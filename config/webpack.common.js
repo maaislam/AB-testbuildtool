@@ -36,7 +36,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       title: 'A/B Test Boilerplate',
-      template: paths.src + '/template.html', // template file
+      template: paths.templateHTML, // template file
       filename: 'index.html', // output file
     }),
   ],
