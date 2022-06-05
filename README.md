@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Sensible webpack 5 boilerplate using Babel, PostCSS and Sass.
+A/B test webpack 5 boilerplate using Babel, PostCSS and Sass.
 
 ## Installation
 
@@ -20,7 +20,7 @@ npm i
 npm start
 ```
 
-You can view the development server at `localhost:8080`.
+You can view the development server at `localhost:3000`.
 
 ### Production build
 

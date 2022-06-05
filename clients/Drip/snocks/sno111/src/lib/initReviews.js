@@ -1,9 +1,9 @@
-import { pollerLite } from '../../../../../../util'
+import { pollerLite } from '../../../../../../globalUtil/util';
 
 /* eslint-disable no-undef */
 const initReviews = (sku) => {
-  const reviewInterval = window.setInterval(myReviewsIo, 100)
-  let reviewsIo
+  const reviewInterval = window.setInterval(myReviewsIo, 100);
+  let reviewsIo;
   const loadRevWidget = () => {
     reviewsIo = new ReviewsWidget('#ReviewsWidget', {
       //Your REVIEWS.io Store ID and widget type:
@@ -181,14 +181,14 @@ const initReviews = (sku) => {
         '--pagination-tab-active-border-color': '#0E1311',
         '--pagination-tab-border-width': '3px',
       },
-    })
-  }
+    });
+  };
   function myReviewsIo() {
     pollerLite([() => window.ReviewsWidget != undefined], () => {
-      loadRevWidget()
-      window.clearInterval(reviewInterval)
-    })
+      loadRevWidget();
+      window.clearInterval(reviewInterval);
+    });
   }
-}
+};
 
-export default initReviews
+export default initReviews;
