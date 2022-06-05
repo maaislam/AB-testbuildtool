@@ -1,15 +1,11 @@
-const addScript = (jsUrl, cssUrl) => {
-  const script = document.createElement('script');
-  //const link = document.createElement('link');
+const addScript = (jsUrl) => {
+  const script = document.createElement('script')
 
-  script.type = 'text/javascript';
-  script.src = `${jsUrl}`;
-  //   link.type = 'text/css';
-  //   link.rel = 'stylesheet';
-  //   link.href = `${cssUrl}`;
+  script.type = 'text/javascript'
+  script.src = `${jsUrl}`
 
-  document.querySelector('head').append(script);
-  //document.querySelector('head').append(link);
-};
+  const scriptExists = document.querySelector(`[src="${jsUrl}]`)
+  !scriptExists && document.querySelector('head').append(script)
+}
 
-export default addScript;
+export default addScript

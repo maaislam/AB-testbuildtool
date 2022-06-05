@@ -17,7 +17,7 @@ const init = () => {
   const isPdp = location.pathname.indexOf('/product') !== -1
   if (!isPdp) return
 
-  console.log('ready')
+  console.log('hello- all')
 
   const activeSku = getActiveSku()
   document.getElementById('ReviewsWidget')?.remove()

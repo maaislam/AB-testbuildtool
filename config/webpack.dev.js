@@ -10,7 +10,12 @@ module.exports = merge(common, {
 
   // Control how source maps are generated
   devtool: 'inline-source-map',
-
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: 'shared',
+    },
+  },
   // Spin up a server for quick development
   devServer: {
     historyApiFallback: true,
