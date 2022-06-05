@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const { merge } = require('webpack-merge')
-
+const RemoveConsolePlugin = require('remove-console-webpack-plugin')
 const paths = require('./paths')
 const common = require('./webpack.common')
 
@@ -39,6 +39,7 @@ module.exports = merge(common, {
       filename: 'styles/[name].[contenthash].css',
       chunkFilename: '[id].css',
     }),
+    //new RemoveConsolePlugin({ include: ['log'] }),
   ],
   optimization: {
     minimize: true,
