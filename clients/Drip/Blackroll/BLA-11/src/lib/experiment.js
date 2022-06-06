@@ -6,7 +6,7 @@
  * @author User Conversion
  */
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
-import shared from '../../../../../../globalUtil/trackings/shared';
+
 import { pollerLite } from '../../../../../../globalUtil/util';
 import renderFloatingSelector from './components/floatingSelector';
 import clickHandler from './helpers/clickHandler';
@@ -15,7 +15,7 @@ import getProductData from './helpers/getProduct';
 import obsIntersection from './helpers/observeIntersection';
 import { excludedUrls, getCountry, langData } from './langData';
 
-const { ID } = shared;
+const ID = 'BLA-11';
 
 const init = () => {
   const isExcludedUrl = excludedUrls.some((path) => path === location.pathname);

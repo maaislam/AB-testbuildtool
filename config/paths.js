@@ -1,5 +1,5 @@
-const path = require('path')
-const currentExperimentPath = '../clients/Drip/snocks/sno111'
+const path = require('path');
+const currentExperimentPath = '../clients/Drip/snocks/sno342';
 
 module.exports = {
   // Source files
@@ -13,4 +13,4 @@ module.exports = {
   public: path.resolve(__dirname, `${currentExperimentPath}/public`),
 
   templateHTML: path.resolve(__dirname, '../template.html'),
-}
+};
