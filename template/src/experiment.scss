@@ -1,3 +1,7 @@
 @import './variables';
 
-.#{$id} {}
+.#{$id} {
+    &__maincontainer {
+        background-color: red;
+    }
+}

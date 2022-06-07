@@ -1,6 +1,6 @@
-import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
+import { setup, fireEvent } from '../../../../../globalUtil/trackings/services';
 
-const ID = 'BLA-11';
+const ID = 'sno342';
 const VARIATION = 1;
 
 export default () => {
@@ -19,4 +19,8 @@ export default () => {
   // Write experiment code here
   // -----------------------------
   // ...
+  document.querySelector('body').classList.add(`${ID}__maincontainer`);
+
+  const myElm = document.querySelector(`.${ID}__maincontainer`);
+  myElm.remove();
 };

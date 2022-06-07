@@ -3,7 +3,8 @@ export const mergeObjects = (target, source) => {
   Object.keys(source).forEach((key) => {
     const sourceValue = source[key];
     const targetValue = merged[key];
-    const isObject = targetValue && typeof targetValue === 'object' && !(targetValue instanceof Array);
+    const isObject =
+      targetValue && typeof targetValue === 'object' && !(targetValue instanceof Array);
 
     if (isObject) {
       // If object, call function recursively to overwrite subproperties individually
@@ -16,6 +17,11 @@ export const mergeObjects = (target, source) => {
   return merged;
 };
 
+const getNow =
+  Date.now ||
+  function getNow() {
+    return new Date().getTime();
+  };
 export const pollerLite = (conditions, callback, userOptions) => {
   /**
    * Default options
