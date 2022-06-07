@@ -20,11 +20,16 @@ const init = () => {
   console.log('hello- all');
 
   const activeSku = getActiveSku();
+  console.log(activeSku);
   document.getElementById('ReviewsWidget')?.remove();
+  document.querySelector('.ruk_rating_snippet')?.remove();
+  const ratingsIoWidget = `<div class="sno334__container-rating ruk_rating_snippet" data-sku="${activeSku}"></div>`;
+
   const reviewsioWidget = '<div id="ReviewsWidget" class="sno334__container Container"></div>';
   document
     .getElementById('judgeme_product_reviews')
     .insertAdjacentHTML('beforebegin', reviewsioWidget);
+  document.querySelector('.prd-Price_VAT').insertAdjacentHTML('beforebegin', ratingsIoWidget);
 
   initReviews(activeSku);
 };
@@ -33,7 +38,17 @@ export default () => {
   pollerLite(['#judgeme_product_reviews', '.Product__Info '], () => {
     const appContainer = document.querySelector('.Product__Info');
     const reviewsioJs = 'https://widget.reviews.io/polaris/build.js';
+    const ratingsJs = 'https://widget.reviews.io/rating-snippet/dist.js';
+    const revStyle = 'https://widget.reviews.io/rating-snippet/dist.css';
+    const link = document.createElement('link');
+
+    link.type = 'text/css';
+    link.rel = 'stylesheet';
+    link.href = `${revStyle}`;
+    document.querySelector('head').append(link);
     addScript(reviewsioJs);
+    addScript(ratingsJs);
+
     setTimeout(() => {
       init();
     }, 2000);

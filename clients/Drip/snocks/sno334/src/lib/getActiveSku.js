@@ -6,8 +6,11 @@ const getActiveSku = () => {
   }, {});
   window.sno342Variants = variants;
   const firstVariant = variantArr[0].id;
-  const varString = location.search;
-  const selectedVariant = varString.substring(varString.indexOf('?variant=') + 9, varString.indexOf('&')) || firstVariant;
+  const varString =
+    location.search.indexOf('&') !== -1
+      ? location.search.split('?variant=')[1].split('&')[0]
+      : location.search.split('?variant=')[1];
+  const selectedVariant = varString || firstVariant;
 
   return variants[selectedVariant];
 };

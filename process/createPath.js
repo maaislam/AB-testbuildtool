@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
 
 const currentPath = process.argv.reduce((prev, curr) => {
   const params = curr.indexOf('n=') !== -1;

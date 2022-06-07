@@ -5,6 +5,19 @@ const initReviews = (sku) => {
   const reviewInterval = window.setInterval(myReviewsIo, 100);
   let reviewsIo;
   const loadRevWidget = () => {
+    // document.querySelector('.ruk_rating_snippet')?.remove();
+    ratingSnippet('ruk_rating_snippet', {
+      store: 'snocks',
+      mode: 'default',
+      color: '#0E1311',
+      linebreak: false,
+      text: 'Reviews',
+      singularText: 'Review',
+      lang: 'en',
+      usePolaris: true,
+      showEmptyStars: true,
+    });
+
     reviewsIo = new ReviewsWidget('#ReviewsWidget', {
       //Your REVIEWS.io Store ID and widget type:
       store: 'snocks',
@@ -184,10 +197,14 @@ const initReviews = (sku) => {
     });
   };
   function myReviewsIo() {
-    pollerLite([() => window.ReviewsWidget != undefined], () => {
-      loadRevWidget();
-      window.clearInterval(reviewInterval);
-    });
+    pollerLite(
+      [() => window.ReviewsWidget != undefined, () => window.ratingSnippet !== 'undefined'],
+      () => {
+        loadRevWidget();
+
+        window.clearInterval(reviewInterval);
+      }
+    );
   }
 };
 
