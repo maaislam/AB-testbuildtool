@@ -1,17 +1,38 @@
 /* eslint-disable no-undef */
+const fs = require('fs');
+const path = require('path');
 const { exec } = require('child_process');
 const prompt = require('prompt');
 
 prompt.start();
 
-prompt.get(['clientName', 'siteName', 'experimentName'], function (err, result) {
+prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], function (err, result) {
   if (err) {
     return onErr(err);
   }
+  const { clientName, siteName, experimentId, setVarFlag } = result;
 
-  exec(
-    `npm run configpath -- cn=${result.clientName} sn=${result.siteName} en=${result.experimentName}`
+  const sharedJsContent = (experimentId, setVarFlag, clientName) => `export default {
+    ID: "${experimentId}",
+    VARIATION: "${setVarFlag}",
+    CLIENT: "${clientName}",
+  };`;
+
+  fs.writeFile(
+    path.resolve(
+      __dirname,
+      `../clients/${clientName}/${siteName}/${experimentId}/src/lib/shared/shared.js`
+    ),
+    sharedJsContent(experimentId, setVarFlag, clientName),
+    (err) => {
+      if (err) {
+        console.error('ERROR', err);
+      }
+      // file written successfully
+    }
   );
+
+  exec(`npm run configpath -- cn=${clientName} sn=${siteName} en=${experimentId}`);
 });
 
 function onErr(err) {
