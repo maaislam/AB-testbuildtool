@@ -4,6 +4,7 @@ import { pollerLite } from '../../../../../../globalUtil/util';
 
 import addScript from './helpers/addScript';
 import getActiveSku from './helpers/getActiveSku';
+
 import initReviews from './helpers/initReviews';
 import { isPDP, isPLP, skusOnPage, thingsToPollFor } from './helpers/utils';
 
@@ -14,27 +15,27 @@ const init = () => {
     const productCards = document.querySelectorAll('.ProductList.ProductList--grid .ProductItem');
     pollerLite([() => window.ratingSnippet !== 'undefined'], () => {
       productCards.forEach((card, index) => {
+          card.querySelector(`.ProductItem__Info .jdgm-widget `).classList.add(`sno334__hide`);
+        if (location.pathname.indexOf('/search') !== -1) return;
         const cardProdId = card
           .querySelector('.ProductItem__Info h2.ProductItem__Title.Heading a')
-          .getAttribute('href')
+          ?.getAttribute('href')
           .split('variant=')[1];
 
         const cardSku = skusOnPage[cardProdId];
 
         const ratingsIoWidget = `<div class="sno334__container-rating ruk_rating_snippet sno334__container-rating--${index}" data-sku="${cardSku}"></div>`;
-
+        card.querySelector(`.jdgm-widget.jdgm--done-setup`).classList.add(`sno334__hide`);
         card.querySelector('.sno334__container-rating')?.remove();
         card
           .querySelector('.ProductItem__TitleDescription')
-          .insertAdjacentHTML('afterend', ratingsIoWidget);
+          ?.insertAdjacentHTML('afterend', ratingsIoWidget);
         // eslint-disable-next-line no-undef
         ratingSnippet('ruk_rating_snippet', {
           store: 'snocks',
           mode: 'default',
-          color: '#0E1311',
+          color: '#F9CA4F',
           linebreak: false,
-          text: 'Reviews',
-          singularText: 'Review',
           lang: 'en',
           usePolaris: true,
           showEmptyStars: true,
@@ -55,9 +56,31 @@ const init = () => {
   document
     .getElementById('judgeme_product_reviews')
     .insertAdjacentHTML('beforebegin', reviewsioWidget);
-  document.querySelector('.prd-Price_VAT').insertAdjacentHTML('beforebegin', ratingsIoWidget);
+
+  document.querySelector(`.jdgm-widget`).classList.add(`sno334__hide`);
+  document.querySelector(`.jdgm-rev-widg`).classList.add(`sno334__hide`);
+
+  document.querySelector(`.ProductItem__Info .jdgm-widget `).classList.add(`sno334__hide`);
+
+  const ratingsIoWidgetWrapper = `<div class="sno334__container-rating-wrapper" href="#ReviewsWidget"></div>`;
+  document
+    .querySelector('.product-price-review-css')
+    .insertAdjacentHTML('beforeend', ratingsIoWidgetWrapper);
+  document
+    .querySelector('.sno334__container-rating-wrapper')
+    .insertAdjacentHTML('beforeend', ratingsIoWidget);
+
+    document.querySelector('.ProductMeta').classList.add(`sno334__container-product`);
 
   initReviews(activeSku);
+
+  setTimeout(() => {
+    var reviewNumberText = document.querySelector('.header__group .R-TextBody').innerText.substring(14, document.querySelector('.header__group .R-TextBody').innerText.indexOf('Be') - 1);
+    //  CHANGING OLD REVIEW COUNT TEXT TO NEW UPDATED TEXT(ACCORDING TO DESIGN)
+    document.querySelector('.header__group .R-TextBody').classList.add('sno334-widget-mutated')
+    document.querySelector('.R-RatingStars__stars.u-marginBottom--none > span').setAttribute('data-text', reviewNumberText)
+  }, "2000")
+  
 };
 
 export default () => {
@@ -82,12 +105,13 @@ export default () => {
     let oldHref = location.href;
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
+        console.log(mutation);
         if (oldHref != location.href) {
           oldHref = location.href;
 
           setTimeout(() => {
             init();
-          }, 1000);
+          }, 2000);
         }
       });
     });
