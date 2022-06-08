@@ -1,4 +1,4 @@
-import { pollerLite } from '../../../../../../globalUtil/util';
+import { pollerLite } from '../../../../../../../globalUtil/util';
 
 /* eslint-disable no-undef */
 const initReviews = (sku) => {

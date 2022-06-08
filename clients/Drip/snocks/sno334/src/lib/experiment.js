@@ -1,23 +1,49 @@
-/**
- * ID - Description
- *
- * @fileoverview The main experiment logic goes here. Everything should be written inside the
- * activate function which is called if the conditions in triggers.js have passed evaluation
- * @author User Conversion
- */
 // import { setup, fireEvent } from '../../../../../core-files/services';
 // import shared from '../../../../../core-files/shared';
 import { pollerLite } from '../../../../../../globalUtil/util';
 
-import addScript from './addScript';
-import getActiveSku from './getActiveSku';
-import initReviews from './initReviews';
+import addScript from './helpers/addScript';
+import getActiveSku from './helpers/getActiveSku';
+import initReviews from './helpers/initReviews';
+import { isPDP, isPLP, skusOnPage, thingsToPollFor } from './helpers/utils';
 
 const init = () => {
-  const isPdp = location.pathname.indexOf('/product') !== -1;
-  if (!isPdp) return;
+  if (isPLP) {
+    console.log('isPLP', isPLP);
 
-  console.log('hello- all');
+    const productCards = document.querySelectorAll('.ProductList.ProductList--grid .ProductItem');
+    pollerLite([() => window.ratingSnippet !== 'undefined'], () => {
+      productCards.forEach((card, index) => {
+        const cardProdId = card
+          .querySelector('.ProductItem__Info h2.ProductItem__Title.Heading a')
+          .getAttribute('href')
+          .split('variant=')[1];
+
+        const cardSku = skusOnPage[cardProdId];
+
+        const ratingsIoWidget = `<div class="sno334__container-rating ruk_rating_snippet sno334__container-rating--${index}" data-sku="${cardSku}"></div>`;
+
+        card.querySelector('.sno334__container-rating')?.remove();
+        card
+          .querySelector('.ProductItem__TitleDescription')
+          .insertAdjacentHTML('afterend', ratingsIoWidget);
+        // eslint-disable-next-line no-undef
+        ratingSnippet('ruk_rating_snippet', {
+          store: 'snocks',
+          mode: 'default',
+          color: '#0E1311',
+          linebreak: false,
+          text: 'Reviews',
+          singularText: 'Review',
+          lang: 'en',
+          usePolaris: true,
+          showEmptyStars: true,
+        });
+      });
+    });
+  }
+
+  if (!isPDP) return;
 
   const activeSku = getActiveSku();
   console.log(activeSku);
@@ -35,7 +61,8 @@ const init = () => {
 };
 
 export default () => {
-  pollerLite(['#judgeme_product_reviews', '.Product__Info '], () => {
+  console.log('hello- all');
+  pollerLite(thingsToPollFor, () => {
     const appContainer = document.querySelector('.Product__Info');
     const reviewsioJs = 'https://widget.reviews.io/polaris/build.js';
     const ratingsJs = 'https://widget.reviews.io/rating-snippet/dist.js';
@@ -70,6 +97,6 @@ export default () => {
       subtree: true,
     };
 
-    observer.observe(appContainer, config);
+    isPDP && observer.observe(appContainer, config);
   });
 };

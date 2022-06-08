@@ -5,9 +5,10 @@
 
 import activate from './lib/experiment';
 import { pollerLite } from '../../../../../globalUtil/util';
+import { isPDP, isPLP } from './lib/helpers/utils';
 
 const ieChecks = /MSIE|Trident|Edge\/(12|13|14|15|16|17|18)/.test(window.navigator.userAgent);
-const isPDP = location.pathname.indexOf('/product') !== -1;
-if (!ieChecks && isPDP) {
-  pollerLite(['body', '#judgeme_product_reviews'], activate);
+
+if (!ieChecks && (isPDP || isPLP)) {
+  pollerLite(['body'], activate);
 }
