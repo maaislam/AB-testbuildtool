@@ -75,7 +75,23 @@ const init = (dataObj) => {
     .querySelector('.sno334__container-rating-wrapper')
     .insertAdjacentHTML('beforeend', ratingsIoWidget);
 
+  document.querySelector('.ProductMeta').classList.add(`sno334__container-product`);
+
   initReviews(activeSku);
+
+  setTimeout(() => {
+    var reviewNumberText = document
+      .querySelector('.header__group .R-TextBody')
+      .innerText.substring(
+        14,
+        document.querySelector('.header__group .R-TextBody').innerText.indexOf('Be') - 1
+      );
+    //  CHANGING OLD REVIEW COUNT TEXT TO NEW UPDATED TEXT(ACCORDING TO DESIGN)
+    document.querySelector('.header__group .R-TextBody').classList.add('sno334-widget-mutated');
+    document
+      .querySelector('.R-RatingStars__stars.u-marginBottom--none > span')
+      .setAttribute('data-text', reviewNumberText);
+  }, '2000');
 };
 
 export default () => {

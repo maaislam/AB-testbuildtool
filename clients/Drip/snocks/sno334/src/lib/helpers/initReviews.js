@@ -154,7 +154,7 @@ const initReviews = (sku) => {
         //Slider indicator (for attributes) styles:
         '--slider-indicator-bg-color': '#F9CA4F',
         '--slider-indicator-button-color': '#666666',
-        '--slider-indicator-width': '260px',
+        '--slider-indicator-width': '270px',
         //Badge styles:
         '--badge-icon-color': '#0E1311',
         '--badge-icon-font-size': '0px',
