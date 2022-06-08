@@ -14,6 +14,7 @@ const init = () => {
     const productCards = document.querySelectorAll('.ProductList.ProductList--grid .ProductItem');
     pollerLite([() => window.ratingSnippet !== 'undefined'], () => {
       productCards.forEach((card, index) => {
+          card.querySelector('.ProductItem__Info .jdgm-prev-badge').classList.add(`sno334__hide`);
         const cardProdId = card
           .querySelector('.ProductItem__Info h2.ProductItem__Title.Heading a')
           .getAttribute('href')
@@ -31,10 +32,8 @@ const init = () => {
         ratingSnippet('ruk_rating_snippet', {
           store: 'snocks',
           mode: 'default',
-          color: '#0E1311',
+          color: '#F9CA4F',
           linebreak: false,
-          text: 'Reviews',
-          singularText: 'Review',
           lang: 'en',
           usePolaris: true,
           showEmptyStars: true,
@@ -55,7 +54,15 @@ const init = () => {
   document
     .getElementById('judgeme_product_reviews')
     .insertAdjacentHTML('beforebegin', reviewsioWidget);
-  document.querySelector('.prd-Price_VAT').insertAdjacentHTML('beforebegin', ratingsIoWidget);
+//   document.querySelector('.prd-Price_VAT').insertAdjacentHTML('beforebegin', ratingsIoWidget);
+document.querySelector(`.jdgm-widget`).classList.add(`sno334__hide`);
+document.querySelector(`.jdgm-rev-widg`).classList.add(`sno334__hide`);
+
+document.querySelector(`.ProductItem__Info .jdgm-widget `).classList.add(`sno334__hide`);
+
+const ratingsIoWidgetWrapper = `<div class="sno334__container-rating-wrapper" href="#ReviewsWidget"></div>`;
+document.querySelector('.product-price-review-css').insertAdjacentHTML('beforeend', ratingsIoWidgetWrapper);
+document.querySelector('.sno334__container-rating-wrapper').insertAdjacentHTML('beforeend', ratingsIoWidget);
 
   initReviews(activeSku);
 };
