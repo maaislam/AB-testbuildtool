@@ -15,17 +15,6 @@ const init = () => {
     const productCards = document.querySelectorAll('.ProductList.ProductList--grid .ProductItem');
     pollerLite([() => window.ratingSnippet !== 'undefined'], () => {
       productCards.forEach((card, index) => {
-        const productUrl = card
-          .querySelector('.ProductItem__Info h2.ProductItem__Title.Heading a')
-          .getAttribute('href');
-        const productId = productUrl.split('variant=')[1];
-
-        const prodhandle = productUrl.split('?')[0];
-
-        const data = getProductData(prodhandle);
-        console.log('data', data);
-
-        //end of search page stuff
         if (location.pathname.indexOf('/search') !== -1) return;
         const cardProdId = card
           .querySelector('.ProductItem__Info h2.ProductItem__Title.Heading a')
