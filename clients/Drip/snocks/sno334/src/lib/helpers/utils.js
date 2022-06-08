@@ -12,7 +12,7 @@ export const skusOnPage =
 
     return prev;
   }, {});
-console.log(skusOnPage);
+
 const skusArr = Object.values(skusOnPage);
 
 export const thingsToPollFor = isPDP
