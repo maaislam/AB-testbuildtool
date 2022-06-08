@@ -198,7 +198,7 @@ const initReviews = (sku) => {
   };
   function myReviewsIo() {
     pollerLite(
-      [() => window.ReviewsWidget != undefined, () => window.ratingSnippet !== 'undefined'],
+      [() => window.ReviewsWidget != undefined, () => window.ratingSnippet !== undefined],
       () => {
         loadRevWidget();
 
