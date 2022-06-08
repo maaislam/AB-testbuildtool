@@ -4,49 +4,55 @@ import { pollerLite } from '../../../../../../globalUtil/util';
 
 import addScript from './helpers/addScript';
 import getActiveSku from './helpers/getActiveSku';
+import getRecommProdData from './helpers/getRecommProdData';
 
 import initReviews from './helpers/initReviews';
 import { isPDP, isPLP, skusOnPage, thingsToPollFor } from './helpers/utils';
 
-const init = () => {
-  if (isPLP) {
-    console.log('isPLP', isPLP);
+const init = (dataObj) => {
+  if (isPLP || !!document.querySelector('.ProductListWrapper')) {
+    const plpList = document.querySelectorAll('.ProductList.ProductList--grid .ProductItem');
+    const carouselList = document.querySelectorAll('.ProductRecommendations .ProductItem');
+    const productCards = isPLP
+      ? plpList
+      : document.querySelector('.ProductListWrapper')
+      ? carouselList
+      : null;
 
-    const productCards = document.querySelectorAll('.ProductList.ProductList--grid .ProductItem');
-    pollerLite([() => window.ratingSnippet !== 'undefined'], () => {
+    pollerLite([() => window.ratingSnippet !== undefined], () => {
       productCards.forEach((card, index) => {
-        if (location.pathname.indexOf('/search') !== -1) return;
         const cardProdId = card
           .querySelector('.ProductItem__Info h2.ProductItem__Title.Heading a')
           ?.getAttribute('href')
           .split('variant=')[1];
 
-        const cardSku = skusOnPage[cardProdId];
+        const cardSku = skusOnPage(dataObj)[cardProdId];
+        console.log(cardProdId);
 
         const ratingsIoWidget = `<div class="sno334__container-rating ruk_rating_snippet sno334__container-rating--${index}" data-sku="${cardSku}"></div>`;
-        card.querySelector(`.jdgm-widget.jdgm--done-setup`).classList.add(`sno334__hide`);
+        card.querySelector(`.jdgm-widget`)?.classList.add(`sno334__hide`);
         card.querySelector('.sno334__container-rating')?.remove();
         card
           .querySelector('.ProductItem__TitleDescription')
           ?.insertAdjacentHTML('afterend', ratingsIoWidget);
-        // eslint-disable-next-line no-undef
-        ratingSnippet('ruk_rating_snippet', {
-          store: 'snocks',
-          mode: 'default',
-          color: '#F9CA4F',
-          linebreak: false,
-          lang: 'en',
-          usePolaris: true,
-          showEmptyStars: true,
-        });
+      });
+      // eslint-disable-next-line no-undef
+      ratingSnippet('ruk_rating_snippet', {
+        store: 'snocks',
+        mode: 'default',
+        color: '#F9CA4F',
+        linebreak: false,
+        lang: 'en',
+        usePolaris: true,
+        showEmptyStars: true,
       });
     });
   }
 
   if (!isPDP) return;
-
   const activeSku = getActiveSku();
-  console.log(activeSku);
+
+  // console.log(activeSku);
   document.getElementById('ReviewsWidget')?.remove();
   document.querySelector('.ruk_rating_snippet')?.remove();
   const ratingsIoWidget = `<div class="sno334__container-rating ruk_rating_snippet" data-sku="${activeSku}"></div>`;
@@ -56,8 +62,8 @@ const init = () => {
     .getElementById('judgeme_product_reviews')
     .insertAdjacentHTML('beforebegin', reviewsioWidget);
 
-  document.querySelector(`.jdgm-widget`).classList.add(`sno334__hide`);
-  document.querySelector(`.jdgm-rev-widg`).classList.add(`sno334__hide`);
+  document.querySelector(`.jdgm-widget`)?.classList.add(`sno334__hide`);
+  document.querySelector(`.jdgm-rev-widg`)?.classList.add(`sno334__hide`);
 
   document.querySelector(`.ProductItem__Info .jdgm-widget `).classList.add(`sno334__hide`);
 
@@ -73,7 +79,6 @@ const init = () => {
 };
 
 export default () => {
-  console.log('hello- all');
   pollerLite(thingsToPollFor, () => {
     const appContainer = document.querySelector('.Product__Info');
     const reviewsioJs = 'https://widget.reviews.io/polaris/build.js';
@@ -88,19 +93,45 @@ export default () => {
     addScript(reviewsioJs);
     addScript(ratingsJs);
 
+    const renderRecommStar = async () => {
+      const recommProducts = document.querySelectorAll(
+        '.ProductRecommendations a.ProductItem__ImageWrapper'
+      );
+      // console.log(recommProducts);
+      let promises = [];
+      for (let index = 0; index < recommProducts.length; index++) {
+        const prodHref = recommProducts[index].getAttribute('href');
+        if (prodHref) {
+          promises.push(getRecommProdData(prodHref));
+        }
+      }
+      const data = await Promise.all(promises);
+      const normalisedData = data.reduce((prev, curr) => {
+        prev[curr.product.id] = curr.product;
+        return prev;
+      }, {});
+      window.collectionProducts = normalisedData;
+      setTimeout(() => {
+        init(window.collectionProducts);
+      }, 2000);
+    };
+    !isPLP && renderRecommStar();
+
     setTimeout(() => {
-      init();
+      init(window.collectionProducts);
     }, 2000);
     let oldHref = location.href;
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
-        console.log(mutation);
         if (oldHref != location.href) {
           oldHref = location.href;
 
-          setTimeout(() => {
-            init();
-          }, 2000);
+          const { addedNodes } = mutation;
+          addedNodes.forEach((addedNode) => {
+            setTimeout(() => {
+              init(window.collectionProducts);
+            }, 2000);
+          });
         }
       });
     });
