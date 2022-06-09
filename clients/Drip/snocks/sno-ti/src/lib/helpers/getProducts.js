@@ -5,16 +5,14 @@ const getProducts = async (endPoint) => {
         console.log('response', response)
         const data  = await response.json()
         if(data){
-            console.log('product', data)
             return data
 
         }
         else{
-            console.log(data)
             return null
         }
     } catch (error) {
-        console.log(error)
+       throw new Error(error)
     }
   };
   
