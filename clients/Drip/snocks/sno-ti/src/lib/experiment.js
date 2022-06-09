@@ -5,9 +5,9 @@ import {getRecommendation} from './helpers/recommendation'
 
 const { ID, VARIATION } = shared;
 
-const setUniqueClass = ()=>{
-  document.querySelector('body').classList.add(`${ID}`)
-}
+const setUniqueClass = () => {
+  document.querySelector('body').classList.add(`${ID}`);
+};
 
 
 export default async () => {
