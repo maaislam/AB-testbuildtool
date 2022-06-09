@@ -60,6 +60,11 @@ const init = (dataObj) => {
     .getElementById('judgeme_product_reviews')
     .insertAdjacentHTML('beforebegin', reviewsioWidget);
 
+  //document.querySelector(`.jdgm-widget`)?.classList.add(`${ID}__hide`);
+  //document.querySelector(`.jdgm-rev-widg`)?.classList.add(`${ID}__hide`);
+
+  // document.querySelector(`.ProductItem__Info .jdgm-widget `).classList.add(`${ID}__hide`);
+
   const ratingsIoWidgetWrapper = `<div class="${ID}__container-rating-wrapper ${ID}__review-pdp" href="#ReviewsWidget"></div>`;
   document
     .querySelector('.product-price-review-css')
