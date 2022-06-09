@@ -1,4 +1,9 @@
-$media: (xsm:360px, sm: 740px, md: 866px, lg: 1024px, );
+$id: 'sno-ti';
+$media: (xsm:360px,
+    sm: 768px,
+    md: 850px,
+    lg: 1024px,
+);
 
 @mixin mediaQuery($breakpoint) {
 

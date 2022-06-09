@@ -1,9 +1,9 @@
 export const isPDP = location.pathname.indexOf('/product') !== -1;
 export const isPLP = location.pathname.indexOf('/collections') !== -1;
-const productsOnPage = isPLP && Object.values(window.collectionProducts);
-export const skusOnPage =
+const productsOnPage = (dataObj) => isPLP && Object.values(dataObj);
+export const skusOnPage = (dataObj) =>
   isPLP &&
-  productsOnPage.reduce((prev, curr) => {
+  productsOnPage(dataObj).reduce((prev, curr) => {
     const variants = curr.variants;
 
     variants.forEach((variant) => {
@@ -27,4 +27,6 @@ export const thingsToPollFor = isPDP
         document.querySelectorAll('.ProductList.ProductList--grid .ProductItem').length >=
         skusArr.length,
     ]
+  : document.querySelector('.ProductListWrapper')
+  ? ['.ProductListWrapper']
   : null;
