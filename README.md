@@ -14,6 +14,12 @@ npm i
 
 ## Usage
 
+### Create new Experiment
+
+```bash
+npm experiment-create
+```
+
 ### Development server
 
 ```bash
