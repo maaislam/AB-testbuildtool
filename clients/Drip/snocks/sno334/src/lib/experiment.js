@@ -87,7 +87,7 @@ const init = (dataObj) => {
         document.querySelector('.header__group .R-TextBody')?.innerText.indexOf('Be') - 1
       );
     //  CHANGING OLD REVIEW COUNT TEXT TO NEW UPDATED TEXT(ACCORDING TO DESIGN)
-    document.querySelector('.header__group .R-TextBody')?.classList.add('${ID}-widget-mutated');
+    document.querySelector('.header__group .R-TextBody')?.classList.add(`${ID}-widget-mutated`);
     document
       .querySelector('.R-RatingStars__stars.u-marginBottom--none > span')
       ?.setAttribute('data-text', reviewNumberText);
