@@ -9,7 +9,7 @@ export const initRatingsScript = () =>
     linebreak: false,
     lang: 'en',
     usePolaris: true,
-    showEmptyStars: true,
+    showEmptyStars: false,
   });
 export const initReviews = (sku) => {
   const reviewInterval = window.setInterval(myReviewsIo, 100);
