@@ -11,8 +11,18 @@
         display: none !important;
     }
     &__container {
+        position: relative;
         background-color: #FAFAFA;
-        padding-top: 0px;
+        padding-top: 40px;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 40px;
+            top: 0;
+            left: 0;
+            background: #fff;
+        }
         &-rating {
             pointer-events: none;
             &-wrapper {
@@ -155,7 +165,7 @@
             font-family: 'Gordita Regular';
             font-style: normal;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 16px !important;
             line-height: 17px;
             color: #0F1412;
         }
@@ -184,7 +194,9 @@
         [r-tooltip="Normal"]>div,
         [r-tooltip="Sehr bequem"]>div,
         [r-tooltip="Unzufrieden"]>div,
-        [r-tooltip="Sehr zufrieden"]>div {
+        [r-tooltip="Sehr zufrieden"]>div,
+        [r-tooltip="Fallen zu klein aus"]>div,
+        [r-tooltip="Fallen zu groß aus"]>div {
             visibility: hidden;
             position: relative;
         }
@@ -267,7 +279,8 @@
             line-height: 11px;
             color: #575757;
         }
-        & [r-tooltip="Fallen klein aus"]>div::before {
+        & [r-tooltip="Fallen klein aus"]>div::before,
+        [r-tooltip="Fallen zu klein aus"]>div::before {
             content: 'klein';
             visibility: visible;
             display: block;
@@ -283,8 +296,8 @@
             line-height: 11px;
             color: #575757;
         }
-        &[r-tooltip="Passen wie erwartet"]>div::before {
-            content: 'perfekt';
+        & .ElementsWidget-prefix [r-tooltip="Passen wie erwartet"]>div::before {
+            content: 'perfekt'!important;
             visibility: visible;
             display: block;
             top: 0;
@@ -297,7 +310,8 @@
             line-height: 11px;
             color: #575757;
         }
-        & [r-tooltip="Fallen groß aus"]>div::before {
+        & [r-tooltip="Fallen groß aus"]>div::before,
+        [r-tooltip="Fallen zu groß aus"]>div::before {
             content: 'groß';
             visibility: visible;
             display: block;
@@ -460,6 +474,22 @@
             font-size: 14px;
             line-height: 14px;
             color: #666666 !important;
+        }
+        & .R-SliderIndicator-group .R-TextHeading {
+            font-family: 'Gordita Regular';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 13px;
+            color: #0F1412;
+        }
+        & .item__inner .R-TextHeading.R-TextHeading--xxs {
+            font-family: 'Gordita Regular';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 18px;
+            color: #0F1412;
         }
     }
 }
