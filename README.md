@@ -1,4 +1,4 @@
-# 📦 A/B test webpack Boilerplate
+# 📦 A/B test development tool
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
