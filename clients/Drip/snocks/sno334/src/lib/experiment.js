@@ -24,10 +24,12 @@ const init = (dataObj) => {
       : document.querySelector('.ProductListWrapper')
       ? carouselList
       : null;
-
     productCards.forEach((card, index) => {
-      const cardProdHref = card.querySelector('.ProductItem__Info a')?.getAttribute('href');
+      const cardProdHref = card
+        .querySelectorAll('.ProductItem__ImageWrapper')[1]
+        ?.getAttribute('href');
       const cardProdId = cardProdHref?.split('variant=')[1];
+      console.log(cardProdId);
 
       const cardSku =
         cardProdId && isPLP
@@ -39,7 +41,7 @@ const init = (dataObj) => {
       card.querySelector(`.${ID}__container-rating`)?.remove();
       const anchorElem = card.querySelector('.ProductItem__PriceList.Heading');
 
-      cardSku && anchorElem.insertAdjacentHTML('beforebegin', ratingsIoWidget);
+      cardSku && anchorElem.insertAdjacentHTML('afterbegin', ratingsIoWidget);
     });
     pollerLite([() => window.ratingSnippet !== undefined], () => {
       // eslint-disable-next-line no-undef
