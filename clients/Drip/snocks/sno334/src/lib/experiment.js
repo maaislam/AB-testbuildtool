@@ -25,9 +25,15 @@ const init = (dataObj) => {
       ? carouselList
       : null;
     productCards.forEach((card, index) => {
+      // eslint-disable-next-line no-undef
+      const sno323__varBucketed = Kameleoon.API.Experiments.getActive().some(
+        (experiment) =>
+          experiment.name === 'SNO_323' && experiment.associatedVariation.id !== 'reference'
+      );
+      // console.log('sno323_bucketed', sno323_bucketed);
       const cardProdHref = card
-        .querySelectorAll('.ProductItem__ImageWrapper')[1]
-        ?.getAttribute('href');
+        .querySelectorAll('.ProductItem__ImageWrapper')
+        [sno323__varBucketed ? 1 : 0]?.getAttribute('href');
       const cardProdId = cardProdHref?.split('variant=')[1];
       console.log(cardProdId);
 
