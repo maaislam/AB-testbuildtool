@@ -1,20 +1,22 @@
 import { pollerLite } from '../../../../../../../globalUtil/util';
 
 /* eslint-disable no-undef */
-const initReviews = (sku) => {
+export const initRatingsScript = () =>
+  ratingSnippet('ruk_rating_snippet', {
+    store: 'snocks',
+    mode: 'default',
+    color: '#F9CA4F',
+    linebreak: false,
+    lang: 'en',
+    usePolaris: true,
+    showEmptyStars: true,
+  });
+export const initReviews = (sku) => {
   const reviewInterval = window.setInterval(myReviewsIo, 100);
   let reviewsIo;
   const loadRevWidget = () => {
     // document.querySelector('.ruk_rating_snippet')?.remove();
-    ratingSnippet('ruk_rating_snippet', {
-      store: 'snocks',
-      mode: 'default',
-      color: '#F9CA4F',
-      linebreak: false,
-      lang: 'en',
-      usePolaris: true,
-      showEmptyStars: true,
-    });
+    initRatingsScript();
 
     reviewsIo = new ReviewsWidget('#ReviewsWidget', {
       //Your REVIEWS.io Store ID and widget type:
@@ -203,5 +205,3 @@ const initReviews = (sku) => {
     );
   }
 };
-
-export default initReviews;

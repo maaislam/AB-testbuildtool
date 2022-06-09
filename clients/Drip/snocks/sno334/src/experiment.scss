@@ -1,6 +1,13 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
+
+.jdgm-widget,
+.jdgm-rev-widg {
+    //special case
+    display: none !important;
+}
+
 .#{$id} {
     &__hide {
         display: none !important;

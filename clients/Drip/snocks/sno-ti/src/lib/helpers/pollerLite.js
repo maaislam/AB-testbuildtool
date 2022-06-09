@@ -1,9 +1,28 @@
+/**
+ * Returns a function to get current time
+ * @returns {Function}
+ */
+export const getNow =
+  Date.now ||
+  function getNow() {
+    return new Date().getTime();
+  };
+
+/**
+ * Merge together two objects with properties of the source object taking priority
+ * The function is called recursively for properties that are also objects to avoid
+ * overwriting the entire source object
+ * @param {object} target Base object
+ * @param {object} source Object with properties that will overwrite target
+ * @returns {object}
+ */
 export const mergeObjects = (target, source) => {
   const merged = target;
   Object.keys(source).forEach((key) => {
     const sourceValue = source[key];
     const targetValue = merged[key];
-    const isObject = targetValue && typeof targetValue === 'object' && !(targetValue instanceof Array);
+    const isObject =
+      targetValue && typeof targetValue === 'object' && !(targetValue instanceof Array);
 
     if (isObject) {
       // If object, call function recursively to overwrite subproperties individually
@@ -16,6 +35,13 @@ export const mergeObjects = (target, source) => {
   return merged;
 };
 
+/**
+ * @desc Lightweight version of the poller that doesn't include some advanced functionality
+ *  Check the existence of elements or some other logic.
+ * @param {array} conditions
+ * @param {function} callback
+ * @param {options} userOptions
+ */
 export const pollerLite = (conditions, callback, userOptions) => {
   /**
    * Default options
@@ -116,3 +142,9 @@ export const pollerLite = (conditions, callback, userOptions) => {
     pollForCondition(conditions[i], wait, true);
   }
 };
+
+export const formatPrice = (amount, code = 'en-GB', currency = 'GBP') =>
+  new Intl.NumberFormat(code, {
+    style: 'currency',
+    currency,
+  }).format(amount);

@@ -11,7 +11,7 @@ const getActiveSku = () => {
       ? location.search.split('?variant=')[1]?.split('&')[0]
       : location.search.split('?variant=')[1];
   const selectedVariant = varString || firstVariant;
-  console.log(variants[selectedVariant]);
+  //console.log(variants[selectedVariant]);
   return variants[selectedVariant];
 };
 
