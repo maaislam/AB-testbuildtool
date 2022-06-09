@@ -12,21 +12,36 @@ const slider = async (variants)=>{
   const productWrapper = document.querySelector(`.${ID} .Product__Wrapper`)
   console.log('slider', productWrapper)
 
-  const varientsDiv = variants.map(({title, src, option1})=>{
+  const varientsDiv = variants.map(({title, featured_image, handle, price})=>{
     return `<div class="product">
-              <img class="product-img" src="${src}"/>
-              <p class="product-title">${title}</p>
-              <p class="product-title">${option1}</p>
+              <img class="product-img" src="${featured_image}"/>
+             <div class="product-info">
+             <p class="product-info__title">${title}</p>
+             <p class="product-info__subtitle">${handle}</p>
+             <p class="product-info__price">&#8364;${price}</p>
+             </div>
             </div>`
   }).join('')
 
   const slider = `<div class="${ID}-products"> 
-                    <h2>Passt dazu</h2> 
-                    <p>Mach dein outfit komplete</p> 
+                    <h2 class="${ID}-products__title" >Passt dazu</h2> 
+                    <p class="${ID}-products__suntitle">Mach dein outfit komplete</p> 
                     <div class="${ID}-products--container">${varientsDiv}</div> 
                   </div>`
 
   productWrapper.insertAdjacentHTML('afterend', slider)
+
+  let elem = document.querySelector(`.${ID}-products--container`);
+  // console.log(elem)
+  let flkty = new window.Flickity( elem, {
+    cellAlign: 'center',
+    contain: true,
+    initialIndex: 6,
+    prevNextButtons: true,
+    pageDots: false,
+    draggable: false,
+    percentPosition: false,
+  });
 }
 
 export default async () => {
@@ -41,18 +56,19 @@ export default async () => {
   }
 
   setUniqueClass()
-  const {handle: productName} = window.product
-  const {variants, images} = await getProducts(`products/${productName}.json`)
+  const {id: productId} = window.product
+  const {products} = await getProducts(`/recommendations/products.json?product_id=${productId}&limit=15`)
+  console.log('recommendation', products)
 
-  const products = variants.map((variant)=>{
-    const imgIndex = images.findIndex(({id})=> id === variant.image_id)
+  slider(products)
 
-    return {...variant, ...images[imgIndex]}
-
-  })
-  console.log('prod', products)
-
-  slider(products.slice(0,4))
+  const nextBtn = document.querySelector('.flickity-prev-next-button.next')
+  // console.log('nextBtn', nextBtn)
+  nextBtn.style.right = 0
+  nextBtn.style.top = '30%'
+  const prevBtn = document.querySelector('.flickity-prev-next-button.previous')
+  prevBtn.style.left = 0
+  prevBtn.style.top = '30%'
   // -----------------------------
   // Write experiment code here
   // -----------------------------

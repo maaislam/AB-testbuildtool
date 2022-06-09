@@ -1,14 +1,16 @@
 const getProducts = async (endPoint) => {
     try {
         const baseUrl = 'https://snocks.com/'
-        const products = await fetch(`${baseUrl}${endPoint}`)
-        const {product}  = await products.json()
-        if(product){
-            console.log('product', product)
-            return product
+        const response = await fetch(`${baseUrl}${endPoint}`)
+        console.log('response', response)
+        const data  = await response.json()
+        if(data){
+            console.log('product', data)
+            return data
 
         }
         else{
+            console.log(data)
             return null
         }
     } catch (error) {

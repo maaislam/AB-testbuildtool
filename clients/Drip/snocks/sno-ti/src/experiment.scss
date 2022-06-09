@@ -2,34 +2,94 @@
 
 .#{$id} {
     &__maincontainer {
-        background-color: red;
     }
     .#{$id}-products{
         display: flex;
-        border: 1px solid red;
         flex-direction: column;
         align-items: flex-start;
-        // justify-content: flex-start;
+        width: 100%;
+
+        &__title{
+            font-family: Gordita;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 0em;
+            // text-align: left;
+
+        }
+        &__subtitle{
+            font-family: Gordita;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 16px;
+            letter-spacing: 0em;
+            // text-align: left;
+            text-transform: uppercase;
+
+        }
 
         &--container{
             display: flex;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
+            width: 100%;
+            flex-wrap: nowrap;
 
             .product{
-                border: 1px solid blue;
                 margin: 5px;
                 padding: 5px;
+                width: 305px;
+                height: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
 
                 img{
                     height: 305px;
                     width: 305px;
                 }
-                &-title{
+                &-info{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
                     text-align: center;
+                    &__title{
+                        margin-top: 20px;
+                        font-weight: 400;
+                        font-size: 15px;
+                    }
+                    &__subtitle{
+                        // font-weight: lighter;
+                        font-size: 13px;
+                    }
+                    &__price{
+                        font-weight: lighter;
+                        color:  #646464;
+                        font-size: 14px;
+                    
+                    }
                 }
+                }
+               
+            .flickity-viewport{
+          
+            }
+            .flickity-prev-next-button {
+                width: 38px;
+                // background: antiquewhite;
+                height: 38px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #FFFFFF;
+                box-shadow: 0px 1px 8px rgb(0 0 0 / 10%);
             }
         }
+       
 
     }
 }
