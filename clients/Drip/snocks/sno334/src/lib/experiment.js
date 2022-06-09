@@ -78,12 +78,14 @@ const init = (dataObj) => {
   initReviews(activeSku);
 
   let timer;
+  const TIMER_INTERVAL = 25;
 
   timer = setInterval(() => {
+    const SUB_STRING_LENGTH = 14;
     const reviewNumberText = document
       .querySelector('.header__group .R-TextBody')
       ?.innerText.substring(
-        14,
+        SUB_STRING_LENGTH,
         document.querySelector('.header__group .R-TextBody')?.innerText.indexOf('Be') - 1
       );
     //  CHANGING OLD REVIEW COUNT TEXT TO NEW UPDATED TEXT(ACCORDING TO DESIGN)
@@ -93,7 +95,7 @@ const init = (dataObj) => {
       ?.setAttribute('data-text', reviewNumberText);
     if (!reviewNumberText || !document.querySelector(`[data-text="${reviewNumberText}"]`)) return;
     clearInterval(timer);
-  }, 25);
+  }, TIMER_INTERVAL);
 };
 
 export default () => {
