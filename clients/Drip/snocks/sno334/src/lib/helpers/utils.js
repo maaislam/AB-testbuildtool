@@ -15,6 +15,8 @@ export const skusOnPage =
 
 const skusArr = Object.values(skusOnPage);
 
+
+
 export const thingsToPollFor = isPDP
   ? ['#judgeme_product_reviews', '.Product__Info']
   : isPLP

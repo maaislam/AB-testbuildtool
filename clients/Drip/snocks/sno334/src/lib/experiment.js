@@ -48,6 +48,7 @@ const init = () => {
 
   const activeSku = getActiveSku();
   console.log(activeSku);
+  document.querySelector('.sno334__container-rating-wrapper')?.remove();
   document.getElementById('ReviewsWidget')?.remove();
   document.querySelector('.ruk_rating_snippet')?.remove();
   const ratingsIoWidget = `<div class="sno334__container-rating ruk_rating_snippet" data-sku="${activeSku}"></div>`;
@@ -79,7 +80,7 @@ const init = () => {
     //  CHANGING OLD REVIEW COUNT TEXT TO NEW UPDATED TEXT(ACCORDING TO DESIGN)
     document.querySelector('.header__group .R-TextBody').classList.add('sno334-widget-mutated')
     document.querySelector('.R-RatingStars__stars.u-marginBottom--none > span').setAttribute('data-text', reviewNumberText)
-  }, "2000")
+  }, 2000)
   
 };
 
@@ -108,7 +109,7 @@ export default () => {
         console.log(mutation);
         if (oldHref != location.href) {
           oldHref = location.href;
-
+            console.log('inside mutation')
           setTimeout(() => {
             init();
           }, 2000);
