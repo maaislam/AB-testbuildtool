@@ -4,11 +4,11 @@ import { slider } from './components/slider';
 import {getRecommendation} from './helpers/recommendation'
 
 const { ID, VARIATION } = shared;
+const {id: productId, selectedVariant} = window.product
 
 const setUniqueClass = () => {
   document.querySelector('body').classList.add(`${ID}`);
 };
-
 
 export default async () => {
   try {
@@ -22,10 +22,8 @@ export default async () => {
       return;
     }
     setUniqueClass()
-    const {id: productId, selectedVariant} = window.product
   
     const filteredProducts = await getRecommendation({productId, selectedVariant})
-  
   
     slider(filteredProducts)
   } catch (error) {
