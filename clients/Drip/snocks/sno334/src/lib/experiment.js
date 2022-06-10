@@ -25,10 +25,18 @@ const init = (dataObj) => {
       : document.querySelector('.ProductListWrapper')
       ? carouselList
       : null;
-
     productCards.forEach((card, index) => {
-      const cardProdHref = card.querySelector('.ProductItem__Info a')?.getAttribute('href');
+      // eslint-disable-next-line no-undef
+      const sno323__varBucketed = Kameleoon.API.Experiments.getActive().some(
+        (experiment) =>
+          experiment.name === 'SNO_323' && experiment.associatedVariation.id !== 'reference'
+      );
+      // console.log('sno323_bucketed', sno323_bucketed);
+      const cardProdHref = card
+        .querySelectorAll('.ProductItem__ImageWrapper')
+        [sno323__varBucketed ? 1 : 0]?.getAttribute('href');
       const cardProdId = cardProdHref?.split('variant=')[1];
+      console.log(cardProdId);
 
       const cardSku =
         cardProdId && isPLP
@@ -39,7 +47,7 @@ const init = (dataObj) => {
       card.querySelector(`.${ID}__container-rating`)?.remove();
       const anchorElem = card.querySelector('.ProductItem__PriceList.Heading');
 
-      cardSku && anchorElem.insertAdjacentHTML('beforebegin', ratingsIoWidget);
+      cardSku && anchorElem.insertAdjacentHTML('afterbegin', ratingsIoWidget);
     });
     pollerLite([() => window.ratingSnippet !== undefined], () => {
       // eslint-disable-next-line no-undef
