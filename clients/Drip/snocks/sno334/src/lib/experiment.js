@@ -13,6 +13,7 @@ const { ID, VARIATION } = shared;
 
 const init = (dataObj) => {
   if (isPLP || !!document.querySelector('.ProductListWrapper')) {
+
     const plpList = document.querySelectorAll('.ProductList.ProductList--grid .ProductItem');
     const homePage = location.pathname === '/';
     const carouselList = homePage
@@ -33,7 +34,6 @@ const init = (dataObj) => {
         cardProdId && isPLP
           ? skusOnPage(dataObj)[cardProdId]
           : Object.values(dataObj)[index]?.variants[0].sku;
-
       const ratingsIoWidget = `<div class="${ID}__container-rating ruk_rating_snippet ${ID}__container-rating--${index}" data-sku="${cardSku}"></div>`;
       // card.querySelector(`.jdgm-widget`)?.classList.add(`${ID}__hide`);
       card.querySelector(`.${ID}__container-rating`)?.remove();
@@ -84,10 +84,8 @@ const init = (dataObj) => {
     const SUB_STRING_LENGTH = 14;
     const reviewNumberText = document
       .querySelector('.header__group .R-TextBody')
-      ?.innerText.substring(
-        SUB_STRING_LENGTH,
-        document.querySelector('.header__group .R-TextBody')?.innerText.indexOf('Be') - 1
-      );
+      ?.innerText.replace(/[^0-9]/g,'').match(/(\d+)/)[0];
+     
     //  CHANGING OLD REVIEW COUNT TEXT TO NEW UPDATED TEXT(ACCORDING TO DESIGN)
     document.querySelector('.header__group .R-TextBody')?.classList.add(`${ID}-widget-mutated`);
     document
