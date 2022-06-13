@@ -2,13 +2,13 @@ import getProducts from "./getProducts"
 
 
 const getVariant = (prods, selectedVariant)=>{
+  console.log(selectedVariant)
     const {option1:v1, option2:v2, option3:v3} = selectedVariant
-    const p =  prods.reduce((acc, curr)=>{
-      const prod = curr.variants.find(({option1, option2})=> v1===option1 && v2===option2)
+    return prods.reduce((acc, curr)=>{
+      const prod = curr.variants.find(({option1, option2, option3})=> v1===option1 && v2===option2 && v3===option3)
       
       return prod ? [...acc, prod] : acc
     }, [])
-  return p
   }
 
 export const getRecommendation = async ({productId, selectedVariant}) => {
