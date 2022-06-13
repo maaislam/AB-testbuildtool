@@ -31,23 +31,28 @@ const init = (dataObj) => {
         (experiment) =>
           experiment.name === 'SNO_323' && experiment.associatedVariation.id !== 'reference'
       );
-      // console.log('sno323_bucketed', sno323_bucketed);
       const cardProdHref = card
         .querySelectorAll('.ProductItem__ImageWrapper')
         [sno323__varBucketed ? 1 : 0]?.getAttribute('href');
       const cardProdId = cardProdHref?.split('variant=')[1];
-      console.log(cardProdId);
 
       const cardSku =
         cardProdId && isPLP
           ? skusOnPage(dataObj)[cardProdId]
-          : Object.values(dataObj)[index]?.variants[0].sku;
+          : Object?.values(dataObj)[index]?.variants[0].sku;
+
       const ratingsIoWidget = `<div class="${ID}__container-rating ruk_rating_snippet ${ID}__container-rating--${index}" data-sku="${cardSku}"></div>`;
       // card.querySelector(`.jdgm-widget`)?.classList.add(`${ID}__hide`);
       card.querySelector(`.${ID}__container-rating`)?.remove();
       const anchorElem = card.querySelector('.ProductItem__PriceList.Heading');
+      const anchorElemAll = card.querySelectorAll('.ProductItem__PriceList.Heading');
 
-      cardSku && anchorElem.insertAdjacentHTML('afterbegin', ratingsIoWidget);
+      pollerLite([() => anchorElemAll], () => {
+        anchorElem.insertAdjacentHTML('afterbegin', ratingsIoWidget);
+
+      })
+
+      // anchorElem.insertAdjacentHTML('afterbegin', ratingsIoWidget);
     });
     pollerLite([() => window.ratingSnippet !== undefined], () => {
       // eslint-disable-next-line no-undef
@@ -58,9 +63,10 @@ const init = (dataObj) => {
   if (!isPDP) return;
   const activeSku = getActiveSku();
 
-  // console.log(activeSku);
   document.getElementById('ReviewsWidget')?.remove();
-  document.querySelector('.ruk_rating_snippet')?.remove();
+  document.querySelector('.ProductMeta .ruk_rating_snippet')?.remove();
+  // document.querySelector(`#shopify-section-product-seo-text`)?.classList.remove(`${ID}__hide`);
+
   const ratingsIoWidget = `<div class="${ID}__container-rating ruk_rating_snippet" data-sku="${activeSku}"></div>`;
 
   const reviewsioWidget = `<div id="ReviewsWidget" class="${ID}__container Container"></div>`;
@@ -73,22 +79,27 @@ const init = (dataObj) => {
 
   // document.querySelector(`.ProductItem__Info .jdgm-widget `).classList.add(`${ID}__hide`);
 
-  const ratingsIoWidgetWrapper = `<div class="${ID}__container-rating-wrapper ${ID}__review-pdp" href="#ReviewsWidget"></div>`;
+  const ratingsIoWidgetWrapper = `<div class="${ID}__container-rating-wrapper ${ID}__review-pdp"></div>`;
   document
     .querySelector('.product-price-review-css')
     .insertAdjacentHTML('beforeend', ratingsIoWidgetWrapper);
   document
     .querySelector(`.${ID}__container-rating-wrapper`)
     .insertAdjacentHTML('beforeend', ratingsIoWidget);
+    document.querySelector(`.${ID}__container-rating`)?.addEventListener("click", function(){
+      document.querySelector('#ReviewsWidget')?.scrollIntoView({behavior: "smooth"});
+        
+    })
 
   document.querySelector('.ProductMeta').classList.add(`${ID}__container-product`);
 
   initReviews(activeSku);
 
   let timer;
-  const TIMER_INTERVAL = 25;
+  const TIMER_INTERVAL = 50;
 
   timer = setInterval(() => {
+
     const SUB_STRING_LENGTH = 14;
     const reviewNumberText = document
       .querySelector('.header__group .R-TextBody')
@@ -116,7 +127,10 @@ export default () => {
     addScript(ratingsJs);
 
     //re collecting data as recommend carousel prod sometimes has no variant id in url
-    !isPLP && getRecommStarData(init);
+    setTimeout(() => {
+      !isPLP && getRecommStarData(init);
+    }, 3000);
+    // !isPLP && getRecommStarData(init);
 
     setTimeout(() => {
       isPLP && init(window.collectionProducts);

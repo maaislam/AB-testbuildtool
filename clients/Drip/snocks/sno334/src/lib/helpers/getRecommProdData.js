@@ -3,7 +3,6 @@ const getRecommStarData = async(init) => {
     const recommProducts = homePage ?
         document.querySelectorAll('.ProductListWrapper .ProductItem a') :
         document.querySelectorAll('.ProductRecommendations .ProductItem a');
-
     let promises = [];
     for (let index = 0; index < recommProducts.length; index++) {
         const prodHref = recommProducts[index].getAttribute('href');
@@ -23,6 +22,8 @@ const getRecommStarData = async(init) => {
     window.collectionProducts = normalisedData;
     setTimeout(() => {
         init(window.collectionProducts);
-    }, 2000);
+    }, 5000);
 };
+
+
 export default getRecommStarData;
