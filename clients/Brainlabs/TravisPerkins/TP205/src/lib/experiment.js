@@ -2,6 +2,7 @@ import { setup, fireEvent } from '../../../../../../globalUtil/trackings/service
 import { observeDOM, obsIntersection } from '../../../../../../globalUtil/util';
 import renderSeeAll from './components/seeAll';
 import { pollerLite } from './helpers/pollerLite';
+import { validSearchUrls } from './helpers/validSearchUrls';
 import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
@@ -9,16 +10,32 @@ const { ID, VARIATION } = shared;
 const init = () => {
   setup('Experimentation', `TravisPerkins - ${ID}`);
 
-  const seeAllClicked = !!document.querySelector(`.${ID}__seeall-clicked`);
-  if (seeAllClicked) return;
+  const intersectionConfigControl = {
+    threshold: 0.3,
+  };
 
-  //console.log(ID);
+  const interSectionCallbackControl = (entry) => {
+    if (entry.isIntersecting && !document.querySelector(`.${ID}__seen`)) {
+      fireEvent(`Test ID: ${ID} Variation: ${VARIATION} Label: Customer sees “See Full Range” CTA`);
+      fireEvent(`Test ID: ${ID} Variation: ${VARIATION} Label: Conditions Met`);
+      entry.target.classList.add(`${ID}__seen`);
+    }
+  };
+
+  obsIntersection(
+    document.querySelectorAll('[data-test-id="product"]')[8],
+    intersectionConfigControl,
+    interSectionCallbackControl
+  );
   // -----------------------------
   // If control, bail out from here
   // -----------------------------
+
   if (VARIATION == 'control') {
     return;
   }
+  const seeAllClicked = !!document.querySelector(`.${ID}__seeall-clicked`);
+  if (seeAllClicked) return;
 
   const totalProductOnpage = document
     .querySelector('[data-test-id="listing-header-count"]')
@@ -89,8 +106,16 @@ export default () => {
     const mutationCallback = (mutation) => {
       const isTextMutation =
         mutation.target.nodeName == '#text' && mutation.oldValue !== mutation.target.textContent;
-      if (location.href !== oldHref || isTextMutation) {
+      const isValidSearchPage = validSearchUrls.some(
+        (url) => url == location.pathname + location.search
+      );
+
+      if ((location.href !== oldHref || isTextMutation) && isValidSearchPage) {
         setTimeout(init, 2000);
+      } else if (!isValidSearchPage) {
+        document.querySelectorAll(`.${ID}__seefullrange`).forEach((item) => {
+          item.remove();
+        });
       }
     };
     const mutationConfig = {
@@ -104,9 +129,6 @@ export default () => {
       rootMargin: `500px`,
       threshold: 0,
     };
-    const intersectionConfigControl = {
-      threshold: 0.3,
-    };
 
     const interSectionCallback = (entry) => {
       //console.log(entry);
@@ -116,20 +138,7 @@ export default () => {
         document.querySelector('[data-test-id="pag-button"]')?.click();
       }
     };
-    const interSectionCallbackControl = (entry) => {
-      if (entry.isIntersecting && !document.querySelector(`.${ID}__seen`)) {
-        fireEvent(
-          `Test ID: ${ID} Variation: ${VARIATION} Label: Customer sees “See Full Range” CTA`
-        );
-        entry.target.classList.add(`${ID}__seen`);
-      }
-    };
 
-    obsIntersection(
-      document.querySelectorAll('[data-test-id="product"]')[8],
-      intersectionConfigControl,
-      interSectionCallbackControl
-    );
     obsIntersection(paginationWrapper, intersectionConfig, interSectionCallback);
 
     observeDOM('#app-container', mutationCallback, mutationConfig);
