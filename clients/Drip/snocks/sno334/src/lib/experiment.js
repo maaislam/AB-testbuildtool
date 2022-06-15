@@ -12,8 +12,7 @@ import observeDOM from './helpers/observeDOM.js';
 const { ID, VARIATION } = shared;
 
 const init = (dataObj) => {
-  if (isPLP || !!document.querySelector('.ProductListWrapper')) {
-
+  if (dataObj !== undefined && (isPLP || !!document.querySelector('.ProductListWrapper'))) {
     const plpList = document.querySelectorAll('.ProductList.ProductList--grid .ProductItem');
     const homePage = location.pathname === '/';
     const carouselList = homePage
@@ -31,23 +30,27 @@ const init = (dataObj) => {
         (experiment) =>
           experiment.name === 'SNO_323' && experiment.associatedVariation.id !== 'reference'
       );
-      // console.log('sno323_bucketed', sno323_bucketed);
       const cardProdHref = card
         .querySelectorAll('.ProductItem__ImageWrapper')
         [sno323__varBucketed ? 1 : 0]?.getAttribute('href');
       const cardProdId = cardProdHref?.split('variant=')[1];
-      console.log(cardProdId);
 
       const cardSku =
         cardProdId && isPLP
           ? skusOnPage(dataObj)[cardProdId]
-          : Object.values(dataObj)[index]?.variants[0].sku;
+          : Object?.values(dataObj)[index]?.variants[0].sku;
+
       const ratingsIoWidget = `<div class="${ID}__container-rating ruk_rating_snippet ${ID}__container-rating--${index}" data-sku="${cardSku}"></div>`;
       // card.querySelector(`.jdgm-widget`)?.classList.add(`${ID}__hide`);
       card.querySelector(`.${ID}__container-rating`)?.remove();
       const anchorElem = card.querySelector('.ProductItem__PriceList.Heading');
+      const anchorElemAll = card.querySelectorAll('.ProductItem__PriceList.Heading');
 
-      cardSku && anchorElem.insertAdjacentHTML('afterbegin', ratingsIoWidget);
+      pollerLite([() => anchorElemAll], () => {
+        anchorElem.insertAdjacentHTML('afterbegin', ratingsIoWidget);
+      });
+
+      // anchorElem.insertAdjacentHTML('afterbegin', ratingsIoWidget);
     });
     pollerLite([() => window.ratingSnippet !== undefined], () => {
       // eslint-disable-next-line no-undef
@@ -58,9 +61,10 @@ const init = (dataObj) => {
   if (!isPDP) return;
   const activeSku = getActiveSku();
 
-  // console.log(activeSku);
   document.getElementById('ReviewsWidget')?.remove();
-  document.querySelector('.ruk_rating_snippet')?.remove();
+  document.querySelector('.ProductMeta .ruk_rating_snippet')?.remove();
+  // document.querySelector(`#shopify-section-product-seo-text`)?.classList.remove(`${ID}__hide`);
+
   const ratingsIoWidget = `<div class="${ID}__container-rating ruk_rating_snippet" data-sku="${activeSku}"></div>`;
 
   const reviewsioWidget = `<div id="ReviewsWidget" class="${ID}__container Container"></div>`;
@@ -73,27 +77,31 @@ const init = (dataObj) => {
 
   // document.querySelector(`.ProductItem__Info .jdgm-widget `).classList.add(`${ID}__hide`);
 
-  const ratingsIoWidgetWrapper = `<div class="${ID}__container-rating-wrapper ${ID}__review-pdp" href="#ReviewsWidget"></div>`;
+  const ratingsIoWidgetWrapper = `<div class="${ID}__container-rating-wrapper ${ID}__review-pdp"></div>`;
   document
     .querySelector('.product-price-review-css')
     .insertAdjacentHTML('beforeend', ratingsIoWidgetWrapper);
   document
     .querySelector(`.${ID}__container-rating-wrapper`)
     .insertAdjacentHTML('beforeend', ratingsIoWidget);
+  document.querySelector(`.${ID}__container-rating`)?.addEventListener('click', function () {
+    document.querySelector('#ReviewsWidget')?.scrollIntoView({ behavior: 'smooth' });
+  });
 
   document.querySelector('.ProductMeta').classList.add(`${ID}__container-product`);
 
   initReviews(activeSku);
 
   let timer;
-  const TIMER_INTERVAL = 25;
+  const TIMER_INTERVAL = 50;
 
   timer = setInterval(() => {
     const SUB_STRING_LENGTH = 14;
     const reviewNumberText = document
       .querySelector('.header__group .R-TextBody')
-      ?.innerText.replace(/[^0-9]/g,'').match(/(\d+)/)[0];
-     
+      ?.innerText.replace(/[^0-9]/g, '')
+      .match(/(\d+)/)[0];
+
     //  CHANGING OLD REVIEW COUNT TEXT TO NEW UPDATED TEXT(ACCORDING TO DESIGN)
     document.querySelector('.header__group .R-TextBody')?.classList.add(`${ID}-widget-mutated`);
     document
@@ -102,6 +110,8 @@ const init = (dataObj) => {
     if (!reviewNumberText || !document.querySelector(`[data-text="${reviewNumberText}"]`)) return;
     clearInterval(timer);
   }, TIMER_INTERVAL);
+
+  console.log('sgsgshghgfdgsf');
 };
 
 export default () => {
@@ -115,12 +125,17 @@ export default () => {
     addScript(reviewsioJs);
     addScript(ratingsJs);
 
+    init();
+
     //re collecting data as recommend carousel prod sometimes has no variant id in url
-    !isPLP && getRecommStarData(init);
+    setTimeout(() => {
+      !isPLP && getRecommStarData(init);
+    }, 500);
+    // !isPLP && getRecommStarData(init);
 
     setTimeout(() => {
       isPLP && init(window.collectionProducts);
-    }, 2000);
+    }, 500);
 
     const variantSelectCallback = (mutation) => {
       if (oldHref != location.href) {
@@ -130,7 +145,7 @@ export default () => {
         addedNodes.forEach((addedNode) => {
           setTimeout(() => {
             init(window.collectionProducts);
-          }, 2000);
+          }, 500);
         });
       }
     };

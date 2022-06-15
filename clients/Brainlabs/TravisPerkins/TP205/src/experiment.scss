@@ -6,6 +6,13 @@
         display: none !important;
     }
 
+    &__mobfilter-btn {
+        display: none;
+
+        @include mediaQuery(sm) {
+            display: block;
+        }
+    }
 
 
     &__seefullrange {
@@ -18,10 +25,20 @@
         padding: 20px;
         background-color: #fff;
 
+        @include mediaQuery(sm) {
+            width: auto;
+            text-align: center;
+
+        }
+
         &--headline {
 
             font-size: 18px;
             color: #354755;
+
+            @include mediaQuery(sm) {
+                margin-bottom: 14px;
+            }
 
             & span {
                 font-weight: 700;

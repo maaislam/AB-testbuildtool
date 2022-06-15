@@ -1,18 +1,19 @@
 import { pollerLite } from '../../../../../../../globalUtil/util';
 
 /* eslint-disable no-undef */
-export const initRatingsScript = () =>
-  ratingSnippet('ruk_rating_snippet', {
+export const initRatingsScript = () => {
+  return ratingSnippet('ruk_rating_snippet', {
     store: 'snocks',
     mode: 'default',
     color: '#F9CA4F',
     linebreak: false,
     lang: 'en',
-    usePolaris: true,
+    usePolaris: false,
     showEmptyStars: false,
   });
+};
 export const initReviews = (sku) => {
-  const reviewInterval = window.setInterval(myReviewsIo, 100);
+  // const reviewInterval = window.setInterval(myReviewsIo, 100);
   let reviewsIo;
   const loadRevWidget = () => {
     // document.querySelector('.ruk_rating_snippet')?.remove();
@@ -195,14 +196,14 @@ export const initReviews = (sku) => {
     });
   };
 
-  function myReviewsIo() {
+  (function myReviewsIo() {
     pollerLite(
-      [() => window.ReviewsWidget != undefined, () => window.ratingSnippet !== undefined],
+      [() => window.ReviewsWidget != undefined, () => window.ratingSnippet != undefined],
       () => {
         loadRevWidget();
 
-        window.clearInterval(reviewInterval);
+        // window.clearInterval(reviewInterval);
       }
     );
-  }
+  })();
 };

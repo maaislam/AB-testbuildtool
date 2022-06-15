@@ -14,6 +14,9 @@
         position: relative;
         background-color: #FAFAFA;
         padding-top: 80px !important;
+        @include mediaQuery(md) {
+            padding-top: 100px !important;
+        }
         &::before {
             position: absolute;
             content: '';
@@ -22,13 +25,16 @@
             top: 0;
             left: 0;
             background: #fff;
-        }
-        &-rating {
-            pointer-events: none;
-            &-wrapper {
-                cursor: pointer;
+            @include mediaQuery(md) {
+                height: 60px;
             }
         }
+        // &-rating {
+        //     pointer-events: none;
+        //     &-wrapper {
+        //         cursor: pointer;
+        //     }
+        // }
         & .R-ContentList__item {
             position: relative;
             padding-bottom: 100px !important;
@@ -44,6 +50,7 @@
             font-style: normal;
             font-weight: 400;
             font-size: 14px;
+            bottom: 0px !important;
             padding-left: 6px;
             line-height: 22px;
             color: #1C1C1C;
@@ -129,8 +136,10 @@
             font-size: 10px;
             line-height: 11px;
             color: #575757;
-            @include mediaQuery(xsm) {
-                font-size: 8px;
+        }
+        & .item__inner .R-flex-row.R-flex-row--noMargin.R-flex-middle-xxs.R-flex-start-xxs {
+            @include mediaQuery(md) {
+                flex-wrap: nowrap;
             }
         }
         & .R-TextBody.R-TextBody--xs.u-textLeft--all.u-whiteSpace--prewrap {
@@ -200,7 +209,9 @@
         [r-tooltip="Unzufrieden"]>div,
         [r-tooltip="Sehr zufrieden"]>div,
         [r-tooltip="Fallen zu klein aus"]>div,
-        [r-tooltip="Fallen zu groß aus"]>div {
+        [r-tooltip="Fallen zu groß aus"]>div,
+        [r-tooltip="Fällt zu klein aus"]>div,
+        [r-tooltip="Passt wie erwartet"]>div {
             visibility: hidden;
             position: relative;
         }
@@ -284,7 +295,8 @@
             color: #575757;
         }
         & [r-tooltip="Fallen klein aus"]>div::before,
-        [r-tooltip="Fallen zu klein aus"]>div::before {
+        [r-tooltip="Fallen zu klein aus"]>div::before,
+        [r-tooltip="Fällt zu klein aus"]>div::before {
             content: 'klein';
             visibility: visible;
             display: block;
@@ -300,7 +312,8 @@
             line-height: 11px;
             color: #575757;
         }
-        & .ElementsWidget-prefix [r-tooltip="Passen wie erwartet"]>div::before {
+        & .ElementsWidget-prefix [r-tooltip="Passen wie erwartet"]>div::before,
+        [r-tooltip="Passt wie erwartet"]>div::before {
             content: 'perfekt'!important;
             visibility: visible;
             display: block;
