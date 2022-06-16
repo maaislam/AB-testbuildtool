@@ -102,10 +102,10 @@ export const slider = async (variants)=>{
 
     const [size, quantity] = document.querySelectorAll('.SizeSwatchList')
     const sizeSwitcher = size.querySelectorAll('li input')
-    // const quantitySwitcher = quantity.querySelectorAll('li input')
+    const quantitySwitcher = quantity.querySelectorAll('li input')
     const colorSwitcher = document.querySelectorAll('.color-options__swatches ul li input')
 
     getChangedVariants(colorSwitcher, 'value', 'option1')
     getChangedVariants(sizeSwitcher, 'value', 'option2')
-    // getChangedVariants(quantitySwitcher, 'data-value', 'option3')
+    getChangedVariants(quantitySwitcher, 'data-value', 'option3')
   }
