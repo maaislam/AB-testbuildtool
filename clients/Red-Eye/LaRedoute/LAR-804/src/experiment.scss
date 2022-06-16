@@ -1,8 +1,24 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
-.#{$id} {
-    &__test {
-        display: block;
+body {
+  #divGiftCodes {
+    #giftCodeTitle {
+      display: none;
     }
+    #giftCodeContent {
+      #formGiftCode {
+        #btnSubmitGiftCode {
+          background-color: black;
+          color: white;
+          width: 80px;
+          max-height: 45px;
+          min-height: 45px;
+          top: 0;
+          margin-top: 0;
+          right: 0;
+        }
+      }
+    }
+  }
 }

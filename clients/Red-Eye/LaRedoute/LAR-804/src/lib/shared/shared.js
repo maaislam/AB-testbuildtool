@@ -1,5 +1,5 @@
 export default {
     ID: "LAR-804",
-    VARIATION: "1",
+    VARIATION: "2",
     CLIENT: "Red-Eye",
   };
