@@ -57,9 +57,11 @@ export default () => {
   document.querySelector(".product-photos").classList.add("echo_mk_2");
   reArrangePrice()
 
-  // const dotContainer = document.querySelector()
-  window.jQuery('.slick-track .item').hide()
-  window.jQuery('.slick-track .item[aria-describedby]').show()
+  waitForEl('.slick-track .item[aria-describedby]', function() {
+    window.jQuery('.slick-track .item').hide()
+    window.jQuery('.slick-track .item[aria-describedby]').show()
+  })
+  
   
   // -----------------------------
   // Write experiment code here
