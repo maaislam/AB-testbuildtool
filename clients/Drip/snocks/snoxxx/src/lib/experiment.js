@@ -3,7 +3,7 @@ import { observeDOM } from '../../../../../../globalUtil/util';
 import cartLineTootip from './components/cartLineTooltip';
 
 import renderPulseButton from './components/pulseButton';
-import { tooltipPosConfig } from './configs';
+import { tooltipPosConfig, wordingBubble } from './configs';
 
 import getCart from './helpers/getCart';
 import { isCartPage } from './helpers/pageTypes';
@@ -33,7 +33,11 @@ const init = async (mutation) => {
 
     //each line in cart page has multiple quantity selector for responsive design
     const thisQuantitySelectors = document.querySelectorAll(`a[data-line-id="${key}"]`);
-
+    const prodTitle = thisQuantitySelectors[0]
+      .closest('.CartItem')
+      .querySelector('.CartItem__Title').innerText;
+    const copyInfo = wordingBubble[prodTitle];
+    console.log(copyInfo);
     thisQuantitySelectors.forEach((item) => {
       const thisQuantitySelector = item.closest('.QuantitySelector');
       if (!thisQuantitySelector) return;
@@ -70,7 +74,10 @@ const init = async (mutation) => {
 
       thisQuantitySelector
         .closest(tooltipAnchorPoint)
-        .insertAdjacentHTML(tooltipAnchorPos, cartLineTootip(ID, lineQuantity, tooltipArrowClass));
+        .insertAdjacentHTML(
+          tooltipAnchorPos,
+          cartLineTootip(ID, lineQuantity, tooltipArrowClass, copyInfo)
+        );
 
       /********<render tooltip/>************/
 
