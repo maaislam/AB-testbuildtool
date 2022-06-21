@@ -12,8 +12,7 @@ import observeDOM from './helpers/observeDOM.js';
 const { ID, VARIATION } = shared;
 
 const init = (dataObj) => {
-  if (isPLP || !!document.querySelector('.ProductListWrapper')) {
-
+  if (dataObj !== undefined && (isPLP || !!document.querySelector('.ProductListWrapper'))) {
     const plpList = document.querySelectorAll('.ProductList.ProductList--grid .ProductItem');
     const homePage = location.pathname === '/';
     const carouselList = homePage
@@ -49,8 +48,7 @@ const init = (dataObj) => {
 
       pollerLite([() => anchorElemAll], () => {
         anchorElem.insertAdjacentHTML('afterbegin', ratingsIoWidget);
-
-      })
+      });
 
       // anchorElem.insertAdjacentHTML('afterbegin', ratingsIoWidget);
     });
@@ -86,10 +84,9 @@ const init = (dataObj) => {
   document
     .querySelector(`.${ID}__container-rating-wrapper`)
     .insertAdjacentHTML('beforeend', ratingsIoWidget);
-    document.querySelector(`.${ID}__container-rating`)?.addEventListener("click", function(){
-      document.querySelector('#ReviewsWidget')?.scrollIntoView({behavior: "smooth"});
-        
-    })
+  document.querySelector(`.${ID}__container-rating`)?.addEventListener('click', function () {
+    document.querySelector('#ReviewsWidget')?.scrollIntoView({ behavior: 'smooth' });
+  });
 
   document.querySelector('.ProductMeta').classList.add(`${ID}__container-product`);
 
@@ -99,12 +96,12 @@ const init = (dataObj) => {
   const TIMER_INTERVAL = 50;
 
   timer = setInterval(() => {
-
     const SUB_STRING_LENGTH = 14;
     const reviewNumberText = document
       .querySelector('.header__group .R-TextBody')
-      ?.innerText.replace(/[^0-9]/g,'').match(/(\d+)/)[0];
-     
+      ?.innerText.replace(/[^0-9]/g, '')
+      .match(/(\d+)/)[0];
+
     //  CHANGING OLD REVIEW COUNT TEXT TO NEW UPDATED TEXT(ACCORDING TO DESIGN)
     document.querySelector('.header__group .R-TextBody')?.classList.add(`${ID}-widget-mutated`);
     document
@@ -113,6 +110,8 @@ const init = (dataObj) => {
     if (!reviewNumberText || !document.querySelector(`[data-text="${reviewNumberText}"]`)) return;
     clearInterval(timer);
   }, TIMER_INTERVAL);
+
+  console.log('sgsgshghgfdgsf');
 };
 
 export default () => {
@@ -125,6 +124,8 @@ export default () => {
     addStyles(revStyle);
     addScript(reviewsioJs);
     addScript(ratingsJs);
+
+    init();
 
     //re collecting data as recommend carousel prod sometimes has no variant id in url
     setTimeout(() => {

@@ -13,18 +13,17 @@ const getRecommStarData = async(init) => {
             const data = await response.json();
             promises.push(data);
         }
-    }
-    const datas = await Promise.all(promises);
-    const normalisedData = datas.reduce((prev, curr) => {
-        prev[curr.product.id] = curr.product;
-        return prev;
-    }, {});
-    window.collectionProducts = normalisedData;
-    setTimeout(() => {
-        init(window.collectionProducts);
-    }, 500);
-};
+        const datas = await Promise.all(promises);
+        const normalisedData = datas.reduce((prev, curr) => {
+            prev[curr.product.id] = curr.product;
+            return prev;
+        }, {});
+        window.collectionProducts = normalisedData;
+        setTimeout(() => {
+            init(window.collectionProducts);
+        }, 500);
+    };
 
-
+}
 
 export default getRecommStarData;

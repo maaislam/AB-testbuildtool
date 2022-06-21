@@ -6,22 +6,63 @@
         display: none !important;
     }
 
+    &__mobfilter-btn {
+        display: none;
+
+        @include mediaQuery(sm) {
+            display: block;
+        }
+    }
 
 
     &__seefullrange {
-        width: 100%;
+        width: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 16px auto 0;
+        margin: 16px auto 16px;
         padding: 20px;
         background-color: #fff;
+
+        @include mediaQuery(sm) {
+            width: auto;
+            text-align: center;
+
+        }
+
+        & .mobile-text,
+        & .mobile-or {
+            display: none;
+
+            @include mediaQuery(sm) {
+                display: inline-block;
+            }
+        }
+
+        & .mobile-or {
+            @include mediaQuery(sm) {
+                display: block;
+            }
+        }
+
+        & .desktop-text,
+        & .desktop-or {
+            display: inline-block;
+
+            @include mediaQuery(sm) {
+                display: none;
+            }
+        }
 
         &--headline {
 
             font-size: 18px;
             color: #354755;
+
+            @include mediaQuery(sm) {
+                margin-bottom: 14px;
+            }
 
             & span {
                 font-weight: 700;

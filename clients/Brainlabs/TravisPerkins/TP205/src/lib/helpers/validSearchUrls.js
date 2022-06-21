@@ -25,4 +25,5 @@ export const validSearchUrls = [
   '/search/?text=&facets%5Bcategory%5D%5B0%5D%5Bvalue%5D=1500538&facets%5Bcategory%5D%5B0%5D%5Bname%5D=Decorating%20%26%20Interiors&facets%5Bcategory%5D%5B1%5D%5Bvalue%5D=1500539&facets%5Bcategory%5D%5B1%5D%5Bname%5D=Cleaning%20%26%20Preparation',
   '/search/?text=&facets%5Bcategory%5D%5B0%5D%5Bvalue%5D=1500538&facets%5Bcategory%5D%5B0%5D%5Bname%5D=Decorating%20%26%20Interiors&facets%5Bcategory%5D%5B1%5D%5Bvalue%5D=1500560&facets%5Bcategory%5D%5B1%5D%5Bname%5D=Tiling',
   '/search/?text=&facets%5Bcategory%5D%5B0%5D%5Bvalue%5D=1500538&facets%5Bcategory%5D%5B0%5D%5Bname%5D=Decorating%20%26%20Interiors&facets%5Bcategory%5D%5B1%5D%5Bvalue%5D=1500566&facets%5Bcategory%5D%5B1%5D%5Bname%5D=Janitorial',
+  '/search/?text=%2A&facets%5Bcategory%5D%5B0%5D%5Bvalue%5D=1500029&facets%5Bcategory%5D%5B0%5D%5Bname%5D=Building%20Materials',
 ];
