@@ -22,8 +22,9 @@ const getRecommStarData = async(init) => {
     window.collectionProducts = normalisedData;
     setTimeout(() => {
         init(window.collectionProducts);
-    }, 5000);
+    }, 500);
 };
+
 
 
 export default getRecommStarData;

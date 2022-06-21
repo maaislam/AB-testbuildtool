@@ -129,12 +129,12 @@ export default () => {
     //re collecting data as recommend carousel prod sometimes has no variant id in url
     setTimeout(() => {
       !isPLP && getRecommStarData(init);
-    }, 3000);
+    }, 500);
     // !isPLP && getRecommStarData(init);
 
     setTimeout(() => {
       isPLP && init(window.collectionProducts);
-    }, 2000);
+    }, 500);
 
     const variantSelectCallback = (mutation) => {
       if (oldHref != location.href) {
@@ -144,7 +144,7 @@ export default () => {
         addedNodes.forEach((addedNode) => {
           setTimeout(() => {
             init(window.collectionProducts);
-          }, 2000);
+          }, 500);
         });
       }
     };
