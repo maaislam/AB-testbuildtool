@@ -6,6 +6,10 @@
         display: none !important;
     }
 
+    &__adjusted--margin {
+        margin-right: 0 !important;
+    }
+
     &__row-padding {
         padding-right: 24px;
 
@@ -62,6 +66,29 @@
             }
         }
 
+        @include mediaQuery(sm) {
+            display: none;
+        }
+
+        &.#{$id}__tooltip-mobile {
+            display: none;
+
+            @include mediaQuery(sm) {
+                display: block;
+                width: 100%;
+                max-width: 154px;
+                margin-top: 24px;
+            }
+
+            & .#{$id}__tooltip--uparrow {
+                //right: 64p
+                position: absolute;
+                top: -16px;
+                right: 45px;
+                transform: rotate(180deg);
+            }
+        }
+
         &--headline {
             display: block;
             margin-bottom: 5px;
@@ -91,9 +118,11 @@
         }
 
         &.arrow-adjust {
-            & .#{$id}__tooltip--downarrow {
-                right: 64px
-            }
+
+
+            // & .#{$id}__tooltip--downarrow {
+            //     //right: 64px
+            // }
 
             & .#{$id}__tooltip--leftarrow {
                 @include mediaQuery(md) {

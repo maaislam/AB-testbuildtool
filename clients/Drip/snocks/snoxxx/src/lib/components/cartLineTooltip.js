@@ -1,10 +1,10 @@
 import { downArrow } from './asset';
 
-const cartLineTootip = (id, lineQuantity, arrowPositionClass, copyInfo) => {
+const cartLineTootip = (id, lineQuantity, arrowPositionClass, copyInfo, device) => {
   const htmlStr = `
-  <div class="${id}__tooltip ${arrowPositionClass == 'leftarrow' ? 'cartpage-adjustments' : ''} ${
-    lineQuantity === 1 ? 'arrow-adjust' : ''
-  }">
+  <div class="${id}__tooltip ${id}__tooltip-${device} ${
+    arrowPositionClass == 'leftarrow' ? 'cartpage-adjustments' : ''
+  } ${lineQuantity === 1 ? 'arrow-adjust' : ''}">
     <span class="${id}__tooltip--headline">Schon gewusst?</span>
     <span class="${id}__tooltip--text">
         Kaufe ${lineQuantity === 1 ? '2 oder' : ''} 3 ${copyInfo.text} und spare bis zu ${

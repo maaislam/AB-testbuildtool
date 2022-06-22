@@ -37,13 +37,14 @@ const init = async (mutation) => {
       .closest('.CartItem')
       .querySelector('.CartItem__Title').innerText;
     const copyInfo = wordingBubble[prodTitle];
-    console.log(copyInfo);
     thisQuantitySelectors.forEach((item) => {
       const thisQuantitySelector = item.closest('.QuantitySelector');
       if (!thisQuantitySelector) return;
 
       thisQuantitySelector.querySelector(`.${ID}__pulse--container`)?.remove();
-      thisQuantitySelector.closest('.CartItem')?.querySelector(`.${ID}__tooltip`)?.remove();
+      document.querySelectorAll(`.${ID}__tooltip`).forEach((item) => {
+        item.remove();
+      });
       thisQuantitySelector.classList.remove(`${ID}__quantity--selector`);
 
       if (lineQuantity >= 3 || cartLineCount !== 1) return;
@@ -78,6 +79,18 @@ const init = async (mutation) => {
           tooltipAnchorPos,
           cartLineTootip(ID, lineQuantity, tooltipArrowClass, copyInfo)
         );
+
+      //mobile
+      if (!isCartPage) {
+        const itemRemoveBtn = thisQuantitySelector
+          .closest('.CartItem')
+          .querySelector('.CartItem__Remove');
+        itemRemoveBtn.classList.add(`${ID}__adjusted--margin`);
+        itemRemoveBtn.insertAdjacentHTML(
+          'afterend',
+          cartLineTootip(ID, lineQuantity, 'uparrow', copyInfo, 'mobile')
+        );
+      }
 
       /********<render tooltip/>************/
 
