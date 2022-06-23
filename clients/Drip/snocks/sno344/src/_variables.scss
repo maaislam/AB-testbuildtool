@@ -1,4 +1,4 @@
-$media: (xsm:494px, sm: 640px, md: 768px, lg: 1024px, );
+$media: (xxxsm:360px, xxsm: 430px, xsm:494px, sm: 640px, md: 768px, xmd: 851px, lg: 1024px, );
 @mixin mediaQuery($breakpoint) {
     @each $breakpoints,
     $size in $media {
