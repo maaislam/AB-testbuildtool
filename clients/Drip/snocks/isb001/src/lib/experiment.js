@@ -23,30 +23,6 @@ export default async() => {
   setUniqueClass();
   // Write experiment code here
 
-
-  // const refNode = document.querySelectorAll('.product-description')[1];
-  // var sliderHTML = `<div class='carousel'>
-  //                   </div> 
-  //                   ` ;
-  // refNode.insertAdjacentHTML("afterend", sliderHTML);
-
-  // // Defining async function
-  // // const api_url = window.Shopify.routes.root + `recommendations/products.json?product_id=${id}&limit=15`;
-  // async function getapi() {
-  //   //  console.log("function called",selectedVariant);
-  //   // Storing response
-  //   const response = await getRecommendation({productId, selectedVariant:changedVariants});
-  //   // console.log("response", response);
-  //   // Storing data in form of JSON
-  //   // var data = await response.json();
-  //   // const prod = data.products;
-  //   return response;
-  // }
-  // // Calling that async function
-  // getapi();
-  // outsidemodule.exports.doStuff = doStuff;
-  // products.then(function (data) {
-  //   console.log("filtering",data);
   
   //   for (let i = 0; i < desiredProducts.length; i++) {
   //     // console.log("daaa", desiredProducts[i]);
