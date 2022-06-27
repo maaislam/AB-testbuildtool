@@ -1,0 +1,11 @@
+@import './variables';
+
+.#{$id} {
+    &__maincontainer {
+        background-color: red;
+    }
+}
+
+.product-list-item__bottom__buttons{
+    justify-content: space-between;
+}
