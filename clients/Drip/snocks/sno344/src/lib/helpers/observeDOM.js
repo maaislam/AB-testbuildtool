@@ -1,7 +1,10 @@
-const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
+import getCart from "./getCart";
+
+export const observeDOM = async(targetSelectorString, callbackFunction, configObject) => {
     const target = document.querySelector(`${targetSelectorString}`);
 
     const observer = new MutationObserver((mutations) => {
+
         mutations.forEach(function(mutation) {
             callbackFunction(mutation);
         });
@@ -10,7 +13,7 @@ const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
     // configuration of the observer:
 
     const config = configObject || {
-        attributes: false,
+        attributes: true,
         childList: true,
         characterData: false,
         subtree: true,
@@ -18,5 +21,3 @@ const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
 
     observer.observe(target, config);
 };
-
-export default observeDOM;
