@@ -1,5 +1,5 @@
 //import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
-import { observeDOM } from '../../../../../../globalUtil/util';
+//import { observeDOM, pollerLite } from '../../../../../../globalUtil/util';
 import cartLineTootip from './components/cartLineTooltip';
 
 import renderPulseButton from './components/pulseButton';
@@ -7,15 +7,21 @@ import newVariantTitle from './components/quantityChange';
 import { tooltipPosConfig, wordingBubble } from './configs';
 
 import getCart from './helpers/getCart';
+import { observeDOM } from './helpers/observeDOM';
 import { isCartPage } from './helpers/pageTypes';
 import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
 
 const init = async (mutation) => {
+  console.log(mutation)
+  
   const isSideCartOpen = mutation && (mutation.oldValue === 'true' || mutation.oldValue === null);
 
-
+  // document.querySelector(`.CartItem__Remove`)?.addEventListener('click', function(){
+  //   console.log('remove clicked')
+    
+  // })
   
 
   if (!isCartPage && !isSideCartOpen) return;
@@ -27,11 +33,29 @@ const init = async (mutation) => {
     return;
   }
 
-  
+
   const cartData = await getCart();
   const { items } = cartData;
   console.log(cartData)
   const cartLineCount = items.length;
+  // window.cartLineCount = cartLineCount
+  // window.cartLineCount = 0;
+  // console.log(window.cartLineCount)
+
+  // if(cartLineCount >= window.cartLineCount){
+  //   if(cartLineCount === 1){
+  //     return;
+  //   }
+  //   window.cartLineCount = cartLineCount;
+  //   console.log("GOT IT", cartLineCount, window.cartLineCount)
+
+
+  // }
+
+  // if(window.cartLineCount === 1 && cartLineCount<window.cartLineCount){
+  //   console.log('fsdfdsfdsfdsgsgs')
+  //   window.cartLineCount = cartLineCount;
+  // }
 
   items.forEach((item) => {
     const { key, quantity, variant_options, variant_title } = item;
@@ -72,7 +96,22 @@ const init = async (mutation) => {
       }
       // currentVariantTitle.insertAdjacentHTML('afterend', newVariantTitle(ID, variant_options, lineQuantity))
 
+      // if (cartLineCount > 1){
+      //   console.log('counting')
+      //   pollerLite([() => document.querySelector(`.${ID}__tooltip`)], () => {
+      //     const removeBtns =  document.querySelectorAll('.CartItem__Remove')
+      //     removeBtns.forEach((btn)  => {
+      //       btn.addEventListener('click', function(){
+      //         console.log('remove clicked')
+      //         document.querySelector(`.${ID}__tooltip`).classList.add(`${ID}__hide`);
+      //       })
+      //     })
+      //   });
+       
+      // }
+
       if (lineQuantity >= 3 || cartLineCount !== 1) return;
+      
 
 
       /********<render pulse animation container>************/
@@ -137,6 +176,8 @@ const init = async (mutation) => {
           thisQuantitySelector.querySelector('a:last-of-type').click();
         });
     });
+
+
   });
 };
 
@@ -148,6 +189,8 @@ export default () => {
     attributeFilter: ['aria-hidden'],
     attributeOldValue: true,
   };
+ 
 
   observeDOM(`[data-section-type="cart"] ${isCartPage ? '.PageContent' : ''}`, init, mutObsConfig);
+  
 };
