@@ -14,15 +14,14 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 const init = async (mutation) => {
-  console.log(mutation)
-  
+  console.log(mutation);
+
   const isSideCartOpen = mutation && (mutation.oldValue === 'true' || mutation.oldValue === null);
 
   // document.querySelector(`.CartItem__Remove`)?.addEventListener('click', function(){
   //   console.log('remove clicked')
-    
+
   // })
-  
 
   if (!isCartPage && !isSideCartOpen) return;
   // -----------------------------
@@ -33,29 +32,18 @@ const init = async (mutation) => {
     return;
   }
 
-
   const cartData = await getCart();
   const { items } = cartData;
-  console.log(cartData)
+
   const cartLineCount = items.length;
-  // window.cartLineCount = cartLineCount
-  // window.cartLineCount = 0;
-  // console.log(window.cartLineCount)
+  if (cartLineCount >= 2) {
+    window.oldCartCount = 'morethan2';
+  }
 
-  // if(cartLineCount >= window.cartLineCount){
-  //   if(cartLineCount === 1){
-  //     return;
-  //   }
-  //   window.cartLineCount = cartLineCount;
-  //   console.log("GOT IT", cartLineCount, window.cartLineCount)
-
-
-  // }
-
-  // if(window.cartLineCount === 1 && cartLineCount<window.cartLineCount){
-  //   console.log('fsdfdsfdsfdsgsgs')
-  //   window.cartLineCount = cartLineCount;
-  // }
+  if (window.oldCartCount === 'morethan2' && cartLineCount == 1) {
+    window.oldCartCount = '';
+    return;
+  }
 
   items.forEach((item) => {
     const { key, quantity, variant_options, variant_title } = item;
@@ -64,7 +52,6 @@ const init = async (mutation) => {
     const optionTitle = cartItemTitle[2].split(' ')[0];
     //console.log(joinValues(ID, qtyCalculated(lineQuantity, optionTitle), cartItemTitle, optionTitle));
     // item.querySelector('.CartItem__Meta.Heading').insertAdjacentHTML("afterbegin",joinValues(ID, qtyCalculated(lineQuantity, optionTitle), cartItemTitle, optionTitle) )
-
 
     //each line in cart page has multiple quantity selector for responsive design
     const thisQuantitySelectors = document.querySelectorAll(`a[data-line-id="${key}"]`);
@@ -76,43 +63,28 @@ const init = async (mutation) => {
       const thisQuantitySelector = item.closest('.QuantitySelector');
       if (!thisQuantitySelector) return;
 
-
       thisQuantitySelector.querySelector(`.${ID}__pulse--container`)?.remove();
       document.querySelectorAll(`.${ID}__tooltip`).forEach((item) => {
         item.remove();
       });
       thisQuantitySelector.classList.remove(`${ID}__quantity--selector`);
-      const currentVariantTitle = thisQuantitySelector.closest('.CartItem').querySelector('.CartItem__Variant');
-      console.log(variant_title)
-      
+      const currentVariantTitle = thisQuantitySelector
+        .closest('.CartItem')
+        .querySelector('.CartItem__Variant');
+      console.log(variant_title);
 
       // document.querySelectorAll(`.${ID}__CartItem__Variant`).forEach((item) => {
       //   item.remove();
       // });
       currentVariantTitle.classList.add(`${ID}__hide`);
-      if(!thisQuantitySelector.closest('.CartItem').querySelector(`.${ID}__CartItem__Variant`)){
-        currentVariantTitle.insertAdjacentHTML('afterend', newVariantTitle(ID, variant_options, lineQuantity))
-
+      if (!thisQuantitySelector.closest('.CartItem').querySelector(`.${ID}__CartItem__Variant`)) {
+        currentVariantTitle.insertAdjacentHTML(
+          'afterend',
+          newVariantTitle(ID, variant_options, lineQuantity)
+        );
       }
-      // currentVariantTitle.insertAdjacentHTML('afterend', newVariantTitle(ID, variant_options, lineQuantity))
-
-      // if (cartLineCount > 1){
-      //   console.log('counting')
-      //   pollerLite([() => document.querySelector(`.${ID}__tooltip`)], () => {
-      //     const removeBtns =  document.querySelectorAll('.CartItem__Remove')
-      //     removeBtns.forEach((btn)  => {
-      //       btn.addEventListener('click', function(){
-      //         console.log('remove clicked')
-      //         document.querySelector(`.${ID}__tooltip`).classList.add(`${ID}__hide`);
-      //       })
-      //     })
-      //   });
-       
-      // }
 
       if (lineQuantity >= 3 || cartLineCount !== 1) return;
-      
-
 
       /********<render pulse animation container>************/
 
@@ -156,17 +128,23 @@ const init = async (mutation) => {
           cartLineTootip(ID, lineQuantity, 'uparrow', copyInfo, 'mobile-drawer')
         );
       }
-      if(isCartPage){
-        const qtySection = thisQuantitySelector.closest('.CartItem').querySelector('.QuantitySelector');
-        const qtyTabSection = thisQuantitySelector.closest('.CartItem').querySelector('.CartItem__Info + .CartItem__Actions .CartItem__QuantitySelector');
-          qtySection.insertAdjacentHTML('afterend', cartLineTootip(ID, lineQuantity, 'leftarrow', copyInfo, 'mobile-page'));
-          qtyTabSection.insertAdjacentHTML('beforeend', cartLineTootip(ID, lineQuantity, 'uparrow', copyInfo, 'tab'));
+      if (isCartPage) {
+        const qtySection = thisQuantitySelector
+          .closest('.CartItem')
+          .querySelector('.QuantitySelector');
+        const qtyTabSection = thisQuantitySelector
+          .closest('.CartItem')
+          .querySelector('.CartItem__Info + .CartItem__Actions .CartItem__QuantitySelector');
+        qtySection.insertAdjacentHTML(
+          'afterend',
+          cartLineTootip(ID, lineQuantity, 'leftarrow', copyInfo, 'mobile-page')
+        );
+        qtyTabSection.insertAdjacentHTML(
+          'beforeend',
+          cartLineTootip(ID, lineQuantity, 'uparrow', copyInfo, 'tab')
+        );
+      }
 
-        }
-      
-
-
-      
       /********<render tooltip/>************/
 
       //delegate click to pluse button from pulse container
@@ -176,8 +154,6 @@ const init = async (mutation) => {
           thisQuantitySelector.querySelector('a:last-of-type').click();
         });
     });
-
-
   });
 };
 
@@ -189,8 +165,6 @@ export default () => {
     attributeFilter: ['aria-hidden'],
     attributeOldValue: true,
   };
- 
 
   observeDOM(`[data-section-type="cart"] ${isCartPage ? '.PageContent' : ''}`, init, mutObsConfig);
-  
 };

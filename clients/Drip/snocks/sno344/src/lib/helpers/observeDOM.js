@@ -1,23 +1,20 @@
-import getCart from "./getCart";
+export const observeDOM = async (targetSelectorString, callbackFunction, configObject) => {
+  const target = document.querySelector(`${targetSelectorString}`);
 
-export const observeDOM = async(targetSelectorString, callbackFunction, configObject) => {
-    const target = document.querySelector(`${targetSelectorString}`);
-
-    const observer = new MutationObserver((mutations) => {
-
-        mutations.forEach(function(mutation) {
-            callbackFunction(mutation);
-        });
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      callbackFunction(mutation);
     });
+  });
 
-    // configuration of the observer:
+  // configuration of the observer:
 
-    const config = configObject || {
-        attributes: true,
-        childList: true,
-        characterData: false,
-        subtree: true,
-    };
+  const config = configObject || {
+    attributes: true,
+    childList: true,
+    characterData: false,
+    subtree: true,
+  };
 
-    observer.observe(target, config);
+  observer.observe(target, config);
 };
