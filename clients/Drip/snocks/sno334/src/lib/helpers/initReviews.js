@@ -1,22 +1,23 @@
 import { pollerLite } from '../../../../../../../globalUtil/util';
 
 /* eslint-disable no-undef */
-const initReviews = (sku) => {
-  const reviewInterval = window.setInterval(myReviewsIo, 100);
+export const initRatingsScript = () => {
+  return ratingSnippet('ruk_rating_snippet', {
+    store: 'snocks',
+    mode: 'default',
+    color: '#F9CA4F',
+    linebreak: false,
+    lang: 'en',
+    usePolaris: false,
+    showEmptyStars: false,
+  });
+};
+export const initReviews = (sku) => {
+  // const reviewInterval = window.setInterval(myReviewsIo, 100);
   let reviewsIo;
   const loadRevWidget = () => {
     // document.querySelector('.ruk_rating_snippet')?.remove();
-    ratingSnippet('ruk_rating_snippet', {
-      store: 'snocks',
-      mode: 'default',
-      color: '#0E1311',
-      linebreak: false,
-      text: 'Reviews',
-      singularText: 'Review',
-      lang: 'en',
-      usePolaris: true,
-      showEmptyStars: true,
-    });
+    initRatingsScript();
 
     reviewsIo = new ReviewsWidget('#ReviewsWidget', {
       //Your REVIEWS.io Store ID and widget type:
@@ -25,20 +26,21 @@ const initReviews = (sku) => {
 
       options: {
         types: 'product_review',
-        lang: 'en',
+        lang: 'de',
         //Possible layout options: bordered, large and reverse.
         layout: '',
         //How many reviews & questions to show per page?
         per_page: 10,
         store_review: {
-          hide_if_no_results: true,
+          hide_if_no_results: false,
         },
         third_party_review: {
-          hide_if_no_results: true,
+          hide_if_no_results: false,
         },
         product_review: {
           sku: sku,
           enable_rich_snippets: true,
+          hide_if_no_results: true,
           /* Your custom Structured Data */
         },
         /* Toggle Options */
@@ -76,9 +78,9 @@ const initReviews = (sku) => {
         },
         //Review settings:
         reviews: {
-          enable_avatar: true, //Show author avatar
+          enable_avatar: false, //Show author avatar
           enable_reviewer_name: true, //Show author name
-          enable_reviewer_address: true, //Show author location
+          enable_reviewer_address: false, //Show author location
           reviewer_address_format: 'city, country', //Author location display format
           enable_verified_badge: true, //Show "Verified Customer" badge
           review_content_filter: 'undefined', //Filter content
@@ -87,7 +89,7 @@ const initReviews = (sku) => {
           enable_product_name: true, //Show display product name
           enable_review_title: true, //Show review title
           enable_replies: undefined, //Show review replies
-          enable_images: false, //Show display review photos
+          enable_images: true, //Show display review photos
           enable_ratings: true, //Show product attributes (additional ratings)
           enable_share: false, //Show share buttons
           enable_helpful_vote: false, //Show "was this helpful?" section
@@ -99,7 +101,6 @@ const initReviews = (sku) => {
       //Translation settings
       translations: {
         'Verified Customer': 'Verifizierter Käufer',
-        'Fallen klein aus': 'klein',
       },
       //Style settings:
       styles: {
@@ -129,7 +130,7 @@ const initReviews = (sku) => {
         '--medium-star-size': '22px',
         '--small-star-size': '19px',
         //Heading styles:
-        '--heading-text-color': '#0E1311',
+        '--heading-text-color': '#666666',
         '--heading-text-font-weight': '700',
         '--heading-text-font-family': 'inherit',
         '--heading-text-line-height': '1.4',
@@ -155,13 +156,13 @@ const initReviews = (sku) => {
         '--common-border-width': '1px',
         '--common-sidebar-width': '190px',
         //Slider indicator (for attributes) styles:
-        '--slider-indicator-bg-color': 'rgba(0,0,0,0.1)',
-        '--slider-indicator-button-color': '#0E1311',
-        '--slider-indicator-width': '190px',
+        '--slider-indicator-bg-color': '#F9CA4F',
+        '--slider-indicator-button-color': '#666666',
+        '--slider-indicator-width': '270px',
         //Badge styles:
         '--badge-icon-color': '#0E1311',
         '--badge-icon-font-size': '0px',
-        '--badge-text-color': '#0E1311',
+        '--badge-text-color': '#575757',
         '--badge-text-font-size': 'inherit',
         '--badge-text-letter-spacing': 'inherit',
         '--badge-text-transform': 'capitalize',
@@ -183,29 +184,26 @@ const initReviews = (sku) => {
         '--mediaslider-overlay-bg-color': 'rgba(0, 0, 0, 0.8))',
         '--mediaslider-item-size': '110px',
         //Pagination & tabs styles (normal):
-        '--pagination-tab-text-color': '#0E1311',
+        '--pagination-tab-text-color': '#666666',
         '--pagination-tab-text-transform': 'none',
         '--pagination-tab-text-letter-spacing': '0',
-        '--pagination-tab-text-font-size': '16px',
+        '--pagination-tab-text-font-size': '14px',
         '--pagination-tab-text-font-weight': '600',
         //Pagination & tabs styles (active):
-        '--pagination-tab-active-text-color': '#0E1311',
-        '--pagination-tab-active-text-font-weight': '600',
-        '--pagination-tab-active-border-color': '#0E1311',
-        '--pagination-tab-border-width': '3px',
+        '--pagination-tab-active-text-color': '#666666',
+        '--pagination-tab-active-text-font-weight': '700',
       },
     });
   };
-  function myReviewsIo() {
+
+  (function myReviewsIo() {
     pollerLite(
-      [() => window.ReviewsWidget != undefined, () => window.ratingSnippet !== 'undefined'],
+      [() => window.ReviewsWidget != undefined, () => window.ratingSnippet != undefined],
       () => {
         loadRevWidget();
 
-        window.clearInterval(reviewInterval);
+        // window.clearInterval(reviewInterval);
       }
     );
-  }
+  })();
 };
-
-export default initReviews;

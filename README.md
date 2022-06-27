@@ -1,4 +1,4 @@
-# 📦 A/B test webpack Boilerplate
+# 📦 A/B Testing Development Tool
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -14,6 +14,12 @@ npm i
 
 ## Usage
 
+### Create new Experiment
+
+```bash
+npm experiment-create
+```
+
 ### Development server
 
 ```bash
@@ -26,18 +32,6 @@ You can view the development server at `localhost:3000`.
 
 ```bash
 npm run build
-```
-
-> Note: Install [http-server](https://www.npmjs.com/package/http-server) globally to deploy a simple server.
-
-```bash
-npm i -g http-server
-```
-
-You can view the deploy by creating a server in `dist`.
-
-```bash
-cd dist && http-server
 ```
 
 ## Features

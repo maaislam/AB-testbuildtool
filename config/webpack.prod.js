@@ -1,9 +1,10 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const { merge } = require('webpack-merge')
-const RemoveConsolePlugin = require('remove-console-webpack-plugin')
-const paths = require('./paths')
-const common = require('./webpack.common')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { merge } = require('webpack-merge');
+const RemovePlugin = require('remove-files-webpack-plugin');
+
+const paths = require('./paths');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -39,7 +40,11 @@ module.exports = merge(common, {
       filename: 'styles/[name].[contenthash].css',
       chunkFilename: '[id].css',
     }),
-    //new RemoveConsolePlugin({ include: ['log'] }),
+    new RemovePlugin({
+      before: {
+        include: [paths.build],
+      },
+    }),
   ],
   optimization: {
     minimize: true,
@@ -53,4 +58,4 @@ module.exports = merge(common, {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
-})
+});
