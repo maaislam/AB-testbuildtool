@@ -23,21 +23,25 @@ const waitForEl = function(selector, callback) {
   }
 };
 
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 26 20" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1.3335 10L4.25016 7.08333L10.0835 12.9167L21.7502 1.25L24.6668 4.16667L10.0835 18.75L1.3335 10Z" fill="#ACD399" stroke="#ACD399" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`
+
 const heroContent = ` <div class="${ID}-hero-section">
                         <div class="hero-content">
                           <div class="content-text">
                             <h1>Regain your <span>health and energy</span> with the power of nature</h1>
                             <ul class="content-check-lists">
                               <li class="check-list">
-                                <div class="content-text-tick"><img src="https://sandbox.echologyx.com/wp-content/uploads/2022/06/Vector.svg"/></div>
+                                <div class="content-text-tick">${svg}</div>
                                 <p>Carefully curated all-natural formulations</p>
                               </li>
                               <li  class="check-list">
-                                <div class="content-text-tick"><img src="https://sandbox.echologyx.com/wp-content/uploads/2022/06/Vector.svg"/></div>
-                                <p>Over 200 patents in 27 areas of product research</p>
+                                <div class="content-text-tick">${svg}</div>
+                                <p>Over 1700+ life changing reviews</p>
                               </li>
                               <li  class="check-list">
-                                <div class="content-text-tick"><img src="https://sandbox.echologyx.com/wp-content/uploads/2022/06/Vector.svg"/></div>
+                                <div class="content-text-tick">${svg}</div>
                                 <p>Over 20 years of expertise in full body wellness</p>
                               </li>
                             </ul>
@@ -105,3 +109,5 @@ export default () => {
   // -----------------------------
   // ...
 };
+
+

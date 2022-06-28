@@ -86,7 +86,9 @@
                         .review-stars{
                             display: flex;
                             img{
-                                margin-right: 4px;
+                                margin-right: 8px;
+                                width: 24px;
+                                height: 24px;
                             }
                         }
                         .review-text{
@@ -119,7 +121,7 @@
                 background: radial-gradient(circle, rgba(117,168,35,0.804359243697479) 0%, rgba(255,255,255,0.6979166666666667) 50%);
 
             img{
-                max-width: 486px;
+                max-width: 423px;
             }
         }
         .mobile-content-review{
@@ -233,8 +235,9 @@
                     .review-stars{
                         display: flex;
                         img{
-                            width: 5%;
-                            margin-right: 4px;
+                            width: 16px;
+                            height: 16px;
+                            margin-right: 5px;
                         }
                     }
                     .review-text{
@@ -258,6 +261,9 @@
                     }
                 }
             }
+        }
+        .image-container img {
+            max-width: 300px;
         }
     }
 }
@@ -283,13 +289,13 @@
                         margin-left: -30px;
 
                         p{
-                            font-size: 14px;
-                            line-height: 15px;
+                            font-size: 15px;
+                            line-height: 17px;
                         }
                         .content-text-tick{
-                            margin-right: 0px;
-                            img{
-                                width: 60%;
+                            margin-right: 4px;
+                            svg{
+                                width: 16px;
                             }
                         }
                     }
@@ -301,8 +307,11 @@
             }
         }
         .image-container{
+            background: rgb(117,168,35);
+            background: radial-gradient(circle, rgba(117,168,35,0.804359243697479) 0%, rgba(255,255,255,0.6979166666666667) 39%);
             img{
-                max-width: 100%;
+                max-width: 60%;
+                margin: auto;
             }
         }
 
@@ -319,10 +328,11 @@
                 font-family: "Helvetica";
                 font-style: normal;
                 font-weight: 700;
-                font-size: 18px;
-                line-height: 20px;
+                font-size: 20px;
+                line-height: 24px;
                 color: #FFFFFF;
                 text-align: center;
+                width: 100%;
             }
             .review-content{
                 margin-top: 25px;
@@ -334,16 +344,17 @@
                     .review-stars{
                         display: flex;
                         img{
-                            width: 5%;
-                            margin-right: 4px;
+                            width: 16px;
+                            height: 16px;
+                            margin-right: 5px;
                         }
                     }
                     .review-text{
                         font-family: "Helvetica";
                         font-style: normal;
-                        font-weight: 500;
-                        font-size: 11px;
-                        line-height: 18px;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 13px;
                         color: #000000;
                         margin: 10px 0;
                     }
@@ -358,5 +369,10 @@
                 }
             }
         }
+    }
+}
+@media (max-width: 364px){
+    .uv-01-hero-section .mobile-content-review .regain-cta{
+        font-size: 16px;
     }
 }
