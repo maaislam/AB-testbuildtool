@@ -47,7 +47,7 @@ export const wordingBubble = {
         text: 'Packs',
         count: '17%',
     },
-    'Mittelhohe Laufsocken Herren & Damen': {
+    'Mittelhohe Laufsocken': {
         productTitle: 'Mittelhohe Laufsocken Herren & Damen',
         text: 'Packs',
         count: '17%',

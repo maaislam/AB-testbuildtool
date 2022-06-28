@@ -1,5 +1,4 @@
-import { pollerLite } from '../../clients/Drip/Blackroll/BLA-11/src/lib/helpers/pollerLite';
-import shared from './shared';
+import { pollerLite } from '../util';
 
 /**
  * Standard experiment setup
@@ -143,7 +142,7 @@ const events = {
     }
   },
 };
-export const setup = (category, action) => {
+export const setup = (category, action, shared) => {
   const { ID, VARIATION, CLIENT, LIVECODE } = shared;
 
   // set up events
@@ -162,7 +161,7 @@ export const setup = (category, action) => {
 };
 
 export const fireEvent = (label, sendOnce = false) => {
-  const { ID, VARIATION, CLIENT, LIVECODE } = shared;
+  //const { ID, VARIATION, CLIENT, LIVECODE } = shared;
 
   let labelMessage = label;
 

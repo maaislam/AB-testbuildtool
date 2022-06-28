@@ -1,0 +1,24 @@
+@import './variables';
+
+.#{$id} {
+    &__maincontainer {
+        background-color: red;
+    }
+}
+
+    .success_txt{
+       display:none !important;
+    }
+
+    .main-cont p{
+        font-family: 'Futura' !important;
+        font-style: normal;
+        font-weight: 500 !important;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 17px;
+        color: #000000;
+    }
