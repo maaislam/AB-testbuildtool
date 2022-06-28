@@ -74,6 +74,11 @@
                     font-size: 30px;
                     line-height: 34px;
                     color: #FFFFFF;
+
+                    &:hover{
+                        background-color: #8dc200 !important;
+                        border-color: #8dc200 !important;
+                    }
                 }
                 .review-content{
                     // margin-top: 70px;
@@ -172,6 +177,10 @@
                 .regain-cta{
                     padding: 10px 39px;
                     font-size: 25px;
+                    &:hover{
+                        background-color: #8dc200 !important;
+                        border-color: #8dc200 !important;
+                    }
                 }
             }
         }
@@ -224,6 +233,10 @@
                 color: #FFFFFF;
                 text-align: center;
                 width: fit-content;
+                &:hover{
+                    background-color: #8dc200 !important;
+                    border-color: #8dc200 !important;
+                }
             }
             .review-content{
                 margin-top: 25px;
@@ -333,6 +346,10 @@
                 color: #FFFFFF;
                 text-align: center;
                 width: 100%;
+                &:hover{
+                    background-color: #8dc200 !important;
+                    border-color: #8dc200 !important;
+                }
             }
             .review-content{
                 margin-top: 25px;
@@ -367,6 +384,12 @@
                         color: #000000;
                     }
                 }
+
+                .review-avatar{
+                    img{
+                        width:100px;
+                    }
+                }
             }
         }
     }
@@ -374,5 +397,17 @@
 @media (max-width: 364px){
     .uv-01-hero-section .mobile-content-review .regain-cta{
         font-size: 16px;
+        &:hover{
+            background-color: #8dc200 !important;
+            border-color: #8dc200 !important;
+        }
+    }
+    .uv-01-hero-section .mobile-content-review .review-content .review-avatar img{
+        width: 130px;
     }
 }
+// @media (max-width: 320px){
+//     .uv-01-hero-section .mobile-content-review .review-content .review-avatar img{
+//         width: 130px;
+//     }
+// }

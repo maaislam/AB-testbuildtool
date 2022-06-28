@@ -62,7 +62,7 @@ const heroContent = ` <div class="${ID}-hero-section">
                         </div>
                         <div class="image-container">
                           <div>
-                            <img src="https://sandbox.echologyx.com/wp-content/uploads/2022/06/My-project-e1656072612972.png"/>
+                            <img src="https://sandbox.echologyx.com/wp-content/uploads/2022/06/My-project-1_adobe_express-1-e1656415616988.png"/>
                           </div>
                         </div>
                         <div class="mobile-content-review">
