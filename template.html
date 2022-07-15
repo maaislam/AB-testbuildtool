@@ -8,7 +8,13 @@
   <meta http-equiv="x-ua-compatible"
         content="ie=edge" />
 
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="shortcut icon"
+        type="image/x-icon"
+        href="https://echologyx.com/wp-content/uploads/2022/02/apple-touch-icon-150x150.png" />
+  <title>
+    <%= htmlWebpackPlugin.options.title
+        %>
+  </title>
   <script>
 
   </script>
@@ -17,13 +23,50 @@
 <body>
   <div id="root">
     <style>
-      .echologyx {
+      body {
+        margin: 0
+      }
+
+      main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-size: 20px;
-        color: red;
-        text-align: centers;
+        color: #fff;
+        text-align: center;
+        background: url(https://echologyx.com/wp-content/themes/echologyx/public/img/favpng_technology-download.webp), linear-gradient(245deg, #531800 0%, #1d1d1b 49%);
+        background-position: right center;
+        background-repeat: no-repeat;
+
+      }
+
+      main>h1 {
+        animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      }
+
+
+      @keyframes focus-in-expand {
+        0% {
+          letter-spacing: -0.5em;
+          filter: blur(12px);
+          opacity: 0;
+        }
+
+        100% {
+          filter: blur(0px);
+          opacity: 1;
+        }
       }
     </style>
-    <div class="echologyx">Echologyx build tool successfylly initiated.</div>
+    <main>
+      <h1>Echologyx A/B test build tool successfully initiated...</h1>
+      <div class="echologyx">
+        <span>Please copy and paste the code from scriptLoader.js in your userjs extension to get start.</span>
+      </div>
+    </main>
   </div>
 </body>
 

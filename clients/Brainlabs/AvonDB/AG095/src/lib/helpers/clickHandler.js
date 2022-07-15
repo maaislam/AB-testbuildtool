@@ -40,12 +40,12 @@ const clickHandler = (ID, VARIATION, fireEvent) => {
           ?.classList.remove(`${ID}__invisible`);
         addToCart?.classList.remove('reduced-position');
         buttonTitle.innerText = 'Hide Brochures';
-        document.querySelectorAll(`.v7__elem__catalog__slide-page-image`).forEach((item) => {
-          item?.classList.add(`${ID}__catalog--image`);
-        });
-        document.querySelectorAll(`.v7__elem__catalog__slide-page-wrapper`).forEach((item) => {
-          item?.classList.add(`${ID}__catalogslide--wrapper`);
-        });
+        // document.querySelectorAll(`.v7__elem__catalog__slide-page-image`).forEach((item) => {
+        //   item?.classList.add(`${ID}__catalog--image`);
+        // });
+        // document.querySelectorAll(`.v7__elem__catalog__slide-page-wrapper`).forEach((item) => {
+        //   item?.classList.add(`${ID}__catalogslide--wrapper`);
+        // });
       } else {
         slideWrapper.classList.add(`slide-out-bottom`);
         slideWrapper.classList.remove(`slide-in-bottom`);
@@ -54,12 +54,12 @@ const clickHandler = (ID, VARIATION, fireEvent) => {
 
         document.querySelector('.AG085a__rep--container')?.classList.add(`${ID}__hide`);
 
-        document.querySelectorAll(`.v7__elem__catalog__slide-page-image`).forEach((item) => {
-          item?.classList.remove(`${ID}__catalog--image`);
-        });
-        document.querySelectorAll(`.v7__elem__catalog__slide-page-wrapper`).forEach((item) => {
-          item?.classList.remove(`${ID}__catalogslide--wrapper`);
-        });
+        // document.querySelectorAll(`.v7__elem__catalog__slide-page-image`).forEach((item) => {
+        //   item?.classList.remove(`${ID}__catalog--image`);
+        // });
+        // document.querySelectorAll(`.v7__elem__catalog__slide-page-wrapper`).forEach((item) => {
+        //   item?.classList.remove(`${ID}__catalogslide--wrapper`);
+        // });
         setTimeout(() => {
           slideWrapper.querySelector(`.${ID}__catalog-swiper`).classList.add(`${ID}__invisible`);
           slideWrapper

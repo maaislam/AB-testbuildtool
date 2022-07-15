@@ -1,13 +1,19 @@
 //import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import shared from './shared/shared';
-import { pollerLite } from '../../../../../../globalUtil/util';
 
 const { ID, VARIATION } = shared;
+
+const initMain = () => {
+  let giftContent = document.querySelector(`#giftCodeContent`);
+  if (window.getComputedStyle(giftContent).display === 'none') {
+    // Do something..
+    document.querySelector(`#giftCodeTitle`).click();
+  }
+};
 
 export default () => {
   //setup(); //use if needed
 
-  console.log(ID);
   // -----------------------------
   // If control, bail out from here
   // -----------------------------
@@ -20,23 +26,12 @@ export default () => {
   // -----------------------------
   // ...
 
-  const initMain = () => {
-    pollerLite(['#divGiftCodes'], () => {
-      if (document.querySelector(`#giftCodeContent`).style.display == 'none') {
-        document.querySelector(`#giftCodeTitle`).click();
-      }
-    });
-  };
-
-  if (VARIATION == 1) {
-    document.body.classList.add(`${ID}`);
-    initMain();
-  }
+  document.body.classList.add(`${ID}`);
+  initMain();
 
   if (VARIATION == 2) {
-    console.log(VARIATION);
-    document.body.classList.add(`${ID}`);
-    initMain();
+    document.querySelector(`#giftCodeTitle`).classList.add(`${ID}__giftCodeTitle`);
+    document.querySelector(`#btnSubmitGiftCode`).classList.add(`${ID}__btnSubmitGiftCode`);
     document.querySelector(`#btnSubmitGiftCode`).innerText = 'Apply';
   }
 };

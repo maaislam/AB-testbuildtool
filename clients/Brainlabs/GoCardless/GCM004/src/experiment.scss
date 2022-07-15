@@ -1,0 +1,72 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.css-sk7pc7 {
+    visibility: hidden;
+}
+
+.#{$id} {
+    &__hide {
+        display: none !important;
+    }
+
+
+    &__calcbanner {
+        width: 100%;
+        max-width: 570px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 15px 20px;
+        margin-bottom: 32px;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+        border: 1px solid #FFFFFF;
+        color: #FFFFFF;
+        text-decoration: none;
+        filter: drop-shadow(0px 10px 24px rgba(0, 0, 0, 0.1));
+        border-radius: 12px;
+        cursor: pointer;
+
+
+        @include mediaQuery(xsm) {
+            align-items: center;
+        }
+
+        &-left {
+            margin-right: 15px;
+        }
+
+        &:hover {
+
+            // & .text {
+            //     font-weight: 700;
+            // }
+
+            & .arrow-right>svg {
+                transform: translateX(8px);
+
+            }
+        }
+
+    }
+
+    &__calcbanner--cta {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 20px;
+
+
+        &>span:first-child {
+            margin-right: 10px;
+
+        }
+
+        & svg {
+            transition: transform 200ms ease-in-out 0s;
+        }
+    }
+}

@@ -1,11 +1,13 @@
 {
   "rules": {
-    "prefer-template": "off",
+    "no-func-assign": 2,
+    "prefer-template": 1,
+    "no-else-return": 1,
     "no-var": 1,
-    "no-unused-vars": 0,
+    "no-unused-vars": 1,
     "camelcase": 0,
     "no-nested-ternary": 0,
-    "no-console": 0,
+    "no-console": 1,
     "no-template-curly-in-string": 1,
     "no-self-compare": 1,
     "import/prefer-default-export": 0,

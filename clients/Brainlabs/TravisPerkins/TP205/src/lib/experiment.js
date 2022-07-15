@@ -1,7 +1,7 @@
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import { observeDOM, obsIntersection } from '../../../../../../globalUtil/util';
 import renderSeeAll from './components/seeAll';
-import { pollerLite } from './helpers/pollerLite';
+import { pollerLite } from '../../../../../globalUtil/util';
 import { validSearchUrls } from './helpers/validSearchUrls';
 import shared from './shared/shared';
 

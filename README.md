@@ -17,7 +17,7 @@ npm i
 ### Create new Experiment
 
 ```bash
-npm experiment-create
+npm run experiment-create
 ```
 
 ### Development server
@@ -25,13 +25,19 @@ npm experiment-create
 ```bash
 npm start
 ```
+### Connnect development server to client's site
 
-You can view the development server at `localhost:3000`.
+copy content from scriptLoader.js to userjs extension.
 
 ### Production build
 
 ```bash
 npm run build
+```
+### Git Commits
+
+```bash
+git commit -m "[Test ID] Name of commit message."
 ```
 
 ## Features

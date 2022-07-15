@@ -4,7 +4,7 @@ import shared from './shared/shared';
 import observeDOM from './helpers/observeDOM';
 import prepareControl from './helpers/prepareControl';
 import getCatalog from './helpers/getCatalog';
-import { getCurrMonth, localStorageGet, localStorageSave } from '../../../../../../globalUtil/util';
+import { localStorageGet, localStorageSave } from '../../../../../../globalUtil/util';
 import initExternalLib from './helpers/addExternal';
 import newMenuWrapper from './components/newMenuWrapper';
 import { iconData } from './assets';
@@ -17,12 +17,6 @@ const init = (mutation, urlChanged) => {
   //setup();
 
   //fireEvent('Conditions Met');
-
-  // -----------------------------
-  // Add events that apply to both variant and control
-  // @see https://app.gitbook.com/@userconversion/s/development/events/helpers/
-  // -----------------------------
-  // ...
 
   // -----------------------------
   // If control, bail out from here
@@ -39,6 +33,10 @@ const init = (mutation, urlChanged) => {
   document.querySelector('.AG085a__rep--container')?.classList.add(`${ID}__hide`);
   if (urlChanged) {
     prepareControl(ID);
+    const mainContainer = document
+      .querySelector('#v7_vue_pdp_detail')
+      ?.closest('.v7__elem--container');
+    mainContainer?.classList.add(`${ID}__mainContainer`);
   }
 
   const { type, target, addedNodes, removedNodes } = mutation;
@@ -56,7 +54,7 @@ const init = (mutation, urlChanged) => {
       !mutation
     ) {
       const catalogData = localStorageGet('catalogData');
-      console.log(catalogData);
+      //console.log(catalogData);
 
       document.querySelectorAll(`.${ID}__newmenuwrapper`).forEach((item) => {
         item?.remove();
@@ -79,9 +77,9 @@ export default async () => {
   setup('Experimentation', `AvonGlobal - ${ID}`, shared);
 
   fireEvent(`Test ID: ${ID} Variation: ${VARIATION} Label: Conditions Met`);
-  console.log(VARIATION);
+  // console.log(VARIATION);
   if (VARIATION == 'control') {
-    console.log('test');
+    //console.log('test');
     const controlInit = (mutation, urlChanged) => {
       if (urlChanged && location.href.indexOf('basket') !== -1) {
         fireEvent(`Test ID: ${ID} Variation: ${VARIATION} Label: User clicks the basket`);

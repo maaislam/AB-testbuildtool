@@ -160,10 +160,12 @@ export const setup = (category, action, shared) => {
   document.documentElement.classList.add(`${ID}-${VARIATION}`);
 };
 
-export const fireEvent = (label, sendOnce = false) => {
-  //const { ID, VARIATION, CLIENT, LIVECODE } = shared;
+export const fireEvent = (label, shared, sendOnce = false) => {
+  const { ID, VARIATION } = shared;
 
-  let labelMessage = label;
+  let labelMessage =
+    // eslint-disable-next-line prefer-template
+    'Test ID: ' + ID + ' Variation: ' + VARIATION + ' Label: ' + label;
 
   events.sendNormalised(labelMessage, {
     sendOnce: sendOnce,

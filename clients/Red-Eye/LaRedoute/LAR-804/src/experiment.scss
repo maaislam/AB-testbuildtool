@@ -1,24 +1,19 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
-body {
-  #divGiftCodes {
-    #giftCodeTitle {
-      display: none;
-    }
-    #giftCodeContent {
-      #formGiftCode {
-        #btnSubmitGiftCode {
-          background-color: black;
-          color: white;
-          width: 80px;
-          max-height: 45px;
-          min-height: 45px;
-          top: 0;
-          margin-top: 0;
-          right: 0;
-        }
-      }
-    }
+.#{$id} {
+  &__giftCodeTitle {
+    display: none;
+  }
+
+  &__btnSubmitGiftCode {
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 80px;
+    height: 45px;
+    margin-top: 0;
+    color: white;
+    background-color: black;
   }
 }

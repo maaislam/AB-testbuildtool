@@ -10,7 +10,7 @@ const getCatalog = async () => {
   const catalogRes = await fetch(
     `https://admin.${BASE_URL}/api/campaigns/${campaign}/brochures/?rep_id=${
       rep_id || ''
-    }&rep_slug=${resJson.slug}&preventCache=${window.preventCacheId}`
+    }&rep_slug=${resJson.slug || ''}&preventCache=${window.preventCacheId}`
   );
 
   const catalogData = await catalogRes.json();

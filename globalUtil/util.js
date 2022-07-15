@@ -167,7 +167,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
     subtree: true,
   };
 
-  observer.observe(target, config);
+  target && observer.observe(target, config);
 };
 
 export const obsIntersection = (target, config, callback) => {
@@ -232,6 +232,9 @@ export const getCurrMonth = () => {
   const date = new Date();
   return month[date.getMonth()];
 };
+
+/***********************************************************/
+
 //for DY only
 function triggerEvent(eventName, eventProperties, isDelayed) {
   const eventData = {
@@ -247,3 +250,30 @@ function triggerEvent(eventName, eventProperties, isDelayed) {
     DY.API('event', eventData);
   }
 }
+
+//for DY only
+
+/***********************************************************/
+
+/***********************************************************/
+
+export const setCookie = (cName, cValue, expDays) => {
+  let date = new Date();
+
+  date.setTime(date.getTime() + expDays * 24 * 60 * 60 * 1000);
+
+  let expires = `expires= ${date.toUTCString()}`;
+
+  // eslint-disable-next-line prefer-template
+  document.cookie = cName + '=' + cValue + '; ' + expires;
+};
+
+export const getCookie = (name) => {
+  let value = `; ${document.cookie}`;
+
+  let parts = value.split(`; ${name}=`);
+
+  if (parts.length == 2) {
+    return parts.pop().split(';').shift();
+  }
+};
