@@ -1,11 +1,16 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable no-shadow */
+/* eslint-disable consistent-return */
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-undef */
 const fs = require('fs');
 const fse = require('fs-extra');
 const prompt = require('prompt');
 const path = require('path');
+
 prompt.start();
 
-prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], function (err, result) {
+prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], (err, result) => {
   if (err) {
     return onErr(err);
   }
@@ -26,8 +31,8 @@ prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], function (e
     )
     .then((exists) => {
       if (exists) return;
-      return fse.copy(`./template/`, dir);
-      //console.log("Build success! -- now 'npm start' to start development");
+      return fse.copy('./template/', dir);
+      // console.log("Build success! -- now 'npm start' to start development");
     })
     .then(() => {
       fs.writeFile(

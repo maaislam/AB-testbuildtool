@@ -1,5 +1,7 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-undef */
 const fs = require('fs');
+const fse = require('fs-extra');
 const path = require('path');
 
 const currentPath = process.argv.reduce((prev, curr) => {
@@ -31,9 +33,19 @@ const content = (currPath) => {
   return text;
 };
 
-fs.writeFile(path.resolve(__dirname, '../config/paths.js'), content(currentPath), (err) => {
-  if (err) {
-    console.error('ERROR', err);
-  }
-  // file written successfully
-});
+const pathFile = path.resolve(__dirname, '../config/paths.js');
+
+fse
+  .ensureFile(pathFile)
+  .then(() => {
+    console.log('success!');
+    fs.writeFile(pathFile, content(currentPath), (err) => {
+      if (err) {
+        console.error('ERROR', err);
+      }
+      // file written successfully
+    });
+  })
+  .catch((err) => {
+    console.error(err);
+  });

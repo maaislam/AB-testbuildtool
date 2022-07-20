@@ -12,7 +12,7 @@ Clone this repo and npm install.
 npm i
 ```
 
-## Usage
+## How to
 
 ### Create new Experiment
 
@@ -25,6 +25,7 @@ npm run experiment-create
 ```bash
 npm start
 ```
+
 ### Connnect development server to client's site
 
 copy content from scriptLoader.js to userjs extension.
@@ -34,16 +35,22 @@ copy content from scriptLoader.js to userjs extension.
 ```bash
 npm run build
 ```
+
 ### Production build -- unminified
 
 ```bash
 npm run build-u
 ```
+
 ### Git Commits
 
 ```bash
 git commit -m "[Test ID] Name of commit message."
 ```
+
+### CSS/SCSS order guideline
+
+- [CSS order guideline](https://www.npmjs.com/package/stylelint-config-rational-order)
 
 ## Features
 
@@ -90,7 +97,7 @@ git commit -m "[Test ID] Name of commit message."
 
 - [`eslint`](https://github.com/eslint/eslint) - Enforce styleguide across application
 - [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) - Implement prettier rules
-  - - [`prettier`](https://github.com/prettier/prettier) - Dependency for `prettier-webpack-plugin` plugin
+- [`prettier`](https://github.com/prettier/prettier) - Dependency for `prettier-webpack-plugin` plugin
 - [`eslint-import-resolver-webpack`](https://github.com/benmosher/eslint-plugin-import/tree/master/resolvers/webpack) - Throw exceptions for import/export in webpack
 
 ## Author
