@@ -14,7 +14,7 @@
     "arrow-body-style": 0,
     "import/no-extraneous-dependencies": ["off", { "devDependencies": false }],
     "spaced-comment": ["error", "always", { "exceptions": ["-", "+"] }],
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": 0,
     "operator-linebreak": ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
     "padded-blocks": ["error", "never"],
     "indent": "off",
