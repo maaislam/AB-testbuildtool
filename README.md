@@ -34,6 +34,11 @@ copy content from scriptLoader.js to userjs extension.
 ```bash
 npm run build
 ```
+### Production build -- unminified
+
+```bash
+npm run build-u
+```
 ### Git Commits
 
 ```bash

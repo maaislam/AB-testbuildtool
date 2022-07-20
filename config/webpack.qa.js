@@ -12,7 +12,7 @@ module.exports = merge(common, {
   output: {
     path: paths.build,
     publicPath: '/',
-    filename: 'minified/js/[name].bundle.js'
+    filename: 'unminified/js/[name].bundle.js'
   },
   module: {
     rules: [
@@ -23,7 +23,7 @@ module.exports = merge(common, {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 2,
+              importLoaders: 1,
               sourceMap: false,
               modules: false
             }
@@ -37,7 +37,7 @@ module.exports = merge(common, {
   plugins: [
     // Extracts CSS into separate files
     new MiniCssExtractPlugin({
-      filename: 'minified/styles/[name].css',
+      filename: 'unminified/styles/[name].css',
       chunkFilename: '[id].css'
     }),
     new RemovePlugin({
@@ -47,8 +47,7 @@ module.exports = merge(common, {
     })
   ],
   optimization: {
-    minimize: true,
-    minimizer: [new CssMinimizerPlugin(), '...']
+    minimize: false
     // splitChunks: { chunks: 'all' },
     // runtimeChunk: {
     //   name: 'runtime'

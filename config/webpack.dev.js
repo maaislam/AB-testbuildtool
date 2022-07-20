@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 //const fs = require('fs')
 const { merge } = require('webpack-merge');
-const paths = require('./paths');
+//const paths = require('./paths');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -13,8 +13,8 @@ module.exports = merge(common, {
   optimization: {
     splitChunks: {
       chunks: 'all',
-      name: 'shared',
-    },
+      name: 'shared'
+    }
   },
   // Spin up a server for quick development
   devServer: {
@@ -29,8 +29,8 @@ module.exports = merge(common, {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': '*',
-      'Access-Control-Allow-Headers': '*',
-    },
+      'Access-Control-Allow-Headers': '*'
+    }
   },
 
   module: {
@@ -45,20 +45,20 @@ module.exports = merge(common, {
             options: {
               importLoaders: 2,
               sourceMap: false,
-              modules: false,
-            },
+              modules: false
+            }
           },
           'postcss-loader',
-          'sass-loader',
-        ],
-      },
-    ],
+          'sass-loader'
+        ]
+      }
+    ]
   },
   plugins: [
     // Extracts CSS into separate files
     new MiniCssExtractPlugin({
       filename: 'styles/[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
+      chunkFilename: '[id].css'
+    })
+  ]
 });
