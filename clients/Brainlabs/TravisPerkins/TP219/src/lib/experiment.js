@@ -14,17 +14,12 @@ import { deviceType, isPDP, isPLP } from './helpers/utils';
 const { ID, VARIATION } = shared;
 
 const init = (mutation) => {
-  // console.log(mutation);
+  //console.log(mutation);
   setup('Experimentation', `TravisPerkins - ${ID}`);
 
   const isLoggedIn = !!getCookie('access_token');
 
   const isMobile = deviceType() !== 'desktop';
-
-  // -----------------------------
-  // Add events that apply to both variant and control
-  // @see https://app.gitbook.com/@userconversion/s/development/events/helpers/
-  // -----------------------------
 
   //render pdp changes
 
@@ -137,15 +132,15 @@ export default () => {
   //init();
   setup('Experimentation', `TravisPerkins - ${ID}`);
 
-  // Poll and re-run init
+  //Poll and re-run init
   pollerLite(['#app-container'], () => {
     const appContainer = document.querySelector('#app-container');
     const controlInit = () => {
-      // console.log('testingggg', isPLP());
+      //console.log('testingggg', isPLP());
       if (isPDP() && skuValidity(tradeSkuPrice) && postcodeMatch(postcodes)) {
         fireEvent(`Test ID: ${ID} Variation: ${VARIATION} Label: Conditions Met`);
       } else if (postcodeMatch(postcodes)) {
-        // console.log('I am in plp');
+        //console.log('I am in plp');
         const prodCards = document
           .querySelector('[data-test-id="plp-list"]')
           .querySelectorAll('[data-test-id="product"]');
@@ -171,10 +166,10 @@ export default () => {
       setTimeout(controlInit, 2000);
       document.body.addEventListener('click', (e) => {
         if (!isPDP()) return;
-        const target = e.target;
-        // console.log('target', target);
-        const loginBtn = `[data-test-id="link"][href="/login"]`;
-        const signupBtn = `[data-test-id="link"][href="/activate"]`;
+        const { target } = e;
+        //console.log('target', target);
+        const loginBtn = '[data-test-id="link"][href="/login"]';
+        const signupBtn = '[data-test-id="link"][href="/activate"]';
         const targetMatched = (desiredMatch) =>
           target.matches(desiredMatch) || target.closest(desiredMatch);
         if (targetMatched(loginBtn)) {
@@ -189,14 +184,14 @@ export default () => {
       });
     }
     let oldHref = document.location.href;
-    const observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
         setTimeout(() => {
           const validPage = isPDP() || isPLP();
-          //validPage && init(mutation);
+          validPage && init(mutation);
         }, 2000);
 
-        if (oldHref != document.location.href) {
+        if (oldHref !== document.location.href) {
           oldHref = document.location.href;
 
           document.body.classList.remove(`${shared.ID}`);
@@ -211,7 +206,7 @@ export default () => {
     const config = {
       childList: true,
       subtree: true,
-      CharacterData: true,
+      CharacterData: true
     };
 
     observer.observe(appContainer, config);

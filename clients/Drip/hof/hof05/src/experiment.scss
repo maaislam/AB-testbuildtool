@@ -1,0 +1,206 @@
+/* stylelint-disable value-keyword-case */
+/* stylelint-disable number-max-precision */
+/* stylelint-disable property-no-vendor-prefix */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+  &__moreBuy {
+    margin: 8px 0;
+  }
+  
+  & .__hide {
+    display: none;
+  }
+
+  & .__show {
+    display: block;
+  }
+
+  & .ProductForm__Variants {
+    & div {
+      &:nth-child(3),
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+  }
+
+  &__checkboxLabel {
+    color: #001624;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Sofia Regular';
+    font-style: normal;
+    line-height: 26px;
+  }
+
+  &__moreBuyTitle {
+    position: relative;
+    margin-bottom: 8px !important;
+    color: #001624;
+    font-weight: 800;
+    font-size: 16px;
+    font-family: 'Sofia Bold';
+    font-style: normal;
+    line-height: 26px;
+  }
+
+  &__moreBuyTooltip {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__tooltip-arrow::before {
+    position: absolute;
+    top: -8px;
+    border-color: transparent transparent #008000;
+    border-style: solid;
+    border-width: 11px;
+    content: '';
+  }
+
+  &__tooltip-arrow {
+    width: fit-content;
+    margin-top: 12px;
+    margin-left: 12px;
+    padding: 1px 6px 2px;
+    color: #fff;
+    font-size: 16px;
+    background: #008000;
+    border-radius: 2px;
+  }
+
+  &__oldPrice {
+    s {
+      position: relative;
+
+      span {
+        margin: 14px;
+      }
+    }
+  }
+
+  &__loader {
+    position: absolute;
+    top: -8px;
+    right: -6px;
+    display: inline;
+    width: 0;
+    height: 0;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-right-color: #888;
+    border-radius: 22px;
+    animation: rotate 1s infinite linear;
+  }
+  
+  &__tooltip-arrow-label {
+      position: relative;
+
+      span {
+        margin: 14px;
+      }
+  }
+
+  @keyframes rotate {
+    /* 100% keyframe for  clockwise. 
+       use 0% instead for anticlockwise */
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  input[type=checkbox] + label {
+    display: block;
+    cursor: pointer;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox] + label::before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    color: transparent;
+    vertical-align: middle;
+    border: 2px solid #D9DCDE;
+    border-radius: 0;
+    transition: .2s;
+    content: "";
+  }
+  
+  input[type=checkbox]:checked + label::before {
+    background-color: white;
+  }
+  
+  &__checkmark {
+    position: absolute;
+    margin-top: -21px;
+    cursor: pointer;
+  }
+
+  @media (min-width:340px) and (max-width:363px) {
+    &__moreBuy {
+      margin-bottom: 48px;
+    }
+
+    &__checkboxLabel {
+      font-size: 14px;
+    }
+
+    &__tooltip-arrow {
+      font-size: 15px;
+    }
+
+    &__loader{
+      top: -10px
+    }
+  }
+  @media (min-width:365px) and (max-width:1024px) {
+    &__moreBuy {
+      margin-bottom: 48px;
+    }
+
+    &__checkboxLabel {
+      font-size: 15px;
+    }
+
+    &__tooltip-arrow {
+      font-size: 15px;
+    }
+    
+    &__loader{
+      top: -10px
+    }
+  }
+  @media (min-width:1030px) and (max-width:1170px) {
+    &__checkboxLabel {
+      font-size: 15px;
+    }
+
+    &__tooltip-arrow {
+      font-size: 15px;
+    }
+    
+    &__loader{
+      top: -10px
+    }
+  }
+  @media (min-width:392px) and (max-width:460px) {
+    &__moreBuy {
+      margin-bottom: 48px;
+    }
+  }
+}

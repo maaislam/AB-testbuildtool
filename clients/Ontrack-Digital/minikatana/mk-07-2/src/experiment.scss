@@ -1,0 +1,21 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__test {
+        display: block;
+    }
+}
+.mk-video-section{
+    margin-top: 14px;
+    h3{
+        text-transform: uppercase;
+    }
+}
+.mk-07-ifrmae{
+    height: 100%;
+}
+
+.tab-content iframe, .tab-content video, .short-description iframe, .short-description video, .vertical-tabs iframe, .vertical-tabs video{
+    height: 550px;
+}

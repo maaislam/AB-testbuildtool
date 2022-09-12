@@ -9,12 +9,12 @@ const searchWrapper = (id, data) => {
   const { testBasedData, userData } = data;
   const { searchTerms, tradeCategory, traderIcon } = testBasedData;
   const { name, customerTradeType } = userData;
-  const userHasDataPoint = customerTradeType !== '';
+  const userHasDataPoint = customerTradeType !== '' && tradeCategory !== '';
   const headlineData = {
     name,
     tradeCategory,
     traderIcon,
-    userHasDataPoint,
+    userHasDataPoint
   };
 
   const htmlStr = `

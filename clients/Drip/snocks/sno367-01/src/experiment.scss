@@ -1,0 +1,161 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable color-hex-length */
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+  &.__discount .ProductMeta .product-price-review-css {display:none !important}
+
+  .hidden {
+    display: none !important;
+  }
+
+  .show {
+    display: block !important;
+  }
+
+  .variantPriceColorControl {
+    color: #646464 !important;
+  }
+
+  .salesBox-tooltip {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .ProductMeta {
+    margin-bottom: 20px;
+  }
+
+  .ProductForm {
+    margin-top: 0 !important;
+  }
+
+  .SaleBox {
+    display: none;
+  }
+
+  .jdgm-widget.jdgm-preview-badge.jdgm--done-setup .jdgm-prev-badge {
+    display: block !important;
+  }
+
+  .review-badge {
+    margin-bottom: 8px;
+  }
+
+  .tooltip-arrow::after {
+    position: absolute;
+    top: 29px;
+    border-color: #dd7d45 transparent transparent;
+    border-style: solid;
+    border-width: 11px;
+    content: '';
+  }
+
+  .tooltip-arrow {
+    display: flex;
+    min-width: 90px;
+    padding: 15px 10px;
+    background: #dd7d45;
+    border-radius: 2px;
+  }
+
+  .timer__Item {
+    color: #fff;
+    font-weight: 500;
+    font-size: 13px;
+    font-family: 'Gordita Medium';
+    line-height: 0;
+    letter-spacing: 1px;
+  }
+
+  .percentage {
+    width: 42px;
+    margin-top: 14px;
+    padding-bottom: 1px;
+    text-align: center;
+    background: #ff0000;
+    border-radius: 2px;
+  }
+
+  .percentage span {
+    color: #fff;
+    font-weight: 400;
+    font-size: 10px;
+    font-family: 'Gordita Medium';
+    vertical-align: middle;
+  }
+
+  .priceBox {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  .Price--highlight {
+    color: #ff0000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 1px;
+  }
+
+  .Price--compareAt {
+    display: inline !important;
+    color: #646464;
+    font-weight: 500;
+    font-size: 19px;
+    font-family: 'Gordita Medium';
+    line-height: 26px;
+    letter-spacing: 1px;
+  }
+
+  .price-compare {
+    color: #646464;
+    font-size: 19px;
+    font-family: 'Gordita Medium';
+    font-style: normal;
+    line-height: 21px;
+    letter-spacing: 1px;
+    text-decoration-line: line-through;
+  }
+
+  .price-highlight {
+    margin-left: 8px;
+    color: #ff0000;
+    font-size: 16px;
+    font-family: 'Gordita Regular';
+    line-height: 17px;
+    letter-spacing: 1px;
+  }
+
+  .DiscountTabsNavigation .Tab.-Active {
+    background-color: #ff0000 !important;
+  }
+
+  .semiColon {
+    color: white;
+    line-height: 0;
+  }
+
+  .tooltip-arrow .semiColon {
+    margin-top: -1.5px;
+  }
+
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      .percentage span {
+        font-size: 9px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 380px) {
+    .percentage span {
+      padding-bottom: 0;
+      font-size: 9px;
+    }
+  }
+}

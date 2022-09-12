@@ -1,0 +1,58 @@
+$media: (xsm:360px,
+    sm: 768px,
+    md: 850px,
+    lg: 1024px,
+);
+$brand-black:#1C2C3C;
+$brand-gray:#636F7E;
+$brand-green:#33705A;
+$brand-white-primary:#fff;
+$brand-white-secondary:#E3E8ED;
+
+@mixin media-query($breakpoint) {
+
+    @each $breakpoints,
+    $size in $media {
+        @if $breakpoint==$breakpoints {
+            @media screen and (max-width: $size) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin apply-font($fonttype:'carousel-title') {
+    color: $brand-green;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.3;
+
+    @include media-query(sm) {
+        font-size: 16px;
+    }
+
+    @if $fonttype=='slide-title' {
+        color: $brand-black;
+
+        @include media-query(sm) {
+            font-size: 13px;
+        }
+    }
+
+    @if $fonttype=='slide-subtitle' {
+        color: $brand-gray;
+
+        @include media-query(sm) {
+            color: $brand-black;
+            font-weight: 400;
+            font-size: 14px;
+        }
+    }
+
+    @else if $fonttype=='slide-selected' {
+        color: $brand-green;
+        font-weight: 700;
+
+
+    }
+}

@@ -6,7 +6,8 @@ const dummySearch = (id) => {
         <div class="${id}__dummySearch--title ${id}__title">Find trade products with your trade pricing:</div>
         <div class="${id}__dummySearch--container">
             <input class="${id}__dummySearch--input"
-                type="search"
+                readonly="readonly"
+                type="text"
                 placeholder="Start searching">
             <span class="${id}__dummySearch--searchicon">
                 ${searIcon}

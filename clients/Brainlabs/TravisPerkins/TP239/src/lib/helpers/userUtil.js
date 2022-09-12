@@ -14,7 +14,7 @@ const headers = {
   'x-data-consumer-name': 'TP-WEB',
   'x-tp-checkout-new': 'true',
   'x-tp-request-id': '24fb997c-466b-425f-8bef-e388c5996eab',
-  'x-tp-session-id': getCookie('x-tp-session-id'),
+  'x-tp-session-id': getCookie('x-tp-session-id')
 };
 
 export const isLoggedIn = !!getCookie('access_token');
@@ -27,7 +27,7 @@ export const getUser = async () => {
     method: 'POST',
     mode: 'cors',
     body: '{"operationName":"customer","variables":{},"query":"query customer {\\n  customer {\\n    ...CustomerFields\\n    __typename\\n  }\\n}\\n\\nfragment CustomerFields on Customer {\\n  code\\n  name\\n  email\\n  customerType\\n  accountStatus\\n  accountNumber\\n  customerTradeType\\n  deliveryPhoneNumbers\\n  ...DeliveryAddressesFields\\n  __typename\\n}\\n\\nfragment DeliveryAddressesFields on Customer {\\n  deliveryAddresses {\\n    id\\n    line1\\n    line2\\n    line3\\n    town\\n    postalCode\\n    deliveryContact {\\n      name\\n      telephone\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}"}',
-    credentials: 'include',
+    credentials: 'include'
   });
   const data = await response.json();
   return data.data.customer;

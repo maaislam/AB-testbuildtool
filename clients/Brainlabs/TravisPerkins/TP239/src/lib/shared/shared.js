@@ -1,5 +1,5 @@
 export default {
     ID: "TP239",
-    VARIATION: "control",
+    VARIATION: "1",
     CLIENT: "Brainlabs",
   };

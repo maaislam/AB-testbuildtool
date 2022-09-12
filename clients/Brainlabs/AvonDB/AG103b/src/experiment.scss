@@ -1,0 +1,117 @@
+/* stylelint-disable rule-empty-line-before */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__slidecatalog {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+        height: auto;
+        min-height: 140px;
+        padding: 4px 8px 8px;
+        background-color: #7622B8;
+        border-radius: 5px;
+        transform: translate(0, -50%);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+        animation: slide-in-right 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+
+        @include media-query(sm) {
+            transform: translate(100%, -50%);
+            animation: wobble-hor-bottom 0.8s cubic-bezier(0.470, 0.000, 0.745, 0.715) 3 both;
+
+        }
+
+        .#{$id}__slidecatalog {
+            &--content {
+                display: block;
+                color: #fff;
+                font-weight: 500;
+                font-size: 14px;
+                font-family: Montserrat;
+                line-height: 1.5;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            &--title {
+                padding-top: 4px;
+                padding-bottom: 8px;
+            }
+        }
+
+        & img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__closeicon {
+        display: inline-block;
+        text-align: right;
+        cursor: pointer;
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translate(0, -50%);
+        opacity: 0;
+
+    }
+
+    100% {
+        transform: translate(-100%, -50%);
+        opacity: 1;
+
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translate(-100%, -50%);
+        opacity: 0;
+
+    }
+
+    100% {
+        transform: translate(0, -50%);
+        opacity: 1;
+
+    }
+}
+
+
+
+@keyframes wobble-hor-bottom {
+
+    0%,
+    100% {
+        transform: translate(0, -50%);
+        transform-origin: 50% 50%;
+    }
+
+    15% {
+        transform: translate(0, -50%) rotate(-6deg);
+    }
+
+    30% {
+        transform: translate(0, -50%) rotate(6deg);
+    }
+
+    45% {
+        transform: translate(0, -50%) rotate(-3.6deg);
+    }
+
+    60% {
+        transform: translate(0, -50%) rotate(2.4deg);
+    }
+
+    75% {
+        transform: translate(0, -50%) rotate(-1.2deg);
+    }
+}

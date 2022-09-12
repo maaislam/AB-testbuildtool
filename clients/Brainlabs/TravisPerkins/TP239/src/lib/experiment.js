@@ -11,25 +11,25 @@ const { ID, VARIATION } = shared;
 const init = (userData) => {
   setup('Experimentation', `TravisPerkins - ${ID}`, shared);
 
-  if (!userData || location.pathname !== '/') return;
+  if (!userData || window.location.pathname !== '/') return;
 
-  // -----------------------------
-  // If control, bail out from here
-  // -----------------------------
+  //-----------------------------
+  //If control, bail out from here
+  //-----------------------------
   fireEvent('Conditions Met', shared);
-  if (VARIATION == 'control') {
+  if (VARIATION === 'control') {
     return;
   }
 
-  // eslint-disable-next-line no-console
+  //eslint-disable-next-line no-console
 
-  const customerTradeType = userData.customerTradeType === '' ? '12B' : userData.customerTradeType;
+  console.log(userData.customerTradeType);
 
   const traderInfo = {
-    testBasedData: tradeUserConfig[customerTradeType],
-    userData,
+    testBasedData: tradeUserConfig[userData.customerTradeType] || tradeUserConfig['12XX'],
+    userData
   };
-  // eslint-disable-next-line no-console
+  //eslint-disable-next-line no-console
   console.log(traderInfo);
   document.querySelector(`.${ID}__searchWrapper`)?.remove();
 
@@ -54,13 +54,13 @@ export default async () => {
   pollerLite(['#app-container', '[data-test-id="home-page-wrapper"]'], () => {
     const appContainer = document.querySelector('#app-container');
 
-    let oldHref = location.href;
+    let oldHref = window.location.href;
     const observer = new MutationObserver((mutations) => {
       mutations.forEach(() => {
-        // console.log(mutation);
+        //console.log(mutation);
 
-        if (oldHref != location.href) {
-          oldHref = location.href;
+        if (oldHref !== window.location.href) {
+          oldHref = window.location.href;
           //clear old DOM
           document.querySelector(`.${ID}__searchWrapper`)?.remove();
           setTimeout(() => {
@@ -72,7 +72,7 @@ export default async () => {
 
     const config = {
       childList: true,
-      subtree: true,
+      subtree: true
     };
 
     observer.observe(appContainer, config);

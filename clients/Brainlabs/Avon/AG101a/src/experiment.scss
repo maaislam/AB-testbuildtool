@@ -1,0 +1,95 @@
+/* stylelint-disable selector-no-vendor-prefix */
+/* stylelint-disable selector-id-pattern */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+
+    &__hide {
+        display: none !important;
+    }
+
+    &__cartCoupon {
+        width: 100%;
+        margin: 16px auto;
+        padding: 0 2rem;
+
+        form {
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            display: inline-block;
+            width: 60%;
+            height: 3.6rem;
+            margin-right: 1rem;
+            padding-left: 1rem;
+            color: #707677;
+            font-size: 1.4rem;
+            font-family: Montserrat-Medium, Arial;
+            line-height: 1;
+            background-color: #f6f9f9;
+            border: solid 1px #e4eded;
+            border-radius: 2rem;
+
+            &::placeholder {
+                color: #707677 !important;
+                font-size: 15px !important;
+                font-family: Montserrat-Medium !important;
+
+                @include media-query(xsm) {
+                    font-size: 13px !important;
+                }
+            }
+
+        }
+
+        a.#{$id}__cartCoupon {
+            &--button {
+                display: inline-block;
+                width: 40%;
+                max-width: 122px;
+                margin-bottom: 0;
+                padding: 0.5rem 1rem;
+                color: #7f28c4;
+                background-color: #fff;
+                border-color: #7f28c4;
+            }
+
+            &--remove {
+                color: #707677;
+            }
+        }
+    }
+
+    &__cartCoupon--promoMessage {
+        margin-top: 10px;
+
+        &.fail {
+            color: #851168;
+        }
+    }
+
+    &__control-coupon {
+        display: block;
+
+        .Cart-CouponPromotionMessage,
+        #CouponCode {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+
+.AG101a-2 #CartPage .Cart-Footer .AG101a__control-coupon .CouponInputBox::-webkit-input-placeholder {
+    color: #707677 !important;
+    font-size: 15px !important;
+    font-family: Montserrat-Medium !important;
+
+    @include media-query(xsm) {
+        font-size: 13px !important;
+    }
+}

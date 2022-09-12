@@ -1,0 +1,95 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__hide {
+        display: none !important;
+    }
+
+    &__swiper {
+        width: 100%;
+        max-width: 600px;
+        margin: 0;
+        transform: translateX(-40px);
+
+        @include media-query(lg) {
+            margin: 0 auto;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            padding: 0 40px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #6D6D6D;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            background-image: none;
+
+            &::after {
+                color: #F3704B;
+                font-weight: bold;
+
+                @include media-query(md) {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .swiper-button-next {
+            right: 0;
+        }
+
+        .swiper-button-prev {
+            left: 0;
+        }
+
+        .swiper-pagination {
+            position: static;
+            bottom: 0;
+        }
+
+        .swiper-pagination-bullet {
+            background-color: #6D6D6D;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #F3704B;
+        }
+
+        @include media-query(md) {
+            transform: unset;
+        }
+    }
+
+    &__imageItem {
+        width: 100%;
+    }
+
+    &-2__body {
+
+        .#{$id}__mainContainer {
+            & .container {
+                display: flex;
+                flex-direction: column-reverse;
+
+                &>div:last-child {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .#{$id}__formElmContainer {
+            top: 320px !important;
+
+            @include media-query(md) {
+                top: 0 !important;
+            }
+        }
+    }
+}

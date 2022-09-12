@@ -1,0 +1,599 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+body {
+  .add-to-cart-popup.add-to-cart-popup .action-close {
+    z-index: -999;
+    opacity: 0;
+  }
+  .modal-popup.add-to-cart-popup.modal-inner-wrap-border._show {
+    .modal-header {
+      & > button.action-close {
+        display: none;
+      }
+    }
+
+    .recommended-popup {
+      & .block-content.content {
+        position: relative;
+      }
+      & ul.products.list {
+        position: unset;
+      }
+      & .slick-track {
+        width: fit-content !important;
+      }
+
+      & .slick-slide {
+        flex: unset;
+      }
+    }
+
+    .#{$id}__product-title {
+      position: relative;
+      background: #e5efe6;
+      color: #317c3a;
+      & > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        @media only screen and (max-width: 767px) {
+          // do something
+          & {
+            flex-direction: column;
+          }
+        }
+        & .#{$id}__tick-icon {
+          margin-right: 5px;
+          & svg {
+            width: 20px;
+            height: 20px;
+          }
+          @media only screen and (max-width: 767px) {
+            // do something
+            & {
+              display: none;
+            }
+          }
+        }
+
+        & .#{$id}__pd-title {
+          margin-bottom: 0px;
+        }
+        & .#{$id}__pd-bold {
+          margin-bottom: 0px;
+          font-weight: bold;
+        }
+
+        & .#{$id}__package-cross {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          right: 2%;
+          display: fles;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &::before {
+            height: 17px;
+            display: inline-block;
+            content: url('https://api.iconify.design/akar-icons/cross.svg');
+          }
+          @media only screen and (max-width: 767px) {
+            // do something
+            & {
+              top: 26%;
+            }
+          }
+        }
+        @media only screen and (max-width: 767px) {
+          // do something
+          & span {
+            display: none;
+          }
+        }
+      }
+    }
+    .#{$id}__desktop-package-panel-container {
+      padding: 0 2rem;
+      background-color: #000;
+      @media only screen and (max-width: 767px) {
+        & {
+          display: none;
+        }
+      }
+      & .#{$id}__firstSection {
+        padding: 2rem 2rem 0;
+        &::after {
+          content: '';
+          display: block;
+          border-top: 1px solid #dfd3d3;
+          margin-top: 20px;
+        }
+        & .#{$id}__package-section {
+          display: flex;
+          & .#{$id}__package-thumbnail {
+            width: 35%;
+            & img {
+              border: solid 1px yellow;
+              border-radius: 5px;
+            }
+          }
+
+          & .#{$id}__package-details {
+            width: 65%;
+            padding-left: 10px;
+            & .#{$id}__package-header {
+              color: #fff;
+              font-size: 16px;
+              font-weight: 700;
+              margin-bottom: 5px;
+              text-transform: uppercase;
+            }
+            & .#{$id}__package-title {
+              color: #fff;
+              font-size: 16px;
+              margin-bottom: 0px;
+              letter-spacing: -0.035em;
+              color: rgba(255, 255, 255, 0.8);
+            }
+            & .#{$id}__package-price {
+              color: #fff;
+              font-size: 20px;
+              font-weight: bold;
+              margin: 2rem 0;
+              letter-spacing: -0.035em;
+            }
+
+            & .#{$id}__package-transactions {
+              color: #fff;
+              display: flex;
+              & .#{$id}__package-add-to-cart {
+                width: 50%;
+                text-align: center;
+                background: linear-gradient(180deg, #fcd900 50%, #ffba00 100%);
+                color: #000;
+                font-size: 16px;
+                font-weight: 700;
+                padding: 1.5rem 0;
+                border-radius: 10px;
+                margin-right: 20px;
+                cursor: pointer;
+                &::before {
+                  content: '\002B';
+                  font-weight: bolder;
+                  font-size: 15px;
+                  display: inline-block;
+                  margin-right: 5px;
+                  vertical-align: middle;
+                }
+                &:hover {
+                  border: solid 2px #000;
+                  color: #000;
+                  background: #fff;
+                  padding: 1.3rem 0;
+                }
+                @media only screen and (max-width: 800px) {
+                  & {
+                    font-size: 12px;
+                  }
+                }
+              }
+              & .#{$id}__package-add-to-checkout {
+                width: 50%;
+                text-align: center;
+                padding: 1.5rem 0;
+                border: solid 2px #fff;
+                border-radius: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                @media only screen and (max-width: 800px) {
+                  & {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      & .#{$id}__secondSection {
+        padding: 3rem 2rem;
+        & .package-ticks {
+          display: flex;
+          color: #fff;
+          width: 80%;
+          justify-content: center;
+          margin: 0 auto;
+          & .tick-item {
+            width: 25%;
+            text-align: center;
+            & .tick-icon {
+              margin: auto;
+              width: 28px;
+              height: 28px;
+              background-repeat: no-repeat;
+              background-image: url('https://abtest-img-upload.s3.eu-west-2.amazonaws.com/teenyicons_tick-circle-solid.png');
+            }
+            & .tick-text {
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+      & div.#{$id}__toolTipBox {
+        display: inline-block;
+        position: relative;
+        & svg {
+          width: 16px;
+          height: 16px;
+        }
+
+        &:hover {
+          .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+        .tooltiptext {
+          top: 135%;
+          left: 50%;
+          margin-left: -30px;
+          visibility: hidden;
+          position: absolute;
+          width: 136px;
+          background-color: #eeeeee;
+          color: #000;
+          text-align: center;
+          padding: 5px 0;
+          border-radius: 6px;
+          z-index: 1;
+          opacity: 0;
+          transition: opacity 0.6s;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 20%;
+            margin-left: -5px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent #eeeeee transparent;
+          }
+        }
+      }
+      .tedMascotText {
+        font-family: 'Gloria Hallelujah';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 36px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+        color: #fcdd00;
+        -webkit-transform: rotate(6.16deg);
+        transform: rotate(7deg);
+        margin-left: 40%;
+        margin-bottom: -60px;
+        margin-top: -41px;
+        @media only screen and (max-width: 1005px) {
+          // do something
+          & {
+            margin-left: 44%;
+            margin-bottom: -56px;
+          }
+        }
+        @media only screen and (max-width: 1005px) {
+          // do something
+          & {
+            margin-left: 46%;
+            margin-bottom: -53px;
+          }
+        }
+      }
+      .yellowArrow {
+        margin-left: 25%;
+        margin-bottom: -15px;
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .#{$id}__mobile-package-panel-container {
+      background: #000;
+      color: #fff;
+      @media only screen and (min-width: 768px) {
+        // do something
+        & {
+          display: none;
+        }
+      }
+      & .#{$id}__mobile-package-hero {
+        padding: 10px;
+        &::after {
+          content: '';
+          display: block;
+          border-top: 1px solid #dfd3d3;
+          margin-top: 20px;
+        }
+        & .#{$id}__package-thumbnail {
+          & img {
+            border: solid 4px yellow;
+            border-radius: 5px;
+          }
+        }
+        & .#{$id}__package-details {
+          & .#{$id}__package-header {
+            text-transform: uppercase;
+            margin-bottom: 0;
+            font-weight: bold;
+            font-weight: 700;
+            font-size: 18.2994px;
+            line-height: 22px;
+            letter-spacing: -0.035em;
+            margin-top: 13px;
+          }
+
+          & .#{$id}__package-title {
+            margin-bottom: 0px;
+            font-size: 15px;
+            font-weight: 400;
+            font-size: 18.2994px;
+            line-height: 22px;
+            letter-spacing: -0.035em;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 5px;
+          }
+          & .#{$id}__package-price {
+            margin-top: 2rem;
+            font-weight: 700;
+            font-size: 21.9593px;
+            line-height: 27px;
+            letter-spacing: -0.035em;
+          }
+          & .#{$id}__package-add-to-cart {
+            text-align: center;
+            background: linear-gradient(180deg, #fcd900 50%, #ffba00 100%);
+            color: #000;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 1.5rem 0;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            &::before {
+              content: '+';
+              font-weight: bolder;
+              font-size: 15px;
+              display: inline-block;
+              margin-right: 5px;
+              vertical-align: middle;
+            }
+          }
+          & .#{$id}__package-add-to-checkout {
+            text-align: center;
+            padding: 1.5rem 0;
+            border: solid 2px #fff;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      & .#{$id}__secondSection {
+        & .package-ticks {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          flex-wrap: wrap;
+          color: #fff;
+          width: 80%;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          padding-bottom: 15px;
+          padding-top: 10px;
+          margin: 0 auto;
+          & .tick-item {
+            width: 50%;
+            margin-bottom: 10px;
+            text-align: center;
+            & .tick-icon {
+              margin: auto;
+              width: 28px;
+              height: 28px;
+              background-repeat: no-repeat;
+              background-image: url('https://abtest-img-upload.s3.eu-west-2.amazonaws.com/teenyicons_tick-circle-solid.png');
+            }
+            & .tick-text {
+            }
+          }
+        }
+      }
+      & div.#{$id}__toolTipBox {
+        display: inline-block;
+        position: relative;
+        & svg {
+          width: 16px;
+          height: 16px;
+        }
+
+        &:hover {
+          .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+        .tooltiptext {
+          top: -5px;
+          left: 336%;
+          margin-left: -30px;
+          visibility: hidden;
+          position: absolute;
+          width: 136px;
+          background-color: #eeeeee;
+          color: #000;
+          text-align: center;
+          padding: 5px 0;
+          z-index: 1;
+          opacity: 0;
+          transition: opacity 0.6s;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 42%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent #eeeeee transparent transparent;
+          }
+          @media only screen and (max-width: 375px) {
+            & {
+              width: 111px;
+            }
+          }
+        }
+      }
+      .tedMascotText {
+        font-family: 'Gloria Hallelujah';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 36px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+        color: #fcdd00;
+        -webkit-transform: rotate(6.16deg);
+        transform: rotate(7deg);
+        margin-left: 40%;
+        margin-bottom: -59px;
+        margin-top: -41px;
+        @media only screen and (max-width: 650px) {
+          // do something
+          & {
+            margin-left: 44%;
+            margin-bottom: -56px;
+          }
+        }
+        @media only screen and (max-width: 510px) {
+          // do something
+          & {
+            margin-left: 47%;
+            margin-bottom: -53px;
+          }
+        }
+
+        @media only screen and (max-width: 450px) {
+          // do something
+          & {
+            margin-left: 50%;
+            margin-bottom: -53px;
+          }
+        }
+        @media only screen and (max-width: 420px) {
+          // do something
+          & {
+            line-height: 24px;
+          }
+        }
+      }
+      .yellowArrow {
+        margin-left: 25%;
+        margin-bottom: -15px;
+        width: 80px;
+        height: 80px;
+        @media only screen and (max-width: 420px) {
+          // do something
+          & {
+            margin-left: 27%;
+          }
+        }
+      }
+    }
+    & .add-to-cart-dialog {
+      & .header-panel {
+        display: none;
+      }
+
+      & .package-panel {
+        display: none;
+      }
+
+      & .recommended-panel {
+        & .recommended-title {
+          margin: 0 10px;
+          text-align: left;
+          padding: 2rem 0;
+        }
+
+        & .recommended-items {
+          & .products.wrapper {
+            margin-top: 0;
+            margin-bottom: 0;
+            & ul.products.list {
+              margin-top: 0;
+              margin-bottom: 0;
+              overflow: hidden;
+
+              & .slick-track {
+                & .slick-slide {
+                  background-color: #f1ecec;
+                  & > div {
+                    padding: 10px 10px 0;
+                  }
+
+                  & button {
+                    & > span {
+                      &::before {
+                        content: '\002B';
+                        font-weight: bolder;
+                        font-size: 15px;
+                        display: inline-block;
+                        margin-right: 5px;
+                        vertical-align: middle;
+                      }
+                    }
+                  }
+                }
+              }
+
+              & .slick-next {
+                right: 2%;
+                &::before {
+                  background-size: 22px 15px;
+                }
+              }
+              & .slick-prev {
+                left: 2%;
+                &::before {
+                  background-size: 22px 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .grid-relateds {
+      margin-top: 0;
+    }
+  }
+}

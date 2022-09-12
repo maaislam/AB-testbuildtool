@@ -1,0 +1,63 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .sidebar-label > span.icon-filter{
+        display: none;
+    }
+    .column-left{
+        .filter-search{
+            display: flex;
+            font-weight: bold;
+            align-items: center;
+            text-transform: uppercase;
+        }
+        .filter-sortby{
+            display: none;
+        }
+    }
+    .filters-toolbar__sortby{
+        
+        .filter-sortby{
+            border: 1px solid #dadada;
+            padding: 8px 14px 6px 15px;
+            max-width: 100%;
+            border-radius: 4px;
+
+            ul{
+                min-width: 85%;
+                li{
+                    span{
+                        display: block;
+                        padding: 4px 14px 3px 15px;
+                        cursor: pointer;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+                .active{
+                    background-color: #f4f4f4;
+                    color: #66787f;
+                }
+            }
+
+            .label-tab{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        label{
+            text-transform: uppercase;
+        }
+    }
+    .clone-dropdown-mk{
+        top: 9px !important;
+        left: -15px !important;
+    }
+    
+}
+

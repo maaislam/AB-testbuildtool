@@ -18,25 +18,21 @@ const init = (mutation, urlChanged) => {
 
   //fireEvent('Conditions Met');
 
-  // -----------------------------
-  // If control, bail out from here
-  // -----------------------------
-  if (VARIATION == 'control') {
+  //-----------------------------
+  //If control, bail out from here
+  //-----------------------------
+  if (VARIATION === 'control') {
     return;
   }
 
-  // -----------------------------
-  // Write experiment code here
-  // -----------------------------
-  // ...
+  //-----------------------------
+  //Write experiment code here
+  //-----------------------------
+  //...
 
   document.querySelector('.AG085a__rep--container')?.classList.add(`${ID}__hide`);
   if (urlChanged) {
     prepareControl(ID);
-    const mainContainer = document
-      .querySelector('#v7_vue_pdp_detail')
-      ?.closest('.v7__elem--container');
-    mainContainer?.classList.add(`${ID}__mainContainer`);
   }
 
   const { type, target, addedNodes, removedNodes } = mutation;
@@ -76,20 +72,20 @@ const init = (mutation, urlChanged) => {
 export default async () => {
   setup('Experimentation', `AvonGlobal - ${ID}`, shared);
 
-  fireEvent(`Test ID: ${ID} Variation: ${VARIATION} Label: Conditions Met`);
-  // console.log(VARIATION);
-  if (VARIATION == 'control') {
+  fireEvent('Conditions Met', shared);
+  //console.log(VARIATION);
+  if (VARIATION === 'control') {
     //console.log('test');
     const controlInit = (mutation, urlChanged) => {
-      if (urlChanged && location.href.indexOf('basket') !== -1) {
-        fireEvent(`Test ID: ${ID} Variation: ${VARIATION} Label: User clicks the basket`);
+      if (urlChanged && window.location.href.indexOf('basket') !== -1) {
+        fireEvent('User clicks the basket', shared);
       }
     };
     observeDOM('body', controlInit);
     return;
   }
 
-  // get catalog data
+  //get catalog data
   const swiperJs = 'https://m7cdn.io/common/js/swiper.js';
   const swiperCss = 'https://dev.m7cdn.io//common/css/swiper.css';
   initExternalLib(swiperJs, swiperCss);

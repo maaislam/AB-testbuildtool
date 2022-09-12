@@ -1,0 +1,3736 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+  &__limitedTagForSwatchContainer {
+    position: absolute;
+    top: 18px;
+    left: -8px;
+    z-index: 1;
+    width: 40px;
+    padding: 2px 4px;
+    font-size: 0;
+    background: linear-gradient(
+      135deg,
+      #e4edcc 3.23%,
+      #d8aaca 15.47%,
+      #eef1f5 32.54%,
+      #76b6dc 48.36%,
+      #ecedf3 57.2%,
+      #bddae7 65.95%,
+      #a48eb8 75.13%,
+      #b5d9de 85.84%,
+      #b5d9de 95.02%
+    );
+    border-radius: 1px;
+    box-shadow: 0 1px 1px rgba(0 0 0 / 25%);
+    animation: fade-in 1s;
+
+    label {
+      color: #343434;
+      font-weight: 700;
+      font-size: 9px;
+      font-family: 'Gordita Bold';
+      line-height: 10px;
+      text-align: center;
+      mix-blend-mode: color-burn;
+    }
+  }
+
+  &__limitedTag {
+    position: absolute;
+    top: 26px;
+    left: -2px;
+    z-index: 1;
+    width: 40px;
+    padding: 2px 4px;
+    font-size: 0;
+    background: linear-gradient(
+      135deg,
+      #e4edcc 3.23%,
+      #d8aaca 15.47%,
+      #eef1f5 32.54%,
+      #76b6dc 48.36%,
+      #ecedf3 57.2%,
+      #bddae7 65.95%,
+      #a48eb8 75.13%,
+      #b5d9de 85.84%,
+      #b5d9de 95.02%
+    );
+    border-radius: 1px;
+    box-shadow: 0 1px 1px rgba(0 0 0 / 25%);
+
+    label {
+      color: #343434;
+      font-weight: 700;
+      font-size: 9px;
+      font-family: 'Gordita Bold';
+      line-height: 10px;
+      text-align: center;
+      mix-blend-mode: color-burn;
+    }
+  }
+
+  &__limitedTagforImageSection {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &__limitedTagforImage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: scale(-1.2);
+
+    .__limitedLabelforBottom {
+      position: absolute;
+      top: 36px;
+      right: 28px;
+      transform: scale(-0.7);
+      mix-blend-mode: color-burn;
+
+      label {
+        margin-right: 36px;
+        color: #343434;
+        font-size: 13px;
+        font-family: 'Gordita Bold';
+        line-height: 22px;
+        animation: fade-in 1s;
+      }
+    }
+
+    .__limitedLabelforTop {
+      position: absolute;
+      bottom: 36px;
+      left: 28px;
+      transform: scale(-0.7) rotate(180deg);
+      mix-blend-mode: color-burn;
+
+      label {
+        margin-right: 36px;
+        color: #343434;
+        font-size: 13px;
+        font-family: 'Gordita Bold';
+        line-height: 22px;
+        animation: fade-in 1s;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      position: absolute;
+      top: 198px;
+      right: -158px;
+      transform: scale(-0.7) rotate(90deg);
+      mix-blend-mode: color-burn;
+
+      label {
+        margin-right: 36px;
+        color: #343434;
+        font-size: 13px;
+        font-family: 'Gordita Bold';
+        line-height: 22px;
+        animation: fade-in 1s;
+      }
+    }
+
+    .__limitedLabelforRight {
+      position: absolute;
+      top: 224px;
+      left: -158px;
+      transform: scale(-0.7) rotate(270deg);
+      mix-blend-mode: color-burn;
+
+      label {
+        margin-right: 36px;
+        color: #343434;
+        font-size: 13px;
+        font-family: 'Gordita Bold';
+        line-height: 22px;
+        animation: fade-in 1s;
+      }
+    }
+  }
+
+  &__limitedTagOverlay {
+    position: absolute;
+    z-index: 2;
+    width: 700px;
+    height: 105px;
+    transform: rotate(-45.21deg);
+  }
+
+  &__limitedTagOverlay::before {
+    position: absolute;
+    top: 450px;
+    right: 210px;
+    width: 700px;
+    height: 105px;
+    background: linear-gradient(
+      180deg,
+      rgba(255 251 216 / 0%) 0%,
+      #fffef0 51.04%,
+      rgba(217 217 217 / 0%) 100%,
+      rgba(255 251 216 / 0%) 100%
+    );
+    animation: overlay-transition 1s;
+    animation-delay: 1.5s;
+    content: '';
+  }
+
+  &__limitedTagforImage::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      -45deg,
+      #eef1f5 8.69%,
+      #e4edcc 12.35%,
+      #d8aaca 15.47%,
+      #e7dae7 22.63%,
+      #eef1f5 44.88%,
+      #e5eecf 48.35%,
+      #76b6dc 52.18%,
+      #a48eb8 54.73%,
+      #ecedf3 58.3%,
+      #eef1f5 70.54%,
+      #b5d9de 86.86%,
+      #b5d9de 95.02%
+    );
+    animation: transition-in 1s;
+    content: '';
+  }
+
+  & .ProductItem__Wrapper > .ProductItem__ImageWrapper {
+    position: relative;
+    height: 100%;
+  }
+
+  &__limitedTagforImageSectionForCollection {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__limitedTagOverlayForCollection {
+    position: absolute;
+    z-index: 2;
+    width: 700px;
+    height: 105px;
+    transform: rotate(-45.21deg);
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    position: absolute;
+    top: -350px;
+    right: 210px;
+    width: 700px;
+    height: 105px;
+    background: linear-gradient(
+      180deg,
+      rgba(255 251 216 / 0%) 0%,
+      #fffef0 51.04%,
+      rgba(217 217 217 / 0%) 100%,
+      rgba(255 251 216 / 0%) 100%
+    );
+    animation: overlay-transition2 3s;
+    animation-delay: 2s;
+    content: '';
+  }
+  
+  &__limitedTagforImageForCollection {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: scale(-1.2);
+
+    .__limitedLabelforBottom {
+      position: absolute;
+      top: 36px;
+      right: 28px;
+      transform: scale(-0.7);
+      mix-blend-mode: color-burn;
+
+      label {
+        margin-right: 36px;
+        color: #343434;
+        font-size: 13px;
+        font-family: 'Gordita Bold';
+        line-height: 22px;
+        animation: fade-in 1s;
+      }
+    }
+
+    .__limitedLabelforTop {
+      position: absolute;
+      bottom: 36px;
+      left: 28px;
+      transform: scale(-0.7) rotate(180deg);
+      mix-blend-mode: color-burn;
+
+      label {
+        margin-right: 36px;
+        color: #343434;
+        font-size: 13px;
+        font-family: 'Gordita Bold';
+        line-height: 22px;
+        animation: fade-in 1s;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      position: absolute;
+      top: 198px;
+      right: -158px;
+      transform: scale(-0.7) rotate(90deg);
+      mix-blend-mode: color-burn;
+
+      label {
+        margin-right: 36px;
+        color: #343434;
+        font-size: 13px;
+        font-family: 'Gordita Bold';
+        line-height: 22px;
+        animation: fade-in 1s;
+      }
+    }
+
+    .__limitedLabelforRight {
+      position: absolute;
+      top: 224px;
+      left: -158px;
+      transform: scale(-0.7) rotate(270deg);
+      mix-blend-mode: color-burn;
+
+      label {
+        margin-right: 36px;
+        color: #343434;
+        font-size: 13px;
+        font-family: 'Gordita Bold';
+        line-height: 22px;
+        animation: fade-in 1s;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection::before {
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      -45deg,
+      #eef1f5 8.69%,
+      #e4edcc 12.35%,
+      #d8aaca 15.47%,
+      #e7dae7 22.63%,
+      #eef1f5 44.88%,
+      #e5eecf 48.35%,
+      #76b6dc 52.18%,
+      #a48eb8 54.73%,
+      #ecedf3 58.3%,
+      #eef1f5 70.54%,
+      #b5d9de 86.86%,
+      #b5d9de 95.02%
+    );
+    animation: transition-in 2s;
+    content: '';
+  }
+
+  @keyframes transition-in {
+    from {
+      transform: rotate(-10deg);
+    }
+
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes overlay-transition {
+    from {
+      top: -350px;
+    }
+
+    to {
+      top: 450px;
+    }
+  }
+
+  @keyframes overlay-transition2 {
+    from {
+      top: -350px;
+    }
+
+    to {
+      top: 375px;
+    }
+  }
+  
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 28px;
+  }
+
+  & .product-gallery__main .swiper-pagination-bullets {
+    left: 32px !important;
+  }
+
+  & .swiper-container-vertical>.swiper-pagination-bullets {
+    top: 42%;
+  }
+  
+// 1850px to 1920px only for collection page
+  @media (min-width:1850px) and (max-width:1920px) {
+    &__limitedTagforImageForCollection {
+      .__limitedLabelforTop {
+        left: 38px;
+
+        label {
+          margin-right: 26px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        label {
+          margin-right: 26px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 186px;
+        right: -135px;
+
+        label {
+          margin-right: 26px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 204px;
+        left: -135px;
+
+        label {
+          margin-right: 26px;
+        }
+      }
+
+    }
+  }
+
+// 1800px to 1849px only for collection page
+@media (min-width:1800px) and (max-width:1849px) {
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      left: 34px;
+
+      label {
+        margin-right: 24px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      label {
+        margin-right: 24px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 180px;
+      right: -135px;
+
+      label {
+        margin-right: 26px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 198px;
+      left: -135px;
+
+      label {
+        margin-right: 26px;
+      }
+    }
+
+  }
+}
+
+// 1750px to 1799px only for collection page
+@media (min-width:1750px) and (max-width:1799px) {
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 32px;
+      left: 32px;
+
+      label {
+        margin-right: 22px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 32px;
+      right: 32px;
+
+      label {
+        margin-right: 22px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 170px;
+      right: -128px;
+
+      label {
+        margin-right: 22px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 188px;
+      left: -128px;
+
+      label {
+        margin-right: 22px;
+      }
+    }
+
+  }
+}
+
+// 1700px to 1749px only for collection page
+@media (min-width:1700px) and (max-width:1749px) {
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 32px;
+      left: 32px;
+
+      label {
+        margin-right: 18px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 32px;
+      right: 32px;
+
+      label {
+        margin-right: 18px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 164px;
+      right: -128px;
+
+      label {
+        margin-right: 22px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 180px;
+      left: -128px;
+
+      label {
+        margin-right: 22px;
+      }
+    }
+
+  }
+}
+
+// 1684px to 1699px only for collection page
+@media (min-width:1686px) and (max-width:1699px) {
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 32px;
+      left: 32px;
+
+      label {
+        margin-right: 18px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 32px;
+      right: 32px;
+
+      label {
+        margin-right: 18px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 164px;
+      right: -128px;
+
+      label {
+        margin-right: 22px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 180px;
+      left: -128px;
+
+      label {
+        margin-right: 22px;
+      }
+    }
+
+  }
+}
+
+// 1600px to 1685px only for collection page
+  @media (min-width:1630px) and (max-width:1685px) {
+    &__limitedTagforImageForCollection {
+      .__limitedLabelforTop {
+        bottom: 30px;
+        left: 26px;
+
+        label {
+          margin-right: 18px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 30px;
+        right: 26px;
+
+        label {
+          margin-right: 18px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 160px;
+        right: -120px;
+
+        label {
+          margin-right: 18px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 174px;
+        left: -120px;
+
+        label {
+          margin-right: 18px;
+        }
+      }
+
+    }
+  }
+
+// 1600px to 1685px only for collection page
+@media (min-width:1581px) and (max-width:1629px) {
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 28px;
+      left: 24px;
+
+      label {
+        margin-right: 14px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 28px;
+      right: 24px;
+
+      label {
+        margin-right: 14px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 154px;
+      right: -120px;
+
+      label {
+        margin-right: 18px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 166px;
+      left: -120px;
+
+      label {
+        margin-right: 18px;
+      }
+    }
+
+  }
+}  
+
+// 1500px to 1580px only for collection page
+  @media (min-width:1500px) and (max-width:1580px) {
+    &__limitedTagforImageForCollection {
+      .__limitedLabelforTop {
+        bottom: 28px;
+        left: 26px;
+
+        label {
+          margin-right: 8px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 28px;
+        right: 26px;
+
+        label {
+          margin-right: 8px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 144px;
+        right: -98px;
+
+        label {
+          margin-right: 8px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 150px;
+        left: -98px;
+
+        label {
+          margin-right: 8px;
+        }
+      }
+
+    }
+  }
+
+// 1451px to 1499px only for collection page
+@media (min-width:1451px) and (max-width:1499px) {
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 26px;
+      left: 24px;
+
+      label {
+        margin-right: 6px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 26px;
+      right: 24px;
+
+      label {
+        margin-right: 6px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 138px;
+      right: -94px;
+
+      label {
+        margin-right: 6px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 144px;
+      left: -94px;
+
+      label {
+        margin-right: 6px;
+      }
+    }
+
+  }
+}
+
+// 1421px to 1445px only for collection page
+  @media (min-width:1421px) and (max-width:1450px) {
+    &__limitedTagforImageForCollection {
+      .__limitedLabelforTop {
+        bottom: 26px;
+        left: 21px;
+
+        label {
+          margin-right: 6px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 26px;
+        right: 21px;
+
+        label {
+          margin-right: 6px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 135px;
+        right: -94px;
+
+        label {
+          margin-right: 6px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 139px;
+        left: -94px;
+
+        label {
+          margin-right: 6px;
+        }
+      }
+
+    }
+  }
+
+// 1364px to 1420px only for collection page
+  @media (min-width:1364px) and (max-width:1420px) {
+    &__limitedTagforImageForCollection {
+      .__limitedLabelforTop {
+        bottom: 24px;
+        left: 18px;
+
+        label {
+          margin-right: 4px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 24px;
+        right: 18px;
+
+        label {
+          margin-right: 4px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 130px;
+        right: -92px;
+
+        label {
+          margin-right: 4px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 132px;
+        left: -92px;
+
+        label {
+          margin-right: 4px;
+        }
+      }
+
+    }
+  }
+
+// 1330px to 1363px only for collection page
+@media (min-width:1330px) and (max-width:1363px) {
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 18px;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 20px;
+      left: 18px;
+
+      label {
+        margin-right: 4px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 20px;
+      right: 18px;
+
+      label {
+        margin-right: 4px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 130px;
+      right: -96px;
+
+      label {
+        margin-right: 4px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 132px;
+      left: -96px;
+
+      label {
+        margin-right: 4px;
+      }
+    }
+
+  }
+}
+
+// 1280px to 1329px only for collection page
+@media (min-width:1280px) and (max-width:1329px) {
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 18px;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 18px;
+      left: 18px;
+
+      label {
+        margin-right: 8px;
+        font-size: 11px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 18px;
+      right: 18px;
+
+      label {
+        margin-right: 8px;
+        font-size: 11px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 120px;
+      right: -90px;
+
+      label {
+        margin-right: 8px;
+        font-size: 11px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 126px;
+      left: -90px;
+
+      label {
+        margin-right: 8px;
+        font-size: 11px;
+      }
+    }
+
+  }
+}
+
+// 1240px to 1279px only for collection page
+@media (min-width:1240px) and (max-width:1279px) {
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 18px;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 18px;
+      left: 16px;
+
+      label {
+        margin-right: 6px;
+        font-size: 11px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 18px;
+      right: 16px;
+
+      label {
+        margin-right: 6px;
+        font-size: 11px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 120px;
+      right: -90px;
+
+      label {
+        margin-right: 8px;
+        font-size: 11px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 126px;
+      left: -90px;
+
+      label {
+        margin-right: 8px;
+        font-size: 11px;
+      }
+    }
+
+  }
+}
+
+// 1180px to 1239px
+@media (min-width:1180px) and (max-width:1239px) {
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 20px;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 28px;
+      left: 24px;
+
+      label {
+        margin-right: 16px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 28px;
+      right: 24px;
+
+      label {
+        margin-right: 16px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 168px;
+      right: -107px;
+
+      label {
+        margin-right: 8px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 174px;
+      left: -107px;
+
+      label {
+        margin-right: 8px;
+        font-size: 14px;
+      }
+    }
+
+  }
+}
+
+// 1110px to 1179px
+@media (min-width:1110px) and (max-width:1179px) {
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 20px;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 25px;
+      left: 30px;
+
+      label {
+        margin-right: 16px;
+        font-size: 12px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 25px;
+      right: 30px;
+
+      label {
+        margin-right: 16px;
+        font-size: 12px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 155px;
+      right: -110px;
+
+      label {
+        margin-right: 16px;
+        font-size: 12px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 165px;
+      left: -110px;
+
+      label {
+        margin-right: 16px;
+        font-size: 12px;
+      }
+    }
+
+  }
+}
+
+// 1050px to 1109px
+@media (min-width:1050px) and (max-width:1109px) {
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 20px;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 25px;
+      left: 30px;
+
+      label {
+        margin-right: 12px;
+        font-size: 12px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 25px;
+      right: 30px;
+
+      label {
+        margin-right: 12px;
+        font-size: 12px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 146px;
+      right: -112px;
+
+      label {
+        margin-right: 16px;
+        font-size: 12px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 156px;
+      left: -112px;
+
+      label {
+        margin-right: 16px;
+        font-size: 12px;
+      }
+    }
+
+  }
+}
+
+// 1008px to 1049px
+@media (min-width:1008px) and (max-width:1049px) {
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 20px;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 24px;
+      left: 26px;
+
+      label {
+        margin-right: 10px;
+        font-size: 12px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 23px;
+      right: 26px;
+
+      label {
+        margin-right: 10px;
+        font-size: 12px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 136px;
+      right: -100px;
+
+      label {
+        margin-right: 10px;
+        font-size: 12px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 144px;
+      left: -100px;
+
+      label {
+        margin-right: 10px;
+        font-size: 12px;
+      }
+    }
+
+  }
+}
+
+// 1008px to 1239px
+  @media (min-width:1008px) and (max-width:1239px) {
+    &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+      padding: 24px !important;
+    }
+
+    &__limitedTagforImage {
+      .__limitedLabelforTop {
+        bottom: 28px;
+
+        label {
+          margin-right: 14px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 27px;
+        
+        label {
+          margin-right: 14px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 155px;
+        right: -113px;
+        
+        label {
+          margin-right: 14px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 166px;
+        left: -113px;
+
+        label {
+          margin-right: 14px;
+        }
+      }
+    }
+  }
+
+// 985px to 1007px
+  @media (min-width:985px) and (max-width:1007px) {
+    &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+      padding: 38px !important;
+    }
+
+    &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+      padding: 20px;
+    }
+
+    &__limitedTagforImage {
+      .__limitedLabelforTop {
+        bottom: 75px;
+        left: 88px;
+
+        label {
+          margin-right: 100px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 75px;
+        right: 88px;
+        
+        label {
+          margin-right: 100px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 375px;
+        right: -280px;
+        
+        label {
+          margin-right: 100px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 456px;
+        left: -280px;
+
+        label {
+          margin-right: 100px;
+        }
+      }
+    }
+
+    &__limitedTagforImageForCollection {
+      .__limitedLabelforTop {
+        bottom: 25px;
+        left: 20px;    
+
+        label {
+          margin-right: 14px;
+          font-size: 11px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 22px;
+        right: 16px;
+
+        label {
+          margin-right: 14px;
+          font-size: 11px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 130px;
+        right: -102px;
+
+        label {
+          margin-right: 14px;
+          font-size: 11px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 140px;
+        left: -102px;
+
+        label {
+          margin-right: 14px;
+          font-size: 11px;
+          line-height: 8px;
+        }
+      }
+
+    }
+    
+    &__limitedTagOverlay::before {
+      top: 950px;
+      right: -75px;
+      width: 1620px;
+      animation: overlay-transition1000 0.5s;
+    }
+
+    @keyframes overlay-transition1000 {
+      from {
+        top: -450px;
+      }
+  
+      to {
+        top: 950px;
+      }
+    }
+  }
+
+// 951px to 984px
+@media (min-width:951px) and (max-width:984px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 38px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 20px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 75px;
+      left: 88px;
+
+      label {
+        margin-right: 93px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 75px;
+      right: 88px;
+      
+      label {
+        margin-right: 93px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 375px;
+      right: -280px;
+      
+      label {
+        margin-right: 100px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 456px;
+      left: -280px;
+
+      label {
+        margin-right: 100px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 21px;
+      left: 20px;    
+
+      label {
+        margin-right: 12px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 21px;
+      right: 16px;
+
+      label {
+        margin-right: 12px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 125px;
+      right: -102px;
+
+      label {
+        margin-right: 14px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 135px;
+      left: -102px;
+
+      label {
+        margin-right: 14px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+  }
+  
+  &__limitedTagOverlay::before {
+    top: 950px;
+    right: -75px;
+    width: 1620px;
+    animation: overlay-transition1000 0.5s;
+  }
+
+  @keyframes overlay-transition1000 {
+    from {
+      top: -450px;
+    }
+
+    to {
+      top: 950px;
+    }
+  }
+}
+
+// 911px to 950px
+@media (min-width:911px) and (max-width:950px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 28px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 17px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 62px;
+      left: 64px;
+
+      label {
+        margin-right: 80px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 62px;
+      right: 64px;
+      
+      label {
+        margin-right: 80px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 344px;
+      right: -273px;
+      
+      label {
+        margin-right: 82px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 410px;
+      left: -273px;
+
+      label {
+        margin-right: 82px;
+        font-size: 16px;
+      }
+    }
+  }
+  
+  &__limitedTagOverlay::before {
+    top: 950px;
+    right: -75px;
+    width: 1620px;
+    animation: overlay-transition1000 0.5s;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 18.5px;
+      left: 16px;
+
+      label {
+        margin-right: 14px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 18.5px;
+      right: 16px;
+
+      label {
+        margin-right: 14px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 118px;
+      right: -96px;
+
+      label {
+        margin-right: 14px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 128px;
+      left: -96px;
+
+      label {
+        margin-right: 14px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  @keyframes overlay-transition1000 {
+    from {
+      top: -450px;
+    }
+
+    to {
+      top: 950px;
+    }
+  }
+}
+
+// 871px to 910px
+@media (min-width:871px) and (max-width:910px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 28px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 17px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 60px;
+      left: 64px;
+
+      label {
+        margin-right: 72px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 60px;
+      right: 64px;
+      
+      label {
+        margin-right: 72px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 334px;
+      right: -262px;
+      
+      label {
+        margin-right: 76px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 400px;
+      left: -262px;
+
+      label {
+        margin-right: 76px;
+        font-size: 16px;
+      }
+    }
+  }
+  
+  &__limitedTagOverlay::before {
+    top: 950px;
+    right: -75px;
+    width: 1620px;
+    animation: overlay-transition1000 0.5s;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 18.5px;
+      left: 16px;
+
+      label {
+        margin-right: 11px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 18.5px;
+      right: 16px;
+
+      label {
+        margin-right: 11px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 112px;
+      right: -96px;
+
+      label {
+        margin-right: 14px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 122px;
+      left: -96px;
+
+      label {
+        margin-right: 14px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  @keyframes overlay-transition1000 {
+    from {
+      top: -450px;
+    }
+
+    to {
+      top: 950px;
+    }
+  }
+}
+
+// 830px to 870px
+@media (min-width:830px) and (max-width:870px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 28px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 17px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 56px;
+      left: 66px;
+
+      label {
+        margin-right: 62px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 56px;
+      right: 66px;
+      
+      label {
+        margin-right: 62px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 304px;
+      right: -230px;
+      
+      label {
+        margin-right: 62px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 354px;
+      left: -230px;
+
+      label {
+        margin-right: 62px;
+        font-size: 16px;
+      }
+    }
+  }
+  
+  &__limitedTagOverlay::before {
+    top: 950px;
+    right: -75px;
+    width: 1620px;
+    animation: overlay-transition1000 0.5s;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 16.5px;
+      left: 16px;
+
+      label {
+        margin-right: 8px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 16.5px;
+      right: 16px;
+
+      label {
+        margin-right: 8px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 109px;
+      right: -83px;
+
+      label {
+        margin-right: 8px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 115px;
+      left: -83px;
+
+      label {
+        margin-right: 8px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  @keyframes overlay-transition1000 {
+    from {
+      top: -450px;
+    }
+
+    to {
+      top: 950px;
+    }
+  }
+}
+
+// 801px to 829px
+@media (min-width:801px) and (max-width:829px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 28px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 17px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 54px;
+      left: 64px;
+
+      label {
+        margin-right: 58px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 54px;
+      right: 64px;
+      
+      label {
+        margin-right: 58px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 296px;
+      right: -230px;
+      
+      label {
+        margin-right: 62px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 344px;
+      left: -230px;
+
+      label {
+        margin-right: 62px;
+        font-size: 16px;
+      }
+    }
+  }
+  
+  &__limitedTagOverlay::before {
+    top: 950px;
+    right: -75px;
+    width: 1620px;
+    animation: overlay-transition1000 0.5s;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 16.5px;
+      left: 16px;
+
+      label {
+        margin-right: 7px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 16.5px;
+      right: 16px;
+
+      label {
+        margin-right: 7px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 109px;
+      right: -83px;
+
+      label {
+        margin-right: 8px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 115px;
+      left: -83px;
+
+      label {
+        margin-right: 8px;
+        font-size: 10px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  @keyframes overlay-transition1000 {
+    from {
+      top: -450px;
+    }
+
+    to {
+      top: 950px;
+    }
+  }
+}
+
+// 780px to 800px
+@media (min-width:780px) and (max-width:800px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 24px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 14px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 50px;
+      left: 38px;
+
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 50px;
+      right: 38px;
+      
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 278px;
+      right: -231px;
+      
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 320px;
+      left: -231px;
+
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 14.5px;
+      left: 18px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 14px;
+      right: 18px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 98px;
+      right: -74px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 105px;
+      left: -74px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlay::before {
+    top: 670px;
+    right: 62px;
+    width: 1000px;
+    height: 105px;
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 740px to 779px
+@media (min-width:740px) and (max-width:779px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 24px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 14px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 50px;
+      left: 38px;
+
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 50px;
+      right: 38px;
+      
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 278px;
+      right: -231px;
+      
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 320px;
+      left: -231px;
+
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 14.5px;
+      left: 18px;
+
+      label {
+        margin-right: 8px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 14px;
+      right: 18px;
+
+      label {
+        margin-right: 8px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 94px;
+      right: -74px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 101px;
+      left: -74px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlay::before {
+    top: 670px;
+    right: 62px;
+    width: 1000px;
+    height: 105px;
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 700px to 739px
+@media (min-width:700px) and (max-width:739px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 24px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 14px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 50px;
+      left: 38px;
+
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 50px;
+      right: 38px;
+      
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 278px;
+      right: -231px;
+      
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 320px;
+      left: -231px;
+
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 12px;
+      left: 18px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 12px;
+      right: 18px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 90px;
+      right: -66px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 90px;
+      left: -66px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlay::before {
+    top: 670px;
+    right: 62px;
+    width: 1000px;
+    height: 105px;
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 670px to 699px
+@media (min-width:670px) and (max-width:699px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 24px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 14px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 50px;
+      left: 38px;
+
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 50px;
+      right: 38px;
+      
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 278px;
+      right: -231px;
+      
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 320px;
+      left: -231px;
+
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 12px;
+      left: 12px;
+
+      label {
+        margin-right: 2px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 12px;
+      right: 12px;
+
+      label {
+        margin-right: 4px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 80px;
+      right: -62px;
+
+      label {
+        margin-right: 4px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 80px;
+      left: -62px;
+
+      label {
+        margin-right: 4px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlay::before {
+    top: 670px;
+    right: 62px;
+    width: 1000px;
+    height: 105px;
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 620px to 669px
+@media (min-width:620px) and (max-width:669px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 26px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 18px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 50px;
+      left: 48px;
+
+      label {
+        margin-right: 56px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 50px;
+      right: 48px;
+      
+      label {
+        margin-right: 56px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 284px;
+      right: -231px;
+      
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 328px;
+      left: -231px;
+
+      label {
+        margin-right: 60px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 22px;
+      left: 16px;
+
+      label {
+        margin-right: 15px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 22px;
+      right: 16px;
+
+      label {
+        margin-right: 15px;
+        font-size:11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 130px;
+      right: -106px;
+
+      label {
+        margin-right: 16px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 140px;
+      left: -106px;
+
+      label {
+        margin-right: 16px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlay::before {
+    top: 670px;
+    right: 62px;
+    width: 1000px;
+    height: 105px;
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 580px to 619px
+@media (min-width:580px) and (max-width:619px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 26px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 16px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 50px;
+      left: 48px;
+
+      label {
+        margin-right: 54px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 50px;
+      right: 48px;
+      
+      label {
+        margin-right: 54px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 266px;
+      right: -215px;
+      
+      label {
+        margin-right: 60px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 310px;
+      left: -215px;
+
+      label {
+        margin-right: 60px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 18px;
+      left: 18px;
+
+      label {
+        margin-right: 10px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 18px;
+      right: 18px;
+
+      label {
+        margin-right: 10px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 124px;
+      right: -94px;
+
+      label {
+        margin-right: 10px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 130px;
+      left: -94px;
+
+      label {
+        margin-right: 10px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlay::before {
+    top: 670px;
+    right: 62px;
+    width: 1000px;
+    height: 105px;
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 540px to 579px
+@media (min-width:540px) and (max-width:579px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 26px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 18px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 44px;
+      left: 48px;
+
+      label {
+        margin-right: 46px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 44px;
+      right: 48px;
+      
+      label {
+        margin-right: 46px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 240px;
+      right: -185px;
+      
+      label {
+        margin-right: 46px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 276px;
+      left: -185px;
+
+      label {
+        margin-right: 46px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 18px;
+      left: 18px;
+
+      label {
+        margin-right: 4px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 18px;
+      right: 18px;
+
+      label {
+        margin-right: 4px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 114px;
+      right: -81px;
+
+      label {
+        margin-right: 4px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 118px;
+      left: -81px;
+
+      label {
+        margin-right: 4px;
+        font-size: 11px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlay::before {
+    top: 670px;
+    right: 62px;
+    width: 1000px;
+    height: 105px;
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 510px to 539px
+@media (min-width:510px) and (max-width:539px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 26px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 14px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 44px;
+      left: 48px;
+
+      label {
+        margin-right: 38px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 44px;
+      right: 48px;
+      
+      label {
+        margin-right: 38px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 230px;
+      right: -185px;
+      
+      label {
+        margin-right: 46px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 266px;
+      left: -185px;
+
+      label {
+        margin-right: 46px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 16px;
+      left: 24px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 16px;
+      right: 24px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 102px;
+      right: -74px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 108px;
+      left: -72px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlay::before {
+    top: 670px;
+    right: 62px;
+    width: 1000px;
+    height: 105px;
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 480px to 509px
+@media (min-width:480px) and (max-width:509px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 26px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 14px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 40px;
+      left: 50px;
+
+      label {
+        margin-right: 34px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 40px;
+      right: 50px;
+      
+      label {
+        margin-right: 34px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 220px;
+      right: -158px;
+      
+      label {
+        margin-right: 34px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 244px;
+      left: -158px;
+
+      label {
+        margin-right: 34px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 14.5px;
+      left: 18px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 14px;
+      right: 18px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 98px;
+      right: -74px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 105px;
+      left: -74px;
+
+      label {
+        margin-right: 10px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlay::before {
+    top: 670px;
+    right: 62px;
+    width: 1000px;
+    height: 105px;
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 445px to 479px
+@media (min-width:445px) and (max-width:479px) {
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 14px;
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 13px;
+      left: 18px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 13px;
+      right: 18px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 90px;
+      right: -66px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 98px;
+      left: -66px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 431px to 444px
+@media (min-width:431px) and (max-width:444px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 26px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 14px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 35px;
+      left: 40px;
+
+      label {
+        margin-right: 24px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 35px;
+      right: 40px;
+      
+      label {
+        margin-right: 24px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 196px;
+      right: -164px;
+      
+      label {
+        margin-right: 34px;
+        font-size: 14px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 216px;
+      left: -164px;
+
+      label {
+        margin-right: 34px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 13px;
+      left: 14px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 13px;
+      right: 14px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 84px;
+      right: -66px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 88px;
+      left: -66px;
+
+      label {
+        margin-right: 6px;
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlay::before {
+    top: 670px;
+    right: 62px;
+    width: 1000px;
+    height: 105px;
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 416px to 430px iphone 13 pro max
+@media (min-width:416px) and (max-width:430px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 24px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 14px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 33px;
+      left: 32px;
+
+      label {
+        margin-right: 28px;
+        font-size: 13px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 33px;
+      right: 32px;
+      
+      label {
+        margin-right: 28px;
+        font-size: 13px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 189px;
+      right: -146px;
+      
+      label {
+        margin-right: 30px;
+        font-size: 13px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 210px;
+      left: -146px;
+
+      label {
+        margin-right: 30px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 12.5px;
+      left: 14px;
+
+      label {
+        margin-right: 8px;
+        font-size: 7px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 11.5px;
+      right: 14px;
+
+      label {
+        margin-right: 8px;
+        font-size: 7px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 81px;
+      right: -63px;
+
+      label {
+        margin-right: 8px;
+        font-size: 7px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 87px;
+      left: -63px;
+
+      label {
+        margin-right: 8px;
+        font-size: 7px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+// 401px to 415px
+  @media (min-width:401px) and (max-width:415px) {
+    &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+      padding: 24px !important;
+    }
+
+    &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+      padding: 10px;
+    }
+
+    &__limitedTagforImage {
+      .__limitedLabelforTop {
+        bottom: 33px;
+        left: 32px;
+
+        label {
+          margin-right: 33px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 33px;
+        right: 32px;
+        
+        label {
+          margin-right: 33px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 180px;
+        right: -139px;
+        
+        label {
+          margin-right: 34px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 206px;
+        left: -139px;
+
+        label {
+          margin-right: 34px;
+          font-size: 11px;
+        }
+      }
+    }
+
+    &__limitedTagforImageForCollection {
+      .__limitedLabelforTop {
+        bottom: 10.5px;
+        left: 16px;
+
+        label {
+          margin-right: 13px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 9.5px;
+        right: 16px;
+
+        label {
+          margin-right: 13px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 76px;
+        right: -60px;
+
+        label {
+          margin-right: 13px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 85px;
+        left: -60px;
+
+        label {
+          margin-right: 13px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+    }
+
+    &__limitedTagOverlayForCollection::before {
+      height: 50px;
+    }
+  }
+
+// 355px to 370px
+  @media (min-width:355px) and (max-width:370px) {
+    &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+      padding: 22px !important;
+    }
+
+    &__limitedTagforImage {
+      .__limitedLabelforTop {
+        bottom: 28px;
+        left: 26px;
+
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 27px;
+        right: 26px;
+        
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 156px;
+        right: -120px;
+        
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 176px;
+        left: -120px;
+
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+    }
+
+    &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+      padding: 11px;
+    }
+
+    &__limitedTagforImageForCollection {
+      .__limitedLabelforTop {
+        bottom: 8px;
+        left: 12px;
+
+        label {
+          margin-right: 9px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 8px;
+        right: 12px;
+
+        label {
+          margin-right: 9px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 64px;
+        right: -54px;
+
+        label {
+          margin-right: 10px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 72px;
+        left: -54px;
+
+        label {
+          margin-right: 10px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+    }
+
+    &__limitedTagOverlayForCollection::before {
+      height: 50px;
+    }
+  }
+
+// 371px to 380px
+  @media (min-width:371px) and (max-width:385px) {
+    &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+      padding: 24px !important;
+    }
+
+    &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+      padding: 11px;
+    }
+
+    &__limitedTagforImage {
+      .__limitedLabelforTop {
+        bottom: 30px;
+        left: 34px;
+
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 30px;
+        right: 34px;
+        
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 165px;
+        right: -118px;
+        
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 182px;
+        left: -118px;
+
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+    }
+
+    &__limitedTagforImageForCollection {
+      .__limitedLabelforTop {
+        bottom: 9px;
+        left: 14px;
+
+        label {
+          margin-right: 10px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 9px;
+        right: 13px;
+
+        label {
+          margin-right: 10px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 68px;
+        right: -54px;
+
+        label {
+          margin-right: 10px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 75px;
+        left: -54px;
+
+        label {
+          margin-right: 10px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+    }
+
+    &__limitedTagOverlayForCollection::before {
+      height: 50px;
+    }
+  }
+
+// 381px to 385px
+@media (min-width:381px) and (max-width:385px) {
+  &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+    padding: 24px !important;
+  }
+
+  &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+    padding: 11px;
+  }
+
+  &__limitedTagforImage {
+    .__limitedLabelforTop {
+      bottom: 30px;
+      left: 34px;
+
+      label {
+        margin-right: 24px;
+        font-size: 11px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 30px;
+      right: 34px;
+      
+      label {
+        margin-right: 24px;
+        font-size: 11px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 165px;
+      right: -118px;
+      
+      label {
+        margin-right: 24px;
+        font-size: 11px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 182px;
+      left: -118px;
+
+      label {
+        margin-right: 24px;
+        font-size: 11px;
+      }
+    }
+  }
+
+  &__limitedTagforImageForCollection {
+    .__limitedLabelforTop {
+      bottom: 9px;
+      left: 16px;
+
+      label {
+        margin-right: 10px;
+        font-size: 5px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforBottom {
+      top: 9px;
+      right: 16px;
+
+      label {
+        margin-right: 10px;
+        font-size: 5px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforLeft {
+      top: 70px;
+      right: -54px;
+
+      label {
+        margin-right: 10px;
+        font-size: 5px;
+        line-height: 8px;
+      }
+    }
+
+    .__limitedLabelforRight {
+      top: 78px;
+      left: -54px;
+
+      label {
+        margin-right: 10px;
+        font-size: 5px;
+        line-height: 8px;
+      }
+    }
+
+  }
+
+  &__limitedTagOverlayForCollection::before {
+    height: 50px;
+  }
+}
+
+  // 386px to 400px
+  @media (min-width:386px) and (max-width:400px) {
+    &__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+      padding: 24px !important;
+    }
+
+    &__limitedTagforImageSectionForCollection ~ .AspectRatio.AspectRatio--square > .ProductItem__Image.Image--lazyLoaded.Image--fadeIn {
+      padding: 11px;
+    }
+
+    &__limitedTagforImage {
+      .__limitedLabelforTop {
+        bottom: 31px;
+        left: 42px;
+
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 31px;
+        right: 42px;
+        
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 173px;
+        right: -117px;
+        
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 186px;
+        left: -117px;
+
+        label {
+          margin-right: 24px;
+          font-size: 11px;
+        }
+      }
+    }
+
+    &__limitedTagforImageForCollection {
+      .__limitedLabelforTop {
+        bottom: 9.5px;
+        left: 16px;
+
+        label {
+          margin-right: 11.5px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforBottom {
+        top: 9.5px;
+        right: 16px;
+
+        label {
+          margin-right: 11.5px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforLeft {
+        top: 71px;
+        right: -57px;
+
+        label {
+          margin-right: 11.5px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+      .__limitedLabelforRight {
+        top: 79px;
+        left: -57px;
+
+        label {
+          margin-right: 11.5px;
+          font-size: 5px;
+          line-height: 8px;
+        }
+      }
+
+    }
+
+    &__limitedTagOverlayForCollection::before {
+      height: 50px;
+    }
+  }
+}
+
+.sno374 .ProductForm__Option .ColorSwatchList .HorizontalList__Item {
+  position: relative;
+}
+
+.sno374__limitedProduct .product-gallery__container .product-gallery-main-wrapper .swiper-wrapper .swiper-slide-active img {
+  padding: 28px;
+}
+
+.sno374 .swatch-container{
+  position: relative;
+}

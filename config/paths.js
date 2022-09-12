@@ -1,17 +1,17 @@
-const path = require('path');
 
-module.exports = {
-  // Source files
-
-  src: path.resolve(__dirname, `../clients/Drip/kickz/kic4/src`),
-
-  // Production build files
-  build: path.resolve(__dirname, `../clients/Drip/kickz/kic4/public`),
-
-  // Static files that get copied to build folder
-  public: path.resolve(__dirname, `../clients/Drip/kickz/kic4/public`),
-
-  templateHTML: path.resolve(__dirname, '../template.html')
-};
-
-const x = '';
+    const path = require('path');
+    
+    module.exports = {
+      // Source files
+    
+      src: path.resolve(__dirname, `../clients/Brainlabs/TravisPerkins/TP244/src`),
+    
+      // Production build files
+      build: path.resolve(__dirname, `../clients/Brainlabs/TravisPerkins/TP244/public`),
+    
+      // Static files that get copied to build folder
+      public: path.resolve(__dirname, `../clients/Brainlabs/TravisPerkins/TP244/public`),
+    
+      templateHTML: path.resolve(__dirname, '../template.html'),
+    };
+    

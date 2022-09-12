@@ -16,9 +16,14 @@ const getCatalog = async () => {
   const catalogData = await catalogRes.json();
   console.log(resJson);
   console.log(catalogData);
-
+  const repBlock = document.querySelector('[data-item-id="shoppingWithName"]  strong');
   return {
-    repName: resJson.config ? resJson.config.shop_with_my_rep.name : undefined,
+    repName:
+      resJson.config && resJson.config.shop_with_my_rep
+        ? resJson.config.shop_with_my_rep.name
+        : repBlock
+        ? repBlock.innerText
+        : undefined,
     catalogData,
   };
 };

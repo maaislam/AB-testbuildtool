@@ -19,7 +19,7 @@ const events = {
     return this;
   },
   setPropertyId(propertyId) {
-    // If set, will look for tracker matching given property ID
+    //If set, will look for tracker matching given property ID
     this.propertyId = propertyId;
   },
   setTrackerName(trackerName) {
@@ -59,18 +59,17 @@ const events = {
       if (variation == 0) {
         variation = 'Control';
       }
-      label = 'Variation: ' + variation + ' - ' + evLabel;
+      label = `Variation: ${variation} - ${evLabel}`;
     }
 
     if (typeof options === 'object' && options.sendOnce) {
       const eventID = `${category}${action}${label}`;
-      // Check eventCache to see if this has already been sent
+      //Check eventCache to see if this has already been sent
       if (this.eventCache.indexOf(eventID) > -1) {
         return false;
-      } else {
-        // Store event in cache
-        this.eventCache.push(eventID);
       }
+      //Store event in cache
+      this.eventCache.push(eventID);
     }
 
     const self = this;
@@ -82,15 +81,15 @@ const events = {
           action,
           label,
           null,
-          typeof options.nonInteraction !== 'undefined' ? options.nonInteraction : true,
+          typeof options.nonInteraction !== 'undefined' ? options.nonInteraction : true
         ]);
       } else {
         const opts = {
-          nonInteraction: options.nonInteraction ? options.nonInteraction : true,
+          nonInteraction: options.nonInteraction ? options.nonInteraction : true
         };
 
         if (options.opts) {
-          for (let k in options.opts) {
+          for (const k in options.opts) {
             opts[k] = options.opts[k];
           }
         }
@@ -104,12 +103,12 @@ const events = {
         fire(self.trackerName);
       }
     } else {
-      // Set trackerName inside polling condition
+      //Set trackerName inside polling condition
       pollerLite(
         [
           () => {
             try {
-              const trackers = window[self.analyticsReference].getAll();
+              const trackers = window[self.analyticsReference]?.getAll();
 
               if (trackers && trackers.length) {
                 if (self.propertyId) {
@@ -128,7 +127,7 @@ const events = {
             } catch (err) {
               console.error(err);
             }
-          },
+          }
         ],
         () => {
           if (this.sendEvents == true) {
@@ -136,16 +135,16 @@ const events = {
           }
         },
         {
-          wait: 150,
+          wait: 150
         }
       );
     }
-  },
+  }
 };
 export const setup = (category, action, shared) => {
   const { ID, VARIATION, CLIENT, LIVECODE } = shared;
 
-  // set up events
+  //set up events
   events.setDefaultCategory(category);
   events.setDefaultAction(action);
 
@@ -155,7 +154,7 @@ export const setup = (category, action, shared) => {
     events.sendEvents = true;
   }
 
-  // adds document body classlist
+  //adds document body classlist
   document.documentElement.classList.add(ID);
   document.documentElement.classList.add(`${ID}-${VARIATION}`);
 };
@@ -163,11 +162,11 @@ export const setup = (category, action, shared) => {
 export const fireEvent = (label, shared, sendOnce = false) => {
   const { ID, VARIATION } = shared;
 
-  let labelMessage =
-    // eslint-disable-next-line prefer-template
+  const labelMessage =
+    //eslint-disable-next-line prefer-template
     'Test ID: ' + ID + ' Variation: ' + VARIATION + ' Label: ' + label;
 
   events.sendNormalised(labelMessage, {
-    sendOnce: sendOnce,
+    sendOnce
   });
 };

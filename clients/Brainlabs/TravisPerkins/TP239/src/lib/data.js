@@ -7,29 +7,59 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Building Material',
-        link: '/product/building-materials/c/1500029/',
+        link: '/product/building-materials/c/1500029/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
+  },
+  '12XX': {
+    tradeCategory: '',
+    traderIcon: '',
+    searchTerms: [
+      {
+        searchTerm: 'Building Material',
+        link: '/product/building-materials/c/1500029/'
       },
-    ],
+      {
+        searchTerm: 'Bricks & Blocks',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
+      },
+      {
+        searchTerm: 'Standard Block Paving',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
+      },
+      {
+        searchTerm: 'Bagged Aggregates',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
+      },
+      {
+        searchTerm: 'Cement',
+        link: '/product/building-materials/cements/cement/c/1500040/'
+      },
+      {
+        searchTerm: 'Treated Timber',
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '13A': {
     tradeCategory: 'Civil Engineer / Infrastructure',
@@ -39,29 +69,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Building Material',
-        link: '/product/building-materials/c/1500029/',
+        link: '/product/building-materials/c/1500029/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '13C': {
     tradeCategory: 'Drainage Contractor',
@@ -71,61 +101,61 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Plumbing',
-        link: '/product/plumbing/c/1583050/',
+        link: '/product/plumbing/c/1583050/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '13B': {
-    tradeCategory: 'Building Materials',
+    tradeCategory: 'Ground Worker',
     traderIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" viewBox="0 0 36 24" fill="none">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M28 10H34C35.1046 10 36 10.8954 36 12V22C36 23.1046 35.1046 24 34 24H2C0.89543 24 0 23.1046 0 22V12C0 10.8954 0.89543 10 2 10H8V2C8 0.89543 8.89543 0 10 0H26C27.1046 0 28 0.89543 28 2V10ZM24 4H12V10H24V4ZM16 14V20H4V14H16ZM20 14V20H32V14H20Z" fill="#F6AB24"/>
     </svg>`,
     searchTerms: [
       {
-        searchTerm: 'Plumbing',
-        link: '/product/building-materials/c/1500029/',
+        searchTerm: 'Building Materials',
+        link: '/product/building-materials/c/1500029/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '16C': {
     tradeCategory: 'Electrician / Contractor',
@@ -138,29 +168,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Electrical & Lighting',
-        link: '/product/electrical-and-lighting/c/1500571/',
+        link: '/product/electrical-and-lighting/c/1500571/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '14A': {
     tradeCategory: 'Carpenter',
@@ -176,29 +206,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Timber & Sheet Materials',
-        link: '/product/timber-and-sheet-materials/c/1500000/',
+        link: '/product/timber-and-sheet-materials/c/1500000/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '14B': {
     tradeCategory: 'Joiner',
@@ -208,29 +238,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Timber & Sheet Materials',
-        link: '/product/timber-and-sheet-materials/c/1500000/',
+        link: '/product/timber-and-sheet-materials/c/1500000/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '14C': {
     tradeCategory: 'Kitchen fitter',
@@ -242,29 +272,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Kitchens',
-        link: '/product/benchmarx-kitchens/c/1509005/',
+        link: '/product/benchmarx-kitchens/c/1509005/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '17A': {
     tradeCategory: 'Landscaper',
@@ -274,29 +304,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Gardens & Landscaping',
-        link: '/product/gardens-and-landscaping/c/1500098/',
+        link: '/product/gardens-and-landscaping/c/1500098/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '16B': {
     tradeCategory: 'Painter & Decorator',
@@ -306,29 +336,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Decorating & Interiors',
-        link: '/product/decorating-and-interiors/c/1500538/',
+        link: '/product/decorating-and-interiors/c/1500538/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '16A': {
     tradeCategory: 'Plasterer & Drylining',
@@ -338,29 +368,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Plaster & Plasterboard',
-        link: '/product/building-materials/plaster-and-plasterboards/c/1500220/',
+        link: '/product/building-materials/plaster-and-plasterboards/c/1500220/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '15A': {
     tradeCategory: 'Plumbing & Heating',
@@ -370,29 +400,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Plumbing',
-        link: '/product/plumbing/c/1583050/',
+        link: '/product/plumbing/c/1583050/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '15C': {
     tradeCategory: 'Bathroom Installer',
@@ -403,29 +433,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Bathrooms',
-        link: '/product/bathrooms/c/1500376/',
+        link: '/product/bathrooms/c/1500376/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '12A': {
     tradeCategory: 'Shop / Office fitter',
@@ -435,29 +465,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Decorating & Interiors',
-        link: '/product/decorating-and-interiors/c/1500538/',
+        link: '/product/decorating-and-interiors/c/1500538/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '16F': {
     tradeCategory: 'Internal fits',
@@ -467,29 +497,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Decorating & Interiors',
-        link: '/product/decorating-and-interiors/c/1500538/',
+        link: '/product/decorating-and-interiors/c/1500538/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '12J': {
     tradeCategory: 'M&E Contractor',
@@ -502,29 +532,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Electrical & Lighting',
-        link: '/product/electrical-and-lighting/c/1500571/',
+        link: '/product/electrical-and-lighting/c/1500571/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '12E': {
     tradeCategory: 'Repairs & Maintenance',
@@ -540,29 +570,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Building Materials',
-        link: '/product/building-materials/c/1500029/',
+        link: '/product/building-materials/c/1500029/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '12F': {
     tradeCategory: 'Housebuilder / Developer',
@@ -572,29 +602,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Building Materials',
-        link: '/product/building-materials/c/1500029/',
+        link: '/product/building-materials/c/1500029/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '12C': {
     tradeCategory: 'Timber Frame Construction',
@@ -604,29 +634,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Timber & Sheet Materials',
-        link: '/product/timber-and-sheet-materials/c/1500000/',
+        link: '/product/timber-and-sheet-materials/c/1500000/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '12K': {
     tradeCategory: 'Facilities Management / Property Services',
@@ -636,29 +666,29 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Tools & Workwear',
-        link: '/product/tools-and-workwear/c/1500450/',
+        link: '/product/tools-and-workwear/c/1500450/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
   },
   '12D': {
     tradeCategory: 'Construction / Building Contractor',
@@ -668,30 +698,30 @@ export const tradeUserConfig = {
     searchTerms: [
       {
         searchTerm: 'Building Materials',
-        link: '/product/building-materials/c/1500029/',
+        link: '/product/building-materials/c/1500029/'
       },
       {
         searchTerm: 'Bricks & Blocks',
-        link: '/product/building-materials/bricks-and-blocks/c/1500030/',
+        link: '/product/building-materials/bricks-and-blocks/c/1500030/'
       },
       {
         searchTerm: 'Standard Block Paving',
-        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/',
+        link: '/product/gardens-and-landscaping/driveways/block-paving/standard-block-paving/c/1591019/'
       },
       {
         searchTerm: 'Bagged Aggregates',
-        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/',
+        link: '/product/building-materials/aggregates/bagged-aggregates/c/1500050/'
       },
       {
         searchTerm: 'Cement',
-        link: '/product/building-materials/cements/cement/c/1500040/',
+        link: '/product/building-materials/cements/cement/c/1500040/'
       },
       {
         searchTerm: 'Treated Timber',
-        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/',
-      },
-    ],
-  },
+        link: '/product/timber-and-sheet-materials/sawn-timber/treated-timber/c/1500002/'
+      }
+    ]
+  }
 };
 
 export const quickLinksConfigs = [
@@ -700,8 +730,8 @@ export const quickLinksConfigs = [
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59975 5.25H6.125V7H0.875V1.74213H2.625V3.724C4.58238 1.67212 6.81362 0.875 9.625 0.875C14.9406 0.875 19.25 5.18438 19.25 10.5C19.25 15.8156 14.9406 20.125 9.625 20.125C4.30938 20.125 0 15.8156 0 10.5H1.75C1.75 14.8488 5.27625 18.375 9.625 18.375C13.9738 18.375 17.5 14.8488 17.5 10.5C17.5 6.15125 13.9738 2.625 9.625 2.625C7.14 2.625 5.28937 3.31712 3.59975 5.25ZM10.5 9.625H14V11.375H8.75V5.25H10.5V9.625Z" fill="#141414"/>
     </svg>`,
-    link: 'https://www.travisperkins.co.uk/accountDashboard/orderHistory/1/10',
-    color: 'yellow',
+    link: 'https://www.travisperkins.co.uk/accountDashboard/myProducts',
+    color: 'yellow'
   },
   {
     name: 'Check Invoices',
@@ -709,8 +739,8 @@ export const quickLinksConfigs = [
     <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 12.125V2.5H2.5V16.5H12.125V13.875C12.125 12.9081 12.9081 12.125 13.875 12.125H16.5ZM16.1378 13.875H13.875V16.1378L16.1378 13.875ZM2.5 18.25C1.53312 18.25 0.75 17.4669 0.75 16.5V2.5C0.75 1.53312 1.53312 0.75 2.5 0.75H16.5C17.4669 0.75 18.25 1.53312 18.25 2.5V14.2372L14.2372 18.25H2.5ZM5.125 13.875V12.125H10.375V13.875H5.125ZM5.125 10.375V8.625H13.875V10.375H5.125ZM5.125 6.875V5.125H13.875V6.875H5.125Z" fill="#141414"/>
     </svg>`,
     link: 'https://www.travisperkins.co.uk/accountDashboard/balanceInvoices',
-    color: 'white',
-  },
+    color: 'white'
+  }
 ];
 
 export const tickIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">

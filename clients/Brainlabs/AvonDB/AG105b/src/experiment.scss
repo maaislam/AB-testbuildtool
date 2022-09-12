@@ -1,0 +1,151 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+
+
+.#{$id} {
+    &__hide {
+        display: none !important;
+    }
+
+    &__main-container {
+        background-color: $brand-white-secondary;
+    }
+
+    &__logo-container {
+        img {
+            margin: 0;
+        }
+
+        span {
+            margin-left: 26px;
+            @include apply-font('logo');
+        }
+    }
+
+    &__brochureserial {
+        text-align: center;
+        @include flex-container('', '', column);
+        @include apply-font('serial');
+
+        &.icontype-label {
+            color: $brand-red-primary;
+        }
+    }
+
+    &__brochureinfo {
+        width: 40%;
+
+        &>a {
+            &:first-of-type {
+                color: $brand-black-primary;
+            }
+
+            &:last-of-type {
+                @include background-image('purple')
+            }
+
+            &:hover,
+            &:active,
+            &:visited {
+                color: $brand-white-primary;
+                text-decoration: none !important;
+            }
+        }
+
+        &.icontype-label {
+            &>p:first-of-type {
+                color: $brand-red-primary !important;
+            }
+
+            &>a:last-of-type {
+                @include background-image('red')
+            }
+
+        }
+    }
+
+    &__brochuretitle {
+        &.titletype-hero {
+            h3 {
+                display: block;
+                margin: 0;
+                @include apply-font('hero-title');
+            }
+        }
+
+        &.titletype-card {
+            h3 {
+                display: block;
+                margin: 0 0 26px;
+                @include apply-font('card-title');
+            }
+
+        }
+    }
+
+    &__brochurecover {
+        width: 60%;
+        @include drop-shadow;
+    }
+
+    &__brochurepara {
+        min-height: 32px;
+        margin-bottom: 26px;
+        @include apply-font('paragraph');
+    }
+
+    &__brochurebutton {
+        width: 100%;
+        max-width: 120px;
+        height: 42px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        @include flex-container;
+        @include apply-font('button');
+
+    }
+
+    &__herobrochure {
+        padding: 14px 20px;
+
+        .row1 {
+            margin-bottom: 16px;
+            @include flex-container(flex-start);
+
+            &>div:not(:last-child) {
+                margin-right: 24px;
+            }
+        }
+
+        .row2 {
+            @include flex-container;
+
+            &>a:not(:last-child) {
+                width: calc(60% + 64px);
+                margin-right: 24px;
+            }
+
+            h3 {
+                display: none;
+            }
+        }
+    }
+
+
+    &__brochurecard {
+        padding: 14px 20px;
+        background-color: $brand-white-primary;
+        border-top: 4px solid $brand-white-secondary;
+        @include flex-container;
+
+        &>div:first-child {
+            align-self: flex-start;
+        }
+
+        &>*:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}

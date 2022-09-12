@@ -19,7 +19,7 @@ prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], (err, resul
   const sharedJsContent = (experimentId, setVarFlag, clientName) => `export default {
     ID: "${experimentId}",
     VARIATION: "${setVarFlag}",
-    CLIENT: "${clientName}",
+    CLIENT: "${clientName}"
   };`;
 
   const dir = path.resolve(__dirname, `../clients/${clientName}/${siteName}/${experimentId}/`);

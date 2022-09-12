@@ -2,6 +2,10 @@ import prepareControl from './prepareControl';
 import triggerEvent from './triggerEvent';
 
 const clickHandler = (ID, VARIATION, fireEvent) => {
+  const shared = {
+    ID,
+    VARIATION,
+  };
   document.body.addEventListener('click', (e) => {
     prepareControl(ID);
     const target = e.target;
@@ -25,9 +29,7 @@ const clickHandler = (ID, VARIATION, fireEvent) => {
         .classList.contains(`${ID}__invisible`);
       const buttonTitle = target.closest(`.${ID}__menubar-item--Brochures`).querySelector('.title');
 
-      fireEvent(
-        `Test ID: ${ID} Variation: ${VARIATION} Label: User clicks “Show” or “Hide” Brochure`
-      );
+      fireEvent(`User clicks “Show” or “Hide” Brochure`, shared);
       const addToCart = document.querySelector(`.${ID}__basket-section`);
 
       //document.querySelector(`.${ID}__repname .subtitle`).classList.toggle(`${ID}__hide`);
@@ -73,8 +75,8 @@ const clickHandler = (ID, VARIATION, fireEvent) => {
     ) {
       const cartBtn = document.querySelector('[data-item-id="wishlistButton"]');
       triggerEvent(cartBtn);
-      fireEvent('User clicks the basket');
-      fireEvent(`Test ID: ${ID} Variation: ${VARIATION} Label: User clicks the basket`);
+      fireEvent('User clicks the basket', shared);
+      fireEvent(`User clicks the basket`, shared);
     }
   });
 };

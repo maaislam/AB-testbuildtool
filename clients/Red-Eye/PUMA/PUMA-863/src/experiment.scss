@@ -1,0 +1,96 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+body {
+  @media (min-width: 1200px) {
+    .#{$id}__searchStructure {
+      display: none;
+      &.#{$id}__show {
+        display: block;
+      }
+      & .#{$id}__p-search-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: block;
+        margin-top: 0.25rem;
+        margin-left: -25rem;
+
+        & .#{$id}__p-search-dropdown-panel {
+          position: absolute;
+          display: block;
+          padding: 0;
+          color: #181818;
+          background-color: #fff;
+          border-radius: 0.125rem;
+          box-shadow: 0.625rem 0.625rem 1.875rem rgb(0 0 0 / 5%);
+          animation: showPanelDropdown 0.25s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+
+          & .#{$id}__p-search-dropdown-columns {
+            display: flex;
+
+            & .#{$id}__suggestedProducts {
+              & .#{$id}__red {
+                margin-right: 0.5em;
+                color: red;
+              }
+
+              & .#{$id}__visible {
+                display: block;
+              }
+            }
+
+            & .#{$id}__popularProducts {
+              & .p-search-dropdown-section {
+                & a {
+                  & span {
+                    color: black;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1650px) {
+    .#{$id}__searchStructure {
+      & .#{$id}__p-search-dropdown {
+        margin-left: -18.75rem;
+      }
+    }
+  }
+  .#{$id}__searchStructureMobile {
+    display: none;
+    &.#{$id}__show {
+      display: block;
+    }
+    & .#{$id}__p-search-dropdown-columnsMobile {
+      display: flex;
+      flex-direction: column-reverse;
+      background: #fff;
+      & .#{$id}__suggestedProducts {
+        & .#{$id}__red {
+          margin-right: 0.5em;
+          color: red;
+        }
+
+        & .#{$id}__visible {
+          display: block;
+        }
+      }
+
+      & .#{$id}__popularProducts {
+        & .p-search-dropdown-section {
+          & a {
+            & span {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

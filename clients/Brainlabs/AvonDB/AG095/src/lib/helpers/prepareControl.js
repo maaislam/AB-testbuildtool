@@ -34,8 +34,15 @@ const prepareControl = (ID) => {
 
   document.querySelector('[data-item-id="shareBtnContainer"]').classList.add(`${ID}__shareBtn`);
 
+  //PDP page
+  const mainContainer = document
+    .querySelector('#v7_vue_pdp_detail')
+    ?.closest('.v7__elem--container');
+  mainContainer?.classList.add(`${ID}__mainContainer`);
+
   //pdp cart btn
-  const isAttached = location.pathname.indexOf('/avon') !== -1;
+  const isAttached =
+    location.pathname.indexOf('/avon') !== -1 || location.search.indexOf('rep_id') !== -1;
   const basketSection = document.querySelector('.basket_section');
   basketSection?.classList.add(
     `${ID}__basket-section`,

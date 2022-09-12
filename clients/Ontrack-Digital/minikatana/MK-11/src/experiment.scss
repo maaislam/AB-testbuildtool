@@ -1,0 +1,98 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+body {
+  overflow: hidden;
+  #sticky-wrapper {
+    height: auto !important;
+    & .header-bottom {
+      & a.icon-search {
+        display: none;
+      }
+
+      & a.close-search {
+        display: none;
+      }
+
+      & + .search-form {
+        & .header-search__form {
+          position: relative;
+          a {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: 30px;
+            color: #000;
+            z-index: 99;
+          }
+          form {
+            display: flex;
+            width: 100%;
+            padding: 10px;
+            background: #000;
+            position: relative;
+
+            & .input-group-field {
+              width: 100%;
+              border-radius: 15px;
+              padding: 8px 45px;
+              &::placeholder {
+                text-align: center;
+              }
+
+              &::-webkit-input-placeholder {
+                text-align: center;
+              }
+
+              &:-moz-placeholder {
+                /* Firefox 18- */
+                text-align: center;
+              }
+
+              /* stylelint-disable-next-line selector-no-vendor-prefix */
+              &::-moz-placeholder {
+                text-align: center;
+              }
+
+              &:-ms-input-placeholder {
+                text-align: center;
+              }
+            }
+
+            & .#{$id}__searchIcon {
+              position: absolute;
+              top: 50%;
+              transform: translate(0, -50%);
+              display: flex;
+              color: #ccc;
+              left: 25px;
+
+              & svg {
+                width: 30px;
+                height: 30px;
+              }
+            }
+
+            button {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .#{$id}__sticky {
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+  }
+
+  #instafeed {
+    button.slick-prev {
+      right: 0px;
+    }
+    button.slick-next {
+      right: 0px;
+    }
+  }
+}

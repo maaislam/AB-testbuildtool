@@ -1,0 +1,44 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__test {
+        display: block;
+    }
+
+    &__hbsptcontainer {
+        width: 100%;
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .submitted-message {
+            text-align: center;
+        }
+
+        .form-wrapper {
+            width: 100%;
+
+
+            input[type="email"],
+            input[name="confirm_email_address"] {
+                max-width: 100%;
+            }
+
+            input[type="submit"] {
+                display: block;
+                margin: 0 auto;
+                background-color: #ffd520;
+                border-color: #ffd520;
+
+                &:hover {
+                    color: #000 !important;
+                }
+            }
+        }
+
+
+    }
+}

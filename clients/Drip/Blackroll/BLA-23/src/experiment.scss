@@ -1,0 +1,9 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+.#{$id} {
+    &-mobile .order-summary__section__content {
+        height: 238px;
+        padding-top: 10px;
+        overflow-y: scroll;
+    }
+}

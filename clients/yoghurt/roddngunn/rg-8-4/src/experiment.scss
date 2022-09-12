@@ -1,0 +1,24 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .discount-banner{
+        background-color: #E5EEEA;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        margin-top: 10px;
+        a{
+            color: #002716;
+            text-decoration: none;
+            font-size: 10px !important;
+        }
+    }
+    #cart-table > tbody > tr > td.item-details > div.product-list-item > div.item-name-container > div.promo.first{
+        display: none;
+    }
+    .promo-adjustment span{
+        color: #6A9C5A !important;
+    }
+}

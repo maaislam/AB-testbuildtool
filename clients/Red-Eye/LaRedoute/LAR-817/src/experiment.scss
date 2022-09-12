@@ -1,0 +1,79 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__btnAtbWrapper {
+    background: #4285f4;
+    display: none;
+
+    &.#{$id}__show {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 25;
+    }
+    & .lr-button {
+      border: 0;
+      &::before {
+        background-color: #4285f4;
+      }
+    }
+  }
+
+  &__sizeAtbContainer {
+    display: none;
+    width: 100%;
+    text-align: center;
+
+    &.#{$id}__show {
+      display: flex;
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      z-index: 25;
+    }
+
+    & > .#{$id}__btnSize {
+      flex-basis: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      border: solid 1px #ccc;
+      border-radius: 4px 0px 0px 4px;
+
+      & .arrow-hidden {
+        display: none;
+      }
+    }
+
+    & > .#{$id}__btnAtbContainer {
+      flex-basis: 50%;
+
+      .lr-button {
+        border: solid 1px #ccc;
+        border-radius: 0px 4px 4px 0px;
+        &::before {
+          background: #018849;
+        }
+      }
+    }
+  }
+
+  .modal--iceberg[aria-describedby='Chooseasize:'] {
+    & .modal_content {
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+
+  .modal--isOpen.modal--iceberg[aria-describedby='Chooseasize:'] {
+    & .modal_content {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

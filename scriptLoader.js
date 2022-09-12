@@ -7,45 +7,45 @@
     const config = {
       js: {
         id: 'echologyx_script',
-        htmlTag: 'script',
+        htmlTag: 'script'
       },
       bJs: {
         id: 'echologyx_buildScript',
-        htmlTag: 'script',
+        htmlTag: 'script'
       },
 
       css: {
         id: 'echologyx_style',
-        htmlTag: 'style',
-      },
+        htmlTag: 'style'
+      }
     };
 
     fetch(fileLocation)
-      .then(function (response) {
+      .then((response) => {
         return response.text();
       })
-      .then(function (fileData) {
+      .then((fileData) => {
         const newFile = document.createElement(config[fileType].htmlTag);
 
         newFile.id = config[fileType].id;
         newFile.textContent = fileData;
-        if (fileType == 'css') {
+        if (fileType === 'css') {
           document.querySelector(`#${config[fileType].id}`)?.remove();
           document.querySelector('head').append(newFile);
           return;
         }
-        console.log(fileData !== document.querySelector(`#${config[fileType].id}`)?.text);
+        //console.log(fileData !== document.querySelector(`#${config[fileType].id}`)?.text);
         if (fileData !== document.querySelector(`#${config[fileType].id}`)?.text) {
           document.querySelector(`#${config[fileType].id}`)?.remove();
           document.querySelector('head').append(newFile);
         }
       })
-      .catch(function (err) {
-        console.warn('Something went wrong.', err);
+      .catch(() => {
+        //console.warn('Something went wrong.', err);
       });
   };
   fileFetcher(sharedBundle, 'bJs');
-  // Listen for messages
+  //Listen for messages
   socket.addEventListener('message', (event) => {
     if (JSON.parse(event.data).type !== 'ok') return;
     fileFetcher(jsLocation, 'js');

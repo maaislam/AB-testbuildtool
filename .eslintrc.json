@@ -13,12 +13,24 @@
     "import/prefer-default-export": 0,
     "arrow-body-style": 0,
     "import/no-extraneous-dependencies": ["off", { "devDependencies": false }],
-    "spaced-comment": ["error", "always", { "exceptions": ["-", "+"] }],
     "linebreak-style": 0,
     "operator-linebreak": ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
     "padded-blocks": ["error", "never"],
     "indent": "off",
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    "radix": ["error", "as-needed"],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
+    "spaced-comment": ["error", "never"],
+    "implicit-arrow-linebreak": 0,
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": "always",
+        "ObjectPattern": { "multiline": true },
+        "ImportDeclaration": "never",
+        "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+      }
+    ]
   },
   "ignorePatterns": ["dist", "public", "node_modules", "webpack.*", "config/paths.js"],
   "env": {

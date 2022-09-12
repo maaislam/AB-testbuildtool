@@ -1,0 +1,92 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .b-navbar__nav{
+        margin: 0;
+        width: 100%;
+        .b-navbar__item{
+            // border: 1px solid red;
+            flex-grow: 1;
+            // flex-shrink: 5;
+            display: flex;
+            justify-content: flex-start;
+            button{
+                pointer-events: none;
+            }
+
+            &:last-child{
+                flex-grow: 20;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .dropdown-menu{
+                // display: none !important;
+                width: max-content;
+                top: 50px;
+                left: 252px;
+
+                padding: 0;
+                .dropdown-link{
+                    display: none !important;
+                }
+                .#{$id}-dropdown-item{
+                    display: flex;
+                    &-left{
+                        &-content{
+                            padding: 15px;
+                            display: flex;
+                            flex-direction: column;
+                            a{
+                                margin: 10px 0;
+                                color: #000;
+                                text-decoration: none;
+
+                                &:hover{
+                                    color: #007B81;
+                                }
+                            }
+
+                            &--footer{
+                                margin-top: 8px;
+                                border-top: 1px solid rgb(147, 142, 142);
+                                padding: 10px 0;
+                                font-size: 18px;
+                            }
+                        }
+                        
+                        width: 250px;
+                        // border: 1px solid red;
+                    }
+                    &-right{
+                        &-content{
+                            padding: 15px;
+                            display: flex;
+                            flex-direction: column;
+                            a{
+                                margin: 10px 0;
+                                color: #000;
+                                text-decoration: none;
+
+                                &:hover{
+                                    color: #007B81;
+                                }
+                            }
+                        }
+                        width: 250px;
+                        // border: 1px solid red;
+                        background-color: #f7f9fd;
+                    }
+                }
+            }
+        }
+    }
+
+    &-block{
+        display: block!important;
+    }
+    &-none{
+        display: none!important;
+    }
+}

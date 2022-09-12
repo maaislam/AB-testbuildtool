@@ -1,0 +1,72 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__hide {
+        display: none !important;
+    }
+
+    &__firstproduct {
+        max-width: 80px !important;
+        cursor: pointer !important;
+
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 180px;
+            height: 20px;
+            background-image: url('https://cdn-eu.dynamicyield.com/api/9877979/images/612a6cd01972__group_3.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            box-shadow: rgba(50 50 105 / 15%) 0 2px 5px 0, rgba(0 0 0 / 5%) 0 1px 1px 0;
+            transform: translate(-100%, -50%);
+            cursor: pointer;
+            animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            content: '';
+        }
+
+        &.#{$id}__btn-left-aligned {
+            &::before {
+                left: calc(100% + 210px);
+                background-image: url('https://cdn-eu.dynamicyield.com/api/9877979/images/1011c83184746__group_3.svg');
+                animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+        }
+    }
+
+    &__newpdpImage {
+        img {
+            top: 50% !important;
+            left: 70% !important;
+            width: 40px !important;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+
+@keyframes slide-in-left {
+    0% {
+        transform: translate(-1000px, -50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-100%, -50%);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translate(1000px, -50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-100%, -50%);
+        opacity: 1;
+    }
+}

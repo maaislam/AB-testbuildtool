@@ -1,0 +1,109 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+// .#{$id} {
+    // body {
+    //     opacity: 0;
+    // }
+
+        // .b-product_tile_swatches {
+        //     position: unset;
+        //     justify-content: center !important;
+        //     background-color: transparent;
+        //     opacity: 1 !important;
+        // }
+
+        // .b-product_tile_swatches-leftover{
+        //     text-decoration: underline !important;
+        //     border: none;
+        // }
+
+        // // .b-product_tile {
+        // //     padding-bottom: 30px;
+        // //     border-bottom: 0.5px solid #9A9A9A;
+
+        // //     @include media-query(lg) {
+        // //         padding-bottom: 16px;
+        // //     }
+        // // }
+
+        // .b-product_tile-image_link {
+        //     position: relative;
+        // }
+
+        // button.b-product_tile-quick_view.b-button.m-square {
+        //     z-index: 1;
+        // }
+        
+        // .b-product_tile-info_wrapper {
+        //     transition: none !important;
+        // }
+
+        // .m-multiple-colors:hover+.b-product_tile-info_wrapper{
+        //     opacity: 1 !important;
+        //     pointer-events: all !important;
+        // }
+.#{$id} {
+    &__remove-opacity{
+        opacity: 1 !important;
+    }
+
+    &__show-swatches, &__basketball-plp {
+        // body {
+        //     opacity: 1 !important;
+        // }
+
+        .b-product_tile_swatches {
+            position: unset;
+            justify-content: center !important;
+            background-color: transparent;
+            opacity: 1 !important;
+        }
+
+        .m-multiple-colors:hover+.b-product_tile-info_wrapper{
+            opacity: 1 !important;
+            pointer-events: all !important;
+        }
+
+        .b-product_tile_swatches-leftover{
+            width: 22px !important;
+            text-decoration: underline !important;
+            border: none;
+        }
+
+        .b-product_tile-image_link {
+            position: relative;
+        }
+
+        button.b-product_tile-quick_view.b-button.m-square {
+            z-index: 1;
+        }
+        
+        .b-product_tile-info_wrapper {
+            transition: none !important;
+        }
+
+    }
+
+    &__show-swatches {
+        .b-product_tile {
+            padding-bottom: 30px;
+            border-bottom: 0.5px solid #9A9A9A;
+
+            @include media-query(lg) {
+                padding-bottom: 16px;
+            }
+        }
+    }
+
+    &__basketball-plp {
+        .b-carousel-item {
+            padding-bottom: 30px;
+            border-bottom: 0.5px solid #9A9A9A;
+
+            @include media-query(lg) {
+                padding-bottom: 16px;
+            }
+        }
+    }
+}

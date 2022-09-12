@@ -1,0 +1,45 @@
+$media: (xsm:600px,
+    sm: 900px,
+    md:1200px);
+
+@mixin media-query($breakpoint) {
+
+    @each $breakpoints,
+    $size in $media {
+        @if $breakpoint==$breakpoints {
+            @media screen and (max-width: $size) {
+                @content;
+            }
+
+        }
+    }
+}
+
+@mixin pill-button($color, $backcolor, $marginbtm:28px) {
+    display: block;
+    width: 100%;
+    max-width: 290px;
+    margin-bottom: $marginbtm;
+    padding: 12px 32px;
+    color: $color;
+    text-align: center;
+    text-decoration: none;
+    background-color: $backcolor;
+    border-radius: 24px;
+    transition: transform 0.2s ease-in;
+
+    &:hover {
+        font-weight: 500;
+
+        // transform: translateY(-3px);
+    }
+
+    // &:active {
+    //     transform: translateY(0);
+    // }
+}
+
+
+@mixin background-image($image-name-string) {
+    background-image: url('https://ucds.ams3.digitaloceanspaces.com/GCOR011/UK/GCOR011_'+ $image-name-string + '.png');
+}

@@ -1,0 +1,54 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__test {
+        display: block;
+    }
+}
+
+
+
+
+#home-page-body > div.b-hero.b-hero-main > div > div.b-hero__content > div > div > div > div:nth-child(3){
+	display: none;
+}
+#home-page-body > div.b-hero.b-hero-main > div > div.b-hero__content > div > div > div > p{
+	display: none;
+}
+
+#home-page-body > div.b-hero.b-hero-main > div > div.b-hero__content > div > div > div > div:nth-child(4){
+	display:flex;
+	flex-direction:column;
+	align-items:flex-start;
+	padding:16px;
+	gap:16px;
+	background:rgba(0,0,0,0.4);
+	backdrop-filter:blur(12px);
+	border-radius:8px;
+}
+
+#home-page-body > div.b-hero.b-hero-main > div > div.b-hero__content > div > div > div > div:nth-child(4) > div > div{
+	margin: 0 8px;
+}
+
+#home-page-body > div.b-hero.b-hero-main > div > div.b-hero__content > div > div > div > div:nth-child(4) > p{
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 0;
+}
+
+#home-page-body > div.b-hero.b-hero-main > div > div.b-hero__content > div > div > div > div:nth-child(4) > div > div > a{
+	font-size: 15px;
+}
+@media (max-width: 767px){
+	#home-page-body > div.b-hero.b-hero-main > div > div.b-hero__content > div > div > div > div:nth-child(4){
+		background: none;
+	}
+	#home-page-body > div.b-hero.b-hero-main > div > div.b-hero__content > div > div > div > div:nth-child(4) > p{
+		color: #000;
+	}
+	#home-page-body > div.b-hero.b-hero-main > div > div.b-hero__content > div > div > div > div:nth-child(4) > div > div{
+		margin: 0;
+	}
+}

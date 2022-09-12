@@ -12,7 +12,7 @@ const clickHandler = (target, shared, fireEvent) => {
       .querySelector('[class^="Search__SearchOverlay-sc-"]')
       ?.classList.add(`${ID}__opacity-60`);
     document.querySelector('[data-test-id="header-search-button"]')?.click();
-    fireEvent(`User clicks search`, shared);
+    fireEvent('User clicks search', shared);
   } else if (targetMatched(`.${ID}__quicklink--yellow`)) {
     fireEvent('Customer clicks Order History CTA', shared);
   } else if (targetMatched(`.${ID}__quicklink--white`)) {
