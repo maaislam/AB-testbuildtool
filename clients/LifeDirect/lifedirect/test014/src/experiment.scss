@@ -1,0 +1,211 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable font-family-name-quotes */
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__hide {
+        display: none !important;
+    }
+
+    &__covercard {
+        width: 100%;
+        min-width: 600px;
+        margin: 0 auto;
+        padding: 24px;
+
+        @include media-query(sm) {
+            min-width: 300px;
+            margin: 0 auto 16px;
+            padding: 0;
+        }
+
+        &--title,
+        &--subtitle {
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        &--seperator {
+            margin: 10px 0;
+            color: $brand-black-primary;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+
+    &__coverselector {
+        position: relative;
+        width: 100%;
+        padding: 16px 20px 16px 40px;
+        border: 1px solid $brand-white-secondary;
+
+
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 4px;
+            height: calc(100% + 2px);
+            background-color: $brand-white-primary;
+            transform: translateY(-50%);
+            content: '';
+
+        }
+
+        &.stepped {
+            &::before {
+                background-color: $brand-blue-primary;
+            }
+        }
+
+        &.level {
+            &::before {
+                background-color: $brand-green-primary;
+            }
+        }
+
+        .row-1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .column-1 {
+                @include media-query(sm) {
+                    margin-bottom: 16px;
+                }
+            }
+
+            @include media-query(sm) {
+                flex-direction: column;
+            }
+        }
+
+        &--title {
+            margin: 0 10px 10px;
+            color: $brand-black-primary;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        &--btn {
+            position: relative;
+            display: block;
+            padding: 6px 20px;
+            color: $brand-white-primary;
+            font-weight: 900;
+            font-size: 1.0rem;
+            font-family: Titillium Web;
+            text-align: center;
+            background-color: $brand-pink;
+            cursor: pointer;
+
+            span {
+                display: block;
+                width: 120px;
+            }
+
+            span.selected {
+                display: none;
+            }
+
+            &.selected {
+                background-color: $brand-brown;
+
+                span.select {
+                    display: none;
+                }
+
+                span.selected {
+                    display: block;
+                    padding-left: 20px;
+
+                    &::before {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        width: 20px;
+                        height: 20px;
+                        background-image: url('https://www.lifedirect.co.nz/scripts/src/compare/assets/icons/icon-tick-offers.svg');
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-size: contain;
+                        transform: translate(20px, -50%);
+                        content: '';
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: $brand-brown;
+            }
+        }
+    }
+
+    &__coverusp {
+        display: flex;
+        align-items: center;
+
+        &--icon {
+            width: 12px;
+            height: 16px;
+            margin-right: 8px;
+            background-image: url('https://www.lifedirect.co.nz/scripts/src/compare/assets/icons/icon-tick-offers.svg');
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: contain;
+        }
+    }
+
+    &__levelcoversubs {
+        display: flex;
+        flex-direction: column;
+        margin: 24px 0;
+        text-align: center;
+
+        &--title {
+            font-weight: 700;
+        }
+
+        &--agegroups {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 16px;
+
+            &>span {
+                padding: 6px 16px;
+                border: 1px solid $brand-black-primary;
+                cursor: pointer;
+
+                &.selected {
+                    color: $brand-white-primary;
+                    background-color: $brand-black-primary;
+                }
+            }
+        }
+    }
+
+    &__aboutcovers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 24px 0 0;
+        color: $brand-green-secondary;
+        font-size: 0.875rem;
+        cursor: pointer;
+
+        span {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+$brand-white-primary:#fff;
+$brand-white-secondary:#e6edee;
+$brand-white-tertiary:#adc0bc;
+$brand-black-primary:#195151;
+$brand-blue-primary:#1bd8ff;
+$brand-green-primary:#1cb495;
+$brand-green-secondary:#16ae8f;
+;
+$brand-pink:#ee0872;
+$brand-brown:#50001e;
+$media: (xsm:360px,
+    sm: 768px,
+    md: 850px,
+    lg: 1024px,
+);
+
+@mixin media-query($breakpoint) {
+
+    @each $breakpoints,
+    $size in $media {
+        @if $breakpoint==$breakpoints {
+            @media screen and (max-width: $size) {
+                @content;
+            }
+        }
+    }
+}
