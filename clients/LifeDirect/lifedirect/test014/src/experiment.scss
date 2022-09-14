@@ -60,13 +60,13 @@
 
         &.stepped {
             &::before {
-                background-color: $brand-blue-primary;
+                background-color: $brand-green-primary;
             }
         }
 
         &.level {
             &::before {
-                background-color: $brand-green-primary;
+                background-color: $brand-blue-primary;
             }
         }
 
@@ -87,10 +87,17 @@
         }
 
         &--title {
-            margin: 0 10px 10px;
+            display: flex;
+            align-items: center;
+            margin: 0 10px 10px 0;
             color: $brand-black-primary;
             font-weight: 700;
             font-size: 1.2rem;
+
+            span {
+                display: flex;
+                margin-right: 10px;
+            }
         }
 
         &--btn {
@@ -107,7 +114,7 @@
 
             span {
                 display: block;
-                width: 120px;
+                width: 116px;
             }
 
             span.selected {
@@ -122,21 +129,13 @@
                 }
 
                 span.selected {
-                    display: block;
-                    padding-left: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
 
-                    &::before {
-                        position: absolute;
-                        top: 50%;
-                        left: 0;
-                        width: 20px;
-                        height: 20px;
-                        background-image: url('https://www.lifedirect.co.nz/scripts/src/compare/assets/icons/icon-tick-offers.svg');
-                        background-repeat: no-repeat;
-                        background-position: center bottom;
-                        background-size: contain;
-                        transform: translate(20px, -50%);
-                        content: '';
+
+                    svg {
+                        margin-top: 4px;
                     }
                 }
             }

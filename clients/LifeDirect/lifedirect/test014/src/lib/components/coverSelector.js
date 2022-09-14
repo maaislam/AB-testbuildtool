@@ -1,4 +1,5 @@
 /*eslint-disable object-curly-newline */
+import { checkMark } from '../data';
 import coverUsp from './coverUsp';
 
 const coverSelector = (id, coverData, children) => {
@@ -23,7 +24,7 @@ const coverSelector = (id, coverData, children) => {
                 <div class="${id}__coverselector--btn"
                  data-action="${coverBtnAction}">
                     <span class="select">${coverBtnText}</span>
-                    <span class="selected">SELECTED</span>
+                    <span class="selected">${checkMark}<span>SELECTED</span></span>
                  </div>
             </div>
         </div>
