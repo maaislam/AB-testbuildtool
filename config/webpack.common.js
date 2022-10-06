@@ -45,7 +45,7 @@ module.exports = {
   module: {
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
-      { test: /\.js$/, use: ['babel-loader'] }
+      { test: /\.(jsx|js)$/, use: ['babel-loader'] }
 
       // Images: Copy image files to build folder
       // { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
@@ -54,7 +54,6 @@ module.exports = {
       // { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
     ]
   },
-
   resolve: {
     modules: [paths.src, 'node_modules'],
     extensions: ['.js', '.jsx', '.json'],

@@ -8,7 +8,7 @@ import { hideControlElems } from './helpers/setControl';
 import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
-const DOM_RERENDER_DELAY = 500;
+const DOM_RERENDER_DELAY = 20;
 
 const init = () => {
   const controlSelector = document.getElementById('life.premiumStructure');

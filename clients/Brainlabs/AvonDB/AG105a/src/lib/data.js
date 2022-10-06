@@ -13,7 +13,7 @@ export const iconCongig = {
 
 export const brochureDescription = {
   1: '${Brochure description 1}',
-  2: '',
+  2: '${Brochure description 2}',
   3: '${Brochure description 3}',
   4: '${Brochure description 4}',
   5: '${Brochure description 5}',

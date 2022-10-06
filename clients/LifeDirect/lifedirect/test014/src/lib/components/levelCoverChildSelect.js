@@ -4,7 +4,7 @@ const levelCoverChildSelect = (id) => {
         <div class="${id}__levelcoversubs--title">Select how long you would like to have this cover for.</div>
         <div class="${id}__levelcoversubs--agegroups">
             <span class="${id}__agegroup"
-                data-agegroup="LevelTenYears">To age 10</span>
+                data-agegroup="LevelTenYears">10 years</span>
             <span class="${id}__agegroup"
                 data-agegroup="LevelToAgeSixtyFive">To age 65</span>
             <span class="${id}__agegroup"

@@ -4,7 +4,7 @@ $media: (xsm:360px,
     lg: 1024px,
 );
 
-@mixin mediaQuery($breakpoint) {
+@mixin media-query($breakpoint) {
 
     @each $breakpoints,
     $size in $media {

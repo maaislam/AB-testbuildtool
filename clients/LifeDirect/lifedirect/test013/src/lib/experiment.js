@@ -1,0 +1,30 @@
+import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
+import shared from './shared/shared';
+
+const { ID, VARIATION } = shared;
+
+export default () => {
+  setup('Experimentation', `LifeDirect - ${ID}`, shared);
+
+  console.log(ID);
+  //-----------------------------
+  //If control, bail out from here
+  //-----------------------------
+  //if (VARIATION == 'control') {
+
+  //}
+
+  //-----------------------------
+  //Write experiment code here
+  //-----------------------------
+  //...
+
+  const imgContainer = document.querySelector('.quote-continue');
+  imgContainer.classList.add(`${ID}__quote-continue`);
+
+  const title = imgContainer.querySelector('.quote-continue__headline');
+  const subtitle = imgContainer.querySelector('.quote-continue__subheadline');
+
+  title.innerHTML = 'MAKING<br>INSURANCE<br>EASY';
+  subtitle.innerText = "Compare and buy from NZ's top insurers";
+};

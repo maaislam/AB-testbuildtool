@@ -202,9 +202,12 @@ const init = () => {
 
       element.dataset.dymId = `email_dym_${that.CurrentId}`;
       console.log(element);
+      that.ElementChange(element);
+      console.log('change');
       //Onchange of the text field itself
       element.addEventListener('change', (event) => {
         that.ElementChange(element);
+        console.log('change');
       });
     },
     ElementChange(element) {
@@ -259,7 +262,7 @@ const init = () => {
         dymElem.innerHTML = `Did you mean: <a href='#' id='${element.dataset.dymId}'>${emailInfo.Start}@${dym.Correct}</a>`;
 
         element.parentNode.insertBefore(dymElem, element.nextSibling);
-        console.log(element, 'Prince Kumar');
+        console.log(element, 'element');
         document.getElementById(element.dataset.dymId).addEventListener('click', function (event) {
           dymElem.remove();
 
@@ -381,5 +384,6 @@ const init = () => {
 
 export default () => {
   const emailField = document.querySelector('._3y8gsIkX_dk5l4PdRAM3GR[type="email"]');
+  console.log('email field', emailField);
   emailField.addEventListener('blur', init);
 };

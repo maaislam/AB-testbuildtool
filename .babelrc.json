@@ -1,5 +1,19 @@
 {
-  "presets": ["@babel/preset-env"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": "defaults"
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic" // defaults to classic
+        // "importSource": "custom-jsx-library" // defaults to react (only in automatic runtime)
+      }
+    ]
+  ],
   "plugins": [
     ["@babel/plugin-proposal-class-properties"],
     ["@babel/plugin-transform-runtime"],
