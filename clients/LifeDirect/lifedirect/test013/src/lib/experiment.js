@@ -10,9 +10,12 @@ export default () => {
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
-  //if (VARIATION == 'control') {
 
-  //}
+  fireEvent('Conditions Met', shared);
+
+  if (VARIATION === 'control') {
+    return;
+  }
 
   //-----------------------------
   //Write experiment code here
@@ -22,9 +25,18 @@ export default () => {
   const imgContainer = document.querySelector('.quote-continue');
   imgContainer.classList.add(`${ID}__quote-continue`);
 
-  const title = imgContainer.querySelector('.quote-continue__headline');
-  const subtitle = imgContainer.querySelector('.quote-continue__subheadline');
+  if (VARIATION === '1') {
+    //change button text
+    const compareBtn = imgContainer.querySelector(
+      '.quote-continue--button__container>a>span:first-child'
+    );
+    compareBtn.innerText = 'GET STARTED NOW';
+    return;
+  }
 
-  title.innerHTML = 'MAKING<br>INSURANCE<br>EASY';
-  subtitle.innerText = "Compare and buy from NZ's top insurers";
+  // const title = imgContainer.querySelector('.quote-continue__headline');
+  // const subtitle = imgContainer.querySelector('.quote-continue__subheadline');
+
+  // title.innerHTML = 'MAKING<br>INSURANCE<br>EASY';
+  // subtitle.innerText = "Compare and buy from NZ's top insurers";
 };

@@ -1,5 +1,5 @@
 export default {
     ID: "test013",
-    VARIATION: "2",
+    VARIATION: "1",
     CLIENT: "LifeDirect",
   };
