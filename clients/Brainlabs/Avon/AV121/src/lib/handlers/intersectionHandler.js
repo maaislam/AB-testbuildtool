@@ -10,4 +10,4 @@ export const intersectionHandler = (entry) => {
   }
 };
 
-//export const deleteHandler = () => {};
+export const deleteHandler = () => {};

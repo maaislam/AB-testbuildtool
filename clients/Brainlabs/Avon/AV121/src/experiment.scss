@@ -42,6 +42,12 @@
             min-width: 180px;
         }
 
+        &[data-type="single-add"] {
+            @include media-query(sm) {
+                width: calc(100% + 50px);
+            }
+        }
+
         &[data-type="multi-add"] {
             padding: 12px 44px;
             font-weight: 700;
@@ -49,14 +55,14 @@
 
         &.see-all-sample {
             width: max-content;
-            margin: 24px 0 0 auto;
+            margin: 24px 50px 0 auto;
             padding: 12px 44px;
             color: $black-primary;
             text-decoration: none;
             background-color: $white-primary;
             border: 1px solid $black-primary;
 
-            @include media-query(sm) {
+            @include media-query(lg) {
                 margin: 24px auto 0
             }
 
@@ -97,13 +103,17 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            padding: 0 34px 24px;
+            padding: 0 50px 24px;
             background-color: $white-secondary;
 
-            @include media-query(sm) {
+            @include media-query(lg) {
                 flex-direction: column;
-                padding: 0 16px 16px;
+                padding: 0 12px 16px;
                 text-align: center;
+            }
+
+            @include media-query(sm) {
+                align-items: initial;
             }
 
             h4 {
@@ -148,11 +158,10 @@
 
             .col1 {
                 align-self: flex-start;
-                margin-right: 30px;
+                margin-right: auto;
 
                 @include media-query(sm) {
                     margin-right: 15px;
-
                 }
             }
 
@@ -192,17 +201,17 @@
 
             .col3 {
                 width: 100%;
-                max-width: 50px;
+                max-width: 40px;
                 height: 50px;
                 margin-left: 10px;
 
                 @include media-query(sm) {
+                    max-width: 50px;
                     margin-left: 30px;
+
                 }
 
-                @include media-query(xsm) {
-                    margin-left: 10px;
-                }
+
 
                 svg.icon {
                     display: block;

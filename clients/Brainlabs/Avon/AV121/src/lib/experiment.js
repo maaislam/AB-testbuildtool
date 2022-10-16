@@ -2,8 +2,8 @@
 
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import sampleUpSell from './components/sampleUpSell';
-import { intersectionHandler } from './handlers';
-import clickHandler from './helpers/clickHandler';
+import { intersectionHandler } from './handlers/intersectionHandler';
+import clickHandler from './handlers/clickHandler';
 import { realtimeRulesV1, realtimeRulesV2 } from './helpers/duApiRules';
 import getDySampleData from './helpers/getDySampleData';
 import getShopifyData from './helpers/getShopifyData';

@@ -16,7 +16,7 @@ const productRow = (id, data) => {
   };
 
   const htmlStr = `
-    <div class="${id}__sampleupsell--row" data-title='${title.toLowerCase().split(' ').join('-')}'>
+    <div class="${id}__sampleupsell--row" data-title='${url}'>
         <div class="col1">${image(id, {
           title,
           featured_image,
