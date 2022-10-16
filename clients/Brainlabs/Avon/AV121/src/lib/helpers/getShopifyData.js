@@ -1,10 +1,16 @@
-const getShopifyData = async (renderItemUrls) => {
+import { dyEventTrigger } from './utils';
+
+const getShopifyData = async (renderItemUrls, shared) => {
   const promises = renderItemUrls.map((item) => fetch(item.fetchUrl));
   const shopifyResponse = await Promise.all(promises);
   const shopifyData = await Promise.all(shopifyResponse.map((response) => response.json()));
 
   const renderData = shopifyData.map((data, index) => {
-    const { featured_image, price, title, url, variants } = data;
+    const { available, featured_image, price, title, url, variants } = data;
+
+    if (!available) {
+      dyEventTrigger(`Product with url: ${url} is out of stock`, shared);
+    }
 
     const variantToUse =
       variants.length === 1

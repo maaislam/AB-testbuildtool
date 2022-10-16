@@ -1,4 +1,5 @@
 /*eslint-disable implicit-arrow-linebreak */
+
 export const formatPrice = (amount, code = 'en-GB', currency = 'GBP') =>
   new Intl.NumberFormat(code, {
     style: 'currency',
@@ -54,3 +55,14 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 };
 
 export const isMobile = () => window.matchMedia('(max-width: 991px)').matches;
+
+export const dyEventTrigger = (label, shared) => {
+  const { ID, VARIATION } = shared;
+  window.DY.API('event', {
+    name: 'Experimentation',
+    properties: {
+      type: `${ID}-${VARIATION}`,
+      value: `Test ID: ${ID} Variation: ${VARIATION} Label: ${label}`
+    }
+  });
+};

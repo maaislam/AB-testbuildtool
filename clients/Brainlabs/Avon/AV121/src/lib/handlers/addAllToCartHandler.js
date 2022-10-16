@@ -4,7 +4,7 @@ import checkmark from '../components/checkmarck';
 
 import { addToCart, emitDYAddToCart } from '../helpers/addToCart';
 
-const addAllToCartHandler = (id, target, fireEvent, shared) => {
+const addAllToCartHandler = async (id, target, fireEvent, shared) => {
   if (!target.dataset.id) return;
   const payloads = target.dataset.id.split(',').map((item) => {
     return {
@@ -18,22 +18,22 @@ const addAllToCartHandler = (id, target, fireEvent, shared) => {
   const sampleContainer = target.closest(`.${id}__sampleupsell`);
   sampleContainer.classList.add('adding');
   target.innerHTML = 'adding';
-  addToCart(addAllPayloads)
-    .then((res) => {
-      fireEvent('', shared);
-      target.innerHTML = 'Added';
-      return res;
-    })
-    .then(({ items }) => {
-      items.forEach((item) => emitDYAddToCart(item, 1));
-      fireEvent(`User adds ${items.length} products using the top CTA`, shared);
-      setTimeout(() => {
-        sampleContainer.classList.remove('adding');
-        target.innerHTML = `${checkmark} Offer complete`;
-        window.location.reload();
-      }, 1000);
-    })
-    .catch((err) => console.error(err));
+
+  try {
+    const response = await addToCart(addAllPayloads);
+    target.innerHTML = 'Added';
+    const { items } = response;
+    items.forEach((item) => emitDYAddToCart(item, 1));
+    fireEvent(`User adds ${items.length} products using the top CTA`, shared);
+    setTimeout(() => {
+      sampleContainer.classList.remove('adding');
+      target.innerHTML = `${checkmark} Offer complete`;
+      window.location.reload();
+    }, 1000);
+  } catch (error) {
+    fireEvent(`Add all to cart failed: ${error}`, shared);
+    window.location.reload();
+  }
 };
 
 export default addAllToCartHandler;

@@ -41,7 +41,7 @@ const init = async () => {
   anchorElem.insertAdjacentElement('beforeend', sampleUpsellContainer);
   try {
     const renderItemUrls = await getDySampleData(ID, strategyId, apiRules);
-    const renderData = await getShopifyData(renderItemUrls);
+    const renderData = await getShopifyData(renderItemUrls, shared);
 
     //console.log('final render data', renderData);
 
