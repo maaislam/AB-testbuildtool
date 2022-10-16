@@ -41,7 +41,7 @@
         }
       })
       .catch(() => {
-        //console.warn('Something went wrong.', err);
+        console.warn('Something went wrong.', err);
       });
   };
   fileFetcher(sharedBundle, 'bJs');

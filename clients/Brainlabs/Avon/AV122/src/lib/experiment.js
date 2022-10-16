@@ -1,6 +1,6 @@
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import giftQuestion from './components/giftQuestion';
-import { setCookie } from './helpers/cookie';
+import { deleteCookie, setCookie } from './helpers/cookie';
 import obsIntersection from './helpers/observeIntersection';
 import shared from './shared/shared';
 
@@ -9,7 +9,7 @@ const { ID, VARIATION } = shared;
 export default () => {
   setup('Experimentation', `Avon - ${ID}`, shared);
 
-  const isMobile = () => window.DY.deviceInfo.type === 'smartphone';
+  const isMobile = () => window.matchMedia('(max-width: 700px)').matches;
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
@@ -49,14 +49,17 @@ export default () => {
     elm.insertAdjacentHTML('afterend', giftQuestion(ID));
     obsIntersection(elm, 0.5, intersectionCallback);
   });
-  document.querySelector(`.${ID}__container`).addEventListener(
-    'click',
-    () => {
-      fireEvent('Customer selects the checkbox', shared);
-      setCookie(`${ID}__giftselected`, true);
-    },
-    {
-      once: true
-    }
-  );
+
+  const giftChekbox = document.querySelectorAll(`#${ID}__giftcheckbox`);
+
+  giftChekbox.forEach((box) => {
+    box.addEventListener('click', () => {
+      if (box.checked === true) {
+        fireEvent('Customer selects the checkbox', shared);
+        setCookie(`${ID}__giftselected`, true);
+      } else {
+        deleteCookie(`${ID}__giftselected`);
+      }
+    });
+  });
 };

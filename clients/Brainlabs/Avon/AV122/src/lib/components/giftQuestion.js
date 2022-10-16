@@ -1,7 +1,7 @@
 const giftQuestion = (id) => {
   const htmlStr = `<div class="${id}__container">
         <label class="${id}__giftcheckbox-label">
-            <input type="radio"
+            <input type="checkbox"
                 id="${id}__giftcheckbox"
                 name="${id}__giftcheckbox">
             <span class="checkmark"></span>

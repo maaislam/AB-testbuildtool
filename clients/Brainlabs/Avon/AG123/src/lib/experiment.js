@@ -1,6 +1,6 @@
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import giftQuestion from './components/giftQuestion';
-import { setCookie } from './helpers/cookie';
+import { deleteCookie, setCookie } from './helpers/cookie';
 import obsIntersection from './helpers/observeIntersection';
 import shared from './shared/shared';
 
@@ -51,14 +51,13 @@ export default () => {
   });
 
   //click handler
-  document.querySelector(`.${ID}__container`).addEventListener(
-    'click',
-    () => {
+  const checkbox = document.getElementById(`${ID}__giftcheckbox`);
+  checkbox.addEventListener('click', () => {
+    if (checkbox.checked === true) {
       fireEvent('Customer selects the checkbox', shared);
       setCookie(`${ID}__giftselected`, true);
-    },
-    {
-      once: true
+    } else {
+      deleteCookie(`${ID}__giftselected`);
     }
-  );
+  });
 };

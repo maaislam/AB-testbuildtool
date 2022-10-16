@@ -1,6 +1,6 @@
 $media: (xsm:360px,
-    sm: 768px,
-    md: 850px,
+    sm: 600px,
+    md: 991px,
     lg: 1024px,
 );
 
@@ -15,3 +15,14 @@ $media: (xsm:360px,
         }
     }
 }
+
+
+$brand-primary:#7F28C4;
+$brand-secondary:#6A17AD;
+$brand-gray-primary:#F5F5F5;
+$brand-gray-secondary:#9E9E9E;
+$brand-gray-tertiary:#e3e3e3;
+$white-primary:#fff;
+$white-secondary:#F8F6F7;
+$black-primary:#000;
+$black-secondary:#212121;
