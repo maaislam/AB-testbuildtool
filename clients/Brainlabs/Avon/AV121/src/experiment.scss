@@ -91,17 +91,12 @@
         }
 
         .inner {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-
+            @include flex-position(center, flex-start, column)
         }
 
         &--header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include flex-position(space-between);
+
             width: 100%;
             padding: 0 50px 24px;
             background-color: $white-secondary;
@@ -166,9 +161,8 @@
             }
 
             .col2 {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flex-position(space-between);
+
                 width: 80%;
 
                 @include media-query(sm) {

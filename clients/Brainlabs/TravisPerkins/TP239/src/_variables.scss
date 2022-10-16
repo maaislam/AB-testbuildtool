@@ -18,7 +18,7 @@ $media: (xsm:360px,
 
 @mixin flex-position ($direction:row, $justify:center) {
     display: flex;
-    justify-content: $justify;
-    align-items: center;
     flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify;
 }

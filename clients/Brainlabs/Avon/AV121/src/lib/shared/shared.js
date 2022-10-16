@@ -1,5 +1,5 @@
 export default {
-  ID: 'AV121',
-  VARIATION: '2',
-  CLIENT: 'Brainlabs'
-};
+    ID: "AV121",
+    VARIATION: "1",
+    CLIENT: "Brainlabs",
+  };
