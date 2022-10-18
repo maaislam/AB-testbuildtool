@@ -58,6 +58,7 @@ export default () => {
         fireEvent('Customer selects the checkbox', shared);
         setCookie(`${ID}__giftselected`, true);
       } else {
+        fireEvent('Customer unselects the checkbox', shared);
         deleteCookie(`${ID}__giftselected`);
       }
     });
