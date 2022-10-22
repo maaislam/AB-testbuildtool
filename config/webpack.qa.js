@@ -1,10 +1,15 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
 const { merge } = require('webpack-merge');
 const RemovePlugin = require('remove-files-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const paths = require('./paths');
 const common = require('./webpack.common');
+
+// Used to regenerate `fullhash`/`chunkhash` between different implementation
+// Example: you fix a bug in custom minimizer/custom function, but unfortunately webpack doesn't know about it, so you will get the same fullhash/chunkhash
+// to avoid this you can provide version of your custom minimizer
+// You don't need if you use only `contenthash`
 
 module.exports = merge(common, {
   mode: 'production',
@@ -12,7 +17,8 @@ module.exports = merge(common, {
   output: {
     path: paths.build,
     publicPath: '/',
-    filename: 'unminified/js/[name].bundle.js'
+    filename: 'unminified/js/[name].bundle.js',
+    iife: false
   },
   module: {
     rules: [
@@ -31,6 +37,16 @@ module.exports = merge(common, {
           'postcss-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: []
+          }
+        }
       }
     ]
   },
@@ -47,10 +63,33 @@ module.exports = merge(common, {
     })
   ],
   optimization: {
-    minimize: false
-    // splitChunks: { chunks: 'all' },
-    // runtimeChunk: {
-    //   name: 'runtime'
-    // }
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            unused: true,
+            dead_code: true,
+            conditionals: true,
+            evaluate: true,
+
+            // changed
+            ecma: 2022,
+            properties: false,
+            drop_debugger: false,
+            booleans: false,
+            loops: false,
+            toplevel: false,
+            top_retain: false,
+            hoist_funs: false,
+            if_return: false,
+            join_vars: false,
+            collapse_vars: false,
+            reduce_vars: false,
+            warnings: false
+          },
+          mangle: false
+        }
+      })
+    ]
   }
 });
