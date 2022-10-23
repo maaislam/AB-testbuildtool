@@ -1,10 +1,10 @@
-/* eslint-disable func-names */
-/* eslint-disable consistent-return */
-/* eslint-disable no-shadow */
-/* eslint-disable no-use-before-define */
-/* eslint-disable object-curly-newline */
-/* eslint-disable prefer-arrow-callback */
-/* eslint-disable no-undef */
+/*eslint-disable func-names */
+/*eslint-disable consistent-return */
+/*eslint-disable no-shadow */
+/*eslint-disable no-use-before-define */
+/*eslint-disable object-curly-newline */
+/*eslint-disable prefer-arrow-callback */
+/*eslint-disable no-undef */
 const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
@@ -34,7 +34,7 @@ prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], function (e
       if (err) {
         console.error('ERROR', err);
       }
-      // file written successfully
+      //file written successfully
     }
   );
 

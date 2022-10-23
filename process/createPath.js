@@ -1,5 +1,5 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-undef */
+/*eslint-disable no-param-reassign */
+/*eslint-disable no-undef */
 const fs = require('fs');
 const fse = require('fs-extra');
 const path = require('path');
@@ -7,7 +7,7 @@ const path = require('path');
 const currentPath = process.argv.reduce((prev, curr) => {
   const params = curr.indexOf('n=') !== -1;
   if (!params) return '';
-  prev = prev + curr.split('=')[1] + '/';
+  prev = `${prev + curr.split('=')[1]}/`;
   return prev;
 }, '');
 
@@ -43,7 +43,7 @@ fse
       if (err) {
         console.error('ERROR', err);
       }
-      // file written successfully
+      //file written successfully
     });
   })
   .catch((err) => {

@@ -1,8 +1,8 @@
-/* eslint-disable object-curly-newline */
-/* eslint-disable no-shadow */
-/* eslint-disable consistent-return */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-undef */
+/*eslint-disable object-curly-newline */
+/*eslint-disable no-shadow */
+/*eslint-disable consistent-return */
+/*eslint-disable no-use-before-define */
+/*eslint-disable no-undef */
 const fs = require('fs');
 const fse = require('fs-extra');
 const prompt = require('prompt');
@@ -27,12 +27,12 @@ prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], (err, resul
   fse
     .ensureDir(dir)
     .then(
-      () => fse.pathExists(`${dir}/src`) // => false
+      () => fse.pathExists(`${dir}/src`) //=> false
     )
     .then((exists) => {
       if (exists) return;
       return fse.copy('./template/', dir);
-      // console.log("Build success! -- now 'npm start' to start development");
+      //console.log("Build success! -- now 'npm start' to start development");
     })
     .then(() => {
       fs.writeFile(
@@ -42,7 +42,7 @@ prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], (err, resul
           if (err) {
             console.error('ERROR', err);
           }
-          // file written successfully
+          //file written successfully
         }
       );
     })
@@ -51,7 +51,7 @@ prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], (err, resul
         if (err) {
           console.error('ERROR', err);
         }
-        // file written successfully
+        //file written successfully
       });
     })
     .catch((err) => {
