@@ -12,6 +12,7 @@ if (!ieChecks && window.location.pathname.includes('index.html')) {
         !document.referrer.includes('index.html')
       ) {
         setTimeout(() => {
+          console.log('inside');
           activate();
         }, 1000);
       }

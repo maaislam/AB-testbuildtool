@@ -1,6 +1,6 @@
 const brochureCover = (id, data) => {
   const htmlStr = `
-        <a class="${id}__brochurecover" data-title="${data.title}" href="${data.live_url}">
+        <a class="${id}__brochurecover" data-title="${data.title}" href="${data.live_url}/index.html">
             <img src="${data.cover}" alt="${data.title}">
         </a>`;
 

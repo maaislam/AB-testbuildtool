@@ -1,0 +1,235 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+#mainContent {
+    background-color: #fff;
+
+    iframe {
+        height: 1450px !important;
+        overflow-y: scroll;
+    }
+}
+
+.#{$id} {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 60px;
+        padding-bottom: 40px;
+
+        @include media-query(md) {
+            flex-direction: column;
+            margin-top: 0;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #EFECE7;
+            font-weight: 600;
+            font-size: 60px;
+            line-height: 1.3;
+
+            @include media-query(md) {
+                font-size: 50px;
+            }
+        }
+
+        p {
+            color: #EFECE7;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.3;
+
+            @include media-query(md) {
+                font-size: 16px;
+
+            }
+        }
+
+        ul {
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            color: #EFECE7;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.3;
+            list-style: none;
+
+            @include media-query(md) {
+                font-size: 16px;
+
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+
+            span {
+                margin-right: 8px;
+            }
+        }
+
+        a {
+            color: #FAF9F7;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        figure,
+        blockquote {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        figure {
+            margin-top: 15px;
+        }
+
+        blockquote p {
+            color: #1E1A14;
+        }
+
+        figcaption {
+            color: #464646;
+
+        }
+
+        cite {
+            font-style: normal;
+        }
+
+    }
+
+    &__column {
+        width: 100%;
+        background-color: #fff;
+
+
+        &1 {
+            width: 50%;
+
+            .#{$id}__sticky-wrapper {
+                position: sticky;
+                top: 0;
+            }
+
+            @include media-query(md) {
+                width: 100%;
+            }
+        }
+
+        &2 {
+            z-index: 1;
+            width: 50%;
+            max-width: 640px;
+            padding: 30px;
+            box-shadow: -1px 3px 16px 4px rgba(0 0 0 / 10%);
+
+            @include media-query(md) {
+                width: 100%;
+                padding: 0;
+                box-shadow: none;
+
+            }
+        }
+    }
+
+    &__sticky-wrapper {
+        position: sticky;
+        top: 0;
+    }
+
+    &__row {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 25px 40px 25px 0;
+
+        @include media-query(md) {
+            padding: 20px 32px 20px 0;
+        }
+
+        @include media-query(sm) {
+            padding: 20px 20px 20px 0;
+        }
+    }
+
+    &__contactsales {
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #344139;
+        box-shadow: 0 0 0 100vmax #344139;
+        clip-path: inset(0 -100vmax);
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__partners {
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            color: #1E1A14;
+        }
+
+        .partners {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+
+            & .smart-pension {
+                width: 144px;
+
+                @include media-query(sm) {
+                    width: 134px;
+                }
+
+            }
+
+            & .bulb {
+                width: 62px;
+
+                @include media-query(sm) {
+                    width: 50px;
+                }
+
+            }
+
+            & .epson {
+                width: 82px;
+
+                @include media-query(sm) {
+                    width: 72px;
+                }
+            }
+
+            & .cuckoo {
+                width: 92px;
+
+                @include media-query(sm) {
+                    display: none;
+                }
+
+            }
+        }
+    }
+
+    &__review-img {
+        width: 120px;
+        margin-top: 32px;
+    }
+}

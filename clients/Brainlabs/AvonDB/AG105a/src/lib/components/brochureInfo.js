@@ -7,7 +7,7 @@ const brochureInfo = (id, data) => {
         ${brochureTitle(id, data)}
         <p class="${id}__brochurepara">${window.ag105aData[data.cardSerial]}</p>
         <a class="${id}__brochurebutton" 
-            href="${data.live_url}"
+            href="${data.live_url}/index.html"
             data-title="${data.title}">OPEN</a>
     </div>`;
 
