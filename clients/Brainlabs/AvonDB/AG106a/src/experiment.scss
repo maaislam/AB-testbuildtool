@@ -3,6 +3,10 @@
 @import '../src/lib/shared/shared';
 
 .#{$id} {
+    &__invisible {
+        opacity: 0;
+    }
+
     &__pagebanner {
         position: relative;
         padding: 20px 12px;

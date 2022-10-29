@@ -1,5 +1,6 @@
 import shared from '../shared/shared';
 import triggerEvent from './triggerEvent';
+import waitForElm from './waitForElm';
 
 const clickHandler = (id, event, fireEvent) => {
   const { target } = event;
@@ -9,8 +10,16 @@ const clickHandler = (id, event, fireEvent) => {
     document.querySelector('[data-item-id="scrollshopBtn"]');
   if (target.matches('.subtitle[data-clicktakesto]')) {
     const clickTakesTo = target.dataset.clicktakesto;
+    const newMenu = document.querySelector('[data-item-id="newMenuBtn"]');
 
-    clickTakesTo === 'scrollshop' ? triggerEvent(scrollshop) : triggerEvent(pagesBtn);
+    newMenu && triggerEvent(newMenu);
+
+    if (clickTakesTo === 'scrollshop') {
+      pagesBtn ? triggerEvent(scrollshop) : waitForElm('#scrollshop').then((elm) => elm.click());
+    } else {
+      pagesBtn ? triggerEvent(pagesBtn) : waitForElm('#pages').then((elm) => elm.click());
+    }
+
     fireEvent(
       `User interacts with banner cta on ${
         clickTakesTo === 'scrollshop' ? 'pages' : 'scrollshop'

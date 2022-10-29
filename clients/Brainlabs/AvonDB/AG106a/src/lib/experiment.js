@@ -26,7 +26,18 @@ export default () => {
     return;
   }
 
-  VARIATION === '2' ? triggerEvent(scrollshop) : triggerEvent(pagesBtn);
+  if (pagesBtn && scrollshop) {
+    VARIATION === '2' ? triggerEvent(scrollshop) : triggerEvent(pagesBtn);
+  } else {
+    const newMenu = document.querySelector('[data-item-id="newMenuBtn"]');
+    document.querySelector('[data-item-id="menuContainer"]')?.classList.add(`${ID}__invisible`);
+    triggerEvent(newMenu);
+
+    VARIATION === '2'
+      ? waitForElm('#scrollshop').then((elm) => elm.click())
+      : waitForElm('#pages').then((elm) => elm.click());
+  }
+
   fireEvent(
     `User interacts with a digital brochure - ${window.PDP_MANAGER.API_DATA.brochure_id}`,
     shared

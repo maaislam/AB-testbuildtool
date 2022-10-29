@@ -5,7 +5,12 @@ const ieChecks = /MSIE|Trident|Edge\/(12|13|14|15|16|17|18)/.test(window.navigat
 
 if (!ieChecks && window.location.pathname.includes('index.html')) {
   pollerLite(
-    ['[data-item-id="diaporamaBtn"]', () => typeof window.PDP_MANAGER !== 'undefined'],
+    [
+      () =>
+        document.querySelector('[data-item-id="diaporamaBtn"]') ||
+        document.querySelector('[data-item-id="newMenuBtn"]'),
+      () => typeof window.PDP_MANAGER !== 'undefined'
+    ],
     () => {
       if (
         document.referrer.includes(`/${window.PDP_MANAGER.API_DATA.campaignId}/`) &&

@@ -130,6 +130,7 @@
             z-index: 1;
             width: 50%;
             max-width: 640px;
+            margin-top: 25px;
             padding: 30px;
             box-shadow: -1px 3px 16px 4px rgba(0 0 0 / 10%);
 
@@ -168,6 +169,11 @@
         background-color: #344139;
         box-shadow: 0 0 0 100vmax #344139;
         clip-path: inset(0 -100vmax);
+
+        h1 {
+            margin-top: 0;
+            line-height: 48px;
+        }
 
         p:last-child {
             margin-bottom: 0;

@@ -14,20 +14,39 @@ export default () => {
     openMiniCart(ID);
   }
 
+  console.log(ID);
+
   const oldCartButton = document.getElementById('product-addtocart-button');
   const atcForm = document.getElementById('product_addtocart_form');
 
   //preselect first option
 
-  atcForm.querySelector('label').click();
+  const priceRadioCount = atcForm.querySelectorAll('label').length;
+  if (priceRadioCount > 1 || (priceRadioCount === 1 && atcForm.querySelector('label>input'))) {
+    const highestVal = [...atcForm.querySelectorAll('label')]
+      .map((item) => item.querySelector('input').getAttribute('value'))
+      .reduce((prev, curr) => {
+        return Math.max(prev, curr);
+      });
+
+    atcForm.querySelector(`label>input[value="${highestVal}"]`)?.click();
+  }
+
+  const checkVariantSelection = () => {
+    const selectElem = document.querySelector('#attribute162');
+    if (!selectElem) return;
+    const noVariantSelected = selectElem && selectElem.value === '';
+    const atcBtn = document.querySelector(`.${ID}__product-addtocart-button`);
+    noVariantSelected ? atcBtn.classList.add('inactive') : atcBtn.classList.remove('inactive');
+  };
 
   //get selected upsell val
   const getSelectedUpsell = () => {
     const activeUpsell = atcForm.querySelector('label.active>input');
-    const activeUpsellKey = activeUpsell.getAttribute('name');
+    const activeUpsellKey = activeUpsell?.getAttribute('name') || '';
     return {
       upsellKey: activeUpsellKey,
-      upsellValue: activeUpsell.value
+      upsellValue: activeUpsell?.value || ''
     };
   };
 
@@ -40,11 +59,16 @@ export default () => {
   const getAtcPayload = () => {
     const productId = atcForm.querySelector('input[name="product"]').value;
     const formKey = atcForm.querySelector('input[name="form_key"]').value;
+    const relatedProd = atcForm.querySelector('#related-products-field')?.value || '';
+    const configOption =
+      atcForm.querySelector('[name="selected_configurable_option"]')?.value || '';
+    const variantOption = atcForm.querySelector('#attribute162')?.value || '';
     const { upsellKey, upsellValue } = getSelectedUpsell();
     const payload = {
       product: productId,
-      selected_configurable_option: '',
-      related_product: '',
+      selected_configurable_option: configOption,
+      related_product: relatedProd,
+      'super_attribute[162]': variantOption,
       form_key: formKey,
       [upsellKey]: upsellValue,
       qty: getQuantity()
@@ -58,10 +82,11 @@ export default () => {
   oldCartButton.classList.add(`${ID}__hide`);
   document.querySelector(`.${ID}__product-addtocart-button`)?.remove();
   oldCartButton.insertAdjacentHTML('beforebegin', newCartButton(ID));
+  checkVariantSelection();
 
   document.body.addEventListener('pointerup', (e) => {
     const { target } = e;
-    if (target.closest(`.${ID}__product-addtocart-button`)) {
+    if (target.closest(`.${ID}__product-addtocart-button`) && !target.closest('.inactive')) {
       e.preventDefault();
       target.closest('.box-tocart').classList.add('adding');
       const formAction = atcForm.getAttribute('action');
@@ -74,11 +99,19 @@ export default () => {
           }, 2000);
         });
       });
+    } else if (target.closest(`.${ID}__product-addtocart-button`) && target.closest('.inactive')) {
+      oldCartButton.click();
     } else if (
       (target.closest(`.${ID}__overlay`) || target.closest('#btn-minicart-close')) &&
       document.querySelector(`.${ID}__overlay`)
     ) {
       window.location.reload();
+    }
+  });
+
+  document.body.addEventListener('change', ({ target }) => {
+    if (target.matches('#attribute162')) {
+      checkVariantSelection();
     }
   });
 };
