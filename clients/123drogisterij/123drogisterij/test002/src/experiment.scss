@@ -9,7 +9,7 @@ body {
             }
         }
         
-        //nav.navigation{
+        nav.navigation{
             & .#{$id}__minisearch{
                 display: flex;
                 margin: 20px auto;
@@ -37,9 +37,16 @@ body {
                 & label{
                     display:none;
                 }
+                & + li{
+                    span{
+                        margin-left:0 !important;
+                    }
+                }
             }
+
+           
             
         }
-    //}
+    }
     
 }
