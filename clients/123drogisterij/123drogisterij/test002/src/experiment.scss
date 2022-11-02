@@ -1,0 +1,52 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+body {
+    .sections.nav-sections{
+        & > div{
+            & > .section-item-title{
+                margin-bottom: 20px;
+            }
+        }
+        
+        nav.navigation{
+            & .#{$id}__minisearch{
+                display: flex;
+                margin: 20px auto;
+                height: 52px;
+                z-index: 3434;
+                width:calc(100% - 10px);
+                & > .field{
+                    flex: 1 0 50%;
+                    margin-right:10px;
+                    &> .control{
+                        height: 100%;
+                    }
+                }
+                & > .actions{
+                    flex: 1 0 15%;
+
+                    & > button {
+                        background-image: linear-gradient(to bottom, #8ede47 0%,#73b53a 100%);
+                    }
+                }
+                & #search2{
+                    border-radius: 3px;
+                    height: 100%;
+                }
+                & label{
+                    display:none;
+                }
+                & + li{
+                    span{
+                        margin-left:0 !important;
+                    }
+                }
+            }
+
+           
+            
+        }
+    }
+    
+}
