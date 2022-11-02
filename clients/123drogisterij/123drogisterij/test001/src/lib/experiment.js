@@ -14,8 +14,6 @@ export default () => {
     openMiniCart(ID);
   }
 
-  console.log(ID);
-
   const oldCartButton = document.getElementById('product-addtocart-button');
   const atcForm = document.getElementById('product_addtocart_form');
 
@@ -87,16 +85,17 @@ export default () => {
   document.body.addEventListener('pointerup', (e) => {
     const { target } = e;
     if (target.closest(`.${ID}__product-addtocart-button`) && !target.closest('.inactive')) {
-      e.preventDefault();
+      console.time('ATC');
       target.closest('.box-tocart').classList.add('adding');
       const formAction = atcForm.getAttribute('action');
       addToCart(formAction, getAtcPayload()).then(() => {
         document.body.insertAdjacentHTML('beforeend', fakeIframe(ID));
         document.querySelector(`.${ID}__fake-iframe`).addEventListener('load', () => {
+          console.timeEnd('ATC');
           setTimeout(() => {
             window.location.reload();
             sessionStorage.setItem('reloaded-by-atc', true);
-          }, 2000);
+          }, 500);
         });
       });
     } else if (target.closest(`.${ID}__product-addtocart-button`) && target.closest('.inactive')) {
