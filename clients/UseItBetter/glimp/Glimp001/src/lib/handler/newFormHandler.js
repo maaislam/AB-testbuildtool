@@ -1,4 +1,4 @@
-const newFormHandler = (id) => {
+const newFormHandler = (id, callback) => {
   const name = document.querySelector(`.${id}__input-name`).value;
   const phone = document.querySelector(`.${id}__input-phone`).value;
   const email = document.querySelector(`.${id}__input-email`).value;
@@ -10,7 +10,9 @@ const newFormHandler = (id) => {
   });
   sessionStorage.setItem(`${id}__userData`, data);
   sessionStorage.removeItem(`${id}__show-new-modal`);
-  window.location.reload();
+  //window.location.reload();
+  console.log('baal');
+  callback();
 };
 
 export default newFormHandler;

@@ -24,6 +24,11 @@ export default () => {
   //Write experiment code here
   //-----------------------------
   //...
+  const removeCustomForm = () => {
+    document.body.classList.remove('modal-open');
+    document.querySelector(`#${ID}__switch-modal`)?.remove();
+    document.querySelector(`.${ID}__modal-overlay`)?.remove();
+  };
 
   if (sessionStorage.getItem(`${ID}__show-new-modal`)) {
     document.body.classList.add('modal-open');
@@ -31,7 +36,7 @@ export default () => {
     document.body.insertAdjacentHTML('beforeend', modelStructure(ID));
     document.querySelector(`.${ID}__switchForm`).addEventListener('submit', (e) => {
       e.preventDefault();
-      newFormHandler(ID);
+      newFormHandler(ID, removeCustomForm);
     });
   }
 };
