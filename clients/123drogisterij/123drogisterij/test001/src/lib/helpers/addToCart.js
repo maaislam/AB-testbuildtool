@@ -7,9 +7,7 @@ const addToCart = (url, formBody) => {
     },
     method: 'POST',
     body: formBody
-  })
-    .then((response) => response.json())
-    .catch((error) => console.log(error));
+  }).catch((error) => console.log(error));
 };
 
 export default addToCart;
