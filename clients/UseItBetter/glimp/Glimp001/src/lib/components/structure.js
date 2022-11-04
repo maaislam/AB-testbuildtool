@@ -10,7 +10,7 @@ export const modelStructure = (id) => {
               <p>Enter your details</p>
             </div>
             
-           <form name="switchForm" class="${id}__switchForm"/>
+           <form name="switchForm" class="${id}__switchForm">
             <div class="field-cover">
               <div class="fields">
                 <fieldset class="switch-form">
