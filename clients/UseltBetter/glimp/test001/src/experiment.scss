@@ -1,0 +1,14 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+body {
+    .modal.fade.glimp-modal.switch-modal.in:not(##{$id}__switch-modal){
+        & input[type="submit"]{
+              display: none !important;
+        }
+      
+    }
+    .modal-backdrop.fade.in:not(.#{$id}__modal-overlay){
+        //display: none !important;
+    }
+}
