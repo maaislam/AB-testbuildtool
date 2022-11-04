@@ -11,7 +11,7 @@ const newFormHandler = (id, callback) => {
   sessionStorage.setItem(`${id}__userData`, data);
   sessionStorage.removeItem(`${id}__show-new-modal`);
   //window.location.reload();
-  console.log('baal');
+
   callback();
 };
 
