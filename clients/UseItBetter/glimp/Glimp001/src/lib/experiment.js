@@ -2,15 +2,14 @@
 //import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import shared from './shared/shared';
 import clickHandler from './handler/clickHandler';
+import newFormHandler from './handler/newFormHandler';
 
 const { modelStructure, modalOverlay } = require('./components/structure');
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   //setup(); //use if needed
-
-  console.log(ID);
 
   document.body.addEventListener('click', ({ target }) => {
     clickHandler(ID, target);
@@ -30,8 +29,10 @@ export default () => {
     document.body.classList.add('modal-open');
     document.body.insertAdjacentHTML('beforeend', modalOverlay(ID));
     document.body.insertAdjacentHTML('beforeend', modelStructure(ID));
-
-    sessionStorage.removeItem(`${ID}__show-new-modal`);
+    document.querySelector(`.${ID}__switchForm`).addEventListener('submit', (e) => {
+      e.preventDefault();
+      newFormHandler(ID);
+    });
   }
 };
 
