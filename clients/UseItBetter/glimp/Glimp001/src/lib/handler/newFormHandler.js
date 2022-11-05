@@ -10,7 +10,9 @@ const newFormHandler = (id) => {
   });
   sessionStorage.setItem(`${id}__userData`, data);
   sessionStorage.removeItem(`${id}__show-new-modal`);
-  window.location.reload();
+  document.getElementById(`${id}__switch-modal`).remove();
+  document.querySelector(`.${id}__modal-overlay`).remove();
+  document.body.classList.remove('modal-open');
 };
 
 export default newFormHandler;

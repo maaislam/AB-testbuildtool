@@ -4,7 +4,7 @@ import shared from './shared/shared';
 import clickHandler from './handler/clickHandler';
 import newFormHandler from './handler/newFormHandler';
 
-const { modelStructure, modalOverlay } = require('./components/structure');
+//const { modalOverlay } = require('./components/structure');
 
 const { ID } = shared;
 
@@ -24,15 +24,25 @@ export default () => {
   //Write experiment code here
   //-----------------------------
   //...
+  const modalOverlay = (id) => {
+    return `<div class="${id}__modal-overlay modal-backdrop fade in"></div>`;
+  };
 
-  if (sessionStorage.getItem(`${ID}__show-new-modal`)) {
+  const isErrorPage = document.querySelector('#error-pages');
+  const addressForm = document.querySelector('#am_01');
+
+  if (sessionStorage.getItem(`${ID}__show-new-modal`) && !isErrorPage && !addressForm) {
     document.body.classList.add('modal-open');
     document.body.insertAdjacentHTML('beforeend', modalOverlay(ID));
-    document.body.insertAdjacentHTML('beforeend', modelStructure(ID));
+    //document.body.insertAdjacentHTML('beforeend', modelStructure(ID));
+    document.getElementById(`${ID}__switch-modal`).classList.remove(`${ID}__hidden`);
+
     document.querySelector(`.${ID}__switchForm`).addEventListener('submit', (e) => {
       e.preventDefault();
       newFormHandler(ID);
     });
+  } else if (isErrorPage || addressForm) {
+    sessionStorage.removeItem(`${ID}__show-new-modal`);
   }
 };
 

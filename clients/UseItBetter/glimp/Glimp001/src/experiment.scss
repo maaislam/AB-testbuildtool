@@ -1,9 +1,22 @@
+/* stylelint-disable selector-id-pattern */
 @import './variables';
 @import '../src/lib/shared/shared';
 
 .#{$id} {
+    &__hidden {
+        display: none;
+    }
+
     &__hide {
         visibility: hidden;
         opacity: 0;
     }
+}
+
+##{$id}__switch-modal {
+    display: block
+}
+
+##{$id}__switch-modal.#{$id}__hidden {
+    display: none
 }
