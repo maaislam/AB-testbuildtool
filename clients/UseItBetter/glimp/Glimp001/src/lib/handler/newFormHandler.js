@@ -1,4 +1,4 @@
-const newFormHandler = (id) => {
+const newFormHandler = (id, callback) => {
   const name = document.querySelector(`.${id}__input-name`).value;
   const phone = document.querySelector(`.${id}__input-phone`).value;
   const email = document.querySelector(`.${id}__input-email`).value;
