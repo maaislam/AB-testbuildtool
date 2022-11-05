@@ -39,7 +39,7 @@ export default () => {
 
     document.querySelector(`.${ID}__switchForm`).addEventListener('submit', (e) => {
       e.preventDefault();
-      newFormHandler(ID, removeCustomForm);
+      newFormHandler(ID);
     });
   } else if (isErrorPage || addressForm) {
     sessionStorage.removeItem(`${ID}__show-new-modal`);
