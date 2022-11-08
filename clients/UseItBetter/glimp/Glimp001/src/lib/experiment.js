@@ -35,6 +35,16 @@ export default () => {
     document.body.classList.add('modal-open');
     document.body.insertAdjacentHTML('beforeend', modalOverlay(ID));
     //document.body.insertAdjacentHTML('beforeend', modelStructure(ID));
+
+    //place previous val
+    const savedData = JSON.parse(localStorage.getItem(`${ID}__userData`));
+    if (savedData) {
+      const { name, phone, email } = savedData;
+      document.querySelector(`.${ID}__input-name`).value = name || '';
+      document.querySelector(`.${ID}__input-phone`).value = phone || '';
+      document.querySelector(`.${ID}__input-email`).value = email || '';
+    }
+
     document.getElementById(`${ID}__switch-modal`).classList.remove(`${ID}__hidden`);
 
     document.querySelector(`.${ID}__switchForm`).addEventListener('submit', (e) => {

@@ -15,7 +15,7 @@ export default () => {
     document.querySelector('[data-item-id="menuBtn"]') ||
     document.querySelector('[data-item-id="scrollshopBtn"]');
 
-  document.body.addEventListener('pointerup', (event) => {
+  document.body.addEventListener('click', (event) => {
     clickHandler(ID, event, fireEvent);
   });
   //-----------------------------

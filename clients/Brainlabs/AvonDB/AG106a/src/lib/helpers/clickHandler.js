@@ -59,7 +59,7 @@ const clickHandler = (id, event, fireEvent) => {
   } else if (target.closest('.v7__plp__filters')) {
     fireEvent('User interacts with filters when on scroll shop', shared);
   } else if (target.closest(`.${id}__pagebanner-close`)) {
-    event.stopPropagation();
+    //event.stopPropagation();
     const pageName = target.closest(`.${id}__pagebanner-close`).dataset.location;
     fireEvent(`User closes the banner in ${pageName}`, shared);
     //remove banner
