@@ -11,23 +11,32 @@ const newFormHandler = (id) => {
   };
 
   const name = document.querySelector(`.${id}__input-name`).value;
-  const phone = document.querySelector(`.${id}__input-phone`).value;
+  const phone_number = document.querySelector(`.${id}__input-phone`).value;
   const email = document.querySelector(`.${id}__input-email`).value;
   const address = decodeURIComponent(getCookie('broadband_address')).split('+').join(' ');
 
-  const data = JSON.stringify({
+  const data = {
     name,
-    phone,
+    phone_number,
     email,
-    address
-  });
+    address,
+    provider: 'MyRepublic',
+    plan_id: 281614
+  };
+  const formBody = Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
 
-  fetch('/broadband', {
-    body: data,
+  fetch('/broadband_switches', {
+    headers: {
+      accept: '*/*',
+      'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+    },
+    body: formBody,
     method: 'POST'
   });
-  localStorage.setItem(`${id}__userData`, data);
-  sessionStorage.setItem(`${id}__userData`, data);
+  localStorage.setItem(`${id}__userData`, JSON.stringify(data));
+  sessionStorage.setItem(`${id}__userData`, JSON.stringify(data));
   sessionStorage.removeItem(`${id}__show-new-modal`);
   document.getElementById(`${id}__switch-modal`).remove();
   document.querySelector(`.${id}__modal-overlay`).remove();

@@ -7,7 +7,7 @@ const clickHandler = (id, target) => {
   } else if (target.closest('[id^="broadband-switch-button"]')) {
     //place data
     const sessionData = JSON.parse(sessionStorage.getItem(`${id}__userData`));
-    const { name, phone, email } = sessionData;
+    const { name, phone_number, email } = sessionData;
     const { planid } = target.dataset;
 
     const nameField = document.getElementById(`switch-name-field-${planid}`);
@@ -15,7 +15,7 @@ const clickHandler = (id, target) => {
     const emailField = document.getElementById(`switch-email-address-${planid}`);
 
     nameField.value = name;
-    phoneField.value = phone;
+    phoneField.value = phone_number;
     emailField.value = email;
 
     const selectDealBtn = document.getElementById(`switch-btn-${planid}`);
