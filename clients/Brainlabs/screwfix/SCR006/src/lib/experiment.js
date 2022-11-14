@@ -46,13 +46,15 @@ export default () => {
 
   compareBtnAnchor.insertAdjacentHTML('beforebegin', compareButton);
 
-  document.querySelector(`.${ID}__compare-btn`).addEventListener('click', () => {
+  document.querySelector(`.${ID}__compare-btn`).addEventListener('click', ({ target }) => {
+    target.classList.add('loading');
     //check if compare slot is full
     const comparePageUrl = `${window.location.origin}${categoryInfo.url}?action=compare`;
     getCompareCount().then((data) => {
       if (parseInt(data) >= 4) {
         //render modal
         document.body.insertAdjacentHTML('afterbegin', renderModal(ID, comparePageUrl));
+        target.classList.remove('loading');
       } else {
         const productId = document.getElementById('productId').value;
         setCompare(productId).then((response) => {
