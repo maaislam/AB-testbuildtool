@@ -1,4 +1,4 @@
-const getCompareCount = function getCompareCount() {
+const getCompareCount = () => {
   return fetch(
     `https://www.screwfix.com/presentation-web-search/jsp/search/action/productCompareListSize.jsp?_=${Date.now()}`,
     {

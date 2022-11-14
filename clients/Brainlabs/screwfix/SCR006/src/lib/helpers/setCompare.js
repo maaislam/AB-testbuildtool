@@ -1,4 +1,4 @@
-const setCompare = function setCompare(productId) {
+const setCompare = (productId) => {
   const response = fetch('/presentation-web-search/jsp/search/action/productCompareList.jsp', {
     headers: {
       accept: '*/*',
