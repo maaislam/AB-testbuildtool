@@ -1,5 +1,6 @@
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import { pollerLite } from '../../../../../../globalUtil/util';
+import shared from './shared/shared';
 import howitworks from './components/howItWorks';
 import reelBtn from './components/reelButton';
 import reelItems from './components/reelItems';
@@ -9,7 +10,6 @@ import initSwiper from './helpers/initSwiper';
 import obsIntersection from './helpers/observeIntersection';
 import { addCssToPage, addJsToPage } from './helpers/utils';
 import wistiaTrackings from './helpers/wistiaTrackings';
-import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
 

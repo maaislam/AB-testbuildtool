@@ -1,28 +1,28 @@
+/*eslint-disable no-console */
 /*eslint-disable object-curly-newline */
 /*eslint-disable no-shadow */
 /*eslint-disable consistent-return */
 /*eslint-disable no-use-before-define */
 /*eslint-disable no-undef */
-const fs = require('fs');
+
 const fse = require('fs-extra');
 const prompt = require('prompt');
 const path = require('path');
 
+const { sharedJsContent, createFile, createExpSchema } = require('./cliUtils');
+
 prompt.start();
 
-prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], (err, result) => {
+prompt.get(createExpSchema, (err, result) => {
   if (err) {
     return onErr(err);
   }
 
   const { clientName, siteName, experimentId, setVarFlag } = result;
-  const sharedJsContent = (experimentId, setVarFlag, clientName) => `export default {
-    ID: "${experimentId}",
-    VARIATION: "${setVarFlag}",
-    CLIENT: "${clientName}"
-  };`;
 
   const dir = path.resolve(__dirname, `../clients/${clientName}/${siteName}/${experimentId}/`);
+
+  const content = sharedJsContent(experimentId, setVarFlag, clientName, siteName);
 
   fse
     .ensureDir(dir)
@@ -35,28 +35,11 @@ prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], (err, resul
       //console.log("Build success! -- now 'npm start' to start development");
     })
     .then(() => {
-      fs.writeFile(
-        `${dir}/src/lib/shared/shared.js`,
-        sharedJsContent(experimentId, setVarFlag, clientName),
-        (err) => {
-          if (err) {
-            console.error('ERROR', err);
-          }
-          //file written successfully
-        }
-      );
+      createFile(`${dir}/src/lib/shared/shared.js`, content);
+      createFile(path.resolve(__dirname, '../process/experimentConfig.js'), content);
     })
-    .then(() => {
-      fs.writeFile(`${dir}/src/lib/shared/shared.scss`, `$id: '${experimentId}';`, (err) => {
-        if (err) {
-          console.error('ERROR', err);
-        }
-        //file written successfully
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+    .then(() => createFile(`${dir}/src/lib/shared/shared.scss`, `$id: '${experimentId}';`))
+    .catch((err) => console.error(err));
 });
 
 function onErr(err) {
