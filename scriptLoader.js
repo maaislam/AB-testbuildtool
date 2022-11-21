@@ -40,7 +40,7 @@
           document.querySelector('head').append(newFile);
         }
       })
-      .catch(() => {
+      .catch((err) => {
         console.warn('Something went wrong.', err);
       });
   };

@@ -1,0 +1,208 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+   
+
+    &__reviews-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px;
+        
+        margin: 0 auto 52px;
+        border-radius: 4px;
+        background-color: #fff;
+
+        &.#{$id}__pdp-adjustments {
+            width: unset;
+            margin: 16px 0;
+
+            & .#{$id}__swiper-container {
+                width: 80% !important;
+
+                @media (max-width: 768px) {
+                    width: 100% !important;
+                }
+            }
+
+            & .logo {
+                &::after {
+                    right: -52px !important;
+                }
+            }
+        }
+
+
+
+        &>.title {
+            margin-bottom: 52px;
+            font-size: 20px;
+            line-height: 1.3;
+            font-weight: 700;
+
+            @media (max-width: 768px) {
+                margin-bottom: 20px;
+            }
+        }
+
+
+        & .#{$id}__trustpilot-reviews {
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 16px;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                gap: 20px;
+
+            }
+
+            & .logo {
+                position: relative;
+                width: 10%;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+
+                }
+
+                & span {
+                    width: 100px;
+                }
+
+                & span:last-child {
+                    margin-top: 4px;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 2px;
+                    height: 150px;
+                    top: 0;
+                    right: -18px;
+                    // transform: translateY(-50%);
+                    background-color: #C0C6CD;
+
+                    @media (max-width: 768px) {
+                        display: none;
+
+                    }
+                }
+            }
+
+            & .#{$id}__swiper-container {
+
+                width: 86%;
+                margin-left: auto;
+                overflow: hidden;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 110px;
+                    height: 100%;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(266.92deg, #FFFFFF 50.47%, rgba(255, 255, 255, 0) 126.06%);
+                    z-index: 50;
+
+                    @media (max-width: 768px) {
+                        width: 180px;
+                    }
+
+                    @media (max-width: 640px) {
+                        width: 100px;
+                    }
+                }
+
+                &.last-slide-reached {
+                    &::after {
+                        display: none;
+                    }
+                }
+
+
+                @media (max-width: 768px) {
+                    margin-left: 0;
+                }
+
+                & .swiper-button-next {
+                    top: 40px;
+                    right: 26px;
+
+                    @media (max-width: 768px) {
+                        display: none;
+
+                    }
+                }
+
+                & .swiper-button-prev {
+                    top: 40px;
+                    right: 80px;
+                    left: auto;
+
+                    @media (max-width: 768px) {
+                        display: none;
+
+                    }
+                }
+
+                & .swiper-button-next,
+                & .swiper-button-prev {
+
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background-color: #C0C6CD;
+                    z-index: 100;
+
+                    &::after {
+                        font-size: 16px;
+                        font-weight: 900;
+                        color: #0A4F38;
+                    }
+                }
+
+
+
+
+            }
+
+            & .individual-reviews {
+
+
+                //overflow-x: hidden;
+
+
+                & a {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    color: #687482;
+                    text-decoration: none;
+                }
+
+                & .#{$id}__review--reviewer {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+   &__controlled-width{
+    width: 100%;
+    max-width: 650px;
+    overflow-x: hidden;
+   }
+
+}

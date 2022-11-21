@@ -1,5 +1,5 @@
 export default {
     ID: "AG101a",
-    VARIATION: "control",
+    VARIATION: "1",
     CLIENT: "Brainlabs",
   };

@@ -5,38 +5,31 @@
 /*eslint-disable object-curly-newline */
 /*eslint-disable prefer-arrow-callback */
 /*eslint-disable no-undef */
-const fs = require('fs');
+
 const path = require('path');
 const { exec } = require('child_process');
 const prompt = require('prompt');
 
+const { sharedJsContent, createFile, runExpSchema } = require('./cliUtils');
+
 prompt.start();
 
-prompt.get(['clientName', 'siteName', 'experimentId', 'setVarFlag'], function (err, result) {
+prompt.get(runExpSchema, (err, result) => {
   if (err) {
     return onErr(err);
   }
   const { clientName, siteName, experimentId, setVarFlag } = result;
 
-  const sharedJsContent = (experimentId, setVarFlag, clientName) => `export default {
-    ID: "${experimentId}",
-    VARIATION: "${setVarFlag}",
-    CLIENT: "${clientName}",
-  };`;
-
-  fs.writeFile(
-    path.resolve(
-      __dirname,
-      `../clients/${clientName}/${siteName}/${experimentId}/src/lib/shared/shared.js`
-    ),
-    sharedJsContent(experimentId, setVarFlag, clientName),
-    (err) => {
-      if (err) {
-        console.error('ERROR', err);
-      }
-      //file written successfully
-    }
+  const expPath = path.resolve(
+    __dirname,
+    `../clients/${clientName}/${siteName}/${experimentId}/src/lib/shared/shared.js`
   );
+
+  const cliPath = path.resolve(__dirname, '../process/experimentConfig.js');
+  const content = sharedJsContent(experimentId, setVarFlag, clientName, siteName);
+
+  createFile(expPath, content);
+  createFile(cliPath, content); //makes it easier to make code pack
 
   exec(`npm run configpath -- cn=${clientName} sn=${siteName} en=${experimentId}`);
 });
