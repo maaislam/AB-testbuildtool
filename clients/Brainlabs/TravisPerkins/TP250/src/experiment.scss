@@ -1,8 +1,237 @@
 @import './variables';
-@import '../src/lib/shared/shared.scss';
+@import '../src/lib/shared/shared';
 
 .#{$id} {
-    &__test {
-        display: block;
+    &__hidden {
+        display: none !important;
+    }
+
+    &__loginpromo--wrapper{
+        margin-bottom: 20px;
+        padding: 0;
+        color: $brand-white-primary;
+        background-color: $brand-white-primary;
+        border-radius: 4px;
+        @include media-query(sm){
+            // padding: 8px 12px 12px 8px;
+            // background-color: $brand-green-primary;
+        }
+
+        .login-row {
+            display: none;
+            text-align: center;
+            @include media-query(sm){
+                // display: block;
+            }
+
+           a{
+            color: $brand-white-primary;
+            text-decoration: underline;
+           } 
+        }
+    }
+
+    &__promobanner{
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 8px 14px 8px 12px;
+        color: $brand-white-primary;
+        background: url('http://sb.monetate.net/img/1/581/4465346.png'), linear-gradient(90deg, rgba(26 33 38 / 100%) 80%, $brand-white-primary 80%);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+        border-radius: 4px;
+        @include media-query(sm){
+            width: 80%;
+            margin-top: 20px;
+            padding: 12px 14px 12px 12px;
+
+            // background: url('http://sb.monetate.net/img/1/581/4465346.png'), linear-gradient(90deg, rgba(26 33 38 / 100%) 80%, $brand-green-primary 80%);
+        }
+        
+        &[data-pagetype="plp"]{
+            font-weight: 700;
+            font-size: 11px;
+            line-height: 1.3;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            @include media-query(sm){
+                font-size: 14px;
+            }
+            & .#{$id}__promobanner--icon{
+                display: none;
+
+            }
+        }
+    }
+
+    &__diagonal-banner{
+        position: relative;
+
+        &::before{
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            width: 110px;
+            height: 110px;
+            background-image: url('http://sb.monetate.net/img/1/c/static/2908/770904/de06d39fcb20507391811bb621ef71f2c8adb025.png');
+            background-repeat: no-repeat;
+            background-position: top center;
+            border-radius: 0 5px 0 0;
+            content: '';
+
+        }
+    }
+
+
+    &__popup--overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        background:  rgba(24 45 61 / 50%);
+    }
+
+    &__overlay--contents {
+        position: relative;
+        top: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 24px 22px 24px 12px;
+        background: $brand-white-secondary;
+        border-radius: 2px;
+        transform: translateY(-50%);
+
+        @media (max-width: 768px) {
+            top: 100%;
+            width: 90%;
+            padding-bottom: 16px;
+            border-radius: 10px 10px 0 0;
+            transform: translateY(-100%);
+        }
+
+        & .headline {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 8px 40px 8px 12px;
+            color: $brand-white-primary;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            background: url('http://sb.monetate.net/img/1/581/4465346.png'), linear-gradient(90deg, rgba(26 33 38 / 100%) 80%, $brand-white-secondary 80%);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: contain;
+            border-radius: 4px;
+
+            & .icon {
+                display: flex;
+                align-items: center;
+                margin-right: 14px;
+            }
+
+            & .text {
+                &>span {
+                    font-weight: 700;
+                }
+            }
+        }
+
+        & .paragraph {
+            margin-bottom: 20px;
+            color: $brand-black-secondary;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        & .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            & .user-btn-wrapper {
+                display: flex;
+                gap: 30px;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                margin-bottom: 16px;
+
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    gap: 12px;
+
+                }
+            }
+
+
+
+            & a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                max-width: 260px;
+                height: 40px;
+                color: #fff;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: center;
+                text-decoration: none;
+                background: $brand-green-primary;
+                border-radius: 4px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $brand-green-secondary;
+                }
+
+                @media (max-width: 768px) {
+                    max-width: 100%;
+
+                }
+            }
+
+            & .#{$id}__cancel-btn {
+                color: $brand-green-primary;
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+                cursor: pointer;
+
+                &:hover {
+                    color: $brand-green-secondary;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        & .#{$id}__close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            cursor: pointer;
+
+
+        }
     }
 }
+

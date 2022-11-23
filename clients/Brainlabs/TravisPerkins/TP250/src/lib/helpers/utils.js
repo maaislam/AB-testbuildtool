@@ -12,3 +12,21 @@ export const isPLP = () => {
     !!document.querySelector('[data-test-id="plp-list"]')
   );
 };
+
+export const formatPrice = (amount, code = 'en-GB', currency = 'GBP') => {
+  return new Intl.NumberFormat(code, {
+    style: 'currency',
+    currency
+  }).format(amount.toFixed(2));
+};
+
+export const getCookie = (name) => {
+  const value = `; ${document.cookie}`;
+
+  const parts = value.split(`; ${name}=`);
+
+  if (parts.length === 2) {
+    return parts.pop().split(';').shift();
+  }
+  return false;
+};

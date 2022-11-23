@@ -1,4 +1,4 @@
-const observeDOM = (targetSelectorString, callbackFunction, expElemSelector, configObject) => {
+const observeDOM = (targetSelectorString, callbackFunction, expId, configObject) => {
   const target = document.querySelector(`${targetSelectorString}`);
   let oldHref = window.location.href;
   const observer = new MutationObserver((mutations) => {
@@ -10,7 +10,7 @@ const observeDOM = (targetSelectorString, callbackFunction, expElemSelector, con
       }
       const { addedNodes, removedNodes } = mutation;
       const modifiedNodes = [...addedNodes, ...removedNodes];
-      if (!modifiedNodes.some((node) => node.nodeType === 1 && node.matches(expElemSelector))) {
+      if (!modifiedNodes.some((node) => node.nodeType === 1 && node.matches(`[class^=${expId}]`))) {
         setTimeout(callbackFunction(mutation, urlChanged), 1000);
       }
     });
