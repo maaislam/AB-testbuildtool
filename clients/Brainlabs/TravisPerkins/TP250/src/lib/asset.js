@@ -15,12 +15,12 @@ export const closeIcon = `<svg xmlns="http://www.w3.org/2000/svg"
 
 export const messages = {
   notLoggedin: {
-    plp: 'Account holders get up to 20% off',
-    pdp: 'up to 20% off this Black friday when you spend £100+'
+    plp: 'Account holders get up to 20% off.',
+    pdp: 'up to 20% off this Black friday when you spend £100+.'
   },
   loggedin: {
-    plp: 'You have qualified for up to 20% off',
-    pdp: 'As a logged in customer, you have qualified for our Black Friday offer',
-    loginPopup: 'UP to 20% off this Black friday for travis perkins account holders only'
+    plp: 'You have qualified for up to 20% off.',
+    pdp: 'As a logged in customer, you have qualified for our Black Friday offer.',
+    loginPopup: 'UP to 20% off this Black friday for travis perkins account holders only.'
   }
 };
