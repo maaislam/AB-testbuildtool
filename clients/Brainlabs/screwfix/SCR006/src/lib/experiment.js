@@ -1,6 +1,7 @@
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import renderModal from './components/modal';
 import getCompareCount from './helpers/getCompareCount';
+import obsIntersection from './helpers/observeIntersection';
 import setCompare from './helpers/setCompare';
 
 import { isValidCategory } from './helpers/utils';
@@ -15,7 +16,7 @@ export default () => {
   sessionStorage.removeItem(`${ID}__selectedforcompare`);
 
   setup('Experimentation', `Screwfix - ${ID}`, shared);
-  fireEvent('Conditions Met', shared);
+  // fireEvent('Conditions Met', shared);
 
   document.body.addEventListener('click', ({ target }) => {
     if (
@@ -30,6 +31,19 @@ export default () => {
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
+
+  const compareBtnAnchor = document.getElementById('product_long_description_container');
+  //Gazi
+  const intersectionCallback = (entry) => {
+    if (entry.isIntersecting && !document.querySelector(`.${ID}__seen`)) {
+      entry.target.classList.add(`${ID}__seen`);
+      // console.log('Conditions Met');
+      fireEvent('Conditions Met', shared);
+    }
+  };
+
+  obsIntersection(compareBtnAnchor, 0.5, intersectionCallback);
+
   if (VARIATION === 'control') {
     return;
   }
@@ -39,7 +53,7 @@ export default () => {
   //-----------------------------
   //...
 
-  const compareBtnAnchor = document.getElementById('product_long_description_container');
+  //const compareBtnAnchor = document.getElementById('product_long_description_container');
   const compareButton = `<a title="Click here to add item to compare list" class="${ID}__compare-btn btn btn--lg fill">
       Compare our ${categoryInfo.category} product range
   </a>`;

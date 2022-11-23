@@ -4,13 +4,13 @@
     module.exports = {
       // Source files
     
-      src: path.resolve(__dirname, `../clients/Brainlabs/TravisPerkins/TP250/src`),
+      src: path.resolve(__dirname, `../clients/Brainlabs/screwfix/SCR006/src`),
     
       // Production build files
-      build: path.resolve(__dirname, `../clients/Brainlabs/TravisPerkins/TP250/public`),
+      build: path.resolve(__dirname, `../clients/Brainlabs/screwfix/SCR006/public`),
     
       // Static files that get copied to build folder
-      public: path.resolve(__dirname, `../clients/Brainlabs/TravisPerkins/TP250/public`),
+      public: path.resolve(__dirname, `../clients/Brainlabs/screwfix/SCR006/public`),
     
       templateHTML: path.resolve(__dirname, '../template.html'),
     };

@@ -4,37 +4,37 @@
 @import '../src/lib/shared/shared';
 
 .#{$id} {
-    &__compare-btn {
-        margin: 20px 0;
-        font-size: 20px !important;
-
-        &.loading {
-            position: relative;
-            color: transparent;
-            pointer-events: none;
-
-            &::after {
-                position: absolute;
-                left: 50%;
-                color: #000;
-                font-weight: 400;
-                font-family: font-awesome-custom;
-                transform: translate(-50%, -50%);
-                animation: spin 2s infinite linear;
-                content: '\e805';
-            }
-        }
+  &__compare-btn {
+    margin: 20px 0;
+    font-size: 18px !important;
+    @include media-query(sm) {
+      font-size: 16px !important;
     }
+    &.loading {
+      position: relative;
+      color: transparent;
+      pointer-events: none;
 
-
+      &::after {
+        position: absolute;
+        left: 50%;
+        color: #000;
+        font-weight: 400;
+        font-family: font-awesome-custom;
+        transform: translate(-50%, -50%);
+        animation: spin 2s infinite linear;
+        content: '\e805';
+      }
+    }
+  }
 }
 
 @keyframes spin {
-    0% {
-        transform: translate(-50%, -50%) rotate(0)
-    }
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
 
-    100% {
-        transform: translate(-50%, -50%) rotate(359deg)
-    }
+  100% {
+    transform: translate(-50%, -50%) rotate(359deg);
+  }
 }

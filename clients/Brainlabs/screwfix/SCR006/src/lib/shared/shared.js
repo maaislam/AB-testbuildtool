@@ -1,5 +1,6 @@
-export default {
+module.exports = {
     ID: "SCR006",
-    VARIATION: "1",
+    VARIATION: "control",
     CLIENT: "Brainlabs",
+    SITE: "screwfix"
   };
