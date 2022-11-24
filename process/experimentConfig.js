@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "SCR006",
-    VARIATION: "control",
+    ID: "SCR013",
+    VARIATION: "1",
     CLIENT: "Brainlabs",
     SITE: "screwfix"
   };
