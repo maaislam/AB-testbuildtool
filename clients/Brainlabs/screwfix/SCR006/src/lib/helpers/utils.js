@@ -19,7 +19,7 @@ export const isValidCategory = () => {
   const isValidPdp = validCategories.find((item) => {
     return dataObjs.prodCategory.includes(item.category);
   });
-  console.log(isValidPdp);
+  //console.log(isValidPdp);
 
   if (isValidPdp) {
     return {

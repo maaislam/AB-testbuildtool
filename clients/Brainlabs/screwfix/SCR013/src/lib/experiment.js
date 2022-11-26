@@ -19,5 +19,7 @@ export default () => {
   //-----------------------------
   //...
   const pageData = sizeData[window.location.pathname.split('-size')[0]];
-  console.log(pageData);
+  console.log('🚀 ~ file: experiment.js ~ line 22 ~ pageData', pageData);
+
+  const anchorElem = document.querySelector('.pr__prices').firstElementChild;
 };

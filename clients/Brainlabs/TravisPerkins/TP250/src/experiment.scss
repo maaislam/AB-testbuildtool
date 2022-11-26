@@ -129,9 +129,10 @@
             z-index: 1;
             width: 110px;
             height: 110px;
-            background-image: url('http://sb.monetate.net/img/1/c/static/2908/770904/de06d39fcb20507391811bb621ef71f2c8adb025.png');
+            background-image: url('https://sb.monetate.net/img/1/c/thumbnail/2908/6.11.eJwNzMsKgCAQQNF_mbU4STWIPxM9BhXMpKYHRP-eqwtncV8IHH0QcC01CsrOV-R7mLcs_FTNZ0oKzj2BgyBSHOIx6XXLLKOwrsG4ejTYW4NdR5aIdMkeFNxxkVC_1nw_554g2w.nDjj3ryov0HNQ8OHpmFbS4SAQcK5rNJM4ISRKiWMzYA/381x360.png');
             background-repeat: no-repeat;
             background-position: top center;
+            background-size: contain;
             border-radius: 0 5px 0 0;
             content: '';
 
@@ -180,12 +181,17 @@
             color: $brand-white-primary;
             font-weight: 700;
             font-size: 14px;
+            line-height: 20px;
             text-transform: uppercase;
             background: url('http://sb.monetate.net/img/1/581/4465346.png'), linear-gradient(90deg, rgba(26 33 38 / 100%) 80%, $brand-white-secondary 80%);
             background-repeat: no-repeat;
             background-position: right;
             background-size: contain;
             border-radius: 4px;
+            
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
 
             & .icon {
                 display: flex;
