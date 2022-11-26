@@ -1,5 +1,5 @@
 //import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
-import { pollerLite } from '../../../../../../globalUtil/util';
+import { pollerLite } from '../../../../../../../../globalUtil/util';
 import formWrapper from './components/formWrapper';
 import { addJsToPage } from './helpers/utils';
 import shared from './shared/shared';
