@@ -1,16 +1,17 @@
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import { sizeData } from './data';
 import shared from './shared/shared';
-import dropdownStr from './components/structure';
+
 import clickHandler from './components/handler';
 import obsIntersection from './observeIntersection';
+import getStockData from './getStockData';
 
 const { ID, VARIATION } = shared;
 
 export default () => {
-  setup('Experimentation', `Screwfix - ${ID}`, shared);
+  //setup('Experimentation', `Screwfix - ${ID}`, shared);
   document.body.addEventListener('click', ({ target }) => {
-    clickHandler(shared, target, fireEvent);
+    //clickHandler(shared, target, fireEvent);
   });
 
   console.log(ID);
@@ -19,7 +20,7 @@ export default () => {
   const intersectionCallback = (entry) => {
     if (entry.isIntersecting && !document.querySelector(`.${ID}__seen`)) {
       entry.target.classList.add(`${ID}__seen`);
-      fireEvent('Conditions Met', shared);
+      //fireEvent('Conditions Met', shared);
     }
   };
 
@@ -35,35 +36,18 @@ export default () => {
   //Write experiment code here
   //-----------------------------
   //...
+  const { pathname } = window.location;
+  const productName = pathname.slice(0, pathname.lastIndexOf('-size'));
+  const variants = sizeData[productName];
+  const variantUrls = variants.map(({ id, size }) => `${productName}-size-${size}/${id}`);
+  //render at this point
+  getStockData(variantUrls).then((stockData) => {
+    console.log(stockData);
 
-  const preSelectFn = (size) => {
-    const isElem = document.querySelector(`li a[data-size="${size.toUpperCase()}"]`);
-    if (isElem) {
-      isElem.parentElement.classList.add('selected');
-    }
-  };
+    //add class to show out of stock
+  });
 
-  const pageData = sizeData[window.location.pathname.split('-size')[0]];
-  const src = window.location.pathname.split('-size')[0];
-  const selectedSize = window.location.pathname.split(
-    window.location.pathname.match(/(size).\d*\//gi)
-  )[1];
-
-  const availableProduct = () => {
-    console.log('promise exerise', pageData);
-    const modifiedData = [];
-    for (const key in pageData) {
-      modifiedData.push({ [key]: pageData[key] });
-    }
-    console.log(modifiedData);
-  };
-  availableProduct();
-
-  document
-    .querySelector('.pr__prices > div')
-    .insertAdjacentHTML('afterend', dropdownStr(ID, src, pageData));
-
-  if (selectedSize) {
-    preSelectFn(selectedSize);
-  }
+  // console.log(variantUrls);
+  // console.log(productName);
+  // console.log(variants);
 };

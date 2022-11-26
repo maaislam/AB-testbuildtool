@@ -1,6 +1,6 @@
 module.exports = {
-  ID: 'DM10',
-  VARIATION: '1',
-  CLIENT: 'Funnelenvy',
-  SITE: 'deleteme'
-};
+    ID: "SCR013",
+    VARIATION: "1",
+    CLIENT: "Brainlabs",
+    SITE: "screwfix"
+  };
