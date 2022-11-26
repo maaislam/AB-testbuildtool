@@ -1,6 +1,6 @@
 //import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import shared from './shared/shared';
-import { pollerLite } from '../../../../../../globalUtil/util';
+import { pollerLite } from '../../../../../../../../globalUtil/util';
 import { addCssToPage, addJsToPage } from './helpers/utils';
 import imageItems from './components/imageItems';
 import { imagesData } from './data';
