@@ -31,6 +31,26 @@ body {
                     margin: 10px 0 0 0;
                 }
             }
+
+            .#{$id}__errorMessage {
+                &.#{$id}__disable{
+                    display: none;
+                }
+                .#{$id}__errorMessage-wrapper{
+                    display: flex;
+                    .#{$id}__icon{
+
+                    }
+                    .#{$id}__title{
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 15px;
+                        color: #D0030B;
+                        margin-left:5px;
+                    }
+                }
+            }
         }
        
         & .dropdown-menu{
@@ -95,6 +115,16 @@ body {
                     }
                   }
             }
+        }
+    }
+
+    .#{$id}__fakeDelivery{
+        &:hover{
+            background: #408f18;
+            background-image: -webkit-linear-gradient(top,#62b11a 0,#408f18 50%,#26770f 50%,#024b0d 100%);
+            background-image: linear-gradient(to bottom,#62b11a 0,#408f18 50%,#26770f 50%,#024b0d 100%);
+            border-color: #085010;
+            color: #fff;
         }
     }
 }
