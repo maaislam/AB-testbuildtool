@@ -29,7 +29,7 @@ export default () => {
 
   const urlParams = new URLSearchParams(window.location.search);
   const campaignId = urlParams.get('utm_campaignid');
-  console.log('utm_campaignid:', campaignId);
+  //console.log('utm_campaignid:', campaignId);
   const headlineText = campaignId ? headlineConfig[campaignId] : '';
   const headlineHtml = `<h1>${headlineText}</h1>`;
 
