@@ -7,6 +7,7 @@ import clickHandler from './components/handler';
 import obsIntersection from './observeIntersection';
 import getStockData from './getStockData';
 
+const INTERSECTING_RATIO = 0.3;
 const { ID, VARIATION } = shared;
 
 export default () => {
@@ -32,7 +33,7 @@ export default () => {
     }
   };
 
-  obsIntersection(compareBtnAnchor, 0.3, intersectionCallback);
+  obsIntersection(compareBtnAnchor, INTERSECTING_RATIO, intersectionCallback);
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
@@ -59,12 +60,13 @@ export default () => {
   getStockData(variantUrls).then((stockData) => {
     console.log(stockData, 'stockdata');
 
-    const notAvailable = stockData.filter(({ delivery, collection }) => !delivery && !collection);
-    const { sku } = notAvailable[0];
-    const isElem = document.querySelector(`[data-size="${sku}"]`);
-    if (isElem) {
-      isElem.parentElement.classList.add(`${ID}__notAvailable`);
-    }
+    const notAvailable = stockData.filter(({ delivery, collection }) => !delivery);
+    notAvailable.forEach((item) => {
+      const isElem = document.querySelector(`[data-size="${item.sku}"]`);
+      if (isElem) {
+        isElem.parentElement.classList.add(`${ID}__notAvailable`);
+      }
+    });
 
     //add class to show out of stock
   });

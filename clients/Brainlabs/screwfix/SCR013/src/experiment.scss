@@ -70,8 +70,21 @@ body {
                     border-radius: 2px;
                     margin:0 0 10px 0;
 
-                    &.#{$id}__notAvailable{
-                        display: none;
+                    &.#{$id}__notAvailable, &.selected.#{$id}__notAvailable{
+                        position: relative;
+                        background:  rgb(192 192 192);
+                        border: 2px solid rgb(192 192 192);
+                        pointer-events: none;
+                        opacity: 0.5;
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            top:50%;
+                            left:50%;
+                            width:100%;
+                            background:rgb(87, 86, 86);
+                            
+                        }
                     }
                    
                     &:nth-child(2), &:nth-child(5), &:nth-child(8), &:nth-child(11), &:nth-child(14), &:nth-child(17), &:nth-child(20){
