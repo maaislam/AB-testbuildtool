@@ -1,11 +1,11 @@
 @import './variables';
-@import '../src/lib/shared/shared.scss';
+@import '../src/lib/shared/shared';
 
 body {
     .#{$id}__dropdown-container{
         display: flex;
         align-items: center;
-        margin: 15px 0;
+        margin: 10px 0;
 
         @media only screen and (max-width: 640px) {
             &{
@@ -14,21 +14,21 @@ body {
         }
 
         & .dropdown-title{
-            font-style: normal;
+            align-self: flex-start;
+            padding-top:10px;
+            color: #1C549B;
             font-weight: 559;
             font-size: 18px;
             line-height: 20px;
-            color: #1C549B;
-            align-self: flex-start;
-            padding-top:10px;
         }
+
         & .dropdown-box{
             width: calc(100% - 57px);
             margin-left: 15px;
             @media only screen and (max-width: 640px) {
                 &{
                     width: 100%;
-                    margin: 10px 0 0 0;
+                    margin: 10px 0 0;
                 }
             }
 
@@ -38,16 +38,14 @@ body {
                 }
                 .#{$id}__errorMessage-wrapper{
                     display: flex;
-                    .#{$id}__icon{
-
-                    }
+                   
                     .#{$id}__title{
-                        font-style: normal;
+                        margin-left:5px;
+                        color: #D0030B;
                         font-weight: 400;
                         font-size: 13px;
+                        font-style: normal;
                         line-height: 15px;
-                        color: #D0030B;
-                        margin-left:5px;
                     }
                 }
             }
@@ -58,31 +56,33 @@ body {
                 display: flex;
                 flex-wrap: wrap;
                 width: 100%;
-                list-style: none;
-                padding: 0;
                 margin: 0;
+                padding: 0;
                 overflow: hidden;
+                list-style: none;
+
                 & li{
                     flex-basis: calc(100% / 3 - 7px);
+                    margin:0 0 10px;
                     text-align: center;
-                    background: #FFFFFF;
+                    background: #FFF;
                     border: 2px solid #E9E9E9;
                     border-radius: 2px;
-                    margin:0 0 10px 0;
 
                     &.#{$id}__notAvailable, &.selected.#{$id}__notAvailable{
                         position: relative;
                         background:  rgb(192 192 192);
                         border: 2px solid rgb(192 192 192);
-                        pointer-events: none;
                         opacity: 0.5;
+                        pointer-events: none;
+
                         &::before{
-                            content: '';
                             position: absolute;
                             top:50%;
                             left:50%;
                             width:100%;
-                            background:rgb(87, 86, 86);
+                            background:rgb(87 86 86);
+                            content: '';
                             
                         }
                     }
@@ -93,28 +93,28 @@ body {
                     @media only screen and (max-width: 640px) {
                         &{
                             flex-basis: calc(100% / 3 - 10px);
-                            margin:0 0px 15px 0;
+                            margin:0 0 15px;
                         }
+
                         &:nth-child(2), &:nth-child(5), &:nth-child(8), &:nth-child(11), &:nth-child(14), &:nth-child(17), &:nth-child(20){
                             margin: 0 15px 15px;
                         }
                     }
+
                     &.selected{
                         border: 2px solid #0053A0;
                     }
+
                     a{
                         display: block;
                         width:100%;
                         padding:10px 0;
-                        text-decoration: none;
-                        color: #000000;
-                        font-style: normal;
-                        font-weight: 400;
+                        color: #000;
+                        font-weight: 600;
                         font-size: 14px;
                         line-height: 16px;
-                        font-weight: 600;
+                        text-decoration: none;
                         transition: all ease-in-out 0.3s;
-                       
                     }
                 }
             }
@@ -132,16 +132,6 @@ body {
                     }
                   }
             }
-        }
-    }
-
-    .#{$id}__fakeDelivery{
-        &:hover{
-            background: #408f18;
-            background-image: -webkit-linear-gradient(top,#62b11a 0,#408f18 50%,#26770f 50%,#024b0d 100%);
-            background-image: linear-gradient(to bottom,#62b11a 0,#408f18 50%,#26770f 50%,#024b0d 100%);
-            border-color: #085010;
-            color: #fff;
         }
     }
 }

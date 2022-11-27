@@ -284,3 +284,18 @@ export const sizeData = {
     }
   ]
 };
+
+//const validUrls = [
+//'/p/dewalt-bolster-safety-boots-honey',
+//'/p/dewalt-phoenix-safety-boots-tan',
+//'/p/dewalt-hadley-safety-boots-brown',
+//'/p/dewalt-recip-safety-boots-black',
+//'/p/site-onyx-safety-boots-black',
+//'/p/site-fortress-safety-boots-black',
+//'/p/dewalt-pro-lite-comfort-safety-boots-brown',
+//'/p/dewalt-hydrogen-safety-boots-tan',
+//'/p/site-savannah-safety-boots-tan-size',
+//'/p/scruffs-switchback-ladies-safety-boots-tan'
+//];
+
+//validUrls.some((url) => window.location.pathname.includes(url));

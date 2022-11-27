@@ -3,9 +3,9 @@ import { sizeData } from './data';
 import shared from './shared/shared';
 import { dropdownStr } from './components/structure';
 
-import clickHandler from './components/handler';
-import obsIntersection from './observeIntersection';
-import getStockData from './getStockData';
+import clickHandler from './helpers/handler';
+import obsIntersection from './helpers/observeIntersection';
+import getStockData from './helpers/getStockData';
 
 const INTERSECTING_RATIO = 0.3;
 const { ID, VARIATION } = shared;
@@ -19,17 +19,21 @@ export default () => {
     clickHandler(shared, target, fireEvent, selectedSize);
   });
 
-  document.querySelector('.pr__product #qty').addEventListener('keyup', () => {
-    fireEvent('User interacts with quantity on pdp', shared);
+  document.body.addEventListener('input', ({ target }) => {
+    if (target.matches('#sticky_qty') || target.matches('.pr__product #qty')) {
+      fireEvent('User interacts with quantity on pdp', shared);
+    }
   });
 
-  console.log(ID);
+  //document.querySelector('.pr__product #qty').addEventListener('keyup', () => {});
+
+  //console.log(ID);
 
   const compareBtnAnchor = document.querySelector('.pr__prices');
   const intersectionCallback = (entry) => {
     if (entry.isIntersecting && !document.querySelector(`.${ID}__seen`)) {
       entry.target.classList.add(`${ID}__seen`);
-      //fireEvent('Conditions Met', shared);
+      fireEvent('Conditions Met', shared);
     }
   };
 
@@ -45,22 +49,22 @@ export default () => {
   //Write experiment code here
   //-----------------------------
   //...
-  const { pathname } = window.location;
-  const productName = pathname.slice(0, pathname.lastIndexOf('-size'));
+  const urlPathname = window.location.pathname;
+  const productName = urlPathname.slice(0, urlPathname.lastIndexOf('-size'));
   const variants = sizeData[productName];
   const variantUrls = variants.map(({ id, size }) => `${productName}-size-${size}/${id}`);
 
   //render at this point
-  console.log(variants, 'variants data', productName);
+  //console.log(variants, 'variants data', productName);
 
   document
     .querySelector('.pr__prices > div')
     .insertAdjacentHTML('afterend', dropdownStr(ID, productName, variants));
 
   getStockData(variantUrls).then((stockData) => {
-    console.log(stockData, 'stockdata');
+    //console.log(stockData, 'stockdata');
 
-    const notAvailable = stockData.filter(({ delivery, collection }) => !delivery);
+    const notAvailable = stockData.filter(({ delivery, collection }) => !collection && !delivery);
     notAvailable.forEach((item) => {
       const isElem = document.querySelector(`[data-size="${item.sku}"]`);
       if (isElem) {

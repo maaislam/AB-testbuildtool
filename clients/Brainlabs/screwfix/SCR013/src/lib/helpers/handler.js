@@ -1,6 +1,6 @@
 const clickHandler = (shared, target, fireEvent, selectedSize) => {
   const { ID } = shared;
-  console.log(selectedSize.toUpperCase());
+  //console.log(selectedSize.toUpperCase());
   if (target.closest('.dropdown-menu ul li')) {
     const targetElem = target.closest('.dropdown-menu ul li');
     document.querySelectorAll(`.${ID}__dropdown-container ul li.selected`).forEach((item) => {

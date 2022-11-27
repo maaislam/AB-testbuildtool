@@ -9,22 +9,16 @@ const sizeOption = (data, productName) => {
   return option;
 };
 
-export const dropdownStr = (id, productName, data, crossIcon) => {
+export const dropdownStr = (id, productName, variants) => {
   return `
     <div class="${id}__dropdown-container lg-24 md-12 cols">
         <span class="dropdown-title">SIZE</span>
         <div class="dropdown-box">
             <div class="dropdown-menu">
                 <ul>
-                    ${data.map((item) => sizeOption(item, productName)).join('\n')}
+                    ${variants.map((item) => sizeOption(item, productName)).join('\n')}
                 </ul>
             </div>
-            <div class="${id}__errorMessage ${id}__disable">
-                <div class="${id}__errorMessage-wrapper">
-                    <div class="${id}__icon">${crossIcon}</div>
-                    <div class="${id}__title">Please choose a size</div>
-                </div>
-                
         </div>
         </div>
             
