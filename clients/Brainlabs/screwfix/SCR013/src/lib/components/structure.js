@@ -1,20 +1,22 @@
-const sizeOption = (data) => {
+const sizeOption = (data, productName) => {
   //eslint-disable-next-line no-restricted-syntax
-  const { size, code, link } = data;
+  const { size, id } = data;
+  const link = `${productName}-size-${size}/${id}`;
+  const isSelected = window.location.pathname.includes(id) ? 'selected' : '';
 
-  const option = `<li><a href="${link}" data-size="${code}" >${size}</a></li>`;
+  const option = `<li class="${isSelected}"><a href="${link}" data-size="${id}">${size}</a></li>`;
 
   return option;
 };
 
-export const dropdownStr = (id, src, data, crossIcon) => {
+export const dropdownStr = (id, productName, data, crossIcon) => {
   return `
     <div class="${id}__dropdown-container lg-24 md-12 cols">
         <span class="dropdown-title">SIZE</span>
         <div class="dropdown-box">
             <div class="dropdown-menu">
                 <ul>
-                    ${data.map((item) => item.isDelivery && sizeOption(item)).join('\n')}
+                    ${data.map((item) => sizeOption(item, productName)).join('\n')}
                 </ul>
             </div>
             <div class="${id}__errorMessage ${id}__disable">
@@ -28,13 +30,5 @@ export const dropdownStr = (id, src, data, crossIcon) => {
             
     </div>
     
-    `;
-};
-
-export const fakeDeliveryButon = (id) => {
-  return `
-    <button id="product_add_to_trolley_image" alt="Add for Delivery" title="Click here to add this item to your basket for delivery" class="btn btn--lg btn--del fill light ${id}__fakeDelivery">
-        Deliver
-    </button>
     `;
 };
