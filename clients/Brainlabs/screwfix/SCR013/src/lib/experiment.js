@@ -18,7 +18,7 @@ export default () => {
     clickHandler(shared, target, fireEvent, selectedSize);
   });
 
-  document.querySelector('.pr__product #qty').addEventListener('keyup', (e) => {
+  document.querySelector('.pr__product #qty').addEventListener('keyup', () => {
     fireEvent('User interacts with quantity on pdp', shared);
   });
 
@@ -64,9 +64,7 @@ export default () => {
   getStockData(variantUrls).then((stockData) => {
     console.log(stockData, 'stockdata');
 
-    const notAvailable = stockData.filter((item) => {
-      return item.delivery === false;
-    });
+    const notAvailable = stockData.filter(({ delivery, collection }) => !delivery && !collection);
     const { sku } = notAvailable[0];
     const isElem = document.querySelector(`[data-size="${sku}"]`);
     if (isElem) {
