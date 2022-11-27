@@ -1,3 +1,4 @@
+import { pollerLite } from '../../../../../../globalUtil/util';
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import renderModal from './components/modal';
 import getCompareCount from './helpers/getCompareCount';
@@ -9,14 +10,13 @@ import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
 
-export default () => {
+const init = () => {
+  if (!isValidCategory()) return;
   const { isValidPdp, categoryInfo } = isValidCategory();
 
   if (!isValidPdp && !window.location.pathname.includes('/p/')) return;
-  sessionStorage.removeItem(`${ID}__selectedforcompare`);
 
   setup('Experimentation', `Screwfix - ${ID}`, shared);
-  // fireEvent('Conditions Met', shared);
 
   document.body.addEventListener('click', ({ target }) => {
     if (
@@ -33,11 +33,11 @@ export default () => {
   //-----------------------------
 
   const compareBtnAnchor = document.getElementById('product_long_description_container');
-  //Gazi
+
   const intersectionCallback = (entry) => {
     if (entry.isIntersecting && !document.querySelector(`.${ID}__seen`)) {
       entry.target.classList.add(`${ID}__seen`);
-      // console.log('Conditions Met');
+
       fireEvent('Conditions Met', shared);
     }
   };
@@ -74,11 +74,18 @@ export default () => {
         setCompare(productId).then((response) => {
           if (response.status === 200) {
             fireEvent('User clicks on compare CTA', shared);
-            sessionStorage.setItem(`${ID}__selectedforcompare`, productId);
-            window.location.href = comparePageUrl;
+            const lastBreadcrumb = document.querySelector('.bc__sm >a').getAttribute('href');
+            sessionStorage.setItem(`${ID}__selectedforcompare`, comparePageUrl);
+
+            //window.history()
+            window.location.replace(lastBreadcrumb);
           }
         });
       }
     });
   });
+};
+
+export default () => {
+  pollerLite(['#product_long_description_container'], init);
 };
