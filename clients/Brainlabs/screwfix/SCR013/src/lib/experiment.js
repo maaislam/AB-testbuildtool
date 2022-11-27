@@ -22,11 +22,6 @@ export default () => {
     fireEvent('User interacts with quantity on pdp', shared);
   });
 
-  //setup('Experimentation', `Screwfix - ${ID}`, shared);
-  document.body.addEventListener('click', ({ target }) => {
-    //clickHandler(shared, target, fireEvent);
-  });
-
   console.log(ID);
 
   const compareBtnAnchor = document.querySelector('.pr__prices');
