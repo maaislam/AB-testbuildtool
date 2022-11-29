@@ -14,8 +14,8 @@ const { ID, VARIATION } = shared;
 const init = () => {
   if (!isValidCategory()) return;
   const { isValidPdp, categoryInfo } = isValidCategory();
-  console.log('i am in');
-  fireEvent('Conditions Met');
+  //console.log('i am in');
+  //fireEvent('Conditions Met');
   if (!isValidPdp && !window.location.pathname.includes('/p/')) return;
 
   setup();
