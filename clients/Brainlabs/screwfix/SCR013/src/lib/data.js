@@ -227,7 +227,7 @@ export const sizeData = {
       size: 12
     }
   ],
-  '/p/site-savannah-safety-boots-tan-size': [
+  '/p/site-savannah-safety-boots-tan': [
     {
       id: '9147P',
       size: 7

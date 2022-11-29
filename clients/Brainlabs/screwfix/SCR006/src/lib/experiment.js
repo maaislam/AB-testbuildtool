@@ -1,5 +1,6 @@
 import { pollerLite } from '../../../../../../globalUtil/util';
-import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
+import setup from './helpers/setup';
+import fireEvent from './helpers/gaTracking';
 import renderModal from './components/modal';
 import getCompareCount from './helpers/getCompareCount';
 import obsIntersection from './helpers/observeIntersection';
@@ -13,10 +14,11 @@ const { ID, VARIATION } = shared;
 const init = () => {
   if (!isValidCategory()) return;
   const { isValidPdp, categoryInfo } = isValidCategory();
-
+  console.log('i am in');
+  fireEvent('Conditions Met');
   if (!isValidPdp && !window.location.pathname.includes('/p/')) return;
 
-  setup('Experimentation', `Screwfix - ${ID}`, shared);
+  setup();
 
   document.body.addEventListener('click', ({ target }) => {
     if (
@@ -38,7 +40,7 @@ const init = () => {
     if (entry.isIntersecting && !document.querySelector(`.${ID}__seen`)) {
       entry.target.classList.add(`${ID}__seen`);
 
-      fireEvent('Conditions Met', shared);
+      fireEvent('Conditions Met');
     }
   };
 

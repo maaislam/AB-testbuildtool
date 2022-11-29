@@ -52,7 +52,9 @@ export default () => {
   const urlPathname = window.location.pathname;
   const productName = urlPathname.slice(0, urlPathname.lastIndexOf('-size'));
   const variants = sizeData[productName];
-  const variantUrls = variants.map(({ id, size }) => `${productName}-size-${size}/${id}`);
+  //console.log(productName, sizeData, sizeData[productName]);
+  const variantUrls =
+    variants?.length > 0 && variants.map(({ id, size }) => `${productName}-size-${size}/${id}`);
 
   //render at this point
   //console.log(variants, 'variants data', productName);

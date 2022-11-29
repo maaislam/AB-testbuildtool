@@ -3,7 +3,7 @@ import { pollerLite } from '../../../../../globalUtil/util';
 import spinner from './lib/components/spinner';
 
 if (window.location.pathname.includes('/p/')) {
-  pollerLite(['main'], () => {
+  pollerLite(['main', () => window.ga !== undefined], () => {
     setTimeout(activate, 2000);
   });
 } else if (
@@ -12,7 +12,7 @@ if (window.location.pathname.includes('/p/')) {
   sessionStorage.getItem('SCR006__selectedforcompare')
 ) {
   //document.querySelector('main').classList.add('SCR006__loader');
-  pollerLite(['main'], () => {
+  pollerLite(['main', () => window.ga !== undefined], () => {
     const main = document.querySelector('main');
     main.insertAdjacentHTML('afterbegin', spinner());
     const url = sessionStorage.getItem('SCR006__selectedforcompare');
