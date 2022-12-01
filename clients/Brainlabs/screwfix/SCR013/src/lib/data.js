@@ -253,11 +253,7 @@ export const sizeData = {
       size: 12
     }
   ],
-  '/p/scruffs-switchback-ladies-safety-boots-tan': [
-    {
-      id: '594VG',
-      size: 3
-    },
+  '/p/scruffs-switchback-3-safety-boots-tan': [
     {
       id: '299KH',
       size: 7
