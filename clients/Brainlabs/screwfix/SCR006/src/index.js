@@ -3,7 +3,7 @@ import { pollerLite } from '../../../../../globalUtil/util';
 import spinner from './lib/components/spinner';
 
 if (window.location.pathname.includes('/p/')) {
-  pollerLite(['main'], () => {
+  pollerLite(['main', () => window.gtag !== undefined], () => {
     setTimeout(activate, 2000);
   });
 } else if (

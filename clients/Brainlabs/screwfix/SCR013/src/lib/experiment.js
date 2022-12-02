@@ -38,6 +38,14 @@ export default () => {
   };
 
   obsIntersection(compareBtnAnchor, INTERSECTING_RATIO, intersectionCallback);
+  const urlPathname = window.location.pathname;
+
+  const currentDelivery = !!document.querySelector('#product_add_to_trolley_image');
+  const currentCollection = !!document.querySelector('[id^=add_for_collection_button]');
+
+  if (!currentDelivery && !currentCollection) {
+    fireEvent(`User viewed ${urlPathname.slice(0, urlPathname.lastIndexOf('/'))} - Out of stock`);
+  }
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
@@ -49,10 +57,11 @@ export default () => {
   //Write experiment code here
   //-----------------------------
   //...
-  const urlPathname = window.location.pathname;
   const productName = urlPathname.slice(0, urlPathname.lastIndexOf('-size'));
   const variants = sizeData[productName];
-  const variantUrls = variants.map(({ id, size }) => `${productName}-size-${size}/${id}`);
+  //console.log(productName, sizeData, sizeData[productName]);
+  const variantUrls =
+    variants?.length > 0 && variants.map(({ id, size }) => `${productName}-size-${size}/${id}`);
 
   //render at this point
   //console.log(variants, 'variants data', productName);
@@ -68,7 +77,7 @@ export default () => {
     notAvailable.forEach((item) => {
       const isElem = document.querySelector(`[data-size="${item.sku}"]`);
       if (isElem) {
-        isElem.parentElement.classList.add(`${ID}__notAvailable`);
+        //isElem.parentElement.classList.add(`${ID}__notAvailable`);
       }
     });
 
