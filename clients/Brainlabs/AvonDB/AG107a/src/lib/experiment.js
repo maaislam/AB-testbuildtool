@@ -21,6 +21,11 @@ const init = () => {
   document.querySelectorAll(`[src="${image}"]`).forEach((item) => {
     item.remove();
   });
+  const howToImage = document.querySelector('[src^="common/data/0002.svg"]');
+  howToImage?.setAttribute(
+    'src',
+    'https://cdn-eu.dynamicyield.com/api/9877979/images/1a4b1002a849__asset_8_3x.png'
+  );
 
   intervalTimer = setInterval(() => {
     const pdpImages = document.querySelectorAll('.v7__maps__hotspot');
@@ -75,21 +80,21 @@ export default () => {
   }
   //bail if control
 
-  // init();
+  init();
 
-  // let oldURL = window.location.href;
-  // const mutationCallback = (mutation) => {
-  //   if (oldURL !== window.location.href) {
-  //     if (!oldURL.includes('/product') && !window.location.href.includes('/product')) {
-  //       sessionStorage.setItem(`${ID}__seen`, 'true');
-  //       init();
-  //     } else {
-  //       document.querySelectorAll(`[src="${image}"]`).forEach((item) => {
-  //         item.closest('.v7__maps__map').classList.remove(`${ID}__firstproduct`);
-  //       });
-  //     }
-  //     oldURL = window.location.href;
-  //   }
-  // };
-  // observeDOM('body', mutationCallback);
+  let oldURL = window.location.href;
+  const mutationCallback = (mutation) => {
+    if (oldURL !== window.location.href) {
+      if (!oldURL.includes('/product') && !window.location.href.includes('/product')) {
+        sessionStorage.setItem(`${ID}__seen`, 'true');
+        init();
+      } else {
+        document.querySelectorAll(`[src="${image}"]`).forEach((item) => {
+          item.closest('.v7__maps__map').classList.remove(`${ID}__firstproduct`);
+        });
+      }
+      oldURL = window.location.href;
+    }
+  };
+  observeDOM('body', mutationCallback);
 };
