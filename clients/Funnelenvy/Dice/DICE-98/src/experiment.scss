@@ -1,0 +1,41 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.FE-#{$id} {
+    &__freemonthpromo {
+        margin-top: 3rem;
+        color:#069;
+        line-height: 1.5;
+
+        h3{
+            margin-bottom: 0;
+        }
+
+        .end-date{
+            margin-bottom: 14px;
+            font-size: 19px;
+        }
+
+        a{
+            display: inline-block;
+            padding: .75rem 1rem;
+            color: #fff;
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            background-color: #069;
+            border: 1px solid #069;
+            border-radius: 3px;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+            user-select: none;
+            
+            &:hover{
+                background-color: #00334d;
+                border-color: #00334d;
+            }
+        }
+    }
+}

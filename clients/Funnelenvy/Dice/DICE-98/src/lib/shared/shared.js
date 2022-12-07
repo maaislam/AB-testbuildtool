@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "DM10",
+    ID: "DICE-98",
     VARIATION: "1",
     CLIENT: "Funnelenvy",
-    SITE: "deleteme"
+    SITE: "Dice"
   };
