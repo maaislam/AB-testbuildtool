@@ -1,0 +1,113 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__hide {
+        display: none !important;
+    }
+
+    &__bosch-promo {
+        clear: both;
+        margin-bottom: 20px;
+        border: 1px solid #C7C7C7;
+    }
+
+    // &__promomsg {}
+
+    &__promomsg {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        color: $brand-blue-primary;
+        font-weight: 700;
+        font-size: 18px;
+        font-family: 'screwfix_betabold';
+
+        &--copy {
+            width: calc(70% - 20px);
+            max-width: 170px;
+        }
+    }
+
+    &__terms {
+        position: relative;
+        color: #fff;
+        font-weight: 700;
+        font-size: 12px;
+        font-family: 'screwfix_betaregular';
+        line-height: 1.5;
+
+
+        a {
+            color: #fff;
+        }
+
+        &--title {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            line-height: 1.5;
+            background-color: $brand-blue-primary;
+            cursor: pointer;
+        }
+
+        &--content {
+            max-height: 0;
+            padding: 0 10px;
+            background-color: $brand-blue-primary;
+            transition: all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+            &.open {
+                max-height: 150px;
+                padding: 0 10px 10px;
+            }
+        }
+    }
+
+    &__closebtn {
+        position: relative;
+        width: 12px;
+        height: 12px;
+        margin-left: 12px;
+
+        &::after,
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            transform: translate(-50%, -50%);
+            transition: all .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+            content: "";
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &.open {
+            &::before {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+        }
+    }
+}
+
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
