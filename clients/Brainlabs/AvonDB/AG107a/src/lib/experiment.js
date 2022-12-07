@@ -21,6 +21,11 @@ const init = () => {
   document.querySelectorAll(`[src="${image}"]`).forEach((item) => {
     item.remove();
   });
+  const howToImage = document.querySelector('[src^="common/data/0002.svg"]');
+  howToImage?.setAttribute(
+    'src',
+    'https://cdn-eu.dynamicyield.com/api/9877979/images/1a4b1002a849__asset_8_3x.png'
+  );
 
   intervalTimer = setInterval(() => {
     const pdpImages = document.querySelectorAll('.v7__maps__hotspot');
