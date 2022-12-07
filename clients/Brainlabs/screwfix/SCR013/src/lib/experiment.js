@@ -40,11 +40,18 @@ export default () => {
   obsIntersection(compareBtnAnchor, INTERSECTING_RATIO, intersectionCallback);
   const urlPathname = window.location.pathname;
 
-  const currentDelivery = !!document.querySelector('#product_add_to_trolley_image');
-  const currentCollection = !!document.querySelector('[id^=add_for_collection_button]');
+  const noDelivery = document
+    .querySelector('[id^="product_add_to_trolley"]')
+    ?.classList.contains('btn--disabled');
+  const noCollection = document
+    .querySelector('[id^=add_for_collection_button]')
+    ?.classList.contains('btn--disabled');
 
-  if (!currentDelivery && !currentCollection) {
-    fireEvent(`User viewed ${urlPathname.slice(0, urlPathname.lastIndexOf('/'))} - Out of stock`);
+  if (noDelivery && noCollection) {
+    fireEvent(
+      `User viewed ${urlPathname.slice(0, urlPathname.lastIndexOf('/'))} - Out of stock`,
+      shared
+    );
   }
   //-----------------------------
   //If control, bail out from here

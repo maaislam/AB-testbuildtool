@@ -47,53 +47,53 @@ export const sizeData = {
   ],
   '/p/dewalt-phoenix-safety-boots-tan': [
     {
-      id: '8168V',
+      id: '8168v',
       size: 7
     },
     {
-      id: '4842V',
+      id: '4842v',
       size: 8
     },
     {
-      id: '7001V',
+      id: '7001v',
       size: 9
     },
     {
-      id: '2448V',
+      id: '2448v',
       size: 10
     },
     {
-      id: '3301V',
+      id: '3301v',
       size: 11
     },
     {
-      id: '4061V',
+      id: '4061v',
       size: 12
     }
   ],
   '/p/dewalt-hadley-safety-boots-brown': [
     {
-      id: '657JJ',
+      id: '657jj',
       size: 7
     },
     {
-      id: '201JJ',
+      id: '201jj',
       size: 8
     },
     {
-      id: '534JJ',
+      id: '534jj',
       size: 9
     },
     {
-      id: '313JJ',
+      id: '313jj',
       size: 10
     },
     {
-      id: '665JJ',
+      id: '665jj',
       size: 11
     },
     {
-      id: '277JJ',
+      id: '277jj',
       size: 12
     }
   ],
@@ -151,131 +151,131 @@ export const sizeData = {
   ],
   '/p/site-fortress-safety-boots-black': [
     {
-      id: '4454V',
+      id: '4454v',
       size: 7
     },
     {
-      id: '9604V',
+      id: '9604v',
       size: 8
     },
     {
-      id: '8452V',
+      id: '8452v',
       size: 9
     },
     {
-      id: '2219V',
+      id: '2219v',
       size: 10
     },
     {
-      id: '6015V',
+      id: '6015v',
       size: 11
     },
     {
-      id: '5330V',
+      id: '5330v',
       size: 12
     }
   ],
   '/p/dewalt-pro-lite-comfort-safety-boots-brown': [
     {
-      id: '7645T',
+      id: '7645t',
       size: 7
     },
     {
-      id: '8405T',
+      id: '8405t',
       size: 8
     },
     {
-      id: '3180T',
+      id: '3180t',
       size: 9
     },
     {
-      id: '1409T',
+      id: '1409t',
       size: 10
     },
     {
-      id: '3987T',
+      id: '3987t',
       size: 11
     },
     {
-      id: '7827T',
+      id: '7827t',
       size: 12
     }
   ],
   '/p/dewalt-hydrogen-safety-boots-tan': [
     {
-      id: '2726P',
+      id: '2726p',
       size: 7
     },
     {
-      id: '5896P',
+      id: '5896p',
       size: 8
     },
     {
-      id: '3045P',
+      id: '3045p',
       size: 9
     },
     {
-      id: '6965P',
+      id: '6965p',
       size: 10
     },
     {
-      id: '9769P',
+      id: '9769p',
       size: 11
     },
     {
-      id: '5206P',
+      id: '5206p',
       size: 12
     }
   ],
   '/p/site-savannah-safety-boots-tan': [
     {
-      id: '9147P',
+      id: '9147p',
       size: 7
     },
     {
-      id: '3517P',
+      id: '3517p',
       size: 8
     },
     {
-      id: '8699P',
+      id: '8699p',
       size: 9
     },
     {
-      id: '7844P',
+      id: '7844p',
       size: 10
     },
     {
-      id: '3412P',
+      id: '3412p',
       size: 11
     },
     {
-      id: '6853P',
+      id: '6853p',
       size: 12
     }
   ],
   '/p/scruffs-switchback-3-safety-boots-tan': [
     {
-      id: '299KH',
+      id: '299kh',
       size: 7
     },
     {
-      id: '382KH',
+      id: '382kh',
       size: 8
     },
     {
-      id: '950KH',
+      id: '950kh',
       size: 9
     },
     {
-      id: '902KH',
+      id: '902kh',
       size: 10
     },
     {
-      id: '773KH',
+      id: '773kh',
       size: 11
     },
     {
-      id: '291KH',
+      id: '291kh',
       size: 12
     }
   ]

@@ -1,18 +1,11 @@
 import shared from '../shared/shared';
 
-const fireEvent = (label) => {
-  //console.log(label);
+const gaTracking = (label) => {
   const { ID, VARIATION, SITE } = shared;
   document.documentElement.classList.add(ID);
   document.documentElement.classList.add(`${ID}-${VARIATION}`);
   const labelMessage = `Test ID: ${ID} Variation: ${VARIATION} Label: ${label}`;
-  //window.ga('send', 'event', 'Experimentation', `${SITE} - ${ID}`, labelMessage);
-  //window.gtag('send', {
-  //hitType: 'event',
-  //eventCategory: 'Experimentation',
-  //eventAction: `${SITE} - ${ID}`,
-  //eventLabel: labelMessage
-  //});
+  //console.log(labelMessage);
   window.gtag('event', 'Experimentation', {
     event_category: 'Experimentation',
     event_action: `${SITE} - ${ID}`,
@@ -21,4 +14,4 @@ const fireEvent = (label) => {
   });
 };
 
-export default fireEvent;
+export default gaTracking;
