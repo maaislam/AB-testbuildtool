@@ -55,13 +55,16 @@
         }
 
         &--content {
+            position: relative;
             max-height: 0;
             padding: 0 10px;
+            overflow: hidden;
             background-color: $brand-blue-primary;
             transition: all 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
             &.open {
-                max-height: 150px;
+                z-index: 1;
+                max-height: 250px;
                 padding: 0 10px 10px;
             }
         }
@@ -95,6 +98,30 @@
             &::before {
                 transform: translate(-50%, -50%) rotate(180deg);
             }
+        }
+    }
+
+    &__howitworks {
+        margin-top: 15px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.3;
+
+        &--steps {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        &--step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
         }
     }
 }
