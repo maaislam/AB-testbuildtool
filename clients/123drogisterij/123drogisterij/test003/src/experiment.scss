@@ -15,7 +15,7 @@ body {
                     color: #03031a;
                     background-color: #febd00;
                     border-color: #febd00;
-                    box-shadow: rgba(3, 3, 26, 0.25) 0px 4px 0px -2px;
+                    border-radius: 3px;
                     border: 1px solid transparent;
                     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
                     cursor: pointer;
@@ -23,9 +23,9 @@ body {
                         & svg{
                             width:21px;
                             height:21px;
-                            font-size: 1.5em;
-                            line-height: .6667em;
+                            font-weight: bolder;
                             vertical-align: -0.3125rem;
+                            fill: #523a00;
                         }
                      }
 
@@ -44,6 +44,14 @@ body {
                      &:focus-visible{
                         outline: 2px solid #33f;
                         outline-offset: 2px;
+                     }
+
+                     .#{$id}__cart-icon{
+                        color: #523a00;
+                        & i{
+                            font-size: 21px;
+                            width: 21px;
+                        }
                      }
              
                     }
