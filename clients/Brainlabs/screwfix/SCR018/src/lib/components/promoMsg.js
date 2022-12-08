@@ -1,4 +1,6 @@
-const promoMsg = (id) => {
+import howItWorks from './howitWork';
+
+const promoMsg = (id, variation) => {
   const htmlStr = `
     <div class="${id}__bosch-promo">
     <div class="${id}__promomsg">
@@ -18,11 +20,13 @@ const promoMsg = (id) => {
             <span class="${id}__closebtn"></span>
         </div>
         <div class="${id}__terms--content">
+            <div class="text-conten">
             Promotion valid for purchases made between 1st September and the 31st December 2022. For free product
             choices,
             T&C’s and details on how to claim the free product from Bosch, see
-            <a href="https://www.bosch-professional.com/gb/en/pro360/prodeals/toolbag/">https://www.bosch-professional.com/gb/en/pro360/prodeals/toolbag/</a> by 31/01/2023. Proof of purchase required.
-            This is a manufacturer promotion.
+            <a class="bosch-toolbag" href="https://www.bosch-professional.com/gb/en/pro360/prodeals/toolbag/">https://www.bosch-professional.com/gb/en/pro360/prodeals/toolbag/</a> by 31/01/2023. Proof of purchase required.
+            This is a manufacturer promotion.</div>
+            ${variation === '2' ? howItWorks(id) : ''}
         </div>
     </div>
 </div>`;
