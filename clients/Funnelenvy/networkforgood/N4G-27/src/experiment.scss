@@ -1,0 +1,64 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.FE-#{$id} {
+    &__hide{
+        display: none !important;
+    }
+
+    &__inputrow {
+        width: 100% !important;
+    }
+
+    &__formnavelems{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 200px;
+        margin: 10px auto 40px;
+        padding: 16px 12px;
+
+        .line-middle{
+            width: calc(100% - 40px);
+            height: 4px;
+            background-color: #c8c8ca;
+        }
+
+        .circle-blue{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            
+            path{
+                fill: rgb(37 172 235);
+            }
+        }
+
+        .circle-left, .circle-right{
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #c8c8ca;
+            border-radius: 50%;
+            
+            // cursor: pointer;
+
+            &::before{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: calc(100% - 5px);
+                height: calc(100% - 5px);
+                background-color: #c8c8ca;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                content: '';
+            }
+        }
+
+        .circle-right[data-action="step-toggle"]{
+            cursor: pointer;
+        }
+    }
+}
