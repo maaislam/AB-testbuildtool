@@ -88,7 +88,8 @@ export default () => {
 
   leadFormContainer.addEventListener('click', ({ target }) => {
     if (target.closest('[data-action="step-toggle"]')) {
-      if (window.getComputedStyle(submitBtn).display === 'none') {
+      const isStep1 = window.getComputedStyle(submitBtn).display === 'none';
+      if (isStep1) {
         submitBtn.click();
       }
       setTimeout(() => {
@@ -98,8 +99,12 @@ export default () => {
         });
 
         if (hasError) return;
-
         //return if error
+
+        if (isStep1) {
+          gaTracking('Step 1 Completion');
+        }
+
         const inputRows = formElement.querySelectorAll(`.FE-${ID}__inputrow`);
         const navElems = document.querySelectorAll(`.FE-${ID}__formnav span`);
         toggleDisplay(inputRows);
@@ -107,6 +112,15 @@ export default () => {
         document.querySelector(`.FE-${ID}__mktoButton`).classList.toggle(`FE-${ID}__hide`);
         submitBtn.classList.toggle(`FE-${ID}__hide`);
       }, 700);
+    } else if (target.closest('input') || target.closest('select')) {
+      gaTracking('Form engagement');
+    } else if (target.closest('button[type="submit"].mktoButton')) {
+      const hasError = [...stepTwoInputs].some((stepTwoInput) => {
+        const errDiv = stepTwoInput.querySelector('.mktoError');
+        return errDiv && window.getComputedStyle(errDiv).display !== 'none';
+      });
+      if (hasError) return;
+      gaTracking('Step 2 Completion');
     }
   });
 };
