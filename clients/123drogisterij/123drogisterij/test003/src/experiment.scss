@@ -20,9 +20,10 @@ body {
                     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
                     cursor: pointer;
                      & span{
+                        display: flex;
                         & svg{
-                            width:21px;
-                            height:21px;
+                            width:16px;
+                            height:14px;
                             font-weight: bolder;
                             vertical-align: -0.3125rem;
                             fill: #523a00;

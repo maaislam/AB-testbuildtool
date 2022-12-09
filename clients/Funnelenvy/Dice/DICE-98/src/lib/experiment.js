@@ -23,7 +23,7 @@ export default () => {
     } else if (
       (target.closest('[id^="bm-next-"]') &&
         target.closest('.bm-step').querySelector('.fe-active')) ||
-      (target.closest('.mktoButton') &&
+      (!target.closest('.mktoButton') &&
         target.closest('button[type="submit"]') &&
         target.closest('form').querySelector('.mktoError')?.style.display === 'none')
     ) {
