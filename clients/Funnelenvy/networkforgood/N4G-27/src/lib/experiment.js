@@ -111,15 +111,16 @@ export default () => {
         toggleDisplay(navElems);
         document.querySelector(`.FE-${ID}__mktoButton`).classList.toggle(`FE-${ID}__hide`);
         submitBtn.classList.toggle(`FE-${ID}__hide`);
-      }, 700);
-    } else if (target.closest('input') || target.closest('select')) {
+      }, 1000);
+    } else if (target.closest('input') && !target.closest('input#Phone')) {
       gaTracking('Form engagement');
     } else if (target.closest('button[type="submit"].mktoButton')) {
       const hasError = [...stepTwoInputs].some((stepTwoInput) => {
         const errDiv = stepTwoInput.querySelector('.mktoError');
         return errDiv && window.getComputedStyle(errDiv).display !== 'none';
       });
-      if (hasError) return;
+
+      if (hasError || window.getComputedStyle(submitBtn).display === 'none') return;
       gaTracking('Step 2 Completion');
     }
   });

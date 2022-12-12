@@ -47,7 +47,9 @@ export default () => {
   //contactUsCopy.classList.add(`FE-${ID}__hide`);
 
   const offerLine = `<span class="FE-${ID}__offerline">This offer ends December 31, so act now!</span>`;
-  document.querySelector('.bm_form_heading>p').insertAdjacentHTML('beforeend', offerLine);
+  const formHead = document.querySelector('.bm_form_heading > p');
+  formHead.innerText = 'Get Your Free Month';
+  formHead.insertAdjacentHTML('beforeend', offerLine);
 
   contactUsCopy.innerHTML = newContent(ID);
 };
