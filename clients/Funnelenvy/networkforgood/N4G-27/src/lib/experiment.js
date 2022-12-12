@@ -46,6 +46,8 @@ export default () => {
   const formSelects = formElement.querySelectorAll('select');
   const submitBtn = formElement.querySelector('button[type="submit"]');
 
+  leadFormContainer.classList.add(`FE-${ID}__leadformcontainer`);
+
   const inputElemAdjust = (inputs) => {
     inputs.forEach((input) => {
       if (input.type === 'hidden') return;
@@ -71,19 +73,23 @@ export default () => {
 
   //make all input field full width
   //hide all select fields
-  const stepOneInputs = document.querySelectorAll(`.FE-${ID}__input:not(.FE-${ID}__Phone)`);
+  const stepOneInputs = document.querySelectorAll(`.FE-${ID}__input:not(.FE-${ID}__Company)`);
 
   const stepTwoInputs = [
     ...document.querySelectorAll(`.FE-${ID}__select`),
-    document.querySelector(`.FE-${ID}__Phone`)
+    document.querySelector(`.FE-${ID}__Company`)
   ];
+
+  formTitle.innerHTML = `<h2 class="FE-${ID}__formtitle">Watch for Free</h2>`;
   submitBtn.insertAdjacentHTML('beforebegin', nextStepBtn);
   formTitle.insertAdjacentHTML('afterend', formNav);
   submitBtn.classList.add(`FE-${ID}__hide`);
   toggleDisplay(stepTwoInputs);
 
   //add a button with functionality to show hide
-
+  const companyRow = document.querySelector(`.FE-${ID}__Company`);
+  const phoneRow = document.querySelector(`.FE-${ID}__Phone`);
+  phoneRow.insertAdjacentElement('afterend', companyRow);
   //on load changes ends here//
 
   leadFormContainer.addEventListener('click', ({ target }) => {
@@ -112,7 +118,7 @@ export default () => {
         document.querySelector(`.FE-${ID}__mktoButton`).classList.toggle(`FE-${ID}__hide`);
         submitBtn.classList.toggle(`FE-${ID}__hide`);
       }, 1000);
-    } else if (target.closest('input') && !target.closest('input#Phone')) {
+    } else if (target.closest('input') && !target.closest('input#Company')) {
       gaTracking('Form engagement');
     } else if (target.closest('button[type="submit"].mktoButton')) {
       const hasError = [...stepTwoInputs].some((stepTwoInput) => {

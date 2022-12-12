@@ -1,14 +1,64 @@
 @import './variables';
 @import '../src/lib/shared/shared';
 
+
+.resourceMarketoForm .section__form.FE-#{$id}__leadformcontainer .mktoForm .mktoFormRow{
+    padding-left: 0;
+    
+    input, select{
+        height: 42px !important;
+        border-color: #aeb0b6 !important;
+        border-radius: 4px !important;
+    }
+
+    .fe-tooltip-N4G4-paid{
+        display: none;
+    }
+  
+}
+
 .FE-#{$id} {
     &__hide{
         display: none !important;
     }
 
+    .stepPaginationContainer{
+        margin-bottom: 0;
+    }
+
+    &__leadformcontainer{
+        width: 100%;
+        max-width: 537px;
+        margin: 0 auto;
+
+      
+
+
+        label.mktoLabel{
+            padding-left: 9px !important;
+            color: #04293a !important;
+            font-weight: 600 !important;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        input{
+            height: 42px !important;
+            border-color: #aeb0b6 !important;
+            border-radius: 4px !important;
+        }
+    }
+
+    &__formtitle{
+        line-height: 36px;
+        text-align: center;
+    }
+
     &__inputrow {
         width: 100% !important;
+        padding: 0 !important;
     }
+
 
     &__formnavelems{
         display: flex;
@@ -16,7 +66,7 @@
         justify-content: space-around;
         width: 100%;
         max-width: 200px;
-        margin: 10px auto;
+        margin: 0 auto 14px;
         padding: 12px;
 
         .line-middle{
