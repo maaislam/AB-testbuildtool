@@ -79,17 +79,23 @@ export default () => {
     ...document.querySelectorAll(`.FE-${ID}__select`),
     document.querySelector(`.FE-${ID}__Company`)
   ];
+  const currentTitle = formTitle.innerText;
 
-  formTitle.innerHTML = `<h2 class="FE-${ID}__formtitle">Watch for Free</h2>`;
+  formTitle.innerHTML = `<h2 class="FE-${ID}__formtitle">${currentTitle}</h2>`;
   submitBtn.insertAdjacentHTML('beforebegin', nextStepBtn);
   formTitle.insertAdjacentHTML('afterend', formNav);
   submitBtn.classList.add(`FE-${ID}__hide`);
+
+  submitBtn.innerText = currentTitle.includes('Download') ? 'Download' : 'Watch Now';
   toggleDisplay(stepTwoInputs);
 
   //add a button with functionality to show hide
   const companyRow = document.querySelector(`.FE-${ID}__Company`);
   const phoneRow = document.querySelector(`.FE-${ID}__Phone`);
   phoneRow.insertAdjacentElement('afterend', companyRow);
+
+  //update phone label
+  phoneRow.querySelector('label').innerHTML = '<div class="mktoAsterix">*</div> Work Phone';
   //on load changes ends here//
 
   leadFormContainer.addEventListener('click', ({ target }) => {
@@ -121,13 +127,16 @@ export default () => {
     } else if (target.closest('input') && !target.closest('input#Company')) {
       gaTracking('Form engagement');
     } else if (target.closest('button[type="submit"].mktoButton')) {
-      const hasError = [...stepTwoInputs].some((stepTwoInput) => {
-        const errDiv = stepTwoInput.querySelector('.mktoError');
-        return errDiv && window.getComputedStyle(errDiv).display !== 'none';
-      });
+      setTimeout(() => {
+        const hasError = [...stepTwoInputs].some((stepTwoInput) => {
+          const errDiv = stepTwoInput.querySelector('.mktoError');
+          return errDiv && window.getComputedStyle(errDiv).display !== 'none';
+        });
 
-      if (hasError || window.getComputedStyle(submitBtn).display === 'none') return;
-      gaTracking('Step 2 Completion');
+        if (!hasError && window.getComputedStyle(submitBtn).display !== 'none') {
+          gaTracking('Step 2 Completion');
+        }
+      }, 1000);
     }
   });
 };

@@ -1,8 +1,8 @@
 const newContent = (ID) => {
   const htmlStr = `<h4>Dice is the better way to hire in tech.</h4>
-    <p class="FE-${ID}__subheading">Hiring tech talent in a competitive market is a lot easier when you have a partner who really understands tech.
+    <p class="FE-${ID}__subheadline">Hiring tech talent in a competitive market is a lot easier when you have a partner who really understands tech.
         With Dice's tech recruitment package, you get:</p><p class="FE-${ID}__hotfix ${ID}__hide"></p>
-    <ul class="FE-${ID}__lists">
+    <ul class="FE-${ID}__featurelists">
         <li>Access to more than 5 million of the best technology professionals available</li>
         <li>Tools you need to find the right fit for your roles, needs and culture</li>
         <li>Best-in-class, white glove support from our hiring specialists, who know tech professionals inside and out</li>
