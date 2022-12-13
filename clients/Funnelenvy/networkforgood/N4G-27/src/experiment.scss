@@ -2,39 +2,64 @@
 @import '../src/lib/shared/shared';
 
 
-.resourceMarketoForm .section__form.FE-#{$id}__leadformcontainer .mktoForm .mktoFormRow{
+.resourceMarketoForm .section__form.FE-#{$id}__leadformcontainer .mktoForm .mktoFormRow {
     padding-left: 0;
-    
-    input, select{
+
+    input,
+    select {
         height: 42px !important;
-        border-color: #aeb0b6 !important;
         border-radius: 4px !important;
     }
 
-    .fe-tooltip-N4G4-paid{
+    .fe-tooltip-N4G4-paid {
         display: none;
     }
-  
+
+    &.termsSection {
+        width: 60% !important;
+
+        @media screen and (max-width: 767px) {
+            width: 100% !important;
+        }
+
+        &+.mktoButtonRow {
+            width: 40% !important;
+
+            @media screen and (max-width: 767px) {
+                width: 100% !important;
+            }
+        }
+    }
+
+
+
 }
 
 .FE-#{$id} {
-    &__hide{
+    &__hide {
         display: none !important;
     }
 
-    .stepPaginationContainer{
+    .stepPaginationContainer {
         margin-bottom: 0;
     }
 
-    &__leadformcontainer{
+    &__leadformcontainer.section__form {
         width: 100%;
         max-width: 537px;
         margin: 0 auto;
 
-      
+        @media screen and (max-width: 768px) {
+            padding: 22px !important;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 30px !important;
+        }
 
 
-        label.mktoLabel{
+
+        label.mktoLabel {
             padding-left: 9px !important;
             color: #04293a !important;
             font-weight: 600 !important;
@@ -42,16 +67,17 @@
             line-height: 20px;
         }
 
-        input{
+        input {
             height: 42px !important;
             border-color: #aeb0b6 !important;
             border-radius: 4px !important;
         }
     }
 
-    &__formtitle{
+    &__formtitle {
         line-height: 36px;
-        text-align: center;
+        text-align: center !important;
+
     }
 
     &__inputrow {
@@ -60,7 +86,7 @@
     }
 
 
-    &__formnavelems{
+    &__formnavelems {
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -69,32 +95,33 @@
         margin: 0 auto 14px;
         padding: 12px;
 
-        .line-middle{
+        .line-middle {
             width: calc(100% - 40px);
             height: 4px;
             background-color: #c8c8ca;
         }
 
-        .circle-blue{
+        .circle-blue {
             width: 20px;
             height: 20px;
             cursor: pointer;
-            
-            path{
+
+            path {
                 fill: rgb(37 172 235);
             }
         }
 
-        .circle-left, .circle-right{
+        .circle-left,
+        .circle-right {
             position: relative;
             width: 20px;
             height: 20px;
             border: 1px solid #c8c8ca;
             border-radius: 50%;
-            
+
             // cursor: pointer;
 
-            &::before{
+            &::before {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -107,7 +134,7 @@
             }
         }
 
-        .circle-right[data-action="step-toggle"]{
+        .circle-right[data-action="step-toggle"] {
             cursor: pointer;
         }
     }

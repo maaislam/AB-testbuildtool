@@ -24,7 +24,7 @@ export default () => {
       entry.target.classList.add(`${ID}__seen`);
       gaTracking('Conditions Met'); //use if needed
       isMobile() && gaTracking('Customer scrolls far enough to see the energy rating image.');
-      gaTracking(`user sees ${energyRating}`);
+      gaTracking(`user sees ${energyRating}`, true);
     }
   };
 
