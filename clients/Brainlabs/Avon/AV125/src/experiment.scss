@@ -1,8 +1,108 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
 @import './variables';
-@import '../src/lib/shared/shared.scss';
+@import '../src/lib/shared/shared';
 
 .#{$id} {
-    &__test {
+    &__banner {
+        display: grid;
+        grid-template-columns: 2.0fr 2.5fr 1fr;
+        gap: 40px;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        font-family: Montserrat;
+        
+        &--col1{
+            .title{
+                margin-bottom: 12px;
+                padding: 5px 25px;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 20px;
+                text-align: center;
+            }
+
+            .subtitle{
+                margin-left: 25px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                letter-spacing: 0.01em;
+                text-align: right;
+
+            }
+        }
+
+        &--col2{
+            ul{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;  
+            }
+
+            li{ 
+                font-weight: 500;
+                font-size: 11px;
+                font-style: italic;
+                line-height: 13px;
+                text-align: center;
+                list-style: none;
+            }
+
+            img{
+                max-width: 100%;
+                height: auto !important;
+            }
+        }
+
+        &--col3{
+            padding-right: 20px;
+            text-align: right;
+             .#{$id}__productprice{
+                margin-bottom: 4px;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;  
+            }
+             .#{$id}__pricedetail{
+                margin-bottom: 8px;
+                font-weight: 500;
+                font-size: 9px;
+                font-style: italic;
+                line-height: 11px;  
+            }
+
+            .#{$id}__addtobag{
+                display: block;
+                width: 100%;
+                max-width: 134px;
+                margin-left: auto;
+                padding: 10px 0;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 15px;
+                text-align: center;
+                background: #7F28C4;
+                border: 1px solid #7F28C4;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover{
+                    background-color: #6a17ad;
+                    border-color: #6a17ad;
+                }
+            }
+        }
+        
+    }
+
+    &__productImg{
         display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 4px;
+        border: 1px solid #fff;
+        border-radius: 3px;
     }
 }
