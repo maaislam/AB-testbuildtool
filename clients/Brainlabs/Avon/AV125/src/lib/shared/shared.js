@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "AV125",
-    VARIATION: "1",
-    CLIENT: "Brainlabs",
-    SITE: "Avon"
-  };
+  ID: 'AV125',
+  VARIATION: 'control',
+  CLIENT: 'Brainlabs',
+  SITE: 'Avon'
+};

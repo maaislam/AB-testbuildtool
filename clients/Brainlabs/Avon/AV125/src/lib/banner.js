@@ -1,15 +1,21 @@
-const banner = (id) => {
+const banner = (id, variation) => {
   const { title, subTitle, bundleSku, bannerStyles, bannerProducts } = window.bannerData;
 
   const productHtml = bannerProducts
     .map((data) => {
+      const words = data.productTitle
+        .split(' ')
+        .map((item) => {
+          return `<span>${item}</span>`;
+        })
+        .join('\n');
       return `
         <li>
             <span class="${id}__productImg">
                 <img src="${data.productImage}" alt="${data.productTitle}">
             </span>
             <span class="${id}__productTitle">
-                ${data.productTitle}
+                ${variation === '2' ? words : data.productTitle}
             </span>
         </li>
     `;
@@ -17,7 +23,7 @@ const banner = (id) => {
     .join('\n');
 
   const htmlStr = `
-    <div class="${id}__banner" style="background-color:${bannerStyles.backColor}">
+    <div class="${id}__banner" style="background-color:${bannerStyles.backColor};">
         <div class="${id}__banner--col1">
             <div class="title" style="background-color:${bannerStyles.titleBackcolor}">
                 ${title}
@@ -34,8 +40,9 @@ const banner = (id) => {
                 +£1.00
             </div>
             <div class="${id}__pricedetail">
-                (3 x 0.15ml Samples)<br>
-                (£0.35 per ml)
+                <span class="productprice-mobile">+£1.00</span> 
+                <span class="productdetail-mobile">(3 x 0.15ml Samples)</span>
+                <span>(£0.35 per ml)</span>   
             </div>
             <div class="${id}__addtobag" data-sku="${bundleSku}">
                 Add To Bag
