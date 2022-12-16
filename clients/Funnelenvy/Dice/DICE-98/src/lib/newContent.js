@@ -9,7 +9,7 @@ const newContent = (ID) => {
     </ul>
     <div class="FE-${ID}__freemonthpromo">
         <div class="left-wrapper">
-            <h4>WIN TECH TALENT IN 2023 WITH A FREE MONTH FROM DICE</h4>
+            <h4>WIN TECH TALENT IN 2023 WITH A FREE MONTH FROM DICE*</h4>
             <div class="subheading">We’re offering one month of our annual tech recruitment services package for free to help you win skilled tech candidates in a tight market next year. Buy an annual recruitment package by December 31 and get 12 months for the price of 11.
             </div>
         </div>
@@ -23,8 +23,9 @@ const newContent = (ID) => {
                     </path>
                 </svg></span>
         </div>
-        
-    </div>`;
+    </div>
+    <div class="FE-${ID}__disclaimer">* <em>Offer not valid for active Dice subscription clients.</em></div>`;
+
   return htmlStr;
 };
 
