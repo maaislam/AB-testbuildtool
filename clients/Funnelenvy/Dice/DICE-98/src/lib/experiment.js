@@ -11,24 +11,17 @@ export default () => {
   document.body.addEventListener('pointerup', ({ target }) => {
     if (target.closest('.bm-answer-btn') || target.closest('.mktoFormCol')) {
       gaTracking('form_engagement');
-    } else if (
-      (target.closest('[id^="bm-next-"]') &&
-        !target.closest('.bm-step').querySelector('.fe-active')) ||
-      (!target.closest('.mktoButton') &&
-        target.closest('button[type="submit"]') &&
-        target.closest('form').querySelector('.mktoError')?.style.display !== 'none')
-    ) {
+    } else if (target.closest('#bm-next-one') || target.closest('#bm-next-two')) {
       gaTracking('CTA_continue');
-      //console.log('worked');
-    } else if (
-      (target.closest('[id^="bm-next-"]') &&
-        target.closest('.bm-step').querySelector('.fe-active')) ||
-      (!target.closest('.mktoButton') &&
-        target.closest('button[type="submit"]') &&
-        target.closest('form').querySelector('.mktoError')?.style.display === 'none')
-    ) {
-      gaTracking('CTA_continue');
-      gaTracking('continuation_rate');
+      setTimeout(() => {
+        const landedOnStep2 = !!document.querySelector(
+          '.fe-step1-complete:not(.fe-step2-complete)'
+        );
+        const landedOnStep3 = !!document.querySelector('.fe-step1-complete.fe-step2-complete');
+        console.log(landedOnStep2, landedOnStep3);
+        landedOnStep2 && gaTracking('2nd_step_b2b_from', 'continuation_rate');
+        landedOnStep3 && gaTracking('3rd_step_b2b_from', 'continuation_rate');
+      }, 500);
     }
   });
   //-----------------------------
