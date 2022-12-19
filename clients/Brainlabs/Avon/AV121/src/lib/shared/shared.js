@@ -1,5 +1,6 @@
-export default {
+module.exports = {
     ID: "AV121",
     VARIATION: "1",
-    CLIENT: "brainlabs",
+    CLIENT: "Brainlabs",
+    SITE: "Avon"
   };
