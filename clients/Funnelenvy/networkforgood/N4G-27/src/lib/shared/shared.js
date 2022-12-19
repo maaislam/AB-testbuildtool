@@ -1,6 +1,6 @@
 module.exports = {
     ID: "N4G-27",
-    VARIATION: "1",
+    VARIATION: "control",
     CLIENT: "Funnelenvy",
     SITE: "networkforgood"
   };
