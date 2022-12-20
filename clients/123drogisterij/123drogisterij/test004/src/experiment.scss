@@ -1,0 +1,117 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+body {
+    
+    .test004__mainStructure {
+        text-align: center;
+        position: fixed;
+        width: 130px;
+        text-align: center;
+        position: fixed;
+        background: white;
+        padding: 8px 0px;
+        border: none;
+        box-shadow: rgb(0 0 0 / 10%) 0px 2px 9px 4px;
+        border-radius: 8px;
+        top: auto;
+        right: 13px !important;
+        bottom: 96px !important;
+        left: auto;
+        inset: auto 20px 74px auto;
+        transition: opacity 0.2s linear 0s;
+        z-index: 9;
+
+        & .test004__ratings{
+            display: block;
+            background: url(https://www.kiyoh.com/assets/kiyoh/images/kv_shape.svg) 50% 50% no-repeat;
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            color: #464343;
+            margin:0 auto;
+
+            &::before{
+                content: '';
+                position: absolute;
+                top: 5%;
+                left: 5%;
+                width: 90%;
+                height: 90%;
+                background: #fff;
+                z-index: -1;
+                border-radius: 50%;
+            }
+
+            & span {
+                display: block;
+                position: absolute;
+                font-weight: 500;
+                font-family: Gotham,Arial;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                letter-spacing: -.05em;
+                text-align: center;
+                transform: translate(0, -50%);
+            }
+        }
+
+        & .test004__stars {
+
+            width:90px;
+            margin:5px auto 0;
+            height: 15px;
+            background-image: url(https://www.123drogisterij.nl/static/version1669977435/frontend/Magento/luma/nl_NL/Interactivated_Customerreview/images/rating-sprite.png);
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+
+        }
+
+        & .test004__contents{
+            & .test004__title{
+                margin-bottom: 0;
+
+            }
+
+            & .test004__subtitle{
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+        }
+
+        & .test004__buttonContainer{
+            
+            width: 120px;
+            margin: 0 auto;
+        & .test004__button{
+            padding: 5px 4px;
+            font-size: 11px;
+            background-color: #dd6826;
+            color: #fff;
+            &::after{
+                font-family: FontAwesome;
+                font-size: 1.5625em;
+                margin-top: -0.08em;
+                font-weight: 700;
+                transition: color .3s ease-out,transform .3s ease-out,background-color .3s ease-out;
+                line-height: 0;
+                display: inline-block;
+                vertical-align: middle;
+                content: "\f105";
+                margin-left: 1.5em;
+                transform: translate3d(-0.5em,0,0);
+            }
+
+            &:hover::after{
+                transform: translate3d(0,0,0);
+            }
+        }
+        }
+
+    }
+        
+    
+}
