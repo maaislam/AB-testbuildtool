@@ -12,17 +12,19 @@ export default () => {
   const energyRatingElem = document.querySelector('.energyLabelArrow');
   const energyRating = energyRatingElem.getAttribute('alt');
 
+  const isMobile = () => window.matchMedia('(max-width: 640px)').matches;
   const compareBtnAnchor =
     VARIATION === '1'
-      ? document.querySelector('#product_description')
+      ? isMobile()
+        ? document.querySelector('#product_description')
+        : document.querySelector('.pr__tabbed-content')
       : document.querySelector('#product_specification_list');
   const intersectionCallback = (entry) => {
-    const isMobile = window.matchMedia('(max-width: 640px)').matches;
     if (entry.isIntersecting && !document.querySelector(`.${ID}__seen`)) {
       entry.target.classList.add(`${ID}__seen`);
       gaTracking('Conditions Met'); //use if needed
-      isMobile && gaTracking('Customer scrolls far enough to see the energy rating image.');
-      gaTracking(`user sees ${energyRating}`);
+      isMobile() && gaTracking('Customer scrolls far enough to see the energy rating image.');
+      gaTracking(`user sees ${energyRating}`, true);
     }
   };
 
