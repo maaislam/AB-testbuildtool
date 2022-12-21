@@ -80,13 +80,22 @@
                 expose your personal your personal information.
             </p>
         </div>
-        <div class="button-row">
-            <div class="test__pill-button test__brand-yellow">
-                Yes
-            </div>
-            <div class="test__pill-button test__brand-white">
-                No
-            </div>
+        <div class="getlocation-form">
+            <form autocomplete="off"
+                  class="test__fullname--form">
+                <span>
+                    <input name="fullName"
+                           type="text"
+                           class="test__fullname--input"
+                           id="test__fullname--input">
+                    <label for="test__fullname--input">
+                        Enter First and Last Name
+                    </label>
+                </span>
+                <input type="submit"
+                       value="Search"
+                       class="test__fullname--submit">
+            </form>
         </div>
     </div>
     <div class="test__confirmlocation--col3">
@@ -108,5 +117,53 @@
         </div>
 
     </div>
+</div>
 
+
+
+
+<div class="scanner-animation-section-outer hidden-handhelds">
+    <div class="scanner-animation-section">1. Enter your information</div> 
+    <div class="scanner-animation-section">2. Scan data brokers</div> 
+    <div class="scanner-animation-section">3. See results</div> 
+    <div class="scanner-animation-section-line step1">&nbsp;</div>
+</div>
+
+
+<div class="scanner-progress">
+    <div class="scanner-progress-animation" style="width: 22.6562%;">
+        <span>smartbackgroundchecks.com...</span>
+    </div>
+</div>
+
+
+<datalist>
+    <option value="S Coffeyville, OK"></option>
+    <option value="S.N.P.J., PA"></option>
+    <option value="Sabael, NY"></option>
+    <option value="Sabana Eneas, PR"></option>
+    <option value="Sabana Grande, PR"></option>
+    <option value="Sabana Hoyos, PR"></option>
+</datalist>
+
+
+
+<div class="acceptation">
+    <div class="check-row">
+        <input id="chk-term-1" class="chk-term" type="checkbox">
+        <label id="lbl-term-1" for="chk-term-1" class="alert">
+            <span>I have read and agree to the <a href="https://joindeleteme.com/legal/#terms" target="_blank" rel="noopener noreferrer">Terms of Service</a> and <a href="https://joindeleteme.com/legal/#privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></span>
+        </label>
+    </div>
+</div>
+
+
+<div class="checkbox-block"><input id="acceptRules" type="checkbox" name="isAcceptRules">
+    <label for="acceptRules">
+        I have read and I agree to the
+        <a href="/terms-of-service" target="_blank">Terms of Service</a>
+        and
+        <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+        .
+    </label>
 </div>

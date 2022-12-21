@@ -1,7 +1,7 @@
-const nameChangeHandler = (target) => {
+const inputChangeHandler = (target) => {
   target.removeAttribute('not-empty');
   if (target.value === '') return;
   target.setAttribute('not-empty', true);
 };
 
-export default nameChangeHandler;
+export default inputChangeHandler;
