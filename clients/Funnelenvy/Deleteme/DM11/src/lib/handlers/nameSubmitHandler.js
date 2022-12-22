@@ -1,3 +1,5 @@
+import gaTracking from '../services/gaTracking';
+
 const nameSubmitHandler = (id, target) => {
   //validate input
   const fullNameElem = target.closest('form').querySelector(`.${id}__fullname--input`);
@@ -20,6 +22,7 @@ const nameSubmitHandler = (id, target) => {
   //place name in control's form
   document.getElementById('billie-widget-txt-name').value = fullname;
   //send user to scanning page by clicking control's submit
+  gaTracking('step_1_completion');
   document.getElementById('billie-widget-submit').click();
 };
 

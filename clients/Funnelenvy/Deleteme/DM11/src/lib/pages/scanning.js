@@ -126,5 +126,5 @@ const scanning = (id) => {
 
   return htmlStr.trim();
 };
-
-export default scanning;
+window.feDm11Scanning = scanning;
+//export default scanning;

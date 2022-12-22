@@ -16,6 +16,9 @@ const locationSubmitHandler = (id, target) => {
   }
 
   //send to scanning
+  const navtabs = document.querySelector(`.${id}__navtab`);
+  navtabs?.classList.remove('step-1');
+  navtabs?.classList.add('step-2');
   sessionStorage.setItem(`${id}__currentlocation`, searchTerm);
   document.querySelector('[data-btn="local-correct"]').click();
 };

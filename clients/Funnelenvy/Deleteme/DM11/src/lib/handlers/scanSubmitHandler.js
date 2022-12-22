@@ -1,6 +1,7 @@
 /*eslint-disable no-param-reassign */
 import initaialScan from '../components/initailScan';
 import { delay, waitForElm } from '../helpers/utils';
+import gaTracking from '../services/gaTracking';
 
 const scanSubmitHandler = (id) => {
   const payload = {
@@ -25,6 +26,8 @@ const scanSubmitHandler = (id) => {
       .then((res) => res)
       .then((data) => delay(waitInterval).then(() => data));
   };
+
+  gaTracking('step_2_completion');
 
   return fetch(`${searchDomain}/bff/api/v1/free-scan`, {
     headers: {

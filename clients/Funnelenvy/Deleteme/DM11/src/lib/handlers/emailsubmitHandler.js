@@ -1,3 +1,5 @@
+import gaTracking from '../services/gaTracking';
+
 /*eslint-disable no-useless-escape */
 const emailSibmitHandler = (id, target) => {
   //validate email
@@ -23,6 +25,7 @@ const emailSibmitHandler = (id, target) => {
   }
   document.getElementById('txt-email-1').value = email;
   document.getElementById('btn-submit-1').click();
+  gaTracking(' step_3_completion');
 };
 
 export default emailSibmitHandler;
