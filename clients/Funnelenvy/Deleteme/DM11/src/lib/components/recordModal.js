@@ -63,6 +63,6 @@ const recordModal = (id, recordProvider) => {
   return htmlStr.trim();
 };
 
-window.feDm11RecordModal = recordModal;
+//window.feDm11RecordModal = recordModal;
 
-//export default recordModal;
+export default recordModal;

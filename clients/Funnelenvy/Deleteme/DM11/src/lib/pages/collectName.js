@@ -18,7 +18,7 @@ const collectName = (id) => {
             </div>
             <div class="${id}__collectname--form">
                 <p>
-                    Find out which sites publish your info. It's free.
+                    Find out which sites publish your info. It's free!
                 </p>
                 <form autocomplete="off"
                     class="${id}__fullname--form">

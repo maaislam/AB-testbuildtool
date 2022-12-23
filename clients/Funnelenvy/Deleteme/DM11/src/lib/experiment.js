@@ -6,14 +6,14 @@ import collectName from './pages/collectName';
 import nameSubmitHandler from './handlers/nameSubmitHandler';
 import inputChangeHandler from './handlers/inputChangeHandle';
 import scanPage from './pages/scanPage';
-//import scanning from './pages/scanning';
+import scanning from './pages/scanning';
 import locationInputhandler from './handlers/locationInputHandler';
 import locationSubmitHandler from './handlers/locationSubmitHandler';
 import scanSubmitHandler from './handlers/scanSubmitHandler';
 import emailSibmitHandler from './handlers/emailsubmitHandler';
 import scanResult from './pages/scanResult';
 import getScanResult from './helpers/getScanResult';
-//import scanRecordRow from './components/scanRecordRow';
+import scanRecordRow from './components/scanRecordRow';
 import recordModalHandler from './handlers/recordModalHandler';
 import whyModalHandler from './handlers/whyModalHandler';
 
@@ -49,7 +49,7 @@ export default () => {
     } else if (target.closest('[data-btn="local-correct"]')) {
       const header = document.querySelector(`.${ID}__header`);
       document.querySelector(`.${ID}__confirmlocation`)?.remove();
-      header.insertAdjacentHTML('afterend', window.feDm11Scanning(ID));
+      header.insertAdjacentHTML('afterend', scanning(ID));
       scanSubmitHandler(ID);
       const navtabs = document.querySelector(`.${ID}__navtab`);
       navtabs?.classList.remove('step-1');
@@ -133,7 +133,7 @@ export default () => {
       //render scan result rows
       document
         .querySelector(`.${ID}__scanresults--resultheader`)
-        .insertAdjacentHTML('afterend', window.feDm11ScanRecordRow(ID, records));
+        .insertAdjacentHTML('afterend', scanRecordRow(ID, records));
       const recordModal = `<div class="${ID}__recordmodal ${ID}__hide"></div>`;
       document.body.insertAdjacentHTML('afterbegin', recordModal);
     });
