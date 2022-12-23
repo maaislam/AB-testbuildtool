@@ -1,7 +1,8 @@
 /* stylelint-disable no-descending-specificity */
 /* stylelint-disable import-notation */
 @import './variables';
-@import './form.css';
+
+// @import './form.css';
 @import '../src/lib/shared/shared';
 
 // @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
@@ -244,12 +245,21 @@
             max-width: 1330px;
             height: 100vh;
             margin: 0 auto;
+            padding: 0 70px;
+
            
-            @include media-query(xlg) {
-                padding: 0 32px;
-            }
             @include media-query(lg) {
+                padding: 0 100px;
+            }
+            @include media-query(sm) {
                 padding: 0 20px;
+                text-align: center;
+            }
+
+            form{
+                @include media-query(sm) {
+                    margin: 20px auto 0;
+                }
             }
             
         }
@@ -502,6 +512,8 @@
             }
 
             .text{
+                position: relative;
+
                 span{
                     display: block;
                     width: 24px;
@@ -513,6 +525,7 @@
                     line-height: 1;
                     background-color: $brand-gray-tertiary;
                     border-radius: 50%;
+                    cursor: pointer;
                 }
             }
         }
@@ -623,7 +636,11 @@
         height: 100%;
         overflow: auto; 
         overflow-x: hidden;
-        background-color: transparent;
+
+        // background-color: transparent;
+        background-color: rgba(0 0 0 / 40%);
+
+        
        
 
         .#{$id}__modalcontent{
@@ -636,6 +653,34 @@
             background-color: #fff;
             box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
             animation: slide-in-right 0.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) both;
+
+            &.why{
+                top: 40%;
+                width: 100%;
+                max-width: 600px;
+                height: auto;
+                margin: 0 auto;
+                padding: 40px 30px 30px;
+                color: #000;
+                transform: translateY(-50%);
+                animation: fade-in 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+
+                h2{
+                    margin-bottom: 20px;
+                }
+
+                .#{$id}__modalclose{
+                    top: 0;
+                    right: 10px;
+                }
+
+                &.close{
+                    animation: fade-out 0.2s ease-out both;
+                }
+
+            }
+
+
             @include media-query(lg) {
                 width: 80%;
             }
@@ -719,6 +764,29 @@
             }
         }
     }
+
+    &__questiontooltip{
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        width: 300px;
+        padding: 10px;
+        text-align: left;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+        transform: translateX(-50%);
+
+        &::after {
+            position: absolute;
+            bottom: 100%;  /* At the top of the tooltip */
+            left: 50%;
+            margin-left: -5px;
+            border-color: transparent transparent #fff ;
+            border-style: solid;
+            border-width: 5px;
+            content: " ";
+          }
+    }
 }
 
 #reviewBadgeWidgetInner {
@@ -748,6 +816,27 @@
     100% {
       transform: translateX(1000px);
       opacity: 1;
+    }
+  }
+  
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+@keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
     }
   }
   

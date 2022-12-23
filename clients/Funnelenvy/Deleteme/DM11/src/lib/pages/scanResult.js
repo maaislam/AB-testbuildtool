@@ -1,4 +1,5 @@
 import header from '../components/header';
+import questionTooltip from '../components/questionTooltip';
 
 const scanResult = (id) => {
   const fullname = sessionStorage.getItem(`${id}__fullname`);
@@ -14,12 +15,13 @@ const scanResult = (id) => {
                     <span>${scanCount}</span>
                     <span>Profiles found</span>
                 </div>
-                <div class="text">
+                <div class="${id}__questionmark text">
                     <span>?</span>
+                    ${questionTooltip(id)}
                 </div>
             </div>
             <div class="${id}__scanresults--why"> 
-                <a href="">Why my private info is public?</a>
+                <a href="" class="${id}__scanresults--question">Why my private info is public?</a>
             </div>
             <div class="${id}__scanresults--resultheader">
                 <div class="col1 mobile-view">RECORDS</div>

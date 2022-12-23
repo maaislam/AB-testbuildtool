@@ -54,9 +54,10 @@
 
 .common-input:focus+label,
 .common-input[not-empty]+label {
-    margin-top: 6px;
-    padding-top: 0;
-    font-size: 12px;
+    margin-top: -6px;
+    padding: 0 5px;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 100%;
     outline: none;
 }

@@ -15,6 +15,7 @@ import scanResult from './pages/scanResult';
 import getScanResult from './helpers/getScanResult';
 //import scanRecordRow from './components/scanRecordRow';
 import recordModalHandler from './handlers/recordModalHandler';
+import whyModalHandler from './handlers/whyModalHandler';
 
 const { ID } = shared;
 
@@ -83,6 +84,13 @@ export default () => {
       gaTracking('remove_my_private_info');
     } else if (target.closest(`.${ID}__startprotection`)) {
       gaTracking('start_protection');
+    } else if (target.closest(`.${ID}__scanresults--question`)) {
+      e.preventDefault();
+      whyModalHandler(ID);
+    } else if (target.closest(`.${ID}__questionmark > span`)) {
+      target.nextElementSibling.classList.toggle(`${ID}__hide`);
+    } else if (!target.closest(`.${ID}__questiontooltip`)) {
+      document.querySelector(`.${ID}__questiontooltip`)?.classList.add(`${ID}__hide`);
     }
   });
 

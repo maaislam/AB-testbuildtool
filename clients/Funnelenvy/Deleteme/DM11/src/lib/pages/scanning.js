@@ -59,7 +59,7 @@ const scanning = (id) => {
                     </div>
                     <div class="subheading">
                         <p class="bold">
-                                We are searching for your personal information on peopl-search sites.
+                                We are searching for your personal information on people-search sites.
                         </p>
                     </div>
                     <div class="${id}__scanning-gauge">

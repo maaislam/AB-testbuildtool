@@ -22,4 +22,6 @@ if (VARIATION === 'control') {
       }
     });
   });
+} else {
+  pollerLite(['body', '#page', () => window.ga !== undefined], activate);
 }
