@@ -49,7 +49,7 @@ const scanPage = (id) => {
                               required
                               type="text"
                               list="${id}__searchsuggestions"
-                              class="${id}__getlocal--input common-input"
+                              class="${id}__getlocal--input common-input not-colored"
                               id="${id}__getlocal--input">
                         <label for="${id}__getlocal--input">
                             City, State

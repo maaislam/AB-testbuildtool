@@ -90,7 +90,7 @@ const scanning = (id) => {
                                 <input name="getemail"
                                     required
                                     type="text"
-                                    class="${id}__getemail--input common-input"
+                                    class="${id}__getemail--input common-input not-colored"
                                     id="${id}__getemail--input">
                                 <label for="${id}__getemail--input">
                                     Email
@@ -116,7 +116,7 @@ const scanning = (id) => {
                 <div class="records-found">
                     <p class="bold">Records found on:</p>
                         ${recordsFoundOn
-                          .map((site) => `<p class="small">${site}.com</p>`)
+                          .map((site) => `<p class="small">${site}.com,</p>`)
                           .join('\n')}
                     <p>...</p>    
                 </div>
@@ -127,4 +127,4 @@ const scanning = (id) => {
   return htmlStr.trim();
 };
 window.feDm11Scanning = scanning;
-//export default scanning;
+export default scanning;
