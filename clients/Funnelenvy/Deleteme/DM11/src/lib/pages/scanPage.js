@@ -38,7 +38,7 @@ const scanPage = (id) => {
               <div class="subheading">
                   <p>
                       We will use this data to scan people-search sites to find those that <br />
-                      expose your personal your personal information.
+                      expose your personal information.
                   </p>
               </div>
               <div class="getlocation-form">
