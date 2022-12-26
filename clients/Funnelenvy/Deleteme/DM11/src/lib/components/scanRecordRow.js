@@ -41,6 +41,6 @@ const scanRecordRow = (id, records) => {
     .join('');
 };
 
-//window.feDm11ScanRecordRow = scanRecordRow;
+window.feDm11ScanRecordRow = scanRecordRow;
 
-export default scanRecordRow;
+//export default scanRecordRow;

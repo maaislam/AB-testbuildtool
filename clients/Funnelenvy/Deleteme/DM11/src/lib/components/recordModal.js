@@ -56,6 +56,9 @@ const recordModal = (id, recordProvider) => {
                             Billed annually  at $129.00
                         </div>
                     </div>
+                    <span class="disclaimer">
+                        * Number of sites for removal can fluctuate.
+                    </span>
                 </div>
             </div>
         </div>`;
@@ -63,6 +66,6 @@ const recordModal = (id, recordProvider) => {
   return htmlStr.trim();
 };
 
-//window.feDm11RecordModal = recordModal;
+window.feDm11RecordModal = recordModal;
 
-export default recordModal;
+//export default recordModal;

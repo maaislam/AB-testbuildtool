@@ -2,19 +2,27 @@
 /* stylelint-disable import-notation */
 @import './variables';
 
-@import './form.css';
+// @import './form.css';
 @import '../src/lib/shared/shared';
 
 // @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
-.#{$id}-1 {
-    overflow-y: hidden;
-}
+
 
 .#{$id} {
     &__hide {
         display: none;
     }
 
+    &__hidescroll {
+        overflow-y: hidden;
+
+        @media screen and (max-width: 850px) and (orientation:landscape) {
+            overflow-y: scroll;
+        }
+        @include media-query(sm) {
+            overflow-y: scroll;
+        }
+    }
 
     &__container {
         width: 100%;
@@ -144,16 +152,38 @@
             z-index: 1;
             display: flex;
             align-items: center;
+            width: 100%;
+            max-width: 600px;
             padding-bottom: 4px;
 
             @include media-query(md) {
                 justify-content: space-between;
-                width: 100%;
                 font-size: 14px;
+            }
+
+            @include media-query(md) {
+                max-width: 500px;
             }
 
             @include media-query(sm) {
                 font-size: 12px;
+            }
+
+
+            &.desktop-view {
+                display: flex;
+
+                @include media-query(sm) {
+                    display: none;
+                }
+            }
+
+            &.mobile-view {
+                display: none;
+
+                @include media-query(sm) {
+                    display: flex;
+                }
             }
 
             &>div:not(:last-child) {
@@ -172,7 +202,8 @@
                 position: absolute;
                 top: calc(100% + 10px);
                 left: 0;
-                width: 60px;
+                width: 30%;
+                max-width: calc(100% / 3);
                 height: 2px;
                 background-color: #000;
                 transition: all .3s ease;
@@ -180,69 +211,66 @@
 
                 @include media-query(md) {
                     top: calc(100% + 4px);
+                    max-width: calc(100% / 3.2);
+                }
+
+                @include media-query(sm) {
+                    top: calc(100% + 4px);
+                    max-width: calc(100% / 4.2);
                 }
             }
 
             &.step-1 {
                 &::after {
-                    width: 170px;
-
-                    @include media-query(md) {
-                        width: 150px;
-                    }
-
-                    @include media-query(sm) {
-                        width: 130px;
-                    }
-
-                    @include media-query(xsm) {
-                        width: 80px;
-                    }
+                    left: 0;
                 }
             }
 
             &.step-2 {
                 &::after {
-                    left: 43%;
-                    width: 140px;
+                    left: 32%;
 
-                    @include media-query(md) {
-                        width: 120px;
-                    }
 
-                    @include media-query(sm) {
-                        left: 46%;
-                        width: 100px;
-                    }
+                    // @include media-query(md) {
+                    //     width: 120px;
+                    // }
 
-                    @include media-query(xsm) {
-                        left: 43%;
-                        width: 50px;
-                    }
+                    // @include media-query(sm) {
+                    //     left: 46%;
+                    //     width: 100px;
+                    // }
+
+                    // @include media-query(xsm) {
+                    //     left: 43%;
+                    //     width: 50px;
+                    // }
                 }
             }
 
             &.step-3 {
                 &::after {
-                    left: 78%;
-                    width: 100px;
+                    left: 66%;
 
-                    @include media-query(md) {
-                        width: 80px;
-                    }
 
-                    @include media-query(sm) {
-                        left: 84%;
-                        width: 64px;
-                    }
+                    // @include media-query(md) {
+                    //     width: 80px;
+                    // }
 
-                    @include media-query(xsm) {
-                        left: 78%;
-                        width: 40px;
-                    }
+                    // @include media-query(sm) {
+                    //     left: 84%;
+                    //     width: 64px;
+                    // }
+
+                    // @include media-query(xsm) {
+                    //     left: 75%;
+                    //     width: 40px;
+                    // }
                 }
             }
 
+            &--step {
+                width: 100%;
+            }
         }
     }
 
@@ -354,6 +382,7 @@
         &--col2 {
             width: 100%;
             padding: 100px 0 0 45px;
+            overflow-x: hidden;
 
             @include media-query(lg) {
                 display: flex;
@@ -365,14 +394,14 @@
                 clip-path: inset(0 -100vmax);
             }
 
-
+            @media screen and (max-width:1025px) {
+                max-width: 320px;
+            }
 
             @include media-query(sm) {
                 flex-direction: column;
                 align-items: flex-start;
                 padding-top: 20px;
-
-
             }
 
             &>div:last-child {
@@ -462,10 +491,22 @@
 
     &__scanning {
         &--col1 {
-            padding-top: 20%;
+            padding-top: 15%;
+
+            @include media-query(lg) {
+                padding-top: 25%;
+
+            }
 
             p {
                 width: 100%;
+            }
+        }
+
+        &--col2 {
+            @include media-query(lg) {
+                padding-top: 20px;
+
             }
         }
 
@@ -691,7 +732,8 @@
             position: relative;
             width: 50%;
             max-width: 600px;
-            height: 100%;
+            height: auto;
+            min-height: 100vh;
             margin-left: auto;
             padding: 80px 20px 30px;
             background-color: #fff;
@@ -703,6 +745,7 @@
                 width: 100%;
                 max-width: 600px;
                 height: auto;
+                min-height: 200px;
                 margin: 0 auto;
                 padding: 40px 30px 30px;
                 color: #000;
@@ -804,9 +847,27 @@
             margin-top: 32px;
 
 
+            @include media-query(sm) {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+            }
+
+            .pricing-info {
+                @include media-query(sm) {
+                    margin-bottom: 16px;
+                }
+            }
+
             a {
                 max-width: 250px;
                 margin-right: 16px;
+
+                @include media-query(sm) {
+                    margin-right: 0;
+                    margin-bottom: 16px;
+                }
             }
         }
     }

@@ -2,32 +2,37 @@ import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 
-import collectName from './pages/collectName';
+//import collectName from './pages/collectName';
 import nameSubmitHandler from './handlers/nameSubmitHandler';
 import inputChangeHandler from './handlers/inputChangeHandle';
 import scanPage from './pages/scanPage';
-import scanning from './pages/scanning';
+//import scanning from './pages/scanning';
 import locationInputhandler from './handlers/locationInputHandler';
 import locationSubmitHandler from './handlers/locationSubmitHandler';
 import scanSubmitHandler from './handlers/scanSubmitHandler';
 import emailSibmitHandler from './handlers/emailsubmitHandler';
 import scanResult from './pages/scanResult';
 import getScanResult from './helpers/getScanResult';
-import scanRecordRow from './components/scanRecordRow';
+//import scanRecordRow from './components/scanRecordRow';
 import recordModalHandler from './handlers/recordModalHandler';
 import whyModalHandler from './handlers/whyModalHandler';
+import { addCssToPage, addJsToPage } from './helpers/utils';
+import getReviews from './helpers/getReviews';
 
 const { ID } = shared;
 
 export default () => {
+  const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
+  const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
+
   setup(); //use if needed
   //gaTracking('Conditions Met'); //use if needed
-
+  window.scrollTo(0, 0);
   const page = document.getElementById('page');
   page.classList.add(`${ID}__hide`);
-
+  //window.feDm11ScanPage = scanPage;
   const pageContentConfig = {
-    '/scan/': collectName(ID),
+    '/scan/': window.feDm11CollectName(ID),
     '/scanning/': scanPage(ID),
     '/scan-results/': scanResult(ID)
   };
@@ -49,11 +54,23 @@ export default () => {
     } else if (target.closest('[data-btn="local-correct"]')) {
       const header = document.querySelector(`.${ID}__header`);
       document.querySelector(`.${ID}__confirmlocation`)?.remove();
-      header.insertAdjacentHTML('afterend', scanning(ID));
-      scanSubmitHandler(ID);
-      const navtabs = document.querySelector(`.${ID}__navtab`);
-      navtabs?.classList.remove('step-1');
-      navtabs?.classList.add('step-2');
+
+      //get reviews
+      getReviews()
+        .then((reviews) => {
+          //split here with window.feDm11Scanning
+          header.insertAdjacentHTML('afterend', window.feDm11Scanning(ID, reviews));
+          //render review carousel
+          scanSubmitHandler(ID);
+          const navtabs = document.querySelectorAll(`.${ID}__navtab`);
+          navtabs.forEach((tab) => {
+            tab?.classList.remove('step-1');
+            tab?.classList.add('step-2');
+          });
+
+          document.querySelector(`.${ID}__checkbox-block >input`).click();
+        })
+        .catch((err) => console.log(err));
     } else if (target.closest(`.${ID}__getlocal--submit`)) {
       e.preventDefault();
 
@@ -116,8 +133,11 @@ export default () => {
 
   page.insertAdjacentHTML('afterend', pageContent);
 
+  document.body.classList.add(`${ID}__hidescroll`);
+
   //add scan result rows if scan result page
   if (window.location.pathname === '/scan-results/') {
+    document.body.classList.remove(`${ID}__hidescroll`);
     document.body.classList.add(`${ID}__scanresults--page`);
     const clonedJoinBtn = document.getElementById('menu-item-1580').cloneNode(true);
     clonedJoinBtn.classList.add(`${ID}__scanresults--joinbtn`);
@@ -131,11 +151,17 @@ export default () => {
 
     getScanResult(ID).then((records) => {
       //render scan result rows
+      //split here with window.feDm11ScanRecordRow
       document
         .querySelector(`.${ID}__scanresults--resultheader`)
-        .insertAdjacentHTML('afterend', scanRecordRow(ID, records));
+        .insertAdjacentHTML('afterend', window.feDm11ScanRecordRow(ID, records));
       const recordModal = `<div class="${ID}__recordmodal ${ID}__hide"></div>`;
       document.body.insertAdjacentHTML('afterbegin', recordModal);
     });
+  } else if (window.location.pathname === '/scanning/') {
+    //add swiper js
+
+    addJsToPage(swiperJs, `${ID}__swiperjs`);
+    addCssToPage(swiperCss, `${ID}__swipercss`);
   }
 };

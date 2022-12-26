@@ -86,5 +86,5 @@ const scanPage = (id) => {
 
   return htmlStr.trim();
 };
-
+//window.feDm11ScanPage = scanPage;
 export default scanPage;

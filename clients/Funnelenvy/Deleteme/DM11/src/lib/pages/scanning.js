@@ -1,4 +1,4 @@
-const scanning = (id) => {
+const scanning = (id, reviewsData) => {
   //show scanning page
   //update nav tabs
   const servicesArr = [
@@ -46,6 +46,43 @@ const scanning = (id) => {
   };
 
   progressInterval = setInterval(incrementProgress, 1500);
+
+  const reviewStars = [];
+
+  for (let index = 0; index < 5; index += 1) {
+    const element =
+      '<img src="https://joindeleteme.com/wp-content/themes/deleteme/assets/images/star.svg" alt="⭐">';
+    reviewStars.push(element);
+  }
+
+  const arrowLeftSvg =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill-rule="evenodd" clip-rule="evenodd"><path xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M47.5 19.5h-43M20 37L2 20M19 2L2 20"/></svg>';
+
+  const reviewItem = (data) => {
+    const { review, author, reviewsSrc } = data;
+    return `
+    <div data-href="${reviewsSrc}" class="${id}__swiper-slide swiper-slide" >
+        <span class="review-stars">
+            ${reviewStars.join('\n')}
+        </span>
+        <h4 class="review-author">${author}</h4>
+        <a href="${reviewsSrc}" target="_blank"><p class="review-text large" >${review}</p></a> 
+    </div>
+    `;
+  };
+
+  const reviews = () => {
+    const htmlStr = `
+    <div class="${id}__swiper swiper ${id}__hide">
+        <div class="${id}__swiper-wrapper swiper-wrapper">
+            ${reviewsData.map((reviewData) => reviewItem(reviewData)).join('\n')}
+        </div>
+        <div class="swiper-button-prev">${arrowLeftSvg}</div>
+        <div class="swiper-button-next">${arrowLeftSvg}</div>
+    </div>
+    `;
+    return htmlStr.trim();
+  };
 
   const htmlStr = `
     <div class="${id}__scanning ${id}__container site">
@@ -120,6 +157,7 @@ const scanning = (id) => {
                           .join('\n')}
                     <p>...</p>    
                 </div>
+                ${reviews()}
             </div>    
         </div>
     </div>`;
@@ -127,4 +165,4 @@ const scanning = (id) => {
   return htmlStr.trim();
 };
 window.feDm11Scanning = scanning;
-export default scanning;
+//export default scanning;

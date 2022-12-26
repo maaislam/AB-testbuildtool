@@ -1,5 +1,6 @@
 /*eslint-disable no-param-reassign */
 import initaialScan from '../components/initailScan';
+import initSwiper from '../helpers/initSwiper';
 import { delay, waitForElm } from '../helpers/utils';
 import gaTracking from '../services/gaTracking';
 
@@ -65,13 +66,23 @@ const scanSubmitHandler = (id) => {
 
         document.querySelector(`.${id}__scanning--row1`).classList.add(`${id}__hide`);
         document.querySelector(`.${id}__scanning--row2`).classList.remove(`${id}__hide`);
-        const navtabs = document.querySelector(`.${id}__navtab`);
-        navtabs?.classList.remove('step-2');
-        navtabs?.classList.add('step-3');
+        const navtabs = document.querySelectorAll(`.${id}__navtab`);
+        navtabs.forEach((tab) => {
+          tab?.classList.remove('step-2');
+          tab?.classList.add('step-3');
+        });
         document
           .querySelector(`.${id}__scanning--row2`)
           .insertAdjacentHTML('afterbegin', initaialScan(id));
       });
+
+      //show reviews
+      const reviews = document.querySelector(`.${id}__swiper`);
+      const recordSites = document.querySelector(`.${id}__scanning--col2 .records-found`);
+      //init swiper
+      initSwiper('.swiper');
+      reviews.classList.remove(`${id}__hide`);
+      recordSites.classList.add(`${id}__hide`);
     });
 };
 

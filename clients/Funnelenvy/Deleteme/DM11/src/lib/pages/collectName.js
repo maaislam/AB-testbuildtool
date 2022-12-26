@@ -1,8 +1,20 @@
-import header from '../components/header';
+//import header from '../components/header';
 
 const collectName = (id) => {
+  const header = () => {
+    const htmlStr = `
+          <div class="${id}__header">
+              <div class="${id}__header--logo">
+                  <a href="/"> <img src="/wp-content/themes/deleteme/assets/svgs/deleteme-color.svg" alt="deleteme logo" /></a>
+                
+              </div>
+          </div>`;
+
+    return htmlStr.trim();
+  };
+
   const htmlStr = `
-    ${header(id)}
+    ${header()}
     <div class="${id}__collectname ${id}__container site">
         <div class="${id}__page-wrapper">
             <div class="${id}__collectname-text">
@@ -41,5 +53,5 @@ const collectName = (id) => {
 
   return htmlStr.trim();
 };
-
-export default collectName;
+window.feDm11CollectName = collectName;
+//export default collectName;

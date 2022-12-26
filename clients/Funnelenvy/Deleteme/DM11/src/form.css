@@ -4,7 +4,8 @@
 .common-input {
     z-index: 1;
     width: 100%;
-    padding: 14px 138px 14px 33px;
+    height: 66px;
+    padding: 14px 138px 14px 32px;
     color: #040507;
     font-size: 20px;
     line-height: 34px;
@@ -17,8 +18,9 @@
 @media only screen and (max-width: 1023px) {
     .common-input {
         width: 100%;
+        height: 54px;
         padding-right: 118px;
-        padding-left: 22px;
+        padding-left: 24px;
         font-size: 16px;
         line-height: 22px;
     }
@@ -69,7 +71,7 @@
     display: inline-block;
     width: 130px;
     height: 100%;
-    max-height: 65px;
+    max-height: 66px;
     padding: 0;
     color: #fff;
     font-size: 20px;
@@ -85,7 +87,6 @@
 
 .common-submit:hover {
     transform: scale(1.02);
-
 }
 
 @media only screen and (max-width: 1023px) {
@@ -326,4 +327,65 @@
 .checkbox-block.error [type=checkbox]+label,
 .checkbox-block.error [type=checkbox]+label>a {
     color: #fd4c5c
+}
+
+.DM11__swiper {
+    width: 100%;
+    position: relative;
+    height: 280px;
+}
+
+.DM11__swiper-wrapper {
+    color: #000;
+    font-size: 24px;
+    line-height: 36px;
+    font-style: italic;
+}
+
+.DM11__swiper .swiper-button-prev,
+.DM11__swiper .swiper-button-next {
+    display: flex;
+    top: 90%;
+    width: 70px;
+}
+
+.DM11__swiper .swiper-button-prev {
+    left: 0;
+    justify-content: flex-start;
+}
+
+.DM11__swiper .swiper-button-next {
+    transform: rotate(-180deg);
+    right: 0;
+    justify-content: flex-end;
+}
+
+.DM11__swiper .swiper-button-prev::after,
+.DM11__swiper .swiper-button-next::after {
+    display: none;
+}
+
+.DM11__swiper-wrapper a {
+    height: auto;
+    color: #000;
+    text-decoration: none;
+
+}
+
+.DM11__swiper-wrapper a:hover {
+    color: #000;
+
+}
+
+@media only screen and (max-width: 1023px) {
+    .DM11__swiper {
+        padding-left: 0 !important;
+        height: 170px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .DM11__swiper {
+        height: 200px;
+    }
 }

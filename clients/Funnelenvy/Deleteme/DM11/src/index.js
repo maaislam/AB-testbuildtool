@@ -7,21 +7,29 @@ import gaTracking from './lib/services/gaTracking';
 const { VARIATION } = shared;
 
 if (VARIATION === 'control') {
-  pollerLite(['body', '#page', () => window.ga !== undefined], () => {
-    if (window.location.pathname === '/scan-results/') {
-      gaTracking(' step_3_completion');
+  console.log('control in');
+  pollerLite(
+    ['body', '#page', () => window.ga !== undefined, () => typeof window.ga.getAll === 'function'],
+    () => {
+      console.log('control', window.location.pathname);
+
+      setTimeout(() => {
+        if (window.location.pathname === '/scan-results/') {
+          gaTracking('step_3_completion');
+        }
+        document.body.addEventListener('click', ({ target }) => {
+          if (target.closest('#billie-widget-submit')) {
+            gaTracking('step_1_completion');
+          } else if (
+            window.location.pathname === '/scan-results/' &&
+            target.closest('[href="/privacy-protection-plans-scan/"]')
+          ) {
+            gaTracking('join_deleteme');
+          }
+        });
+      }, 1500);
     }
-    document.body.addEventListener('click', ({ target }) => {
-      if (target.closest('#billie-widget-submit')) {
-        gaTracking('step_1_completion');
-      } else if (
-        window.location.pathname === '/scan-results/' &&
-        target.closest('[href="/privacy-protection-plans-scan/"]')
-      ) {
-        gaTracking('join_deleteme');
-      }
-    });
-  });
+  );
 } else {
   pollerLite(['body', '#page', () => window.ga !== undefined], activate);
 }
