@@ -19,7 +19,7 @@ const emailSibmitHandler = (id, target) => {
   const errElem = !isEmailGood(email)
     ? '<div class="input-error">The email field must be a valid email</div>'
     : '<div class="input-error">Please accept the terms and conditions</div>';
-  if ((!chkTermAlert() || !isEmailGood(email)) && !document.querySelector('.input-error')) {
+  if (!chkTermAlert() || !isEmailGood(email)) {
     target.insertAdjacentHTML('afterend', errElem);
     return;
   }

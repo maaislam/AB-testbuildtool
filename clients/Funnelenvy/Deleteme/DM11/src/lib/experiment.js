@@ -67,8 +67,8 @@ export default () => {
             tab?.classList.remove('step-1');
             tab?.classList.add('step-2');
           });
-
-          document.querySelector(`.${ID}__checkbox-block >input`).click();
+          //document.getElementById('chk-term-1').checked = true;
+          document.querySelector(`.${ID}__checkbox-block > label`).click();
         })
         .catch((err) => console.log(err));
     } else if (target.closest(`.${ID}__getlocal--submit`)) {
@@ -79,9 +79,11 @@ export default () => {
     } else if (target.closest(`.${ID}__getemail--submit`)) {
       e.preventDefault();
       emailSibmitHandler(ID, target);
-    } else if (target.closest(`.${ID}__checkbox-block`)) {
-      document.querySelector('#lbl-term-1').click();
-      document.getElementById('chk-term-1').checked = true;
+    } else if (target.closest(`.${ID}__checkbox-block > label`)) {
+      const checkboxStatus = document.getElementById('chk-term-1').checked;
+      console.log('checkboxStatus', checkboxStatus);
+      //document.querySelector('#lbl-term-1').click();
+      document.getElementById('chk-term-1').checked = !checkboxStatus;
     } else if (target.closest(`.${ID}__scanresults--resultrow`)) {
       recordModalHandler(ID, target);
     } else if (
