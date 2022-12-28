@@ -1,0 +1,56 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+body {
+  //EXAMPLE ONE 
+  .product__info-container{
+    & .product-form__input-variants{
+        & .product-form__input-variant{
+            border: solid 2px transparent;
+            transition: border-color 0.15s ease 0s;
+
+            &.active{
+                border-color: red;
+
+                & span.form__label-title{
+                    color:red;
+                }
+            }
+        }    
+    }
+  }
+
+  //EXAMPLE ONE 
+
+  //EXAMPLE TWO
+//   .product__info-container{
+//     & .product-form__input-variants{
+//         & .product-form__input-variant{
+
+//             & span.form__label-image{
+//                 width:75px;
+//                 height: 75px;
+//                 border: solid 2px #DDDDDD;
+//                 border-radius: 50%;
+//                 transition: border-color 0.15s ease 0s;
+//                 overflow: hidden;
+//                 & img{
+//                     margin: 2px;
+//                 }
+//             }
+
+//             &.active{
+//                 & span.form__label-image{
+//                     border-color:#002750;
+//                 }
+
+//                 & span.form__label-title{
+//                     color:#002750;
+//                 }
+//             }
+//         }    
+//     }
+//   }
+
+  // example two
+}
