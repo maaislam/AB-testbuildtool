@@ -46,7 +46,7 @@ const recordModal = (id, recordProvider) => {
                 <div class="${id}__purchasebanner">
                     ${protectionBenifits.map((benefit) => benefitHtml(benefit)).join('\n')}
                     <div class="btn-row">
-                        <a href="https://joindeleteme.com/delete-me/user/order/new/dmbb2/5" 
+                        <a href="" 
                             class="${id}__startprotection button button-alt button-medium button-icon-pos button-block">
                             Start Protection
                             <span class="icon icon-arrow-right"></span>

@@ -16,10 +16,12 @@ const emailSibmitHandler = (id, target) => {
   };
 
   //display error if invalid
+  //console.log(document.querySelectorAll('.input-error').length);
   const errElem = !isEmailGood(email)
     ? '<div class="input-error">The email field must be a valid email</div>'
     : '<div class="input-error">Please accept the terms and conditions</div>';
   if (!chkTermAlert() || !isEmailGood(email)) {
+    document.querySelector('.input-error')?.remove();
     target.insertAdjacentHTML('afterend', errElem);
     return;
   }
