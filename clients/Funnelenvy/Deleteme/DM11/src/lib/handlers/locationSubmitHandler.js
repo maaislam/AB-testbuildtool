@@ -10,7 +10,8 @@ const locationSubmitHandler = (id, target) => {
 
   //display error if invalid
   const errElem = '<div class="input-error">Please enter your location</div>';
-  if (!isValid && !document.querySelector('.input-error')) {
+  if (!isValid) {
+    document.querySelector('.input-error')?.remove();
     target.closest('form').insertAdjacentHTML('afterend', errElem);
     return;
   }
