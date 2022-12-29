@@ -7,50 +7,64 @@ body {
     & .product-form__input-variants{
         & .product-form__input-variant{
             border: solid 2px transparent;
+            border-radius: 3px;
             transition: border-color 0.15s ease 0s;
+            margin-bottom: 10px;
+
+            &:not(.active):hover{
+              scale: 1.1;
+              & .form__label-title{
+                color:#002750;
+                font-weight: 900;
+              }
+            }
+
+            @media (max-width:749px) {
+              &{
+                border: unset;
+                transition: unset;
+                & span.form__label-image{
+                  width:75px;
+                  height: 75px;
+                  border: solid 2px #DDDDDD;
+                  border-radius: 50%;
+                  transition: border-color 0.15s ease 0s;
+                  overflow: hidden;
+                  & img{
+                      margin: 2px;
+                      width:60px;
+                      height:60px;
+                      transform: translateY(4px) translateX(8px);
+                  }
+                }
+              }
+             
+            }
 
             &.active{
                 border-color: red;
+                @media (max-width:749px) {
+                  &{
+                    border-color: unset;             
+                      & span.form__label-image{
+                          border-color:#002750;
+                         
+                      }
+      
+                      & span.form__label-title{
+                          color:#002750;
+                      }                
+                  }               
+                }
 
                 & span.form__label-title{
                     color:red;
+                    @media (max-width:749px) {
+                      color: #002750;
+                    }
                 }
             }
         }    
     }
-  }
-
-  //EXAMPLE ONE 
-
-  //EXAMPLE TWO
-//   .product__info-container{
-//     & .product-form__input-variants{
-//         & .product-form__input-variant{
-
-//             & span.form__label-image{
-//                 width:75px;
-//                 height: 75px;
-//                 border: solid 2px #DDDDDD;
-//                 border-radius: 50%;
-//                 transition: border-color 0.15s ease 0s;
-//                 overflow: hidden;
-//                 & img{
-//                     margin: 2px;
-//                 }
-//             }
-
-//             &.active{
-//                 & span.form__label-image{
-//                     border-color:#002750;
-//                 }
-
-//                 & span.form__label-title{
-//                     color:#002750;
-//                 }
-//             }
-//         }    
-//     }
-//   }
-
-  // example two
+  } 
 }
