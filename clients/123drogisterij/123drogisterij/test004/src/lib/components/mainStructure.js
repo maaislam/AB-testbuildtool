@@ -8,7 +8,9 @@ export const mainSructure = (id) => {
             <div class="${id}__stars"></div>
             <div class="${id}__contents">
                 <p class="${id}__title">kiyoh</p>
-                <p class="${id}__subtitle"><span>4991</span> <br> beoordelingen</p>
+                <p class="${id}__subtitle">
+                <span class="${id}__number">4991</span>
+                <span class="${id}__description">beoordelingen</span>
             </div>
           </a>
         </div>

@@ -86,15 +86,25 @@ body {
 
         & .test004__contents{
             & .test004__title{
-                margin-bottom: 0;
+                margin-bottom: 0px;
+                line-height: 1;
+                margin-top: 5px;
 
             }
 
             & .test004__subtitle{
                 font-size: 12px;
-                margin-bottom: 5px;
-                & span{
+                margin-bottom: 0px;
+                & .test004__number{
+                    display: block;
                     font-weight: 900;
+                    line-height: 1;
+                    margin-top: 5px;
+                }
+                & .test004__description{
+                    display: block;
+                    line-height: 1;
+                    margin-top: 5px;
                 }
             }
         }
