@@ -6,11 +6,10 @@ body {
     .test004__mainStructure {
         text-align: center;
         position: fixed;
-        width: 130px;
+        width: 100px;
         text-align: center;
         position: fixed;
         background: white;
-        padding: 8px 0px;
         border: none;
         box-shadow: rgb(0 0 0 / 10%) 0px 2px 9px 4px;
         border-radius: 8px;
@@ -19,8 +18,23 @@ body {
         bottom: 96px !important;
         left: auto;
         inset: auto 20px 74px auto;
-        transition: opacity 0.2s linear 0s;
+        transition: opacity 0.2s linear 0s !important;
+        cursor: pointer;
         z-index: 9;
+
+        &:hover{
+            border: 1px solid rgb(255, 220, 15) !important;
+            box-shadow: rgb(0 0 0 / 10%) 0px 2px 9px 2px !important;
+            inset: auto 12px 95px auto !important;
+            transition: none 0s ease 0s !important;
+        }
+
+        & a{
+            display: block;
+            padding:8px 0;
+            text-decoration: none;
+            color: #888;
+        }
 
         & .test004__ratings{
             display: block;
@@ -72,44 +86,30 @@ body {
 
         & .test004__contents{
             & .test004__title{
-                margin-bottom: 0;
+                margin-bottom: 0px;
+                line-height: 1;
+                margin-top: 5px;
 
             }
 
             & .test004__subtitle{
                 font-size: 12px;
-                margin-bottom: 5px;
+                margin-bottom: 0px;
+                & .test004__number{
+                    display: block;
+                    font-weight: 900;
+                    line-height: 1;
+                    margin-top: 5px;
+                }
+                & .test004__description{
+                    display: block;
+                    line-height: 1;
+                    margin-top: 5px;
+                }
             }
         }
 
-        & .test004__buttonContainer{
-            
-            width: 120px;
-            margin: 0 auto;
-        & .test004__button{
-            padding: 5px 4px;
-            font-size: 11px;
-            background-color: #dd6826;
-            color: #fff;
-            &::after{
-                font-family: FontAwesome;
-                font-size: 1.5625em;
-                margin-top: -0.08em;
-                font-weight: 700;
-                transition: color .3s ease-out,transform .3s ease-out,background-color .3s ease-out;
-                line-height: 0;
-                display: inline-block;
-                vertical-align: middle;
-                content: "\f105";
-                margin-left: 1.5em;
-                transform: translate3d(-0.5em,0,0);
-            }
-
-            &:hover::after{
-                transform: translate3d(0,0,0);
-            }
-        }
-        }
+       
 
     }
         

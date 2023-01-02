@@ -136,12 +136,12 @@ const scanning = (id, reviewsData) => {
                               <input type="submit"
                                   value="Submit"
                                   class="${id}__getemail--submit common-submit">
-                              <div class="checkbox-block ${id}__checkbox-block"><input id="acceptRules" type="checkbox" name="isAcceptRules">
-                                  <label for="acceptRules">
+                              <div class="checkbox-block ${id}__checkbox-block"><input id="${id}__acceptRules" type="checkbox" name="isAcceptRules">
+                                  <label for="${id}__acceptRules">
                                       I have read and I agree to the
-                                      <a href="/terms-of-service" target="_blank">Terms of Service</a>
-                                      and
-                                      <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+                                      <a href="/legal/#terms" target="_blank">Terms of Service</a>
+                                    and
+                                    <a href="/legal/#privacy-policy" target="_blank">Privacy Policy</a>
                                       .
                                   </label>
                               </div>
