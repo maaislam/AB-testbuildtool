@@ -1,8 +1,23 @@
 @import './variables';
-@import '../src/lib/shared/shared.scss';
+@import '../src/lib/shared/shared';
 
 .#{$id} {
-    &__test {
-        display: block;
+    &__mktoFormRow {
+        height: 68px;
+        margin-bottom: 10px !important;
+    }
+
+    &__mktoRequiredField {
+        position: relative;
+    }
+
+    &__mktZipError {
+        position: absolute;
+        top: 100%;
+        left: 20px;
+    }
+
+    &__disable {
+        pointer-events: none;
     }
 }
