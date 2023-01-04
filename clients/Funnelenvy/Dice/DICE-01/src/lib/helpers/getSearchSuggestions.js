@@ -1,6 +1,6 @@
 import { debounce } from './utils';
 
-const getSearchSuggestions = (searchTerm) => {
+const getSearchSuggestions = debounce((searchTerm) => {
   const url =
     'https://funnelenvy.app.n8n.cloud/webhook-test/10973993-151a-4478-b088-2d30ef86dc1d/check'; //n8n WebHook URL
 
@@ -16,6 +16,6 @@ const getSearchSuggestions = (searchTerm) => {
     })
   };
   return fetch(url, options);
-};
+});
 
 export default getSearchSuggestions;
