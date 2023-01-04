@@ -3,9 +3,10 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import getSearchSuggestions from './helpers/getSearchSuggestions';
 import searchSuggestions from './components/searchSuggestions';
-import { observeDOM } from './helpers/utils';
+import { debounce, observeDOM } from './helpers/utils';
 import zipcodeWrapper from './components/zipcodeWrapper';
 import errorHtml from './components/errorElem';
+import zipInputHandler from './handlers/zipInputHandler';
 
 const { ID, VARIATION } = shared;
 
@@ -64,29 +65,8 @@ const init = () => {
 
   //validate
   zipcodeInput?.addEventListener('input', ({ target }) => {
-    const searchTerm = target.value;
     removeZipErr();
-    if (searchTerm === '' || searchTerm.length < 4 || searchTerm.length > 15) return;
-
-    try {
-      getSearchSuggestions(searchTerm)
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Network response was not ok.');
-        })
-        .then((data) => {
-          //render search suggestion dropdown
-
-          document.querySelector(`.${ID}__searchsuggestions`).innerHTML = searchSuggestions(
-            ID,
-            data[0].body.predictions
-          );
-        });
-    } catch (error) {
-      console.error('There has been a problem with your fetch operation:', error);
-    }
+    zipInputHandler(target);
   });
 };
 
