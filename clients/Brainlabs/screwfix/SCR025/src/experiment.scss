@@ -1,0 +1,21 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__hide {
+        display: none;
+
+        &.#{$id}__offerflag {
+            display: block;
+        }
+    }
+
+
+    &__offerflag {
+        img {
+            width: 64px;
+        }
+    }
+
+
+}

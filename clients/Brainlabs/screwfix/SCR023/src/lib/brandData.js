@@ -1,33 +1,33 @@
 const brandData = {
-  'Combi Drills': {
-    Makita: {
-      v1Url: 'https://www.screwfix.com/c/tools/drills/cat830704?brand=makita',
-      v2Url: 'https://www.screwfix.com/brand/makita',
+  Showers: {
+    Triton: {
+      v1Url: '/c/bathrooms-kitchens/showers/cat820272#category=cat820272&brand=triton',
+      v2Url: '/search?search=triton&brand=triton',
       imgSrc: ''
     },
-    Dewalt: {
-      v1Url: 'https://www.screwfix.com/c/tools/drills/cat830704#category=cat830704&brand=dewalt',
-      v2Url: 'https://www.screwfix.com/brand/dewalt/',
+    Mira: {
+      v1Url: '/c/bathrooms-kitchens/showers/cat820272#category=cat820272&brand=mira',
+      v2Url: '/brand/mira/',
       imgSrc: ''
     },
-    Bosch: {
-      v1Url: 'https://www.screwfix.com/c/tools/drills/cat830704#category=cat830704&brand=bosch',
-      v2Url: 'https://www.screwfix.com/brand/bosch/',
+    Aqualisa: {
+      v1Url: '/c/bathrooms-kitchens/showers/cat820272#category=cat820272&brand=aqualisa',
+      v2Url: '/brand/aqualisa',
       imgSrc: ''
     }
   },
-  'Bare Units': {
-    Makita: {
-      v1Url: 'https://www.screwfix.com/c/tools/angle-grinders/cat830694?brand=makita',
-      v2Url: 'https://www.screwfix.com/brand/makita'
+  'Shower kit and rails': {
+    Croydex: {
+      v1Url: '/c/bathrooms-kitchens/shower-heads/cat820278?brand=ideal_standard',
+      v2Url: '/brand/idealstandard'
     },
-    Dewalt: {
-      v1Url: 'https://www.screwfix.com/c/tools/angle-grinders/cat830694?brand=dewalt',
-      v2Url: 'https://www.screwfix.com/brand/dewalt/'
+    'Ideal standard': {
+      v1Url: '/c/bathrooms-kitchens/shower-heads/cat820278?brand=mira',
+      v2Url: '/brand/mira/'
     },
-    Bosch: {
-      v1Url: 'https://www.screwfix.com/c/tools/angle-grinders/cat830694?brand=bosch',
-      v2Url: 'https://www.screwfix.com/brand/bosch/'
+    Triton: {
+      v1Url: '/c/bathrooms-kitchens/shower-heads/cat820278?brand=triton',
+      v2Url: '/search?search=triton&brand=triton'
     }
   },
   'Shower Heads': {
