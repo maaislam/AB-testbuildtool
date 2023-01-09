@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "test-001",
-    VARIATION: "1",
-    CLIENT: "Minimeis",
-    SITE: "Minimeis"
-  };
+  ID: 'test-001',
+  VARIATION: '2',
+  CLIENT: 'Minimeis',
+  SITE: 'Minimeis'
+};

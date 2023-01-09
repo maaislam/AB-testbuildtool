@@ -1,61 +1,61 @@
 const brandData = {
   'Combi Drills': {
     Makita: {
-      v1Url: 'https://www.screwfix.com/c/tools/drills/cat830704?brand=makita',
-      v2Url: 'https://www.screwfix.com/brand/makita',
+      v1Url: '/c/tools/drills/cat830704?brand=makita',
+      v2Url: '/brand/makita',
       imgSrc: ''
     },
-    Dewalt: {
-      v1Url: 'https://www.screwfix.com/c/tools/drills/cat830704#category=cat830704&brand=dewalt',
-      v2Url: 'https://www.screwfix.com/brand/dewalt/',
+    DeWalt: {
+      v1Url: '/c/tools/drills/cat830704#category=cat830704&brand=dewalt',
+      v2Url: '/brand/dewalt/',
       imgSrc: ''
     },
     Bosch: {
-      v1Url: 'https://www.screwfix.com/c/tools/drills/cat830704#category=cat830704&brand=bosch',
-      v2Url: 'https://www.screwfix.com/brand/bosch/',
+      v1Url: '/c/tools/drills/cat830704#category=cat830704&brand=bosch',
+      v2Url: '/brand/bosch/',
       imgSrc: ''
     }
   },
   'Bare Units': {
     Makita: {
-      v1Url: 'https://www.screwfix.com/c/tools/angle-grinders/cat830694?brand=makita',
-      v2Url: 'https://www.screwfix.com/brand/makita'
+      v1Url: '/c/tools/angle-grinders/cat830694?brand=makita',
+      v2Url: '/brand/makita'
     },
-    Dewalt: {
-      v1Url: 'https://www.screwfix.com/c/tools/angle-grinders/cat830694?brand=dewalt',
-      v2Url: 'https://www.screwfix.com/brand/dewalt/'
+    DeWalt: {
+      v1Url: '/c/tools/angle-grinders/cat830694?brand=dewalt',
+      v2Url: '/brand/dewalt/'
     },
     Bosch: {
-      v1Url: 'https://www.screwfix.com/c/tools/angle-grinders/cat830694?brand=bosch',
-      v2Url: 'https://www.screwfix.com/brand/bosch/'
+      v1Url: '/c/tools/angle-grinders/cat830694?brand=bosch',
+      v2Url: '/brand/bosch/'
     }
   },
-  'Shower Heads': {
-    'Ideal Standard': {
-      v1Url: '/c/bathrooms-kitchens/shower-heads/cat820278?brand=ideal_standard',
-      v2Url: '/brand/idealstandard'
+  'Electric Screwdrivers': {
+    Makita: {
+      v1Url: '/c/tools/electric-screwdrivers/cat830720?brand=makita',
+      v2Url: '/brand/makita'
     },
-    Mira: {
-      v1Url: '/c/bathrooms-kitchens/shower-heads/cat820278?brand=mira',
-      v2Url: '/brand/mira/'
+    Bosch: {
+      v1Url: '/c/tools/electric-screwdrivers/cat830720?brand=bosch',
+      v2Url: '/brand/bosch/'
     },
-    Triton: {
-      v1Url: '/c/bathrooms-kitchens/shower-heads/cat820278?brand=triton',
-      v2Url: '/search?search=triton&brand=triton'
+    DeWalt: {
+      v1Url: '/c/tools/electric-screwdrivers/cat830720?brand=dewalt',
+      v2Url: '/brand/dewalt/'
     }
   },
-  'Shower valves': {
-    'Ideal standard': {
-      v1Url: '/c/bathrooms-kitchens/shower-valves/cat820336?brand=ideal_standard',
-      v2Url: '/brand/idealstandard'
+  Planers: {
+    Makita: {
+      v1Url: '/c/tools/planers/cat830902?brand=makita',
+      v2Url: '/brand/makita'
     },
-    Bristan: {
-      v1Url: '/c/bathrooms-kitchens/shower-valves/cat820336?brand=bristan',
-      v2Url: '/brand/bristan'
+    Bosch: {
+      v1Url: '/c/tools/planers/cat830902?brand=bosch',
+      v2Url: '/brand/bosch/'
     },
-    Triton: {
-      v1Url: '/c/bathrooms-kitchens/shower-valves/cat820336?brand=triton',
-      v2Url: '/search?search=triton&brand=triton'
+    DeWalt: {
+      v1Url: '/c/tools/planers/cat830902?brand=dewalt',
+      v2Url: '/brand/dewalt/'
     }
   }
 };

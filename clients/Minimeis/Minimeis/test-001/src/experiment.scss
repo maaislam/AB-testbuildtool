@@ -1,70 +1,134 @@
 @import './variables';
-@import '../src/lib/shared/shared.scss';
+@import '../src/lib/shared/shared';
 
-body {
-  //EXAMPLE ONE 
-  .product__info-container{
-    & .product-form__input-variants{
-        & .product-form__input-variant{
-            border: solid 2px transparent;
-            border-radius: 3px;
-            transition: border-color 0.15s ease 0s;
-            margin-bottom: 10px;
+.#{$id}-1,
+.#{$id}-2 {
+  body {
+    .product__info-container {
+      & .product-form__input-variants {
 
-            &:not(.active):hover{
-              scale: 1.1;
-              & .form__label-title{
-                color:#002750;
-                font-weight: 900;
+
+        @media (max-width:749px) {
+          display: flex !important;
+          overflow-x: scroll;
+        }
+
+        & .product-form__input-variant {
+          padding: 5px;
+          border: solid 2px transparent;
+          border-radius: 3px;
+          transition: border-color 0.15s ease 0s;
+          margin-bottom: 10px;
+
+          &:not(.active) {
+            & .form__label-title {
+              color: #002750;
+              font-weight: 400;
+            }
+          }
+
+          &:not(.active):hover {
+            scale: 1.1;
+
+            & .form__label-title {
+              color: #002750;
+              font-weight: 900;
+            }
+          }
+
+          @media (max-width:749px) {
+
+
+            & {
+              border: unset;
+              transition: unset;
+
+              & span.form__label-image {
+                width: 75px;
+                height: 75px;
+                border: solid 2px #fff;
+                border-radius: 50%;
+                transition: border-color 0.15s ease 0s;
+                overflow: hidden;
+
+                & img {
+                  margin: 2px;
+                  width: 60px;
+                  height: 60px;
+                  transform: translateY(4px) translateX(8px);
+                }
               }
             }
+
+          }
+
+          &.active {
+            border-color: #E77502;
+            ;
 
             @media (max-width:749px) {
-              &{
-                border: unset;
-                transition: unset;
-                & span.form__label-image{
-                  width:75px;
-                  height: 75px;
-                  border: solid 2px #DDDDDD;
-                  border-radius: 50%;
-                  transition: border-color 0.15s ease 0s;
-                  overflow: hidden;
-                  & img{
-                      margin: 2px;
-                      width:60px;
-                      height:60px;
-                      transform: translateY(4px) translateX(8px);
-                  }
+              & {
+                border-color: unset;
+
+                & span.form__label-image {
+                  border-color: #E77502;
+                  ;
+
+                }
+
+                & span.form__label-title {
+                  color: #002750;
                 }
               }
-             
             }
 
-            &.active{
-                border-color: red;
-                @media (max-width:749px) {
-                  &{
-                    border-color: unset;             
-                      & span.form__label-image{
-                          border-color:#002750;
-                         
-                      }
-      
-                      & span.form__label-title{
-                          color:#002750;
-                      }                
-                  }               
-                }
+            & span.form__label-title {
+              color: #E77502;
+              ;
 
-                & span.form__label-title{
-                    color:red;
-                    @media (max-width:749px) {
-                      color: #002750;
-                    }
-                }
+              @media (max-width:749px) {
+                color: #002750;
+              }
             }
-        }    
+          }
+        }
+      }
     }
-  } 
+  }
+}
+
+.#{$id}-2 {
+  body {
+    .product__info-container {
+      & .product-form__input-variants {
+        & .product-form__input-variant {
+          &:not(.active):hover {
+            scale: 1.1;
+
+            & .form__label-title {
+              color: #002750;
+              font-weight: 900;
+            }
+          }
+
+          &.active {
+            border-color: #002750;
+
+            @media (max-width:749px) {
+              & {
+                span.form__label-image {
+                  border-color: #002750;
+                }
+
+              }
+            }
+
+            & span.form__label-title {
+              color: #002750;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -71,9 +71,10 @@ export default () => {
   const brandName = brandElem.getAttribute('alt');
   const brandLogo = brandElem.getAttribute('src');
   const pdpCategory = window.dataLayer[0].prodCategory;
+  if (!brandData[pdpCategory]) return;
 
   const brandDetails = brandData[pdpCategory][brandName];
-  console.log(brandDetails);
+  console.log(brandData, brandDetails);
 
   const textContent =
     VARIATION === '1'
