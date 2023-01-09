@@ -17,11 +17,14 @@ const zipInputHandler = debounce((target) => {
       })
       .then((data) => {
         //render search suggestion dropdown
-
+        const { predictions } = data[0].body;
         document.querySelector(`.${ID}__searchsuggestions`).innerHTML = searchSuggestions(
           ID,
-          data[0].body.predictions
+          predictions
         );
+        if (predictions.length > 0) {
+          document.querySelector(`.${ID}__searchsuggestions`).classList.remove(`${ID}__hide`);
+        }
       });
   } catch (error) {
     console.error('There has been a problem with your fetch operation:', error);

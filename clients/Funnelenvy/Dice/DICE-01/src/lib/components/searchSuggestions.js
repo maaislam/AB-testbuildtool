@@ -1,5 +1,6 @@
 const searchSuggestions = (id, suggestions) => {
-  const datalistOption = (option) => `<option value="${option}">${option}</option>`;
+  const datalistOption = (option) =>
+    `<div class="${id}__zipcodeoption" data-value="${option}">${option}</div>`;
   const htmlStr = suggestions.map((option) => datalistOption(option.description)).join('');
 
   return htmlStr.trim();

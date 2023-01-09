@@ -1,4 +1,4 @@
-const errorHtml = (ID) => `
+const errorHtml = (ID, message = 'This field is required.') => `
 <div class="${ID}__mktZipError mktoError"
     style="right: 90px; bottom: -35px;">
   <div class="mktoErrorArrowWrap">
@@ -7,7 +7,7 @@ const errorHtml = (ID) => `
   <div id="ValidMsgCompany"
         role="alert"
         tabindex="-1"
-        class="mktoErrorMsg">This field is required.</div>
+        class="mktoErrorMsg">${message}</div>
 </div>
 `;
 

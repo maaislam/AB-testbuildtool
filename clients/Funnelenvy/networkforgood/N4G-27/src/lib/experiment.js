@@ -94,7 +94,7 @@ export default () => {
   formTitle.insertAdjacentHTML('afterend', formNav);
   submitBtn.classList.add(`FE-${ID}__hide`);
 
-  submitBtn.innerText = currentTitle.includes('Download') ? 'Download' : 'Watch Now';
+  submitBtn.innerText = currentTitle.includes('Download') ? 'Submit' : 'Submit';
   toggleDisplay(stepTwoInputs);
 
   //add a button with functionality to show hide

@@ -1,7 +1,15 @@
 @import './variables';
 @import '../src/lib/shared/shared';
 
+#LblCompany ~ .mktoError{
+    bottom: -35px !important;
+}
+
 .#{$id} {
+    &__hide{
+        display: none;
+    }
+
     &__mktoFormRow {
         position: relative;
         height: 68px;
@@ -14,4 +22,32 @@
         left: 20px;
         width:max-content;
     }
+
+    &__searchsuggestions{
+        position: absolute;
+        top: 100%;
+        left: 5px;
+        z-index: 99;
+        width: calc(100% - 10px);
+        max-height: 250px;
+        overflow-y: scroll;
+        color: #181818;
+        font-size: 16px;
+        line-height: 23px;
+        background-color: #fff;
+        box-shadow: 5px 10px 18px #888;
+
+        &>div{
+            padding: 5px !important;
+            padding-left: 10px !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+
+            &:hover{
+                background-color: #e9ecef;
+            }
+        }
+    }
+    
 }
