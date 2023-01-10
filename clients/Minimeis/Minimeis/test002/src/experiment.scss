@@ -1,0 +1,205 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 90000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0 39 80 / 39%);
+        animation: fadein 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        
+        &.#{$id}__closeoverlay{
+            animation: fadeout 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            
+        }
+    }
+
+    &__modal-inner{
+        position: relative;
+        width: 100%;
+        max-width: 1099px;
+        padding: 40px 0 20px;
+        background-color: #fff;
+    }
+
+    &__close{
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+
+    }
+
+
+    .discount__banner-inner {
+        position: relative;
+        min-height: 500px;
+        font-family: "Agrandir Variable", sans-serif;
+    }
+
+    .discount__banner-content {
+        position: relative;
+        z-index: 3;
+        max-width: 60%;
+        padding-left: 25%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .discount__banner-subtitle {
+        font-size: 40px;
+        line-height: 1.1em;
+    }
+
+    .discount__banner-title {
+        color: red;
+        font-size: 50px;
+        line-height: 1.2em;
+    }
+
+    .discount__banner-image--left img {
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .discount__banner-image--left {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 2;
+        height: 80%;
+    }
+
+    .discount__banner-list {
+        margin-bottom: 20px;
+    }
+
+    .discount__banner-list ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .discount__banner-list ul li {
+        list-style: none;
+    }
+
+    .discount__banner-list ul li p{
+        margin: 0;
+    }
+
+    .discount__banner-list ul li strong {
+        color: red;
+    }
+
+    .discount__banner-image--right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        max-width: 70%;
+        height: 100%;
+    }
+
+    .discount__product--badge {
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90px;
+        height: 90px;
+        padding-top: 5px;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: #149CFF;
+        border-radius: 50%;
+    }
+
+    .discount__image--mobile {
+        display: none;
+    }
+
+    .discount__image--desktop img, .discount__image--mobile img {
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .discount__image--desktop {
+        display: block;
+    }
+
+    @media screen and (max-width: 992px) {
+        .discount__banner-image--right {
+            max-width: 79%;
+        }
+
+        .discount__image--mobile {
+            display: block;
+        }
+
+        .discount__image--desktop {
+            display: none;
+        }
+
+        .discount__banner-image--left img {
+            display: none;
+        }
+
+        .discount__banner-image--left {
+            width: 100%;
+        }
+
+        .discount__product--badge {
+            left: 70%;
+        }
+
+        .discount__banner-content {
+            max-width: 100%;
+            padding-left: 10px;
+            text-align: left;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .discount__banner-content {
+            padding-right: 30px;
+        }
+    }
+
+    &__hide {
+        display: none;
+    }
+}
+@keyframes fadein {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+
+@keyframes fadeout {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
