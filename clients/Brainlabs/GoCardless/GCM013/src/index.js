@@ -5,7 +5,12 @@ const ieChecks = /MSIE|Trident|Edge\/(12|13|14|15|16|17|18)/.test(window.navigat
 
 if (!ieChecks) {
   pollerLite(
-    ['body', '#___gatsby', () => window.ga !== undefined && window.ga.getAll !== undefined],
+    [
+      'body',
+      '#___gatsby',
+      '.css-5j6s9h',
+      () => window.ga !== undefined && window.ga.getAll !== undefined
+    ],
     activate
   );
 }

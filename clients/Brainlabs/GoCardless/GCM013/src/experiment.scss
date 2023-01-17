@@ -16,4 +16,24 @@
         position: sticky;
         top: 0;
     }
+
+    .css-95l7bd{
+        grid-row: 1;
+        grid-column: 3 / 4;
+        
+        &.show{
+            display: block;
+        }
+
+        @include media-query(sm) {
+            grid-row: 2;
+            grid-column: 1 / 4;
+        }
+        
+        .css-19nbx3n{
+            @include media-query(sm) {
+                width: 100%;
+            }   
+        }
+    }
 }
