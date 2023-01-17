@@ -25,17 +25,17 @@ const clickHandler = (fireEvent, { ID, VARIATION }) => {
           document.querySelector('.close_button')?.click();
         }, 300);
       }, 300);
-      fireEvent('User clicks with the clearance brochure element', {
-        ID,
-        VARIATION
-      });
+      //fireEvent('User clicks with the clearance brochure element', {
+      //ID,
+      //VARIATION
+      //});
     } else if (targetMatched(`.${ID}__closeicon`)) {
       removeExisting(ID);
       sessionStorage.setItem(`${ID}__user-closed`, 'true');
-      fireEvent('User closes with the clearance brochure element', {
-        ID,
-        VARIATION
-      });
+      //fireEvent('User closes with the clearance brochure element', {
+      //ID,
+      //VARIATION
+      //});
     }
   });
 };

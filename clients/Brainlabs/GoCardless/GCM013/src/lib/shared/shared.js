@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "TP244",
+    ID: "GCM013",
     VARIATION: "1",
     CLIENT: "Brainlabs",
-    SITE: "TravisPerkins"
+    SITE: "GoCardless"
   };

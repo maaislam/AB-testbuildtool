@@ -16,7 +16,7 @@ const modalInner = (id) => {
               
               <div class="discount__product--badge">
                   <span>Worth</span>
-                  <span>40£</span>
+                  <span>${window.location.href.includes('us') ? '$49' : '40£'}</span>
               </div>
           </div>
           <div class="discount__banner-content">

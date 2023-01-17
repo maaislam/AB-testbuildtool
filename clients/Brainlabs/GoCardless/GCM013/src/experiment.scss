@@ -1,0 +1,19 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    .css-1v4n8bb {
+        width: 310px;
+    }
+
+    &__navItems {
+        &>*:not(:last-child) {
+            display: none !important;
+        }
+    }
+
+    [data-testid="navigationBar"] {
+        position: sticky;
+        top: 0;
+    }
+}

@@ -143,6 +143,7 @@ const validIds = [
   '646HK'
 ];
 const init = () => {
+  console.log('init');
   const prodCards = document.querySelectorAll('[id^="product_box"]');
   prodCards.forEach((card) => {
     const id = card.querySelector('.fh_product_click').getAttribute('descriptionproductid');
@@ -191,7 +192,8 @@ export default () => {
       entry.target.classList.add(`${ID}__seen`);
       gaTracking('Conditions Met');
       gaTracking(
-        `user ${VARIATION === 'control' ? 'would have seen' : 'sees'} "18th edition baadge" in PDP`
+        `user ${VARIATION === 'control' ? 'would have seen' : 'sees'} "18th edition baadge" in PDP`,
+        true
       );
     }
   };

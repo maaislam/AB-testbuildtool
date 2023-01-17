@@ -1,4 +1,4 @@
-import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
+//import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 
 import slideCatalog from './components/slideCatalog';
 import clickHandler from './helpers/clickHandler';
@@ -43,17 +43,17 @@ const init = (catalogBtnData) => {
   anchorElem.classList.add(`${ID}__anchorelem`);
 
   anchorElem.insertAdjacentHTML('beforebegin', slideCatalog(ID, catalogBtnData, anchorElemPos));
-  clickHandler(fireEvent, shared);
+  clickHandler('', shared);
 };
 
 export default async () => {
-  setup('Experimentation', `AvonGlobal - ${ID}`, shared);
+  //setup('Experimentation', `AvonGlobal - ${ID}`, shared);
   if (window.location.hash !== '#page/1') return;
-  fireEvent(`user views brocure with ID ${window.PDP_MANAGER.API_DATA.brochure_id}`, shared);
+  //fireEvent(`user views brocure with ID ${window.PDP_MANAGER.API_DATA.brochure_id}`, shared);
 
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('[data-item-id="shareContainer"]')) {
-      fireEvent('User interacts with the social media ctas', shared);
+      //fireEvent('User interacts with the social media ctas', shared);
     }
   });
 
@@ -83,7 +83,7 @@ export default async () => {
         }
       : saleCatalog;
   if (!window.location.href.includes(catalogBtnData.slug)) {
-    fireEvent('Conditions Met', shared);
+    //fireEvent('Conditions Met', shared);
 
     setTimeout(() => {
       init(catalogBtnData);

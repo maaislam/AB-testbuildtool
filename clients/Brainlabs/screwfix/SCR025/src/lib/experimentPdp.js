@@ -159,13 +159,13 @@ export default () => {
   //...
 
   const promoIcon = document.querySelector('.banner__promo-icon');
-  promoIcon?.setAttribute('src', 'https://media.screwfix.com/is/image/ae235/18th%20edition_3');
+  promoIcon?.setAttribute('src', 'https://media.screwfix.com/is/image/ae235/18th%20Edition_3');
   if (!promoIcon) {
     document
       .querySelector('.pr__media--main')
       .insertAdjacentHTML(
         'afterend',
-        '<img class="banner__promo-icon" alt="Great Value Product" src="https://media.screwfix.com/is/image/ae235/18th%20edition_3">'
+        '<img class="banner__promo-icon" alt="Great Value Product" src="https://media.screwfix.com/is/image/ae235/18th%20Edition_3">'
       );
   }
 };
