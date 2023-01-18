@@ -4,7 +4,7 @@ import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { pageData } from './pageData';
-import { observeDOM } from './helpers/utils';
+import { observeDOM, obsIntersection } from './helpers/utils';
 import clickHandler from './helpers/clickHandler';
 import wistiaTrackings from './helpers/wistiaTrackings';
 
@@ -67,4 +67,17 @@ export default () => {
     childList: true,
     subtree: true
   });
+
+  const contactCta = document.querySelector('.css-5j6s9h');
+  const headerContactCta = document.querySelector('.css-95l7bd');
+  const intersectionCallback = (entry) => {
+    //console.log(entry);
+    if (entry.isIntersecting) {
+      headerContactCta.classList.remove('show');
+      return;
+    }
+    headerContactCta.classList.add('show');
+  };
+
+  obsIntersection(contactCta, 0.5, intersectionCallback);
 };
