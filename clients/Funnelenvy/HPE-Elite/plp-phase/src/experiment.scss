@@ -1,0 +1,9 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+
+.#{$id} {
+    &__test {
+        display: block;
+    }
+}
