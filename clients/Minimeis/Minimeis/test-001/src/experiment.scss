@@ -38,23 +38,27 @@
           }
 
           @media (max-width:749px) {
+            padding: 0;
+
             & {
               border: unset;
               transition: unset;
 
               & span.form__label-image {
-                width: 75px;
-                height: 75px;
+                width: 60px;
+                height: 60px;
                 overflow: hidden;
                 border: solid 2px #fff;
                 border-radius: 50%;
                 transition: border-color 0.15s ease 0s;
 
                 & img {
-                  width: 60px;
-                  height: 60px;
+                  top: 50%;
+                  left: 50%;
+                  width: 50px;
+                  height: 50px;
                   margin: 2px;
-                  transform: translateY(4px) translateX(8px);
+                  transform: translate(-50%, -50%);
                 }
               }
             }
@@ -63,7 +67,7 @@
 
           &.active {
             border-color: #E77502;
-            ;
+
 
             @media (max-width:749px) {
               & {
@@ -71,7 +75,6 @@
 
                 & span.form__label-image {
                   border-color: #E77502;
-                  ;
 
                 }
 
@@ -83,7 +86,7 @@
 
             & span.form__label-title {
               color: #E77502;
-              ;
+
 
               @media (max-width:749px) {
                 color: #002750;
