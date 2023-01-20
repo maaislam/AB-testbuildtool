@@ -1,9 +1,47 @@
 @import './variables';
 @import '../src/lib/shared/shared';
-
+html body.fe-Elite-Product-Comparison .#{$id}__plpCard .compairElementBox{
+    display: none !important;
+}
 
 .#{$id} {
-    &__test {
-        display: block;
+    &__hide{
+        display: none !important;
+    }
+
+    &__slide-left{
+        transform: translateX(-14px);
+    }
+
+    &__plpCard{
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 32.3%;
+
+        .compairElementBox{
+            display: none !important;
+        }
+    }
+
+    .catalogLP{
+        .#{$id}__contactcommercial.add-to-cart-icon{
+            margin-top: auto !important;
+            padding: 10px!important;
+            font-size: 18px !important;
+    
+            &::before{
+                display: none !important;
+            }
+        }
+
+        .products section div span.#{$id}__contactcommercial a{
+            color: #fff !important;
+        }
+    }
+
+    .compairElementBox{
+        display: none !important;
     }
 }
