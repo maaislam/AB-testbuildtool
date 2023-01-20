@@ -12,6 +12,7 @@ if (!ieChecks) {
       '.fe-card-show',
       () =>
         window.headerData &&
+        window.headerData.userEmail === 'test_newrelic_mi@yopmail.com' &&
         (window.headerData.user.account_id === 'FRB2B190325133147' ||
           window.headerData.user.rootorg_id === 'MATI20210608085950')
     ],

@@ -5,6 +5,10 @@ html body.fe-Elite-Product-Comparison .#{$id}__plpCard .compairElementBox{
 }
 
 .#{$id} {
+    &__hide{
+        display: none !important;
+    }
+
     &__plpCard{
         display: flex !important;
         flex-direction: column;

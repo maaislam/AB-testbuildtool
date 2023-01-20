@@ -1,3 +1,4 @@
+import contactCta from './components/contactCta';
 import plpCards from './components/plpCards';
 import { newProductData } from './data';
 import { getCategoryName, observeDOM } from './helpers/utils';
@@ -9,9 +10,23 @@ const { ID } = shared;
 
 const init = () => {
   //check which plp is loaded
+  const anchorElem = document.querySelector('.fe-card-show').closest('section');
+
+  const controlCards = anchorElem.children;
+  [...controlCards].forEach((elm) => {
+    //if no configure button delete placce new button
+    const configureButton = elm.querySelector('.configButton');
+    if (!configureButton) return;
+
+    //place new button to pdf here
+    const atcCta = elm.querySelector('.add-to-cart-icon').closest('div');
+    atcCta.insertAdjacentHTML('beforebegin', contactCta(ID));
+    atcCta.classList.add(`${ID}__hide`);
+  });
+  //console.log(controlCards);
+
   const pageProducts = newProductData[getCategoryName()];
 
-  const anchorElem = document.querySelector('.fe-card-show').closest('section');
   console.log(pageProducts, getCategoryName(), newProductData);
 
   document.querySelectorAll(`.${ID}__plpCard`).forEach((elm) => {
@@ -20,6 +35,8 @@ const init = () => {
   });
 
   anchorElem.insertAdjacentHTML('afterbegin', plpCards(ID, pageProducts));
+
+  //add new buttons
 };
 
 export default () => {
