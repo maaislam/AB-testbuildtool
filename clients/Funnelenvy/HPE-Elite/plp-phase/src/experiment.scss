@@ -9,6 +9,10 @@ html body.fe-Elite-Product-Comparison .#{$id}__plpCard .compairElementBox{
         display: none !important;
     }
 
+    &__slide-left{
+        transform: translateX(-14px);
+    }
+
     &__plpCard{
         display: flex !important;
         flex-direction: column;

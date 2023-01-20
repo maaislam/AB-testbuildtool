@@ -16,11 +16,12 @@ const init = () => {
   [...controlCards].forEach((elm) => {
     //if no configure button delete placce new button
     const configureButton = elm.querySelector('.configButton');
-    if (!configureButton) return;
+    if (configureButton) return;
 
     //place new button to pdf here
     const atcCta = elm.querySelector('.add-to-cart-icon').closest('div');
     atcCta.insertAdjacentHTML('beforebegin', contactCta(ID));
+    elm.querySelector(`.${ID}__contactcommercial`).classList.add(`${ID}__slide-left`);
     atcCta.classList.add(`${ID}__hide`);
   });
   //console.log(controlCards);
