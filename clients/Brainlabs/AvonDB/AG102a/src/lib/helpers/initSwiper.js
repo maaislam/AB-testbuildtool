@@ -5,8 +5,8 @@ const initSwiper = (Swiper, swiperModules, container, trackingHelper) => {
   swiperConfig.modules = swiperModules;
   const slider = new Swiper(`${container}`, swiperConfig);
   slider.on('slideChange', () => {
-    // console.log('slide changed');
-    // fireEvent('Scroll on carousel', shared);
+    //console.log('slide changed');
+    //fireEvent('Scroll on carousel', shared);
     document.querySelectorAll('.AG102a__productvariant-selected').forEach((item) => {
       item?.classList.remove('is-open');
     });

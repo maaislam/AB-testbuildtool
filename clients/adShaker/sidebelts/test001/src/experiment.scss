@@ -1,0 +1,61 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__stickyatc{
+        position: sticky;
+        top: 0;
+        justify-content: flex-end;
+        height: 0;
+        opacity: 0;
+
+        @include media-query(md){
+            justify-content: center;
+        }
+
+        &.nav-main{
+            @include media-query(md){
+                display: flex ;
+            }
+        }
+    }
+
+    .slide-in-top {
+        height: 100%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    .seen-sticky-atc.slide-out-top {
+        animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    }
+}
+
+
+
+ @keyframes slide-in-top {
+    0% {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+
+@keyframes slide-out-top {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+  }
+  

@@ -1,10 +1,11 @@
 import { pollerLite } from '../../../../../../../globalUtil/util';
+
 export const initSwiper = (container, configObj, fireEvent) => {
   const loadSwiper = () => {
-    // eslint-disable-next-line no-undef
+    //eslint-disable-next-line no-undef
     const slider = new Swiper(`${container}`, configObj);
   };
-  pollerLite([() => window.Swiper != undefined], () => {
+  pollerLite([() => window.Swiper !== undefined], () => {
     loadSwiper();
   });
 };
@@ -14,6 +15,6 @@ export const swiperConfig = {
   spaceBetween: 24,
   navigation: {
     nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+    prevEl: '.swiper-button-prev'
+  }
 };

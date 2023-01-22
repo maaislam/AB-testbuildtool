@@ -1,0 +1,66 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    header{
+        background-color: #fff;
+    }
+
+    .product-gallery__fullscreen{
+        z-index: 9999;
+    }
+
+    .product-page{
+        &.mt-30{
+            margin-top: 16px;
+        }
+    }
+
+    &__hide {
+        display: none;
+    }
+
+    &__mb16{
+        margin-bottom: 16px;
+    }
+
+    &__slider{
+        height: auto;
+        height: 360px;
+        margin-bottom: 10px;
+        overflow-x: hidden;
+
+        .swiper-wrapper{
+             height: 350px;
+        }
+
+        // .swiper-slide{
+        //     height: 430px;
+        // }
+
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .swiper-button-next, .swiper-button-prev{
+            width: 35px;
+            height: 35px;
+            color: #141414;
+            background-color: #F5F5F5;;
+            border-radius: 50%;
+
+            &::after{
+                display: none;
+            }
+        }
+
+        .swiper-pagination-bullet{
+            width: 8px;
+            height: 8px;
+            background:#141414
+        }
+    }
+}
