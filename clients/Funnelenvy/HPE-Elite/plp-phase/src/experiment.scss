@@ -9,8 +9,12 @@ html body.fe-Elite-Product-Comparison .#{$id}__plpCard .compairElementBox{
         display: none !important;
     }
 
+    &__plpCard--sortlast{
+        order: 2;
+    }
+
     &__slide-left{
-        transform: translateX(-14px);
+        transform: translate(0, 60px);
     }
 
     &__plpCard{

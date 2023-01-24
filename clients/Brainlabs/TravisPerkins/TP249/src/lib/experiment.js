@@ -16,7 +16,12 @@ const init = () => {
   const isDoorSku = (sku) => doorSkus.includes(sku);
 
   if (document.querySelector(`.${ID}__banner`) || !isDoorSku(prodDku)) return;
-  gaTracking('User lands on PDP');
+
+  if (sessionStorage.getItem('doorVisualiserBanner') !== 'true') {
+    gaTracking('Conditions Met');
+    gaTracking('User lands on PDP');
+    sessionStorage.setItem('doorVisualiserBanner', 'true');
+  }
 
   if (document.referrer.includes('http://travisperkins.doorvisualiser.com/')) {
     gaTracking('User returns to PDP after being on door visualiser');
@@ -59,7 +64,7 @@ export default () => {
       gaTracking('User adds products to bag');
     }
   });
-
+  sessionStorage.removeItem('doorVisualiserBanner');
   init();
 
   const mutationCallback = () => {
