@@ -26,7 +26,7 @@ export const newProductData = {
         '1|R4R03A|HPE Superdome Flex 280 4-socket Base Chassis',
         '2|R6A25A|Intel Xeon-Gold 5318H (2.5GHz/18-core/150W) Processor Kit for HPE Superdome Flex 280'
       ],
-      labels: [],
+      labels: ['', 'epeat', 'tco certified'],
       price: 'EUR HT 11 957,90'
     },
     {
@@ -147,7 +147,7 @@ export const newProductData = {
         '2|798095-B21|HPE 2650W Performance Hot Plug Titanium Plus Power Supply Kit',
         '1|804938-B21|HPE Synergy Frame Rack Rail Kit'
       ],
-      labels: ['', 'epeat', 'tco certified'],
+      labels: ['energy star', 'epeat', ''],
       price: 'EUR HT 2 824,50'
     },
     {
@@ -162,7 +162,7 @@ export const newProductData = {
         '1|P07336-L21|Intel Xeon-Gold 5215 (2.5GHz/10-core/85W) FIO Processor Kit for HPE Synergy 480/660 Gen10.',
         '1|P07336-B21|Intel Xeon-Gold 5215 (2.5GHz/10-core/85W) FIO Processor Kit for HPE Synergy 480/660 Gen10.'
       ],
-      labels: ['', 'epeat', 'tco certified'],
+      labels: ['energy star', 'epeat', ''],
       price: 'EUR HT 2 837,10'
     }
   ],

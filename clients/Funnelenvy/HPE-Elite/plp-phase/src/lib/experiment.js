@@ -10,7 +10,9 @@ const { ID } = shared;
 
 const init = () => {
   //check which plp is loaded
-  const anchorElem = document.querySelector('.fe-card-show').closest('section');
+  const anchorElem =
+    document.querySelector('.fe-card-show').closest('section') ||
+    document.querySelector('.products section:last-child');
 
   const controlCards = anchorElem.children;
   [...controlCards].forEach((elm) => {
