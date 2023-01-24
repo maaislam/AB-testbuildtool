@@ -10,6 +10,7 @@ if (!ieChecks) {
       '#productCatalog',
       '#selectedCatalog .selecter-selected',
       '.fe-card-show',
+      '#pageSizeSelector',
       () =>
         window.headerData &&
         window.headerData.userEmail === 'test_newrelic_mi@yopmail.com' &&

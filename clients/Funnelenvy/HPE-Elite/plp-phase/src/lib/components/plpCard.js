@@ -11,7 +11,7 @@ const plpCard = (id, productData) => {
   };
 
   const htmlStr = `
-  <div class="${id}__plpCard col323 mobile100 padding15 bg-cloud prodListBox center fe-card-show" >
+  <div class="${id}__plpCard ${id}__plpCard--sortlast col323 mobile100 padding15 bg-cloud prodListBox center fe-card-show" >
   <aside class="width_fix">
     <span class="none" data-bind="text: 'image content source: ' + imageSource()"
       >image content source: EP</span

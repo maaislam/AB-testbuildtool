@@ -1,3 +1,4 @@
+import { pollerLite } from '../../../../../../globalUtil/util';
 import contactCta from './components/contactCta';
 import plpCards from './components/plpCards';
 import { newProductData } from './data';
@@ -14,11 +15,13 @@ const init = () => {
 
   const controlCards = anchorElem.children;
   [...controlCards].forEach((elm) => {
-    //if no configure button delete placce new button
+    //if no configure button delete & place new button
+    elm.classList.add('fe-card-show');
     const configureButton = elm.querySelector('.configButton');
     if (configureButton) return;
 
     //place new button to pdf here
+    elm.classList.add(`${ID}__plpCard--sortlast`);
     const atcCta = elm.querySelector('.add-to-cart-icon').closest('div');
     atcCta.insertAdjacentHTML('beforebegin', contactCta(ID));
     elm.querySelector(`.${ID}__contactcommercial`).classList.add(`${ID}__slide-left`);
@@ -35,7 +38,7 @@ const init = () => {
     elm.querySelector('.compairElementBox')?.remove();
   });
 
-  anchorElem.insertAdjacentHTML('afterbegin', plpCards(ID, pageProducts));
+  anchorElem.insertAdjacentHTML('beforeend', plpCards(ID, pageProducts));
 
   //add new buttons
 };
@@ -44,7 +47,27 @@ export default () => {
   setup(); //use if needed
 
   console.log(ID);
-  init();
+  //pre select 48 items per page
 
-  observeDOM('#selectedCatalog .selecter-selected', init, ID);
+  const selecter = document.querySelector('#pageSizeSelector + .selecter');
+  selecter.classList.add('open');
+  selecter.classList.remove('closed');
+  selecter.querySelector('.selecter-options').style.display = 'block';
+  document.querySelector('#pageSizeSelector + .selecter [data-value="48"]').click();
+
+  pollerLite(
+    [
+      () =>
+        document
+          .querySelector('#pageSizeSelector + .selecter .selecter-selected')
+          .textContent.includes('48')
+    ],
+    () => {
+      setTimeout(() => {
+        init();
+      }, 2000);
+
+      observeDOM('#selectedCatalog .selecter-selected', init, ID);
+    }
+  );
 };
