@@ -5,6 +5,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, expId, config
     mutations.forEach((mutation) => {
       let urlChanged = false;
       if (oldHref !== window.location.href) {
+        sessionStorage.removeItem('doorVisualiserBanner');
         oldHref = window.location.href;
         urlChanged = true;
       }

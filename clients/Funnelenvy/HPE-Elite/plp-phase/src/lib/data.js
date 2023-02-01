@@ -26,7 +26,7 @@ export const newProductData = {
         '1|R4R03A|HPE Superdome Flex 280 4-socket Base Chassis',
         '2|R6A25A|Intel Xeon-Gold 5318H (2.5GHz/18-core/150W) Processor Kit for HPE Superdome Flex 280'
       ],
-      labels: ['energy star', 'epeat', ''],
+      labels: ['', 'epeat', 'tco certified'],
       price: 'EUR HT 11 957,90'
     },
     {
@@ -147,16 +147,6 @@ export const newProductData = {
         '1|P07336-L21|Intel Xeon-Gold 5215 (2.5GHz/10-core/85W) FIO Processor Kit for HPE Synergy 480/660 Gen10.',
         '1|P07336-B21|Intel Xeon-Gold 5215 (2.5GHz/10-core/85W) FIO Processor Kit for HPE Synergy 480/660 Gen10.'
       ],
-      labels: ['energy star', 'epeat', ''],
-      price: 'EUR HT 2 837,10'
-    },
-    {
-      id: 3,
-      imageSrc: 'https://b2b.hpe.com/static/kfMsXwUj0CsxzxHVWowMvBbf5IRw7fs6WeSVuuiliwI.png',
-      title: 'SY660 Gen10 - Lame -  Quad Socket Intel (Cat4 Conf3)',
-      pdfLink:
-        'https://b2b.hpe.com/navigation/openContactPDF?fileName=MatinfoCat3Conf6A6500XL675dPCI.pdf',
-      specList: ['1|871929-B21|HPE Synergy 660 Gen10 ', '1|P07336-L21|Intel Xeon-G 5215'],
       labels: ['energy star', 'epeat', ''],
       price: 'EUR HT 2 837,10'
     },

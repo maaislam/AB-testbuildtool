@@ -9,7 +9,6 @@ if (!ieChecks) {
       'body',
       '#productCatalog',
       '#selectedCatalog .selecter-selected',
-      '#pageSizeSelector',
       () => window.headerData && window.headerData.userEmail === 'test_newrelic_mi@yopmail.com'
     ],
     activate

@@ -10,7 +10,7 @@ const gaTracking = (label, nonInteraction = false) => {
   window.ga.getAll()[0].send('event', {
     eventCategory: 'Experimentation',
     eventAction: `${SITE} - ${ID}`,
-    eventLabel: label
+    eventLabel: labelMessage
   });
 };
 
