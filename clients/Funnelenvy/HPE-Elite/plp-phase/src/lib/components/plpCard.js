@@ -1,5 +1,7 @@
 const plpCard = (id, productData) => {
   const { imageSrc, title, specList, labels, price } = productData;
+  const pdfLink =
+    'https://b2b.hpe.com/navigation/openContactPDF?fileName=Portail%20Matinfo%205%20Lot%204_Organisation%20HPE.pdf';
 
   const labelConfig = {
     'energy star':
@@ -16,14 +18,13 @@ const plpCard = (id, productData) => {
     <span class="none" data-bind="text: 'image content source: ' + imageSource()"
       >image content source: EP</span
     >
-    <a href="javascript:void(0)" class="block center lock_width instantLoad">
+    <a href="${pdfLink}" target="_blank" class="${id}__fakeanchor block center lock_width instantLoad">
       <!-- ko if: imageUrl() --><!-- /ko -->
       <!-- ko ifnot:imageUrl() -->
       <img
-        class="productCatalogLink clear fe_compareThumb"
-        data-bind="attr:{src: headerData.defaultHPELogo, sku: sku()}"
+        class="productCatalogLink clear "
         src="${imageSrc}"
-        sku="EC-SYS-BAND_42121174"
+        sku=""
       />
       <!-- /ko -->
     </a>
@@ -35,11 +36,10 @@ const plpCard = (id, productData) => {
       <!-- ko if:shortDescription -->
       <i class="bar"></i>
       <a
-        class="productCatalogLink black ellip instantLoad align-left fe_compareThumb"
-        href="javascript:void(0)"
-        data-bind="text: shortDescription(),  attr: {title: shortDescription(),sku: sku()}"
+        class="productCatalogLin black ellip instantLoad align-left ${id}__fakeanchor"
+        href="${pdfLink}" target="_blank"
         title="${title}"
-        sku="EC-SYS-BAND_42121174"
+        sku=""
         >${title}</a
       >
       <!-- ko if: $data.configurationSource &&  ($data.configurationSource() == "PRE-FIX" || $data.configurationSource() == "PRE-BAND") --><!-- /ko -->
@@ -62,18 +62,12 @@ const plpCard = (id, productData) => {
     </div>
     <p></p>
 
-    <article class="windows-xp align-left b-margin25px">
+    <article class="windows-xp align-left b-margin25px" >
       <span class="none" data-bind="text: 'keyspecs content source: ' + specSource()"
         >keyspecs content source: EP</span
       >
       <ul class="plongdesc" data-bind="html: $root.getLongDescription(longDescription())">
-        <li>
-          ${specList[0]}
-        </li>
-        <li>${specList[1]}</li>
-        <li>
-            ${specList[2]}
-        </li>
+        ${specList.map((spec) => `<li>${spec}</li>`).join('\n')}
       </ul>
     </article>
 
@@ -99,9 +93,9 @@ const plpCard = (id, productData) => {
     </span></span>
     <span
     class="${id}__contactcommercial add-to-cart-icon t-inline-block"
-    ><a target="_blank" href="https://b2b.hpe.com/navigation/openContactPDF?fileName=Portail%20Matinfo%205%20Lot%204_Organisation%20HPE.pdf">Contactez votre  équipe commerciable</a>
+    ><a target="_blank" href="${pdfLink}">Contactez votre  équipe commerciable</a>
     </span>
-  
+    <div class ="${id}__empty-height"></div>
 </div>
 
   `;

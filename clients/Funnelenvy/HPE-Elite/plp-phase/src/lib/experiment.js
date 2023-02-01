@@ -11,7 +11,9 @@ const { ID } = shared;
 
 const init = () => {
   //check which plp is loaded
-  const anchorElem = document.querySelector('.fe-card-show').closest('section');
+  const anchorElem = document.querySelector('.fe-card-show')
+    ? document.querySelector('.fe-card-show').closest('section')
+    : document.querySelector('.products section:last-child');
 
   const controlCards = anchorElem.children;
   [...controlCards].forEach((elm) => {
@@ -22,14 +24,17 @@ const init = () => {
 
     //place new button to pdf here
     elm.classList.add(`${ID}__plpCard--sortlast`);
-    const atcCta = elm.querySelector('.add-to-cart-icon').closest('div');
-    atcCta.insertAdjacentHTML('beforebegin', contactCta(ID));
-    elm.querySelector(`.${ID}__contactcommercial`).classList.add(`${ID}__slide-left`);
-    atcCta.classList.add(`${ID}__hide`);
+    const atcCta = elm.querySelector('.add-to-cart-icon')?.closest('div');
+    if (atcCta) {
+      atcCta.insertAdjacentHTML('beforebegin', contactCta(ID));
+      elm.querySelector(`.${ID}__contactcommercial`).classList.add(`${ID}__slide-left`);
+      atcCta.classList.add(`${ID}__hide`);
+    }
   });
   //console.log(controlCards);
 
   const pageProducts = newProductData[getCategoryName()];
+  document.body.classList.add(`${ID}__${getCategoryName()}`);
 
   console.log(pageProducts, getCategoryName(), newProductData);
 
@@ -46,14 +51,22 @@ const init = () => {
 export default () => {
   setup(); //use if needed
 
-  console.log(ID);
   //pre select 48 items per page
+  console.log(ID);
 
   const selecter = document.querySelector('#pageSizeSelector + .selecter');
   selecter.classList.add('open');
   selecter.classList.remove('closed');
   selecter.querySelector('.selecter-options').style.display = 'block';
   document.querySelector('#pageSizeSelector + .selecter [data-value="48"]').click();
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    //console.log(target);
+    if (target.closest(`.${ID}__plpCard`) && !target.closest(`.${ID}__contactcommercial`)) {
+      e.preventDefault();
+      target.closest(`.${ID}__plpCard`).querySelector(`.${ID}__contactcommercial a`).click();
+    }
+  });
 
   pollerLite(
     [
@@ -63,11 +76,17 @@ export default () => {
           .textContent.includes('48')
     ],
     () => {
-      setTimeout(() => {
-        init();
-      }, 2000);
+      setTimeout(init, 2000);
 
-      observeDOM('#selectedCatalog .selecter-selected', init, ID);
+      const mutationCallback = () => {
+        document.querySelectorAll(`.${ID}__contactcommercial`).forEach((item) => {
+          item.remove();
+        });
+        console.log('mutationCallback1');
+        setTimeout(init, 4000);
+      };
+
+      observeDOM('#selectedCatalog .selecter-selected', mutationCallback, ID);
     }
   );
 };

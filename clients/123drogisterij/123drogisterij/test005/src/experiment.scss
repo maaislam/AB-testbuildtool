@@ -1,0 +1,18 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__size {
+        margin-top: 12px;
+        margin-bottom: 6px;
+        color: #000;
+        font-weight: 600;
+        font-size: 14px;
+
+        span{
+            padding: 5px 8px;
+            font-weight: 700;
+            background-color: #f1b215;
+        }
+    }
+}

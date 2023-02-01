@@ -9,12 +9,41 @@ html body.fe-Elite-Product-Comparison .#{$id}__plpCard .compairElementBox{
         display: none !important;
     }
 
+    &__fakeanchor{
+        pointer-events: none;
+    }
+
     &__plpCard--sortlast{
         order: 2;
     }
 
+    .fe-card-show{
+        // height: 610px;
+        .productCatalogLink{
+            min-height: 36px;
+        }
+    }
+
     &__slide-left{
         transform: translate(0, 60px);
+    }
+
+    
+    .#{$id}__serveurs, .#{$id}__synergy {
+        
+        .#{$id}__empty-height{
+            width: 100%;
+            height: 30px;   
+        } 
+    }
+    .#{$id}__stockage {
+        .catalogLP .products section div aside article{
+            min-height: 100px !important;
+        }
+        .#{$id}__empty-height{
+            width: 100%;
+            height: 40px;   
+        }
     }
 
     &__plpCard{
@@ -23,6 +52,7 @@ html body.fe-Elite-Product-Comparison .#{$id}__plpCard .compairElementBox{
         align-items: center;
         justify-content: flex-start;
         width: 32.3%;
+        cursor: pointer;
 
         .compairElementBox{
             display: none !important;
@@ -42,6 +72,19 @@ html body.fe-Elite-Product-Comparison .#{$id}__plpCard .compairElementBox{
 
         .products section div span.#{$id}__contactcommercial a{
             color: #fff !important;
+        }
+
+        .fe_labels{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin: 15px auto;
+
+            a{
+                width: 35px;
+                height: 35px;
+            }
         }
     }
 

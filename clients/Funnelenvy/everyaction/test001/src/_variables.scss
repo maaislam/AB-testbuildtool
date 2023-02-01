@@ -1,0 +1,23 @@
+$media: (xsm:360px,
+    sm: 768px,
+    md: 850px,
+    lg: 1024px,
+);
+
+@mixin media-query($breakpoint) {
+
+    @each $breakpoints,
+    $size in $media {
+        @if $breakpoint==$breakpoints {
+            @media screen and (max-width: $size) {
+                @content;
+            }
+        }
+    }
+}
+
+$test-black-primary: #000;
+$test-black-secondary: #222230;
+$test-blue-primary: #228ae6;
+$test-blue-secondary: #b1d3ee;
+
