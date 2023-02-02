@@ -24,3 +24,5 @@ const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
 
   observer.observe(target, config);
 };
+
+export default observeDOM;

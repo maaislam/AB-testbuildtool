@@ -43,7 +43,7 @@ const contactPage = (id) => {
                 </ul>
                 <p>
                     For technical support or information regarding events, please use the
-                    <a href="https://hub.gocardless.com/s/?language=en_GB">Customer Hub</a>.
+                    <a href="https://hub.gocardless.com/s/?language=en_GB">Customer Hub</a>.<br>If you are an existing customer looking for support, please submit a <a href="https://support.gocardless.com/hc/en-gb/requests/new?ticket_form_id=134125">support ticket</a> support ticket or call <a href="tel: +442083389540">+44 20 8338 9540</a>.
                 </p>
             </div>
        
