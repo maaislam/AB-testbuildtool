@@ -2,7 +2,7 @@ import { pollerLite } from '../../../../../../globalUtil/util';
 import contactCta from './components/contactCta';
 import plpCards from './components/plpCards';
 import { newProductData } from './data';
-import { getCategoryName, observeDOM } from './helpers/utils';
+import { categoryUrlConfig, getCategoryName, getNewUrl, observeDOM } from './helpers/utils';
 import setup from './services/setup';
 
 import shared from './shared/shared';
@@ -27,6 +27,7 @@ const init = () => {
     const atcCta = elm.querySelector('.add-to-cart-icon')?.closest('div');
     if (atcCta) {
       atcCta.insertAdjacentHTML('beforebegin', contactCta(ID));
+      elm.classList.add(`${ID}__block-default-links`);
       elm.querySelector(`.${ID}__contactcommercial`).classList.add(`${ID}__slide-left`);
       atcCta.classList.add(`${ID}__hide`);
     }
@@ -52,7 +53,7 @@ export default () => {
   setup(); //use if needed
 
   //pre select 48 items per page
-  console.log(ID);
+  //console.log(ID);
 
   const selecter = document.querySelector('#pageSizeSelector + .selecter');
   selecter.classList.add('open');
@@ -65,11 +66,21 @@ export default () => {
     if (target.closest(`.${ID}__plpCard`) && !target.closest(`.${ID}__contactcommercial`)) {
       e.preventDefault();
       target.closest(`.${ID}__plpCard`).querySelector(`.${ID}__contactcommercial a`).click();
+    } else if (
+      target.closest(`.${ID}__block-default-links`) &&
+      !target.closest(`.${ID}__contactcommercial`)
+    ) {
+      e.preventDefault();
+      target
+        .closest(`.${ID}__block-default-links`)
+        .querySelector(`.${ID}__contactcommercial a`)
+        .click();
     }
   });
 
   pollerLite(
     [
+      '#selectedCatalog .selecter-selected',
       () =>
         document
           .querySelector('#pageSizeSelector + .selecter .selecter-selected')
@@ -78,15 +89,18 @@ export default () => {
     () => {
       setTimeout(init, 2000);
 
-      const mutationCallback = () => {
-        document.querySelectorAll(`.${ID}__contactcommercial`).forEach((item) => {
-          item.remove();
-        });
-        console.log('mutationCallback1');
-        setTimeout(init, 4000);
+      const mutationCallback = (mutation) => {
+        //document.querySelectorAll(`.${ID}__contactcommercial`).forEach((item) => {
+        //item.remove();
+        //});
+        if (!mutation.target.matches('span.selecter-selected')) return;
+        console.log('mutationCallback1477');
+        const select = document.getElementById('categoryDropdown');
+        const selectedValue = select.options[select.selectedIndex].value;
+        window.location.href = getNewUrl(selectedValue, categoryUrlConfig);
       };
 
-      observeDOM('#selectedCatalog .selecter-selected', mutationCallback, ID);
+      observeDOM('#selectedCatalog', mutationCallback);
     }
   );
 };

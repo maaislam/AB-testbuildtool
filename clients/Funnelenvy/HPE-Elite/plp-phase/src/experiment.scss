@@ -13,6 +13,15 @@ html body.fe-Elite-Product-Comparison .#{$id}__plpCard .compairElementBox{
         pointer-events: none;
     }
 
+    &__block-default-links{
+        cursor: pointer;
+        
+        a[href="javascript:void(0)"]{
+            pointer-events: none;
+        }
+
+    }
+
     &__plpCard--sortlast{
         order: 2;
     }
@@ -29,20 +38,33 @@ html body.fe-Elite-Product-Comparison .#{$id}__plpCard .compairElementBox{
     }
 
     
-    .#{$id}__serveurs, .#{$id}__synergy {
+    .#{$id}__serveurs {
         
         .#{$id}__empty-height{
             width: 100%;
             height: 30px;   
         } 
     }
-    .#{$id}__stockage {
+    .#{$id}__synergy, .#{$id}__serveurs {
+        & .fe-card-show{
+            height: 625px !important;
+        }
+
         .catalogLP .products section div aside article{
-            min-height: 100px !important;
+            min-height: 140px !important;
         }
         .#{$id}__empty-height{
             width: 100%;
-            height: 40px;   
+            height: 25px;   
+        } 
+    }
+    .#{$id}__stockage {
+        .catalogLP .products section div aside article{
+            min-height: 105px !important;
+        }
+        .#{$id}__empty-height{
+            width: 100%;
+            height: 26px;   
         }
     }
 

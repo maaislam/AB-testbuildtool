@@ -26,14 +26,14 @@ export const newProductData = {
         '1|R4R03A|HPE Superdome Flex 280 4-socket Base Chassis',
         '2|R6A25A|Intel Xeon-Gold 5318H (2.5GHz/18-core/150W) Processor Kit for HPE Superdome Flex 280'
       ],
-      labels: ['', 'epeat', 'tco certified'],
+      labels: ['energy star', 'epeat', ''],
       price: 'EUR HT 11 957,90'
     },
     {
       id: 3,
       imageSrc:
         'https://bm-test-dev.s3.us-east-2.amazonaws.com/FE/HPE+Elite/HPE+Elite+Matinfo+-+Customer+Experience/Cat3-Conf1-Apollo2000-Gen10.png',
-      title: 'Apollo 2000 Gen10 HPE Apollo 2000 XL170r Gen10 (Cat3 Conf1)',
+      title: 'A2000 Gen10 - 2U 4Serveurs - Dual Socket Intel (Cat3 Conf1)',
       pdfLink:
         'https://b2b.hpe.com/navigation/openContactPDF?fileName=MatinfoCat3Conf1Apollo2000Gen10.pdf',
       specList: [
@@ -48,7 +48,7 @@ export const newProductData = {
       id: 4,
       imageSrc:
         'https://bm-test-dev.s3.us-east-2.amazonaws.com/FE/HPE+Elite/HPE+Elite+Matinfo+-+Customer+Experience/Cat3-Conf8-A2000-G10p-Chassis.png',
-      title: 'A2000 G10p Chassis HPE Apollo 2000 Gen10+ Chassis (Cat3 Conf8)',
+      title: 'A2000 Gen10+ - Chassis 2U 4Serveurs (Cat3 Conf8)',
       pdfLink:
         'https://b2b.hpe.com/navigation/openContactPDF?fileName=MatinfoCat3Conf8A2000G10pChassis.pdf',
       specList: [
@@ -62,7 +62,7 @@ export const newProductData = {
     {
       id: 5,
       imageSrc: 'https://b2b.hpe.com/static/kfMsXwUj0CsxzxHVWowMvBbf5IRw7fs6WeSVuuiliwI.png',
-      title: 'A2k Lame 2U Intel HPE Apollo 2000 XL290n Gen10+ (Cat3 Conf10)',
+      title: 'A2000 XL290n Gen10+  - Lame 2U - Dual Socket Intel (Cat3 Conf10)',
       pdfLink:
         'https://b2b.hpe.com/navigation/openContactPDF?fileName=MatinfoCat3Conf10A2kLame2UIntel.pdf',
       specList: [
@@ -124,7 +124,7 @@ export const newProductData = {
       id: 1,
       imageSrc:
         'https://bm-test-dev.s3.us-east-2.amazonaws.com/FE/HPE+Elite/HPE+Elite+Matinfo+-+Customer+Experience/Cat4-Conf1-Synergy-Chassis.png',
-      title: 'Synergy Chassis HPE Synergy 12000 (Cat4 Conf1)',
+      title: 'Synergy - 10U Chassis (Cat4 Conf1)',
       pdfLink:
         'https://b2b.hpe.com/navigation/openContactPDF?fileName=MatinfoCat4Conf1SynergyChassis.pdf',
       specList: [
@@ -139,7 +139,7 @@ export const newProductData = {
       id: 2,
       imageSrc:
         'https://bm-test-dev.s3.us-east-2.amazonaws.com/FE/HPE+Elite/HPE+Elite+Matinfo+-+Customer+Experience/Cat4-Conf1-SY660-Gen10.png',
-      title: 'SY660 Gen10 HPE Synergy 660 Gen10 (Cat4 Conf3)',
+      title: 'SY660 Gen10 - Lame -  Quad Socket Intel (Cat4 Conf3)',
       pdfLink:
         'https://b2b.hpe.com/navigation/openContactPDF?fileName=MatinfoCat4Conf3SY660Gen10.pdf',
       specList: [
@@ -149,16 +149,6 @@ export const newProductData = {
       ],
       labels: ['energy star', 'epeat', ''],
       price: 'EUR HT 2 837,10'
-    },
-    {
-      id: 3,
-      imageSrc: 'https://b2b.hpe.com/static/kfMsXwUj0CsxzxHVWowMvBbf5IRw7fs6WeSVuuiliwI.png',
-      title: 'Synergy - 10U Chassis (Cat4 Conf1)',
-      pdfLink:
-        'https://b2b.hpe.com/navigation/openContactPDF?fileName=MatinfoCat3Conf6A6500XL675dPCI.pdf',
-      specList: ['1|P06011-B21|HPE Synergy 12000'],
-      labels: ['energy star', 'epeat', ''],
-      price: 'EUR HT 2 824,50'
     }
   ],
   stockage: [
@@ -241,7 +231,7 @@ export const newProductData = {
       id: 9,
       imageSrc:
         'https://bm-test-dev.s3.us-east-2.amazonaws.com/FE/HPE+Elite/HPE+Elite+Matinfo+-+Customer+Experience/Cat-5-Conf-15-Qumulo-Apollo-4200.png',
-      title: 'Qumulo A4200 Nœud Add Qumulo A4200 (Cat5 Conf15)',
+      title: 'Qumulo A4200 Nœud Add - NAS Scalable (Cat5 Conf15)',
       pdfLink:
         'https://b2b.hpe.com/navigation/openContactPDF?fileName=MatinfoCat5Conf15QumuloA4200NoeudAdd.pdf',
       specList: [
@@ -256,7 +246,7 @@ export const newProductData = {
       id: 10,
       imageSrc:
         'https://bm-test-dev.s3.us-east-2.amazonaws.com/FE/HPE+Elite/HPE+Elite+Matinfo+-+Customer+Experience/Cat5-Conf16-Qumulo-DL325-Kit.png',
-      title: 'Qumulo DL325 Kit Depart Qumulo DL325 (Cat5 Conf16)',
+      title: 'Qumulo DL325 Kit Depart - NAS Scalable (Cat5 Conf16)',
       pdfLink:
         'https://b2b.hpe.com/navigation/openContactPDF?fileName=MatinfoCat5Conf16QumuloDL325KitDepart.pdf',
       specList: [
@@ -271,7 +261,7 @@ export const newProductData = {
       id: 11,
       imageSrc:
         'https://bm-test-dev.s3.us-east-2.amazonaws.com/FE/HPE+Elite/HPE+Elite+Matinfo+-+Customer+Experience/Cat5-Conf17-Qumulo-DL325.png',
-      title: 'Qumulo DL325 Nœud Add (Cat5 Conf17)',
+      title: 'Qumulo DL325 Nœud Add - NAS Scalable (Cat5 Conf17)',
       pdfLink:
         'https://b2b.hpe.com/navigation/openContactPDF?fileName=MatinfoCat5Conf17QumuloDL325NoeudAdd.pdf',
       specList: [
@@ -282,5 +272,6 @@ export const newProductData = {
       labels: [],
       price: 'EUR HT 35 050,05'
     }
-  ]
+  ],
+  options: []
 };

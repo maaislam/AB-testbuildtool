@@ -93,7 +93,7 @@ const plpCard = (id, productData) => {
     </span></span>
     <span
     class="${id}__contactcommercial add-to-cart-icon t-inline-block"
-    ><a target="_blank" href="${pdfLink}">Contactez votre  équipe commerciable</a>
+    ><a target="_blank" href="${pdfLink}">Contactez votre équipe commerciale</a>
     </span>
     <div class ="${id}__empty-height"></div>
 </div>

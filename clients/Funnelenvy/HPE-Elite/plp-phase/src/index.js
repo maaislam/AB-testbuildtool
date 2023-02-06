@@ -9,7 +9,10 @@ if (!ieChecks) {
       'body',
       '#productCatalog',
       '#selectedCatalog .selecter-selected',
-      () => window.headerData && window.headerData.userEmail === 'test_newrelic_mi@yopmail.com'
+      () =>
+        window.headerData &&
+        (window.headerData.user.account_id === 'FRB2B190325133147' ||
+          window.headerData.user.rootorg_id === 'MATI20210608085950')
     ],
     activate
   );

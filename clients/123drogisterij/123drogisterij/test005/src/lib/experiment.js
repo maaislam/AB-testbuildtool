@@ -23,27 +23,37 @@ export default () => {
     'XX-Small',
     'X-Small',
     'Small',
-    'Small / Medium',
+    'Small/Medium',
     'Medium',
     'Large',
     'Extra Large',
-    'Large / X-large',
+    'Large/X-large',
+    'L/XL',
+    'Large/Extra Large',
     'X-Large',
     'XX-Large',
     'XXX-Large',
     '4XL',
     '5XL',
-    'XXL'
+    'XXL',
+    'S/M'
   ];
 
   const cartItems = document.querySelectorAll('.product-item-name a');
 
   cartItems.forEach((item) => {
     const itemName = item.innerText;
-    const seperator = itemName.includes('-') ? '- ' : ' ';
-    const itemSize = itemName.slice(itemName.lastIndexOf(seperator) + 1);
+    //const seperator = itemName.includes('-') ? '- ' : ' ';
+    //const itemSize = itemName.slice(itemName.lastIndexOf(seperator) + 1);
+    const itemSizes = sizes.filter((size) => itemName.includes(size));
+    const itemSize =
+      itemSizes.length > 0 &&
+      itemSizes.reduce((prev, cur) => {
+        if (prev.length > cur.length) return prev;
+        return cur;
+      });
     console.log('itemSize', itemSize);
-    if (sizes.includes(itemSize.trim())) {
+    if (itemSize) {
       //console.log('found item', itemSize);
       if (item.parentElement.querySelector(`.${ID}__size`)) return;
       item.insertAdjacentHTML(
