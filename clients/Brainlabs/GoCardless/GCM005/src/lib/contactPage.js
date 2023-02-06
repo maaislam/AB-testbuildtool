@@ -43,7 +43,7 @@ const contactPage = (id) => {
                 </ul>
                 <p>
                     For technical support or information regarding events, please use the
-                    <a href="https://hub.gocardless.com/s/?language=en_GB">Customer Hub</a>.
+                    <a href="https://hub.gocardless.com/s/?language=en_GB">Customer Hub</a>.If you are an existing customer looking for support, please submit a <a href="https://support.gocardless.com/hc/en-gb/requests/new?ticket_form_id=134125">support ticket</a> support ticket or call <a href="tel: +442083389540">+44 20 8338 9540</a>.
                 </p>
             </div>
        
@@ -52,9 +52,9 @@ const contactPage = (id) => {
                 <div class="partners">
                     <span class="smart-pension" ><img src="https://ucds.ams3.digitaloceanspaces.com/GoCardless/GCM005/image-smartpension.png"
                             alt="smart pension"></span>
-                    <span class="bulb" ><img src="https://ucds.ams3.digitaloceanspaces.com/GoCardless/GCM005/image-bulb.png"
+                    <span class="bulb" ><img src="https://ucds.ams3.digitaloceanspaces.com/GoCardless/GCM005/image-tripadvisor.png"
                             alt="bulb"></span>
-                    <span class="epson"><img src="https://ucds.ams3.digitaloceanspaces.com/GoCardless/GCM005/image-epson.png"
+                    <span class="epson"><img src="https://ucds.ams3.digitaloceanspaces.com/GoCardless/GCM005/image-guardian.png"
                             alt="epson"></span>
                     <span class="cuckoo"><img src="https://ucds.ams3.digitaloceanspaces.com/GoCardless/GCM005/image-cuckoo.png"
                             alt="cuckoo"></span>
