@@ -24,16 +24,22 @@ export default () => {
 
   const { isPossiblePhoneNumber } = window.libphonenumber;
 
-  mktForm.onValidate(() => {
+  mktForm.onValidate((isValid) => {
     //Get the values
     const vals = mktForm.vals();
-    //Check condition
-    if (isPossiblePhoneNumber(vals.Phone) && vals.Company !== '') {
-      //console.log('custom validation passed');
-      document.querySelector('#Phone + .mktoError').style.display = 'none';
+    const phoneNumStr = vals.Phone;
+    if (!phoneNumStr) return;
+    const phoneNumber = phoneNumStr.match(/\d/g).join('');
+
+    if ((isPossiblePhoneNumber(phoneNumber) || isValid) && vals.Company !== '') {
+      const phoneErr = document.querySelector('#Phone + .mktoError');
+      if (phoneErr) {
+        document.querySelector('#Phone + .mktoError').style.display = 'none';
+      }
       mktForm.submittable(true);
       return;
     }
+    //document.querySelector('#Phone + .mktoError').style.display = 'block';
     mktForm.submittable(false);
   });
 };

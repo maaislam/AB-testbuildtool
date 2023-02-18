@@ -1,12 +1,14 @@
-import activate from './lib/experiment';
+import plpChanges from './lib/pages/plpChanges';
 import { pollerLite } from '../../../../../globalUtil/util';
-import searchPageChanges from './lib/searchPageChanges';
-import pdpChanges from './lib/pdpChanges';
+import searchPageChanges from './lib/pages/searchPageChanges';
+import pdpChanges from './lib/pages/pdpChanges';
+import homePageChanges from './lib/pages/hpChanges';
 
 //const ieChecks = /MSIE|Trident|Edge\/(12|13|14|15|16|17|18)/.test(window.navigator.userAgent);
 const searchPage = window.location.pathname.includes('/search');
 const categoryPage = window.location.pathname.includes('/list');
-const pdp = window.location.pathname.includes('/productDetails/details');
+const productPage = window.location.pathname.includes('/productDetails/details');
+const homePage = window.location.pathname === '/';
 
 pollerLite(
   [
@@ -24,9 +26,11 @@ pollerLite(
     if (searchPage) {
       searchPageChanges();
     } else if (categoryPage) {
-      activate();
-    } else if (pdp) {
+      plpChanges();
+    } else if (productPage) {
       pdpChanges();
+    } else if (homePage) {
+      homePageChanges();
     }
   }
 );

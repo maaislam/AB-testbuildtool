@@ -7,13 +7,13 @@ const gaTracking = (label, action = 'click') => {
   //const labelMessage = `Test ID: ${ID} Variation: ${VARIATION} Label: ${label}`;
   //window.ga('create', 'UA-55205898-4', 'auto');
   window.ga.getAll().forEach((tracker) => {
-    if (tracker.get('trackingId') === 'UA-55205898-4') {
-      tracker.send('event', {
-        eventCategory: 'funnelenvy',
-        eventAction: action,
-        eventLabel: label
-      });
-    }
+    tracker.send('event', {
+      eventCategory: 'funnelenvy',
+      eventAction: action,
+      eventLabel: label
+    });
+    //if (tracker.get('trackingId') === 'UA-55205898-4') {
+    //}
   });
   //window.ga('send', 'event', 'funnelenvy', action, label);
 };

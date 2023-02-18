@@ -1,0 +1,401 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+html body.fe-Elite-Product-Comparison .#{$id}__plpCard .compairElementBox{
+    display: none !important;
+}
+
+.#{$id} {
+    &__hide{
+        display: none !important;
+    }
+
+    &__fakeanchor{
+        pointer-events: none;
+    }
+
+    &__block-default-links{
+        cursor: pointer;
+        
+        a[href="javascript:void(0)"]{
+            pointer-events: none;
+        }
+
+    }
+
+    &__plpCard--sortlast{
+        order: 2;
+    }
+
+    .catalogLP .fe-card-show .add-to-cart-icon{
+        margin-top: 24px !important;
+    }
+
+    .fe-card-show{
+        // height: 610px;
+        .productCatalogLink{
+            min-height: 36px;
+        }
+
+        .catalogLP .add-to-cart-icon{
+            margin-top: 24px !important;
+        }
+    }
+
+    &__slide-left{
+        transform: translate(0, 24px);
+    }
+
+    
+    .#{$id}__serveurs {
+        
+        .#{$id}__empty-height{
+            width: 100%;
+            height: 30px;   
+        } 
+    }
+    
+    .#{$id}__synergy, .#{$id}__serveurs {
+        & .fe-card-show{
+            height: 672px !important;
+        }
+
+        .catalogLP .products section div aside article{
+            min-height: 180px !important;
+        }
+        .#{$id}__empty-height{
+            width: 100%;
+            height: 35px;   
+        } 
+    }
+    .#{$id}__stockage {
+        & .fe-card-show{
+            height: 672px !important;
+
+            &:nth-child(1){
+
+                .#{$id}__slide-left{
+                    transform: translate(0, 3px);
+                }
+            }
+
+            .#{$id}__slide-left{
+                transform: translate(0, 60px);
+            }
+        }
+
+
+        .catalogLP .products section div aside article{
+            min-height: 180px !important;
+        }
+        .#{$id}__empty-height{
+            width: 100%;
+            height: 30px;   
+        }
+    }
+
+    .#{$id}__synergy {
+        
+        .#{$id}__empty-height{
+            width: 100%;
+            height: 64px;   
+        } 
+    }
+
+    &__plpCard{
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 32.3%;
+        cursor: pointer;
+
+        .compairElementBox{
+            display: none !important;
+        }
+    }
+
+    #productDetailsDiv{
+        .compairElementBox{
+            margin-top: 12px !important;
+        } 
+    }
+
+    .search-results{
+        table{
+            table-layout: auto;
+
+            .compairElementBox{
+                margin-top: 12px !important;
+            }
+
+            tr.#{$id}__adjust .compairElementBox{
+                max-width: 126px;
+                margin-left: auto !important;
+            }
+        }
+    }
+
+    .catalogLP, .search-results, #productDetailsDiv{
+        .#{$id}__contactcommercial.add-to-cart-icon{
+            margin-top: auto !important;
+            padding: 10px!important;
+            
+
+            a{
+                color: #fff;
+                font-size: 16px !important;
+            }
+    
+            &::before{
+                display: none !important;
+            }
+        }
+
+        .products section div span.#{$id}__contactcommercial a{
+            color: #fff !important;
+        }
+
+        .fe_labels{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin: 15px auto;
+
+            a{
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+
+    .compairElementBox{
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 1680px) {
+    html body li.fe-footer-banner {
+        padding-top: 45px;
+    }
+
+    html body .fe-above-hero-banner .fe-banner-heading {
+        font-size: 36px;
+    }
+
+    html body .fe-above-hero-banner .fe-banner-heading span {
+        font-size: 28px;
+    }
+
+    html body li.fe-footer-banner .fe-banner-heading {
+        font-size: 29px;
+    }
+
+    html body li.fe-footer-banner .fe-banner-heading span {
+        font-size: 22px;
+    }
+
+    html body .fe-banner-image {
+        height: 160px;
+    }
+}
+
+.fe-above-hero-banner .fe-banner-image {
+    height: 150px;
+}
+
+li.fe-footer-banner {
+    padding-top: 13px;
+}
+
+.fe-above-hero-banner>.row,
+.fe-footer-banner>.row {
+    display: flex;
+    border: 1px solid #ccc;
+}
+
+.fe-above-hero-banner .fe-banner-text p {
+    font-size: 25px;
+}
+
+.fe-above-hero-banner .fe-banner-text {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 55%;
+    justify-content: center;
+}
+
+.fe-above-hero-banner .fe-banner-text .fe-banner-heading {
+    font-family: "HPEMetricBold";
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.fe-footer-banner .fe-banner-heading {
+    font-size: 28px;
+}
+
+.fe-banner-heading span {
+    font-family: "HPEMetricBold";
+    display: block;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.fe-footer-banner .fe-banner-heading span {
+    font-size: 20px;
+}
+
+.fe-footer-banner>.row>div {
+    width: 49%;
+}
+
+.fe-above-hero-banner>.row>.fe-banner-image {
+    width: 40%;
+    position: relative;
+}
+
+.fe-above-hero-banner .fe_logo_matinfo {
+    position: absolute;
+    width: 135px;
+    left: 22px;
+    top: 22px;
+    background: #fff;
+    padding: 2px;
+}
+
+.fe-above-hero-banner .fe-image-text {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    font-family: "HPEMetricBold";
+    display: block;
+    font-size: 26px;
+    text-align: left;
+}
+
+.fe-above-hero-banner>.row>.fe-banner-text {
+    width: 60%;
+}
+
+html body .fe-above-hero-banner {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.fe-above-hero-banner .fe-banner-image {
+    background: url("https://fe-hpe-public.s3.amazonaws.com/images/2022-07-01Matinfo_portal_banner.png");
+    background-size: cover;
+    background-position-y: -10px;
+}
+
+.fe-above-hero-banner .fe-banner-image img {
+    opacity: 0;
+}
+
+.fe-above-hero-banner .fe-banner-image .fe_logo_matinfo {
+    opacity: 1;
+}
+
+html body.fe-matinfo-homepage .title-container .fe-hero {
+    margin-bottom: 0px !important;
+}
+
+html body .fe-commande-link+.fe-above-hero-banner {
+    display: none;
+}
+
+html body .fe-above-hero-banner {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.fe-above-hero-banner img.fe-mbanner-img {
+    width: 100%;
+}
+
+/* Home phase CSS */
+html body.fe-product-options .main-page .main,
+html body.fe-home-phase .main-page .main,
+html body.fe-home-phase .fe-gen-text,
+html body.fe-home-phase.fe-matinfo-homepage .title-container .fe-commande-link,
+html body.fe-home-phase.fe-matinfo-homepage .title-container .fe-hero {
+    display: none !important;
+}
+
+.fe-homepage-products .product-border .lock_width {
+    margin: 0 auto;
+    max-width: 180px;
+    width: 80% !important;
+    max-height: 115px;
+}
+
+.fe-homepage-products .product-border .lock_width2 {
+    color: #01A982;
+    white-space: normal;
+    height: 2.5em;
+    vertical-align: top;
+    display: block;
+    text-align: center;
+}
+
+
+.fe-homepage-products .product-border {
+    border: 6px solid white;
+    background: #f2f2f2;
+    text-align: center;
+    margin: 0;
+    padding: 1.5em 1.5em 0.5em;
+}
+
+.fe-homepage-products .product-border .lock_width img {
+    max-height: inherit;
+}
+
+.fe-home-phase .fe-click-banner span {
+    font-size: 20px;
+    line-height: 1.2;
+    color: #333;
+    margin: 0px 0 20px 0;
+    font-family: HPEMetricMedium;
+}
+
+.fe-home-phase .fe-click-banner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.fe-home-phase .fe-click-banner .fe-click-link {
+    font-size: 18px;
+    padding: 0px 10px;
+    color: #01a982;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: "HPEMetricRegular";
+    display: inline-block;
+}
+
+.fe-home-phase .fe-gen-hero-text {
+    font-size: 20px;
+    line-height: 1.2;
+    color: #333;
+    margin: 10px 0 20px 0;
+    font-family: HPEMetricMedium;
+}
+
+.fe-home-phase .fe-gen-hero-text a {
+    font-size: 20px;
+    line-height: 1.2;
+    color: #333;
+    text-decoration: underline;
+}
+
+.fe-home-phase .fe-homepage-products {
+    margin-bottom: 60px;
+}
