@@ -1,15 +1,14 @@
-import shared from '../shared/shared';
+import { pollerLite } from '../../../../../../../globalUtil/util';
 
-const gaTracking = (label) => {
-  const { ID, VARIATION, CLIENT } = shared;
-  document.documentElement.classList.add(ID);
-  document.documentElement.classList.add(`${ID}-${VARIATION}`);
-  const labelMessage = `Test ID: ${ID} Variation: ${VARIATION} Label: ${label}`;
-  window.ga('send', {
-    hitType: 'event',
-    eventCategory: 'Experimentation',
-    eventAction: `${CLIENT} - ${ID}`,
-    eventLabel: labelMessage
+const gaTracking = (label, action = 'click') => {
+  pollerLite([() => typeof window.ga.getAll === 'function'], () => {
+    window.ga.getAll().forEach((tracker) => {
+      tracker.send('event', {
+        eventCategory: 'funnelenvy',
+        eventAction: action,
+        eventLabel: label
+      });
+    });
   });
 };
 

@@ -9,12 +9,5 @@ const pageToSelectorConfig = {
 };
 
 if (!ieChecks) {
-  pollerLite(
-    [
-      'body',
-      `${pageToSelectorConfig[window.location.pathname]}`,
-      () => typeof window.ga.getAll === 'function'
-    ],
-    activate
-  );
+  pollerLite(['body', `${pageToSelectorConfig[window.location.pathname]}`], activate);
 }
