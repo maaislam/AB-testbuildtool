@@ -5,8 +5,7 @@ const ieChecks = /MSIE|Trident|Edge\/(12|13|14|15|16|17|18)/.test(window.navigat
 const pageToSelectorConfig = {
   '/pricing/': '.pricing-columns',
   '/plans-comparison/': '.pricing-table-v2--table',
-  '/bullet/upgrade': '#pricing_plans',
-  '/admin/registrations/new': 'body'
+  '/bullet/upgrade': '#pricing_plans'
 };
 
 if (!ieChecks) {
