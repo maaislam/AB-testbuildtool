@@ -28,10 +28,14 @@ const init = () => {
   //...
   if (window.location.pathname === '/bullet/upgrade') {
     const growthPlan = document.querySelector('[data-test="growth-plan"]');
-    const plusPan = document.querySelector('[data-intercom="plusDemoRequest"]');
+    const plusPlans = document.querySelectorAll('[data-intercom="plusDemoRequest"]');
     const secondList = growthPlan.querySelectorAll('.list-disc')[1];
-    growthPlan.querySelector('ds-button').setAttribute('style', '--primary: var(--gray-900);');
-    plusPan.removeAttribute('style');
+    growthPlan.querySelectorAll('ds-button').forEach((btn) => {
+      btn.setAttribute('style', '--primary: var(--gray-900);');
+    });
+    plusPlans.forEach((plusPlan) => {
+      plusPlan.removeAttribute('style');
+    });
     if (!document.querySelector(`.${ID}__growthHeadline`)) {
       growthPlan.lastElementChild.classList.add(`${ID}__featurecontainer`);
       growthPlan

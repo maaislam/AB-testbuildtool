@@ -8,11 +8,11 @@ const gaTracking = (eventLabel, trackingId = 'G-KXMYLX5B91', eventName = 'click'
     client_id: Math.random().toString(36).substring(2),
     events: [
       {
-        name: eventName,
-        params: {
-          event_category: 'funnelenvy',
-          event_label: eventLabel
-        }
+        name: eventLabel
+        //params: {
+        //event_category: 'funnelenvy',
+        //event_label: eventLabel
+        //}
       }
     ]
   };
