@@ -1,4 +1,4 @@
-import gaTracking from '../services/gaTracking';
+//import gaTracking from '../services/gaTracking';
 
 const pageNameConfig = {
   '/pricing/': 'pricing',
@@ -19,22 +19,22 @@ const clickHandler = (event) => {
     target.closest(`a[href*="${basicPlanLink}"]`) ||
     target.closest(`[href*="${basicUpgradeLink}"]`)
   ) {
-    gaTracking(`basic_${action}_clicks_${pageNameConfig[window.location.pathname]}`);
+    //gaTracking(`basic_${action}_clicks_${pageNameConfig[window.location.pathname]}`);
   } else if (
     target.closest(`a[href*="${growthPlanLink}"]`) ||
     target.closest(`[href*="${growthUpgradeLink}"]`)
   ) {
-    gaTracking(`growth_${action}_clicks_${pageNameConfig[window.location.pathname]}`);
+    //gaTracking(`growth_${action}_clicks_${pageNameConfig[window.location.pathname]}`);
   } else if (
     target.closest(`a[href*="${bookDemoLink}"]`) ||
     target.closest('[data-intercom="plusDemoRequest"]')
   ) {
-    gaTracking(`plus_book_demo_clicks_${pageNameConfig[window.location.pathname]}`);
+    //gaTracking(`plus_book_demo_clicks_${pageNameConfig[window.location.pathname]}`);
   } else if (
     target.closest('[href*="/plans-comparison/"]') &&
     window.location.pathname === '/pricing/'
   ) {
-    gaTracking('view_full_list_clicks_pricing');
+    //gaTracking('view_full_list_clicks_pricing');
   }
 };
 

@@ -1,0 +1,49 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__filterbtn {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        z-index: 9;
+        padding: 10px 20px;
+        background-color: #fff;
+        border-bottom: 2px solid #4ca840;
+        border-radius: 4px;
+        box-shadow: 0 0 5px rgb(176 202 156 / 80%);
+        transform: translateX(-50%);
+        cursor: pointer;
+
+        &-wrapper{
+            display: flex;
+            align-items: center;
+            color: #4ca840;
+            font-weight: 700;
+            font-size: 17px;
+
+            .filter-icon{
+                display: flex;
+                margin-right: 16px;
+            }
+        }
+
+        &-count{
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1;
+            text-align: center;
+            background-color: #d9b666;
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+        }
+    }
+}

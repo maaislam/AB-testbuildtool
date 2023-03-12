@@ -36,6 +36,15 @@ export default () => {
   mainCta.innerText = primaryCtaText;
   mainCta.insertAdjacentHTML('afterend', newCta);
 
+  if (
+    window.location.pathname === '/thank-you-ebook-create-reports-funders-want-to-see/' ||
+    window.location.pathname === '/thank-you-case-study-kahnawake/'
+  ) {
+    mainCta.classList.add('no-background');
+  } else {
+    mainCta.classList.add('with-background');
+  }
+
   document.querySelector(`.${ID}__ctablock`).addEventListener('click', () => {
     gaTracking('tour_the_product');
   });

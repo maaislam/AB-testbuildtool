@@ -1,6 +1,6 @@
 module.exports = {
   ID: 'uc006a',
-  VARIATION: '1',
+  VARIATION: 'control',
   CLIENT: 'Funnelenvy',
   SITE: 'uscreen'
 };
