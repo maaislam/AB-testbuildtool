@@ -1,0 +1,27 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 16px;
+
+        & > a:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+
+    &__labellink {
+        display: flex;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+
+        img{
+            max-width: 100%;
+            max-height: auto;
+        }
+    }
+}
