@@ -1,0 +1,29 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__instock {
+        display: flex;
+        align-items: center;
+        color: #008500;
+        font-weight: 700;
+        font-size: 14px;
+
+        &> svg{
+            display: block;
+            width: 14px;
+            height: 14px;
+            margin-right: 6px;
+        }
+
+        &.instock-msg-1{
+            @include media-query(sm) {
+                justify-content: center;
+            }
+        }
+
+        &.instock-msg-2{
+            margin-top: 5px;
+        }
+    }
+}

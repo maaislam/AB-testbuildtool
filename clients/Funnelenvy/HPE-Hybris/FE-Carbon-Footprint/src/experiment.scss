@@ -1,0 +1,12 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__pdp {
+        
+        .#{$id}__cflabel{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

@@ -7,22 +7,27 @@ import getData from './helpers/getData';
 const { ID } = shared;
 
 export default async (pageData) => {
-  const { targetSelector, attachPoint } = pageData;
   setup();
+  const { targetSelector, skuSelectors, attachPoint, pageType } = pageData;
   const data = await getData();
   const { base_sku } = data;
 
+  document.body.classList.add(`${ID}__${pageType}`);
+
   document.querySelectorAll(targetSelector).forEach((element) => {
-    const skuElem =
-      element.querySelector('.hpe-featured-product__feature li:first-child') ||
-      element.querySelector('.hpe-product-sku');
-    const sku = skuElem.innerText.trim().split(' ').at(-1); //get word after last space
+    const skuSelector = skuSelectors.find((item) => element.querySelector(item.selector));
+    if (!skuSelector) return;
+    const { selector, seperator } = skuSelector;
+    const skuElem = element.querySelector(selector);
+    const skuText = skuElem.innerText === '' ? skuElem.closest('div').innerText : skuElem.innerText;
+    const sku = seperator === '' ? skuText : skuText.split(seperator).at(-1); //get word after last space
     console.log('sku:', sku);
-    const skuData = base_sku[sku];
-    console.log('running...', base_sku, skuData);
+    const skuData = base_sku[sku.trim()];
+    console.log('running...', skuData);
     if (!skuData) return;
 
     if (element.querySelector(`.${ID}__container`)) return;
+    console.log(element.querySelector(attachPoint), element);
     element.querySelector(attachPoint).insertAdjacentHTML('afterEnd', feEcoLabels(ID, skuData));
   });
 };

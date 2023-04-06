@@ -1,10 +1,10 @@
-export const urlConfigs = {
+const pageConfigs = {
   '/c/': {
     targetSelector: '.hpe-product-list__row',
     skuSelectors: [
       {
         selector: '.hpe-featured-product__feature li:first-child',
-        seperator: ' '
+        seperator: ': '
       },
       {
         selector: '.hpe-product-sku',
@@ -20,7 +20,7 @@ export const urlConfigs = {
     skuSelectors: [
       {
         selector: '.hpe-featured-product__feature li:first-child',
-        seperator: ' '
+        seperator: ': '
       },
       {
         selector: '.hpe-product-sku',
@@ -36,7 +36,7 @@ export const urlConfigs = {
     skuSelectors: [
       {
         selector: '.hpe-featured-product__feature li:first-child',
-        seperator: ' '
+        seperator: ': '
       },
       {
         selector: '.hpe-product-sku',
@@ -44,14 +44,14 @@ export const urlConfigs = {
       }
     ],
     seperator: ' ',
-    attachPoint: '.pdp-image-gallery',
+    attachPoint: '.pdp-refValue-place',
     pageType: 'pdp'
   },
   '/cart': {
     targetSelector: '.hpe-cart-list__section-body',
     skuSelectors: [
       {
-        selector: '.hpe-cart-list__config-item .hpe-cart-list__text--heavy',
+        selector: '.hpe-cart-list__config-item > *:first-child',
         seperator: ''
       },
       {
@@ -157,23 +157,4 @@ export const urlConfigs = {
   }
 };
 
-export const ecoLabelConfig = [
-  {
-    name: 'energy_star',
-    href: 'https://www.energystar.gov/productfinder/?s=mega',
-    src: 'https://fe-test-dev.s3.amazonaws.com/hpe/hpe-elite-matinfo-rfp-portal-including-carbon-footprints/Energy_Star_Logo.png',
-    title: 'Energy Star'
-  },
-  {
-    name: 'epeat',
-    href: 'https://epeat.net/search-servers',
-    src: 'https://fe-test-dev.s3.amazonaws.com/hpe/hpe-elite-matinfo-rfp-portal-including-carbon-footprints/EPEAT_logo_transprent_bg.png',
-    title: 'Epeat'
-  },
-  {
-    name: 'tco',
-    href: 'https://tcocertified.com/',
-    src: 'https://fe-test-dev.s3.amazonaws.com/hpe/hpe-elite-matinfo-rfp-portal-including-carbon-footprints/TCO_logo_transparent_bg.png',
-    title: 'TCO Certified'
-  }
-];
+export default pageConfigs;

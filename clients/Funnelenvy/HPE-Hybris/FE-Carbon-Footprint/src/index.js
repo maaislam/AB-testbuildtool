@@ -1,15 +1,15 @@
 import activate from './lib/experiment';
 import { pollerLite } from './lib/helpers/utils';
-import { urlConfigs } from './lib/pageConfigs';
+import pageConfigs from './lib/pageConfig';
 
-const validUrls = Object.keys(urlConfigs);
+const validUrls = Object.keys(pageConfigs);
 const { pathname } = window.location;
 const pathComponent = validUrls.find((validUrl) => pathname.includes(validUrl));
 console.log('pathComponent:');
 
 if (pathComponent) {
   pollerLite(['body'], () => {
-    const pageData = urlConfigs[pathComponent];
+    const pageData = pageConfigs[pathComponent];
     activate(pageData);
   });
 }

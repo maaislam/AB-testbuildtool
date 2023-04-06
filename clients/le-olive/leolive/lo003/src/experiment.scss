@@ -1,0 +1,13 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    .product-miniatures .product-miniature .product__image-wrapper .btn{
+        opacity: 1 ;
+
+        @include media-query(sm){
+            font-weight: 600;
+            transform: scale(0.75) translateX(50%);
+        }
+    }
+}

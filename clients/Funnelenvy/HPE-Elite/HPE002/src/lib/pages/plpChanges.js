@@ -116,6 +116,10 @@ export default () => {
               console.log(elm);
               elm.remove();
             });
+          //emit custom event for filter
+
+          const event = new CustomEvent('filterApplied');
+          target.dispatchEvent(event);
         } else if (!isFilterApplied && !document.querySelector('.cat-url')) {
           window.location.reload();
         }

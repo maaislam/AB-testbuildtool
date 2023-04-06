@@ -3,7 +3,7 @@ import feLabel from './feEcoLabel';
 
 const feEcoLabels = (id, skuData) => {
   const htmlStr = `
-    <div class="${id}__container">
+    <div class="${id}__container ">
       ${ecoLabelConfig
         .map((label) => (skuData[label.name] === 'YES' ? feLabel(id, label) : ''))
         .join('\n')} 
