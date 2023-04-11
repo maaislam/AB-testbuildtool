@@ -20,22 +20,8 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
       callback();
     } else if (Date.now() - startTime >= maxTime) {
       clearInterval(interval);
+      //eslint-disable-next-line no-console
       console.error('Polling exceeded maximum time limit');
     }
   }, POLLING_INTERVAL);
-};
-
-export const translationConfig = {
-  nl: 'Op vooraad',
-  de: 'auf lager',
-  fr: 'en stock',
-  es: 'en stock',
-  en: 'In stock'
-};
-
-export const getCountry = (config) => {
-  const countryString = Object.keys(config).find(
-    (key) => window.location.pathname.includes(key) && key
-  );
-  return countryString || '/en/';
 };

@@ -1,4 +1,4 @@
-import { getCountry, translationConfig } from './helpers/utils';
+//import { getCountry, translationConfig } from './helpers/utils';
 import setup from './services/setup';
 
 import shared from './shared/shared';
@@ -17,8 +17,16 @@ export default () => {
 
   const outOfStock = !!document.querySelector('#NotifyMeBtn');
   if (outOfStock) return;
+  const translationConfig = {
+    nl: 'Op vooraad',
+    de: 'auf lager',
+    fr: 'en stock',
+    es: 'en stock',
+    en: 'In stock'
+  };
+  const lang = window.langify.locale.iso_code;
 
-  const inStockMsg = translationConfig[getCountry(translationConfig)];
+  const inStockMsg = translationConfig[lang];
 
   ['.baby__product-price', '#ProductPrice'].forEach((selector, index) => {
     const el = document.querySelector(selector);
