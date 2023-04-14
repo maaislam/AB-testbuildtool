@@ -1,0 +1,24 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &_bulk_test {
+        .product-add-form{
+            .custom-child-upsel-checkbox{
+                p.product{
+                    & ~ p{
+                        display: none;
+                    }
+                }
+                .hightest_badge{
+                    background-color: green;
+                    color: white;
+                    padding: 4px 8px;
+                    text-align: center;
+                    border-radius: 5px;
+
+                }
+            }
+        }
+    }
+}
