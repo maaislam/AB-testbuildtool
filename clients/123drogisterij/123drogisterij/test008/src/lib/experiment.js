@@ -28,11 +28,7 @@ export default () => {
     document.querySelectorAll('body label.custom-child-upsel-checkbox')
   );
   const mainProdPrice = parseFloat(
-    document
-      .querySelector('body .product-info-price span.price')
-      .textContent.split('€')[1]
-      .trim()
-      .replace(',', '.')
+    document.querySelector('body .product-info-price span.price-wrapper').dataset.priceShow.trim()
   );
 
   document.body.classList.add(`${ID}_bulk_test`);
