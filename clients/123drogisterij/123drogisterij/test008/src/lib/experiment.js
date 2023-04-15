@@ -67,19 +67,17 @@ export default () => {
   existingBulkOptions.forEach((existingBulk) => {
     const quantity = parseInt(existingBulk.querySelector('input').value);
     //eslint-disable-next-line array-callback-return
-    const modifiedData = [...collectData].filter((data) => {
-      if (data.quantity === quantity) {
-        return data;
-      }
+    const modifiedData = [...collectData].find((data) => {
+      return data.quantity === quantity;
     });
 
-    if (modifiedData.length) {
+    if (modifiedData) {
       //console.log(typeof mainProdPrice, modifiedData, modifiedData);
-      modifiedData[0].showPrice =
-        (mainProdPrice - modifiedData[0].actualPrice) * modifiedData[0].quantity + 4.95;
-      bulkMessage(modifiedData, existingBulk, ID, Highest_Number);
+      modifiedData.showPrice =
+        (mainProdPrice - modifiedData.actualPrice) * modifiedData.quantity + 4.95;
+      bulkMessage(existingBulk, ID, Highest_Number, modifiedData);
     } else {
-      bulkMessage([], existingBulk, ID, Highest_Number);
+      bulkMessage(existingBulk, ID, Highest_Number);
     }
   });
 };
