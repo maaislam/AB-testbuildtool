@@ -1,6 +1,7 @@
 import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
+import { addTitle } from './components/addTitle';
 import { bulkMessage } from './components/bulkMessage';
 
 const { ID, VARIATION } = shared;
@@ -31,53 +32,47 @@ export default () => {
     document.querySelector('body .product-info-price span.price-wrapper').dataset.priceShow.trim()
   );
 
-  document.body.classList.add(`${ID}_bulk_test`);
+  //collect prce and quantity from dom and inject in dom
+  const initMain = () => {
+    bulkData.forEach((bulk) => {
+      const qty = parseInt(bulk.dataset.item);
+      const price = parseFloat(
+        bulk.querySelector('span.price-container > span').dataset.priceShow.trim()
+      );
 
-  //add a title above the bulk options section
-  const addTitle = () => {
-    return `
-      <div class="${ID}_title">
-        <strong>Kies uw voordeel:</strong>
-      </div>
-    `;
+      if (Highest_Number < qty) {
+        Highest_Number = qty;
+      }
+
+      collectData.push({
+        quantity: qty,
+        actualPrice: price
+      });
+    });
+
+    //individual bulk option  text change code
+    //eslint-disable-next-line default-param-last
+    existingBulkOptions.forEach((existingBulk) => {
+      const quantity = parseInt(existingBulk.querySelector('input').value);
+      //eslint-disable-next-line array-callback-return
+      const modifiedData = [...collectData].find((data) => {
+        return data.quantity === quantity;
+      });
+
+      if (modifiedData) {
+        //console.log(typeof mainProdPrice, modifiedData, modifiedData);
+        modifiedData.showPrice =
+          (mainProdPrice - modifiedData.actualPrice) * modifiedData.quantity + 4.95;
+        bulkMessage(existingBulk, ID, Highest_Number, modifiedData);
+      } else {
+        bulkMessage(existingBulk, ID, Highest_Number);
+      }
+    });
   };
 
+  //action
+  document.body.classList.add(`${ID}_bulk_test`);
   document.querySelector(`.${ID}_title`)?.remove();
-  document.querySelector('body .product-add-form').insertAdjacentHTML('beforebegin', addTitle());
-
-  //collect prce and quantity from dom
-  bulkData.forEach((bulk) => {
-    const qty = parseInt(bulk.dataset.item);
-    const price = parseFloat(
-      bulk.querySelector('span.price-container > span').dataset.priceShow.trim()
-    );
-
-    if (Highest_Number < qty) {
-      Highest_Number = qty;
-    }
-
-    collectData.push({
-      quantity: qty,
-      actualPrice: price
-    });
-  });
-
-  //individual bulk option  text change code
-  //eslint-disable-next-line default-param-last
-  existingBulkOptions.forEach((existingBulk) => {
-    const quantity = parseInt(existingBulk.querySelector('input').value);
-    //eslint-disable-next-line array-callback-return
-    const modifiedData = [...collectData].find((data) => {
-      return data.quantity === quantity;
-    });
-
-    if (modifiedData) {
-      //console.log(typeof mainProdPrice, modifiedData, modifiedData);
-      modifiedData.showPrice =
-        (mainProdPrice - modifiedData.actualPrice) * modifiedData.quantity + 4.95;
-      bulkMessage(existingBulk, ID, Highest_Number, modifiedData);
-    } else {
-      bulkMessage(existingBulk, ID, Highest_Number);
-    }
-  });
+  document.querySelector('body .product-add-form').insertAdjacentHTML('beforebegin', addTitle(ID));
+  initMain();
 };
