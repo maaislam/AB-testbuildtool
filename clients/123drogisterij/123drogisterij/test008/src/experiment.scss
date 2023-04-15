@@ -3,6 +3,10 @@
 
 .#{$id} {
     &_bulk_test {
+        .#{$id}_title{
+            margin-bottom: 10px;
+        }
+        
         .product-add-form{
             .custom-child-upsel-checkbox{
                 p.product{
@@ -11,12 +15,20 @@
                     }
                 }
                 .hightest_badge{
-                    background-color: green;
+                    display:inline-block;
+                    background-color: #939396;
                     color: white;
                     padding: 4px 8px;
+                    margin-bottom: 5px;
                     text-align: center;
                     border-radius: 5px;
 
+                }
+
+                &.active {
+                    .hightest_badge{
+                        background-color:#4a8c43;
+                    }
                 }
             }
         }
