@@ -25,47 +25,31 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
   }, POLLING_INTERVAL);
 };
 
-export const getMenuData = () => {
-  const menuItems = document.querySelectorAll('.menu__panel > .menu__item');
-  //console.log(menuItems);
-  const menuData = [];
-  menuItems.forEach((item) => {
-    const itemElem = item.querySelector('a');
-    const itemName = itemElem.innerText.trim().toLowerCase();
-    const itemLink = itemElem.href;
-    return menuData.push({
-      name: itemName,
-      link: itemLink
-    });
-  });
-  return menuData;
-};
-
-export const getSizeOptions = () => {
-  const sizes = [];
-  const sizeList = document.querySelectorAll('label[for^="Filter-Size-"]');
-  //console.log('🚀 ~ file: experiment.js:50 ~ getSizeOptions ~ sizes', sizes);
-  sizeList.forEach((size) => {
-    const sizeVal = size.querySelector('input').value;
-    sizes.push(sizeVal);
-  });
-  return sizes;
-};
-
-export const resetSizeSelection = (ID) => {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const selectedSizes = urlParams.getAll('filter.v.option.size');
-  document.querySelectorAll(`.${ID}__size`).forEach((item) => {
-    item.querySelector('input').checked = false;
-  });
-  selectedSizes.forEach((size) => {
-    const sizeElm = document.querySelector(`.${ID}__size > [value="${size}"]`);
-    sizeElm.checked = true;
-  });
-};
+/**
+ * poller() checks for specified conditions until they are true or the timeout limit is reached.
+ *
+ * @param {Array} conditions - An array of conditions that need to be checked.
+ * Each condition can be either a CSS selector or a function that returns a Boolean value.
+ *
+ * @param {Function} callback - A function to be executed when all conditions are true.
+ *
+ * @param {number} [timeout=10000] - An optional timeout value (in milliseconds)
+ * after which the function will throw an error.
+ * Default value is 10000ms (10 seconds).
+ *
+ * @throws {TypeError} If the first parameter is not an array,
+ * the second parameter is not a function,
+ * or the third parameter is not a number or is less than 1000ms.
+ *
+ */
 
 export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
+  //configuration of the observer:
+
+  const config = configObject || {
+    childList: true,
+    subtree: true
+  };
   const target = document.querySelector(`${targetSelectorString}`);
   let oldHref = window.location.href;
   const observer = new MutationObserver((mutations) => {
@@ -76,17 +60,12 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
           oldHref = window.location.href;
           urlChanged = true;
         }
+        observer.disconnect();
         callbackFunction(mutation, urlChanged);
+        observer.observe(target, config);
       }, 1000);
     });
   });
-
-  //configuration of the observer:
-
-  const config = configObject || {
-    childList: true,
-    subtree: true
-  };
 
   observer.observe(target, config);
 };

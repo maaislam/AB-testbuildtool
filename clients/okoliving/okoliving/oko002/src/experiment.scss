@@ -1,0 +1,60 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+    &__trustbadge {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 600px;
+        height: 56px;
+        margin: 16px auto;
+        padding: 0 16px;
+        text-align: center;
+
+        @include media-query(sm){
+            height: 70px;
+            
+        }
+
+        &>div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        img{
+            height: auto;
+        }
+
+        &--secure{
+            img{
+                width: 20px;
+            }
+        }
+
+        &--gurantee{
+            img{
+                width: 28px;
+            }
+        }
+
+        &--fastship{
+            img{
+                width: 32px;
+                margin-bottom: 2px;
+            }
+        }
+
+        p{  
+            margin-top: 10px;
+            margin-bottom: 0;
+            color: #c19574;
+            font-size: 14px;
+            line-height: 1;
+        }
+    }
+}
