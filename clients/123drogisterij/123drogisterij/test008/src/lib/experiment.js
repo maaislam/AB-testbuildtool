@@ -60,12 +60,9 @@ export default () => {
       });
 
       if (modifiedData) {
-        //console.log(typeof mainProdPrice, modifiedData, modifiedData);
         modifiedData.showPrice =
           (mainProdPrice - modifiedData.actualPrice) * modifiedData.quantity + 4.95;
         bulkMessage(existingBulk, ID, Highest_Number, modifiedData);
-      } else {
-        bulkMessage(existingBulk, ID, Highest_Number);
       }
     });
   };
