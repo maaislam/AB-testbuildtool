@@ -52,7 +52,9 @@ export default () => {
 
     //individual bulk option  text change code
     //eslint-disable-next-line default-param-last
-    existingBulkOptions.forEach((existingBulk) => {
+    existingBulkOptions.forEach((existingBulk, index) => {
+      const lastIndex = existingBulkOptions.length - 1;
+      if (index === lastIndex) return;
       const quantity = parseInt(existingBulk.querySelector('input').value);
       //eslint-disable-next-line array-callback-return
       const modifiedData = [...collectData].find((data) => {

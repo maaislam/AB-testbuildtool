@@ -6,16 +6,16 @@
   const fileFetcher = (fileLocation, fileType) => {
     const config = {
       js: {
-        id: 'echologyx_script',
+        id: 'salyenz_script',
         htmlTag: 'script'
       },
       bJs: {
-        id: 'echologyx_buildScript',
+        id: 'salyenz_buildScript',
         htmlTag: 'script'
       },
 
       css: {
-        id: 'echologyx_style',
+        id: 'salyenz_style',
         htmlTag: 'style'
       }
     };
