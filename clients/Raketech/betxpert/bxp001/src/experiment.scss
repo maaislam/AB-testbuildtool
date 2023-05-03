@@ -1,8 +1,451 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable font-family-name-quotes */
 @import './variables';
-@import '../src/lib/shared/shared.scss';
+@import '../src/lib/shared/shared';
 
 .#{$id} {
-    &__test {
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__hide {
+        display: none;
+    }
+
+    .desktop-show{
         display: block;
+
+        &.inline{
+            display: inline-block;
+            @include media-query(sm){
+                display: none;
+            }
+        }
+        @include media-query(sm){
+            display: none;
+        }
+    }
+
+    .desktop-hide{
+        display: none;
+
+        @include media-query(sm){
+            display: block;
+        }
+    }
+
+
+
+    &__bluebtn{
+        display: block;
+        width: max-content;
+        padding: 6px 22px;
+        color: #fff !important;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.2;
+        text-align: center;
+        background-color: #0275D8;
+        border-radius: 4px;
+        box-shadow: 0 2px 2px rgba(0 0 0 / 25%);
+
+        &:hover{
+            text-decoration: none !important;
+            background-color: #025aa5;
+        }
+    }
+
+    &__disclaimer{
+        margin: 12px auto;
+        color: #000;
+        font-size: 12px;
+        font-family: 'Roboto';
+        line-height: 1.2;
+
+        @include media-query(sm){
+            margin-top: 6px;
+        }
+    }
+
+    &__learnmore{
+        display: block;
+        width: max-content;
+        padding: 3px 6px;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        border: 1px solid #006BDB;
+
+        &:hover{
+            color: #fff !important;
+            text-decoration: none !important;
+            background-color: #0b4066;
+            border-color: #0b4066;
+        }
+    }
+
+    &__bonuscards, &__bookmakercards{
+        padding-bottom: 30px;
+        overflow: hidden;
+        font-family: 'Titillium Web';
+
+        a{
+            display: block;
+        }
+
+        h1{
+            font-size: 24px;
+            line-height: 1.2;
+        }
+
+        .#{$id}__toprow{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .swiper-button-prev{
+            top: auto;
+            bottom: -3px;
+            left: calc(50% - 50px);
+            transform: translateX(-50%);
+
+            &::after{
+                font-size: 10px;
+            }
+        }
+
+        .swiper-button-next{
+            top: auto;
+            bottom: -3px;
+            left: calc(50% + 50px);
+            transform: translateX(-50%);
+            
+            &::after{
+                font-size: 10px;
+            }
+        }
+    }
+
+    &__bonuscard{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        min-height: 270px;
+        color: #fff;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 4px ;
+
+        
+        &-content{
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            padding: 20px 15px;
+            background: linear-gradient(180deg, rgba(0 0 0 / 0%) 0%, rgba(0 0 0 / 89%) 44.27%);
+            border-radius: 0 0 4px 4px;
+
+            &>*:not(:last-child){
+                margin-right: 8px;
+            }
+
+            .op-name{
+                margin-bottom: 6px;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 120%;
+            }
+
+           
+        }
+    }
+
+    &__bookmakercards{
+        padding-top: 20px;
+        padding-bottom: 12px;
+
+        .swiper-pagination{
+            display: none;
+        }
+
+        &.vertical{
+            .swiper-vertical{
+                height: 450px;
+            }
+
+            .#{$id}__learnmore{
+                width: 100%;
+                margin: 12px auto 0;
+                padding: 4px 10px;
+                color:#0275D8 ;
+                font-size: 14px;
+                border-radius: 4px;
+            }
+        }
+
+        .#{$id}__learnmore{
+
+            @include media-query(sm){
+                width: 100%;
+                margin: 12px auto 0;
+                padding: 4px 10px;
+                font-size: 14px;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    &__bonuscards{
+        .#{$id}__toprow{
+            @include media-query(sm){
+                display: none;
+            }
+        }
+    }
+
+    &__bookmakercard{
+        background:  #F8F8F8;
+        border-radius: 4px;
+
+        &>a{
+            width: 100%;
+            max-width: 130px;
+            margin: 0 auto;
+            @include media-query(sm){
+                max-width: 174px;
+            }
+        }
+
+        img{
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px 4px 0 0;
+        }
+        .#{$id}__bluebtn{
+            width: 100%;
+            padding: 5px 16px;
+            font-size: 14px;
+        }
+
+        &-btnrow{
+            padding: 8px;
+        }
+
+        &.vertical{
+            display: flex;
+            align-items: center;
+            @include media-query(sm){
+                flex-direction: column;
+            }
+
+            &>a{
+                max-width: 108px;
+                margin-right: 0;
+                margin-left: 0;
+                @include media-query(sm){
+                    width: 100%;
+                    max-width: 174px;
+                    margin: 0 auto;
+                }
+            }
+
+            img{
+                border-radius: 4px; 
+            }
+
+            .#{$id}__bookmakercard-btnrow{
+                flex-grow: 2;
+                @include media-query(sm){
+                    width: 100%;
+                }
+            }
+
+            .#{$id}__bluebtn{
+                font-size: 16px;
+            }
+
+            .row-bookmakercard{
+                color: #363535;
+                font-weight: 700;
+                font-size: 16px;
+                font-family: 'Roboto';
+                line-height: 1.3;
+
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+    
+
+    &__newsitems{
+
+        .#{$id}__learnmore{
+            width: 100%;
+            margin: 12px auto 0;
+            padding: 4px 10px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+
+        .#{$id}__newsitems-wrapper > a:nth-child(n+4){
+            @include media-query(sm){
+                display: none;
+            }
+        }
+        .#{$id}__newsitems-wrapper > a:not(:last-child){
+            margin-bottom: 10px;
+        }
+
+    }
+
+    &__newsitem{
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        
+        &:hover{
+            text-decoration: none;
+        }
+        
+        &-image{
+            width: 100%;
+            max-width: 80px;
+            height: 70px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        &-content{
+            width: 100%;
+            font-family: 'Titillium Web';
+
+            .title{
+                color: #222;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 1.3;
+            }
+
+            .comment{
+                margin-top: 6px;
+                color: #6E6E6E; 
+                font-weight: 600;
+                font-size: 11px;
+                line-height: 11px;
+            }
+        }
+    }
+
+    [id*="all_current_"]{
+        &>div>a{
+            color: #0275D8 !important;
+            background-color: #fff;
+            border: 1px solid #0275D8;
+            border-radius: 4px !important;
+
+            &:hover{
+                color: #fff !important;
+                text-decoration: none !important;
+                background-color: #0b4066;
+                border-color: #0b4066;
+            }
+        }
+    }
+
+    &__tipstable{
+        table-layout: auto;
+
+        td.#{$id}__oplink{
+            @include media-query(sm){
+                width: 28px;
+                color: #fff;
+                text-align: center;
+                background-color:#093;
+                border-radius: 4px;
+
+               a{
+                margin: 0 auto;
+               } 
+            }
+        }
+
+        .date-cell{
+            font-weight: 400 !important;
+            font-size: 14px !important;
+            font-family: 'Titillium Web' !important;
+        }
+
+        .list-link{
+            color: #0275D8 !important;
+            font-weight: 400 !important;
+            font-size: 14px !important;
+            font-family: 'Titillium Web' !important;
+            text-decoration: underline;
+        }
+
+        .#{$id}__bluebtn{
+            background-color:#093 ;
+        }
+
+        .#{$id}__pickodds .pick-odds{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            text-align: center;
+            background: #F7882F !important;
+            border-radius: 4px;
+
+          
+
+            .operator{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 54px;
+                height: 30px;
+                background-color: #000;
+                border-radius: 4px 0 0 4px;
+            }
+
+            &+span{
+                @include media-query(sm){
+                    float: right;
+                }
+            }
+        }
+
+        .star-icon{
+            span{
+                display: block;
+                width: 100%;
+                max-width: 30px;
+                margin-left: auto;
+
+                i:first-child{
+                    &::before{
+                        color: #F7882F;
+                        font-size: 32px;
+                    }
+                }
+
+                i:nth-child(2){
+                    &::before{
+                        font-weight: 600;
+                        font-size: 31px;
+                    }
+                }
+            }
+        }
     }
 }
