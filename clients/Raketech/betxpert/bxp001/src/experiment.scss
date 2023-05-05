@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
 /* stylelint-disable font-family-name-quotes */
 @import './variables';
@@ -35,6 +36,16 @@
         }
     }
 
+    .bonus-carousel, .current-picks-widget{
+        margin-bottom: 0;
+        @include media-query(sm){
+        }
+    }
+    .bm-carousel, .current-picks-widget{
+        margin-top: 0;
+        @include media-query(sm){
+        }
+    }
 
 
     &__bluebtn{
@@ -89,10 +100,8 @@
         padding-bottom: 30px;
         overflow: hidden;
         font-family: 'Titillium Web';
-
-        a{
-            display: block;
-        }
+        background-color: #fff
+        
 
         h1{
             font-size: 24px;
@@ -128,6 +137,20 @@
         }
     }
 
+    &__bonuscards{
+       padding-bottom: 6px;
+        @include media-query(sm){
+            margin-bottom: 0;
+            background-color: #fff;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+        }
+        .#{$id}__toprow{
+            @include media-query(sm){
+                display: none;
+            }
+        }
+    }
+
     &__bonuscard{
         display: flex;
         align-items: flex-end;
@@ -135,10 +158,13 @@
         min-height: 270px;
         color: #fff;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: center center;
         background-size: cover;
         border-radius: 4px ;
 
+        &:hover {
+            text-decoration: none !important;
+        }
         
         &-content{
             display: flex;
@@ -152,6 +178,15 @@
                 margin-right: 8px;
             }
 
+            .logo{
+                width: 130px;
+                
+
+                img{
+                    border-radius: 4px ;
+                }
+            }
+
             .op-name{
                 margin-bottom: 6px;
                 font-weight: 700;
@@ -163,14 +198,25 @@
         }
     }
 
+
     &__bookmakercards{
         padding-top: 20px;
         padding-bottom: 12px;
+        background-color: #fff;
+
+        & + .ov-flow-hidden{
+            display: none;
+        }
 
         .swiper-pagination{
             display: none;
         }
 
+        a{
+            display: block;
+        }
+
+       
         &.vertical{
             .swiper-vertical{
                 height: 450px;
@@ -198,13 +244,7 @@
         }
     }
 
-    &__bonuscards{
-        .#{$id}__toprow{
-            @include media-query(sm){
-                display: none;
-            }
-        }
-    }
+   
 
     &__bookmakercard{
         background:  #F8F8F8;
@@ -364,18 +404,72 @@
     &__tipstable{
         table-layout: auto;
 
+        tr{
+            background-color: #fff;
+            border-color:  #EDEDED;   
+        }
+
+        td{
+            @include media-query(sm){
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            } 
+        }
+
         td.#{$id}__oplink{
             @include media-query(sm){
-                width: 28px;
+                transform: scale(0.9);
+            }
+            a{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                @include media-query(sm){
+                    display: block;
+                }
+            }
+            span{
+                font-size: 14px;
+            }
+            @include media-query(sm){
+                width: 22px;
                 color: #fff;
                 text-align: center;
                 background-color:#093;
                 border-radius: 4px;
 
                a{
-                margin: 0 auto;
+                   margin: 0 auto;
                } 
             }
+
+            
+        }
+        
+        .pick-bottom-row-cont{
+            
+            @include media-query(sm){
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 0;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                height: 60px;
+            }
+
+           &>a{
+            @include media-query(sm){
+                margin-left: 12px;
+            }
+           }
+
+           &>*{
+            @include media-query(sm){
+                display: block;
+            }
+           }
         }
 
         .date-cell{
@@ -390,11 +484,17 @@
             font-size: 14px !important;
             font-family: 'Titillium Web' !important;
             text-decoration: underline;
+            text-underline-offset: 4px;
+          
+            @include media-query(sm){
+                display: block;
+            }
         }
 
         .#{$id}__bluebtn{
             background-color:#093 ;
         }
+
 
         .#{$id}__pickodds .pick-odds{
             display: flex;
@@ -403,19 +503,29 @@
             justify-content: space-between;
             font-size: 14px;
             text-align: center;
-            background: #F7882F !important;
+            background: #fff !important;
+            border: none !important;
             border-radius: 4px;
-
-          
+            
+            
+            .odds{
+                margin-left: 0;
+                line-height: 24px;
+                background-color: #F7882F;
+                border-radius: 0 4px 4px 0;
+            }
 
             .operator{
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-end;
                 width: 54px;
-                height: 30px;
-                background-color: #000;
-                border-radius: 4px 0 0 4px;
+                height: 32px;
+                background-color: #fff;
+                
+                span{
+                    border-radius: 4px 0 0 4px;
+                }
             }
 
             &+span{
@@ -425,8 +535,8 @@
             }
         }
 
-        .star-icon{
-            span{
+        .star-icon, .icon-star10{
+            & span, &{
                 display: block;
                 width: 100%;
                 max-width: 30px;
@@ -434,15 +544,15 @@
 
                 i:first-child{
                     &::before{
-                        color: #F7882F;
-                        font-size: 32px;
+                        color: #F7882F !important;
+                        font-size: 26px;
                     }
                 }
 
                 i:nth-child(2){
                     &::before{
                         font-weight: 600;
-                        font-size: 31px;
+                        font-size: 25px;
                     }
                 }
             }

@@ -69,7 +69,6 @@ export const isMobile = () => window.matchMedia('(max-width: 600px)').matches;
 export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
   const target = document.querySelector(`${targetSelectorString}`);
 
-  console.log('🚀 ~ file: utils.js:72 ~ observeDOM ~ target:', target);
   if (!target) return;
   //configuration of the observer:
 
@@ -89,4 +88,17 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
+};
+
+export const getOperatorFromUrl = (url) => {
+  //Get the text after the last slash
+  const text = url.split('/').pop();
+
+  //If the text contains a question mark, remove any characters after it
+  const questionMarkIndex = text.indexOf('?');
+  if (questionMarkIndex !== -1) {
+    return text.substring(0, questionMarkIndex);
+  }
+
+  return text;
 };

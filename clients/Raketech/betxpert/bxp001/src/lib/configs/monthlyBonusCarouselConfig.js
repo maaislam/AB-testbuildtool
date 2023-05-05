@@ -1,51 +1,43 @@
 const mbCarouselConfig = [
   {
-    imageSrc: 'https://raketech.s3.amazonaws.com/images/carousel-back.png',
-    logoSrc: 'https://raketech.s3.amazonaws.com/images/carousel-operator.png',
+    imageSrc: '/uploads/article/1000x230/betxpert.com/online-casino.jpg?v=1557393082',
+    logoSrc: '/uploads/operator/1/normal/300x160/leovegas.jpg?v=1566219414',
     title: '100% betting bonus up to DKK 1000',
-    opName: 'Expekt',
-    btnText: 'Opret tip',
-    btnLink: '/'
+    opName: 'LeoVegas',
+    btnText: 'Hant Bonus',
+    btnLink: '/redirect/operator/leovegas'
   },
   {
-    imageSrc: 'https://raketech.s3.amazonaws.com/images/carousel-back.png',
-    logoSrc: 'https://raketech.s3.amazonaws.com/images/carousel-operator.png',
+    imageSrc: '/uploads/article/1000x230/betxpert.com/fodboldspiller.jpg?v=1651736542',
+    logoSrc: '/assets/images/min/operators/300x160/bet365.jpg',
     title: '100% betting bonus up to DKK 1000',
-    opName: 'Expekt',
-    btnText: 'Opret tip',
-    btnLink: '/'
+    opName: 'Bet365',
+    btnText: 'Hant Bonus',
+    btnLink: '/redirect/operator/bet365'
   },
   {
-    imageSrc: 'https://raketech.s3.amazonaws.com/images/carousel-back.png',
-    logoSrc: 'https://raketech.s3.amazonaws.com/images/carousel-operator.png',
+    imageSrc: '/uploads/article/1000x230/betxpert.com/betinia-banner.jpg?v=1673168124',
+    logoSrc: '/uploads/operator/1/normal/300x160/betinia.jpg?v=1673514635',
     title: '100% betting bonus up to DKK 1000',
-    opName: 'Expekt',
-    btnText: 'Opret tip',
-    btnLink: '/'
+    opName: 'Betinia',
+    btnText: 'Hant Bonus',
+    btnLink: '/redirect/operator/betinia'
   },
   {
-    imageSrc: 'https://raketech.s3.amazonaws.com/images/carousel-back.png',
-    logoSrc: 'https://raketech.s3.amazonaws.com/images/carousel-operator.png',
+    imageSrc: '/uploads/article/1000x230/betxpert.com/denmark-soccer-ball-in-net.jpg?v=1642606657',
+    logoSrc: '/uploads/operator/1/normal/300x160/comeon.jpg?v=1639065771',
     title: '100% betting bonus up to DKK 1000',
-    opName: 'Expekt',
-    btnText: 'Opret tip',
-    btnLink: '/'
+    opName: 'ComeOn',
+    btnText: 'Hant Bonus',
+    btnLink: '/redirect/operator/comeon'
   },
   {
-    imageSrc: 'https://raketech.s3.amazonaws.com/images/carousel-back.png',
-    logoSrc: 'https://raketech.s3.amazonaws.com/images/carousel-operator.png',
+    imageSrc: '/uploads/article/1000x230/betxpert.com/mr-play.jpg?v=1664735651',
+    logoSrc: '/uploads/operator/1/normal/300x160/mrplay.jpg?v=1666543925',
     title: '100% betting bonus up to DKK 1000',
-    opName: 'Expekt',
-    btnText: 'Opret tip',
-    btnLink: '/'
-  },
-  {
-    imageSrc: 'https://raketech.s3.amazonaws.com/images/carousel-back.png',
-    logoSrc: 'https://raketech.s3.amazonaws.com/images/carousel-operator.png',
-    title: '100% betting bonus up to DKK 1000',
-    opName: 'Expekt',
-    btnText: 'Opret tip',
-    btnLink: '/'
+    opName: 'MrPlay',
+    btnText: 'Hant Bonus',
+    btnLink: '/redirect/operator/mrplay/standard-affiliate-link'
   }
 ];
 

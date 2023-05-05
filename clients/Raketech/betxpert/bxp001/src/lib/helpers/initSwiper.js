@@ -1,10 +1,7 @@
 const initSwiper = (container, initConfig) => {
   //const { slidesPerView, spaceBetween, direction } = initConfig;
 
-  const slider = new window.Swiper(`${container}`, {
-    ...initConfig,
-
-    //Navigation arrows
+  const baseConfig = {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
@@ -13,7 +10,9 @@ const initSwiper = (container, initConfig) => {
       el: '.swiper-pagination',
       clickable: true
     }
-  });
+  };
+
+  const slider = new window.Swiper(`${container}`, Object.assign(baseConfig, initConfig));
 };
 
 export default initSwiper;

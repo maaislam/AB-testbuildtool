@@ -4,7 +4,7 @@ const bookmakerCards = (id, carouselData, orientation = 'column') => {
   const htmlStr = `   
     <div class="${id}__bookmakercards card-block ${orientation === 'column' ? '' : 'vertical'}">
         <div class="${id}__toprow">
-            <h1>Bookmaker bonus</h1>
+            <h2>Bookmaker bonus</h2>
             ${
               orientation === 'column'
                 ? `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Se Alle Bonus</a>`

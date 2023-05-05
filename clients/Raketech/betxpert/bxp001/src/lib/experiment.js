@@ -13,13 +13,20 @@ import {
   vBookmakerSwiperConfigMob
 } from './configs/swiperConfigs';
 import initSwiper from './helpers/initSwiper';
-import { addCssToPage, addJsToPage, isMobile, observeDOM, pollerLite } from './helpers/utils';
+import {
+  addCssToPage,
+  addJsToPage,
+  getOperatorFromUrl,
+  isMobile,
+  observeDOM,
+  pollerLite
+} from './helpers/utils';
 import gaTracking from './services/gaTracking';
 import setup from './services/setup';
 //import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 
-const { ID } = shared;
+const { ID, VARIATION } = shared;
 
 const init = () => {
   //setup for hero section
@@ -29,7 +36,7 @@ const init = () => {
   bonusCardAttachPoint.querySelector('.card-block').classList.add(`${ID}__hide`);
   bonusCardAttachPoint.querySelector('.card-title').classList.add(`${ID}__hide`);
   bonusCardAttachPoint.insertAdjacentHTML('afterbegin', bonusCards(ID, mbCarouselConfig));
-
+  bonusCardAttachPoint.classList.add('bonus-carousel');
   //init hero swiper
   const heroSwiperConfig = isMobile() ? bonusSwiperConfigMob : bonusSwiperConfig;
   initSwiper('.swiper-hero', heroSwiperConfig);
@@ -41,7 +48,7 @@ const init = () => {
   const firstBmposition = isMobile() ? 'beforebegin' : 'afterend';
   bookmakerCardsAttachPoint.insertAdjacentHTML(
     firstBmposition,
-    `<div class="card">${bookmakerCards(ID, bookmakerCarouselConfig)}</div>`
+    `<div class="card bm-carousel">${bookmakerCards(ID, bookmakerCarouselConfig)}</div>`
   );
   //init bookmaker swiper
   const bookmakersSwiperConfig = isMobile() ? bookmakerSwiperConfigMob : bookmakerSwiperConfig;
@@ -49,12 +56,21 @@ const init = () => {
 
   //setup for vertical bookmaker bonus section
 
-  const vBookmakerAttachPoint = document.querySelector('#right>.card:first-child');
+  const vBookmakerAttachPoint = isMobile()
+    ? document.querySelector('.current-picks-widget')
+    : document.querySelector('#right>.card:first-child');
 
   if (document.querySelector(`.${ID}__bookmakercards.vertical`)) return;
-  vBookmakerAttachPoint.innerHTML = bookmakerCards(ID, bookmakerCarouselConfig, 'vertical');
+  isMobile()
+    ? vBookmakerAttachPoint.insertAdjacentHTML(
+        'afterend',
+        bookmakerCards(ID, bookmakerCarouselConfig, 'vertical')
+      )
+    : (vBookmakerAttachPoint.innerHTML = bookmakerCards(ID, bookmakerCarouselConfig, 'vertical'));
   //init bookmaker swiper
-  const vBookmakersSwiperConfig = isMobile() ? vBookmakerSwiperConfigMob : vBookmakerSwiperConfig;
+  const vBookmakersSwiperConfig = window.matchMedia('(max-width: 850px)').matches
+    ? vBookmakerSwiperConfigMob
+    : vBookmakerSwiperConfig;
 
   initSwiper('.vertical.swiper-bookmaker', vBookmakersSwiperConfig);
 
@@ -81,35 +97,38 @@ const init = () => {
   });
   console.log(newsRowsData);
 
-  const newsContainerAttachPoint = document.querySelector('#right>.card:nth-child(2)');
+  const newsContainerAttachPoint = isMobile()
+    ? document.querySelector(`.${ID}__bookmakercards.vertical`)
+    : document.querySelector('#right>.card:nth-child(2)');
   newsContainerAttachPoint.insertAdjacentHTML(
     'beforebegin',
     `<div class="card">${newsItems(ID, newsRowsData)}</div>`
   );
+  isMobile() && document.querySelector('#right>.card:nth-child(1)').classList.add(`${ID}__hide`);
 };
 
 const initTipsStyles = () => {
   //style tips section
   pollerLite([() => !document.querySelector('.fa-spinner')], () => {
-    console.log('tips');
     const tipsTable = document.querySelectorAll('#picks-table');
 
     const expertTips = document.querySelectorAll('tr.has-experttip');
+    const userTips = document.querySelectorAll('tr.has-usertip');
 
-    const arrowSvg = `<svg style="margin-left:4px;" xmlns="http://www.w3.org/2000/svg" width="6" height="13" viewBox="0 0 6 13" fill="none">
+    const arrowSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="13" viewBox="0 0 6 13" fill="none">
     <path d="M1 1.5498L4.89793 5.88084C5.24021 6.26114 5.24021 6.83846 4.89793 7.21877L1 11.5498" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
     </svg>`;
 
     tipsTable.forEach((table) => table.classList.add(`${ID}__tipstable`));
 
-    expertTips.forEach((expertTip) => {
+    [...userTips, ...expertTips].forEach((expertTip) => {
       const operatorLink = expertTip.querySelector('a.pick-odds').getAttribute('href');
       const operatorName = expertTip.querySelector('a.pick-odds').getAttribute('data-ga-label');
       const pickOdds = expertTip.querySelector('.pick-odds');
 
       const palceBetBtn = `<td class="${ID}__oplink bet-intent"><a class="${
         isMobile() ? '' : `${ID}__bluebtn`
-      }" target="_blank" data-operator="${operatorName}" href="${operatorLink}"><span class="desktop-show inline">Place Bet</span> ${arrowSvg}</a></td>`;
+      }" target="_blank" data-operator="${operatorName}" href="${operatorLink}"><span class="desktop-show inline">Placer Bet</span> ${arrowSvg}</a></td>`;
       pickOdds.closest('td').classList.add(`${ID}__pickodds`);
       if (!expertTip.querySelector(`.${ID}__oplink`)) {
         expertTip.insertAdjacentHTML('beforeend', palceBetBtn);
@@ -129,33 +148,58 @@ export default () => {
 
   setup(); //use if needed
   //gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  addJsToPage(swiperJs, `${ID}__swiperjs`);
-  addCssToPage(swiperCss, `${ID}__swipercss`);
 
   document.body.addEventListener('click', (ev) => {
     const { target } = ev;
 
-    if (target.closest(`.${ID}__bonus-intent`)) {
-      const operator = target.closest('a').getAttribute('data-operator');
+    if (
+      target.closest(`.${ID}__bonus-intent`) ||
+      target.closest('[data-ga-action="Operator bonus list"]')
+    ) {
+      const href = target.closest('a').getAttribute('href');
+      const operator =
+        VARIATION !== 'control'
+          ? target.closest('a').getAttribute('data-operator')
+          : getOperatorFromUrl(href);
       gaTracking(`${operator} | Bonus Intent CTA Click`);
-    } else if (target.closest('.bet-intent') || target.closest(`.${ID}__pickodds`)) {
+    } else if (target.closest('.bet-intent') || target.closest('.pick-odds')) {
       const operator =
         target.closest('a').getAttribute('data-operator') ||
         target.closest('a').getAttribute('data-ga-label');
-      gaTracking(`${operator} | Bet Intent CTA Click`);
-    } else if (target.closest('.seeallnews') || target.closest(`.${ID}__newsitem`)) {
+      gaTracking(
+        `${operator} | Bet Intent ${
+          target.closest('.bet-intent') ? 'Green CTA' : 'Odd & Logo'
+        } Click `
+      );
+    } else if (
+      target.closest('.seeallnews') ||
+      target.closest(`.${ID}__newsitem`) ||
+      (target.closest('[data-ga-action="Content carousel"]') && target.closest('a'))
+    ) {
       gaTracking('Clicks to News');
     } else if (target.closest('.list-link') || target.closest('[href="/ekspert/tips"]')) {
       gaTracking('Clicks To Tips');
+    } else if (target.closest(`[href="/bookmakere/bonus"].${ID}__learnmore`)) {
+      gaTracking('Clicks to all bonus page');
+    } else if (
+      target.closest('li.nav-item') &&
+      target.closest('.ajax-nav-tabs') &&
+      target.closest('.current-picks-widget')
+    ) {
+      gaTracking(`${target.innerText} Filter Clicks`);
     }
   });
+
+  //-----------------------------
+  //If control, bail out from here
+  //-----------------------------
+
+  if (VARIATION === 'control') {
+    return;
+  }
+
+  addJsToPage(swiperJs, `${ID}__swiperjs`);
+  addCssToPage(swiperCss, `${ID}__swipercss`);
 
   initTipsStyles();
   const callbackFn = () => {
