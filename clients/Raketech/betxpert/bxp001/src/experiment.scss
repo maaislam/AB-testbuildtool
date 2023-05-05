@@ -334,7 +334,7 @@
         }
 
 
-        .#{$id}__newsitems-wrapper > a:nth-child(n+4){
+        .#{$id}__newsitems-wrapper > a:nth-child(n+6){
             @include media-query(sm){
                 display: none;
             }

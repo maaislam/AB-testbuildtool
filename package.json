@@ -48,6 +48,7 @@
     "remove-console-webpack-plugin": "^0.2.0",
     "remove-files-webpack-plugin": "^1.5.0",
     "rollup": "^3.21.2",
+    "rollup-plugin-cleanup": "^3.2.1",
     "sass": "^1.43.5",
     "sass-loader": "^12.2.0",
     "stylelint": "^14.13.0",

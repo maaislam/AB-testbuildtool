@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 //const cssnano = require('cssnano');
 //const postcssImport = require('postcss-import');
 const del = require('rollup-plugin-delete');
+const cleanup = require('rollup-plugin-cleanup');
 
 const paths = require('./paths');
 
@@ -27,6 +28,7 @@ module.exports = {
     postcss({
       extract: 'variation.css',
       plugins: [autoprefixer()]
-    })
+    }),
+    cleanup()
   ]
 };
