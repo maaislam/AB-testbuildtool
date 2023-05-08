@@ -133,9 +133,13 @@ export const poller = (conditions, callback, timeout = 10000) => {
     console.error(error);
   }
 };
-export const formatPrice = (amount, code = 'en-NL', currency = 'EUR') => {
-  return new Intl.NumberFormat(code, {
+
+export const formatPrice = (amount, code = 'en-GB', currency = 'GBP') =>
+  new Intl.NumberFormat(code, {
     style: 'currency',
-    currency
-  }).format(amount);
-};
+    currency,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })
+    .format(amount)
+    .replace('£', '€');
