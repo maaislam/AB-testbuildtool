@@ -91,6 +91,15 @@
         }
     }
 
+    .#{$id}__toprow{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            h2.card-title{
+                padding-left: 0;
+        }
+    }
+
      &__bookmakercards{
         padding-bottom: 30px;
         overflow: hidden;
@@ -255,4 +264,5 @@
 
     }
     
+ 
 }

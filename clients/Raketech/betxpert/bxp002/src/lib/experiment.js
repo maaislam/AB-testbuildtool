@@ -39,44 +39,22 @@ export default () => {
   setup(); //use if needed
   //gaTracking('Conditions Met'); //use if needed
 
+  const goal = (target) => {
+    const linkTitle = target.closest('a[href*="/redirect"]').href;
+    //eslint-disable-next-line no-useless-escape
+    const regex = /([^\/\?]+)\?/gi;
+    const match = linkTitle.match(regex);
+
+    if (match && match[1]) {
+      gaTracking(`${match[1]} | CTA CLICK`);
+    }
+  };
+
   document.body.addEventListener('click', (ev) => {
     const { target } = ev;
 
-    if (
-      target.closest(`.${ID}__bonus-intent`) ||
-      target.closest('[data-ga-action="Operator bonus list"]')
-    ) {
-      const href = target.closest('a').getAttribute('href');
-      const operator =
-        VARIATION !== 'control'
-          ? target.closest('a').getAttribute('data-operator')
-          : getOperatorFromUrl(href);
-      gaTracking(`${operator} | Bonus Intent CTA Click`);
-    } else if (target.closest('.bet-intent') || target.closest('.pick-odds')) {
-      const operator =
-        target.closest('a').getAttribute('data-operator') ||
-        target.closest('a').getAttribute('data-ga-label');
-      gaTracking(
-        `${operator} | Bet Intent ${
-          target.closest('.bet-intent') ? 'Green CTA' : 'Odd & Logo'
-        } Click `
-      );
-    } else if (
-      target.closest('.seeallnews') ||
-      target.closest(`.${ID}__newsitem`) ||
-      (target.closest('[data-ga-action="Content carousel"]') && target.closest('a'))
-    ) {
-      gaTracking('Clicks to News');
-    } else if (target.closest('.list-link') || target.closest('[href="/ekspert/tips"]')) {
-      gaTracking('Clicks To Tips');
-    } else if (target.closest(`[href="/bookmakere/bonus"].${ID}__learnmore`)) {
-      gaTracking('Clicks to all bonus page');
-    } else if (
-      target.closest('li.nav-item') &&
-      target.closest('.ajax-nav-tabs') &&
-      target.closest('.current-picks-widget')
-    ) {
-      gaTracking(`${target.innerText} Filter Clicks`);
+    if (target.closest('a[href*="/redirect"]')) {
+      goal(target);
     }
   });
 
