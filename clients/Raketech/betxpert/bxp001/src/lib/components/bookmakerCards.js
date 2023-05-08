@@ -4,10 +4,10 @@ const bookmakerCards = (id, carouselData, orientation = 'column') => {
   const htmlStr = `   
     <div class="${id}__bookmakercards card-block ${orientation === 'column' ? '' : 'vertical'}">
         <div class="${id}__toprow">
-            <h2>Bookmaker bonus</h2>
+            <h2 class="card-title">Bookmaker bonus</h2>
             ${
               orientation === 'column'
-                ? `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Se Alle Bonus</a>`
+                ? `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Alle Bonusser</a>`
                 : ''
             }
         </div>
@@ -26,11 +26,11 @@ const bookmakerCards = (id, carouselData, orientation = 'column') => {
         <div class="${id}__disclaimer desktop-show">
             **Indeholder reklamelinks | 18+ | stopspillet.dk | r&v gælder | Selvudelukkelse: Rofus.nu
         </div>
-        <a href="/bookmakere/bonus" class="${id}__learnmore desktop-hide">Se Alle Bonus</a>
+        <a href="/bookmakere/bonus" class="${id}__learnmore desktop-hide">Alle Bonusser</a>
         ${
           orientation === 'column'
             ? ''
-            : `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Se Alle Bonus</a>`
+            : `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Alle Bonusser</a>`
         }
     </div>
     `;

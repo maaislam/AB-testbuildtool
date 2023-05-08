@@ -102,7 +102,7 @@ const init = () => {
     : document.querySelector('#right>.card:nth-child(2)');
   newsContainerAttachPoint.insertAdjacentHTML(
     'beforebegin',
-    `<div class="card">${newsItems(ID, newsRowsData)}</div>`
+    `<div class="card newsitemmargin">${newsItems(ID, newsRowsData)}</div>`
   );
   isMobile() && document.querySelector('#right>.card:nth-child(1)').classList.add(`${ID}__hide`);
 };
@@ -122,9 +122,14 @@ const initTipsStyles = () => {
     tipsTable.forEach((table) => table.classList.add(`${ID}__tipstable`));
 
     [...userTips, ...expertTips].forEach((expertTip) => {
+      const SINGLE_LINE_HEIGHT = 45;
       const operatorLink = expertTip.querySelector('a.pick-odds').getAttribute('href');
       const operatorName = expertTip.querySelector('a.pick-odds').getAttribute('data-ga-label');
       const pickOdds = expertTip.querySelector('.pick-odds');
+      const expTipHeight = expertTip.offsetHeight;
+      const classTOAdjust = expTipHeight > SINGLE_LINE_HEIGHT ? 'adjust-star' : 'no-adjust-star';
+
+      expertTip.classList.add(classTOAdjust);
 
       const palceBetBtn = `<td class="${ID}__oplink bet-intent"><a class="${
         isMobile() ? '' : `${ID}__bluebtn`
@@ -177,9 +182,10 @@ export default () => {
       (target.closest('[data-ga-action="Content carousel"]') && target.closest('a'))
     ) {
       gaTracking('Clicks to News');
-    } else if (target.closest('.list-link') || target.closest('[href="/ekspert/tips"]')) {
+    } else if (target.closest('.list-link') || target.closest('[href*="/ekspert/tips"]')) {
       gaTracking('Clicks To Tips');
-    } else if (target.closest(`[href="/bookmakere/bonus"].${ID}__learnmore`)) {
+    } else if (target.closest('[href*="/bookmakere/bonus"]')) {
+      console.log('Clicks to all bonus page');
       gaTracking('Clicks to all bonus page');
     } else if (
       target.closest('li.nav-item') &&

@@ -4,7 +4,7 @@ const bookmakerCarouselConfig = [
     link: '/redirect/operator/betinia',
     imgSrc: '/uploads/operator/1/normal/300x160/betinia.jpg?v=1673514635',
     backColor: '',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     gaLabel: 'Betinia'
   },
   {
@@ -12,7 +12,7 @@ const bookmakerCarouselConfig = [
     link: '/redirect/operator/comeon',
     imgSrc: '/uploads/operator/1/normal/300x160/comeon.jpg?v=1639065771',
     backColor: '',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     gaLabel: 'Comeon'
   },
   {
@@ -20,7 +20,7 @@ const bookmakerCarouselConfig = [
     link: '/redirect/operator/leovegas',
     imgSrc: '/uploads/operator/1/normal/300x160/leovegas.jpg?v=1566219414',
     backColor: '',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     gaLabel: 'LeoVegas'
   },
   {
@@ -28,7 +28,7 @@ const bookmakerCarouselConfig = [
     link: '/redirect/operator/nordicbet',
     imgSrc: '/uploads/operator/1/normal/300x160/nordicbet.jpg?v=1664872923',
     backColor: '',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     gaLabel: 'NordicBet'
   },
   {
@@ -36,7 +36,7 @@ const bookmakerCarouselConfig = [
     link: '/redirect/operator/bwin/bwin',
     imgSrc: '/assets/images/min/operators/300x160/bwin.jpg',
     backColor: '',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     gaLabel: 'Bwin'
   },
   {
@@ -44,7 +44,7 @@ const bookmakerCarouselConfig = [
     link: '/redirect/operator/betfair',
     imgSrc: '/assets/images/min/operators/300x160/betfair.jpg',
     backColor: '',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     gaLabel: 'Betfair'
   }
 ];

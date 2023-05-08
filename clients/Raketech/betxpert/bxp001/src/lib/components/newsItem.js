@@ -15,7 +15,7 @@ const newsItem = (id, data) => {
                     </svg>
                 </span>
                 <span class="comment-count">${commentCount} 
-                    commnet${commentCount > 1 ? 's' : ''}</span>
+                    Kommentar${commentCount > 1 ? 'er' : ''}</span>
             </div>
         </div>
     </a>
