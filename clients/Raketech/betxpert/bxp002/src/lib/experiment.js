@@ -39,22 +39,12 @@ export default () => {
   setup(); //use if needed
   //gaTracking('Conditions Met'); //use if needed
 
-  const goal = (target) => {
-    const linkTitle = target.closest('a[href*="/redirect"]').href;
-    //eslint-disable-next-line no-useless-escape
-    const regex = /([^\/\?]+)\?/gi;
-    const match = linkTitle.match(regex);
-
-    if (match && match[1]) {
-      gaTracking(`${match[1]} | CTA CLICK`);
-    }
-  };
-
   document.body.addEventListener('click', (ev) => {
     const { target } = ev;
 
     if (target.closest('a[href*="/redirect"]')) {
-      goal(target);
+      const href = target.closest('a').getAttribute('href');
+      gaTracking(`${getOperatorFromUrl(href)} cta Click`);
     }
   });
 
