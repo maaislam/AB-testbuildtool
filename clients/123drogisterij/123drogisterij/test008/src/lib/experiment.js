@@ -1,15 +1,15 @@
 import setup from './services/setup';
-//import gaTracking from './services/gaTracking';
+import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { addTitle } from './components/addTitle';
 import { bulkMessage } from './components/bulkMessage';
 
-const { ID } = shared;
+const { ID, VARIATION } = shared;
 
 export default () => {
   setup(); //use if needed
-  //gaTracking('Conditions Met'); //use if needed
-  //console.log(ID);
+  gaTracking('Conditions Met'); //use if needed
+  console.log(ID);
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
@@ -52,9 +52,7 @@ export default () => {
 
     //individual bulk option  text change code
     //eslint-disable-next-line default-param-last
-    existingBulkOptions.forEach((existingBulk, index) => {
-      const lastIndex = existingBulkOptions.length - 1;
-      if (index === lastIndex) return;
+    existingBulkOptions.forEach((existingBulk) => {
       const quantity = parseInt(existingBulk.querySelector('input').value);
       //eslint-disable-next-line array-callback-return
       const modifiedData = [...collectData].find((data) => {
@@ -62,12 +60,9 @@ export default () => {
       });
 
       if (modifiedData) {
-        //console.log(typeof mainProdPrice, modifiedData, modifiedData);
         modifiedData.showPrice =
           (mainProdPrice - modifiedData.actualPrice) * modifiedData.quantity + 4.95;
         bulkMessage(existingBulk, ID, Highest_Number, modifiedData);
-      } else {
-        bulkMessage(existingBulk, ID, Highest_Number);
       }
     });
   };

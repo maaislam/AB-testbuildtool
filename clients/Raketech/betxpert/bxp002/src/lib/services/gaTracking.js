@@ -1,13 +1,11 @@
-import { pollerLite } from '../../../../../../../globalUtil/util';
+import { pollerLite } from '../helpers/utils';
+import shared from '../shared/shared';
 
 const gaTracking = (label, action = 'click') => {
-  pollerLite([() => typeof window.ga.getAll === 'function'], () => {
-    window.ga.getAll().forEach((tracker) => {
-      tracker.send('event', {
-        eventCategory: 'funnelenvy',
-        eventAction: action,
-        eventLabel: label
-      });
+  pollerLite([() => typeof window.gtag === 'function'], () => {
+    window.gtag('event', 'Experimentation', {
+      event_action: action,
+      event_label: `Carousel variation: ${shared.VARIATION} | ${label}`
     });
   });
 };

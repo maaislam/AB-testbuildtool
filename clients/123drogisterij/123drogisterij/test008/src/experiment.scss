@@ -1,5 +1,5 @@
 @import './variables';
-@import '../src/lib/shared/shared';
+@import '../src/lib/shared/shared.scss';
 
 .#{$id} {
     &_bulk_test {
@@ -14,22 +14,20 @@
                         display: none;
                     }
                 }
-
                 .hightest_badge{
                     display:inline-block;
-                    margin-bottom: 5px;
+                    background-color: #939396;
+                    color: white;
                     padding: 4px 8px;
-                    color: #000;
-                    font-weight: 600;
+                    margin-bottom: 5px;
                     text-align: center;
-                    background-color: #ffae1b;
                     border-radius: 5px;
 
                 }
 
                 &.active {
                     .hightest_badge{
-                        background-color:#ffae1b;
+                        background-color:#4a8c43;
                     }
                 }
             }
