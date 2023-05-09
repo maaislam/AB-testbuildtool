@@ -1,28 +1,15 @@
 import setup from './services/setup';
-<<<<<<< HEAD
-//import gaTracking from './services/gaTracking';
-=======
 import gaTracking from './services/gaTracking';
->>>>>>> 83d65eb931235e670027a46d81e83cab0a63206b
 import shared from './shared/shared';
 import { addTitle } from './components/addTitle';
 import { bulkMessage } from './components/bulkMessage';
 
-<<<<<<< HEAD
-const { ID } = shared;
-
-export default () => {
-  setup(); //use if needed
-  //gaTracking('Conditions Met'); //use if needed
-  //console.log(ID);
-=======
 const { ID, VARIATION } = shared;
 
 export default () => {
   setup(); //use if needed
   gaTracking('Conditions Met'); //use if needed
   console.log(ID);
->>>>>>> 83d65eb931235e670027a46d81e83cab0a63206b
   //-----------------------------
   //If control, bail out from here
   //-----------------------------

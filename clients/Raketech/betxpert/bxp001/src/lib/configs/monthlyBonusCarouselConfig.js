@@ -4,7 +4,7 @@ const mbCarouselConfig = [
     logoSrc: '/uploads/operator/1/normal/300x160/leovegas.jpg?v=1566219414',
     title: '100% betting bonus up to DKK 1000',
     opName: 'LeoVegas',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     btnLink: '/redirect/operator/leovegas'
   },
   {
@@ -12,7 +12,7 @@ const mbCarouselConfig = [
     logoSrc: '/assets/images/min/operators/300x160/bet365.jpg',
     title: '100% betting bonus up to DKK 1000',
     opName: 'Bet365',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     btnLink: '/redirect/operator/bet365'
   },
   {
@@ -20,7 +20,7 @@ const mbCarouselConfig = [
     logoSrc: '/uploads/operator/1/normal/300x160/betinia.jpg?v=1673514635',
     title: '100% betting bonus up to DKK 1000',
     opName: 'Betinia',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     btnLink: '/redirect/operator/betinia'
   },
   {
@@ -28,7 +28,7 @@ const mbCarouselConfig = [
     logoSrc: '/uploads/operator/1/normal/300x160/comeon.jpg?v=1639065771',
     title: '100% betting bonus up to DKK 1000',
     opName: 'ComeOn',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     btnLink: '/redirect/operator/comeon'
   },
   {
@@ -36,7 +36,7 @@ const mbCarouselConfig = [
     logoSrc: '/uploads/operator/1/normal/300x160/mrplay.jpg?v=1666543925',
     title: '100% betting bonus up to DKK 1000',
     opName: 'MrPlay',
-    btnText: 'Hant Bonus',
+    btnText: 'Hent Bonus',
     btnLink: '/redirect/operator/mrplay/standard-affiliate-link'
   }
 ];

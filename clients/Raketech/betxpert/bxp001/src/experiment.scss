@@ -37,13 +37,18 @@
     }
 
     .bonus-carousel, .current-picks-widget{
-        margin-bottom: 0;
         @include media-query(sm){
+            margin-bottom: 0;
+            
         }
     }
-    .bm-carousel, .current-picks-widget{
-        margin-top: 0;
+    .current-picks-widget{
+        padding-bottom: 16px;
+    }
+    .bm-carousel, .current-picks-widget, .newsitemmargin{
         @include media-query(sm){
+            margin-top: 0;
+            margin-bottom: 0;
         }
     }
 
@@ -86,6 +91,7 @@
         font-size: 12px;
         line-height: 18px;
         text-align: center;
+        color:#0275D8;
         border: 1px solid #006BDB;
 
         &:hover{
@@ -96,11 +102,21 @@
         }
     }
 
+    .#{$id}__toprow{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        h2.card-title{
+            padding-left: 0;
+        }
+    }
+
     &__bonuscards, &__bookmakercards{
         padding-bottom: 30px;
         overflow: hidden;
         font-family: 'Titillium Web';
         background-color: #fff
+        
         
 
         h1{
@@ -108,11 +124,8 @@
             line-height: 1.2;
         }
 
-        .#{$id}__toprow{
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-        }
+        
+        
 
         .swiper-button-prev{
             top: auto;
@@ -146,7 +159,7 @@
         }
         .#{$id}__toprow{
             @include media-query(sm){
-                display: none;
+                //display: none;
             }
         }
     }
@@ -407,13 +420,29 @@
         tr{
             background-color: #fff;
             border-color:  #EDEDED;   
+            &.adjust-star{
+                .star-icon{
+                    transform: translateY(10px);
+                    @include media-query(sm){
+                        transform: translateY(0);
+                    }
+                }
+            }
+
+            &.day-header{
+                td{
+                    padding: .4286rem .2857rem !important;
+                }
+            }
         }
 
         td{
             @include media-query(sm){
                 padding-top: 0 !important;
                 padding-bottom: 0 !important;
-            } 
+            }
+            
+            
         }
 
         td.#{$id}__oplink{
@@ -541,6 +570,11 @@
                 width: 100%;
                 max-width: 30px;
                 margin-left: auto;
+                transform: translateY(2px);
+                    @include media-query(sm){
+                        transform: translateY(0);
+                    }
+               
 
                 i:first-child{
                     &::before{
