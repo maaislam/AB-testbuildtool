@@ -44,7 +44,9 @@ export default () => {
 
     if (target.closest('a[href*="/redirect"]')) {
       const href = target.closest('a').getAttribute('href');
-      gaTracking(`${getOperatorFromUrl(href)} cta Click`);
+      const clickedFromCarousel =
+        target.closest(`.${ID}__bookmakercards`) && VARIATION !== 'control';
+      gaTracking(`${clickedFromCarousel ? 'Carousel' : ''} ${getOperatorFromUrl(href)} cta Click`);
     }
   });
 
