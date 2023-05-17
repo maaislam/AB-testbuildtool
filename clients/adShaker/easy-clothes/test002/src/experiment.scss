@@ -2,7 +2,9 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    .free-shipping__text.add-more{
+        display: flex;
+        gap: 12px;
+        padding: 4px 8px;
     }
 }

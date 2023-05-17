@@ -6,7 +6,7 @@ const bonusCards = (id, carouselData) => {
         <div class="${id}__toprow">
             <h1>En verden af spilforslag, odds og betting</h1>
         </div>
-        <div class="${id}__bonuscard-swiper swiper-hero ${id}__hide">
+        <div class="${id}__bonuscard-swiper swiper-hero">
             <div class="${id}__bonuscards-swrapper swiper-wrapper">
                 ${carouselData.map((carousel) => bonusCard(id, carousel)).join('\n')}
             </div>

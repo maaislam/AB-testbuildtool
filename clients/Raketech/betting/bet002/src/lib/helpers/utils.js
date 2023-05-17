@@ -1,4 +1,3 @@
-/*eslint-disable consistent-return */
 /**
  * Polls the DOM for a condition to be met before executing a callback.
  *
@@ -26,24 +25,46 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
   }, POLLING_INTERVAL);
 };
 
-export const getCookie = (name) => {
-  const value = `; ${document.cookie}`;
-
-  const parts = value.split(`; ${name}=`);
-
-  if (parts.length === 2) {
-    return parts.pop().split(';').shift();
+export const addCssToPage = (href, id, classes) => {
+  if (document.querySelector(`#${id}`)) {
+    return;
   }
+
+  const c = document.createElement('link');
+  c.setAttribute('id', id);
+  c.setAttribute('rel', 'stylesheet');
+
+  if (classes) {
+    c.className = classes;
+  }
+
+  c.href = href;
+  document.head.appendChild(c);
 };
 
-export const deleteCookie = (cookieName) => {
-  document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+/**
+ * Helper append JS to page
+ */
+export const addJsToPage = (src, id, cb, classes) => {
+  if (document.querySelector(`#${id}`)) {
+    return;
+  }
+
+  const s = document.createElement('script');
+  if (typeof cb === 'function') {
+    s.onload = cb;
+  }
+
+  if (classes) {
+    s.className = classes;
+  }
+
+  s.src = src;
+  s.setAttribute('id', id);
+  document.head.appendChild(s);
 };
 
-export const setCookie = (cName, cValue) => {
-  const path = 'path=/';
-  document.cookie = `${cName}=${cValue}; ${path}`;
-};
+export const isMobile = () => window.matchMedia('(max-width: 600px)').matches;
 
 export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
   const target = document.querySelector(`${targetSelectorString}`);
@@ -53,7 +74,8 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   const config = configObject || {
     childList: true,
-    subtree: true
+    subtree: true,
+    attributes: true
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
@@ -68,17 +90,15 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   observer.observe(target, config);
 };
 
-export const formatPrice = (amount, code = 'en-US', currency = 'USD') =>
-  new Intl.NumberFormat(code, {
-    style: 'currency',
-    currency
-  }).format(amount / 100);
+export const getOperatorFromUrl = (url) => {
+  //Get the text after the last slash
+  const text = url.split('/').pop();
 
-export const discountLink = (discountCode) => {
-  const { pathname, search } = window.location;
+  //If the text contains a question mark, remove any characters after it
+  const questionMarkIndex = text.indexOf('?');
+  if (questionMarkIndex !== -1) {
+    return text.substring(0, questionMarkIndex);
+  }
 
-  const newPathname = `/discount/${discountCode}`;
-  const newQueryString = `redirect=${pathname}${search}`;
-
-  return `${window.location.origin}${newPathname}?${newQueryString}`;
+  return text;
 };

@@ -1,4 +1,12 @@
-import { deleteCookie, getCookie, observeDOM, pollerLite, setCookie } from './helpers/utils';
+/*eslint-disable object-curly-newline */
+import {
+  deleteCookie,
+  formatPrice,
+  getCookie,
+  observeDOM,
+  pollerLite,
+  setCookie
+} from './helpers/utils';
 import setup from './services/setup';
 
 import shared from './shared/shared';
@@ -22,9 +30,15 @@ const discountConfig = {
 const init = () => {
   //hide announcementbar
   const announcementBar = document.querySelector('.vb-tape-set');
+  const { discountCode, threshold } = discountConfig[VARIATION];
+  const newAnnouncement = `FREE US SHIPPING ${
+    threshold > 0 ? `OVER $${threshold} USD` : ''
+  } / FREE INTL. SHIPPING OVER $150 USD`;
+
   if (announcementBar) {
-    announcementBar.style.display = 'none';
+    announcementBar.querySelector('p').innerText = newAnnouncement;
   }
+  deleteCookie('discount_code');
 
   //get cart total
   const cartCurrentData = JSON.parse(localStorage.getItem('cartCurrentData'));
@@ -32,21 +46,34 @@ const init = () => {
   if (!cartCurrentData) return;
 
   const { total_price } = cartCurrentData;
-
-  const { discountCode, threshold } = discountConfig[VARIATION];
+  //console.log(' total_price:', total_price, threshold, total_price / 100 > threshold);
 
   //set discount cookie based on cart value
 
   total_price / 100 > threshold
-    ? setCookie('discount_code', discountCode, 1)
+    ? setCookie('discount_code', discountCode)
     : deleteCookie('discount_code');
 
   pollerLite(['.js-free-shipping'], () => {
     const discountApplied = getCookie('discount_code');
-    const freeShipMsg = document.querySelector('.js-free-shipping');
-    const freeShipMsgDisplay = discountApplied ? 'block' : 'none';
+    const amountToSpend = threshold * 100 - total_price;
+    console.log('🚀 ~ file: experiment.js:66 ~ pollerLite ~ amountToSpend:', amountToSpend);
+    const newMessage =
+      discountApplied || amountToSpend <= 0
+        ? 'Free Shipping'
+        : `Spend ${formatPrice(amountToSpend)} USD more and get free shipping`;
 
-    freeShipMsg.style.display = freeShipMsgDisplay;
+    const freeShipBanners = document.querySelectorAll('.js-free-shipping');
+    freeShipBanners.forEach((freeShipBanner) => {
+      const freeShipMsgContent = freeShipBanner.querySelector('.free-shipping__text');
+
+      //eslint-disable-next-line no-param-reassign
+      freeShipBanner.querySelector('[data-js-text]').innerText = newMessage;
+
+      !discountApplied
+        ? freeShipMsgContent.classList.add('add-more')
+        : freeShipMsgContent.classList.remove('add-more');
+    });
   });
 };
 

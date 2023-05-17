@@ -42,37 +42,37 @@ const init = () => {
   initSwiper('.swiper-hero', heroSwiperConfig);
 
   //setup for bookmaker section
-  const bookmakerCardsAttachPoint = document.querySelector('.current-picks-widget');
+  //const bookmakerCardsAttachPoint = document.querySelector('.current-picks-widget');
 
-  if (document.querySelector(`.${ID}__bookmakercards`)) return;
-  const firstBmposition = isMobile() ? 'beforebegin' : 'afterend';
-  bookmakerCardsAttachPoint.insertAdjacentHTML(
-    firstBmposition,
-    `<div class="card bm-carousel">${bookmakerCards(ID, bookmakerCarouselConfig)}</div>`
-  );
-  //init bookmaker swiper
-  const bookmakersSwiperConfig = isMobile() ? bookmakerSwiperConfigMob : bookmakerSwiperConfig;
-  initSwiper('.swiper-bookmaker', bookmakersSwiperConfig);
+  //if (document.querySelector(`.${ID}__bookmakercards`)) return;
+  //const firstBmposition = isMobile() ? 'beforebegin' : 'afterend';
+  //bookmakerCardsAttachPoint.insertAdjacentHTML(
+  //firstBmposition,
+  //`<div class="card bm-carousel">${bookmakerCards(ID, bookmakerCarouselConfig)}</div>`
+  //);
+  ////init bookmaker swiper
+  //const bookmakersSwiperConfig = isMobile() ? bookmakerSwiperConfigMob : bookmakerSwiperConfig;
+  //initSwiper('.swiper-bookmaker', bookmakersSwiperConfig);
 
-  //setup for vertical bookmaker bonus section
+  ////setup for vertical bookmaker bonus section
 
-  const vBookmakerAttachPoint = isMobile()
-    ? document.querySelector('.current-picks-widget')
-    : document.querySelector('#right>.card:first-child');
+  //const vBookmakerAttachPoint = isMobile()
+  //? document.querySelector('.current-picks-widget')
+  //: document.querySelector('#right>.card:first-child');
 
-  if (document.querySelector(`.${ID}__bookmakercards.vertical`)) return;
-  isMobile()
-    ? vBookmakerAttachPoint.insertAdjacentHTML(
-        'afterend',
-        bookmakerCards(ID, bookmakerCarouselConfig, 'vertical')
-      )
-    : (vBookmakerAttachPoint.innerHTML = bookmakerCards(ID, bookmakerCarouselConfig, 'vertical'));
-  //init bookmaker swiper
-  const vBookmakersSwiperConfig = window.matchMedia('(max-width: 850px)').matches
-    ? vBookmakerSwiperConfigMob
-    : vBookmakerSwiperConfig;
+  //if (document.querySelector(`.${ID}__bookmakercards.vertical`)) return;
+  //isMobile()
+  //? vBookmakerAttachPoint.insertAdjacentHTML(
+  //'afterend',
+  //bookmakerCards(ID, bookmakerCarouselConfig, 'vertical')
+  //)
+  //: (vBookmakerAttachPoint.innerHTML = bookmakerCards(ID, bookmakerCarouselConfig, 'vertical'));
+  ////init bookmaker swiper
+  //const vBookmakersSwiperConfig = window.matchMedia('(max-width: 850px)').matches
+  //? vBookmakerSwiperConfigMob
+  //: vBookmakerSwiperConfig;
 
-  initSwiper('.vertical.swiper-bookmaker', vBookmakersSwiperConfig);
+  //initSwiper('.vertical.swiper-bookmaker', vBookmakersSwiperConfig);
 
   //setup for latest news
   if (document.querySelector(`.${ID}__newsitems`)) return;

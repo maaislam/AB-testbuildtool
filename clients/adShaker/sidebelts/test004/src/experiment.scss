@@ -1,0 +1,10 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+.#{$id} {
+    .product-single__additional-actions{
+        display: none !important;
+    }
+    &__hide {
+        display: none !important;
+    }
+}
