@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /**
  * Polls the DOM for a condition to be met before executing a callback.
  *
@@ -101,4 +102,26 @@ export const getOperatorFromUrl = (url) => {
   }
 
   return text;
+};
+
+export const applyFallbackImages = (images) => {
+  //const images = document.querySelectorAll('img[data-fallback1]');
+
+  images.forEach((image) => {
+    const fallbackImages = Array.from(image.attributes)
+      .filter((attr) => attr.name.startsWith('data-fallback'))
+      .map((attr) => attr.value);
+
+    image.onerror = () => {
+      const nextImage = fallbackImages.shift();
+      if (nextImage) {
+        image.src = nextImage;
+      } else {
+        //All fallback images failed to load for this image
+        //Add a default image or display an error message
+      }
+    };
+
+    image.src = fallbackImages.shift();
+  });
 };

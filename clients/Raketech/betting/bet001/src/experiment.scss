@@ -5,6 +5,20 @@
 @import '../src/lib/shared/shared';
 
 .#{$id} {
+
+
+    .bb-age-limit{
+        color: #000;
+        font-family: 'Titillium Web';
+        font-style: italic;
+        font-size: 11px;
+        background: #E4E4E4 !important;
+        border: none;
+    }
+
+
+
+
     img{
         max-width: 100%;
         height: auto;
@@ -124,7 +138,9 @@
             line-height: 1.2;
         }
 
-        
+        .swiper-pagination{
+            bottom: 6px;
+        }
         
 
         .swiper-button-prev{
@@ -151,7 +167,7 @@
     }
 
     &__bonuscards{
-       padding-bottom: 6px;
+       padding-bottom: 30px;
         @include media-query(sm){
             margin-bottom: 0;
             background-color: #fff;
@@ -168,7 +184,7 @@
         display: flex;
         align-items: flex-end;
         justify-content: flex-start;
-        min-height: 270px;
+        min-height: 300px;
         color: #fff;
         background-repeat: no-repeat;
         background-position: center center;
@@ -181,7 +197,9 @@
         
         &-content{
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
             width: 100%;
             padding: 20px 15px;
             background: linear-gradient(180deg, rgba(0 0 0 / 0%) 0%, rgba(0 0 0 / 89%) 44.27%);
@@ -192,7 +210,7 @@
             }
 
             .logo{
-                width: 130px;
+                width: 70px;
                 
 
                 img{
@@ -201,10 +219,43 @@
             }
 
             .op-name{
-                margin-bottom: 6px;
+                margin-bottom: 8px;
+                color: #fff;
                 font-weight: 700;
                 font-size: 18px;
                 line-height: 120%;
+            }
+
+            .tc-wrapper{
+                display: flex;
+                align-items: center;
+                margin-top: 8px;
+                
+                .tc-content{
+                    height: 16px;
+                    overflow: hidden;
+                    font-size: 11px;
+                    color: #fff;
+                    a{
+                        color: #fff;
+                    }
+                }
+
+                &>span{
+                    display: flex;
+                    cursor: pointer;
+                }
+
+                &.open{
+                    align-items: flex-start;
+                    .tc-content{
+                        height: auto;
+                    }
+
+                    & >span{
+                        transform: scale(-1);
+                    }
+                }
             }
 
            
@@ -260,31 +311,64 @@
    
 
     &__bookmakercard{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
         background:  #F8F8F8;
         border-radius: 4px;
 
-        &>a{
+        .operator-name{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            color: #363535;
+        }
+        .operator-subtitle{
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.2;
+            color: #037313;
+        }
+
+       .#{$id}__bluebtn{
             width: 100%;
-            max-width: 130px;
+            max-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0 auto;
+            padding: 5px 16px;
+            font-size: 14px;
+
+            span{
+                margin-right: 8px;
+            }
+
             @include media-query(sm){
                 max-width: 174px;
             }
         }
+
 
         img{
             max-width: 100%;
             height: auto;
             border-radius: 4px 4px 0 0;
         }
-        .#{$id}__bluebtn{
-            width: 100%;
-            padding: 5px 16px;
-            font-size: 14px;
-        }
+      
 
         &-btnrow{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
             padding: 8px;
+            padding-bottom: 4px;
+            &:hover{
+                color: initial;
+                text-decoration: none;
+            }
         }
 
         &.vertical{
@@ -590,6 +674,20 @@
                     }
                 }
             }
+        }
+    }
+
+
+    &__operatorrow{
+        border: none !important;
+        
+        &>div:not(:last-child){
+            display: none !important;
+        }
+        
+        .#{$id}__operatorLogo{
+            width: 70%;
+            padding: 8px;
         }
     }
 }

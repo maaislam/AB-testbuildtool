@@ -1,5 +1,6 @@
 /*eslint-disable object-curly-newline */
 import bonusCards from './components/bonusCards';
+import bookmakerCard from './components/bookmakerCard';
 import bookmakerCards from './components/bookmakerCards';
 import newsItems from './components/newsItems';
 import bookmakerCarouselConfig from './configs/bookmakerBonusCarouselConfig';
@@ -16,6 +17,7 @@ import initSwiper from './helpers/initSwiper';
 import {
   addCssToPage,
   addJsToPage,
+  applyFallbackImages,
   getOperatorFromUrl,
   isMobile,
   observeDOM,
@@ -41,38 +43,36 @@ const init = () => {
   const heroSwiperConfig = isMobile() ? bonusSwiperConfigMob : bonusSwiperConfig;
   initSwiper('.swiper-hero', heroSwiperConfig);
 
-  //setup for bookmaker section
-  //const bookmakerCardsAttachPoint = document.querySelector('.current-picks-widget');
+  //new bonus section
 
-  //if (document.querySelector(`.${ID}__bookmakercards`)) return;
-  //const firstBmposition = isMobile() ? 'beforebegin' : 'afterend';
-  //bookmakerCardsAttachPoint.insertAdjacentHTML(
-  //firstBmposition,
-  //`<div class="card bm-carousel">${bookmakerCards(ID, bookmakerCarouselConfig)}</div>`
-  //);
-  ////init bookmaker swiper
-  //const bookmakersSwiperConfig = isMobile() ? bookmakerSwiperConfigMob : bookmakerSwiperConfig;
-  //initSwiper('.swiper-bookmaker', bookmakersSwiperConfig);
+  const bonusList = document.querySelectorAll('.b-bonus-list>div');
+  const sectionParent = document.querySelector('.b-bonus-list').closest('.card-block');
+  sectionParent.querySelector('div:first-child').classList.remove('d-block');
+  sectionParent.querySelector('div:first-child').classList.add(`${ID}__hide`);
+  bonusList.forEach((operatorRow, index) => {
+    //extract data
+    if (index % 2 !== 0) {
+      return;
+    }
+    const opLinkElem = operatorRow.querySelector('a[data-ga-label]');
+    const { gaLabel } = opLinkElem.dataset;
+    const link = opLinkElem.href;
+    const title = operatorRow.querySelector('.bb-title').innerText;
+    const domainFlagSrc = operatorRow.querySelector('img.domain-flag').src;
+    const data = {
+      link,
+      gaLabel,
+      title,
+      domainFlagSrc
+    };
 
-  ////setup for vertical bookmaker bonus section
+    operatorRow.classList.add(`${ID}__operatorrow`);
 
-  //const vBookmakerAttachPoint = isMobile()
-  //? document.querySelector('.current-picks-widget')
-  //: document.querySelector('#right>.card:first-child');
-
-  //if (document.querySelector(`.${ID}__bookmakercards.vertical`)) return;
-  //isMobile()
-  //? vBookmakerAttachPoint.insertAdjacentHTML(
-  //'afterend',
-  //bookmakerCards(ID, bookmakerCarouselConfig, 'vertical')
-  //)
-  //: (vBookmakerAttachPoint.innerHTML = bookmakerCards(ID, bookmakerCarouselConfig, 'vertical'));
-  ////init bookmaker swiper
-  //const vBookmakersSwiperConfig = window.matchMedia('(max-width: 850px)').matches
-  //? vBookmakerSwiperConfigMob
-  //: vBookmakerSwiperConfig;
-
-  //initSwiper('.vertical.swiper-bookmaker', vBookmakersSwiperConfig);
+    const newLogo = bookmakerCard(ID, data);
+    operatorRow.insertAdjacentHTML('beforeend', newLogo);
+  });
+  const images = document.querySelectorAll(`.${ID}__opimages`);
+  applyFallbackImages(images);
 
   //setup for latest news
   if (document.querySelector(`.${ID}__newsitems`)) return;
@@ -97,14 +97,12 @@ const init = () => {
   });
   console.log(newsRowsData);
 
-  const newsContainerAttachPoint = isMobile()
-    ? document.querySelector(`.${ID}__bookmakercards.vertical`)
-    : document.querySelector('#right>.card:nth-child(2)');
+  const newsContainerAttachPoint = document.querySelector('#right>.card:nth-child(2)');
   newsContainerAttachPoint.insertAdjacentHTML(
     'beforebegin',
     `<div class="card newsitemmargin">${newsItems(ID, newsRowsData)}</div>`
   );
-  isMobile() && document.querySelector('#right>.card:nth-child(1)').classList.add(`${ID}__hide`);
+  //isMobile() && document.querySelector('#right>.card:nth-child(1)').classList.add(`${ID}__hide`);
 };
 
 const initTipsStyles = () => {
@@ -158,13 +156,14 @@ export default () => {
     const { target } = ev;
 
     if (
-      target.closest(`.${ID}__bonus-intent`) ||
-      target.closest('[data-ga-action="Operator bonus list"]')
+      (target.closest(`.${ID}__bonus-intent`) ||
+        target.closest('[data-ga-action="Operator bonus list"]')) &&
+      !target.closest('.tc-wrapper')
     ) {
-      const href = target.closest('a').getAttribute('href');
+      const href = target.closest('a')?.getAttribute('href');
       const operator =
         VARIATION !== 'control'
-          ? target.closest('a').getAttribute('data-operator')
+          ? target.closest('a')?.getAttribute('data-operator')
           : getOperatorFromUrl(href);
       gaTracking(`${operator} | Bonus Intent CTA Click`);
     } else if (target.closest('.bet-intent') || target.closest('.pick-odds')) {
@@ -185,7 +184,6 @@ export default () => {
     } else if (target.closest('.list-link') || target.closest('[href*="/ekspert/tips"]')) {
       gaTracking('Clicks To Tips');
     } else if (target.closest('[href*="/bookmakere/bonus"]')) {
-      console.log('Clicks to all bonus page');
       gaTracking('Clicks to all bonus page');
     } else if (
       target.closest('li.nav-item') &&
@@ -193,6 +191,8 @@ export default () => {
       target.closest('.current-picks-widget')
     ) {
       gaTracking(`${target.innerText} Filter Clicks`);
+    } else if (target.closest('.tc-wrapper')) {
+      target.closest('.tc-wrapper').classList.toggle('open');
     }
   });
 
