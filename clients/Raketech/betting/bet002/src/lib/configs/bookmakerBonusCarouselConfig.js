@@ -1,51 +1,51 @@
 const bookmakerCarouselConfig = [
   {
-    alt: 'Besøg Betinia',
-    link: '/redirect/operator/betinia',
-    imgSrc: '/uploads/operator/1/normal/300x160/betinia.jpg?v=1673514635',
+    alt: 'SpeedyBet',
+    link: '/redirect/operator/speedybet/default-52',
+    imgSrc: '/uploads/operator/16/normal/300x160/sportsbetting/speedybet.jpg',
     backColor: '',
-    btnText: 'Hent Bonus',
+    btnText: 'Hämta bonus',
+    gaLabel: 'SpeedyBet'
+  },
+  {
+    alt: 'Besök Expekt',
+    link: '/redirect/operator/expekt/expekt',
+    imgSrc: '/uploads/operator/16/normal/300x160/expekt.jpg',
+    backColor: '',
+    btnText: 'Hämta bonus',
+    gaLabel: 'Expekt'
+  },
+  {
+    alt: 'Besök FastBet',
+    link: 'https://www.betting.se/redirect/operator/fastbet',
+    imgSrc: '/assets/images/min/operators/300x160/fastbet.jpg',
+    backColor: '',
+    btnText: 'Hämta bonus',
+    gaLabel: 'FastBet'
+  },
+  {
+    alt: 'Besök Betinia',
+    link: '/redirect/operator/betinia/betinia',
+    imgSrc: '/uploads/operator/1/normal/300x160/betinia.jpg',
+    backColor: '',
+    btnText: 'Hämta bonus',
     gaLabel: 'Betinia'
   },
   {
-    alt: 'Besøg Comeon',
-    link: '/redirect/operator/comeon',
-    imgSrc: '/uploads/operator/1/normal/300x160/comeon.jpg?v=1639065771',
+    alt: 'Besök Lyllo Casino',
+    link: 'https://www.betting.se/redirect/operator/lyllo-casino',
+    imgSrc: '/uploads/operator/16/normal/300x160/lyllo-casino.jpg',
     backColor: '',
-    btnText: 'Hent Bonus',
-    gaLabel: 'Comeon'
+    btnText: 'Hämta bonus',
+    gaLabel: 'Lyllo Casino'
   },
   {
-    alt: 'Besøg LeoVegas',
-    link: '/redirect/operator/leovegas',
-    imgSrc: '/uploads/operator/1/normal/300x160/leovegas.jpg?v=1566219414',
+    alt: 'Besök Snabbare',
+    link: 'https://www.betting.se/redirect/operator/snabbare/snabbare',
+    imgSrc: '/uploads/operator/16/normal/300x160/snabbare.jpg',
     backColor: '',
-    btnText: 'Hent Bonus',
-    gaLabel: 'LeoVegas'
-  },
-  {
-    alt: 'Besøg NordicBet',
-    link: '/redirect/operator/nordicbet',
-    imgSrc: '/uploads/operator/1/normal/300x160/nordicbet.jpg?v=1664872923',
-    backColor: '',
-    btnText: 'Hent Bonus',
-    gaLabel: 'NordicBet'
-  },
-  {
-    alt: 'Besøg Bwin',
-    link: '/redirect/operator/bwin/bwin',
-    imgSrc: '/assets/images/min/operators/300x160/bwin.jpg',
-    backColor: '',
-    btnText: 'Hent Bonus',
-    gaLabel: 'Bwin'
-  },
-  {
-    alt: 'Besøg Betfair',
-    link: '/redirect/operator/betfair',
-    imgSrc: '/assets/images/min/operators/300x160/betfair.jpg',
-    backColor: '',
-    btnText: 'Hent Bonus',
-    gaLabel: 'Betfair'
+    btnText: 'Hämta bonus',
+    gaLabel: 'Snabbare'
   }
 ];
 

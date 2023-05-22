@@ -4,15 +4,15 @@ const bookmakerCards = (id, carouselData, orientation = 'column') => {
   const htmlStr = `   
     <div class="${id}__bookmakercards card-block ${orientation === 'column' ? '' : 'vertical'}">
         <div class="${id}__toprow">
-            <h2 class="card-title">Populære bookmakere</h2>
+            <h2 class="card-title">Populära spelbolag 2023</h2>
             ${
               orientation === 'column'
-                ? `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Alle Bonusser</a>`
+                ? `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Alla bonusar</a>`
                 : ''
             }
         </div>
         <div class="${id}__disclaimer desktop-hide">
-            **Indeholder <a target="_blank" href="/saadan-anmelder-betxpert-bookmakerne">reklamelinks</a> | 18+ | <a target="_blank" rel="nofollow" href="https://www.stopspillet.dk/">stopspillet.dk</a> | r&v gælder | Selvudelukkelse: <a target="_blank" rel="nofollow" href="https://www.rofus.nu/">Rofus.nu</a>
+            *Innehåller reklamlänk | 18+ år, spela ansvarsfullt, <a target="_blank" rel="nofollow" href="https://stodlinjen.se/#!/">stodlinjen.se</a>, <a target="_blank" rel="nofollow" href="https://www.spelpaus.se/">spelpaus.se</a>.
         </div>
         <div class="${id}__bookmakercards-swiper swiper-bookmaker 
             ${orientation === 'column' ? '' : 'vertical'}">
@@ -24,13 +24,13 @@ const bookmakerCards = (id, carouselData, orientation = 'column') => {
             <div class="swiper-pagination"></div>
         </div>
         <div class="${id}__disclaimer desktop-show">
-            **Indeholder <a target="_blank" href="/saadan-anmelder-betxpert-bookmakerne">reklamelinks</a> | 18+ | <a target="_blank" rel="nofollow" href="https://www.stopspillet.dk/">stopspillet.dk</a> | r&v gælder | Selvudelukkelse: <a target="_blank" rel="nofollow" href="https://www.rofus.nu/">Rofus.nu</a> 
+            *Innehåller reklamlänk | 18+ år, spela ansvarsfullt, <a target="_blank" rel="nofollow" href="https://stodlinjen.se/#!/">stodlinjen.se</a>, <a target="_blank" rel="nofollow" href="https://www.spelpaus.se/">spelpaus.se</a>. 
         </div>
-        <a href="/bookmakere/bonus" class="${id}__learnmore desktop-hide">Alle Bonusser</a>
+        <a href="/bookmakere/bonus" class="${id}__learnmore desktop-hide">Alla bonusar</a>
         ${
           orientation === 'column'
             ? ''
-            : `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Alle Bonusser</a>`
+            : `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Alla bonusar</a>`
         }
     </div>
     `;
