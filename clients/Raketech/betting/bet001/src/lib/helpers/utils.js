@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/*eslint-disable no-param-reassign */
 /**
  * Polls the DOM for a condition to be met before executing a callback.
  *
@@ -124,4 +124,12 @@ export const applyFallbackImages = (images) => {
 
     image.src = fallbackImages.shift();
   });
+};
+
+export const processForImageName = (inputString) => {
+  const lowercaseString = inputString.toLowerCase().trim();
+  const removedSpecialCharsString = lowercaseString.replace(/[-_]/g, '');
+  const wordsArray = removedSpecialCharsString.split(/\s+/);
+  const joinedString = wordsArray.join('');
+  return joinedString;
 };

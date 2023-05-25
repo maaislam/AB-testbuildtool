@@ -1,18 +1,12 @@
 export const bonusSwiperConfig = {
-  slidesPerView: 2.2,
+  slidesPerView: 2.0,
   spaceBetween: 10,
-  loop: true,
-  autoplay: {
-    delay: 5000
-  }
+  loop: true
 };
 export const bonusSwiperConfigMob = {
-  slidesPerView: 1.02,
+  slidesPerView: 1.0,
   spaceBetween: 6,
-  loop: true,
-  autoplay: {
-    delay: 5000
-  }
+  loop: true
 };
 export const bookmakerSwiperConfig = {
   slidesPerView: 6,

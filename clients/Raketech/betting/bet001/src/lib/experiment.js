@@ -1,18 +1,10 @@
 /*eslint-disable object-curly-newline */
 import bonusCards from './components/bonusCards';
 import bookmakerCard from './components/bookmakerCard';
-import bookmakerCards from './components/bookmakerCards';
+
 import newsItems from './components/newsItems';
-import bookmakerCarouselConfig from './configs/bookmakerBonusCarouselConfig';
-import mbCarouselConfig from './configs/monthlyBonusCarouselConfig';
-import {
-  bonusSwiperConfig,
-  bonusSwiperConfigMob,
-  bookmakerSwiperConfig,
-  bookmakerSwiperConfigMob,
-  vBookmakerSwiperConfig,
-  vBookmakerSwiperConfigMob
-} from './configs/swiperConfigs';
+
+import { bonusSwiperConfig, bonusSwiperConfigMob } from './configs/swiperConfigs';
 import initSwiper from './helpers/initSwiper';
 import {
   addCssToPage,
@@ -30,14 +22,35 @@ import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
 
+const getBoostedAticle = () => {
+  const bostedArticles = document.querySelectorAll('.first-level .article-image');
+  return [...bostedArticles].map((article) => {
+    const imageSrc = article.querySelector('img').src;
+    const linkElem = article.querySelector('a[data-ga-label]');
+    const btnLink = linkElem.href;
+    const title = article.querySelector('.title').innerText;
+    const bodyText = article.querySelector('.teaser').innerText;
+    const btnText = linkElem.dataset.gaLabel;
+    return {
+      imageSrc,
+      title,
+      bodyText,
+      btnLink,
+      btnText
+    };
+  });
+};
+
 const init = () => {
   //setup for hero section
-
+  //get boosted articles
+  const boostedArticle = getBoostedAticle();
+  console.log('boostedArticle:', boostedArticle);
   const bonusCardAttachPoint = document.querySelector('#main>.card:first-child');
   if (document.querySelector(`.${ID}__bonuscards`)) return;
   bonusCardAttachPoint.querySelector('.card-block').classList.add(`${ID}__hide`);
   bonusCardAttachPoint.querySelector('.card-title').classList.add(`${ID}__hide`);
-  bonusCardAttachPoint.insertAdjacentHTML('afterbegin', bonusCards(ID, mbCarouselConfig));
+  bonusCardAttachPoint.insertAdjacentHTML('afterbegin', bonusCards(ID, boostedArticle));
   bonusCardAttachPoint.classList.add('bonus-carousel');
   //init hero swiper
   const heroSwiperConfig = isMobile() ? bonusSwiperConfigMob : bonusSwiperConfig;
@@ -50,6 +63,10 @@ const init = () => {
   sectionParent.querySelector('div:first-child').classList.remove('d-block');
   sectionParent.querySelector('div:first-child').classList.add(`${ID}__hide`);
   bonusList.forEach((operatorRow, index) => {
+    if (index >= 24) {
+      //eslint-disable-next-line no-param-reassign
+      operatorRow.style.display = 'none';
+    }
     //extract data
     if (index % 2 !== 0) {
       return;
@@ -131,7 +148,7 @@ const initTipsStyles = () => {
 
       const palceBetBtn = `<td class="${ID}__oplink bet-intent"><a class="${
         isMobile() ? '' : `${ID}__bluebtn`
-      }" target="_blank" data-operator="${operatorName}" href="${operatorLink}"><span class="desktop-show inline">Placer Bet</span> ${arrowSvg}</a></td>`;
+      }" target="_blank" data-operator="${operatorName}" href="${operatorLink}"><span class="desktop-show inline">Rygga spelet</span> ${arrowSvg}</a></td>`;
       pickOdds.closest('td').classList.add(`${ID}__pickodds`);
       if (!expertTip.querySelector(`.${ID}__oplink`)) {
         expertTip.insertAdjacentHTML('beforeend', palceBetBtn);
@@ -160,11 +177,9 @@ export default () => {
         target.closest('[data-ga-action="Operator bonus list"]')) &&
       !target.closest('.tc-wrapper')
     ) {
-      const href = target.closest('a')?.getAttribute('href');
-      const operator =
-        VARIATION !== 'control'
-          ? target.closest('a')?.getAttribute('data-operator')
-          : getOperatorFromUrl(href);
+      const href = target.closest('a').getAttribute('href');
+
+      const operator = getOperatorFromUrl(href);
       gaTracking(`${operator} | Bonus Intent CTA Click`);
     } else if (target.closest('.bet-intent') || target.closest('.pick-odds')) {
       const operator =
@@ -172,7 +187,7 @@ export default () => {
         target.closest('a').getAttribute('data-ga-label');
       gaTracking(
         `${operator} | Bet Intent ${
-          target.closest('.bet-intent') ? 'Green CTA' : 'Odd & Logo'
+          target.closest('.bet-intent') ? 'Green CTA' : 'Odd & Logo CTA'
         } Click `
       );
     } else if (
@@ -193,6 +208,12 @@ export default () => {
       gaTracking(`${target.innerText} Filter Clicks`);
     } else if (target.closest('.tc-wrapper')) {
       target.closest('.tc-wrapper').classList.toggle('open');
+    } else if (target.closest(`.${ID}__bonuscard`)) {
+      const url = target.closest(`.${ID}__bonuscard`).dataset.href;
+      gaTracking('Boosted odd cta clicks');
+      window.open(url, '_blank');
+    } else if (target.closest('[href*="/bonus"]')) {
+      gaTracking('Clicks to all bonus page');
     }
   });
 

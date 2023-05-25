@@ -52,13 +52,13 @@
         font-size: 16px;
         line-height: 1.2;
         text-align: center;
-        background-color: #0275D8;
+        background-color: #037313;
         border-radius: 4px;
         box-shadow: 0 2px 2px rgba(0 0 0 / 25%);
 
         &:hover{
             text-decoration: none !important;
-            background-color: #025aa5;
+            background-color:  #02410b;
         }
     }
 
@@ -85,13 +85,13 @@
         font-size: 12px;
         line-height: 18px;
         text-align: center;
-        border: 1px solid #006BDB;
+        border: 1px solid #037313;
 
         &:hover{
             color: #fff !important;
             text-decoration: none !important;
-            background-color: #0b4066;
-            border-color: #0b4066;
+            background-color:  #02410b;
+            border-color:  #02410b;
         }
     }
 
@@ -172,7 +172,7 @@
                 width: 100%;
                 margin: 12px auto 0;
                 padding: 4px 10px;
-                color:#0275D8 ;
+                color:#037313;
                 font-size: 14px;
                 border-radius: 4px;
             }
