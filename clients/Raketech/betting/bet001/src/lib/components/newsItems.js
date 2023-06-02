@@ -9,7 +9,7 @@ const newsItems = (id, newsFeed) => {
         <div class="${id}__newsitems-wrapper">
             ${newsFeed.map((item) => newsItem(id, item)).join('\n')}
         </div>
-        <a href="/artikler" class="${id}__learnmore seeallnews">Fler nyheter</a>
+        <a href="/nyheter" class="${id}__learnmore seeallnews">Fler nyheter</a>
     </div>
     `;
 

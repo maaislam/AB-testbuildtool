@@ -43,6 +43,8 @@ export default () => {
       const clickedFromCarousel =
         target.closest(`.${ID}__bookmakercards`) && VARIATION !== 'control';
       gaTracking(`${clickedFromCarousel ? 'Carousel' : ''} ${getOperatorFromUrl(href)} cta Click`);
+    } else if (target.closest('a[href*="/bonus"]')) {
+      gaTracking('All bonus cta Click');
     }
   });
 

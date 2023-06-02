@@ -7,7 +7,7 @@ const bookmakerCards = (id, carouselData, orientation = 'column') => {
             <h2 class="card-title">Populära spelbolag 2023</h2>
             ${
               orientation === 'column'
-                ? `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Alla bonusar</a>`
+                ? `<a href="/bonus" class="${id}__learnmore desktop-show">Alla bonusar</a>`
                 : ''
             }
         </div>
@@ -26,11 +26,11 @@ const bookmakerCards = (id, carouselData, orientation = 'column') => {
         <div class="${id}__disclaimer desktop-show">
             *Innehåller reklamlänk | 18+ år, spela ansvarsfullt, <a target="_blank" rel="nofollow" href="https://stodlinjen.se/#!/">stodlinjen.se</a>, <a target="_blank" rel="nofollow" href="https://www.spelpaus.se/">spelpaus.se</a>. 
         </div>
-        <a href="/bookmakere/bonus" class="${id}__learnmore desktop-hide">Alla bonusar</a>
+        <a href="/bonus" class="${id}__learnmore desktop-hide">Alla bonusar</a>
         ${
           orientation === 'column'
             ? ''
-            : `<a href="/bookmakere/bonus" class="${id}__learnmore desktop-show">Alla bonusar</a>`
+            : `<a href="/bonus" class="${id}__learnmore desktop-show">Alla bonusar</a>`
         }
     </div>
     `;

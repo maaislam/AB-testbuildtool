@@ -1,7 +1,7 @@
 export const casinoData = [
   {
     name: 'Mr Vegas',
-    details: '100% i välkomstbonus upp till 2000SEK',
+    offers: '100% i välkomstbonus upp till 2000SEK',
     btnText: 'BESÖK CASINOT',
     btnLink: '/',
     rating: 4,
@@ -14,7 +14,7 @@ export const casinoData = [
   },
   {
     name: 'Mr Vegas',
-    details: '100% i välkomstbonus upp till 2000SEK',
+    offers: '100% i välkomstbonus upp till 2000SEK',
     btnText: 'BESÖK CASINOT',
     btnLink: '/',
     rating: 4,
@@ -27,7 +27,7 @@ export const casinoData = [
   },
   {
     name: 'Mr Vegas',
-    details: '100% i välkomstbonus upp till 2000SEK',
+    offers: '100% i välkomstbonus upp till 2000SEK',
     btnText: 'BESÖK CASINOT',
     btnLink: '/',
     rating: 4,
@@ -40,7 +40,7 @@ export const casinoData = [
   },
   {
     name: 'Mr Vegas',
-    details: '100% i välkomstbonus upp till 2000SEK',
+    offers: '100% i välkomstbonus upp till 2000SEK',
     btnText: 'BESÖK CASINOT',
     btnLink: '/',
     rating: 4,
@@ -53,7 +53,7 @@ export const casinoData = [
   },
   {
     name: 'Mr Vegas',
-    details: '100% i välkomstbonus upp till 2000SEK',
+    offers: '100% i välkomstbonus upp till 2000SEK',
     btnText: 'BESÖK CASINOT',
     btnLink: '/',
     rating: 4,
@@ -66,7 +66,7 @@ export const casinoData = [
   },
   {
     name: 'Mr Vegas',
-    details: '100% i välkomstbonus upp till 2000SEK',
+    offers: '100% i välkomstbonus upp till 2000SEK',
     btnText: 'BESÖK CASINOT',
     btnLink: '/',
     rating: 4,
@@ -79,7 +79,7 @@ export const casinoData = [
   },
   {
     name: 'Mr Vegas',
-    details: '100% i välkomstbonus upp till 2000SEK',
+    offers: '100% i välkomstbonus upp till 2000SEK',
     btnText: 'BESÖK CASINOT',
     btnLink: '/',
     rating: 4,
@@ -92,7 +92,7 @@ export const casinoData = [
   },
   {
     name: 'Mr Vegas',
-    details: '100% i välkomstbonus upp till 2000SEK',
+    offers: '100% i välkomstbonus upp till 2000SEK',
     btnText: 'BESÖK CASINOT',
     btnLink: '/',
     rating: 4,
@@ -105,7 +105,7 @@ export const casinoData = [
   },
   {
     name: 'Mr Vegas',
-    details: '100% i välkomstbonus upp till 2000SEK',
+    offers: '100% i välkomstbonus upp till 2000SEK',
     btnText: 'BESÖK CASINOT',
     btnLink: '/',
     rating: 4,

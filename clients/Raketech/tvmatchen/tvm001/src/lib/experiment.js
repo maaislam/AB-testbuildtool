@@ -12,6 +12,10 @@ const init = () => {
   //collect each row data and place new DOM
 
   tipRows.forEach((tipRow) => {
+    //const liveScoreElem = tipRow.querySelector('.match-detail .match-livescore');
+    //const score = liveScoreElem ? liveScoreElem.innerText : '';
+    //console.log('🚀score:', score, liveScoreElem);
+
     const viewOptions = tipRow.querySelectorAll('.match-channels li');
     const viewOptionsData = [...viewOptions].map((item, i) => {
       const isBettingLink = item.querySelector('img').src.includes('liveodds') ? 'betting' : '';
@@ -24,7 +28,9 @@ const init = () => {
       const imageElem = item.querySelector('img');
       const imageLink = imageElem.src;
       const imageAlt = imageElem.alt;
-      const optionLink = item.querySelector('a')?.href;
+      const optionLink = item.querySelector('a')
+        ? item.querySelector('a').href
+        : tipRow.querySelector('a').href;
       const viewType = isTvLink || isStreamLink || isBettingLink;
 
       viewOptions[i].setAttribute('data-viewtype', viewType);
@@ -60,7 +66,7 @@ export default () => {
   //add tracking
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    console.log('target:', target);
+    //console.log('target:', target);
 
     if (target.closest('[data-channelname]')) {
       const parentElem = target.closest('li') || target.closest('a');

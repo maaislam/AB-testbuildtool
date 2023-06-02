@@ -123,6 +123,8 @@ const initTipsStyles = () => {
 
     [...userTips, ...expertTips].forEach((expertTip) => {
       const SINGLE_LINE_HEIGHT = 45;
+      const linkElem = expertTip.querySelector('a.pick-odds');
+      if (!linkElem) return;
       const operatorLink = expertTip.querySelector('a.pick-odds').getAttribute('href');
       const operatorName = expertTip.querySelector('a.pick-odds').getAttribute('data-ga-label');
       const pickOdds = expertTip.querySelector('.pick-odds');

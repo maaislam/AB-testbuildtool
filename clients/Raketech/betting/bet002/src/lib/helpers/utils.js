@@ -42,9 +42,6 @@ export const addCssToPage = (href, id, classes) => {
   document.head.appendChild(c);
 };
 
-/**
- * Helper append JS to page
- */
 export const addJsToPage = (src, id, cb, classes) => {
   if (document.querySelector(`#${id}`)) {
     return;

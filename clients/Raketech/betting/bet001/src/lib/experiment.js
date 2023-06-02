@@ -1,4 +1,5 @@
 /*eslint-disable object-curly-newline */
+
 import bonusCards from './components/bonusCards';
 import bookmakerCard from './components/bookmakerCard';
 
@@ -23,22 +24,27 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 const getBoostedAticle = () => {
-  const bostedArticles = document.querySelectorAll('.first-level .article-image');
-  return [...bostedArticles].map((article) => {
-    const imageSrc = article.querySelector('img').src;
-    const linkElem = article.querySelector('a[data-ga-label]');
-    const btnLink = linkElem.href;
-    const title = article.querySelector('.title').innerText;
-    const bodyText = article.querySelector('.teaser').innerText;
-    const btnText = linkElem.dataset.gaLabel;
-    return {
-      imageSrc,
-      title,
-      bodyText,
-      btnLink,
-      btnText
-    };
-  });
+  const bostedArticles = document.querySelectorAll('.article-image');
+  return [...bostedArticles]
+    .map((article) => {
+      const terms = article.querySelector('.bb-age-limit');
+      if (!terms) return '';
+      const imageSrc = article.querySelector('img').src;
+      const linkElem = article.querySelector('a[data-ga-label]');
+      const btnLink = linkElem.href;
+      const title = article.querySelector('.title').innerText;
+      const bodyText = article.querySelector('.teaser').innerText;
+      const btnText = linkElem.dataset.gaLabel;
+
+      return {
+        imageSrc,
+        title,
+        bodyText,
+        btnLink,
+        btnText
+      };
+    })
+    .filter(Boolean);
 };
 
 const init = () => {
@@ -138,8 +144,10 @@ const initTipsStyles = () => {
 
     [...userTips, ...expertTips].forEach((expertTip) => {
       const SINGLE_LINE_HEIGHT = 45;
-      const operatorLink = expertTip.querySelector('a.pick-odds').getAttribute('href');
-      const operatorName = expertTip.querySelector('a.pick-odds').getAttribute('data-ga-label');
+      const linkElem = expertTip.querySelector('a.pick-odds');
+      if (!linkElem) return;
+      const operatorLink = linkElem.getAttribute('href');
+      const operatorName = linkElem.getAttribute('data-ga-label');
       const pickOdds = expertTip.querySelector('.pick-odds');
       const expTipHeight = expertTip.offsetHeight;
       const classTOAdjust = expTipHeight > SINGLE_LINE_HEIGHT ? 'adjust-star' : 'no-adjust-star';

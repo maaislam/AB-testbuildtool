@@ -6,8 +6,10 @@ const bonusCards = (id, carouselData) => {
         <div class="${id}__toprow">
             <h1>Här får du allt om betting – speltips, guider och bra bonusar!</h1>
         </div>
-        <div class="${id}__bonuscard-swiper swiper-hero" style="display:none;">
-            <div class="${id}__bonuscards-swrapper swiper-wrapper">
+        <div class="${id}__bonuscard-swiper swiper-hero ${
+    carouselData.length === 0 ? `${id}__hide` : ''
+  }">
+            <div class="${id}__bonuscards-swrapper swiper-wrapper" >
                  ${carouselData.map((carousel) => bonusCard(id, carousel)).join('\n')}
             </div>
             <div class="swiper-pagination"></div>     

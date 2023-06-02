@@ -5,725 +5,711 @@
 @import '../src/lib/shared/shared';
 
 .#{$id} {
+  .bb-age-limit {
+    margin-bottom: 14px;
+    color: #000;
+    font-family: 'Titillium Web';
+    font-style: italic;
+    font-size: 11px;
+    background: #e4e4e4 !important;
+    border: 1px solid #e4e4e4;
+    border-radius: 0 0 4px 4px;
 
-
-    .bb-age-limit{
-        margin-bottom: 14px;
-        color: #000;
-        font-family: 'Titillium Web';
-        font-style: italic;
-        font-size: 11px;
-        background: #E4E4E4 !important;
-        border: 1px solid #E4E4E4;
-        border-radius: 0 0 4px 4px;
-
-        &>div:first-child{
-
-            @include media-query(sm){
-                flex: 0 0 90%;
-            }
-        }
+    & > div:first-child {
+      @include media-query(sm) {
+        flex: 0 0 90%;
+      }
     }
+  }
 
-    .domain-flag-container{
-        width: 90px;
-        height: 90px;
-        @include media-query(sm){
-            width: 90px;
-            height: 90px;
-        }
+  .domain-flag-container {
+    width: 90px;
+    height: 90px;
+    @include media-query(sm) {
+      width: 90px;
+      height: 90px;
     }
+  }
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-    img{
-        max-width: 100%;
-        height: auto;
-    }
+  &__hide {
+    display: none;
+  }
 
-    &__hide {
+  .desktop-show {
+    display: block;
+
+    &.inline {
+      display: inline-block;
+      @include media-query(sm) {
         display: none;
+      }
+    }
+    @include media-query(sm) {
+      display: none;
+    }
+  }
+
+  .desktop-hide {
+    display: none;
+
+    @include media-query(sm) {
+      display: block;
+    }
+  }
+
+  .bonus-carousel,
+  .current-picks-widget {
+    @include media-query(sm) {
+      margin-bottom: 0;
+    }
+  }
+  .current-picks-widget {
+    padding-bottom: 16px;
+  }
+  .bm-carousel,
+  .current-picks-widget,
+  .newsitemmargin {
+    @include media-query(sm) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__bluebtn {
+    display: block;
+    width: max-content;
+    padding: 6px 22px;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #037313;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgba(0 0 0 / 25%);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none !important;
+      background-color: #02410b;
+    }
+  }
+
+  &__disclaimer {
+    margin: 12px auto;
+    color: #000;
+    font-size: 12px;
+    font-family: 'Roboto';
+    line-height: 1.2;
+
+    @include media-query(sm) {
+      margin-top: 6px;
+    }
+  }
+
+  &__learnmore {
+    display: block;
+    width: max-content;
+    padding: 3px 6px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    color: #0275d8;
+    border: 1px solid #006bdb;
+
+    &:hover {
+      color: #fff !important;
+      text-decoration: none !important;
+      background-color: #0b4066;
+      border-color: #0b4066;
+    }
+  }
+
+  .#{$id}__toprow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    h2.card-title {
+      padding-left: 0;
+    }
+  }
+
+  &__bonuscards,
+  &__bookmakercards {
+    padding-bottom: 30px;
+    overflow: hidden;
+    font-family: 'Titillium Web';
+    background-color: #fff h1 {
+      font-size: 24px;
+      line-height: 1.2;
     }
 
-    .desktop-show{
-        display: block;
-
-        &.inline{
-            display: inline-block;
-            @include media-query(sm){
-                display: none;
-            }
-        }
-        @include media-query(sm){
-            display: none;
-        }
+    .swiper-pagination {
+      bottom: -16px !important;
     }
 
-    .desktop-hide{
-        display: none;
+    .swiper-button-prev {
+      top: auto;
+      bottom: -3px;
+      left: calc(50% - 50px);
+      transform: translateX(-50%);
 
-        @include media-query(sm){
-            display: block;
-        }
+      &::after {
+        font-size: 10px;
+      }
     }
 
-    .bonus-carousel, .current-picks-widget{
-        @include media-query(sm){
-            margin-bottom: 0;
-            
-        }
+    .swiper-button-next {
+      top: auto;
+      bottom: -3px;
+      left: calc(50% + 50px);
+      transform: translateX(-50%);
+
+      &::after {
+        font-size: 10px;
+      }
     }
-    .current-picks-widget{
-        padding-bottom: 16px;
+  }
+
+  &__bonuscards {
+    padding-bottom: 5.6px;
+
+    &-swrapper {
+      margin-top: 20px;
     }
-    .bm-carousel, .current-picks-widget, .newsitemmargin{
-        @include media-query(sm){
-            margin-top: 0;
-            margin-bottom: 0;
-        }
+    @include media-query(sm) {
+      // padding-bottom: 10px;
+      margin-bottom: 0;
+      background-color: #fff;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
     }
-
-
-    &__bluebtn{
-        display: block;
-        width: max-content;
-        padding: 6px 22px;
-        color: #fff !important;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 1.2;
-        text-align: center;
-        background-color: #037313;
-        border-radius: 4px;
-        box-shadow: 0 2px 2px rgba(0 0 0 / 25%);
-        cursor: pointer;
-
-        &:hover{
-            text-decoration: none !important;
-            background-color: #02410b;
-        }
+    .#{$id}__toprow {
+      //justify-content: center;
+      display: block;
+      text-align: left;
+      @include media-query(sm) {
+        //display: none;
+      }
     }
+  }
 
-    &__disclaimer{
-        margin: 12px auto;
-        color: #000;
-        font-size: 12px;
-        font-family: 'Roboto';
-        line-height: 1.2;
+  &__bonuscard {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    min-height: 300px;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    border-radius: 4px;
 
-        @include media-query(sm){
-            margin-top: 6px;
-        }
-    }
-
-    &__learnmore{
-        display: block;
-        width: max-content;
-        padding: 3px 6px;
-        font-size: 12px;
-        line-height: 18px;
-        text-align: center;
-        color:#0275D8;
-        border: 1px solid #006BDB;
-
-        &:hover{
-            color: #fff !important;
-            text-decoration: none !important;
-            background-color: #0b4066;
-            border-color: #0b4066;
-        }
+    &:hover {
+      text-decoration: none !important;
     }
 
-    .#{$id}__toprow{
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        h2.card-title{
-            padding-left: 0;
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+      width: 100%;
+      padding: 20px 15px;
+      background: linear-gradient(180deg, rgba(0 0 0 / 0%) 0%, rgba(0 0 0 / 89%) 45%);
+      border-radius: 0 0 4px 4px;
+
+      & > *:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      .logo {
+        width: 70px;
+
+        img {
+          border-radius: 4px;
         }
-    }
+      }
 
-    &__bonuscards, &__bookmakercards{
-        padding-bottom: 30px;
-        overflow: hidden;
-        font-family: 'Titillium Web';
-        background-color: #fff
-        
-        
-
-        h1{
-            font-size: 24px;
-            line-height: 1.2;
-        }
-
-        .swiper-pagination{
-            bottom: 6px;
-        }
-        
-
-        .swiper-button-prev{
-            top: auto;
-            bottom: -3px;
-            left: calc(50% - 50px);
-            transform: translateX(-50%);
-
-            &::after{
-                font-size: 10px;
-            }
-        }
-
-        .swiper-button-next{
-            top: auto;
-            bottom: -3px;
-            left: calc(50% + 50px);
-            transform: translateX(-50%);
-            
-            &::after{
-                font-size: 10px;
-            }
-        }
-    }
-
-    &__bonuscards{
-       padding-bottom: 5.6px;
-        @include media-query(sm){
-           // padding-bottom: 10px;
-            margin-bottom: 0;
-            background-color: #fff;
-            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-        }
-        .#{$id}__toprow{
-            //justify-content: center;
-            @include media-query(sm){
-                //display: none;
-            }
-        }
-    }
-
-    &__bonuscard{
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-        min-height: 300px;
+      .op-name {
+        margin-bottom: 8px;
         color: #fff;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: contain;
-        border-radius: 4px ;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 120%;
+      }
+      .op-conetnt {
+        margin-bottom: 12px;
+        color: #fff;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+      }
+
+      .#{$id}__disclaimer {
+        margin-bottom: 0;
+        color: #fff;
+        font-family: 'Titillium Web';
+        font-size: 11px;
+
+        a {
+          color: #fff;
+        }
+      }
+
+      .tc-wrapper {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+
+        .tc-content {
+          height: 16px;
+          overflow: hidden;
+          font-size: 11px;
+          color: #fff;
+          a {
+            color: #fff;
+          }
+        }
+
+        & > span {
+          display: flex;
+          cursor: pointer;
+        }
+
+        &.open {
+          align-items: flex-start;
+          .tc-content {
+            height: auto;
+          }
+
+          & > span {
+            transform: scale(-1);
+          }
+        }
+      }
+    }
+  }
+
+  &__bookmakercards {
+    padding-top: 20px;
+    padding-bottom: 12px;
+    background-color: #fff;
+
+    & + .ov-flow-hidden {
+      display: none;
+    }
+
+    .swiper-pagination {
+      display: none;
+    }
+
+    a {
+      display: block;
+    }
+
+    &.vertical {
+      .swiper-vertical {
+        height: 450px;
+      }
+
+      .#{$id}__learnmore {
+        width: 100%;
+        margin: 12px auto 0;
+        padding: 4px 10px;
+        color: #0275d8;
+        font-size: 14px;
+        border-radius: 4px;
+      }
+    }
+
+    .#{$id}__learnmore {
+      @include media-query(sm) {
+        width: 100%;
+        margin: 12px auto 0;
+        padding: 4px 10px;
+        font-size: 14px;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__bookmakercard {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Titillium Web';
+    background: #f8f8f8;
+    border-radius: 4px 4px 0 0;
+
+    .operator-name {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      color: #363535;
+    }
+    .operator-subtitle {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #037313;
+    }
+
+    .#{$id}__bluebtn {
+      width: 100%;
+      max-width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 7px 16px;
+      font-size: 14px;
+      line-height: 1.2;
+
+      span {
+        margin-right: 8px;
+      }
+
+      @include media-query(sm) {
+        max-width: 250px;
+        margin-left: 0;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px 0 0 0;
+    }
+
+    &-btnrow {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px;
+
+      &:hover {
+        color: initial;
+        text-decoration: none;
+      }
+    }
+
+    &.vertical {
+      display: flex;
+      align-items: center;
+      @include media-query(sm) {
+        flex-direction: column;
+      }
+
+      & > a {
+        max-width: 108px;
+        margin-right: 0;
+        margin-left: 0;
+        @include media-query(sm) {
+          width: 100%;
+          max-width: 174px;
+          margin: 0 auto;
+        }
+      }
+
+      img {
+        border-radius: 4px;
+      }
+
+      .#{$id}__bookmakercard-btnrow {
+        flex-grow: 2;
+        @include media-query(sm) {
+          width: 100%;
+        }
+      }
+
+      .#{$id}__bluebtn {
+        font-size: 16px;
+      }
+
+      .row-bookmakercard {
+        color: #363535;
+        font-weight: 700;
+        font-size: 16px;
+        font-family: 'Roboto';
+        line-height: 1.3;
 
         &:hover {
-            text-decoration: none !important;
+          text-decoration: none;
         }
-        
-        &-content{
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            align-items: flex-start;
-            width: 100%;
-            padding: 20px 15px;
-            background: linear-gradient(180deg, rgba(0 0 0 / 0%) 0%, rgba(0 0 0 / 89%) 45%);
-            border-radius: 0 0 4px 4px;
+      }
+    }
+  }
 
-            &>*:not(:last-child){
-                margin-right: 8px;
-            }
-
-            .logo{
-                width: 70px;
-                
-
-                img{
-                    border-radius: 4px ;
-                }
-            }
-
-            .op-name{
-                margin-bottom: 8px;
-                color: #fff;
-                font-weight: 700;
-                font-size: 18px;
-                line-height: 120%;
-            }
-            .op-conetnt{
-                margin-bottom: 12px;
-                color: #fff;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 120%; 
-            }
-
-            .tc-wrapper{
-                display: flex;
-                align-items: center;
-                margin-top: 8px;
-                
-                .tc-content{
-                    height: 16px;
-                    overflow: hidden;
-                    font-size: 11px;
-                    color: #fff;
-                    a{
-                        color: #fff;
-                    }
-                }
-
-                &>span{
-                    display: flex;
-                    cursor: pointer;
-                }
-
-                &.open{
-                    align-items: flex-start;
-                    .tc-content{
-                        height: auto;
-                    }
-
-                    & >span{
-                        transform: scale(-1);
-                    }
-                }
-            }
-
-           
-        }
+  &__newsitems {
+    .#{$id}__learnmore {
+      width: 100%;
+      margin: 12px auto 0;
+      padding: 4px 10px;
+      font-size: 14px;
+      border-radius: 4px;
     }
 
+    .#{$id}__newsitems-wrapper > a:nth-child(n + 6) {
+      @include media-query(sm) {
+        display: none;
+      }
+    }
+    .#{$id}__newsitems-wrapper > a:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
 
-    &__bookmakercards{
-        padding-top: 20px;
-        padding-bottom: 12px;
-        background-color: #fff;
+  &__newsitem {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 
-        & + .ov-flow-hidden{
-            display: none;
-        }
-
-        .swiper-pagination{
-            display: none;
-        }
-
-        a{
-            display: block;
-        }
-
-       
-        &.vertical{
-            .swiper-vertical{
-                height: 450px;
-            }
-
-            .#{$id}__learnmore{
-                width: 100%;
-                margin: 12px auto 0;
-                padding: 4px 10px;
-                color:#0275D8 ;
-                font-size: 14px;
-                border-radius: 4px;
-            }
-        }
-
-        .#{$id}__learnmore{
-
-            @include media-query(sm){
-                width: 100%;
-                margin: 12px auto 0;
-                padding: 4px 10px;
-                font-size: 14px;
-                border-radius: 4px;
-            }
-        }
+    &:hover {
+      text-decoration: none;
     }
 
-   
-
-    &__bookmakercard{
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        width: 100%;
-        font-family: 'Titillium Web';
-        background:  #F8F8F8;
-        border-radius: 4px 4px 0 0;
-
-        .operator-name{
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 19px;
-            color: #363535;
-        }
-        .operator-subtitle{
-            font-weight: 700;
-            font-size: 14px;
-            line-height: 1.2;
-            color: #037313;
-        }
-
-       .#{$id}__bluebtn{
-            width: 100%;
-            max-width: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            padding: 7px 16px;
-            font-size: 14px;
-            line-height: 1.2;
-
-            span{
-                margin-right: 8px;
-            }
-
-            @include media-query(sm){
-                max-width: 250px;
-                margin-left: 0;
-            }
-        }
-
-
-        img{
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px 0 0 0;
-        }
-      
-
-        &-btnrow{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            padding: 8px;
-            
-            &:hover{
-                color: initial;
-                text-decoration: none;
-            }
-
-           
-        }
-
-        &.vertical{
-            display: flex;
-            align-items: center;
-            @include media-query(sm){
-                flex-direction: column;
-            }
-
-            &>a{
-                max-width: 108px;
-                margin-right: 0;
-                margin-left: 0;
-                @include media-query(sm){
-                    width: 100%;
-                    max-width: 174px;
-                    margin: 0 auto;
-                }
-            }
-
-            img{
-                border-radius: 4px; 
-            }
-
-            .#{$id}__bookmakercard-btnrow{
-                flex-grow: 2;
-                @include media-query(sm){
-                    width: 100%;
-                }
-            }
-
-            .#{$id}__bluebtn{
-                font-size: 16px;
-            }
-
-            .row-bookmakercard{
-                color: #363535;
-                font-weight: 700;
-                font-size: 16px;
-                font-family: 'Roboto';
-                line-height: 1.3;
-
-                &:hover{
-                    text-decoration: none;
-                }
-            }
-        }
-
-    }
-    
-
-    &__newsitems{
-
-        .#{$id}__learnmore{
-            width: 100%;
-            margin: 12px auto 0;
-            padding: 4px 10px;
-            font-size: 14px;
-            border-radius: 4px;
-        }
-
-
-        .#{$id}__newsitems-wrapper > a:nth-child(n+6){
-            @include media-query(sm){
-                display: none;
-            }
-        }
-        .#{$id}__newsitems-wrapper > a:not(:last-child){
-            margin-bottom: 10px;
-        }
-
+    &-image {
+      width: 100%;
+      max-width: 80px;
+      height: 70px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      @include media-query(sm) {
+        max-width: 70px;
+        height: 50px;
+      }
     }
 
-    &__newsitem{
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        
-        &:hover{
-            text-decoration: none;
-        }
-        
-        &-image{
-            width: 100%;
-            max-width: 80px;
-            height: 70px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            @include media-query(sm){
-                max-width: 70px;
-                height: 50px;
-            }
-        }
+    &-content {
+      width: 70%;
+      font-family: 'Titillium Web';
 
-        &-content{
-            width: 70%;
-            font-family: 'Titillium Web';
+      .title {
+        color: #222;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.3;
+      }
 
-            .title{
-                color: #222;
-                font-weight: 700;
-                font-size: 14px;
-                line-height: 1.3;
-            }
+      .comment {
+        margin-top: 6px;
+        color: #6e6e6e;
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 11px;
+      }
+    }
+  }
 
-            .comment{
-                margin-top: 6px;
-                color: #6E6E6E; 
-                font-weight: 600;
-                font-size: 11px;
-                line-height: 11px;
-            }
+  [id*='all_current_'] {
+    & > div > a {
+      color: #0275d8 !important;
+      background-color: #fff;
+      border: 1px solid #0275d8;
+      border-radius: 4px !important;
+
+      &:hover {
+        color: #fff !important;
+        text-decoration: none !important;
+        background-color: #0b4066;
+        border-color: #0b4066;
+      }
+    }
+  }
+
+  &__tipstable {
+    table-layout: auto;
+
+    tr {
+      background-color: #fff;
+      border-color: #ededed;
+      &.adjust-star {
+        .star-icon {
+          transform: translateY(10px);
+          @include media-query(sm) {
+            transform: translateY(0);
+          }
         }
+      }
+
+      &.day-header {
+        td {
+          padding: 0.4286rem 0.2857rem !important;
+        }
+      }
     }
 
-    [id*="all_current_"]{
-        &>div>a{
-            color: #0275D8 !important;
-            background-color: #fff;
-            border: 1px solid #0275D8;
-            border-radius: 4px !important;
-
-            &:hover{
-                color: #fff !important;
-                text-decoration: none !important;
-                background-color: #0b4066;
-                border-color: #0b4066;
-            }
-        }
-    }
-
-    &__tipstable{
-        table-layout: auto;
-
-        tr{
-            background-color: #fff;
-            border-color:  #EDEDED;   
-            &.adjust-star{
-                .star-icon{
-                    transform: translateY(10px);
-                    @include media-query(sm){
-                        transform: translateY(0);
-                    }
-                }
-            }
-
-            &.day-header{
-                td{
-                    padding: .4286rem .2857rem !important;
-                }
-            }
-        }
-
-        td{
-            @include media-query(sm){
-                padding-top: 0 !important;
-                padding-bottom: 0 !important;
-            }
-            
-            
-        }
-
-        td.#{$id}__oplink{
-            @include media-query(sm){
-                transform: scale(0.9);
-            }
-            a{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                @include media-query(sm){
-                    display: block;
-                }
-            }
-            span{
-                font-size: 14px;
-            }
-            @include media-query(sm){
-                width: 22px;
-                color: #fff;
-                text-align: center;
-                background-color:#093;
-                border-radius: 4px;
-
-               a{
-                   margin: 0 auto;
-               } 
-            }
-
-            
-        }
-        
-        .pick-bottom-row-cont{
-            
-            @include media-query(sm){
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                gap: 0;
-                align-items: center;
-                justify-content: center;
-                width: 50%;
-                height: 60px;
-            }
-
-           &>a{
-            @include media-query(sm){
-                margin-left: 12px;
-            }
-           }
-
-           &>*{
-            @include media-query(sm){
-                display: block;
-            }
-           }
-        }
-
-        .date-cell{
-            font-weight: 400 !important;
-            font-size: 14px !important;
-            font-family: 'Titillium Web' !important;
-        }
-
-        .list-link{
-            color: #0275D8 !important;
-            font-weight: 400 !important;
-            font-size: 14px !important;
-            font-family: 'Titillium Web' !important;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-          
-            @include media-query(sm){
-                display: block;
-            }
-        }
-
-        .#{$id}__bluebtn{
-            background-color:#093 ;
-        }
-
-
-        .#{$id}__pickodds .pick-odds{
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 14px;
-            text-align: center;
-            background: #fff !important;
-            border: none !important;
-            border-radius: 4px;
-            
-            
-            .odds{
-                margin-left: 0;
-                line-height: 24px;
-                background-color: #F7882F;
-                border-radius: 0 4px 4px 0;
-            }
-
-            .operator{
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                width: 54px;
-                height: 32px;
-                background-color: #fff;
-                
-                span{
-                    border-radius: 4px 0 0 4px;
-                }
-            }
-
-            &+span{
-                @include media-query(sm){
-                    float: right;
-                }
-            }
-        }
-
-        .star-icon, .icon-star10{
-            & span, &{
-                display: block;
-                width: 100%;
-                max-width: 30px;
-                margin-left: auto;
-                transform: translateY(2px);
-                    @include media-query(sm){
-                        transform: translateY(0);
-                    }
-               
-
-                i:first-child{
-                    &::before{
-                        color: #F7882F !important;
-                        font-size: 26px;
-                    }
-                }
-
-                i:nth-child(2){
-                    &::before{
-                        font-weight: 600;
-                        font-size: 25px;
-                    }
-                }
-            }
-        }
-    }
-
-
-    &__operatorrow{
-        border: none !important;
+    td {
+      @include media-query(sm) {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
-        
-        &>div:not(:last-child){
-            display: none !important;
-        }
-        
-        // .#{$id}__operatorLogo{
-        //     width: 70%;
-        //     padding: 8px;
-        // }
+      }
     }
+
+    td.#{$id}__oplink {
+      @include media-query(sm) {
+        transform: scale(0.9);
+      }
+      a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include media-query(sm) {
+          display: block;
+        }
+      }
+      span {
+        font-size: 14px;
+      }
+      @include media-query(sm) {
+        width: 22px;
+        color: #fff;
+        text-align: center;
+        background-color: #093;
+        border-radius: 4px;
+
+        a {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .pick-bottom-row-cont {
+      @include media-query(sm) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 60px;
+      }
+
+      & > a {
+        @include media-query(sm) {
+          margin-left: 12px;
+        }
+      }
+
+      & > * {
+        @include media-query(sm) {
+          display: block;
+        }
+      }
+    }
+
+    .date-cell {
+      font-weight: 400 !important;
+      font-size: 14px !important;
+      font-family: 'Titillium Web' !important;
+    }
+
+    .list-link {
+      color: #0275d8 !important;
+      font-weight: 400 !important;
+      font-size: 14px !important;
+      font-family: 'Titillium Web' !important;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+
+      @include media-query(sm) {
+        display: block;
+      }
+    }
+
+    .#{$id}__bluebtn {
+      background-color: #093;
+    }
+
+    .#{$id}__pickodds .pick-odds {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      text-align: center;
+      background: #fff !important;
+      border: none !important;
+      border-radius: 4px;
+
+      .odds {
+        margin-left: 0;
+        line-height: 24px;
+        background-color: #f7882f;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .operator {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 54px;
+        height: 32px;
+        background-color: #fff;
+
+        span {
+          border-radius: 4px 0 0 4px;
+        }
+      }
+
+      & + span {
+        @include media-query(sm) {
+          float: right;
+        }
+      }
+    }
+
+    .star-icon,
+    .icon-star10 {
+      & span,
+      & {
+        display: block;
+        width: 100%;
+        max-width: 30px;
+        margin-left: auto;
+        transform: translateY(2px);
+        @include media-query(sm) {
+          transform: translateY(0);
+        }
+
+        i:first-child {
+          &::before {
+            color: #f7882f !important;
+            font-size: 26px;
+          }
+        }
+
+        i:nth-child(2) {
+          &::before {
+            font-weight: 600;
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  &__operatorrow {
+    border: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    & > div:not(:last-child) {
+      display: none !important;
+    }
+
+    // .#{$id}__operatorLogo{
+    //     width: 70%;
+    //     padding: 8px;
+    // }
+  }
 }

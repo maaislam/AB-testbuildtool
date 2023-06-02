@@ -1,13 +1,11 @@
-import { pollerLite } from '../../../../../../../globalUtil/util';
+import { pollerLite } from '../helpers/utils';
+import shared from '../shared/shared';
 
-const gaTracking = (label, action = 'click') => {
-  pollerLite([() => typeof window.ga.getAll === 'function'], () => {
-    window.ga.getAll().forEach((tracker) => {
-      tracker.send('event', {
-        eventCategory: 'funnelenvy',
-        eventAction: action,
-        eventLabel: label
-      });
+const gaTracking = (label) => {
+  pollerLite([() => typeof window.gtag === 'function'], () => {
+    window.gtag('event', 'Experiment SC Redesign 004', {
+      event_label: `variation: ${shared.VARIATION} | ${label}`,
+      event_category: 'Desktop Only Test'
     });
   });
 };

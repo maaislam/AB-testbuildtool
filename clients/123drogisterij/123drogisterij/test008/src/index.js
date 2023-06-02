@@ -7,9 +7,7 @@ if (!ieChecks) {
   pollerLite(
     [
       'body.catalog-product-view',
-      () => {
-        return document.querySelectorAll('body .custom-child-upsel-checkbox').length > 1;
-      }
+      () => document.querySelectorAll('body .custom-child-upsel-checkbox').length > 1
     ],
     activate
   );
