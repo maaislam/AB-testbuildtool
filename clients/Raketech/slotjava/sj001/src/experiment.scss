@@ -1,0 +1,237 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .test_001 .game__controls #refillButton {
+    display: none;
+  }
+
+  .blur_bg {
+    background: black;
+    opacity: 0.3;
+    overflow: hidden;
+  }
+
+  .test_001 .game__window {
+    position: relative;
+  }
+  .hide_content {
+    display: none !important;
+  }
+  .modal_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    overflow: hidden;
+  }
+
+  .first_pop_up {
+    max-width: 366px;
+    width: 100%;
+    height: 120px;
+    background: #222949;
+    border-radius: 5px;
+    padding: 12px;
+    margin: auto;
+    position: absolute;
+    z-index: 101;
+    top: 30%;
+    right: 0;
+    left: 0;
+  }
+
+  .pop_up_heading {
+    font-size: 20px;
+    line-height: 26px;
+    color: #ffffff;
+    font-weight: 600;
+    margin: auto;
+  }
+
+  .pop_up_sub_heading {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 21.28px;
+    margin: 6px auto;
+  }
+
+  .button_div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  .first_btn {
+    max-width: 150px;
+    width: 100%;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 15px;
+    cursor: pointer;
+    font-weight: 900;
+  }
+
+  .second_btn {
+    max-width: 200px;
+    width: 100%;
+    height: 40px;
+    background: #ff7556;
+    border-radius: 3px;
+    color: #6b1400;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #custom_modal_close {
+    color: #ffffff;
+  }
+  .second_popup {
+    max-width: 320px;
+    width: 100%;
+    background: #222949;
+    padding: 12px 12px 40px 12px;
+    border-radius: 5px;
+    margin: auto;
+    position: relative;
+  }
+  #casino_flag {
+    width: 20px;
+    height: 20px;
+  }
+  .top_content {
+    display: flex;
+    padding-bottom: 5px;
+  }
+
+  .top_content p {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    margin: auto;
+    text-transform: uppercase;
+  }
+  .content_top {
+    display: flex;
+    background: #fafafa;
+    border-radius: 5px 5px 0px 0px;
+    padding: 7px 5px;
+    align-items: center;
+  }
+  .casino-list__offer_text h4 {
+    color: #5c6ca3;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: auto 0;
+  }
+  .sub_heading_div {
+    display: flex;
+    flex-direction: column;
+  }
+  .sub_heading_div span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    margin: auto 0;
+    color: #212529;
+  }
+  .tnc_text_div {
+    background: #eeeeee;
+    border-radius: 0px 0px 5px 5px;
+    height: 24px;
+    display: flex;
+    margin-top: 3px;
+  }
+  .tnc_text_div p {
+    font-size: 9px;
+    text-align: center;
+    margin: auto;
+  }
+  .main_contents_wrapper {
+    margin-top: 6px;
+  }
+  .custom_popUP_btn {
+    background: #ff7556;
+    width: 74.42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    border-radius: 3px;
+    color: #6b1400;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 11px;
+  }
+  .casino-list__offer_text {
+    width: 60%;
+    margin-left: 10px;
+  }
+
+  .cancel_btn {
+    color: #8a8c96;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    margin: 10px auto;
+    justify-content: center;
+    display: flex;
+  }
+
+  .no_scroll {
+    overflow: hidden;
+  }
+
+  .second_popup .casino-list__logo-image {
+    object-fit: contain;
+  }
+
+  .second_popUp_overlay {
+    position: fixed;
+    display: flex;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+
+    z-index: 100;
+  }
+
+  @media screen and (max-width: 767px) {
+    .first_pop_up {
+      max-width: 90%;
+    }
+    .pop_up_sub_heading {
+      font-size: 15px;
+    }
+    .second_btn {
+      max-width: 175px;
+      font-size: 11px;
+    }
+    .first_btn {
+      font-size: 11px;
+    }
+  }
+}
