@@ -61,8 +61,6 @@ export const addJsToPage = (src, id, cb, classes) => {
   document.head.appendChild(s);
 };
 
-export const isMobile = () => window.matchMedia('(max-width: 600px)').matches;
-
 export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
   const target = document.querySelector(`${targetSelectorString}`);
 
@@ -98,4 +96,10 @@ export const getOperatorFromUrl = (url) => {
   }
 
   return text;
+};
+
+export const getStringBetween = (str, start, end) => {
+  const startIndex = str.indexOf(start) + start.length;
+  const endIndex = str.indexOf(end, startIndex);
+  return startIndex >= start.length && endIndex !== -1 ? str.substring(startIndex, endIndex) : '';
 };

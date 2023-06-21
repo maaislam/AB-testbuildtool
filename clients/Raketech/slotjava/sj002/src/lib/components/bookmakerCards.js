@@ -8,6 +8,8 @@ const bookmakerCards = (id, carouselData) => {
                 ${carouselData.map((carousel) => bookmakerCard(id, carousel)).join('\n')}
             </div>
             <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </div>
     `;
