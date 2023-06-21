@@ -1,11 +1,13 @@
 import modal from './components/modal';
+import modalContent from './components/modalContent';
 import qtyInput from './components/qtyInput';
 import getProductInfo from './helpers/getProductData';
+import { formatPrice } from './helpers/utils';
 import setup from './services/setup';
 
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup();
@@ -22,7 +24,10 @@ export default () => {
   //...
   const anchorPoints = document.querySelectorAll('.product-item-actions');
 
-  const fakeButton = `<button type="submit" title="kies uw voordeel" class="${ID}__openmodal">
+  const fakeButton = (
+    id,
+    sku
+  ) => `<button type="submit" title="kies uw voordeel" class="${id}__openmodal" data-sku="${sku}">
     <span><i class="fas fa-shopping-cart"></i>  kies uw voordeel</span>
   </button>`;
 
@@ -30,64 +35,75 @@ export default () => {
 
   anchorPoints.forEach((anchorPoint) => {
     if (anchorPoint.querySelector(`.${ID}__openmodal`)) return;
-    anchorPoint.insertAdjacentHTML('afterbegin', fakeButton);
-    //anchorPoint.querySelector('.action.tocart').insertAdjacentHTML('beforebegin', qtyInput(ID));
+    const sku = anchorPoint.querySelector('form').getAttribute('data-product-sku');
+
+    anchorPoint.insertAdjacentHTML('afterbegin', fakeButton(ID, sku));
+    anchorPoint
+      .querySelector('.action.tocart')
+      .insertAdjacentHTML('beforebegin', qtyInput(ID, sku));
   });
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    console.log('🚀target:', target);
+    //console.log('🚀target:', target);
 
     if (target.closest(`.${ID}__atc`)) {
       //get sku
-      const sku = target.closest('button').getAttribute('data-sku');
+      const modalForm = target.closest('.ppatc__popup-form');
+      const variantsWrapper = modalForm.querySelector(`.${ID}__variants`);
+
+      const sku = variantsWrapper.getAttribute('data-active-sku');
       const primaryForm = document.querySelector(`form[data-product-sku="${sku}"]`);
-      const primaryAtc = primaryForm.querySelector('.action.tocart');
-      const qty = target.closest('.ppatc__popup-form').querySelector(`.${ID}__offerqty`).innerText;
-      //place quantity
-      if (!primaryForm.querySelector(`.${ID}__fakeqty`)) {
-        primaryAtc.insertAdjacentHTML('beforebegin', qtyInput(ID, qty));
-      }
-      primaryForm.submit();
+      primaryForm.querySelector('button[type="submit"]').click();
       //submit form using js .submit()
     } else if (target.closest(`.${ID}__denyoffer`)) {
-      const sku = target
-        .closest('.ppatc__popup-form')
-        .querySelector(`.${ID}__atc`)
-        .getAttribute('data-sku');
-      const primaryForm = document.querySelector(`form[data-product-sku="${sku}"]`);
-      const primaryAtc = primaryForm.querySelector('.action.tocart');
-      primaryForm.querySelector(`.${ID}__fakeqty`)?.remove();
-      primaryAtc.click();
+      const modalForm = target.closest('.ppatc__popup-form');
+      const defaultLabel = modalForm.querySelector('label[data-quantity="1"]');
+      const modalSubmitBtn = modalForm.querySelector(`.${ID}__atc`);
+      defaultLabel.click();
+      modalSubmitBtn.click();
     } else if (target.closest(`.${ID}__openmodal`)) {
       const closestParent = target.closest('.product-item-info');
-      const prdImg = closestParent.querySelector('.product-image-photo').getAttribute('src');
-      const prodTitle = closestParent.querySelector('.product-item-link').innerText;
-      const prodPrice = closestParent.querySelector('.price').innerText;
-      const sku = closestParent.querySelector('[data-product-sku]').dataset.productSku;
 
       const prodUrl = closestParent?.querySelector('a')?.getAttribute('href');
       if (!prodUrl) return;
-      getProductInfo(prodUrl).then((radioVal) => {
-        console.log('test', radioVal);
-        if (radioVal > 1) {
+      getProductInfo(prodUrl).then((productsData) => {
+        //console.log('test', productsData);
+        if (productsData.variants.length > 1) {
           //update modal
-          const img = document.querySelector(`.${ID}__offerimg>i`);
-          const title = document.querySelector(`.${ID}__title`);
-          const price = document.querySelector(`.${ID}__offerprice`);
-          const qty = document.querySelector(`.${ID}__offerqty`);
-          const atc = document.querySelector(`.${ID}__atc`);
-          img.style.backgroundImage = `url(${prdImg})`;
-          title.innerText = prodTitle;
-          price.innerText = prodPrice;
-          qty.innerText = radioVal;
-          atc.setAttribute('data-sku', sku);
+          const { sku } = target.closest('button').dataset;
+
+          const modalInnerContent = document.querySelector('.ppatc__popup-items');
+          modalInnerContent.innerHTML = '';
+          modalInnerContent.insertAdjacentHTML('afterbegin', modalContent(ID, productsData, sku));
+          modalInnerContent.querySelector('label[data-quantity="1"]')?.click();
+          modalInnerContent.setAttribute('data-href', prodUrl);
           document.body.classList.add('ppatc__popup-enabled');
+
           return;
         }
 
         closestParent.querySelector('.action.tocart').click();
       });
+    } else if (target.closest(`.${ID}__variant`)) {
+      const closestLabel = target.closest('label');
+      const labelsWrapper = target.closest(`.${ID}__variants`);
+      const modalBody = target.closest('.ppatc__popup-form');
+      const sku = labelsWrapper.dataset.activeSku;
+
+      const labelQty = closestLabel.dataset.quantity;
+      const labelPrice = closestLabel.dataset.price;
+      labelsWrapper.querySelectorAll('label').forEach((item) => {
+        item.classList.remove('active');
+      });
+      closestLabel.classList.add('active');
+      const activeInput = document.querySelector(`input[data-sku="${sku}"]`);
+      activeInput.value = labelQty;
+
+      modalBody.querySelector('.price').innerText = formatPrice(labelPrice);
+    } else if (target.closest('.ppatc__popup-link')) {
+      const prodUrl = document.querySelector('.ppatc__popup-items').dataset.href;
+      window.location.href = prodUrl;
     }
   });
 };

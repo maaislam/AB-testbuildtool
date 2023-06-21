@@ -8,14 +8,14 @@ const getTopSlots = (url = '/') => {
 
       const tableRowsData = [];
       tableRows.forEach((el, i) => {
-        if (i > 5 || i == 0) return;
+        if (i > 5 || i === 0) return;
 
         const anchorElm = el.querySelector('a');
-        console.log(el);
+        //console.log(el);
         const target_url = anchorElm.href;
         const backColor = anchorElm.getAttribute('style');
-        console.log(anchorElm);
-        console.log(backColor);
+        //console.log(anchorElm);
+        //console.log(backColor);
 
         const imgElm = el.querySelector('img');
 
@@ -41,9 +41,8 @@ const getTopSlots = (url = '/') => {
       });
 
       const allData = tableRowsData.filter(Boolean);
-      console.log(allData);
 
-      return tableRowsData.filter(Boolean);
+      return allData.reverse();
     })
     .catch((error) => {
       console.log('An error occurred:', error);

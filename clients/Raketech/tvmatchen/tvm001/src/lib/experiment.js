@@ -12,16 +12,12 @@ const init = () => {
   //collect each row data and place new DOM
 
   tipRows.forEach((tipRow) => {
-    //const liveScoreElem = tipRow.querySelector('.match-detail .match-livescore');
-    //const score = liveScoreElem ? liveScoreElem.innerText : '';
-    //console.log('🚀score:', score, liveScoreElem);
-
     const viewOptions = tipRow.querySelectorAll('.match-channels li');
     const viewOptionsData = [...viewOptions].map((item, i) => {
       const isBettingLink = item.querySelector('img').src.includes('liveodds') ? 'betting' : '';
       const isStreamLink =
         item.querySelector('a') && !item.querySelector('img').src.includes('liveodds')
-          ? 'Watch'
+          ? 'Streama'
           : '';
       const isTvLink = !item.querySelector('a') ? 'TV' : '';
 
@@ -32,12 +28,19 @@ const init = () => {
         ? item.querySelector('a').href
         : tipRow.querySelector('a').href;
       const viewType = isTvLink || isStreamLink || isBettingLink;
+      const paidCustomers = ['discovery+', 'c-more-live', 'vidplay.se', 'c more stream'];
+
+      const isPromoted = paidCustomers.includes(imageAlt.toLowerCase());
+      //console.log('🚀 ~ file: experiment.js:39 ~ viewOptionsData ~ isPromoted:', isPromoted);
 
       viewOptions[i].setAttribute('data-viewtype', viewType);
       viewOptions[i].setAttribute('data-channelname', imageAlt);
+      viewOptions[i].setAttribute('data-promoted', isPromoted);
       tipRow.classList.add(`${ID}__tipRow`);
+      const matchDetailsPage = tipRow.querySelector('a');
+      matchDetailsPage.style.display = 'none';
+      //tipRow.setAttribute('date-href', matchDetailsPage.href);
       if (viewType === 'TV') {
-        console.log(imageAlt);
         viewOptions[i].closest(`.${ID}__tipRow`)?.setAttribute('data-mainchannelname', imageAlt);
       }
       return {
@@ -60,9 +63,6 @@ const init = () => {
 export default () => {
   setup(); //use if needed
 
-  init();
-  observeDOM('.main-container', init);
-
   //add tracking
   document.body.addEventListener('click', (e) => {
     const { target } = e;
@@ -70,12 +70,39 @@ export default () => {
 
     if (target.closest('[data-channelname]')) {
       const parentElem = target.closest('li') || target.closest('a');
-      const { channelname, viewtype } = parentElem.dataset;
-      gaTracking(`user clicked ${viewtype} ${channelname}`);
-    } else if (target.closest('a') && !target.closest('[data-channelname]')) {
-      const channelname = target.closest(`.${ID}__tipRow`).getAttribute('data-mainchannelname');
+      const { channelname, viewtype, promoted } = parentElem.dataset;
+      viewtype !== 'betting' &&
+        gaTracking(
+          `${channelname} | CTA Click to ${
+            viewtype === 'Streama' ? 'Streaming' : viewtype
+          } Service Providers ${promoted === 'true' ? ' | Highlighted' : ''}`
+        );
 
-      gaTracking(`user clicked TV ${channelname}`);
+      viewtype === 'betting' &&
+        gaTracking(
+          `${channelname} | CTA Clicks to operator (Place Bet Intent) ${
+            promoted === 'true' ? ' | Highlighted' : ''
+          }`
+        );
+    } else if (
+      (target.closest('.match-detail') &&
+        !target.closest(`.${ID}__viewoptions`) &&
+        !target.closest('.match-channels')) ||
+      target.closest('.match-info')
+    ) {
+      const clickedItem = target.closest('.match-info') ? 'Sports Icon' : 'Headline';
+
+      gaTracking(`Clicks to Match Details | ${clickedItem}`);
+
+      target.closest(`.${ID}__tipRow`).querySelector('a').click();
+      //const channelname = target.closest(`.${ID}__tipRow`).getAttribute('data-mainchannelname');
+    } else if (target.closest('li.date')) {
+      const closestParent = target.closest('li.date');
+      const clickedDate = closestParent.dataset.date;
+      gaTracking(`${clickedDate} | Clicks on Date`);
     }
   });
+
+  init();
+  observeDOM('.main-container', init);
 };

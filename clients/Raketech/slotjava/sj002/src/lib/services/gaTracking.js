@@ -1,13 +1,20 @@
+/*eslint-disable no-underscore-dangle */
 import { pollerLite } from '../helpers/utils';
 import shared from '../shared/shared';
 
-const gaTracking = (label) => {
-  pollerLite([() => typeof window.gtag === 'function'], () => {
-    window.gtag('event', 'Experiment HP Redesign 001', {
-      event_label: `variation: ${shared.VARIATION} | ${label}`,
-      event_category: 'Desktop Only Test'
-    });
+const { VARIATION } = shared;
+
+const piwikTrack = (label, device = 'Desktop') => {
+  pollerLite([() => window._paq !== undefined], () => {
+    //console.log(label);
+    window._paq.push([
+      'trackEvent',
+      'Experiment HP Academy 009',
+      'click',
+      `${device} Users Only`,
+      `009 | Variation: ${VARIATION} | ${label}`
+    ]);
   });
 };
 
-export default gaTracking;
+export default piwikTrack;

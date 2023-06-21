@@ -6,6 +6,16 @@
     display: none;
   }
 
+  .overallContentWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+  }
+
+  #custom_modal_close_2 {
+    top: 5px;
+  }
+
   .blur_bg {
     background: black;
     opacity: 0.3;
@@ -102,13 +112,16 @@
     color: #ffffff;
   }
   .second_popup {
-    max-width: 320px;
+    max-width: 350px;
     width: 100%;
     background: #222949;
     padding: 12px 12px 40px 12px;
     border-radius: 5px;
     margin: auto;
     position: relative;
+    @include media-query(sm) {
+      max-width: 650px;
+    }
   }
   #casino_flag {
     width: 20px;
@@ -116,16 +129,22 @@
   }
   .top_content {
     display: flex;
+    align-items: center;
     padding-bottom: 5px;
   }
 
   .top_content p {
+    text-align: center;
     color: #ffffff;
     font-size: 15px;
     font-weight: 700;
     line-height: 18px;
     margin: auto;
     text-transform: uppercase;
+
+    .new-line {
+      display: block;
+    }
   }
   .content_top {
     display: flex;
@@ -183,6 +202,7 @@
   .casino-list__offer_text {
     width: 60%;
     margin-left: 10px;
+    text-decoration: none;
   }
 
   .cancel_btn {

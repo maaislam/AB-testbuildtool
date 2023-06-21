@@ -1,16 +1,11 @@
 /*eslint-disable object-curly-newline */
 import bookmakerCards from './components/bookmakerCards';
 import bookmakerCarouselConfig from './configs/bookmakerBonusCarouselConfig';
-import { bookmakerSwiperConfig, bookmakerSwiperConfigMob } from './configs/swiperConfigs';
+import { bookmakerSwiperConfig } from './configs/swiperConfigs';
 import initSwiper from './helpers/initSwiper';
-import {
-  addCssToPage,
-  addJsToPage,
-  getOperatorFromUrl,
-  isMobile,
-  pollerLite
-} from './helpers/utils';
-import gaTracking from './services/gaTracking';
+import { addCssToPage, addJsToPage, getStringBetween, pollerLite } from './helpers/utils';
+import piwikTrack from './services/gaTracking';
+
 import setup from './services/setup';
 //import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
@@ -18,16 +13,24 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  const carouselAttachment = document.querySelector('main section:nth-child(1)');
+  const carouselAttachPoint = document.querySelector('main section:nth-child(1)');
 
   if (document.querySelector(`.${ID}__bookmakercards`)) return;
-  const firstBmposition = isMobile() ? 'afterend' : 'afterend';
-  carouselAttachment.insertAdjacentHTML(
-    firstBmposition,
-    `<div class="card bm-carousel">${bookmakerCards(ID, bookmakerCarouselConfig)}</div>`
+
+  carouselAttachPoint.insertAdjacentHTML(
+    'afterend',
+    `<section>${bookmakerCards(ID, bookmakerCarouselConfig)}</section>`
   );
-  const bookmakersSwiperConfig = isMobile() ? bookmakerSwiperConfigMob : bookmakerSwiperConfig;
-  initSwiper('.swiper-bookmaker', bookmakersSwiperConfig);
+
+  initSwiper('.swiper-bookmaker', bookmakerSwiperConfig);
+  const scrollLocations = [5, 11, 6, 13];
+  scrollLocations.forEach((item, i) => {
+    const paragraph = document.querySelectorAll('article h2')[item];
+    paragraph.id = `scrollpos-${item}`;
+    const academy = document.querySelectorAll(`.${ID}__bookmakercard`)[i];
+    academy.dataset.scrollto = `scrollpos-${item}`;
+    //academy.href = `#scrollpos-${item}`;
+  });
 };
 
 export default () => {
@@ -38,14 +41,33 @@ export default () => {
 
   document.body.addEventListener('click', (ev) => {
     const { target } = ev;
+    //console.log('🚀target:', target);
 
-    if (target.closest('a[href*="/redirect"]')) {
-      const href = target.closest('a').getAttribute('href');
-      const clickedFromCarousel =
-        target.closest(`.${ID}__bookmakercards`) && VARIATION !== 'control';
-      gaTracking(`${clickedFromCarousel ? 'Carousel' : ''} ${getOperatorFromUrl(href)} cta Click`);
-    } else if (target.closest('a[href*="/bonus"]')) {
-      gaTracking('All bonus cta Click');
+    if (target.closest(`.${ID}__bookmakercard`)) {
+      const highParent = target.closest(`.${ID}__bookmakercard`);
+      const { title } = highParent.dataset;
+      const scrollDiv = highParent.dataset.scrollto;
+
+      const scrollToElem = document.getElementById(scrollDiv);
+      scrollToElem.scrollIntoView();
+      piwikTrack(`${title.replace(/(<([^>]+)>)/gi, '')} | Clicks on Academy`);
+    } else if (target.closest('[href*="/slot-machine/"]')) {
+      piwikTrack('Clicks to Free to Play Slots');
+    } else if (target.closest('[href*="/casino-online-aams-adm/"]')) {
+      piwikTrack('Clicks to Real Money Slots Slots');
+    } else if (target.closest('[href*="/slot/"]')) {
+      const url = target.closest('a').href;
+
+      piwikTrack(`${getStringBetween(url, '/slot/', '/')} | Clicks to Slot Reviews`);
+    } else if (target.closest('[href*="/visita/"]') && target.closest('.section_dark')) {
+      const opName = target.closest('a').dataset.operator;
+      piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Featured`);
+    } else if (target.closest('[href*="/visita/"]') && target.closest('.casino-table')) {
+      const opName = target.closest('a').dataset.operator;
+      piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Toplist`);
+    } else if (target.closest('[href*="/visita/"]') && target.closest('.casino-table-widget')) {
+      const opName = target.closest('a').dataset.operator;
+      piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Sidebar`);
     }
   });
 
@@ -53,7 +75,7 @@ export default () => {
   //If control, bail out from here
   //-----------------------------
 
-  if (VARIATION === 'control') {
+  if (VARIATION === 'Control') {
     return;
   }
   addJsToPage(swiperJs, `${ID}__swiperjs`);
