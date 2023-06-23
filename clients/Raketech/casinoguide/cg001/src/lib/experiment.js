@@ -10,7 +10,7 @@ const init = () => {
   console.log('timeNow:', timeNow);
   const jsUrl = `https://cdn.inbanner.com/w/js/pxpCx.js?cachebuster=${timeNow}`;
   const widget = 'https://inbanner.com/0/widgets/js/locale:sv_SE/currency:SEK';
-  const neBtnHtml = `<a href="https://www.casinoguide.se/go/speedycasino/38739" class="${ID}__inbanner-btn inbanner-link" inbanner-widget="178" locale="sv_SE" currency="SEK" rel="954" inbanner-affcampaign="412" style="width: 100%;"><strong class="inbanner__2fQYe"><strong>Till Casinot</strong></strong></a>`;
+  const neBtnHtml = `<a href="https://record.multibrandaffiliates.com/_xe4gQse6mjqUcyqUL4Bc9GNd7ZgqdRLk/1/" class="${ID}__inbanner-btn inbanner-link" inbanner-widget="178" locale="sv_SE" currency="SEK" rel="954" inbanner-affcampaign="412" style="width: 100%;"><strong class="inbanner__2fQYe"><strong>Till Casinot</strong></strong></a>`;
   const speedyCasinoCards = document.querySelectorAll('[data-toplist-item="39601"]');
 
   speedyCasinoCards.forEach((card) => {
