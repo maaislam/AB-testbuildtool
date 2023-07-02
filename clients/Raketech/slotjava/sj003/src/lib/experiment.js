@@ -21,7 +21,7 @@ const init = () => {
 export default () => {
   setup(); //use if needed
 
-  console.log(ID);
+  //console.log(ID);
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
@@ -90,7 +90,7 @@ export default () => {
       }
     }
 
-    console.log(selectedFilters);
+    //console.log(selectedFilters);
   });
 
   document.querySelector('main').addEventListener('click', (e) => {
@@ -104,8 +104,16 @@ export default () => {
 
       init();
       piwikTrack('Clear All | Clicks on Filter');
-      console.log(selectedFilters);
+      //console.log(selectedFilters);
     } else if (target.closest(`.${ID}__filtersubmit`)) {
+      //console.log(selectedFilters);
+      const { themes, rewards, difficulty, mobFriendly } = selectedFilters;
+      if (sessionStorage.getItem(`${ID}__hasusedfilter`) !== 'true') {
+        piwikTrack(
+          `Show Games | CTA Clicks on Filter | Data | themes: ${themes} | rewards ${rewards} | difficulty: ${difficulty} | mobileFriendly: ${mobFriendly}`
+        );
+        sessionStorage.setItem(`${ID}__hasusedfilter`, 'true');
+      }
       piwikTrack('Show Games | CTA Clicks on Filter');
       window.location.href = 'https://www.slotjava.es/tragamonedas-gratis/';
     } else if (target.closest('[href*="/tragamonedas-gratis/"]')) {

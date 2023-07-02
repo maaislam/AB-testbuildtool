@@ -86,7 +86,8 @@ export default () => {
         );
     } else if (
       (target.closest('.match-detail') &&
-        !target.closest(`.${ID}__viewoptions`) &&
+        target.closest(`.${ID}__viewoptions`) &&
+        !target.closest('a') &&
         !target.closest('.match-channels')) ||
       target.closest('.match-info')
     ) {

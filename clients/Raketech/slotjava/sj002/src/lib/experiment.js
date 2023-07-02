@@ -3,7 +3,13 @@ import bookmakerCards from './components/bookmakerCards';
 import bookmakerCarouselConfig from './configs/bookmakerBonusCarouselConfig';
 import { bookmakerSwiperConfig } from './configs/swiperConfigs';
 import initSwiper from './helpers/initSwiper';
-import { addCssToPage, addJsToPage, getStringBetween, pollerLite } from './helpers/utils';
+import {
+  addCssToPage,
+  addJsToPage,
+  getOperatorFromUrl,
+  getStringBetween,
+  pollerLite
+} from './helpers/utils';
 import piwikTrack from './services/gaTracking';
 
 import setup from './services/setup';
@@ -58,15 +64,18 @@ export default () => {
     } else if (target.closest('[href*="/slot/"]')) {
       const url = target.closest('a').href;
 
-      piwikTrack(`${getStringBetween(url, '/slot/', '/')} | Clicks to Slot Reviews`);
+      piwikTrack(`${getOperatorFromUrl(url, '/slot/', '/')} | Clicks to Slot Reviews`);
     } else if (target.closest('[href*="/visita/"]') && target.closest('.section_dark')) {
-      const opName = target.closest('a').dataset.operator;
+      const url = target.closest('a').href;
+      const opName = getOperatorFromUrl(url, '/visita/', '/');
       piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Featured`);
     } else if (target.closest('[href*="/visita/"]') && target.closest('.casino-table')) {
-      const opName = target.closest('a').dataset.operator;
+      const url = target.closest('a').href;
+      const opName = getOperatorFromUrl(url, '/visita/', '/');
       piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Toplist`);
     } else if (target.closest('[href*="/visita/"]') && target.closest('.casino-table-widget')) {
-      const opName = target.closest('a').dataset.operator;
+      const url = target.closest('a').href;
+      const opName = getOperatorFromUrl(url, '/visita/', '/');
       piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Sidebar`);
     }
   });

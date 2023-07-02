@@ -6,6 +6,7 @@ import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
 const init = () => {
+  if (window.location.pathname.includes('/casino-utan-konto')) return;
   const timeNow = Date.now();
   console.log('timeNow:', timeNow);
   const jsUrl = `https://cdn.inbanner.com/w/js/pxpCx.js?cachebuster=${timeNow}`;
@@ -35,11 +36,29 @@ export default () => {
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    if (target.closest('[data-toplist-item="39601"]') && target.closest('[inbanner-widget]')) {
+    if (target.closest('[href*="/go/speedycasino"]') || target.closest('[inbanner-widget]')) {
       gaTracking('User Clicks Speedycasino');
     }
+    if (target.closest('a[href*="/go/"]')) {
+      const url = target.closest('a').href;
+      const casinoName = url.split('/go/')[1];
+      gaTracking(`${casinoName} | CTA Clicks to Operator`);
+    }
   });
-  if (VARIATION === 'control') return;
+  if (VARIATION === 'Control') {
+    //check if uttan konto page
+    if (window.location.pathname.includes('/casino-utan-konto')) {
+      //render fake button & hide original
+      const originalSpeedyCasino = document.querySelectorAll('[href*="/go/speedycasino"]');
+      const fakeBtn = `<a data-toplist-item-link="/go/speedycasino" class="${ID}__fakebtn cta__1HzOA cta__3Rtjm" href="/go/speedycasino" rel="noopener nofollow" target="_blank"><strong>Till Casinot</strong></a>`;
+      originalSpeedyCasino.forEach((btn) => {
+        btn.insertAdjacentHTML('afterend', fakeBtn);
+        //eslint-disable-next-line no-param-reassign
+        btn.style.display = 'none';
+      });
+    }
+    return;
+  }
 
   init();
 };
