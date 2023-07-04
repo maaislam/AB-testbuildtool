@@ -12,7 +12,7 @@ const piwikTrack = (label, device = 'Desktop') => {
       'Experiment HP Slot Filtering 010',
       'click',
       `${device} Users Only`,
-      `010 | Variation: ${VARIATION} | ${label}`
+      `010 | Variant ${VARIATION} | ${label}`
     ]);
   });
 };

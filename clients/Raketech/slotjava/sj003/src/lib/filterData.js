@@ -1,81 +1,81 @@
 const filterData = {
   themes: [
     {
-      name: 'ancient egypt',
+      name: 'antiguo egipto',
       imgSrcKey: 'ancient-egypt'
     },
     {
-      name: 'Irish Luck',
+      name: 'irlandés',
       imgSrcKey: 'irish-luck'
     },
     {
-      name: 'Oriental/Asian',
+      name: 'Oriental / asiático',
       imgSrcKey: 'oriental-asian'
     },
     {
-      name: 'Mythology',
+      name: 'Mitología',
       imgSrcKey: 'mythology'
     },
     {
-      name: 'Adventure',
+      name: 'Aventuras',
       imgSrcKey: 'adventure'
     },
     {
-      name: 'Nature',
+      name: 'Naturaleza',
       imgSrcKey: 'nature'
     },
     {
-      name: 'Superheroes',
+      name: 'Superhéroes',
       imgSrcKey: 'superheroes'
     },
     {
-      name: 'Classic Fruits',
+      name: 'Clásicas de frutas',
       imgSrcKey: 'classic-fruits'
     },
     {
-      name: 'Sci-Fi',
+      name: 'Ciencia Ficción',
       imgSrcKey: 'sci-fi'
     },
     {
-      name: 'Ancient',
+      name: 'Históricas',
       imgSrcKey: 'ancient'
     },
     {
-      name: 'Supernatural',
+      name: 'Sobrenatural',
       imgSrcKey: 'supernatural'
     },
     {
-      name: 'wild West',
+      name: 'Salvaje Oeste',
       imgSrcKey: 'wild-west'
     }
   ],
   riskAndReward: [
     {
-      name: 'Exciting victories',
+      name: 'Victorias excitantes',
       imgSrcKey: 'exciting-victory'
     },
     {
-      name: 'low risk games',
+      name: 'Bajo riesgo',
       imgSrcKey: 'low-risk'
     },
     {
-      name: 'popular games',
+      name: 'Juegos populares',
       imgSrcKey: 'popular-games'
     },
     {
-      name: 'most liked',
+      name: 'Favoritos',
       imgSrcKey: 'most-liked'
     }
   ],
   difficulty: [
     {
-      name: 'easy'
+      name: 'fácil'
     },
     {
-      name: 'medium'
+      name: 'media'
     },
     {
-      name: 'hard'
+      name: 'alta'
     }
   ],
   compatibility: [

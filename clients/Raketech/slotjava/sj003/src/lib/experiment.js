@@ -17,6 +17,7 @@ const init = () => {
   }
 
   anchorPoint.insertAdjacentHTML('afterend', filterWrapper(ID, filterData));
+  //document.querySelector(`[for="${ID}__difficulty-media"]`).click();
 };
 export default () => {
   setup(); //use if needed
@@ -126,14 +127,13 @@ export default () => {
     } else if (target.closest('[href*="/visitar/"]') && target.closest('.section_dark')) {
       const opName = target.closest('a').dataset.operator;
       piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent)`);
+    } else if (target.closest('[href*="/visitar/"]') && target.closest('.casino-table')) {
+      const opName = target.closest('a').dataset.operator;
+      piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Toplist`);
+    } else if (target.closest('[href*="/visitar/"]') && target.closest('.casino-table-widget')) {
+      const opName = target.closest('a').dataset.operator;
+      piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Sidebar`);
     }
-    //else if (target.closest('[href*="/visita/"]') && target.closest('.casino-table')) {
-    //const opName = target.closest('a').dataset.operator;
-    //piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Toplist`);
-    //} else if (target.closest('[href*="/visita/"]') && target.closest('.casino-table-widget')) {
-    //const opName = target.closest('a').dataset.operator;
-    //piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Sidebar`);
-    //}
   });
 
   if (VARIATION === 'Control') {

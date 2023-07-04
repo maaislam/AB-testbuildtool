@@ -2,10 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  img {
-    width: 100%;
-    height: auto;
-  }
+  // img {
+  //   width: 100%;
+  //   height: auto;
+  // }
 
   &__filters {
     margin-top: 20px;
@@ -13,7 +13,13 @@
     padding: 24px 12px;
     background-color: #fff;
     h4 {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      font-weight: 900;
+      font-size: 18px;
+      @include media-query(md) {
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
     }
   }
 
@@ -23,6 +29,9 @@
     gap: 10px;
     padding-bottom: 12px;
     overflow-x: auto;
+    @include media-query(md) {
+      gap: 4px;
+    }
   }
 
   &__theme-wrapper {
@@ -35,10 +44,15 @@
       height: 82px;
       color: #fff;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 14px;
       line-height: 24px;
       border: 2px solid transparent;
       cursor: pointer;
+
+      @include media-query(md) {
+        width: 160px;
+        font-size: 14px;
+      }
     }
 
     .checkbox-text {
@@ -99,13 +113,13 @@
     }
 
     input[type='checkbox']:checked + label .checkbox-image {
-      border: 2px solid red;
+      border: 2px solid #ff7556;
     }
   }
 
   &__rewards-block,
   &__difficultys-block {
-    margin-top: 20px;
+    margin-top: 24px;
   }
 
   &__rewards,
@@ -128,7 +142,7 @@
       justify-content: space-between;
       padding: 16px 12px;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 14px;
       line-height: 24px;
       text-transform: uppercase;
       color: #212529;
@@ -136,6 +150,9 @@
       border: 1px solid #d1d8e8;
       border-radius: 5px;
       cursor: pointer;
+      @include media-query(md) {
+        font-size: 14px;
+      }
     }
 
     .checkbox-image {
@@ -157,13 +174,21 @@
     }
 
     input[type='checkbox']:checked + label {
-      border: 2px solid red;
+      border: 2px solid #ff7556;
     }
     input[type='radio']:checked + label {
-      border: 2px solid red;
+      border: 2px solid #ff7556;
     }
   }
 
+  &__reward-wrapper {
+    label {
+      @include media-query(md) {
+        background-color: #eeeefd;
+        border: 1px solid #d1d8e8;
+      }
+    }
+  }
   &__difficulty-wrapper {
     label {
       flex-direction: row;
@@ -258,6 +283,7 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
+    box-shadow: none;
   }
 
   input[type='range']:focus::-webkit-slider-thumb {
@@ -298,7 +324,7 @@
     margin-top: 20px;
     color: #000;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 20px;
 
     @include media-query(md) {
@@ -311,6 +337,9 @@
       gap: 14px;
       margin-left: auto;
       cursor: pointer;
+      & > span:last-child {
+        display: flex;
+      }
     }
     .mobile-friendly {
       position: relative;
@@ -338,7 +367,7 @@
       }
 
       .input-text {
-        padding-left: 32px;
+        padding-left: 40px;
         line-height: 25px;
         cursor: pointer;
       }
