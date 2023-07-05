@@ -9,7 +9,7 @@ const difficutyFilter = (id, data) => {
             name="${id}__difficulty" 
             data-filter="difficulty"
             value="${name}" 
-            ${name.includes('medium') ? 'checked' : ''}>
+            ${name.includes('media') ? 'checked' : ''}>
           <label for="${id}__difficulty-${joinedName}">
               <div class="radio-text">
                 <span>${name}</span>

@@ -5,11 +5,11 @@ const filterFooter = (id) => {
             <label for="${id}__mobile-friendly">
                 <input type="checkbox" id="${id}__mobile-friendly" name="${id}__mobile-friendly" data-filter="mobFriendly">
                 <span class="checkmark"></span>
-                <span class="input-text">Mobile friendly</span>
+                <span class="input-text">Versión Móvil</span>
             </label>
         </div>
         <div class="${id}__clearall">
-            <span>Clear all</span>
+            <span>Limpiar</span>
             <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5267 0.293171C14.9128 0.684066 14.9128 1.31783 14.5267 1.70873L1.6878 14.7068C1.30169 15.0977 0.675689 15.0977 0.289581 14.7068C-0.0965271 14.3159 -0.0965267 13.6822 0.289581 13.2913L13.1285 0.293171C13.5146 -0.0977237 14.1406 -0.0977237 14.5267 0.293171Z" fill="#6B7280"/>
@@ -18,7 +18,7 @@ const filterFooter = (id) => {
             </span>
         </div>
         <div class="${id}__filtersubmit button link-out">
-            SHOW GAMES
+            Muestra Juegos
         </div>
     </div>`;
 

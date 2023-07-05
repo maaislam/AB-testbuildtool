@@ -1,15 +1,27 @@
+<<<<<<< HEAD
+=======
+import gameBtnsMobile from './gameBtnsMobile';
+>>>>>>> upstream/main
 import gameOverlay from './gameOverlay';
 
 const gameCard = (id, gameData) => {
   const { gameName, gameLink, imgSrc, numOfLikes } = gameData;
+<<<<<<< HEAD
   const htmlString = `
     <div class="${id}__gamecard">
+=======
+  const awsImgPath =
+    'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign';
+  const htmlString = `
+    <div class="${id}__gamecard" data-position="gif card">
+>>>>>>> upstream/main
        <a href="${gameLink}" class="${id}__gamecard-img">
         <img src="${imgSrc}" alt="${gameName}" />
        </a>
         <a href="${gameLink}" class="${id}__gamecard-details">
             <div class="gamecard-title">${gameName}</div>
             <div class="gamecard-likes">
+<<<<<<< HEAD
             <img src="">
             <span>${numOfLikes}</span></div>
         </a>
@@ -28,6 +40,12 @@ const gameCard = (id, gameData) => {
       </div>
 
 
+=======
+            <img src="${awsImgPath}/heart.svg" alt="heart icon">
+            <span>&nbsp;${numOfLikes}</span></div>
+        </a>
+        ${gameBtnsMobile(gameLink, gameName)}
+>>>>>>> upstream/main
         ${gameOverlay(id, gameData)}
     </div>
     `;

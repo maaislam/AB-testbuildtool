@@ -42,6 +42,11 @@
     width: 100%;
     max-width: 320px;
     border-bottom: none;
+    @include media-query(sm) {
+      max-width: calc(100% - 32px);
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   &__logo-0,
@@ -104,6 +109,9 @@
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 16px;
       margin-bottom: 24px;
+      @include media-query(sm) {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      }
 
       .#{$id}__casinocard {
         position: relative;
@@ -130,6 +138,9 @@
             align-items: center;
             justify-content: space-between;
             font-size: 14px;
+            @include media-query(sm) {
+              text-align: right;
+            }
           }
 
           .cas-title {

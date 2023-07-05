@@ -6,6 +6,7 @@
     position: relative;
   }
 
+<<<<<<< HEAD
   &__gameoverlay {
     max-width: 300px;
     width: 100%;
@@ -22,6 +23,107 @@
 
     &.fadeout {
       animation: fade-out 0.5s ease-in-out both;
+=======
+  .col-width {
+    width: 33.3%;
+    @include media-query(md) {
+      width: 50%;
+    }
+    @include media-query(sm) {
+      width: 100%;
+    }
+
+    a {
+      height: auto;
+    }
+
+    .card__bottom {
+      @include media-query(sm) {
+        padding-bottom: 0;
+      }
+    }
+  }
+  .game-buttons-mb {
+    display: none;
+
+    @include media-query(md) {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 15px auto;
+    }
+    @include media-query(sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .play-now-btn-mb {
+      width: 100%;
+      border-radius: 5px;
+      display: flex;
+      height: 40px !important;
+      justify-content: center;
+      align-items: center;
+      background: #ff7556;
+      font-size: 14px;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .play-money-btn-mb {
+      width: 100%;
+      border-radius: 5px;
+      display: flex;
+      height: 38px;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      font-size: 14px;
+      color: #ff7556;
+      font-weight: 400;
+      border: 1px solid #ff7556;
+    }
+  }
+
+  &__gameoverlay {
+    width: 100%;
+    max-width: 320px;
+    padding: 15px;
+    position: absolute;
+    top: 10px;
+    z-index: 1000;
+    border-radius: 5px;
+    left: 10px;
+    //filter: drop-shadow(1px 0px 1px black);
+    background: #f2f2f2;
+    box-shadow: 2px 0 1px 0 #f2f2f2;
+    backdrop-filter: blur(1.5px);
+    border-radius: 10px;
+
+    @include media-query(md) {
+      display: none;
+    }
+
+    &.stock-card {
+      max-width: 280px;
+      top: 5px;
+      left: 10px;
+    }
+
+    &.fadein {
+      animation: fade-in 0.3s ease-in-out both;
+    }
+    &.fadeout {
+      animation: fade-out 0.3s ease-in-out both;
+>>>>>>> upstream/main
     }
 
     .game-gif {
@@ -32,7 +134,11 @@
       height: 180px;
       width: 100%;
       border-radius: 3px;
+<<<<<<< HEAD
       filter: drop-shadow(1px 0px 1px black);
+=======
+      //filter: drop-shadow(1px 0px 1px black);
+>>>>>>> upstream/main
     }
 
     .game-stats {
@@ -57,10 +163,19 @@
     .game-views span {
       font-size: 14px;
       font-weight: 400;
+<<<<<<< HEAD
       line-height: 21px;
       color: #606366;
     }
     .game-likes {
+=======
+      color: #606366;
+    }
+    .game-likes {
+      display: flex;
+      align-items: center;
+      line-height: 1.3;
+>>>>>>> upstream/main
       margin-right: 3px;
     }
 
@@ -75,7 +190,11 @@
       border-radius: 5px;
 
       display: flex;
+<<<<<<< HEAD
       height: 40px;
+=======
+      height: 40px !important;
+>>>>>>> upstream/main
       justify-content: center;
       align-items: center;
       background: #ff7556;
@@ -105,6 +224,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 12px;
+<<<<<<< HEAD
     @include media-query(sm) {
       grid-template-columns: 1fr;
       gap: 16px;
@@ -115,6 +235,28 @@
       @include media-query(sm) {
         width: 100%;
       }
+=======
+    margin-bottom: 16px;
+
+    @include media-query(md) {
+      gap: 16px;
+    }
+
+    & > .#{$id}__gamecard:nth-child(3n) {
+      .#{$id}__gameoverlay {
+        left: auto;
+        right: 10px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    img[alt="Neptune's Champions"],
+    img[alt='Columbus Deluxe'] {
+      width: 100%;
+>>>>>>> upstream/main
     }
   }
 
@@ -130,9 +272,20 @@
       border-radius: 5px;
     }
 
+<<<<<<< HEAD
     .gamecard-likes span {
       color: #606366;
       font-size: 14px;
+=======
+    .gamecard-likes {
+      display: flex;
+      align-items: center;
+      line-height: 1.3;
+      span {
+        color: #606366;
+        font-size: 14px;
+      }
+>>>>>>> upstream/main
     }
 
     .gamecard-title {
@@ -141,6 +294,7 @@
       line-height: 21px;
       color: #212529;
     }
+<<<<<<< HEAD
 
     .game-buttons-mb {
       display: none;
@@ -177,6 +331,145 @@
         font-weight: 400;
         width: 48%;
         border: 1px solid #ff7556;
+=======
+  }
+
+  &__modal {
+    position: fixed;
+    z-index: 9999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      max-width: 374px;
+      transform: translate(-50%, -50%);
+    }
+
+    .#{$id}__topcasinos {
+      width: 100%;
+      max-width: 350px;
+      margin: auto;
+      padding: 12px 12px 40px;
+      background-color: #222949;
+      border-radius: 5px;
+
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        color: #fff;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 18px;
+
+        p {
+          margin: 0;
+        }
+
+        .header-headline {
+          text-transform: uppercase;
+          &.newline {
+            display: block;
+          }
+        }
+
+        .header-close {
+          cursor: pointer;
+        }
+      }
+
+      &-list {
+        & > div:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+
+      &-listitem {
+        img {
+          object-fit: contain;
+        }
+
+        .content_top {
+          display: flex;
+          background: #fafafa;
+          border-radius: 5px 5px 0px 0px;
+          padding: 7px 5px;
+          align-items: center;
+        }
+        .casino-list__offer_text {
+          width: 60%;
+          margin: 0 auto 0 10px;
+          text-decoration: none;
+          color: #5c6ca3;
+          font-size: 12px;
+          text-transform: uppercase;
+          font-weight: 700;
+          h4 {
+            margin: 0 auto;
+          }
+        }
+        .sub_heading_div {
+          display: flex;
+          flex-direction: column;
+        }
+        .sub_heading_div span {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 14px;
+          margin: auto 0;
+          color: #212529;
+        }
+        .tnc_text_div {
+          background: #eeeeee;
+          border-radius: 0px 0px 5px 5px;
+          height: 24px;
+          display: flex;
+          margin-top: 3px;
+        }
+        .tnc_text_div p {
+          font-size: 9px;
+          text-align: center;
+          margin: auto;
+        }
+        .custom_popUP_btn {
+          background: #ff7556;
+          width: 74.42px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 38px;
+          border-radius: 3px;
+          color: #6b1400;
+          text-decoration: none;
+          font-weight: 900;
+          font-size: 11px;
+        }
+      }
+
+      .footer-button {
+        color: #8a8c96;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        right: 0;
+        cursor: pointer;
+        margin: 10px auto;
+        justify-content: center;
+        display: flex;
+>>>>>>> upstream/main
       }
     }
   }
@@ -187,10 +480,17 @@
     justify-content: space-between;
     margin: 3px auto;
   }
+<<<<<<< HEAD
 }
 
 .hide_content {
   display: none;
+=======
+
+  .hide_content {
+    display: none;
+  }
+>>>>>>> upstream/main
 }
 
 @keyframes fade-in {
