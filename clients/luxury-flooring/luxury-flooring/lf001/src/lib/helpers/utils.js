@@ -24,6 +24,7 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
     }
   }, POLLING_INTERVAL);
 };
+
 export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
   const target = document.querySelector(`${targetSelectorString}`);
 
@@ -37,36 +38,13 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      //console.log(mutation);
       observer.disconnect();
       setTimeout(() => {
         callbackFunction(mutation);
         observer.observe(target, config);
-      }, 1500);
+      }, 500);
     });
   });
 
   observer.observe(target, config);
-};
-export const getOperatorFromUrl = (url) => {
-  let cleanString;
-  cleanString = url;
-  if (cleanString.charAt(cleanString.length - 1) === '/') {
-    cleanString = cleanString.slice(0, -1);
-  }
-  //Get the text after the last slash
-  const text = cleanString.split('/').pop();
-
-  //If the text contains a question mark, remove any characters after it
-  const questionMarkIndex = text.indexOf('?');
-  if (questionMarkIndex !== -1) {
-    return text.substring(0, questionMarkIndex);
-  }
-
-  return text;
-};
-
-export const extractNumberFromString = (str) => {
-  const matches = str.match(/\d+/);
-  return matches ? parseInt(matches[0]) : null;
 };
