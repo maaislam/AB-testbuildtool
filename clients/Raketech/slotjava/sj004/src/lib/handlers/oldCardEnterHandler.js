@@ -18,12 +18,15 @@ const oldCardEnterHandler = (e) => {
   const numOfLikes = extractNumberFromString(
     target.querySelector('.card__description').textContent
   );
+  const gameId = target.querySelector('.card__favourite-button').dataset.slotId;
+  console.log('🚀 ~ file: oldCardEnterHandler.js:22 ~ oldCardEnterHandler ~ gameId:', gameId);
   const gameDesc = '';
   const gameData = {
     gameName,
     gameLink,
     gameGif,
     numOfLikes,
+    gameId,
     gameDesc
   };
 

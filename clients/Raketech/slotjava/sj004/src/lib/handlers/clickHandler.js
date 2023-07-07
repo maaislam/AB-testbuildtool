@@ -55,10 +55,21 @@ const clickHandler = (e) => {
     const btnPositionElem = target.closest('[data-position]');
     const btnPosition = btnPositionElem ? `| ${btnPositionElem.dataset.position}` : '';
     piwikTrack(`${getOperatorFromUrl(url)} | Clicks to Slot Reviews ${btnPosition}`);
-  } else if (target.closest('[href*="/visita/"]') && !target.closest('.modal-content')) {
+  } else if (
+    target.closest('[href*="/visita/"]') &&
+    !target.closest('.modal-content') &&
+    !target.closest('[data-click-target="Slot Page Editors Picks"]')
+  ) {
     const url = target.closest('a').href;
     const opName = getOperatorFromUrl(url, '/visita/', '/');
     piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Sidebar`);
+  } else if (
+    target.closest('[href*="/visita/"]') &&
+    target.closest('[data-click-target="Slot Page Editors Picks"]')
+  ) {
+    const url = target.closest('a').href;
+    const opName = getOperatorFromUrl(url, '/visita/', '/');
+    piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Editor Casino Picks`);
   }
 };
 

@@ -5,6 +5,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2019/09/fowl-play-gold_gratis.jpg',
     numOfLikes: '1585',
     numOfViews: '',
+    gameID: '1106',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/fowl-play-gold.gif',
     gameDesc:
@@ -16,6 +17,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2019/06/book-of-ra-deluxe_slot.jpg',
     numOfLikes: '2327',
     numOfViews: '',
+    gameID: '338',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/book-of-ra-deluxe.gif',
     gameDesc:
@@ -26,7 +28,8 @@ const gameDataArr = [
     gameLink: 'https://www.slotjava.it/slot/the-big-easy/',
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2019/10/the-big-easy_logo.jpg',
     numOfLikes: '1827',
-    numOfViews: '',
+    numOfViews: '2552',
+    gameID: '',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/the-big-easy.gif',
     gameDesc: ''
@@ -37,6 +40,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2019/06/sphinx-logo.jpg',
     numOfLikes: '1827',
     numOfViews: '',
+    gameID: '107',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/sphinx.gif',
     gameDesc:
@@ -49,6 +53,7 @@ const gameDataArr = [
       'https://img.slotjava.it/wp-content/uploads/2022/04/dolphins-pearl-deluxe-10-gratis.png',
     numOfLikes: '40',
     numOfViews: '',
+    gameID: '22611',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/dolphins-pearl-deluxe.gif',
     gameDesc: ''
@@ -59,6 +64,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2020/11/garden-of-riches-slot.jpg',
     numOfLikes: '518',
     numOfViews: '',
+    gameID: '14184',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/garden-of-riches.gif',
     gameDesc:
@@ -70,6 +76,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2019/06/sphinx-wild-gratis-1.jpg',
     numOfLikes: '1716',
     numOfViews: '',
+    gameID: '109',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/sphinx-wild.gif',
     gameDesc:
@@ -81,6 +88,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2019/10/book-of-ra-magic-gratis.jpg',
     numOfLikes: '543',
     numOfViews: '',
+    gameID: '1448',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/book-of-ra-magic.gif',
     gameDesc:
@@ -92,6 +100,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2020/06/secret-elixir-logo.jpg',
     numOfLikes: '288',
     numOfViews: '',
+    gameID: '9346',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/secret-elixir.gif',
     gameDesc:
@@ -103,6 +112,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2021/02/gates-of-olympus_featured.png',
     numOfLikes: '119',
     numOfViews: '',
+    gameID: '15440',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/gates-of-olympus.gif',
     gameDesc:
@@ -115,6 +125,7 @@ const gameDataArr = [
       'https://img.slotjava.it/wp-content/uploads/2023/06/neptunes-champions-featured-286x217.jpg',
     numOfLikes: '1',
     numOfViews: '',
+    gameID: '29381',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/neptunes-champions.gif',
     gameDesc:
@@ -126,6 +137,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2021/02/katana-new.jpg',
     numOfLikes: '616',
     numOfViews: '',
+    gameID: '15334',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/katana.gif',
     gameDesc: ''
@@ -137,6 +149,7 @@ const gameDataArr = [
       'https://img.slotjava.it/wp-content/uploads/2023/06/luke-e-chance-and-the-book-of-luck-featured.jpg',
     numOfLikes: '616',
     numOfViews: '',
+    gameID: '29225',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/luke-e-chance-and-the-book-of-luck.gif',
     gameDesc:
@@ -148,6 +161,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2019/06/columbus-deluxe_free-1-286x217.jpg',
     numOfLikes: '460',
     numOfViews: '',
+    gameID: '240',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/columbus-deluxe.gif',
     gameDesc:
