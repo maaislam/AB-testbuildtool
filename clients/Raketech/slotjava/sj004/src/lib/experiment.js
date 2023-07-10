@@ -72,7 +72,7 @@ const initSecondStage = (mutation) => {
 
 export default () => {
   setup(); //use if needed
-  document.body.addEventListener('click', clickHandler);
+  document.body.addEventListener('pointerup', clickHandler);
 
   document.getElementById('slotNavigatorSearch').addEventListener('input', searchInputHandler);
 

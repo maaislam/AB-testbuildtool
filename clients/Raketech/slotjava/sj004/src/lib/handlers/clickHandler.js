@@ -11,6 +11,7 @@ const toggleModalView = () => {
 
 const clickHandler = (e) => {
   const { target } = e;
+  //console.log('🚀 ~ file: clickHandler.js:14 ~ clickHandler ~ target:', target);
 
   if (target.closest('[class*="play-money-btn"]')) {
     const { gamename } = target.closest('[data-gamename]').dataset;
@@ -37,9 +38,11 @@ const clickHandler = (e) => {
       }`
     );
   } else if (target.closest('.slot-navigator-filter__provider-list-item')) {
+    //console.log(target);
     const { providerName } = target.closest('.slot-navigator-filter__provider-list-item').dataset;
+    //console.log('🚀providerName:', providerName);
 
-    piwikTrack(`${providerName} | Clicks on Filter | Game Providers`);
+    providerName && piwikTrack(`${providerName} | Clicks on Filter | Game Providers`);
   } else if (target.closest('#slotNavigatorLoadButton')) {
     piwikTrack("Clicks on 'Load More Slots'");
   } else if (

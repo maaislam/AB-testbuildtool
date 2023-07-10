@@ -19,7 +19,7 @@ const oldCardEnterHandler = (e) => {
     target.querySelector('.card__description').textContent
   );
   const gameId = target.querySelector('.card__favourite-button').dataset.slotId;
-  console.log('🚀 ~ file: oldCardEnterHandler.js:22 ~ oldCardEnterHandler ~ gameId:', gameId);
+  //console.log('🚀 ~ file: oldCardEnterHandler.js:22 ~ oldCardEnterHandler ~ gameId:', gameId);
   const gameDesc = '';
   const gameData = {
     gameName,
@@ -30,18 +30,18 @@ const oldCardEnterHandler = (e) => {
     gameDesc
   };
 
-  getGameDesc(gameLink).then((data) => {
-    gameData.gameDesc = data;
-    window.mouseinTimer = setTimeout(() => {
-      lastParent.insertAdjacentHTML('afterbegin', gameOverlay(ID, gameData));
-      const hoveredCard = lastParent.querySelector(`.${ID}__gameoverlay`);
-      //hoveredCard.classList.add('stock-card');
-      //extract game data from target
-      hoveredCard.classList.remove('hide_content');
-      hoveredCard.classList.add('fadein');
-      //render overlay
-    }, MOUSE_ENTER_DELAY);
-  });
+  window.mouseinTimer = setTimeout(() => {
+    lastParent.insertAdjacentHTML('afterbegin', gameOverlay(ID, gameData));
+    const hoveredCard = lastParent.querySelector(`.${ID}__gameoverlay`);
+    //hoveredCard.classList.add('stock-card');
+    //extract game data from target
+    hoveredCard.classList.remove('hide_content');
+    hoveredCard.classList.add('fadein');
+    //render overlay
+  }, MOUSE_ENTER_DELAY);
+  //getGameDesc(gameLink).then((data) => {
+  //gameData.gameDesc = data;
+  //});
 };
 
 export default oldCardEnterHandler;

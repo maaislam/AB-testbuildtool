@@ -22,7 +22,7 @@ const gameOverlay = (id, gameData) => {
             </div>
           </div>
           <div class="game-description">
-              <span>${truncateText(gameDesc)}</span>
+              
           </div>
           <div class="game-buttons">
             <a href="${gameLink}" class="play-now-btn">
@@ -40,3 +40,4 @@ const gameOverlay = (id, gameData) => {
 };
 
 export default gameOverlay;
+//<span>${truncateText(gameDesc)}</span>
