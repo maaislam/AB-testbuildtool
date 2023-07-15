@@ -6,10 +6,14 @@ const gameDataArr = [
     numOfLikes: '1585',
     numOfViews: '',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gameGif: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     gameDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 =======
+=======
+    gameID: '1106',
+>>>>>>> upstream/main
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/fowl-play-gold.gif',
     gameDesc:
@@ -23,10 +27,14 @@ const gameDataArr = [
     numOfLikes: '2327',
     numOfViews: '',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gameGif: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     gameDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 =======
+=======
+    gameID: '338',
+>>>>>>> upstream/main
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/book-of-ra-deluxe.gif',
     gameDesc:
@@ -38,12 +46,17 @@ const gameDataArr = [
     gameLink: 'https://www.slotjava.it/slot/the-big-easy/',
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2019/10/the-big-easy_logo.jpg',
     numOfLikes: '1827',
+<<<<<<< HEAD
     numOfViews: '',
 <<<<<<< HEAD
     gameGif: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     gameDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 =======
+=======
+    numOfViews: '2552',
+    gameID: '',
+>>>>>>> upstream/main
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/the-big-easy.gif',
     gameDesc: ''
@@ -56,10 +69,14 @@ const gameDataArr = [
     numOfLikes: '1827',
     numOfViews: '',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gameGif: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     gameDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 =======
+=======
+    gameID: '107',
+>>>>>>> upstream/main
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/sphinx.gif',
     gameDesc:
@@ -74,10 +91,14 @@ const gameDataArr = [
     numOfLikes: '40',
     numOfViews: '',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gameGif: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     gameDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 =======
+=======
+    gameID: '22611',
+>>>>>>> upstream/main
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/dolphins-pearl-deluxe.gif',
     gameDesc: ''
@@ -90,10 +111,14 @@ const gameDataArr = [
     numOfLikes: '518',
     numOfViews: '',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gameGif: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     gameDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 =======
+=======
+    gameID: '14184',
+>>>>>>> upstream/main
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/garden-of-riches.gif',
     gameDesc:
@@ -107,10 +132,14 @@ const gameDataArr = [
     numOfLikes: '1716',
     numOfViews: '',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gameGif: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     gameDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 =======
+=======
+    gameID: '109',
+>>>>>>> upstream/main
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/sphinx-wild.gif',
     gameDesc:
@@ -124,10 +153,14 @@ const gameDataArr = [
     numOfLikes: '543',
     numOfViews: '',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gameGif: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     gameDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 =======
+=======
+    gameID: '1448',
+>>>>>>> upstream/main
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/book-of-ra-magic.gif',
     gameDesc:
@@ -141,10 +174,14 @@ const gameDataArr = [
     numOfLikes: '288',
     numOfViews: '',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gameGif: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     gameDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 =======
+=======
+    gameID: '9346',
+>>>>>>> upstream/main
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/secret-elixir.gif',
     gameDesc:
@@ -158,10 +195,14 @@ const gameDataArr = [
     numOfLikes: '119',
     numOfViews: '',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gameGif: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     gameDesc:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 =======
+=======
+    gameID: '15440',
+>>>>>>> upstream/main
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/gates-of-olympus.gif',
     gameDesc:
@@ -174,6 +215,7 @@ const gameDataArr = [
       'https://img.slotjava.it/wp-content/uploads/2023/06/neptunes-champions-featured-286x217.jpg',
     numOfLikes: '1',
     numOfViews: '',
+    gameID: '29381',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/neptunes-champions.gif',
     gameDesc:
@@ -185,6 +227,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2021/02/katana-new.jpg',
     numOfLikes: '616',
     numOfViews: '',
+    gameID: '15334',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/katana.gif',
     gameDesc: ''
@@ -196,6 +239,7 @@ const gameDataArr = [
       'https://img.slotjava.it/wp-content/uploads/2023/06/luke-e-chance-and-the-book-of-luck-featured.jpg',
     numOfLikes: '616',
     numOfViews: '',
+    gameID: '29225',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/luke-e-chance-and-the-book-of-luck.gif',
     gameDesc:
@@ -207,6 +251,7 @@ const gameDataArr = [
     imgSrc: 'https://img.slotjava.it/wp-content/uploads/2019/06/columbus-deluxe_free-1-286x217.jpg',
     numOfLikes: '460',
     numOfViews: '',
+    gameID: '240',
     gameGif:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign/columbus-deluxe.gif',
     gameDesc:

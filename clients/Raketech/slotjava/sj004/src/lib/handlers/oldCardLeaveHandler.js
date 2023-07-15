@@ -10,7 +10,7 @@ const oldCardLeaveHandler = (e) => {
   const lastParent = target.closest('.navigator-game-card');
 
   const hoveredCard = lastParent.querySelector(`.${ID}__gameoverlay`);
-  window.abortController.abort();
+  //window.abortController.abort();
   clearTimeout(window.mouseinTimer);
   hoveredCard?.classList.add('fadeout');
   setTimeout(() => {

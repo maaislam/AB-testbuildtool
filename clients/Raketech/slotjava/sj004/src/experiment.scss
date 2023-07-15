@@ -4,6 +4,10 @@
 .#{$id} {
   .navigator-game-card {
     position: relative;
+
+    img.card__image {
+      height: 190px;
+    }
   }
 
 <<<<<<< HEAD
@@ -94,19 +98,36 @@
   }
 
   &__gameoverlay {
+    position: relative;
     width: 100%;
     max-width: 320px;
     padding: 15px;
     position: absolute;
-    top: 10px;
+    top: -4px;
     z-index: 1000;
     border-radius: 5px;
-    left: 10px;
-    //filter: drop-shadow(1px 0px 1px black);
+    left: 50%;
+    transform: translateX(-50%);
     background: #f2f2f2;
     box-shadow: 2px 0 1px 0 #f2f2f2;
     backdrop-filter: blur(1.5px);
     border-radius: 10px;
+
+    &::before {
+      content: 'Slot Popolare';
+      z-index: 5;
+      position: absolute;
+      left: 22px;
+      top: 24px;
+      display: none;
+      padding: 5px 10px;
+      font-size: 10px;
+      background: #fb3a2b;
+      text-transform: uppercase;
+      border-radius: 20px;
+      color: #fff;
+      font-weight: 700;
+    }
 
     @include media-query(md) {
       display: none;
@@ -244,8 +265,8 @@
 
     & > .#{$id}__gamecard:nth-child(3n) {
       .#{$id}__gameoverlay {
-        left: auto;
-        right: 10px;
+        // left: auto;
+        // right: 10px;
       }
     }
 
@@ -263,6 +284,11 @@
   &__gamecard {
     position: relative;
     width: 100%;
+    &[data-position='gif card'] {
+      .#{$id}__gameoverlay::before {
+        display: block;
+      }
+    }
 
     a {
       text-decoration: none;
@@ -270,6 +296,10 @@
 
     img {
       border-radius: 5px;
+    }
+    &-img img {
+      width: 100%;
+      height: 190px;
     }
 
 <<<<<<< HEAD

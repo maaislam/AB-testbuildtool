@@ -70,3 +70,15 @@ export const extractNumberFromString = (str) => {
   const matches = str.match(/\d+/);
   return matches ? parseInt(matches[0]) : null;
 };
+
+export const truncateText = (text, maxLength = 90) => {
+  if (text && text.length < maxLength) return text;
+  if (!text) return '';
+  let truncatedText = text.slice(0, maxLength);
+  //Check if the last character is a space to avoid cutting off a word
+  if (truncatedText.charAt(truncatedText.length - 1) === ' ') {
+    truncatedText = truncatedText.slice(0, truncatedText.lastIndexOf(' '));
+  }
+  //${truncatedText}...
+  return '';
+};
