@@ -82,3 +82,31 @@ export const truncateText = (text, maxLength = 90) => {
   //${truncatedText}...
   return '';
 };
+
+export const observeDivsInMiddle = (divElements) => {
+  const options = {
+    root: null,
+    rootMargin: '-24px 0px -24px 0px',
+    threshold: 1 //Adjust this threshold value as needed
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      //console.log('🚀 ~ file: utils.js:95 ~ entries.forEach ~ entry:', entry);
+      const { target } = entry;
+      const imageElem = target.querySelector('a>img');
+      const gifUrl = imageElem.dataset.gif;
+      const imgUrl = imageElem.dataset.img;
+
+      if (entry.isIntersecting) {
+        imageElem.src = gifUrl;
+      } else {
+        imageElem.src = imgUrl;
+      }
+    });
+  }, options);
+
+  divElements.forEach((divElement) => {
+    observer.observe(divElement);
+  });
+};

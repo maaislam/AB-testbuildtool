@@ -9,7 +9,7 @@ const data = {
     inbanner:
       'https://wlpremierlivecasino.adsrv.eacdn.com/C.ashx?btag=a_4841b_111c_&affid=690&siteid=4841&adid=111&c='
   },
-  lyllocasino: {
+  lyllo: {
     default:
       'https://media.lyllocasino.com/tracking.php?tracking_code&aid=107716&mid=6291&sid=456400&pid=2847',
     inbanner:
@@ -21,17 +21,13 @@ const data = {
     inbanner:
       'https://media.hajper.com/tracking.php?tracking_code&aid=110899&mid=1968&sid=456403&pid=640'
   },
-  noaccountcasino: {
-    default: '',
-    inbanner: ''
-  },
-  playojos: {
+  playojo: {
     default:
       'https://site.gotoplayojo.com/index.php?aname=rt00_se_playojo_rev&zone_id=CG_PO_D_N_A_A167017C',
     inbanner:
       'https://site.gotoplayojo.com/index.php?aname=rt00_se_playojo_rev&zone_id=CG_PO_B_N_B_A167018C'
   },
-  snabbarecomcasino: {
+  snabbare: {
     default:
       'https://media.snabbare.com/tracking.php?tracking_code&aid=108016&mid=1960&sid=456404&pid=635',
     inbanner:
@@ -59,43 +55,15 @@ const data = {
     default: 'https://site.turbonino.com/index.php?aname=rtcasino_new&zone_id=CG_TN_D_N_A_A167029C',
     inbanner: 'https://site.turbonino.com/index.php?aname=rtcasino_new&zone_id=CG_TN_B_N_B_A167030C'
   },
-  fastbet: {
-    default: '',
-    inbanner: ''
-  },
-  hypercasino: {
-    default: '',
-    inbanner: ''
-  },
-  bethard: {
-    default: '',
-    inbanner: ''
-  },
   gogocasino: {
     default: 'https://ntrfr.gogocasino.com/redirect.aspx?pid=3765551&bid=17383',
     inbanner: 'https://ntrfr.gogocasino.com/redirect.aspx?pid=3765552&bid=17383'
-  },
-  momangcasino: {
-    default: '',
-    inbanner: ''
-  },
-  ninjacasino: {
-    default: '',
-    inbanner: ''
   },
   casinostugan: {
     default:
       'https://media.casinostugan.com/tracking.php?tracking_code&aid=107713&mid=8419&sid=456408&pid=850',
     inbanner:
       'https://media.casinostugan.com/tracking.php?tracking_code&aid=107713&mid=8419&sid=456409&pid=850'
-  },
-  turbovegas: {
-    default: '',
-    inbanner: ''
-  },
-  paf: {
-    default: '',
-    inbanner: ''
   },
   nyspins: {
     default: 'https://nvd.suprnation.com/redirect.aspx?pid=28464&bid=1975',
@@ -105,7 +73,7 @@ const data = {
     default: 'https://ads.metalcasino.com/redirect.aspx?pid=5049&bid=1673',
     inbanner: 'https://ads.metalcasino.com/redirect.aspx?pid=5050&bid=1673'
   },
-  voodoodreams: {
+  voododreams: {
     default: 'https://nvd.suprnation.com/redirect.aspx?pid=28466&bid=2244',
     inbanner: 'https://nvd.suprnation.com/redirect.aspx?pid=28467&bid=2244'
   },
@@ -121,7 +89,7 @@ const data = {
     default:
       'https://site.gotoroyale500.com/index.php?aname=rt00_se_royale500&zone_id=CG_R5_D_N_A_A167048C',
     inbanner:
-      'https://site.gotoroyale500.com/index.php?aname=rt00_se_royale500&zone_id=CG_R5_D_N_A_A167048C'
+      'https://site.gotoroyale500.com/index.php?aname=rt00_se_royale500&zone_id=CG_R5_B_N_B_A167049C'
   },
   pixelbet: {
     default: 'https://ntrfr.pixel.bet/redirect.aspx?pid=3765554&bid=16742',
@@ -138,10 +106,6 @@ const data = {
   klirrcasino: {
     default: 'https://record.epic.partners/_m9a0fRwHwzUr8Syj4RJS-mNd7ZgqdRLk/3144/',
     inbanner: 'https://record.epic.partners/_m9a0fRwHwzUr8Syj4RJS-mNd7ZgqdRLk/3145/'
-  },
-  yoyocasino: {
-    default: '',
-    inbanner: ''
   },
   duelzcasino: {
     default: 'https://nvd.suprnation.com/redirect.aspx?pid=28468&bid=2385',

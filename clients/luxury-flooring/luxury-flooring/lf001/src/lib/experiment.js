@@ -9,7 +9,7 @@ const clickHandler = (event) => {
   const { target } = event;
 
   if (target.closest('.c-header__main__logo .logo')) {
-    // gaTracking('clicks on brand logo');
+    //gaTracking('clicks on brand logo');
     console.log('clicks on brand logo');
   }
 };
@@ -17,7 +17,7 @@ const clickHandler = (event) => {
 const mutationCallback = (mutation) => {
   if (mutation.target.classList.contains('active')) {
     console.log(mutation);
-    // gaTracking('clicks on basket icon');
+    //gaTracking('clicks on basket icon');
     console.log('clicks on basket icon');
   }
 };

@@ -2,29 +2,29 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  &__test {
-    display: block;
+  &__hide {
+    display: none;
   }
-}
-.csm-btn {
-  width: 100%;
-  background: #f69400;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 130%;
-  max-height: 40px;
-  margin-top: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 0px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.container__1Sosv .benefitsContainer__2DEot + a {
-  display: none;
+  &__csm-btn {
+    width: 100%;
+    background: #f69400;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+    height: 40px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 }

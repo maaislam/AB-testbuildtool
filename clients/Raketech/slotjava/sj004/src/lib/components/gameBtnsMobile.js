@@ -4,11 +4,11 @@ const gameBtnsMobile = (gameLink, gameName) => {
   const htmlStr = `
     <div class="game-buttons-mb" data-gamename="${gameName}">
         <div class="play-money-btn-mb">
-        <span>Verifica nel casinò</span>
+        <span>Esplora casino</span>
         </div>
         <a href="${gameLink}" class="play-now-btn-mb">
 
-        <span>Continua &nbsp;</span>
+        <span>Gioca gratis &nbsp;</span>
         <img src="${awsImgPath}/play.svg" alt="play button">
 
         </a>
