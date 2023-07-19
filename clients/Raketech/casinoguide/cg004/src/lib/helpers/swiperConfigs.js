@@ -1,5 +1,5 @@
 export const highlightSwiperConfig = {
-  slidesPerView: 4,
+  slidesPerView: 6,
   spaceBetween: 10,
   breakpoints: {
     //when window width is >= 320px
@@ -13,7 +13,7 @@ export const highlightSwiperConfig = {
       slidesPerView: 2.2
     },
     1024: {
-      slidesPerView: 4
+      slidesPerView: 6
     }
   }
 };

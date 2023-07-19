@@ -7,7 +7,7 @@ const highlightCard = (id, data) => {
       <div class="${id}__highlightcard ${id}__bonus-intent swiper-slide"  data-title="${reviewSlug}">
           <div class="${id}__slot">
             <div class="${id}__slot-row1">
-              <a target="_blank" href="${reviewUrl}" data-opName="${title}"><img src="${imagePathPrefix}leovegas.png" alt="${reviewSlug}"></a>
+              <a target="_blank" href="${reviewUrl}" data-opName="${title}"><img src="https://www.casinoguide.se/wp-content/uploads/2023/05/ninjacasino-7.png.webp" alt="${reviewSlug}"></a>
             </div>
             <div class="${id}__slot-row2">
               <div class="slot-name"><a target="_blank" data-opName="${title}" href="${reviewUrl}">${title}</a></div>   
