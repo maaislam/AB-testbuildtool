@@ -11,6 +11,7 @@ const toggleModalView = () => {
 
 const clickHandler = (e) => {
   const { target } = e;
+  //e.preventDefault();
   //console.log('🚀 ~ file: clickHandler.js:14 ~ clickHandler ~ target:', target);
 
   if (target.closest('[class*="play-money-btn"]')) {
@@ -57,7 +58,10 @@ const clickHandler = (e) => {
     const url = target.closest('a').href;
     const btnPositionElem = target.closest('[data-position]');
     const btnPosition = btnPositionElem ? `| ${btnPositionElem.dataset.position}` : '';
-    piwikTrack(`${getOperatorFromUrl(url)} | Clicks to Slot Reviews ${btnPosition}`);
+    const isInsideSlotEngine = target.closest('.slot-navigator') ? ' | Slot Engine' : '';
+    piwikTrack(
+      `${getOperatorFromUrl(url)} | Clicks to Slot Reviews ${btnPosition}${isInsideSlotEngine}`
+    );
   } else if (
     target.closest('[href*="/visita/"]') &&
     !target.closest('.modal-content') &&
@@ -73,6 +77,10 @@ const clickHandler = (e) => {
     const url = target.closest('a').href;
     const opName = getOperatorFromUrl(url, '/visita/', '/');
     piwikTrack(`${opName} | CTA Clicks to Operator (Bonus Intent) | Editor Casino Picks`);
+  } else if (target.closest('.game-gif') || target.closest('.game-name-section')) {
+    const overlay = target.closest(`.${ID}__gameoverlay`);
+    const gameBtn = overlay.querySelector('.play-now-btn');
+    gameBtn.click();
   }
 };
 

@@ -7,7 +7,7 @@ import gameDataArr from './gameData';
 import getTopSlots from './helpers/getTopSlots';
 import modal from './components/modal';
 import modalContents from './components/modalContents';
-import { observeDOM } from './helpers/utils';
+import { observeDOM, observeDivsInMiddle } from './helpers/utils';
 import clickHandler from './handlers/clickHandler';
 
 import searchInputHandler from './handlers/searchInputHandler';
@@ -72,7 +72,7 @@ const initSecondStage = (mutation) => {
 
 export default () => {
   setup(); //use if needed
-  document.body.addEventListener('pointerup', clickHandler);
+  document.body.addEventListener('click', clickHandler);
 
   document.getElementById('slotNavigatorSearch').addEventListener('input', searchInputHandler);
 
@@ -90,5 +90,12 @@ export default () => {
 
   renderModal();
   initStageOne();
+  //check if device is mobile using matcmedia
+  const isMobile = window.matchMedia('(max-width: 850px)').matches;
+  if (isMobile) {
+    const divElements = document.querySelectorAll(`.${ID}__gamecard`);
+    observeDivsInMiddle(divElements);
+  }
+
   observeDOM('#slotContainer', initSecondStage);
 };

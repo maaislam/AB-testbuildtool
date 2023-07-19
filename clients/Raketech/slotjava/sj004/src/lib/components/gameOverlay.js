@@ -26,11 +26,11 @@ const gameOverlay = (id, gameData) => {
           </div>
           <div class="game-buttons">
             <a href="${gameLink}" class="play-now-btn">
-              <span>Continua &nbsp;</span>
+              <span>Gioca gratis &nbsp;</span>
               <img src="${awsImgPath}/play.svg" alt="play button">
             </a>
             <div class="play-money-btn " data-gamename="${gameName}">
-                <span>Verifica nel casinò</span>
+                <span>Esplora casino</span>
             </div>
           </div>
       </div>
