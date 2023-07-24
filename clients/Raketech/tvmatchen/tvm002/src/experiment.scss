@@ -1,0 +1,196 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__test {
+        display: block;
+    }
+    .main-container {
+        .centered_wrapper{
+            background-color: #fff;
+        }
+    }
+    #match-view{
+        .day-wrap{
+            margin-bottom: 16px;
+            border-bottom: none;
+            #history_back{
+                display: none;
+            }
+            .day-title{
+                display: none;
+            }
+
+            .show-more{
+                background-color: #fff;
+                color: #000;
+                height: 20px;
+                line-height: 20px;
+                width: 50px;
+                a#match_more_button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between !important;
+                    text-decoration: none;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+                i{
+                    color: #000;
+                    font-size: 18px;
+                    line-height: 20px;
+                }
+                span{
+                    color: #000;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        section.title-area.section{
+            display: flex;
+            padding: 36px 0px 40px 0px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            align-self: stretch;
+            border-radius: 6px;
+            border: 1px solid #EEE;
+            background: #FAFAFA;
+
+
+            .versus-title {
+                width: 100%;
+                flex-direction: row !important;
+                justify-content: center !important;
+                align-items: center !important;
+                li.team {
+                    flex-direction: row !important;
+                    justify-content: flex-end;
+                    align-items: center;
+                    width: calc(50% - 60px);
+                    .match-title{
+                        a{
+                            color: #222;
+                            font-family: Rubik;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 120%;
+                        }
+                    }
+                }
+                li.team.hometeam {
+                    flex-direction: row !important;
+                    .match-title{
+                        margin: 0;
+                        margin-right: 12px;
+                    }
+                }
+                li.team.awayteam {
+                    flex-direction: row-reverse !important;
+                    .match-title{
+                        margin: 0;
+                        margin-left: 12px;
+                    }
+                }
+                .team-logo {
+                    height: 80px;
+                    width: 80px;
+                }
+                li.centerpiece{
+                    .match-time{
+                        color: #0092D0;
+                        font-family: Rubik;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 120%;
+                        border-radius: 0;
+                        border: none;
+                        height: auto;
+                        width: auto;
+                        line-height: auto;
+                    }
+                    .match_date{
+                        color: #6C6C6C;
+                        font-family: Rubik;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+
+        .match_details__item__title{
+            color: #222;
+            font-family: Rubik;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%; 
+            margin-bottom: 8px;
+        }
+    }
+
+    .match_details{
+        .match_details__item{
+            .match_details__item__content{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 8px;
+                a{
+                    width: calc(33.33% - 8px);
+                    display: flex;
+                    justify-content: space-between;
+                    border-radius: 6px;
+                    border: 1px solid #EEE;
+                    background: #FAFAFA;
+                    padding: 5px;
+                    align-items: center;
+                    .left_content{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .channel_image{
+                            img{
+                                height: 36px;
+                                width: 36px;
+                            }
+                        }
+                        .info{
+                            margin-left: 10px;
+                            .title{
+                                color: #000;
+                                font-family: Rubik;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 130%; 
+                                text-decoration: none;
+                            }
+                            .subtitle{
+                                font-family: Rubik;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 150%; /* 18px */
+                                letter-spacing: -0.2px;
+                                color: gray;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
