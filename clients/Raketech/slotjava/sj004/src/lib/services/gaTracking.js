@@ -10,7 +10,6 @@ const piwikTrack = (label, device = 'Desktop') => {
     window._paq.push([
       'trackEvent',
       'Experiment SJ Slot Card Redesign 011',
-      'click',
       `${device} Users Only`,
       `011 | Variation: ${VARIATION} | ${label}`
     ]);

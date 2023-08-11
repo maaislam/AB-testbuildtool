@@ -5,53 +5,80 @@
   .ctaContainerSticky__3P10_ {
     z-index: 999;
   }
+  &__highlightcards {
+    margin-top: 20px;
+    padding: 0 24px;
+    overflow-x: hidden;
+  }
 
   &__highlightcard {
     border-radius: 4px;
     //box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.16);
   }
 
+  &__experiment-wrapper {
+    overflow-x: hidden;
+  }
+
+  &__slot {
+    display: flex;
+  }
+
   &__tc {
     ul {
       justify-content: flex-end;
       background-color: transparent;
+      @include media-query(sm) {
+        justify-content: center;
+        text-align: center;
+      }
     }
   }
 
   &__slot-row1 {
-    border-radius: 4px 4px 0 0;
+    border-radius: 4px 0 0 4px;
     background-color: #f36b4a;
     a {
       display: block;
+      width: 80px;
+
       img {
-        width: 100%;
-        max-width: 100px;
+        // width: 100%;
+        max-width: 100%;
         height: auto;
+        max-height: 166px;
         margin: 0 auto;
+        border-radius: 4px 0 0 4px;
       }
     }
   }
   &__slot-row2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 10px 15px;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 4px 4px 0;
     background-color: #f1f2f2;
 
-    .slot-name a {
+    .slot-name {
       margin-bottom: 8px;
-      color: #00111c;
-      //font-family: Inter;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.3;
-      text-align: left;
-      text-transform: capitalize;
+      a {
+        color: #00111c;
+        //font-family: Inter;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.3;
+        text-align: left;
+        text-transform: capitalize;
+      }
     }
 
     .slot-text {
       display: flex;
       align-items: center;
-      width: 95%;
-      height: 48px;
+
+      //height: 48px;
       a {
         display: block;
         color: #00406c;
@@ -70,7 +97,7 @@
       width: 100%;
       max-width: 280px;
       margin-top: 10px;
-      padding: 6px 0;
+      padding: 10px 0;
       border-radius: 3px;
       background-color: #f69400;
 

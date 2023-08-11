@@ -33,10 +33,11 @@ export default () => {
   //-----------------------------
   //Write experiment code here
   //-----------------------------
-  //...
-
+  //.../go/leovegas
+  const controlAnchorElem = document.querySelector('a.container__3UvJN');
+  const controlHref = controlAnchorElem.href;
   const anchorPoint = document.querySelector('.innerContainer__1XQ-1>.description__2yK1S');
-  const newBtn = `<a data-toplist-item-link="/go/happycasino" class="${ID}__cta cta__1HzOA cta__3Rtjm" href="/go/happycasino" rel="noopener nofollow" target="_blank"><strong>Gå till Casino</strong></a>`;
+  const newBtn = `<a data-toplist-item-link="${controlHref}" class="${ID}__cta cta__1HzOA cta__3Rtjm" href="${controlHref}" rel="noopener nofollow" target="_blank"><strong>Gå till Casino</strong></a>`;
 
   if (document.querySelector(`.${ID}__cta`)) return;
   anchorPoint.insertAdjacentHTML('afterend', newBtn);

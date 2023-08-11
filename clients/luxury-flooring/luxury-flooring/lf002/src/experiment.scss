@@ -1,0 +1,33 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__roomvobtn {
+    width: 100%;
+    max-width: 370px;
+    margin-bottom: 20px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #707070;
+    cursor: pointer;
+    div {
+      color: #202020;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: 'Work Sans';
+    }
+    div:first-child {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      display: inline-block;
+      width: auto;
+      width: 60px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+}

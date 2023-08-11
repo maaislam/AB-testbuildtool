@@ -1,8 +1,10 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
-.#{$id} {
-  &__test {
-    display: block;
+.#{$id}__message {
+  display: flex;
+  justify-content: center;
+  span {
+    font-size: 13px !important;
   }
 }

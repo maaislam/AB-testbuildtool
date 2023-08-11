@@ -1,3 +1,5 @@
+import { truncateText } from '../helpers/utils';
+
 const highlightCard = (id, data) => {
   const { reviewUrl, reviewSlug, operatorUrl, title, subTitle } = data;
   const imagePathPrefix =
@@ -7,12 +9,22 @@ const highlightCard = (id, data) => {
       <div class="${id}__highlightcard ${id}__bonus-intent swiper-slide"  data-title="${reviewSlug}">
           <div class="${id}__slot">
             <div class="${id}__slot-row1">
-              <a target="_blank" href="${reviewUrl}" data-opName="${title}"><img src="${imagePathPrefix}leovegas.png" alt="${reviewSlug}"></a>
+              <a class="${id}__revlink" href="${reviewUrl}" data-opName="${title}">
+                <img 
+                  src="${imagePathPrefix}${operatorUrl.split('/').pop()}.png" 
+                  alt="${reviewSlug}">
+              </a>
             </div>
             <div class="${id}__slot-row2">
-              <div class="slot-name"><a target="_blank" data-opName="${title}" href="${reviewUrl}">${title}</a></div>   
-              <div class="slot-text"><a target="_blank" data-opName="${title}" href="${reviewUrl}">${subTitle}</a></div>
-              <div class="operator-btn"><a target="_blank" data-opName="${title}" href="${operatorUrl}">GET A BONUS</a></div>
+              <div class="slot-name"><a class="${id}__revlink" data-opName="${title}" href="${reviewUrl}">${title}</a></div>   
+              <div class="slot-text">
+                <a 
+                  class="${id}__revlink"
+                  data-opName="${title}" 
+                  href="${reviewUrl}">${truncateText(subTitle)}
+                </a>
+              </div>
+              <div class="operator-btn"><a target="_blank" href="${operatorUrl}">TILL CASINOT</a></div>
             </div>
           </div>
       </div>`;

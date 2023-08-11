@@ -6,14 +6,17 @@ export const highlightSwiperConfig = {
     300: {
       slidesPerView: 1.1
     },
-    640: {
-      slidesPerView: 1.6
+    480: {
+      slidesPerView: 1.8
     },
-    768: {
+    680: {
       slidesPerView: 2.2
     },
     1024: {
-      slidesPerView: 4
+      slidesPerView: 3.2
+    },
+    1280: {
+      slidesPerView: 4.2
     }
   }
 };

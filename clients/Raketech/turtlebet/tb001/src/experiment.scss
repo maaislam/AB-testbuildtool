@@ -1,0 +1,164 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__test {
+    display: block;
+  }
+
+  &-1 {
+    .mui-style-nyuugy:hover,
+    .mui-style-nyuugy:focus,
+    .mui-style-nyuugy:active {
+      border: 1px solid #f58321 !important;
+    }
+    .mui-style-jp7oy2 {
+      &:hover {
+        border-color: #f58321;
+        a.outButton {
+          background-color: #f58321 !important;
+          box-shadow: none;
+        }
+      }
+    }
+    .mui-style-1xv53o1 {
+      background-color: #f25922 !important;
+      box-shadow: inset 0 -2px 0 0 #f58321 !important;
+      &:hover {
+        background-color: #f58321 !important;
+        box-shadow: none;
+      }
+    }
+    .mui-style-wcn377:hover {
+      border-color: #f58321;
+    }
+
+    .mui-style-nyuugy:hover .outButton,
+    .mui-style-nyuugy:focus .outButton,
+    .mui-style-nyuugy:active .outButton {
+      background-color: #f58321 !important;
+      box-shadow: 0 0 0 #f58321 !important;
+      -webkit-animation: animation-1rzv8hv 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+      animation: animation-1rzv8hv 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    }
+    .mui-style-wcn377:hover .outButton,
+    .mui-style-wcn377:focus .outButton,
+    .mui-style-wcn377:active .outButton {
+      background-color: #f58321 !important;
+      box-shadow: 0 0 0 #f58321 !important;
+      -webkit-animation: animation-1rzv8hv 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+      animation: animation-1rzv8hv 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
+    }
+    .MuiGrid-container {
+      a.outButton {
+        background-color: #f25922;
+        box-shadow: inset 0 -2px 0 0 #f25922;
+
+        &:hover,
+        &:focus {
+          background-color: #f58321 !important;
+          box-shadow: inset 0 -2px 0 0 #f58321 !important;
+        }
+
+        &::after {
+          background-image: radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, transparent 10%, #f8ad20 15%, transparent 20%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%);
+        }
+        &::before {
+          background-image: radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, transparent 20%, #f8ad20 20%, transparent 30%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, transparent 10%, #f8ad20 15%, transparent 20%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%),
+            radial-gradient(circle, #f8ad20 20%, transparent 20%);
+        }
+      }
+    }
+  }
+
+  &-2 {
+    .mui-style-nyuugy:hover,
+    .mui-style-nyuugy:focus,
+    .mui-style-nyuugy:active {
+      border: 1px solid #cc412b !important;
+    }
+    .mui-style-jp7oy2 {
+      &:hover {
+        border-color: #cc412b;
+        a.outButton {
+          background-color: #cc412b !important;
+          box-shadow: none;
+        }
+      }
+    }
+    .mui-style-1xv53o1 {
+      background-color: #a62833 !important;
+      box-shadow: inset 0 -2px 0 0 #cc412b !important;
+      &:hover {
+        background-color: #cc412b !important;
+        box-shadow: none;
+      }
+    }
+    .mui-style-wcn377:hover {
+      border-color: #cc412b;
+    }
+
+    .mui-style-nyuugy:hover .outButton,
+    .mui-style-nyuugy:focus .outButton,
+    .mui-style-nyuugy:active .outButton {
+      background-color: #cc412b !important;
+      box-shadow: 0 0 0 #cc412b;
+      -webkit-animation: animation-1rzv8hv 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+      animation: animation-1rzv8hv 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+    .mui-style-wcn377:hover .outButton,
+    .mui-style-wcn377:focus .outButton,
+    .mui-style-wcn377:active .outButton {
+      background-color: #cc412b !important;
+      box-shadow: 0 0 0 #cc412b;
+      -webkit-animation: animation-1rzv8hv 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+      animation: animation-1rzv8hv 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+    .MuiGrid-container {
+      a.outButton {
+        background-color: #a62833;
+        box-shadow: inset 0 -2px 0 0 #a62833;
+
+        &:hover,
+        &:focus {
+          background-color: #cc412b !important;
+          box-shadow: inset 0 -2px 0 0 #cc412b !important;
+        }
+
+        &::after {
+          background-image: radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, transparent 10%, #f25922 15%, transparent 20%),
+            radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, #f25922 20%, transparent 20%);
+        }
+        &::before {
+          background-image: radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, transparent 20%, #f25922 20%, transparent 30%),
+            radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, transparent 10%, #f25922 15%, transparent 20%),
+            radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, #f25922 20%, transparent 20%),
+            radial-gradient(circle, #f25922 20%, transparent 20%);
+        }
+      }
+    }
+  }
+}

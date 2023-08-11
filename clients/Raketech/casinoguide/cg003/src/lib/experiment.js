@@ -1,7 +1,9 @@
+/*eslint-disable object-curly-newline */
 import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import data from './alldata';
+import { getAllAttributes } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
@@ -11,7 +13,8 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (target.closest(`.${ID}__csm-btn`)) {
-      const opName = target.dataset.operator;
+      const opName = target.closest('a').dataset.operator;
+      console.log('🚀opName:', opName);
       gaTracking(opName);
     }
   });
@@ -19,14 +22,29 @@ export default () => {
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
-  if (VARIATION === 'control') {
+  if (VARIATION === 'Control') {
     return;
   }
 
   //-----------------------------
   //Write experiment code here
   //-----------------------------
-  //...
+  const customAttr = {
+    hajper: [
+      { name: 'inbanner-affCampaign', value: '487' },
+      { name: 'inbanner-widget', value: '186' },
+      { name: 'rel', value: '940' },
+      { name: 'locale', value: 'sv_SE' },
+      { name: 'currency', value: 'SEK' }
+    ],
+    playojo: [
+      { name: 'inbanner-affCampaign', value: '488' },
+      { name: 'inbanner-widget', value: '186' },
+      { name: 'rel', value: '934' },
+      { name: 'locale', value: 'sv_SE' },
+      { name: 'currency', value: 'SEK' }
+    ]
+  };
 
   const gameCard = document.querySelectorAll('[data-toplist-item]');
   gameCard.forEach((card) => {
@@ -43,6 +61,13 @@ export default () => {
     if (VARIATION === '2') {
       //console.log(gameName);
       inBannerBtn.classList.add(`${ID}__csm-btn`);
+      inBannerBtn.setAttribute('data-operator', gameName);
+      if (gameName === 'hajper' || gameName === 'playojo') {
+        customAttr[gameName].forEach(({ name, value }) => {
+          inBannerBtn.setAttribute(name, value);
+          inBannerBtn.classList.add('inbanner-link');
+        });
+      }
     }
 
     if (!newBtnUrl || card.querySelector(`.${ID}__csm-btn`) || VARIATION !== '1') return;
@@ -53,5 +78,20 @@ export default () => {
       'afterend',
       `<a href='${newBtnUrl}' data-operator="${gameName}" target='_blank' class='${ID}__csm-btn'>TILL CASINOT</a>`
     );
+    //patch work
+    //if (VARIATION !== '2') return;
+    const inBannerAttr = getAllAttributes(inBannerBtn, 'inbanner');
+    const newBtn = card.querySelector(`.${ID}__csm-btn`);
+    if (!newBtn) return;
+    inBannerAttr.forEach((attr) => {
+      newBtn.setAttribute(attr.name, attr.value);
+
+      if (gameName === 'hajper' || gameName === 'playojo') {
+        customAttr[gameName].forEach(({ name, value }) => {
+          newBtn.setAttribute(name, value);
+          newBtn.classList.add('inbanner-link');
+        });
+      }
+    });
   });
 };

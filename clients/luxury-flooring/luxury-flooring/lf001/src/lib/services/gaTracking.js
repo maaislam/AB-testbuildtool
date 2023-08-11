@@ -1,10 +1,13 @@
 import { pollerLite } from '../helpers/utils';
-import shared from '../shared/shared';
+//import shared from '../shared/shared';
 
-const { VARIATION } = shared;
 const gaTracking = (label) => {
-  pollerLite([() => typeof window.gtag === 'function'], () => {
-    window.gtag('event', `${VARIATION} | ${label}`);
+  pollerLite([() => typeof window.dataLayer !== 'undefined'], () => {
+    window.dataLayer.push({
+      event: 'cro_event',
+      event_category: '127 - AB test a Closed checkout',
+      event_label: label
+    });
   });
 };
 

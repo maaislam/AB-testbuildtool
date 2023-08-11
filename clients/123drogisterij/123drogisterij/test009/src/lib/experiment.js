@@ -1,5 +1,6 @@
+/*eslint-disable max-len */
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+//import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { addTitle } from './components/addTitle';
 import { bulkMessage } from './components/bulkMessage';
@@ -8,7 +9,7 @@ const { ID, VARIATION } = shared;
 
 export default () => {
   setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
+  //gaTracking('Conditions Met'); //use if needed
   console.log(ID);
   //-----------------------------
   //If control, bail out from here
@@ -23,6 +24,7 @@ export default () => {
 
   //start
   const collectData = [];
+  //const basePrice = document.querySelector('[id*="product-price-"]').dataset.priceAmount.trim();
   let Highest_Number = 0;
   const bulkData = Array.from(document.querySelectorAll('ul.prices-tier.items > li'));
   const existingBulkOptions = Array.from(
@@ -62,7 +64,7 @@ export default () => {
       if (modifiedData) {
         modifiedData.showPrice =
           (mainProdPrice - modifiedData.actualPrice) * modifiedData.quantity + 4.95;
-        bulkMessage(existingBulk, ID, Highest_Number, modifiedData);
+        bulkMessage(existingBulk, ID, Highest_Number, modifiedData, mainProdPrice);
       }
     });
   };
@@ -70,8 +72,8 @@ export default () => {
   //action
   document.body.classList.add(`${ID}_bulk_test`);
   document.querySelector(`.${ID}_title`)?.remove();
-  document.querySelector('body .product-add-form').insertAdjacentHTML('beforebegin', addTitle(ID));
+  //document.querySelector('body .product-add-form').insertAdjacentHTML('beforebegin', addTitle(ID));
   initMain();
-  const atc = document.getElementById('product-addtocart-button');
-  atc.querySelector('span').innerText = 'kies uw voordeel';
+  //const atc = document.getElementById('product-addtocart-button');
+  //atc.querySelector('span').innerText = 'kies uw voordeel';
 };

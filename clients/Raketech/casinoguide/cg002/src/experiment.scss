@@ -2,7 +2,11 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
-    }
+  &__cta {
+    margin-bottom: 20px;
+  }
+
+  .container__3UvJN {
+    background-position: center -40px !important;
+  }
 }

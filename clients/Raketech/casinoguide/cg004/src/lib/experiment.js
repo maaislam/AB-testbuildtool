@@ -24,17 +24,20 @@ const init = async () => {
     document.querySelector('[class*="carouselContainer"]');
 
   if (document.querySelector(`.${ID}__highlightcards`)) return;
-
+  const isMobile = window.innerWidth < 887;
   carouselAttachPoint.insertAdjacentHTML(
-    'afterend',
+    `${!isMobile ? 'afterend' : 'beforebegin'}`,
     `<section>${highlightCards(ID, currentSlots)}</section>`
   );
 
   initSwiper('.swiper-highlight', highlightSwiperConfig);
-  const controlTcElem = document.querySelector('.footer__3SPRc');
-  const clonedTcElem = controlTcElem.cloneNode(true);
+  //const controlTcElem = document.querySelector('.footer__3SPRc');
+  //const clonedTcElem = controlTcElem.cloneNode(true);
   const tcFooterContainer = document.querySelector(`.${ID}__tc`);
-  tcFooterContainer.appendChild(clonedTcElem);
+  //tcFooterContainer.appendChild(clonedTcElem);
+  const termsHtml =
+    '<ul class="footer__3SPRc">Reklamlänk | 18+ | Välkomsterbjudanden gäller nya kunder | Spela ansvarsfullt | <span>&nbsp;</span><li><a href="https://stodlinjen.se" target="_blank" rel="noopener nofollow">stodlinjen.se</a> | <span>&nbsp;</span><a href="https://www.spelpaus.se" target="_blank" rel="noopener nofollow">spelpaus.se</a></li></ul>';
+  tcFooterContainer.insertAdjacentHTML('beforeend', termsHtml);
 };
 
 export default () => {
@@ -44,13 +47,25 @@ export default () => {
 
   document.body.addEventListener('click', (ev) => {
     const { target } = ev;
+
     if (target.closest('a[href*="/go/"]')) {
-      const operatorName = target.href.split('/go/')[1];
+      const operatorName = target.closest('a').href.split('/go/')[1];
       const insideCarousel = target.closest(`.${ID}__highlightcard`);
-      gaTracking(`${operatorName} | Clicks on Operator${insideCarousel ? ' | In Carousel' : ''}`);
-    } else if (target.closest('[data-opName]')) {
-      const operatorName = target.dataset.opname;
+      gaTracking(
+        `${operatorName} | Clicks on Operator (Bonus Intent)${
+          insideCarousel ? ' | In Carousel' : ''
+        }`
+      );
+    } else if (target.closest(`.${ID}__revlink`)) {
+      const operatorName = target.closest('a').dataset.opname;
+
       gaTracking(`${operatorName} | Clicks on Review | In Carousel`);
+    } else if (
+      target.closest('.campaignsWrapper__1X4H0') &&
+      (target.closest('.logoContainer__2kEvL') || target.closest('[class^="logoContainer__"]'))
+    ) {
+      const operatorName = target.closest('a').href.split('/').pop();
+      gaTracking(`${operatorName} | Clicks on Review | Sidebar`);
     }
   });
 

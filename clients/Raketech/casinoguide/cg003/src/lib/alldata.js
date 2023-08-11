@@ -110,6 +110,28 @@ const data = {
   duelzcasino: {
     default: 'https://nvd.suprnation.com/redirect.aspx?pid=28468&bid=2385',
     inbanner: 'https://nvd.suprnation.com/redirect.aspx?pid=28469&bid=2385'
+  },
+  noaccountcasino: {
+    default: 'https://record.multibrandaffiliates.com/_k5MV9rSRkjUd2bMnnkYwymNd7ZgqdRLk/11/',
+    inbanner: 'https://record.multibrandaffiliates.com/_k5MV9rSRkjUd2bMnnkYwymNd7ZgqdRLk/12/'
+  },
+  noaccountbet: {
+    default: 'https://record.multibrandaffiliates.com/_yqfmSXnmianKto_EPcZApGNd7ZgqdRLk/11/',
+    inbanner: 'https://record.multibrandaffiliates.com/_yqfmSXnmianKto_EPcZApGNd7ZgqdRLk/12/'
+  },
+  ninjacasino: {
+    default: 'https://record.enlabspartners.com/_XsjQeveSZFoInOTXwiBFJWNd7ZgqdRLk/15',
+    inbanner: 'https://record.enlabspartners.com/_XsjQeveSZFoInOTXwiBFJWNd7ZgqdRLk/16'
+  },
+  prankcasino: {
+    default: 'https://record.multibrandaffiliates.com/_6kynLvfY6kkLak7-PYDSdWNd7ZgqdRLk/12/',
+    inbanner: 'https://record.multibrandaffiliates.com/_6kynLvfY6kkLak7-PYDSdWNd7ZgqdRLk/13/'
+  },
+  swiftcasino: {
+    default:
+      'https://ads.galaxyaffiliates.com/Redirect.aspx?mid=5299&sid=9064&cid=&pid=&affid=5248',
+    inbanner:
+      'https://ads.galaxyaffiliates.com/Redirect.aspx?mid=5299&sid=9065&cid=&pid=&affid=5248'
   }
 };
 

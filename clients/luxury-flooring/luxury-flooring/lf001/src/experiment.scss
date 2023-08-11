@@ -2,7 +2,11 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
-    }
+  &__invisible {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &__hide {
+    display: none;
+  }
 }

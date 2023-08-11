@@ -10,7 +10,6 @@ const piwikTrack = (label, device = 'Desktop') => {
     window._paq.push([
       'trackEvent',
       'Experiment HP Academy 009',
-      'click',
       `${device} Users Only`,
       `009 | Variation: ${VARIATION} | ${label}`
     ]);

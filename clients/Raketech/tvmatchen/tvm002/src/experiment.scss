@@ -1,0 +1,482 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__partnerlink {
+    padding: 4px 12px;
+    color: #0092d0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    box-shadow: 0px 2px 2px 0px #00000040;
+    border: 1px solid #0092d0;
+    border-radius: 6px;
+    &:hover {
+      color: #0092d0;
+      text-decoration: none;
+    }
+  }
+
+  .match-details {
+    display: none;
+  }
+  .match-content {
+    display: none;
+  }
+
+  .additional {
+    display: none;
+  }
+  &__test {
+    display: block;
+  }
+  .main-container {
+    .centered_wrapper {
+      background-color: #fff;
+      @media screen and (max-width: 767px) {
+        padding: 10px;
+      }
+    }
+  }
+  #match-view {
+    padding-bottom: 20px;
+    .day-wrap {
+      margin-bottom: 16px;
+      border-bottom: none;
+      @media screen and (max-width: 767px) {
+        padding: 0 10px;
+      }
+      #history_back {
+        display: none;
+      }
+      .day-title {
+        display: none;
+      }
+
+      .show-more {
+        background-color: #fff;
+        color: #000;
+        height: 20px;
+        line-height: 20px;
+        width: 50px;
+        a#match_more_button {
+          display: flex;
+          align-items: center;
+          justify-content: space-between !important;
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        i {
+          color: #000;
+          font-size: 18px;
+          line-height: 20px;
+          margin-top: 4px;
+          margin-right: 8px;
+        }
+        span {
+          color: #000;
+          font-size: 18px;
+        }
+      }
+    }
+
+    section.title-area.section {
+      display: flex;
+      padding: 36px 0px 40px 0px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      align-self: stretch;
+      border-radius: 6px;
+      border: 1px solid #eee;
+      background: #fafafa;
+      @media screen and (max-width: 767px) {
+        padding: 36px 10px 40px 10px;
+      }
+
+      .versus-title {
+        width: 100%;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        li.team {
+          flex-direction: row !important;
+          justify-content: flex-end;
+          align-items: center;
+          width: calc(50% - 60px);
+          .match-title {
+            a {
+              color: #222;
+              font-family: Rubik;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 120%;
+              text-decoration: none;
+            }
+          }
+        }
+        li.team.hometeam {
+          flex-direction: row !important;
+          @media screen and (max-width: 767px) {
+            flex-direction: column !important;
+          }
+          .match-title {
+            margin: 0;
+            margin-right: 12px;
+          }
+        }
+        li.team.awayteam {
+          flex-direction: row-reverse !important;
+          @media screen and (max-width: 767px) {
+            flex-direction: column !important;
+          }
+          .match-title {
+            margin: 0;
+            margin-left: 12px;
+          }
+        }
+        .team-logo {
+          height: 80px;
+          width: 80px;
+        }
+        li.centerpiece {
+          ul {
+            &::after {
+              clear: both;
+              content: '';
+              display: block;
+            }
+          }
+          .match-time {
+            color: #0092d0;
+            font-family: Rubik;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            border-radius: 0;
+            border: none;
+            height: auto;
+            width: auto;
+            line-height: auto;
+          }
+          .match_date {
+            color: #6c6c6c;
+            font-family: Rubik;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+
+    .match_details__item__title {
+      color: #222;
+      font-family: Rubik;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 130%;
+      margin-bottom: 8px;
+    }
+  }
+
+  .match_details {
+    @media screen and (max-width: 767px) {
+      padding: 0 10px;
+    }
+    .match_details__item {
+      margin-bottom: 16px;
+      .match_details__item__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        @media screen and (max-width: 767px) {
+          flex-direction: column;
+        }
+        a {
+          width: calc(33.33% - 8px);
+          display: flex;
+          justify-content: space-between;
+          border-radius: 6px;
+          border: 1px solid #eee;
+          background: #fafafa;
+          padding: 5px;
+          align-items: center;
+          text-decoration: none;
+
+          @media screen and (max-width: 767px) {
+            width: 100%;
+          }
+          .left_content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            .channel_image {
+              img {
+                height: 36px;
+                width: 36px;
+              }
+            }
+            .info {
+              margin-left: 8px;
+              .title {
+                color: #000;
+                font-family: Rubik;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 130%;
+                text-decoration: none;
+              }
+              .subtitle {
+                font-family: Rubik;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%; /* 18px */
+                letter-spacing: -0.2px;
+                color: gray;
+                text-decoration: none;
+              }
+            }
+          }
+
+          .right_content {
+            .stream {
+              .text {
+                color: #6c6c70;
+                text-align: center;
+                font-family: Rubik;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 18px;
+              }
+              .icon_play_logo {
+                display: inline-block;
+                svg {
+                  path {
+                    stroke: #6c6c70;
+                  }
+                }
+              }
+            }
+          }
+          &.active {
+            border: 1px solid #0092d0;
+            background: #e0f2f9;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+            .right_content {
+              .stream {
+                .text {
+                  color: #0092d0;
+                }
+                .icon_play_logo {
+                  svg {
+                    path {
+                      stroke: #0092d0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .match_details__item__nav {
+        display: flex;
+        gap: 16px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        a {
+          padding-bottom: 8px;
+
+          &.active {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-decoration-color: #0092d0;
+            text-underline-offset: 8px;
+          }
+          &:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-decoration-color: #0092d0;
+            text-underline-offset: 8px;
+          }
+        }
+      }
+
+      .match_details__item__tables {
+        .table_tabs {
+          display: none;
+          &.active {
+            display: block;
+          }
+        }
+        #odds {
+          width: 100%;
+          background: #fafafa;
+          border-radius: 6px;
+          border: 1px solid #eee;
+          padding: 8px 16px;
+          table.match_details__item__content__table {
+            width: 100%;
+            thead {
+              tr th {
+                color: #000;
+                font-weight: 700;
+                padding: 8px 0px;
+              }
+            }
+            tr {
+              &:not(:first-child) {
+                border-top: 1px solid#eee;
+              }
+              padding: 8px 0px;
+
+              img {
+                max-height: 36px;
+              }
+            }
+          }
+        }
+
+        #lineups {
+          width: 100%;
+          .match_details__item__content__table {
+            display: flex;
+            flex-direction: row;
+            gap: 18px;
+
+            @media screen and (max-width: 767px) {
+              flex-direction: column;
+            }
+
+            .home_team,
+            .away_team {
+              width: calc(50% - 9px);
+              @media screen and (max-width: 767px) {
+                width: 100%;
+              }
+              .home_team_main,
+              .home_team_sub,
+              .away_team_main,
+              .away_team_sub {
+                background: #fafafa;
+                border-radius: 6px;
+                border: 1px solid #eee;
+                padding: 12px;
+                margin-bottom: 16px;
+                min-height: 426px;
+              }
+              h4 {
+                color: #222;
+                font-family: Rubik;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 130%;
+                padding-bottom: 4px;
+                margin-bottom: 4px;
+                border-bottom: 1px solid #eee;
+              }
+
+              .home-list,
+              .away-list {
+                div {
+                  padding-bottom: 4px;
+                  padding-top: 4px;
+
+                  &:not(:last-child) {
+                    border-bottom: 1px solid #eee;
+                  }
+
+                  font {
+                    color: #222;
+                    font-family: Rubik;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 130%;
+                  }
+                  span {
+                    padding: 4px;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 50px;
+                    width: 24px;
+                    height: 24px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 12px;
+                    font {
+                      color: #222;
+                      font-family: Rubik;
+                      font-size: 12px;
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: normal;
+                      line-height: 12px;
+                    }
+                  }
+                }
+              }
+            }
+            // .away_team{
+            //     width: calc(50% - 9px);
+            // }
+          }
+        }
+
+        #point_table {
+          background: #fafafa;
+          border-radius: 6px;
+          border: 1px solid #eee;
+          padding: 8px 16px;
+          overflow-x: auto;
+          table.point_table {
+            width: 100%;
+            thead {
+              tr th {
+                color: #000;
+                font-weight: 700;
+                padding: 8px 0px;
+              }
+            }
+            tr {
+              &:not(:first-child) {
+                border-top: 1px solid#eee;
+              }
+              padding: 8px 0px;
+              height: 40px;
+              td {
+                color: #222;
+                font-family: Rubik;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 130%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

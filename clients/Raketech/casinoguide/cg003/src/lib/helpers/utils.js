@@ -24,3 +24,18 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
     }
   }, POLLING_INTERVAL);
 };
+
+export const getAllAttributes = (element) => {
+  const { attributes } = element;
+  const filteredAttributes = [];
+
+  Array.from(attributes).forEach((attr) => {
+    const { name, value } = attr;
+    if (!name.includes('style') && !name.includes('class')) {
+      const obj = { name, value };
+      filteredAttributes.push(obj);
+    }
+  });
+
+  return filteredAttributes;
+};

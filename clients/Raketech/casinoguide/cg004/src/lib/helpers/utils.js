@@ -60,3 +60,16 @@ export const addJsToPage = (src, id, cb, classes) => {
   s.setAttribute('id', id);
   document.head.appendChild(s);
 };
+
+export const truncateText = (text, maxLength = 35) => {
+  if (text && text.length < maxLength) return text;
+  console.log(typeof text, text.length);
+  if (!text) return '';
+  let truncatedText = text.slice(0, maxLength);
+  //Check if the last character is a space to avoid cutting off a word
+  if (truncatedText.charAt(truncatedText.length - 1) === ' ') {
+    truncatedText = truncatedText.slice(0, truncatedText.lastIndexOf(' '));
+  }
+  //${truncatedText}...
+  return `${truncatedText}...`;
+};

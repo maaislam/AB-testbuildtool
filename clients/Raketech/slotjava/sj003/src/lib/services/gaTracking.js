@@ -10,7 +10,6 @@ const piwikTrack = (label, device = 'Desktop') => {
     window._paq.push([
       'trackEvent',
       'Experiment HP Slot Filtering 010',
-      'click',
       `${device} Users Only`,
       `010 | Variant ${VARIATION} | ${label}`
     ]);

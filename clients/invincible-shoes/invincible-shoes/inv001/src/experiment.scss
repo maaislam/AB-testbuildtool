@@ -1,0 +1,22 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__hide {
+    display: none;
+  }
+  #transcySwitcherContainer {
+    top: 250px !important;
+  }
+
+  &__search-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 16px 0 auto !important;
+
+    @include media-query(lg) {
+      width: calc(100% - 44px);
+      margin: 12px auto 0;
+    }
+  }
+}
