@@ -6,7 +6,7 @@ import lib from './roomvo';
 const { ID, VARIATION } = shared;
 
 const filterOptions = {
-  '/vinyl-flooring.html': ['Vinyl (Lvt)', 'Lvt'],
+  '/vinyl-flooring.html': ['Vinyl (LVT)'],
   '/solid-wood-flooring.html': ['Solid', 'Solid Wood'],
   '/engineered-wood-flooring.html': ['Engineered Wood', 'Engineered'],
   '/laminate-flooring.html': ['Laminate']

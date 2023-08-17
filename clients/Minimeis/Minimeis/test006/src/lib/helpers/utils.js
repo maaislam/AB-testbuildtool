@@ -20,8 +20,26 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
       callback();
     } else if (Date.now() - startTime >= maxTime) {
       clearInterval(interval);
-      //eslint-disable-next-line no-console
       console.error('Polling exceeded maximum time limit');
     }
   }, POLLING_INTERVAL);
+};
+
+export const getCookie = (name) => {
+  const value = `; ${document.cookie}`;
+
+  const parts = value.split(`; ${name}=`);
+
+  if (parts.length === 2) {
+    return parts.pop().split(';').shift();
+  }
+};
+
+export const deleteCookie = (cookieName) => {
+  document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+};
+
+export const setCookie = (cName, cValue) => {
+  const path = 'path=/';
+  document.cookie = `${cName}=${cValue}; ${path}`;
 };

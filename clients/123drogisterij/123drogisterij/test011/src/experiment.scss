@@ -74,7 +74,42 @@
   }
 
   &__deliverytime {
-    margin-top: 16px;
-    text-align: right;
+    width: 100%;
+    max-width: 235px;
+    margin-top: 20px;
+    margin-left: auto;
+    padding: 16px 8px;
+    font-size: 12px;
+    border: 1px solid #f0b130;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 767px) {
+    .page-title-wrapper {
+      flex-direction: column;
+      width: 100%;
+      gap: 8px;
+      justify-content: center;
+    }
+    .cart.main.actions {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px;
+
+      .continue {
+        margin: auto;
+        text-align: center;
+      }
+    }
+
+    &__deliverytime {
+      max-width: calc(100% - 50px);
+      margin: 20px auto;
+      font-size: 14px;
+      br {
+        display: none;
+      }
+    }
   }
 }

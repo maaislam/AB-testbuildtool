@@ -10,7 +10,7 @@ const { ID } = shared;
 export default () => {
   setup(); //use if needed
   //gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
+  //console.log(ID);
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
@@ -28,7 +28,12 @@ export default () => {
   }
 
   const expectedDeliveryElem = document.querySelector('.cart.main.actions');
-  if (!document.querySelector(`.${ID}__deliverytime`)) {
-    expectedDeliveryElem.insertAdjacentHTML('afterend', deliveryTime(ID));
-  }
+  const cartBtn = document.querySelector('.cart-summary ul.checkout-methods-items');
+  if (document.querySelector(`.${ID}__deliverytime`)) return;
+  cartBtn.insertAdjacentHTML('afterend', deliveryTime(ID));
+  //if (window.innerWidth < 768) {
+  //cartBtn.insertAdjacentHTML('afterend', deliveryTime(ID));
+  //} else {
+  //expectedDeliveryElem.insertAdjacentHTML('afterend', deliveryTime(ID));
+  //}
 };

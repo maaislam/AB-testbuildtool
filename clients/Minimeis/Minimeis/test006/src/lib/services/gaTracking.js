@@ -1,4 +1,4 @@
-import { pollerLite } from '../../../../../../../globalUtil/util';
+import { pollerLite } from '../helpers/utils';
 
 const gaTracking = (label, action = 'click') => {
   pollerLite([() => typeof window.ga.getAll === 'function'], () => {

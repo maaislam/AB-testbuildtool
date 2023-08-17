@@ -1,0 +1,118 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__test {
+    display: block;
+  }
+
+  .hide_content {
+    display: none !important;
+  }
+  .active-border {
+    border: 1px solid #b86678;
+  }
+
+  .product-form__options-wrapper {
+    position: relative;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+
+    .product-form__options-title {
+      cursor: pointer;
+
+      color: #000;
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: bold;
+      display: flex;
+      max-width: 180px;
+      width: 100%;
+      margin-right: auto;
+      margin-left: 0;
+      justify-content: space-between;
+      align-items: center;
+      br {
+        display: none !important;
+      }
+    }
+
+    .dropdow_arrow {
+      width: 10px;
+      position: absolute;
+      top: 50%;
+      right: 16px !important;
+      transform: translateY(-50%);
+    }
+    .product-form__options {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-right: 0px;
+      padding-left: 0px;
+      padding-top: 0px;
+      z-index: 100;
+      max-width: 180px;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      margin-top: 5px;
+      filter: drop-shadow(0px 0px 3px #000);
+
+      li {
+        border-radius: 0;
+        background-color: none;
+        margin: unset;
+        padding: 8px;
+        background: unset;
+        font-family: 'Montserrat', sans-serif;
+        text-align: left;
+
+        &.active {
+          //box-shadow: none !important;
+          border: 1px solid #b86678 !important;
+        }
+      }
+
+      li:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+  .product-form__kids-size {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    margin-bottom: 28px;
+    max-width: 320px;
+    position: relative;
+    z-index: 99;
+
+    a {
+      font-weight: 500;
+
+      font-size: 16px;
+      line-height: 18px;
+      border-bottom: 1px solid;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 990px) {
+    .product-form__options-title {
+      width: 100% !important;
+    }
+    .dropdow_arrow {
+      right: 16px !important;
+    }
+  }
+}

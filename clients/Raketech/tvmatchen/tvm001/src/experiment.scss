@@ -93,7 +93,8 @@
     border: 2px solid #eeeeee;
     border-radius: 6px;
 
-    &[data-promoted='true'] {
+    &[data-promoted='true'],
+    &[data-channelname='TV4 Play'] {
       background-color: #e0f2f9;
       border: 1px solid #0092d0;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

@@ -28,10 +28,9 @@ const init = () => {
         ? item.querySelector('a').href
         : tipRow.querySelector('a').href;
       const viewType = isTvLink || isStreamLink || isBettingLink;
-      const paidCustomers = ['discovery+', 'c-more-live', 'vidplay.se', 'c more stream'];
-
+      const paidCustomers = ['discovery+', 'tv4 play', 'vidplay.se', 'c more stream'];
+      console.log(paidCustomers.includes('tv4 play'), imageAlt.toLowerCase());
       const isPromoted = paidCustomers.includes(imageAlt.toLowerCase());
-      //console.log('🚀 ~ file: experiment.js:39 ~ viewOptionsData ~ isPromoted:', isPromoted);
 
       viewOptions[i].setAttribute('data-viewtype', viewType);
       viewOptions[i].setAttribute('data-channelname', imageAlt);
