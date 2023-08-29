@@ -42,7 +42,7 @@
   }
   .game-info p {
     line-height: 1.3;
-    letter-spacing: 0.25px;
+    letter-spacing: 0.01px;
     font-size: 14px;
     color: #00406c;
     font-weight: 700;
@@ -157,7 +157,7 @@
 
 .#{$id} {
   &-1 {
-    .gamebenefits p::before {
+    .gamebenefits p:not(.no-bullet)::before {
       background-image: url('https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinoguide/tikMark.png');
       content: '';
       display: inline-block;

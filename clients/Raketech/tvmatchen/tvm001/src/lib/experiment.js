@@ -74,7 +74,9 @@ export default () => {
         gaTracking(
           `${channelname} | CTA Click to ${
             viewtype === 'Streama' ? 'Streaming' : viewtype
-          } Service Providers ${promoted === 'true' ? ' | Highlighted' : ''}`
+          } Service Providers ${
+            promoted === 'true' || channelname === 'TV4 Play' ? ' | Highlighted' : ''
+          }`
         );
 
       viewtype === 'betting' &&

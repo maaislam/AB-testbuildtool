@@ -1,7 +1,7 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
-.#{$id}.#{$id}-1 {
+.#{$id}-1 {
   &__hide {
     display: none;
   }

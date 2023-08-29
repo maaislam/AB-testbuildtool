@@ -136,4 +136,11 @@ export default () => {
 
   const casinoInfo = getDomData();
   init(casinoInfo);
+  const figures = document.querySelectorAll('figure');
+  figures.forEach((figure, i) => {
+    figure.classList.add(`${ID}__hide`);
+    if (i === 0) {
+      figure.classList.add('hide-sibling-paragraph');
+    }
+  });
 };

@@ -103,7 +103,7 @@ export default () => {
 
     el.querySelector('.btmline-div').insertAdjacentHTML(
       'beforeend',
-      `<div class="arrow">${arrow}</div>`
+      `<div class="arrow rotate">${arrow}</div>`
     );
     el.querySelector('.btmline-div > .bottom-line > div').classList.remove(
       'col-sm-12',
@@ -111,7 +111,7 @@ export default () => {
       'pr-3'
     );
 
-    el.querySelector('.bb-info-wrapper').classList.add('hide-content');
+    //el.querySelector('.bb-info-wrapper').classList.add('hide-content');
     el.querySelector('.btmline-div').addEventListener('click', (e) => {
       el.querySelector('.bb-info-wrapper').classList.toggle('hide-content');
       //el.querySelector('.btmline-div').classList.toggle('hide-content');

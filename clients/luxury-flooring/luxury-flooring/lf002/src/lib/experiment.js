@@ -17,7 +17,7 @@ const init = () => {
   lib();
 
   const btnHtml = `
-  <a class="${ID}__roomvobtn" >
+  <a class="${ID}__roomvobtn roomvo-stimr" >
       <div><img src="https://www.roomvo.com/services/vendor/vendor_images/luxuryflooringandfurnishingscouk/roomvo_icon.png" alt="" /></div>
       <div style="display: inline-block;">Try out our Room Visualiser</div>
   </a>

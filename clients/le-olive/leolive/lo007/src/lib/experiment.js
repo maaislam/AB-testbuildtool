@@ -25,13 +25,29 @@ export default () => {
   const kidSizeBtn = document.querySelector('.product-form__kids-size');
   const productOptions = document.querySelector('.product-form__options');
   const productSizeTitle = document.querySelector('.product-form__options-title');
-  productOptions.classList.add('hide_content');
+  if (productOptions) {
+    productOptions.classList.add('hide_content');
+  }
   if (document.querySelector('.product-form__kids-size a')) {
     document.querySelector('.product-form__kids-size a').classList.remove('btn', 'btn--primary');
   }
 
   productSizeTitle.insertAdjacentHTML(
     'afterend',
+    `<div class='selected_size_wrapper'>
+  <div class='selected_size'></div>
+  </div>`
+  );
+
+  const selectedSize = document.querySelector('.selected_size');
+  const selectedSizeWrapper = document.querySelector('.selected_size_wrapper');
+
+  selectedSize.innerHTML = document.querySelector('.product-form__options li.active').innerHTML;
+
+  selectedSize.insertAdjacentElement('afterend', productOptions);
+
+  selectedSizeWrapper.insertAdjacentHTML(
+    'beforeend',
     "<img class='dropdow_arrow' src='https://us.le-olive.com/cdn/shop/t/114/assets/dark-down-icon.png'>"
   );
 
@@ -39,10 +55,10 @@ export default () => {
     productWrapper.insertAdjacentElement('beforeend', kidSizeBtn);
   }
 
-  productSizeTitle.addEventListener('click', (e) => {
+  document.querySelector('.selected_size').addEventListener('click', (e) => {
     //console.log('clicked');
     productOptions.classList.toggle('hide_content');
-    productSizeTitle.classList.add('active-border');
+    selectedSize.classList.add('active-border');
   });
 
   document.body.addEventListener('click', (e) => {
@@ -53,7 +69,7 @@ export default () => {
 
   document.querySelectorAll('.product-form__options li').forEach((el) => {
     el.addEventListener('click', (e) => {
-      productSizeTitle.innerText = e.target.innerText;
+      selectedSize.innerText = e.target.innerText;
       productOptions.classList.add('hide_content');
       //document.querySelector('.dropdow_arrow').classList.add('hide_content');
     });

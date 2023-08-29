@@ -9,12 +9,12 @@ const { ID, VARIATION } = shared;
 
 export default () => {
   setup(); //use if needed
-
+  console.log('experiment.js');
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     const config = {
-      'TV Channel': 'Streaming Service Providers',
-      Stream: 'TV Service Providers',
+      'TV Channel': 'TV Service Providers',
+      Stream: 'Streaming Service Providers',
       betting: 'Operator (Place Bet Intent)'
     };
 
@@ -32,6 +32,15 @@ export default () => {
   //If control, bail out from here
   //-----------------------------
   if (VARIATION === 'Control') {
+    const channels = document.querySelectorAll('.tv-channels li.tv');
+    channels.forEach((item) => {
+      const serviceType = item.querySelector('a').title.includes('Spela live')
+        ? 'betting'
+        : item.querySelector('a').classList.contains('no-href')
+        ? 'TV Channel'
+        : 'Stream';
+      item.setAttribute('data-viewType', serviceType);
+    });
     return;
   }
 

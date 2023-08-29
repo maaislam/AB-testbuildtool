@@ -15,11 +15,11 @@
 
   .product-form__options-wrapper {
     position: relative;
-    width: 180px;
+    max-width: 300px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
 
-    .product-form__options-title {
+    .selected_size {
       cursor: pointer;
 
       color: #000;
@@ -37,6 +37,21 @@
       margin-left: 0;
       justify-content: space-between;
       align-items: center;
+
+      br {
+        display: none !important;
+      }
+    }
+
+    .selected_size_wrapper {
+      max-width: 180px;
+      width: 100%;
+      position: relative;
+      margin-left: 20px;
+    }
+
+    .product-form__options-title {
+      width: max-content !important ;
       br {
         display: none !important;
       }
@@ -46,7 +61,7 @@
       width: 10px;
       position: absolute;
       top: 50%;
-      right: 16px !important;
+      right: 25px !important;
       transform: translateY(-50%);
     }
     .product-form__options {

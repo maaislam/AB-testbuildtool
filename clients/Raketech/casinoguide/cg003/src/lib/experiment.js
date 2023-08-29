@@ -43,6 +43,27 @@ export default () => {
       { name: 'rel', value: '934' },
       { name: 'locale', value: 'sv_SE' },
       { name: 'currency', value: 'SEK' }
+    ],
+    lyllo: [
+      { name: 'inbanner-affCampaign', value: '496' },
+      { name: 'inbanner-widget', value: '186' },
+      { name: 'rel', value: '941' },
+      { name: 'locale', value: 'sv_SE' },
+      { name: 'currency', value: 'SEK' }
+    ],
+    ninjacasino: [
+      { name: 'inbanner-affCampaign', value: '493' },
+      { name: 'inbanner-widget', value: '186' },
+      { name: 'rel', value: '977' },
+      { name: 'locale', value: 'sv_SE' },
+      { name: 'currency', value: 'SEK' }
+    ],
+    gogocasino: [
+      { name: 'inbanner-affCampaign', value: '495' },
+      { name: 'inbanner-widget', value: '186' },
+      { name: 'rel', value: '952' },
+      { name: 'locale', value: 'sv_SE' },
+      { name: 'currency', value: 'SEK' }
     ]
   };
 
@@ -62,7 +83,7 @@ export default () => {
       //console.log(gameName);
       inBannerBtn.classList.add(`${ID}__csm-btn`);
       inBannerBtn.setAttribute('data-operator', gameName);
-      if (gameName === 'hajper' || gameName === 'playojo') {
+      if (Object.keys(customAttr).includes(gameName)) {
         customAttr[gameName].forEach(({ name, value }) => {
           inBannerBtn.setAttribute(name, value);
           inBannerBtn.classList.add('inbanner-link');
@@ -86,7 +107,7 @@ export default () => {
     inBannerAttr.forEach((attr) => {
       newBtn.setAttribute(attr.name, attr.value);
 
-      if (gameName === 'hajper' || gameName === 'playojo') {
+      if (Object.keys(customAttr).includes(gameName)) {
         customAttr[gameName].forEach(({ name, value }) => {
           newBtn.setAttribute(name, value);
           newBtn.classList.add('inbanner-link');

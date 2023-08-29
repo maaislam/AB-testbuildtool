@@ -2,6 +2,10 @@
 @import '../src/lib/shared/shared';
 
 .#{$id} {
+  &__hide {
+    display: none;
+  }
+
   #header-container {
     & + .container {
       & > .row > div:last-child {
@@ -11,7 +15,7 @@
         flex: 0 0 100% !important;
         max-width: 100% !important;
 
-        figure {
+        figure.hide-sibling-paragraph {
           display: none;
           & ~ p {
             display: none;
@@ -23,7 +27,7 @@
   .hide3 {
     .toplistOList__ES0A0 {
       & > li:nth-child(-n + 3) {
-        display: none;
+        //display: none;
       }
     }
   }

@@ -2,6 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  .rules-terms-apply {
+    font-size: 0.7rem;
+  }
+
   .buttons-box {
     display: flex;
     flex-direction: column-reverse;
@@ -112,6 +116,7 @@
   }
   .bb-info-box {
     background: #ffffff;
+    text-align: left;
   }
 
   .rating_div + div > div:nth-child(1) {
@@ -154,6 +159,10 @@
     .bb-box-wrapper > div:nth-child(1) {
       flex-wrap: wrap;
     }
+    .bb-info-box {
+      background: #ffffff;
+      text-align: center;
+    }
     .rating_div {
       flex-direction: unset;
       flex-wrap: wrap;
@@ -177,6 +186,8 @@
     .rating_div + div > div:nth-child(2) {
       width: 100%;
       display: flex;
+      flex-wrap: nowrap;
+      gap: 12px;
       flex-direction: row;
       justify-content: space-evenly;
       margin: 10px 0;

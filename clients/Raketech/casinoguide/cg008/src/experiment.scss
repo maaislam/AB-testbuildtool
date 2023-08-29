@@ -1,0 +1,92 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+
+  &__modalstageone {
+    position: relative;
+    width: calc(100% - 32px);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+    color: #fff;
+    letter-spacing: 0em;
+    border-radius: 5px;
+    background-color: #001240;
+    background-image: url(https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinoguide/question-stage1-desktop.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right top;
+    box-shadow: 0px -4px 20px 0px #00000080;
+
+    @include media-query(sm) {
+      background-image: url(https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinoguide/question-stage1-back.png);
+      background-size: contain;
+    }
+
+    &-content {
+      width: 100%;
+      max-width: 220px;
+    }
+
+    &-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    &-title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 23px;
+      text-align: left;
+    }
+
+    &-text {
+      margin: 10px auto;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    &-button {
+      width: 100%;
+      max-width: 360px;
+      margin-bottom: 6px;
+      padding: 12px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 17px;
+      letter-spacing: 0.25px;
+      border-radius: 6px;
+      cursor: pointer;
+      &.accept {
+        color: #00111c;
+        background-color: #f0f0f0;
+      }
+      &.deny {
+        margin-bottom: 0;
+        background-color: transparent;
+      }
+    }
+  }
+}

@@ -55,6 +55,7 @@ const init = (game_name) => {
     );
 
     second_popUp_contents.forEach((data) => {
+      console.log(data);
       document.querySelector('.overallContentWrapper').insertAdjacentHTML(
         'beforeend',
         `<div class="main_contents_wrapper">
