@@ -1,10 +1,23 @@
 export const casinoLicenseData = [
   {
-    casino: 'Leo Vegas',
-    license: 'LeoVegas Gaming Plc, Sverige'
+    casino: 'Leo Vegas Casino',
+    license: 'LeoVegas Gaming Plc, Sverige',
+    casinoDisplayName: 'Leo Vegas'
   },
   {
-    casino: 'Bertil Casino',
+    casino: 'Maria Casino',
+    license: 'Spooniker Ltd, Sverige'
+  },
+  {
+    casino: 'Ninja Casino',
+    license: 'ElectraWorks (Svenska) Ltd, Sverige'
+  },
+  {
+    casino: 'ComeOn',
+    license: 'ComeOn Sweden Ltd, Sverige'
+  },
+  {
+    casino: 'Bertil',
     license: 'Evoke Gaming Ltd, Sverige'
   },
   {
@@ -16,19 +29,12 @@ export const casinoLicenseData = [
     license: 'Casinostugan Ltd, Sverige'
   },
   {
-    casino: 'Casumo',
+    casino: 'Casumo Casino',
     license: 'Casumo Services Ltd, Sverige'
   },
+
   {
-    casino: 'ComeOn Casino',
-    license: 'ComeOn Sweden Ltd, Sverige'
-  },
-  {
-    casino: 'Maria Casino',
-    license: 'Spooniker Ltd, Sverige'
-  },
-  {
-    casino: 'Mr Green',
+    casino: 'Mr Green Casino',
     license: 'Mr Green Ltd, Sverige'
   },
   {
@@ -44,7 +50,7 @@ export const casinoLicenseData = [
     license: 'Spooniker Ltd, Sverige'
   },
   {
-    casino: 'Vinnarum',
+    casino: 'Vinnarum Casino',
     license: 'Evoke Gaming Ltd, Sverige'
   },
   {
@@ -133,7 +139,8 @@ export const casinoLicenseData = [
   },
   {
     casino: 'CasinoAndFriends',
-    license: 'Skill On Net Ltd, Sverige'
+    license: 'Skill On Net Ltd, Sverige',
+    casinoDisplayName: 'Casino And Friends'
   },
   {
     casino: 'Betfair',
@@ -183,10 +190,7 @@ export const casinoLicenseData = [
     casino: 'Betway',
     license: 'Betway Ltd, Sverige'
   },
-  {
-    casino: 'Ninja Casino',
-    license: 'ElectraWorks (Svenska) Ltd, Sverige'
-  },
+
   {
     casino: 'InterCasino',
     license: 'Dumarca Gaming Ltd, Sverige'
@@ -204,7 +208,7 @@ export const casinoLicenseData = [
     license: 'Snabbare Ltd, Sverige'
   },
   {
-    casino: 'Fun Casino',
+    casino: 'FunCasino',
     license: 'L&L Europe Ltd, Sverige'
   },
   {
@@ -352,8 +356,9 @@ export const casinoLicenseData = [
     license: 'L&L Europe Ltd, Sverige'
   },
   {
-    casino: 'GoGo Casino',
-    license: 'LeoVegas Gaming Plc, Sverige'
+    casino: 'GoGoCasino',
+    license: 'LeoVegas Gaming Plc, Sverige',
+    casinoDisplayName: 'GoGo Casino'
   },
   {
     casino: 'Lucky Louis',
@@ -449,7 +454,8 @@ export const casinoLicenseData = [
   },
   {
     casino: 'SpinGenie',
-    license: 'Skill On Net Ltd, Sverige'
+    license: 'Skill On Net Ltd, Sverige',
+    casinoDisplayName: 'Spin Genie'
   },
   {
     casino: 'Kassu Casino',

@@ -14,12 +14,17 @@ const newPrice = (id, priceObj) => {
   const { oldPrice, finalPrice, discount } = priceObj;
   const htmlStr = `
     <div class="${id}__newprice-wrapper">
-      <div class="${id}__discountbadge">
+      <div class="${id}__discountbadge ${VARIATION !== '1' ? `${id}__hide` : ''}">
         <span>Save ${discount}%</span>
       </div>
       <div class="${id}__prices">
-        <div class="${id}__oldprice">£${oldPrice}m²</div>
+        <div class="${id}__oldprice"><span class="${
+    VARIATION === '1' ? `${id}__hide` : ''
+  }">was</span> <span>£${oldPrice}m²</span></div>
         <div class="${id}__newprice">£${finalPrice}m²</div>
+      </div>
+      <div class="${id}__discountbadge ${VARIATION === '1' ? `${id}__hide` : ''} v2">
+        <span>Save ${discount}%</span>
       </div>
     </div>
   `;
@@ -61,7 +66,8 @@ const init = () => {
         .querySelector('.flooring-price-pack-price')
         .cloneNode(true);
 
-      priceWrapper.insertAdjacentElement('beforebegin', clonedPerPackPrice);
+      const discountBadgeV2 = document.querySelector(`.${ID}__discountbadge.v2`);
+      discountBadgeV2.insertAdjacentElement('beforebegin', clonedPerPackPrice);
 
       console.log('🚀 oldPrice:', oldPrice);
       console.log('🚀 finalPrice:', finalPrice);

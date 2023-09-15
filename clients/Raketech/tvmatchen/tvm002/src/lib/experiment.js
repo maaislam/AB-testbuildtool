@@ -367,5 +367,10 @@ export default () => {
         });
       });
     });
+    const eventBanner = document.querySelector('#event_banner');
+    if (eventBanner) {
+      eventBanner.style.marginBottom = '24px';
+      document.querySelector('.match_details').insertAdjacentElement('beforebegin', eventBanner);
+    }
   });
 };

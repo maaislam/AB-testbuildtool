@@ -2,6 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  .main-container {
+    background-color: #eee;
+  }
+
   &__partnerlink {
     padding: 4px 12px;
     color: #0092d0;
@@ -209,6 +213,7 @@
           width: calc(33.33% - 8px);
           display: flex;
           justify-content: space-between;
+
           border-radius: 6px;
           border: 1px solid #eee;
           background: #fafafa;
@@ -304,16 +309,21 @@
         justify-content: flex-start;
         align-items: flex-start;
         margin-bottom: 16px;
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 2px;
         a {
-          padding-bottom: 8px;
+          //padding-bottom: 8px;
+          color: #828282;
 
           &.active {
+            color: #0092d0;
             text-decoration: underline;
             text-decoration-thickness: 3px;
             text-decoration-color: #0092d0;
             text-underline-offset: 8px;
           }
           &:hover {
+            color: #0092d0;
             text-decoration: underline;
             text-decoration-thickness: 3px;
             text-decoration-color: #0092d0;
@@ -345,10 +355,15 @@
               }
             }
             tr {
-              &:not(:first-child) {
-                border-top: 1px solid#eee;
+              border-top: 1px solid#eee;
+              &:first-child {
+                margin-bottom: 16px;
               }
               padding: 8px 0px;
+
+              td {
+                height: 50px;
+              }
 
               img {
                 max-height: 36px;

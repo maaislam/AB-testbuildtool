@@ -99,7 +99,7 @@ export default () => {
     const tandcElem = el.querySelector('.btmline-div .rules-terms-apply');
 
     //remove <br>
-    tandcElem.innerHTML = tandcElem.innerHTML.replace(/<br>/g, '');
+    tandcElem.innerHTML = tandcElem.innerHTML.replace(/<br>/g, '. ');
 
     el.querySelector('.btmline-div').insertAdjacentHTML(
       'beforeend',

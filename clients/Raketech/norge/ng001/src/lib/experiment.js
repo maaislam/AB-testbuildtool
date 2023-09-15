@@ -16,9 +16,6 @@ const init = () => {
 };
 
 export default () => {
-  const firstTimeVisitor = getCookie('first-time-visitor') === undefined;
-
-  if (!firstTimeVisitor) return;
   setup();
   const closeModal = () => {
     const modalCloseTime = new Date();
@@ -41,8 +38,19 @@ export default () => {
     } else if (target.closest(`.${ID}__disclaimer--cta`)) {
       closeModal();
       gaTracking('Yes Confirm | Clicks on Disclaimer Popup');
+    } else if (target.closest('a[href*="/go/"]')) {
+      const closestWrapper = target.closest('a');
+      const titleElem = closestWrapper.href;
+      const casinoName = titleElem.split('/go/')[1];
+      gaTracking(`${casinoName} | CTA Clicks to Operator (Bonus Intent)`);
     }
   });
+  if (VARIATION === 'Control') {
+    return;
+  }
+  const firstTimeVisitor = getCookie('first-time-visitor') === undefined;
+
+  if (!firstTimeVisitor) return;
 
   init();
 };

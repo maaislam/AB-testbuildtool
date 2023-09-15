@@ -2,9 +2,48 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  &.#{$id}-1 {
+  &__hide {
+    display: none !important;
+  }
+
+  &.#{$id}-2 {
     .#{$id}__newprice {
       color: #333;
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .#{$id}__prices {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      gap: 0;
+      margin-bottom: 0;
+    }
+
+    .#{$id}__pdp {
+      .#{$id}__discountbadge {
+        margin-bottom: 20px;
+      }
+      .#{$id}__prices {
+        align-items: center;
+      }
+    }
+
+    .#{$id}__discountbadge {
+      width: max-content;
+      margin-bottom: 0;
+      padding: 0;
+      text-align: center;
+      color: #da5b48;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.3;
+      background-color: #fff;
+    }
+
+    .flooring-price-pack-price {
+      margin-bottom: 8px;
     }
   }
 
@@ -21,10 +60,6 @@
       justify-content: center;
       margin: 24px auto 0;
     }
-  }
-
-  &__hide {
-    display: none !important;
   }
 
   &__discountbadge {
