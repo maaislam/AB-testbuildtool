@@ -7,7 +7,7 @@
       display: flex !important;
 
       &-item {
-        background: #FAE6BC;
+        background: #FAE6BC !important;
         order: -1;
 
         .#{$id}__topRatedUrlElem {
@@ -41,11 +41,16 @@
           margin-right: 0;
 
           .#{$id}__topRatedUrlElem {
-            gap: 4px;
-            padding: 13px 0 14px 17px;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            // padding: 13px 0 14px 17px;
             color: #121212 !important;
             font-weight: 600;
-            animation-play-state: paused;
+
+            .#{$id}__starSvg {
+              display: flex;
+            }
           }
         }
       }
