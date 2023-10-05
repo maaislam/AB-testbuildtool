@@ -93,11 +93,24 @@
           margin-right: 0;
 
           a.#{$id}__topRatedUrlElem {
-            gap: 4px;
-            padding: 13px 0 14px 17px;
-            color: #121212 !important;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            color: #333 !important;
             font-weight: 600;
             animation-play-state: paused;
+
+            .#{$id}__starSvg {
+              display: flex;
+              svg {
+                width: 11px !important;
+                height: 11px !important;
+  
+                path {
+                  fill: #333 !important;
+                }
+              }
+            }
           }
         }
       }

@@ -26,7 +26,6 @@ const init = () => {
     }
   } else {
     const hamburgerBtn = document.querySelector('header #Hamburger');
-    console.log('hamburgerBtn: ', hamburgerBtn);
     hamburgerBtn.addEventListener('mousedown', () => {
       if (document.body.classList.contains('AG060a')) {
         const mobileNavSaleElem = document.querySelector('.AG060a_MobileNav > .AG060a_MobileNav_level ul li.AG060a_MobileNav_hasSubNav > .AG060a_MobileNav_level ul > li.AG060a_MobileNav_hasSubNav');
@@ -43,13 +42,11 @@ const init = () => {
         mobileNavSaleElem.insertAdjacentElement('afterend', mobileNavTopRatedListItem);
       } else {
         const topRatedUrlElem = document.querySelector('nav#HamburgerMenuNew ul#HamburgerCategories li a[href*="/top-rated"]');
-        console.log('topRatedUrlElem: ', topRatedUrlElem);
       }
     });
   }
 };
 
 export default () => {
-  console.log(ID);
   init();
 };
