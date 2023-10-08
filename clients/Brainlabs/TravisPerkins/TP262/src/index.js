@@ -1,9 +1,5 @@
 import activate from './lib/experiment';
+import { navItemUrlSelector } from './lib/helpers/navItemUrlSelector';
 import { pollerLite } from './lib/helpers/utils';
 
-pollerLite(
-  [
-    '[data-test-id="header-nav-menu"] > div > div:not([data-test-id="nav-menu-bar"]) [data-test-id="nav-table-category"] [data-test-id="nav-table-category-list"] li a'
-  ],
-  activate
-);
+pollerLite([navItemUrlSelector], activate);

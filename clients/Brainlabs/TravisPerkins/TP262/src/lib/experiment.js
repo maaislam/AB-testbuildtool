@@ -1,20 +1,19 @@
 import shared from './shared/shared';
 import { data } from './helpers/data/data';
 import { observeDOM } from './helpers/utils';
+import { navItemUrlSelector } from './helpers/navItemUrlSelector';
 
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  const desktopNavMenus = document.querySelectorAll(
-    '[data-test-id="header-nav-menu"] > div > div:not([data-test-id="nav-menu-bar"]) [data-test-id="nav-table-category"] [data-test-id="nav-table-category-list"] li a'
-  );
-  desktopNavMenus?.forEach((menu) => {
-    const itemUrl = menu?.getAttribute('href').trim();
+  const navMenuUrls = document.querySelectorAll(navItemUrlSelector);
+  navMenuUrls?.forEach((navItemUrl) => {
+    const itemUrl = navItemUrl?.getAttribute('href').trim();
     const matchingObj = data[itemUrl];
-    if (matchingObj?.orangeLabel && VARIATION === '1' && menu.classList.contains(`${ID}__remove`)) {
-      menu.classList.remove(`${ID}__remove`);
+    if (matchingObj?.orangeLabel === true && VARIATION === '1') {
+      navItemUrl.classList.contains(`${ID}__remove`) && navItemUrl.classList.remove(`${ID}__remove`);
     } else {
-      matchingObj && menu.classList.add(`${ID}__remove`);
+      matchingObj && navItemUrl.parentElement.classList.add(`${ID}__remove`);
     }
   });
 };
