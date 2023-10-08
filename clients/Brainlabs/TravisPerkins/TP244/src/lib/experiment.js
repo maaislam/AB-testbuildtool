@@ -7,6 +7,7 @@
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import { pollerLite } from '../../../../../../globalUtil/util';
 import deliveryDates from './components/dekiveryDates';
+import { addCssToPage, addJsToPage } from './helpers/addLibrary';
 //import { addCssToPage, addJsToPage } from './helpers/addLibrary';
 import checkoutAdjust from './helpers/checkoutAdjust';
 import clickHandler from './helpers/clickHandler';
@@ -25,8 +26,8 @@ const { ID, VARIATION } = shared;
 
 const DOM_RERENDER_DELAY = 2000;
 
-//const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
-//const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
+const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
+const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
 
 const init = async () => {
   //remove existing incase of re render
@@ -61,8 +62,8 @@ const init = async () => {
 
   //add swiper js
 
-  //addJsToPage(swiperJs, `${ID}__swiperjs`);
-  //addCssToPage(swiperCss, `${ID}__swipercss`);
+  addJsToPage(swiperJs, `${ID}__swiperjs`);
+  addCssToPage(swiperCss, `${ID}__swipercss`);
 
   const deleiveryDateParsed = deliveryDays
     .map(({ date, slotAvailable }) => slotAvailable && { parsedDate: formatDateStr(date), date })
@@ -75,6 +76,12 @@ const init = async () => {
   const basketData = await getBasketEntries();
   const { basketEntries } = basketData;
   const hasDeliveryItemInCart = basketEntries.some((item) => item.deliveryType === 'BRANCH');
+  //check if delivery button is disabled
+  const deliveryButton = document.querySelector('[data-test-id="add-to-delivery-btn"]');
+  if (deliveryButton && deliveryButton.disabled) {
+    //console.log('delivery button disabled');
+    return;
+  }
 
   //do not render incase status or type or hasDeliveryItemInCart  invalid
   if (status !== 'AVAILABLE' || type !== 'BRANCH' || hasDeliveryItemInCart) return;
