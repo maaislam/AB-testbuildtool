@@ -3,7 +3,7 @@ import { navItemUrlSelector } from './helpers/navItemUrlSelector';
 
 const { ID } = shared;
 
-export default () => {
+const init = () => {
   const navMenuUrls = document.querySelectorAll(navItemUrlSelector);
   navMenuUrls?.forEach((navItemUrl) => {
     const itemUrl = window.innerWidth > 767 ? navItemUrl.querySelector('span > span')?.innerText : navItemUrl.querySelector('span')?.innerText;
@@ -11,4 +11,8 @@ export default () => {
       navItemUrl.parentElement.classList.add(`${ID}__remove`);
     }
   });
+};
+
+export default () => {
+  init();
 };

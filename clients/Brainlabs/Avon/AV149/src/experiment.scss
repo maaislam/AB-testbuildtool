@@ -7,31 +7,61 @@
     margin-bottom: 8px;
 
     .#{$id}__topRatedBadge {
+      position: relative;
       display: flex;
       gap: 4px;
       padding: 0 4px;
       border: 2px solid #000;
       cursor: pointer;
+      overflow: hidden;
+
+      ::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        background-image: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 30%,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0) 70%
+        );
+        top: 0;
+        left: -100px;
+        animation: shine 3s infinite linear;
+      }
     }
   }
   #product-title-desktop {
     .yotpo {
-        order: 2 !important;
+      order: 2 !important;
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      left: -100px;
+    }
+    20% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
     }
   }
 
   @include media-query(xlg) {
     &__topRatedBadgeWrapper {
       margin: 0 0 8px;
-      order: 1;
+      order: 2;
     }
     #product-title-mobile {
-        .product-title {
-            order: 0 !important;
-        }
-        .yotpo {
-            order: 2 !important;
-        }
+      .product-title {
+        order: 0 !important;
+      }
+      .yotpo {
+        order: 1 !important;
+      }
     }
   }
 }
