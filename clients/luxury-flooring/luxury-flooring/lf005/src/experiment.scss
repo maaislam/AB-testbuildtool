@@ -1,0 +1,38 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .price-box > span:not(.old-price) .price-including-tax[data-price-type='finalPrice'],
+  .product-info-price .final-price .price-including-tax {
+    color: #a6383e;
+
+    .price {
+      color: #a6383e;
+    }
+  }
+
+  .product-info-price .final-price .price-including-tax {
+    display: block !important;
+    margin-bottom: 14px;
+    .price {
+      padding-left: 6px;
+    }
+  }
+
+  &.#{$id}-1 {
+    .price-box > span:not(.old-price) .price-including-tax[data-price-type='finalPrice'],
+    .product-info-price .final-price .price-including-tax {
+      &::before {
+        content: 'Only';
+      }
+    }
+  }
+  &.#{$id}-2 {
+    .price-box > span:not(.old-price) .price-including-tax[data-price-type='finalPrice'],
+    .product-info-price .final-price .price-including-tax {
+      &::before {
+        content: 'Just';
+      }
+    }
+  }
+}

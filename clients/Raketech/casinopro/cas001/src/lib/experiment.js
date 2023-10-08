@@ -7,6 +7,7 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 const init = (casinoData) => {
+  console.log('🚀 ~ file: experiment.js:10 ~ init ~ casinoData:', casinoData);
   const anchorPoint = document.getElementById('alla-casinon');
 
   const rectangleCardsData = casinoData.filter((item) => item.badge !== 'top casino');

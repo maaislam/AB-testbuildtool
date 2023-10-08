@@ -21,8 +21,8 @@ const modifyTopList = () => {
     const casinoCard = document.querySelectorAll(`[data-toplist-item="${casinoId}"]`);
     casinoCard.forEach((card) => {
       //eslint-disable-next-line no-param-reassign
-      card.style.filter = 'grayscale(100%)';
-      //card.style.display = 'none';
+      card.style.display = 'none';
+      //card.style.filter = 'grayscale(100%)';
     });
   });
 };
