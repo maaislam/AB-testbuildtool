@@ -1,13 +1,14 @@
-import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
+import { navItemUrlSelector } from './helpers/navItemUrlSelector';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
-  setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
-  const desktopNavMenus = document.querySelectorAll('[data-test-id="header-nav-menu"] > div > div:not([data-test-id="nav-menu-bar"])');
-  const data = desktopNavMenus.querySelectorAll('div > div > div');
+  const navMenuUrls = document.querySelectorAll(navItemUrlSelector);
+  navMenuUrls?.forEach((navItemUrl) => {
+    const itemUrl = window.innerWidth > 767 ? navItemUrl.querySelector('span > span')?.innerText : navItemUrl.querySelector('span')?.innerText;
+    if (itemUrl.toLowerCase() === 'view all') {
+      navItemUrl.parentElement.classList.add(`${ID}__remove`);
+    }
+  });
 };
