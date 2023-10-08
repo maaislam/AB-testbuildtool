@@ -1,0 +1,37 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__topRatedBadgeWrapper {
+    display: flex;
+    margin-bottom: 8px;
+
+    .#{$id}__topRatedBadge {
+      display: flex;
+      gap: 4px;
+      padding: 0 4px;
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+  }
+  #product-title-desktop {
+    .yotpo {
+        order: 2 !important;
+    }
+  }
+
+  @include media-query(xlg) {
+    &__topRatedBadgeWrapper {
+      margin: 0 0 8px;
+      order: 1;
+    }
+    #product-title-mobile {
+        .product-title {
+            order: 0 !important;
+        }
+        .yotpo {
+            order: 2 !important;
+        }
+    }
+  }
+}
