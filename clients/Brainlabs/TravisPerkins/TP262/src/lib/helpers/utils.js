@@ -37,7 +37,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
           urlChanged = true;
         }
         callbackFunction(mutation, urlChanged);
-      }, 0);
+      }, 200);
     });
   });
 
