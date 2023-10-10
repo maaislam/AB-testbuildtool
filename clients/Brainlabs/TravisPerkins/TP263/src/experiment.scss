@@ -1,0 +1,63 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .#{$id}__searchTermSuggestionWrapper {
+      position: fixed;
+      width: 100%;
+      top: 62px;
+      background: #fff;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      z-index: 9;
+
+      .#{$id}__searchTermPopUp {
+        width: 100%;
+
+        &-hr {
+          margin: 4px 28px 0;
+          height: 1px;
+          background: #33705a;
+          border: 0;
+          z-index: 9;
+        }
+
+        &-Content {
+          margin: 0 28px 26px;
+
+          .#{$id}__PopularSearches, .#{$id}__TopCategories {
+            margin-top: 28px;
+
+            &-Title {
+              font-size: 14px;
+              font-weight: 700;
+              color: #000;
+              margin-bottom: 10px;
+            }
+
+            &-Urls {
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 11px;
+              margin-top: 10px;
+
+              .#{$id}__PopularSearchesLink, .#{$id}__TopCategoriesLink {
+                padding: 13px 20px 12px;
+                font-size: 14px;
+                line-height: 15px;
+                font-weight: 700;
+                color: #606f80;
+                border: 1px solid #33705a;
+                border-radius: 4px;
+                text-decoration: none;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
