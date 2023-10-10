@@ -12,6 +12,13 @@
     .mui-style-nyuugy:active {
       border: 1px solid #f58321 !important;
     }
+    
+    .mui-nyuugy:hover,
+    .mui-nyuugy:focus,
+    .mui-nyuugy:active {
+      border: 1px solid #f58321 !important;
+    }
+
     .mui-style-jp7oy2 {
       &:hover {
         border-color: #f58321;
@@ -21,6 +28,7 @@
         }
       }
     }
+
     .mui-style-1xv53o1,
     .mui-style-15gf9sr {
       background-color: #f25922 !important;
@@ -51,9 +59,9 @@
       animation: animation-1rzv8hv 1.25s infinite cubic-bezier(0.66, 0, 0, 1) !important;
     }
     .MuiGrid-container {
-      a.outButton {
-        background-color: #f25922;
-        box-shadow: inset 0 -2px 0 0 #f25922;
+      a.outButton, a.mui-h4zgse {
+        background-color: #f25922 !important;
+        box-shadow: inset 0 -2px 0 0 #f25922 !important;
 
         &:hover,
         &:focus {
@@ -91,6 +99,13 @@
     .mui-style-nyuugy:active {
       border: 1px solid #cc412b !important;
     }
+
+    .mui-nyuugy:hover,
+    .mui-nyuugy:focus,
+    .mui-nyuugy:active {
+      border: 1px solid #cc412b !important;
+    }
+
     .mui-style-jp7oy2 {
       &:hover {
         border-color: #cc412b;
@@ -139,8 +154,8 @@
     }
     .MuiGrid-container {
       a.outButton {
-        background-color: #a62833;
-        box-shadow: inset 0 -2px 0 0 #a62833;
+        background-color: #a62833 !important;
+        box-shadow: inset 0 -2px 0 0 #a62833 !important;
 
         &:hover,
         &:focus {

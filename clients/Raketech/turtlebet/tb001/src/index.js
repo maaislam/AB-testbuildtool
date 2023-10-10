@@ -1,6 +1,6 @@
-import { pollerLite } from './lib/helpers/utils';
+import { observeDOM, pollerLite } from './lib/helpers/utils';
 import setup from './lib/services/setup';
 
 pollerLite(['body'], () => {
-  setup();
+  observeDOM('body', setup);
 });

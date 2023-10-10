@@ -25,6 +25,27 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
   }, POLLING_INTERVAL);
 };
 
+export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
+  const target = document.querySelector(`${targetSelectorString}`);
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach(function (mutation) {
+      callbackFunction(mutation);
+    });
+  });
+
+  // configuration of the observer:
+
+  const config = configObject || {
+    attributes: true,
+    childList: true,
+    characterData: false,
+    subtree: true,
+  };
+
+  target && observer.observe(target, config);
+};
+
 
 /**
  * poller() checks for specified conditions until they are true or the timeout limit is reached.
