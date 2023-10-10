@@ -1,0 +1,41 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .#{$id}__searchTermSuggestionWrapper {
+      position: fixed;
+      width: 100%;
+      top: 62px;
+      background: #fff;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      z-index: 9;
+
+      .#{$id}__searchTermPopUp {
+        width: 100%;
+
+        &-hr {
+          margin: 4px 28px 0;
+          height: 1px;
+          background: #33705a;
+          border: 0;
+          z-index: 9;
+        }
+
+        &-Content {
+          margin: 30px 28px 26px;
+
+          .#{$id}__popularSearches {
+            &-Title {
+                font-size: 14px;
+                font-weight: 700;
+                color: #000;
+                margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
