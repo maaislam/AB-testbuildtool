@@ -29,23 +29,22 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   const target = document.querySelector(`${targetSelectorString}`);
 
   const observer = new MutationObserver((mutations) => {
-    mutations.forEach(function (mutation) {
+    mutations.forEach((mutation) => {
       callbackFunction(mutation);
     });
   });
 
-  // configuration of the observer:
+  //configuration of the observer:
 
   const config = configObject || {
     attributes: true,
     childList: true,
     characterData: false,
-    subtree: true,
+    subtree: true
   };
 
   target && observer.observe(target, config);
 };
-
 
 /**
  * poller() checks for specified conditions until they are true or the timeout limit is reached.
