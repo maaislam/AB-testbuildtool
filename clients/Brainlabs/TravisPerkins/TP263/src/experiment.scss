@@ -24,14 +24,36 @@
         }
 
         &-Content {
-          margin: 30px 28px 26px;
+          margin: 0 28px 26px;
 
-          .#{$id}__popularSearches {
+          .#{$id}__PopularSearches, .#{$id}__TopCategories {
+            margin-top: 28px;
+
             &-Title {
+              font-size: 14px;
+              font-weight: 700;
+              color: #000;
+              margin-bottom: 10px;
+            }
+
+            &-Urls {
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 11px;
+              margin-top: 10px;
+
+              .#{$id}__PopularSearchesLink, .#{$id}__TopCategoriesLink {
+                padding: 13px 20px 12px;
                 font-size: 14px;
+                line-height: 15px;
                 font-weight: 700;
-                color: #000;
-                margin-bottom: 10px;
+                color: #606f80;
+                border: 1px solid #33705a;
+                border-radius: 4px;
+                text-decoration: none;
+                cursor: pointer;
+              }
             }
           }
         }
