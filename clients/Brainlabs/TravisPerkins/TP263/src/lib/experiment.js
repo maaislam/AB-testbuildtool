@@ -45,17 +45,16 @@ export default () => {
       `.${ID}__searchTermSuggestionWrapper`
     );
 
-    if (searchField && searchOverlay && !searchPopup && !searchTermSuggestionWrapper) {
+    //eslint-disable-next-line max-len
+    if (searchField && searchOverlay && !searchPopup && !searchTermSuggestionWrapper && !searchLoader) {
       searchField.insertAdjacentHTML('afterend', searchTermSuggestionHTML);
     } else if (searchPopup && searchTermSuggestionWrapper) {
       searchTermSuggestionWrapper.remove();
     } else if (!searchOverlay && searchTermSuggestionWrapper) {
       searchTermSuggestionWrapper.remove();
     }
-    // else if (searchTermSuggestionWrapper && searchLoader) {
-    //   searchTermSuggestionWrapper.remove();
-    // }
   };
+
   const config = {
     attributes: true,
     childList: true,
