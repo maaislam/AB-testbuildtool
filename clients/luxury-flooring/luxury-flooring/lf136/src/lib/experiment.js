@@ -1,4 +1,3 @@
-import setup from './services/setup';
 import shared from './shared/shared';
 import { bathRoomImages } from './helpers/data/data';
 import { observeDOM } from './helpers/utils';
