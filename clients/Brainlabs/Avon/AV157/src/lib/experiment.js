@@ -26,6 +26,21 @@ export default () => {
   setup();
   init();
 
+  const intersectionCallback = (entry) => {
+    if (entry.isIntersecting && !document.querySelector(`.${ID}__seen`)) {
+      entry.target.classList.add(`${ID}__seen`);
+      console.log('Conditions Met');
+      //fireEvent('User seen', shared);
+    }
+  };
+
+  pollerLite([`.${ID}__giftBag`], () => {
+    const elem = document.querySelector(`.${ID}__giftBag`);
+    obsIntersection(elem, 0.5, intersectionCallback);
+  });
+
+  if (VARIATION === 'control') return;
+
   const callback = (mutations) => {
     const htmlClassLists = document.documentElement.classList;
     const isPageOne = document.querySelector('.ProductListHeading .ProductListPaging a.PageNumber').classList.contains('Active');
@@ -50,17 +65,4 @@ export default () => {
     subtree: false
   };
   mutationObserver('.ProductList', callback, config);
-
-  const intersectionCallback = (entry) => {
-    if (entry.isIntersecting && !document.querySelector(`.${ID}__seen`)) {
-      entry.target.classList.add(`${ID}__seen`);
-      console.log('Conditions Met');
-      //fireEvent('User seen', shared);
-    }
-  };
-
-  pollerLite([`.${ID}__giftBag`], () => {
-    const elem = document.querySelector(`.${ID}__giftBag`);
-    obsIntersection(elem, 0.5, intersectionCallback);
-  });
 };
