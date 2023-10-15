@@ -8,11 +8,14 @@ const init = () => {
   if (document.querySelector('.ProductListHeading .ProductListPaging a.PageNumber').classList.contains('Active')) {
     console.log(`${ID}-${VARIATION} is added!!!`);
     const productLists = document.querySelectorAll('.ProductList .ProductListCell');
-    const attachPoint = VARIATION === '1' ? productLists[11] : (VARIATION === '2' && productLists[4]);
     const firstElem = productLists[0];
+
     firstElem.classList.add(`${ID}__giftBag`);
 
-    attachPoint.insertAdjacentElement('afterend', firstElem);
+    if (VARIATION !== 'control') {
+      const attachPoint = VARIATION === '1' ? productLists[11] : (VARIATION === '2' && productLists[4]);
+      attachPoint.insertAdjacentElement('afterend', firstElem);
+    }
   } else {
     const htmlClassLists = document.documentElement.classList;
     htmlClassLists.contains(`${ID}__mutated`) && htmlClassLists.remove(`${ID}__mutated`);
