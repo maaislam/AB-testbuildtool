@@ -10,7 +10,7 @@ const init = () => {
     const productLists = document.querySelectorAll('.ProductList .ProductListCell');
     const attachPoint = VARIATION === '1' ? productLists[11] : (VARIATION === '2' && productLists[4]);
     const firstElem = productLists[0];
-    firstElem.classList.add(`${ID}__firstElem`);
+    firstElem.classList.add(`${ID}__giftBag`);
 
     attachPoint.insertAdjacentElement('afterend', firstElem);
   } else {
@@ -56,8 +56,8 @@ export default () => {
     }
   };
 
-  pollerLite([`.${ID}__firstElem`], () => {
-    const elem = document.querySelector(`.${ID}__firstElem`);
+  pollerLite([`.${ID}__giftBag`], () => {
+    const elem = document.querySelector(`.${ID}__giftBag`);
     obsIntersection(elem, 0.5, intersectionCallback);
   });
 };
