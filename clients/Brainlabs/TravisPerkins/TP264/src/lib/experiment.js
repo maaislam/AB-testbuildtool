@@ -69,7 +69,7 @@ const attachSearchListeners = () => {
       `.${ID}__searchTermSuggestionWrapper`
     );
     if (searchLoader() || searchPopup() || searchTermSuggestionWrapper) return;
-    console.log('Conditions Met');
+    //fireEvent();
     console.log('User interacts with search');
     searchTermSuggestion();
   });
@@ -117,6 +117,10 @@ export default () => {
       pollerLite(['input[type="search"]'], () => {
         searchTermSuggestion();
         attachSearchListeners();
+        if (isMobile()) {
+          //fireEvent();
+          console.log('User interacts with search');
+        }
       });
     }
   });
