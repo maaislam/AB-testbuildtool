@@ -2,6 +2,7 @@ export const data = {
   '/product/building-materials/plaster-and-plasterboards/beads-and-mesh/c/1500226/': {
     category: 'building materials',
     label: 'Beads & Mesh',
+    subCategoryUrl: '/product/building-materials/plaster-and-plasterboards/c/1500220/',
     url: '/product/building-materials/plaster-and-plasterboards/beads-and-mesh/c/1500226/',
     orangeLabel: false
   },
@@ -14,6 +15,7 @@ export const data = {
   '/product/building-materials/building-chemicals/cement-plasterciser-and-dyes/c/1503000/': {
     category: 'building materials',
     label: 'cement plasterciser & dyes',
+    subCategoryUrl: '/product/building-materials/building-chemicals/c/1529000/',
     url: '/product/building-materials/building-chemicals/cement-plasterciser-and-dyes/c/1503000/',
     orangeLabel: false
   },
@@ -99,6 +101,7 @@ export const data = {
     {
       category: 'Timber & sheet materials',
       label: 'Chainlink Fencing & Wire Netting',
+      subCategoryUrl: '/product/timber-and-sheet-materials/fencing-and-trellis/c/1500099/',
       url: '/product/gardens-and-landscaping/fencing-and-trellis/chainlink-fencing-and-wire-netting/c/1500095/',
       orangeLabel: true
     },
