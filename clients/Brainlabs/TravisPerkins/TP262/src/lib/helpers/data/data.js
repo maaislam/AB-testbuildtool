@@ -71,14 +71,14 @@ export const data = {
     url: '/product/gardens-and-landscaping/fencing-and-trellis/fence-paint/c/1570015/',
     orangeLabel: false
   },
-  '/product/gardens-and-landscaping/fencing-and-trellis/fence-panels/c/1500100/': {
-    category: 'Gardens & Landscaping',
-    subCategory: 'Fence panels',
-    label: 'fence panels',
-    subCategoryUrl: '/product/gardens-and-landscaping/fencing-and-trellis/fence-panels/c/1500100/',
-    url: '/product/gardens-and-landscaping/fencing-and-trellis/fence-panels/c/1500100/',
-    orangeLabel: false
-  },
+  //'/product/gardens-and-landscaping/fencing-and-trellis/fence-panels/c/1500100/': {
+  //category: 'Gardens & Landscaping',
+  //subCategory: 'Fence panels',
+  //label: 'fence panels',
+  //subCategoryUrl: '/product/gardens-and-landscaping/fencing-and-trellis/fence-panels/c/1500100/',
+  //url: '/product/gardens-and-landscaping/fencing-and-trellis/fence-panels/c/1500100/',
+  //orangeLabel: false
+  //},
   '/product/gardens-and-landscaping/decking/fencing-and-decking-treatments/c/1500150/': {
     category: 'Gardens & Landscaping',
     subCategory: 'Decking',
@@ -111,14 +111,14 @@ export const data = {
     url: '/product/timber-and-sheet-materials/timber-sleepers/c/1500128/',
     orangeLabel: false
   },
-  '/product/building-materials/civils-and-drainage/geotextiles/c/1500059/': {
-    category: 'Gardens & Landscaping',
-    subCategory: 'Fence & patio maintenance',
-    label: 'Landscaping Fabric',
-    subCategoryUrl: '/product/gardens-and-landscaping/fence-and-patio-maintenance/c/1500148/',
-    url: '/product/building-materials/civils-and-drainage/geotextiles/c/1500059/',
-    orangeLabel: false
-  },
+  //'/product/building-materials/civils-and-drainage/geotextiles/c/1500059/': {
+  //category: 'Gardens & Landscaping',
+  //subCategory: 'Fence & patio maintenance',
+  //label: 'Landscaping Fabric',
+  //subCategoryUrl: '/product/gardens-and-landscaping/fence-and-patio-maintenance/c/1500148/',
+  //url: '/product/building-materials/civils-and-drainage/geotextiles/c/1500059/',
+  //orangeLabel: false
+  //},
   '/product/gardens-and-landscaping/fencing-and-trellis/trellis-panels/c/1581000/': {
     category: 'Gardens & Landscaping',
     subCategory: 'Fencing & trellis',
@@ -191,14 +191,14 @@ export const data = {
     url: '/product/gardens-and-landscaping/fencing-and-trellis/feather-edge-boards/c/1500065/',
     orangeLabel: true
   },
-  '/product/gardens-and-landscaping/fencing-and-trellis/fence-paint/c/1570015/': {
-    category: 'Timber & sheet materials',
-    subCategory: 'Fencing & trellis',
-    label: 'Fence Paint',
-    subCategoryUrl: '/product/timber-and-sheet-materials/fencing-and-trellis/c/1500099/',
-    url: '/product/gardens-and-landscaping/fencing-and-trellis/fence-paint/c/1570015/',
-    orangeLabel: true
-  },
+  //'/product/gardens-and-landscaping/fencing-and-trellis/fence-paint/c/1570015/': {
+  //category: 'Timber & sheet materials',
+  //subCategory: 'Fencing & trellis',
+  //label: 'Fence Paint',
+  //subCategoryUrl: '/product/timber-and-sheet-materials/fencing-and-trellis/c/1500099/',
+  //url: '/product/gardens-and-landscaping/fencing-and-trellis/fence-paint/c/1570015/',
+  //orangeLabel: true
+  //},
   '/product/gardens-and-landscaping/fencing-and-trellis/fence-panels/c/1500100/': {
     category: 'Timber & sheet materials',
     subCategory: 'Fencing & trellis',
@@ -223,14 +223,14 @@ export const data = {
     url: '/product/gardens-and-landscaping/fencing-and-trellis/fence-spikes-brackets-and-supports/c/1500105/',
     orangeLabel: true
   },
-  '/product/gardens-and-landscaping/decking/fencing-and-decking-treatments/c/1500150/': {
-    category: 'Timber & sheet materials',
-    subCategory: 'Fencing & trellis',
-    label: 'fencing & decking treatments',
-    subCategoryUrl: '/product/timber-and-sheet-materials/fencing-and-trellis/c/1500099/',
-    url: '/product/gardens-and-landscaping/decking/fencing-and-decking-treatments/c/1500150/',
-    orangeLabel: true
-  },
+  //'/product/gardens-and-landscaping/decking/fencing-and-decking-treatments/c/1500150/': {
+  //category: 'Timber & sheet materials',
+  //subCategory: 'Fencing & trellis',
+  //label: 'fencing & decking treatments',
+  //subCategoryUrl: '/product/timber-and-sheet-materials/fencing-and-trellis/c/1500099/',
+  //url: '/product/gardens-and-landscaping/decking/fencing-and-decking-treatments/c/1500150/',
+  //orangeLabel: true
+  //},
   '/product/timber-and-sheet-materials/fencing-and-trellis/c/1500099/': {
     category: 'Timber & sheet materials',
     subCategory: 'Fencing & trellis',
@@ -270,13 +270,13 @@ export const data = {
     subCategoryUrl: '/product/timber-and-sheet-materials/flooring/c/1500188/',
     url: '/product/timber-and-sheet-materials/flooring/planed-tongue-and-grooved-flooring/c/1572004/',
     orangeLabel: false
-  },
-  '/product/gardens-and-landscaping/fencing-and-trellis/trellis-panels/c/1581000/': {
-    category: 'Timber & sheet materials',
-    subCategory: 'Fencing & trellis',
-    label: 'Trellis Panels',
-    subCategoryUrl: '/product/timber-and-sheet-materials/fencing-and-trellis/c/1500099/',
-    url: '/product/gardens-and-landscaping/fencing-and-trellis/trellis-panels/c/1581000/',
-    orangeLabel: true
   }
+  //'/product/gardens-and-landscaping/fencing-and-trellis/trellis-panels/c/1581000/': {
+  //category: 'Timber & sheet materials',
+  //subCategory: 'Fencing & trellis',
+  //label: 'Trellis Panels',
+  //subCategoryUrl: '/product/timber-and-sheet-materials/fencing-and-trellis/c/1500099/',
+  //url: '/product/gardens-and-landscaping/fencing-and-trellis/trellis-panels/c/1581000/',
+  //orangeLabel: true
+  //}
 };
