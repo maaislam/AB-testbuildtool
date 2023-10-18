@@ -1,3 +1,4 @@
+import productCards from './components/productCards';
 import initSwiper from './helpers/initSwiper';
 import { addCssToPage, addJsToPage, pollerLite } from './helpers/utils';
 import setup from './services/setup';
@@ -10,31 +11,28 @@ const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
 const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
 
 const init = () => {
-  //add swiper js
-  console.log(ID, window.Swiper);
+  const productCardsHTML = `
+  <div class="${ID}__swiper swiper">
+    ${productCards(ID, window.AG115Data)}
+  </div>`;
+  document.querySelector('.ProductListHeading').insertAdjacentHTML('afterbegin', productCardsHTML);
 };
 
 export default () => {
   setup(); //use if needed
 
-  console.log(ID, window.Swiper);
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
   if (VARIATION === 'control') {
     return;
   }
 
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
   addJsToPage(swiperJs, `${ID}__swiperjs`);
   addCssToPage(swiperCss, `${ID}__swipercss`);
 
-  pollerLite([() => typeof window.Swiper === 'function'], () => {
-    //attach cards here
-    initSwiper(`.${ID}__swiper`);
-    init();
-  });
+  pollerLite(
+    [() => typeof window.Swiper === 'function' && typeof window.AG115Data !== 'undefined'],
+    () => {
+      init();
+      initSwiper(`.${ID}__swiper`);
+    }
+  );
 };
