@@ -9,13 +9,8 @@ const priceBox = (currentPrice, wasPrice) => {
             </svg>
         </div>
         <div class='${ID}__priceBox-prices'>
-            ${
-              currentPrice
-                ? `<div class='${ID}__currentPrice'>${currentPrice}</div>
-                    <div class='${ID}__wasPrice'>${wasPrice}</div>`
-                : `<div class='${ID}__currentPrice'>${wasPrice}</div>`
-            }
-            
+            <div class='${ID}__currentPrice'>${currentPrice}</div>
+            ${wasPrice ? `<div class='${ID}__wasPrice'>${wasPrice}</div>` : ''}
         </div>
     </div>`;
   return htmlStr;

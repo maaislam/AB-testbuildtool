@@ -15,7 +15,9 @@ const init = () => {
   <div class="${ID}__swiper swiper">
     ${productCards(ID, window.AG115Data)}
   </div>`;
-  document.querySelector('.ProductListHeading').insertAdjacentHTML('afterbegin', productCardsHTML);
+  if (!document.querySelector(`.${ID}__productCards`)) {
+    document.querySelector('.ProductListHeading').insertAdjacentHTML('afterbegin', productCardsHTML);
+  }
 };
 
 export default () => {

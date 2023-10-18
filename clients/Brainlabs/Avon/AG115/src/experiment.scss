@@ -68,13 +68,12 @@
           flex-direction: column;
           gap: 4px;
           list-style-position: inside;
-
-          &-featuredItem {
-            color: #000;
-            font-size: 11px;
-            font-weight: 400;
-            line-height: 13px;
-          }
+        }
+        &-featuredItem {
+          color: #000;
+          font-size: 11px;
+          font-weight: 400;
+          line-height: 13px;
         }
       }
     }
