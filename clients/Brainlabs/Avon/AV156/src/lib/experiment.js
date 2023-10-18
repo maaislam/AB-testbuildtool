@@ -28,10 +28,14 @@ const init = () => {
     const hamburgerBtn = document.querySelector('header #Hamburger');
     hamburgerBtn.addEventListener('mousedown', () => {
       if (document.body.classList.contains('AG060a')) {
-        const mobileNavSaleElem = document.querySelector('.AG060a_MobileNav > .AG060a_MobileNav_level ul li');
-        const mobileNavTopRatedUrlElem = document.querySelector('.AG060a_MobileNav .AG060a_MobileNav_level ul li a[href*="/773/bestsellers"]');
+        const mobileNavSaleElem = document.querySelector(
+          '.AG060a_MobileNav > .AG060a_MobileNav_level ul li'
+        );
+        const mobileNavTopRatedUrlElem = document.querySelector(
+          '.AG060a_MobileNav .AG060a_MobileNav_level ul li a[href*="/773/bestsellers"]'
+        );
         const mobileNavTopRatedListItem = mobileNavTopRatedUrlElem.parentElement;
-        const starSvgElem = document?.querySelector(`.${ID}__starSvg`);
+        const starSvgElem = document.querySelector(`.${ID}__starSvg`);
 
         mobileNavTopRatedListItem.classList.add(`${ID}-${VARIATION}__topRatedMenu-item`);
         mobileNavTopRatedUrlElem.classList.add(`${ID}__topRatedUrlElem`);
@@ -41,7 +45,9 @@ const init = () => {
         }
         mobileNavSaleElem.insertAdjacentElement('beforebegin', mobileNavTopRatedListItem);
       } else {
-        const topRatedUrlElem = document.querySelector('nav#HamburgerMenuNew ul#HamburgerCategories li a[href*="/top-rated"]');
+        const topRatedUrlElem = document.querySelector(
+          'nav#HamburgerMenuNew ul#HamburgerCategories li a[href*="/top-rated"]'
+        );
       }
     });
   }
