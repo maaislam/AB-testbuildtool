@@ -7,6 +7,6 @@ const { VARIATION } = shared;
 export default () => {
   setup();
   setTimeout(() => {
-    sendTga4(`User in experiment hide-widget variation: ${VARIATION}`);
+    sendTga4(`hide-widget variation: ${VARIATION}`);
   }, 2000);
 };
