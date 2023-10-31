@@ -35,11 +35,11 @@ export default () => {
       const casinoName = casinoLink.split('/spela/')[1];
       //const hasAffiliateLink = target.closest(`.${ID}__affiliate`);
 
-      // gaTracking(
-      //   `${casinoName.replace(/\//g, '')} | CTA Clicks to Operator | Toplist${
-      //     target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
-      //   }`
-      // );
+      gaTracking(
+        `${casinoName.replace(/\//g, '')} | CTA Clicks to Operator | Toplist${
+          target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
+        }`
+      );
 
       const data = getCroStorage(`${ID}__visitedCasinos`);
       if (!data) {
@@ -56,7 +56,7 @@ export default () => {
     } else if (target.closest('a[href*="/spela/"]') && !target.closest('.toplist.casino')) {
       const operatorHref = target.closest('a[href*="/spela/"]').href;
       const operatorName = operatorHref.split('/spela/')[1];
-      // gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator`);
+      gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator`);
     }
   });
 
@@ -77,7 +77,7 @@ export default () => {
     });
   };
 
-  //updateAffiliateLinks();
+  updateAffiliateLinks();
 
   if (VARIATION === 'Control') {
     return;
