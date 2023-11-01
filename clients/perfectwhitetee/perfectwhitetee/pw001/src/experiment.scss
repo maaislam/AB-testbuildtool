@@ -1,0 +1,40 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    #CollectionAjaxContent .grid.grid--uniform .grid__item.grid-product,
+    .pagination {
+        display: none;
+    }
+
+    #CollectionAjaxContent .grid.grid--uniform .grid__item.grid-product.#{$id}__item-visible {
+        display: block;
+    }
+
+    &__hide {
+        display: none;
+    }
+
+    &__uniform {
+        .#{$id}__title {
+            text-transform: capitalize;
+        }
+    }
+
+    &__load-more {
+        margin-top: 80px;
+        text-align: center;
+
+        .#{$id}__button {
+            width: 100%;
+            max-width: 146px;
+            padding: 14px 33px;
+            color: #fff;
+            background: #111;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 15px;
+            letter-spacing: 0.375px;
+        }
+    }
+}

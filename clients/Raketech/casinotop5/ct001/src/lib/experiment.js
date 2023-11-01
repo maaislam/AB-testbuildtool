@@ -15,7 +15,7 @@ const init = () => {
     const casinoLinks = document.querySelectorAll(`a[data-oldhref*="${casino}"]`);
     casinoLinks.forEach((casinoLink) => {
       //console.log('🚀 ~ file: experiment.js:17 ~ casinoData.forEach ~ casinoLinks:', casinoLinks);
-      const casinoCardElem = casinoLink?.closest('.toplist-item');
+      const casinoCardElem = casinoLink?.closest('.fcrp-scfeatured');
       if (!casinoCardElem) return;
       casinoCardElem.classList.add(`${ID}__grayscale`);
     });
@@ -27,12 +27,12 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (
-      (target.closest('a[href*="/spela/"]') || target.closest(`.${ID}__affiliate`)) &&
-      target.closest('.toplist.casino')
+      (target.closest('a[href*="/visit/"]') || target.closest(`.${ID}__affiliate`)) &&
+      target.closest('.tdi_26 .wpb_wrapper')
     ) {
       const closestWrapper = target.closest('a');
       const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
-      const casinoName = casinoLink.split('/spela/')[1];
+      const casinoName = casinoLink.split('/visit/')[1];
       //const hasAffiliateLink = target.closest(`.${ID}__affiliate`);
 
       gaTracking(
@@ -53,26 +53,26 @@ export default () => {
       visitedCasinos.push(casinoName);
       setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
       init();
-    } else if (target.closest('a[href*="/spela/"]') && !target.closest('.toplist.casino')) {
-      const operatorHref = target.closest('a[href*="/spela/"]').href;
-      const operatorName = operatorHref.split('/spela/')[1];
+    } else if (target.closest('a[href*="/visit/"]') && !target.closest('.tdi_26 .wpb_wrapper')) {
+      const operatorHref = target.closest('a[href*="/visit/"]').href;
+      const operatorName = operatorHref.split('/visit/')[1];
       gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator`);
     }
   });
 
   const updateAffiliateLinks = () => {
-    const casinoToplistItems = document.querySelectorAll('.toplist.casino .toplist-item');
+    const casinoToplistItems = document.querySelectorAll('.tdi_26 .wpb_wrapper .fcrp-scfeatured');
     casinoToplistItems.forEach((casinoToplistItem) => {
-      const casinoNameElem = casinoToplistItem.querySelector('a.visit');
+      const casinoNameElem = casinoToplistItem.querySelector('a.fcrp-button');
       if (!casinoNameElem) return;
       const casinoHref = casinoNameElem.href;
-      const casinoName = casinoHref.split('/spela/')[1].replace(/[\/\-_]/g, '');
+      const casinoName = casinoHref.split('/visit/')[1].replace(/[\/\-_]/g, '');
       const newUrl = affiliateLinksConfig[linkType][casinoName];
       casinoNameElem.setAttribute('data-oldhref', casinoHref);
-      // if (newUrl) {
-      //   casinoNameElem.classList.add(`${ID}__affiliate`);
-      //   casinoNameElem.href = newUrl;
-      // }
+      if (newUrl) {
+        casinoNameElem.classList.add(`${ID}__affiliate`);
+        casinoNameElem.href = newUrl;
+      }
       //console.log('🚀casinoName:', casinoName);
     });
   };

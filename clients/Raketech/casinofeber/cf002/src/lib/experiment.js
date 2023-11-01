@@ -69,10 +69,10 @@ export default () => {
       const casinoName = casinoHref.split('/spela/')[1].replace(/[\/\-_]/g, '');
       const newUrl = affiliateLinksConfig[linkType][casinoName];
       casinoNameElem.setAttribute('data-oldhref', casinoHref);
-      // if (newUrl) {
-      //   casinoNameElem.classList.add(`${ID}__affiliate`);
-      //   casinoNameElem.href = newUrl;
-      // }
+      if (newUrl) {
+        casinoNameElem.classList.add(`${ID}__affiliate`);
+        casinoNameElem.href = newUrl;
+      }
       //console.log('🚀casinoName:', casinoName);
     });
   };
