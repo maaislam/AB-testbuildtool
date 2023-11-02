@@ -55,7 +55,12 @@ const init = () => {
 
 export default () => {
   setup();
-  //conditions met
+  const isCartEmpty = () => document.querySelector('.mini-cart-content.empty');
+  if (!isCartEmpty()) {
+    console.log('cart has items');
+    //conditions met
+  }
+
   if (VARIATION === 'control') return;
   init();
   const configObj = {
