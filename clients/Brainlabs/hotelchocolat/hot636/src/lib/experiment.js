@@ -16,12 +16,12 @@ const init = () => {
     const isThresholdMet = basketTotalPrice < thresholdPrice;
 
     const progressWidth = (basketTotalPrice / thresholdPrice) * 100;
-    const deductedPrice = isThresholdMet && thresholdPrice - basketTotalPrice;
+    const deductedPrice = isThresholdMet && (thresholdPrice - basketTotalPrice).toFixed(2);
 
     const discountProgressCardHtml = `
       <div class="${ID}__discountProgressCard">
         ${discountOfferMessage(ID, isThresholdMet, deductedPrice)}
-        ${progressBar(ID, progressWidth)}
+        ${progressBar(ID, progressWidth.toFixed(2))}
       </div>
     `;
 

@@ -1,11 +1,13 @@
 import { cartBagIcon } from '../assets/svg';
 
 const discountOfferMessage = (id, isThresholdMet, deductedPrice) => {
-    const message = isThresholdMet ? `Spend £30, get 15% off - You’re just £${deductedPrice} away` : 'Congrats! Your order qualifies for 15% off';
+    const message = isThresholdMet
+        ? `<span>Spend £30, get 15% off</span> - You’re just <span>£${deductedPrice} away</span>`
+        : `<span class='${id}__gotDiscountMessage'>Congrats! Your order qualifies for 15% off</span>`;
     const htmlStr = `
         <div class="${id}__discountOfferMessage">
             <span>${cartBagIcon}</span>
-            <p>${message}</p>
+            <p class='${id}__discountOfferMessage-text'>${message}</p>
         </div>
     `;
 

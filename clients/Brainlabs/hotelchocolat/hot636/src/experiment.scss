@@ -2,7 +2,63 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    &__discountProgressCard {
+        margin: 0 0 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 108px;
+        gap: 18px;
+        border-radius: 4px;
+        background: #F1F1F1;
+
+        @include media-query(sm) {
+            height: 70px;
+            padding: 0 12px;
+            gap: 8px;
+        }
+
+        .#{$id}__discountOfferMessage {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            &-text {
+                color: #000;
+                font-size: 16px;
+                line-height: 19px;
+                font-weight: 300;
+
+                span {
+                    font-weight: 600;
+                }
+
+                span.#{$id}__gotDiscountMessage {
+                    font-weight: 500;
+                    font-family: 'GillSansNova-Medium';
+                }
+            }
+        }
+
+        .#{$id}__discountProgress {
+            height: 12px;
+            width: 407px;
+            background: #FFF;
+            border-radius: 20px;
+            overflow: hidden;
+
+            &-bar {
+                height: 100%;
+                max-width: 100% !important;
+                border-radius: 20px;
+                background: #7C738E;
+            }
+
+            @include media-query(sm) {
+                height: 10px;
+                width: 100%;
+            }
+        }
     }
 }
