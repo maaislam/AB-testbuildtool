@@ -15,8 +15,9 @@
 
   .product-form__options-wrapper {
     position: relative;
-    max-width: 300px;
+    max-width: 100%;
     display: flex;
+    flex-direction: row;
     align-items: center;
 
     .selected_size {
@@ -31,7 +32,7 @@
       font-size: 17px;
       font-weight: bold;
       display: flex;
-      max-width: 180px;
+      max-width: 100%;
       width: 100%;
       margin-right: auto;
       margin-left: 0;
@@ -44,7 +45,7 @@
     }
 
     .selected_size_wrapper {
-      max-width: 180px;
+      max-width: 100%;
       width: 100%;
       position: relative;
       margin-left: 20px;
@@ -73,8 +74,9 @@
       margin-right: 0px;
       padding-left: 0px;
       padding-top: 0px;
+      row-gap: 0px;
       z-index: 100;
-      max-width: 180px;
+      max-width: 100%;
       width: 100%;
       position: absolute;
       top: 100%;
@@ -89,6 +91,7 @@
         background: unset;
         font-family: 'Montserrat', sans-serif;
         text-align: left;
+        border: none;
 
         &.active {
           //box-shadow: none !important;
