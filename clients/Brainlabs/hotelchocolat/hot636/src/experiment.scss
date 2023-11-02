@@ -3,7 +3,6 @@
 
 .#{$id} {
     &__discountProgressCard {
-        margin: 0 0 18px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -12,6 +11,7 @@
         gap: 18px;
         border-radius: 4px;
         background: #F1F1F1;
+        text-transform: none !important;
 
         @include media-query(sm) {
             height: 70px;
@@ -43,7 +43,7 @@
 
         .#{$id}__discountProgress {
             height: 12px;
-            width: 407px;
+            width: 100%;
             background: #FFF;
             border-radius: 20px;
             overflow: hidden;
@@ -55,9 +55,52 @@
                 background: #7C738E;
             }
 
+            // @include media-query(sm) {
+            //     height: 10px;
+            //     width: 100%;
+            // }
+        }
+    }
+
+    &__basketProgressCard {
+        margin: 0 0 18px;
+        gap: 12px;
+
+        .#{$id}__discountProgress {
+            height: 10px;
+            width: 407px;
+
             @include media-query(sm) {
-                height: 10px;
                 width: 100%;
+            }
+        }
+
+        @include media-query(sm) {
+            margin: 23px 0 16px;
+            padding: 0 12px;
+        }
+    }
+
+    &__miniCartProgressCard {
+        height: auto;
+        margin-top: 9px;
+        padding: 12px;
+        gap: 7px;
+
+        .#{$id}__discountOfferMessage {
+            &-text {
+                font-size: 13px;
+                line-height: 17px;
+
+                @include media-query(sm) {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .#{$id}__discountProgress {
+            &-bar {
+                height: 10px;
             }
         }
     }
