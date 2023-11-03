@@ -2,7 +2,55 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    &__bestSellerContainer {
+        margin-top: 50px;
+
+        .#{$id}__headerText {
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: 'Raleway';
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 28px;
+            text-transform: uppercase;
+
+            @include media-query(md) {
+                margin-bottom: 12px;
+            }
+        }
+
+        .#{$id}__swiper {
+            .#{$id}__productCards {
+                padding: 0 !important;
+
+                .swiper-slide.swiper-slide-active {
+                    padding: 0 !important;
+                }
+
+                .#{$id}__productCard {
+                    list-style: none;
+
+                    article {
+                        .hp-title {
+                            .oke-sr-label-text {
+                                display: none;
+                            }
+
+                            form {
+                                button {
+                                    padding: 10px 20px;
+                                    font-family: var(--body-font-stack) !important;
+                                    font-size: 14px !important;
+                                    line-height: 22px;
+                                    letter-spacing: normal !important;
+                                    text-transform: initial !important;
+                                    border-radius: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
