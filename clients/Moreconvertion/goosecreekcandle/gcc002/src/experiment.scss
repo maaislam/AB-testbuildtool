@@ -130,15 +130,14 @@
                 position: absolute;
                 top: -9px;
                 left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
                 color: #9888B4;
                 background-color: #fff;
-
-                transform: translateX(-50%);
                 font-size: 13px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 17px;
-                text-align: center;
             }
         }
     }
