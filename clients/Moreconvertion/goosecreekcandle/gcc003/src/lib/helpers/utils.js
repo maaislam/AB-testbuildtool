@@ -83,3 +83,23 @@ export const addJsToPage = (src, id, cb, classes) => {
   s.setAttribute('id', id);
   document.head.appendChild(s);
 };
+export const addToCart = (id, quantity) => {
+  const payload = {
+    id,
+    quantity
+  };
+
+  const response = fetch(`/cart/add.js`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  }).then((response) => {
+    const res = response.json();
+
+    return res;
+  });
+  return response;
+};

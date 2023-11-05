@@ -1,7 +1,7 @@
 import setup from './services/setup';
 import shared from './shared/shared';
 import initSwiper from './helpers/initSwiper';
-import { addCssToPage, addJsToPage, pollerLite } from './helpers/utils';
+import { addCssToPage, addJsToPage, addToCart, pollerLite } from './helpers/utils';
 import productCards from './components/productCards';
 import fetchProducts from './fetchProducts/fetchProducts';
 
@@ -32,6 +32,16 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (target.closest('form') && target.closest(`.${ID}__productCard`)) {
+      e.preventDefault();
+      const form = target.closest('form');
+      const prdId = form.querySelector('input[name="id"]').value;
+      addToCart(prdId, 1);
+    }
+  });
 
   if (VARIATION === 'control') {
     return;

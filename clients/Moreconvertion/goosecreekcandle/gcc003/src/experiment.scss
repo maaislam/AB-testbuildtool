@@ -3,7 +3,7 @@
 
 .#{$id} {
     &__bestSellerContainer {
-        margin-top: 50px;
+        padding-top: 50px;
 
         .#{$id}__headerText {
             margin-bottom: 20px;
@@ -33,9 +33,15 @@
                     list-style: none;
 
                     article {
+                        padding-bottom: 0 !important;
+                        
                         .hp-title {
                             .oke-sr-label-text {
                                 display: none;
+                            }
+
+                            .indiv-product-title-text{
+                                min-height: 39px;
                             }
 
                             form {
