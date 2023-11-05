@@ -3,12 +3,10 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { data } from './data/data';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup();
-  console.log(ID);
-
   const anchorPoint = document.querySelector('.variants_vendor');
 
   const htmlStr = `<div class='${ID}__uspWrapper'>
