@@ -1,0 +1,49 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__uspWrapper {
+        margin: 21px 0 28px 0;
+        display: flex;
+        justify-content: space-between;
+
+        .#{$id}__uspItem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+
+            .#{$id}__uspIconWrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 67px;
+                height: 67px;
+                border: 1.5px solid #000;
+                border-radius: 50%;
+
+                @include media-query(sm) {
+                    width: 55px;
+                    height: 55px;
+                }
+
+                .#{$id}__uspIcon {
+                    svg {
+                        @include media-query(sm) {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+
+            .#{$id}__uspTitle {
+                color: #000;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 18px;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
