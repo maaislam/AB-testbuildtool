@@ -1,5 +1,4 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { data } from './data/data';
 
@@ -7,7 +6,7 @@ const { ID } = shared;
 
 export default () => {
   setup();
-  const anchorPoint = document.querySelector('.variants_vendor');
+  const anchorPoint = document.querySelector('status-save-button');
 
   const htmlStr = `<div class='${ID}__uspWrapper'>
     ${data.map((item) => {
@@ -25,5 +24,7 @@ export default () => {
     }).join('')}
   </div>`;
 
-  anchorPoint.insertAdjacentHTML('beforebegin', htmlStr);
+  if (!document.querySelector(`.${ID}__uspWrapper`)) {
+    anchorPoint.insertAdjacentHTML('beforebegin', htmlStr);
+  }
 };

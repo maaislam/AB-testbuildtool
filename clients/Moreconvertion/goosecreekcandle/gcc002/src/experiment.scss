@@ -3,141 +3,45 @@
 
 .#{$id} {
     &-1 {
-        .#{$id}__wrapper {
-            margin: 0 0 22px 0;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-
-            @include media-query(sm) {
-                gap: 8px;
-            }
-
-            .#{$id}__item {
-                .#{$id}__paymentIconWrapper {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    .#{$id}__paymentIcon {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 43px;
-                        height: 26px;
-
-                        img {
-                            border-radius: 3.5px;
-                        }
-
-
-                        @include media-query(sm) {
-                            width: 36px;
-                            height: 22px;
-                        }
-                    }
-
-                    .#{$id}__paymentIcon.#{$id}__borderedImage {
-                        border: 0.6px solid #808080;
-                        border-radius: 3.5px;
-
-                        img {
-                            width: auto !important;
-                        }
-
-                        @include media-query(sm) {
-                            padding: 3px;
-                        }
-                    }
-                }
-
-                .#{$id}__uspTitle {
-                    color: #000;
-                    font-weight: 500;
-                    font-size: 14px;
-                    line-height: 18px;
-                    text-transform: capitalize;
-                }
-            }
+        .#{$id}__container {
+            margin-bottom: 21px;
+            padding: 0 20px;
         }
     }
 
     &-2 {
         .#{$id}__container {
-            margin-bottom: 15px;
+            margin: 8px 58px 15px 58px;
             display: flex;
             justify-content: center;
+            position: relative;
+            padding: 20px 6px 8px;
+            border: 1.5px solid #9888B4;
 
-            .#{$id}__wrapper {
-                position: relative;
-                padding: 20px 7px 8px;
-                display: flex;
-                justify-content: center;
-                gap: 7px;
-                border: 1.5px solid #9888B4;
-
-                .#{$id}__item {
-                    .#{$id}__paymentIconWrapper {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-
-                        .#{$id}__paymentIcon {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            width: 32px;
-                            height: 19px;
-
-                            img {
-                                border-radius: 3.5px;
-                            }
-
-
-                            @include media-query(sm) {
-                                width: 29px;
-                                height: 18px;
-                            }
-                        }
-
-                        .#{$id}__paymentIcon.#{$id}__borderedImage {
-                            border: 0.6px solid #808080;
-                            border-radius: 3.5px;
-
-                            img {
-                                width: auto !important;
-                            }
-
-                            @include media-query(sm) {
-                                padding: 3px;
-                            }
-                        }
-                    }
-
-                    .#{$id}__uspTitle {
-                        color: #000;
-                        font-weight: 500;
-                        font-size: 14px;
-                        line-height: 18px;
-                        text-transform: capitalize;
-                    }
-                }
+            @include media-query(md) {
+                margin: 8px 46px 13px 46px;
+                padding: 12px 5px 9px;
             }
+        }
 
-            .#{$id}__wrapper::before {
-                content: 'Guaranteed SAFE Checkout';
-                width: 184px;
-                position: absolute;
-                top: -9px;
-                left: 50%;
-                transform: translateX(-50%);
-                text-align: center;
-                color: #9888B4;
-                background-color: #fff;
-                font-size: 13px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 17px;
+        .#{$id}__container::before {
+            content: 'Guaranteed SAFE Checkout';
+            width: 184px;
+            position: absolute;
+            top: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #9888B4;
+            background-color: #fff;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 17px;
+
+            @include media-query(md) {
+                width: 173px;
+                font-size: 12px;
             }
         }
     }

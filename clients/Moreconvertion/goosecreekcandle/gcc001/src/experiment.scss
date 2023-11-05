@@ -39,10 +39,16 @@
 
             .#{$id}__uspTitle {
                 color: #000;
+                font-family: 'inter';
                 font-weight: 500;
                 font-size: 14px;
                 line-height: 18px;
                 text-transform: capitalize;
+
+                @include media-query(sm) {
+                    font-size: 12px;
+                    line-height: 16px;
+                }
             }
         }
     }

@@ -27,11 +27,17 @@ const init = () => {
     }
     initSwiper(`.${ID}__swiper`);
   };
-  getProducts();
+  getProducts().then(() => {
+    const atcButtons = document.querySelectorAll(`.${ID}__productCards .add-to-cart-ajax`);
+    atcButtons.forEach((atcButton) => {
+      const btn = atcButton;
+      btn.textContent = 'Add to Cart';
+    });
+  });
 };
 
 export default () => {
-  setup(); //use if needed
+  setup();
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
