@@ -1,0 +1,30 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__announcementBanner {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        background-color: #c9a361;
+
+        &-text {
+            margin: 0 25% 0 25%;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            text-wrap: nowrap;
+            animation: scrollText 10s linear infinite;
+        }
+    }
+
+    @keyframes scrollText {
+        0% {
+            transform: translateX(150%);
+        }
+
+        100% {
+            transform: translateX(-150%);
+        }
+    }
+}
