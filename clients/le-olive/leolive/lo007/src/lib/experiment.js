@@ -75,11 +75,6 @@ export default () => {
     });
   });
 
-  //execution time console log
-  const end = new Date().getTime();
-  const time = end - start;
-  console.log('Execution time: ' + time);
-
   //-----------------------------
   //...
 };

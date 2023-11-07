@@ -17,15 +17,9 @@ const gaTracking = (label) => {
         send_to: GA4_PROPERTY_ID
       });
     } else {
-      window.dataLayer = window.dataLayer || [];
-      if (window.customGtag === undefined) {
-        window.customGtag = (...args) => {
-          window.dataLayer.push(...args);
-        };
-        window.customGtag('js', new Date());
-        window.customGtag('config', GA4_PROPERTY_ID);
-      }
-      window.customGtag('event', GA4_INTERNAL_EXPERIMENT_ID, {
+      window.dataLayer.push({
+        event: 'cro_event',
+        event_detail: GA4_INTERNAL_EXPERIMENT_ID,
         event_category: EXPERIMENT_DEVICE_CATEGORY,
         event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | Variation: ${VARIATION} | ${label}`,
         send_to: GA4_PROPERTY_ID

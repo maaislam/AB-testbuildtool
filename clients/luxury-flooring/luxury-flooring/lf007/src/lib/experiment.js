@@ -3,7 +3,7 @@ import setup from './services/setup';
 import shared from './shared/shared';
 
 const { ID } = shared;
-const intersectionAnchor = document.querySelector('.product-options-bottom .tocart');
+const intersectionAnchor = document.querySelector('#product-addtocart-button');
 const anchorPoint = document.body;
 
 const init = () => {
@@ -24,11 +24,17 @@ const init = () => {
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
       const stickySection = document.querySelector(`.${ID}__stickyATC`);
-
+      let scrcrollTimer;
+      clearTimeout(scrcrollTimer);
       if (entry.isIntersecting) {
-        stickySection.classList.add(`${ID}__hide`);
+        stickySection.classList.remove(`${ID}__show`);
+        stickySection.classList.add('slide-out-bottom');
+        scrcrollTimer = setTimeout(() => {
+          stickySection.classList.add(`${ID}__hide`);
+        }, 1000);
       } else {
-        stickySection.classList.contains(`${ID}__hide`) && stickySection.classList.remove(`${ID}__hide`);
+        stickySection.classList.remove('slide-out-bottom');
+        stickySection.classList.remove(`${ID}__hide`);
         stickySection.classList.add(`${ID}__show`);
       }
     });

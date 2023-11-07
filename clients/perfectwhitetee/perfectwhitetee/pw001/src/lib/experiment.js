@@ -1,3 +1,4 @@
+/*eslint-disable no-plusplus */
 import shared from './shared/shared';
 import getNextPage from './helpers/getNextPage';
 import { onUrlChange } from './helpers/utils';
@@ -14,46 +15,54 @@ const init = () => {
     <button class="${ID}__button">Load More</button>
   </div>`;
 
-  productContainer.insertAdjacentHTML('afterend', loadMoreButton);
+  if (!document.querySelector(`.${ID}__load-more`)) {
+    productContainer.insertAdjacentHTML('afterend', loadMoreButton);
+  }
 
   const loadMoreButtonElem = document.querySelector(`.${ID}__load-more`);
 
   const getTotalProductCount = () => {
-    const allProductItems = document.querySelectorAll('#CollectionAjaxContent .grid.grid--uniform .grid__item.grid-product');
+    const allProductItems = document.querySelectorAll(
+      '#CollectionAjaxContent .grid.grid--uniform .grid__item.grid-product'
+    );
     const totalProducts = allProductItems.length;
     return totalProducts;
-  }
+  };
 
   const showNextProducts = () => {
-
     const showProducts = () => {
       const nextTwoRows = visibleProducts + 8;
 
       for (let idx = visibleProducts; idx < nextTwoRows; idx++) {
         if (idx < getTotalProductCount()) {
-          const allPrdItems = document.querySelectorAll('#CollectionAjaxContent .grid.grid--uniform .grid__item.grid-product');
+          const allPrdItems = document.querySelectorAll(
+            '#CollectionAjaxContent .grid.grid--uniform .grid__item.grid-product'
+          );
           const currentProduct = allPrdItems[idx];
-          // const isOutOfStock = currentProduct.querySelector('.grid-product__tag--sold-out');
-          // if (isOutOfStock) return;
+          //const isOutOfStock = currentProduct.querySelector('.grid-product__tag--sold-out');
+          //if (isOutOfStock) return;
           currentProduct.classList.add(`${ID}__item-visible`);
         }
       }
 
       visibleProducts += 8;
-    }
+    };
 
     showProducts();
 
     if (visibleProducts >= getTotalProductCount()) {
       getNextPage(ID, ++currentPage).then(() => showProducts());
-      totalPages === currentPage && loadMoreButtonElem.classList.add(`${ID}__hide`);
+      if (totalPages === currentPage || totalPages === 0) {
+        loadMoreButtonElem.classList.add(`${ID}__hide`);
+      }
     }
-  }
+    //console.log('🚀 ~ file: experiment.js:57 ~ showNextProducts ~ totalPages:', totalPages);
+  };
 
   showNextProducts();
 
   loadMoreButtonElem.addEventListener('click', showNextProducts);
-}
+};
 
 export default () => {
   init();
