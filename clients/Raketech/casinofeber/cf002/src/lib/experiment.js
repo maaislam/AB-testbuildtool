@@ -24,11 +24,12 @@ const init = () => {
 
 export default () => {
   setup();
+
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (
       (target.closest('a[href*="/spela/"]') || target.closest(`.${ID}__affiliate`)) &&
-      target.closest('.toplist.casino')
+      target.closest('.toplist')
     ) {
       const closestWrapper = target.closest('a');
       const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
@@ -53,7 +54,7 @@ export default () => {
       visitedCasinos.push(casinoName);
       setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
       init();
-    } else if (target.closest('a[href*="/spela/"]') && !target.closest('.toplist.casino')) {
+    } else if (target.closest('a[href*="/spela/"]') && !target.closest('.toplist')) {
       const operatorHref = target.closest('a[href*="/spela/"]').href;
       const operatorName = operatorHref.split('/spela/')[1];
       gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator`);
@@ -61,7 +62,7 @@ export default () => {
   });
 
   const updateAffiliateLinks = () => {
-    const casinoToplistItems = document.querySelectorAll('.toplist.casino .toplist-item');
+    const casinoToplistItems = document.querySelectorAll('.toplist .toplist-item');
     casinoToplistItems.forEach((casinoToplistItem) => {
       const casinoNameElem = casinoToplistItem.querySelector('a.visit');
       if (!casinoNameElem) return;

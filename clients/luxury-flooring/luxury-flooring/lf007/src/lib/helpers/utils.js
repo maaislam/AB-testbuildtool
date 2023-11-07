@@ -20,7 +20,7 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
       callback();
     } else if (Date.now() - startTime >= maxTime) {
       clearInterval(interval);
-      console.error('Polling exceeded maximum time limit');
+      console.error('Polling exceeded maximum time limit', conditions);
     }
   }, POLLING_INTERVAL);
 };

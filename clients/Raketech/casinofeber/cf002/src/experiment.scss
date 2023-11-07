@@ -4,5 +4,6 @@
 .#{$id} {
   &__grayscale {
     filter: grayscale(100%) !important;
+    opacity: 0.5;
   }
 }

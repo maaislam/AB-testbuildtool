@@ -5,7 +5,7 @@ const gaTracking = (label) => {
   const { VARIATION } = shared;
 
   const GA4_PROPERTY_ID = 'G-H91NBPERDS';
-  const GA4_INTERNAL_EXPERIMENT_NUM = '031';
+  const GA4_INTERNAL_EXPERIMENT_NUM = '033';
   const GA4_INTERNAL_EXPERIMENT_ID = `Experiment CEO History Casinos ${GA4_INTERNAL_EXPERIMENT_NUM}`;
   const EXPERIMENT_DEVICE_CATEGORY = 'All Devices';
 
@@ -25,7 +25,9 @@ const gaTracking = (label) => {
         window.customGtag('js', new Date());
         window.customGtag('config', GA4_PROPERTY_ID);
       }
-      window.customGtag('event', GA4_INTERNAL_EXPERIMENT_ID, {
+      window.customGtag({
+        event: 'cro_event',
+        event_detail: GA4_INTERNAL_EXPERIMENT_ID,
         event_category: EXPERIMENT_DEVICE_CATEGORY,
         event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | Variation: ${VARIATION} | ${label}`,
         send_to: GA4_PROPERTY_ID
