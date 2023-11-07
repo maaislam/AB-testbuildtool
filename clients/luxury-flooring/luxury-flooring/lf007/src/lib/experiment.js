@@ -45,6 +45,7 @@ const init = () => {
 
   const updateInputValues = (value) => {
     controlAreaInput.value = value;
+    controlAreaInput.dispatchEvent(new Event('change'));
     stickyAreaInput.value = value;
   };
 
