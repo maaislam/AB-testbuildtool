@@ -3,8 +3,7 @@ import shared from './shared/shared';
 
 const { ID } = shared;
 
-export default () => {
-  setup();
+const init = () => {
   const anchorPoint = document.querySelector('header.page-header');
   const accordionTextElem = document.querySelector('.sp_accordion .trigger em');
   const accordionText = accordionTextElem.textContent;
@@ -14,4 +13,9 @@ export default () => {
   </div>`;
 
   anchorPoint.insertAdjacentHTML('beforebegin', announcementBanner);
+};
+
+export default () => {
+  setup();
+  init();
 };
