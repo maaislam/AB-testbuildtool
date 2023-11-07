@@ -2,6 +2,18 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    .end-date .date_pickertext:not(.mobileAverageView) {
+        margin-bottom: 35px;
+
+        @include media-query(md) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__active {
+        border: 1px solid #53565A;
+    }
+
     &__hireLonger {
         position: relative;
         margin: 35px 0;
@@ -10,6 +22,11 @@
         flex-direction: column;
         gap: 16px;
         background-color: #fff;
+
+        @include media-query(md) {
+            margin: 0 -15px;
+            background-color: #F5F5F5;
+        }
 
         &-header {
 
@@ -42,12 +59,12 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            border: 1px solid #53565A;
             cursor: pointer;
 
             input[type="radio"] {
                 margin: 0 !important;
                 position: relative;
+                cursor: pointer;
             }
 
             input[type="radio"]::before {
@@ -57,14 +74,18 @@
                 background-color: #53565A;
                 border-radius: 50%;
                 position: absolute;
-                left: -1px;
+                left: -2px;
                 top: -1px;
+
+                @include media-query(md) {
+                    left: -1px;
+                }
             }
 
             input[type="radio"]::after {
                 content: "";
-                width: 10px;
-                height: 10px;
+                width: 11px;
+                height: 11px;
                 background-color: #fff;
                 border: 2px solid #fff;
                 border-radius: 50%;
@@ -81,6 +102,9 @@
 
             label {
                 margin: 0 !important;
+                font-weight: 500 !important;
+                font-size: 12px !important;
+                cursor: pointer;
             }
         }
 
@@ -102,10 +126,14 @@
             position: absolute;
             top: -16px;
             right: 9px;
-            display: flex;
             padding: 8px 16px;
+            display: flex;
             justify-content: center;
             align-items: center;
+            color: #0089CF;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 18px;
             border: 2px solid #0089CF;
             background: #FFF;
         }
