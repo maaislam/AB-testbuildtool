@@ -1,0 +1,113 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__hireLonger {
+        position: relative;
+        margin: 35px 0;
+        padding: 16px 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: #fff;
+
+        &-header {
+
+            &-title,
+            &-details {
+                color: #53565A;
+                font-size: 12px;
+                line-height: 14.5px;
+            }
+
+            &-title {
+                margin-bottom: 8px;
+                font-weight: 700;
+            }
+
+            &-details {
+                font-weight: 400;
+            }
+        }
+
+        &-options {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        &-option {
+            padding: 8px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #53565A;
+            cursor: pointer;
+
+            input[type="radio"] {
+                margin: 0 !important;
+                position: relative;
+            }
+
+            input[type="radio"]::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                background-color: #53565A;
+                border-radius: 50%;
+                position: absolute;
+                left: -1px;
+                top: -1px;
+            }
+
+            input[type="radio"]::after {
+                content: "";
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top: 50%;
+                z-index: 2;
+            }
+
+            input[type="radio"]:checked::after {
+                background-color: #53565A;
+            }
+
+            label {
+                margin: 0 !important;
+            }
+        }
+
+        &-endDateText {
+            color: #53565A;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14.5px;
+        }
+
+        &-date {
+            color: #53565A;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 14.5px;
+        }
+
+        &-offer {
+            position: absolute;
+            top: -16px;
+            right: 9px;
+            display: flex;
+            padding: 8px 16px;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #0089CF;
+            background: #FFF;
+        }
+    }
+}
