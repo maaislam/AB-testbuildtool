@@ -1,5 +1,4 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
@@ -14,14 +13,14 @@ const init = () => {
     </div>
     <div class='${ID}__hireLonger-options'>
       <form>
-        <div class='${ID}__hireLonger-option'>
+        <label class='${ID}__hireLonger-option'>
           <input type="radio" id="hireDayWise" name="hireOption" value="1">
-          <label for="hireDayWise">Hire for 7 days</label>
-        </div>
-        <div class='${ID}__hireLonger-option ${ID}__active'>
+          <span for="hireDayWise">Hire for 7 days</span>
+        </label>
+        <label class='${ID}__hireLonger-option ${ID}__active'>
           <input type="radio" id="noThanks" name="hireOption" value="2" checked="checked">
-          <label for="noThanks">No thanks</label>
-        </div>
+          <span for="noThanks">No thanks</span>
+        </label>
       </form>
     </div>
     <div>
