@@ -5,19 +5,7 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 export default () => {
-  setup(); //use if needed
-  //gaTracking('Conditions Met'); //use if needed
-  //console.log(ID);
-  ////-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-
-  console.log('leolive');
+  setup();
   //execution time console log
   const start = new Date().getTime();
 
@@ -25,11 +13,13 @@ export default () => {
   const kidSizeBtn = document.querySelector('.product-form__kids-size');
   const productOptions = document.querySelector('.product-form__options');
   const productSizeTitle = document.querySelector('.product-form__options-title');
+  const isBaby = () => document.body.classList.contains('baby-wrapper');
+
   if (productOptions) {
     productOptions.classList.add('hide_content');
   }
   if (document.querySelector('.product-form__kids-size a')) {
-    document.querySelector('.product-form__kids-size a').classList.remove('btn', 'btn--primary');
+    //document.querySelector('.product-form__kids-size a').classList.remove('btn', 'btn--primary');
   }
 
   productSizeTitle.insertAdjacentHTML(
@@ -41,8 +31,15 @@ export default () => {
 
   const selectedSize = document.querySelector('.selected_size');
   const selectedSizeWrapper = document.querySelector('.selected_size_wrapper');
+  const activeOption = document.querySelector('.product-form__options li.active');
+  const firstOption = document.querySelector('.product-form__options li');
 
-  selectedSize.innerHTML = document.querySelector('.product-form__options li.active').innerHTML;
+  if (activeOption) {
+    selectedSize.innerHTML = activeOption.innerHTML;
+  } else {
+    selectedSize.innerHTML = firstOption.innerHTML;
+  }
+  //selectedSize.innerHTML = document.querySelector('.product-form__options li.active').innerHTML;
 
   selectedSize.insertAdjacentElement('afterend', productOptions);
 
@@ -51,12 +48,11 @@ export default () => {
     "<img class='dropdow_arrow' src='https://us.le-olive.com/cdn/shop/t/114/assets/dark-down-icon.png'>"
   );
 
-  if (kidSizeBtn) {
+  if (kidSizeBtn && !isBaby()) {
     productWrapper.insertAdjacentElement('beforeend', kidSizeBtn);
   }
 
-  document.querySelector('.selected_size').addEventListener('click', (e) => {
-    //console.log('clicked');
+  document.querySelector('.selected_size').addEventListener('click', () => {
     productOptions.classList.toggle('hide_content');
     selectedSize.classList.add('active-border');
   });
@@ -74,7 +70,4 @@ export default () => {
       //document.querySelector('.dropdow_arrow').classList.add('hide_content');
     });
   });
-
-  //-----------------------------
-  //...
 };
