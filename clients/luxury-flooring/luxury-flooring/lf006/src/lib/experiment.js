@@ -9,7 +9,7 @@ const init = () => {
   //const accordionText = accordionTextElem.textContent;
 
   const announcementBanner = `<div class='${ID}__announcementBanner'>
-    <a href="#sp_accordion" class="${ID}__animation-wrapper marquee1">
+    <a href="#sp_accordion" class="${ID}__animation-wrapper marquee1" data-index="1">
       <span class='${ID}__announcementBanner-text'>Black Friday Now On / Black Friday Deals Ending Soon</span>
     </a>
     <a href="#sp_accordion" class="${ID}__animation-wrapper marquee2"> 
@@ -28,4 +28,12 @@ const init = () => {
 export default () => {
   setup();
   init();
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (target.closest(`.${ID}__animation-wrapper`)) {
+      const infoAccordion = document.getElementById('sp_accordion');
+      const firstItem = infoAccordion.querySelector('.collapsible:first-child .trigger');
+      firstItem.click();
+    }
+  });
 };

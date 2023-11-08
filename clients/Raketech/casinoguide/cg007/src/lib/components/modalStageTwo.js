@@ -17,8 +17,8 @@ const modalStageTwo = (id, casinoData) => {
                 ${searchbar(id)}
                 ${searchItems(id, casinoData)}
                 <div class="${id}__btns-wrapper">
-                    <div class="${id}__modalstagetwo-button back">Välj Stäng</div>
-                    <div class="${id}__modalstagetwo-button submit">Välj Stäng</div>
+                    <div class="${id}__modalstagetwo-button back">Tillbaka</div>
+                    <div class="${id}__modalstagetwo-button submit">Välj och stäng</div>
                 </div>
             </div>
       </div>
