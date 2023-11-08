@@ -2,29 +2,47 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__announcementBanner {
-        height: 32px;
-        display: flex;
-        align-items: center;
-        background-color: #c9a361;
+  &__announcementBanner {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    line-height: 30px;
+    background-color: #c9a361;
 
-        &-text {
-            margin: 0 25% 0 25%;
-            color: #fff;
-            font-size: 12px;
-            font-weight: 500;
-            text-wrap: nowrap;
-            animation: scrollText 10s linear infinite;
-        }
+    &-text {
+      display: block;
+      text-align: center;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      text-wrap: nowrap;
     }
+  }
 
-    @keyframes scrollText {
-        0% {
-            transform: translateX(200%);
-        }
+  &__animation-wrapper {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marqueetest 15s linear infinite;
 
-        100% {
-            transform: translateX(-200%);
-        }
+    &.marquee2 {
+      animation-delay: 5s;
     }
+    &.marquee3 {
+      animation-delay: 10s;
+    }
+  }
+  @keyframes marqueetest {
+    0% {
+      left: 150%;
+    }
+    100% {
+      left: -150%;
+    }
+  }
 }

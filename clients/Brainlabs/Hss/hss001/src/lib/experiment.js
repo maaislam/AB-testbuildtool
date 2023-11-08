@@ -4,7 +4,9 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  const anchorPoint = document.querySelector('b .pdps1cTextSec:not(.onlyMobileView) .date_selection .hire_now #beforePriceDisplay');
+  const anchorPoint = document.querySelector(
+    'b .pdps1cTextSec:not(.onlyMobileView) .date_selection .hire_now #beforePriceDisplay'
+  );
 
   const hireLonger = `<div class='${ID}__hireLonger'>
     <div class='${ID}__hireLonger-header'>

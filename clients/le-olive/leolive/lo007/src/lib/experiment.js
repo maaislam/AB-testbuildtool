@@ -5,6 +5,9 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 export default () => {
+  if (document.querySelector('.selected_size_wrapper')) {
+    return;
+  }
   setup();
   //execution time console log
   const start = new Date().getTime();
