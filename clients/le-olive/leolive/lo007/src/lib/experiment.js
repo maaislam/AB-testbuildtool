@@ -15,6 +15,7 @@ export default () => {
   const productWrapper = document.querySelector('.product-form__header');
   const kidSizeBtn = document.querySelector('.product-form__kids-size');
   const productOptions = document.querySelector('.product-form__options');
+  const allProductOption = document.querySelectorAll('.product-form__options li');
   const productSizeTitle = document.querySelector('.product-form__options-title');
   const isBaby = () => document.body.classList.contains('baby-wrapper');
 
@@ -72,5 +73,19 @@ export default () => {
       productOptions.classList.add('hide_content');
       //document.querySelector('.dropdow_arrow').classList.add('hide_content');
     });
+  });
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest('.ps__klaviyo-popup__container .ps__klaviyo-popup__bg') || target.closest('.ps__klaviyo-popup__container .ps__klaviyo-popup__close')) {
+      let isSelected = false;
+      allProductOption.forEach((productOption) => {
+        if (!productOption.classList.contains('disabled') && !isSelected) {
+          productOption.click();
+          isSelected = true;
+        }
+      });
+    }
   });
 };
