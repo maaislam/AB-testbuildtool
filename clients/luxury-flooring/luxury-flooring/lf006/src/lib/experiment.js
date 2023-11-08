@@ -9,17 +9,17 @@ const init = () => {
   //const accordionText = accordionTextElem.textContent;
 
   const announcementBanner = `<div class='${ID}__announcementBanner'>
-    <div class="${ID}__animation-wrapper marquee1">
+    <a href="#sp_accordion" class="${ID}__animation-wrapper marquee1">
       <span class='${ID}__announcementBanner-text'>Black Friday Now On / Black Friday Deals Ending Soon</span>
-    </div>
-    <div class="${ID}__animation-wrapper marquee2"> 
+    </a>
+    <a href="#sp_accordion" class="${ID}__animation-wrapper marquee2"> 
      
-    <span class='${ID}__announcementBanner-text'>Pay 25% Now, Deliver Later</span>
-    </div>
-    <div class="${ID}__animation-wrapper marquee3"> 
+      <span class='${ID}__announcementBanner-text'>Pay 25% Now, Deliver Later</span>
+    </a>
+    <a href="#sp_accordion" class="${ID}__animation-wrapper marquee3"> 
      
-    <span class='${ID}__announcementBanner-text'>Price Promise: We Won't be beaten*</span>
-    </div>
+      <span class='${ID}__announcementBanner-text'>Price Promise: We Won't be beaten*</span>
+    </a>
   </div>`;
   if (document.querySelector(`.${ID}__announcementBanner`)) return;
   anchorPoint.insertAdjacentHTML('beforebegin', announcementBanner);
