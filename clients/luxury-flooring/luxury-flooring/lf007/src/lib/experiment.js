@@ -1,4 +1,5 @@
 import combineBtn from './components/combineBtn';
+import scrollToQuantity from './helpers/scrollToQuantity';
 import { observeIntersection } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
@@ -32,7 +33,7 @@ const init = () => {
         stickySection.classList.add('slide-out-bottom');
         scrollTimer = setTimeout(() => {
           stickySection.classList.add(`${ID}__hide`);
-        }, 1000);
+        }, 250);
       } else {
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
@@ -71,7 +72,13 @@ export default () => {
     const { target } = e;
 
     if (target.closest(`.${ID}__atcBtnWrapper`) && target.closest(`.${ID}__atcBtn`)) {
-      intersectionAnchor.click();
+      const areaInput = document.querySelector('.fp-calculator .fp-controls input');
+      scrollToQuantity(areaInput);
+      setTimeout(() => {
+        areaInput.focus();
+      }, 1500);
+    } else if (target.closest(`.${ID}__orderSampleWrapper`) && target.closest(`.${ID}__orderSampleBtn`)) {
+      document.querySelector('#sample_addtocart_form button.tocart').click();
     }
   });
 };
