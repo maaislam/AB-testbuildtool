@@ -1,6 +1,6 @@
 import activate from './lib/experiment';
 import { pollerLite } from './lib/helpers/utils';
 
-pollerLite(['.product-add-form'], () => {
+pollerLite(['.fp-calculator'], () => {
   setTimeout(activate, 1000);
 });

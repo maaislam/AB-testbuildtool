@@ -1,11 +1,10 @@
 import combineBtn from './components/combineBtn';
-import scrollToQuantity from './helpers/scrollToQuantity';
 import { observeIntersection } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
 
 const { ID } = shared;
-const intersectionAnchor = document.querySelector('#product-addtocart-button');
+const intersectionAnchor = document.querySelector('.fp-calculator');
 const anchorPoint = document.body;
 
 const init = () => {
@@ -40,12 +39,21 @@ export default () => {
   anchorPoint.addEventListener('click', (e) => {
     const { target } = e;
 
-    if (target.closest(`.${ID}__atcBtnWrapper`) && target.closest(`.${ID}__atcBtn`)) {
+    if (target.closest(`.${ID}__atcBtn`)) {
+      e.preventDefault();
+
+      const element = document.querySelector('.product-info-price .flooring-price');
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
+
       const areaInput = document.querySelector('.fp-calculator .fp-controls input');
-      scrollToQuantity(areaInput);
       setTimeout(() => {
+        areaInput.value = 1;
+        areaInput.dispatchEvent(new Event('change'));
+        areaInput.value = '';
         areaInput.focus();
-      }, 1500);
+      }, 500);
     } else if (target.closest(`.${ID}__orderSampleWrapper`) && target.closest(`.${ID}__orderSampleBtn`)) {
       document.querySelector('#sample_addtocart_form button.tocart').click();
     }
