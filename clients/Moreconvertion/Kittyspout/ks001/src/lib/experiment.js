@@ -5,7 +5,7 @@ const { ID } = shared;
 
 export default () => {
   setup();
-  const anchorPoint = document.querySelector('.acc-top-bar');
+  const anchorPoint = document.querySelector('[data-section-type="header"]');
   const htmlStr = `
     <div class="${ID}__noticeBar">
       <span class="${ID}__noticeBar-notice">Free Shipping Over $85</span>
@@ -15,5 +15,5 @@ export default () => {
       <span class="${ID}__noticeBar-notice">365 Day Guarantee</span>
     </div>
   `;
-  anchorPoint.insertAdjacentHTML('beforebegin', htmlStr);
+  anchorPoint.insertAdjacentHTML('afterbegin', htmlStr);
 };

@@ -8,7 +8,7 @@
         align-items: center;
         gap: 20px;
         background: #000;
-        padding: 9px 20px 10px;
+        padding: 9px 13px 10px;
 
         &-notice {
             color: #fff;
@@ -34,6 +34,12 @@
             @include media-query(sm) {
                 width: 1px;
             }
+        }
+    }
+
+    @media (min-width:410px) and (max-width:500px) {
+        &__noticeBar {
+            padding: 9px 24px 10px;
         }
     }
 }
