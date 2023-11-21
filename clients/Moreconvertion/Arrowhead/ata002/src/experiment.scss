@@ -48,7 +48,11 @@
 
     &__reviews {
         .#{$id}__reviewRating {
-            padding: 3px 0 0 5px;
+            padding: 0 0 0 5px;
+            color: #000;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 29px;
         }
 
         .loox-rating-label {
