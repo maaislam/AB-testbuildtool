@@ -19,6 +19,7 @@
     height: 58px;
     display: flex;
     background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
     &.slide-out-bottom {
       position: fixed;
@@ -52,6 +53,10 @@
         box-shadow: none !important;
       }
     }
+  }
+
+  &__show ~ #hubspot-messages-iframe-container {
+    bottom: 50px !important;
   }
 
   @keyframes slide-in-bottom {
