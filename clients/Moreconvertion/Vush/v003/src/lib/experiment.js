@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { observeIntersection, pollerLite } from './helpers/utils';
+import { observeIntersection } from './helpers/utils';
 import stickyATC from './components/stickyATC';
 import handleATC from './handlers/handleATC';
 
@@ -22,28 +22,30 @@ const productData = {
   productOriginalPrice,
   productSalePrice
 };
+//'body { background-color: lightblue; }'
+const cssModObj = {
+  adjust: '.vf-container {bottom: 90px !important; right: 16px !important;}',
+  reset: '.vf-container {bottom: 25px !important; right: 16px !important;}'
+};
 
 const init = () => {
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
       const stickySection = document.querySelector(`.${ID}__stickyATCContainer`);
+      const backToTop = document.querySelector('.back-to-top[data-back-to-top]');
       let scrollTimer;
       clearTimeout(scrollTimer);
       if (entry.isIntersecting) {
         stickySection.classList.remove(`${ID}__show`);
         stickySection.classList.add('slide-out-bottom');
+        backToTop.classList.remove('move-up');
+
         const styleSheet = new CSSStyleSheet();
-        styleSheet.replaceSync(
-          '.vf-button { bottom: 25px !important; } .vf-container { bottom: 25px !important; }'
-        );
+        styleSheet.replaceSync(cssModObj.reset);
 
-        const styleSheets = [styleSheet];
+        window.repApp.$$.root.adoptedStyleSheets = [styleSheet];
 
-        if (Symbol.iterator in styleSheets) {
-          window.repApp.$$.root.adoptedStyleSheets = styleSheets;
-        } else {
-          console.error('Invalid iterable object');
-        }
+        backToTop.classList.add('move-up');
         scrollTimer = setTimeout(() => {
           stickySection.classList.add(`${ID}__hide`);
         }, 250);
@@ -52,17 +54,11 @@ const init = () => {
         stickySection.classList.remove(`${ID}__hide`);
         stickySection.classList.add(`${ID}__show`);
         const styleSheet = new CSSStyleSheet();
-        styleSheet.replaceSync(
-          '.vf-button { bottom: 70px !important; } .vf-container { bottom: 140px !important; }'
-        );
+        styleSheet.replaceSync(cssModObj.adjust);
 
-        const styleSheets = [styleSheet];
+        window.repApp.$$.root.adoptedStyleSheets = [styleSheet];
 
-        if (Symbol.iterator in styleSheets) {
-          window.repApp.$$.root.adoptedStyleSheets = styleSheets;
-        } else {
-          console.error('Invalid iterable object');
-        }
+        backToTop.classList.add('move-up');
       }
     });
   };
