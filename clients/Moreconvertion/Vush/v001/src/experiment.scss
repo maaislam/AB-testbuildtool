@@ -1,0 +1,24 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__test {
+        display: block;
+    }
+
+    .yotpo-container-pdp .yotpo-stars .yotpo-icon {
+        color: #FFB22C !important;
+    }
+
+    .product__price-and-ratings {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    // &__afterpay-paragraph {
+    //     span {
+    //         font-size: 12px !important;
+    //         color: red !important;
+    //     }
+    // }
+}
