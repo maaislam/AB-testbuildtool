@@ -49,3 +49,9 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+export const changeCssProperty = (shadowRoot, selector, property, value) => {
+  const element = shadowRoot.querySelector(selector);
+  if (element) {
+    element.style.setProperty(property, value);
+  }
+};

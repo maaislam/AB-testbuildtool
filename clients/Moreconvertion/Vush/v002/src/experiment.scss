@@ -3,6 +3,10 @@
 
 .#{$id} {
     &__cartContainer {
+        .quick-cart__heading sup {
+            display: none !important;
+        }
+        
         .quick-cart__footer .btn.btn--primary {
             color: #373737 !important;
             font-size: 14px !important;

@@ -2,23 +2,42 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    &__productMeta {
+
+        .yotpo-display-wrapper .yotpo-bottomline {
+            justify-content: flex-start !important;
+            gap: 10px !important;
+
+            a {
+                padding-left: 10px !important;
+                border-left: 1px solid #000 !important;
+                line-height: 9px !important;
+            }
+        }
+
+        .yotpo-container-pdp {
+            margin-top: 10px;
+
+            .yotpo-stars .yotpo-icon {
+                color: #FFB22C !important;
+            }
+        }
+
+        .product__price-and-ratings {
+            flex-direction: column;
+            align-items: flex-start !important;
+            gap: 5px !important;
+
+            [data-price], [data-compare-price] {
+                font-size: 17px !important;
+            }
+
+            .product__price-displayed-discount {
+                font-size: 11px !important;
+                font-weight: 700;
+                line-height: 13px;
+            }
+        }
     }
 
-    .yotpo-container-pdp .yotpo-stars .yotpo-icon {
-        color: #FFB22C !important;
-    }
-
-    .product__price-and-ratings {
-        flex-direction: column;
-        align-items: flex-start !important;
-    }
-
-    // &__afterpay-paragraph {
-    //     span {
-    //         font-size: 12px !important;
-    //         color: red !important;
-    //     }
-    // }
 }

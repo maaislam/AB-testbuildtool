@@ -2,10 +2,6 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    [style="height: 0px; width: 0px; position: absolute; display: block; z-index: 2147483647;"] {
-        display: none !important;
-    }
-
     .back-to-top[data-back-to-top] {
         bottom: 94px !important;
         z-index: 999 !important;
@@ -31,7 +27,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 30px;
-        background-color: #fff;
+        background-color: #F7F7F7;
         border-top: 2px solid #373737;
         z-index: 999;
 
@@ -68,7 +64,6 @@
 
                 .#{$id}__productTitle {
                     color: #373737;
-                    font-family: 'Open Sans';
                     font-weight: 600;
                     font-size: 16px;
                     line-height: 22px;
@@ -85,7 +80,6 @@
 
                     .#{$id}__productOriginalPrice {
                         color: #373737 !important;
-                        font-family: 'Open Sans' !important;
                         font-size: 16px !important;
                         font-weight: 700 !important;
                         line-height: 22px !important;
@@ -98,7 +92,6 @@
 
                     .#{$id}__productSalePrice {
                         color: #FF6950 !important;
-                        font-family: 'Open Sans' !important;
                         font-size: 16px !important;
                         font-weight: 700 !important;
                         line-height: 22px !important;

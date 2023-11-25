@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { observeIntersection } from './helpers/utils';
+import { observeIntersection, pollerLite } from './helpers/utils';
 import stickyATC from './components/stickyATC';
 import handleATC from './handlers/handleATC';
 
@@ -46,6 +46,17 @@ const init = () => {
   observeIntersection(intersectionAnchor, 0, handleIntersection);
 
   handleATC(ID, intersectionAnchor);
+
+  const styleSheet = new CSSStyleSheet();
+  styleSheet.replaceSync('.vf-button { bottom: 70px !important; }');
+
+  const styleSheets = [styleSheet];
+
+  if (Symbol.iterator in styleSheets) {
+    window.repApp.$$.root.adoptedStyleSheets = styleSheets;
+  } else {
+    console.error('Invalid iterable object');
+  }
 };
 
 export default () => {
