@@ -9,17 +9,15 @@ const init = () => {
   //const accordionText = accordionTextElem.textContent;
 
   const announcementBanner = `<div class='${ID}__announcementBanner'>
-    <a href="#sp_accordion" class="${ID}__animation-wrapper marquee1" data-index="1">
-      <span class='${ID}__announcementBanner-text'>Black Friday Now On / Black Friday Deals Ending Soon</span>
-    </a>
-    <a href="#sp_accordion" class="${ID}__animation-wrapper marquee2"> 
+    
+    <a href="#sp_accordion" class="${ID}__animation-wrapper marquee1"> 
      
       <span class='${ID}__announcementBanner-text'>Pay 25% Now, Deliver Later</span>
     </a>
-    <a href="#sp_accordion" class="${ID}__animation-wrapper marquee3"> 
+    <div class="${ID}__animation-wrapper marquee2"> 
      
-      <span class='${ID}__announcementBanner-text'>Price Promise: We Won't be beaten*</span>
-    </a>
+      <span class='${ID}__announcementBanner-text'>Price Promise: We Won't be beaten</span>
+    </div>
   </div>`;
   if (document.querySelector(`.${ID}__announcementBanner`)) return;
   anchorPoint.insertAdjacentHTML('beforebegin', announcementBanner);
@@ -30,7 +28,7 @@ export default () => {
   init();
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    if (target.closest(`.${ID}__animation-wrapper`)) {
+    if (target.closest(`a.${ID}__animation-wrapper`)) {
       const infoAccordion = document.getElementById('sp_accordion');
       const firstItem = infoAccordion.querySelector('.collapsible:first-child .trigger');
       firstItem.click();

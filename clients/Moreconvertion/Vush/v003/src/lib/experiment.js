@@ -9,7 +9,9 @@ const { ID } = shared;
 const intersectionAnchor = document.querySelector('.product-form__cart-submit');
 const anchorPoint = document.body;
 
-const productImg = document.querySelector('ul.product-thumbnails__items .product-thumbnails__item img').getAttribute('src');
+const productImg = document
+  .querySelector('ul.product-thumbnails__items .product-thumbnails__item img')
+  .getAttribute('src');
 const productTitle = document.querySelector('.product__title').textContent.trim();
 const productOriginalPrice = document.querySelector('[data-compare-price]').cloneNode(true);
 const productSalePrice = document.querySelector('[data-price]').cloneNode(true);
@@ -48,7 +50,9 @@ const init = () => {
   handleATC(ID, intersectionAnchor);
 
   const styleSheet = new CSSStyleSheet();
-  styleSheet.replaceSync('.vf-button { bottom: 70px !important; }');
+  styleSheet.replaceSync(
+    '.vf-button { bottom: 70px !important; } .vf-container { bottom: 140px !important; }'
+  );
 
   const styleSheets = [styleSheet];
 

@@ -1,0 +1,22 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__most-popular {
+    .package-card__text-2 {
+      order: -1;
+      @include media-query(sm) {
+        order: initial;
+      }
+    }
+
+    .pkg_strip {
+      margin-right: auto;
+      margin-left: auto;
+      @include media-query(sm) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
