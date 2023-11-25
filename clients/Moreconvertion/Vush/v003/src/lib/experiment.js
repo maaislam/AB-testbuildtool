@@ -32,6 +32,18 @@ const init = () => {
       if (entry.isIntersecting) {
         stickySection.classList.remove(`${ID}__show`);
         stickySection.classList.add('slide-out-bottom');
+        const styleSheet = new CSSStyleSheet();
+        styleSheet.replaceSync(
+          '.vf-button { bottom: 25px !important; } .vf-container { bottom: 25px !important; }'
+        );
+
+        const styleSheets = [styleSheet];
+
+        if (Symbol.iterator in styleSheets) {
+          window.repApp.$$.root.adoptedStyleSheets = styleSheets;
+        } else {
+          console.error('Invalid iterable object');
+        }
         scrollTimer = setTimeout(() => {
           stickySection.classList.add(`${ID}__hide`);
         }, 250);
@@ -39,6 +51,18 @@ const init = () => {
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
         stickySection.classList.add(`${ID}__show`);
+        const styleSheet = new CSSStyleSheet();
+        styleSheet.replaceSync(
+          '.vf-button { bottom: 70px !important; } .vf-container { bottom: 140px !important; }'
+        );
+
+        const styleSheets = [styleSheet];
+
+        if (Symbol.iterator in styleSheets) {
+          window.repApp.$$.root.adoptedStyleSheets = styleSheets;
+        } else {
+          console.error('Invalid iterable object');
+        }
       }
     });
   };
