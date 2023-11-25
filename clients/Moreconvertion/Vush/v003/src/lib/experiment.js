@@ -2,6 +2,7 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { observeIntersection } from './helpers/utils';
 import stickyATC from './components/stickyATC';
+import handleATC from './handlers/handleATC';
 
 const { ID } = shared;
 
@@ -12,14 +13,12 @@ const productImg = document.querySelector('ul.product-thumbnails__items .product
 const productTitle = document.querySelector('.product__title').textContent.trim();
 const productOriginalPrice = document.querySelector('[data-compare-price]').cloneNode(true);
 const productSalePrice = document.querySelector('[data-price]').cloneNode(true);
-const productATC = document.querySelector('form .product-form__item--submit').cloneNode(true);
 
 const productData = {
   productImg,
   productTitle,
   productOriginalPrice,
-  productSalePrice,
-  productATC
+  productSalePrice
 };
 
 const init = () => {
@@ -45,10 +44,11 @@ const init = () => {
   anchorPoint.insertAdjacentHTML('beforeend', stickyATC(ID, productData));
 
   observeIntersection(intersectionAnchor, 0, handleIntersection);
+
+  handleATC(ID, intersectionAnchor);
 };
 
 export default () => {
   setup();
   init();
-  console.log(ID);
 };

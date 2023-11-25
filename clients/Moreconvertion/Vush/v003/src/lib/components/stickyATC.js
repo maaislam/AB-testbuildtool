@@ -3,8 +3,7 @@ const stickyATC = (id, productData) => {
         productImg,
         productTitle,
         productOriginalPrice,
-        productSalePrice,
-        productATC
+        productSalePrice
     } = productData;
 
     const htmlStr = `<div class="${id}__hide ${id}__stickyATCContainer">
@@ -21,17 +20,21 @@ const stickyATC = (id, productData) => {
             </div>
         </div>
         <div class="${id}__atcWrapper">
-            <div class="quantity-input">
-                <button type="button" class="quantity-input__button product__quantity-subtract-item" data-subtract-quantity="" aria-label="Add product quantity">
-                    <span class="icon icon-new icon-minus-small ">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 10.75H.25v2.5H1.5v-2.5zm21 2.5h1.25v-2.5H22.5v2.5zm-21 0H12v-2.5H1.5v2.5zm10.5 0h10.5v-2.5H12v2.5z" fill="currentColor"></path></svg>
+            <div class="${id}__quantity-input quantity-input">
+                <button type="button" class="${id}__quantity-subtract quantity-input__button product__quantity-subtract-item">
+                    <span class="icon icon-new icon-minus-small">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.5 10.75H.25v2.5H1.5v-2.5zm21 2.5h1.25v-2.5H22.5v2.5zm-21 0H12v-2.5H1.5v2.5zm10.5 0h10.5v-2.5H12v2.5z" fill="currentColor"></path>
+                        </svg>
                     </span>
                 </button>
                 <label class="visually-hidden" for="Quantity-Input-39512573673626">Quantity</label>
-                <input type="number" name="updates[]" id="Quantity-Input-39512573673626" value="1" min="1" pattern="[0-9]*" class="quantity-input__input" data-quantity-input="" aria-label="Product quantity">
-                <button type="button" class="quantity-input__button product__quantity-add-item" data-add-quantity="" aria-label="Subtract product quantity">
-                    <span class="icon icon-new icon-plus-small ">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.25 1.5V.25h-2.5V1.5h2.5zm-2.5 21v1.25h2.5V22.5h-2.5zM1.5 10.75H.25v2.5H1.5v-2.5zm21 2.5h1.25v-2.5H22.5v2.5zm-21 0H12v-2.5H1.5v2.5zm10.5 0h10.5v-2.5H12v2.5zM10.75 1.5V12h2.5V1.5h-2.5zm0 10.5v10.5h2.5V12h-2.5z" fill="currentColor"></path></svg>
+                <input type="number" value="1" min="1" pattern="[0-9]*" class="quantity-input__input" id="${id}__quantity-input">
+                <button type="button" class="${id}__quantity-add quantity-input__button product__quantity-add-item">
+                    <span class="icon icon-new icon-plus-small">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.25 1.5V.25h-2.5V1.5h2.5zm-2.5 21v1.25h2.5V22.5h-2.5zM1.5 10.75H.25v2.5H1.5v-2.5zm21 2.5h1.25v-2.5H22.5v2.5zm-21 0H12v-2.5H1.5v2.5zm10.5 0h10.5v-2.5H12v2.5zM10.75 1.5V12h2.5V1.5h-2.5zm0 10.5v10.5h2.5V12h-2.5z" fill="currentColor"></path>
+                        </svg>
                     </span>
                 </button>
             </div>
