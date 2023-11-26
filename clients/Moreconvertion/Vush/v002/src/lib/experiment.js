@@ -5,8 +5,8 @@ import shared from './shared/shared';
 
 const { ID } = shared;
 const cssModObj = {
-  hide: '.vf-container {display:none !important;}',
-  show: '.vf-container {display:block !important;}'
+  hide: '.vf-button, .vf-container {display:none !important;}',
+  show: '.vf-button, .vf-container {display:block !important;}'
 };
 
 const chatWidgetDisplay = (display = 'show') => {

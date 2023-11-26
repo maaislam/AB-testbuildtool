@@ -24,8 +24,8 @@ const productData = {
 };
 //'body { background-color: lightblue; }'
 const cssModObj = {
-  adjust: '.vf-container {bottom: 90px !important; right: 16px !important;}',
-  reset: '.vf-container {bottom: 25px !important; right: 16px !important;}'
+  adjust: '.vf-button, .vf-container {bottom: 90px !important; right: 16px !important;}',
+  reset: '.vf-button, .vf-container {bottom: 25px !important; right: 16px !important;}'
 };
 
 const init = () => {
@@ -78,8 +78,6 @@ const init = () => {
 
   if (Symbol.iterator in styleSheets) {
     window.repApp.$$.root.adoptedStyleSheets = styleSheets;
-  } else {
-    console.error('Invalid iterable object');
   }
 };
 
