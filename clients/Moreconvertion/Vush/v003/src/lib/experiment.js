@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { observeIntersection } from './helpers/utils';
+import { observeDOM, observeIntersection } from './helpers/utils';
 import stickyATC from './components/stickyATC';
 import handleATC from './handlers/handleATC';
 
@@ -25,7 +25,16 @@ const productData = {
 //'body { background-color: lightblue; }'
 const cssModObj = {
   adjust: '.vf-button, .vf-container {bottom: 90px !important; right: 16px !important;}',
-  reset: '.vf-button, .vf-container {bottom: 25px !important; right: 16px !important;}'
+  reset: '.vf-button, .vf-container {bottom: 25px !important; right: 16px !important;}',
+  hide: '.vf-button, .vf-container {display:none !important;}',
+  show: '.vf-button, .vf-container {display:block !important;}'
+};
+
+const chatWidgetDisplay = (display = 'show') => {
+  const styleSheet = new CSSStyleSheet();
+  styleSheet.replaceSync(cssModObj[display]);
+
+  window.repApp.$$.root.adoptedStyleSheets = [styleSheet];
 };
 
 const init = () => {
@@ -40,10 +49,7 @@ const init = () => {
         stickySection.classList.add('slide-out-bottom');
         backToTop.classList.remove('move-up');
 
-        const styleSheet = new CSSStyleSheet();
-        styleSheet.replaceSync(cssModObj.reset);
-
-        window.repApp.$$.root.adoptedStyleSheets = [styleSheet];
+        chatWidgetDisplay('reset');
 
         backToTop.classList.add('move-up');
         scrollTimer = setTimeout(() => {
@@ -53,10 +59,7 @@ const init = () => {
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
         stickySection.classList.add(`${ID}__show`);
-        const styleSheet = new CSSStyleSheet();
-        styleSheet.replaceSync(cssModObj.adjust);
-
-        window.repApp.$$.root.adoptedStyleSheets = [styleSheet];
+        chatWidgetDisplay('adjust');
 
         backToTop.classList.add('move-up');
       }
@@ -68,17 +71,18 @@ const init = () => {
   observeIntersection(intersectionAnchor, 0, handleIntersection);
 
   handleATC(ID, intersectionAnchor);
-
-  const styleSheet = new CSSStyleSheet();
-  styleSheet.replaceSync(
-    '.vf-button { bottom: 70px !important; } .vf-container { bottom: 140px !important; }'
-  );
-
-  const styleSheets = [styleSheet];
-
-  if (Symbol.iterator in styleSheets) {
-    window.repApp.$$.root.adoptedStyleSheets = styleSheets;
-  }
+  observeDOM('.quick-cart__wrapper', (mutation) => {
+    if (mutation.target.classList.contains('active')) {
+      chatWidgetDisplay('hide');
+      return;
+    }
+    setTimeout(() => {
+      chatWidgetDisplay('show');
+      if (document.querySelector(`.${ID}__show`)) {
+        chatWidgetDisplay('adjust');
+      }
+    }, 300);
+  });
 };
 
 export default () => {

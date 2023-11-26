@@ -32,10 +32,8 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   const config = configObject || {
     childList: true,
-    subtree: true,
-    attributes: true,
-    characterData: true,
-    characterDataOldValue: true
+    subtree: false,
+    attributes: true
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
@@ -49,6 +47,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
 export const observeIntersection = (target, threshold, callback) => {
   const observer = new IntersectionObserver(callback, {
     root: null,
@@ -60,51 +59,4 @@ export const observeIntersection = (target, threshold, callback) => {
   }
 
   observer?.observe(target);
-};
-
-export const addToCartApi = async (formData) => {
-  try {
-    const response = await fetch('https://www.vushstimulation.com/cart/add.js', {
-      method: 'POST',
-      body: { "form_type": "product", "utf8": "✓", "quantity": "1", "id": "39512573673626" },
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error('Network response was not ok.');
-    }
-
-    const request = new XMLHttpRequest();
-    request.open('GET', '/cart.js', true);
-
-    document.documentElement.dispatchEvent(new CustomEvent('cart:build', {
-      bubbles: true
-    }));
-    document.documentElement.dispatchEvent(new CustomEvent('product:added', {
-      bubbles: true,
-      detail: {
-        variant: '',
-        quantity: 1
-      }
-    }));
-
-    request.onload = () => {
-      document.documentElement.dispatchEvent(new CustomEvent('cart:build', {
-        bubbles: true
-      }));
-      document.documentElement.dispatchEvent(new CustomEvent('product:added', {
-        bubbles: true,
-        detail: {
-          variant: '',
-          quantity
-        }
-      }));
-    };
-
-    request.send();
-  } catch (error) {
-    console.error('There has been a problem with your fetch operation:', error);
-  }
 };
