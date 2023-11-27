@@ -31,4 +31,10 @@ export default () => {
       chatWidgetDisplay('show');
     }, 300);
   });
+
+  observeDOM('[data-js-cart-count]', () => {
+    const isCartOpen = document.querySelector('.quick-cart__wrapper.active');
+    if (isCartOpen) return;
+    document.querySelector('.header__icon-touch').click();
+  });
 };
