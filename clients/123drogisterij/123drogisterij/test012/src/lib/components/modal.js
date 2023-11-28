@@ -1,6 +1,5 @@
 const modal = (id, content = '') => {
   const htmlStr = `
-
     <div class="ppatc__popup">
         <div class="ppatc__popup-bg"></div>
         <div class="ppatc__popup-container">

@@ -12,25 +12,27 @@ const { ID } = shared;
 export default () => {
   setup();
   console.log(ID);
-  const anchorPoints = document.querySelectorAll('.product-item-actions');
+  const cartItems = document.querySelectorAll('.cart.item .item-info');
 
   const fakeButton = (
     id,
     sku
-  ) => `<button type="submit" title="kies uw voordeel" class="${id}__openmodal" data-sku="${sku}">
-    <span><i class="fas fa-shopping-cart"></i>  kies uw voordeel</span>
+  ) => `<button type="button" title="Wilt u Extra voordeel?" class="${id}__openmodal" data-sku="${sku}">
+    <span>Wilt u Extra voordeel?</span>
   </button>`;
 
   document.body.insertAdjacentHTML('afterbegin', modal(ID));
 
-  anchorPoints.forEach((anchorPoint) => {
-    if (anchorPoint.querySelector(`.${ID}__openmodal`)) return;
-    const sku = anchorPoint.querySelector('form').getAttribute('data-product-sku');
+  cartItems.forEach((cartItem) => {
+    if (cartItem.querySelector(`.${ID}__openmodal`)) return;
+    //const sku = anchorPoint.querySelector('form').getAttribute('data-product-sku');
+    const sku = cartItem.querySelector('td .control.qty input.qty').getAttribute('data-cart-item-id');
+    const anchorPoint = cartItem.querySelector('.col.item .product-item-details .product-item-name');
 
-    anchorPoint.insertAdjacentHTML('afterbegin', fakeButton(ID, sku));
-    anchorPoint
-      .querySelector('.action.tocart')
-      .insertAdjacentHTML('beforebegin', qtyInput(ID, sku));
+    anchorPoint.insertAdjacentHTML('beforeend', fakeButton(ID, sku));
+    // cartItem
+    //   .querySelector('.action.tocart')
+    //   .insertAdjacentHTML('beforebegin', qtyInput(ID, sku));
   });
 
   document.body.addEventListener('click', (e) => {
@@ -49,16 +51,16 @@ export default () => {
     } else if (target.closest(`.${ID}__denyoffer`)) {
       const modalForm = target.closest('.ppatc__popup-form');
       const defaultLabel = modalForm.querySelector('label[data-quantity="1"]');
-      const modalSubmitBtn = modalForm.querySelector(`.${ID}__atc`);
+      // const modalSubmitBtn = modalForm.querySelector(`.${ID}__atc`);
       defaultLabel.click();
-      modalSubmitBtn.click();
+      // modalSubmitBtn.click();
     } else if (target.closest(`.${ID}__openmodal`)) {
-      const closestParent = target.closest('.product-item-info');
+      const closestParent = target.closest('.product-item-name');
 
       const prodUrl = closestParent?.querySelector('a')?.getAttribute('href');
       if (!prodUrl) return;
       getProductInfo(prodUrl).then((productsData) => {
-        //console.log('test', productsData);
+        console.log('productsData: ', productsData);
         if (productsData.variants.length > 1) {
           //update modal
           const { sku } = target.closest('button').dataset;
@@ -87,8 +89,8 @@ export default () => {
         item.classList.remove('active');
       });
       closestLabel.classList.add('active');
-      const activeInput = document.querySelector(`input[data-sku="${sku}"]`);
-      activeInput.value = labelQty;
+      // const activeInput = document.querySelector(`input[data-sku="${sku}"]`);
+      // activeInput.value = labelQty;
 
       modalBody.querySelector('.price').innerText = formatPrice(labelPrice);
     } else if (target.closest('.ppatc__popup-link')) {

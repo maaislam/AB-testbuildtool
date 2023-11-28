@@ -16,11 +16,12 @@ const getProductInfo = (url) => {
       if (labels.length > 1) {
         const prodTitle = doc.querySelector('.page-title').innerText.trim();
         const imgSrc = doc.querySelector('.no-sirv-lazy-load').src;
+        const qtyField = doc.querySelector('.field.qty');
         const defaultPriceElem = doc.querySelector('[id^="product-price-"]');
         const defaultPrice = parseFloat(defaultPriceElem.dataset.priceAmount);
 
         productsData.title = prodTitle;
-
+        productsData.qtyElem = qtyField;
         productsData.img = imgSrc;
         //const secondToLastLabel = labels[labels.length - 2]; //Get the second-to-last label
         const priceOptions = doc.querySelectorAll('.prices-tier li');
@@ -41,7 +42,7 @@ const getProductInfo = (url) => {
           saving: 0
         });
       }
-      console.log(variants);
+      console.log('variants: ', variants);
       productsData.variants = variants;
       return productsData;
     })
