@@ -4,10 +4,11 @@ import setup from './services/setup';
 import shared from './shared/shared';
 
 const { ID } = shared;
-const intersectionAnchor = document.querySelector('.fp-calculator');
-const anchorPoint = document.body;
 
 const init = () => {
+  const intersectionAnchor = document.querySelector('.fp-calculator');
+  const anchorPoint = document.body;
+
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
       const stickySection = document.querySelector(`.${ID}__stickyATC`);
@@ -36,7 +37,7 @@ export default () => {
   setup();
   init();
 
-  anchorPoint.addEventListener('click', (e) => {
+  document.body.addEventListener('click', (e) => {
     const { target } = e;
 
     if (target.closest(`.${ID}__atcBtn`)) {
