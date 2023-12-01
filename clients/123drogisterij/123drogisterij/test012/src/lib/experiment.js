@@ -22,8 +22,12 @@ const init = () => {
 
   cartItems.forEach((cartItem) => {
     if (cartItem.querySelector(`.${ID}__openmodal`)) return;
-    const sku = cartItem.querySelector('td .control.qty input.qty').getAttribute('data-cart-item-id');
-    const anchorPoint = cartItem.querySelector('.col.item .product-item-details .product-item-name');
+    const sku = cartItem
+      .querySelector('td .control.qty input.qty')
+      .getAttribute('data-cart-item-id');
+    const anchorPoint = cartItem.querySelector(
+      '.col.item .product-item-details .product-item-name'
+    );
 
     anchorPoint.insertAdjacentHTML('beforeend', fakeButton(ID, sku));
   });
@@ -49,7 +53,10 @@ export default () => {
       //const primaryForm = document.querySelector(`form[data-product-sku="${sku}"]`);
       //primaryForm.querySelector('button[type="submit"]').click();
       //submit form using js .submit()
-    } else if (target.closest(`.${ID}__denyoffer`)) {
+    } else if (
+      target.closest(`.${ID}__denyoffer`) ||
+      (target.closest('.ppatc__popup') && !target.closest('.ppatc__popup-form'))
+    ) {
       document.body.classList.remove('ppatc__popup-enabled');
     } else if (target.closest(`.${ID}__openmodal`)) {
       const closestParent = target.closest('.product-item-name');
@@ -89,7 +96,9 @@ export default () => {
       //activeInput.value = labelQty;
       setTimeout(() => {
         const prodUrl = document.querySelector('.ppatc__popup-items').dataset.href;
-        const busketRowLink = document.querySelector(`table .item-info .product-item-name [href*="${prodUrl}"]`);
+        const busketRowLink = document.querySelector(
+          `table .item-info .product-item-name [href*="${prodUrl}"]`
+        );
         const busketRow = busketRowLink.closest('.item-info');
         const rowQtyInput = busketRow.querySelector('.input-text.qty');
         rowQtyInput.value = labelQty;
