@@ -5,6 +5,7 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { getCroStorage, observeDOM, setCroStorage } from './helpers/utils';
 import affiliateLinksConfig from './affiliateLinksConfig';
+import addTurbonino from './addTopCasino';
 
 const { ID, VARIATION } = shared;
 const linkType = VARIATION === 'Control' ? 'A Link' : 'B Link';
@@ -125,6 +126,10 @@ export default () => {
   });
   if (VARIATION === 'Control') {
     return;
+  }
+
+  if (VARIATION === '3') {
+    addTurbonino(ID);
   }
 
   init();
