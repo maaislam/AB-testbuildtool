@@ -14,28 +14,30 @@ const addTopCasino = (id) => {
             </div>
             <div class='${id}__cardBody'>
                     <a class="${id}__logo img" href="https://record.glitnoraffiliates.com/_xnCN8G1x6VyBKOxorkQ2_WNd7ZgqdRLk/6" rel="nofollow noreferrer">
-                        <img loading="eager" alt="casino" src="https://media.casinofeber.se/operators/happy-casino.png?w=200&amp;q=80&amp;auto=format">
+                        <img loading="eager" alt="casino" src="https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofaber/happycasino-desktop.png">
                     </a>
                 <div class='${id}__content'>
                     <div class='${id}__content-details'>
                         <span class='details'>Smidig registrering och snabba uttag. 50 omsättningsfria free spins på slot med progressiv jackpott</span>
                         <div class="${id}__toplist-terms">
-                            Reklamlänk | 18+ | <a href="/spela/happy-casino/villkor" target="_blank" rel="nofollow noreferrer noopener">Regler &amp; villkor gäller</a> | Spela ansvarsfullt | <a href="https://www.stodlinjen.se" target="_blank" rel="nofollow noreferrer noopener">stodlinjen.se</a>
+                            Reklamlänk | 18+ | <a href="/spela/happy-casino/villkor" target="_blank" rel="nofollow noreferrer noopener"> Regler &amp; villkor gäller </a> | Spela ansvarsfullt | <a href="https://www.stodlinjen.se" target="_blank" rel="nofollow noreferrer noopener">stodlinjen.se</a>
                         </div>
                     </div>
-                    <div class='${id}__content-btn'>
-                        <a href='https://record.glitnoraffiliates.com/_gzA4QjFg4b2BKOxorkQ2_WNd7ZgqdRLk/10' target='_blank'>Till casinot</a>
-                    </div>
+                    <a class='${id}__content-btn' href='https://record.glitnoraffiliates.com/_gzA4QjFg4b2BKOxorkQ2_WNd7ZgqdRLk/10' target='_blank'>
+                        <span>Till casinot</span>
+                    </a>
                 </div>
             </div>
         </div>
         <div class='${id}__footer'>
             <div class="${id}__toplist-terms">
-                Reklamlänk | 18+ | <a href="/spela/happy-casino/villkor" target="_blank" rel="nofollow noreferrer noopener">Regler &amp; villkor gäller</a> | Spela ansvarsfullt | <a href="https://www.stodlinjen.se" target="_blank" rel="nofollow noreferrer noopener">stodlinjen.se</a>
+                Reklamlänk | 18+ | <a href="/spela/happy-casino/villkor" target="_blank" rel="nofollow noreferrer noopener"> Regler &amp; villkor gäller </a> | Spela ansvarsfullt | <a href="https://www.stodlinjen.se" target="_blank" rel="nofollow noreferrer noopener"> stodlinjen.se</a>
             </div>
         </div>
     </div>`;
 
-    anchorPoint.insertAdjacentHTML('afterend', htmlStr);
+    if (!document.querySelector(`.${id}__cardContainer`)) {
+        anchorPoint.insertAdjacentHTML('afterend', htmlStr);
+    }
 };
 export default addTopCasino;
