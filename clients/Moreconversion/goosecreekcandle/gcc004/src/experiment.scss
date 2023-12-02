@@ -10,7 +10,8 @@
           width: 25%;
           padding-right: 0;
           & > .inner {
-            display: none;
+            width: 27px;
+            opacity: 0;
           }
         }
       }
