@@ -2,7 +2,8 @@ import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { prodsStructure } from './components/prodsStructure';
-//import { pollerLite } from '../lib/helpers/utils';
+import { contactInfoStr } from './components/contactInfoStr';
+import { pollerLite } from '../lib/helpers/utils';
 
 const { ID, VARIATION } = shared;
 
@@ -82,11 +83,17 @@ export default () => {
       document
         .querySelector('.dropdown.mega-menu #images-wrapper > li:last-child > .inner')
         .insertAdjacentHTML('afterend', prodsStructure(ID, modifiedProducts));
-      // document.querySelector(`.${ID}__grid__item`).addEventListener('mouseover', (e) => {
-      //   if (e.target.closest(`.${ID}__grid__item`)) {
-      //     document.querySelector('#sub-menu-block .dropdown-submenu--second').classList.add('active');
-      //   }
-      // });
     }
+  });
+
+  //in mobile
+  pollerLite(['#mobile-menu--dev-menu'], () => {
+    console.log('got the mobile element');
+    if (document.querySelector(`.${ID}__contactInfo`)) {
+      document.querySelector(`.${ID}__contactInfo`).remove();
+    }
+    document
+      .querySelector('#mobile-menu--dev-menu')
+      .insertAdjacentHTML('beforeend', contactInfoStr(ID));
   });
 };
