@@ -1,6 +1,6 @@
 export const promoBanner = (ID) => {
   const html = `
-    <div class="header-promo ${ID}__header-promo" id="header-promo" style="background-color: rgb(212, 25, 8);">
+    <div class="header-promo ${ID}__header-promo" style="background-color: rgb(212, 25, 8);">
         <div class="header-promo-container centered" style="color: #ffffff;">
         <div class="header-promo-top hide--desktop">
             <span class="header-promo-message text-center"><p><a href="/collections/3-wick-candles" title="Up to 60% OFF Black Friday Sale Ending in:">Up to 60% OFF Black Friday Sale Ending in:</a></p></span>  

@@ -2,6 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  #attentive_creative {
+    min-width: 200px !important;
+  }
+  
   #main-navigation-wrapper > ul {
     & > li:first-child {
       #images-wrapper {
@@ -92,10 +96,18 @@
     }
   }
 
+  .countdown-added #mobile-menu--dev-menu {
+    padding: 133px 0 0;
+    
+    .content.container.custom-search.search-in-menu {
+      top: 93px;
+    }
+  }
+
   #mobile-menu--dev-menu {
     position: relative;
     justify-content: flex-start;
-    padding: 133px 0 0;
+
     &.mobile-menu {
       li {
         height: auto;
@@ -105,10 +117,6 @@
         line-height: normal;
         padding: 15px 0;
       }
-    }
-
-    .content.container.custom-search.search-in-menu {
-      top: 93px;
     }
 
     .#{$id}__header-promo {

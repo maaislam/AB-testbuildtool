@@ -1,0 +1,10 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    #rebuy-cart {
+        .rebuy-cart__progress-bar-container {
+            display: none;
+        }
+    }
+}
