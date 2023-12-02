@@ -1,0 +1,52 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    #main-navigation-wrapper > ul{
+        & > li:first-child{
+            #images-wrapper{
+                width: 100%;
+                & li.dropdown-submenu:first-child{
+                    width: 25%;
+                    padding-right:0;
+                    & > .inner{
+                        display:none;
+                    }
+                } 
+            } 
+            #images-wrapper li.dropdown-submenu:nth-child(2) {
+                width:75%;
+                padding-left:0;
+                & > .inner{
+                    
+                    width:10px;
+                    opacity:0;
+                }
+            }
+        }
+    }
+
+    .#{$id}__grid__item {
+        padding-left: 0;
+        grid-area: content;
+        width: 100%;
+        display: grid;
+        list-style: none;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 15px;
+        
+        & .#{$id}__hp-title{
+            & > a {
+                flex-wrap: wrap;
+                & > * {
+                   width: 100%;
+                }
+                & > div:last-child{
+                    margin-top:10px;
+                }
+                
+            }
+        }
+    }
+}
