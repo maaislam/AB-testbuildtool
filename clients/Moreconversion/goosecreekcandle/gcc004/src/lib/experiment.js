@@ -3,7 +3,8 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { prodsStructure } from './components/prodsStructure';
 import { contactInfoStr } from './components/contactInfoStr';
-import { pollerLite } from '../lib/helpers/utils';
+import { promoBanner } from './components/promoBanner';
+import { pollerLite, timerCountdown } from '../lib/helpers/utils';
 
 const { ID, VARIATION } = shared;
 
@@ -21,7 +22,7 @@ export default () => {
   //Write experiment code here
   //-----------------------------
   //...
-
+  const TIME_FOR_COUNTDOWN = 'Dec 02 2023 23:59:00';
   const products = [
     'https://goosecreekcandle.com/products/blueberry-cheesecake-large-3-wick-candle',
     'https://goosecreekcandle.com/products/classic-christmas-tree-large-3-wick-candle',
@@ -89,6 +90,16 @@ export default () => {
   //in mobile
   pollerLite(['#mobile-menu--dev-menu'], () => {
     console.log('got the mobile element');
+
+    if (document.querySelector(`.${ID}__header-promo`)) {
+      document.querySelector(`.${ID}__header-promo`).remove();
+    }
+    document
+      .querySelector('#mobile-menu--dev-menu > form')
+      .insertAdjacentHTML('beforebegin', promoBanner(ID));
+
+    timerCountdown(ID, TIME_FOR_COUNTDOWN);
+
     if (document.querySelector(`.${ID}__contactInfo`)) {
       document.querySelector(`.${ID}__contactInfo`).remove();
     }

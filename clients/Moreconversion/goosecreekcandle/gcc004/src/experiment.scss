@@ -94,6 +94,7 @@
   #mobile-menu--dev-menu {
     position: relative;
     justify-content: flex-start;
+    padding: 133px 0 0;
     &.mobile-menu {
       li {
         height: auto;
@@ -102,6 +103,60 @@
         font-size: 13px;
         line-height: normal;
         padding: 15px 0;
+      }
+    }
+
+    .content.container.custom-search.search-in-menu {
+      top: 93px;
+    }
+
+    .#{$id}__header-promo {
+      position: absolute;
+      top: 0;
+      width: 85%;
+
+      .header-promo-message p > a {
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      .header-promo-countdown div {
+        flex: 0;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+
+      .time {
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+
+        & + span {
+          font-size: 7px !important;
+          font-style: normal;
+          font-weight: 300;
+          line-height: normal;
+        }
+      }
+
+      .header-promo-container {
+        justify-content: flex-start;
+        margin-left: 13%;
+        padding: 0;
+
+        #header-promo-countdown {
+          margin-bottom: 0;
+          padding-left: 6%;
+        }
       }
     }
 
