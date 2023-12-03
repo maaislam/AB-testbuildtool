@@ -1,0 +1,665 @@
+{%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+
+{% capture icon_caret %}
+  <svg aria-hidden="true" focusable="false" role="presentation" class="icon-caret" viewBox="0 0 10 6">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+  </svg>
+{% endcapture %}
+
+{% capture icon_close %}
+  <svg  aria-hidden="true" focusable="false" role="presentation" width="12" height="13" class="icon-close-small" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8.48627 9.32917L2.82849 3.67098" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M2.88539 9.38504L8.42932 3.61524" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+{% endcapture %}
+
+<div data-wetheme-section-type="template--collection-filter-sort" data-wetheme-section-id="{{ section.id }}">
+
+{%- if section.settings.enable_filtering == true or section.settings.enable_sorting == true -%}
+<div class="collection-filters" id="main-collection-filters" data-id="{{ section.id }}">
+  <button type="button" class="mobile-facets__open btn btn--large" data-drawer-open-btn>
+    Filter / Sort
+  </button>
+
+    {%- assign total_active_values = 0 -%}
+    <collection-filtering-form class="facets" data-filter-form{% if section.settings.enable_filtering %} data-has-filtering{% endif %}{% if section.settings.enable_sorting %} data-has-sorting{% else %} data-no-sorting{% endif %}{% if section.blocks.size == 0 %} data-no-blocks{% endif %}>
+      <form id="CollectionFiltersForm" class="facets__form">
+        <div class="mobile-menu-close">
+          <button
+            type="button"
+            class="slide-menu menu-close-icon mobile-menu-close alt-focus drawer-close-btn"
+            aria-label="Close navigation"
+            data-drawer-close-btn
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+
+        <div class="facets__form-inner">
+          {% if section.settings.enable_filtering == true %}
+            <div class="facets__wrapper">
+              {%- unless collection.filters == empty -%}
+                <p class="facets__heading type-subheading type-subheading--1">{{ 'sections.collection_template.filter_by_label' | t }}</p>
+              {%- endunless -%}
+
+              {%- for filter in collection.filters -%}
+                {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
+                {% case filter.type %}
+                {% when 'boolean' or 'list' %}
+                  <details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
+                    <summary class="facets__summary">
+                      <div>
+                        <span>{{ filter.label | escape }}</span>
+                        <span class="count-bubble">{%- if filter.active_values.size > 0 -%}{{ filter.active_values.size }}{%- endif -%}</span>
+                        {{ icon_caret }}
+                      </div>
+                    </summary>
+                    <div class="facets__display">
+                      <div class="facets__header">
+                        <span class="facets__selected no-js-hidden">{{ 'sections.collection_template.filters_selected' | t: count: filter.active_values.size }}</span>
+                        <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link js-facet-remove" >{{ 'sections.collection_template.reset' | t }}</a>
+                      </div>
+
+                      <ul class="facets__list list-unstyled" role="list">
+                        {%- for value in filter.values -%}
+                          <li class="list-menu__item facets__item">
+                            <label for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}">
+                              <input type="checkbox"
+                                name="{{ value.param_name }}"
+                                value="{{ value.value }}"
+                                id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+                                {% if value.active %}checked{% endif %}
+                                {% if value.count == 0 and value.active == false %}disabled{% endif %}
+                              >
+
+                              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                                <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                              </svg>
+
+                              <svg class="icon-checkmark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 9" fill="none" width="10px" height="10px">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.35.643a.5.5 0 01.006.707l-6.77 6.886a.5.5 0 01-.719-.006L.638 4.845a.5.5 0 11.724-.69l2.872 3.011 6.41-6.517a.5.5 0 01.707-.006h-.001z" fill="currentColor"/>
+                              </svg>
+                              {{ value.label | escape }} ({{ value.count }})
+                            </label>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    </div>
+                  </details>
+                {% when 'price_range' %}
+                  {% liquid
+                    assign currencies_using_comma_decimals = 'ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND' | split: ','
+                    assign uses_comma_decimals = false
+                    if currencies_using_comma_decimals contains cart.currency.iso_code
+                      assign uses_comma_decimals = true
+                    endif
+                  %}
+                  <details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
+                    <summary class="facets__summary">
+                      <div>
+                        <span>{{ filter.label | escape }}</span>
+                        <span class="count-bubble{%- if filter.min_value.value or filter.max_value.value -%}{{ filter.active_values.size }} count-bubble--dot{% endif %}"></span>
+                        {{ icon_caret }}
+                      </div>
+                    </summary>
+                    <div class="facets__display">
+                      <div class="facets__header">
+                        {%- assign max_price_amount = filter.range_max | money | escape -%}
+                        <span class="facets__selected">{{ "sections.collection_template.max_price" | t: price: max_price_amount }}</span>
+                        <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link js-facet-remove" >{{ 'sections.collection_template.reset' | t }}</a>
+                      </div>
+                      <price-range-selector class="facets__price">
+                        <div class="field">
+                          <span class="field__currency">{{ cart.currency.symbol }}</span>
+                          <input class="field__input"
+                            name="{{ filter.min_value.param_name }}"
+                            id="Filter-{{ filter.label | escape }}-{{ forloop.index }}-min_value"
+                            {%- if filter.min_value.value -%}
+                              {%- if uses_comma_decimals -%}
+                                value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                              {%- else -%}
+                                value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                              {% endif %}
+                            {%- endif -%}
+                            type="number"
+                            placeholder="0"
+                            min="0"
+                            max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
+                          </input>
+                          <label class="field__label" for="Filter-{{ filter.label | escape }}-{{ forloop.index }}-min_value">{{ 'sections.collection_template.from' | t }}</label>
+                        </div>
+                        <div class="field">
+                          <span class="field__currency">{{ cart.currency.symbol }}</span>
+                          <input class="field__input"
+                            name="{{ filter.max_value.param_name }}"
+                            id="Filter-{{ filter.label | escape }}-{{ forloop.index }}-max_value"
+                            {%- if filter.max_value.value -%}
+                              {%- if uses_comma_decimals -%}
+                                value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                              {%- else -%}
+                                value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                              {% endif %}
+                            {%- endif -%}
+                            type="number"
+                            placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                            min="0"
+                            max="{{ filter.range_max | money_without_currency | replace: ',', '' }}">
+                          </input>
+                          <label class="field__label" for="Filter-{{ filter.label | escape }}-{{ forloop.index }}-max_value">{{ 'sections.collection_template.to' | t }}</label>
+                        </div>
+                      </div>
+                    </price-range-selector>
+                  </details>
+                {% endcase %}
+              {%- endfor -%}
+              <noscript>
+                <button type="submit" class="facets__button button">{{ 'sections.collection_template.filter_button' | t }}</button>
+              </noscript>
+            </div>
+
+            <div class="active-facets active-facets-desktop">
+              <a href="{{ collection.url }}?sort_by={{ sort_by }}" class="active-facets__button button button--secondary js-facet-remove">{{ 'sections.collection_template.clear_all' | t }}</a>
+              {%- for filter in collection.filters -%}
+                {%- for value in filter.active_values -%}
+                  <a class="active-facets__button active-facets__button--light button button--tertiary js-facet-remove" href="{{ value.url_to_remove }}">
+                    {% if filter.type == 'boolean' %}
+                      {{ filter.label | escape | append: ': ' }}
+                    {% endif %}
+                    {{ value.label | escape }}
+                    {{ icon_close }}
+                  </a>
+                {%- endfor -%}
+                {% if filter.type == "price_range" %}
+                  {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                    <a class="active-facets__button active-facets__button--light button button--tertiary js-facet-remove" href="{{ filter.url_to_remove }}">
+                      {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money }}{%- else -%}{{ filter.range_max | money }}{%- endif -%}
+                      {{ icon_close }}
+                    </a>
+                  {%- endif -%}
+                {% endif %}
+              {%- endfor -%}
+            </div>
+          {% endif %}
+
+          {% if collection.current_vendor or collection.current_type %}
+            <input type="hidden" name="q" value="{{ collection.current_vendor }}{{ collection.current_type }}">
+          {% endif %}
+
+          {%- if section.settings.enable_sorting == true -%}
+            <div class="collection-filters__item sorting">
+              <div class="collection-filters__field">
+                <label class="collection-filters__label type-subheading type-subheading--1" for="SortBy">{{ 'sections.collection_template.sort_by_label' | t }}</label>
+                <div class="select">
+                  {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                  <select name="sort_by" class="select__select collection-filters__sort" id="SortBy" aria-describedby="a11y-refresh-page-message">
+                    {%- for option in collection.sort_options -%}
+                      <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
+                    {%- endfor -%}
+                  </select>
+                  {{ icon_caret }}
+                </div>
+              </div>
+
+              <noscript>
+                <button type="submit" class="button button--small">{{ 'sections.collection_template.sort_button' | t }}</button>
+              </noscript>
+            </div>
+          {%- endif -%}
+        </div>
+      </form>
+    </collection-filtering-form>
+</div>
+
+<script src="{{ 'filtering.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+{%- if section.settings.desktop_position == 'topbar' and section.settings.enable_filtering == false -%}
+  <style>
+    @media screen and (min-width: 769px) {
+      .collection-filters__item {
+        grid-column: 1 !important;
+      }
+
+      .collection-filters__field {
+        flex-grow: 0 !important;
+      }
+    }
+  </style>
+{% endif %}
+
+{%- if section.settings.desktop_position == 'topbar' -%}
+  <style>
+    @media screen and (max-width: 768px) {
+      .collection-filters__item {
+        margin-bottom: 30px;
+        border-bottom: 1px solid var(--filter-border-color);
+        padding-bottom: 30px;
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      .facets__disclosure:not(:last-of-type) {
+        margin-right: 15px;
+      }
+    }
+  </style>
+{% endif %}
+
+{%- if section.settings.desktop_position == 'sidebar' -%}
+  <style>
+    @media screen and (max-width: 768px) {
+      .is-open .facets__form .collection-filters__item {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid var(--filter-border-color);
+      }
+
+      .sidebar-wrapper-inner .collection-sidebar--section:not(:last-child) {
+        padding-bottom: 15px;
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      .collection-filters__item {
+        padding-bottom: 30px;
+      }
+
+      {% comment %} Text, Vendors, menu {% endcomment %}
+      .collection-sidebar--section {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid var(--filter-border-color);
+      }
+
+      .collection-filtering-section {
+        width: 30%;
+        max-width: 350px;
+        padding-top: 30px;
+        padding-left: 30px;
+      }
+
+      .collection-filters__label {
+        margin: 0 0 1rem;
+      }
+
+      .sidebar-wrapper-inner:not([data-no-filter-sort]) .collection-sidebar--section:first-child {
+        padding-top: 30px;
+      }
+
+      .collection-sidebar--section:last-child {
+        border-bottom: none;
+      }
+
+      .collection-filtering-section {
+        width: 30%;
+        max-width: 350px;
+        padding-left: 30px;
+        padding: 30px 0 0 30px;
+      }
+
+      a.active-facets__button {
+        margin: 0 0 1rem 1rem;
+      }
+
+      .collection-grid-wrapper {
+        padding-left: 30px;
+        width: 70%;
+      }
+
+      [data-filter-form]:not([data-no-blocks]) .facets__form-inner {
+        border-bottom: 1px solid var(--filter-border-color);
+      }
+
+      [data-has-sorting] .facets__wrapper {
+        padding-top: 30px;
+        border-top: 1px solid var(--filter-border-color);
+      }
+    }
+
+    .shopify-section:not(.collection-header-wrapper):not(.collection-sidebar-wrapper):not(.collection-filtering-section):not(.collection-grid-wrapper) {
+      width: 100%;
+    }
+
+    .facets__form-inner {
+      display: flex !important;
+      flex-direction: column-reverse;
+    }
+
+    .facets__wrapper {
+      display: block !important;
+    }
+  </style>
+
+  {% if section.blocks.size == 0 %}
+    <style>
+      .collection-sidebar-wrapper {
+        display: none;
+      }
+    </style>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <style>
+      @media screen and (min-width: 769px) {
+        #collection-sidebar {
+          max-width: 350px;
+        }
+      }
+    </style>
+
+    {% assign no_filter_sort = false %}
+    {% if section.settings.enable_filtering == false and section.settings.enable_sorting == false %}
+      {% assign no_filter_sort = true %}
+    {% endif %}
+
+    <aside class="sidebar-wrapper-inner" id="collection-sidebar"{% if no_filter_sort %} data-no-filter-sort{% endif %}>
+      {% for block in section.blocks %}
+
+        {% case block.type %}
+
+          {% when 'vendors' %}
+
+            <div class="collection-sidebar--section" {{ block.shopify_attributes }}>
+            <h2 class="type-subheading type-subheading--1">{{ block.settings.title }}</h2>
+            <svg class="chevron-right global-transition" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+
+            <ul>
+              {% for product_vendor in shop.vendors %}
+                {% assign its_a_match = false %}
+                {% capture my_collection_handle %} {{ product_vendor | handleize | strip | escape  }} {% endcapture %}
+                {% assign my_collection_handle_stripped = my_collection_handle | strip | escape %}
+
+                {% for collection in collections %}
+                  {% if my_collection_handle_stripped == collection.handle %}
+                    {% assign its_a_match = true %}
+                  {% endif %}
+                {% endfor %}
+
+                {% if its_a_match %}
+                  <li class="vendor-list-item"><a href="{{ routes.collections_url }}/{{ product_vendor | handleize }}">{{ product_vendor }}</a></li>
+                {% else %}
+                  <li class="vendor-list-item">{{ product_vendor | link_to_vendor }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+
+            </div>
+
+          {% when 'text' %}
+
+            <div class="collection-sidebar--section" {{ block.shopify_attributes }}>
+              <h2 class="type-subheading type-subheading--1">{{ block.settings.title }}</h2>
+
+              {% if block.settings.richtext != blank %}
+                <svg class="chevron-right global-transition" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                <div class="collection--sidebar--text--richtext">
+                  {{ block.settings.richtext }}
+                </div>
+              {% endif %}
+            </div>
+
+          {% when 'menu' %}
+
+            {%- assign collection_linklist = block.settings.collection_linklist -%}
+            <div class="collection-sidebar--section" {{ block.shopify_attributes }}>
+              <h2 class="type-subheading type-subheading--1">{{ block.settings.menu_title | escape }}</h2>
+              {% if linklists[collection_linklist].links.size > 0 %}
+                <svg class="chevron-right global-transition" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                <ul>
+                {% for link in linklists[collection_linklist].links %}
+                  <li class="collection-menu--list-item{% if link.object.tags and link.object.tags.size > 0 %} children{% endif %}">
+                    <a href="{{link.url}}">{{link.title}}</a>
+                  </li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+
+          {% when 'image' %}
+
+            {% if block.settings.collection-sidebar-image %}
+            <div class="collection-sidebar--section" {{ block.shopify_attributes }}>
+              {% if block.settings.collection-sidebar-link %}
+                <a href="{{ block.settings.collection-sidebar-link }}" itemprop="url">
+              {% endif %}
+              <div>
+              {% assign alt = block.settings.collection-sidebar-image.alt | default: shop.name %}
+              {% render 'responsive-image' with block.settings.collection-sidebar-image, alt: alt %}
+              </div>
+              {% if block.settings.collection-sidebar-link %}
+                </a>
+              {% endif %}
+            </div>
+            {% endif %}
+
+        {% endcase %}
+
+      {% endfor %}
+    </aside>
+
+  {% endif %}
+{%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Collection sidebar/filter",
+  "tag": "section",
+  "class": "collection-filtering-section spaced-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sidebar"
+    },
+    {
+      "type": "paragraph",
+      "content": "When the filter and sort toolbar position is set to 'Sidebar', additional blocks can be added to the sidebar."
+    },
+    {
+      "type": "header",
+      "content": "Filtering and sorting"
+    },
+    {
+      "type": "select",
+      "id": "desktop_position",
+      "options": [
+        {
+          "value": "topbar",
+          "label": "Top bar"
+        },
+        {
+          "value": "sidebar",
+          "label": "Sidebar"
+        }
+      ],
+      "default": "topbar",
+      "label": "Desktop position"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "default": true,
+      "label": "Show filtering",
+      "info": "[Customize filters](/admin/menus)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "Show sorting"
+    }
+
+  ],
+  "blocks": [
+    {
+        "type": "text",
+        "name": {
+            "en": "Text",
+            "de": "Text",
+            "es": "Texto",
+            "fr": "Texte",
+            "pt-PT": "Texto"
+        },
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": {
+                "en": "Heading",
+                "de": "Überschrift",
+                "es": "Encabezado",
+                "fr": "Rubrique",
+                "pt-PT": "Título"
+            },
+            "default": {
+                "en": "Title",
+                "de": "Titel",
+                "es": "Título",
+                "fr": "Titre",
+                "pt-PT": "Título"
+            }
+          },
+          {
+            "type": "richtext",
+            "id": "richtext",
+            "label": {
+                "en": "Text",
+                "de": "Text",
+                "es": "Texto",
+                "fr": "Texte",
+                "pt-PT": "Texto"
+            },
+            "default": {
+                "en": "<p>Share details about promotions or important messages with your customers.</p>",
+                "de": "<p>Teilen Sie Einzelheiten über Werbeaktionen oder wichtige Nachrichten mit Ihren Kunden.</p>",
+                "es": "<p>Comparta detalles sobre promociones o mensajes importantes con sus clientes.</p>",
+                "fr": "<p>Partagez les détails des promotions ou des messages importants avec vos clients.</p>",
+                "pt-PT": "<p>Partilhe detalhes sobre promoções ou mensagens importantes com os seus clientes.</p>"
+            }
+          }
+        ]
+      },
+      {
+        "type": "vendors",
+        "name": {
+            "en": "Vendors",
+            "de": "Verkäufer",
+            "es": "Vendedores",
+            "fr": "Vendeurs",
+            "pt-PT": "Vendedores"
+        },
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": {
+                "en": "Heading",
+                "de": "Überschrift",
+                "es": "Encabezado",
+                "fr": "Rubrique",
+                "pt-PT": "Título"
+            },
+            "default": {
+                "en": "Vendors",
+                "de": "Verkäufer",
+                "es": "Vendedores",
+                "fr": "Vendeurs",
+                "pt-PT": "Vendedores"
+            }
+          }
+        ]
+      },
+      {
+        "type": "menu",
+        "name": {
+            "en": "Navigation",
+            "de": "Navigation",
+            "es": "Navegación",
+            "fr": "Navigation",
+            "pt-PT": "Navegação"
+        },
+        "settings": [
+          {
+            "type": "text",
+            "id": "menu_title",
+            "label": {
+                "en": "Heading",
+                "de": "Überschrift",
+                "es": "Encabezado",
+                "fr": "Rubrique",
+                "pt-PT": "Título"
+            },
+            "default": {
+                "en": "Links",
+                "de": "Links",
+                "es": "Enlaces",
+                "fr": "Liens",
+                "pt-PT": "Ligações"
+            }
+          },
+          {
+            "type": "link_list",
+            "id": "collection_linklist",
+            "label": {
+                "en": "Navigation",
+                "de": "Navigation",
+                "es": "Navegación",
+                "fr": "Navigation",
+                "pt-PT": "Navegação"
+            },
+            "default": "main-menu"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "name": {
+            "en": "Image",
+            "de": "Bild",
+            "es": "Imagen",
+            "fr": "Image",
+            "pt-PT": "Imagem"
+        },
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "collection-sidebar-image",
+            "label": {
+                "en": "Image",
+                "de": "Bild",
+                "es": "Imagen",
+                "fr": "Image",
+                "pt-PT": "Imagem"
+            },
+            "info": {
+                "en": "300 x 150px recommended",
+                "de": "300 x 150 px empfohlen",
+                "es": "Recomendado 300 x 150 px",
+                "fr": "300 x 150 px recommandé",
+                "pt-PT": "300 x 150px, recomendado"
+            }
+          },
+          {
+            "type": "url",
+            "id": "collection-sidebar-link",
+            "label": {
+                "en": "Link",
+                "de": "Link",
+                "es": "Enlace",
+                "fr": "Lien",
+                "pt-PT": "Ligação"
+            },
+            "info": {
+                "en": "Optional",
+                "de": "Optional",
+                "es": "Opcional",
+                "fr": "Facultatif",
+                "pt-PT": "Opcional"
+            }
+          }
+        ]
+      }
+    ]
+}
+{% endschema %}
