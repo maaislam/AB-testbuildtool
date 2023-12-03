@@ -8,6 +8,10 @@
         .facets__summary,
         .facets__display {
             width: 116px !important;
+
+            @include media-query(sm) {
+                width: 100% !important;
+            }
         }
 
         .facets__list {
