@@ -1,0 +1,39 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__scentFilterDropdown {
+        display: block !important;
+
+        .facets__summary,
+        .facets__display {
+            width: 116px !important;
+        }
+
+        .facets__list {
+            margin: 0 !important;
+            padding: 1rem 0 !important;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                width: 100%;
+                margin: 0 !important;
+                padding: 6px 14px !important;
+                color: #363636;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 15px;
+                letter-spacing: 0.64px;
+
+                &:focus, &:hover {
+                    background: #e7e7e7;
+                }
+            }
+        }
+
+        .#{$id}__scentFilter {
+            display: none;
+        }
+    }
+}
