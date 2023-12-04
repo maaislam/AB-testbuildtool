@@ -94,11 +94,14 @@ export default () => {
     if (document.querySelector(`.${ID}__header-promo`)) {
       document.querySelector(`.${ID}__header-promo`).remove();
     }
-    document
-      .querySelector('#mobile-menu--dev-menu > form')
-      .insertAdjacentHTML('beforebegin', promoBanner(ID));
+    if (document.querySelector('#header-promo:not(.countdown-ended)')) {
+      document.body.classList.add('countdown-added');
+      document
+        .querySelector('#mobile-menu--dev-menu > form')
+        .insertAdjacentHTML('beforebegin', promoBanner(ID));
 
-    timerCountdown(ID, TIME_FOR_COUNTDOWN);
+      timerCountdown(ID, TIME_FOR_COUNTDOWN);
+    }
 
     if (document.querySelector(`.${ID}__contactInfo`)) {
       document.querySelector(`.${ID}__contactInfo`).remove();

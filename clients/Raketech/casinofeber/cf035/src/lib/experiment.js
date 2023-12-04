@@ -129,7 +129,10 @@ export default () => {
   }
 
   if (VARIATION === '3') {
+<<<<<<< HEAD
+=======
     addTurbonino(ID);
+>>>>>>> adc7cc47aad39830cb8e54d351f7298175c2cc13
   }
 
   init();
