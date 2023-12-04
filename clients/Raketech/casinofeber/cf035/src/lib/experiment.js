@@ -127,5 +127,8 @@ export default () => {
     return;
   }
 
+  if (VARIATION === '3') {
+  }
+
   init();
 };
