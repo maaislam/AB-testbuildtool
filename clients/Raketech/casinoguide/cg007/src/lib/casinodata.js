@@ -39,7 +39,6 @@ export const casinoLicenseData = [
     license: 'Casumo Services Ltd, Sverige',
     casino: ''
   },
-
   {
     casinoDisplayName: 'Mr Green Casino',
     license: 'Mr Green Ltd, Sverige',
@@ -126,9 +125,9 @@ export const casinoLicenseData = [
     casino: 'MamaMia Bingo logo'
   },
   {
-    casinoDisplayName: 'Expekt',
+    casinoDisplayName: 'nya expekt',
     license: 'Expekt Nordics Ltd, Sverige',
-    casino: ''
+    casino: 'nya expekt'
   },
   {
     casinoDisplayName: 'bet365',
@@ -235,7 +234,6 @@ export const casinoLicenseData = [
     license: 'Betway Ltd, Sverige',
     casino: 'Betway Casino logo'
   },
-
   {
     casinoDisplayName: 'InterCasino',
     license: 'Dumarca Gaming Ltd, Sverige',
