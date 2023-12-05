@@ -8,13 +8,11 @@
       border: solid 1px #e36b27;
       border-radius: 7px;
       padding: 10px 0;
-      margin-bottom: 10px;
+      margin: 0 auto;
       background: #feede4;
 
       @include media-query(sm) {
         padding: 10px 15px;
-        margin-left: 0;
-        margin-right: 0;
       }
 
       & + div.row {
