@@ -30,4 +30,11 @@ export default () => {
     imageElemWrapper.innerHTML = '';
     imageElemWrapper.appendChild(splicedArr[index]);
   });
+
+  const populerMessage = `
+  <div class="pkg_strip px-4" 
+  "><p>MOST POPULAR</p></div>
+  `;
+
+  document.querySelector('.main_class');
 };
