@@ -22,7 +22,7 @@ const init = () => {
                     </a>
                 <div class='${ID}__content'>
                     <div class='${ID}__content-details'>
-                        <span class='details'>Smidig registrering och snabba uttag. 50 omsättningsfria free spins på slot med progressiv jackpott</span>
+                        <span class='details'>50 omsättningsfria free spins på slot med progressiv jackpott</span>
                         <div class="${ID}__toplist-terms">
                             Reklamlänk | 18+ | <a href="/spela/happy-casino/villkor" target="_blank" rel="nofollow noreferrer noopener"> Regler &amp; villkor gäller </a> | Spela ansvarsfullt | <a href="https://www.stodlinjen.se" target="_blank" rel="nofollow noreferrer noopener">stodlinjen.se</a>
                         </div>
@@ -39,9 +39,9 @@ const init = () => {
             </div>
         </div>
     </div>`;
-  const anchorPoint = document.querySelector('.toplist-holder h3');
+  const anchorPoint = document.querySelector('.toplist-holder');
   if (!document.querySelector(`.${ID}__cardContainer`)) {
-    anchorPoint.insertAdjacentHTML('afterend', htmlStr);
+    anchorPoint.insertAdjacentHTML('afterbegin', htmlStr);
   }
 };
 
