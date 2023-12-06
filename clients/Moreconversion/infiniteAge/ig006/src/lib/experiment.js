@@ -1,5 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 import { timerStr } from './components/timerStr';
 import { displayTimeRemaining } from './helpers/utils';
@@ -8,8 +8,7 @@ const { ID, VARIATION } = shared;
 
 export default () => {
   setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
+
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
@@ -30,16 +29,12 @@ export default () => {
     document.querySelector(`.${ID}__timer`).remove();
   }
 
-  // document
-  //   .querySelector('body .product.product--medium center')
-  //   .insertAdjacentHTML('beforebegin', timerStr(ID, timer));
-
   document
     .querySelector('.addcart:not(.addcartbox)')
     .insertAdjacentHTML('beforeend', timerStr(ID, timer));
 
   if (document.getElementById('timeLeft')) {
-    setInterval(displayTimeRemaining, 1000);
     displayTimeRemaining();
+    setInterval(displayTimeRemaining, 1000);
   }
 };
