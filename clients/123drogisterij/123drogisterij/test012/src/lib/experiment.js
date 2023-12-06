@@ -44,7 +44,19 @@ export default () => {
     //console.log('🚀target:', target);
 
     if (target.closest(`.${ID}__atc`)) {
-      document.querySelector('[data-cart-item-update]').click();
+      const popupItems = target.closest('.ppatc__popup-form');
+      const closestLabel = popupItems.querySelector('.ppatc__popup-items label.active');
+        const labelQty = closestLabel.dataset.quantity;
+        const prodUrl = document.querySelector('.ppatc__popup-items').dataset.href;
+        const busketRowLink = document.querySelector(
+          `table .item-info .product-item-name [href*="${prodUrl}"]`
+        );
+        const busketRow = busketRowLink.closest('.item-info');
+        const rowQtyInput = busketRow.querySelector('.input-text.qty');
+        rowQtyInput.value = labelQty;
+      setTimeout(() => {
+        document.querySelector('[data-cart-item-update]').click();
+      }, 200);
       //get sku
       //const modalForm = target.closest('.ppatc__popup-form');
       //const variantsWrapper = modalForm.querySelector(`.${ID}__variants`);
@@ -86,7 +98,7 @@ export default () => {
       const labelsWrapper = target.closest(`.${ID}__variants`);
       const modalBody = target.closest('.ppatc__popup-form');
 
-      const labelQty = closestLabel.dataset.quantity;
+      //const labelQty = closestLabel.dataset.quantity;
       const labelPrice = closestLabel.dataset.price;
       labelsWrapper.querySelectorAll('label').forEach((item) => {
         item.classList.remove('active');
@@ -94,20 +106,21 @@ export default () => {
       closestLabel.classList.add('active');
       //const activeInput = document.querySelector(`input[data-sku="${sku}"]`);
       //activeInput.value = labelQty;
-      setTimeout(() => {
-        const prodUrl = document.querySelector('.ppatc__popup-items').dataset.href;
-        const busketRowLink = document.querySelector(
-          `table .item-info .product-item-name [href*="${prodUrl}"]`
-        );
-        const busketRow = busketRowLink.closest('.item-info');
-        const rowQtyInput = busketRow.querySelector('.input-text.qty');
-        rowQtyInput.value = labelQty;
-      }, 1000);
+      //setTimeout(() => {
+      //const prodUrl = document.querySelector('.ppatc__popup-items').dataset.href;
+      //const busketRowLink = document.querySelector(
+      //`table .item-info .product-item-name [href*="${prodUrl}"]`
+      //);
+      //const busketRow = busketRowLink.closest('.item-info');
+      //const rowQtyInput = busketRow.querySelector('.input-text.qty');
+      //rowQtyInput.value = labelQty;
+      //}, 1000);
 
       modalBody.querySelector('.price').innerText = formatPrice(labelPrice);
     } else if (target.closest('.ppatc__popup-link')) {
       const prodUrl = document.querySelector('.ppatc__popup-items').dataset.href;
       window.location.href = prodUrl;
+      document.body.classList.remove('ppatc__popup-enabled');
     }
   });
 };
