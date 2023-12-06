@@ -5,7 +5,6 @@ export default () => {
   setup();
 
   const controlSider = document.querySelector('[id^="MediaGallery-template--"]');
-
   const imageElemWrappers = controlSider.querySelectorAll('.product__media');
   const imageElemsArray = Array.from(imageElemWrappers).map((item) => item.querySelector('img'));
   const splicedArr = imageElemsArray.splice(2);

@@ -1,0 +1,22 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__onetime-1,
+  &__sub-1 {
+    order: 1;
+  }
+  &__onetime-2,
+  &__sub-2 {
+    order: 3;
+  }
+  &__onetime-3,
+  &__sub-3 {
+    order: 4;
+  }
+
+  &__highest-val-one-time,
+  &__highest-val-sub {
+    order: 2 !important;
+  }
+}

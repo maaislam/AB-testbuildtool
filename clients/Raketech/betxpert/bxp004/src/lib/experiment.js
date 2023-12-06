@@ -18,7 +18,7 @@ export default () => {
     //};
     if (target.closest('[href*="/redirect/operator/"]')) {
       gaTracking(
-        `${target.closest('a').dataset.gaLabel} | CTA Clicks to Operator (Bonus Intent)${
+        `${target.closest('a').href} | CTA Clicks to Operator (Bonus Intent)${
           isToplist ? ' | Toplist' : ''
         }`
       );
@@ -27,9 +27,7 @@ export default () => {
       target.closest('[href*="/bookmakere/"]')
     ) {
       const operatorUrl = target.closest('a').href;
-      gaTracking(
-        `${operatorUrl.split('/').at(-2)} | CTA Click to Reviews${isToplist ? ' | Toplist' : ''}`
-      );
+      gaTracking(`${operatorUrl} | CTA Click to Reviews${isToplist ? ' | Toplist' : ''}`);
     } else if (target.closest('.btmline-div')) {
       const tcOperator = target.closest('.bb-box-wrapper').dataset.opName;
       gaTracking(`${tcOperator} | Bottomline Clicks`);

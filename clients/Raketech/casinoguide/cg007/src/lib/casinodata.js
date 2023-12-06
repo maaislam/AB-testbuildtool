@@ -1,512 +1,632 @@
 export const casinoLicenseData = [
   {
-    casino: 'Leo Vegas Casino',
+    casinoDisplayName: 'Leo Vegas Casino',
     license: 'LeoVegas Gaming Plc, Sverige',
-    casinoDisplayName: 'Leo Vegas'
+    casino: 'Leo Vegas'
   },
   {
-    casino: 'Maria Casino',
-    license: 'Spooniker Ltd, Sverige'
+    casinoDisplayName: 'Maria Casino',
+    license: 'Spooniker Ltd, Sverige',
+    casino: 'Maria Casino logo'
   },
   {
-    casino: 'Ninja Casino',
-    license: 'ElectraWorks (Svenska) Ltd, Sverige'
+    casinoDisplayName: 'Ninja Casino',
+    license: 'ElectraWorks (Svenska) Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'ComeOn',
-    license: 'ComeOn Sweden Ltd, Sverige'
+    casinoDisplayName: 'ComeOn',
+    license: 'ComeOn Sweden Ltd, Sverige',
+    casino: 'ComeOn logo'
   },
   {
-    casino: 'Bertil',
-    license: 'Evoke Gaming Ltd, Sverige'
+    casinoDisplayName: 'Bertil',
+    license: 'Evoke Gaming Ltd, Sverige',
+    casino: 'Bertil logo'
   },
   {
-    casino: 'Betsson',
-    license: 'Betsson Nordic Ltd, Sverige'
+    casinoDisplayName: 'Betsson',
+    license: 'Betsson Nordic Ltd, Sverige',
+    casino: 'Betsson Casino logo'
   },
   {
-    casino: 'Casinostugan',
-    license: 'Casinostugan Ltd, Sverige'
+    casinoDisplayName: 'Casinostugan',
+    license: 'Casinostugan Ltd, Sverige',
+    casino: 'Casinostugan logo'
   },
   {
-    casino: 'Casumo Casino',
-    license: 'Casumo Services Ltd, Sverige'
-  },
-
-  {
-    casino: 'Mr Green Casino',
-    license: 'Mr Green Ltd, Sverige'
+    casinoDisplayName: 'Casumo Casino',
+    license: 'Casumo Services Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Paf',
-    license: 'Paf International p.l.c., Sverige'
+    casinoDisplayName: 'Mr Green Casino',
+    license: 'Mr Green Ltd, Sverige',
+    casino: 'Mr Green Casino logo'
   },
   {
-    casino: 'Thrills Casino',
-    license: 'Zecure Gaming Ltd, Sverige'
+    casinoDisplayName: 'Paf',
+    license: 'Paf International p.l.c., Sverige',
+    casino: 'Paf logo'
   },
   {
-    casino: 'Unibet',
-    license: 'Spooniker Ltd, Sverige'
+    casinoDisplayName: 'Thrills Casino',
+    license: 'Zecure Gaming Ltd, Sverige',
+    casino: 'Thrills Casino logo'
   },
   {
-    casino: 'Vinnarum Casino',
-    license: 'Evoke Gaming Ltd, Sverige'
+    casinoDisplayName: 'Unibet',
+    license: 'Spooniker Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Yako Casino',
-    license: 'L&L Europe Ltd, Sverige'
+    casinoDisplayName: 'Vinnarum Casino',
+    license: 'Evoke Gaming Ltd, Sverige',
+    casino: 'Vinnarum Casino logo'
   },
   {
-    casino: 'Storspelare',
-    license: 'Spooniker Ltd, Sverige'
+    casinoDisplayName: 'Yako Casino',
+    license: 'L&L Europe Ltd, Sverige',
+    casino: 'Yako Casino logo'
   },
   {
-    casino: 'Dunder Casino',
-    license: 'Burstit Ltd, Sverige'
+    casinoDisplayName: 'Storspelare',
+    license: 'Spooniker Ltd, Sverige',
+    casino: 'Storspelare logo'
   },
   {
-    casino: 'Kaboo',
-    license: 'Zecure Gaming Ltd, Sverige'
+    casinoDisplayName: 'Dunder Casino',
+    license: 'Burstit Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Guts',
-    license: 'Zecure Gaming Ltd, Sverige'
+    casinoDisplayName: 'Kaboo',
+    license: 'Zecure Gaming Ltd, Sverige',
+    casino: 'Kaboo Casino logo'
   },
   {
-    casino: 'Bingo.com',
-    license: 'Spooniker Ltd, Sverige'
+    casinoDisplayName: 'Guts',
+    license: 'Zecure Gaming Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Videoslots',
-    license: 'Videoslots Ltd, Sverige'
+    casinoDisplayName: 'Bingo.com',
+    license: 'Spooniker Ltd, Sverige',
+    casino: 'Bingo.com logo'
   },
   {
-    casino: 'Lyllo Casino',
-    license: 'MOA Gaming Sweden Ltd, Sverige'
+    casinoDisplayName: 'Videoslots',
+    license: 'Videoslots Ltd, Sverige',
+    casino: 'Videoslots Casino logo'
   },
   {
-    casino: 'Casino Room',
-    license: 'Ellmount Entertainment Ltd, Sverige'
+    casinoDisplayName: 'Lyllo Casino',
+    license: 'MOA Gaming Sweden Ltd, Sverige',
+    casino: 'Lyllo Casino logo'
   },
   {
-    casino: 'Spinit',
-    license: 'Genesis Global Ltd, Sverige'
+    casinoDisplayName: 'Casino Room',
+    license: 'Ellmount Entertainment Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Vera & John',
-    license: 'Dumarca Gaming Ltd, Sverige'
+    casinoDisplayName: 'Spinit',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'MamaMia Bingo',
-    license: 'Evoke Gaming Ltd, Sverige'
+    casinoDisplayName: 'Vera & John',
+    license: 'Dumarca Gaming Ltd, Sverige',
+    casino: 'Vera & John Casino logo'
   },
   {
-    casino: 'Expekt',
-    license: 'Expekt Nordics Ltd, Sverige'
+    casinoDisplayName: 'MamaMia Bingo',
+    license: 'Evoke Gaming Ltd, Sverige',
+    casino: 'MamaMia Bingo logo'
   },
   {
-    casino: 'bet365',
-    license: 'Hillside (Sports/Gaming) ENC, Sverige'
+    casinoDisplayName: 'nya expekt',
+    license: 'Expekt Nordics Ltd, Sverige',
+    casino: 'nya expekt'
   },
   {
-    casino: 'Slotsmillion',
-    license: 'SLTM Ltd, Sverige'
+    casinoDisplayName: 'bet365',
+    license: 'Hillside (Sports/Gaming) ENC, Sverige',
+    casino: 'Bet365 logo'
   },
   {
-    casino: 'Rizk Casino',
-    license: 'Zecure Gaming Ltd, Sverige'
+    casinoDisplayName: 'Slotsmillion',
+    license: 'SLTM Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'NordicBet',
-    license: 'NGG Nordic Ltd, Sverige'
+    casinoDisplayName: 'Rizk Casino',
+    license: 'Zecure Gaming Ltd, Sverige',
+    casino: 'Rizk Casino logo'
   },
   {
-    casino: 'Bethard',
-    license: 'Prozone Ltd, Sverige'
+    casinoDisplayName: 'NordicBet',
+    license: 'NGG Nordic Ltd, Sverige',
+    casino: 'NordicBet logo'
   },
   {
-    casino: 'Lottoland',
-    license: 'United Lottery Solutions Ltd, Sverige'
+    casinoDisplayName: 'Bethard',
+    license: 'Prozone Ltd, Sverige',
+    casino: 'Bethard logo'
   },
   {
-    casino: 'Redbet',
-    license: 'Evoke Gaming Ltd, Sverige'
+    casinoDisplayName: 'Lottoland',
+    license: 'United Lottery Solutions Ltd, Sverige',
+    casino: 'Lottoland logo'
   },
   {
-    casino: 'Chanz Casino',
-    license: 'Dreambox Games OÜ, Sverige'
+    casinoDisplayName: 'Redbet',
+    license: 'Evoke Gaming Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'CasinoAndFriends',
+    casinoDisplayName: 'Chanz Casino',
+    license: 'Dreambox Games OÜ, Sverige',
+    casino: 'Chanz logo'
+  },
+  {
     license: 'Skill On Net Ltd, Sverige',
-    casinoDisplayName: 'Casino And Friends'
+    casinoDisplayName: 'Casino And Friends',
+    casino: ''
   },
   {
-    casino: 'Betfair',
-    license: 'Betfair International Plc, Sverige'
+    casinoDisplayName: 'Betfair',
+    license: 'Betfair International Plc, Sverige',
+    casino: 'Betfair Casino logo'
   },
   {
-    casino: 'PlayOJO',
-    license: 'Skill On Net Ltd, Sverige'
+    casinoDisplayName: 'PlayOJO',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: 'PlayOJO logo'
   },
   {
-    casino: 'Betsafe',
-    license: 'BS Nordic Ltd, Sverige'
+    casinoDisplayName: 'Betsafe',
+    license: 'BS Nordic Ltd, Sverige',
+    casino: 'Betsafe Casino logo'
   },
   {
-    casino: 'Voodoo Dreams',
-    license: 'SuprPlay Ltd, Sverige'
+    casinoDisplayName: 'Voodoo Dreams',
+    license: 'SuprPlay Ltd, Sverige',
+    casino: 'VoodooDreams logo'
   },
   {
-    casino: '10Bet',
-    license: 'Blue Star Planet Ltd, Sverige'
+    casinoDisplayName: '10Bet',
+    license: 'Blue Star Planet Ltd, Sverige',
+    casino: '10Bet Casino logo'
   },
   {
-    casino: 'Sloty',
-    license: 'Genesis Global Ltd, Sverige'
+    casinoDisplayName: 'Sloty',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'MultiLotto',
-    license: 'Multi Brand Gaming Ltd, Sverige'
+    casinoDisplayName: 'MultiLotto',
+    license: 'Multi Brand Gaming Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Jackpotjoy',
-    license: 'Dumarca Gaming Ltd, Sverige'
+    casinoDisplayName: 'Jackpotjoy',
+    license: 'Dumarca Gaming Ltd, Sverige',
+    casino: 'JackpotJoy logo'
   },
   {
-    casino: 'Frank Casino',
-    license: 'Avento MT Ltd, Sverige'
+    casinoDisplayName: 'Frank Casino',
+    license: 'Avento MT Ltd, Sverige',
+    casino: 'Frank Casino logo'
   },
   {
-    casino: 'SlotV Casino',
-    license: 'Avento MT Ltd, Sverige'
+    casinoDisplayName: 'SlotV Casino',
+    license: 'Avento MT Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'NYspins',
-    license: 'SuprPlay Ltd, Sverige'
+    casinoDisplayName: 'NYspins',
+    license: 'SuprPlay Ltd, Sverige',
+    casino: 'NYspins logo'
   },
   {
-    casino: 'Betway',
-    license: 'Betway Ltd, Sverige'
-  },
-
-  {
-    casino: 'InterCasino',
-    license: 'Dumarca Gaming Ltd, Sverige'
+    casinoDisplayName: 'Betway',
+    license: 'Betway Ltd, Sverige',
+    casino: 'Betway Casino logo'
   },
   {
-    casino: 'Vegas Hero',
-    license: 'Genesis Global Ltd, Sverige'
+    casinoDisplayName: 'InterCasino',
+    license: 'Dumarca Gaming Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Metal Casino',
-    license: 'Skill On Net Ltd, Sverige'
+    casinoDisplayName: 'Vegas Hero',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Snabbare Casino',
-    license: 'Snabbare Ltd, Sverige'
+    casinoDisplayName: 'Metal Casino',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: 'Metal Casino logo'
   },
   {
-    casino: 'FunCasino',
-    license: 'L&L Europe Ltd, Sverige'
+    casinoDisplayName: 'Snabbare Casino',
+    license: 'Snabbare Ltd, Sverige',
+    casino: 'Snabbare.com Casino logo'
   },
   {
-    casino: 'Interwetten Casino',
-    license: 'Interwetten Gaming Ltd, Sverige'
+    casinoDisplayName: 'FunCasino',
+    license: 'L&L Europe Ltd, Sverige',
+    casino: 'FunCasino logo'
   },
   {
-    casino: 'No Account Casino',
-    license: 'PAF Multibrand Ltd, Sverige'
+    casinoDisplayName: 'Interwetten Casino',
+    license: 'Interwetten Gaming Ltd, Sverige',
+    casino: 'Interwetten logo'
   },
   {
-    casino: 'Casino Cruise',
-    license: 'Genesis Global Ltd, Sverige'
+    casinoDisplayName: 'No Account Casino',
+    license: 'PAF Multibrand Ltd, Sverige',
+    casino: 'No Account Casino logo'
   },
   {
-    casino: 'FastBet',
-    license: 'Prozone Ltd, Sverige'
+    casinoDisplayName: 'Casino Cruise',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Yoyo Casino',
-    license: 'Romix Ltd, Sverige'
+    casinoDisplayName: 'FastBet',
+    license: 'Prozone Ltd, Sverige',
+    casino: 'Fastbet logo'
   },
   {
-    casino: 'CoolBet',
-    license: 'Polar Ltd, Sverige'
+    casinoDisplayName: 'Yoyo Casino',
+    license: 'Romix Ltd, Sverige',
+    casino: 'Yoyo Casino logo'
   },
   {
-    casino: 'Norske Automater',
-    license: 'L&L Europe Ltd, Sverige'
+    casinoDisplayName: 'CoolBet',
+    license: 'Polar Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Genesis Casino',
-    license: 'Genesis Global Ltd, Sverige'
+    casinoDisplayName: 'Norske Automater',
+    license: 'L&L Europe Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Frank & Fred Casino',
-    license: 'XC Gaming Sweden Ltd, Sverige'
+    casinoDisplayName: 'Genesis Casino',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Hajper',
-    license: 'Hajper Ltd, Sverige'
+    casinoDisplayName: 'Frank & Fred Casino',
+    license: 'XC Gaming Sweden Ltd, Sverige',
+    casino: 'Frank & Fred logo'
   },
   {
-    casino: 'Lucky Casino',
-    license: 'Glitnor Services Ltd, Sverige'
+    casinoDisplayName: 'Hajper',
+    license: 'Hajper Ltd, Sverige',
+    casino: 'Hajper logo'
   },
   {
-    casino: 'Speedy Casino',
-    license: 'Speedy Originals Ltd, Sverige'
+    casinoDisplayName: 'Lucky Casino',
+    license: 'Glitnor Services Ltd, Sverige',
+    casino: 'LuckyCasino logo'
   },
   {
-    casino: 'Spela.com Casino',
-    license: 'Genesis Global Ltd, Sverige'
+    casinoDisplayName: 'Speedy Casino',
+    license: 'Speedy Originals Ltd, Sverige',
+    casino: 'SpeedyCasino logo'
   },
   {
-    casino: 'Campobet',
-    license: 'Romix Ltd, Sverige'
+    casinoDisplayName: 'Spela.com Casino',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'ATG',
-    license: 'AB Trav och Galopp, Sverige'
+    casinoDisplayName: 'Campobet',
+    license: 'Romix Ltd, Sverige',
+    casino: 'CampoBet logo'
   },
   {
-    casino: 'Svenska Spel Sport & Casino',
-    license: 'Svenska Spel Sport & Casino AB, Sverige'
+    casinoDisplayName: 'ATG',
+    license: 'AB Trav och Galopp, Sverige',
+    casino: ''
   },
   {
-    casino: 'Duelz Casino',
-    license: 'SuprPlay Ltd, Sverige'
+    casinoDisplayName: 'Svenska Spel Sport & Casino',
+    license: 'Svenska Spel Sport & Casino AB, Sverige',
+    casino: 'Svenska Spel Sport & Casino logo'
   },
   {
-    casino: 'SpeedyBet',
-    license: 'Speedy Originals Ltd, Sverige'
+    casinoDisplayName: 'Duelz Casino',
+    license: 'SuprPlay Ltd, Sverige',
+    casino: 'Duelz Casino logo'
   },
   {
-    casino: 'Prank Casino',
-    license: 'PAF Multibrand Ltd, Sverige'
+    casinoDisplayName: 'SpeedyBet',
+    license: 'Speedy Originals Ltd, Sverige',
+    casino: 'SpeedyBet logo'
   },
   {
-    casino: 'Casino Joy',
-    license: 'Genesis Global Ltd, Sverige'
+    casinoDisplayName: 'Prank Casino',
+    license: 'PAF Multibrand Ltd, Sverige',
+    casino: 'Prank Casino logo'
   },
   {
-    casino: 'Pronto Casino',
-    license: 'Premiergaming Ltd, Sverige'
+    casinoDisplayName: 'Casino Joy',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Premier Live Casino',
-    license: 'Premiergaming Ltd, Sverige'
+    casinoDisplayName: 'Pronto Casino',
+    license: 'Premiergaming Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Ahti Games Casino',
-    license: 'Skill On Net Ltd, Sverige'
+    casinoDisplayName: 'Premier Live Casino',
+    license: 'Premiergaming Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Pixel.bet',
-    license: 'Pixel Digital Ltd, Sverige'
+    casinoDisplayName: 'Ahti Games Casino',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: 'AHTI Games logo'
   },
   {
-    casino: 'Untold Casino',
-    license: 'Viral Interactive Ltd, Sverige'
+    casinoDisplayName: 'Pixel.bet',
+    license: 'Pixel Digital Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Pelaa Casino',
-    license: 'Genesis Global Ltd, Sverige'
+    casinoDisplayName: 'Untold Casino',
+    license: 'Viral Interactive Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Turbo Vegas',
-    license: 'Prozone Ltd, Sverige'
+    casinoDisplayName: 'Pelaa Casino',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Guts Xpress',
-    license: 'Zecure Gaming Ltd, Sverige'
+    casinoDisplayName: 'Turbo Vegas',
+    license: 'Prozone Ltd, Sverige',
+    casino: 'TurboVegas logo'
   },
   {
-    casino: 'Svenska Spel Tur',
-    license: 'AB Svenska Spel, Sverige'
+    casinoDisplayName: 'Guts Xpress',
+    license: 'Zecure Gaming Ltd, Sverige',
+    casino: 'GutsXpress logo'
   },
   {
-    casino: '888 Casino',
-    license: '888 Sweden Ltd, Sverige'
+    casinoDisplayName: 'Svenska Spel Tur',
+    license: 'AB Svenska Spel, Sverige',
+    casino: ''
   },
   {
-    casino: 'Partypoker Casino',
-    license: 'ElectraWorks (Svenska) Ltd, Sverige'
+    casinoDisplayName: '888 Casino',
+    license: '888 Sweden Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Bwin',
-    license: 'ElectraWorks (Svenska) Ltd, Sverige'
+    casinoDisplayName: 'Partypoker Casino',
+    license: 'ElectraWorks (Svenska) Ltd, Sverige',
+    casino: 'PartyPoker logo'
   },
   {
-    casino: 'Pokerstars Casino',
-    license: 'TSG Interactive Plc, Sverige'
+    casinoDisplayName: 'Bwin',
+    license: 'ElectraWorks (Svenska) Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Spin Casino',
-    license: 'Bayton Ltd, Sverige'
+    casinoDisplayName: 'Pokerstars Casino',
+    license: 'TSG Interactive Plc, Sverige',
+    casino: 'PokerStars logo'
   },
   {
-    casino: 'Rapidi Casino',
-    license: 'Bethard Group Ltd, Sverige'
+    casinoDisplayName: 'Spin Casino',
+    license: 'Bayton Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Hyper Casino',
-    license: 'L&L Europe Ltd, Sverige'
+    casinoDisplayName: 'Rapidi Casino',
+    license: 'Bethard Group Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'GoGoCasino',
+    casinoDisplayName: 'Hyper Casino',
+    license: 'L&L Europe Ltd, Sverige',
+    casino: 'Hyper Casino logo'
+  },
+  {
+    casinoDisplayName: 'GoGoCasino',
     license: 'LeoVegas Gaming Plc, Sverige',
-    casinoDisplayName: 'GoGo Casino'
+    casino: 'GoGoCasino logo'
   },
   {
-    casino: 'Lucky Louis',
-    license: 'Skill On Net Ltd, Sverige'
-  },
-  {
-    casino: 'Miljonlotteriet',
-    license: 'IOGT-NTO/Miljonlotteriet, Sverige'
-  },
-  {
-    casino: 'William Hill',
-    license: 'Evoke Gaming Ltd, Sverige'
-  },
-  {
-    casino: 'Yeti Casino',
-    license: 'L&L Europe Ltd, Sverige'
-  },
-  {
-    casino: 'No Account Bet',
-    license: 'PAF Multibrand Ltd, Sverige'
-  },
-  {
-    casino: 'CasinoCasino.com',
-    license: 'L&L Europe Ltd, Sverige'
-  },
-  {
-    casino: 'Nano Casino',
-    license: 'Viral Interactive Ltd, Sverige'
-  },
-  {
-    casino: 'Jalla Casino',
-    license: 'Auto Nordic Ltd, Sverige'
-  },
-  {
-    casino: 'Pronto Live',
-    license: 'Premiergaming Ltd, Sverige'
-  },
-  {
-    casino: 'Pinnacle Casino',
-    license: 'Pinbet (Sverige) Ltd, Sverige'
-  },
-  {
-    casino: 'Lucky Vegas',
-    license: 'Skill On Net Ltd, Sverige'
-  },
-  {
-    casino: 'JackpotCity Casino',
-    license: 'Bayton Ltd, Sverige'
-  },
-  {
-    casino: 'Lyckost',
-    license: 'Lyckost ApS, Sverige'
-  },
-  {
-    casino: 'Speedy Spel',
-    license: 'Speedy Ltd, Sverige'
-  },
-  {
-    casino: 'theLotter',
-    license: 'Lotto Direct Ltd, Sverige'
-  },
-  {
-    casino: 'Klirr Casino',
-    license: 'XC Gaming Sweden Ltd, Sverige'
-  },
-  {
-    casino: 'Turbonino',
-    license: 'Skill On Net Ltd, Sverige'
-  },
-  {
-    casino: 'Race Casino',
-    license: 'L&L Europe Ltd, Sverige'
-  },
-  {
-    casino: 'Ruby Fortune',
-    license: 'Bayton Ltd, Sverige'
-  },
-  {
-    casino: 'Mr Vegas Casino',
-    license: 'Mr Vegas Ltd, Sverige'
-  },
-  {
-    casino: 'Casino Gods',
-    license: 'Genesis Global Ltd, Sverige'
-  },
-  {
-    casino: 'Casino Planet',
-    license: 'Genesis Global Ltd, Sverige'
-  },
-  {
-    casino: 'Casoola',
-    license: 'Genesis Global Ltd, Sverige'
-  },
-  {
-    casino: 'SpinGenie',
+    casinoDisplayName: 'Lucky Louis',
     license: 'Skill On Net Ltd, Sverige',
-    casinoDisplayName: 'Spin Genie'
+    casino: ''
   },
   {
-    casino: 'Kassu Casino',
-    license: 'Genesis Global Limited, Sverige'
+    casinoDisplayName: 'Miljonlotteriet',
+    license: 'IOGT-NTO/Miljonlotteriet, Sverige',
+    casino: ''
   },
   {
-    casino: 'Kazoom Casino',
-    license: 'Burstit Ltd, Sverige'
+    casinoDisplayName: 'William Hill',
+    license: 'Evoke Gaming Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Royale500',
-    license: 'Skill On Net Ltd, Sverige'
+    casinoDisplayName: 'Yeti Casino',
+    license: 'L&L Europe Ltd, Sverige',
+    casino: 'Yeti Casino logo'
   },
   {
-    casino: 'Karma Casino',
-    license: 'Bethard Group Ltd, Sverige'
+    casinoDisplayName: 'No Account Bet',
+    license: 'PAF Multibrand Ltd, Sverige',
+    casino: 'No Account Bet logo'
   },
   {
-    casino: 'Slingo Casino',
-    license: 'Skill On Net Ltd, Sverige'
+    casinoDisplayName: 'CasinoCasino.com',
+    license: 'L&L Europe Ltd, Sverige',
+    casino: 'Casinocasino.com logo'
   },
   {
-    casino: 'Spinlovers',
-    license: 'Viral Interactive Ltd, Sverige'
+    casinoDisplayName: 'Nano Casino',
+    license: 'Viral Interactive Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Slotstars',
-    license: 'Skill On Net Ltd, Sverige'
+    casinoDisplayName: 'Jalla Casino',
+    license: 'Auto Nordic Ltd, Sverige',
+    casino: 'Jalla Casino logo'
   },
   {
-    casino: 'Betinia',
-    license: 'Romix Ltd, Sverige'
+    casinoDisplayName: 'Pronto Live',
+    license: 'Premiergaming Ltd, Sverige',
+    casino: 'ProntoLive logo'
   },
   {
-    casino: 'Lucky Days Casino',
-    license: 'L7 Entertainment Ltd, Sverige'
+    casinoDisplayName: 'Pinnacle Casino',
+    license: 'Pinbet (Sverige) Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Happy Casino',
-    license: 'Forseti Services Ltd, Sverige'
+    casinoDisplayName: 'Lucky Vegas',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Momang Casino',
-    license: 'Svenska Spel Sport & Casino AB, Sverige'
+    casinoDisplayName: 'JackpotCity Casino',
+    license: 'Bayton Ltd, Sverige',
+    casino: ''
   },
   {
-    casino: 'Knight Slots',
-    license: 'Skill On Net Ltd, Sverige'
+    casinoDisplayName: 'Lyckost',
+    license: 'Lyckost ApS, Sverige',
+    casino: ''
   },
   {
-    casino: 'Swift Casino',
-    license: 'Skill On Net Ltd, Sverige'
+    casinoDisplayName: 'Speedy Spel',
+    license: 'Speedy Ltd, Sverige',
+    casino: ''
+  },
+  {
+    casinoDisplayName: 'theLotter',
+    license: 'Lotto Direct Ltd, Sverige',
+    casino: 'TheLotter Sverige logo'
+  },
+  {
+    casinoDisplayName: 'Klirr Casino',
+    license: 'XC Gaming Sweden Ltd, Sverige',
+    casino: 'Klirr Casino logo'
+  },
+  {
+    casinoDisplayName: 'Turbonino',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: 'Turbonino logo'
+  },
+  {
+    casinoDisplayName: 'Race Casino',
+    license: 'L&L Europe Ltd, Sverige',
+    casino: 'Race Casino logo'
+  },
+  {
+    casinoDisplayName: 'Ruby Fortune',
+    license: 'Bayton Ltd, Sverige',
+    casino: ''
+  },
+  {
+    casinoDisplayName: 'Mr Vegas Casino',
+    license: 'Mr Vegas Ltd, Sverige',
+    casino: 'Mr Vegas Casino logo'
+  },
+  {
+    casinoDisplayName: 'Casino Gods',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
+  },
+  {
+    casinoDisplayName: 'Casino Planet',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
+  },
+  {
+    casinoDisplayName: 'Casoola',
+    license: 'Genesis Global Ltd, Sverige',
+    casino: ''
+  },
+  {
+    casinoDisplayName: 'SpinGenie',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: 'SpinGenie logo'
+  },
+  {
+    casinoDisplayName: 'Kassu Casino',
+    license: 'Genesis Global Limited, Sverige',
+    casino: ''
+  },
+  {
+    casinoDisplayName: 'Kazoom Casino',
+    license: 'Burstit Ltd, Sverige',
+    casino: ''
+  },
+  {
+    casinoDisplayName: 'Royale500',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: 'Royale500 logo'
+  },
+  {
+    casinoDisplayName: 'Karma Casino',
+    license: 'Bethard Group Ltd, Sverige',
+    casino: ''
+  },
+  {
+    casinoDisplayName: 'Slingo Casino',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: ''
+  },
+  {
+    casinoDisplayName: 'Spinlovers',
+    license: 'Viral Interactive Ltd, Sverige',
+    casino: ''
+  },
+  {
+    casinoDisplayName: 'Slotstars',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: 'Slotstars casino logo'
+  },
+  {
+    casinoDisplayName: 'Betinia',
+    license: 'Romix Ltd, Sverige',
+    casino: 'Betinia logo'
+  },
+  {
+    casinoDisplayName: 'Lucky Days Casino',
+    license: 'L7 Entertainment Ltd, Sverige',
+    casino: 'LuckyDays Casino logo'
+  },
+  {
+    casinoDisplayName: 'Happy Casino',
+    license: 'Forseti Services Ltd, Sverige',
+    casino: 'HappyCasino logo'
+  },
+  {
+    casinoDisplayName: 'Momang Casino',
+    license: 'Svenska Spel Sport & Casino AB, Sverige',
+    casino: 'Momang Casino logo'
+  },
+  {
+    casinoDisplayName: 'Knight Slots',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: 'KnightSlots logo'
+  },
+  {
+    casinoDisplayName: 'Swift Casino',
+    license: 'Skill On Net Ltd, Sverige',
+    casino: 'Swift Casino logo'
   }
 ];

@@ -1,0 +1,108 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  position: relative;
+
+  #HeaderPlaceholder {
+    background-color: unset;
+    nav#LogoBar {
+      background-color: #fff;
+    }
+
+    div[ng-controller='HeaderController'].ng-scope {
+      background-color: #ffffff;
+    }
+  }
+  .#{$id}__overlay {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    cursor: pointer;
+  }
+
+  .#{$id}__container {
+    background: white;
+    width: 100%;
+    padding: 15px;
+    display: none;
+
+    p {
+      font-weight: 300;
+      line-height: 19.5px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      margin-top: 0;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      list-style-type: none;
+      margin: 0;
+
+      li {
+        font-weight: 300;
+        line-height: 19.5px;
+        font-size: 16px;
+        margin-bottom: 0px;
+        color: #546264;
+
+        a {
+          display: block;
+        }
+      }
+    }
+  }
+
+  #SearchInput {
+    z-index: 9;
+  }
+
+  header #LogoSearchBagBar {
+    #SearchBar#SearchBar.#{$id}__widthChange {
+      width: 60rem !important;
+      transition: width 0.3s;
+    }
+    .#{$id}__container {
+      position: absolute;
+      width: 100%;
+      top: 3.5rem;
+      z-index: 9;
+    }
+
+    #SearchProductSummary {
+      width: 100%;
+    }
+  }
+}
+
+// content: '';
+// position: absolute;
+// width: 24px;
+// height: 24px;
+// background: white;
+// left: 2px;
+// top: 14px;
+// border-bottom-left-radius: 2rem;
+// border-bottom: solid 1px #ccc;
+// box-shadow: 0px 8px 10px 0px #fff;
+
+// ontent: '';
+//     position: absolute;
+//     width: 24px;
+//     height: 22px;
+//     background: white;
+//     left: 2px;
+//     top: 14px;
+//     border-bottom-left-radius: 2rem;
+//     border-bottom: solid 1px #ccc;
+//     box-shadow: -2px 18px 0px 0px #fff;
