@@ -1,0 +1,26 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__thumbs-wrapper {
+    margin: 6px;
+    overflow: auto;
+    .Product__SlideshowNavArrow {
+      display: none !important;
+    }
+    .flickity-page-dots {
+      display: flex;
+      overflow: scroll;
+      .#{$id}__thumb.dot {
+        width: 100%;
+        min-width: 90px;
+        height: 90px;
+        margin-right: 0;
+        border-radius: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
