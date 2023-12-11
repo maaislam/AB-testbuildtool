@@ -32,17 +32,13 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   //configuration of the observer:
 
   const config = configObject || {
-    childList: false,
-    subtree: false,
+    childList: true,
     attributes: true,
-    characterData: false,
-    characterDataOldValue: false
+    subtree: true
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      console.log('mutation', mutation);
       observer.disconnect();
-
       callbackFunction(mutation);
       observer.observe(target, config);
     });
