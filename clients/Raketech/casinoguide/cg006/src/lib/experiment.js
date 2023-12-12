@@ -1,3 +1,4 @@
+//eslint-disable-next-line import/no-unresolved
 import gaTracking from './services/gaTracking';
 import setup from './services/setup';
 //import gaTracking from './services/gaTracking';
@@ -9,18 +10,32 @@ export default () => {
   setup(); //use if needed
   document.body.addEventListener('click', (ev) => {
     const { target } = ev;
-    //ev.preventDefault();
-    //console.log('🚀 ~ file: experiment.js:12 ~ document.body.addEventListener ~ target:', target);
-    if (target.closest('a[href*="/go/"]')) {
+    if (target.closest('.game-cardleft')) {
+      const parentElem = target.closest('.game-cardtop');
+      const operatorName = parentElem.querySelector('a.game-btn').href.split('go/')[1];
+      gaTracking(`${operatorName} | CTA Clicks to Review | Image | Toplist`);
+    } else if (target.closest('.game-name') && target.closest('.game-cardright')) {
+      const parentElem = target.closest('.game-cardright');
+      const operatorName = parentElem.querySelector('a.game-btn').href.split('go/')[1];
+      gaTracking(`${operatorName} | CTA Clicks to Review | Text | Toplist`);
+    } else if (target.closest('a.game-btn') && target.closest('.game-cardright')) {
+      const operatorName = target.closest('a.game-btn').href.split('go/')[1];
+      gaTracking(`${operatorName} | CTA Clicks to Operator | Button | Toplist`);
+    } else if (target.closest('.mui-18d5ns0')) {
+      const parentElem = target.closest('.MuiGrid-root');
+      const operatorName = parentElem.querySelector('a[href*="/go/"]').href.split('go/')[1];
+      gaTracking(`${operatorName} | CTA Clicks to Review | Button`);
+    } else if (target.closest('.mui-a3ufvb')) {
+      const parentElem = target.closest('.MuiGrid-root');
+      const operatorName = parentElem.querySelector('a[href*="/go/"]').href.split('go/')[1];
+      gaTracking(`${operatorName} | CTA Clicks to Review | Logo`);
+    } else if (target.closest('.mui-1civ9s6')) {
+      const parentElem = target.closest('.MuiGrid-root');
+      const operatorName = parentElem.querySelector('a[href*="/go/"]').href.split('go/')[1];
+      gaTracking(`${operatorName} | CTA Clicks to Review | Text`);
+    } else if (target.closest('a[href*="/go/"]')) {
       const operatorName = target.closest('a').href.split('/go/')[1];
-      const insideCarousel = target.closest(`.${ID}__highlightcard`);
-      const clickedElem = target.closest(`.${ID}__cta`) ? ' | Top Banner Button' : ' | Top Banner';
-      gaTracking(`${operatorName} | Clicks to Operator ${insideCarousel ? clickedElem : ''} `);
-    } else if (target.closest('.game-cardleft') || target.closest('.title__2-ppJ')) {
-      const url = target.closest('a').href;
-      const operatorName = new URL(url).pathname.split('/')[1];
-
-      gaTracking(`${operatorName} | Clicks to Review`);
+      gaTracking(`${operatorName} | Clicks to Operator`);
     }
   });
 
@@ -76,7 +91,7 @@ export default () => {
   ];
 
   if (VARIATION === '1') {
-    //console.log('variation 1 cg005');
+    console.log('variation 1 cg005');
 
     document.querySelector('#topplista').insertAdjacentHTML(
       'beforebegin',

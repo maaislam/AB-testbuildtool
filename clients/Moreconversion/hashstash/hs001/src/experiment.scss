@@ -1,0 +1,97 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .cart-drawer {
+    .#{$id}__progressHeader {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      background: #1a1a1a;
+      color: white;
+      padding: 9px 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 100%;
+        left: -40px;
+        background: #1a1a1a;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 100%;
+        right: -40px;
+        background: #1a1a1a;
+      }
+
+      .group-item {
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+
+    .#{$id}__progress-wrapper {
+      background: #f2f2f2;
+      border-radius: 30px;
+      height: 24px;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      .progress-bar-width {
+        background: #3c5e28;
+        height: inherit;
+        border-radius: 10px;
+        width: 60%;
+        position: relative;
+
+        span {
+          font-size: 11px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          color: #fff;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 39px;
+        }
+      }
+
+      .progress-bar-anim {
+        animation: progress 3s linear infinite;
+        background: linear-gradient(
+          -45deg,
+          rgba(255, 255, 255, 0.25) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.25) 50%,
+          rgba(255, 255, 255, 0.25) 75%,
+          transparent 75%,
+          transparent
+        );
+        background-repeat: repeat-x;
+        background-size: 1.5em 1.5em;
+        border-radius: 10px;
+        height: inherit;
+        width: 100%;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+}
+
+@keyframes progress {
+  to {
+    background-position: 1.5em 0;
+  }
+}
