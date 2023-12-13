@@ -1,0 +1,36 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #cart-drawer {
+    #cart-drawer-recommendations {
+      .#{$id}__cartUpsell + .horizontal-product-list {
+        display: none;
+      }
+
+      .#{$id}__cartUpsell {
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        overflow-x: auto;
+        overflow-y: hidden;
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+        .#{$id}__prodInfo {
+          a {
+            display: flex;
+            flex-direction: column;
+          }
+          .price-container {
+            display: flex;
+            gap: 5px;
+
+            .compare-at-price {
+              text-decoration: line-through;
+            }
+          }
+        }
+      }
+    }
+  }
+}
