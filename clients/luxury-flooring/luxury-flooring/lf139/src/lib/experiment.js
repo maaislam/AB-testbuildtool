@@ -2,7 +2,7 @@ import setup from './services/setup';
 
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup(); //use if needed
@@ -40,4 +40,32 @@ export default () => {
   };
 
   obsIntersection(anchoringElem, 1, intersectionHandler);
+
+  let lastScrollTop = 0;
+
+  function isScrollingUp() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      //Scrolling down
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      return false;
+    }
+    //Scrolling up
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    return true;
+  }
+
+  //const selectedFilters = document.querySelector(`.${ID}__sticky + .filter-state`);
+  window.addEventListener('scroll', () => {
+    if (isScrollingUp()) {
+      //User is scrolling up
+      console.log('Scrolling Up');
+      document.querySelector(`.${ID}__sticky + .filter-state`)?.classList.remove(`${ID}__hide`);
+    } else {
+      //User is scrolling down
+      document.querySelector(`.${ID}__sticky + .filter-state`)?.classList.add(`${ID}__hide`);
+      console.log('Scrolling Down');
+    }
+  });
 };
