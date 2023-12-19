@@ -1,0 +1,13 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.shg-box-content > .shg-fw:nth-child(3) {
+  display: none;
+}
+.#{$id} {
+  .#{$id}__homepage-banner {
+    .#{$id}__largeImage.#{$id}__largeImage {
+      background-image: url(https://i.shgcdn.com/2ead1a80-b04c-409b-8dec-71c900dd453e/-/format/auto/-/preview/3000x3000/-/quality/lighter/) !important;
+    }
+  }
+}
