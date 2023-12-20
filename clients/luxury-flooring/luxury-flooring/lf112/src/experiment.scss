@@ -1,0 +1,71 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__editorial {
+    position: relative;
+    display: block;
+    margin-bottom: 1rem;
+    min-height: 400px;
+    animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+  &__img {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__content {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    z-index: 999;
+    padding-right: 20px;
+    text-align: left;
+    color: #fff;
+    &--bottom {
+      bottom: 32px;
+      top: auto;
+    }
+
+    &__badge {
+      font-size: 19px;
+      line-height: 26px;
+      font-weight: 600;
+    }
+    &__title {
+      margin-top: 0;
+      margin-bottom: 16px;
+      //font-weight: 500;
+      font-family: 'Lucida Bright';
+      font-size: 34px;
+      line-height: 1.3;
+      @include media-query(md) {
+        font-size: 26px;
+      }
+    }
+    &__cta {
+      width: max-content;
+      //max-width: 230px;
+      display: block;
+      padding: 13px 40px;
+      background-color: #fff;
+      color: #202020 !important;
+      font-size: 16px;
+      transition: color 0.25s linear;
+      &:hover {
+        color: #c9a361 !important;
+      }
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
