@@ -1,8 +1,7 @@
 import { pollerLite } from '../helpers/utils';
-import shared from '../shared/shared';
 
 const gaTracking = (label) => {
-  const { VARIATION } = shared;
+  //const { VARIATION } = shared;
 
   const GA4_PROPERTY_ID = 'G-H91NBPERDS';
   const GA4_INTERNAL_EXPERIMENT_NUM = '';
@@ -14,7 +13,7 @@ const gaTracking = (label) => {
     if (window.gtag !== undefined) {
       window.gtag('event', GA4_INTERNAL_EXPERIMENT_ID, {
         event_category: EXPERIMENT_DEVICE_CATEGORY,
-        event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | Variation: ${VARIATION} | ${label}`,
+        event_label: `${label}`,
         send_to: GA4_PROPERTY_ID
       });
     } else {
@@ -22,7 +21,7 @@ const gaTracking = (label) => {
         event: 'cro_event',
         event_detail: GA4_INTERNAL_EXPERIMENT_ID,
         event_category: EXPERIMENT_DEVICE_CATEGORY,
-        event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | Variation: ${VARIATION} | ${label}`,
+        event_label: `${label}`,
         send_to: GA4_PROPERTY_ID
       });
     }
