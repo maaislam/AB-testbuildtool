@@ -3,32 +3,31 @@
 
 .#{$id} {
   #cart-drawer {
-    #cart-drawer-recommendations {
-      .#{$id}__cartUpsell + .horizontal-product-list {
-        display: none;
+    z-index: 999999;
+    .#{$id}__cartUpsell + #cart-drawer-recommendations {
+      display: none;
+    }
+
+    .#{$id}__cartUpsell {
+      .#{$id}__prodInfo {
+        a {
+          display: flex;
+          flex-direction: column;
+        }
+        .price-container {
+          display: flex;
+          gap: 5px;
+
+          .compare-at-price {
+            text-decoration: line-through;
+          }
+        }
       }
 
-      .#{$id}__cartUpsell {
-        scroll-snap-type: x mandatory;
-        overscroll-behavior-x: contain;
-        overflow-x: auto;
-        overflow-y: hidden;
-        &::-webkit-scrollbar {
-          width: 0;
-        }
-        .#{$id}__prodInfo {
-          a {
-            display: flex;
-            flex-direction: column;
-          }
-          .price-container {
-            display: flex;
-            gap: 5px;
-
-            .compare-at-price {
-              text-decoration: line-through;
-            }
-          }
+      .horizontal-product-list {
+        gap: 15px;
+        .swiper-slide {
+          width: 100% !important;
         }
       }
     }

@@ -5,7 +5,7 @@
  * @param {function} callback The callback function when all conditions are true.
  * @param {number} maxTime max time the check witll run before abort.
  */
-export const pollerLite = (conditions, callback, maxTime = 100000) => {
+export const pollerLite = (conditions, callback, maxTime = 10000) => {
   const POLLING_INTERVAL = 25;
   const startTime = Date.now();
   const interval = setInterval(() => {
@@ -32,10 +32,14 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   const config = configObject || {
     childList: true,
-    subtree: true
+    subtree: true,
+    attributes: true,
+    characterData: true,
+    characterDataOldValue: true
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
+      //console.log(mutation);
       observer.disconnect();
 
       callbackFunction(mutation);
@@ -44,25 +48,4 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
-};
-
-export const initExternalLib = (jsUrl, cssUrl) => {
-  const script = document.createElement('script');
-  const link = document.createElement('link');
-
-  script.type = 'text/javascript';
-  script.src = `${jsUrl}`;
-  link.type = 'text/css';
-  link.rel = 'stylesheet';
-  link.href = `${cssUrl}`;
-
-  document.querySelector('head').append(script);
-  document.querySelector('head').append(link);
-};
-
-export const initSwiper = (container) => {
-  window.slider = new window.Swiper(`${container}`, {
-    slidesPerView: 1.5,
-    centeredSlides: true
-  });
 };
