@@ -1,4 +1,5 @@
 import { observeDOM } from './helpers/utils';
+import gaTracking from './services/gaTracking';
 import setup from './services/setup';
 
 import shared from './shared/shared';
@@ -47,6 +48,20 @@ const init = () => {
 
 export default () => {
   setup();
+
+  document.body.addEventListener('click', (e) => {
+    if (e.target.closest(`.${ID}__logo`) || e.target.closest(`.${ID}__content-btn`)) {
+        gaTracking('top-banner-position-0');
+
+        const casinoNameElem = e.target.closest('a');
+        const casinoName = casinoNameElem.getAttribute('href').split('/')[2];
+        gaTracking(`User clicked promoted casino: ${casinoName}`);
+
+        const elemClicked = e.target.closest(`.${ID}__logo`) ? 'logo' : 'button';
+        gaTracking(`top-banner-position-0 | ${elemClicked}`);
+    }
+  });
+
   init();
   observeDOM('.toplist-holder', init);
 };
