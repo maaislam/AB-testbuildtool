@@ -6,8 +6,8 @@ const gaTracking = (label) => {
 
   const GA4_PROPERTY_ID = 'G-P2725WEG9G';
   const GA4_INTERNAL_EXPERIMENT_NUM = '030';
-  const GA4_INTERNAL_EXPERIMENT_ID = `Experiment CG Sticky CTA Bonus ${GA4_INTERNAL_EXPERIMENT_NUM}`;
-  const EXPERIMENT_DEVICE_CATEGORY = 'Mobile Only Test';
+  const GA4_INTERNAL_EXPERIMENT_ID = `Experiment CEO History Casinos ${GA4_INTERNAL_EXPERIMENT_NUM}`;
+  const EXPERIMENT_DEVICE_CATEGORY = 'All Device Test';
 
   pollerLite([() => document.readyState === 'complete'], () => {
     //console.log(label);

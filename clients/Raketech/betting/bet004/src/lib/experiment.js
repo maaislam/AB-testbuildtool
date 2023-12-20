@@ -3,7 +3,7 @@
 import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { getCroStorage, onUrlChange, setCroStorage } from './helpers/utils';
+import { getCroStorage, observeDOM, setCroStorage } from './helpers/utils';
 import affiliateLinksConfig from './affiliateLinksConfig';
 
 const { ID, VARIATION } = shared;
@@ -16,7 +16,7 @@ const init = () => {
     const casinoLinks = document.querySelectorAll(`a[data-oldhref*="${casino}"]`);
     casinoLinks.forEach((casinoLink) => {
       //console.log('🚀 ~ file: experiment.js:17 ~ casinoData.forEach ~ casinoLinks:', casinoLinks);
-      const casinoCardElem = casinoLink?.closest('.mui-229w2h');
+      const casinoCardElem = casinoLink?.closest('.bb-box-wrapper');
       if (!casinoCardElem) return;
       casinoCardElem.classList.add(`${ID}__grayscale`);
     });
@@ -29,13 +29,14 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
 
-    if (!target.closest('a[href*="/go/"]') && target.closest(`.${ID}__affiliate`) && target.closest('.mui-isbt42')) {
+    if (!target.closest('a[href*="/redirect/"]') && target.closest(`.${ID}__affiliate`) && target.closest('[data-ga-action="Operators > Bonus index"]')) {
       const closestWrapper = target.closest('a');
       const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
-      const casinoName = casinoLink.split('/go/')[1];
+      //const casinoName = casinoLink.split('/redirect/')[1];
+      const casinoName = closestWrapper.dataset.gaLabel.replace(/[\/\-_]/g, '').toLowerCase();
 
       //const hasAffiliateLink = target.closest(`.${ID}__affiliate`);
-      const clikedElem = target.closest('a.img') ? 'logo' : 'button';
+      const clikedElem = target.closest('a').querySelector('img') ? 'logo' : 'button';
 
       gaTracking(`${linkType} | ${casinoName.replace(/\//g, '')} | CTA Clicks to Operator | Toplist${target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''} (${clikedElem})`);
 
@@ -51,10 +52,12 @@ export default () => {
       visitedCasinos.push(casinoName);
       setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
       init();
-    } else if (target.closest('a[href*="/go/"]') && !target.closest(`.${ID}__affiliate`) && target.closest('.mui-isbt42')) {
-      const operatorHref = target.closest('a[href*="/go/"]').href;
-      const operatorName = operatorHref.split('/go/')[1];
-      const clikedElem = target.closest('a.img') ? 'logo' : 'button';
+    } else if (target.closest('a[href*="/redirect/"]') && !target.closest(`.${ID}__affiliate`) && target.closest('[data-ga-action="Operators > Bonus index"]')) {
+      const operatorHref = target.closest('a[href*="/redirect/"]').href;
+      //const casinoName = casinoLink.split('/redirect/')[1];
+      const casinoLink = target.closest('a[href*="/redirect/"]');
+      const operatorName = casinoLink.dataset.gaLabel.replace(/[\/\-_]/g, '').toLowerCase();
+      const clikedElem = target.closest('a').querySelector('img') ? 'logo' : 'button';
 
       gaTracking(`Default link | ${operatorName.replace(/\//g, '')} | CTA Clicks to Operator${target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''} (${clikedElem})`);
       const data = getCroStorage(`${ID}__visitedCasinos`);
@@ -69,31 +72,21 @@ export default () => {
       visitedCasinos.push(operatorName);
       setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
       init();
-    } else if (target.closest('.mui-1ckh6ov') && !target.closest('.mui-18d5ns0')) {
-      const operatorHref = target.closest('a').href;
-
-      const operatorName = operatorHref.split('se/')[1];
-      console.log('🚀operatorName:', operatorHref, operatorName);
-      gaTracking(`${operatorName} CTA Clicks to Review (Logo) ${target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''}`);
-    } else if (target.closest('.mui-18d5ns0')) {
-      const operatorHref = target.closest('a').href;
-
-      const operatorName = operatorHref.split('se/')[1];
-      console.log('🚀operatorName:', operatorHref, operatorName);
-      gaTracking(`${operatorName} CTA Clicks to Review (Button) ${target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''}`);
     }
   });
 
   const updateAffiliateLinks = () => {
-    const casinoToplistItems = document.querySelectorAll('.mui-isbt42 .mui-229w2h');
+    const casinoToplistItems = document.querySelectorAll('[data-ga-action="Operators > Bonus index"] .bb-box-wrapper');
     casinoToplistItems.forEach((casinoToplistItem) => {
-      const casinoBtnElem = casinoToplistItem.querySelector('a[data-operator]');
-      //const casinoImgElem = casinoToplistItem.querySelector('a.img');
+      const casinoBtnElem = casinoToplistItem.querySelector('a[data-ga-action]');
+      const casinoImgElems = casinoToplistItem.querySelectorAll('a[data-ga-label]');
 
       if (!casinoBtnElem) return;
       const casinoHref = casinoBtnElem.href;
-      if (!casinoHref.includes('/go/')) return;
-      const casinoName = casinoHref.split('/go/')[1].replace(/[\/\-_]/g, '');
+      if (!casinoHref.includes('/redirect/')) return;
+      //const casinoName = casinoHref.split('/redirect/operator/')[1].replace(/[\/\-_]/g, '');
+      const casinoName = casinoBtnElem.dataset.gaLabel.replace(/[\/\-_]/g, '').toLowerCase();
+      console.log('🚀 casinoName:', casinoName);
 
       const newUrl = affiliateLinksConfig[linkType][casinoName];
       //console.log('🚀newUrl:', newUrl);
@@ -104,9 +97,11 @@ export default () => {
         casinoBtnElem.classList.add(`${ID}__affiliate`);
         casinoBtnElem.setAttribute('data-name', casinoName);
         casinoBtnElem.href = newUrl;
-        // casinoImgElem.classList.add(`${ID}__affiliate`);
-        // casinoImgElem.setAttribute('data-name', casinoName);
-        // casinoImgElem.href = newUrl;
+        casinoImgElems.forEach((casinoImgElem) => {
+          casinoImgElem.classList.add(`${ID}__affiliate`);
+          casinoImgElem.setAttribute('data-name', casinoName);
+          casinoImgElem.href = newUrl;
+        });
       }
       //console.log('🚀casinoName:', casinoName);
     });
@@ -114,9 +109,19 @@ export default () => {
 
   updateAffiliateLinks();
 
+  //observeDOM('.toplist', () => {
+  //updateAffiliateLinks();
+  //if (VARIATION !== 'Control') {
+  //init();
+  //}
+  //});
+  //if (VARIATION === 'Control') {
+  //return;
+  //}
+
+  //if (VARIATION === '3') {
+  //addTurbonino(ID);
+  //}
+
   init();
-  onUrlChange(() => {
-    updateAffiliateLinks();
-    init();
-  });
 };

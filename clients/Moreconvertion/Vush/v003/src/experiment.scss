@@ -2,6 +2,17 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  &__chatWidget-adjust {
+    [style='height: 0px; width: 0px; position: absolute; display: block; z-index: 2147483647;'] {
+      display: none !important;
+    }
+  }
+  &__chatWidget-reset {
+    [style='height: 0px; width: 0px; position: absolute; display: block; z-index: 2147483647;'] {
+      display: block !important;
+    }
+  }
+
   .back-to-top[data-back-to-top].move-up {
     bottom: 145px !important;
     z-index: 999 !important;
