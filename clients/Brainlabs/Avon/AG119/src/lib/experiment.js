@@ -11,21 +11,7 @@ import {
 
 const { ID, VARIATION } = shared;
 
-export default () => {
-  setup(); //use if needed
-  //gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
-
+const init = () => {
   //overlay component add
   if (document.querySelector(`.${ID}__overlay`)) {
     document.querySelector(`.${ID}__overlay`).remove();
@@ -113,4 +99,9 @@ export default () => {
       excludeOverlayWithSearch(ID);
     }
   });
+};
+
+export default () => {
+  setup();
+  init();
 };
