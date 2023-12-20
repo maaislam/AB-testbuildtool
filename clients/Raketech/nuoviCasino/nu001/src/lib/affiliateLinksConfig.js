@@ -65,7 +65,7 @@ const affiliateLinksConfig = {
       'https://media.hajper.com/tracking.php?tracking_code&aid=110902&mid=1967&sid=456611&pid=638',
     mrvegas: 'https://www.mrvegas.com/?referral_id=casinopro_se_MrVegas_RUBT_A169277C',
     happycasino: 'https://record.glitnoraffiliates.com/_gzA4QjFg4b2BKOxorkQ2_WNd7ZgqdRLk/10',
-
+    leovegas: 'https://ntrfr.leovegas.com/redirect.aspx?pid=3766887&bid=14986',
     paf: 'https://record.multibrandaffiliates.com/_P0_9mHnl3GuhWoqmOk2VLGNd7ZgqdRLk/768/',
     comeon:
       'https://media.comeon.com/tracking.php?tracking_code&aid=107706&mid=1782&sid=456614&pid=488',
@@ -79,12 +79,14 @@ const affiliateLinksConfig = {
     betsafe: 'https://record.betsafe.com/_ueGwq1j42qQe_3QCZrjl-WNd7ZgqdRLk/273/',
     hyper:
       'https://affiliates.hypercasino.com/redirector?url=https://www.hypercasino.com/&trackerId=64f086a69eb1721b3aa8d6fb',
-
+    videoslots: 'https://www.videoslots.com/?referral_id=casinopro_se_Videoslots_RUBT_A169479C',
     casumo: 'https://media.casumoaffiliates.com/redirect.aspx?pid=1247430&bid=1906',
     turbovegas:
       'https://wlturbovegas.adsrv.eacdn.com/C.ashx?btag=a_27212b_1427c_&affid=8125&siteid=27212&adid=1427&c=',
     storspelare: 'https://b1.trickyrock.com/redirect.aspx?pid=94437925&bid=36898',
-
+    unibet: 'https://b1.trickyrock.com/redirect.aspx?pid=94437966&bid=35742',
+    betway:
+      'https://betway.com/sv?s=bw33384&a=AFF3996383589034849&utm_source=33384&utm_medium=Affiliate&utm_campaign=AFF3996383589034849',
     betsson: 'https://record.betsson.com/_ueGwq1j42qTlkqgTWCr0ImNd7ZgqdRLk/271/',
     bethard:
       'https://wleuroearners.adsrv.eacdn.com/C.ashx?btag=a_171778b_2922c_&affid=13898&siteid=171778&adid=2922&c=',

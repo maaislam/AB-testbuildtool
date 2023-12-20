@@ -25,63 +25,99 @@ const init = () => {
   });
 };
 
+const getAndSetFunc = (casinoName) => {
+  const data = getCroStorage(`${ID}__visitedCasinos`);
+  if (!data) {
+    const casinoNameArr = [casinoName];
+    setCroStorage(`${ID}__visitedCasinos`, casinoNameArr);
+    init();
+    return;
+  }
+  const visitedCasinos = getCroStorage(`${ID}__visitedCasinos`) || [];
+  if (visitedCasinos.includes(casinoName)) return;
+  visitedCasinos.push(casinoName);
+  setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
+  init();
+};
+
 export default () => {
   setup();
 
-  setTimeout(() => {
-    document.body.addEventListener('click', (e) => {
-      const { target } = e;
-      if (target.closest('a[href*="/visita/"]') && target.closest('.casino-table')) {
-        const closestWrapper = target.closest('a');
-        const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
-        const casinoName = casinoLink.split('/visita/')[1];
-        //const hasAffiliateLink = target.closest(`.${ID}__affiliate`);
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (
+      (target.closest('a[href*="/visita/"]') || target.closest(`.${ID}__affiliate`)) &&
+      target.closest('.casino-table')
+    ) {
+      const closestWrapper = target.closest('a');
+      const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
+      const casinoName = casinoLink.split('/visita/')[1];
+      //const hasAffiliateLink = target.closest(`.${ID}__affiliate`);
 
-        if (target.closest('a.casino-table__casino-logo')) {
-          gaTracking(
-            `${casinoName.replace(/\//g, '')} | CTA Clicks to Operator (Image) | Toplist${
-              target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
-            }`
-          );
-        } else {
-          gaTracking(
-            `${casinoName.replace(/\//g, '')} | CTA Clicks to Operator | Toplist${
-              target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
-            }`
-          );
-        }
-
-        const data = getCroStorage(`${ID}__visitedCasinos`);
-        if (!data) {
-          const casinoNameArr = [casinoName];
-          setCroStorage(`${ID}__visitedCasinos`, casinoNameArr);
-          init();
-          return;
-        }
-        const visitedCasinos = getCroStorage(`${ID}__visitedCasinos`) || [];
-        if (visitedCasinos.includes(casinoName)) return;
-        visitedCasinos.push(casinoName);
-        setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
-        init();
-      } else if (target.closest('a[href*="/visita/"]') && !target.closest('.casino-table')) {
-        const operatorHref = target.closest('a[href*="/visita/"]').href;
-        const operatorName = operatorHref.split('/visita/')[1];
-        gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator`);
-        const data = getCroStorage(`${ID}__visitedCasinos`);
-        if (!data) {
-          const casinoNameArr = [operatorName];
-          setCroStorage(`${ID}__visitedCasinos`, casinoNameArr);
-          init();
-          return;
-        }
-        const visitedCasinos = getCroStorage(`${ID}__visitedCasinos`) || [];
-        if (visitedCasinos.includes(operatorName)) return;
-        visitedCasinos.push(operatorName);
-        setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
-        init();
+      if (target.closest('a.casino-table__casino-logo')) {
+        gaTracking(
+          `${casinoName.replace(/\//g, '')} | CTA Clicks to Operator (Logo) | Mainlist${
+            target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
+          }`
+        );
+      } else {
+        gaTracking(
+          `${casinoName.replace(/\//g, '')} | CTA Clicks to Operator (Button) | Mainlist${
+            target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
+          }`
+        );
       }
-    });
-  }, 4000);
+
+      getAndSetFunc(casinoName);
+    } else if (
+      (target.closest('a[href*="/visita/"]') || target.closest(`.${ID}__affiliate`)) &&
+      target.closest('.card-list .column')
+    ) {
+      const operatorHref = target.closest('a[href*="/visita/"]')?.href;
+      const operatorName =
+        operatorHref?.split('/visita/')[1] ||
+        target.closest(`.${ID}__affiliate`).dataset.operator.toLowerCase().trim();
+      gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator | TopList`);
+
+      getAndSetFunc(operatorName);
+    } else if (
+      (target.closest('a[href*="/visita/"]') || target.closest(`.${ID}__affiliate`)) &&
+      !target.closest('.casino-table') &&
+      !target.closest('.card-list .column')
+    ) {
+      const operatorHref = target.closest('a[href*="/visita/"]')?.href;
+      const operatorName =
+        operatorHref?.split('/visita/')[1] ||
+        target.closest(`.${ID}__affiliate`).dataset.operator.toLowerCase().trim();
+
+      if (target.closest('a.casino-table-widget__casino-logo')) {
+        gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator (Logo)`);
+      } else {
+        gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator (Button)`);
+      }
+
+      getAndSetFunc(operatorName);
+    }
+  });
+
+  document.addEventListener('pointerup', ({ target }) => {
+    if (
+      (target.closest('a[href*="/visita/"]') || target.closest(`.${ID}__affiliate`)) &&
+      target.closest('nav#drawer')
+    ) {
+      const closestWrapper = target.closest('a');
+      const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
+      const casinoName = casinoLink.split('/visita/')[1];
+
+      if (target.closest('a.casino-table-widget__casino-logo')) {
+        gaTracking(`${casinoName.replace(/\//g, '')} | CTA Clicks to Operator (Logo)`);
+      } else {
+        gaTracking(`${casinoName.replace(/\//g, '')} | CTA Clicks to Operator (Button)`);
+      }
+
+      getAndSetFunc(casinoName);
+    }
+  });
 
   const updateAffiliateLinks = () => {
     const casinoToplistItems = document.querySelectorAll('a.button.link-out');
