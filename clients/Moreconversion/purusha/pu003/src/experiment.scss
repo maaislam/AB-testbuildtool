@@ -1,0 +1,21 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .CustomContent_liquid {
+    .#{$id}__prodfeatures {
+      margin-top: 32px;
+      li {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        span:first-child {
+          display: flex;
+        }
+        span {
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+}

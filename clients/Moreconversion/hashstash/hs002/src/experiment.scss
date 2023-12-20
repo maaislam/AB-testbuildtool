@@ -1,0 +1,35 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #cart-drawer {
+    z-index: 999999;
+    .#{$id}__cartUpsell + #cart-drawer-recommendations {
+      display: none;
+    }
+
+    .#{$id}__cartUpsell {
+      .#{$id}__prodInfo {
+        a {
+          display: flex;
+          flex-direction: column;
+        }
+        .price-container {
+          display: flex;
+          gap: 5px;
+
+          .compare-at-price {
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      .horizontal-product-list {
+        gap: 15px;
+        .swiper-slide {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

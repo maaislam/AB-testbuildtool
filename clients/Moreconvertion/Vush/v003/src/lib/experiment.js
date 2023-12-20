@@ -9,9 +9,7 @@ const { ID } = shared;
 const intersectionAnchor = document.querySelector('.product-form__cart-submit');
 const anchorPoint = document.body;
 
-const productImg = document
-  .querySelector('ul.product-thumbnails__items .product-thumbnails__item img')
-  .getAttribute('src');
+const productImg = document.querySelector('ul.product-thumbnails__items .product-thumbnails__item img').getAttribute('src');
 const productTitle = document.querySelector('.product__title').textContent.trim();
 const productOriginalPrice = document.querySelector('[data-compare-price]').cloneNode(true);
 const productSalePrice = document.querySelector('[data-price]').cloneNode(true);
@@ -31,10 +29,17 @@ const cssModObj = {
 };
 
 const chatWidgetDisplay = (display = 'show') => {
-  const styleSheet = new CSSStyleSheet();
-  styleSheet.replaceSync(cssModObj[display]);
+  if (typeof CSSStyleSheet === 'function') {
+    const styleSheet = new CSSStyleSheet();
+    styleSheet.replaceSync(cssModObj[display]);
 
-  window.repApp.$$.root.adoptedStyleSheets = [styleSheet];
+    window.repApp.$$.root.adoptedStyleSheets = [styleSheet];
+    return;
+  }
+
+  document.body.classList.remove(`${ID}__chatWidget-reset`);
+  document.body.classList.remove(`${ID}__chatWidget-adjust`);
+  document.body.classList.add(`${ID}__chatWidget-${display}`);
 };
 
 const init = () => {

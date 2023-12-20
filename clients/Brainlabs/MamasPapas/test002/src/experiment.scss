@@ -1,0 +1,27 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+#s-be322870-6c33-4301-97d0-0ae5b178d6fe {
+  display: none;
+}
+.#{$id} {
+  &__linkBox {
+    min-height: 122px;
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+  }
+
+  // &__linkBox&__show {
+  //   animation: fade-in 1s ease-in;
+  // }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}

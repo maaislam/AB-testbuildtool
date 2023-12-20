@@ -2,21 +2,25 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  &__onetime-1,
-  &__sub-1 {
-    order: 1;
+  .ig003__most-popular .package-card__text-2 {
+    //order: 1;
   }
-  &__onetime-2,
-  &__sub-2 {
-    order: 3;
-  }
-  &__onetime-3,
-  &__sub-3 {
-    order: 4;
+
+  &__first-one-time,
+  &__first-sub {
+    border: 1px solid #216a34 !important;
+    .package-card__title.mostpop {
+      background: #1b720a;
+      color: #fff;
+    }
   }
 
   &__highest-val-one-time,
   &__highest-val-sub {
-    order: 2 !important;
+    border: 1px solid #fde34c !important;
+    .package-card__title {
+      background: #fde34c !important;
+      color: #000 !important;
+    }
   }
 }
