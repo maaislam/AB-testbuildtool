@@ -51,18 +51,26 @@ export default () => {
     ) {
       const closestWrapper = target.closest('a');
       const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
-      const casinoName = casinoLink.split('/visita/')[1];
+      const casinoName =
+        casinoLink.split('/visita/')[1] ||
+        target.closest(`.${ID}__affiliate`).dataset.name.toLowerCase().trim();
       //const hasAffiliateLink = target.closest(`.${ID}__affiliate`);
 
       if (target.closest('a.casino-table__casino-logo')) {
         gaTracking(
-          `${casinoName.replace(/\//g, '')} | CTA Clicks to Operator (Logo) | Mainlist${
+          `${target.closest(`.${ID}__affiliate`) ? `${linkType} |` : ''} ${casinoName.replace(
+            /\//g,
+            ''
+          )} | CTA Clicks to Operator (Logo) | Mainlist${
             target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
           }`
         );
       } else {
         gaTracking(
-          `${casinoName.replace(/\//g, '')} | CTA Clicks to Operator (Button) | Mainlist${
+          `${target.closest(`.${ID}__affiliate`) ? `${linkType} |` : ''} ${casinoName.replace(
+            /\//g,
+            ''
+          )} | CTA Clicks to Operator (Button) | Mainlist${
             target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
           }`
         );
@@ -76,8 +84,13 @@ export default () => {
       const operatorHref = target.closest('a[href*="/visita/"]')?.href;
       const operatorName =
         operatorHref?.split('/visita/')[1] ||
-        target.closest(`.${ID}__affiliate`).dataset.operator.toLowerCase().trim();
-      gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator | TopList`);
+        target.closest(`.${ID}__affiliate`).dataset.name.toLowerCase().trim();
+      gaTracking(
+        `${target.closest(`.${ID}__affiliate`) ? `${linkType} |` : ''} ${operatorName.replace(
+          /\//g,
+          ''
+        )} | CTA Clicks to Operator | TopList`
+      );
 
       getAndSetFunc(operatorName);
     } else if (
@@ -88,12 +101,22 @@ export default () => {
       const operatorHref = target.closest('a[href*="/visita/"]')?.href;
       const operatorName =
         operatorHref?.split('/visita/')[1] ||
-        target.closest(`.${ID}__affiliate`).dataset.operator.toLowerCase().trim();
+        target.closest(`.${ID}__affiliate`).dataset.name.toLowerCase().trim();
 
       if (target.closest('a.casino-table-widget__casino-logo')) {
-        gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator (Logo)`);
+        gaTracking(
+          `${target.closest(`.${ID}__affiliate`) ? `${linkType} |` : ''} ${operatorName.replace(
+            /\//g,
+            ''
+          )} | CTA Clicks to Operator (Logo) | Widget`
+        );
       } else {
-        gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator (Button)`);
+        gaTracking(
+          `${target.closest(`.${ID}__affiliate`) ? `${linkType} |` : ''} ${operatorName.replace(
+            /\//g,
+            ''
+          )} | CTA Clicks to Operator (Button) | Widget`
+        );
       }
 
       getAndSetFunc(operatorName);
@@ -107,12 +130,24 @@ export default () => {
     ) {
       const closestWrapper = target.closest('a');
       const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
-      const casinoName = casinoLink.split('/visita/')[1];
+      const casinoName =
+        casinoLink.split('/visita/')[1] ||
+        target.closest(`.${ID}__affiliate`).dataset.name.toLowerCase().trim();
 
       if (target.closest('a.casino-table-widget__casino-logo')) {
-        gaTracking(`${casinoName.replace(/\//g, '')} | CTA Clicks to Operator (Logo)`);
+        gaTracking(
+          `${target.closest(`.${ID}__affiliate`) ? `${linkType} |` : ''} ${casinoName.replace(
+            /\//g,
+            ''
+          )} | CTA Clicks to Operator (Logo)`
+        );
       } else {
-        gaTracking(`${casinoName.replace(/\//g, '')} | CTA Clicks to Operator (Button)`);
+        gaTracking(
+          `${target.closest(`.${ID}__affiliate`) ? `${linkType} |` : ''} ${casinoName.replace(
+            /\//g,
+            ''
+          )} | CTA Clicks to Operator (Button)`
+        );
       }
 
       getAndSetFunc(casinoName);
@@ -120,9 +155,17 @@ export default () => {
   });
 
   const updateAffiliateLinks = () => {
-    const casinoToplistItems = document.querySelectorAll('a.button.link-out');
+    const topListCards = document.querySelectorAll('.card-list__item');
+    const mainListRows = document.querySelectorAll('.casino-table__data-row');
+    const widgetRows = document.querySelectorAll('.casino-table-widget__row');
+
+    const casinoToplistItems = [...topListCards, ...mainListRows, ...widgetRows];
+
     casinoToplistItems.forEach((casinoToplistItem) => {
-      const casinoNameElem = casinoToplistItem;
+      const casinoNameElem = casinoToplistItem.querySelector('a.button.link-out');
+      const casinoImgElem =
+        casinoToplistItem.querySelector('a.casino-table__casino-logo') ||
+        casinoToplistItem.querySelector('a.casino-table-widget__casino-logo');
       if (!casinoNameElem) return;
       const casinoHref = casinoNameElem.href;
       const casinoName = casinoHref?.split('/visita/')[1]?.replace(/[\/\-_]/g, '');
@@ -131,7 +174,14 @@ export default () => {
       casinoNameElem.setAttribute('data-oldhref', casinoHref);
       if (newUrl) {
         casinoNameElem.classList.add(`${ID}__affiliate`);
+        casinoNameElem.setAttribute('data-name', casinoName);
         casinoNameElem.href = newUrl;
+
+        if (casinoImgElem) {
+          casinoImgElem.classList.add(`${ID}__affiliate`);
+          casinoImgElem.setAttribute('data-name', casinoName);
+          casinoImgElem.href = newUrl;
+        }
       }
       //console.log('🚀casinoName:', casinoName);
     });

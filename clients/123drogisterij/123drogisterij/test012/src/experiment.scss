@@ -8,9 +8,9 @@
 
   &__openmodal {
     margin-top: 8px;
-    font-size: 16px;
-
+    font-size: 14px;
     background-color: #f1b215;
+    color: #d59b39;
 
     &:hover {
       background-color: #e77e07;
@@ -231,14 +231,14 @@
     border-radius: 6px;
   }
 
-  .ppatc__popup__item-message>p:first-child {
+  .ppatc__popup__item-message > p:first-child {
     display: block;
     color: #d49935;
     line-height: 1.333;
     margin-bottom: 0;
   }
 
-  .ppatc__popup__item-message>p:last-child {
+  .ppatc__popup__item-message > p:last-child {
     font-size: 13px;
     display: block;
     color: #bb9c62;
@@ -340,15 +340,21 @@
     display: table;
     margin: 0 16px 0 auto;
     background: #f1812f;
-    background-image: -moz-linear-gradient(top,
-        rgba(255, 255, 255, 0.15) 0%,
-        rgba(255, 255, 255, 0) 100%);
-    background-image: -webkit-linear-gradient(top,
-        rgba(255, 255, 255, 0.15) 0%,
-        rgba(255, 255, 255, 0) 100%);
-    background-image: linear-gradient(to bottom,
-        rgba(255, 255, 255, 0.15) 0%,
-        rgba(255, 255, 255, 0) 100%);
+    background-image: -moz-linear-gradient(
+      top,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-image: -webkit-linear-gradient(
+      top,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
     color: #fff !important;
     font-size: 17px;
     padding: 18px 42px 17px 25px !important;
@@ -490,11 +496,15 @@
     }
   }
 
-  @media only screen and (min-width: 768px) and (max-width: 770px) {}
+  @media only screen and (min-width: 768px) and (max-width: 770px) {
+  }
 
-  @media screen and (min-width: 771px) {}
+  @media screen and (min-width: 771px) {
+  }
 
-  @media only screen and (min-width: 991px) and (max-width: 1199px) {}
+  @media only screen and (min-width: 991px) and (max-width: 1199px) {
+  }
 
-  @media only screen and (min-width: 1200px) {}
+  @media only screen and (min-width: 1200px) {
+  }
 }
