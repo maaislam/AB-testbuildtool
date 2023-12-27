@@ -1,0 +1,27 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.announcement-bar__outer-wrapper {
+  display: none;
+}
+
+.#{$id} {
+  &__freeShipping {
+    background-color: #373737;
+    color: #fff;
+  }
+
+  .product__top {
+    & .product__policies {
+      display: none;
+    }
+  }
+
+  &__quick-cart {
+    .quick-cart__footer-inner {
+      .quick-cart__footer-tax-note {
+        display: none;
+      }
+    }
+  }
+}
