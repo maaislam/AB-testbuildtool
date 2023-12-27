@@ -9,11 +9,14 @@
   &__openmodal {
     margin-top: 8px;
     font-size: 14px;
-    background-color: #f1b215;
+    background-color: #fff3df;
     color: #d59b39;
+    border: none;
 
     &:hover {
-      background-color: #e77e07;
+      color: #b97d19;
+      background-color: #fae9cb;
+      border: none
     }
   }
 
