@@ -20,7 +20,7 @@ const init = () => {
     </button>
   </div>`;
 
-  anchorPoint.insertAdjacentHTML('afterend', htmlStr);
+  VARIATION !== 'Control' && anchorPoint.insertAdjacentHTML('afterend', htmlStr);
 
   const rows = document.querySelectorAll('table.casino-table tr.casino-table__data-row');
   const itemsPerPage = 7;
@@ -37,7 +37,7 @@ const init = () => {
     }
   };
 
-  hideRows(itemsPerPage * currentPage);
+  VARIATION !== 'Control' && hideRows(itemsPerPage * currentPage);
 
   const showMore = () => {
     currentPage++;
@@ -50,9 +50,20 @@ const init = () => {
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
+    console.log('target', target)
 
     if (target.closest('#showMoreButton')) {
       showMore();
+      gaTracking('Show More Casinos CTA (Button)');
+    } else if (target.closest('[href*="visita"]')) {
+      console.log('casinoNameElem');
+      const casinoNameElem = target.closest('a[href*="visita"]');
+      console.log(casinoNameElem);
+
+      const casinoName = casinoNameElem.dataset.operator;
+
+      const clickedElemType = casinoNameElem.querySelector('img') ? 'logo' : 'button';
+      gaTracking(`${casinoName} | CTA Clicks to Operator (${clickedElemType})`);
     }
   });
 };
