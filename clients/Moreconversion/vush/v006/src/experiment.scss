@@ -1,0 +1,104 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .header__row-segment-desktop {
+        nav {
+            ul.header__links-list {
+                li {
+                    margin-right: 12px !important;
+    
+                    a {
+                        font-size: 14px;
+                    }
+                }
+    
+                li:last-of-type {
+                    margin-right: 24px !important;
+                }
+            }
+        }
+
+    }
+
+    &__searchBar {
+        width: 280px;
+        height: 34px;
+        padding: 6px 12px 7px;
+        gap: 30px;
+        border: 1px solid #000;
+        background: #FFF;
+
+        @include media-query(md) {
+            width: 180px;
+            height: 30px;
+            padding: 5px 5px 8px;
+            gap: 7px;
+        }
+
+        .#{$id}__placeHolder {
+            color: #373737;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 12px;
+
+            @include media-query(md) {
+                font-size: 8px;
+            }
+        }
+
+        .icon-button {
+            justify-content: flex-start;
+        }
+
+        .icon-button-header-search {
+            width: 21px !important;
+            height: 21px !important;
+            position: relative !important;
+
+            @include media-query(md) {
+                width: 20px !important;
+                height: 20px !important;
+            }
+
+            .icon-button__icon .icon {
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }
+    }
+
+    &__searchBar[aria-expanded="false"] {
+        .icon-button-header-menu-close {
+            display: none !important;
+        }
+    }
+
+    &__searchBar[aria-expanded="true"] {
+        border: 0;
+
+        .icon-button-header-search {
+            display: none;
+        }
+
+        .icon-button-header-menu-close {
+            display: none !important;
+
+            @include media-query(md) {
+                display: flex !important;
+                width: 21px !important;
+                height: 21px !important;
+                position: relative !important;
+            }
+
+            .icon-button__icon .icon {
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }
+
+        .#{$id}__placeHolder {
+            opacity: 0;
+        }
+    }
+}
