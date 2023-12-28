@@ -50,15 +50,12 @@ const init = () => {
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    console.log('target', target)
 
     if (target.closest('#showMoreButton')) {
       showMore();
       gaTracking('Show More Casinos CTA (Button)');
     } else if (target.closest('[href*="visita"]')) {
-      console.log('casinoNameElem');
       const casinoNameElem = target.closest('a[href*="visita"]');
-      console.log(casinoNameElem);
 
       const casinoName = casinoNameElem.dataset.operator;
 
