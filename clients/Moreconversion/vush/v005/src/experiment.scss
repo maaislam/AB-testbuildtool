@@ -1,0 +1,30 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__announcementBar {
+        padding: 7px;
+        background: #373737;
+        color: #fff;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 21px;
+    }
+
+    .announcement-bar {
+        display: none;
+    }
+
+    &-1 {
+        .product__meta .product__policies {
+            display: none;
+        }
+    }
+
+    &-2 {
+        .quick-cart__footer .quick-cart__footer-tax-note {
+            display: none;
+        }
+    }
+}
