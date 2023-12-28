@@ -1,0 +1,36 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__show {
+        display: table-row !important;
+
+        @include media-query(md) {
+            display: grid !important;
+        }
+    }
+
+    &__showMoreButtonWrapper {
+        margin: 16px 0;
+        display: flex;
+        justify-content: center;
+
+        .#{$id}__showMoreButton {
+            display: flex;
+            padding: 10px 30px;
+            justify-content: center;
+            gap: 6px;
+            background: transparent;
+            border-radius: 5px;
+            border: 1px solid #FF7556;
+            cursor: pointer;
+
+            span {
+                color: #FF7556;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+            }
+        }
+    }
+}
