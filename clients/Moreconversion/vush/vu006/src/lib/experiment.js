@@ -39,6 +39,8 @@ const init = () => {
     if (value.length === 0) {
       const overlay = document.querySelector('.quick-search__overlay');
       overlay.click();
+      const closeIcon = document.querySelector(`.${ID}__close`);
+      closeIcon.classList.add(`${ID}__hide`);
       return;
     }
 
