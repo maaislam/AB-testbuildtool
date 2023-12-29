@@ -1,10 +1,10 @@
 import featureBox from './featureBox';
 
-const featureBoxes = (id, data) => {
+const featureBoxes = (id, data, index) => {
     const htmlStr = `
-    <div class='${id}__featureBoxes'>
-        ${data?.map((product) => featureBox(id, product)).join('')}
-    </div>`;
+    <ul class='${id}__featureBoxes'>
+        ${data?.map((product) => featureBox(id, product, index)).join('')}
+    </ul>`;
     return htmlStr;
 };
 

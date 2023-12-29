@@ -1,7 +1,9 @@
-const featureBox = (id, data) => {
+const featureBox = (id, data, index) => {
     const htmlStr = `
-      <ul href='${data.productUrl}' class='${id}__featureBox'>
-      </ul>`;
+      <li class='${id}__featureBox'>
+        <span class='${id}__featureBox-header'>${Object.keys(data)[index]}</span>
+        <span class='${id}__featureBox-content'>${Object.values(data)[index]}</span>
+      </li>`;
     return htmlStr;
 };
 

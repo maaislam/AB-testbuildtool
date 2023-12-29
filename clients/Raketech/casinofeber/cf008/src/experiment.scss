@@ -2,7 +2,48 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    .toplist-item {
+        padding: 0 10px 0 0 !important;
+        background: #fff !important;
+        border: 2px solid #f24726 !important;
+
+        .#{$id}__featureBoxes {
+            padding: 0 !important;
+            margin: 0 !important;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem !important;
+
+            li:before {
+                content: none !important;
+            }
+            
+            .#{$id}__featureBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 90px;
+                width: 130px;
+                padding: 8px;
+                background-color: var(--bg-clr-alt-hvr);
+                border-radius: 4px;
+    
+                &-header {
+                    font-size: 12px;
+                    line-height: 14px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                }
+    
+                &-content {
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+            }
+        }
+    
+        .toplist-pros > li {
+            display: none !important;
+        }
     }
 }
