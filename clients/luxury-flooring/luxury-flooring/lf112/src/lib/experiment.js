@@ -1,4 +1,4 @@
-import { observeDOM } from './helpers/utils';
+import { obsIntersection } from './helpers/utils';
 import setup from './services/setup';
 
 import shared from './shared/shared';
@@ -56,26 +56,25 @@ const init = () => {
   attachPoint.insertAdjacentHTML('afterend', renderHtml(data[VARIATION]));
 };
 
-const adjustPosition = () => {
-  const searchParams = new URLSearchParams(window.location.search);
-  const pageValue = searchParams.get('p');
-  const newlYAddedPage = Number(pageValue) > 1 ? Number(pageValue) + 1 : 2;
-  //console.log('🚀 ~ file: experiment.js:62 ~ adjustPosition ~ newlYAddedPage:', newlYAddedPage);
-  const secondpage = document.querySelector(`.products[amscroll-page="${newlYAddedPage}"]`);
-  if (!secondpage) return;
-  const secondpageFirstProduct = secondpage.querySelector('.product:nth-child(1)');
-  const secondpageSecondProduct = secondpage.querySelector('.product:nth-child(2)');
+const intersectionCallback = (entry) => {
+  //console.log('🚀 entry:', entry);
+  const { isIntersecting } = entry;
 
-  if (!secondpageFirstProduct || !secondpageSecondProduct) return;
-  const firstPage = document.querySelector(`.products[amscroll-page="${newlYAddedPage - 1}"]`);
-  const prodList = firstPage.querySelector('ol');
-  prodList.insertAdjacentElement('beforeend', secondpageFirstProduct);
-  prodList.insertAdjacentElement('beforeend', secondpageSecondProduct);
+  if (isIntersecting) {
+    document.body.classList.remove(`${ID}__editorial--hide`);
+  } else {
+    document.body.classList.add(`${ID}__editorial--hide`);
+  }
 };
 
 export default () => {
   setup();
   init();
   if (window.matchMedia('(max-width: 767px)').matches) return;
-  observeDOM('.main', adjustPosition);
+  //observeDOM('.main', adjustPosition);
+  obsIntersection(
+    document.querySelector('.products>.product:nth-child(3)'),
+    0,
+    intersectionCallback
+  );
 };

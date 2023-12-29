@@ -1,0 +1,43 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .okeReviews[data-oke-container] .oke-w-reviews-main--nav-divider,
+  .okeReviews .oke-w-reviews-main--nav-divider,
+  .okeReviews[data-oke-container] .oke-w-reviews-list-item,
+  .okeReviews .oke-w-reviews-list-item.#{$id}__review {
+    border: none;
+  }
+
+  .oke-w-reviews-alerts,
+  .oke-w-reviews-footer {
+    display: none !important;
+  }
+
+  .#{$id}__review {
+    &.swiper-slide {
+      height: auto;
+    }
+    .oke-w-review {
+      display: block !important;
+      height: 100%;
+      .oke-w-review-recommendation {
+        margin-top: 0 !important;
+      }
+      .oke-w-review-main {
+        margin-top: 16px !important;
+      }
+      & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+        height: 100%;
+        margin-right: 0 !important;
+        .oke-w-review-footer {
+          margin-top: auto;
+        }
+      }
+    }
+  }
+}

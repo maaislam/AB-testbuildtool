@@ -1,0 +1,19 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .nvd-mini.w-nvd-100 {
+    display: block;
+
+    #nvd-widget-cart {
+      padding: 20px !important;
+      padding-left: 10px !important;
+      padding-bottom: 5px !important;
+      h4 {
+        margin-bottom: 5px;
+        font-size: 14px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

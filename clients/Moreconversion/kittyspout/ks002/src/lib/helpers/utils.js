@@ -32,7 +32,10 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   const config = configObject || {
     childList: true,
-    subtree: false
+    subtree: true,
+    attributes: true,
+    characterData: true,
+    characterDataOldValue: true
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
@@ -45,22 +48,4 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
-};
-export const obsIntersection = (target, threshold, callback) => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        callback(entry, observer);
-      });
-    },
-    {
-      threshold,
-      rootMargin: '400px 0px -200px 0px'
-    }
-  );
-  if (!target) {
-    return;
-  }
-
-  observer?.observe(target);
 };

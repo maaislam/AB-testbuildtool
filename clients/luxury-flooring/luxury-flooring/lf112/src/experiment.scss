@@ -2,6 +2,12 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  &__editorial--hide {
+    .#{$id}__editorial {
+      display: none !important;
+    }
+  }
+
   &__editorial {
     position: relative;
     display: block;

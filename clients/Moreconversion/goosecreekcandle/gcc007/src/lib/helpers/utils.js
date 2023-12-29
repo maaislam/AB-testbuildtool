@@ -32,35 +32,55 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   const config = configObject || {
     childList: true,
-    subtree: false
+    subtree: true
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      //console.log(mutation);
-      observer.disconnect();
+      setTimeout(() => {
+        console.log(mutation);
+        observer.disconnect();
 
-      callbackFunction(mutation);
-      observer.observe(target, config);
+        callbackFunction(mutation);
+        observer.observe(target, config);
+      }, 1000);
     });
   });
 
   observer.observe(target, config);
 };
-export const obsIntersection = (target, threshold, callback) => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        callback(entry, observer);
-      });
-    },
-    {
-      threshold,
-      rootMargin: '400px 0px -200px 0px'
-    }
-  );
-  if (!target) {
+
+export const addCssToPage = (href, id, classes) => {
+  if (document.querySelector(`#${id}`)) {
     return;
   }
 
-  observer?.observe(target);
+  const c = document.createElement('link');
+  c.setAttribute('id', id);
+  c.setAttribute('rel', 'stylesheet');
+
+  if (classes) {
+    c.className = classes;
+  }
+
+  c.href = href;
+  document.head.appendChild(c);
+};
+
+export const addJsToPage = (src, id, cb, classes) => {
+  if (document.querySelector(`#${id}`)) {
+    return;
+  }
+
+  const s = document.createElement('script');
+  if (typeof cb === 'function') {
+    s.onload = cb;
+  }
+
+  if (classes) {
+    s.className = classes;
+  }
+
+  s.src = src;
+  s.setAttribute('id', id);
+  document.head.appendChild(s);
 };
