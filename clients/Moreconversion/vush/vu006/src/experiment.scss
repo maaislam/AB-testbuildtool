@@ -3,7 +3,9 @@
 
 .#{$id} {
   .quick-search__bar {
-    display: none;
+    @include media-query(md) {
+      display: none;
+    }
   }
 
   .header__row-segment-desktop {
