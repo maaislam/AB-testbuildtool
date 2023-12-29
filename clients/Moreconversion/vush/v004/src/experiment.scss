@@ -5,4 +5,8 @@
     &__hide {
         display: none !important;
     }
+
+    [aria-label="Open Form"] {
+        display: none !important;
+    }
 }
