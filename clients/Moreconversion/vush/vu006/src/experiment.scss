@@ -2,6 +2,19 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  &__hide {
+    display: none;
+  }
+
+  &__search-wrapper {
+    position: relative;
+    .#{$id}__close {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -16px;
+    }
+  }
   .quick-search__bar {
     @include media-query(md) {
       display: none;
