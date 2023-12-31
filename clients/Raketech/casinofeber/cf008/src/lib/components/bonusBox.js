@@ -5,8 +5,6 @@ const bonusBox = (id, data, casinoElem) => {
     const bonusElem = casinoElem.querySelector(`.${bonus}`).outerHTML;
     const spinsElem = casinoElem.querySelector(`.${spins}`).outerHTML;
 
-    console.log('bonusElem', bonusElem);
-    console.log('spinsElem', spinsElem);
     const htmlStr = `
       <li class='${id}__bonusBox'>
         <span class='${id}__bonusBox-name'>${casinoName}</span>

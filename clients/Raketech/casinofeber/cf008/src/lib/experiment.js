@@ -18,11 +18,13 @@ const init = () => {
     const featureHtmlStr = featureBoxes(ID, data.features, index);
     const bonusHtmlStr = bonusBox(ID, data, casinoElem);
     const featuresIconElem = casinoElem.querySelector('.toplist-container .toplist-features').outerHTML;
+    const termsElem = casinoElem.querySelector('.toplist-terms').outerHTML;
 
     setTimeout(() => {
       ctrlFeaturesElem.insertAdjacentHTML('beforeend', featureHtmlStr);
       bonusSection.insertAdjacentHTML('beforeend', featuresIconElem);
       bonusSection.insertAdjacentHTML('beforeend', bonusHtmlStr);
+      casinoElem.insertAdjacentHTML('afterend', termsElem);
     }, 1000);
   });
 };

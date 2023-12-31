@@ -8,6 +8,10 @@
         background: #fff !important;
         border: 2px solid #f24726 !important;
 
+        .toplist-terms {
+            display: none !important;
+        }
+
         .toplist-bonus {
             display: flex !important;
 
@@ -112,5 +116,12 @@
         .toplist-pros>li {
             display: none !important;
         }
+    }
+
+    .toplist-item ~ .toplist-terms {
+        font-size: 11px;
+        line-height: 13px;
+        font-weight: 200;
+        text-align: center;
     }
 }
