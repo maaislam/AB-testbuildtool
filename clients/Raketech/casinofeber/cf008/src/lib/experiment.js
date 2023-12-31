@@ -15,12 +15,14 @@ const init = () => {
     const casinoName = casinoElem.querySelector('a.title').textContent.toLowerCase();
     const data = casinoData[casinoName];
     if (!data) return;
+
     const featureHtmlStr = featureBoxes(ID, data.features, index);
     const bonusHtmlStr = bonusBox(ID, data, casinoElem);
     const featuresIconElem = casinoElem.querySelector('.toplist-container .toplist-features').outerHTML;
     const termsElem = casinoElem.querySelector('.toplist-terms').outerHTML;
 
     setTimeout(() => {
+      casinoElem.classList.add(`${ID}__casinoItem`);
       ctrlFeaturesElem.insertAdjacentHTML('beforeend', featureHtmlStr);
       bonusSection.insertAdjacentHTML('beforeend', featuresIconElem);
       bonusSection.insertAdjacentHTML('beforeend', bonusHtmlStr);
