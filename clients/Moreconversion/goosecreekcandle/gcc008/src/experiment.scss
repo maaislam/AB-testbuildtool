@@ -11,6 +11,7 @@
 
         &-textWrapper {
             .#{$id}__shippingNotice-text {
+                font-family: 'Inter';
                 font-size: 14px;
                 font-weight: 700;
                 line-height: 17px;
@@ -23,6 +24,7 @@
             }
 
             .#{$id}__shippingNotice-subtext {
+                font-family: 'Inter';
                 font-size: 12px;
                 font-weight: 500;
                 line-height: 15px;
