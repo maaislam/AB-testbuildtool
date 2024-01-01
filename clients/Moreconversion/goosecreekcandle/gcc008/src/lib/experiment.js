@@ -2,10 +2,9 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { shippingIcon } from './assets/svg';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
-  const deliveryText = VARIATION === '1' ? 'Leaves warehouse in 24-48 hours' : 'Arrives in 1-3 days';
   const anchorPoint = document.querySelector('.product-page--submit-action');
 
   const htmlStr = `<div class='${ID}__shippingNotice'>
@@ -13,7 +12,7 @@ const init = () => {
       ${shippingIcon}
     </span>
     <div class='${ID}__shippingNotice-textWrapper'>
-      <span class='${ID}__shippingNotice-text'>${deliveryText}</span>
+      <span class='${ID}__shippingNotice-text'>1-3 Day Delivery</span>
       <span class='${ID}__shippingNotice-subtext'>(Tuesday, January 4th To New York)</span>
     </div>
   </div>`;
