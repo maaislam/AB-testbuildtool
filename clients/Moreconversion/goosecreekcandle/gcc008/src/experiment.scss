@@ -1,0 +1,40 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__shippingNotice {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        &-textWrapper {
+            .#{$id}__shippingNotice-text {
+                font-family: 'Inter';
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 17px;
+                color: #000;
+
+                @include media-query(md) {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+            }
+
+            .#{$id}__shippingNotice-subtext {
+                font-family: 'Inter';
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 15px;
+                color: #808080;
+
+                @include media-query(md) {
+                    font-size: 10px;
+                    line-height: 12px;
+                }
+            }
+        }
+    }
+}

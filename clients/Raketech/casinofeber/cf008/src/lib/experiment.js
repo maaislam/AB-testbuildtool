@@ -1,26 +1,40 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import casinoData from './data/casinoData';
 import featureBoxes from './components/featureBoxes';
+import bonusBox from './components/bonusBox';
 
 const { ID, VARIATION } = shared;
 
 const init = () => {
   const allCasinoElems = document.querySelectorAll('.toplist.casino .toplist-item');
-  allCasinoElems.forEach((casinoElem) => {
+  allCasinoElems.forEach((casinoElem, index) => {
+    const ctrlFeaturesElem = casinoElem.querySelector('.toplist-pros');
+    const bonusSection = casinoElem.querySelector('.toplist-bonus');
+    if (!ctrlFeaturesElem) return;
     const casinoName = casinoElem.querySelector('a.title').textContent.toLowerCase();
-    const isMatch = casinoData[casinoName];
-    if (!isMatch) return;
-    console.log('isMatch: ', isMatch);
-    const featureHtmlStr = featureBoxes(ID, isMatch.features);
+    const data = casinoData[casinoName];
+    if (!data) return;
+
+    const featureHtmlStr = featureBoxes(ID, data.features, index);
+    const bonusHtmlStr = bonusBox(ID, data, casinoElem);
+    const featuresIconElem = casinoElem.querySelector('.toplist-container .toplist-features').outerHTML;
+    const termsElem = casinoElem.querySelector('.toplist-terms').outerHTML;
+
+    setTimeout(() => {
+      casinoElem.classList.add(`${ID}__casinoItem`);
+      ctrlFeaturesElem.insertAdjacentHTML('beforeend', featureHtmlStr);
+      bonusSection.insertAdjacentHTML('beforeend', featuresIconElem);
+      bonusSection.insertAdjacentHTML('beforeend', bonusHtmlStr);
+      casinoElem.insertAdjacentHTML('afterend', termsElem);
+    }, 1000);
   });
 };
 
 export default () => {
   setup(); //use if needed
 
-  gaTracking('Conditions Met'); //use if needed
+  //gaTracking('Conditions Met'); //use if needed
 
   init();
 };

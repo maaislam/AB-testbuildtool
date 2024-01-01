@@ -1,0 +1,29 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__uspWrapper {
+        padding: 25px 26px 17px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        border-radius: 10px;
+        background: #FAFAFA;
+
+        .#{$id}__usp {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .#{$id}__uspTitle {
+                color: #000;
+                font-family: 'Inter';
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 18px;
+            }
+        }
+    }
+}

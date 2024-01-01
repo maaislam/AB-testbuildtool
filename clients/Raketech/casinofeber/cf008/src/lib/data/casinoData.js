@@ -1,11 +1,13 @@
 const casinoData = {
     'mr vegas casino': {
+        bonus: 'amount',
+        spins: 'freespins',
         features: [
             {
-                'withdrawal wagering': 'sek xxx'
+                'withdrawal wagering': 'SEK XXX'
             },
             {
-                'minimal withdrawal': 'sek xxx'
+                'minimal withdrawal': 'SEK XXX'
             },
             {
                 'pay and play': 'Yes'

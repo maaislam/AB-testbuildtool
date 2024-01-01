@@ -9,7 +9,7 @@ const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
 const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
 
 const init = () => {
-  console.log('🚀init');
+  //console.log('🚀init');
   if (!document.querySelector(`.${ID}__review`)) return;
   //init swiper
   const swiper = new window.Swiper('.swiper', {
@@ -42,7 +42,7 @@ const adjustElements = () => {
     review.classList.add('swiper-slide');
     if (!leftColumn || !rightColumn) return;
 
-    console.log('🚀ratingRow', leftColumn, index);
+    //console.log('🚀ratingRow', leftColumn, index);
     leftColumn.insertAdjacentElement('beforeend', rightColumn);
     reviewerBlock.insertAdjacentElement('afterend', ratingRow);
     rightColumn.insertAdjacentElement('afterend', reviewFooter);
@@ -59,7 +59,7 @@ export default () => {
   adjustElements();
 
   observeDOM('#shopify-section-template--14598711443531__1658231130ef15e79f', () => {
-    console.log('🚀observeDOM');
+    //console.log('🚀observeDOM');
     adjustElements();
   });
 
