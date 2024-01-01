@@ -2,7 +2,12 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__hide {
-        display: none !important;
+  &__hide {
+    display: none !important;
+  }
+  &__chatWidget-adjust {
+    [style='height: 0px; width: 0px; position: absolute; display: block; z-index: 2147483647;'] {
+      display: none !important;
     }
+  }
 }
