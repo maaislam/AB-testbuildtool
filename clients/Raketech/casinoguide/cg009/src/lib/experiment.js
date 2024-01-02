@@ -5,16 +5,37 @@ import { observeDOM } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
+const casinoMessageStr = (id, messages) => {
+  const html = `
+    <div class="${id}__casinoMessageContainer" id="${id}__casinoMessage">
+      ${messages
+        .map((message) => {
+          return `<p class="toplistTitle">${message}</p>`;
+        })
+        .join('\n')}
+    </div>
+  `;
+
+  return html.trim();
+};
+
 const init = () => {
-  const casino = document.querySelector('.mui-1xlzx9v');
-  if (!casino) return;
-  const casinoMessage = casino.cloneNode(true);
-  if (casinoMessage) casinoMessage.id = `${ID}__casinoMessage`;
+  //const casino = document.querySelector('.mui-1xlzx9v');
+  const casino = document.querySelectorAll('#sticky-cta-container .mui-6tgflj .mui-1pfard8');
+  if (!casino.length) return;
 
-  const container = document.querySelectorAll('.mui-1v68uba')[1];
+  const messages = [...casino].map((message) => message.querySelector('.mui-p8iq1o')?.innerText);
 
+  // const casinoMessage = casino.cloneNode(true);
+  // if (casinoMessage) casinoMessage.id = `${ID}__casinoMessage`;
+
+  const container = document.querySelectorAll('.mui-1v68uba')[0];
   if (container && !document.querySelector(`#${ID}__casinoMessage`)) {
-    container.insertAdjacentElement('beforebegin', casinoMessage);
+    const subText = document.querySelector('.mui-dspu10').firstChild.textContent;
+    //eslint-disable-next-line no-unused-vars
+    document.querySelector('.mui-dspu10').firstChild.textContent = `${subText} | `;
+
+    container.insertAdjacentHTML('beforebegin', casinoMessageStr(ID, messages));
   }
 };
 export default () => {
