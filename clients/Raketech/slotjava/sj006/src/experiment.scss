@@ -1,0 +1,61 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  & .card-list {
+    .button.link-out {
+      background-color: #ffd300;
+      color: #23294b;
+      font-size: 11.25px;
+      font-weight: 900;
+      &:hover {
+        background-color: #ffd481;
+        color: #2a1b00;
+      }
+
+      &:focus,
+      &:visited {
+        background-color: #ffe3ae;
+        color: #603e00;
+      }
+    }
+  }
+
+  #table,
+  .casino-table-widget {
+    .button.link-out {
+      background-color: #ffd300;
+      color: #23294b;
+      font-size: 12px;
+      font-weight: 900;
+      &:hover {
+        background-color: #ffd481;
+        color: #2a1b00;
+      }
+
+      &:focus,
+      &:visited {
+        background-color: #ffe3ae;
+        color: #603e00;
+      }
+    }
+  }
+
+  & .button.button_hero {
+    background-color: #ffd300;
+    color: #23294b;
+    font-size: 12px;
+    font-weight: 900;
+
+    &:hover {
+      background-color: #ffd481;
+      color: #2a1b00;
+    }
+
+    &:focus,
+    &:visited {
+      background-color: #ffe3ae;
+      color: #603e00;
+    }
+  }
+}
