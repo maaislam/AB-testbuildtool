@@ -8,10 +8,17 @@ import { observeDOM } from './helpers/utils';
 const { ID } = shared;
 
 const init = () => {
+  const isMobile = window.innerWidth < 768;
+
   const allCasinoElems = document.querySelectorAll('.toplist.casino .toplist-item');
   allCasinoElems.forEach((casinoElem) => {
     const ctrlFeaturesElem = casinoElem.querySelector('.toplist-pros');
     const bonusSection = casinoElem.querySelector('.toplist-bonus');
+
+    const cssObj = window.getComputedStyle(bonusSection, null);
+    const colorValue = cssObj.getPropertyValue('background-color');
+    const casinoElemRef = casinoElem;
+    casinoElemRef.style.border = `2px solid ${colorValue}`;
 
     if (!ctrlFeaturesElem) return;
 
@@ -32,7 +39,8 @@ const init = () => {
       casinoElem.classList.add(`${ID}__casinoItem`);
 
       ctrlFeaturesElem.insertAdjacentHTML('beforeend', featureHtmlStr);
-      bonusSection.insertAdjacentHTML('beforeend', featuresIconElem);
+
+      !isMobile && bonusSection.insertAdjacentHTML('beforeend', featuresIconElem);
       bonusSection.insertAdjacentHTML('beforeend', bonusHtmlStr);
       casinoElem.insertAdjacentHTML('afterend', termsElem);
 

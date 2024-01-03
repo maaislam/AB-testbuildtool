@@ -6,7 +6,22 @@
         padding: 0 10px 0 0 !important;
         gap: 8px !important;
         background: #fff !important;
-        border: 2px solid #f24726 !important;
+        // border: 2px solid #f24726 !important;
+
+        @include media-query(md) {
+            border-radius: 10px !important;
+        }
+
+        .toplist-container {
+            @include media-query(md) {
+                padding: 0 !important;
+                background: #fff !important;
+            }
+        }
+
+        .title {
+            opacity: 0;
+        }
 
         .toplist-terms {
             display: none !important;
@@ -15,6 +30,11 @@
         .toplist-bonus {
             display: flex !important;
             gap: 1rem !important;
+
+            @include media-query(md) {
+                flex-direction: column-reverse;
+                background-color: #fff !important;
+            }
 
             >.amount,
             >.freespins {
@@ -28,12 +48,20 @@
                 text-align: start !important;
                 list-style: none;
 
+                @include media-query(md) {
+                    align-items: flex-start !important;
+                }
+
                 &-name {
                     color: rgba(0, 0, 0, 0.8) !important;
                     text-transform: capitalize !important;
                     font-size: 20px;
                     line-height: 21px;
                     font-weight: 700;
+
+                    @include media-query(md) {
+                        display: none;
+                    }
                 }
 
                 .amount {
@@ -48,6 +76,11 @@
                         margin-right: 4px;
                         font-size: 20px !important;
                         line-height: 21px !important;
+                    }
+
+                    @include media-query(md) {
+                        padding: 0;
+                        background-color: transparent;
                     }
                 }
 
@@ -66,6 +99,11 @@
                         font-size: 20px !important;
                         line-height: 21px !important;
                     }
+
+                    @include media-query(md) {
+                        padding: 0;
+                        background-color: transparent;
+                    }
                 }
             }
 
@@ -76,7 +114,17 @@
                 ul {
                     display: flex !important;
                     flex-direction: column;
+
+                    @include media-query(md) {
+                        flex-direction: row;
+                    }
                 }
+            }
+        }
+
+        .toplist-features {
+            @include media-query(md) {
+                background-color: var(--bg-clr-alt-hvr) !important;
             }
         }
 
