@@ -4,11 +4,12 @@
 .#{$id} {
   #cart-drawer {
     z-index: 999999;
-    .#{$id}__cartUpsell + #cart-drawer-recommendations {
+    .#{$id}__cartUpsellMobile + #cart-drawer-recommendations {
       display: none;
     }
 
-    .#{$id}__cartUpsell {
+    .#{$id}__cartUpsell,
+    .#{$id}__cartUpsellMobile {
       .#{$id}__prodInfo {
         a {
           display: flex;
@@ -25,10 +26,22 @@
       }
 
       .horizontal-product-list {
-        gap: 15px;
+        gap: 0.5rem;
         .swiper-slide {
           width: 100% !important;
         }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .#{$id}__cartUpsellMobile {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .#{$id}__cartUpsell {
+        display: none;
       }
     }
   }

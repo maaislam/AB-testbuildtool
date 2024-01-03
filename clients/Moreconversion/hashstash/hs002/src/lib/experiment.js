@@ -3,6 +3,7 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { observeDOM, initExternalLib, initSwiper, pollerLite } from './helpers/utils';
 import { cartUpsell } from './components/cartUpsell';
+import { cartUpsellMobile } from './components/cartUpsellMobile';
 
 const { ID, VARIATION } = shared;
 const swiperJs = 'https://m7cdn.io/common/js/swiper.js';
@@ -25,12 +26,26 @@ const shuffleArray = (array) => {
 };
 
 const addHtmlAndSwiper = (arr) => {
+  //desktop elem remove
   document.querySelector(`.${ID}__cartUpsell`) &&
     document.querySelector(`.${ID}__cartUpsell`).remove();
+
+  //mobile elem remove
+  document.querySelector(`.${ID}__cartUpsellMobile`) &&
+    document.querySelector(`.${ID}__cartUpsellMobile`).remove();
+
+  //desktop elem add
   if (!document.querySelector(`.${ID}__cartUpsell`)) {
     document
       .querySelector('#cart-drawer-recommendations')
       .insertAdjacentHTML('beforebegin', cartUpsell(ID, arr));
+  }
+
+  //mobile elem add
+  if (!document.querySelector(`.${ID}__cartUpsellMobile`)) {
+    document
+      .querySelector('#cart-drawer-recommendations')
+      .insertAdjacentHTML('beforebegin', cartUpsellMobile(ID, arr));
   }
 
   arr.length >= 2 &&
@@ -53,8 +68,12 @@ const init = async () => {
       'https://hashstash.co/products/hashstash-2-5-aluminum-grinder.json'
     );
 
-    const product = { ...stashProdInfo.product };
-    const cartItems = { ...cartInfos };
+    const product = {
+      ...stashProdInfo.product
+    };
+    const cartItems = {
+      ...cartInfos
+    };
 
     const noOgProdAvaiable = product.variants.filter(
       (variant) => !cartItems.items.some((item) => item.id === variant.id)
@@ -63,6 +82,9 @@ const init = async () => {
     if (!noOgProdAvaiable.length) {
       document.querySelector(`.${ID}__cartUpsell`) &&
         document.querySelector(`.${ID}__cartUpsell`).remove();
+
+      document.querySelector(`.${ID}__cartUpsellMobile`) &&
+        document.querySelector(`.${ID}__cartUpsellMobile`).remove();
       return;
     }
 
@@ -126,6 +148,6 @@ export default () => {
   initExternalLib(swiperJs, swiperCss);
   init();
   observeDOM('body .header__cart-count', () => {
-    setTimeout(init, 1000);
+    setTimeout(init, 100);
   });
 };
