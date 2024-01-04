@@ -13,7 +13,7 @@ const gaTracking = (label) => {
     if (window.gtag !== undefined) {
       window.gtag('event', GA4_INTERNAL_EXPERIMENT_ID, {
         event_category: EXPERIMENT_DEVICE_CATEGORY,
-        event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | Variation: ${VARIATION} | ${label}`,
+        event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | V ${VARIATION} | ${label}`,
         send_to: GA4_PROPERTY_ID
       });
     } else {
