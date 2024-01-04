@@ -7,7 +7,7 @@ const gaTracking = (label) => {
 
     window.gtag('event', 'Experiment Grayed Toplist 5618135091', {
       event_category: 'All Device Test',
-      event_label: `5618135091 | Variation: ${VARIATION} | ${label}`
+      event_label: `5618135091 | V ${VARIATION} | ${label}`
     });
   });
 };
