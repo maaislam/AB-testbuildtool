@@ -24,7 +24,7 @@ export default () => {
     const { target } = e;
     if (target.closest('.button.link-out') && target.closest('#drawer')) {
       const operatorName = target.closest('.button.link-out').href.split('visitar/')[1];
-      console.log(operatorName);
+      //console.log(operatorName);
       gaTracking(`${operatorName} | CTA CTO | list`);
     }
   });

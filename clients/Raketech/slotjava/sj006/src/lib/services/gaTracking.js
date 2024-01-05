@@ -4,7 +4,7 @@ import shared from '../shared/shared';
 const gaTracking = (label) => {
   const { VARIATION } = shared;
 
-  const GA4_PROPERTY_ID = 'G-7631EMBK7S';
+  const GA4_PROPERTY_ID = 'G-2NN37L2RT4';
   const GA4_INTERNAL_EXPERIMENT_NUM = '5759498892';
   const GA4_INTERNAL_EXPERIMENT_ID = `cro-${GA4_INTERNAL_EXPERIMENT_NUM}`;
   const EXPERIMENT_DEVICE_CATEGORY = 'All Devices';

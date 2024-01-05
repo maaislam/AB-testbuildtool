@@ -26,8 +26,8 @@ const init = () => {
 
   const messages = [...casino].map((message) => message.querySelector('.mui-p8iq1o')?.innerText);
 
-  // const casinoMessage = casino.cloneNode(true);
-  // if (casinoMessage) casinoMessage.id = `${ID}__casinoMessage`;
+  //const casinoMessage = casino.cloneNode(true);
+  //if (casinoMessage) casinoMessage.id = `${ID}__casinoMessage`;
 
   const container = document.querySelectorAll('.mui-1v68uba')[0];
   if (container && !document.querySelector(`#${ID}__casinoMessage`)) {
@@ -40,14 +40,17 @@ const init = () => {
 };
 export default () => {
   setup();
-  document.body.addEventListener('click', ({ target }) => {
-    if (target.closest('a[href*="/go/"]') && target.closest('.mui-1v68uba')) {
-      const clickedElem = target.closest('a');
-      const casionName = clickedElem.href.split('/go/')[1];
-      gaTracking(`${casionName} | CTA Clicks to Operator| Button | Bottomlist`);
-    }
-  });
+  const { isListenerAdded } = document.body.dataset;
+  !isListenerAdded &&
+    document.addEventListener('click', ({ target }) => {
+      if (target.closest('a[href*="/go/"]') && target.closest('.mui-1v68uba')) {
+        const clickedElem = target.closest('a');
+        const casionName = clickedElem.href.split('/go/')[1];
 
+        gaTracking(`${casionName} | CTA Clicks to Operator| Button | Bottomlist`);
+      }
+    });
+  document.body.dataset.isListenerAdded = true;
   if (VARIATION === 'Control') {
     return;
   }
