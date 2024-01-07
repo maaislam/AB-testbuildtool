@@ -1,7 +1,8 @@
 import modal from './components/modal';
 import modalContent from './components/modalContent';
 import getProductInfo from './helpers/getProductData';
-import { formatPrice } from './helpers/utils';
+import initialProductsFetch from './helpers/initialProductFetch';
+import { formatPrice, pollerLite } from './helpers/utils';
 import setup from './services/setup';
 
 import shared from './shared/shared';
@@ -21,6 +22,20 @@ const init = () => {
   document.body.insertAdjacentHTML('afterbegin', modal(ID));
 
   cartItems.forEach((cartItem) => {
+    cartItem.classList.add(`${ID}__cartItem`);
+    const url = cartItem.querySelector('a').getAttribute('href');
+    const qty = cartItem.querySelector('.control.qty input.qty');
+    const qtyValue = qty.value;
+
+    initialProductsFetch(url).then((doc) => {
+      const upsellOptions = doc.querySelectorAll('.custom-child-upsel-checkbox input');
+      upsellOptions.forEach((upsellOption) => {
+        const upsellOptionQty = upsellOption.value;
+        if (upsellOptionQty === qtyValue && qtyValue !== '1') {
+          cartItem.classList.add(`${ID}__matched`);
+        }
+      });
+    });
     if (cartItem.querySelector(`.${ID}__openmodal`)) return;
     const sku = cartItem
       .querySelector('td .control.qty input.qty')
@@ -46,14 +61,14 @@ export default () => {
     if (target.closest(`.${ID}__atc`)) {
       const popupItems = target.closest('.ppatc__popup-form');
       const closestLabel = popupItems.querySelector('.ppatc__popup-items label.active');
-        const labelQty = closestLabel.dataset.quantity;
-        const prodUrl = document.querySelector('.ppatc__popup-items').dataset.href;
-        const busketRowLink = document.querySelector(
-          `table .item-info .product-item-name [href*="${prodUrl}"]`
-        );
-        const busketRow = busketRowLink.closest('.item-info');
-        const rowQtyInput = busketRow.querySelector('.input-text.qty');
-        rowQtyInput.value = labelQty;
+      const labelQty = closestLabel.dataset.quantity;
+      const prodUrl = document.querySelector('.ppatc__popup-items').dataset.href;
+      const busketRowLink = document.querySelector(
+        `table .item-info .product-item-name [href*="${prodUrl}"]`
+      );
+      const busketRow = busketRowLink.closest('.item-info');
+      const rowQtyInput = busketRow.querySelector('.input-text.qty');
+      rowQtyInput.value = labelQty;
       setTimeout(() => {
         document.querySelector('[data-cart-item-update]').click();
       }, 200);
