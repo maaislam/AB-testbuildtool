@@ -106,7 +106,7 @@ export default () => {
           return;
         }
 
-        closestParent.querySelector('.action.tocart').click();
+        closestParent?.querySelector('.action.tocart')?.click();
       });
     } else if (target.closest(`.${ID}__variant`)) {
       const closestLabel = target.closest('label');
