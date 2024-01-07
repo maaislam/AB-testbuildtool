@@ -2,7 +2,7 @@ import modal from './components/modal';
 import modalContent from './components/modalContent';
 import getProductInfo from './helpers/getProductData';
 import initialProductsFetch from './helpers/initialProductFetch';
-import { formatPrice, pollerLite } from './helpers/utils';
+import { formatPrice } from './helpers/utils';
 import setup from './services/setup';
 
 import shared from './shared/shared';
