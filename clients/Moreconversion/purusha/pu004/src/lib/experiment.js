@@ -2,7 +2,7 @@ import setup from './services/setup';
 
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const getTimeToMidnight = () => {
   const now = new Date();
@@ -19,9 +19,27 @@ const getTimeToMidnight = () => {
 };
 const getThreeDaysFromToday = () => {
   const today = new Date();
-  const threeDaysLater = new Date(today);
-  threeDaysLater.setDate(today.getDate() + 3);
+  let daysToAdd = 3;
 
+  const isWeekend = (date) => {
+    const day = date.getDay();
+    return day === 0 /* Sunday */ || day === 6; /* Saturday */
+  };
+
+  const addDaysSkippingWeekends = (date, days) => {
+    const result = new Date(date);
+
+    for (let i = 0; i < days; ) {
+      result.setDate(result.getDate() + 1);
+      if (!isWeekend(result)) {
+        i++;
+      }
+    }
+
+    return result;
+  };
+
+  const futureDate = addDaysSkippingWeekends(today, daysToAdd);
   const monthsArray = [
     'January',
     'February',
@@ -36,8 +54,9 @@ const getThreeDaysFromToday = () => {
     'November',
     'December'
   ];
-  const date = threeDaysLater.getDate();
-  const month = monthsArray[threeDaysLater.getMonth()];
+
+  const date = futureDate.getDate();
+  const month = monthsArray[futureDate.getMonth()];
 
   return `${date} ${month}`;
 };

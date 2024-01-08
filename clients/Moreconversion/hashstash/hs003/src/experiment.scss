@@ -1,0 +1,122 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__below65 {
+    .#{$id}__discountProgress {
+      .#{$id}__shippingMessage {
+        display: none !important;
+      }
+    }
+
+    .#{$id}__shippingMessage {
+      display: block !important;
+    }
+  }
+
+  &__annoucementBar {
+    height: 30px;
+    margin: 0 -2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #1a1a1a;
+
+    &-content {
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12px;
+    }
+
+    &-ellipse {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+
+  &__discountProgressCard {
+    padding: 24px 0;
+    gap: 18px;
+    border-radius: 4px;
+    text-transform: none !important;
+
+    @include media-query(sm) {
+      padding: 8px 0 16px 0;
+    }
+
+    .#{$id}__discountOfferMessage {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      &-text {
+        color: #000;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 300;
+
+        span {
+          font-weight: 600;
+        }
+
+        span.#{$id}__gotDiscountMessage {
+          font-weight: 500;
+          font-family: 'GillSansNova-Medium';
+        }
+      }
+    }
+
+    .#{$id}__shippingMessage {
+      margin-top: 8px;
+      display: none;
+      color: #1a1a1a;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 12px;
+    }
+
+    .#{$id}__discountProgress {
+      height: 24px;
+      width: 100%;
+      position: relative;
+      background: #f2f2f2;
+      border-radius: 30px;
+      overflow: hidden;
+
+      &-bar {
+        height: 100%;
+        max-width: 100% !important;
+        border-radius: 30px;
+        background: #3c5e28;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='25' viewBox='0 0 20 25' fill='none'%3E%3Cpath opacity='0.05' d='M10 0.589996H20L10 24.59H0L10 0.589996Z' fill='white'/%3E%3C/svg%3E");
+      }
+
+      .#{$id}__shippingMessage {
+        margin: 0;
+        min-width: max-content;
+        display: block;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 12px;
+      }
+
+      // @include media-query(sm) {
+      //     height: 10px;
+      //     width: 100%;
+      // }
+    }
+  }
+
+  .free-shipping-bar {
+    display: none;
+  }
+}

@@ -9,7 +9,7 @@ const affiliateLinksConfig = {
       'https://media.hajper.com/tracking.php?tracking_code&aid=110902&mid=1967&sid=456610&pid=638',
     mrvegas: 'https://www.mrvegas.com/?referral_id=casinopro_se_MrVegas_CampaignA_A169264C',
     happycasino: 'https://record.glitnoraffiliates.com/_gzA4QjFg4b2BKOxorkQ2_WNd7ZgqdRLk/9',
-    leovegas: 'https://ntrfr.leovegas.com/redirect.aspx?pid=3766885&bid=14986',
+    leovegas: 'https://ntrfr.leovegas.com/redirect.aspx?pid=3772101&bid=14962',
     paf: 'https://record.multibrandaffiliates.com/_P0_9mHnl3GuhWoqmOk2VLGNd7ZgqdRLk/767/',
     comeon:
       'https://media.comeon.com/tracking.php?tracking_code&aid=107706&mid=1782&sid=456613&pid=488',
@@ -31,7 +31,7 @@ const affiliateLinksConfig = {
     storspelare: 'https://b1.trickyrock.com/redirect.aspx?pid=94437912&bid=36898',
     unibet: 'https://b1.trickyrock.com/redirect.aspx?pid=94437958&bid=35742',
     betway:
-      'https://betway.com/sv?s=bw33384&a=AFF3996374118897242&utm_source=33384&utm_medium=Affiliate&utm_campaign=AFF3996374118897242',
+      'https://www.betway.it/bwp/casino?s=bpi29979&a=bpiadid180234',
     betsson: 'https://record.betsson.com/_ueGwq1j42qTlkqgTWCr0ImNd7ZgqdRLk/270/',
     bethard:
       'https://wleuroearners.adsrv.eacdn.com/C.ashx?btag=a_171777b_2922c_&affid=13898&siteid=171777&adid=2922&c=',
@@ -53,7 +53,16 @@ const affiliateLinksConfig = {
     noaccountbet: 'https://record.multibrandaffiliates.com/_yqfmSXnmianKto_EPcZApGNd7ZgqdRLk/13/',
     prankcasino: 'https://record.multibrandaffiliates.com/_6kynLvfY6kkVMQur5VcMMWNd7ZgqdRLk/14/',
     swiftcasino:
-      'https://ads.galaxyaffiliates.com/Redirect.aspx?mid=5320&sid=9164&cid=&pid=&affid=5248'
+      'https://ads.galaxyaffiliates.com/Redirect.aspx?mid=5320&sid=9164&cid=&pid=&affid=5248',
+    admiralbet: 'https://wladmiralinteractive.adsrv.eacdn.com/C.ashx?btag=a_3717b_444c_&affid=685&siteid=3717&adid=444&c=',
+    snai: 'https://informatoriads.snai.it/redirect.aspx?pid=36133&bid=1497',
+    starvegas: 'https://www.starvegas.it/gmg/refer/65955a2168e20b0001c035bb',
+    williamhill: 'https://campaigns.williamhill.it/C.ashx?btag=a_205948b_974c_&affid=1738940&siteid=205948&adid=974&c=',
+    betclic: 'https://wlbetclic.adsrv.eacdn.com/C.ashx?btag=a_30711b_12231c_&affid=18344&siteid=30711&adid=12231&c=',
+    bigcasino: 'https://informatoriads.snai.it/redirect.aspx?pid=36137&bid=1497',
+    planetwin: 'https://ads.planetwin365affiliate.com/redirect.aspx?pid=6971&bid=1675',
+    starcasino: 'https://record.starcasino.it/_gBQJTgOCFb0xReI-LIPksWNd7ZgqdRLk/10/',
+    eurobet: 'https://record.betpartners.it/_t7YAfbisBs26tyDIijdDK2Nd7ZgqdRLk/8/'
   },
   'B Link': {
     speedycasino: 'https://record.multibrandaffiliates.com/_b3-ZJQbqYySUcyqUL4Bc9GNd7ZgqdRLk/8/',
@@ -65,7 +74,7 @@ const affiliateLinksConfig = {
       'https://media.hajper.com/tracking.php?tracking_code&aid=110902&mid=1967&sid=456611&pid=638',
     mrvegas: 'https://www.mrvegas.com/?referral_id=casinopro_se_MrVegas_RUBT_A169277C',
     happycasino: 'https://record.glitnoraffiliates.com/_gzA4QjFg4b2BKOxorkQ2_WNd7ZgqdRLk/10',
-    leovegas: 'https://ntrfr.leovegas.com/redirect.aspx?pid=3766887&bid=14986',
+    leovegas: 'https://ntrfr.leovegas.com/redirect.aspx?pid=3772102&bid=14962',
     paf: 'https://record.multibrandaffiliates.com/_P0_9mHnl3GuhWoqmOk2VLGNd7ZgqdRLk/768/',
     comeon:
       'https://media.comeon.com/tracking.php?tracking_code&aid=107706&mid=1782&sid=456614&pid=488',
@@ -86,7 +95,7 @@ const affiliateLinksConfig = {
     storspelare: 'https://b1.trickyrock.com/redirect.aspx?pid=94437925&bid=36898',
     unibet: 'https://b1.trickyrock.com/redirect.aspx?pid=94437966&bid=35742',
     betway:
-      'https://betway.com/sv?s=bw33384&a=AFF3996383589034849&utm_source=33384&utm_medium=Affiliate&utm_campaign=AFF3996383589034849',
+      'https://www.betway.it/bwp/casino?s=bpi29979&a=bpiadid180235',
     betsson: 'https://record.betsson.com/_ueGwq1j42qTlkqgTWCr0ImNd7ZgqdRLk/271/',
     bethard:
       'https://wleuroearners.adsrv.eacdn.com/C.ashx?btag=a_171778b_2922c_&affid=13898&siteid=171778&adid=2922&c=',
@@ -108,7 +117,16 @@ const affiliateLinksConfig = {
     noaccountbet: 'https://record.multibrandaffiliates.com/_yqfmSXnmianKto_EPcZApGNd7ZgqdRLk/14/',
     prankcasino: 'https://record.multibrandaffiliates.com/_6kynLvfY6kkVMQur5VcMMWNd7ZgqdRLk/15/',
     swiftcasino:
-      'https://ads.galaxyaffiliates.com/Redirect.aspx?mid=5320&sid=9165&cid=&pid=&affid=5248'
+      'https://ads.galaxyaffiliates.com/Redirect.aspx?mid=5320&sid=9165&cid=&pid=&affid=5248',
+    admiralbet: 'https://wladmiralinteractive.adsrv.eacdn.com/C.ashx?btag=a_3718b_444c_&affid=685&siteid=3718&adid=444&c=',
+    snai: 'https://informatoriads.snai.it/redirect.aspx?pid=36134&bid=1497',
+    starvegas: 'https://www.starvegas.it/gmg/refer/65955a8668e20b0001c09c9f',
+    williamhill: 'https://campaigns.williamhill.it/C.ashx?btag=a_205949b_974c_&affid=1738940&siteid=205949&adid=974&c=',
+    betclic: 'https://wlbetclic.adsrv.eacdn.com/C.ashx?btag=a_30712b_12231c_&affid=18344&siteid=30712&adid=12231&c=',
+    bigcasino: 'https://informatoriads.snai.it/redirect.aspx?pid=36138&bid=1497',
+    planetwin: 'https://ads.planetwin365affiliate.com/redirect.aspx?pid=6972&bid=1675',
+    starcasino: 'https://record.starcasino.it/_gBQJTgOCFb0xReI-LIPksWNd7ZgqdRLk/11/',
+    eurobet: 'https://record.betpartners.it/_t7YAfbisBs26tyDIijdDK2Nd7ZgqdRLk/9/'
   }
 };
 

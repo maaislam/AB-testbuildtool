@@ -1,0 +1,10 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__reels {
+        .shopify-app-block {
+            display: block !important;
+        }
+    }
+}
