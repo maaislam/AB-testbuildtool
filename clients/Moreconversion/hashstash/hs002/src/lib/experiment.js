@@ -1,11 +1,11 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 import { observeDOM, initExternalLib, initSwiper, pollerLite } from './helpers/utils';
 import { cartUpsell } from './components/cartUpsell';
 import { cartUpsellMobile } from './components/cartUpsellMobile';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 const swiperJs = 'https://m7cdn.io/common/js/swiper.js';
 const swiperCss = 'https://dev.m7cdn.io//common/css/swiper.css';
 
@@ -100,7 +100,10 @@ const init = async () => {
     };
 
     const modifiedArray = [...shuffleArray(noOgProdAvaiable)];
-    const selectedElements = modifiedArray.slice(0, 2);
+    //console.log('🚀 ~ file: experiment.js:103 ~ init ~ modifiedArray:', modifiedArray);
+    //const selectedElements = modifiedArray.slice(0, 2);
+    const selectedElements = modifiedArray;
+
     selectedElements.forEach((element) => {
       const { id, product_id, image_id, compare_at_price, price, title } = element;
       const img = product.images.find((image) => image.id === image_id)?.src;
@@ -116,16 +119,17 @@ const init = async () => {
       });
     });
 
-    if (selectedElements.length > 1) {
-      arr.splice(1, 0, grinder);
+    //check if grinder present in cart
+    const isGrinderPresent = cartItems.items.some((item) => item.product_id === grinder.prodId);
+    //console.log('🚀 ~ file: experiment.js:75 ~ init ~ cartItems:', cartItems);
+    //console.log('🚀 ~ file: experiment.js:124 ~ init ~ isGrinderPresent:', isGrinderPresent);
+
+    if (isGrinderPresent) {
       addHtmlAndSwiper(arr);
-    } else if (selectedElements.length === 1) {
-      arr.push(grinder);
-      addHtmlAndSwiper(arr);
-    } else {
-      arr.push(grinder);
-      addHtmlAndSwiper(arr);
+      return;
     }
+    arr.splice(1, 0, grinder);
+    addHtmlAndSwiper(arr);
   } catch (error) {
     console.error('Error:', error);
   }
@@ -133,21 +137,10 @@ const init = async () => {
 
 export default () => {
   setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
 
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
   initExternalLib(swiperJs, swiperCss);
   init();
   observeDOM('body .header__cart-count', () => {
-    setTimeout(init, 100);
+    setTimeout(init, 1000);
   });
 };

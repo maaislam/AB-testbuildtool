@@ -42,7 +42,6 @@ const getProductInfo = (url) => {
           saving: 0
         });
       }
-      console.log('variants: ', variants);
       productsData.variants = variants;
       return productsData;
     })

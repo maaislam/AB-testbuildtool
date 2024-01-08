@@ -3,7 +3,7 @@ const affiliateLinksConfig = {
     mrvegascasino: 'https://www.mrvegas.com/?referral_id=casinoguidese_MrVegas_CAMPA_A176494C',
     happycasino: 'https://record.glitnoraffiliates.com/_gzA4QjFg4b2BKOxorkQ2_WNd7ZgqdRLk/12',
     gogocasino: 'https://ntrfr.gogocasino.com/redirect.aspx?pid=3771691&bid=16352',
-    x3000: 'https://record.multibrandaffiliates.com/_5bB0Z1-OHDmCbhE8FJgrXWNd7ZgqdRLk/22/',
+    x3000: 'https://record.multibrandaffiliates.com/_5bB0Z1-OHDn6sFz1maRvBWNd7ZgqdRLk/26/',
     supersnabbtse: 'https://ads.supersnabbt.se/C.ashx?btag=a_26976b_217c_&affid=7652&siteid=26976&adid=217&c=',
     jallacasino: 'https://record.jallacasino.se/_MYPBrDOnJ25AD7oDn4j9IGNd7ZgqdRLk/53/',
     noaccountcasino: 'https://record.multibrandaffiliates.com/_k5MV9rSRkjUd2bMnnkYwymNd7ZgqdRLk/19/',
@@ -11,13 +11,24 @@ const affiliateLinksConfig = {
     maria: 'https://b1.trickyrock.com/redirect.aspx?pid=94857394&bid=36926',
     betinia: 'https://btn.servclick1move.com/?mid=21245_652613',
     lyllo: 'https://media.lyllocasino.com/tracking.php?tracking_code&aid=107716&mid=6288&sid=457310&pid=3267',
-    casinostugan: 'https://media.casinostugan.com/tracking.php?tracking_code&aid=108016&mid=8419&sid=457312&pid=850'
+    casinostugan: 'https://media.casinostugan.com/tracking.php?tracking_code&aid=108016&mid=8419&sid=457312&pid=850',
+    expekt: 'https://ntrfr.expekt.se/redirect.aspx?pid=3772046&bid=17455',
+    bethard: 'https://wleuroearners.adsrv.eacdn.com/C.ashx?btag=a_172066b_2743c_&affid=13900&siteid=172066&adid=2743&c=',
+    speedybet: 'https://record.multibrandaffiliates.com/_7Ou10UBufO7nJDRtTrwyKWNd7ZgqdRLk/7/',
+    leovegas: 'https://ads.leovegas.com/redirect.aspx?pid=3772051&bid=15010',
+    comeon: 'https://media.comeon.com/tracking.php?tracking_code&aid=107707&mid=1770&sid=457405&pid=457',
+    '10bet': 'https://track.10bet.com/C.ashx?btag=a_58179b_5641c_&affid=1680980&siteid=58179&adid=5641&c=',
+    noaccounbet: 'https://record.multibrandaffiliates.com/_yqfmSXnmiaktI0PEkohphWNd7ZgqdRLk/20/',
+    hajper: 'https://media.hajper.com/tracking.php?tracking_code&aid=110903&mid=1969&sid=457408&pid=639',
+    bwin: 'https://mediaserver.entainpartners.com/renderBanner.do?zoneId=2128789',
+    betsson: 'https://record.betsson.com/_ro-D-moF05_yE_779qrAymNd7ZgqdRLk/88/',
+    nordicbet: 'https://record.nordicbet.com/_ro-D-moF05_CquxhSQYAnWNd7ZgqdRLk/90/'
   },
   'B Link': {
     mrvegascasino: 'https://www.mrvegas.com/?referral_id=casinoguidese_MrVegas_UT_CAMPB_A176495C',
     happycasino: 'https://record.glitnoraffiliates.com/_gzA4QjFg4b2BKOxorkQ2_WNd7ZgqdRLk/13',
     gogocasino: 'https://ntrfr.gogocasino.com/redirect.aspx?pid=3771692&bid=16352',
-    x3000: 'https://record.multibrandaffiliates.com/_5bB0Z1-OHDmCbhE8FJgrXWNd7ZgqdRLk/23/',
+    x3000: 'https://record.multibrandaffiliates.com/_5bB0Z1-OHDn6sFz1maRvBWNd7ZgqdRLk/27/',
     supersnabbt: 'https://ads.supersnabbt.se/C.ashx?btag=a_26977b_217c_&affid=7652&siteid=26977&adid=217&c=',
     jallacasino: 'https://record.jallacasino.se/_MYPBrDOnJ25AD7oDn4j9IGNd7ZgqdRLk/54/',
     noaccountcasino: 'https://record.multibrandaffiliates.com/_k5MV9rSRkjUd2bMnnkYwymNd7ZgqdRLk/20/',
@@ -25,7 +36,18 @@ const affiliateLinksConfig = {
     maria: 'https://b1.trickyrock.com/redirect.aspx?pid=94857425&bid=36926',
     betinia: 'https://btn.servclick1move.com/?mid=21245_652625',
     lyllo: 'https://media.lyllocasino.com/tracking.php?tracking_code&aid=107716&mid=6288&sid=457311&pid=3267',
-    casinostugan: 'https://media.casinostugan.com/tracking.php?tracking_code&aid=108016&mid=8419&sid=457313&pid=850'
+    casinostugan: 'https://media.casinostugan.com/tracking.php?tracking_code&aid=108016&mid=8419&sid=457313&pid=850',
+    expekt: 'https://ntrfr.expekt.se/redirect.aspx?pid=3772047&bid=17455',
+    bethard: 'https://wleuroearners.adsrv.eacdn.com/C.ashx?btag=a_172067b_2743c_&affid=13900&siteid=172067&adid=2743&c=',
+    speedybet: 'https://record.multibrandaffiliates.com/_7Ou10UBufO7nJDRtTrwyKWNd7ZgqdRLk/8/',
+    leovegas: 'https://ads.leovegas.com/redirect.aspx?pid=3772053&bid=15010',
+    comeon: 'https://media.comeon.com/tracking.php?tracking_code&aid=107707&mid=1770&sid=457406&pid=457',
+    '10bet': 'https://track.10bet.com/C.ashx?btag=a_58180b_5641c_&affid=1680980&siteid=58180&adid=5641&c=',
+    noaccounbet: 'https://record.multibrandaffiliates.com/_yqfmSXnmiaktI0PEkohphWNd7ZgqdRLk/21/',
+    hajper: 'https://media.hajper.com/tracking.php?tracking_code&aid=110903&mid=1969&sid=457409&pid=639',
+    bwin: 'https://mediaserver.entainpartners.com/renderBanner.do?zoneId=2128790',
+    betsson: 'https://record.betsson.com/_ro-D-moF05_yE_779qrAymNd7ZgqdRLk/89/',
+    nordicbet: 'https://record.nordicbet.com/_ro-D-moF05_CquxhSQYAnWNd7ZgqdRLk/91/'
   }
 };
 

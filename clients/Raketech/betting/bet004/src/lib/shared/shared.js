@@ -1,6 +1,6 @@
 module.exports = {
     ID: "bet004",
-    VARIATION: "1",
+    VARIATION: "Control",
     CLIENT: "Raketech",
     SITE: "betting"
   };

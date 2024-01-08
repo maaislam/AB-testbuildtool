@@ -5,7 +5,9 @@ import setup from './services/setup';
 import shared from './shared/shared';
 
 const { ID } = shared;
-const init = () => {
+const init = (data) => {
+  const { backgroudColor, casinoImage, casinoname, disclaimerUrl, messagebody, termsUrl, url } =
+    data;
   const htmlStr = `<div class='${ID}__cardContainer'>
         <div class='${ID}__card'>
             <div class='${ID}__cardHeader'>
@@ -18,17 +20,17 @@ const init = () => {
                 </span>
             </div>
             <div class='${ID}__cardBody'>
-                    <a class="${ID}__logo img" href="/spela/turbonino" rel="nofollow noreferrer">
-                        <img loading="eager" alt="casino" src="https://media.casinofeber.se/operators/turbonino.png?w=200&q=80&auto=format">
+                    <a class="${ID}__logo img" style="background-color:${backgroudColor}" href="${url}" rel="nofollow noreferrer">
+                        <img loading="eager" alt="${casinoname}" src="${casinoImage}">
                     </a>
                 <div class='${ID}__content'>
                     <div class='${ID}__content-details'>
-                        <span class='details'>50 omsättningsfria free spins på slot med progressiv jackpott</span>
+                        <span class='details'>${messagebody}</span>
                         <div class="${ID}__toplist-terms">
-                            Reklamlänk | 18+ | <a href="/spela/turbonino/villkor" target="_blank" rel="nofollow noreferrer noopener"> Regler &amp; villkor gäller </a> | Spela ansvarsfullt | <a href="https://www.stodlinjen.se" target="_blank" rel="nofollow noreferrer noopener">stodlinjen.se</a>
+                            Reklamlänk | 18+ | <a href="${termsUrl}" target="_blank" rel="nofollow noreferrer noopener"> Regler &amp; villkor gäller </a> | Spela ansvarsfullt | <a href="${disclaimerUrl}" target="_blank" rel="nofollow noreferrer noopener">stodlinjen.se</a>
                         </div>
                     </div>
-                    <a href='/spela/turbonino' class='${ID}__content-btn' target='_blank'>
+                    <a href='${url}' class='${ID}__content-btn' target='_blank'>
                         <span>Till casinot</span>
                     </a>
                 </div>
@@ -51,17 +53,47 @@ export default () => {
 
   document.body.addEventListener('click', (e) => {
     if (e.target.closest(`.${ID}__logo`) || e.target.closest(`.${ID}__content-btn`)) {
-        gaTracking('top-banner-position-0');
+      gaTracking('top-banner-position-0');
 
-        const casinoNameElem = e.target.closest('a');
-        const casinoName = casinoNameElem.getAttribute('href').split('/')[2];
-        gaTracking(`User clicked promoted casino: ${casinoName}`);
+      const casinoNameElem = e.target.closest('a');
+      const casinoName = casinoNameElem.getAttribute('href').split('/')[2];
+      gaTracking(`User clicked promoted casino: ${casinoName}`);
 
-        const elemClicked = e.target.closest(`.${ID}__logo`) ? 'logo' : 'button';
-        gaTracking(`top-banner-position-0 | ${elemClicked}`);
+      const elemClicked = e.target.closest(`.${ID}__logo`) ? 'logo' : 'button';
+      gaTracking(`top-banner-position-0 | ${elemClicked}`);
     }
   });
 
-  init();
-  observeDOM('.toplist-holder', init);
+  //get Data from API
+  const getData = async (endpoint, key = 'AB_data') => {
+    const BASE_URL = 'https://ab-test-datastore.s3.ap-south-1.amazonaws.com';
+    const url = `${BASE_URL}${endpoint}`;
+
+    //Check if the data is already in session storage
+    const data = sessionStorage.getItem(key);
+    if (data) {
+      return JSON.parse(data);
+    }
+
+    //Make a fetch call to get the data
+    const response = await fetch(url);
+    if (!response.ok) {
+      sessionStorage.removeItem(key);
+      throw new Error(`Failed to fetch data from ${url}`);
+    }
+    const fetchedData = await response.json();
+    console.log('fetchedData:', fetchedData);
+
+    //Store the fetched data in session storage
+    sessionStorage.setItem(key, JSON.stringify(fetchedData));
+
+    return fetchedData;
+  };
+  const apiKeySuffix = `${ID}__apiData`;
+  getData('/cfPromotedCasino.json', apiKeySuffix).then((data) => {
+    init(data[0]);
+    observeDOM('.toplist-holder', () => {
+      init(data[0]);
+    });
+  });
 };
