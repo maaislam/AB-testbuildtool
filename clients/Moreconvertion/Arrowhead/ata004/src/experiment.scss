@@ -1,0 +1,32 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__sizeGuideContainer {
+    thead th {
+      font-weight: 400;
+      background: #990;
+      color: #fff;
+    }
+
+    tr {
+      background: #f4f7f8;
+      border-bottom: 1px solid #fff;
+      margin-bottom: 5px;
+    }
+
+    tr:nth-child(even) {
+      background: #e8eeef;
+    }
+
+    th,
+    td {
+      text-align: centen;
+      font-weight: 300;
+    }
+
+    tfoot tr {
+      background: none;
+    }
+  }
+}
