@@ -1,0 +1,23 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__shippingdate {
+    display: block;
+    margin-top: 14px;
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.3;
+    p {
+      font-family: Inter !important;
+    }
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__timetomidnight {
+    color: #006b14;
+  }
+}

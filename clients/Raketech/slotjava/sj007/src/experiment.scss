@@ -1,0 +1,172 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__heroBanner {
+    .row {
+      .#{$id}__section_1 {
+        max-width: 460px;
+        @media screen and (max-width: 768px) {
+          & {
+            max-width: 100%;
+          }
+        }
+      }
+      .#{$id}__section_2 {
+        width: calc(100% - 460px);
+        margin-top: 24px;
+        padding-left: 57px;
+        @media screen and (max-width: 1023px) {
+          & {
+            width: 100%;
+            margin-top: 15px;
+            padding-left: 12px;
+          }
+        }
+
+        .#{$id}__casinoBox {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+
+          @media screen and (max-width: 768px) {
+            & {
+              gap: 10px;
+            }
+          }
+
+          .#{$id}__item {
+            @media screen and (max-width: 1023px) {
+              & {
+                flex-basis: calc(100% / 3);
+              }
+            }
+            .#{$id}__description {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              border-radius: 12px;
+              border: 1px solid var(--White, #fff);
+              background: var(----Secondary-Colors-Space-Cadet-Blue, #222949);
+              box-shadow: 0px 0px 32.9px 0px #222949;
+              width: 220px;
+              @media screen and (max-width: 1023px) {
+                & {
+                  width: unset;
+
+                  & svg {
+                    width: 24px;
+                    height: 24px;
+                  }
+                }
+              }
+
+              h4 {
+                font-weight: 900;
+                font-size: 35px;
+                margin: 31px 0 11px 0;
+                @media screen and (max-width: 1023px) {
+                  & {
+                    font-size: 18px;
+                  }
+                }
+              }
+
+              .#{$id}__container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 31px;
+                @media screen and (max-width: 1023px) {
+                  & {
+                    gap: 5px;
+                  }
+                }
+              }
+
+              span {
+                font-size: 32px;
+                @media screen and (max-width: 1023px) {
+                  & {
+                    font-size: 17px;
+                  }
+                }
+              }
+            }
+            .#{$id}__text {
+              max-width: 170px;
+              margin: 13px auto 0 auto;
+              text-align: center;
+              font-size: 16px;
+              font-weight: 700;
+              @media screen and (max-width: 768px) {
+                max-width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      .col-12 {
+        .#{$id}__heading_hero {
+          font-size: 58px;
+          @media screen and (max-width: 768px) {
+            font-size: 36px;
+          }
+        }
+        .text {
+          margin: 0;
+          font-size: 18px;
+          @media screen and (max-width: 768px) {
+            & {
+              font-size: 14px;
+            }
+          }
+        }
+        .button-list {
+          margin-top: 22px;
+          @media screen and (max-width: 768px) {
+            & {
+              margin-top: 13px;
+              & a {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+              }
+            }
+          }
+        }
+
+        .#{$id}__first_text {
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        .#{$id}__heading_Box {
+          position: relative;
+          &::after {
+            content: '';
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(https://img.slotjava.es/wp-content/themes/sumpan-21/dist/img/mr-java-stand-shadow.png);
+            display: block;
+            position: absolute;
+            width: 75px;
+            height: 90px;
+            top: 11px;
+            right: -11px;
+
+            @media screen and (max-width: 768px) {
+              & {
+                width: 53px;
+                height: 64px;
+                left: 240px;
+                top: 7px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

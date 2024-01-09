@@ -1,15 +1,17 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 import annoucementBar from './components/annoucementBar';
 import progressBar from './components/progressBar';
 import { observeDOM } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const thresholdPrice = 99;
-  const basketTotalPriceCtrl = document.querySelector('[slot="footer"] .h-stack span.h5:nth-child(2)').textContent;
+  const basketTotalPriceCtrl = document.querySelector(
+    '[slot="footer"] .h-stack span.h5:nth-child(2)'
+  ).textContent;
   const match = basketTotalPriceCtrl.match(/\d+\.\d+/);
   const basketTotalPrice = match ? +match[0] : 0;
 
