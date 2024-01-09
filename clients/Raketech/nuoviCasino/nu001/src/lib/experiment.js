@@ -62,7 +62,7 @@ export default () => {
             /\//g,
             ''
           )} | CTA Clicks to Operator (Logo) | Mainlist${
-            target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
+            target.closest(`.${ID}__grayscale`) && VARIATION !== 'Control' ? ' | Greyscale' : ''
           }`
         );
       } else {
@@ -71,7 +71,7 @@ export default () => {
             /\//g,
             ''
           )} | CTA Clicks to Operator (Button) | Mainlist${
-            target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
+            target.closest(`.${ID}__grayscale`) && VARIATION !== 'Control' ? ' | Greyscale' : ''
           }`
         );
       }
