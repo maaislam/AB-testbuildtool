@@ -13,9 +13,8 @@ const heroBanner = (ID) => {
           <h1 class="heading heading_hero ${ID}__heading_hero">A Slotjava!</h1>
           </div>
           <p class="text">
-            ¡Accede a 1000s de demos de tragaperras, reseñas
+            ¡Accede a 1000s de demos de tragaperras, reseñas confiables, guías informativas y los últimos bonos!
           </p>
-          <p class="text">confiables, guías informativas y los últimos bonos!</p>
           <div class="button-list">
             <a class="button button_hero button-list__button" href="/tragamonedas-gratis/"
               >Jugar slots gratis</a
