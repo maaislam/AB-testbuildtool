@@ -14,7 +14,7 @@ const gaTracking = (label) => {
       window.gtag('cro_event', GA4_INTERNAL_EXPERIMENT_ID, {
         event_category: EXPERIMENT_DEVICE_CATEGORY,
         event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | V${
-          VARIATION === 'control' ? 'C' : VARIATION
+          VARIATION == 'control' ? 'C' : VARIATION
         } | ${label}`
       });
     } else {
@@ -23,7 +23,7 @@ const gaTracking = (label) => {
         event_detail: GA4_INTERNAL_EXPERIMENT_ID,
         event_category: EXPERIMENT_DEVICE_CATEGORY,
         event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | V${
-          VARIATION === 'control' ? 'C' : VARIATION
+          VARIATION == 'control' ? 'C' : VARIATION
         } | ${label}`
       });
     }
