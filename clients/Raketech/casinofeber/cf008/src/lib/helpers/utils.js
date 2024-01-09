@@ -1,3 +1,7 @@
+import { casinoFeberData } from '../data/casinoFeberData';
+import getData from './getData';
+import modifyData from './modifyData';
+
 /**
  * Polls the DOM for a condition to be met before executing a callback.
  *
@@ -48,4 +52,15 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
+};
+
+export const setCasinoData = async (id) => {
+  getData(id).then((result) => {
+    const modifiedData = modifyData(result);
+    window[`${id}__data`] = modifiedData;
+  }).catch((error) => {
+    console.error(error);
+    const modifiedData = modifyData(casinoFeberData);
+    window[`${id}__data`] = modifiedData;
+  });
 };
