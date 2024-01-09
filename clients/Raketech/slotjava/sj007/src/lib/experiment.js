@@ -27,11 +27,11 @@ export default () => {
 
   document.body.addEventListener('click', ({ target }) => {
     if (target.closest(`.${ID}__description`) && target.closest('#Games')) {
-      gaTracking('Games | New Hero');
+      gaTracking('Games | New Hero Card');
     } else if (target.closest(`.${ID}__description`) && target.closest('#Casino')) {
-      gaTracking('Casino | New Hero');
+      gaTracking('Casino | New Hero Card');
     } else if (target.closest(`.${ID}__description`) && target.closest('#Bonus')) {
-      gaTracking('Bonus | New Hero');
+      gaTracking('Bonus | New Hero Card');
     } else if (target.closest('a.button.button_hero ') && target.closest('.section.section_top')) {
       gaTracking('Slots Button | Hero');
     } else if (
