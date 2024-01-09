@@ -1,27 +1,18 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { sizeGuideStr } from './components/sizeGuideStr';
+import sizeGuide from './components/sizeGuide';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
+
+const init = () => {
+  const anchorPoint = document.querySelector('body .product-description div[data-mce-fragment="1"]');
+  if (!document.querySelector(`.${ID}__sizeGuideContainer`)) {
+    anchorPoint.insertAdjacentHTML('beforebegin', sizeGuide(ID));
+  }
+};
 
 export default () => {
-  setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
+  setup();
 
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
-  if (!document.querySelector(`.${ID}__sizeGuideContainer`)) {
-    document
-      .querySelector('body .product-description div[data-mce-fragment="1"]')
-      .insertAdjacentHTML('beforebegin', sizeGuideStr(ID));
-  }
+  init();
 };
