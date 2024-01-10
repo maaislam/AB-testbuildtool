@@ -4,11 +4,11 @@
 .#{$id} {
   & main {
     .#{$id}__heroBanner {
-      background-image: url(https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/sj007-banner_desk.png);
+      background-image: url(https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/sj007-banner_desktop.png);
       background-repeat: no-repeat;
       background-position: 24% 100%;
-      background-size: auto;
-      padding: 45px 20px;
+      background-size: cover;
+      padding: 45px 0;
       @media screen and (max-width: 768px) {
         & {
           background-image: url(https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/sj007-banner_mob.png);
