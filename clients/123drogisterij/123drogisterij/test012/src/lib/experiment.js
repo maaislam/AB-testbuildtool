@@ -2,6 +2,7 @@ import modal from './components/modal';
 import modalContent from './components/modalContent';
 import getProductInfo from './helpers/getProductData';
 import initialProductsFetch from './helpers/initialProductFetch';
+import setPercentage from './helpers/setPercentage';
 import { formatPrice } from './helpers/utils';
 import setup from './services/setup';
 
@@ -11,12 +12,14 @@ const { ID } = shared;
 
 const init = () => {
   const cartItems = document.querySelectorAll('.cart.item .item-info');
+  const collectData = [];
+  let Highest_Number = 0;
 
   const fakeButton = (
     id,
     sku
-  ) => `<button type="button" title="Wilt u Extra voordeel?" class="${id}__openmodal" data-sku="${sku}">
-    <span>Wilt u Extra voordeel?</span>
+  ) => `<button type="button" title="Wilt u extra voordeel?" class="${id}__openmodal" data-sku="${sku}">
+    <span>Wilt u extra voordeel?</span>
   </button>`;
 
   document.body.insertAdjacentHTML('afterbegin', modal(ID));
@@ -26,6 +29,17 @@ const init = () => {
     const url = cartItem.querySelector('a').getAttribute('href');
     const qty = cartItem.querySelector('.control.qty input.qty');
     const qtyValue = qty.value;
+    const priceElem = cartItem.querySelector('.cart-price > .price').textContent.replace(',', '.').replace('€', '').trim();
+    const price = parseFloat(priceElem);
+
+    if (Highest_Number < qtyValue) {
+      Highest_Number = qtyValue;
+    }
+
+    collectData.push({
+      quantity: parseInt(qtyValue),
+      actualPrice: price
+    });
 
     initialProductsFetch(url).then((doc) => {
       const upsellOptions = doc.querySelectorAll('.custom-child-upsel-checkbox input');
@@ -102,6 +116,8 @@ export default () => {
           modalInnerContent.querySelector('.highest_badge').closest(`.${ID}__variant`)?.click();
           modalInnerContent.setAttribute('data-href', prodUrl);
           document.body.classList.add('ppatc__popup-enabled');
+
+          setPercentage(ID, productsData);
 
           return;
         }

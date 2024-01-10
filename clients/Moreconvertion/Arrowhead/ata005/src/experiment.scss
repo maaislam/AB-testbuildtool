@@ -1,0 +1,10 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .product-block {
+    & > .social-sharing {
+      display: none;
+    }
+  }
+}

@@ -2,166 +2,270 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  &__heroBanner {
-    .row {
-      .#{$id}__section_1 {
-        max-width: 460px;
-        @media screen and (max-width: 768px) {
-          & {
-            max-width: 100%;
-          }
+  & main {
+    .#{$id}__heroBanner {
+      background-image: url(https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/sj007-banner_desk.png);
+      background-repeat: no-repeat;
+      background-position: 24% 100%;
+      background-size: auto;
+      padding: 45px 20px;
+      @media screen and (max-width: 768px) {
+        & {
+          background-image: url(https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/sj007-banner_mob.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          padding: 20px 0;
         }
       }
-      .#{$id}__section_2 {
-        width: calc(100% - 460px);
-        margin-top: 24px;
-        padding-left: 57px;
-        @media screen and (max-width: 1023px) {
-          & {
-            width: 100%;
-            margin-top: 15px;
-            padding-left: 12px;
-          }
-        }
-
-        .#{$id}__casinoBox {
-          display: flex;
-          align-items: flex-start;
-          gap: 20px;
-
-          @media screen and (max-width: 768px) {
-            & {
-              gap: 10px;
-            }
-          }
-
-          .#{$id}__item {
-            @media screen and (max-width: 1023px) {
-              & {
-                flex-basis: calc(100% / 3);
-              }
-            }
-            .#{$id}__description {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              border-radius: 12px;
-              border: 1px solid var(--White, #fff);
-              background: var(----Secondary-Colors-Space-Cadet-Blue, #222949);
-              box-shadow: 0px 0px 32.9px 0px #222949;
-              width: 220px;
-              @media screen and (max-width: 1023px) {
-                & {
-                  width: unset;
-
-                  & svg {
-                    width: 24px;
-                    height: 24px;
-                  }
-                }
-              }
-
-              h4 {
-                font-weight: 900;
-                font-size: 35px;
-                margin: 31px 0 11px 0;
-                @media screen and (max-width: 1023px) {
-                  & {
-                    font-size: 18px;
-                  }
-                }
-              }
-
-              .#{$id}__container {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                margin-bottom: 31px;
-                @media screen and (max-width: 1023px) {
-                  & {
-                    gap: 5px;
-                  }
-                }
-              }
-
-              span {
-                font-size: 32px;
-                @media screen and (max-width: 1023px) {
-                  & {
-                    font-size: 17px;
-                  }
-                }
-              }
-            }
-            .#{$id}__text {
-              max-width: 170px;
-              margin: 13px auto 0 auto;
-              text-align: center;
-              font-size: 16px;
-              font-weight: 700;
-              @media screen and (max-width: 768px) {
-                max-width: 100%;
-              }
-            }
-          }
-        }
+      & + .section.section_top {
+        display: none;
       }
+      .row {
+        .#{$id}__section_1 {
+          max-width: 460px;
 
-      .col-12 {
-        .#{$id}__heading_hero {
-          font-size: 58px;
-          @media screen and (max-width: 768px) {
-            font-size: 36px;
-          }
-        }
-        .text {
-          margin: 0;
-          font-size: 18px;
-          @media screen and (max-width: 768px) {
-            & {
-              font-size: 14px;
-            }
-          }
-        }
-        .button-list {
-          margin-top: 22px;
-          @media screen and (max-width: 768px) {
-            & {
-              margin-top: 13px;
-              & a {
-                width: 100%;
-                margin-left: 0;
-                margin-right: 0;
-              }
-            }
-          }
-        }
-
-        .#{$id}__first_text {
-          font-size: 14px;
-          font-weight: 700;
-        }
-
-        .#{$id}__heading_Box {
-          position: relative;
-          &::after {
-            content: '';
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-image: url(https://img.slotjava.es/wp-content/themes/sumpan-21/dist/img/mr-java-stand-shadow.png);
-            display: block;
-            position: absolute;
-            width: 75px;
-            height: 90px;
-            top: 11px;
-            right: -11px;
-
+          .button {
+            font-size: 12px;
+            font-weight: 900;
+            line-height: normal;
+            text-transform: uppercase;
             @media screen and (max-width: 768px) {
               & {
-                width: 53px;
-                height: 64px;
-                left: 240px;
-                top: 7px;
+                font-weight: 700;
+                line-height: 16px;
+              }
+              &.button_hero {
+                margin-top: 0px;
+              }
+              &.button_secondary {
+                margin-top: 12px;
+              }
+            }
+          }
+          @media screen and (max-width: 768px) {
+            & {
+              max-width: 100%;
+            }
+          }
+        }
+        .#{$id}__section_2 {
+          width: calc(100% - 460px);
+          margin-top: 24px;
+          padding-left: 57px;
+          @media screen and (max-width: 1400px) and (min-width: 1024px) {
+            & {
+              padding-left: 0;
+              padding-right: 0;
+            }
+          }
+          @media screen and (max-width: 1023px) {
+            & {
+              width: 100%;
+              margin-top: 15px;
+              padding-left: 12px;
+            }
+          }
+
+          .#{$id}__casinoBox {
+            display: flex;
+            align-items: flex-start;
+            gap: 37px;
+
+            @media screen and (max-width: 1023px) {
+              & {
+                gap: 12px;
+              }
+            }
+
+            .#{$id}__item {
+              @media screen and (max-width: 1400px) and (min-width: 1024px) {
+                & {
+                  flex-basis: calc(100% / 3);
+                }
+              }
+              @media screen and (max-width: 1023px) {
+                & {
+                  flex-basis: calc(100% / 3);
+                }
+              }
+              .#{$id}__description {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 12px;
+                border: 1px solid var(--White, #fff);
+                background: #222949;
+                box-shadow: 0px 0px 32.9px 0px #222949;
+                width: 220px;
+                text-decoration: none;
+                @media screen and (max-width: 1400px) and (min-width: 1024px) {
+                  & {
+                    width: auto;
+
+                    svg {
+                      width: 34px;
+                      height: 34px;
+                    }
+                  }
+                }
+
+                @media screen and (max-width: 1023px) {
+                  & {
+                    width: unset;
+                    border-radius: 6px;
+                    box-shadow: 0px 0px 17.347px 0px #222949;
+
+                    & svg {
+                      width: 24px;
+                      height: 24px;
+                    }
+                  }
+                }
+
+                h4 {
+                  font-weight: 900;
+                  font-size: 34px;
+                  font-style: normal;
+                  margin: 31px 0 10px 0;
+                  line-height: 48px;
+                  @media screen and (max-width: 1400px) and (min-width: 1024px) {
+                    & {
+                      font-size: 28px;
+                    }
+                  }
+                  @media screen and (max-width: 1023px) {
+                    & {
+                      font-size: 18px;
+                      margin: 10px 0 5px 0;
+                      font-style: normal;
+                      font-weight: 900;
+                      line-height: 25px;
+                    }
+                  }
+                }
+
+                .#{$id}__container {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 31px;
+                  @media screen and (max-width: 1400px) and (min-width: 1024px) {
+                    & {
+                      gap: 5px;
+                    }
+                  }
+                  @media screen and (max-width: 1023px) {
+                    & {
+                      gap: 5px;
+                      margin-bottom: 16px;
+                    }
+                  }
+                }
+
+                span {
+                  font-size: 32px;
+                  @media screen and (max-width: 1400px) and (min-width: 1024px) {
+                    & {
+                      font-size: 24px;
+                    }
+                  }
+                  @media screen and (max-width: 1023px) {
+                    & {
+                      font-size: 17px;
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: 24px;
+                    }
+                  }
+                }
+              }
+              .#{$id}__text {
+                max-width: 170px;
+                margin: 13px auto 0 auto;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 700;
+                font-style: normal;
+                line-height: 22px;
+                @media screen and (max-width: 1023px) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+
+        .col-12 {
+          .#{$id}__heading_hero {
+            font-size: 58px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 58px;
+            text-transform: uppercase;
+            @media screen and (max-width: 768px) {
+              font-size: 36px;
+              line-height: 36px;
+            }
+          }
+          .text {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+            @media screen and (max-width: 768px) {
+              & {
+                font-size: 14px;
+                &.text-2 {
+                  max-width: 336px;
+                  line-height: 18px;
+                }
+              }
+            }
+          }
+          .button-list {
+            margin-top: 22px;
+            @media screen and (max-width: 768px) {
+              & {
+                margin-top: 13px;
+                & a {
+                  width: 100%;
+                  margin-left: 0;
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+
+          .#{$id}__first_text {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px;
+          }
+
+          .#{$id}__heading_Box {
+            position: relative;
+            margin-bottom: 8px;
+            &::after {
+              content: '';
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-image: url(https://img.slotjava.es/wp-content/themes/sumpan-21/dist/img/mr-java-stand-shadow.png);
+              display: block;
+              position: absolute;
+              width: 75px;
+              height: 90px;
+              top: 11px;
+              right: -11px;
+
+              @media screen and (max-width: 768px) {
+                & {
+                  width: 53px;
+                  height: 64px;
+                  left: 240px;
+                  top: 7px;
+                }
               }
             }
           }
