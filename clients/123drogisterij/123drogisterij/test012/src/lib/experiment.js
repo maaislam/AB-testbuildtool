@@ -15,8 +15,8 @@ const init = () => {
   const fakeButton = (
     id,
     sku
-  ) => `<button type="button" title="Wilt u Extra voordeel?" class="${id}__openmodal" data-sku="${sku}">
-    <span>Wilt u Extra voordeel?</span>
+  ) => `<button type="button" title="Wilt u extra voordeel?" class="${id}__openmodal" data-sku="${sku}">
+    <span>Wilt u extra voordeel?</span>
   </button>`;
 
   document.body.insertAdjacentHTML('afterbegin', modal(ID));
