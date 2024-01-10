@@ -9,7 +9,6 @@ const gaTracking = (label) => {
   const EXPERIMENT_DEVICE_CATEGORY = 'All Devices';
 
   pollerLite([() => document.readyState === 'complete'], () => {
-    //console.log(label);
     if (window.gtag !== undefined) {
       window.gtag('cro_event', GA4_INTERNAL_EXPERIMENT_ID, {
         event_category: EXPERIMENT_DEVICE_CATEGORY,
