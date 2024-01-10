@@ -1,12 +1,14 @@
 import { formatPrice } from '../helpers/utils';
 
-const variantlabel = (id, variant, highestSaver) => {
+const variantlabel = (id, variant, highestSaver, lowestSaver) => {
   const { qty, price, saving } = variant;
   const isDefault = saving === 0;
 
+  const isLowestSaver = saving === lowestSaver;
+
   const htmlStr = `
     <label class="${id}__variant custom-child-upsel-one custom-child-upsel-checkbox 
-        ${isDefault ? 'active' : ''}" data-quantity="${qty}" data-price="${price}">
+        ${isDefault ? 'active' : ''}" data-quantity="${qty}" data-price="${price}" ${isLowestSaver ? 'data-lowest' : ''}>
         <input 
             type="radio" id="${id}__upsellnewprod" name="${id}__upsellnewprod" class="${id}__upsellnewprod" value="${qty}">
         ${
