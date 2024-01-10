@@ -12,7 +12,7 @@ const heroBanner = (ID) => {
           <h1 class="heading heading_hero ${ID}__heading_hero">Bienvenido</h1>
           <h1 class="heading heading_hero ${ID}__heading_hero">A Slotjava!</h1>
           </div>
-          <p class="text">
+          <p class="text text-2">
             ¡Accede a 1000s de demos de tragaperras, reseñas confiables, guías informativas y los últimos bonos!
           </p>
           <div class="button-list">
