@@ -1,27 +1,21 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
-import shared from './shared/shared';
-import { sizeGuideStr } from './components/sizeGuideStr';
+import shared, { VARIATION } from './shared/shared';
+import sizeGuide from './components/sizeGuide';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
+
+const init = () => {
+  const anchorPointSelector = VARIATION === '1' ? 'product-description div[data-mce-fragment="1"]' : 'product-description h5';
+  const anchorPosition = VARIATION === '1' ? 'beforebegin' : 'afterend';
+  const anchorPoint = document.querySelector(`.${anchorPointSelector}`);
+
+  if (!document.querySelector(`.${ID}__sizeGuideContainer`)) {
+    anchorPoint.insertAdjacentHTML(anchorPosition, sizeGuide(ID));
+  }
+};
 
 export default () => {
-  setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
+  setup();
 
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
-  if (!document.querySelector(`.${ID}__sizeGuideContainer`)) {
-    document
-      .querySelector('body .product-description div[data-mce-fragment="1"]')
-      .insertAdjacentHTML('beforebegin', sizeGuideStr(ID));
-  }
+  init();
 };
