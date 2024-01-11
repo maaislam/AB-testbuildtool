@@ -1,14 +1,12 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-//import casinoData from './data/casinoData';
 import featureBoxes from './components/featureBoxes';
 import bonusBox from './components/bonusBox';
 import { observeDOM, setCasinoData } from './helpers/utils';
-import getData from './helpers/getData';
-import modifyData from './helpers/modifyData';
-import { casinoFeberData } from './data/casinoFeberData';
+import gaTracking from './services/gaTracking';
 
-const { ID } = shared;
+const { ID, VARIATION } = shared;
+const linkType = VARIATION === 'Control' ? 'A Link' : 'B Link';
 
 const init = () => {
   const isMobile = window.innerWidth < 768;
@@ -34,6 +32,9 @@ const init = () => {
     const termsElem = casinoElem.querySelector('.toplist-terms').outerHTML;
     const reviewElem = casinoElem.querySelector('.review');
 
+    const casinoElemRef = casinoElem;
+    casinoElemRef.style.border = `2px solid ${casino.operatorColor}`;
+
     setTimeout(() => {
       if (casinoElem.querySelector(`.${ID}__featureBoxes`)) return;
 
@@ -49,15 +50,6 @@ const init = () => {
         const reviewTextContent = reviewElem.textContent;
         reviewElem.textContent = `Read ${reviewTextContent} review`;
       }
-
-      const bonusElem = casinoElem.querySelector('.toplist-bonus');
-      //console.log('bonusElem: ', bonusElem);
-      const cssObj = window.getComputedStyle(bonusElem, null);
-      //console.log('cssObj: ', cssObj);
-      const colorValue = cssObj.getPropertyValue('background-color');
-      //console.log('colorValue: ', colorValue);
-      const casinoElemRef = casinoElem;
-      casinoElemRef.style.border = `2px solid ${colorValue}`;
     }, 1000);
   });
 };
@@ -75,5 +67,27 @@ export default () => {
     childList: true,
     subtree: false,
     attributes: false
+  });
+
+  document.body.addEventListener('click', (e) => {
+    if (e.target.closest('.visit')) {
+      const casinoNameElem = e.target.closest('a');
+      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
+      casinoName = casinoName.replace(/-/g, ' ');
+
+      gaTracking(`${linkType} | ${casinoName} CTA CTO (Button)`);
+    } else if (e.target.closest('a.img') || e.target.closest('a.title')) {
+      const casinoNameElem = e.target.closest('.a.img');
+      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
+      casinoName = casinoName.replace(/-/g, ' ');
+
+      gaTracking(`${linkType} | ${casinoName} CTA CTO (Logo)`);
+    } else if (e.target.closest(`.${ID}__review`)) {
+      const casinoNameElem = e.target.closest(`.${ID}__review`);
+      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
+      casinoName = casinoName.replace(/-/g, ' ');
+
+      gaTracking(`${linkType} | ${casinoName} CTA CTR`);
+    }
   });
 };
