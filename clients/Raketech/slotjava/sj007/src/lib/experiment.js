@@ -7,7 +7,7 @@ const { ID, VARIATION } = shared;
 
 export default () => {
   setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
+  //gaTracking('Conditions Met'); //use if needed
   console.log(ID);
   //-----------------------------
   //If control, bail out from here
@@ -39,23 +39,21 @@ export default () => {
       target.closest('.section.section_top')
     ) {
       gaTracking('Casinos Button | Hero');
-    } else if (
-      target.closest('a.menu__link') &&
-      target.closest('.menu__item.menu__item_icon-slot') &&
-      target.closest('ul.menu_main')
-    ) {
+    } else if (target.closest('a.menu__link[href*="/slots"]')) {
       gaTracking('Free Slots | Menu');
-    } else if (
-      target.closest('a.menu__link') &&
-      target.closest('.menu__item.menu__item_icon-gift') &&
-      target.closest('ul.menu_main')
-    ) {
+    } else if (target.closest('a.menu__link[href*="/bonos-sin-deposito/"]')) {
       gaTracking('Bonus | Menu');
-    } else if (
-      target.closest('a.menu__link') &&
-      target.closest('.menu__item.menu__item_icon-casino') &&
-      target.closest('ul.menu_main')
-    ) {
+    } else if (target.closest('a.menu__link[href*="s/nuevos-casinos-online/"]')) {
+      gaTracking('Casinos | Menu');
+    }
+  });
+
+  document.body.addEventListener('pointerup', ({ target }) => {
+    if (target.closest('a.menu__link[href*="/slots"]')) {
+      gaTracking('Free Slots | Menu');
+    } else if (target.closest('a.menu__link[href*="/bonos-sin-deposito/"]')) {
+      gaTracking('Bonus | Menu');
+    } else if (target.closest('a.menu__link[href*="s/nuevos-casinos-online/"]')) {
       gaTracking('Casinos | Menu');
     }
   });
