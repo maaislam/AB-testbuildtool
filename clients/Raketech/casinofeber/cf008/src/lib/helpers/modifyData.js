@@ -1,17 +1,23 @@
+import translationConfig from '../data/translationConfig';
+
 const modifyData = (data) => {
     const modifiedData = [];
+    const pageLang = document.querySelector('html').getAttribute('lang');
+    const withdrawalAttempt1 = translationConfig['Withdrawal attempt 1'][pageLang];
+    const withdrawalAttempt2 = translationConfig['Withdrawal attempt 2'][pageLang];
+    const withdrawalWagering = translationConfig['Withdrawal wagering'][pageLang];
 
     data.forEach((operator) => {
         const operatorName = operator.Operator.toLowerCase().replace(/\s/g, '-');
         const features = [
             {
-                'Withdrawal attempt 1': operator['Withdrawal attempt 1']
+                [withdrawalAttempt1]: operator['Withdrawal attempt 1']
             },
             {
-                'Withdrawal attempt 2': operator['Withdrawal attempt 2']
+                [withdrawalAttempt2]: operator['Withdrawal attempt 2']
             },
             {
-                'Withdrawal wagering': operator['Withdrawal wagering']
+                [withdrawalWagering]: operator['Withdrawal wagering']
             },
             {
                 'Min withdrawal': operator['Min withdrawal']
@@ -30,7 +36,8 @@ const modifyData = (data) => {
             name: operatorName,
             features,
             bonusWagering: operator['Bonus wagering'],
-            spinsWagering: operator['Free spins wagering']
+            spinsWagering: operator['Free spins wagering'],
+            operatorColor: operator.operatorColor
         });
     });
     return modifiedData;

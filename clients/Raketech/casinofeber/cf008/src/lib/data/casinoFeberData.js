@@ -1,6 +1,7 @@
 export const casinoFeberData = [
     {
         Operator: 'Mr Vegas',
+        operatorColor: 'rgb(0, 0, 0)',
         'Bonus amount': '2000 Kr',
         'Bonus wagering': '35x',
         'Free spins amount': 11,
@@ -13,12 +14,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '17 s',
         'Combined ratings from other affiliates': 4.1,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'Betinia',
+        operatorColor: 'rgb(21, 21, 21)',
         'Bonus amount': '2500 Kr',
         'Bonus wagering': '35x',
         'Free spins amount': '-',
@@ -31,12 +31,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '18 s',
         'Combined ratings from other affiliates': 4.3,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Nej',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Nej'
     },
     {
         Operator: 'Happy Casino',
+        operatorColor: 'rgb(80, 9, 157)',
         'Bonus amount': 'Snabba uttag',
         'Bonus wagering': '-',
         'Free spins amount': 50,
@@ -49,12 +48,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '9 s',
         'Combined ratings from other affiliates': 4.8,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'GoGo Casino',
+        operatorColor: 'rgb(14, 11, 3)',
         'Bonus amount': 'Ägs av LeoVegas',
         'Bonus wagering': '-',
         'Free spins amount': 150,
@@ -67,12 +65,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '12 s',
         'Combined ratings from other affiliates': 4.9,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'X3000',
+        operatorColor: 'rgb(244, 244, 244)',
         'Bonus amount': '1500 Kr',
         'Bonus wagering': '30x',
         'Free spins amount': 0,
@@ -85,12 +82,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '12 s ',
         'Combined ratings from other affiliates': 4.3,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'LeoVegas',
+        operatorColor: 'rgb(232, 96, 64)',
         'Bonus amount': '2000 Kr',
         'Bonus wagering': '20x',
         'Free spins amount': 100,
@@ -103,12 +99,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '15 s',
         'Combined ratings from other affiliates': 4.6,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'No Account Casino',
+        operatorColor: 'rgb(32, 46, 55)',
         'Bonus amount': '500 Kr',
         'Bonus wagering': '10x',
         'Free spins amount': '28 exklusiva spel',
@@ -121,12 +116,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '11 s',
         'Combined ratings from other affiliates': 4.6,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'Lyllo Casino',
+        operatorColor: 'rgb(235, 146, 70)',
         'Bonus amount': '600 Kr',
         'Bonus wagering': '20x',
         'Free spins amount': 'Snabb registrering',
@@ -139,12 +133,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '17 s',
         'Combined ratings from other affiliates': 4.7,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'Jalla Casino',
+        operatorColor: 'rgb(63, 35, 94)',
         'Bonus amount': 'Samma ägare som Betsson',
         'Bonus wagering': '-',
         'Free spins amount': 200,
@@ -157,12 +150,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '11 s',
         'Combined ratings from other affiliates': 4.3,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'ComeOn',
+        operatorColor: 'rgb(11, 7, 4)',
         'Bonus amount': '2000 Kr',
         'Bonus wagering': '20x',
         'Free spins amount': 'Evo Rewards',
@@ -175,12 +167,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '15 s',
         'Combined ratings from other affiliates': 4.8,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'Paf',
+        operatorColor: 'rgb(255, 255, 255)',
         'Bonus amount': 'Snabba uttag med Swish',
         'Bonus wagering': '-',
         'Free spins amount': 99,
@@ -193,12 +184,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '15 s',
         'Combined ratings from other affiliates': 4.3,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'Klirr',
+        operatorColor: 'rgb(15, 118, 99)',
         'Bonus amount': 'Från gänget bakom Frank & Fred',
         'Bonus wagering': 'Uttag på någon sekund',
         'Free spins amount': '-',
@@ -211,12 +201,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '15 s',
         'Combined ratings from other affiliates': 3.7,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Nej',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Nej'
     },
     {
         Operator: 'Momang',
+        operatorColor: 'rgb(145, 50, 245)',
         'Bonus amount': 'Ingen mingräns på uttag',
         'Bonus wagering': '-',
         'Free spins amount': 'Skapat av Svenska Spel',
@@ -229,12 +218,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '10 s',
         'Combined ratings from other affiliates': 4.5,
         'Trustly (yes/no)': 'Nej',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'Expekt',
+        operatorColor: 'rgb(255, 122, 1)',
         'Bonus amount': '1500 Kr',
         'Bonus wagering': '20x',
         'Free spins amount': 30,
@@ -247,12 +235,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '-',
         'Combined ratings from other affiliates': 4.7,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'CasinoStugan',
+        operatorColor: 'rgb(74, 85, 55)',
         'Bonus amount': '3000 Kr',
         'Bonus wagering': '20x',
         'Free spins amount': 100,
@@ -265,12 +252,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '17 s',
         'Combined ratings from other affiliates': 4.3,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'Snabbare',
+        operatorColor: 'rgb(86, 179, 249)',
         'Bonus amount': '2500 Kr',
         'Bonus wagering': '20x',
         'Free spins amount': 100,
@@ -283,12 +269,11 @@ export const casinoFeberData = [
         'Speed experience (avg)': '17.5 s',
         'Combined ratings from other affiliates': 4.5,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'Hajper',
+        operatorColor: 'rgb(28, 50, 82)',
         'Bonus amount': '5000 Kr',
         'Bonus wagering': '20x',
         'Free spins amount': 10,
@@ -301,16 +286,15 @@ export const casinoFeberData = [
         'Speed experience (avg)': '16 s',
         'Combined ratings from other affiliates': 4.9,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Ja',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Ja'
     },
     {
         Operator: 'Turbonino',
+        operatorColor: 'rgb(13, 45, 78)',
         'Bonus amount': 'Hot & Cold ',
         'Bonus wagering': '-',
         'Free spins amount': '196 megaways',
-        'Free spins wagering': '-',
+        'Free spins wagering': '- ',
         'Withdrawal attempt 1': '1 m (Trustly)',
         'Withdrawal attempt 2': 'Direkt (Trustly)',
         'Withdrawal wagering': '0x',
@@ -319,8 +303,6 @@ export const casinoFeberData = [
         'Speed experience (avg)': '14 s',
         'Combined ratings from other affiliates': 3.8,
         'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Nej',
-        'Licens  (yes/no)': 'Ja',
-        BankID: 'Ja'
+        'Swish (yes/no)': 'Nej'
     }
 ];

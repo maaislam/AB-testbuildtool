@@ -182,6 +182,7 @@
                         font-weight: 300;
                         font-size: 14px;
                         line-height: 17px;
+                        text-align: left;
 
                         .wageringValue {
                             color: #000;
@@ -195,6 +196,7 @@
             }
 
             .toplist-features {
+                height: 100%;
                 display: flex !important;
                 background-color: var(--bg-clr-alt-hvr) !important;
 
@@ -256,9 +258,14 @@
 
                 &-content {
                     font-size: 18px;
+                    line-height: 23px;
                     font-weight: 700;
                 }
             }
+        }
+
+        .toplist-pros {
+            padding: 16px !important;
         }
 
         .toplist-pros>li {
