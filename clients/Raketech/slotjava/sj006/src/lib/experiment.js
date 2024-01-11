@@ -16,8 +16,8 @@ export default () => {
       const operatorName = target.closest('.button.link-out').dataset.operator;
       gaTracking(`${operatorName} | CTA CTO | Toplist`);
     } else if (target.closest('.button.link-out')) {
-      const operatorName = target.closest('.button.link-out').dataset.operator;
-      gaTracking(`${operatorName} | CTA CTO | list`);
+      const operatorName = target.closest('.button.link-out').href.split('visitar/')[1];
+      gaTracking(`${operatorName} | CTA CTO | Bottomlist`);
     }
   });
 
@@ -26,7 +26,7 @@ export default () => {
     if (target.closest('.button.link-out') && target.closest('#drawer')) {
       const operatorName = target.closest('.button.link-out').dataset.operator;
       //console.log(operatorName);
-      gaTracking(`${operatorName} | CTA CTO | list`);
+      gaTracking(`${operatorName} | CTA CTO | Bottomlist`);
     }
   });
 };
