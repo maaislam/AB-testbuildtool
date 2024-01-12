@@ -4,6 +4,7 @@ import featureBoxes from './components/featureBoxes';
 import bonusBox from './components/bonusBox';
 import { observeDOM, setCasinoData } from './helpers/utils';
 import gaTracking from './services/gaTracking';
+import setLeoVegasJackpot from './helpers/setLeoVegasJackpot';
 
 const { ID, VARIATION } = shared;
 const linkType = VARIATION === 'Control' ? 'A Link' : 'B Link';
@@ -60,7 +61,9 @@ const init = () => {
         const reviewTextContent = reviewElem.textContent;
         reviewElem.textContent = `Read ${reviewTextContent} review`;
       }
-    }, 1000);
+
+      setLeoVegasJackpot(ID, casinoElem, casino, isMobile);
+    }, 1250);
   });
 };
 

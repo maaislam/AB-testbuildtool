@@ -15,6 +15,9 @@ const bonusBox = (id, data) => {
 
   const isBonusAmount = bonusAmount.toLowerCase().includes('kr');
 
+  const isBonusWagering = bonusWagering.length > 1;
+  const isSpinsWagering = spinsWagering.length > 1;
+
   const htmlStr = `
       <li class='${id}__bonusBox'>
         <span class='${id}__bonusBox-name'>${casinoName}</span>
@@ -29,18 +32,18 @@ const bonusBox = (id, data) => {
         </span>
         ` : ''}
         <span class='${id}__bonusBox-wagering'>
-          <span class='${id}__bonusBox-wagering-bonus'>
+          ${isBonusWagering ? `<span class='${id}__bonusBox-wagering-bonus'>
             <span class='${id}__bonusWageringIcon'>${bonusWageringIcon}</span>
             <span>${bonusWageringText}
               <span class='wageringValue'>${bonusWagering}</span>
             </span>
-          </span>
-          <span class='${id}__bonusBox-wagering-spins'>
+          </span>` : ''}
+          ${isSpinsWagering ? `<span class='${id}__bonusBox-wagering-spins'>
             <span class='${id}__spinWageringIcon'>${spinWageringIcon}</span>
             <span>${spinsWageringText}
               <span class='wageringValue'>${spinsWagering}</span>
             </span>
-          </span>
+          </span>` : ''}
         </span>
       </li>`;
   return htmlStr;
