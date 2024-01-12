@@ -66,7 +66,7 @@ export default () => {
 
   //get Data from API
   const getData = async (endpoint, key = 'AB_data') => {
-    const BASE_URL = 'https://ab-test-datastore.s3.ap-south-1.amazonaws.com';
+    const BASE_URL = 'https://cf-abtest-datastore.s3.ap-southeast-2.amazonaws.com';
     const url = `${BASE_URL}${endpoint}`;
 
     //Check if the data is already in session storage
@@ -90,7 +90,7 @@ export default () => {
     return fetchedData;
   };
   const apiKeySuffix = `${ID}__apiData`;
-  getData('/cfPromotedCasino.json', apiKeySuffix).then((data) => {
+  getData('/promotedcasino.json', apiKeySuffix).then((data) => {
     init(data[0]);
     observeDOM('.toplist-holder', () => {
       init(data[0]);

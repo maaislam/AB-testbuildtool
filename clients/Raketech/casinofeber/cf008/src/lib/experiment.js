@@ -15,7 +15,9 @@ const init = () => {
   if (!casinoData) return;
 
   casinoData.forEach((casino) => {
-    const domElems = document.querySelectorAll(`.toplist.casino .toplist-item a.title[href*="${casino.name}"]`);
+    const domElems = document.querySelectorAll(
+      `.toplist.casino .toplist-item a.title[href*="${casino.name}"]`
+    );
     if (!domElems.length) return;
     const casinoElem = domElems[0].closest('.toplist-item');
     casinoElem.classList.add(`${ID}__casinoItem`);
@@ -28,7 +30,9 @@ const init = () => {
 
     const featureHtmlStr = featureBoxes(ID, casino.features);
     const bonusHtmlStr = bonusBox(ID, casino, casinoElem);
-    const featuresIconElem = casinoElem.querySelector('.toplist-container .toplist-features').outerHTML;
+    const featuresIconElem = casinoElem.querySelector(
+      '.toplist-container .toplist-features'
+    ).outerHTML;
     const termsElem = casinoElem.querySelector('.toplist-terms').outerHTML;
     const reviewElem = casinoElem.querySelector('.review');
 
@@ -45,6 +49,12 @@ const init = () => {
       bonusSection.insertAdjacentHTML('beforeend', bonusHtmlStr);
       casinoElem.insertAdjacentHTML('afterend', termsElem);
 
+      //set affiliate links
+      const casinoCtaBtn = casinoElem.querySelector('.visit');
+      const casinoLogo = casinoElem.querySelector('.img');
+      casinoCtaBtn.setAttribute('href', casino[linkType]);
+      casinoLogo.setAttribute('href', casino[linkType]);
+
       if (reviewElem) {
         reviewElem.classList.add(`${ID}__review`);
         const reviewTextContent = reviewElem.textContent;
@@ -57,11 +67,13 @@ const init = () => {
 export default () => {
   setup();
 
-  setCasinoData(ID).then(() => {
-    init();
-  }).catch(() => {
-    init();
-  });
+  setCasinoData(ID)
+    .then(() => {
+      init();
+    })
+    .catch(() => {
+      init();
+    });
 
   observeDOM('.toplist.casino', init, {
     childList: true,
