@@ -38,7 +38,9 @@ const init = () => {
     const reviewElem = casinoElem.querySelector('.review');
 
     const casinoElemRef = casinoElem;
-    casinoElemRef.style.border = `2px solid ${casino.operatorColor}`;
+    if (VARIATION !== 'Control') {
+      casinoElemRef.style.border = `2px solid ${casino.operatorColor}`;
+    }
 
     setTimeout(() => {
       if (casinoElem.querySelector(`.${ID}__featureBoxes`)) return;
@@ -70,20 +72,6 @@ const init = () => {
 export default () => {
   setup();
 
-  setCasinoData(ID)
-    .then(() => {
-      init();
-    })
-    .catch(() => {
-      init();
-    });
-
-  observeDOM('.toplist.casino', init, {
-    childList: true,
-    subtree: false,
-    attributes: false
-  });
-
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('.visit')) {
       const casinoNameElem = e.target.closest('a');
@@ -104,5 +92,21 @@ export default () => {
 
       gaTracking(`${linkType} | ${casinoName} CTA CTR`);
     }
+  });
+
+  if (VARIATION === 'Control') return;
+
+  setCasinoData(ID)
+    .then(() => {
+      init();
+    })
+    .catch(() => {
+      init();
+    });
+
+  observeDOM('.toplist.casino', init, {
+    childList: true,
+    subtree: false,
+    attributes: false
   });
 };
