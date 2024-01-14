@@ -6,10 +6,16 @@ const modifyData = (data) => {
   const withdrawalAttempt1 = translationConfig['Withdrawal attempt 1'][pageLang];
   const withdrawalAttempt2 = translationConfig['Withdrawal attempt 2'][pageLang];
   const withdrawalWagering = translationConfig['Withdrawal wagering'][pageLang];
+  const speedExperience = translationConfig['Speed experience (avg)'][pageLang];
+  const liveChatExperience = translationConfig['Live chat experience (avg)'][pageLang];
+  const combinedRatings = translationConfig['Combined ratings from other affiliates'][pageLang];
 
   data.forEach((operator) => {
     const operatorName = operator.Operator.toLowerCase().replace(/\s/g, '-');
     const features = [
+      {
+        [withdrawalWagering]: operator['Withdrawal wagering']
+      },
       {
         [withdrawalAttempt1]: operator['Withdrawal attempt 1']
       },
@@ -17,16 +23,13 @@ const modifyData = (data) => {
         [withdrawalAttempt2]: operator['Withdrawal attempt 2']
       },
       {
-        [withdrawalWagering]: operator['Withdrawal wagering']
+        [speedExperience]: operator['Speed experience (avg)']
       },
       {
-        'Min withdrawal': operator['Min withdrawal']
+        [liveChatExperience]: operator['Live chat experience (avg)']
       },
       {
-        'Live chat experience (avg)': operator['Live chat experience (avg)']
-      },
-      {
-        'Speed experience (avg)': operator['Speed experience (avg)']
+        [combinedRatings]: operator['Combined ratings from other affiliates']
       }
     ];
 

@@ -27,13 +27,17 @@ const translationConfig = {
         en: 'Withdrawal wagering',
         sv: 'omsättningskrav på uttag'
     },
-    'Speed performance': {
-        en: 'Speed performance',
+    'Speed experience (avg)': {
+        en: 'Speed experience (avg)',
         sv: 'hastighet'
     },
-    'live chat experience': {
-        en: 'LIVE CHAT EXPERIENCE (AVG)',
+    'Live chat experience (avg)': {
+        en: 'Live chat experience (avg)',
         sv: 'responstid från live chat (avg)'
+    },
+    'Combined ratings from other affiliates': {
+        en: 'Combined ratings from other affiliates',
+        sv: 'ank från andra jämförelsesidor'
     }
 };
 export default translationConfig;
