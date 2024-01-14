@@ -21,29 +21,27 @@ const bonusBox = (id, data) => {
   const htmlStr = `
       <li class='${id}__bonusBox'>
         <span class='${id}__bonusBox-name'>${casinoName}</span>
-        ${isBonusAmount ? `<span class='${id}__bonusBox-bonus'>
-        <span class='${id}__bonusBox-bonus-amount'>${bonusAmount}</span>
-        <span class='${id}__bonusBox-bonus-text'>${bonusText}</span>
-      </span>` : ''}
-        ${typeof spinsAmount === 'number' ? `
+        <span class='${id}__bonusBox-bonus'>
+          <span class='${id}__bonusBox-bonus-amount'>${bonusAmount}</span>
+          <span class='${id}__bonusBox-bonus-text'>${bonusText}</span>
+        </span>
         <span class='${id}__bonusBox-spins'>
           <span class='${id}__bonusBox-spins-amount'>${spinsAmount}</span>
           <span class='${id}__bonusBox-spins-text'>${spinsText}</span>
         </span>
-        ` : ''}
         <span class='${id}__bonusBox-wagering'>
-          ${isBonusWagering ? `<span class='${id}__bonusBox-wagering-bonus'>
+          <span class='${id}__bonusBox-wagering-bonus'>
             <span class='${id}__bonusWageringIcon'>${bonusWageringIcon}</span>
             <span>${bonusWageringText}
               <span class='wageringValue'>${bonusWagering}</span>
             </span>
-          </span>` : ''}
-          ${isSpinsWagering ? `<span class='${id}__bonusBox-wagering-spins'>
+          </span>
+          <span class='${id}__bonusBox-wagering-spins'>
             <span class='${id}__spinWageringIcon'>${spinWageringIcon}</span>
             <span>${spinsWageringText}
               <span class='wageringValue'>${spinsWagering}</span>
             </span>
-          </span>` : ''}
+          </span>
         </span>
       </li>`;
   return htmlStr;
