@@ -1,5 +1,6 @@
 import { bonusWageringIcon, spinWageringIcon } from '../assets/svg';
 import translationConfig from '../data/translationConfig';
+import checkLength from '../helpers/checkLength';
 
 const bonusBox = (id, data) => {
   const { name, bonusAmount, spinsAmount, bonusWagering, spinsWagering } = data;
@@ -14,9 +15,10 @@ const bonusBox = (id, data) => {
   const spinsWageringText = translationConfig['spins wagering'][pageLang];
 
   const isBonusAmount = bonusAmount.toLowerCase().includes('kr');
+  const isLength = checkLength(spinsAmount);
 
-  const isBonusWagering = bonusWagering.length > 1;
-  const isSpinsWagering = spinsWagering.length > 1;
+  //const isBonusWagering = bonusWagering.length > 1;
+  //const isSpinsWagering = spinsWagering.length > 1;
 
   const htmlStr = `
       <li class='${id}__bonusBox'>
@@ -25,7 +27,7 @@ const bonusBox = (id, data) => {
           <span class='${id}__bonusBox-bonus-amount'>${bonusAmount}</span>
           <span class='${id}__bonusBox-bonus-text'>${bonusText}</span>
         </span>
-        <span class='${id}__bonusBox-spins'>
+        <span class='${id}__bonusBox-spins ${isLength ? '' : `${id}__spinsAsText`}'>
           <span class='${id}__bonusBox-spins-amount'>${spinsAmount}</span>
           <span class='${id}__bonusBox-spins-text'>${spinsText}</span>
         </span>

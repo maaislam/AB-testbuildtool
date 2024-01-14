@@ -94,7 +94,7 @@
 
           &-amount {
             color: #2ca5e4 !important;
-            font-size: 20px;
+            font-size: 16px;
             line-height: 20px;
             font-weight: 700;
 
@@ -106,7 +106,7 @@
           &-text {
             color: #000;
             font-weight: 300;
-            font-size: 20px;
+            font-size: 16px;
             line-height: 20px;
           }
         }
@@ -117,7 +117,7 @@
           align-items: center;
           justify-content: center;
           gap: 4px;
-          font-size: 20px;
+          font-size: 16px;
           line-height: 20px;
           border-radius: 8px;
           background: rgba(92, 182, 41, 0.10);
@@ -139,6 +139,18 @@
           &-text {
             color: #000;
             font-weight: 300;
+          }
+        }
+
+        &-bonus.#{$id}__bonusAsText {
+          span {
+            font-size: 13px;
+          }
+        }
+
+        &-spins.#{$id}__spinsAsText {
+          span {
+            font-size: 13px;
           }
         }
 
@@ -224,8 +236,8 @@
         justify-content: space-between;
         height: auto;
         max-height: 76px;
-        width: 127px;
-        padding: 6px;
+        width: 120px;
+        padding: 8px;
         background: #EFEFEF;
         border-radius: 4px;
 
