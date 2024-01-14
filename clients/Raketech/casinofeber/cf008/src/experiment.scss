@@ -242,7 +242,8 @@
         border-radius: 4px;
 
         @include media-query(md) {
-          max-height: 58px;
+          padding: 6px !important;
+          height: 58px;
           width: auto;
           border-radius: 7px;
         }
@@ -260,6 +261,11 @@
           font-size: 16px;
           line-height: 21px;
           font-weight: 700;
+
+          @include media-query(md) {
+            font-size: 15px;
+            line-height: 18px;
+          }
         }
       }
     }
