@@ -2,12 +2,20 @@ import { pollerLite } from '../helpers/utils';
 import shared from '../shared/shared';
 
 const gaTracking = (label) => {
-  pollerLite([() => typeof window.gtag === 'function'], () => {
-    const { VARIATION } = shared;
+  const { VARIATION } = shared;
 
-    window.gtag('event', 'Experiment Grayed Toplist 5758528416', {
-      event_category: 'All Device Test',
-      event_label: `5758528416 | V ${VARIATION} | ${label}`
+  const GA4_INTERNAL_EXPERIMENT_NUM = '5618135091';
+  const GA4_INTERNAL_EXPERIMENT_ID = `cro-${GA4_INTERNAL_EXPERIMENT_NUM}`;
+  const EXPERIMENT_DEVICE_CATEGORY = 'All Devices';
+
+  pollerLite([() => document.readyState === 'complete'], () => {
+    //console.log(label);
+    window.dataLayer.push({
+      event: 'cro_event',
+      event_detail: GA4_INTERNAL_EXPERIMENT_ID,
+      event_category: EXPERIMENT_DEVICE_CATEGORY,
+      event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | V${VARIATION === 'Control' ? 'C' : VARIATION
+        } | ${label}`
     });
   });
 };

@@ -4,6 +4,7 @@ import featureBoxes from './components/featureBoxes';
 import bonusBox from './components/bonusBox';
 import { observeDOM, setCasinoData } from './helpers/utils';
 import gaTracking from './services/gaTracking';
+import setLeoVegasJackpot from './helpers/setLeoVegasJackpot';
 
 const { ID, VARIATION } = shared;
 const linkType = VARIATION === 'Control' ? 'A Link' : 'B Link';
@@ -37,7 +38,9 @@ const init = () => {
     const reviewElem = casinoElem.querySelector('.review');
 
     const casinoElemRef = casinoElem;
-    casinoElemRef.style.border = `2px solid ${casino.operatorColor}`;
+    if (VARIATION !== 'Control') {
+      casinoElemRef.style.border = `2px solid ${casino.operatorColor}`;
+    }
 
     setTimeout(() => {
       if (casinoElem.querySelector(`.${ID}__featureBoxes`)) return;
@@ -60,26 +63,14 @@ const init = () => {
         const reviewTextContent = reviewElem.textContent;
         reviewElem.textContent = `Read ${reviewTextContent} review`;
       }
-    }, 1000);
+
+      setLeoVegasJackpot(ID, casinoElem, casino, isMobile);
+    }, 1250);
   });
 };
 
 export default () => {
   setup();
-
-  setCasinoData(ID)
-    .then(() => {
-      init();
-    })
-    .catch(() => {
-      init();
-    });
-
-  observeDOM('.toplist.casino', init, {
-    childList: true,
-    subtree: false,
-    attributes: false
-  });
 
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('.visit')) {
@@ -101,5 +92,21 @@ export default () => {
 
       gaTracking(`${linkType} | ${casinoName} CTA CTR`);
     }
+  });
+
+  if (VARIATION === 'Control') return;
+
+  setCasinoData(ID)
+    .then(() => {
+      init();
+    })
+    .catch(() => {
+      init();
+    });
+
+  observeDOM('.toplist.casino', init, {
+    childList: true,
+    subtree: false,
+    attributes: false
   });
 };
