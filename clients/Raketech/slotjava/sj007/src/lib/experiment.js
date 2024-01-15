@@ -39,12 +39,6 @@ export default () => {
       target.closest('.section.section_top')
     ) {
       gaTracking('Casinos Button | Hero');
-    } else if (target.closest('a.menu__link[href*="/slots"]')) {
-      gaTracking('Free Slots | Menu');
-    } else if (target.closest('a.menu__link[href*="/bonos-sin-deposito/"]')) {
-      gaTracking('Bonus | Menu');
-    } else if (target.closest('a.menu__link[href*="s/nuevos-casinos-online/"]')) {
-      gaTracking('Casinos | Menu');
     }
   });
 
