@@ -6,7 +6,7 @@ const gaTracking = (label) => {
   const varTitle = VARIATION === 'Control' ? 'C' : VARIATION;
 
   const GA4_PROPERTY_ID = 'G-H91NBPERDS';
-  const GA4_INTERNAL_EXPERIMENT_NUM = '034';
+  const GA4_INTERNAL_EXPERIMENT_NUM = '5758485106';
   const GA4_INTERNAL_EXPERIMENT_ID = `${GA4_INTERNAL_EXPERIMENT_NUM} | Topist Card Update Experiment`;
   const EXPERIMENT_DEVICE_CATEGORY = 'All Devices';
 
