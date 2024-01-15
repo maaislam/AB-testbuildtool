@@ -12,13 +12,12 @@ export default () => {
     if (target.closest('.button.button_hero')) {
       gaTracking('Welcome Button');
     } else if (target.closest('.button.link-out') && target.closest('.card-list')) {
-      //const operatorName = target.closest('.button.link-out').href.split('visitar/')[1];
       const operatorName = target.closest('.button.link-out').dataset.operator;
-      gaTracking(`${operatorName} | CTA CTO | Toplist`);
+      gaTracking(`${operatorName} CTA CTO | Toplist`);
     } else if (target.closest('.button.link-out')) {
-      const operatorName = target.closest('.button.link-out').href.split('visitar/')[1];
+      const operatorName = target.closest('.button.link-out').dataset.operator;
       const position = target.closest('.casino-table-widget__row') ? 'Bottomlist' : 'List';
-      gaTracking(`${operatorName} | CTA CTO | ${position}`);
+      gaTracking(`${operatorName} CTA CTO | ${position}`);
     }
   });
 
@@ -26,8 +25,7 @@ export default () => {
     const { target } = e;
     if (target.closest('.button.link-out') && target.closest('#drawer')) {
       const operatorName = target.closest('.button.link-out').dataset.operator;
-      //console.log(operatorName);
-      gaTracking(`${operatorName} | CTA CTO | Bottomlist`);
+      gaTracking(`${operatorName} CTA CTO | Bottomlist`);
     }
   });
 };
