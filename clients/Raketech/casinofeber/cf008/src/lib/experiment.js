@@ -43,15 +43,6 @@ const init = () => {
     }
 
     setTimeout(() => {
-      if (casinoElem.querySelector(`.${ID}__featureBoxes`)) return;
-
-      const featureAnchorPoint = isMobile ? casinoElem : ctrlFeaturesElem;
-      featureAnchorPoint.insertAdjacentHTML('beforeend', featureHtmlStr);
-
-      !isMobile && bonusSection.insertAdjacentHTML('beforeend', featuresIconElem);
-      bonusSection.insertAdjacentHTML('beforeend', bonusHtmlStr);
-      casinoElem.insertAdjacentHTML('afterend', termsElem);
-
       //set affiliate links
       const casinoCtaBtn = casinoElem.querySelector('.visit');
       const casinoLogo = casinoElem.querySelector('.img');
@@ -63,6 +54,17 @@ const init = () => {
       casinoCtaBtn.setAttribute('data-operator', casino.name);
       casinoLogo.setAttribute('href', casino[linkType]);
       casinoLogo.setAttribute('data-operator', casino.name);
+
+      if (VARIATION === 'Control') return;
+
+      if (casinoElem.querySelector(`.${ID}__featureBoxes`)) return;
+
+      const featureAnchorPoint = isMobile ? casinoElem : ctrlFeaturesElem;
+      featureAnchorPoint.insertAdjacentHTML('beforeend', featureHtmlStr);
+
+      !isMobile && bonusSection.insertAdjacentHTML('beforeend', featuresIconElem);
+      bonusSection.insertAdjacentHTML('beforeend', bonusHtmlStr);
+      casinoElem.insertAdjacentHTML('afterend', termsElem);
 
       if (reviewElem) {
         reviewElem.classList.add(`${ID}__review`);
@@ -81,28 +83,26 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('.visit')) {
       const casinoNameElem = e.target.closest('a');
-      let casinoName = casinoNameElem.dataset.operator;
+      let casinoName = casinoNameElem.dataset.operator || casinoNameElem.getAttribute('href').split('/')[2];
       casinoName = casinoName.replace(/-/g, ' ');
       const hasAffiliateLink = casinoNameElem.dataset.affiliatelink;
 
       gaTracking(`${hasAffiliateLink ? linkType : 'Default Link'} | ${casinoName} CTA CTO (Button)`);
     } else if (e.target.closest('a.img') || e.target.closest('a.title')) {
       const casinoNameElem = e.target.closest('a');
-      let casinoName = casinoNameElem.dataset.operator;
+      let casinoName = casinoNameElem.dataset.operator || casinoNameElem.getAttribute('href').split('/')[2];
       casinoName = casinoName.replace(/-/g, ' ');
       const hasAffiliateLink = casinoNameElem.dataset.affiliatelink;
 
       gaTracking(`${hasAffiliateLink ? linkType : 'Default Link'} | ${casinoName} CTA CTO (Logo)`);
-    } else if (e.target.closest(`.${ID}__review`)) {
-      const casinoNameElem = e.target.closest(`.${ID}__review`);
+    } else if (e.target.closest(`.${ID}__review`) || e.target.closest('.review')) {
+      const casinoNameElem = e.target.closest(`.${ID}__review`) || e.target.closest('.review');
       let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
       casinoName = casinoName.replace(/-/g, ' ');
 
       gaTracking(`${casinoName} CTA CTR`);
     }
   });
-
-  if (VARIATION === 'Control') return;
 
   setCasinoData(ID)
     .then(() => {
