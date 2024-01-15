@@ -44,6 +44,7 @@ const init = () => {
 
     setTimeout(() => {
       //set affiliate links
+      reviewElem.classList.add(`${ID}__review`);
       const casinoCtaBtn = casinoElem.querySelector('.visit');
       const casinoLogo = casinoElem.querySelector('.img');
       if (casino[linkType]) {
@@ -67,7 +68,6 @@ const init = () => {
       casinoElem.insertAdjacentHTML('afterend', termsElem);
 
       if (reviewElem) {
-        reviewElem.classList.add(`${ID}__review`);
         const reviewTextContent = reviewElem.textContent;
         reviewElem.textContent = `Read ${reviewTextContent} review`;
       }
@@ -83,14 +83,14 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('.visit')) {
       const casinoNameElem = e.target.closest('a');
-      let casinoName = casinoNameElem.dataset.operator || casinoNameElem.getAttribute('href').split('/')[2];
+      let casinoName = casinoNameElem.dataset.operator;
       casinoName = casinoName.replace(/-/g, ' ');
       const hasAffiliateLink = casinoNameElem.dataset.affiliatelink;
 
       gaTracking(`${hasAffiliateLink ? linkType : 'Default Link'} | ${casinoName} CTA CTO (Button)`);
     } else if (e.target.closest('a.img') || e.target.closest('a.title')) {
       const casinoNameElem = e.target.closest('a');
-      let casinoName = casinoNameElem.dataset.operator || casinoNameElem.getAttribute('href').split('/')[2];
+      let casinoName = casinoNameElem.dataset.operator;
       casinoName = casinoName.replace(/-/g, ' ');
       const hasAffiliateLink = casinoNameElem.dataset.affiliatelink;
 
