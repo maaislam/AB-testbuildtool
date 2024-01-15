@@ -56,7 +56,9 @@ const init = () => {
       const casinoCtaBtn = casinoElem.querySelector('.visit');
       const casinoLogo = casinoElem.querySelector('.img');
       casinoCtaBtn.setAttribute('href', casino[linkType]);
+      casinoCtaBtn.setAttribute('data-operator', casino.name);
       casinoLogo.setAttribute('href', casino[linkType]);
+      casinoLogo.setAttribute('data-operator', casino.name);
 
       if (reviewElem) {
         reviewElem.classList.add(`${ID}__review`);
