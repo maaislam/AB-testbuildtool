@@ -306,24 +306,6 @@ export const casinoFeberData = [
         'B Link': ''
     },
     {
-        Operator: 'Klirr',
-        'Bonus amount': 'Från gänget bakom Frank & Fred',
-        'Free spins amount': '-',
-        'Bonus wagering': 'Uttag på någon sekund',
-        'Free spins wagering': '-',
-        'Withdrawal wagering': '0x',
-        'Withdrawal attempt 1': 'Direkt (Trustly)',
-        'Withdrawal attempt 2': '12 h (Trustly)',
-        'Speed experience (avg)': '15 sek',
-        'Live chat experience (avg)': 'Direkt',
-        'Combined ratings from other affiliates': 3.7,
-        'Trustly (yes/no)': 'Ja',
-        'Swish (yes/no)': 'Nej',
-        operatorColor: 'rgb(15, 118, 99)',
-        'A Link': '',
-        'B Link': ''
-    },
-    {
         Operator: 'Turbonino',
         'Bonus amount': 'Hot & Cold ',
         'Free spins amount': '196 megaways',

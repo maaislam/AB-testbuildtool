@@ -94,8 +94,8 @@
 
           &-amount {
             color: #2ca5e4 !important;
-            font-size: 16px;
-            line-height: 20px;
+            font-size: 14px;
+            line-height: 17px;
             font-weight: 700;
 
             @include media-query(md) {
@@ -106,8 +106,8 @@
           &-text {
             color: #000;
             font-weight: 300;
-            font-size: 16px;
-            line-height: 20px;
+            font-size: 14px;
+            line-height: 17px;
           }
         }
 
@@ -117,8 +117,8 @@
           align-items: center;
           justify-content: center;
           gap: 4px;
-          font-size: 16px;
-          line-height: 20px;
+          font-size: 14px;
+          line-height: 17px;
           border-radius: 8px;
           background: rgba(92, 182, 41, 0.10);
 
@@ -142,11 +142,11 @@
           }
         }
 
-        &-bonus.#{$id}__bonusAsText {
-          span {
-            font-size: 13px;
-          }
-        }
+        // &-bonus.#{$id}__bonusAsText {
+        //   span {
+        //     font-size: 13px;
+        //   }
+        // }
 
         &-spins.#{$id}__spinsAsText {
           span {
@@ -258,13 +258,13 @@
 
         &-content {
           color: #333;
-          font-size: 16px;
-          line-height: 21px;
+          font-size: 14px;
+          line-height: 17px;
           font-weight: 700;
 
           @include media-query(md) {
-            font-size: 15px;
-            line-height: 18px;
+            font-size: 14px;
+            line-height: 17px;
           }
         }
       }
