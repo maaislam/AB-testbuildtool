@@ -8,7 +8,7 @@ const { ID, VARIATION } = shared;
 export default () => {
   setup(); //use if needed
   //gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
+  //console.log(ID);
   //-----------------------------
   //If control, bail out from here
   //-----------------------------

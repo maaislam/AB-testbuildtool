@@ -17,7 +17,8 @@ export default () => {
       gaTracking(`${operatorName} | CTA CTO | Toplist`);
     } else if (target.closest('.button.link-out')) {
       const operatorName = target.closest('.button.link-out').href.split('visitar/')[1];
-      gaTracking(`${operatorName} | CTA CTO | Bottomlist`);
+      const position = target.closest('.casino-table-widget__row') ? 'Bottomlist' : 'List';
+      gaTracking(`${operatorName} | CTA CTO | ${position}`);
     }
   });
 
