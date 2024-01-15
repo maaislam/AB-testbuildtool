@@ -55,6 +55,10 @@ const init = () => {
       //set affiliate links
       const casinoCtaBtn = casinoElem.querySelector('.visit');
       const casinoLogo = casinoElem.querySelector('.img');
+      if (casino[linkType]) {
+        casinoLogo.setAttribute('data-affiliateLink', true);
+        casinoCtaBtn.setAttribute('data-affiliateLink', true);
+      }
       casinoCtaBtn.setAttribute('href', casino[linkType]);
       casinoCtaBtn.setAttribute('data-operator', casino.name);
       casinoLogo.setAttribute('href', casino[linkType]);
@@ -77,22 +81,24 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('.visit')) {
       const casinoNameElem = e.target.closest('a');
-      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
+      let casinoName = casinoNameElem.dataset.operator;
       casinoName = casinoName.replace(/-/g, ' ');
+      const hasAffiliateLink = casinoNameElem.dataset.affiliatelink;
 
-      gaTracking(`${linkType} | ${casinoName} CTA CTO (Button)`);
+      gaTracking(`${hasAffiliateLink ? linkType : 'Default Link'} | ${casinoName} CTA CTO (Button)`);
     } else if (e.target.closest('a.img') || e.target.closest('a.title')) {
-      const casinoNameElem = e.target.closest('.a.img');
-      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
+      const casinoNameElem = e.target.closest('a');
+      let casinoName = casinoNameElem.dataset.operator;
       casinoName = casinoName.replace(/-/g, ' ');
+      const hasAffiliateLink = casinoNameElem.dataset.affiliatelink;
 
-      gaTracking(`${linkType} | ${casinoName} CTA CTO (Logo)`);
+      gaTracking(`${hasAffiliateLink ? linkType : 'Default Link'} | ${casinoName} CTA CTO (Logo)`);
     } else if (e.target.closest(`.${ID}__review`)) {
       const casinoNameElem = e.target.closest(`.${ID}__review`);
       let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
       casinoName = casinoName.replace(/-/g, ' ');
 
-      gaTracking(`${linkType} | ${casinoName} CTA CTR`);
+      gaTracking(`${casinoName} CTA CTR`);
     }
   });
 
