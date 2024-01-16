@@ -251,7 +251,7 @@
 
         @include media-query(md) {
           padding: 6px !important;
-          height: 58px;
+          height: 64px;
           width: auto;
           border-radius: 7px;
         }
@@ -271,8 +271,8 @@
           font-weight: 900;
 
           @include media-query(md) {
-            font-size: 14px;
-            line-height: 17px;
+            font-size: 12px;
+            line-height: 15px;
           }
         }
       }

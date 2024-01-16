@@ -9,11 +9,11 @@ const translationConfig = {
     },
     'bonus wagering': {
         en: 'Bonus wagering',
-        sv: 'omsättningskrav på bonus'
+        sv: 'Omsättningskrav på bonus:'
     },
     'spins wagering': {
         en: 'Spins wagering',
-        sv: 'omsättningskrav på spins'
+        sv: 'Omsättningskrav på spins:'
     },
     'Withdrawal attempt 1': {
         en: 'Withdrawal attempt 1',
@@ -25,15 +25,15 @@ const translationConfig = {
     },
     'Withdrawal wagering': {
         en: 'Withdrawal wagering',
-        sv: 'omsättningskrav på uttag'
+        sv: 'omsättningskrav på insättning'
     },
     'Speed experience (avg)': {
         en: 'Speed experience (avg)',
-        sv: 'hastighet'
+        sv: 'Hitta starburst (hastighet)'
     },
     'Live chat experience (avg)': {
         en: 'Live chat experience (avg)',
-        sv: 'responstid från live chat (avg)'
+        sv: 'Genomsnittlig svarstid live chatt'
     },
     'Combined ratings from other affiliates': {
         en: 'Combined ratings from other affiliates',
