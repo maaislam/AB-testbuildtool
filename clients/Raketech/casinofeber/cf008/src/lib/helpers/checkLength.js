@@ -1,5 +1,5 @@
 const checkLength = (str) => {
-  if (str.length > 7) {
+  if (str.length > 4) {
     return false;
   }
   return true;

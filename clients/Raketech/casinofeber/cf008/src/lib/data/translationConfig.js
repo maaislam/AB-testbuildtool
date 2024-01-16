@@ -37,7 +37,7 @@ const translationConfig = {
     },
     'Combined ratings from other affiliates': {
         en: 'Combined ratings from other affiliates',
-        sv: 'ank från andra jämförelsesidor'
+        sv: 'Rank från andra jämförelsesidor'
     }
 };
 export default translationConfig;

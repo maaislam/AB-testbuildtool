@@ -25,11 +25,11 @@ const bonusBox = (id, data) => {
         <span class='${id}__bonusBox-name'>${casinoName}</span>
         <span class='${id}__bonusBox-bonus ${isBonusAmount ? '' : `${id}__bonusAsText`}'>
           <span class='${id}__bonusBox-bonus-amount'>${bonusAmount}</span>
-          <span class='${id}__bonusBox-bonus-text'>${bonusText}</span>
+          <span class='${id}__bonusBox-bonus-text'>${isBonusAmount ? bonusText : ''}</span>
         </span>
         <span class='${id}__bonusBox-spins ${isLength ? '' : `${id}__spinsAsText`}'>
           <span class='${id}__bonusBox-spins-amount'>${spinsAmount}</span>
-          <span class='${id}__bonusBox-spins-text'>${spinsText}</span>
+          <span class='${id}__bonusBox-spins-text'>${isLength ? spinsText : ''}</span>
         </span>
         <span class='${id}__bonusBox-wagering'>
           <span class='${id}__bonusBox-wagering-bonus'>

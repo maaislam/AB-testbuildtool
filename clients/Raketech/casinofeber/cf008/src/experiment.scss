@@ -94,9 +94,9 @@
 
           &-amount {
             color: #2ca5e4 !important;
+            font-weight: 900;
             font-size: 14px;
             line-height: 17px;
-            font-weight: 700;
 
             @include media-query(md) {
               text-align: left;
@@ -129,7 +129,7 @@
 
           &-amount {
             color: #5CB629 !important;
-            font-weight: 700;
+            font-weight: 900;
 
             @include media-query(md) {
               text-align: left;
@@ -172,7 +172,7 @@
 
             .wageringValue {
               color: #000;
-              font-weight: 700;
+              font-weight: 900;
               font-size: 14px;
               line-height: 17px;
             }
@@ -268,7 +268,7 @@
           color: #333;
           font-size: 14px;
           line-height: 17px;
-          font-weight: 700;
+          font-weight: 900;
 
           @include media-query(md) {
             font-size: 14px;

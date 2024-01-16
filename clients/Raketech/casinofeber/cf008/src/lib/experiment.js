@@ -68,8 +68,8 @@ const init = () => {
       casinoElem.insertAdjacentHTML('afterend', termsElem);
 
       if (reviewElem) {
-        const reviewTextContent = reviewElem.textContent;
-        reviewElem.textContent = `Read ${reviewTextContent} review`;
+        const operatorName = reviewElem.textContent;
+        reviewElem.textContent = `${operatorName} Recension`;
       }
 
       setLeoVegasJackpot(ID, casinoElem, casino, isMobile);
