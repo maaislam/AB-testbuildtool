@@ -42,20 +42,20 @@ const init = () => {
       casinoElemRef.style.border = `2px solid ${casino.operatorColor}`;
     }
 
-    setTimeout(() => {
-      //set affiliate links
-      reviewElem.classList.add(`${ID}__review`);
-      const casinoCtaBtn = casinoElem.querySelector('.visit');
-      const casinoLogo = casinoElem.querySelector('.img');
-      if (casino[linkType]) {
-        casinoLogo.setAttribute('data-affiliateLink', true);
-        casinoCtaBtn.setAttribute('data-affiliateLink', true);
-      }
-      casinoCtaBtn.setAttribute('href', casino[linkType]);
-      casinoCtaBtn.setAttribute('data-operator', casino.name);
-      casinoLogo.setAttribute('href', casino[linkType]);
-      casinoLogo.setAttribute('data-operator', casino.name);
+    //set affiliate links
+    reviewElem.classList.add(`${ID}__review`);
+    const casinoCtaBtn = casinoElem.querySelector('.visit');
+    const casinoLogo = casinoElem.querySelector('.img');
+    if (casino[linkType]) {
+      casinoLogo.setAttribute('data-affiliateLink', true);
+      casinoCtaBtn.setAttribute('data-affiliateLink', true);
+    }
+    casinoCtaBtn.setAttribute('href', casino[linkType]);
+    casinoCtaBtn.setAttribute('data-operator', casino.name);
+    casinoLogo.setAttribute('href', casino[linkType]);
+    casinoLogo.setAttribute('data-operator', casino.name);
 
+    setTimeout(() => {
       if (VARIATION === 'Control') return;
 
       if (casinoElem.querySelector(`.${ID}__featureBoxes`)) return;
@@ -84,6 +84,7 @@ export default () => {
     if (e.target.closest('.visit')) {
       const casinoNameElem = e.target.closest('a');
       let casinoName = casinoNameElem.dataset.operator;
+      if (!casinoName) return;
       casinoName = casinoName.replace(/-/g, ' ');
       const hasAffiliateLink = casinoNameElem.dataset.affiliatelink;
 
@@ -91,6 +92,7 @@ export default () => {
     } else if (e.target.closest('a.img') || e.target.closest('a.title')) {
       const casinoNameElem = e.target.closest('a');
       let casinoName = casinoNameElem.dataset.operator;
+      if (!casinoName) return;
       casinoName = casinoName.replace(/-/g, ' ');
       const hasAffiliateLink = casinoNameElem.dataset.affiliatelink;
 
