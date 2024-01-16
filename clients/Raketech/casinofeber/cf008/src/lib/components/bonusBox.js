@@ -34,14 +34,14 @@ const bonusBox = (id, data) => {
         <span class='${id}__bonusBox-wagering'>
           <span class='${id}__bonusBox-wagering-bonus'>
             <span class='${id}__bonusWageringIcon'>${bonusWageringIcon}</span>
-            <span>${bonusWageringText}
-              <span class='wageringValue'>${bonusWagering}</span>
+            <span>${isBonusAmount ? bonusWageringText : 'Bonus ej tillgänglig'}
+              <span class='wageringValue'>${isBonusAmount ? bonusWagering : ''}</span>
             </span>
           </span>
           <span class='${id}__bonusBox-wagering-spins'>
             <span class='${id}__spinWageringIcon'>${spinWageringIcon}</span>
-            <span>${spinsWageringText}
-              <span class='wageringValue'>${spinsWagering}</span>
+            <span>${isBonusAmount ? spinsWageringText : 'Free spins ej tillgängligt'}
+              <span class='wageringValue'>${isBonusAmount ? spinsWagering : ''}</span>
             </span>
           </span>
         </span>
