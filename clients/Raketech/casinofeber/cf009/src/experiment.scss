@@ -1,0 +1,12 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .toplist-holder {
+      button.load-more {
+        display: none;
+      }
+    }
+  }
+}
