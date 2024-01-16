@@ -10,6 +10,7 @@ const { ID, VARIATION } = shared;
 const linkType = VARIATION === 'Control' ? 'A Link' : 'B Link';
 
 const init = () => {
+  console.log('init');
   const isMobile = window.innerWidth < 768;
 
   const casinoData = window[`${ID}__data`];
@@ -88,7 +89,9 @@ export default () => {
       casinoName = casinoName.replace(/-/g, ' ');
       const hasAffiliateLink = casinoNameElem.dataset.affiliatelink;
 
-      gaTracking(`${hasAffiliateLink ? linkType : 'Default Link'} | ${casinoName} CTA CTO (Button)`);
+      gaTracking(
+        `${hasAffiliateLink ? linkType : 'Default Link'} | ${casinoName} CTA CTO (Button)`
+      );
     } else if (e.target.closest('a.img') || e.target.closest('a.title')) {
       const casinoNameElem = e.target.closest('a');
       let casinoName = casinoNameElem.dataset.operator;
@@ -115,8 +118,8 @@ export default () => {
     });
 
   observeDOM('.toplist.casino', init, {
-    childList: true,
+    childList: false,
     subtree: false,
-    attributes: false
+    attributes: true
   });
 };

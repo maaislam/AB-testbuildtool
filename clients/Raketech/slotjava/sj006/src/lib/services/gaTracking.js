@@ -13,16 +13,18 @@ const gaTracking = (label) => {
     if (window.gtag !== undefined) {
       window.gtag('cro_event', GA4_INTERNAL_EXPERIMENT_ID, {
         event_category: EXPERIMENT_DEVICE_CATEGORY,
-        event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | V${VARIATION == 'Control' ? 'C' : VARIATION
-          } | ${label}`
+        event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | V${
+          VARIATION === 'Control' ? 'C' : VARIATION
+        } | ${label}`
       });
     } else {
       window.dataLayer.push({
         event: 'cro_event',
         event_detail: GA4_INTERNAL_EXPERIMENT_ID,
         event_category: EXPERIMENT_DEVICE_CATEGORY,
-        event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | V${VARIATION == 'Control' ? 'C' : VARIATION
-          } | ${label}`
+        event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | V${
+          VARIATION === 'Control' ? 'C' : VARIATION
+        } | ${label}`
       });
     }
   });
