@@ -16,7 +16,7 @@
     &:hover {
       color: #b97d19;
       background-color: #fae9cb;
-      border: none
+      border: none;
     }
   }
 
@@ -28,13 +28,14 @@
 
     @include media-query(sm) {
       flex-direction: column;
+      gap: 10px;
     }
 
     .prodact-image {
       @include media-query(sm) {
         width: 100%;
-        max-width: 150px;
-        margin: 10px auto;
+        max-width: 100px;
+        margin: 10px auto 0;
       }
     }
 
@@ -44,6 +45,11 @@
       font-size: 26px;
       font-weight: 600;
       line-height: 1.3;
+      @include media-query(sm) {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
     }
 
     .price {
@@ -52,6 +58,11 @@
       font-size: 30px;
       font-weight: 600;
       line-height: 36px;
+      @include media-query(sm) {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
     }
 
     .inner-custm-add-prod-upsell {
@@ -62,6 +73,9 @@
   &__variants {
     &-label {
       margin-bottom: 16px;
+      @include media-query(sm) {
+        margin-bottom: 6px;
+      }
     }
 
     label {
@@ -84,7 +98,7 @@
       }
 
       &.custom-child-upsel-one {
-        padding: 15px 0 10px 15px !important;
+        padding: 8px 0 8px 15px !important;
       }
     }
   }
@@ -335,6 +349,9 @@
     justify-content: center;
     text-align: center;
     padding: 18px 0;
+    @include media-query(sm) {
+      padding: 10px 0;
+    }
   }
 
   .ppatc__popup-btn {
