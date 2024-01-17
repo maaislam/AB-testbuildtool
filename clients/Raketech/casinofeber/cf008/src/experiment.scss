@@ -100,6 +100,7 @@
 
             @include media-query(md) {
               text-align: left;
+              font-size: 16px;
             }
           }
 
@@ -108,6 +109,10 @@
             font-weight: 300;
             font-size: 14px;
             line-height: 17px;
+
+            @include media-query(md) {
+              font-size: 16px;
+            }
           }
         }
 
@@ -125,6 +130,7 @@
           @include media-query(md) {
             padding: 0;
             background-color: transparent;
+            font-size: 16px;
           }
 
           &-amount {
@@ -148,17 +154,21 @@
         //   }
         // }
 
-        &-spins.#{$id}__spinsAsText {
-          span {
-            font-size: 13px;
-          }
-        }
+        // &-spins.#{$id}__spinsAsText {
+        //   span {
+        //     font-size: 13px;
+        //   }
+        // }
 
         &-wagering {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           gap: 8px;
+
+          @include media-query(md) {
+            margin-top: 5px;
+          }
 
           &-bonus,
           &-spins {

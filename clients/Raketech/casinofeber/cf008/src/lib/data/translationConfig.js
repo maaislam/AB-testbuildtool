@@ -33,7 +33,7 @@ const translationConfig = {
     },
     'Live chat experience (avg)': {
         en: 'Live chat experience (avg)',
-        sv: 'Genomsnittlig svarstid live chatt'
+        sv: 'Genomsnittlig svarstid chatt'
     },
     'Combined ratings from other affiliates': {
         en: 'Combined ratings from other affiliates',
