@@ -6,18 +6,14 @@ import { heartIcon } from './assets/svg';
 const { ID } = shared;
 
 const init = () => {
-  //tech connect component add
   if (!document.querySelector(`.${ID}__techConnectContainer`)) {
     const techConnectAnchorPoint = document.querySelector('.sales-form-title');
     techConnectAnchorPoint.insertAdjacentHTML('afterbegin', techConnect(ID));
   }
-
-  //header logo src
   const headerLogo = document.querySelector('.header-inner .header-logo');
-  headerLogo.href = 'https://www.dice.com/hiring';
-
-  //form section
   const salesForm = document.querySelector('.sales-form-holder');
+
+  headerLogo.href = 'https://www.dice.com/hiring';
   salesForm.classList.add(`${ID}__salesForm`);
 
   const progressCounter = () => {
@@ -35,7 +31,7 @@ const init = () => {
   const feLogo = document.querySelector('.logo-section');
   feLogo.classList.add(`${ID}__logoSection`);
 
-  const imgSrcs = [
+  const logoSrcs = [
     'https://fe-test-dev.s3.amazonaws.com/Dice/Dice-128/capital.png',
     'https://fe-test-dev.s3.amazonaws.com/Dice/Dice-128/robartthalflogo.png',
     'https://fe-test-dev.s3.amazonaws.com/Dice/Dice-128/disney.png',
@@ -43,13 +39,13 @@ const init = () => {
     'https://fe-test-dev.s3.amazonaws.com/Dice/Dice-128/kforce.jpg'
   ];
   feLogo.querySelectorAll('.logos img').forEach((img, index) => {
-    img.src = imgSrcs[index];
+    img.src = logoSrcs[index];
   });
 
   //we know tech section
   const weKnowSection = document.querySelector('.bm_we_know_section');
-  weKnowSection.classList.add(`${ID}__weKnowSection`);
   const alignImage = weKnowSection.querySelector('.align-image');
+  weKnowSection.classList.add(`${ID}__weKnowSection`);
 
   if (!document.querySelector(`.${ID}__alignImage`)) {
     const newAlignImage = `<div class='${ID}__alignImageWrapper'>
