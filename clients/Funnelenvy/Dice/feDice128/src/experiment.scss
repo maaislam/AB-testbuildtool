@@ -12,7 +12,6 @@
 
   .sales-form-wrapper,
   .sales-form-title {
-
     background-color: #fff !important;
   }
 
@@ -33,28 +32,29 @@
       margin: 64px 0 24px 0;
       font-size: 56px;
       font-weight: 700;
-      // font-family: Degular;
+      font-family: 'Degular';
       line-height: 67px;
       color: #111827;
 
       @include media-query(lg) {
         margin: 40px 0 16px 0;
-        font-size: 30px;
-        line-height: 34px;
+        font-size: 36px;
+        line-height: 40px;
       }
     }
 
     .#{$id}__subTitle {
       margin: 0 0 48px 0;
       color: #0f172a;
+      font-family: "IBM Plex Sans";
       font-size: 24px;
       font-weight: 400;
       line-height: 32px;
 
       @include media-query(lg) {
         margin: 0 0 32px 0;
-        font-size: 20px;
-        line-height: 22px;
+        font-size: 18px;
+        line-height: 21px;
       }
     }
 
@@ -79,7 +79,7 @@
         .#{$id}__itemText {
           color: #111827;
           font-size: 24px;
-          font-style: normal;
+          font-family: "IBM Plex Sans";
           font-weight: 600;
           line-height: 32px;
 
@@ -119,6 +119,7 @@
         color: #0f172a;
         font-size: 24px;
         font-style: italic;
+        font-family: "IBM Plex Sans";
         font-weight: 400;
         line-height: 33px;
 
@@ -127,7 +128,7 @@
         }
 
         @include media-query(lg) {
-          font-size: 16px;
+          font-size: 18px;
           line-height: 24px;
 
         }
@@ -136,11 +137,12 @@
   }
 
   &__salesForm {
-    max-width: 512px;
+    max-width: 512px !important;
     margin-top: 96px !important;
     padding: 32px 48px 24px !important;
     background: #F4F4F5;
     border-radius: 8px;
+    font-family: "IBM Plex Sans";
 
     @include media-query(lg) {
       margin: 24px auto 24px !important;
@@ -163,7 +165,7 @@
         line-height: 36px;
 
         @include media-query(lg) {
-        margin: 0 auto 16px;
+          margin: 0 auto 16px;
           font-size: 24px;
           line-height: 28px;
         }
@@ -196,20 +198,25 @@
     .mktoForm {
       padding-top: 16px;
 
+      @include media-query(lg) {
+        padding: 16px 0 10px 0 !important;
+      }
+
       .iti * {
-        border-radius: 24px 0 0 24px !important;
+        // border-radius: 24px 0 0 24px !important;
       }
 
       #fe-form-question {
         h3 {
+          margin: 0;
           color: #111827;
           text-align: center;
+          font-family: "IBM Plex Sans";
           font-size: 20px;
           font-weight: 600 !important;
           line-height: 30px;
 
           @include media-query(lg) {
-            margin: 0;
             font-size: 18px;
             line-height: 24px;
           }
@@ -229,13 +236,31 @@
         }
 
         button.fe-answer-btn {
+          background: #F4F4F5;
           margin-bottom: 0 !important;
 
           label {
             padding: 12px 24px !important;
             border-radius: 24px;
             border: 1px solid #D4D4D8;
+            color: #111827;
+
+            span {
+              font-family: "IBM Plex Sans";
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 24px;
+
+              @include media-query(lg) {
+                font-size: 14px;
+                line-height: 21px;
+              }
+            }
           }
+        }
+
+        button.fe-answer-btn.fe-active label {
+          color: #fff;
         }
       }
 
@@ -273,17 +298,7 @@
     }
 
     form.mktoForm {
-      // .mktoFormRow.fe_show {
-      //   display: flex !important;
-      //   flex-direction: column !important;
-      // }
-
-      // .mktoFormRow:nth-of-type(3) .mktoFormCol {
-      //   width: 100% !important;
-      // }
-
       .mktoFormRow {
-
         input {
           padding: 12px 24px !important;
           border-radius: 24px !important;
@@ -312,6 +327,7 @@
       margin-top: 24px;
       text-align: center;
       color: #111827;
+      font-family: "IBM Plex Sans";
       font-size: 16px;
       font-weight: 500;
       line-height: 24px;
@@ -323,18 +339,23 @@
     background-image: none;
 
     .logo-color {
+      padding: 48px 0;
       background-color: #ecfeff;
 
+      @include media-query(lg) {
+        padding: 28px 0 !important;
+      }
+
       .bmsection-content {
-        padding-top: 48px !important;
+        padding-top: 0 !important;
         color: #2b2927;
         text-align: center;
+        font-family: "IBM Plex Sans";
         font-size: 32px;
         font-weight: 700;
         line-height: 48px;
 
         @include media-query(lg) {
-          padding-top: 28px !important;
           font-size: 20px;
           line-height: 28px;
         }
@@ -344,14 +365,20 @@
     .logos {
       gap: 40px;
       justify-content: center;
-      
+
+      @include media-query(lg) {
+        padding: 28px 28px 0;
+        gap: 30px;
+        justify-content: space-evenly;
+      }
+
       .logo {
         padding: 0 !important;
         width: 104px;
         height: 104px;
         display: flex;
         align-items: center;
-  
+
         img {
           width: 100%;
         }
@@ -360,7 +387,12 @@
       .logo:nth-child(2) {
         width: 56px;
         height: 56px;
-  
+
+        @include media-query(lg) {
+          width: 75px;
+          height: 75px;
+        }
+
         img {
           width: 100%;
         }
@@ -377,8 +409,29 @@
     }
 
     .bm_know_tech_section {
+      .align-image {
+        display: none;
+      }
+
+      .#{$id}__alignImageWrapper {
+        @include media-query(lg) {
+          display: flex;
+          justify-content: center;
+        }
+        .#{$id}__alignImage {
+          width: 500px;
+          height: 112px;
+  
+          @include media-query(lg) {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+
       .bm_know_heading {
         color: #18181b;
+        font-family: "Degular";
         font-size: 40px;
         font-weight: 700;
         line-height: 48px;
@@ -392,6 +445,7 @@
       .bm_knowtech_para {
         margin: 24px 0 0;
         color: #18181b;
+        font-family: "IBM Plex Sans";
         font-size: 24px;
         font-weight: 400;
         line-height: 32px;
@@ -425,11 +479,13 @@
     }
 
     .bm_tech_position_text {
+      max-width: 1014px !important;
 
       .bm_position_para {
         margin: 32px 0 24px !important;
         color: #18181B;
         text-align: center;
+        font-family: "IBM Plex Sans";
         font-size: 24px;
         font-weight: 600;
         line-height: 32px;
@@ -438,6 +494,20 @@
           margin: 16px 0 16px !important;
           font-size: 24px;
           line-height: 28px;
+        }
+      }
+
+      .bm_position_bottom_text {
+        color: #3F3F46;
+        text-align: center;
+        font-family: "IBM Plex Sans";
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+
+        @include media-query(lg) {
+          font-size: 20px;
+          line-height: 21px;
         }
       }
     }
@@ -466,7 +536,7 @@
         color: #18181b;
         text-align: center;
         font-size: 48px;
-        font-style: normal;
+        font-family: 'Degular';
         font-weight: 700;
         line-height: 58px;
         margin-bottom: 48px;
@@ -488,7 +558,7 @@
         color: #fff;
         text-align: center;
         font-size: 16px;
-        font-style: normal;
+        font-family: "IBM Plex Sans";
         font-weight: 500;
         line-height: 24px;
       }
