@@ -417,12 +417,15 @@
         @include media-query(lg) {
           display: flex;
           justify-content: center;
+          width: 100%;
+          padding: 0 28px;
         }
         .#{$id}__alignImage {
           width: 500px;
           height: 112px;
   
           @include media-query(lg) {
+            max-width: 400px;
             width: 100%;
             height: auto;
           }
