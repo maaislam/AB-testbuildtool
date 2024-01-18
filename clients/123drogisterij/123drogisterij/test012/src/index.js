@@ -1,4 +1,6 @@
 import activate from './lib/experiment';
 import { pollerLite } from './lib/helpers/utils';
 
-pollerLite(['body'], activate);
+if (window.location.href.includes('qa=true')) {
+    pollerLite(['body'], activate);
+}
