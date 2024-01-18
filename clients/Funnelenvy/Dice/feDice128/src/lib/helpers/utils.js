@@ -1,10 +1,3 @@
-/**
- * Polls the DOM for a condition to be met before executing a callback.
- *
- * @param {array} conditions The array of conditions to check for.
- * @param {function} callback The callback function when all conditions are true.
- * @param {number} maxTime max time the check witll run before abort.
- */
 export const pollerLite = (conditions, callback, maxTime = 10000) => {
   const POLLING_INTERVAL = 25;
   const startTime = Date.now();
@@ -24,28 +17,11 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
     }
   }, POLLING_INTERVAL);
 };
-export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
-  const target = document.querySelector(`${targetSelectorString}`);
 
-  if (!target) return;
-  //configuration of the observer:
-
-  const config = configObject || {
-    childList: true,
-    subtree: true,
-    attributes: true,
-    characterData: true,
-    characterDataOldValue: true
-  };
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      //console.log(mutation);
-      observer.disconnect();
-
-      callbackFunction(mutation);
-      observer.observe(target, config);
-    });
-  });
-
-  observer.observe(target, config);
+export const addCss = (id, href) => {
+  const link = document.createElement('link');
+  link.setAttribute('id', id);
+  link.setAttribute('rel', 'stylesheet');
+  link.href = href;
+  document.head.appendChild(link);
 };
