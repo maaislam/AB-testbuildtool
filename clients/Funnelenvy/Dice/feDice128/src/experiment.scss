@@ -2,26 +2,37 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  & .#{$id}__staticPageContainer {
+
+  .sales-form-wrapper,
+  .sales-form-title {
+
+    background-color: #fff !important;
+  }
+
+  &__techConnectContainer {
     padding: 0px 48px 0;
+
     @media screen and (max-width: 1023px) {
       & {
         padding: 17px 17px;
       }
     }
-    & + .fe-static-page-content {
+
+    &+.fe-static-page-content {
       display: none;
     }
-    & .#{$id}__staticPageTitle {
+
+    .#{$id}__title {
       font-size: 56px;
       font-style: normal;
       font-weight: 700;
-      font-family: Degular;
+      // font-family: Degular;
       line-height: 67px;
       color: #111827;
       margin: 64px 0 24px 0;
     }
-    & .#{$id}__staticPageSubtitle {
+
+    .#{$id}__subTitle {
       font-size: 24px;
       font-style: normal;
       font-weight: 400;
@@ -30,64 +41,209 @@
       margin: 0 0 48px 0;
     }
 
-    & .#{$id}__staticPageLists {
-      list-style-type: none;
+    .#{$id}__lists {
       padding: 0;
       margin: 0 0 48px 0;
-      & .#{$id}__item {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      list-style-type: none;
+
+      .#{$id}__item {
         display: flex;
         align-items: center;
         max-width: 580px;
         gap: 24px;
-        &:nth-child(2) {
-          margin: 24px 0;
-        }
-        & .#{$id}__itemText {
+
+        .#{$id}__itemText {
           color: #111827;
           font-size: 24px;
           font-style: normal;
           font-weight: 600;
           line-height: 32px;
         }
+
+        .#{$id}__itemIcon {
+          width: 104px;
+          height: 82px;
+        }
       }
     }
 
-    & .#{$id}__staticPageContactUs {
+    .#{$id}__contactUs {
       width: 100%;
       max-width: 587px;
       margin-bottom: 48px;
-      .#{$id}__staticPageContactUsTitle {
+
+      .#{$id}__contactUsTitle {
         color: var(--Extended-blue-gray-900, #0f172a);
         font-size: 24px;
         font-style: italic;
         font-weight: 400;
         line-height: 33px;
 
-        & .#{$id}__bold {
+        .#{$id}__bold {
           font-weight: 700;
         }
       }
     }
   }
 
-  & .#{$id}__logoSection {
+  &__salesForm {
+    max-width: 512px;
+    margin-top: 96px !important;
+    padding: 32px 48px 24px !important;
+    background: #F4F4F5;
+    border-radius: 8px;
+
+    .bm_form_heading {
+      margin: 0 auto 16px;
+
+      p {
+        margin: 0 auto 24px;
+        color: #18181B;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+      }
+
+      .fe-progress-bar {
+        width: 88%;
+        border: 2px solid #0891B2;
+
+        span {
+          display: none;
+        }
+      }
+
+      .fe-progress-bar.fe-step1-complete {
+        background: linear-gradient(90deg, #0891B2 33%, #ECFEFF 33%);
+      }
+    }
+
+    .mktoForm {
+      // padding-top: 16px;
+      #fe-form-question {
+        h3 {
+          color: #111827;
+          text-align: center;
+          font-size: 20px;
+          font-weight: 600 !important;
+          line-height: 30px;
+        }
+      }
+
+      #fe-form-answers {
+        margin: 32px auto 40px !important;
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        button.fe-answer-btn {
+          margin-bottom: 0 !important;
+
+          label {
+            padding: 12px 24px !important;
+            border-radius: 24px;
+            border: 1px solid #D4D4D8;
+          }
+        }
+      }
+
+      .fe-next-button {
+        margin-top: 0 !important;
+        text-align: center;
+
+        button {
+          width: 260px;
+          color: #FFF;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 24px;
+          text-align: center;
+          border-radius: 50px;
+          background: #0E7490;
+        }
+      }
+
+      .mktoButtonWrap {
+        display: flex;
+        justify-content: center;
+
+        .multi-step-step1-btn {
+          width: 260px !important;
+          color: #FFF;
+          font-weight: 700;
+          font-size: 16px !important;
+          line-height: 24px;
+          text-align: center;
+          border-radius: 50px;
+          background: #0E7490 !important;
+        }
+      }
+    }
+
+    form.mktoForm {
+      .mktoFormRow.fe_show {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      .mktoFormRow:nth-of-type(3) .mktoFormCol {
+        width: 100% !important;
+      }
+
+      .mktoFormRow {
+        .mktoFieldDescriptor {
+          .iti--allow-dropdown {
+            width: 100% !important;
+          }
+
+          ul.iti__country-list {
+            width: 450px !important;
+            overflow-x: hidden !important;
+          }
+        }
+      }
+    }
+
+    .bm_formCta {
+      float: none !important;
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+      text-align: center;
+      color: #111827;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      text-decoration-line: underline;
+    }
+  }
+
+  .#{$id}__logoSection {
     background-image: none;
+
     .logo-color {
       background-color: #ecfeff;
+
       .bmsection-content {
+        padding-top: 48px !important;
         color: #2b2927;
         text-align: center;
         font-size: 32px;
-        font-style: normal;
         font-weight: 700;
         line-height: 48px;
       }
     }
   }
 
-  & .#{$id}__weKnowSection {
+  .#{$id}__weKnowSection {
     padding: 72px 0;
     background: #fafafa;
+
     .bm_know_tech_section {
       .bm_know_heading {
         color: #18181b;
@@ -96,6 +252,7 @@
         font-weight: 700;
         line-height: 48px;
       }
+
       .bm_knowtech_para {
         margin: 24px 0 0;
         color: #18181b;
@@ -104,9 +261,11 @@
         font-weight: 400;
         line-height: 32px;
       }
+
       .bm_knowtech_content {
         padding-bottom: 0;
       }
+
       .color-content,
       .bm_tech_position_text {
         display: none;
@@ -114,7 +273,7 @@
     }
   }
 
-  & .#{$id}__footerSection {
+  .#{$id}__footerSection {
     background: #fafafa;
     border-top: none;
 
@@ -123,9 +282,11 @@
       flex-direction: column;
       padding-top: 80px;
       padding-bottom: 80px;
+
       .dots.bm_dots {
         display: none;
       }
+
       .bm_fotter_text {
         color: #18181b;
         text-align: center;
@@ -135,6 +296,7 @@
         line-height: 58px;
         margin-bottom: 48px;
       }
+
       .fotter_contact_btn {
         width: 200px;
         height: auto;
@@ -142,7 +304,6 @@
         padding: 12px 0;
         border-radius: 50px;
         background: #0e7490;
-
         color: #fff;
         text-align: center;
         font-size: 16px;

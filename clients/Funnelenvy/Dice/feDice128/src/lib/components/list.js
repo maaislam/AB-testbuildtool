@@ -1,8 +1,8 @@
 export const list = (item, ID) => {
-  const { svg, text } = item;
+  const { icon, text } = item;
   const html = `
         <li class="${ID}__item">
-            ${svg}
+            <div class='${ID}__itemIcon'>${icon}</div>
             <p class="${ID}__itemText">${text}</p>
         </li>
     `;
