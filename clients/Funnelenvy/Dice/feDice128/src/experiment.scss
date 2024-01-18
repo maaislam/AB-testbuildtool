@@ -340,6 +340,32 @@
         }
       }
     }
+
+    .logos {
+      gap: 40px;
+      justify-content: center;
+      
+      .logo {
+        padding: 0 !important;
+        width: 104px;
+        height: 104px;
+        display: flex;
+        align-items: center;
+  
+        img {
+          width: 100%;
+        }
+      }
+
+      .logo:nth-child(2) {
+        width: 56px;
+        height: 56px;
+  
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 
   .#{$id}__weKnowSection {
