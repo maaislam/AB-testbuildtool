@@ -49,16 +49,19 @@ const init = () => {
           cartItem.classList.add(`${ID}__matched`);
         }
       });
-    });
-    if (cartItem.querySelector(`.${ID}__openmodal`)) return;
-    const sku = cartItem
-      .querySelector('td .control.qty input.qty')
-      .getAttribute('data-cart-item-id');
-    const anchorPoint = cartItem.querySelector(
-      '.col.item .product-item-details .product-item-name'
-    );
 
-    anchorPoint.insertAdjacentHTML('beforeend', fakeButton(ID, sku));
+      if (cartItem.querySelector(`.${ID}__openmodal`)) return;
+      const sku = cartItem
+        .querySelector('td .control.qty input.qty')
+        .getAttribute('data-cart-item-id');
+      const anchorPoint = cartItem.querySelector(
+        '.col.item .product-item-details .product-item-name'
+      );
+      console.log('🚀anchorPoint:', anchorPoint);
+
+      if (upsellOptions.length < 1) return;
+      anchorPoint.insertAdjacentHTML('beforeend', fakeButton(ID, sku));
+    });
   });
 };
 
