@@ -1,4 +1,5 @@
 import { decrementIcon, incrementIcon } from '../assets/icons';
+import { star } from './star';
 
 export const product = (ID, data) => {
   const {
@@ -14,15 +15,13 @@ export const product = (ID, data) => {
     atcColor
   } = data;
 
-  console.log('data', data);
-
   const html = `
     <div class="${ID}__tradeProdItem">
         <div class="${ID}__image">
             <img src="${imageURL}" alt="${title}"/>
         </div>
         <div class="${ID}__reviews">
-            <div class="${ID}__stars"></div>
+            ${star(ID)}
             <div class="${ID}__ratingsContainer">
                 <span class="${ID}__ratings">${reviewsRating}</span>
                 <span class="${ID}__number">(${reviewsNumber} reviews)</span>

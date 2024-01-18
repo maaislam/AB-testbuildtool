@@ -34,6 +34,9 @@
           }
         }
         .#{$id}__reviews {
+          display: flex;
+          align-items: center;
+          gap: 5px;
           margin: 16px 0 12px 0;
           .#{$id}__ratingsContainer {
             color: #606f80;
