@@ -1,7 +1,7 @@
 import setup from './services/setup';
 import shared from './shared/shared';
 import techConnect from './components/techConnect';
-import { heartIcon } from './assets/svg';
+import { trackGAEvent } from './helpers/utils';
 
 const { ID } = shared;
 
@@ -12,8 +12,9 @@ const init = () => {
   }
   const headerLogo = document.querySelector('.header-inner .header-logo');
   const salesForm = document.querySelector('.sales-form-holder');
+  const redirectUrl = 'https://www.dice.com/hiring';
 
-  headerLogo.href = 'https://www.dice.com/hiring';
+  headerLogo.href = redirectUrl;
   salesForm.classList.add(`${ID}__salesForm`);
 
   const progressCounter = () => {
@@ -55,7 +56,7 @@ const init = () => {
   }
 
   const bmTechSectionElem = document.querySelector('.bm_tech_position_text');
-  bmTechSectionElem.insertAdjacentHTML('afterbegin', heartIcon);
+  bmTechSectionElem.insertAdjacentHTML('afterbegin', "<img src='https://fe-test-dev.s3.amazonaws.com/Dice/Dice-128/dice-logo.svg' />");
 
   const bmTechSection = `<section class='${ID}__bmTechSection'>
     ${bmTechSectionElem.outerHTML}
@@ -75,8 +76,10 @@ export default () => {
 
   init();
 
+  let formEngagement = false;
   document.body.addEventListener('click', (e) => {
     const { target } = e;
+
     if (target.closest('#fe-next-one') || target.closest('.mktoButtonWrap')) {
       const incrementalTextElem = document.querySelector(`.${ID}__incrementalText`);
 
@@ -89,8 +92,23 @@ export default () => {
           incrementalTextElem.textContent = '2';
         } else if (bmFormHeading.classList.contains('step1Complete')) {
           incrementalTextElem.textContent = '3';
+          //step 1 completion event
+          trackGAEvent('funnelenvy', 'click', 'Step 1 completion');
         }
       }, DELAY);
+    }
+
+    //selected option event
+    const isFeAnswerBtnAcitve = document.querySelector('div.step_one #fe-form-answers button.fe-active');
+    if (e.target.matches('.step_one div.fe-next-button button') && isFeAnswerBtnAcitve) {
+      const selectedOption = document.querySelector('div.step_one #fe-form-answers button.fe-active span').getAttribute('data');
+      trackGAEvent('funnelenvy', 'Qualifying question', selectedOption);
+    }
+
+    //form engagement event
+    if (e.target.closest('button.fe-answer-btn') && formEngagement === false) {
+      trackGAEvent('funnelenvy', 'click', 'form_engagement_LP');
+      formEngagement = true;
     }
   });
 };

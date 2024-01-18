@@ -25,3 +25,13 @@ export const addCss = (id, href) => {
   link.href = href;
   document.head.appendChild(link);
 };
+
+export const trackGAEvent = (eventCategory, eventAction, eventLabel) => {
+  if ('ga' in window) {
+      window.ga.getAll()[0].send('event', {
+          eventCategory,
+          eventAction,
+          eventLabel
+      });
+  }
+};
