@@ -12,6 +12,10 @@ const init = () => {
     techConnectAnchorPoint.insertAdjacentHTML('afterbegin', techConnect(ID));
   }
 
+  //header logo src
+  const headerLogo = document.querySelector('.header-inner .header-logo');
+  headerLogo.href = 'https://www.dice.com/hiring';
+
   //form section
   const salesForm = document.querySelector('.sales-form-holder');
   salesForm.classList.add(`${ID}__salesForm`);
@@ -24,8 +28,14 @@ const init = () => {
   const weKnowSection = document.querySelector('.bm_we_know_section');
   weKnowSection.classList.add(`${ID}__weKnowSection`);
 
-  const bmTechSection = document.querySelector('.bm_tech_position_text');
-  bmTechSection.insertAdjacentHTML('afterbegin', heartIcon);
+  const bmTechSectionElem = document.querySelector('.bm_tech_position_text');
+  bmTechSectionElem.insertAdjacentHTML('afterbegin', heartIcon);
+
+  const bmTechSection = `<section class='${ID}__bmTechSection'>
+    ${bmTechSectionElem.outerHTML}
+  </section>`;
+
+  weKnowSection.insertAdjacentHTML('afterend', bmTechSection);
 
   //contact us
   const feFooter = document.querySelector('.fotter_section');
