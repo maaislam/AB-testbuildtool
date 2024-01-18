@@ -57,7 +57,6 @@ const init = () => {
       const anchorPoint = cartItem.querySelector(
         '.col.item .product-item-details .product-item-name'
       );
-      console.log('🚀anchorPoint:', anchorPoint);
 
       if (upsellOptions.length < 1) return;
       anchorPoint.insertAdjacentHTML('beforeend', fakeButton(ID, sku));
