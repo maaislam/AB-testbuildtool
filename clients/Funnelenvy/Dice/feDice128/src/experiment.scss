@@ -2,6 +2,9 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  .FE-Form-Validator__step2 .fe-progress-bar {
+    background: linear-gradient(90deg, #0891B2 50%, #0891B2 50%) !important;
+  }
 
   .sales-form-wrapper,
   .sales-form-title {
@@ -118,12 +121,14 @@
       }
 
       .fe-progress-bar.fe-step1-complete {
-        background: linear-gradient(90deg, #0891B2 33%, #ECFEFF 33%);
+        background: linear-gradient(90deg, #0891B2 50%, #ECFEFF 50%);
       }
     }
 
     .mktoForm {
-      // padding-top: 16px;
+
+      padding-top: 16px;
+
       #fe-form-question {
         h3 {
           color: #111827;
@@ -196,6 +201,14 @@
       }
 
       .mktoFormRow {
+
+        input {
+          padding: 12px 24px !important;
+          border-radius: 24px !important;
+          border: 1px solid #D4D4D8 !important;
+          box-shadow: none !important;
+        }
+
         .mktoFieldDescriptor {
           .iti--allow-dropdown {
             width: 100% !important;
@@ -266,9 +279,20 @@
         padding-bottom: 0;
       }
 
-      .color-content,
-      .bm_tech_position_text {
+      .color-content {
         display: none;
+      }
+
+      .bm_tech_position_text {
+        background: #fff;
+
+        .bm_position_para {
+          color: #18181B;
+          text-align: center;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 32px;
+        }
       }
     }
   }

@@ -1,6 +1,7 @@
 import setup from './services/setup';
 import shared from './shared/shared';
 import techConnect from './components/techConnect';
+import { heartIcon } from './assets/svg';
 
 const { ID } = shared;
 
@@ -22,6 +23,9 @@ const init = () => {
   //we know tech section
   const weKnowSection = document.querySelector('.bm_we_know_section');
   weKnowSection.classList.add(`${ID}__weKnowSection`);
+
+  const bmTechSection = document.querySelector('.bm_tech_position_text');
+  bmTechSection.insertAdjacentHTML('afterbegin', heartIcon);
 
   //contact us
   const feFooter = document.querySelector('.fotter_section');
