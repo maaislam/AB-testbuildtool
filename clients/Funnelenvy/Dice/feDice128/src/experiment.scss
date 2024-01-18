@@ -124,6 +124,15 @@
         }
       }
 
+      .#{$id}__progressCounter {
+        margin-top: 4px;
+        color: #18181B;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 500;
+        line-height: 21px;
+      }
+
       .fe-progress-bar.fe-step1-complete {
         background: linear-gradient(90deg, #0891B2 50%, #ECFEFF 50%);
       }

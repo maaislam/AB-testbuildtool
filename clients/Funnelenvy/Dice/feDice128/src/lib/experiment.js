@@ -20,6 +20,15 @@ const init = () => {
   const salesForm = document.querySelector('.sales-form-holder');
   salesForm.classList.add(`${ID}__salesForm`);
 
+  const progressCounter = () => {
+    const htmlStr = `<div class="${ID}__progressCounter">
+        Step <span class='${ID}__incrementalText'>1</span> of 3
+    </div>`;
+    return htmlStr;
+  };
+  const feProgressBar = document.querySelector('.fe-progress-bar');
+  feProgressBar.insertAdjacentHTML('afterend', progressCounter());
+
   //logo section
   const feLogo = document.querySelector('.logo-section');
   feLogo.classList.add(`${ID}__logoSection`);
@@ -46,4 +55,23 @@ export default () => {
   setup();
 
   init();
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (target.closest('#fe-next-one') || target.closest('.mktoButtonWrap')) {
+      const incrementalTextElem = document.querySelector(`.${ID}__incrementalText`);
+
+      const DELAY = 200;
+      setTimeout(() => {
+        const feProgressBar = document.querySelector('.fe-progress-bar');
+        const bmFormHeading = document.querySelector('.bm_form_heading');
+
+        if (feProgressBar.classList.contains('fe-step1-complete') && !bmFormHeading.classList.contains('step1Complete')) {
+          incrementalTextElem.textContent = '2';
+        } else if (bmFormHeading.classList.contains('step1Complete')) {
+          incrementalTextElem.textContent = '3';
+        }
+      }, DELAY);
+    }
+  });
 };
