@@ -43,10 +43,12 @@ const init = () => {
 
     initialProductsFetch(url).then((doc) => {
       const upsellOptions = doc.querySelectorAll('.custom-child-upsel-checkbox input');
+      let isHighestLabelSelected = false;
       upsellOptions.forEach((upsellOption) => {
         const upsellOptionQty = upsellOption.value;
         if (upsellOptionQty === qtyValue && qtyValue !== '1') {
           cartItem.classList.add(`${ID}__matched`);
+          isHighestLabelSelected = true;
         }
       });
 
@@ -58,7 +60,8 @@ const init = () => {
         '.col.item .product-item-details .product-item-name'
       );
 
-      if (upsellOptions.length < 1) return;
+      if (upsellOptions.length < 1 || isHighestLabelSelected) return;
+
       anchorPoint.insertAdjacentHTML('beforeend', fakeButton(ID, sku));
     });
   });
