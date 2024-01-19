@@ -1,3 +1,5 @@
+/*eslint-disable no-param-reassign */
+/*eslint-disable max-len */
 import setup from './services/setup';
 import shared from './shared/shared';
 //import { trackGAEvent } from './helpers/utils';
@@ -153,9 +155,9 @@ export default () => {
     //}
 
     //form engagement event
-    // if (e.target.closest('button.fe-answer-btn') && formEngagement === false) {
-    //   trackGAEvent('funnelenvy', 'click', 'form_engagement_LP');
-    //   formEngagement = true;
-    // }
+    //if (e.target.closest('button.fe-answer-btn') && formEngagement === false) {
+    //trackGAEvent('funnelenvy', 'click', 'form_engagement_LP');
+    //formEngagement = true;
+    //}
   });
 };
