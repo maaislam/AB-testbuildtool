@@ -1,11 +1,56 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import techConnect from './components/techConnect';
-import { trackGAEvent } from './helpers/utils';
+//import { trackGAEvent } from './helpers/utils';
 
-const { ID } = shared;
+const { ID, VARIATION } = shared;
 
 const init = () => {
+  const techConnectData = [
+    {
+      icon: 'https://fe-test-dev.s3.amazonaws.com/Dice/Dice-128/candidatesVerifyIcon.svg',
+      text: 'Find pre-screened tech candidates, many verified'
+    },
+    {
+      icon: 'https://fe-test-dev.s3.amazonaws.com/Dice/Dice-128/enhanceJobPostingIcon.svg',
+      text: 'Enhance your job postings'
+    },
+    {
+      icon: 'https://fe-test-dev.s3.amazonaws.com/Dice/Dice-128/hireWithConfidenceIcon.svg',
+      text: 'Hire with confidence'
+    }
+  ];
+  const list = (item) => {
+    const { icon, text } = item;
+    const htmlStr = `
+        <li class="${ID}__item">
+            <div class='${ID}__itemIcon'><img src='${icon}'/></div>
+            <p class="${ID}__itemText">${text}</p>
+        </li>
+    `;
+
+    return htmlStr.trim();
+  };
+
+  const techConnect = () => {
+    const htmlStr = `
+          <div class="${ID}__techConnectContainer">
+              <h3 class="${ID}__title">Where tech connects</h3>
+              <h4 class="${ID}__subTitle">With over 6.2M members on Dice, we’re here to help you connect with the tech talent to power your business forward.</h4>
+              <ul class="${ID}__lists">
+                  ${techConnectData.map((item) => list(item, ID)).join('\n')}
+              </ul>
+              <div class="${ID}__contactUs">
+                  <span class="${ID}__contactUsTitle">
+                    <span class="${ID}__bold">Contact us today,</span> 
+                    and let one of our team members show you why Dice is the trusted partner by companies that are transforming the world through technology.
+                  </span>
+              </div>
+          </div>
+      `;
+
+    return htmlStr.trim();
+  };
+
   if (!document.querySelector(`.${ID}__techConnectContainer`)) {
     const techConnectAnchorPoint = document.querySelector('.sales-form-title');
     techConnectAnchorPoint.insertAdjacentHTML('afterbegin', techConnect(ID));
@@ -74,9 +119,11 @@ const init = () => {
 export default () => {
   setup();
 
+  if (VARIATION === 'Control') return;
+
   init();
 
-  let formEngagement = false;
+  //let formEngagement = false;
   document.body.addEventListener('click', (e) => {
     const { target } = e;
 
@@ -93,22 +140,22 @@ export default () => {
         } else if (bmFormHeading.classList.contains('step1Complete')) {
           incrementalTextElem.textContent = '3';
           //step 1 completion event
-          trackGAEvent('funnelenvy', 'click', 'Step 1 completion');
+          //trackGAEvent('funnelenvy', 'click', 'Step 1 completion');
         }
       }, DELAY);
     }
 
     //selected option event
-    const isFeAnswerBtnAcitve = document.querySelector('div.step_one #fe-form-answers button.fe-active');
-    if (e.target.matches('.step_one div.fe-next-button button') && isFeAnswerBtnAcitve) {
-      const selectedOption = document.querySelector('div.step_one #fe-form-answers button.fe-active span').getAttribute('data');
-      trackGAEvent('funnelenvy', 'Qualifying question', selectedOption);
-    }
+    //const isFeAnswerBtnAcitve = document.querySelector('div.step_one #fe-form-answers button.fe-active');
+    //if (e.target.matches('.step_one div.fe-next-button button') && isFeAnswerBtnAcitve) {
+      //const selectedOption = document.querySelector('div.step_one #fe-form-answers button.fe-active span').getAttribute('data');
+      //trackGAEvent('funnelenvy', 'Qualifying question', selectedOption);
+    //}
 
     //form engagement event
-    if (e.target.closest('button.fe-answer-btn') && formEngagement === false) {
-      trackGAEvent('funnelenvy', 'click', 'form_engagement_LP');
-      formEngagement = true;
-    }
+    // if (e.target.closest('button.fe-answer-btn') && formEngagement === false) {
+    //   trackGAEvent('funnelenvy', 'click', 'form_engagement_LP');
+    //   formEngagement = true;
+    // }
   });
 };
