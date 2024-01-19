@@ -1,0 +1,117 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__tradeContainer {
+    background: #004631;
+    padding: 32px 0px 32px 27px;
+    .#{$id}__tradeTitle {
+      color: #fff;
+      font-size: 46px;
+      font-style: italic;
+      font-weight: 800;
+      line-height: normal;
+      margin: 0 0 12px 0;
+      span {
+        border-bottom: solid 2px #fff;
+      }
+    }
+
+    .#{$id}__tradeProdsList {
+      display: flex;
+      gap: 16px;
+      .#{$id}__tradeProdItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 282px;
+        border-radius: 3px;
+        background: #fff;
+        padding: 16px;
+        .#{$id}__image {
+          img {
+            width: 100%;
+          }
+        }
+        .#{$id}__reviews {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          margin: 16px 0 12px 0;
+          .#{$id}__ratingsContainer {
+            color: #606f80;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+        .#{$id}__title {
+          p {
+            color: #182d3d;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin: 0;
+            min-height: 51px;
+          }
+        }
+        .#{$id}__originalPriceContainer {
+          color: #606f80;
+          font-family: Lato;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          margin-top: 12px;
+          .#{$id}__originalPrice {
+            text-decoration: line-through;
+          }
+        }
+        .#{$id}__tradePriceContainer {
+          color: #047258;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          padding: 12px 0;
+        }
+        .#{$id}__counterContainer {
+          display: flex;
+          align-items: center;
+          .#{$id}__btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            background: #f2f2f2;
+          }
+          input {
+            text-align: center;
+          }
+        }
+        .#{$id}__atcContainer {
+          margin-top: 12px;
+          button {
+            width: 100%;
+            border: none;
+            padding: 9px 0;
+            border-radius: 3px;
+            span {
+              color: #25282a;
+              text-align: center;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}
