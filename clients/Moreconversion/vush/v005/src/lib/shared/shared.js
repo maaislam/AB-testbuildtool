@@ -1,6 +1,6 @@
 module.exports = {
     ID: "v005",
-    VARIATION: "2",
+    VARIATION: "1",
     CLIENT: "Moreconversion",
     SITE: "vush"
   };

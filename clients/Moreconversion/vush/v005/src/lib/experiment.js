@@ -12,7 +12,9 @@ const init = () => {
       <span>FREE EXPRESS SHIPPING ON ALL ORDERS</span>
     </div>
   </div>`;
-  anchorPoint.insertAdjacentHTML('beforebegin', htmlStr);
+  if (!document.querySelector(`.${ID}__announcementBar`)) {
+    anchorPoint.insertAdjacentHTML('beforebegin', htmlStr);
+  }
 };
 
 export default () => {
