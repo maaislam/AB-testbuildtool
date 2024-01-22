@@ -125,6 +125,8 @@ export default () => {
 
   init();
 
+  document.body.classList.add(`${ID}__show`);
+
   //let formEngagement = false;
   document.body.addEventListener('click', (e) => {
     const { target } = e;
