@@ -37,7 +37,7 @@ const init = () => {
     const htmlStr = `
           <div class="${ID}__techConnectContainer">
               <h3 class="${ID}__title">Where tech connects</h3>
-              <h4 class="${ID}__subTitle">With over 6.2M members on Dice, we’re here to help you connect with the tech talent to power your business forward.</h4>
+              <h4 class="${ID}__subTitle">With over 6.2M members on Dice, we’re here to help&nbsp;you connect with the tech talent to power your business&nbsp;forward.</h4>
               <ul class="${ID}__lists">
                   ${techConnectData.map((item) => list(item, ID)).join('\n')}
               </ul>

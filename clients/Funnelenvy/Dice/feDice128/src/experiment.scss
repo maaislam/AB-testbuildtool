@@ -28,11 +28,11 @@ body {
   }
 
   &__techConnectContainer {
-    padding: 0px 8px 0 48px;
+    padding: 0px 48px 0;
 
-    @media screen and (max-width: 1023px) {
+    @include media-query(lg) {
       & {
-        padding: 17px 17px;
+        padding: 17px;
       }
     }
 
