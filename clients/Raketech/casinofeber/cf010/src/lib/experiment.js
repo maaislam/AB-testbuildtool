@@ -2,9 +2,11 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import featureBoxes from './components/featureBoxes';
 import bonusBox from './components/bonusBox';
-import { observeDOM, setCasinoData } from './helpers/utils';
+import { observeDOM } from './helpers/utils';
 import gaTracking from './services/gaTracking';
 import setLeoVegasJackpot from './helpers/setLeoVegasJackpot';
+import modifyData from './helpers/modifyData';
+import { casinoFeberData } from './data/casinoFeberData';
 
 const { ID, VARIATION } = shared;
 const linkType = VARIATION === 'Control' ? 'A Link' : 'B Link';
@@ -109,13 +111,10 @@ export default () => {
     }
   });
 
-  setCasinoData(ID)
-    .then(() => {
-      init();
-    })
-    .catch(() => {
-      init();
-    });
+  const modifiedData = modifyData(casinoFeberData);
+  window[`${ID}__data`] = modifiedData;
+
+  init();
 
   observeDOM('.toplist.casino', init, {
     childList: false,

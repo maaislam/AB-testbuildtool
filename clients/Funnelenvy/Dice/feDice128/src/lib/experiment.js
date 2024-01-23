@@ -59,6 +59,14 @@ const init = () => {
   }
   const headerLogo = document.querySelector('.header-inner .header-logo');
   const salesForm = document.querySelector('.sales-form-holder');
+
+  const formHeaderTextElem = document.querySelector('.sales-form-holder .bm_form_heading p');
+  const formHeaderSubTitleHTML = `<div class='${ID}__formHeaderSubTitle'>Let us show your how we help fill tech jobs faster</div>`;
+
+  if (!document.querySelector(`.${ID}__formHeaderSubTitle`)) {
+    formHeaderTextElem.insertAdjacentHTML('afterend', formHeaderSubTitleHTML);
+  }
+
   const redirectUrl = 'https://www.dice.com/hiring';
 
   headerLogo.href = redirectUrl;
