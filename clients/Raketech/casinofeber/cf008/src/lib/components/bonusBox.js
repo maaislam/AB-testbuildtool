@@ -3,7 +3,7 @@ import translationConfig from '../data/translationConfig';
 import checkLength from '../helpers/checkLength';
 
 const bonusBox = (id, data) => {
-  const { name, bonusAmount, spinsAmount, bonusWagering, spinsWagering } = data;
+  const { name, bonusAmount, spinsAmount, bonusWagering, spinsWagering, displayName } = data;
 
   const casinoName = name.replace(/-/g, ' ');
   //const casinoName = casinoElem.querySelector('a.title').textContent.toLowerCase();
@@ -22,7 +22,7 @@ const bonusBox = (id, data) => {
 
   const htmlStr = `
       <li class='${id}__bonusBox'>
-        <span class='${id}__bonusBox-name'>${casinoName}</span>
+        <span class='${id}__bonusBox-name'>${displayName}</span>
         <span class='${id}__bonusBox-bonus ${isBonusAmount ? '' : `${id}__bonusAsText`}'>
           <span class='${id}__bonusBox-bonus-amount'>${bonusAmount}</span>
           <span class='${id}__bonusBox-bonus-text'>${isBonusAmount ? bonusText : ''}</span>

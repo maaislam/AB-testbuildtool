@@ -10,7 +10,7 @@ const { ID, VARIATION } = shared;
 const linkType = VARIATION === 'Control' ? 'A Link' : 'B Link';
 
 const init = () => {
-  console.log('init');
+  //console.log('init');
   const isMobile = window.innerWidth < 768;
 
   const casinoData = window[`${ID}__data`];
@@ -100,8 +100,8 @@ export default () => {
       const hasAffiliateLink = casinoNameElem.dataset.affiliatelink;
 
       gaTracking(`${hasAffiliateLink ? linkType : 'Default Link'} | ${casinoName} CTA CTO (Logo)`);
-    } else if (e.target.closest(`.${ID}__review`) || e.target.closest('.review')) {
-      const casinoNameElem = e.target.closest(`.${ID}__review`) || e.target.closest('.review');
+    } else if (e.target.closest(`a.${ID}__review`)) {
+      const casinoNameElem = e.target.closest(`.${ID}__review`);
       let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
       casinoName = casinoName.replace(/-/g, ' ');
 
