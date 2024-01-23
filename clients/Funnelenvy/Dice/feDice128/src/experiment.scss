@@ -1,9 +1,22 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
+body {
+  opacity: 0;
+}
+
 .#{$id} {
-  .header-return {
+  &__show {
+    opacity: 1 !important;
+  }
+
+  .header-return,
+  .header-tagline {
     display: none !important;
+  }
+
+  .header-wrapper {
+    background: #111827 !important;
   }
 
   .FE-Form-Validator__step2 .fe-progress-bar {
@@ -18,9 +31,9 @@
   &__techConnectContainer {
     padding: 0px 48px 0;
 
-    @media screen and (max-width: 1023px) {
+    @include media-query(lg) {
       & {
-        padding: 17px 17px;
+        padding: 17px;
       }
     }
 
@@ -208,10 +221,6 @@
         padding: 16px 0 10px 0 !important;
       }
 
-      .iti * {
-        // border-radius: 24px 0 0 24px !important;
-      }
-
       #fe-form-question {
         h3 {
           margin: 0;
@@ -250,6 +259,7 @@
             border-radius: 24px;
             border: 1px solid #D4D4D8;
             color: #111827;
+            text-align: center;
 
             span {
               font-family: "IBM Plex Sans";
@@ -419,22 +429,55 @@
         display: none;
       }
 
-      .#{$id}__alignImageWrapper {
+      .#{$id}__newStats {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
         @include media-query(lg) {
-          display: flex;
-          justify-content: center;
           width: 100%;
-          padding: 0 28px;
+          justify-content: center;
+          margin-top: 20px;
+          gap: 30px
         }
 
-        .#{$id}__alignImage {
-          width: 500px;
-          height: 112px;
+        .#{$id}__statsContainer {
+          min-width: 150px;
+          text-align: center;
 
           @include media-query(lg) {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
+            min-width: auto;
+          }
+
+          h1 {
+            color: #06b6d4;
+            font-family: 'Degular';
+            font-size: 72px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 86px;
+            margin: 0;
+
+            @include media-query(lg) {
+              font-size: 32px;
+              line-height: 40px;
+            }
+          }
+
+          p {
+            color: #18181b;
+            text-align: center;
+            font-family: 'IBM Plex Sans';
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            margin: 8px 0 0;
+
+            @include media-query(lg) {
+              font-size: 14px;
+              line-height: 24px;
+            }
           }
         }
       }
