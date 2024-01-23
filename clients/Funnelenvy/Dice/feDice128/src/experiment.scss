@@ -170,13 +170,14 @@ body {
 
     .bm_form_heading {
       margin: 0 auto 16px;
+      text-align: center;
 
       @include media-query(lg) {
         margin: 0 auto 0;
       }
 
       p {
-        margin: 0 auto 24px;
+        margin: 0 auto 8px;
         color: #18181B;
         text-align: center;
         font-size: 30px;
@@ -187,6 +188,22 @@ body {
           margin: 0 auto 16px;
           font-size: 24px;
           line-height: 28px;
+        }
+      }
+
+      .#{$id}__formHeaderSubTitle {
+        margin-bottom: 24px;
+        color: #18181B;
+        text-align: center;
+        font-family: "IBM Plex Sans";
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+
+        @include media-query(sm) {
+          margin-bottom: 16px;
+          font-size: 14px;
+          line-height: 17px;
         }
       }
 

@@ -51,9 +51,9 @@ const init = () => {
       casinoLogo.setAttribute('data-affiliateLink', true);
       casinoCtaBtn.setAttribute('data-affiliateLink', true);
     }
-    casinoCtaBtn.setAttribute('href', casino[linkType]);
+    casinoCtaBtn.setAttribute('href', casino[linkType] || casinoCtaBtn.href);
     casinoCtaBtn.setAttribute('data-operator', casino.name);
-    casinoLogo.setAttribute('href', casino[linkType]);
+    casinoLogo.setAttribute('href', casino[linkType] || casinoCtaBtn.href);
     casinoLogo.setAttribute('data-operator', casino.name);
 
     setTimeout(() => {
