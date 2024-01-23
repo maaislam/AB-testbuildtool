@@ -39,6 +39,7 @@ const modifyData = (data) => {
       bonusAmount: operator['Bonus amount'],
       spinsAmount: operator['Free spins amount'],
       name: operatorName,
+      displayName: operator.Operator,
       features,
       bonusWagering: operator['Bonus wagering'],
       spinsWagering: operator['Free spins wagering'],
