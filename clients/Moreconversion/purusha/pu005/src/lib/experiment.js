@@ -11,6 +11,7 @@ const init = () => {
   </svg>`;
   const atc = document.querySelector('.ProductForm__BuyButtons');
   const atcBtnInner = atc.querySelector('span');
+  if (!atcBtnInner) return;
 
   atcBtnInner.classList.add(`${ID}__atc-btn-inner`);
   atcBtnInner.innerHTML = `${plusIcon} <span>Add to Basket</span>`;
@@ -19,13 +20,9 @@ const init = () => {
 export default () => {
   setup();
   init();
+
   document.body.addEventListener('click', (e) => {
-    const { target } = e;
-    if (
-      target.closest('.HorizontalList__Item') &&
-      target.closest('.HorizontalList__Item:not(.slash-option)')
-    ) {
-      init();
-    }
+    //console.log('in');
+    setTimeout(init, 500);
   });
 };
