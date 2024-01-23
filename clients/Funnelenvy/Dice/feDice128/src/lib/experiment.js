@@ -95,11 +95,38 @@ const init = () => {
   const alignImage = weKnowSection.querySelector('.align-image');
   weKnowSection.classList.add(`${ID}__weKnowSection`);
 
-  if (!document.querySelector(`.${ID}__alignImage`)) {
-    const newAlignImage = `<div class='${ID}__alignImageWrapper'>
-      <img class='${ID}__alignImage' src='https://fe-test-dev.s3.amazonaws.com/Dice/Dice-128/stats.png'/>
+  const statsData = [
+    {
+      count: '1.5M',
+      subText: 'Monthly Users'
+    },
+    {
+      count: '2.7M',
+      subText: 'Visinle Resumes'
+    },
+    {
+      count: '9M',
+      subText: 'Tech Profiles'
+    }
+  ];
+
+  const stats = (data) => {
+    const { count, subText } = data;
+    const htmlStr = `
+    <div class="${ID}__statsContainer">
+      <h1>${count}</h1>
+      <p>${subText}</p>
+    </div>
+    `;
+
+    return htmlStr;
+  };
+
+  if (!document.querySelector(`.${ID}__statsContainer`)) {
+    const newStats = `<div class='${ID}__newStats'>
+      ${statsData.map((data) => stats(data)).join('\n')}
     </div>`;
-    alignImage.insertAdjacentHTML('afterend', newAlignImage);
+    alignImage.insertAdjacentHTML('afterend', newStats);
   }
 
   const bmTechSectionElem = document.querySelector('.bm_tech_position_text');
