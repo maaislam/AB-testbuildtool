@@ -1,9 +1,9 @@
-const getProlfileVisibilityStatus = async () => {
-    const profileHref = document.querySelector('.personal-links-section .link-row a').href;
+import { getCookie } from './utils';
 
-    const value = profileHref.split('/profiles/')[1];
+const getProlfileVisibilityStatus = async (value) => {
+    //const value = getCookie('searchableProfileId');
 
-    const url = `https://www.dice.com/config/dice/api.json?path=%2Fprofiles%2F${value}`;
+    const url = `https://www.dice.com/config/dice/api.json?path=${encodeURIComponent('/profiles/')}${value}`;
     try {
         const response = await fetch(url, {
             method: 'GET',
@@ -17,7 +17,7 @@ const getProlfileVisibilityStatus = async () => {
         }
     } catch (error) {
         console.error(error);
-        return 0;
     }
+    return null;
 };
 export default getProlfileVisibilityStatus;
