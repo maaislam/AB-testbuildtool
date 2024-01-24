@@ -6,6 +6,13 @@ import { pollerLite, observeDOM } from './helpers/utils';
 const { ID, VARIATION } = shared;
 
 const callbackForLageImage = (mutation) => {
+  if (
+    document.querySelector(`.${ID}__largeImage`) &&
+    document.querySelector(`.${ID}__fotorama__img--full`)
+  ) {
+    return;
+  }
+
   pollerLite(
     ['.fotorama__stage .fotorama__stage__frame.fotorama-video-container img.fotorama__img'],
     () => {
