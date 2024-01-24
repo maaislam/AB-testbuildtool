@@ -5,14 +5,13 @@ import { pollerLite, observeDOM } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
-const callbackForLageImage = (mutation) => {
-  if (
-    document.querySelector(`.${ID}__largeImage`) &&
-    document.querySelector(`.${ID}__fotorama__img--full`)
-  ) {
-    return;
-  }
+const classRemove = () => {
+  document
+    .querySelector('.fotorama__stage .fotorama__stage__frame.fotorama-video-container')
+    .classList.remove('magnify-wheel-loaded', 'fotorama-video-container', 'video-unplayed');
+};
 
+const callbackForLageImage = (mutation) => {
   pollerLite(
     ['.fotorama__stage .fotorama__stage__frame.fotorama-video-container img.fotorama__img'],
     () => {
@@ -40,9 +39,7 @@ const callbackForLageImage = (mutation) => {
           .insertAdjacentHTML('beforebegin', selectedVideoExtraLageImageEl);
       }
 
-      document
-        .querySelector('.fotorama__stage .fotorama__stage__frame.fotorama-video-container')
-        .classList.remove('magnify-wheel-loaded', 'fotorama-video-container', 'video-unplayed');
+      classRemove();
     }
   );
 };
