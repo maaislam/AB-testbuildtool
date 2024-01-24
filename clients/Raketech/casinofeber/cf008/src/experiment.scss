@@ -320,11 +320,13 @@
     }
   }
 
-  .toplist-item~.toplist-terms {
+  .toplist-item+.toplist-terms {
+    display: block !important;
     padding: 0 24px;
     font-size: 11px;
     line-height: 13px;
     font-weight: 200;
     text-align: center;
   }
+
 }

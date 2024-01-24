@@ -17,9 +17,11 @@ const init = () => {
   if (!casinoData) return;
 
   casinoData.forEach((casino) => {
+    console.log('casino.name: ', casino.name);
     const domElems = document.querySelectorAll(
       `.toplist.casino .toplist-item a.title[href*="${casino.name}"]`
     );
+
     if (!domElems.length) return;
     const casinoElem = domElems[0].closest('.toplist-item');
     casinoElem.classList.add(`${ID}__casinoItem`);
@@ -75,6 +77,13 @@ const init = () => {
 
       setLeoVegasJackpot(ID, casinoElem, casino, isMobile);
     }, 1250);
+  });
+
+  document.querySelectorAll('.toplist.casino > .toplist-terms').forEach((term) => {
+    const prevSibling = term.previousElementSibling;
+    if (!prevSibling.classList.contains(`${ID}__casinoItem`)) {
+      term.remove();
+    }
   });
 };
 
