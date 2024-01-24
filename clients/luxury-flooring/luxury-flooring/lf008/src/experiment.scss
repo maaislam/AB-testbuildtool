@@ -1,0 +1,37 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .fotorama__stage {
+      .fotorama__stage__frame.fotorama-video-container {
+        & img.fotorama__img:not(.#{$id}__largeImage),
+        & img.fotorama__img--full:not(.#{$id}__fotorama__img--full) {
+          display: none;
+        }
+
+        & img.fotorama__img--full.#{$id}__fotorama__img--full {
+          display: block !important;
+        }
+        &::after {
+          display: none;
+        }
+
+        & .product-video {
+          display: none !important;
+        }
+
+        &:hover img {
+          opacity: 1;
+        }
+      }
+    }
+    .fotorama__nav-wrap {
+      .fotorama__nav__frame.video-thumb-icon {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
