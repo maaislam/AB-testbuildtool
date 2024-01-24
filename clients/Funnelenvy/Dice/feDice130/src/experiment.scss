@@ -2,7 +2,12 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  & .#{$id}__modalContainer {
+  &__modalShow {
+    .#{$id}__modalContainer {
+      animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+  }
+  &__modalContainer {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,10 +19,9 @@
     text-align: center;
     background-color: #fff;
     z-index: 9999;
+    animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 
     .#{$id}__modalWrapper {
-      // position: relative;
-
       .#{$id}__header {
         margin: 8px 0;
         text-align: center;
@@ -47,7 +51,7 @@
         }
       }
 
-      form.#{$id}__formWrapper {
+      .#{$id}__formWrapper {
         margin: 24px 0 16px;
 
         .form__group {
@@ -131,6 +135,32 @@
         color: #195589;
         cursor: pointer;
       }
+    }
+  }
+
+  @keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scale-out-center {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 1;
     }
   }
 }
