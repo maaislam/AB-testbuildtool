@@ -23,6 +23,8 @@
     // animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 
     .#{$id}__modalWrapper {
+      padding: 10px 30px;
+
       .#{$id}__header {
         margin: 8px 0;
         text-align: center;
