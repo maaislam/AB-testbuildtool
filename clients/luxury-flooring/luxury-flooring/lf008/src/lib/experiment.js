@@ -36,13 +36,11 @@ const callbackForLageImage = (mutation) => {
     ['.fotorama__stage .fotorama__stage__frame.fotorama-video-container img.fotorama__img'],
     () => {
       const selectedVideoLageImageEl = `
-        <img src="https://luxury-flooring.s3.amazonaws.com/newthumb.jpg" alt="Studley Barn Engineered Oak" class="fotorama__img ${ID}__largeImage" aria-hidden="false">
-      `;
-
+          <img src="https://luxury-flooring.s3.amazonaws.com/newthumb.jpg" alt="Studley Barn Engineered Oak" class="fotorama__img ${ID}__largeImage" aria-hidden="false">
+        `;
       const selectedVideoExtraLageImageEl = `
-      <img src="https://luxury-flooring.s3.amazonaws.com/newthumb.jpg" alt="Studley Barn Engineered Oak" class="fotorama__img--full ${ID}__fotorama__img--full" aria-hidden="false">
-    `;
-
+        <img src="https://luxury-flooring.s3.amazonaws.com/newthumb.jpg" alt="Studley Barn Engineered Oak" class="fotorama__img--full ${ID}__fotorama__img--full" aria-hidden="false">
+      `;
       if (!document.querySelector(`.${ID}__largeImage`)) {
         document
           .querySelector(
@@ -50,13 +48,11 @@ const callbackForLageImage = (mutation) => {
           )
           .insertAdjacentHTML('beforebegin', selectedVideoLageImageEl);
       }
-
       if (!document.querySelector(`.${ID}__fotorama__img--full`)) {
         document
           .querySelector('.fotorama__stage .fotorama__stage__frame.fotorama-video-container')
           .insertAdjacentHTML('afterbegin', selectedVideoExtraLageImageEl);
       }
-
       classRemove('fotorama-video-container');
     }
   );
@@ -75,8 +71,8 @@ const callBackForThumImage = () => {
   );
   const selectedVideoThumbImageEl = selectedVideoThumbEl.querySelector('img.fotorama__img');
   selectedVideoThumbImageEl.style.cssText = `
-  max-width: 172px;
-  max-height:116px;
+  max-width: 100%;
+  border:none !important;
 `;
 
   selectedVideoThumbImageEl.src = 'https://luxury-flooring.s3.amazonaws.com/newthumb.jpg';
