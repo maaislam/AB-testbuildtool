@@ -5,10 +5,30 @@ import { pollerLite, observeDOM } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
-const classRemove = () => {
+const classRemove = (target) => {
   document
-    .querySelector('.fotorama__stage .fotorama__stage__frame.fotorama-video-container')
-    .classList.remove('magnify-wheel-loaded', 'fotorama-video-container', 'video-unplayed');
+    .querySelector(`.fotorama__stage .fotorama__stage__frame.${target}`)
+    .classList.remove(
+      'fotorama-video-container',
+      'video-unplayed',
+      'fotorama__product-video--loaded',
+      'magnify-wheel-loaded'
+    );
+
+  // pollerLite(
+  //   [
+  //     '.fotorama__zoom-in.fotorama__zoom-in--disabled',
+  //     '.fotorama__zoom-out.fotorama__zoom-out--disabled'
+  //   ],
+  //   () => {
+  //     document
+  //       .querySelector('.fotorama__zoom-in.fotorama__zoom-in--disabled')
+  //       .classList.remove('fotorama__zoom-in--disabled');
+  //     document
+  //       .querySelector('.fotorama__zoom-out.fotorama__zoom-out--disabled')
+  //       .classList.remove('fotorama__zoom-out--disabled');
+  //   }
+  // );
 };
 
 const callbackForLageImage = (mutation) => {
@@ -28,18 +48,23 @@ const callbackForLageImage = (mutation) => {
           .querySelector(
             '.fotorama__stage .fotorama__stage__frame.fotorama-video-container img.fotorama__img'
           )
-          .insertAdjacentHTML('afterend', selectedVideoLageImageEl);
+          .insertAdjacentHTML('beforebegin', selectedVideoLageImageEl);
       }
 
       if (!document.querySelector(`.${ID}__fotorama__img--full`)) {
         document
-          .querySelector(
-            '.fotorama__stage .fotorama__stage__frame.fotorama-video-container .fotorama__img'
-          )
-          .insertAdjacentHTML('beforebegin', selectedVideoExtraLageImageEl);
+          .querySelector('.fotorama__stage .fotorama__stage__frame.fotorama-video-container')
+          .insertAdjacentHTML('afterbegin', selectedVideoExtraLageImageEl);
       }
 
-      classRemove();
+      classRemove('fotorama-video-container');
+    }
+  );
+
+  pollerLite(
+    ['.fotorama__stage .fotorama__stage__frame.magnify-wheel-loaded img.fotorama__img'],
+    () => {
+      classRemove('magnify-wheel-loaded');
     }
   );
 };
@@ -49,6 +74,10 @@ const callBackForThumImage = () => {
     '.fotorama__nav-wrap .fotorama__nav__frame.video-thumb-icon'
   );
   const selectedVideoThumbImageEl = selectedVideoThumbEl.querySelector('img.fotorama__img');
+  selectedVideoThumbImageEl.style.cssText = `
+  max-width: 172px;
+  max-height:116px;
+`;
 
   selectedVideoThumbImageEl.src = 'https://luxury-flooring.s3.amazonaws.com/newthumb.jpg';
 };

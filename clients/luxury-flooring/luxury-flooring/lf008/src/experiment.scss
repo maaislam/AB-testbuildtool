@@ -4,9 +4,9 @@
 .#{$id} {
   &-1 {
     .fotorama__stage {
-      .fotorama__stage__frame.fotorama-video-container {
-        & img.fotorama__img:not(.#{$id}__largeImage),
-        & img.fotorama__img--full:not(.#{$id}__fotorama__img--full) {
+      .fotorama__stage__frame {
+        & img.#{$id}__largeImage + img.fotorama__img,
+        & img.fotorama__img--full.#{$id}__fotorama__img--full + img.fotorama__img--full {
           display: none;
         }
 
@@ -23,6 +23,9 @@
 
         &:hover img {
           opacity: 1;
+        }
+        .product-video {
+          display: none !important;
         }
       }
     }
