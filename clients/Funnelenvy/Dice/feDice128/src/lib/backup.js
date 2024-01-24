@@ -1,5 +1,4 @@
 /*eslint-disable */
-
 (function () {
     const shared = {
         ID: "feDice128",
@@ -9,7 +8,6 @@
     };
 
     const { ID, VARIATION } = shared;
-
     const setup = () => {
         document.documentElement.classList.add(ID);
         document.documentElement.classList.add(`${ID}-${VARIATION}`);
@@ -33,10 +31,10 @@
         const list = (item) => {
             const { icon, text } = item;
             const htmlStr = `
-            <li class="${ID}__item">
-                <div class='${ID}__itemIcon'><img src='${icon}'/></div>
-                <p class="${ID}__itemText">${text}</p>
-            </li>
+                <li class="${ID}__item">
+                    <div class='${ID}__itemIcon'><img src='${icon}'/></div>
+                    <p class="${ID}__itemText">${text}</p>
+                </li>
             `;
             return htmlStr.trim();
         };
@@ -64,14 +62,11 @@
         }
         const headerLogo = document.querySelector('.header-inner .header-logo');
         const salesForm = document.querySelector('.sales-form-holder');
-
         const formHeaderTextElem = document.querySelector('.sales-form-holder .bm_form_heading p');
-        const formHeaderSubTitleHTML = `<div class='${ID}__formHeaderSubTitle'>Let us show your how we help fill tech jobs faster</div>`;
-
+        const formHeaderSubTitleHTML = `<div class='${ID}__formHeaderSubTitle'>Let us show you how we help fill tech jobs faster</div>`;
         if (!document.querySelector(`.${ID}__formHeaderSubTitle`)) {
             formHeaderTextElem.insertAdjacentHTML('afterend', formHeaderSubTitleHTML);
         }
-
         const redirectUrl = 'https://www.dice.com/hiring';
         headerLogo.href = redirectUrl;
         salesForm.classList.add(`${ID}__salesForm`);
@@ -107,7 +102,7 @@
             },
             {
                 count: '2.7M',
-                subText: 'Visinle Resumes'
+                subText: 'Visible Resumes'
             },
             {
                 count: '9M',
@@ -141,7 +136,7 @@
         const feFooter = document.querySelector('.fotter_section');
         feFooter.classList.add(`${ID}__footerSection`);
     };
-    const activate = () => {
+    var activate = () => {
         setup();
         if (VARIATION === 'Control') return;
         init();
@@ -195,4 +190,3 @@
     pollerLite(['.bm_we_know_section', '.fe-progress-bar'], activate);
 
 })();
-

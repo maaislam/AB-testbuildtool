@@ -5,6 +5,10 @@ body {
   opacity: 0;
 }
 
+main {
+  background-color: #fff;
+}
+
 .#{$id} {
   &__show {
     opacity: 1 !important;
@@ -164,8 +168,8 @@ body {
     font-family: "IBM Plex Sans";
 
     @include media-query(lg) {
-      margin: 24px auto 24px !important;
-      padding: 36px 16px 16px !important;
+      margin: 24px auto 0 !important;
+      padding: 36px 16px !important;
     }
 
     .bm_form_heading {
@@ -437,11 +441,32 @@ body {
     padding: 72px 0;
     background: #fafafa;
 
+
     @include media-query(lg) {
       padding: 50px 0;
     }
 
     .bm_know_tech_section {
+      padding: 0 0 0 80px !important;
+      max-width: 1260px !important;
+      
+      @include media-query(xlg) {
+        max-width: 1140px !important;
+      }
+      @include media-query(xxlg) {
+        padding: 0 !important;
+      }
+
+      .bm_knowtech_content {
+        @include media-query(xxlg) {
+          padding: 0 0 0 50px !important;
+        }
+
+        @include media-query(sm) {
+          padding: 12px !important;
+        }
+      }
+
       .align-image {
         display: none;
       }

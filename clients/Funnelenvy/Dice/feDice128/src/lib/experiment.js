@@ -61,7 +61,7 @@ const init = () => {
   const salesForm = document.querySelector('.sales-form-holder');
 
   const formHeaderTextElem = document.querySelector('.sales-form-holder .bm_form_heading p');
-  const formHeaderSubTitleHTML = `<div class='${ID}__formHeaderSubTitle'>Let us show your how we help fill tech jobs faster</div>`;
+  const formHeaderSubTitleHTML = `<div class='${ID}__formHeaderSubTitle'>Let us show you how we help fill tech jobs faster</div>`;
 
   if (!document.querySelector(`.${ID}__formHeaderSubTitle`)) {
     formHeaderTextElem.insertAdjacentHTML('afterend', formHeaderSubTitleHTML);
@@ -110,7 +110,7 @@ const init = () => {
     },
     {
       count: '2.7M',
-      subText: 'Visinle Resumes'
+      subText: 'Visible Resumes'
     },
     {
       count: '9M',
