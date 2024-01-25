@@ -1,9 +1,8 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { pollerLite, observeDOM } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 let zoom = 1;
 const zoominStr = `
@@ -55,7 +54,13 @@ const init = (target) => {
   );
 };
 
-const callbackForLageImage = (mutation) => {
+const callbackForLageImage = () => {
+  if (document.querySelector('.product-video')) {
+    document.querySelector('.product-video').remove();
+  }
+  if (document.querySelector('.fotorama__stage .fotorama__stage__frame img[src*="hqdefault_46_12.webp"]')) {
+    document.querySelector('.fotorama__stage .fotorama__stage__frame img[src*="hqdefault_46_12.webp"]').remove();
+  }
   pollerLite(
     ['.fotorama__stage .fotorama__stage__frame.fotorama-video-container img.fotorama__img'],
     () => {
@@ -103,33 +108,34 @@ const callBackForThumImage = () => {
 };
 
 export default () => {
-  setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+  setup();
 
   callBackForThumImage();
   observeDOM('.fotorama__stage .fotorama__stage__shaft', callbackForLageImage);
 
   document.body.addEventListener('pointerup', ({ target }) => {
     if (target.closest('.zoom.zoom-in')) {
-      zoom += 0.1;
-      document.querySelector(`.${ID}__targetImage`).style.transform = 'scale(' + zoom + ')';
+      zoom += 0.2;
+      document.querySelector(`.${ID}__targetImage`).style.transform = `scale(${zoom})`;
     }
 
     if (target.closest('.zoom.zoom-out')) {
       if (zoom > 1) {
-        zoom -= 0.1;
-        document.querySelector(`.${ID}__targetImage`).style.transform = 'scale(' + zoom + ')';
+        zoom -= 0.2;
+        document.querySelector(`.${ID}__targetImage`).style.transform = `scale(${zoom})`;
+      }
+    }
+  });
+
+  document.body.addEventListener('wheel', (e) => {
+    const { target, deltaY } = e;
+    if (target.closest(`.${ID}__targetImage`)) {
+      if (deltaY < 0 && zoom < 2) {
+        zoom += 0.2;
+        document.querySelector(`.${ID}__targetImage`).style.transform = `scale(${zoom})`;
+      } else if (deltaY > 0 && zoom > 1) {
+        zoom -= 0.2;
+        document.querySelector(`.${ID}__targetImage`).style.transform = `scale(${zoom})`;
       }
     }
   });

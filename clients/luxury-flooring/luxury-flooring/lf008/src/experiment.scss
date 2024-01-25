@@ -3,6 +3,9 @@
 
 .#{$id} {
   &-1 {
+    .fotorama__stage .fotorama__stage__frame img[src*="hqdefault_46_12.webp"] {
+      opacity: 0 !important;
+    }
     .fotorama__stage {
       .fotorama__stage__frame {
         & img.#{$id}__largeImage + img.fotorama__img,
@@ -12,6 +15,12 @@
 
         & img.fotorama__img--full.#{$id}__fotorama__img--full {
           display: block !important;
+          height: 100% !important;
+
+          @include media-query(md) {
+            height: auto !important;
+          }
+          
         }
         &::after {
           display: none;
@@ -53,11 +62,19 @@
       .zoom-in {
         background-position: 0 0px !important;
         top: 0;
+
+        @include media-query(md) {
+          display: none;
+        }
       }
 
       .zoom-out {
         background-position: 0 -80px !important;
         top: 80px;
+
+        @include media-query(md) {
+          display: none;
+        }
       }
     }
   }
