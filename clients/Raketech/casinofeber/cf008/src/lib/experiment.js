@@ -17,7 +17,6 @@ const init = () => {
   if (!casinoData) return;
 
   casinoData.forEach((casino) => {
-    console.log('casino.name: ', casino.name);
     const domElems = document.querySelectorAll(
       `.toplist.casino .toplist-item a.title[href*="${casino.name}"]`
     );
@@ -89,6 +88,7 @@ const init = () => {
 
 export default () => {
   setup();
+  setCasinoData(ID);
 
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('.visit')) {
@@ -118,13 +118,7 @@ export default () => {
     }
   });
 
-  setCasinoData(ID)
-    .then(() => {
-      init();
-    })
-    .catch(() => {
-      init();
-    });
+  init();
 
   observeDOM('.toplist.casino', init, {
     childList: false,

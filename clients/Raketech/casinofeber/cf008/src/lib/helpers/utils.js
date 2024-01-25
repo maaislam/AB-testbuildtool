@@ -54,13 +54,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   observer.observe(target, config);
 };
 
-export const setCasinoData = async (id) => {
-  getData(id).then((result) => {
-    const modifiedData = modifyData(result);
-    window[`${id}__data`] = modifiedData;
-  }).catch((error) => {
-    console.error(error);
-    const modifiedData = modifyData(casinoFeberData);
-    window[`${id}__data`] = modifiedData;
-  });
+export const setCasinoData = (id) => {
+  const modifiedData = modifyData(casinoFeberData);
+  window[`${id}__data`] = modifiedData;
 };
