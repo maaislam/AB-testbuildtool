@@ -3,7 +3,7 @@
 
 .#{$id} {
   &-1 {
-    .fotorama__stage .fotorama__stage__frame img[src*="hqdefault_46_12.webp"] {
+    .fotorama__stage .fotorama__stage__frame img[src*='hqdefault_46_12.webp'] {
       opacity: 0 !important;
     }
     .fotorama__stage {
@@ -15,12 +15,11 @@
 
         & img.fotorama__img--full.#{$id}__fotorama__img--full {
           display: block !important;
-          height: 100% !important;
+          // height: 100% !important;
 
           @include media-query(md) {
             height: auto !important;
           }
-          
         }
         &::after {
           display: none;

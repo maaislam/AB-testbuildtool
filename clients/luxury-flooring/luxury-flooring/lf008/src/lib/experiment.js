@@ -58,8 +58,18 @@ const callbackForLageImage = () => {
   if (document.querySelector('.product-video')) {
     document.querySelector('.product-video').remove();
   }
-  if (document.querySelector('.fotorama__stage .fotorama__stage__frame img[src*="hqdefault_46_12.webp"]')) {
-    document.querySelector('.fotorama__stage .fotorama__stage__frame img[src*="hqdefault_46_12.webp"]').remove();
+  if (
+    document.querySelector(
+      '.fotorama__stage .fotorama__stage__frame img[src*="hqdefault_46_12.webp"]'
+    )
+  ) {
+    document
+      .querySelector('.fotorama__stage .fotorama__stage__frame img[src*="hqdefault_46_12.webp"]')
+      .remove();
+  }
+
+  if (document.querySelector(`.${ID}__fotorama__img--full`)) {
+    document.querySelector(`.${ID}__fotorama__img--full`).style.cssText = 'transform: scale(1)';
   }
   pollerLite(
     ['.fotorama__stage .fotorama__stage__frame.fotorama-video-container img.fotorama__img'],
