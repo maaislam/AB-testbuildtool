@@ -15,10 +15,12 @@
 
         & img.fotorama__img--full.#{$id}__fotorama__img--full {
           display: block !important;
+          margin: auto;
           // height: 100% !important;
 
           @include media-query(md) {
             height: auto !important;
+            max-width: 100%;
           }
         }
         &::after {
@@ -74,6 +76,10 @@
         @include media-query(md) {
           display: none;
         }
+      }
+
+      & img.fotorama__img--full.#{$id}__fotorama__img--full {
+        height: 100% !important;
       }
     }
   }

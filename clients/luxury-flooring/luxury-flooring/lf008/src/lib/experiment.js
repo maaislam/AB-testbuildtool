@@ -140,7 +140,7 @@ export default () => {
   document.body.addEventListener('wheel', (e) => {
     const { target, deltaY } = e;
     if (target.closest(`.${ID}__targetImage`)) {
-      if (deltaY < 0 && zoom < 2) {
+      if (deltaY < 0 && zoom < 2.5) {
         zoom += 0.2;
         document.querySelector(`.${ID}__targetImage`).style.transform = `scale(${zoom})`;
       } else if (deltaY > 0 && zoom > 1) {
