@@ -5,7 +5,15 @@ import { pollerLite, observeDOM } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
-const classRemove = (target) => {
+let zoom = 1;
+const zoominStr = `
+<div class="zoom zoom-in" data-gallery-role="fotorama__zoom-in" aria-label="Zoom in" role="button" tabindex="0"></div>
+`;
+const zoomoutStr = `
+<div class="zoom zoom-out" data-gallery-role="fotorama__zoom-out" aria-label="Zoom out" role="button" tabindex="0"></div>
+`;
+
+const init = (target) => {
   document
     .querySelector(`.fotorama__stage .fotorama__stage__frame.${target}`)
     .classList.remove(
@@ -15,20 +23,36 @@ const classRemove = (target) => {
       'magnify-wheel-loaded'
     );
 
-  // pollerLite(
-  //   [
-  //     '.fotorama__zoom-in.fotorama__zoom-in--disabled',
-  //     '.fotorama__zoom-out.fotorama__zoom-out--disabled'
-  //   ],
-  //   () => {
-  //     document
-  //       .querySelector('.fotorama__zoom-in.fotorama__zoom-in--disabled')
-  //       .classList.remove('fotorama__zoom-in--disabled');
-  //     document
-  //       .querySelector('.fotorama__zoom-out.fotorama__zoom-out--disabled')
-  //       .classList.remove('fotorama__zoom-out--disabled');
-  //   }
-  // );
+  pollerLite(
+    [
+      '.fotorama__zoom-in.fotorama__zoom-in--disabled',
+      '.fotorama__zoom-out.fotorama__zoom-out--disabled',
+      () => document.querySelector(`.${ID}__fotorama__img--full`)?.closest('.fotorama__active')
+    ],
+    () => {
+      if (!document.querySelector('.zoom-in')) {
+        document.querySelector('.fotorama__zoom-in').insertAdjacentHTML('afterend', zoominStr);
+      }
+
+      if (!document.querySelector('.zoom-out')) {
+        document.querySelector('.fotorama__zoom-out').insertAdjacentHTML('afterend', zoomoutStr);
+      }
+    }
+  );
+
+  pollerLite(
+    [() => !document.querySelector(`.${ID}__fotorama__img--full`)?.closest('.fotorama__active')],
+    () => {
+      if (document.querySelector('.zoom-in')) {
+        document.querySelector('.zoom-in').remove();
+      }
+
+      if (document.querySelector('.zoom-out')) {
+        document.querySelector('.zoom-out').remove();
+      }
+      zoom = 1;
+    }
+  );
 };
 
 const callbackForLageImage = (mutation) => {
@@ -39,7 +63,7 @@ const callbackForLageImage = (mutation) => {
           <img src="https://luxury-flooring.s3.amazonaws.com/newthumb.jpg" alt="Studley Barn Engineered Oak" class="fotorama__img ${ID}__largeImage" aria-hidden="false">
         `;
       const selectedVideoExtraLageImageEl = `
-        <img src="https://luxury-flooring.s3.amazonaws.com/newthumb.jpg" alt="Studley Barn Engineered Oak" class="fotorama__img--full ${ID}__fotorama__img--full" aria-hidden="false">
+        <img src="https://luxury-flooring.s3.amazonaws.com/newthumb.jpg" alt="Studley Barn Engineered Oak" class="${ID}__targetImage fotorama__img--full ${ID}__fotorama__img--full" aria-hidden="false">
       `;
       if (!document.querySelector(`.${ID}__largeImage`)) {
         document
@@ -53,14 +77,14 @@ const callbackForLageImage = (mutation) => {
           .querySelector('.fotorama__stage .fotorama__stage__frame.fotorama-video-container')
           .insertAdjacentHTML('afterbegin', selectedVideoExtraLageImageEl);
       }
-      classRemove('fotorama-video-container');
+      init('fotorama-video-container');
     }
   );
 
   pollerLite(
     ['.fotorama__stage .fotorama__stage__frame.magnify-wheel-loaded img.fotorama__img'],
     () => {
-      classRemove('magnify-wheel-loaded');
+      init('magnify-wheel-loaded');
     }
   );
 };
@@ -95,4 +119,18 @@ export default () => {
 
   callBackForThumImage();
   observeDOM('.fotorama__stage .fotorama__stage__shaft', callbackForLageImage);
+
+  document.body.addEventListener('pointerup', ({ target }) => {
+    if (target.closest('.zoom.zoom-in')) {
+      zoom += 0.1;
+      document.querySelector(`.${ID}__targetImage`).style.transform = 'scale(' + zoom + ')';
+    }
+
+    if (target.closest('.zoom.zoom-out')) {
+      if (zoom > 1) {
+        zoom -= 0.1;
+        document.querySelector(`.${ID}__targetImage`).style.transform = 'scale(' + zoom + ')';
+      }
+    }
+  });
 };

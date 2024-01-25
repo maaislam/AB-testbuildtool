@@ -36,5 +36,29 @@
         }
       }
     }
+
+    .fotorama__fullscreen {
+      .zoom {
+        cursor: pointer;
+        display: block;
+        height: 80px;
+        overflow: hidden;
+        position: absolute;
+        width: 80px;
+        background-image: url(https://www.luxuryflooringandfurnishings.co.uk/static/version1706076993/frontend/Ayko/lff/en_GB/mage/gallery/gallery.png);
+        background-repeat: no-repeat;
+        z-index: 1000;
+      }
+
+      .zoom-in {
+        background-position: 0 0px !important;
+        top: 0;
+      }
+
+      .zoom-out {
+        background-position: 0 -80px !important;
+        top: 80px;
+      }
+    }
   }
 }
