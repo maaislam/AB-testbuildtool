@@ -1,0 +1,218 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__toplistContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 0 auto;
+
+        .#{$id}__toplistItem {
+            border-radius: 8px;
+            border: 2px solid #E9C058;
+            background: #FFF;
+
+            &-topHeader {
+                display: flex;
+                justify-content: space-between;
+
+                &-logo {
+                    width: 125px;
+                    background-color: #000;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                &-info {
+                    display: flex;
+                    padding: 12px 8px 0px 8px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: 8px;
+                    flex: 1 0 0;
+
+                    .#{$id}__bonusAmount {
+                        color: #2CA5E4;
+                        font-size: 20px;
+                        font-weight: 800;
+                        line-height: 28px;
+                        text-transform: capitalize;
+
+                        span {
+                            color: #000;
+                            font-size: 20px;
+                            font-weight: 300;
+                            line-height: 28px;
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    .#{$id}__spinsAmount {
+                        color: #5CB629;
+                        font-size: 20px;
+                        font-weight: 800;
+                        line-height: 28px;
+                        text-transform: capitalize;
+
+                        span {
+                            color: #000;
+                            font-size: 20px;
+                            font-weight: 300;
+                            line-height: 28px;
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    .#{$id}__bonusWagering,
+                    .#{$id}__spinsWagering {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                        color: #333;
+                        font-size: 13px;
+                        font-weight: 400;
+                        line-height: 16px;
+
+                        span {
+                            color: #000;
+                            font-size: 13px;
+                            font-weight: 700;
+                            line-height: 16px
+                        }
+                    }
+
+                    .#{$id}__badges {
+                        padding: 12px 24px 8px;
+                        border-radius: 7px;
+                        background: rgba(51, 51, 51, 0.10);
+
+                        ul {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 0 !important;
+                            margin: 0 !important;
+
+                            li {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
+                                img {
+                                    width: 22px;
+                                    height: auto;
+                                }
+
+                                span {
+                                    color: #333;
+                                    text-align: center;
+                                    font-size: 11px;
+                                    font-weight: 300;
+                                    line-height: 18px
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .#{$id}__featureBoxes {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                margin: 0 !important;
+                padding: 8px 12px !important;
+
+                .#{$id}__featureBox {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: auto;
+                    max-height: 76px;
+                    width: 100px;
+                    padding: 8px;
+                    background: #EFEFEF;
+                    border-radius: 4px;
+
+                    @include media-query(md) {
+                        padding: 6px !important;
+                        height: 64px;
+                        width: auto;
+                        border-radius: 7px;
+                    }
+
+                    &-header {
+                        color: #333;
+                        font-size: 10px;
+                        line-height: 12px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+
+                    &-content {
+                        color: #333;
+                        font-size: 14px;
+                        line-height: 17px;
+                        font-weight: 900;
+
+                        @include media-query(md) {
+                            font-size: 12px;
+                            line-height: 15px;
+                        }
+                    }
+                }
+            }
+
+            .#{$id}__toplistItem-footer {
+                padding: 0 12px 12px;
+
+                .toplist-cta {
+                    a.visit {
+                        display: grid;
+                        border-radius: var(--bd-rad-sm);
+                        background-color: var(--clr-cta);
+                        text-decoration: none;
+                        font-size: 1rem;
+                        padding: .875rem;
+                        line-height: 1.333;
+                        transition: background-color .2s ease-out;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+
+                        span {
+                            color: #FFF;
+                            text-align: center;
+                            font-size: 12px;
+                            font-weight: 400;
+                            line-height: 17px;
+                        }
+
+                        span:first-of-type {
+                            text-transform: uppercase;
+                            font-size: 16px;
+                            font-weight: 700;
+                            line-height: 21px;
+                        }
+                    }
+
+                    a.review {
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        color: #2980B9;
+                        font-size: 14px;
+                        font-weight: 700;
+                        line-height: 20px;
+                        border-radius: 4px;
+                        border: 1px solid #2980B9;
+                    }
+                }
+            }
+        }
+    }
+}
