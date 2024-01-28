@@ -11,8 +11,11 @@ const init = () => {
   const casinoData = window[`${ID}__data`];
   if (!casinoData) return;
 
+  const allCasinos = document.querySelectorAll('.toplist.casino .toplist-item');
+  const firstThreeCasinos = [...allCasinos].slice(0, 3);
+
   const htmlStr = `<div class='${ID}__toplistContainer'>
-    ${casinoData.map((data) => toplistItem(ID, data)).join('')}
+    ${firstThreeCasinos.map((casino, index) => toplistItem(ID, casino, index)).join('')}
   </div>`;
   toplistSection.insertAdjacentHTML('afterbegin', htmlStr);
 };

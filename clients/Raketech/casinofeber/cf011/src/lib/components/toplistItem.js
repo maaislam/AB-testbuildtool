@@ -1,16 +1,35 @@
+/*eslint-disable consistent-return */
 import { bonusWageringIcon, spinsWageringIcon } from '../assets/svg';
 import badges from './badges';
 import featureBoxes from './featureBoxes';
 import toplistItemFooter from './toplistItemFooter';
 
 /*eslint-disable max-len */
-const toplistItem = (id, data) => {
-    const { displayName, image, bonusAmount, spinsAmount, bonusWagering, spinsWagering, withdrawalWagering, withdrawalAttempt1, withdrawalAttempt2, speedExperience, liveChat, combinedRatings, trustly, swish, operatorColor } = data;
+const toplistItem = (id, casino, index) => {
+    const casinoData = window[`${id}__data`];
+    const casinoName = casino.querySelector('a.title').getAttribute('href').split('/')[2];
 
-    const htmlStr = `<div class='${id}__toplistItem'>
+    const matchedData = casinoData[casinoName];
+    if (!matchedData) return;
+
+    const casinoRank = index + 1;
+
+    const { displayName, bonusAmount, spinsAmount, bonusWagering, spinsWagering, withdrawalWagering, withdrawalAttempt1, withdrawalAttempt2, speedExperience, liveChat, combinedRatings, trustly, swish, operatorColor } = matchedData;
+
+    const itemHref = casino.querySelector('a.title').getAttribute('href');
+    const image = casino.querySelector('.img img').getAttribute('src');
+    const reviews = casino.querySelector('.item-rating').outerHTML;
+
+    const htmlStr = `<div class='${id}__toplistItem' data-rank='${casinoRank}'>
         <div class='${id}__toplistItem-topHeader'>
             <div class='${id}__toplistItem-topHeader-logo'>
-                <img src='${image}' alt='${displayName}'>
+                <div class='${id}__rankBadgeContainer'>
+                    <div class='${id}__casinoRank'>#${casinoRank}</div>
+                </div>
+                <a href='/spela/${casinoName}'>
+                    <img src='${image}' alt='${displayName}'>
+                </a>
+                <div class='${id}__casinoReviews'>${reviews}</div>
             </div>
             <div class='${id}__toplistItem-topHeader-info'>
                 <span class='${id}__bonusAmount'>
@@ -37,12 +56,13 @@ const toplistItem = (id, data) => {
             </div>
         </div>
         <div class='${id}__featureBoxContainer'>
-            ${featureBoxes(id, data.features)}
+            ${featureBoxes(id, matchedData.features)}
         </div>
         <div class='${id}__toplistItem-footer'>
-            ${toplistItemFooter(id, data)}
+            ${toplistItemFooter(id, itemHref, casinoName)}
         </div>
     </div>`;
+
     return htmlStr;
 };
 

@@ -1,7 +1,9 @@
 import translationConfig from '../data/translationConfig';
 
 const modifyData = (data) => {
-  const modifiedData = [];
+  let modifiedData = {
+
+  };
   const pageLang = document.querySelector('html').getAttribute('lang');
   const withdrawalAttempt1 = translationConfig['Withdrawal attempt 1'][pageLang];
   const withdrawalAttempt2 = translationConfig['Withdrawal attempt 2'][pageLang];
@@ -33,19 +35,22 @@ const modifyData = (data) => {
       }
     ];
 
-    modifiedData.push({
-      'A Link': operator['A Link'],
-      'B Link': operator['B Link'],
-      bonusAmount: operator['Bonus amount'],
-      spinsAmount: operator['Free spins amount'],
-      name: operatorName,
-      displayName: operator.Operator,
-      features,
-      bonusWagering: operator['Bonus wagering'],
-      spinsWagering: operator['Free spins wagering'],
-      operatorColor: operator.operatorColor,
-      image: operator.image
-    });
+    modifiedData = {
+      ...modifiedData,
+      [operatorName]: {
+        'A Link': operator['A Link'],
+        'B Link': operator['B Link'],
+        bonusAmount: operator['Bonus amount'],
+        spinsAmount: operator['Free spins amount'],
+        name: operatorName,
+        displayName: operator.Operator,
+        features,
+        bonusWagering: operator['Bonus wagering'],
+        spinsWagering: operator['Free spins wagering'],
+        operatorColor: operator.operatorColor,
+        image: operator.image
+      }
+    };
   });
   return modifiedData;
 };
