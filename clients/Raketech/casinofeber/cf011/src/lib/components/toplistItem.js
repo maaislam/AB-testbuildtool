@@ -4,6 +4,8 @@ import badges from './badges';
 import featureBoxes from './featureBoxes';
 import toplistItemFooter from './toplistItemFooter';
 import shared from '../shared/shared';
+import translationConfig from '../data/translationConfig';
+import checkLength from '../helpers/checkLength';
 
 /*eslint-disable max-len */
 const toplistItem = (id, casino, index) => {
@@ -23,6 +25,16 @@ const toplistItem = (id, casino, index) => {
     const reviews = casino.querySelector('.item-rating').outerHTML;
     const terms = casino.querySelector('.toplist-terms').outerHTML;
 
+    const pageLang = document.querySelector('html').getAttribute('lang');
+    const bonusText = translationConfig.bonus[pageLang];
+    const spinsText = translationConfig.spins[pageLang];
+
+    const bonusWageringText = translationConfig['bonus wagering'][pageLang];
+    const spinsWageringText = translationConfig['spins wagering'][pageLang];
+
+    const isBonusAmount = bonusAmount.toLowerCase().includes('kr');
+    const isLength = checkLength(spinsAmount);
+
     const htmlStr = `<div class='${id}__toplistItem swiper-slide'>
         <div class='${id}__toplistItem-inner' data-rank='${casinoRank}'>
             <div class='${id}__toplistItem-inner-topHeader'>
@@ -38,27 +50,32 @@ const toplistItem = (id, casino, index) => {
                 <div class='${id}__toplistItem-inner-topHeader-info'>
                     <span class='${id}__bonusAmount'>
                         ${bonusAmount} 
-                        <span>Bonus</span>
+                        <span>${isBonusAmount ? `${bonusText}` : ''}</span>
                     </span>
                     <span class='${id}__spinsAmount'>
                         ${spinsAmount}
-                        <span>Free spins</span>
+                        <span>${isLength ? spinsText : ''}</span>
                     </span>
                     <span class='${id}__bonusWagering'>
                         ${bonusWageringIcon}
-                        Bonus wagering 
-                        <span>${bonusWagering}</span>
+                        ${bonusWagering && bonusWagering !== '-' ? bonusWageringText : 'Bonus ej tillgänglig'}
+                        <span>${bonusWagering && bonusWagering !== '-' ? bonusWagering : ''}</span>
                     </span>
                     <span class='${id}__spinsWagering'>
                         ${spinsWageringIcon}               
-                        Spin Wagering
-                        <span>${spinsWagering}</span>
+                        ${spinsWagering && spinsWagering !== '-'
+                            ? spinsWageringText
+                            : 'Free spins ej tillgängligt'
+                        }
+                        <span>${
+                            spinsWagering && spinsWagering !== '-' ? spinsWagering : ''
+                          }</span>
                     </span>
                     <div class="${id}__badges">
                         ${badges(id)}
                     </div>
                     <div class='${id}__toplistItem-footer ${VARIATION === '1' ? `${id}__hide` : `${id}__topCta`}'>
-                        ${toplistItemFooter(id, itemHref, casinoName)}
+                        ${toplistItemFooter(id, itemHref, casinoName, displayName)}
                     </div>
                 </div>
             </div>
@@ -66,7 +83,7 @@ const toplistItem = (id, casino, index) => {
                 ${featureBoxes(id, matchedData.features)}
             </div>
             <div class='${id}__toplistItem-footer ${VARIATION !== '1' ? `${id}__hide` : ''}'>
-                ${toplistItemFooter(id, itemHref, casinoName)}
+                ${toplistItemFooter(id, itemHref, casinoName, displayName)}
             </div>
         </div>
         <div class='${id}__toplistItem-outer'>

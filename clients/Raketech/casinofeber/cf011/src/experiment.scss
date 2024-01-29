@@ -19,16 +19,16 @@
 
         .#{$id}__toplistItems {
             display: flex;
+            gap: 9px;
 
             @include media-query-min(sm) {
                 flex-direction: column;
-                gap: 10px;
+                
             }
 
             @include media-query-min(xl) {
                 flex-direction: row;
                 justify-content: space-between;
-                gap: 10px;
                 margin: 0;
             }
         }
