@@ -3,246 +3,304 @@
 
 .#{$id} {
     &__toplistContainer {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        margin: 0;
+        @include media-query(sm) {
+            width: 100%;
+        }
+
+        @include media-query-min(sm) {
+            margin: 0 !important;
+        }
+
+        .#{$id}__toplistItems {
+            display: flex;
+
+            @include media-query-min(sm) {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            @include media-query-min(xl) {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 10px;
+                margin: 0;
+            }
+        }
 
         .#{$id}__toplistItem {
-            flex: 1;
-            border-radius: 8px;
             background: #FFF;
 
-            &-topHeader {
-                position: relative;
-                display: flex;
-                justify-content: space-between;
-                
-                &-logo {
+            @include media-query-min(sm) {
+                flex: 1;
+            }
+
+            .#{$id}__toplistItem-inner {
+                border-radius: 8px;
+
+                &-topHeader {
+                    position: relative;
                     display: flex;
-                    flex-direction: column;
                     justify-content: space-between;
-                    width: 125px;
-                    overflow: hidden;
-                    background-color: #000;
-                    border-top-left-radius: 6px;
 
-                    img {
-                        width: 100%;
-                        height: auto;
-                    }
-
-                    .#{$id}__rankBadgeContainer {
-                        height: 38px;
-
-                        position: relative;
-                        .#{$id}__casinoRank {
-                            position: absolute;
-                            top: 10px;
-                            left: -42px;
-                            width: 100%;
-                            height: 22px;
-                            color: #000;
-                            line-height: 21px;
-                            font-size: 15px;
-                            transform: rotate(-45deg);
-                            text-align: center;
-                        }
-                    }
-
-                    .#{$id}__casinoReviews {
-                        .item-rating {
-                            color: #FFF !important;
-                        }
-                    }
-                }
-
-                &-info {
-                    display: flex;
-                    padding: 12px 8px 0px 8px;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
-                    gap: 8px;
-                    flex: 1 0 0;
-
-                    .#{$id}__bonusAmount {
-                        color: #2CA5E4;
-                        font-size: 17px;
-                        font-weight: 800;
-                        line-height: 24px;
-                        text-transform: capitalize;
-
-                        span {
-                            color: #000;
-                            font-size: 17px;
-                            font-weight: 300;
-                            line-height: 24px;
-                            text-transform: capitalize;
-                        }
-                    }
-
-                    .#{$id}__spinsAmount {
-                        color: #5CB629;
-                        font-size: 17px;
-                        font-weight: 800;
-                        line-height: 24px;
-                        text-transform: capitalize;
-
-                        span {
-                            color: #000;
-                            font-size: 17px;
-                            font-weight: 300;
-                            line-height: 24px;
-                            text-transform: capitalize;
-                        }
-                    }
-
-                    .#{$id}__bonusWagering,
-                    .#{$id}__spinsWagering {
+                    &-logo {
                         display: flex;
-                        align-items: center;
-                        gap: 4px;
-                        color: #333;
-                        font-size: 13px;
-                        font-weight: 400;
-                        line-height: 16px;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: 125px;
+                        overflow: hidden;
+                        background-color: #000;
+                        border-top-left-radius: 6px;
 
-                        span {
-                            color: #000;
-                            font-size: 13px;
-                            font-weight: 700;
-                            line-height: 16px
+                        @include media-query(xl) {
+                            width: 169px;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        .#{$id}__rankBadgeContainer {
+                            height: 38px;
+
+                            position: relative;
+
+                            .#{$id}__casinoRank {
+                                position: absolute;
+                                top: 10px;
+                                left: -42px;
+                                width: 100%;
+                                height: 22px;
+                                color: #000;
+                                line-height: 21px;
+                                font-size: 15px;
+                                transform: rotate(-45deg);
+                                text-align: center;
+                            }
+                        }
+
+                        .#{$id}__casinoReviews {
+                            .item-rating {
+                                color: #FFF !important;
+                            }
                         }
                     }
 
-                    .#{$id}__badges {
-                        padding: 12px 24px 8px;
-                        border-radius: 7px;
-                        background: rgba(51, 51, 51, 0.10);
+                    &-info {
+                        display: flex;
+                        padding: 12px 8px 0px 8px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        gap: 8px;
+                        flex: 1 0 0;
 
-                        ul {
+                        .#{$id}__bonusAmount {
+                            color: #2CA5E4;
+                            font-size: 17px;
+                            font-weight: 800;
+                            line-height: 24px;
+                            text-transform: capitalize;
+
+                            span {
+                                color: #000;
+                                font-size: 17px;
+                                font-weight: 300;
+                                line-height: 24px;
+                                text-transform: capitalize;
+                            }
+                        }
+
+                        .#{$id}__spinsAmount {
+                            color: #5CB629;
+                            font-size: 17px;
+                            font-weight: 800;
+                            line-height: 24px;
+                            text-transform: capitalize;
+
+                            span {
+                                color: #000;
+                                font-size: 17px;
+                                font-weight: 300;
+                                line-height: 24px;
+                                text-transform: capitalize;
+                            }
+                        }
+
+                        .#{$id}__bonusWagering,
+                        .#{$id}__spinsWagering {
                             display: flex;
-                            justify-content: center;
                             align-items: center;
-                            padding: 0 !important;
-                            margin: 0 !important;
+                            gap: 4px;
+                            color: #333;
+                            font-size: 13px;
+                            font-weight: 400;
+                            line-height: 16px;
 
-                            li {
+                            span {
+                                color: #333;
+                                font-size: 13px;
+                                font-weight: 700;
+                                line-height: 16px
+                            }
+                        }
+
+                        .#{$id}__badges {
+                            padding: 12px 24px 8px;
+                            border-radius: 7px;
+                            background: rgba(51, 51, 51, 0.10);
+
+                            ul {
                                 display: flex;
-                                flex-direction: column;
+                                justify-content: center;
                                 align-items: center;
+                                padding: 0 !important;
+                                margin: 0 !important;
 
-                                img {
-                                    width: 22px;
-                                    height: auto;
-                                }
+                                li {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
 
-                                span {
-                                    color: #333;
-                                    text-align: center;
-                                    font-size: 11px;
-                                    font-weight: 300;
-                                    line-height: 18px
+                                    img {
+                                        width: 22px;
+                                        height: auto;
+                                        opacity: 0.7;
+                                    }
+
+                                    span {
+                                        color: #333;
+                                        text-align: center;
+                                        font-size: 11px;
+                                        font-weight: 300;
+                                        line-height: 18px
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
 
-            .#{$id}__featureBoxes {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                margin: 0 !important;
-                padding: 8px 12px !important;
+                .#{$id}__featureBoxes {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    margin: 0 !important;
+                    padding: 8px 12px !important;
 
-                .#{$id}__featureBox {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    height: auto;
-                    max-height: 76px;
-                    width: 105px;
-                    padding: 8px;
-                    background: #EFEFEF;
-                    border-radius: 4px;
-
-                    @include media-query(md) {
-                        padding: 6px !important;
-                        height: 64px;
-                        width: auto;
-                        border-radius: 7px;
+                    @include media-query(sm) {
+                        padding: 8px !important;
+                        gap: 8px !important;
                     }
 
-                    &-header {
-                        color: #333;
-                        font-size: 10px;
-                        line-height: 12px;
-                        font-weight: 700;
-                        text-transform: uppercase;
+                    .#{$id}__featureBox {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: auto;
+                        max-height: 76px;
+                        width: 105px;
+                        padding: 8px;
+                        background: #EFEFEF;
+                        border-radius: 4px;
+
+                        @include media-query-min(sm) {
+                            width: auto;
+                        }
+
+                        @include media-query(sm) {
+                            padding: 6px !important;
+                            height: 64px;
+                            width: auto;
+                            border-radius: 7px;
+                        }
+
+                        &-header {
+                            color: #333;
+                            font-size: 10px;
+                            line-height: 12px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+
+                            @include media-query(sm) {
+                                font-size: 9px;
+                            }
+                        }
+
+                        &-content {
+                            color: #333;
+                            font-size: 13px;
+                            line-height: 17px;
+                            font-weight: 900;
+
+                            @include media-query(md) {
+                                font-size: 12px;
+                                line-height: 15px;
+                            }
+                        }
                     }
+                }
 
-                    &-content {
-                        color: #333;
-                        font-size: 13px;
-                        line-height: 17px;
-                        font-weight: 900;
+                .#{$id}__toplistItem-footer {
+                    padding: 0 12px 12px;
 
-                        @include media-query(md) {
-                            font-size: 12px;
-                            line-height: 15px;
+                    .toplist-cta.#{$id}__cta {
+                        a.visit {
+                            display: grid;
+                            border-radius: var(--bd-rad-sm);
+                            background-color: var(--clr-cta);
+                            text-decoration: none;
+                            font-size: 1rem;
+                            padding: .875rem;
+                            line-height: 1.333;
+                            transition: background-color .2s ease-out;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+
+                            span {
+                                color: #FFF;
+                                text-align: center;
+                                font-size: 12px;
+                                font-weight: 400;
+                                line-height: 17px;
+                            }
+
+                            span:first-of-type {
+                                text-transform: uppercase;
+                                font-size: 16px;
+                                font-weight: 700;
+                                line-height: 21px;
+                            }
+                        }
+
+                        a.review {
+                            margin-top: 8px;
+                            padding: 10px 8px;
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+                            color: #2980B9;
+                            font-size: 14px;
+                            font-weight: 700;
+                            line-height: 20px;
+                            border-radius: 4px;
+                            border: 1px solid #2980B9;
                         }
                     }
                 }
             }
 
-            .#{$id}__toplistItem-footer {
-                padding: 0 12px 12px;
+            .#{$id}__toplistItem-outer {
+                margin-top: 8px;
+                color: #000;
+                text-align: center;
+                font-size: 9px;
+                font-weight: 300;
+                line-height: 11px;
 
-                .toplist-cta.#{$id}__cta {
-                    a.visit {
-                        display: grid;
-                        border-radius: var(--bd-rad-sm);
-                        background-color: var(--clr-cta);
-                        text-decoration: none;
-                        font-size: 1rem;
-                        padding: .875rem;
-                        line-height: 1.333;
-                        transition: background-color .2s ease-out;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-
-                        span {
-                            color: #FFF;
-                            text-align: center;
-                            font-size: 12px;
-                            font-weight: 400;
-                            line-height: 17px;
-                        }
-
-                        span:first-of-type {
-                            text-transform: uppercase;
-                            font-size: 16px;
-                            font-weight: 700;
-                            line-height: 21px;
-                        }
-                    }
-
-                    a.review {
-                        margin-top: 8px;
-                        padding: 10px 8px;
-                        display: block;
-                        width: 100%;
-                        text-align: center;
-                        color: #2980B9;
-                        font-size: 14px;
-                        font-weight: 700;
-                        line-height: 20px;
-                        border-radius: 4px;
-                        border: 1px solid #2980B9;
-                    }
+                a {
+                    color: #000;
+                    text-decoration: underline;
                 }
             }
         }

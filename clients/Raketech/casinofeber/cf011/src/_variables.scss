@@ -13,6 +13,14 @@ $media: (xsm:360px,
             @media screen and (max-width: $size) {
                 @content;
             }
-        }
+        } 
+    }
+}
+
+@mixin media-query-min($breakpoint) {
+    $size: map-get($media, $breakpoint);
+
+    @media screen and (min-width: $size) {
+        @content;
     }
 }
