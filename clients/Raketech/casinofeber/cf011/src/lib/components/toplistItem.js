@@ -3,9 +3,11 @@ import { bonusWageringIcon, spinsWageringIcon } from '../assets/svg';
 import badges from './badges';
 import featureBoxes from './featureBoxes';
 import toplistItemFooter from './toplistItemFooter';
+import shared from '../shared/shared';
 
 /*eslint-disable max-len */
 const toplistItem = (id, casino, index) => {
+    const { VARIATION } = shared;
     const casinoData = window[`${id}__data`];
     const casinoName = casino.querySelector('a.title').getAttribute('href').split('/')[2];
 
@@ -54,6 +56,9 @@ const toplistItem = (id, casino, index) => {
                     </span>
                     <div class="${id}__badges">
                         ${badges(id)}
+                    </div>
+                    <div class='${id}__toplistItem-footer ${VARIATION === '1' ? `${id}__hide` : `${id}__topCta`}'>
+                        ${toplistItemFooter(id, itemHref, casinoName)}
                     </div>
                 </div>
             </div>

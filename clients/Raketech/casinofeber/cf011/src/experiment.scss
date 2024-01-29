@@ -2,6 +2,9 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    &__hide {
+        display: none;
+    }
     &__toplistContainer {
         @include media-query(sm) {
             width: 100%;
@@ -214,11 +217,7 @@
                         background: #EFEFEF;
                         border-radius: 4px;
 
-                        @include media-query-min(sm) {
-                            width: auto;
-                        }
-
-                        @include media-query(sm) {
+                        @include media-query(xl) {
                             padding: 6px !important;
                             height: 64px;
                             width: auto;
