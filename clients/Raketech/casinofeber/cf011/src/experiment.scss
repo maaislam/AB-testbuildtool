@@ -76,6 +76,16 @@
                                 font-size: 15px;
                                 transform: rotate(-45deg);
                                 text-align: center;
+
+                                @include media-query(xl) {
+                                    top: 12px;
+                                    left: -64px;
+                                }
+
+                                @include media-query(sm) {
+                                    top: 10px;
+                                    left: -34px;
+                                }
                             }
                         }
 
