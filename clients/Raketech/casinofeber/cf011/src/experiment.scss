@@ -359,5 +359,11 @@
             padding: 0 0 12px !important;
             width: 100%;
         }
+
+        @include media-query(sm) {
+            .#{$id}__casinoRank {
+                left: -47px !important;
+            }
+        }
     }
 }
