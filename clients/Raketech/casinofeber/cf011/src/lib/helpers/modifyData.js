@@ -35,8 +35,23 @@ const modifyData = (data) => {
       }
     ];
 
-    modifiedData = {
-      ...modifiedData,
+    // modifiedData = {
+    //   ...modifiedData,
+    //   [operatorName]: {
+    //     'A Link': operator['A Link'],
+    //     'B Link': operator['B Link'],
+    //     bonusAmount: operator['Bonus amount'],
+    //     spinsAmount: operator['Free spins amount'],
+    //     name: operatorName,
+    //     displayName: operator.Operator,
+    //     features,
+    //     bonusWagering: operator['Bonus wagering'],
+    //     spinsWagering: operator['Free spins wagering'],
+    //     operatorColor: operator.operatorColor,
+    //     image: operator.image
+    //   }
+    // };
+    modifiedData = Object.assign({}, modifiedData, {
       [operatorName]: {
         'A Link': operator['A Link'],
         'B Link': operator['B Link'],
@@ -50,7 +65,7 @@ const modifyData = (data) => {
         operatorColor: operator.operatorColor,
         image: operator.image
       }
-    };
+    });
   });
   return modifiedData;
 };

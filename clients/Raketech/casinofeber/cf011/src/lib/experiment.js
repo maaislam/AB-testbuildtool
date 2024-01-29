@@ -15,12 +15,14 @@ const init = () => {
   if (!casinoData) return;
 
   const allCasinos = document.querySelectorAll('.toplist.casino .toplist-item');
-  const firstThreeCasinos = [...allCasinos].slice(0, 3);
+  const firstThreeCasinos = Array.from(allCasinos).slice(0, 3);
 
   const htmlStr = `<div class='${ID}__toplistContainer swiper'>
     ${toplistItems(ID, firstThreeCasinos)}
   </div>`;
-  toplistSection.insertAdjacentHTML('afterbegin', htmlStr);
+  if (!document.querySelector(`.${ID}__toplistContainer`)) {
+    toplistSection.insertAdjacentHTML('afterbegin', htmlStr);
+  }
 };
 
 export default () => {
@@ -28,8 +30,10 @@ export default () => {
   setCasinoData(ID);
 
   document.body.addEventListener('click', (e) => {
-    if (e.target.closest('.visit')) {
-      const casinoNameElem = e.target.closest('a');
+    const { target } = e;
+
+    if (target.closest('.visit')) {
+      const casinoNameElem = target.closest('a');
       let casinoName = casinoNameElem.dataset.operator;
       if (!casinoName) return;
       casinoName = casinoName.replace(/-/g, ' ');
@@ -38,8 +42,8 @@ export default () => {
       gaTracking(
         `${hasAffiliateLink ? linkType : 'Default Link'} | ${casinoName} CTA CTO (Button)`
       );
-    } else if (e.target.closest('a.img') || e.target.closest('a.title')) {
-      const casinoNameElem = e.target.closest('a');
+    } else if (target.closest('a.img') || e.target.closest('a.title')) {
+      const casinoNameElem = target.closest('a');
       let casinoName = casinoNameElem.dataset.operator;
       if (!casinoName) return;
       casinoName = casinoName.replace(/-/g, ' ');
@@ -47,13 +51,15 @@ export default () => {
 
       gaTracking(`${hasAffiliateLink ? linkType : 'Default Link'} | ${casinoName} CTA CTO (Logo)`);
     } else if (e.target.closest(`a.${ID}__review`)) {
-      const casinoNameElem = e.target.closest(`.${ID}__review`);
+      const casinoNameElem = target.closest(`.${ID}__review`);
       let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
       casinoName = casinoName.replace(/-/g, ' ');
 
       gaTracking(`${casinoName} CTA CTR`);
     }
   });
+
+  if (VARIATION === 'Control') return;
 
   init();
   initMobileSwiper('.swiper');
