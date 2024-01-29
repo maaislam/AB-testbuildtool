@@ -6,8 +6,11 @@
         display: none;
     }
     &__toplistContainer {
+        margin: 10px 0;
+
         @include media-query(sm) {
             width: 100%;
+            margin: 10px 0 19px;
         }
 
         @include media-query-min(sm) {
@@ -337,6 +340,24 @@
             .#{$id}__casinoRank {
                 background: #E58742;
             }
+        }
+    }
+
+    &-2 {
+        .#{$id}__toplistItem-footer.#{$id}__topCta {
+            padding: 0 !important;
+            width: 100%;
+        }
+    }
+
+    &-3 {
+        .#{$id}__bonusWagering, .#{$id}__spinsWagering, .#{$id}__badges, .#{$id}__featureBoxes {
+            display: none !important;
+        }
+
+        .#{$id}__toplistItem-footer.#{$id}__topCta {
+            padding: 0 0 12px !important;
+            width: 100%;
         }
     }
 }

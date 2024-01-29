@@ -7,7 +7,7 @@ const { ID } = shared;
 const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
 const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
 
-pollerLite(['body'], () => {
+pollerLite(['.toplist.casino'], () => {
   addJsToPage(swiperJs, `${ID}__swiperjs`);
   addCssToPage(swiperCss, `${ID}__swipercss`);
   setTimeout(activate, 1500);

@@ -65,7 +65,7 @@ const toplistItem = (id, casino, index) => {
             <div class='${id}__featureBoxContainer'>
                 ${featureBoxes(id, matchedData.features)}
             </div>
-            <div class='${id}__toplistItem-footer'>
+            <div class='${id}__toplistItem-footer ${VARIATION !== '1' ? `${id}__hide` : ''}'>
                 ${toplistItemFooter(id, itemHref, casinoName)}
             </div>
         </div>
