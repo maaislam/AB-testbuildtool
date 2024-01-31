@@ -64,4 +64,22 @@
       }
     }
   }
+  &-2 {
+    .#{$id}__productBadge {
+      padding-top: 0;
+      margin-bottom: 43px;
+      @include media-query(xmd) {
+        margin-top: 44px;
+      }
+
+      .#{$id}__item {
+        @include media-query(md) {
+          max-width: 115px;
+        }
+        @include media-query(xmd) {
+          max-width: 140px;
+        }
+      }
+    }
+  }
 }

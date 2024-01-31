@@ -39,8 +39,15 @@ export default () => {
   //Write experiment code here
   //-----------------------------
   //...
+  if (VARIATION === '1') {
+    if (!document.querySelector(`.${ID}__productBadge`)) {
+      document.querySelector('.product_badge').insertAdjacentHTML('beforebegin', upvHtml());
+    }
+  }
 
-  if (!document.querySelector(`.${ID}__productBadge`)) {
-    document.querySelector('.product_badge').insertAdjacentHTML('beforebegin', upvHtml());
+  if (VARIATION === '2') {
+    if (!document.querySelector(`.${ID}__productBadge`)) {
+      document.querySelector('body .Product_Aside').insertAdjacentHTML('beforebegin', upvHtml());
+    }
   }
 };
