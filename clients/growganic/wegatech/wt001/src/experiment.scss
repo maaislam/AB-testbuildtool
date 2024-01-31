@@ -36,6 +36,7 @@
   .#{$id}__homepage {
     .#{$id}__socialproof {
       max-width: 100%;
+      margin-left: auto;
       @include media-query(lg) {
         align-items: center;
         max-width: 236px;
