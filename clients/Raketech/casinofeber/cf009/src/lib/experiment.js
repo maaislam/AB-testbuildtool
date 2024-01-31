@@ -5,19 +5,50 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 export default () => {
-  setup(); //use if needed
+  setup();
 
-  console.log(ID);
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
+  const capitalizeWords = (str) => {
+    return str.replace(/\b\w/g, (char) => char.toUpperCase());
+  };
 
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    console.log('target', target);
+    if (target.closest('a.visit')) {
+      const casinoNameElem = target.closest('a');
+      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
+
+      if (!casinoName) return;
+      casinoName = casinoName.replace(/-/g, ' ');
+      casinoName = capitalizeWords(casinoName);
+
+      gaTracking(`${casinoName} CTA CTO (Button)`);
+    } else if (target.closest('a.img')) {
+      const casinoNameElem = target.closest('a');
+      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
+
+      if (!casinoName) return;
+      casinoName = casinoName.replace(/-/g, ' ');
+      casinoName = capitalizeWords(casinoName);
+
+      gaTracking(`${casinoName} CTA CTO (Logo)`);
+    } else if (target.closest('a.review')) {
+      const casinoNameElem = target.closest('a.review');
+      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
+      casinoName = casinoName.replace(/-/g, ' ');
+      casinoName = capitalizeWords(casinoName);
+
+      gaTracking(`${casinoName} CTA CTR (Button)`);
+    }
+  });
+
+  document.body.addEventListener('pointerup', (e) => {
+    if (e.target.closest('button.load-more') && VARIATION === 'Control') {
+      gaTracking('Load More Casinos');
+    }
+  });
+  if (VARIATION === 'Control') return;
+
   const INTERVAL_PERIOD = 1000;
   const targetEl = document.querySelector('.toplist-holder .load-more');
 

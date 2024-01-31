@@ -1,0 +1,41 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+
+    .banner img.bnrprd-v2,
+    .banner img.bnrprd-v2-mob {
+        display: none !important;
+    }
+
+    .banner {
+        .#{$id}__heroVideo {
+            margin: 10px 50px;
+            max-width: 500px;
+
+            @include media-query(xl) {
+                margin: 10px 0 10px 50px;
+                max-width: 450px;
+            }
+
+            @include media-query(lg) {
+                margin: 20px auto;
+                max-width: 320px;
+            }
+        }
+
+        img.bnrprd-v2-mob + .#{$id}__heroVideo {
+            display: none;
+        }
+
+        @include media-query(lg) {
+            img.bnrprd-v2 + .#{$id}__heroVideo {
+                display: none;
+            }
+            
+            img.bnrprd-v2-mob + .#{$id}__heroVideo {
+                display: block;
+            }
+        }
+    }
+}
