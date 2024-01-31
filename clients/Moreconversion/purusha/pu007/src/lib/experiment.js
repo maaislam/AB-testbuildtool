@@ -33,8 +33,6 @@ export default () => {
   //-----------------------------
   //...
   if (!document.querySelector(`.${ID}__topBar`)) {
-    document
-      .querySelector('#section-header .Header__Wrapper')
-      .insertAdjacentHTML('beforebegin', topBarHtml());
+    document.querySelector('#Search').insertAdjacentHTML('beforebegin', topBarHtml());
   }
 };
