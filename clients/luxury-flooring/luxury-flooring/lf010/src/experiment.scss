@@ -2,29 +2,31 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  #maincontent {
-    .category-info {
-      position: relative;
-      .#{$id}__floorFinder {
-        position: absolute;
-        top: 70px;
-        left: -93px;
-        width: 150px;
-        padding: 10px 0;
-        background-color: #c9a361;
-        color: #fff;
-        text-align: center;
-        transform: rotate(270deg);
-        &:hover {
-          background-color: #b88c3f;
-        }
-        @include media-query(md) {
-          left: -68px;
-        }
-        @include media-query(sm) {
-          top: 22px;
-        }
-      }
+  .#{$id}__floorFinder {
+    position: fixed;
+    top: 58%;
+    left: -53px;
+    width: 150px;
+    padding: 10px 0;
+    background-color: #c9a361;
+    color: #fff;
+    text-align: center;
+    transform: rotate(270deg);
+    z-index: 9999;
+    &:hover {
+      background-color: #b88c3f;
+    }
+    @include media-query(md) {
+      top: 60%;
+    }
+    @include media-query(smd) {
+      top: 45%;
+    }
+    @include media-query(xmd) {
+      top: 39%;
+    }
+    @include media-query(sm) {
+      top: 44%;
     }
   }
 }

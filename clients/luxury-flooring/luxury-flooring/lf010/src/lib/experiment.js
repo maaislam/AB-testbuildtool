@@ -24,8 +24,6 @@ export default () => {
   //-----------------------------
   //...
   if (!document.querySelector(`.${ID}__floorFinder`)) {
-    document
-      .querySelector('#maincontent .category-info')
-      .insertAdjacentHTML('beforeend', floorFinderStr());
+    document.querySelector('.page-with-filter').insertAdjacentHTML('beforeend', floorFinderStr());
   }
 };
