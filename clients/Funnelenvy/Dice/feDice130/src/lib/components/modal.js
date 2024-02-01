@@ -11,7 +11,7 @@ const modal = (ID) => {
                 <p class="${ID}__subHeader">Make your profile visible and be discovered by employers with opportunities</p>
                 <p class="${ID}__subHeader">that match your skills and experience!</p>
                 <p class="${ID}__subHeader">Rest assured, your information is secure.
-                    <a href="https://www.dice.com/support/candidate/candidate-profile/profile---private-email.html">Learn more</a>
+                    <a href="https://www.dice.com/support/candidate/candidate-profile/profile---private-email.html" target="_blank">Learn more</a>
                 </p>
                 <div class="${ID}__formWrapper">
                     <div class="form__group">
