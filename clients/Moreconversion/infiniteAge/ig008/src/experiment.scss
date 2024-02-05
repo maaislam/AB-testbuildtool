@@ -1,0 +1,141 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .banner.flt {
+    .container.bdinpad {
+      img.bnrprd-v2 {
+        display: none !important;
+      }
+      .bnrrgt {
+        .bnrhd2 {
+          text-align: center;
+        }
+
+        .bnrrgt-hding,
+        & > ul.bnrlist {
+          display: none;
+        }
+
+        .#{$id}__banner_list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          width: 100%;
+          margin: 0 auto;
+
+          @include max-media-query(sm) {
+            max-width: 400px;
+          }
+
+          .banner_prod-mob {
+            display: none;
+            @include max-media-query(sm) {
+              display: block;
+              width: 50%;
+              text-align: center;
+              margin-top: 20px;
+              img {
+                height: auto;
+              }
+            }
+          }
+          .banner__points {
+            width: 100%;
+            margin-top: 25px;
+            display: flex;
+            max-width: 900px;
+            margin: 25px auto 0;
+
+            @include max-media-query(sm) {
+              width: 48%;
+              flex-wrap: wrap;
+              justify-content: start;
+              row-gap: 10px;
+              margin: 20px 0 0;
+            }
+            li {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              width: calc(100% / 4);
+
+              img {
+                width: 44px;
+                height: 44px;
+                @include max-media-query(sm) {
+                  width: 40px;
+                  height: 40px;
+                }
+              }
+              p {
+                font-size: 15px;
+                line-height: 20px;
+                letter-spacing: 0;
+                text-transform: uppercase;
+                @include max-media-query(mlg) {
+                  font-size: 12px;
+                }
+
+                @include max-media-query(sm) {
+                  max-width: 127px;
+                }
+
+                @include max-media-query(xsm) {
+                  font-size: 10px;
+                }
+              }
+
+              @include max-media-query(sm) {
+                width: 100%;
+                gap: 5px;
+              }
+            }
+          }
+        }
+        img.bnrprd-v2-mob {
+          @include max-media-query(sm) {
+            display: none !important;
+          }
+        }
+        @include min-media-query(sm) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .banner {
+    .#{$id}__heroVideo {
+      margin: 25px 50px 0;
+      max-width: 450px;
+
+      @include max-media-query(xl) {
+        margin: 10px 0 10px 50px;
+        max-width: 450px;
+      }
+
+      @include max-media-query(lg) {
+        margin: 20px auto 0;
+        max-width: 320px;
+      }
+    }
+
+    img.bnrprd-v2-mob + .#{$id}__heroVideo {
+      // display: none;
+    }
+
+    @include max-media-query(lg) {
+      img.bnrprd-v2 + .#{$id}__heroVideo {
+        display: none;
+      }
+
+      img.bnrprd-v2-mob + .#{$id}__heroVideo {
+        display: block;
+      }
+    }
+  }
+}
