@@ -1,9 +1,10 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 import { topBarIcon } from './assets/icons';
+import { observeDOM } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const topBarHtml = () => {
   const html = `
@@ -18,21 +19,35 @@ const topBarHtml = () => {
   return html.trim();
 };
 
-export default () => {
-  setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
+const getCart = () => {
+  return fetch('https://purushapeople.com/cart.js', {
+    headers: {
+      accept: '*/*'
+    }
+  }).then((response) => response.json());
+};
 
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
-  if (!document.querySelector(`.${ID}__topBar`)) {
-    document.querySelector('#Search').insertAdjacentHTML('beforebegin', topBarHtml());
-  }
+const init = () => {
+  //check if cart has item and if free shipping threshold is reached
+  getCart().then((cart) => {
+    console.log(cart);
+    const cartCount = cart.item_count;
+    const cartTotal = cart.total_price / 100;
+
+    if (cartCount > 0 && cartTotal < 200 && !document.querySelector(`.${ID}__topBar`)) {
+      document.querySelector('#Search').insertAdjacentHTML('beforebegin', topBarHtml());
+      return;
+    }
+
+    //remove existing top bar if cart is empty or threshold is not reached
+    if (document.querySelector(`.${ID}__topBar`)) {
+      document.querySelector(`.${ID}__topBar`).remove();
+    }
+  });
+};
+
+export default () => {
+  setup();
+  init();
+  observeDOM('#sidebar-cart', init);
 };

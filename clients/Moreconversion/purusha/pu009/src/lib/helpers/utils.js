@@ -32,6 +32,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   const config = configObject || {
     childList: true,
+    subtree: false,
     attributes: true
   };
   const observer = new MutationObserver((mutations) => {
@@ -45,4 +46,17 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
+};
+
+export const observeIntersection = (target, threshold, callback) => {
+  const observer = new IntersectionObserver(callback, {
+    root: null,
+    rootMargin: '0px',
+    threshold
+  });
+  if (!target) {
+    return;
+  }
+
+  observer?.observe(target);
 };

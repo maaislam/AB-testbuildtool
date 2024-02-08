@@ -1,5 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 import { upvData } from './data/upvData';
 

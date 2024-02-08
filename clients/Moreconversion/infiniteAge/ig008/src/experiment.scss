@@ -132,6 +132,19 @@
   }
 
   .banner {
+    .#{$id}__video-wrapper {
+      position: relative;
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: 1;
+      }
+    }
+
     .#{$id}__heroVideo {
       margin: 25px 50px 0;
       max-width: 450px;
