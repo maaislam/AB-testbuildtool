@@ -36,18 +36,6 @@
             max-width: 400px;
           }
 
-          // .banner_prod-mob {
-          //   display: none;
-          //   @include max-media-query(sm) {
-          //     display: block;
-          //     width: 50%;
-          //     text-align: center;
-          //     margin-top: 20px;
-          //     img {
-          //       height: auto;
-          //     }
-          //   }
-          // }
           .banner__points {
             width: 100%;
             margin-top: 25px;
@@ -66,13 +54,11 @@
               width: 100%;
               flex-wrap: wrap;
               justify-content: start;
-              row-gap: 10px;
               margin: 20px 0 0;
             }
             li {
               display: flex;
               align-items: center;
-              gap: 10px;
               width: calc(100% / 4);
 
               img {
@@ -88,12 +74,14 @@
                 line-height: 20px;
                 letter-spacing: 0;
                 text-transform: uppercase;
+                margin-left: 10px;
                 @include max-media-query(mlg) {
                   font-size: 12px;
                 }
 
                 @include max-media-query(sm) {
                   max-width: 127px;
+                  margin-left: 5px;
                 }
 
                 @include max-media-query(xsm) {
@@ -103,7 +91,10 @@
 
               @include max-media-query(sm) {
                 width: calc(100% / 2);
-                gap: 5px;
+                &:nth-child(3),
+                &:last-child {
+                  margin-top: 10px;
+                }
               }
             }
           }
@@ -151,10 +142,6 @@
         height: 100%;
         background: transparent;
         z-index: 1;
-        // background-image: url(https://cdn.shopify.com/s/files/1/0267/7080/0737/files/thumbnail_l_-_v2.jpg?v=1706274934);
-        // background-position: center;
-        // background-size: cover;
-        // background-repeat: no-repeat;
       }
     }
 
@@ -173,10 +160,6 @@
         margin: 20px auto 0;
         max-width: 320px;
       }
-    }
-
-    img.bnrprd-v2-mob + .#{$id}__heroVideo {
-      // display: none;
     }
 
     @include max-media-query(lg) {
