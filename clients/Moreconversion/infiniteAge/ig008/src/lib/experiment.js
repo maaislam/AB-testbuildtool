@@ -32,4 +32,17 @@ export default () => {
       document.querySelector(`.${ID}__heroVideo`).muted = false;
     }
   });
+
+  document.querySelector(`.${ID}__heroVideo`).addEventListener('pause', ({ target }) => {
+    const pauseTime = target.currentTime;
+    //eslint-disable-next-line no-param-reassign
+    target.autoplay = false;
+    target.load();
+    window[`${ID}__pauseTime`] = pauseTime;
+  });
+
+  document.querySelector(`.${ID}__heroVideo`).addEventListener('play', ({ target }) => {
+    //eslint-disable-next-line no-param-reassign
+    target.currentTime = window[`${ID}__pauseTime`] || 0;
+  });
 };

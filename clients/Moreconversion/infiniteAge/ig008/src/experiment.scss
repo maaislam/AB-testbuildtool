@@ -165,7 +165,7 @@
       z-index: 22;
 
       @include max-media-query(xlg) {
-        max-width: 300px;
+        max-width: 400px;
         margin: 12px 50px 0;
       }
       @include max-media-query(lg) {
