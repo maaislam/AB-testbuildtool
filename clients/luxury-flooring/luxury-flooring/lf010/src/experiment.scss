@@ -2,9 +2,12 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  #hubspot-messages-iframe-container {
+    z-index: 9997 !important;
+  }
   .#{$id}__floorFinder {
     position: fixed;
-    top: 58%;
+    top: 60%;
     left: -53px;
     width: 150px;
     padding: 10px 0;
@@ -12,21 +15,19 @@
     color: #fff;
     text-align: center;
     transform: rotate(270deg);
-    z-index: 9999;
+    z-index: 9997;
     &:hover {
       background-color: #b88c3f;
     }
     @include media-query(md) {
-      top: 60%;
+      top: 55%;
     }
-    @include media-query(smd) {
+
+    @include media-query(xmd) {
       top: 45%;
     }
-    @include media-query(xmd) {
-      top: 39%;
-    }
     @include media-query(sm) {
-      top: 44%;
+      top: 55%;
     }
   }
 }
