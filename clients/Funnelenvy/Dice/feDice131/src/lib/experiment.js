@@ -78,6 +78,9 @@ export default () => {
     } else if (e.target.matches('.step_one div.fe-next-button button') && document.querySelector('div.step_one #fe-form-answers button.fe-active')) {
       const selectedOption = document.querySelector('div.step_one #fe-form-answers button.fe-active span').getAttribute('data');
       trackGAEvent('funnelenvy', 'Qualifying question', selectedOption);
+    } else if (target.closest('.FE-Form-Validator__tempStep1Btn')) {
+      //console.log('form submitted');
+      trackGAEvent('funnelenvy', 'click', 'Step 1 completion');
     }
   });
 };
