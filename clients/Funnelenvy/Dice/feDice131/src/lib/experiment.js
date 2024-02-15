@@ -61,15 +61,16 @@ export default () => {
     } else if (
       target.closest('.fe-next-button button') &&
       otherCTAInput.checked &&
-      document.querySelector(`.${ID}__detailsInfoContainer textarea`).value === ''
+      document.querySelector(`.${ID}__detailsInfoContainer textarea`).value.trim().length < 3
     ) {
       e.preventDefault();
       e.stopPropagation();
       errorHandle(true);
     } else if (target.closest('.fe-next-button button') &&
     otherCTAInput.checked &&
-    document.querySelector(`.${ID}__detailsInfoContainer textarea`).value.length > 0) {
+    document.querySelector(`.${ID}__detailsInfoContainer textarea`).value.trim().length > 2) {
       const roleValue = document.querySelector(`.${ID}__detailsInfoContainer textarea`).value;
+      //console.log('role value: ', roleValue);
       postRole(roleValue);
       const selectedOption = document.querySelector('div.step_one #fe-form-answers button.fe-active span').getAttribute('data');
       trackGAEvent('funnelenvy', 'Qualifying question', 'Other answer submitted');
