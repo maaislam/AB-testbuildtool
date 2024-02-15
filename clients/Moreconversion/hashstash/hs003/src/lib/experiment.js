@@ -40,6 +40,7 @@ const init = () => {
 
   anchorPoint.insertAdjacentHTML('afterend', shippingInfoHtml);
 
+  console.log('🚀 ~ init ~ basketTotalPrice:', basketTotalPrice);
   if (basketTotalPrice < 65) {
     document.querySelector('.cart-drawer').classList.add(`${ID}__below65`);
   } else {

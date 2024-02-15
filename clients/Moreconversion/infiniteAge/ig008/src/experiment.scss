@@ -138,10 +138,40 @@
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1;
         width: 100%;
         height: 100%;
-        background: transparent;
-        z-index: 1;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 5px;
+          left: 60px;
+          width: 140px;
+          height: 70px;
+          background-image: url(https://cdn.shopify.com/s/files/1/0267/7080/0737/files/click-to-turn-on-sound.webp?v=1707774895);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          transition: max-width 200ms ease 0s;
+          z-index: 2;
+          animation: pulse 1.5s infinite;
+        }
+
+        & [aria-label='Click for sound'] {
+          & > div {
+            opacity: 0;
+          }
+        }
+        &:hover {
+          & [aria-label='Click for sound'] {
+            width: auto !important;
+            & > div {
+              max-width: 1000px !important;
+              opacity: 1;
+            }
+          }
+        }
       }
     }
 
@@ -170,6 +200,19 @@
       img.bnrprd-v2-mob + .#{$id}__heroVideo {
         display: block;
       }
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.95);
     }
   }
 }
