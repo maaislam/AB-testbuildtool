@@ -1,0 +1,10 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .variant-wrapper fieldset[name='Model'] {
+    .variant-input[data-value='3.2L'] {
+      display: none;
+    }
+  }
+}
