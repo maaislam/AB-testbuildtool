@@ -28,9 +28,7 @@ const init = () => {
       <div class="${ID}__uspsList">
         ${uspsData.map((usps) => `
           <div class="${ID}__uspItem">
-            <span class="${ID}__icon">
-              ${checkboxIcon}
-            </span>
+            
             <div class="${ID}__details">${usps.details}</div>
           </div>
         `).join('')}
