@@ -8,9 +8,9 @@ const { ID, VARIATION } = shared;
 
 const init = () => {
   const thresholdPrice = 85;
-  const basketTotalPriceCtrl = document.querySelector(
-    '.rebuy-cart__flyout-subtotal-amount'
-  ).textContent;
+  const basketTotalPriceCtrl =
+    document.querySelector('.rebuy-cart__flyout-subtotal-amount')?.textContent ||
+    document.querySelector('.drawer__inner .drawer__footer .cart__item-sub .money')?.textContent;
 
   const match = basketTotalPriceCtrl.match(/\d+\.\d+/);
   const basketTotalPrice = match ? +match[0] : 0;
@@ -32,7 +32,9 @@ const init = () => {
     </div>
   `;
 
-  const anchorPoint = document.querySelector('.rebuy-cart__flyout-content.has-items');
+  const anchorPoint =
+    document.querySelector('.rebuy-cart__flyout-content.has-items') ||
+    document.querySelector('#CartDrawer.drawer--is-open .drawer__inner');
 
   if (document.querySelector(`.${ID}__shippingInfo`)) {
     document.querySelector(`.${ID}__shippingInfo`).remove();
@@ -44,6 +46,7 @@ const init = () => {
 export default () => {
   setup();
   console.log(ID);
+
   const configObj = {
     childList: true,
     subtree: false,
@@ -55,8 +58,14 @@ export default () => {
       if (document.querySelector('.rebuy-cart__flyout-content.has-items')) {
         init();
       }
+      if (document.querySelector('#CartDrawer.drawer--is-open:not(.is-empty)')) {
+        init();
+      }
+      if (document.querySelector('#CartDrawer.drawer--is-open.is-empty')) {
+        document.querySelector(`#CartDrawer .${ID}__shippingInfo`)?.remove();
+      }
       if (document.querySelector('.rebuy-cart__flyout-content.no-items')) {
-        document.querySelector(`.${ID}__shippingInfo`)?.remove();
+        document.querySelector(`.rebuy-cart__flyout-content .${ID}__shippingInfo`)?.remove();
       }
     },
     configObj
