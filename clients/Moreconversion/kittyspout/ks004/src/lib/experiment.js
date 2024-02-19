@@ -1,10 +1,9 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { observeDOM } from './helpers/utils';
 import progressBar from './components/progressBar';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const thresholdPrice = 85;
@@ -16,10 +15,7 @@ const init = () => {
   const basketTotalPrice = match ? +match[0] : 0;
 
   const isThresholdMet = basketTotalPrice < thresholdPrice;
-  if (isThresholdMet) {
-    //fireEvent('user meets the threshold');
-  }
-  console.log(basketTotalPrice);
+  //console.log(basketTotalPrice);
 
   const progressWidth = (basketTotalPrice / thresholdPrice) * 100;
   const deductedPrice = isThresholdMet && (thresholdPrice - basketTotalPrice).toFixed(2);
@@ -45,7 +41,6 @@ const init = () => {
 
 export default () => {
   setup();
-  console.log(ID);
 
   const configObj = {
     childList: true,
