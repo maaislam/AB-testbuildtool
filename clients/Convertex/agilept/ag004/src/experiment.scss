@@ -1,0 +1,25 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__uspsContainer {
+        padding: 30px 15px 15px;
+
+        .#{$id}__uspsList {
+            .#{$id}__uspItem {
+                display: flex;
+                gap: 8px;
+
+                .#{$id}__icon {
+                    padding-top: 2px;
+                    svg {
+                        width: 16px !important;
+                        height: 16px;
+                    }
+                }
+
+                .#{$id}__details {}
+            }
+        }
+    }
+}
