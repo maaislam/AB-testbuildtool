@@ -28,7 +28,6 @@ const init = () => {
       <div class="${ID}__uspsList">
         ${uspsData.map((usps) => `
           <div class="${ID}__uspItem">
-            
             <div class="${ID}__details">${usps.details}</div>
           </div>
         `).join('')}
