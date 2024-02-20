@@ -19,4 +19,21 @@
             font-weight: 600;
         }
     }
+
+    .page-title {
+        span {
+            font-weight: 700;
+            font-size: 30px !important;
+            color: #333 !important;
+        }
+    }
+
+    .page-title-wrapper {
+        .#{$id}__productAttributes {
+            width: 65%;
+            margin: 12px 0;
+            color: #333 !important;
+            font-weight: 600;
+        }
+    }
 }

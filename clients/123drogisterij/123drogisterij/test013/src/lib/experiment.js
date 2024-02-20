@@ -4,7 +4,8 @@ import shared from './shared/shared';
 const { ID } = shared;
 
 const init = () => {
-  const anchorPoint = document.querySelector('.custpro .product.mob-name-cust');
+  const mobileAnchorPoint = document.querySelector('.custpro .product.mob-name-cust');
+  const desktopAnchorPoint = document.querySelector('.page-title');
 
   const absorptievermogen = document.querySelector('[data-th="Absorptievermogen"]').closest('tr').querySelector('th').textContent;
   const absorptievermogenValue = document.querySelector('[data-th="Absorptievermogen"]').textContent;
@@ -22,7 +23,8 @@ const init = () => {
   </div>`;
 
   if (!document.querySelector(`.${ID}__productAttributes`)) {
-    anchorPoint.insertAdjacentHTML('afterend', htmlStr);
+    mobileAnchorPoint.insertAdjacentHTML('afterend', htmlStr);
+    desktopAnchorPoint.insertAdjacentHTML('afterend', htmlStr);
   }
 };
 
