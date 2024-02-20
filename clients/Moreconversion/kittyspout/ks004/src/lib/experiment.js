@@ -36,8 +36,12 @@ const init = () => {
     document.querySelector('.rebuy-cart__flyout-content.has-items') ||
     document.querySelector('#CartDrawer.drawer--is-open .drawer__inner');
 
-  if (document.querySelector(`.${ID}__shippingInfo`)) {
-    document.querySelector(`.${ID}__shippingInfo`).remove();
+  if (document.querySelector(`#CartDrawer .${ID}__shippingInfo`)) {
+    document.querySelector(`#CartDrawer .${ID}__shippingInfo`).remove();
+  }
+
+  if (document.querySelector(`.rebuy-cart__flyout-content .${ID}__shippingInfo`)) {
+    document.querySelector(`.rebuy-cart__flyout-content .${ID}__shippingInfo`).remove();
   }
 
   anchorPoint.insertAdjacentHTML('afterbegin', shippingInfoHtml);
