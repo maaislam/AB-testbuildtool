@@ -1,0 +1,12 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  header {
+    .#{$id}__banner {
+    }
+    div[data-qaid='header-bottom-merchArea-0']:not(.#{$id}__banner) {
+      display: none;
+    }
+  }
+}

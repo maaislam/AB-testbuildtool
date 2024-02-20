@@ -11,7 +11,7 @@ const init = () => {
     document.querySelector('.rebuy-cart__flyout-subtotal-amount') ||
     document.querySelector('.drawer__inner .drawer__footer .cart__item-sub .money');
 
-    //console.log('basketTotalPriceCtrl: ', basketTotalPriceCtrl());
+  //console.log('basketTotalPriceCtrl: ', basketTotalPriceCtrl());
 
   pollerLite([() => basketTotalPriceCtrl()], () => {
     const match = basketTotalPriceCtrl().textContent.match(/\d+\.\d+/);
@@ -35,7 +35,7 @@ const init = () => {
       document.querySelector('.rebuy-cart__flyout-content.has-items') ||
       document.querySelector('#CartDrawer.drawer--is-open .drawer__inner') ||
       document.querySelector('.drawer__inner');
-    const anchorPoint2 = document.querySelector('.drawer__inner');
+
     if (document.querySelector(`.${ID}__shippingInfo`)) {
       document.querySelectorAll(`.${ID}__shippingInfo`).forEach((el) => el.remove());
     }
