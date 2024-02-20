@@ -5,7 +5,10 @@ const { ID } = shared;
 
 const init = () => {
   const anchorPoint = document.querySelector('.shopify-section.section');
-  const catDrinkingWater = document.querySelectorAll('.shopify-section .index-section .feature-row-wrapper')[2];
+  const catDrinkingWater = document.querySelectorAll(
+    '.shopify-section .index-section .feature-row-wrapper'
+  )[2];
+  catDrinkingWater.classList.add(`${ID}__catDrinkingWater`);
 
   if (anchorPoint && catDrinkingWater) {
     const catDrinkingWaterSection = catDrinkingWater.closest('.shopify-section');

@@ -7,6 +7,7 @@ const common = require('./webpack.common');
 module.exports = merge(common, {
   // Set the mode to development or production
   mode: 'development',
+
   experiments: {
     backCompat: true
   },
@@ -32,6 +33,9 @@ module.exports = merge(common, {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': '*',
       'Access-Control-Allow-Headers': '*'
+    },
+    client: {
+      overlay: false
     }
   },
 

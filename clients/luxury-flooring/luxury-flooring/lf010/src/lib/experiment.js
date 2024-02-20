@@ -10,18 +10,27 @@ const floorFinderStr = () => {
 };
 
 export default () => {
-  setup(); //use if needed
+  setup();
+  if (window.location.href.includes('quiz-rkHWx0')) {
+    //document.querySelector(`.${ID}__floorFinder`).style.display = 'none';
+    document.body.classList.add('quiz');
+    const rhModal = document.querySelector('.rh-modal');
+    if (rhModal) {
+      rhModal.style.zIndex = null;
+      //rhModal.style.zIndex = '9999999999';
+    }
 
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
+    const chatWidget = document.querySelector('##hubspot-messages-iframe-container');
+    if (chatWidget) {
+      chatWidget.style.zIndex = null;
+      chatWidget.style.zIndex = '9999999';
+    }
+  }
 
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+  if (VARIATION === 'control') {
+    return;
+  }
+
   if (!document.querySelector(`.${ID}__floorFinder`)) {
     document.body.insertAdjacentHTML('beforeend', floorFinderStr());
   }

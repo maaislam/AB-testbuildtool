@@ -5,6 +5,16 @@
   #hubspot-messages-iframe-container {
     z-index: 9997 !important;
   }
+
+  .quiz {
+    .rh-modal {
+      z-index: 9999999998 !important;
+    }
+    .#{$id}__floorFinder {
+      display: none;
+    }
+  }
+
   .#{$id}__floorFinder {
     position: fixed;
     top: 60%;

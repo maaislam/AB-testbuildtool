@@ -1,6 +1,9 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
+#webpack-dev-server-client-overlay-div {
+  display: none !important;
+}
 .#{$id} {
   .#{$id}__shippingInfo {
     width: 100%;

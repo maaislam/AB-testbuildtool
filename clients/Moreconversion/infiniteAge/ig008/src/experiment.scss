@@ -134,6 +134,8 @@
     .#{$id}__video-wrapper {
       position: relative;
       overflow: hidden;
+      width: max-content;
+      margin: 0 auto;
       .video-overlay {
         position: absolute;
         top: 0;
@@ -145,7 +147,7 @@
         &::before {
           content: '';
           position: absolute;
-          top: 5px;
+          top: 20px;
           left: 60px;
           width: 140px;
           height: 70px;
@@ -156,9 +158,16 @@
           transition: max-width 200ms ease 0s;
           z-index: 2;
           animation: pulse 1.5s infinite;
+
+          @include max-media-query(lg) {
+            left: 0;
+          }
         }
 
         & [aria-label='Click for sound'] {
+          @include max-media-query(lg) {
+            right: 0 !important;
+          }
           & > div {
             opacity: 0;
           }
