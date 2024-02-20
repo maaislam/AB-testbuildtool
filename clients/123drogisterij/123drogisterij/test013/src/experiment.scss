@@ -1,0 +1,22 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .custpro.cust-mob-name-cust {
+        text-align: center;
+
+        .product.mob-name-cust {
+            .value {
+                font-weight: 700;
+                font-size: 24px !important;
+                color: #333 !important;
+            }
+        }
+
+        .#{$id}__productAttributes {
+            margin-top: 12px;
+            color: #333 !important;
+            font-weight: 600;
+        }
+    }
+}
