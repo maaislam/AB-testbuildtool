@@ -11,12 +11,14 @@ const init = () => {
     document.querySelector('.rebuy-cart__flyout-subtotal-amount') ||
     document.querySelector('.drawer__inner .drawer__footer .cart__item-sub .money');
 
+    //console.log('basketTotalPriceCtrl: ', basketTotalPriceCtrl());
+
   pollerLite([() => basketTotalPriceCtrl()], () => {
     const match = basketTotalPriceCtrl().textContent.match(/\d+\.\d+/);
     const basketTotalPrice = match ? +match[0] : 0;
 
+    //console.log('basketTotalPrice: ', basketTotalPrice);
     const isThresholdMet = basketTotalPrice < thresholdPrice;
-    //console.log(basketTotalPrice);
 
     const progressWidth = (basketTotalPrice / thresholdPrice) * 100;
     const deductedPrice = isThresholdMet && (thresholdPrice - basketTotalPrice).toFixed(2);
@@ -39,7 +41,7 @@ const init = () => {
     }
     //console.log('🚀 ~ pollerLite ~ anchorPoint:', anchorPoint);
 
-    anchorPoint2?.insertAdjacentHTML('afterbegin', shippingInfoHtml);
+    //anchorPoint2?.insertAdjacentHTML('afterbegin', shippingInfoHtml);
     anchorPoint?.insertAdjacentHTML('afterbegin', shippingInfoHtml);
   });
 };
@@ -52,7 +54,7 @@ export default () => {
   document.addEventListener('submit', (e) => {
     if (e.target.closest('form')) {
       pollerLite(['.rebuy-cart__flyout-content.has-items'], () => {
-        console.log('form submitted');
+        //console.log('form submitted');
         init();
       });
     }
@@ -61,11 +63,14 @@ export default () => {
   const configObj = {
     childList: true,
     subtree: false,
-    attributes: false
+    attributes: true,
+    characterData: true,
+    characterDataOldValue: true
   };
   observeDOM(
     'body',
     () => {
+      init();
       pollerLite(['.rebuy-cart__flyout-content.has-items'], () => {
         init();
       });
