@@ -5,7 +5,7 @@ const wistiaOverlay = () => {
     style="display: block;height: 100%;left: 0px;pointer-events: auto;position: absolute;top: 0px;width: 100%;z-index: 9999;">
    <button aria-label="Click for sound"
            class="w-vulcan-v2-button click-for-sound-btn"
-           style="width:50px;height:50px;background: rgba(0, 0, 0, 0.8);border: 2px solid transparent;border-radius: 60px;cursor: pointer;display: flex;justify-content: space-between;align-items: center;outline: none;pointer-events: auto;position: absolute;right: 60px;top: 20px;height: 46px;width: 47px;">
+           style="width:50px;height:50px;background: rgba(0, 0, 0, 0.8);border: 2px solid transparent;border-radius: 60px;cursor: pointer;display: flex;justify-content: space-between;align-items: center;outline: none;pointer-events: auto;position: absolute;right: 60px;top: 35px;height: 46px;width: 47px;">
        <div
             style="display: flex;align-items: center;justify-content: flex-end;white-space: nowrap;overflow: hidden;max-width: 0px;transition: max-width 200ms ease 0s;">
            <span

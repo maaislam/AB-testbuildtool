@@ -2,7 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+  &__catDrinkingWater {
+    & > div {
+      flex-direction: row-reverse !important;
+      gap: 10px;
     }
+  }
 }
