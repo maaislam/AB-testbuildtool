@@ -1,0 +1,26 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &-1 {
+        form.form .container .row .select-change:last-child {
+            order: -2
+        }
+
+        form.form .oneetime .container .pkg_strip {
+            margin-right: 0 !important;
+        }
+    }
+
+    &-3 {
+        form.form .oneetime .container .row {
+            .package-card__text-1 {
+                order: -2
+            }
+        }
+
+        form.form .oneetime .container .pkg_strip {
+            margin-left: 0 !important;
+        }
+    }
+}
