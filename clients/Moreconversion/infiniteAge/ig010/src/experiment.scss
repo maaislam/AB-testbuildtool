@@ -1,0 +1,54 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &-1 {
+        @include media-query(sm) {
+            .pkg-container {
+                display: flex;
+                flex-direction: column;
+
+                .pkg3 {
+                    order: -2;
+                }
+            }
+        }
+    }
+
+    &-2 {
+        .pkg-container {
+            display: flex;
+            gap: 10px;
+
+            @include media-query(sm) {
+                flex-direction: column;
+            }
+
+            .pkg3 {
+                order: 2;
+            }
+
+            .pkg2 {
+                position: initial !important;
+            }
+        }
+    }
+
+    &-3 {
+        .pkg-container {
+            display: flex;
+
+            @include media-query(sm) {
+                flex-direction: column;
+            }
+
+            .pkg1 {
+                order: -2;
+            }
+
+            .pkg2 {
+                position: initial !important;
+            }
+        }
+    }
+}
