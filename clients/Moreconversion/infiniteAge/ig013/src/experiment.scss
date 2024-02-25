@@ -3,19 +3,28 @@
 
 .#{$id} {
     &__atcBtn {
-        height: 58px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
+        padding: 12px 8px;
         background-color: #25A752;
         color: #fff;
         font-size: 20px;
         font-weight: 600;
-        letter-spacing: 1.1px;
+        letter-spacing: 1px;
         text-transform: uppercase;
         border: none;
         border-radius: 8px;
+        cursor: pointer;
+
+        .#{$id}__btnContent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .#{$id}__guaranteeText {
+            font-size: 12px;
+            font-weight: 300;
+        }
 
         span {
             svg {
@@ -26,7 +35,7 @@
         }
     }
 
-    &__atcBtn ~ img {
+    &__atcBtn~img {
         display: none;
     }
 }
