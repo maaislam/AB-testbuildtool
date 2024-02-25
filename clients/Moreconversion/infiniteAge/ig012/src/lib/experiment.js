@@ -12,9 +12,8 @@ export default () => {
     document.addEventListener('click', (e) => {
       const { target } = e;
 
-      if (target.closest('a.pulse')) {
+      if (target.closest('a.pulse') || target.closest('.ctabtn.mobbtn')) {
         e.preventDefault();
-
         window.location.href = '/pages/lp2-special';
       }
     });
