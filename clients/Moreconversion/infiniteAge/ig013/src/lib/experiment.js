@@ -5,7 +5,7 @@ import cartIcon from './assets/cartIcon';
 const { ID } = shared;
 
 const init = () => {
-  const atcBtns = document.querySelectorAll('.pkg-container .pkgrgt div > a.onetime');
+  const atcBtns = document.querySelectorAll('.pkg-container a.onetime');
 
   const htmlStr = `<button class='${ID}__atcBtn pkgbtn'>
     <div class='${ID}__btnContent'>
@@ -14,6 +14,8 @@ const init = () => {
     </div>
     <span class='${ID}__guaranteeText'>100% Money Back Guarantee</span>
   </button>`;
+
+  if (document.querySelector(`.${ID}__atcBtn`)) return;
 
   atcBtns.forEach((btn) => {
     btn.insertAdjacentHTML('afterbegin', htmlStr);

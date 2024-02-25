@@ -2,17 +2,27 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    div.show-767 * {
+        margin-bottom: 0 !important;
+    }
+
     &__atcBtn {
         padding: 12px 8px;
         background-color: #25A752;
         color: #fff;
         font-size: 20px;
+        line-height: 20px;
         font-weight: 600;
         letter-spacing: 1px;
         text-transform: uppercase;
         border: none;
         border-radius: 8px;
         cursor: pointer;
+
+        @include media-query(sm) {
+            padding: 12px 16px;
+            font-size: 18px;
+        }
 
         .#{$id}__btnContent {
             display: flex;
