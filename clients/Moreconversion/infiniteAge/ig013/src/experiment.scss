@@ -1,0 +1,32 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__atcBtn {
+        height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #25A752;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 8px;
+
+        span {
+            svg {
+                margin-top: 4px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &__atcBtn ~ img {
+        display: none;
+    }
+}
