@@ -1,0 +1,26 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .product__info-container {
+    .usp {
+      & > .usp {
+        p#usp {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  #main-cart-footer {
+    .cart__footer {
+      .js-contents {
+        .tax-note {
+          display: none;
+        }
+      }
+    }
+  }
+}
