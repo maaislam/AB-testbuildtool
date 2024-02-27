@@ -1,0 +1,28 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .modal.betting-odds {
+    .odds-holder {
+      .#{$id}__hidden {
+        display: none !important;
+      }
+
+      .betrow {
+        .bookmaker.dafabet {
+          background-color: #bf0202;
+        }
+        .bookmaker.fun88 {
+          background-color: #00aae7;
+        }
+        .bookmaker.stake {
+          background-color: #00263b;
+        }
+
+        .bookmaker.satbet {
+          background-color: #febd02;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .product__info-wrapper {
+    variant-radios {
+      fieldset.product-form__input {
+        legend {
+          & ~ * {
+            display: none;
+          }
+        }
+      }
+    }
+    fieldset {
+      &.#{$id}__swatchContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        .#{$id}__swatchItem {
+          width: 38px;
+          height: 38px;
+          border: solid 1px #463e4f;
+          border-radius: 50%;
+          cursor: pointer;
+          svg {
+            display: none;
+          }
+          &.#{$id}__selected {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            //background-color: #fff !important;
+            border: solid 2px #9783e4;
+            svg {
+              display: initial;
+            }
+          }
+        }
+      }
+    }
+  }
+}
