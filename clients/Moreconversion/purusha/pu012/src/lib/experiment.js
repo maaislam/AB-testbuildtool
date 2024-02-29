@@ -1,0 +1,22 @@
+import setup from './services/setup';
+import shared from './shared/shared';
+
+const { ID, VARIATION } = shared;
+
+function changeText(selector, text) {
+  document.querySelector(selector).innerText = text;
+}
+
+export default () => {
+  setup(); //use if needed
+  console.log(ID);
+  const data = {
+    '.SectionHeader__SubHeading.Heading.u-h6' : 'is what you want sold out?',
+    '.SectionHeader__SubHeading.Heading.u-h6 + .u-h1': 'ENTER TO WIN $200!',
+    '.SectionHeader__SubHeading.Heading.u-h6 + .u-h1 + .SectionHeader__Description p': "Register to be among the first to access new releases, explore Hayley's insights on sustainability, and seize the opportunity to win a $200 gift card every month!"
+  }
+
+  Object.keys(data).forEach(key => {
+    changeText(key, data[key]);
+  });
+}

@@ -1,0 +1,49 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__section {
+        padding-left: 90px !important;
+        padding-right: 90px !important;
+
+        @media screen and (max-width: 1008px) {
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+    }
+
+    &__container {
+        display: flex;
+        gap: 30px;
+        max-width: 1180px;
+        margin: 0 auto;
+
+        >div {
+            flex: 1;
+        }
+
+        @media screen and (max-width: 1008px) {
+            flex-direction: column;
+            text-align: center;
+            max-width: 88vw;
+        }
+    }
+
+    &__description {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__heading {
+        font-weight: 400;
+        font-size: 27px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+
+        @media screen and (max-width: 1008px) {
+            font-size: 23px;
+        }
+    }
+}
