@@ -2,7 +2,18 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    button.Cart__Checkout#checkout_btn {
+        border: 1px solid black;
+        color: black;
+        font-weight: 700;
+
+        &::before {
+            background: #F2E6DF;
+        }
+
+        span::after {
+            content: "»";
+            padding-left: 3px;
+        }
     }
 }
