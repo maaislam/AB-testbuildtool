@@ -11,12 +11,13 @@
         line-height: 1;
         margin-bottom: 64px;
         text-align: center;
-        line-height: 20px;
+        line-height: 15px;
 
         @media screen and (max-width: 768px){
             width: 290px;
             margin: 0 auto;
             margin-bottom: 32px;
+            line-height: 20px;
         }
     }
     &__tooltip {
