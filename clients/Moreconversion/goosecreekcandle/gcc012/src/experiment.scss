@@ -2,7 +2,24 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    &__container {
+        // display: flex;
+        // gap: 8px;
+        font-size: 12px;
+        // justify-content: center;
+        // align-items: center;
+        line-height: 1;
+        margin-bottom: 64px;
+        text-align: center;
+        line-height: 20px;
+
+        @media screen and (max-width: 768px){
+            width: 290px;
+            margin: 0 auto;
+            margin-bottom: 32px;
+        }
+    }
+    &__tooltip {
+        cursor: pointer;
     }
 }
