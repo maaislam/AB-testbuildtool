@@ -17,10 +17,6 @@
         }
     }
 
-    .Drawer[aria-hidden=false] [data-drawer-animated-bottom] {
-        padding-bottom: 20px;
-    }
-
     .PageOverlay.is-visible~.amped-wrapper,
     .Cart.Drawer__Content .Drawer__Container>p,
     .Cart.Drawer__Content [class*="free_shipping_card_progress"] {
@@ -70,7 +66,19 @@
         transition: width 2s;
     }
 
+    .Drawer__Footer {
+        .Cart__Taxes {
+            display: none;
+        }
+        .Cart__NoteButton[data-action="toggle-cart-note"] {
+            display: none;
+        }
+    }
+
     &-2 {
+        .Drawer[aria-hidden=false] [data-drawer-animated-bottom] {
+            padding-bottom: 20px;
+        }
         .Drawer[aria-hidden=false] [data-drawer-animated-bottom]::after {
             content: 'Free 45 Day Returns';
             font-style: italic;

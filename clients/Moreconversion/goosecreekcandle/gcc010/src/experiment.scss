@@ -1,0 +1,38 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__container {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 32px;
+    }
+
+    &__stock-message {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 12px;
+    }
+    &__stock-bar {
+        margin: 0 24px;
+        height: 8px;
+        background: #EAECF0;
+        border-radius: 100px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: var(--stock-bar-percentage, 0%);
+            height: 100%;
+            background: #9888B4;
+            border-radius: 100px;
+            left: 0;
+            top: 0;
+        }
+    }
+}
