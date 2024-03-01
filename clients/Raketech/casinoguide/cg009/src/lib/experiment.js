@@ -21,10 +21,12 @@ const casinoMessageStr = (id, messages) => {
 
 const init = () => {
   //const casino = document.querySelector('.mui-1xlzx9v');
-  const casino = document.querySelectorAll('#sticky-cta-container .mui-6tgflj .mui-1pfard8');
+  //const casino = document.querySelectorAll('#sticky-cta-container .mui-6tgflj .mui-1pfard8');
+  const casino = document.querySelectorAll('#sticky-cta-container .mui-p8iq1o');
   if (!casino.length) return;
 
-  const messages = [...casino].map((message) => message.querySelector('.mui-p8iq1o')?.innerText);
+  const messages = [...casino].map((message) => message?.innerText);
+  //const messages = [...casino].map((message) => message.querySelector('.mui-p8iq1o')?.innerText);
 
   //const casinoMessage = casino.cloneNode(true);
   //if (casinoMessage) casinoMessage.id = `${ID}__casinoMessage`;
