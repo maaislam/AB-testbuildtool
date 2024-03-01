@@ -2,7 +2,7 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    .ImageHero--newsletter .SectionHeader.SectionHeader {
+        margin-bottom: 40px !important;
     }
 }
