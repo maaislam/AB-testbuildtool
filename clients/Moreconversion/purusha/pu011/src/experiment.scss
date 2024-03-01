@@ -37,13 +37,15 @@
     }
 
     &__heading {
+        font-family: Stract !important;
         font-weight: 400;
-        font-size: 27px;
+        font-size: 40px;
+        line-height: 40px;
         text-transform: uppercase;
         letter-spacing: 4px;
 
         @media screen and (max-width: 1008px) {
-            font-size: 23px;
+            font-size: 26px;
         }
     }
 }
