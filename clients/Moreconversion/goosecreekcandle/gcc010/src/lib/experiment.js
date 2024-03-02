@@ -17,9 +17,13 @@ const templateHTML = () => `<div class="${ID}__container">
 </div>`;
 
 const updateStockBar = () => {
+  const INVENTORY_THRESHOLD = 20;
+
   const stockBar = document.querySelector(`.${ID}__stock-bar`);
-  const stockBarWidthPercentage = 50;
-  // const stockBarWidthPercentage = 100 - (100 * (window.innerWidth - window.scrollX)) / document.body.scrollWidth;
+  const inventoryQuantity = parseInt(document.querySelector('.variant-inventory').textContent, 10);
+
+  console.log(inventoryQuantity);
+  const stockBarWidthPercentage = inventoryQuantity >= INVENTORY_THRESHOLD ? 100 : (100 * inventoryQuantity) / INVENTORY_THRESHOLD;
 
   stockBar.style.setProperty('--stock-bar-percentage', `${stockBarWidthPercentage}%`);
 };
@@ -28,7 +32,7 @@ export default () => {
   setup(); //use if needed
   console.log(ID);
 
-  pollerLite(['#purchase'], () => {
+  pollerLite(['#purchase', '.variant-inventory'], () => {
     !document.querySelector(`.${ID}__container`) && document.querySelector('#purchase').insertAdjacentHTML('afterend', templateHTML());
     updateStockBar();
   })
