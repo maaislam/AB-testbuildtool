@@ -1,0 +1,22 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #container-main {
+    div[data-qaid='product-grid'] {
+      .HfYajj {
+        .EkX3Pq {
+          flex-direction: column;
+          align-items: baseline;
+          flex-wrap: initial;
+          .#{$id}__perLitre {
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 13px;
+            color: #636363;
+          }
+        }
+      }
+    }
+  }
+}
