@@ -1,0 +1,35 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+
+}
+
+.grid__item li {
+	position: relative;
+}
+
+.grid__item li .badgeContainer {
+	display: block !important;
+}
+
+.grid__item li .sale {
+	border-radius: 71px;
+}
+
+.grid__item li .bestSeller {
+	border-radius: 4px;
+}
+
+.grid__item li .bestSeller, .grid__item li .sale {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 3px 6px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 600;
+	background: #9888B4;
+	z-index: 10;
+}

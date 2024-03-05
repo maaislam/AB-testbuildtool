@@ -2,6 +2,11 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    .product-page--submit-action {
+        a.btn {
+            margin-bottom: 14px !important;
+        }
+    }
     &__container {
         display: flex;
         text-align: center;
@@ -16,6 +21,7 @@
         justify-content: center;
         gap: 8px;
         font-size: 12px;
+        line-height: 15px;
     }
     &__stock-bar {
         margin: 0 24px;
