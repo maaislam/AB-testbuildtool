@@ -1,5 +1,4 @@
 import setup from './services/setup';
-
 import shared from './shared/shared';
 import delivery from './components/delivery';
 
