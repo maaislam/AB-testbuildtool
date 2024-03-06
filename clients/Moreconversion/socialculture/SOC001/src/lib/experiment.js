@@ -1,7 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
 import colorStr from './components/colorStr';
 //eslint-disable-next-line import/named
 import { colorSwatches } from './data/data';
@@ -10,8 +8,6 @@ const { ID, VARIATION } = shared;
 
 export default () => {
   setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
 
   const colorSection = document
     .querySelector('template[x-for="(value, index) in colors"]')
