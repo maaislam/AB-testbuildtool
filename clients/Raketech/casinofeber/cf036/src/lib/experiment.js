@@ -69,6 +69,9 @@ export default () => {
         .closest('.toplist .cta-container')
         .querySelector('a[data-type="button"]').dataset.operator;
       gaTracking(`${casinoName} CTA CTR`);
+    } else if (e.target.closest('a[data-type="button"]')) {
+      const casinoName = e.target.closest('a[data-type="button"]').dataset.operator;
+      gaTracking(`${casinoName} CTA CTO (Button)`);
     }
   });
 
@@ -83,6 +86,8 @@ export default () => {
     termsUrl: 'https://www.stodlinjen.se/',
     url: 'https://www.casinofeber.se/spela/speedy-casino'
   };
+
+  if (window.location.pathname !== '/') return;
 
   init(data);
   observeDOM('.toplist-holder', () => {

@@ -15,7 +15,7 @@ const gaTracking = (label) => {
       event: 'cro_event',
       event_detail: GA4_INTERNAL_EXPERIMENT_ID,
       event_category: EXPERIMENT_DEVICE_CATEGORY,
-      event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | V:${varTitle} | ${label}`,
+      event_label: `${GA4_INTERNAL_EXPERIMENT_NUM} | V${varTitle} | ${label}`,
       send_to: GA4_PROPERTY_ID
     });
   });

@@ -1,0 +1,25 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .product-header1_layout {
+    .product-button-block {
+      .#{$id}__delivery {
+        display: flex;
+        align-items: center;
+        &-text {
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 28px;
+          @include media-query(xsm) {
+            font-size: 11px;
+          }
+        }
+        &-icon {
+          display: flex;
+          margin: 0 6px;
+        }
+      }
+    }
+  }
+}
