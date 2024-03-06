@@ -49,3 +49,28 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
+const calculateBusinessDays = (fromDate, daysToAdd) => {
+  const dayOfWeek = fromDate.getDay(); //0 = Sunday, 1 = Monday, etc.
+  let daysAdded = 0;
+  while (daysAdded < daysToAdd) {
+    fromDate.setDate(fromDate.getDate() + 1); //Add a day
+    if (fromDate.getDay() !== 0 && fromDate.getDay() !== 6) {
+      //Skip weekends
+      daysAdded++;
+    }
+  }
+  return fromDate;
+};
+
+export const displayDeliveryEstimate = () => {
+  const today = new Date();
+  const minDeliveryDate = calculateBusinessDays(new Date(), 3);
+  const maxDeliveryDate = calculateBusinessDays(new Date(), 5);
+
+  const options = { month: 'short', day: 'numeric' };
+  const minDeliveryDateString = minDeliveryDate.toLocaleDateString('en-US', options);
+  const maxDeliveryDateString = maxDeliveryDate.toLocaleDateString('en-US', { day: 'numeric' });
+
+  return ` ${minDeliveryDateString} - ${maxDeliveryDateString}.`;
+};
