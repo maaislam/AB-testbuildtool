@@ -8,36 +8,27 @@ const { ID, VARIATION } = shared;
 export default () => {
   setup();
 
-  const capitalizeWords = (str) => {
-    return str.replace(/\b\w/g, (char) => char.toUpperCase());
-  };
+  // const capitalizeWords = (str) => {
+  //   return str.replace(/\b\w/g, (char) => char.toUpperCase());
+  // };
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     //console.log('target', target);
-    if (target.closest('a.cta')) {
-      const casinoNameElem = target.closest('a');
-      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
-
-      if (!casinoName) return;
-      casinoName = casinoName.replace(/-/g, ' ');
-      casinoName = capitalizeWords(casinoName);
+    if (target.closest('.toplist .cta-container a[data-type="button"]')) { //BUTTON
+      const casinoName = target.closest('.toplist .cta-container a[data-type="button"]').dataset
+        .operator;
 
       gaTracking(`${casinoName} CTA CTO (Button)`);
-    } else if (target.closest('a[data-type="logo"]')) {
-      const casinoNameElem = target.closest('a');
-      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
-
-      if (!casinoName) return;
-      casinoName = casinoName.replace(/-/g, ' ');
-      casinoName = capitalizeWords(casinoName);
+    } else if (target.closest('.toplist .logo-container a[data-type="logo"]')) { //LOGO
+      const casinoName = target.closest('.toplist .logo-container a[data-type="logo"]').dataset
+        .operator;
 
       gaTracking(`${casinoName} CTA CTO (Logo)`);
-    } else if (target.closest('a.cta-review')) {
-      const casinoNameElem = target.closest('a.cta-review');
-      let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
-      casinoName = casinoName.replace(/-/g, ' ');
-      casinoName = capitalizeWords(casinoName);
+    } else if (target.closest('.toplist .cta-container a.cta-review')) { //REVIEW
+      const casinoName = e.target
+        .closest('.toplist .cta-container')
+        .querySelector('a[data-type="button"]').dataset.operator;
 
       gaTracking(`${casinoName} CTA CTR (Button)`);
     }
