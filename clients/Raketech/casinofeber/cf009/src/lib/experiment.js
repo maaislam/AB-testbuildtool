@@ -1,3 +1,4 @@
+import gaTracking from './services/gaTracking';
 import setup from './services/setup';
 
 import shared from './shared/shared';
@@ -13,8 +14,8 @@ export default () => {
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    console.log('target', target);
-    if (target.closest('a.visit')) {
+    //console.log('target', target);
+    if (target.closest('a.cta')) {
       const casinoNameElem = target.closest('a');
       let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
 
@@ -23,7 +24,7 @@ export default () => {
       casinoName = capitalizeWords(casinoName);
 
       gaTracking(`${casinoName} CTA CTO (Button)`);
-    } else if (target.closest('a.img')) {
+    } else if (target.closest('a[data-type="logo"]')) {
       const casinoNameElem = target.closest('a');
       let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
 
@@ -32,8 +33,8 @@ export default () => {
       casinoName = capitalizeWords(casinoName);
 
       gaTracking(`${casinoName} CTA CTO (Logo)`);
-    } else if (target.closest('a.review')) {
-      const casinoNameElem = target.closest('a.review');
+    } else if (target.closest('a.cta-review')) {
+      const casinoNameElem = target.closest('a.cta-review');
       let casinoName = casinoNameElem.getAttribute('href').split('/')[2];
       casinoName = casinoName.replace(/-/g, ' ');
       casinoName = capitalizeWords(casinoName);
