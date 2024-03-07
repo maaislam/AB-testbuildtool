@@ -13,6 +13,8 @@ export default () => {
   setup();
   console.log(ID);
 
+  let flag = false;
+
   const anchorPoint = document.querySelector('.product-add-form');
 
   const fakeButton = (id, sku) =>
@@ -89,8 +91,12 @@ export default () => {
         `form[data-product-sku="${sku}"] input[type="number"].input-text`
       );
 
-      if (closestLabel.dataset.quantity !== '1') {
+      if (
+        (closestLabel.dataset.quantity !== '1' && !flag) ||
+        (closestLabel.dataset.quantity === '1' && flag)
+      ) {
         activeInput.value = labelQty;
+        flag = !flag;
       }
 
       modalBody.querySelector('.price').innerText = formatPrice(labelPrice);
