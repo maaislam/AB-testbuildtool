@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "pu010",
+    ID: "SOC001",
     VARIATION: "1",
     CLIENT: "Moreconversion",
-    SITE: "purusha"
+    SITE: "socialculture"
   };

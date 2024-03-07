@@ -22,7 +22,10 @@ const updateStockBar = (inventoryQuantity) => {
   const INVENTORY_THRESHOLD = 20;
 
   const stockBar = document.querySelector(`.${ID}__stock-bar`);
-  const stockBarWidthPercentage = inventoryQuantity >= INVENTORY_THRESHOLD ? 100 : (100 * inventoryQuantity) / INVENTORY_THRESHOLD;
+  const stockBarWidthPercentage =
+    inventoryQuantity >= INVENTORY_THRESHOLD
+      ? 100
+      : (100 * inventoryQuantity) / INVENTORY_THRESHOLD;
 
   stockBar.style.setProperty('--stock-bar-percentage', `${stockBarWidthPercentage}%`);
 };
@@ -31,7 +34,10 @@ export default () => {
   setup();
 
   pollerLite(['#purchase', '.variant-inventory'], () => {
-    const inventoryQuantity = parseInt(document.querySelector('.variant-inventory').textContent, 10);
+    const inventoryQuantity = parseInt(
+      document.querySelector('.variant-inventory').textContent,
+      10
+    );
 
     const anchorPoint = document.querySelector('.product-page--submit-action');
 
@@ -39,7 +45,6 @@ export default () => {
       anchorPoint.insertAdjacentHTML('beforeend', templateHTML(inventoryQuantity));
     }
 
-    //!document.querySelector(`.${ID}__container`) && document.querySelector('#purchase').insertAdjacentHTML('afterend', templateHTML(inventoryQuantity));
     updateStockBar(inventoryQuantity);
   });
 };

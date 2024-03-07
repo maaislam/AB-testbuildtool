@@ -58,7 +58,7 @@ export default () => {
   //adjust positions of elements
   adjustElements();
 
-  observeDOM('#shopify-section-template--14598711443531__1658231130ef15e79f', () => {
+  observeDOM('#shopify-section-template--14877509681227__1658231130ef15e79f', () => {
     //console.log('🚀observeDOM');
     adjustElements();
   });

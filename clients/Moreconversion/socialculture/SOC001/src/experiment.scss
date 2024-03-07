@@ -1,0 +1,29 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .product-header1_layout {
+    .#{$id}__hidden {
+      display: none;
+    }
+    template[x-for='(value, index) in colors'] ~ * {
+      display: none;
+    }
+    .#{$id}__color-section {
+      display: flex;
+      gap: 6px;
+      .#{$id}__color-item {
+        padding: 10px;
+        border: solid 2px transparent;
+        border-radius: 50%;
+        span {
+          display: block;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
