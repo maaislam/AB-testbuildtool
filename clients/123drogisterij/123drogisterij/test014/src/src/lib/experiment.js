@@ -98,7 +98,6 @@ export default () => {
       });
       closestLabel.classList.add('active');
       const activeInput = document.querySelector(`input[data-sku="${sku}"]`);
-      console.log(activeInput, 'activeInput');
       activeInput.value = labelQty;
 
       modalBody.querySelector('.price').innerText = formatPrice(labelPrice);
