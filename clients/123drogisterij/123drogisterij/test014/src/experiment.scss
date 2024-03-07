@@ -6,8 +6,8 @@
     display: none;
   }
 
-  .action.tocart {
-    //display: none;
+  .action.tocart:not(.#{$id}__openmodal) {
+    display: none;
   }
 
   &__openmodal {

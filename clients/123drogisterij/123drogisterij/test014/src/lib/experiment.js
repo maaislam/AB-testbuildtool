@@ -37,15 +37,10 @@ export default () => {
     const { target } = e;
 
     if (target.closest(`.${ID}__atc`)) {
-      //get sku
       const modalForm = target.closest('.ppatc__popup-form');
       const variantsWrapper = modalForm.querySelector(`.${ID}__variants`);
       const sku = variantsWrapper.getAttribute('data-active-sku');
       const primaryForm = document.querySelector(`form[data-product-sku="${sku}"]`);
-      console.log(
-        'check',
-        primaryForm.querySelector(`button[type="submit"]:not(.${ID}__openmodal)`)
-      );
       primaryForm.querySelector(`button[type="submit"]:not(.${ID}__openmodal)`).click();
     } else if (target.closest(`.${ID}__denyoffer`)) {
       const modalForm = target.closest('.ppatc__popup-form');
@@ -55,14 +50,17 @@ export default () => {
       modalSubmitBtn.click();
     } else if (target.closest(`.${ID}__openmodal`)) {
       const closestParent = target.closest('.column.main');
-      //
       const productsData = getProductInfo(closestParent);
-      //
-      const primarySelectedOption = closestParent
-        .querySelector('label.custom-child-upsel-two')
-        .classList.contains('active');
-      //
-      if (productsData.variants.length > 1 && primarySelectedOption) {
+
+      const quantity = document.querySelector(
+        `form[data-product-sku="${sku}"] input[type="number"].input-text`
+      )?.value;
+
+      const firstOptionQuantity = document.querySelector(
+        `form[data-product-sku="${sku}"] label.custom-child-upsel-one input.custupsellpro`
+      )?.value;
+
+      if (productsData.variants.length > 1 && parseInt(quantity) < parseInt(firstOptionQuantity)) {
         const { sku } = target.closest('button').dataset;
         const modalInnerContent = document.querySelector('.ppatc__popup-items');
         modalInnerContent.innerHTML = '';
@@ -73,7 +71,6 @@ export default () => {
 
         return;
       }
-      //
       closestParent.querySelector(`.action.tocart:not(.${ID}__openmodal)`).click();
     } else if (target.closest(`.${ID}__variant`)) {
       const closestLabel = target.closest('label');
@@ -88,14 +85,14 @@ export default () => {
       });
       closestLabel.classList.add('active');
 
-      // const activeInput = document.querySelector(
-      //   `form[data-product-sku="${sku}"] input[type="number"].input-text`
-      // );
+      const activeInput = document.querySelector(
+        `form[data-product-sku="${sku}"] input[type="number"].input-text`
+      );
 
-      // if(closestLabel.dataset.quantity){
+      if (closestLabel.dataset.quantity !== '1') {
+        activeInput.value = labelQty;
+      }
 
-      // }
-      // activeInput.value = labelQty;
       modalBody.querySelector('.price').innerText = formatPrice(labelPrice);
     } else if (target.closest('.ppatc__popup-link')) {
       const prodUrl = document.querySelector('.ppatc__popup-items').dataset.href;
