@@ -4,7 +4,7 @@
 .#{$id} {
   @include media-query(sm) {
     .reel2Section {
-      padding-top: 0;
+      padding-top: 0px;
       padding-bottom: 0;
     }
   }
