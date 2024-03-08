@@ -65,6 +65,10 @@ export default () => {
         showAllItems();
       } else {
         hideItems();
+        target.closest('#showMoreButton').scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
       }
 
       gaTracking('Show All Casinos');
