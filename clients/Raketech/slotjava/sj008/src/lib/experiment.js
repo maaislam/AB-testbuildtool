@@ -67,10 +67,6 @@ export default () => {
         hideItems();
       }
 
-      target.closest('#showMoreButton').scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-      });
       gaTracking('Show All Casinos');
     } else if (target.closest('[href*="visita"]')) {
       const casinoNameElem = target.closest('a[href*="visita"]');
