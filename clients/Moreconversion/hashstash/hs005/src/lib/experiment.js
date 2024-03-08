@@ -1,5 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 import { pollerLite } from './helpers/utils';
 
@@ -45,8 +45,11 @@ const applyVariation2 = () => {
 
 export default () => {
   setup(); //use if needed
+<<<<<<< HEAD
+=======
   gaTracking('Conditions Met'); //use if needed
   console.log(ID);
+>>>>>>> eee73c2c7c6c4e394b54100b2c996c7d69750b49
 
   if (VARIATION === '1') {
     pollerLite(

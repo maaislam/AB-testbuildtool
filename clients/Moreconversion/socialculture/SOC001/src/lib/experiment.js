@@ -15,15 +15,19 @@ export default () => {
     .querySelector('template[x-for="(value, index) in colors"]')
     .closest('.product-materials-grid');
 
-  colorSection.classList.add(`${ID}__hidden`);
+  colorSection.closest('.product-materials-block').classList.add(`${ID}__hidden`);
 
   const colorElements = [...colorSection.querySelectorAll('label.product-materials-button')];
 
-  if (document.querySelector(`.${ID}__color-section`)) {
-    document.querySelector(`.${ID}__color-section`).remove();
+  if (document.querySelector(`.${ID}__color-swatch`)) {
+    document.querySelector(`.${ID}__color-swatch`).remove();
   }
 
-  colorSection.insertAdjacentHTML('afterend', colorStr(ID, colorElements));
+  const sizeContainer = document.querySelector('.product-size-block');
+
+  if (document.querySelector(`.${ID}__color-swatch`)) return;
+
+  sizeContainer.insertAdjacentHTML('beforebegin', colorStr(ID, colorElements));
 
   document.body.addEventListener('click', ({ target }) => {
     if (target.closest(`.${ID}__color-item`)) {
