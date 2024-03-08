@@ -1,13 +1,12 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
 
 export default () => {
   setup(); //use if needed
-  gaTracking('Conditions Met'); //use if needed
-  console.log(ID);
+
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
@@ -18,4 +17,6 @@ export default () => {
   //Write experiment code here
   //-----------------------------
   //...
+  const pill = document.querySelector('on-sale-badge[discount-mode="saving"]');
+  pill.innerHTML = 'Save $20.00';
 };
