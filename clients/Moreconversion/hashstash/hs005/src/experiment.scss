@@ -2,54 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &-1 {
-        .hs005_container {
-            display: flex;
-            gap: 11px;
-
-            @media screen and (max-width: 555px){
-                gap: 8px;
-            }
-        }
-
-        .product-info__complementary-products .hs005_container {
-            display: none;
-        }
-        @media screen and (max-width: 1000px){
-            .product-info__complementary-products .hs005_container {
-                display: flex;
-            }
-            .product-info__liquid + .hs005_container {
-                display: none;
-            }
-        }
+  @include media-query(sm) {
+    .reel2Section {
+      padding-top: 0;
+      padding-bottom: 0;
     }
-
-    &-2 {
-        .hs005_container {
-            display: flex;
-            max-width: 1106px;
-            gap: 21px;
-            margin: 60px auto;
-
-            @media screen and (max-width: 1280px){
-                max-width: 90vw;
-            }
-            @media screen and (max-width: 768px){
-                gap: 7px;
-                margin: 0 auto;
-            }
-        }
-        @media screen and (max-width: 768px){
-            .shopify-section--faq .section-blends {
-                padding-top: 36px;
-            }
-            #shopify-section-template--17332018544873__10746890-4455-4312-ae27-608c7cb4b009 .video-with-text__text {
-                margin-bottom: 1rem;
-            }
-            .shopify-section:has(+ .hs005_container) .video-with-text__text {
-                margin-bottom: 1rem;
-            }
-        }
-    }
+  }
 }
