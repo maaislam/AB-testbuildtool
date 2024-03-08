@@ -1,0 +1,22 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    on-sale-badge.badge.badge--on-sale:after {
+        display: none;
+    }
+    on-sale-badge.badge.badge--on-sale {
+        color: white !important;
+        font-size: 13px;
+        font-weight: 700;
+    }
+    @media screen and (max-width: 555px){
+        on-sale-badge.badge.badge--on-sale {
+            color: white !important;
+            font-size: 13px;
+            font-weight: 700;
+            width: auto !important;
+            padding: 0 12px;
+        }
+    }
+}

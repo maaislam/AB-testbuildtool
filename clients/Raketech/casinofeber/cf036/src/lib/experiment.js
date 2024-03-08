@@ -56,22 +56,60 @@ export default () => {
       gaTracking('speedy-casino CTA CTO (Logo) | Highlight');
     } else if (e.target.closest(`.${ID}__content-btn`)) {
       gaTracking('speedy-casino CTA CTO (Button) | Highlight');
-    } else if (e.target.closest('.toplist .logo-container a[data-type="logo"]')) {
+    } else if (
+      e.target.closest('.toplist .logo-container a[data-type="logo"]') &&
+      window.location.pathname === '/'
+    ) {
       const casinoName = e.target.closest('.toplist .logo-container a[data-type="logo"]').dataset
         .operator;
       gaTracking(`${casinoName} CTA CTO (Logo)`);
-    } else if (e.target.closest('.toplist .cta-container a[data-type="button"]')) {
+    } else if (
+      e.target.closest('.toplist .cta-container a[data-type="button"]') &&
+      window.location.pathname === '/'
+    ) {
       const casinoName = e.target.closest('.toplist .cta-container a[data-type="button"]').dataset
         .operator;
       gaTracking(`${casinoName} CTA CTO (Button)`);
-    } else if (e.target.closest('.toplist .cta-container a.cta-review')) {
+    } else if (
+      e.target.closest('.toplist .cta-container a.cta-review') &&
+      window.location.pathname === '/'
+    ) {
       const casinoName = e.target
         .closest('.toplist .cta-container')
         .querySelector('a[data-type="button"]').dataset.operator;
       gaTracking(`${casinoName} CTA CTR`);
-    } else if (e.target.closest('a[data-type="button"]')) {
+    } else if (
+      e.target.closest('a[data-type="button"]') &&
+      e.target.closest('div[data-element="hero"]')
+    ) {
       const casinoName = e.target.closest('a[data-type="button"]').dataset.operator;
-      gaTracking(`${casinoName} CTA CTO (Button)`);
+      gaTracking(`${casinoName} CTA CTO (Hero Button)`);
+    } else if (
+      e.target.closest('.toplist .logo-container a[data-type="logo"]') &&
+      window.location.pathname !== '/'
+    ) {
+      const casinoName = e.target.closest('.toplist .logo-container a[data-type="logo"]').dataset
+        .operator;
+      gaTracking(`${casinoName} CTA CTO (Card Logo)`);
+    } else if (
+      e.target.closest('.toplist .cta-container a[data-type="button"]') &&
+      window.location.pathname !== '/'
+    ) {
+      const casinoName = e.target.closest('.toplist .cta-container a[data-type="button"]').dataset
+        .operator;
+      gaTracking(`${casinoName} CTA CTO (Card Button)`);
+    } else if (
+      e.target.closest('a[data-type="button"]') &&
+      e.target.closest('div[data-element="bonus-boxes"]')
+    ) {
+      const casinoName = e.target.closest('a[data-type="button"]').dataset.operator;
+      gaTracking(`${casinoName} CTA CTO (Bonus Button)`);
+    } else if (
+      e.target.closest('a[data-type="button"]') &&
+      e.target.closest('div[data-element="scrollable"]')
+    ) {
+      const casinoName = e.target.closest('a[data-type="button"]').dataset.operator;
+      gaTracking(`${casinoName} CTA CTO (Popup Button)`);
     }
   });
 
