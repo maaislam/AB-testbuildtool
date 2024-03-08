@@ -11,8 +11,21 @@
   }
 
   #table {
-    table.casino-table {
-      .casino-table__data-row.#{$id}__hide {
+    .casino-table__data-row.#{$id}__hide {
+      display: none;
+    }
+
+    &.sj008__show-full {
+      svg.show {
+        display: none;
+      }
+      svg.less {
+        transform: translateY(5px);
+      }
+    }
+
+    &:not(.sj008__show-full) {
+      svg.less {
         display: none;
       }
     }
