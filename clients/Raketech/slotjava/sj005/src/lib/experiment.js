@@ -53,14 +53,14 @@ const init = () => {
 
     if (target.closest('#showMoreButton')) {
       showMore();
-      gaTracking('Show More Casinos CTA (Button)');
+      gaTracking('Show All Casinos');
     } else if (target.closest('[href*="visita"]')) {
       const casinoNameElem = target.closest('a[href*="visita"]');
 
       const casinoName = casinoNameElem.dataset.operator;
 
-      const clickedElemType = casinoNameElem.querySelector('img') ? 'logo' : 'button';
-      gaTracking(`${casinoName} | CTA Clicks to Operator (${clickedElemType})`);
+      const clickedElemType = casinoNameElem.querySelector('img') ? 'Logo' : 'Button';
+      gaTracking(`${casinoName} CTA CTO | ${clickedElemType}`);
     }
   });
 };
