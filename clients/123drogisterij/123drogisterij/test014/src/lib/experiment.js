@@ -1,6 +1,6 @@
 import modal from './components/modal';
 import modalContent from './components/modalContent';
-import qtyInput from './components/qtyInput';
+//import qtyInput from './components/qtyInput';
 import getProductInfo from './helpers/getProductData';
 import { formatPrice } from './helpers/utils';
 import setup from './services/setup';
@@ -11,7 +11,6 @@ const { ID } = shared;
 
 export default () => {
   setup();
-  console.log(ID);
 
   let flag = false;
 
@@ -31,9 +30,9 @@ export default () => {
   anchorPoint
     .querySelector('#product-addtocart-button')
     .insertAdjacentHTML('beforebegin', fakeButton(ID, sku));
-  // anchorPoint
-  //   .querySelector(`.action.tocart:not(.${ID}__openmodal)`)
-  //   .insertAdjacentHTML('beforebegin', qtyInput(ID, sku));
+  //anchorPoint
+  //.querySelector(`.action.tocart:not(.${ID}__openmodal)`)
+  //.insertAdjacentHTML('beforebegin', qtyInput(ID, sku));
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
