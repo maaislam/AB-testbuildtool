@@ -63,15 +63,16 @@ export default () => {
 
       if (document.querySelector(`#table.${ID}__show-full`)) {
         showAllItems();
+        gaTracking('Show All Casinos');
       } else {
         hideItems();
-        target.closest('#showMoreButton').scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
-      }
 
-      gaTracking('Show All Casinos');
+        document.querySelector('#table').scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        gaTracking('Show Less Casinos');
+      }
     } else if (target.closest('[href*="visita"]')) {
       const casinoNameElem = target.closest('a[href*="visita"]');
 
