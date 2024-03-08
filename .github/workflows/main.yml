@@ -1,0 +1,36 @@
+name: Commit Message Notification for 'DONE'
+on: [push]
+
+jobs:
+  notify_slack_for_done:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Check for 'DONE' in commit message
+      id: check_message
+      run: |
+        echo "Checking for 'DONE' in commit messages..."
+        if git log --format=%B -n 1 ${{ github.event.before }}..${{ github.event.after }} | grep -q 'DONE'; then
+          echo "::set-output name=notify::true"
+        else
+          echo "::set-output name=notify::false"
+        fi
+
+    - name: Notify Slack
+      if: steps.check_message.outputs.notify == 'true'
+      uses: ravsamhq/notify-slack-action@v1
+      with:
+        status: custom
+        custom_payload: |
+          {
+            "text": "A commit with 'DONE' in the message has been pushed to the repository ${GITHUB_REPOSITORY}.",
+            "attachments": [
+              {
+                "text": "Commit Details: \nAuthor: ${{ github.actor }}\nMessage: ${{ github.event.head_commit.message }}\nURL: ${{ github.event.head_commit.url }}"
+              }
+            ]
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
