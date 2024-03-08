@@ -20,39 +20,19 @@ const init = () => {
     </button>
   </div>`;
 
-  VARIATION !== 'Control' && anchorPoint.insertAdjacentHTML('afterend', htmlStr);
+  anchorPoint.insertAdjacentHTML('afterend', htmlStr);
 
   const rows = document.querySelectorAll('table.casino-table tr.casino-table__data-row');
   const itemsPerPage = 7;
-  let currentPage = 1;
+};
 
-  const hideRows = (index) => {
-    for (let i = 0; i < rows.length; i++) {
-      if (i < index) {
-        rows[i].classList.add(`${ID}__show`);
-      } else {
-        rows[i].style.display = 'none';
-        rows[i].classList.remove(`${ID}__show`);
-      }
-    }
-  };
-
-  VARIATION !== 'Control' && hideRows(itemsPerPage * currentPage);
-
-  const showMore = () => {
-    currentPage++;
-    hideRows(itemsPerPage * currentPage);
-
-    if (itemsPerPage * currentPage >= rows.length) {
-      document.getElementById('showMoreButton').style.display = 'none';
-    }
-  };
+export default () => {
+  setup();
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
 
     if (target.closest('#showMoreButton')) {
-      showMore();
       gaTracking('Show All Casinos');
     } else if (target.closest('[href*="visita"]')) {
       const casinoNameElem = target.closest('a[href*="visita"]');
@@ -63,9 +43,8 @@ const init = () => {
       gaTracking(`${casinoName} CTA CTO | ${clickedElemType}`);
     }
   });
-};
 
-export default () => {
-  setup();
+  if (VARIATION === 'Control') return;
+
   init();
 };

@@ -2,10 +2,18 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    cart-drawer > .v-stack {
-        gap: var(--spacing-4);
-        .text-subdued.text-sm {
-            display: none !important;
-        }
+  cart-drawer > .v-stack {
+    gap: var(--spacing-4);
+    .text-subdued.text-sm {
+      display: none !important;
     }
+  }
+
+  .cart-order__recap {
+    .cart-form__totals {
+      .text-subdued.text-sm {
+        display: none;
+      }
+    }
+  }
 }
