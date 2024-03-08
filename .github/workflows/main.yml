@@ -1,36 +1,21 @@
-name: Commit Message Notification for 'DONE'
+name: Notify Slack on DONE Commit
 on: [push]
 
 jobs:
-  notify_slack_for_done:
+  notify_slack:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Check for 'DONE' in commit message
-      id: check_message
-      run: |
-        echo "Checking for 'DONE' in commit messages..."
-        if git log --format=%B -n 1 ${{ github.event.before }}..${{ github.event.after }} | grep -q 'DONE'; then
-          echo "::set-output name=notify::true"
-        else
-          echo "::set-output name=notify::false"
-        fi
-
-    - name: Notify Slack
-      if: steps.check_message.outputs.notify == 'true'
-      uses: ravsamhq/notify-slack-action@v1
-      with:
-        status: custom
-        custom_payload: |
-          {
-            "text": "A commit with 'DONE' in the message has been pushed to the repository ${GITHUB_REPOSITORY}.",
-            "attachments": [
-              {
-                "text": "Commit Details: \nAuthor: ${{ github.actor }}\nMessage: ${{ github.event.head_commit.message }}\nURL: ${{ github.event.head_commit.url }}"
-              }
-            ]
-          }
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Extract commit message
+        id: get_commit_message
+        run: |
+          COMMIT_MESSAGE=$(git log --format=%B -n 1)
+          echo "::set-output name=message::${COMMIT_MESSAGE}"
+          echo "Commit Message: ${COMMIT_MESSAGE}"
+      
+      - name: Check for DONE in commit message and notify Slack
+        if: contains(steps.get_commit_message.outputs.message, 'DONE')
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"A commit containing the word *DONE* was just pushed. Here is the commit message: '${{ steps.get_commit_message.outputs.message }}'"}' ${{ secrets.SLACK_WEBHOOK_URL }}
