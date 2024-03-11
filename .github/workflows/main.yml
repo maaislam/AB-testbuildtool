@@ -1,0 +1,21 @@
+name: Notify Slack on DONE Commit
+on: [push]
+
+jobs:
+  notify_slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Extract commit message
+        id: get_commit_message
+        run: |
+          COMMIT_MESSAGE=$(git log --format=%B -n 1)
+          echo "::set-output name=message::${COMMIT_MESSAGE}"
+          echo "Commit Message: ${COMMIT_MESSAGE}"
+      
+      - name: Check for DONE in commit message and notify Slack
+        if: contains(steps.get_commit_message.outputs.message, 'DONE')
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"A commit containing the word *DONE* was just pushed. Here is the commit message: '${{ steps.get_commit_message.outputs.message }}'"}' ${{ secrets.SLACK_WEBHOOK_URL }}
