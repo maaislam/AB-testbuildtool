@@ -1,0 +1,161 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .product.media {
+    .gallery-placeholder {
+      .fotorama__stage {
+        position: relative;
+
+        .fotorama__stage__frame {
+          img {
+            width: 100%;
+          }
+        }
+
+        .#{$id}__room-visualiser {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          z-index: 99;
+          @include media-query(sm) {
+            top: 10px;
+            bottom: 0;
+            right: 10px;
+          }
+          &-box {
+            display: flex;
+            align-items: center;
+            &-text {
+              padding: 2px 15px;
+              transform: translateX(3px);
+              color: #fff;
+              background: #231f20;
+              cursor: pointer;
+            }
+            &-icon {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              background: #231f20;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .#{$id}__counter {
+          position: absolute;
+          background: #fff;
+          z-index: 999;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 2px 5px;
+          font-weight: 700;
+          display: none;
+
+          @include media-query(sm) {
+            display: block;
+          }
+        }
+      }
+      .fotorama__nav-wrap {
+        display: none !important;
+      }
+    }
+
+    .#{$id}__images-wrapper {
+      .#{$id}__images-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        @include media-query(sm) {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          max-width: 100%;
+        }
+        .#{$id}__image-item {
+          width: 50%;
+
+          &.#{$id}__hide {
+            display: none;
+          }
+          &.#{$id}__show-more-parent {
+            position: relative;
+
+            .#{$id}__button-wrapper {
+              position: absolute;
+              left: 20px;
+              bottom: 20px;
+              padding: 6px;
+              color: #000;
+              background: #fff;
+              z-index: 9;
+              cursor: pointer;
+            }
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+          }
+
+          &:nth-child(odd) {
+            padding-right: 5px;
+            padding-bottom: 10px;
+          }
+          &:nth-child(even) {
+            padding-left: 5px;
+            padding-bottom: 10px;
+          }
+
+          @include media-query(sm) {
+            flex-basis: 30%;
+            flex-shrink: 0;
+          }
+        }
+      }
+
+      .#{$id}__button-wrapper.less {
+        display: none;
+      }
+
+      &.open {
+        .#{$id}__button-wrapper.less {
+          display: block;
+          margin-bottom: 0;
+          padding: 10px;
+        }
+
+        .#{$id}__button-wrapper.more {
+          display: none;
+        }
+      }
+
+      &.mobile {
+        display: none;
+      }
+
+      @include media-query(sm) {
+        &.desktop {
+          display: none;
+        }
+
+        &.mobile {
+          display: block;
+          .#{$id}__image-item {
+            padding-right: 5px !important;
+            padding-bottom: 0 !important;
+            .#{$id}__button-wrapper.more {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    div[data-role='roomvo'] {
+      display: none;
+    }
+  }
+}
