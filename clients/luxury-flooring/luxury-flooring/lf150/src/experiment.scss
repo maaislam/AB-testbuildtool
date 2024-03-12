@@ -30,8 +30,10 @@
                         object-fit: cover;
                     }
 
-                    &:last-child {
-                        margin-right: 15px;
+                    @include media-query(md) {
+                        &:last-child {
+                            margin-right: 15px;
+                        }
                     }
                 }
             }
@@ -53,6 +55,11 @@
                     padding: 15px 0;
                     justify-content: center;
                     gap: 27px;
+
+                    @include media-query(lg) {
+                        gap: 12px;
+                        justify-content: flex-start;
+                    }
 
                     .#{$id}__categoryCard {
                         height: 123px;
@@ -102,7 +109,7 @@
                     justify-content: center;
                     gap: 35px;
 
-                    @include media-query(md) {
+                    @include media-query(lg) {
                         padding: 15px 0;
                         gap: 12px;
                         justify-content: flex-start;
