@@ -3,7 +3,7 @@ import { categoryData } from './data/categoryData';
 import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const anchorPoint = document.querySelector('.filter-toolbar');
@@ -18,7 +18,9 @@ const init = () => {
     </div>
   </div>`;
 
-  anchorPoint.insertAdjacentHTML('beforebegin', htmlStr);
+  if (!document.querySelector(`.${ID}__container`)) {
+    anchorPoint.insertAdjacentHTML('beforebegin', htmlStr);
+  }
 };
 
 export default () => {
