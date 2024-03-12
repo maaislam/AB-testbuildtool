@@ -3,10 +3,11 @@ import shared from './shared/shared';
 import { roomVisualiser } from './components/roomVisualiser';
 import { images } from './components/images';
 import counter from './components/counter';
-import { pollerLite } from './helpers/utils';
+import { isElementInView, obsIntersection } from './helpers/utils';
 
 const { ID } = shared;
 const MIN_IMAGES_OF_PROD = 5;
+let lastScrollTop = 0;
 
 const isertRoomVisualiser = (parentElem) => {
   if (document.querySelector(`.${ID}__room-visualiser`)) {
@@ -58,23 +59,25 @@ export default () => {
   }
 
   document.body.addEventListener('pointerup', (e) => {
-    console.log('target', e.target);
+    //console.log('target', e.target);
+    const { target } = e;
 
-    if (e.target.closest(`.${ID}__room-visualiser`)) {
+    if (target.closest(`.${ID}__room-visualiser`)) {
       e.preventDefault();
       e.stopPropagation();
 
       document.querySelector('div[data-role="roomvo"] .roomvo-stimr').click();
-      setTimeout(() => {
-        fotoramaData.cancelFullScreen();
-      }, 0);
-    } else if (e.target.closest(`.${ID}__button-wrapper.more`)) {
+
+      fotoramaData.cancelFullScreen();
+    } else if (target.closest(`.${ID}__button-wrapper.more`)) {
       document.querySelector(`.${ID}__images-wrapper.desktop`).classList.add('open');
+      document.body.classList.add('makeSticky');
       document
         .querySelectorAll(`.${ID}__hide`)
         .forEach((item) => item && item.classList.remove(`${ID}__hide`));
-    } else if (e.target.closest(`.${ID}__button-wrapper.less`)) {
+    } else if (target.closest(`.${ID}__button-wrapper.less`)) {
       document.querySelector(`.${ID}__images-wrapper.desktop`).classList.remove('open');
+      document.body.classList.remove('makeSticky');
       const imageItems = [
         ...document.querySelectorAll(`.${ID}__images-wrapper.desktop .${ID}__image-item`)
       ];
@@ -87,31 +90,37 @@ export default () => {
         block: 'center'
       });
     } else if (
-      e.target.closest(`.${ID}__image-item `) &&
-      e.target.closest(`.${ID}__images-wrapper.desktop`)
+      target.closest(`.${ID}__image-item `) &&
+      target.closest(`.${ID}__images-wrapper.desktop`)
     ) {
-      const keyValue = e.target.closest(`.${ID}__image-item `).dataset.key;
+      const keyValue = target.closest(`.${ID}__image-item `).dataset.key;
       fullSizeScreen(keyValue, fotoramaData);
     } else if (
-      e.target.closest(`.${ID}__image-item `) &&
-      e.target.closest(`.${ID}__images-wrapper.mobile`)
+      target.closest(`.${ID}__image-item `) &&
+      target.closest(`.${ID}__images-wrapper.mobile`)
     ) {
-      const keyValue = e.target.closest(`.${ID}__image-item `).dataset.key;
+      const keyValue = target.closest(`.${ID}__image-item `).dataset.key;
       fullSizeScreen(keyValue, fotoramaData);
     }
 
-    setTimeout(() => {
-      if (fotoramaData.activeIndex !== 0) {
-        if (document.querySelector(`.${ID}__room-visualiser`)) {
-          document.querySelector(`.${ID}__room-visualiser`).remove();
-        }
-        isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
-      } else if (fotoramaData.activeIndex === 0) {
-        isertRoomVisualiser(parentElement);
-        isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+    if (fotoramaData.activeIndex !== 0) {
+      if (document.querySelector(`.${ID}__room-visualiser`)) {
+        document.querySelector(`.${ID}__room-visualiser`).remove();
       }
-    }, 0);
+      isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+    } else if (fotoramaData.activeIndex === 0) {
+      isertRoomVisualiser(parentElement);
+      isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+    }
   });
 
-  //height measurements
+  obsIntersection(document.querySelector('.product-section.details'), 0, (entry) => {
+    if (entry.isIntersecting) {
+      document.body.classList.remove('makeSticky');
+      document.body.classList.add('pushtobottom');
+    } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+      document.body.classList.add('makeSticky');
+      document.body.classList.remove('pushtobottom');
+    }
+  });
 };

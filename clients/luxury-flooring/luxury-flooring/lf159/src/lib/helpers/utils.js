@@ -49,3 +49,36 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
+export const obsIntersection = (target, threshold, callback) => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        callback(entry, observer);
+      });
+    },
+    {
+      threshold,
+      rootMargin: '0px 0px 0px 0px'
+    }
+  );
+  if (!target) {
+    return;
+  }
+
+  observer?.observe(target);
+};
+
+export const isElementInView = (element) => {
+  const rect = element.getBoundingClientRect();
+  //is element hidden
+  if (rect.top === 0 && rect.left === 0 && rect.bottom === 0 && rect.right === 0) {
+    return false;
+  }
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
