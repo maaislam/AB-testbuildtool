@@ -83,10 +83,6 @@
                             @include media-query(xl) {
                                 font-size: 16px;
                             }
-
-                            @include media-query(lg) {
-                                font-size: 16px;
-                            }
                         }
                     }
                 }
@@ -143,45 +139,114 @@
     }
 
     &-3 {
-        .#{$id}__container {
-            margin-bottom: 8px;
+        .#{$id}__wrapper {
+            display: flex;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #E1E1E1;
 
-            .scrollable-wrapper {
-                padding: 0;
-                border-bottom: 1px solid #E1E1E1;
+            .#{$id}__categoryWrapper {
+                flex: 1;
 
-                @include media-query(md) {
-                    border-top: 1px solid #E1E1E1;
+                .#{$id}__header {
+                    h1 {
+                        text-align: left !important;
+                    }
                 }
 
-                .#{$id}__categoryCards {
-                    padding: 20px 0;
-                    justify-content: flex-start;
-                    gap: 40px;
+                .#{$id}__categories {
+                    .#{$id}__container {
+                        margin-bottom: 8px;
 
-                    @include media-query(md) {
-                        padding: 20px 8px;
+                        .scrollable-wrapper {
+                            padding: 0;
+
+                            @include media-query(md) {
+                                border-top: 1px solid #E1E1E1;
+                                border-bottom: 1px solid #E1E1E1;
+                            }
+
+                            .#{$id}__categoryCards {
+                                padding: 20px 0;
+                                justify-content: flex-start;
+                                gap: 34px;
+
+                                @include media-query(md) {
+                                    padding: 20px 8px;
+                                }
+
+                                .#{$id}__categoryCard {
+                                    @include media-query(lg) {
+                                        flex: 0 0 auto;
+                                    }
+
+                                    .#{$id}__image {
+                                        display: none;
+                                    }
+
+                                    .#{$id}__title {
+                                        margin: 0 !important;
+                                        width: 100%;
+                                        font-family: "work-sans" !important;
+                                        font-size: 16px;
+                                        color: #202020;
+                                        text-decoration: underline;
+
+                                        @include media-query(lg) {
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
+                }
+            }
 
-                    .#{$id}__categoryCard {
-                        @include media-query(lg) {
+            .category-info {
+                flex: 1;
+
+                @include media-query(xl) {
+                    max-width: 520px;
+                }
+            }
+        }
+
+        .#{$id}__image {
+            display: none;
+        }
+
+        @include media-query(lg) {
+            .#{$id}__container {
+                margin-bottom: 8px;
+
+                .scrollable-wrapper {
+                    padding: 0;
+                    border-top: 1px solid #E1E1E1;
+                    border-bottom: 1px solid #E1E1E1;
+
+                    .#{$id}__categoryCards {
+                        padding: 20px 8px;
+                        justify-content: flex-start;
+                        gap: 34px;
+
+                        .#{$id}__categoryCard {
                             flex: 0 0 auto;
-                        }
 
-                        .#{$id}__image {
-                            display: none;
-                        }
+                            .#{$id}__image {
+                                display: none;
+                            }
 
-                        .#{$id}__title {
-                            margin: 0 !important;
-                            width: 100%;
-                            font-family: "work-sans" !important;
-                            font-size: 16px;
-                            color: #202020;
-                            text-decoration: underline;
-
-                            @include media-query(lg) {
+                            .#{$id}__title {
+                                margin: 0 !important;
+                                width: 100%;
+                                font-family: "work-sans" !important;
                                 font-size: 16px;
+                                color: #202020;
+                                text-decoration: underline;
+
+                                @include media-query(lg) {
+                                    font-size: 16px;
+                                }
                             }
                         }
                     }
