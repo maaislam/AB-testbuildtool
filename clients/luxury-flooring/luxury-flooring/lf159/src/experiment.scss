@@ -3,6 +3,9 @@
 
 .#{$id} {
   .product.media {
+    &.#{$id}__overflow {
+      overflow-y: scroll;
+    }
     .gallery-placeholder {
       .fotorama__stage {
         position: relative;

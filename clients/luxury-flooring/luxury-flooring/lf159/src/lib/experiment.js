@@ -3,6 +3,7 @@ import shared from './shared/shared';
 import { roomVisualiser } from './components/roomVisualiser';
 import { images } from './components/images';
 import counter from './components/counter';
+import { pollerLite } from './helpers/utils';
 
 const { ID } = shared;
 const MIN_IMAGES_OF_PROD = 5;
@@ -113,5 +114,26 @@ export default () => {
         isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
       }
     }, 0);
+  });
+
+  //height measurements
+
+  pollerLite([() => document.readyState === 'complete'], () => {
+    const galleryHeight = document
+      .querySelector('#maincontent .product.media')
+      .getBoundingClientRect().height;
+    const prodInfoHeight = document
+      .querySelector('#maincontent .product-info-main')
+      .getBoundingClientRect().height;
+
+    console.log(galleryHeight, prodInfoHeight);
+    if (fotoramaData.data.length > MIN_IMAGES_OF_PROD) {
+      console.log('scroll add');
+      document.querySelector('#maincontent .product.media').style.height = `${
+        galleryHeight + 20
+      }px`;
+
+      document.querySelector('#maincontent .product.media').classList.add(`${ID}__overflow`);
+    }
   });
 };
