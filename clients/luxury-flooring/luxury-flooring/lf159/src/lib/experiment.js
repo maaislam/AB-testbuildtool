@@ -60,10 +60,7 @@ export default () => {
   document.body.addEventListener('pointerup', (e) => {
     console.log('target', e.target);
 
-    if (
-      e.target.closest(`.${ID}__room-visualiser-box-text`) ||
-      e.target.closest(`.${ID}__room-visualiser-box-icon`)
-    ) {
+    if (e.target.closest(`.${ID}__room-visualiser`)) {
       e.preventDefault();
       e.stopPropagation();
 
@@ -117,23 +114,4 @@ export default () => {
   });
 
   //height measurements
-
-  pollerLite([() => document.readyState === 'complete'], () => {
-    const galleryHeight = document
-      .querySelector('#maincontent .product.media')
-      .getBoundingClientRect().height;
-    const prodInfoHeight = document
-      .querySelector('#maincontent .product-info-main')
-      .getBoundingClientRect().height;
-
-    console.log(galleryHeight, prodInfoHeight);
-    if (fotoramaData.data.length > MIN_IMAGES_OF_PROD) {
-      console.log('scroll add');
-      document.querySelector('#maincontent .product.media').style.height = `${
-        galleryHeight + 20
-      }px`;
-
-      document.querySelector('#maincontent .product.media').classList.add(`${ID}__overflow`);
-    }
-  });
 };
