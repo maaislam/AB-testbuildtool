@@ -59,16 +59,15 @@ export default () => {
   }
 
   document.body.addEventListener('pointerup', (e) => {
-    //console.log('target', e.target);
     const { target } = e;
 
     if (target.closest(`.${ID}__room-visualiser`)) {
       e.preventDefault();
       e.stopPropagation();
-
       document.querySelector('div[data-role="roomvo"] .roomvo-stimr').click();
-
-      fotoramaData.cancelFullScreen();
+      setTimeout(() => {
+        fotoramaData.cancelFullScreen();
+      }, 0);
     } else if (target.closest(`.${ID}__button-wrapper.more`)) {
       document.querySelector(`.${ID}__images-wrapper.desktop`).classList.add('open');
       document.body.classList.add('makeSticky');
