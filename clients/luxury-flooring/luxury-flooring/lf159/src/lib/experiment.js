@@ -93,8 +93,14 @@ export default () => {
       target.closest(`.${ID}__image-item `) &&
       target.closest(`.${ID}__images-wrapper.desktop`)
     ) {
-      const keyValue = target.closest(`.${ID}__image-item `).dataset.key;
+      const keyValue = target.closest(`.${ID}__image-item`).dataset.key;
       fullSizeScreen(keyValue, fotoramaData);
+      if (target.closest(`.${ID}__image-item`).dataset.type === 'video') {
+        gallery.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
     } else if (
       target.closest(`.${ID}__image-item `) &&
       target.closest(`.${ID}__images-wrapper.mobile`)
