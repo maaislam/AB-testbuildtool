@@ -97,6 +97,11 @@
           overflow-x: auto;
           max-width: 100%;
         }
+
+        @include media-query(sm) {
+          margin-right: -15px;
+          max-width: calc(100% + 15px);
+        }
         .#{$id}__image-item {
           width: 50%;
 

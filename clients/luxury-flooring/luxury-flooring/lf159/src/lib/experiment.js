@@ -109,15 +109,17 @@ export default () => {
       fullSizeScreen(keyValue, fotoramaData);
     }
 
-    if (fotoramaData.activeIndex !== 0) {
-      if (document.querySelector(`.${ID}__room-visualiser`)) {
-        document.querySelector(`.${ID}__room-visualiser`).remove();
+    setTimeout(() => {
+      if (fotoramaData.activeIndex !== 0) {
+        if (document.querySelector(`.${ID}__room-visualiser`)) {
+          document.querySelector(`.${ID}__room-visualiser`).remove();
+        }
+        isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+      } else if (fotoramaData.activeIndex === 0) {
+        isertRoomVisualiser(parentElement);
+        isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
       }
-      isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
-    } else if (fotoramaData.activeIndex === 0) {
-      isertRoomVisualiser(parentElement);
-      isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
-    }
+    }, 0);
   });
 
   obsIntersection(document.querySelector('.product-section.details'), 0, (entry) => {
