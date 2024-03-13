@@ -137,6 +137,24 @@
             flex-shrink: 0;
           }
         }
+
+        [data-type="video"] {
+          position: relative;
+
+          &::after {
+            z-index: 999;
+            background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png') bottom left;
+            bottom: 0;
+            content: '';
+            height: 40px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 10px;
+            width: 49px;
+          }
+        }
       }
 
       .#{$id}__button-wrapper.less {
@@ -146,6 +164,7 @@
       &.open {
         .#{$id}__button-wrapper.less {
           display: block;
+          margin-top: 16px;
           margin-bottom: 0;
           padding: 10px;
         }

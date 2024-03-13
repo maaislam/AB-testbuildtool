@@ -9,7 +9,7 @@ const imageItem = (ID, item, isShowMore, className) => {
       ? `${ID}__hide`
       : ''
   }"
-         data-key="${item.i - 1}">
+         data-key="${item.i - 1}" data-type="${item.type === 'video' ? 'video' : 'image'}">
             <img src="${className === 'desktop' ? item.full : item.thumb}" alt="${item.caption}" />
             ${
               isShowMore && item.i === 4 && className === 'desktop'
