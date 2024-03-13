@@ -117,7 +117,7 @@ export const categoryData = {
         {
             title: 'Stone Effect',
             image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_tile.png',
-            url: 'https://www.luxuryflooringandfurnishings.co.uk/vinyl-flooring/range/stately-tile.html',
+            url: 'https://www.luxuryflooringandfurnishings.co.uk/vinyl-flooring/plank-effect/stone-vinyl-plank-flooring.html',
             alt: 'Stone-Effect'
         },
         {
