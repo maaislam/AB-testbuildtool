@@ -36,7 +36,7 @@
 
         .fotorama__stage__frame {
           img {
-            width: 100%;
+            max-width: 100%;
           }
         }
 
@@ -138,12 +138,13 @@
           }
         }
 
-        [data-type="video"] {
+        [data-type='video'] {
           position: relative;
 
           &::after {
             z-index: 999;
-            background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png') bottom left;
+            background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png')
+              bottom left;
             bottom: 0;
             content: '';
             height: 40px;
@@ -153,6 +154,7 @@
             right: 0;
             top: 10px;
             width: 49px;
+            cursor: pointer;
           }
         }
       }
