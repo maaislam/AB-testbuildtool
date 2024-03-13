@@ -44,8 +44,10 @@
           position: absolute;
           bottom: 20px;
           right: 20px;
+          max-height: fit-content;
           z-index: 99;
           cursor: pointer;
+
           @include media-query(md) {
             top: 10px;
             bottom: 0;
