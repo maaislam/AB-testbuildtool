@@ -20,7 +20,7 @@ export const categoryData = {
         },
         {
             title: 'Light',
-            image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_light.png',
+            image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_lightwood.png',
             url: 'https://www.luxuryflooringandfurnishings.co.uk/solid-wood-flooring/shade/light.html',
             alt: 'light'
         },
@@ -52,7 +52,7 @@ export const categoryData = {
         },
         {
             title: 'Light',
-            image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_light.png',
+            image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_lightwood.png',
             url: 'https://www.luxuryflooringandfurnishings.co.uk/engineered-wood-flooring/shade/light.html',
             alt: 'Light'
         },
@@ -70,7 +70,7 @@ export const categoryData = {
         },
         {
             title: 'Grey',
-            image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_grey.png',
+            image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_greywood.png',
             url: 'https://www.luxuryflooringandfurnishings.co.uk/engineered-wood-flooring/finish/grey-engineered-wood-flooring.html',
             alt: 'Grey'
         }
@@ -84,13 +84,13 @@ export const categoryData = {
         },
         {
             title: 'Light',
-            image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_light.png',
+            image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_lightwood.png',
             url: 'https://www.luxuryflooringandfurnishings.co.uk/parquet/colour/light-parquet-flooring.html',
             alt: 'light'
         },
         {
             title: 'Grey',
-            image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_grey.png',
+            image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_greywood.png',
             url: 'https://www.luxuryflooringandfurnishings.co.uk/parquet/colour/grey-parquet-flooring.html',
             alt: 'Grey'
         },
@@ -115,10 +115,10 @@ export const categoryData = {
     ],
     '/vinyl-flooring.html': [
         {
-            title: 'Tile Effect',
+            title: 'Stone Effect',
             image: 'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/img_tile.png',
             url: 'https://www.luxuryflooringandfurnishings.co.uk/vinyl-flooring/range/stately-tile.html',
-            alt: 'Tile-Effect'
+            alt: 'Stone-Effect'
         },
         {
             title: 'Wood Effect',
