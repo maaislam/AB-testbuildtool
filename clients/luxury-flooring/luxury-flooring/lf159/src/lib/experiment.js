@@ -8,14 +8,14 @@ import { obsIntersection } from './helpers/utils';
 const { ID } = shared;
 const MIN_IMAGES_OF_PROD = 5;
 
-const isertRoomVisualiser = (parentElem) => {
+const insertRoomVisualiser = (parentElem) => {
   if (document.querySelector(`.${ID}__room-visualiser`)) {
     document.querySelector(`.${ID}__room-visualiser`).remove();
   }
   parentElem.insertAdjacentHTML('beforeend', roomVisualiser(ID));
 };
 
-const isertCounter = (parentElem, index, size) => {
+const insertCounter = (parentElem, index, size) => {
   if (document.querySelector(`.${ID}__counter`)) {
     document.querySelector(`.${ID}__counter`).remove();
   }
@@ -36,8 +36,8 @@ export default () => {
 
   //room visualiser add
   if (fotoramaData.activeIndex === 0) {
-    isertRoomVisualiser(parentElement);
-    isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+    insertRoomVisualiser(parentElement);
+    insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
   }
 
   //insert other images
@@ -66,7 +66,7 @@ export default () => {
       document.querySelector('div[data-role="roomvo"] .roomvo-stimr').click();
       setTimeout(() => {
         fotoramaData.cancelFullScreen();
-      }, 0);
+      }, 200);
     } else if (target.closest(`.${ID}__button-wrapper.more`)) {
       document.querySelector(`.${ID}__images-wrapper.desktop`).classList.add('open');
       document.body.classList.add('makeSticky');
@@ -88,7 +88,7 @@ export default () => {
         block: 'center'
       });
     } else if (
-      target.closest(`.${ID}__image-item `) &&
+      target.closest(`.${ID}__image-item`) &&
       target.closest(`.${ID}__images-wrapper.desktop`)
     ) {
       const keyValue = target.closest(`.${ID}__image-item`).dataset.key;
@@ -100,7 +100,7 @@ export default () => {
         });
       }
     } else if (
-      target.closest(`.${ID}__image-item `) &&
+      target.closest(`.${ID}__image-item`) &&
       target.closest(`.${ID}__images-wrapper.mobile`)
     ) {
       const keyValue = target.closest(`.${ID}__image-item `).dataset.key;
@@ -112,10 +112,10 @@ export default () => {
         if (document.querySelector(`.${ID}__room-visualiser`)) {
           document.querySelector(`.${ID}__room-visualiser`).remove();
         }
-        isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+        insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
       } else if (fotoramaData.activeIndex === 0) {
-        isertRoomVisualiser(parentElement);
-        isertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+        insertRoomVisualiser(parentElement);
+        insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
       }
     }, 0);
   });
