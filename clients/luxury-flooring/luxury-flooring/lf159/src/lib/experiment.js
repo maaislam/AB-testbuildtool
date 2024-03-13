@@ -3,11 +3,10 @@ import shared from './shared/shared';
 import { roomVisualiser } from './components/roomVisualiser';
 import { images } from './components/images';
 import counter from './components/counter';
-import { isElementInView, obsIntersection } from './helpers/utils';
+import { obsIntersection } from './helpers/utils';
 
 const { ID } = shared;
 const MIN_IMAGES_OF_PROD = 5;
-let lastScrollTop = 0;
 
 const isertRoomVisualiser = (parentElem) => {
   if (document.querySelector(`.${ID}__room-visualiser`)) {
