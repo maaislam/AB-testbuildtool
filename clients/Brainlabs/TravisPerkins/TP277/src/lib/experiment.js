@@ -27,7 +27,12 @@ export default () => {
     } else if (target.closest('.demoupUI-close') && target.closest('.demoupUI-popup')) {
       fireEvent('User interacts with close cta', shared);
     } else if (
-      target.closest('div[class^="ViewMore__ViewMoreWrapper"]') &&
+      target.closest('button[data-test-id="view-less-button"]') &&
+      target.closest('div[data-test-id="product-overview"]')
+    ) {
+      fireEvent('User interacts with view less on the overview', shared);
+    } else if (
+      target.closest('button[data-test-id="view-more-button"]') &&
       target.closest('div[data-test-id="product-overview"]')
     ) {
       fireEvent('User interacts with view more on the overview', shared);
