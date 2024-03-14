@@ -2,4 +2,45 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  div[data-test-id='pdp-wrapper'] {
+    div[class^='PDPDemoUpButton__DemoUpButtonWrapper'] {
+      flex-direction: column;
+      align-items: center;
+      #demoup_stage2_script {
+        .demoupUI-playimage {
+          width: 135px;
+          height: 75px;
+          border-radius: 3px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+
+          @include media-query(sm) {
+            width: 60px;
+            height: 60px;
+          }
+          .demoupUI-img {
+            width: 30px !important;
+            height: 30px !important;
+            fill: #f7c447;
+            padding: 0;
+            background: none;
+            box-shadow: none;
+            border-radius: 0px;
+            circle {
+              stroke: #f7c447 !important;
+            }
+            path {
+              fill: #000;
+            }
+          }
+        }
+      }
+      div[class^='PDPDemoUpButton__DemoUpButtonLabel'] {
+        margin: 2px 0px 0px 0px;
+        color: #606f80;
+        text-transform: capitalize;
+      }
+    }
+  }
 }
