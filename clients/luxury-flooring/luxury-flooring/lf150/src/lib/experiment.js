@@ -1,5 +1,6 @@
 import categoryCards from './components/categoryCards';
 import { categoryData } from './data/categoryData';
+import { getPathnameFirstpart } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -12,7 +13,7 @@ const init = () => {
 
   const { pathname } = window.location;
 
-  const data = categoryData[pathname];
+  const data = categoryData[getPathnameFirstpart(window.location.href)];
 
   const htmlStr = `<div class="${ID}__container">
     <div class="scrollable-wrapper">
