@@ -50,8 +50,11 @@ export default () => {
     if (document.querySelector(`.${ID}__images-wrapper.mobile`)) {
       document.querySelector(`.${ID}__images-wrapper.mobile`).remove();
     }
-    data.length &&
-      gallery.insertAdjacentHTML('afterend', images(ID, data, MIN_IMAGES_OF_PROD, 'desktop'));
+    data.slice(1).length &&
+      gallery.insertAdjacentHTML(
+        'afterend',
+        images(ID, data.slice(1), MIN_IMAGES_OF_PROD, 'desktop')
+      );
     //mobile
     data.length &&
       gallery.insertAdjacentHTML('afterend', images(ID, data, MIN_IMAGES_OF_PROD, 'mobile'));
