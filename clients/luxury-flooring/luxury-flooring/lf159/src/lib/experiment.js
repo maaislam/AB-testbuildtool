@@ -42,7 +42,7 @@ export default () => {
 
   //insert other images
   if (fotoramaData.data.length) {
-    const data = fotoramaData.data.slice(1);
+    const { data } = fotoramaData;
     if (document.querySelector(`.${ID}__images-wrapper.desktop`)) {
       document.querySelector(`.${ID}__images-wrapper.desktop`).remove();
     }

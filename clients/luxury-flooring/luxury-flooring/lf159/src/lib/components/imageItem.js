@@ -2,15 +2,15 @@ import button from './button';
 
 const imageItem = (ID, item, isShowMore, className) => {
   let classes = `${ID}__image-item`;
-  if (isShowMore && item.i === 4 && className === 'desktop') {
+  if (isShowMore && item.i === 3 && className === 'desktop') {
     classes += ` ${ID}__show-more-parent`;
-  } else if (item.i > 5 && className === 'desktop') {
+  } else if (item.i > 4 && className === 'desktop') {
     classes += ` ${ID}__hide`;
   }
 
   const type = item.type === 'video' ? 'video' : 'image';
   const buttonText =
-    isShowMore && item.i === 4 && className === 'desktop'
+    isShowMore && item.i === 3 && className === 'desktop'
       ? button(ID, '+', 'Show more images', 'more')
       : '';
 
