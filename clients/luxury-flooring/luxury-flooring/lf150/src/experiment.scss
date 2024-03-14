@@ -2,12 +2,19 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    span.category-readmore {
+        margin-top: 8px !important;
+    }
+
+    .category-info .category-description-new {
+        margin-bottom: 1em !important;
+    }
+
     &__container {
         width: 100%;
 
         .scrollable-wrapper {
             width: 100%;
-            // overflow: hidden;
 
             .#{$id}__categoryCards {
                 display: flex;
@@ -51,12 +58,18 @@
                 border-top: 1px solid #E1E1E1;
                 border-bottom: 1px solid #E1E1E1;
 
+                @include media-query(md) {
+                    padding: 0;
+                    border-top: none;
+                }
+
                 .#{$id}__categoryCards {
                     padding: 15px 0;
                     justify-content: center;
                     gap: 27px;
 
                     @include media-query(lg) {
+                        padding: 8px 0 15px 0;
                         gap: 12px;
                         justify-content: flex-start;
                     }
@@ -110,7 +123,7 @@
                     gap: 35px;
 
                     @include media-query(lg) {
-                        padding: 15px 0;
+                        padding: 8px 0 15px 0;
                         gap: 12px;
                         justify-content: flex-start;
                     }
@@ -168,7 +181,6 @@
                             padding: 0;
 
                             @include media-query(md) {
-                                border-top: 1px solid #E1E1E1;
                                 border-bottom: 1px solid #E1E1E1;
                             }
 
@@ -178,7 +190,7 @@
                                 gap: 34px;
 
                                 @include media-query(md) {
-                                    padding: 20px 8px;
+                                    padding: 8px 0 20px 8px;
                                 }
 
                                 .#{$id}__categoryCard {
@@ -228,11 +240,10 @@
 
                 .scrollable-wrapper {
                     padding: 0;
-                    border-top: 1px solid #E1E1E1;
                     border-bottom: 1px solid #E1E1E1;
 
                     .#{$id}__categoryCards {
-                        padding: 20px 8px;
+                        padding: 8px 0 20px 8px;
                         justify-content: flex-start;
                         gap: 34px;
 
