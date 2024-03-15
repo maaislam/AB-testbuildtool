@@ -102,9 +102,6 @@ export default () => {
       activeInput.value = labelQty;
 
       modalBody.querySelector('.price').innerText = formatPrice(labelPrice);
-    } else if (target.closest('.ppatc__popup-link')) {
-      const prodUrl = document.querySelector('.ppatc__popup-items').dataset.href;
-      window.location.href = prodUrl;
     }
   });
 };

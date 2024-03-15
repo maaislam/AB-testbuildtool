@@ -298,8 +298,6 @@
   }
   .ppatc__popup-footer {
     display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     padding: 18px 0;
   }
@@ -307,7 +305,7 @@
     text-decoration: none !important;
     position: relative;
     display: table;
-    margin: 0 16px 0 auto;
+    margin: 0 16px 0 0;
     background: #f1812f;
     background-image: -moz-linear-gradient(
       top,

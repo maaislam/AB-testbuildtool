@@ -10,11 +10,7 @@ const modal = (id, content = '') => {
                 <div class="ppatc__popup-header">Extra besparen?</div>
                 <div class="ppatc__popup-items">
                     ${content}
-                </div>
-                <div class="ppatc__popup-footer">
-                    <button type="button" class="ppatc__popup-btn ${id}__atc">In winkelmand</button>
-                    <button type="button" class="ppatc__popup-link">Nee, vandaag niet</button>
-                </div>
+                </div>   
             </div>
         </div>
         </div>
