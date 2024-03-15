@@ -1,0 +1,108 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .section.section_top {
+        display: none;
+    }
+    &__hero-sub {
+        background: #DBE5D1;
+        padding: 6px 12px 1px;
+
+        .#{$id}__hero-sub-heading {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #49B862;
+            text-decoration-thickness: 2px;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .#{$id}__hero-sub-usplist {
+            list-style: none;
+            padding-left: 6px;
+            line-height: 18px;
+            margin-top: 8px;
+
+            .#{$id}__hero-sub-usplist-item {
+                list-style: inside;
+                list-style-position: inside;
+                font-size: 12px;
+            }
+        }
+    }
+    &__slider-section {
+        min-height: 460px;
+
+        .#{$id}__swiper {
+            min-height: 460px;
+            display: flex;
+
+            .swiper-wrapper {
+                display: flex;
+                align-items: stretch;
+                height: auto;
+
+                .#{$id}__slide {
+                    width: 100vw;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 460px;
+                    background-size: cover;
+                    padding: 30px;
+                    box-sizing: border-box;
+
+                    .#{$id}__slide-img {
+                        width: 224px;
+                        height: 168px;
+                        border-radius: 14px;
+                        overflow: hidden;
+                        margin: 0 auto;
+
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .#{$id}__slide-btns {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 14px;
+                        margin-top: auto;
+                        .#{$id}__slide-btn {
+                            display: flex;
+                            width: 100%;
+                            height: 42px;
+                            border-radius: 3px;
+                            align-items: center;
+                            justify-content: center;
+                            text-decoration: none;
+                            font-size: 12px;
+                            font-weight: 900;
+                            text-transform: uppercase;
+                            color: #335B1F;
+                            
+                            &.btn-yellow {
+                                background: #FCC911;
+                            }
+                            &.btn-gray {
+                                background: #DBE5D1;
+                            }
+                        }
+                    }
+
+                }
+            }
+            .swiper-button-next, .swiper-button-prev {
+                top: 120px;
+            }
+            .swiper-button-prev::after {
+                content: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.5 33L16.5 22L27.5 11' stroke='black' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M27.5 33L16.5 22L27.5 11' stroke='white' stroke-width='3.81901' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            }
+            .swiper-button-next::after {
+                content: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5 11L27.5 22L16.5 33' stroke='black' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 11L27.5 22L16.5 33' stroke='white' stroke-width='3.81901' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            }
+        }
+    }
+}
