@@ -91,6 +91,20 @@
                             }
                         }
                     }
+                    .#{$id}__slide-content {
+                        h3 {
+                            font-size: 32px;
+                            font-weight: 900;
+                            margin: 0;
+                            color: white;
+                        }
+                        p {
+                            margin-top: 8px;
+                            font-size: 14px;
+                            color: white;
+                        }
+
+                    } 
 
                 }
             }
