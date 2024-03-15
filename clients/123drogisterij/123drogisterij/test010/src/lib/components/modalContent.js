@@ -15,6 +15,9 @@ const modalContent = (id, data, sku) => {
                 ${formatPrice(variants.find((item) => item.saving === 0).price)}
             </div>
             ${variantLabels(id, variants, sku)}
+            <div class="ppatc__popup-footer">
+                <button type="button" class="ppatc__popup-btn ${id}__atc">In winkelmand</button>
+            </div>
         </div>
     </div>
   `;
