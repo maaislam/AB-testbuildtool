@@ -113,20 +113,6 @@
           &.#{$id}__hide {
             display: none;
           }
-          &.#{$id}__show-more-parent {
-            position: relative;
-
-            .#{$id}__button-wrapper {
-              position: absolute;
-              left: 20px;
-              bottom: 20px;
-              padding: 6px;
-              color: #000;
-              background: #fff;
-              z-index: 9;
-              cursor: pointer;
-            }
-          }
           img {
             width: 100%;
             height: 100%;
@@ -173,12 +159,27 @@
         display: none;
       }
 
+      &:not(.open) {
+        .#{$id}__button-wrapper.more {
+          display: block;
+          margin-top: 16px;
+          margin-bottom: 0;
+          padding: 10px;
+          color: #000;
+          background: #fff;
+          border: solid 1px #000;
+        }
+      }
+
       &.open {
         .#{$id}__button-wrapper.less {
           display: block;
           margin-top: 16px;
           margin-bottom: 0;
           padding: 10px;
+          color: #000;
+          background: #fff;
+          border: solid 1px #000;
         }
 
         .#{$id}__button-wrapper.more {

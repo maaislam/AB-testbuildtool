@@ -10,6 +10,11 @@ export const images = (ID, data, MIN_IMAGES_OF_PROD, className) => {
             </div>
             ${
               isShowMore && className === 'desktop'
+                ? button(ID, '+', 'Show more images', 'more')
+                : ''
+            }
+            ${
+              isShowMore && className === 'desktop'
                 ? button(ID, '-', 'Show less images', 'less')
                 : ''
             }
