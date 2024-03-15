@@ -19,7 +19,7 @@ export default () => {
       () => {
         const vetReviewSection = document.querySelector('.testImgMobile').closest('.shopify-section');
         moveSocialProofSection(vetReviewSection);
-      },
+      }
     );
   } else if (VARIATION === '2') {
     pollerLite(
@@ -27,7 +27,7 @@ export default () => {
       () => {
         const productDescription = document.querySelector('[data-section-type="product"]');
         moveSocialProofSection(productDescription);
-      },
+      }
     );
   }
 };
