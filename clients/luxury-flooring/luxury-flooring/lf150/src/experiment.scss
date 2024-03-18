@@ -117,6 +117,12 @@
             .scrollable-wrapper {
                 padding: 0;
 
+                @include media-query(lg) {
+                    padding: 14px 0 10px 0;
+                    border-top: 1px solid #E1E1E1;
+                    border-bottom: 1px solid #E1E1E1;
+                }
+
                 .#{$id}__categoryCards {
                     padding: 0 0 15px 0;
                     justify-content: center;
