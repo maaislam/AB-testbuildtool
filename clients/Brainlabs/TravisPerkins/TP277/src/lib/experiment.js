@@ -1,6 +1,6 @@
 import { fireEvent } from '../../../../../../globalUtil/trackings/services';
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;

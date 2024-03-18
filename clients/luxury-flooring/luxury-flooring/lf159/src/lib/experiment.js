@@ -123,13 +123,24 @@ export default () => {
     }, 0);
   });
 
-  obsIntersection(document.querySelector('.product-section.details'), 0, (entry) => {
-    if (entry.isIntersecting) {
-      document.body.classList.remove('makeSticky');
-      document.body.classList.add('pushtobottom');
-    } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
-      document.body.classList.add('makeSticky');
-      document.body.classList.remove('pushtobottom');
+  const prodDetailsContainer = document.querySelector('.product-info-main');
+  prodDetailsContainer.style.height = 'max-content';
+
+  const prodDetailsContainerHeight = prodDetailsContainer.scrollHeight;
+
+  const intersectionRation = prodDetailsContainerHeight > 500 ? 0 : 1;
+
+  obsIntersection(
+    document.querySelector('.product-section.details'),
+    intersectionRation,
+    (entry) => {
+      if (entry.isIntersecting) {
+        document.body.classList.remove('makeSticky');
+        document.body.classList.add('pushtobottom');
+      } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+        document.body.classList.add('makeSticky');
+        document.body.classList.remove('pushtobottom');
+      }
     }
-  });
+  );
 };

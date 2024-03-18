@@ -7,6 +7,9 @@
     @include media-query(md) {
       overflow-x: hidden !important;
     }
+    .product-info-main {
+      height: max-content;
+    }
   }
 
   .makeSticky .product-info-main {
