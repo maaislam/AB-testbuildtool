@@ -1,6 +1,6 @@
 const price = (ID, pricePerLitre, actualPrice) => {
   console.log(pricePerLitre, actualPrice);
-  if (!pricePerLitre) return;
+  if (!pricePerLitre) return '';
   const html = `<span class="${ID}__perLitre">(£${((actualPrice / pricePerLitre) * 1000).toFixed(
     2
   )}/Ltr)</span>`;
