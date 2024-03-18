@@ -2,12 +2,14 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    span.category-readmore {
-        margin-top: 8px !important;
-    }
+    @include media-query(md) {
+        .category-info .category-description-new {
+            margin-bottom: 1em !important;
+        }
 
-    .category-info .category-description-new {
-        margin-bottom: 1em !important;
+        span.category-readmore {
+            margin-top: 8px !important;
+        }
     }
 
     &__container {
@@ -59,8 +61,7 @@
                 border-bottom: 1px solid #E1E1E1;
 
                 @include media-query(md) {
-                    padding: 0;
-                    border-top: none;
+                    padding: 17px 0 11px 0;
                 }
 
                 .#{$id}__categoryCards {
@@ -116,6 +117,12 @@
 
             .scrollable-wrapper {
                 padding: 0;
+
+                @include media-query(md) {
+                    padding: 14px 0 10px 0;
+                    border-top: 1px solid #E1E1E1;
+                    border-bottom: 1px solid #E1E1E1;
+                }
 
                 .#{$id}__categoryCards {
                     padding: 0 0 15px 0;
@@ -239,11 +246,12 @@
                 margin-bottom: 8px;
 
                 .scrollable-wrapper {
-                    padding: 0;
+                    padding: 15px 0 14px 0;
+                    border-top: 1px solid #E1E1E1;
                     border-bottom: 1px solid #E1E1E1;
 
                     .#{$id}__categoryCards {
-                        padding: 8px 0 20px 8px;
+                        padding: 8px 0 14px 8px;
                         justify-content: flex-start;
                         gap: 34px;
 
