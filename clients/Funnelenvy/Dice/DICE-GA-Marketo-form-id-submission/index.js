@@ -20,7 +20,7 @@ function pollerLite (conditions, callback, maxTime) {
 };
 
 function init () {
-    var gaClientId = {{ CJS - GA Client ID}};
+    var gaClientId = {{CJS - GA Client ID}};
     var marketoForm = document.querySelector('[name="formid"]');
 
     var formId = document.querySelector('[name="formid"]').value;
