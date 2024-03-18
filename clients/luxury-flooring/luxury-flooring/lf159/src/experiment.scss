@@ -7,26 +7,28 @@
     @include media-query(md) {
       overflow-x: hidden !important;
     }
-    .product-info-main {
-      height: max-content;
-    }
   }
 
-  .makeSticky .product-info-main {
+  // .makeSticky .product-info-main {
+  //   position: sticky;
+  //   top: 0;
+  //   @include media-query(md) {
+  //     position: relative;
+  //     top: auto;
+  //   }
+  // }
+
+  // .pushtobottom .product-info-main {
+  //   position: relative;
+  //   margin-top: auto;
+  //   @include media-query(md) {
+  //     margin-top: 0;
+  //   }
+  // }
+
+  .#{$id}__wrapper-class {
     position: sticky;
     top: 0;
-    @include media-query(md) {
-      position: relative;
-      top: auto;
-    }
-  }
-
-  .pushtobottom .product-info-main {
-    position: relative;
-    margin-top: auto;
-    @include media-query(md) {
-      margin-top: 0;
-    }
   }
 
   .product.media {

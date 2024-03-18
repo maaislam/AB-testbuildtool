@@ -3,7 +3,7 @@ import shared from './shared/shared';
 import { roomVisualiser } from './components/roomVisualiser';
 import { images } from './components/images';
 import counter from './components/counter';
-import { obsIntersection } from './helpers/utils';
+import { obsIntersection, wrapInner } from './helpers/utils';
 
 const { ID } = shared;
 const MIN_IMAGES_OF_PROD = 5;
@@ -124,23 +124,9 @@ export default () => {
   });
 
   const prodDetailsContainer = document.querySelector('.product-info-main');
-  prodDetailsContainer.style.height = 'max-content';
 
-  const prodDetailsContainerHeight = prodDetailsContainer.scrollHeight;
-
-  const intersectionRation = prodDetailsContainerHeight > 500 ? 0 : 1;
-
-  obsIntersection(
-    document.querySelector('.product-section.details'),
-    intersectionRation,
-    (entry) => {
-      if (entry.isIntersecting) {
-        document.body.classList.remove('makeSticky');
-        document.body.classList.add('pushtobottom');
-      } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
-        document.body.classList.add('makeSticky');
-        document.body.classList.remove('pushtobottom');
-      }
-    }
-  );
+  //Suppose you have a div with id="myDiv" that contains several children you want to wrap.
+  wrapInner('.product-info-main', {
+    class: `${ID}__wrapper-class`
+  });
 };

@@ -82,3 +82,15 @@ export const isElementInView = (element) => {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 };
+
+export const wrapInner = (parentSelector, wrapperAttributes = {}) => {
+  const parent = document.querySelector(parentSelector);
+  if (!parent) return;
+
+  const wrapper = document.createElement('div');
+  Object.entries(wrapperAttributes).forEach(([key, value]) => wrapper.setAttribute(key, value));
+
+  Array.from(parent.childNodes).forEach((child) => wrapper.appendChild(child));
+
+  parent.appendChild(wrapper);
+};
