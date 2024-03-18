@@ -2,12 +2,14 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    span.category-readmore {
-        margin-top: 8px !important;
-    }
+    @include media-query(md) {
+        .category-info .category-description-new {
+            margin-bottom: 1em !important;
+        }
 
-    .category-info .category-description-new {
-        margin-bottom: 1em !important;
+        span.category-readmore {
+            margin-top: 8px !important;
+        }
     }
 
     &__container {
