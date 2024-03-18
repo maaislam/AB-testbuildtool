@@ -244,11 +244,12 @@
                 margin-bottom: 8px;
 
                 .scrollable-wrapper {
-                    padding: 0;
+                    padding: 15px 0 14px 0;
+                    border-top: 1px solid #E1E1E1;
                     border-bottom: 1px solid #E1E1E1;
 
                     .#{$id}__categoryCards {
-                        padding: 8px 0 20px 8px;
+                        padding: 8px 0 14px 8px;
                         justify-content: flex-start;
                         gap: 34px;
 
