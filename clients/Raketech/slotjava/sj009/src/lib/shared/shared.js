@@ -1,6 +1,6 @@
 module.exports = {
     ID: "sj009",
-    VARIATION: "1",
+    VARIATION: "Control",
     CLIENT: "Raketech",
     SITE: "slotjava"
   };
