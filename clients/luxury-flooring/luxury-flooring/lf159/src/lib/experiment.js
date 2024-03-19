@@ -3,7 +3,7 @@ import shared from './shared/shared';
 import { roomVisualiser } from './components/roomVisualiser';
 import { images } from './components/images';
 import counter from './components/counter';
-import { obsIntersection, wrapInner } from './helpers/utils';
+import { wrapInner } from './helpers/utils';
 
 const { ID } = shared;
 const MIN_IMAGES_OF_PROD = 5;
@@ -123,7 +123,7 @@ export default () => {
     }, 0);
   });
 
-  const prodDetailsContainer = document.querySelector('.product-info-main');
+  //const prodDetailsContainer = document.querySelector('.product-info-main');
 
   //Suppose you have a div with id="myDiv" that contains several children you want to wrap.
   wrapInner('.product-info-main', {
