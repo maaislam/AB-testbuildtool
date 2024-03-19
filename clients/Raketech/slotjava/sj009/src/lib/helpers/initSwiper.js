@@ -15,10 +15,10 @@ const initSwiper = (id) => {
       loop: true,
       navigation: {
         nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+        prevEl: '.swiper-button-prev'
+      }
     });
   };
-}
+};
 
 export default initSwiper;

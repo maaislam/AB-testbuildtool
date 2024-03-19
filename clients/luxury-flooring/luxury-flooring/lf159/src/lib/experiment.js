@@ -3,7 +3,7 @@ import shared from './shared/shared';
 import { roomVisualiser } from './components/roomVisualiser';
 import { images } from './components/images';
 import counter from './components/counter';
-import { obsIntersection } from './helpers/utils';
+import { wrapInner, pollerLite } from './helpers/utils';
 
 const { ID } = shared;
 const MIN_IMAGES_OF_PROD = 5;
@@ -35,10 +35,11 @@ export default () => {
   const parentElement = document.querySelector('.fotorama__stage');
 
   //room visualiser add
-  if (fotoramaData.activeIndex === 0) {
+
+  pollerLite(['div[data-role="roomvo"] > .roomvo-stimr'], () => {
     insertRoomVisualiser(parentElement);
     insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
-  }
+  });
 
   //insert other images
   if (fotoramaData.data.length) {
@@ -112,24 +113,17 @@ export default () => {
 
     setTimeout(() => {
       if (fotoramaData.activeIndex !== 0) {
-        if (document.querySelector(`.${ID}__room-visualiser`)) {
-          document.querySelector(`.${ID}__room-visualiser`).remove();
-        }
         insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
       } else if (fotoramaData.activeIndex === 0) {
-        insertRoomVisualiser(parentElement);
         insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
       }
     }, 0);
   });
 
-  obsIntersection(document.querySelector('.product-section.details'), 0, (entry) => {
-    if (entry.isIntersecting) {
-      document.body.classList.remove('makeSticky');
-      document.body.classList.add('pushtobottom');
-    } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
-      document.body.classList.add('makeSticky');
-      document.body.classList.remove('pushtobottom');
-    }
+  const prodDetailsContainer = document.querySelector('.product-info-main');
+
+  //Suppose you have a div with id="myDiv" that contains several children you want to wrap.
+  wrapInner('.product-info-main', {
+    class: `${ID}__wrapper-class`
   });
 };

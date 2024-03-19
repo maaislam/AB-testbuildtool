@@ -1,12 +1,15 @@
 import slideTemplate from './slide';
 
-const heroSection = (id, slideInfo) => {
+const heroSection = (id, VARIATION, slideInfo) => {
   const htmlString = `
     <section class="${id}__hero">
       <div class="${id}__slider-section">
       <div class="swiper ${id}__swiper">
         <div class="swiper-wrapper">
-          ${slideInfo.sort((a, b) => a.order - b.order).map((slide, index) => slideTemplate(id, slide)).join('')}
+          ${slideInfo
+            .sort((a, b) => a.order - b.order)
+            .map((slide, index) => slideTemplate(id, VARIATION, slide, index))
+            .join('')}
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
