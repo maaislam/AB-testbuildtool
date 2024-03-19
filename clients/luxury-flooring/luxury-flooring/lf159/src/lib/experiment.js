@@ -3,7 +3,8 @@ import shared from './shared/shared';
 import { roomVisualiser } from './components/roomVisualiser';
 import { images } from './components/images';
 import counter from './components/counter';
-import { wrapInner } from './helpers/utils';
+
+import { wrapInner, pollerLite } from './helpers/utils';
 
 const { ID } = shared;
 const MIN_IMAGES_OF_PROD = 5;
@@ -27,6 +28,24 @@ const fullSizeScreen = (keyValue, fotoramaData) => {
   fotoramaData.requestFullScreen();
 };
 
+const checkVideoContainer = () => {
+  if (
+    document.querySelector(
+      '.fotorama__stage .fotorama__stage__frame.fotorama-video-container.video-unplayed'
+    )
+  ) {
+    document.querySelector(`.${ID}__room-visualiser`)?.classList.remove(`${ID}__hide`);
+  }
+
+  if (
+    document.querySelector(
+      '.fotorama__stage .fotorama__stage__frame.fotorama-video-container.fotorama__active:not(.video-unplayed)'
+    )
+  ) {
+    document.querySelector(`.${ID}__room-visualiser`)?.classList.add(`${ID}__hide`);
+  }
+};
+
 export default () => {
   setup();
 
@@ -35,10 +54,11 @@ export default () => {
   const parentElement = document.querySelector('.fotorama__stage');
 
   //room visualiser add
-  if (fotoramaData.activeIndex === 0) {
+
+  pollerLite(['div[data-role="roomvo"] > .roomvo-stimr'], () => {
     insertRoomVisualiser(parentElement);
     insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
-  }
+  });
 
   //insert other images
   if (fotoramaData.data.length) {
@@ -113,10 +133,12 @@ export default () => {
     setTimeout(() => {
       if (fotoramaData.activeIndex !== 0) {
         insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+        checkVideoContainer();
       } else if (fotoramaData.activeIndex === 0) {
         insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+        checkVideoContainer();
       }
-    }, 0);
+    }, 300);
   });
 
   //const prodDetailsContainer = document.querySelector('.product-info-main');
