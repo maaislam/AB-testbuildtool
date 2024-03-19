@@ -112,12 +112,8 @@ export default () => {
 
     setTimeout(() => {
       if (fotoramaData.activeIndex !== 0) {
-        if (document.querySelector(`.${ID}__room-visualiser`)) {
-          document.querySelector(`.${ID}__room-visualiser`).remove();
-        }
         insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
       } else if (fotoramaData.activeIndex === 0) {
-        insertRoomVisualiser(parentElement);
         insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
       }
     }, 0);
