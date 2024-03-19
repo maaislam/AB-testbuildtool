@@ -11,6 +11,7 @@ const limitReached = 'Sample limit reached';
 let stage3Msg = 'Added to basket';
 
 let finalMessage = 'Order a sample';
+let clickCount = 0;
 
 const init = (mutation) => {
   const { addedNodes, removedNodes, target } = mutation;
@@ -44,9 +45,9 @@ export default () => {
     );
 
     let btnSubtextMsg = '';
-    //console.log('🚀 ~ cart.subscribe ~ currentSampleQty:', currentSampleQty);
-
-    if (currentSampleQty > 1) {
+    console.log('🚀 ~ cart.subscribe ~ currentSampleQty:', currentSampleQty);
+    clickCount++;
+    if (currentSampleQty >= 2 && clickCount > 2) {
       stage3Msg = limitReached;
       finalMessage = limitReached;
       btnSubtextMsg = "You've hit the sample limit for this product.";
@@ -54,6 +55,7 @@ export default () => {
       stage3Msg = 'Added to basket';
       finalMessage = 'Order a sample';
     }
+
     console.log('🚀 ~ cart.subscribe ~ totalSampleQty:', totalSampleQty);
 
     if (totalSampleQty >= 15) {
