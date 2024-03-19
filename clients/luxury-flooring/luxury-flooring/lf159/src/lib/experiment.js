@@ -3,7 +3,7 @@ import shared from './shared/shared';
 import { roomVisualiser } from './components/roomVisualiser';
 import { images } from './components/images';
 import counter from './components/counter';
-import { obsIntersection, wrapInner } from './helpers/utils';
+import { wrapInner, pollerLite } from './helpers/utils';
 
 const { ID } = shared;
 const MIN_IMAGES_OF_PROD = 5;
@@ -35,10 +35,11 @@ export default () => {
   const parentElement = document.querySelector('.fotorama__stage');
 
   //room visualiser add
-  if (fotoramaData.activeIndex === 0) {
+
+  pollerLite(['div[data-role="roomvo"] > .roomvo-stimr'], () => {
     insertRoomVisualiser(parentElement);
     insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
-  }
+  });
 
   //insert other images
   if (fotoramaData.data.length) {
