@@ -53,6 +53,10 @@
           z-index: 9999;
           cursor: pointer;
 
+          &.#{$id}__hide {
+            display: none;
+          }
+
           @include media-query(md) {
             top: 10px;
             bottom: 0;

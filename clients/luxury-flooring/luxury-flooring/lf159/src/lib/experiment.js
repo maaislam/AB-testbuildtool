@@ -27,6 +27,24 @@ const fullSizeScreen = (keyValue, fotoramaData) => {
   fotoramaData.requestFullScreen();
 };
 
+const checkVideoContainer = () => {
+  if (
+    document.querySelector(
+      '.fotorama__stage .fotorama__stage__frame.fotorama-video-container.video-unplayed'
+    )
+  ) {
+    document.querySelector(`.${ID}__room-visualiser`)?.classList.remove(`${ID}__hide`);
+  }
+
+  if (
+    document.querySelector(
+      '.fotorama__stage .fotorama__stage__frame.fotorama-video-container.fotorama__active:not(.video-unplayed)'
+    )
+  ) {
+    document.querySelector(`.${ID}__room-visualiser`)?.classList.add(`${ID}__hide`);
+  }
+};
+
 export default () => {
   setup();
 
@@ -114,10 +132,12 @@ export default () => {
     setTimeout(() => {
       if (fotoramaData.activeIndex !== 0) {
         insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+        checkVideoContainer();
       } else if (fotoramaData.activeIndex === 0) {
         insertCounter(parentElement, fotoramaData.activeIndex, fotoramaData.size);
+        checkVideoContainer();
       }
-    }, 0);
+    }, 300);
   });
 
   const prodDetailsContainer = document.querySelector('.product-info-main');
