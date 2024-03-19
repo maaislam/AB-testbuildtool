@@ -11,7 +11,7 @@ const init = () => {
 
   const anchorPoint = document.querySelector('.filter-toolbar');
 
-  const { pathname } = window.location;
+  //const { pathname } = window.location;
 
   const data = categoryData[getPathnameFirstpart(window.location.href)];
 
@@ -51,6 +51,15 @@ const init = () => {
 
 export default () => {
   setup();
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest(`.${ID}__categoryCard`)) {
+      window._conv_q = window._conv_q || [];
+      _conv_q.push(['triggerConversion', '100445374']);
+    }
+  });
 
   if (VARIATION === 'control') return;
 
