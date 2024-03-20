@@ -20,7 +20,6 @@ const init = () => {
 
 export default () => {
   setup();
-  console.log(ID);
 
   const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
   !isListenerAdded &&
