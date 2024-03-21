@@ -13,8 +13,12 @@ const init = () => {
 
   targetElement.forEach((item) => {
     const casinoName = item.dataset.operator;
-    if (listofCasinos.includes(casinoName)) return;
+    if (listofCasinos.includes(casinoName)) {
+      item.classList.add(`${ID}__casinot`);
+      return;
+    }
     item.textContent = 'TILL BONUS';
+    item.classList.add(`${ID}__bonus`);
   });
 };
 
@@ -25,10 +29,19 @@ export default () => {
   !isListenerAdded &&
     document.addEventListener('click', ({ target }) => {
       const pageType = window.location.pathname === '/' ? 'Home' : 'NatCasino';
+
       if (target.closest('a[href*="/go/"]') && target.closest('a[data-click-target="Toplist"]')) {
         const clickedElem = target.closest('a');
         const casionName = clickedElem.href.split('/go/')[1];
-        gaTracking(`${casionName} CTO | ${pageType} | Button`);
+        const buttonType = clickedElem.classList.contains(`${ID}__bonus`)
+          ? 'Bonus'
+          : clickedElem.classList.contains(`${ID}__casinot`)
+          ? 'Casinot'
+          : '';
+
+        VARIATION === '1'
+          ? gaTracking(`${casionName} CTO | ${pageType} | ${buttonType} | Button`)
+          : gaTracking(`${casionName} CTO | ${pageType} | Button`);
       } else if (target.closest('a.mui-1hafamj') && target.closest('.MuiGrid-grid-md-4')) {
         const targetElement = target.closest('.MuiGrid-item');
         const casionName = targetElement.querySelector('a[href*="/go/"]').href.split('/go/')[1];
