@@ -1,3 +1,4 @@
+/*eslint-disable no-param-reassign */
 import setup from './services/setup';
 import shared from './shared/shared';
 import gaTracking from './services/gaTracking';
@@ -14,11 +15,11 @@ const init = () => {
   targetElement.forEach((item) => {
     const casinoName = item.dataset.operator;
     if (listofCasinos.includes(casinoName)) {
-      item.classList.add(`${ID}__casinot`);
+      item.dataset.btnType = 'Casinot';
       return;
     }
     item.textContent = 'TILL BONUS';
-    item.classList.add(`${ID}__bonus`);
+    item.dataset.btnType = 'Bonus';
   });
 };
 
@@ -27,21 +28,12 @@ export default () => {
 
   const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
   !isListenerAdded &&
-    document.addEventListener('click', ({ target }) => {
+    document.body.addEventListener('click', (e) => {
+      const { target } = e;
       const pageType = window.location.pathname === '/' ? 'Home' : 'NatCasino';
-
       if (target.closest('a[href*="/go/"]') && target.closest('a[data-click-target="Toplist"]')) {
-        const clickedElem = target.closest('a');
-        const casionName = clickedElem.href.split('/go/')[1];
-        const buttonType = clickedElem.classList.contains(`${ID}__bonus`)
-          ? 'Bonus'
-          : clickedElem.classList.contains(`${ID}__casinot`)
-          ? 'Casinot'
-          : '';
-
-        VARIATION === '1'
-          ? gaTracking(`${casionName} CTO | ${pageType} | ${buttonType} | Button`)
-          : gaTracking(`${casionName} CTO | ${pageType} | Button`);
+        const { btnType, operator } = target.dataset;
+        gaTracking(`${operator} CTO | ${pageType} | ${btnType} | Button`);
       } else if (target.closest('a.mui-1hafamj') && target.closest('.MuiGrid-grid-md-4')) {
         const targetElement = target.closest('.MuiGrid-item');
         const casionName = targetElement.querySelector('a[href*="/go/"]').href.split('/go/')[1];
@@ -52,6 +44,7 @@ export default () => {
         gaTracking(`${casionName} CTR | ${pageType} | Logo`);
       }
     });
+
   document.body.dataset[`${ID}__isListenerAdded`] = true;
   if (VARIATION === 'Control') {
     return;

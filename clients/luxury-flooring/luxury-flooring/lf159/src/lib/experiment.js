@@ -141,9 +141,6 @@ export default () => {
     }, 300);
   });
 
-  //const prodDetailsContainer = document.querySelector('.product-info-main');
-
-  //Suppose you have a div with id="myDiv" that contains several children you want to wrap.
   wrapInner('.product-info-main', {
     class: `${ID}__wrapper-class`
   });

@@ -45,8 +45,10 @@ export default () => {
     );
 
     let btnSubtextMsg = '';
-    console.log('🚀 ~ cart.subscribe ~ currentSampleQty:', currentSampleQty);
-    clickCount++;
+    //console.log('🚀 ~ cart.subscribe ~ currentSampleQty:', currentSampleQty);
+    clickCount += 1;
+    //console.log('🚀 ~ document.addEventListener ~ clickCount:', clickCount);
+
     if (currentSampleQty >= 2 && clickCount > 2) {
       stage3Msg = limitReached;
       finalMessage = limitReached;
@@ -56,7 +58,7 @@ export default () => {
       finalMessage = 'Order a sample';
     }
 
-    console.log('🚀 ~ cart.subscribe ~ totalSampleQty:', totalSampleQty);
+    //console.log('🚀 ~ cart.subscribe ~ totalSampleQty:', totalSampleQty);
 
     if (totalSampleQty >= 15) {
       finalMessage = limitReached;

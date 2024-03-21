@@ -1,8 +1,8 @@
 (() => {
-  const sharedBundle = 'http://localhost:3000/shared.bundle.js';
-  const jsLocation = 'http://localhost:3000/main.bundle.js';
-  const cssLocation = 'http://localhost:3000/styles/main.css';
-  const socket = new WebSocket('ws://localhost:3000/ws');
+  const sharedBundle = 'http://localhost:7000/shared.bundle.js';
+  const jsLocation = 'http://localhost:7000/main.bundle.js';
+  const cssLocation = 'http://localhost:7000/styles/main.css';
+  const socket = new WebSocket('ws://localhost:7000/ws');
   const fileFetcher = (fileLocation, fileType) => {
     const config = {
       js: {
