@@ -7,10 +7,22 @@
       .#{$id}__predict {
         --bgColor: #262626;
         flex: 1;
+        position: relative;
         padding: 1.1em 0;
         text-align: center;
         text-decoration: none;
         background: var(--bgColor);
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          border: 18px solid #1ba66b;
+          border-left-color: transparent;
+          border-bottom-color: transparent;
+        }
 
         svg {
           height: 21px;
@@ -22,6 +34,17 @@
           font-size: 0.95em;
           color: #fff;
           overflow: hidden;
+        }
+
+        span {
+          position: absolute;
+          top: 8px;
+          right: 1px;
+          font-weight: 700;
+          font-size: 10px;
+          line-height: 13px;
+          transform: rotate(45deg);
+          color: #fff;
         }
       }
     }
