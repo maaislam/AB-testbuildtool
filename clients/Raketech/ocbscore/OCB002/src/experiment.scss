@@ -1,0 +1,29 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .sticky {
+      .#{$id}__predict {
+        --bgColor: #262626;
+        flex: 1;
+        padding: 1.1em 0;
+        text-align: center;
+        text-decoration: none;
+        background: var(--bgColor);
+
+        svg {
+          height: 21px;
+        }
+        p {
+          margin: 0.5em 0 0;
+          line-height: 1;
+          font-weight: 300;
+          font-size: 0.95em;
+          color: #fff;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
