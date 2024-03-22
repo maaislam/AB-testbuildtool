@@ -46,6 +46,19 @@
       border: 1px solid #ff7556;
       cursor: pointer;
 
+      &:hover {
+        background-color: #ff7556;
+
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+        span {
+          color: #fff;
+        }
+      }
+
       span {
         color: #ff7556;
         font-size: 14px;

@@ -24,7 +24,7 @@ const init = () => {
         </mask>
         <path d="M8 5.47657e-07L10.1213 -2.12132L8 -4.24264L5.87868 -2.12132L8 5.47657e-07ZM2.12132 10.1213L10.1213 2.12132L5.87868 -2.12132L-2.12132 5.87868L2.12132 10.1213ZM5.87868 2.12132L13.8787 10.1213L18.1213 5.87868L10.1213 -2.12132L5.87868 2.12132Z" fill="#FF7556" mask="url(#path-1-inside-1_5518_72156)"/>
       </svg>
-      <span>Mostra altri casinò (${rows.length - ITEMS_PER_PAGE})</span>
+      <span>MOSTRA ALTRI CASINÒ (${rows.length - ITEMS_PER_PAGE})</span>
     </button>
   </div>`;
 
@@ -47,7 +47,7 @@ const showAllItems = () => {
 
 const hideItems = () => {
   rows.slice(ITEMS_PER_PAGE).forEach((element) => element.classList.toggle(`${ID}__hide`));
-  document.querySelector('#showMoreButton span').innerText = `Mostra altri casinò (${
+  document.querySelector('#showMoreButton span').innerText = `MOSTRA ALTRI CASINÒ (${
     rows.length - ITEMS_PER_PAGE
   })`;
 };
