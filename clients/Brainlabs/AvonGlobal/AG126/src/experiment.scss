@@ -1,0 +1,19 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .ImageWrapper {
+    position: relative;
+  }
+
+  &-message {
+    width: 100%;
+    max-width: 140px;
+    margin: 0.5rem 0;
+    color: #e5004b;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: left;
+  }
+}
