@@ -1,0 +1,313 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #MainContent {
+    & > .container {
+      .#{$id}__header {
+        text-align: center;
+        padding: 0 5px;
+        &-title {
+          font-size: 30px;
+          font-weight: 400;
+          color: #000;
+          letter-spacing: 3px;
+          line-height: 42px;
+          white-space: nowrap;
+          @include media-query(sm) {
+            font-size: 20px;
+          }
+        }
+        &-subtitle {
+          font-size: 20px;
+          font-family: 'function light 1';
+          font-weight: 400;
+          color: #000;
+          line-height: 28px;
+          margin: 10px 0 34px 0;
+        }
+      }
+      .#{$id}__packageContainer {
+        padding: 0 68px;
+        @include media-query(xlg) {
+          padding: 0 55px;
+        }
+        @include media-query(lg) {
+          padding: 0 47px;
+        }
+        .#{$id}__packageContainer-products {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 54px;
+          margin-bottom: 56px;
+          @include media-query(xxlg) {
+            gap: 38px;
+          }
+          @include media-query(lg) {
+            gap: 22px;
+          }
+          @include media-query(sm) {
+            flex-wrap: wrap;
+            gap: 45px;
+          }
+          .#{$id}__productItem {
+            border: solid 2px #000;
+            padding: 12px 12px 20px 12px;
+            @include media-query(sm) {
+              width: 95%;
+            }
+            &-img {
+              border: 1px solid rgb(199, 199, 199);
+
+              img {
+                width: 100%;
+                max-height: 333px;
+                height: 100%;
+                object-fit: contain;
+                @include media-query(sm) {
+                  max-height: 100%;
+                }
+              }
+            }
+
+            &-info {
+              text-align: center;
+              .#{$id}__productItem-title {
+                font-size: 22px;
+                font-weight: 400;
+                font-family: 'function medium 1';
+                line-height: 26px;
+                letter-spacing: 2px;
+                color: #000;
+                margin-top: 20px;
+                @include media-query(xxlg) {
+                  font-size: 15px;
+                  line-height: 18px;
+                }
+                @include media-query(sm) {
+                  font-size: 22px;
+                  line-height: 26px;
+                }
+              }
+              .#{$id}__productItem-type {
+                font-size: 22px;
+                font-weight: 400;
+                font-family: 'function medium 1';
+                line-height: 26px;
+                letter-spacing: 2px;
+                color: #000;
+                margin-bottom: 20px;
+                @include media-query(xxlg) {
+                  font-size: 16px;
+                  line-height: 18px;
+                }
+                @include media-query(sm) {
+                  font-size: 22px;
+                  line-height: 26px;
+                }
+              }
+              .#{$id}__productItem-save {
+                font-size: 18px;
+                font-weight: 400;
+                font-family: 'function light 1';
+                line-height: 18px;
+                color: #000;
+              }
+              .#{$id}__productItem-des {
+                font-size: 18px;
+                font-weight: 400;
+                font-family: 'function light 1';
+                line-height: 18px;
+                color: #000;
+                margin-bottom: 20px;
+              }
+              .#{$id}__productItemCTA {
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
+                font-family: 'function medium 1';
+                padding: 6px 40px;
+                background-color: #000;
+                color: #fff;
+                @include media-query(sm) {
+                  font-size: 18px;
+                  line-height: 18px;
+                  padding: 6px 32px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .#{$id}__podContainer {
+        padding: 0 68px;
+        @include media-query(xlg) {
+          padding: 0 55px;
+        }
+        @include media-query(lg) {
+          padding: 0 47px;
+        }
+        .#{$id}__podContainer-products {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 54px;
+          margin-bottom: 56px;
+          @include media-query(xxlg) {
+            gap: 38px;
+          }
+          @include media-query(sm) {
+            flex-wrap: wrap;
+            gap: 45px;
+          }
+          .#{$id}__productItem {
+            border: solid 2px #000;
+            padding: 12px 12px 20px 12px;
+            max-width: 360px;
+            width: 100%;
+            @include media-query(xlg) {
+              max-width: 307px;
+            }
+            @include media-query(sm) {
+              max-width: 95%;
+            }
+            &-img {
+              border: 1px solid rgb(199, 199, 199);
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            &-info {
+              text-align: center;
+
+              .#{$id}__productItem-type {
+                font-size: 22px;
+                font-weight: 400;
+                font-family: 'function medium 1';
+                line-height: 26px;
+                letter-spacing: 2px;
+                color: #000;
+                margin: 20px 0;
+                @include media-query(xxlg) {
+                  font-size: 16px;
+                  line-height: 18px;
+                }
+              }
+
+              .#{$id}__productItemCTA {
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
+                font-family: 'function medium 1';
+                padding: 6px 40px;
+                background-color: #000;
+                color: #fff;
+                @include media-query(sm) {
+                  font-size: 18px;
+                  line-height: 18px;
+                  padding: 6px 32px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .#{$id}__blendContainer {
+        padding: 0 68px;
+        margin-bottom: 60px;
+        @include media-query(xlg) {
+          padding: 0 55px;
+        }
+        @include media-query(lg) {
+          padding: 0 47px;
+        }
+
+        @include media-query(sm) {
+          margin-bottom: 30px;
+        }
+
+        &-wrapper {
+          display: flex;
+          border: solid 2px #000;
+          @include media-query(sm) {
+            flex-direction: column;
+            width: 95%;
+            margin: 0 auto;
+          }
+          .#{$id}__blendContainer-img {
+            width: 50%;
+            padding: 10px;
+            @include media-query(sm) {
+              width: 100%;
+              padding: 20px;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .#{$id}__blendContainer-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            @include media-query(sm) {
+              width: 100%;
+            }
+            .#{$id}__blendContainer-title {
+              font-size: 30px;
+              font-weight: 400;
+              line-height: 42px;
+              letter-spacing: 3px;
+              color: #000;
+              text-align: center;
+              @include media-query(xxlg) {
+                font-size: 22px;
+                line-height: 28px;
+              }
+            }
+            .#{$id}__blendContainer-subtitle {
+              font-size: 16px;
+              font-weight: 400;
+              font-family: 'function light 1';
+              line-height: 22px;
+              max-width: 345px;
+              text-align: center;
+              color: #000;
+              margin: 30px 0;
+              padding: 0 5px;
+              @include media-query(xxlg) {
+                margin: 20px 0;
+              }
+            }
+            .#{$id}__blendContainerCTA {
+              display: inline-block;
+              font-family: 'Function Medium 1';
+              line-height: 22px;
+              padding: 6px 40px;
+              background-color: #000;
+              color: #fff;
+              @include media-query(sm) {
+                margin-bottom: 30px;
+                font-size: 18px;
+                line-height: 18px;
+                padding: 6px 32px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
