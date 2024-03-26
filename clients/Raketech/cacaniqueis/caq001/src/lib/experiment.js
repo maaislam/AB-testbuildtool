@@ -12,7 +12,8 @@ const slideInfo = [
   {
     contentImg:
       'https://img.cacaniqueisonline.com/wp-content/uploads/2020/10/cleopatra-igt_new.jpg?fit=max&h=180&w=235',
-    bgImage: 'https://via.placeholder.com/300x200',
+    bgImage:
+      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/cacaniqueisonline/Play-Cleopatra-bg.png',
     casinoName: 'Play Cleopatra',
     title: 'Cleopatra Slot',
     text: 'A lenda da mulher mais famosa da história continua... Esse mistério aguarda você no caça-níquel Cleopatra, bem aqui.',
@@ -26,8 +27,9 @@ const slideInfo = [
   },
   {
     contentImg:
-      'https://img.cacaniqueisonline.com/wp-content/uploads/2020/10/cleopatra-igt_new.jpg?fit=max&h=180&w=235',
-    bgImage: 'https://via.placeholder.com/300x200',
+      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/cacaniqueisonline/bonus-casino-content-img.png',
+    bgImage:
+      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/cacaniqueisonline/bonus-casino-bg.png',
     title: 'Bônus de Cassino',
     casinoName: 'Bonus Casino',
     text: 'Aproveite ao máximo sua experiência com bônus de boas-vindas, rodadas grátis e promoções',
@@ -41,8 +43,9 @@ const slideInfo = [
   },
   {
     contentImg:
-      'https://img.cacaniqueisonline.com/wp-content/uploads/2020/10/cleopatra-igt_new.jpg?fit=max&h=180&w=235',
-    bgImage: 'https://via.placeholder.com/300x200',
+      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/cacaniqueisonline/kto-casino-content-img.png',
+    bgImage:
+      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/cacaniqueisonline/kto-casino-bg.png',
     title: 'KTO Cassino:',
     casinoName: 'KTO Cassino',
     text: 'R$ 200 de Bônus de boas-vindas! Descubra tudo o que eles têm a oferecer em nossa análise.',
