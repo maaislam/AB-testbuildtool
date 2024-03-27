@@ -15,6 +15,7 @@ const collectData = (element) => {
     data[input.id] = input.value;
   });
   if (data[`${ID}__email`]) {
+    console.log('data', data);
     showFormMessage();
   }
 };
