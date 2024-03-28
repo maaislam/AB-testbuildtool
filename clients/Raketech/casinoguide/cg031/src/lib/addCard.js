@@ -12,17 +12,17 @@ const addCard = (id) => {
           </div>
       </div>
   </div>
-  <div class="cg031_sub-text">100% upp till 2000SEK + 11 omsättningsfria spins</div>
-  <a class="cg031_cta" href="/go/mrvegascasino">Till casinot</a>
-  <div class="cg031_links">
+  <div class="${id}_sub-text">100% upp till 2000SEK + 11 omsättningsfria spins</div>
+  <a class="${id}_cta" href="/go/mrvegascasino">Till casinot</a>
+  <div class="${id}_links">
     Reklamlänk | Villkor gäller | 18+ år | Spela ansvarsfull | <a href="/go/mrvegasterms" rel="noopener nofollow">Regler &amp; villkor gäller</a> | <a href="https://stodlinjen.se" rel="noopener nofollow">Stödlinjen.se</a> | <a href="https://stodlinjen.se" rel="noopener nofollow">spelpaus.se</a> | Spela ansvarsfullt
   </div>
 </div>
-<div class="cg031_info-container">
-    <div class="cg031_info">
+<div class="${id}_info-container">
+    <div class="${id}_info">
 Skribent: <a href="/om/monica-eliasson">Monica Eliasson</a>
     </div>
-<div class="cg031_info">
+<div class="${id}_info">
 Granskats av: <a href="/om/caroline-fjellheim">Caroline Fjellheim</a>
     </div>
 </div>
