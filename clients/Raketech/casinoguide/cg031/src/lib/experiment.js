@@ -9,15 +9,12 @@ import { onUrlChange } from './helpers/utils';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  pollerLite(
-    ['.MuiContainer-root .mui-1cpixy9'],
-    () => {
-      setTimeout(() => {
-        addBreadcrumb(ID);
-        addCard(ID);
-      }, 1000);
-    },
-  );
+  pollerLite(['.MuiContainer-root .mui-1cpixy9'], () => {
+    setTimeout(() => {
+      addBreadcrumb(ID);
+      addCard(ID);
+    }, 2000);
+  });
 };
 
 export default () => {
