@@ -13,7 +13,7 @@ const init = () => {
   pollerLite(['.MuiContainer-root .mui-1cpixy9'], () => {
     setTimeout(() => {
       addBreadcrumb(ID);
-      addCard(ID);
+      //addCard(ID);
     }, 2000);
   });
 };
@@ -23,9 +23,8 @@ export default () => {
   const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
   if (!isListenerAdded) {
     document.body.addEventListener('click', (e) => {
-      if (!window.location.href.includes('/leovegas')) return;
-
       const { target } = e;
+      if (!window.location.href.includes('/leovegas')) return;
       if (target.closest(`.${ID}_cta`) && target.closest(`.${ID}_card-container`)) {
         gaTracking('CTA CTO | Card');
       } else if (
