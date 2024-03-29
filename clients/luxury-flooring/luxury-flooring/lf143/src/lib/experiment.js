@@ -12,6 +12,7 @@ let stage3Msg = 'Added to basket';
 
 let finalMessage = 'Order a sample';
 let clickCount = 0;
+const totalClickCount = 0;
 
 const init = (mutation) => {
   const { addedNodes, removedNodes, target } = mutation;
@@ -29,11 +30,14 @@ const init = (mutation) => {
 export default () => {
   const targetPoint = document.querySelector('#sample_addtocart_form');
   setup();
-  emitCartDataOnChange();
 
   document.addEventListener('cartDataChanged', (e) => {
-    console.log('Cart data:', e.detail);
+    //console.log('Cart data:', e.detail);
     const cartData = e.detail;
+    console.log('🚀 ~ document.addEventListener ~ cartData:', cartData);
+
+    if (Object.keys(cartData).length === 0) return;
+
     const thisProductSampleSku = document.querySelector('.sample-add-form form').dataset.productSku;
     const sampleInCart = cartData.items.find((item) => item.product_sku === thisProductSampleSku);
 
@@ -46,10 +50,10 @@ export default () => {
 
     let btnSubtextMsg = '';
     //console.log('🚀 ~ cart.subscribe ~ currentSampleQty:', currentSampleQty);
-    clickCount += 1;
-    //console.log('🚀 ~ document.addEventListener ~ clickCount:', clickCount);
 
-    if (currentSampleQty >= 2 && clickCount > 2) {
+    clickCount += 1;
+
+    if (currentSampleQty >= 2) {
       stage3Msg = limitReached;
       finalMessage = limitReached;
       btnSubtextMsg = "You've hit the sample limit for this product.";
@@ -88,6 +92,16 @@ export default () => {
   document.body.addEventListener('click', ({ target }) => {
     if (target.closest(`.${ID}__order-button`)) {
       targetPoint.querySelector('#product-addtocart-button1').click();
+      const originalSend = XMLHttpRequest.prototype.send;
+      XMLHttpRequest.prototype.send = function () {
+        this.addEventListener('load', function () {
+          //console.log(this.responseText); //Log or inspect the responseText
+          if (this.responseText === '{"success":false}') {
+            emitCartDataOnChange();
+          }
+        });
+        originalSend.apply(this, arguments);
+      };
     }
   });
 

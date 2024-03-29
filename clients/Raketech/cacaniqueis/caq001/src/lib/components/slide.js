@@ -20,7 +20,7 @@ const slideTemplate = (id, VARIATION, slideInfo, index) => {
     <div class="swiper-slide">
       <div class="${id}__slide" style="background-image:url(${bgImage})" data-type=${variationType} data-index="${slideIndex}" data-name="${casinoName}">
         <div class="${id}__slide-img">
-          <a class="${id}__slide-img-link" href="https://www.google.com/">
+          <a class="${id}__slide-img-link" href="${btnFirstLink}">
             <img src="${contentImg}" alt="${title}" />
           </a>
         </div>

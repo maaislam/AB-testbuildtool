@@ -1,0 +1,37 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .fabric-upvs,
+  .delivery-upvs {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      margin: 0;
+      margin-bottom: 6px;
+      padding: 0;
+      font-size: 13px;
+      svg {
+        margin-right: 8px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        margin-right: 12px;
+      }
+
+      &.container-1 {
+        img {
+          transform: translateX(3px);
+        }
+      }
+    }
+  }
+}

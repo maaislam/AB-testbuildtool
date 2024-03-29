@@ -2,9 +2,17 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  .section.section_top {
+  .hero_carousel,
+  .carousel_control.prev,
+  .carousel_control.next {
     display: none;
   }
+
+  &__hero {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   &__hero-sub {
     background: #dbe5d1;
     padding: 6px 12px 1px;

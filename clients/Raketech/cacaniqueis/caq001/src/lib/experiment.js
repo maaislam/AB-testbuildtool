@@ -18,10 +18,10 @@ const slideInfo = [
     title: 'Cleopatra Slot',
     text: 'A lenda da mulher mais famosa da história continua... Esse mistério aguarda você no caça-níquel Cleopatra, bem aqui.',
     btnFirstTxt: 'JOGUE Cleopatra AGORA',
-    btnFirstLink: 'https://www.google.com',
+    btnFirstLink: '/caca-niquel/cleopatra/',
     btnFirstLabel: 'Play Cleopatra',
     btnSecondTxt: 'JOGUE SLOTS ONLINE DE GRAÇA',
-    btnSecondLink: 'https://www.google.com',
+    btnSecondLink: '/slots',
     btnSecondLabel: 'All Slots',
     order: VARIATION === '1' ? 1 : VARIATION === '2' ? 2 : 3
   },
@@ -34,10 +34,9 @@ const slideInfo = [
     casinoName: 'Bonus Casino',
     text: 'Aproveite ao máximo sua experiência com bônus de boas-vindas, rodadas grátis e promoções',
     btnFirstTxt: 'Explore Todos os bônus',
-    btnFirstLink: 'https://www.google.com',
-    btnFirstLabel: 'Discover Bonus',
+    btnFirstLink: '/free-spins',
     btnSecondTxt: 'Ver Jogadas Grátis',
-    btnSecondLink: 'https://www.google.com',
+    btnSecondLink: '/bonus-casino/',
     btnSecondLabel: 'Play Free',
     order: VARIATION === '1' ? 2 : VARIATION === '2' ? 3 : 1
   },
@@ -50,10 +49,10 @@ const slideInfo = [
     casinoName: 'KTO Cassino',
     text: 'R$ 200 de Bônus de boas-vindas! Descubra tudo o que eles têm a oferecer em nossa análise.',
     btnFirstTxt: 'Leia mais sobre KTO',
-    btnFirstLink: 'https://www.google.com',
+    btnFirstLink: '/kto',
     btnFirstLabel: 'Read More',
     btnSecondTxt: 'Explore Todos os Cassinos',
-    btnSecondLink: 'https://www.google.com',
+    btnSecondLink: '/cassino-online-brasil/',
     btnSecondLabel: 'All Casinos',
     order: VARIATION === '1' ? 3 : VARIATION === '2' ? 1 : 2
   }
@@ -66,7 +65,7 @@ const init = () => {
   console.log('ID: ', ID);
 
   document
-    .querySelector('.section.section_top')
+    .querySelector('.hero_carousel')
     .insertAdjacentHTML('afterend', heroSection(ID, VARIATION, slideInfo));
   initSwiper(ID);
 };

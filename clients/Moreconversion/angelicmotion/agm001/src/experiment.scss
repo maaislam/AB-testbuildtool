@@ -1,0 +1,12 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .show-review {
+    .ali-widget-star-rating {
+      display: block;
+      margin-top: -1.5rem;
+      margin-left: 1.5rem;
+    }
+  }
+}
