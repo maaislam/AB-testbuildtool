@@ -19,6 +19,25 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
+  const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
+  !isListenerAdded &&
+    document.body.addEventListener('click', (e) => {
+      const { target } = e;
+      if (target.closest(`.${ID}_cta`) && target.closest(`.${ID}_card-container`)) {
+        gaTracking('CTA CTO | Card');
+      } else if (
+        target.closest('a[data-operator="Mr Vegas Casino"]') &&
+        target.closest('#sticky-cta-container')
+      ) {
+        gaTracking('CTA CTO | Card');
+      }
+    });
+
+  document.body.dataset[`${ID}__isListenerAdded`] = true;
+
+  if (VARIATION === 'Control') {
+    return;
+  }
   console.log(ID);
 
   init();
