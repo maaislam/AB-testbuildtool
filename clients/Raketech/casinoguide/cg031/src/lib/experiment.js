@@ -8,7 +8,7 @@ import addCard from './addCard';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  if (!window.location.href.includes('/leovegas')) return;
+  if (!window.location.href.includes('/mr-vegas-casino')) return;
 
   pollerLite(['.MuiContainer-root .mui-1cpixy9'], () => {
     setTimeout(() => {
@@ -23,7 +23,7 @@ export default () => {
   const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
   if (!isListenerAdded) {
     document.body.addEventListener('click', (e) => {
-      if (!window.location.href.includes('/leovegas')) return;
+      if (!window.location.href.includes('/mr-vegas-casino')) return;
 
       const { target } = e;
       if (target.closest(`.${ID}_cta`) && target.closest(`.${ID}_card-container`)) {
