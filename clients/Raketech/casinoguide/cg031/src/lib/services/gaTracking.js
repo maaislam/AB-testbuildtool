@@ -6,8 +6,8 @@ const gaTracking = (label) => {
   const variationType = VARIATION === '1' ? '1' : 'C';
 
   const GA4_PROPERTY_ID = 'G-P2725WEG9G';
-  const GA4_INTERNAL_EXPERIMENT_NUM = '6323700159';
-  const GA4_INTERNAL_EXPERIMENT_ID = `Experiment CEO History Casinos ${GA4_INTERNAL_EXPERIMENT_NUM}`;
+  const GA4_INTERNAL_EXPERIMENT_NUM = '6323669925';
+  const GA4_INTERNAL_EXPERIMENT_ID = `${GA4_INTERNAL_EXPERIMENT_NUM} LeoVegas Review Page Redesign`;
   const EXPERIMENT_DEVICE_CATEGORY = 'Mobile Device Test';
 
   pollerLite([() => document.readyState === 'complete'], () => {
