@@ -1,8 +1,9 @@
 import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { observeIntersection } from './helpers/utils';
+import { observeIntersection, pollerLite } from './helpers/utils';
 import { stickyElement } from './components/stickyElement';
+import { upArrow } from './components/upArrow';
 
 const { ID, VARIATION } = shared;
 
@@ -86,14 +87,37 @@ const init = () => {
 
   observeIntersection(intersectionAnchor, 0, handleIntersection);
 };
+
 export default () => {
   setup();
   console.log(ID);
 
-  init();
+  if (VARIATION === '1') {
+    init();
+  }
 
-  document.body.addEventListener('click', (e) => {
+  if (VARIATION === '2') {
+    pollerLite(['footer.footer', () => document.readyState === 'complete'], () => {
+      const height = document.body.scrollHeight;
+
+      if (document.querySelector(`.${ID}__upArrow`)) {
+        document.querySelector(`.${ID}__upArrow`).remove();
+      }
+      document.body.insertAdjacentHTML('beforeend', upArrow(ID));
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > height / 2) {
+          document.querySelector(`.${ID}__upArrow`).classList.add(`${ID}__show`);
+        } else {
+          document.querySelector(`.${ID}__upArrow`).classList.remove(`${ID}__show`);
+        }
+      });
+    });
+  }
+
+  document.body.addEventListener('pointerup', (e) => {
     const { target } = e;
+    console.log('target', target);
 
     if (target.closest('button') && target.closest(`.${ID}__stickyATCContainer-atc-button`)) {
       document
@@ -104,6 +128,12 @@ export default () => {
       document.querySelector(`.${ID}__stickyATCContainer`).classList.contains(`${ID}__show`)
     ) {
       prodInfoFn();
+    } else if (target.closest(`.${ID}__upArrow`)) {
+      console.log('clicked');
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
   });
 };
