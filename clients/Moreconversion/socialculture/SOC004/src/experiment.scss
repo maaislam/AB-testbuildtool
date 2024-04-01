@@ -1,0 +1,138 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__hide {
+    display: none !important;
+  }
+
+  &__show {
+    position: fixed;
+    bottom: -1px;
+    left: 0;
+    z-index: 2147483631;
+    animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  .#{$id}__stickyATCContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background-color: #fff;
+    border-top: solid 5px #e40909;
+    box-shadow: 0px -2px 15px 0px #0000001f;
+
+    &.slide-out-bottom {
+      position: fixed;
+      bottom: -1px;
+      left: 0;
+      z-index: 2147483631;
+      animation: slide-out-bottom 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+    }
+    &-info {
+      display: flex;
+      gap: 20px;
+      @include media-query(sm) {
+        gap: 10px;
+      }
+      &-img {
+        img {
+          width: 50px;
+          height: 50px;
+          @include media-query(sm) {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+      &-headline {
+        h2 {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 19px;
+          color: #04050b;
+          @include media-query(sm) {
+            font-size: 12px;
+            line-height: 15px;
+          }
+        }
+        p {
+          font-size: 16px;
+          font-weight: 800;
+          line-height: 27px;
+          color: #04050b;
+          @include media-query(sm) {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    &-atc {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      @include media-query(lg) {
+        gap: 15px;
+      }
+      &-reviews {
+        img.review-star {
+          width: 16px;
+          height: 16px;
+          min-width: 16px;
+        }
+        .text-xs {
+          font-size: 10px;
+          line-height: 0;
+        }
+
+        @include media-query(sm) {
+          display: none;
+        }
+      }
+      &-button {
+        button {
+          font-size: 14px;
+          line-height: 23px;
+          padding: 12px 60px;
+          @include media-query(sm) {
+            padding: 10px;
+          }
+          img {
+            width: 26px;
+            height: 26px;
+          }
+        }
+      }
+    }
+
+    @include media-query(sm) {
+      padding: 12px 16px;
+      gap: 5px;
+    }
+  }
+
+  @keyframes slide-in-bottom {
+    0% {
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-out-bottom {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+  }
+}
