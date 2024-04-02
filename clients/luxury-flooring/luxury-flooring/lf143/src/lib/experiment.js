@@ -34,7 +34,7 @@ export default () => {
   document.addEventListener('cartDataChanged', (e) => {
     //console.log('Cart data:', e.detail);
     const cartData = e.detail;
-    console.log('🚀 ~ document.addEventListener ~ cartData:', cartData);
+    //console.log('🚀 ~ document.addEventListener ~ cartData:', cartData);
 
     if (Object.keys(cartData).length === 0) return;
 
@@ -92,11 +92,17 @@ export default () => {
   document.body.addEventListener('click', ({ target }) => {
     if (target.closest(`.${ID}__order-button`)) {
       targetPoint.querySelector('#product-addtocart-button1').click();
+      const oldCount = document.querySelector('.counter-number').innerText;
       const originalSend = XMLHttpRequest.prototype.send;
       XMLHttpRequest.prototype.send = function () {
         this.addEventListener('load', function () {
-          //console.log(this.responseText); //Log or inspect the responseText
-          if (this.responseText === '{"success":false}') {
+          //Log or inspect the responseText
+          const newCount = document.querySelector('.counter-number').innerText;
+
+          if (this.responseText.includes('cart') && oldCount === '(15)' && newCount === '(15)') {
+            //const cartData = JSON.parse(this.responseText);
+            emitCartDataOnChange();
+          } else if (this.responseText === '{"success":false}') {
             emitCartDataOnChange();
           }
         });
