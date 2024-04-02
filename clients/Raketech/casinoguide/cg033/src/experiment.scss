@@ -7,5 +7,14 @@
     overflow-x: hidden;
     flex-wrap: nowrap;
     scroll-behavior: smooth;
+
+    .#{$id}__casinoSlider-item {
+      &-image {
+        img {
+        }
+      }
+      &-icon {
+      }
+    }
   }
 }

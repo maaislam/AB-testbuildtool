@@ -25,6 +25,7 @@ export default () => {
       if (!window.location.href.includes('/svenska-casinon/jallacasino/')) return;
 
       const { target } = e;
+      console.log(target.closest('div[class^="mobSticky"]'));
       if (target.closest(`.${ID}__casino-cta`) && target.closest(`.${ID}_card-container`)) {
         gaTracking('Card | Button');
       } else if (
@@ -41,6 +42,11 @@ export default () => {
         target.closest('.sidebar__3SWUh')
       ) {
         gaTracking(' Card | Logo');
+      } else if (
+        target.closest('a[href="/till/jalla-casino/"]') &&
+        target.closest('div[class*="mobSticky"]')
+      ) {
+        gaTracking('Sticky Card | Button');
       }
     });
   }
