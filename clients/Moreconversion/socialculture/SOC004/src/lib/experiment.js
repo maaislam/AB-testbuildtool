@@ -1,5 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 import { observeIntersection } from './helpers/utils';
 import { stickyElement } from './components/stickyElement';
@@ -88,7 +88,6 @@ const init = () => {
 };
 export default () => {
   setup();
-  console.log(ID);
 
   init();
 
