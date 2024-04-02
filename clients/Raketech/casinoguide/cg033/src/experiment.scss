@@ -2,7 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
-    }
+  .#{$id}__casinoSlider {
+    display: flex;
+    overflow-x: hidden;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+  }
 }
