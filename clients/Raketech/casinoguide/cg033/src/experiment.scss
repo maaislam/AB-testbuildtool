@@ -4,17 +4,30 @@
 .#{$id} {
   .#{$id}__casinoSlider {
     display: flex;
-    overflow-x: hidden;
+    overflow-x: scroll;
     flex-wrap: nowrap;
     scroll-behavior: smooth;
-
+    margin-bottom: 24px;
+    gap: 8px;
     .#{$id}__casinoSlider-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 20px 5px 5px;
+      gap: 12px;
+      border: solid 1px #e5e5e5;
       &-image {
+        width: 40px;
+        height: 40px;
         img {
         }
       }
       &-icon {
       }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 }

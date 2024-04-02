@@ -44,15 +44,11 @@ export default () => {
       if (!window.location.href.includes('/maria')) return;
 
       const { target } = e;
-      if (target.closest(`.${ID}_cta`) && target.closest(`.${ID}_card-container`)) {
-        gaTracking('CTA CTO | Card');
-      } else if (
-        target.closest('a[data-operator="Mr Vegas Casino"]') &&
-        target.closest('#sticky-cta-container')
-      ) {
-        gaTracking('CTA CTO | Card');
-      } else if (target.closest('[data-click-target="Casino review CTA sticky"]')) {
-        gaTracking('CTA CTO | Sticky');
+
+      if (target.closest(`.${ID}__casinoSlider-item`)) {
+        const casinoName = target.closest(`.${ID}__casinoSlider-item`).href.split('/go/')[1];
+        const indexItem = target.closest(`.${ID}__casinoSlider-item`).dataset.index;
+        gaTracking(`${casinoName} ${indexItem} CTA CTO | Recommended`);
       }
     });
   }
