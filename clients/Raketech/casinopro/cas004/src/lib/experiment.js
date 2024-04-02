@@ -10,9 +10,6 @@ const init = () => {
   if (!window.location.href.includes('/svenska-casinon/jallacasino/')) return;
   pollerLite(['.sidebar__3SWUh .ctaWrapper__18skR'], () => {
     document.querySelector('.sidebar__3SWUh .ctaWrapper__18skR').innerHTML = addCard(ID);
-    // setTimeout(() => {
-    //   addCard(ID);
-    // }, 2000);
   });
 };
 
