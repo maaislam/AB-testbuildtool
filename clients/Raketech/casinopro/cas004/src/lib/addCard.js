@@ -5,7 +5,7 @@ const addCard = (id) => {
     <div class="${id}_card-container">
         <div class="${id}_card-container-infos">
             <div class="${id}_card-container-infos-icon">
-                <a href="/till/jalla-casino/" target="_blank" rel="nofollow"
+                <a href="/till/jalla-casino/" target="_blank" rel="nofollow" class="${id}__casino-logo"
                 ><img
                     src="/wp-content/uploads/2020/03/jalla-casino-1.png"
                     alt="Jalla casino logo"

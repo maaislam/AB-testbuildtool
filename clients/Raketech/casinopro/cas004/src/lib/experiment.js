@@ -30,6 +30,14 @@ export default () => {
         target.closest('.sidebar__3SWUh')
       ) {
         gaTracking('Card | Button');
+      } else if (target.closest(`.${ID}__casino-logo`)) {
+        gaTracking(' Card | Logo');
+      } else if (
+        target.closest('a[href="/till/jalla-casino/"]') &&
+        target.closest('div[class^="logoWrapper"]') &&
+        target.closest('.sidebar__3SWUh')
+      ) {
+        gaTracking(' Card | Logo');
       }
     });
   }
