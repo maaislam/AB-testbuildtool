@@ -1,0 +1,38 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__casinoSlider {
+    display: flex;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    margin-bottom: 24px;
+    gap: 8px;
+    .#{$id}__casinoSlider-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 20px 5px 5px;
+      gap: 12px;
+      border: solid 1px #e5e5e5;
+      border-radius: 5px;
+      &-image {
+        width: 40px;
+        height: 40px;
+        img {
+        }
+      }
+      &-icon {
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & + div {
+      display: none;
+    }
+  }
+}
