@@ -5,6 +5,9 @@ import { pollerLite, onUrlChange } from './helpers/utils';
 import { casinoSlider } from './components/casinoSlider';
 
 const { ID, VARIATION } = shared;
+
+const DOM_RENDER_DELAY = 2000;
+
 const init = () => {
   if (!window.location.href.includes('/maria')) return;
 
@@ -30,13 +33,12 @@ const init = () => {
       document
         .querySelector(`.${ID}__targetedCasino > p`)
         .insertAdjacentHTML('afterend', casinoSlider(ID, data));
-    }, 2000);
+    }, DOM_RENDER_DELAY);
   });
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
+  setup();
 
   const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
   if (!isListenerAdded) {

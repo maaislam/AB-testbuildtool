@@ -22,7 +22,7 @@ export default () => {
       if (!window.location.href.includes('/svenska-casinon/jallacasino/')) return;
 
       const { target } = e;
-      console.log(target.closest('div[class^="mobSticky"]'));
+      //console.log(target.closest('div[class^="mobSticky"]'));
       if (target.closest(`.${ID}__casino-cta`) && target.closest(`.${ID}_card-container`)) {
         gaTracking('Card | Button');
       } else if (
