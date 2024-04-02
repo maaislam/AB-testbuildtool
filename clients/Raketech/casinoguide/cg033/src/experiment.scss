@@ -29,5 +29,9 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+    & + div {
+      display: none;
+    }
   }
 }
