@@ -75,13 +75,13 @@ const init = () => {
         }, 250);
 
         attributeFn(stickyButton);
-        prodInfoFn();
+        setTimeout(prodInfoFn, 1200);
       } else if (entry.boundingClientRect.top < 0 && !entry.isIntersecting) {
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
         stickySection.classList.add(`${ID}__show`);
         attributeFn(stickyButton);
-        prodInfoFn();
+        setTimeout(prodInfoFn, 1200);
       }
     });
   };
@@ -98,20 +98,31 @@ export default () => {
 
   if (VARIATION === '2') {
     pollerLite(['footer.footer', () => document.readyState === 'complete'], () => {
-      const height = document.body.scrollHeight;
+      const intersectionAnchor = document.querySelector(
+        '.product-header1_layout form[action="/cart/add"] button[type="submit"]'
+      );
 
       if (document.querySelector(`.${ID}__upArrow`)) {
         document.querySelector(`.${ID}__upArrow`).remove();
       }
       document.body.insertAdjacentHTML('beforeend', upArrow(ID));
 
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > height / 2) {
-          document.querySelector(`.${ID}__upArrow`).classList.add(`${ID}__show`);
-        } else {
-          document.querySelector(`.${ID}__upArrow`).classList.remove(`${ID}__show`);
-        }
-      });
+      const handleIntersection = (entries) => {
+        entries.forEach((entry) => {
+          //console.log('🚀 ~ entries.forEach ~ entry:', entry);
+          const stickySection = document.querySelector(`.${ID}__upArrow`);
+
+          let scrollTimer;
+          clearTimeout(scrollTimer);
+          if (entry.isIntersecting) {
+            stickySection.classList.remove(`${ID}__show`);
+          } else if (entry.boundingClientRect.top < 0 && !entry.isIntersecting) {
+            stickySection.classList.add(`${ID}__show`);
+          }
+        });
+      };
+
+      observeIntersection(intersectionAnchor, 0, handleIntersection);
     });
   }
 
@@ -131,7 +142,7 @@ export default () => {
       target.closest('form[action="/cart/add"]') &&
       document.querySelector(`.${ID}__stickyATCContainer`).classList.contains(`${ID}__show`)
     ) {
-      prodInfoFn();
+      setTimeout(prodInfoFn, 1200);
     } else if (target.closest(`.${ID}__upArrow`) || target.closest('[data-scrolltop="true"]')) {
       //console.log('clicked');
       window.scrollTo({
