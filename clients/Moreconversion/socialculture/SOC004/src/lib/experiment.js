@@ -67,6 +67,7 @@ const init = () => {
 
       let scrollTimer;
       clearTimeout(scrollTimer);
+      console.log('entry', entry);
       if (entry.isIntersecting) {
         stickySection.classList.remove(`${ID}__show`);
         stickySection.classList.add('slide-out-bottom');
@@ -76,7 +77,7 @@ const init = () => {
 
         attributeFn(stickyButton);
         prodInfoFn();
-      } else if (entry.boundingClientRect.top < 0 && !entry.isIntersecting) {
+      } else if (entry.boundingClientRect.top < 0 || !entry.isIntersecting) {
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
         stickySection.classList.add(`${ID}__show`);
@@ -135,5 +136,26 @@ export default () => {
         behavior: 'smooth'
       });
     }
+  });
+
+  const inputFields = document.querySelectorAll('.custom-input');
+  const values = {};
+
+  inputFields.forEach((inputField, index) => {
+    inputField.addEventListener('input', (e) => {
+      values[index] = e.target.value.trim();
+
+      if (values[0] && values[1]) {
+        //active CTA button
+        document
+          .querySelector(`.${ID}__stickyATCContainer button`)
+          .removeAttribute('disabled', 'disabled');
+      } else {
+        //inactive CTA button
+        document
+          .querySelector(`.${ID}__stickyATCContainer button`)
+          .setAttribute('disabled', 'disabled');
+      }
+    });
   });
 };
