@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "SOC004",
-    VARIATION: "2",
-    CLIENT: "Moreconversion",
-    SITE: "socialculture"
-  };
+  ID: 'SOC004',
+  VARIATION: '1',
+  CLIENT: 'Moreconversion',
+  SITE: 'socialculture'
+};
