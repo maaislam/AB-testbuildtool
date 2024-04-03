@@ -1,5 +1,4 @@
 import { header } from './header';
-import { form } from './form';
 import { FormMessage } from './FormMessage';
 
 export const modal = (ID) => {
