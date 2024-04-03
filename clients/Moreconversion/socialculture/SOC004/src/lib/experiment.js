@@ -18,6 +18,14 @@ const prodInfoFn = () => {
   document.querySelector(`.${ID}__stickyATCContainer-info-headline p`).innerText = price;
 };
 
+const attributeFn = (intersectionAnchor, stickyButton) => {
+  if (intersectionAnchor.getAttribute('disabled') === 'disabled') {
+    stickyButton.setAttribute('disabled', 'disabled');
+  } else {
+    stickyButton.removeAttribute('disabled', 'disabled');
+  }
+};
+
 const init = () => {
   const intersectionAnchor = document.querySelector(
     '.product-header1_layout form[action="/cart/add"] button[type="submit"]'
@@ -50,14 +58,6 @@ const init = () => {
     stickyElement(ID, prodImg, productTitle, productPrice, productReviews)
   );
 
-  const attributeFn = (stickyButton) => {
-    if (intersectionAnchor.getAttribute('disabled') === 'disabled') {
-      stickyButton.setAttribute('disabled', 'disabled');
-    } else {
-      stickyButton.removeAttribute('disabled', 'disabled');
-    }
-  };
-
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
       //console.log('🚀 ~ entries.forEach ~ entry:', entry);
@@ -73,14 +73,15 @@ const init = () => {
           stickySection.classList.add(`${ID}__hide`);
         }, 250);
 
-        attributeFn(stickyButton);
+        attributeFn(intersectionAnchor, stickyButton);
+        setTimeout(prodInfoFn, 1200);
         prodInfoFn();
       } else if (entry.boundingClientRect.top < 0 || !entry.isIntersecting) {
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
         stickySection.classList.add(`${ID}__show`);
-        attributeFn(stickyButton);
-        prodInfoFn();
+        attributeFn(intersectionAnchor, stickyButton);
+        setTimeout(prodInfoFn, 1200);
       }
     });
   };
@@ -96,23 +97,24 @@ export default () => {
     const inputFields = document.querySelectorAll('.custom-input');
     const values = {};
 
-    inputFields.forEach((inputField, index) => {
-      inputField.addEventListener('input', (e) => {
-        values[index] = e.target.value.trim();
+    inputFields.length > 0 &&
+      inputFields.forEach((inputField, index) => {
+        inputField.addEventListener('input', (e) => {
+          values[index] = e.target.value.trim();
 
-        if (values[0] && values[1]) {
-          //active CTA button
-          document
-            .querySelector(`.${ID}__stickyATCContainer button`)
-            .removeAttribute('disabled', 'disabled');
-        } else {
-          //inactive CTA button
-          document
-            .querySelector(`.${ID}__stickyATCContainer button`)
-            .setAttribute('disabled', 'disabled');
-        }
+          if (values[0] && values[1]) {
+            //active CTA button
+            document
+              .querySelector(`.${ID}__stickyATCContainer button`)
+              .removeAttribute('disabled', 'disabled');
+          } else {
+            //inactive CTA button
+            document
+              .querySelector(`.${ID}__stickyATCContainer button`)
+              .setAttribute('disabled', 'disabled');
+          }
+        });
       });
-    });
   }
 
   if (VARIATION === '2') {
@@ -151,7 +153,13 @@ export default () => {
       target.closest('form[action="/cart/add"]') &&
       document.querySelector(`.${ID}__stickyATCContainer`).classList.contains(`${ID}__show`)
     ) {
-      prodInfoFn();
+      attributeFn(
+        document.querySelector(
+          '.product-header1_layout form[action="/cart/add"] button[type="submit"]'
+        ),
+        document.querySelector(`.${ID}__stickyATCContainer button`)
+      );
+      setTimeout(prodInfoFn, 1200);
     } else if (target.closest(`.${ID}__upArrow`)) {
       window.scrollTo({
         top: 0,
