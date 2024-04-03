@@ -1,5 +1,4 @@
 import setup from './services/setup';
-
 import shared from './shared/shared';
 import { observeIntersection, pollerLite } from './helpers/utils';
 import { stickyElement } from './components/stickyElement';
@@ -67,7 +66,6 @@ const init = () => {
 
       let scrollTimer;
       clearTimeout(scrollTimer);
-      console.log('entry', entry);
       if (entry.isIntersecting) {
         stickySection.classList.remove(`${ID}__show`);
         stickySection.classList.add('slide-out-bottom');
@@ -95,6 +93,26 @@ export default () => {
 
   if (VARIATION === '1') {
     init();
+    const inputFields = document.querySelectorAll('.custom-input');
+    const values = {};
+
+    inputFields.forEach((inputField, index) => {
+      inputField.addEventListener('input', (e) => {
+        values[index] = e.target.value.trim();
+
+        if (values[0] && values[1]) {
+          //active CTA button
+          document
+            .querySelector(`.${ID}__stickyATCContainer button`)
+            .removeAttribute('disabled', 'disabled');
+        } else {
+          //inactive CTA button
+          document
+            .querySelector(`.${ID}__stickyATCContainer button`)
+            .setAttribute('disabled', 'disabled');
+        }
+      });
+    });
   }
 
   if (VARIATION === '2') {
@@ -140,26 +158,5 @@ export default () => {
         behavior: 'smooth'
       });
     }
-  });
-
-  const inputFields = document.querySelectorAll('.custom-input');
-  const values = {};
-
-  inputFields.forEach((inputField, index) => {
-    inputField.addEventListener('input', (e) => {
-      values[index] = e.target.value.trim();
-
-      if (values[0] && values[1]) {
-        //active CTA button
-        document
-          .querySelector(`.${ID}__stickyATCContainer button`)
-          .removeAttribute('disabled', 'disabled');
-      } else {
-        //inactive CTA button
-        document
-          .querySelector(`.${ID}__stickyATCContainer button`)
-          .setAttribute('disabled', 'disabled');
-      }
-    });
   });
 };
