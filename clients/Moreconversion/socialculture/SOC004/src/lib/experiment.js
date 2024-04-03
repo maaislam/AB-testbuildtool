@@ -99,7 +99,9 @@ export default () => {
 
   if (VARIATION === '2') {
     pollerLite(['footer.footer', () => document.readyState === 'complete'], () => {
-      const height = document.body.scrollHeight;
+      const intersectionAnchor = document.querySelector(
+        '.product-header1_layout form[action="/cart/add"] button[type="submit"]'
+      );
 
       if (document.querySelector(`.${ID}__upArrow`)) {
         document.querySelector(`.${ID}__upArrow`).remove();
@@ -107,7 +109,11 @@ export default () => {
       document.body.insertAdjacentHTML('beforeend', upArrow(ID));
 
       window.addEventListener('scroll', () => {
-        if (window.scrollY > height / 2) {
+        if (
+          intersectionAnchor.getBoundingClientRect().top +
+            intersectionAnchor.getBoundingClientRect().height <
+          86
+        ) {
           document.querySelector(`.${ID}__upArrow`).classList.add(`${ID}__show`);
         } else {
           document.querySelector(`.${ID}__upArrow`).classList.remove(`${ID}__show`);
@@ -118,7 +124,6 @@ export default () => {
 
   document.body.addEventListener('pointerup', (e) => {
     const { target } = e;
-    console.log('target', target);
 
     if (target.closest('button') && target.closest(`.${ID}__stickyATCContainer-atc-button`)) {
       document
@@ -130,7 +135,6 @@ export default () => {
     ) {
       prodInfoFn();
     } else if (target.closest(`.${ID}__upArrow`)) {
-      console.log('clicked');
       window.scrollTo({
         top: 0,
         behavior: 'smooth'

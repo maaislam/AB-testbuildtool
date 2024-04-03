@@ -157,6 +157,15 @@
       z-index: 999999999999;
       transition: opacity 0.5s;
 
+      @include media-query(sm) {
+        width: 44px;
+        height: 44px;
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
       &.#{$id}__show {
         opacity: 1;
       }
