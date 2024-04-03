@@ -5,7 +5,7 @@ pollerLite(
   [
     'body.catalog-product-view',
     '.sample-add-form',
-    () => !document.querySelector('#product-addtocart-button')
+    () => document.querySelector('#product-addtocart-button')
   ],
   activate
 );

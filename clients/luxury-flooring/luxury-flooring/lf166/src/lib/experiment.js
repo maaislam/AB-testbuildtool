@@ -101,9 +101,16 @@ export default () => {
     window.hbspt.forms.create({
       region: 'na1',
       portalId: '4544336',
-      formId: 'add62d11-d7e9-440e-8811-9123fea1d1aa'
+      formId: 'add62d11-d7e9-440e-8811-9123fea1d1aa',
+      taget: `.${ID}__modal .sidebar`,
+      onFormReady: ($form, ctx) => {
+        $form.find('input').css('border', '1px solid #000');
+        $form.find('input[type="submit"]').css('border', 'none');
+        $form.find('input[type="submit"]').val('Submit pre-order request');
+        $form.find('input[type="submit"]').parent().css('text-align', 'left');
+      }
     });
-
-    init(); //
   });
+
+  init(); //
 };
