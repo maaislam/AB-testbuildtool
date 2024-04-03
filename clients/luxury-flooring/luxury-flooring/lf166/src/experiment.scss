@@ -25,74 +25,25 @@
 
       &.open {
         right: 0;
-        .#{$id}__formMessage {
-          display: none;
-        }
-      }
-
-      &.open.next-step {
-        .#{$id}__header,
-        .#{$id}__preOrderForm {
-          display: none;
-        }
-        .#{$id}__formMessage {
-          display: inline-block;
-        }
       }
 
       .#{$id}__header {
         &-title {
+          font-size: 24px;
+          font-weight: 700;
           margin-bottom: 15px;
         }
-        &-message {
-        }
+
         &-text {
           margin-bottom: 20px;
         }
       }
 
-      .#{$id}__preOrderForm {
-        &-form-field {
-        }
-        &-label {
-          &[data-symbol='true']::after {
-            content: '*';
-            color: red;
-            margin-left: 5px;
-          }
-        }
-        &-input {
-          background-color: #fff;
-          border: solid 1px #000;
-          padding: 16px;
-        }
-        &-submit {
-          margin-top: 30px;
-          &:hover {
-            background-color: #a57d38;
-          }
-        }
-      }
-
       .#{$id}__formMessage {
-        &-thanks {
-        }
         &-title {
           font-size: 24px;
           font-weight: 700;
           margin-bottom: 20px;
-        }
-        &-info {
-          margin: 20px 0;
-        }
-        &-additional-info {
-          margin: 0;
-        }
-        &-number {
-          margin: 0;
-        }
-        &-team {
-          margin-top: 20px;
         }
       }
       @include media-query(sm) {
@@ -130,6 +81,10 @@
         opacity: 1;
         visibility: visible;
       }
+    }
+
+    .#{$id}__hide {
+      display: none;
     }
   }
 }

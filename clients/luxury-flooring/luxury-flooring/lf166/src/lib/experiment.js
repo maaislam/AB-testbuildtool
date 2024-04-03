@@ -2,31 +2,9 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { fakeButton } from './components/fakebutton';
 import { modal } from './components/modal';
+import { addJsToPage, pollerLite } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
-
-const showFormMessage = () => {
-  document.querySelector(`.${ID}__modal .sidebar.open`).classList.add('next-step');
-};
-
-const collectData = (element) => {
-  const data = {};
-  element.querySelectorAll('input').forEach((input) => {
-    data[input.id] = input.value;
-  });
-  if (data[`${ID}__email`]) {
-    console.log('data', data);
-    showFormMessage();
-  }
-};
-
-const addSubmitHandler = () => {
-  const formField = document.querySelector(`.${ID}__preOrderForm`);
-  formField.addEventListener('submit', (e) => {
-    e.preventDefault();
-    collectData(formField);
-  });
-};
 
 const init = () => {
   const orderSampleBtn = document.querySelector('.sample-add-form');
@@ -38,23 +16,12 @@ const init = () => {
   }
   orderSampleBtn.insertAdjacentHTML('beforebegin', fakeButton(ID));
   document.body.insertAdjacentHTML('beforeend', modal(ID)); //
-
-  addSubmitHandler();
-};
-
-const clearInputData = () => {
-  document.querySelectorAll(`.${ID}__preOrderForm input`).forEach((input) => {
-    if (input.value) {
-      input.value = '';
-    }
-  });
 };
 
 const modalOpen = () => {
   document.querySelector(`.${ID}__modal .sidebar`).classList.add('open');
   document.querySelector(`.${ID}__modal .sidebar-overlay`).classList.add('active');
   document.querySelector(`.${ID}__modal .sidebar-close`).classList.add('active');
-  clearInputData();
 };
 
 const modalClose = () => {
@@ -64,20 +31,8 @@ const modalClose = () => {
 };
 
 export default () => {
-  setup(); //use if needed
+  setup();
   console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
-
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
 
   if (VARIATION === 'control') {
     return;
@@ -95,5 +50,38 @@ export default () => {
     }
   });
 
-  init(); //
+  addJsToPage('//js.hsforms.net/forms/embed/v2.js', `${ID}__hbspt`);
+  pollerLite([() => typeof window.hbspt !== 'undefined'], () => {
+    init();
+    window.hbspt.forms.create({
+      region: 'na1',
+      portalId: '4544336',
+      formId: 'add62d11-d7e9-440e-8811-9123fea1d1aa',
+      target: `.${ID}__formContainer`,
+      onFormReady: ($form, ctx) => {
+        $form.addClass(`${ID}__form`);
+        $form.find('label').css('font-weight', '700');
+        $form.find('input').css({
+          border: '1px solid #000',
+          padding: '24px'
+        });
+        $form.find('input[type="submit"]').css({
+          border: 'none',
+          'font-weight': '400',
+          'font-size': '14px',
+          padding: '18px 24px',
+          'border-radius': '0'
+        });
+        $form.find('input[type="submit"]').parent().css('text-align', 'left');
+
+        $form.validate({
+          submitHandler: (form) => {
+            form.submit();
+            document.querySelector(`.${ID}__header`).classList.add(`${ID}__hide`);
+            document.querySelector(`.${ID}__formMessage`).classList.remove(`${ID}__hide`);
+          }
+        });
+      }
+    });
+  });
 };

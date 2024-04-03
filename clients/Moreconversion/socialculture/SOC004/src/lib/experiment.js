@@ -1,4 +1,5 @@
 import setup from './services/setup';
+
 import shared from './shared/shared';
 import { observeIntersection, pollerLite } from './helpers/utils';
 import { stickyElement } from './components/stickyElement';
@@ -52,9 +53,9 @@ const init = () => {
 
   const attributeFn = (stickyButton) => {
     if (intersectionAnchor.getAttribute('disabled') === 'disabled') {
-      stickyButton.setAttribute('disabled', 'disabled');
+      stickyButton.setAttribute('data-scrolltop', 'true');
     } else {
-      stickyButton.removeAttribute('disabled', 'disabled');
+      stickyButton.removeAttribute('data-scrolltop');
     }
   };
 
@@ -62,7 +63,7 @@ const init = () => {
     entries.forEach((entry) => {
       //console.log('🚀 ~ entries.forEach ~ entry:', entry);
       const stickySection = document.querySelector(`.${ID}__stickyATCContainer`);
-      const stickyButton = document.querySelector(`.${ID}__stickyATCContainer button`);
+      const stickyButton = document.querySelector(`.${ID}__stickyATCContainer-atc-button`);
 
       let scrollTimer;
       clearTimeout(scrollTimer);
@@ -74,13 +75,13 @@ const init = () => {
         }, 250);
 
         attributeFn(stickyButton);
-        prodInfoFn();
-      } else if (entry.boundingClientRect.top < 0 || !entry.isIntersecting) {
+        setTimeout(prodInfoFn, 1200);
+      } else if (entry.boundingClientRect.top < 0 && !entry.isIntersecting) {
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
         stickySection.classList.add(`${ID}__show`);
         attributeFn(stickyButton);
-        prodInfoFn();
+        setTimeout(prodInfoFn, 1200);
       }
     });
   };
@@ -93,26 +94,6 @@ export default () => {
 
   if (VARIATION === '1') {
     init();
-    const inputFields = document.querySelectorAll('.custom-input');
-    const values = {};
-
-    inputFields.forEach((inputField, index) => {
-      inputField.addEventListener('input', (e) => {
-        values[index] = e.target.value.trim();
-
-        if (values[0] && values[1]) {
-          //active CTA button
-          document
-            .querySelector(`.${ID}__stickyATCContainer button`)
-            .removeAttribute('disabled', 'disabled');
-        } else {
-          //inactive CTA button
-          document
-            .querySelector(`.${ID}__stickyATCContainer button`)
-            .setAttribute('disabled', 'disabled');
-        }
-      });
-    });
   }
 
   if (VARIATION === '2') {
@@ -126,24 +107,34 @@ export default () => {
       }
       document.body.insertAdjacentHTML('beforeend', upArrow(ID));
 
-      window.addEventListener('scroll', () => {
-        if (
-          intersectionAnchor.getBoundingClientRect().top +
-            intersectionAnchor.getBoundingClientRect().height <
-          86
-        ) {
-          document.querySelector(`.${ID}__upArrow`).classList.add(`${ID}__show`);
-        } else {
-          document.querySelector(`.${ID}__upArrow`).classList.remove(`${ID}__show`);
-        }
-      });
+      const handleIntersection = (entries) => {
+        entries.forEach((entry) => {
+          //console.log('🚀 ~ entries.forEach ~ entry:', entry);
+          const stickySection = document.querySelector(`.${ID}__upArrow`);
+
+          let scrollTimer;
+          clearTimeout(scrollTimer);
+          if (entry.isIntersecting) {
+            stickySection.classList.remove(`${ID}__show`);
+          } else if (entry.boundingClientRect.top < 0 && !entry.isIntersecting) {
+            stickySection.classList.add(`${ID}__show`);
+          }
+        });
+      };
+
+      observeIntersection(intersectionAnchor, 0, handleIntersection);
     });
   }
 
   document.body.addEventListener('pointerup', (e) => {
     const { target } = e;
+    //console.log('target', target);
 
-    if (target.closest('button') && target.closest(`.${ID}__stickyATCContainer-atc-button`)) {
+    if (
+      target.closest('button') &&
+      target.closest(`.${ID}__stickyATCContainer-atc-button`) &&
+      !target.closest('[data-scrolltop="true"]')
+    ) {
       document
         .querySelector('.product-header1_layout form[action="/cart/add"] button[type="submit"]')
         .click();
@@ -151,8 +142,9 @@ export default () => {
       target.closest('form[action="/cart/add"]') &&
       document.querySelector(`.${ID}__stickyATCContainer`).classList.contains(`${ID}__show`)
     ) {
-      prodInfoFn();
-    } else if (target.closest(`.${ID}__upArrow`)) {
+      setTimeout(prodInfoFn, 1200);
+    } else if (target.closest(`.${ID}__upArrow`) || target.closest('[data-scrolltop="true"]')) {
+      //console.log('clicked');
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
