@@ -6,9 +6,11 @@ export const modal = (ID) => {
   const html = `
         <div class="${ID}__modal">
             <div class="sidebar">
-                ${header(ID)}
-                ${form(ID)}
-                ${FormMessage(ID)}
+                <div class="${ID}__headerMessage">
+                  ${header(ID)}
+                  ${FormMessage(ID)}
+                </div>
+                <div class="${ID}__formContainer"></div>
             </div>
             <div class="sidebar-overlay"></div>
             <span class="sidebar-close">&#x2715;</span>
