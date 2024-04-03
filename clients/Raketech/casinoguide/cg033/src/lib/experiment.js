@@ -51,6 +51,12 @@ export default () => {
         const casinoName = target.closest(`.${ID}__casinoSlider-item`).href.split('/go/')[1];
         const indexItem = target.closest(`.${ID}__casinoSlider-item`).dataset.index;
         gaTracking(`${casinoName} ${indexItem} CTA CTO | Recommended`);
+      } else if (target.closest('[href*="/go/"]') && target.closest('.mui-1l8etx6')) {
+        const casinoName = target.closest('a').href.split('/go/')[1];
+        const listitems = target.closest('.mui-u2ar62').parentNode;
+        const clickedIndex = Array.from(listitems.children).indexOf(target.closest('.mui-u2ar62'));
+        //console.log('🚀 ~ document.body.addEventListener ~ clickedIndex:', clickedIndex);
+        gaTracking(`${casinoName} ${clickedIndex} CTA CTO | Recommended`);
       }
     });
   }
