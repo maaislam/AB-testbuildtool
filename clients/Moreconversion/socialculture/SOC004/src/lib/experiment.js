@@ -75,7 +75,6 @@ const init = () => {
 
         attributeFn(intersectionAnchor, stickyButton);
         setTimeout(prodInfoFn, 1200);
-        prodInfoFn();
       } else if (entry.boundingClientRect.top < 0 && !entry.isIntersecting) {
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
