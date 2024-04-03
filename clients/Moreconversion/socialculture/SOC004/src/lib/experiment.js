@@ -61,6 +61,7 @@ const init = () => {
 
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
+      //console.log('🚀 ~ entries.forEach ~ entry:', entry);
       const stickySection = document.querySelector(`.${ID}__stickyATCContainer`);
       const stickyButton = document.querySelector(`.${ID}__stickyATCContainer button`);
 
@@ -75,7 +76,7 @@ const init = () => {
 
         attributeFn(stickyButton);
         prodInfoFn();
-      } else {
+      } else if (entry.boundingClientRect.top < 0 && !entry.isIntersecting) {
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
         stickySection.classList.add(`${ID}__show`);

@@ -2,6 +2,12 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  #sticky-cta-container {
+    & + div > div:last-child {
+      display: none;
+    }
+  }
+
   .#{$id}__casinoSlider {
     display: flex;
     overflow-x: scroll;
@@ -23,16 +29,14 @@
         img {
         }
       }
-      &-icon {
-      }
     }
 
     &::-webkit-scrollbar {
       display: none;
     }
 
-    & + div {
-      display: none;
-    }
+    // & + div {
+    //   display: none;
+    // }
   }
 }
