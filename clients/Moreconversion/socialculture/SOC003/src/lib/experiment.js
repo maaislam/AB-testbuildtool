@@ -17,7 +17,14 @@ const formatPrice = (number) =>
 const init = () => {
   getCartVal().then((data) => {
     //console.log('🚀 ~ init ~ data', data);
+    const isDreamCard2 = data.items.some((item) => item.id === 43905578827984);
+
+    if (!isDreamCard2) return;
+
+    const checkoutCta = document.querySelector('.upcart-checkout-button');
     const total = data.total_price;
+    const shippingTotal = data.items.length > 1 ? 1495 + 895 : 1495;
+    const checkoutTotal = total + shippingTotal;
     //render cart value
     const cartValueEl = `
       <div class="${ID}__cartVals">
@@ -27,7 +34,7 @@ const init = () => {
         </div>
         <div class="${ID}__cartVals-shipping cartVals">
           <span>STANDARD SHIPPING FEE</span>
-          <span>$14.95</span>
+          <span>${formatPrice(shippingTotal)}</span>
         </div>
       </div>`;
 
@@ -37,6 +44,7 @@ const init = () => {
 
     const attachPoint = document.querySelector('.upcart-footer');
     attachPoint.insertAdjacentHTML('afterbegin', cartValueEl);
+    checkoutCta.textContent = `Checkout - ${formatPrice(checkoutTotal)}`;
   });
 };
 
