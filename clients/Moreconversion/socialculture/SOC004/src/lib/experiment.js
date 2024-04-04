@@ -23,10 +23,8 @@ const init = () => {
   const intersectionAnchor = document.querySelector(
     '.product-header1_layout form[action="/cart/add"] button[type="submit"]'
   );
-
-  const prodImg = document.querySelector(
-    '#productGallery .swiper-slide.swiper-slide-active img'
-  ).src;
+  const prodImgElem = document.querySelector('#productGallery img');
+  const prodImg = prodImgElem ? prodImgElem.src : '';
 
   const productTitle = document.querySelector(
     '.product-header1_layout form[action="/cart/add"] .product-headline h4'
