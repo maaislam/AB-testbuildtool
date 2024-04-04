@@ -113,11 +113,11 @@
               height: 26px;
             }
             @include media-query(sm) {
-              padding: 10px;
+              padding: 14px;
             }
             @include media-query(xsm) {
               gap: 5px;
-              padding: 5px;
+              padding: 10px;
               & > div {
                 font-size: 10px;
               }
@@ -135,7 +135,7 @@
         gap: 5px;
       }
       @include media-query(xsm) {
-        padding: 12px 8px;
+        padding: 10px;
       }
     }
 
