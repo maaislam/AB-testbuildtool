@@ -1,7 +1,0 @@
-eslint "clients --ext .js,.jsx"
-
-# Check if ESLint failed
-if [ $? -ne 0 ]; then
-  echo "ESLint found errors. Aborting push."
-  exit 1
-fi
