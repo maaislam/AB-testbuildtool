@@ -1,4 +1,4 @@
-eslint "**/*.js"
+eslint "clients --ext .js,.jsx"
 
 # Check if ESLint failed
 if [ $? -ne 0 ]; then
