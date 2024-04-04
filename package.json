@@ -10,7 +10,8 @@
     "experiment-create": "node process/createScript.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "build-u": "node process/createIIFE.js",
-    "configpath": "node process/createPath.js"
+    "configpath": "node process/createPath.js",
+    "lint": "eslint clients --ext .js,.jsx"
   },
   "keywords": [
     "webpack",
