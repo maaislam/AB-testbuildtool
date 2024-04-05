@@ -52,7 +52,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 export const getPathnameFirstpart = (url) => {
   const urlObject = new URL(url);
   const pathnameParts = urlObject.pathname.split('/');
-  // Check if the first part has a '.html' extension and remove it
+  //Check if the first part has a '.html' extension and remove it
   const firstPart = pathnameParts[1].endsWith('.html')
     ? pathnameParts[1].slice(0, -5)
     : pathnameParts[1];

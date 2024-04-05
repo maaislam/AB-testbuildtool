@@ -1,3 +1,4 @@
+/*eslint-disable prefer-rest-params */
 import setup from './services/setup';
 import shared from './shared/shared';
 import orderButton from './components/orderButton';
@@ -12,7 +13,7 @@ let stage3Msg = 'Added to basket';
 
 let finalMessage = 'Order a sample';
 let clickCount = 0;
-const totalClickCount = 0;
+//const totalClickCount = 0;
 
 const init = (mutation) => {
   const { addedNodes, removedNodes, target } = mutation;

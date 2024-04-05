@@ -5,7 +5,7 @@ const { ID } = shared;
 
 const init = () => {
   const anchorPoint = document.querySelector('header.page-header');
-  const accordionTextElem = document.querySelector('.sp_accordion .trigger em');
+  //const accordionTextElem = document.querySelector('.sp_accordion .trigger em');
   //const accordionText = accordionTextElem.textContent;
 
   const announcementBanner = `<div class='${ID}__announcementBanner'>

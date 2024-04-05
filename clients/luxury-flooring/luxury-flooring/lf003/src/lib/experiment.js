@@ -69,9 +69,9 @@ const init = () => {
       const discountBadgeV2 = document.querySelector(`.${ID}__discountbadge.v2`);
       discountBadgeV2.insertAdjacentElement('beforebegin', clonedPerPackPrice);
 
-      console.log('🚀 oldPrice:', oldPrice);
-      console.log('🚀 finalPrice:', finalPrice);
-      console.log('🚀 discount:', discount);
+      //console.log('🚀 oldPrice:', oldPrice);
+      //console.log('🚀 finalPrice:', finalPrice);
+      //console.log('🚀 discount:', discount);
     });
   } else if (isPlp()) {
     pollerLite(['.products'], () => {

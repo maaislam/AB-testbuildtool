@@ -1,3 +1,4 @@
+/*eslint-disable object-curly-newline */
 /**
  * Polls the DOM for a condition to be met before executing a callback.
  *

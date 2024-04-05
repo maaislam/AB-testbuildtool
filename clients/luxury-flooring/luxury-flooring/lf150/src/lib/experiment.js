@@ -1,3 +1,5 @@
+/*eslint-disable no-undef */
+/*eslint-disable no-underscore-dangle */
 import categoryCards from './components/categoryCards';
 import { categoryData } from './data/categoryData';
 import { getPathnameFirstpart } from './helpers/utils';

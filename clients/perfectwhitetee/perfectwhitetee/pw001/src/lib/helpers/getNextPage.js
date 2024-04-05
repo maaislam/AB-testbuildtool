@@ -1,3 +1,4 @@
+/*eslint-disable no-param-reassign */
 const getNextPage = (id, pageNo) => {
   const url = window.location.href;
   const newUrl = new URL(url);

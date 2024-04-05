@@ -1,3 +1,4 @@
+/*eslint-disable no-useless-escape */
 export const form = (ID) => {
   const html = `
     <form class="${ID}__preOrderForm">
