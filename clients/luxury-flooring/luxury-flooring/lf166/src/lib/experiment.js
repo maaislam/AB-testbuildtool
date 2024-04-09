@@ -81,6 +81,7 @@ export default () => {
             document.querySelector(`.${ID}__header`).classList.add(`${ID}__hide`);
             document.querySelector(`.${ID}__formMessage`).classList.remove(`${ID}__hide`);
             const style = document.createElement('style');
+            style.setAttribute('type', 'text/css');
             const css = document.createTextNode(`
               body .submitted-message a[href="tel:0333 577 0025"], body .submitted-message a[href="tel:0333 577 0025"]:active{
                 color: #000;
