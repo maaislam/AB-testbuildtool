@@ -31,12 +31,11 @@ export default () => {
       '.quote-continue--button__container>a>span:first-child'
     );
     compareBtn.innerText = 'GET STARTED NOW';
-    return;
   }
 
-  // const title = imgContainer.querySelector('.quote-continue__headline');
-  // const subtitle = imgContainer.querySelector('.quote-continue__subheadline');
+  //const title = imgContainer.querySelector('.quote-continue__headline');
+  //const subtitle = imgContainer.querySelector('.quote-continue__subheadline');
 
-  // title.innerHTML = 'MAKING<br>INSURANCE<br>EASY';
-  // subtitle.innerText = "Compare and buy from NZ's top insurers";
+  //title.innerHTML = 'MAKING<br>INSURANCE<br>EASY';
+  //subtitle.innerText = "Compare and buy from NZ's top insurers";
 };

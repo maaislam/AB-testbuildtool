@@ -4,11 +4,11 @@ import triggerEvent from './triggerEvent';
 const clickHandler = (ID, VARIATION, fireEvent) => {
   const shared = {
     ID,
-    VARIATION,
+    VARIATION
   };
   document.body.addEventListener('click', (e) => {
     prepareControl(ID);
-    const target = e.target;
+    const { target } = e;
     const targetMatched = (desiredMatch) =>
       target.matches(desiredMatch) || target.closest(desiredMatch);
 
@@ -29,39 +29,39 @@ const clickHandler = (ID, VARIATION, fireEvent) => {
         .classList.contains(`${ID}__invisible`);
       const buttonTitle = target.closest(`.${ID}__menubar-item--Brochures`).querySelector('.title');
 
-      fireEvent(`User clicks “Show” or “Hide” Brochure`, shared);
+      fireEvent('User clicks “Show” or “Hide” Brochure', shared);
       const addToCart = document.querySelector(`.${ID}__basket-section`);
 
       //document.querySelector(`.${ID}__repname .subtitle`).classList.toggle(`${ID}__hide`);
       if (isCatSwiperHidden) {
-        slideWrapper.classList.add(`slide-in-bottom`);
-        slideWrapper.classList.remove(`slide-out-bottom`);
+        slideWrapper.classList.add('slide-in-bottom');
+        slideWrapper.classList.remove('slide-out-bottom');
         slideWrapper.querySelector(`.${ID}__catalog-swiper`).classList.remove(`${ID}__invisible`);
         slideWrapper
           .querySelector(`.${ID}__repname>.subtitle`)
           ?.classList.remove(`${ID}__invisible`);
         addToCart?.classList.remove('reduced-position');
         buttonTitle.innerText = 'Hide Brochures';
-        // document.querySelectorAll(`.v7__elem__catalog__slide-page-image`).forEach((item) => {
-        //   item?.classList.add(`${ID}__catalog--image`);
-        // });
-        // document.querySelectorAll(`.v7__elem__catalog__slide-page-wrapper`).forEach((item) => {
-        //   item?.classList.add(`${ID}__catalogslide--wrapper`);
-        // });
+        //document.querySelectorAll(`.v7__elem__catalog__slide-page-image`).forEach((item) => {
+        //item?.classList.add(`${ID}__catalog--image`);
+        //});
+        //document.querySelectorAll(`.v7__elem__catalog__slide-page-wrapper`).forEach((item) => {
+        //item?.classList.add(`${ID}__catalogslide--wrapper`);
+        //});
       } else {
-        slideWrapper.classList.add(`slide-out-bottom`);
-        slideWrapper.classList.remove(`slide-in-bottom`);
+        slideWrapper.classList.add('slide-out-bottom');
+        slideWrapper.classList.remove('slide-in-bottom');
         buttonTitle.innerText = 'Show Brochures';
         addToCart?.classList.add('reduced-position');
 
         document.querySelector('.AG085a__rep--container')?.classList.add(`${ID}__hide`);
 
-        // document.querySelectorAll(`.v7__elem__catalog__slide-page-image`).forEach((item) => {
-        //   item?.classList.remove(`${ID}__catalog--image`);
-        // });
-        // document.querySelectorAll(`.v7__elem__catalog__slide-page-wrapper`).forEach((item) => {
-        //   item?.classList.remove(`${ID}__catalogslide--wrapper`);
-        // });
+        //document.querySelectorAll(`.v7__elem__catalog__slide-page-image`).forEach((item) => {
+        //item?.classList.remove(`${ID}__catalog--image`);
+        //});
+        //document.querySelectorAll(`.v7__elem__catalog__slide-page-wrapper`).forEach((item) => {
+        //item?.classList.remove(`${ID}__catalogslide--wrapper`);
+        //});
         setTimeout(() => {
           slideWrapper.querySelector(`.${ID}__catalog-swiper`).classList.add(`${ID}__invisible`);
           slideWrapper
@@ -76,7 +76,7 @@ const clickHandler = (ID, VARIATION, fireEvent) => {
       const cartBtn = document.querySelector('[data-item-id="wishlistButton"]');
       triggerEvent(cartBtn);
       fireEvent('User clicks the basket', shared);
-      fireEvent(`User clicks the basket`, shared);
+      fireEvent('User clicks the basket', shared);
     }
   });
 };

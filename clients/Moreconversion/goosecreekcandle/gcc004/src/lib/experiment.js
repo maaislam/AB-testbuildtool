@@ -4,7 +4,7 @@ import shared from './shared/shared';
 import { prodsStructure } from './components/prodsStructure';
 import { contactInfoStr } from './components/contactInfoStr';
 import { promoBanner } from './components/promoBanner';
-import { pollerLite, timerCountdown } from '../lib/helpers/utils';
+import { pollerLite, timerCountdown } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
@@ -61,8 +61,7 @@ export default () => {
       fetch(url).catch((error) => {
         console.error(`Error fetching ${url}: ${error.message}`);
         return Promise.resolve(null);
-      })
-    );
+      }));
 
     const responses = await Promise.all(promises);
     for (const [index, response] of responses.entries()) {

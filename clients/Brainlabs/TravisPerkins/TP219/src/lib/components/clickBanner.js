@@ -39,7 +39,7 @@ const clickCollectMessages = (id, anchorElm, pageType, plpCard) => {
     childList: true,
     subtree: false,
     characterData: true,
-    attributes: true,
+    attributes: true
   };
   changeUnderBtnText();
   observer.observe(controlStockLvlMsgBlock, config);

@@ -14,7 +14,7 @@ const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
     });
   });
 
-  // configuration of the observer:
+  //configuration of the observer:
 
   const config = configObject || {
     attributes: true,

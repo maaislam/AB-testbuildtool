@@ -19,6 +19,6 @@ export default () => {
   //Write experiment code here
   //-----------------------------
   //...
-  // selectors
+  //selectors
   const postContentSelector = 'div.post-content';
 };

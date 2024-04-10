@@ -18,7 +18,7 @@ const skuValidity = (data, productCodePlp) => {
     const productCodeText = document.querySelector('[data-test-id="product-code"]').innerText;
     const productCode = isMobile ? productCodeText.split(': ')[1] : productCodeText;
     return skus.some((id) => id == productCode);
-  } else if (isPLP()) {
+  } if (isPLP()) {
     return skus.some((id) => id == productCodePlp);
   }
 };

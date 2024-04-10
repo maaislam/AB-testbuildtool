@@ -11,8 +11,7 @@
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "build-u": "node process/createIIFE.js",
     "configpath": "node process/createPath.js",
-    "lint": "eslint clients --ext .js,.jsx",
-    "prepare": "husky"
+    "lint": "node process/lint.js"
   },
   "keywords": [
     "webpack",
@@ -33,7 +32,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.4.0",
     "css-minimizer-webpack-plugin": "^3.1.1",
-    "eslint": "^8.2.0",
+    "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-webpack": "^0.13.1",

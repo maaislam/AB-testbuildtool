@@ -44,27 +44,27 @@ export default () => {
 
   const cartItems = document.querySelectorAll('.cart .product-item-name a');
 
-  // cartItems.forEach((item) => {
-  //   const itemName = item.innerText;
-  //   //const seperator = itemName.includes('-') ? '- ' : ' ';
-  //   //const itemSize = itemName.slice(itemName.lastIndexOf(seperator) + 1);
-  //   const itemSizes = sizes.filter((size) => itemName.includes(size));
-  //   const itemSize =
-  //     itemSizes.length > 0 &&
-  //     itemSizes.reduce((prev, cur) => {
-  //       if (prev.length > cur.length) return prev;
-  //       return cur;
-  //     });
-  //   console.log('itemSize', itemSize);
-  //   if (itemSize) {
-  //     //console.log('found item', itemSize);
-  //     if (item.parentElement.querySelector(`.${ID}__size`)) return;
-  //     item.insertAdjacentHTML(
-  //       'afterend',
-  //       `<div class="${ID}__size">Gekozen Maat: <span>${itemSize}</span></div>`
-  //     );
-  //   }
-  // });
+  //cartItems.forEach((item) => {
+  //const itemName = item.innerText;
+  ////const seperator = itemName.includes('-') ? '- ' : ' ';
+  ////const itemSize = itemName.slice(itemName.lastIndexOf(seperator) + 1);
+  //const itemSizes = sizes.filter((size) => itemName.includes(size));
+  //const itemSize =
+  //itemSizes.length > 0 &&
+  //itemSizes.reduce((prev, cur) => {
+  //if (prev.length > cur.length) return prev;
+  //return cur;
+  //});
+  //console.log('itemSize', itemSize);
+  //if (itemSize) {
+  ////console.log('found item', itemSize);
+  //if (item.parentElement.querySelector(`.${ID}__size`)) return;
+  //item.insertAdjacentHTML(
+  //'afterend',
+  //`<div class="${ID}__size">Gekozen Maat: <span>${itemSize}</span></div>`
+  //);
+  //}
+  //});
 
   const cartHrefs = Array.from(cartItems).map((item) => item.href);
   //console.log('🚀 ~ file: experiment.js:70 ~ cartHrefs', cartHrefs);

@@ -13,7 +13,7 @@ export default () => {
 
   const isMobile = window.innerWidth < 576;
 
-  // if (!isMobile) return;
+  //if (!isMobile) return;
 
   const oneTimePacks = document.querySelectorAll('.oneetime [data-val]');
   const subPacks = document.querySelectorAll('.subscript [data-val]');
@@ -34,7 +34,9 @@ export default () => {
       }
       return acc;
     },
-    { val: 0, el: null }
+    {
+ val: 0, el: null
+}
   );
 
   const highestValSub = subPacksArr.reduce(
@@ -51,7 +53,9 @@ export default () => {
       }
       return acc;
     },
-    { val: 0, el: null }
+    {
+ val: 0, el: null
+}
   );
   console.log('highestValOneTime:', highestValOneTime);
   console.log('highestValSub:', highestValSub);

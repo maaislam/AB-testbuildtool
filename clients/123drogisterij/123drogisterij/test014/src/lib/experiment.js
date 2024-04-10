@@ -77,7 +77,7 @@ export default () => {
       const closestLabel = target.closest('label');
       const labelsWrapper = target.closest(`.${ID}__variants`);
       const modalBody = target.closest('.ppatc__popup-form');
-      const sku = labelsWrapper.dataset.activeSku;
+      const sku1 = labelsWrapper.dataset.activeSku;
 
       const labelQty = closestLabel.dataset.quantity;
       const labelPrice = closestLabel.dataset.price;
@@ -87,7 +87,7 @@ export default () => {
       closestLabel.classList.add('active');
 
       const activeInput = document.querySelector(
-        `form[data-product-sku="${sku}"] input[type="number"].input-text`
+        `form[data-product-sku="${sku1}"] input[type="number"].input-text`
       );
 
       if (

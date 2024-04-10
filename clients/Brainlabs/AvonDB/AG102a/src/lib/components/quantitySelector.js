@@ -1,4 +1,4 @@
-/* eslint-disable no-useless-escape */
+/*eslint-disable no-useless-escape */
 const quantitySelector = (id) => {
   const htmlStr = `
     <div class="${id}__quantity-wrapper">

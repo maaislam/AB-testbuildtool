@@ -1,12 +1,11 @@
 const lib = () =>
   !(function () {
-    'use strict';
     function e(e, t) {
-      var o = Object.keys(e);
+      const o = Object.keys(e);
       if (Object.getOwnPropertySymbols) {
-        var n = Object.getOwnPropertySymbols(e);
+        let n = Object.getOwnPropertySymbols(e);
         t &&
-          (n = n.filter(function (t) {
+          (n = n.filter((t) => {
             return Object.getOwnPropertyDescriptor(e, t).enumerable;
           })),
           o.push.apply(o, n);
@@ -14,15 +13,16 @@ const lib = () =>
       return o;
     }
     function t(t) {
-      for (var o = 1; o < arguments.length; o++) {
-        var n = null != arguments[o] ? arguments[o] : {};
+      for (let o = 1; o < arguments.length; o++) {
+        var n = arguments[o] != null ? arguments[o] : {
+};
         o % 2
-          ? e(Object(n), !0).forEach(function (e) {
+          ? e(Object(n), !0).forEach((e) => {
               a(t, e, n[e]);
             })
           : Object.getOwnPropertyDescriptors
           ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n))
-          : e(Object(n)).forEach(function (e) {
+          : e(Object(n)).forEach((e) => {
               Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e));
             });
       }
@@ -31,13 +31,13 @@ const lib = () =>
     function o(e) {
       return (
         (o =
-          'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
+          typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol'
             ? function (e) {
                 return typeof e;
               }
             : function (e) {
                 return e &&
-                  'function' == typeof Symbol &&
+                  typeof Symbol === 'function' &&
                   e.constructor === Symbol &&
                   e !== Symbol.prototype
                   ? 'symbol'
@@ -50,8 +50,8 @@ const lib = () =>
       if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
     }
     function r(e, t) {
-      for (var o = 0; o < t.length; o++) {
-        var n = t[o];
+      for (let o = 0; o < t.length; o++) {
+        const n = t[o];
         (n.enumerable = n.enumerable || !1),
           (n.configurable = !0),
           'value' in n && (n.writable = !0),
@@ -62,7 +62,9 @@ const lib = () =>
       return (
         t && r(e.prototype, t),
         o && r(e, o),
-        Object.defineProperty(e, 'prototype', { writable: !1 }),
+        Object.defineProperty(e, 'prototype', {
+ writable: !1
+}),
         e
       );
     }
@@ -80,12 +82,15 @@ const lib = () =>
       );
     }
     function s(e, t) {
-      if ('function' != typeof t && null !== t)
-        throw new TypeError('Super expression must either be null or a function');
+      if (typeof t !== 'function' && t !== null) throw new TypeError('Super expression must either be null or a function');
       (e.prototype = Object.create(t && t.prototype, {
-        constructor: { value: e, writable: !0, configurable: !0 }
+        constructor: {
+ value: e, writable: !0, configurable: !0
+}
       })),
-        Object.defineProperty(e, 'prototype', { writable: !1 }),
+        Object.defineProperty(e, 'prototype', {
+ writable: !1
+}),
         t && d(e, t);
     }
     function l(e) {
@@ -109,11 +114,11 @@ const lib = () =>
       );
     }
     function c() {
-      if ('undefined' == typeof Reflect || !Reflect.construct) return !1;
+      if (typeof Reflect === 'undefined' || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
-      if ('function' == typeof Proxy) return !0;
+      if (typeof Proxy === 'function') return !0;
       try {
-        return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})), !0;
+        return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], () => {})), !0;
       } catch (e) {
         return !1;
       }
@@ -123,23 +128,21 @@ const lib = () =>
         (u = c()
           ? Reflect.construct.bind()
           : function (e, t, o) {
-              var n = [null];
+              const n = [null];
               n.push.apply(n, t);
-              var r = new (Function.bind.apply(e, n))();
+              const r = new (Function.bind.apply(e, n))();
               return o && d(r, o.prototype), r;
             }),
         u.apply(null, arguments)
       );
     }
     function p(e) {
-      var t = 'function' == typeof Map ? new Map() : void 0;
+      const t = typeof Map === 'function' ? new Map() : void 0;
       return (
         (p = function (e) {
-          if (null === e || ((o = e), -1 === Function.toString.call(o).indexOf('[native code]')))
-            return e;
-          var o;
-          if ('function' != typeof e)
-            throw new TypeError('Super expression must either be null or a function');
+          if (e === null || ((o = e), Function.toString.call(o).indexOf('[native code]') === -1)) return e;
+          let o;
+          if (typeof e !== 'function') throw new TypeError('Super expression must either be null or a function');
           if (void 0 !== t) {
             if (t.has(e)) return t.get(e);
             t.set(e, n);
@@ -149,7 +152,9 @@ const lib = () =>
           }
           return (
             (n.prototype = Object.create(e.prototype, {
-              constructor: { value: n, enumerable: !1, writable: !0, configurable: !0 }
+              constructor: {
+ value: n, enumerable: !1, writable: !0, configurable: !0
+}
             })),
             d(n, e)
           );
@@ -158,40 +163,38 @@ const lib = () =>
       );
     }
     function f(e, t) {
-      if (t && ('object' == typeof t || 'function' == typeof t)) return t;
-      if (void 0 !== t)
-        throw new TypeError('Derived constructors may only return object or undefined');
+      if (t && (typeof t === 'object' || typeof t === 'function')) return t;
+      if (void 0 !== t) throw new TypeError('Derived constructors may only return object or undefined');
       return (function (e) {
-        if (void 0 === e)
-          throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+        if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
         return e;
-      })(e);
+      }(e));
     }
     function m(e) {
-      var t = c();
+      const t = c();
       return function () {
-        var o,
-          n = l(e);
+        let o;
+          const n = l(e);
         if (t) {
-          var r = l(this).constructor;
+          const r = l(this).constructor;
           o = Reflect.construct(n, arguments, r);
         } else o = n.apply(this, arguments);
         return f(this, o);
       };
     }
     function h(e, t) {
-      for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = l(e)); );
+      for (; !Object.prototype.hasOwnProperty.call(e, t) && (e = l(e)) !== null;);
       return e;
     }
     function v() {
       return (
         (v =
-          'undefined' != typeof Reflect && Reflect.get
+          typeof Reflect !== 'undefined' && Reflect.get
             ? Reflect.get.bind()
             : function (e, t, o) {
-                var n = h(e, t);
+                const n = h(e, t);
                 if (n) {
-                  var r = Object.getOwnPropertyDescriptor(n, t);
+                  const r = Object.getOwnPropertyDescriptor(n, t);
                   return r.get ? r.get.call(arguments.length < 3 ? e : o) : r.value;
                 }
               }),
@@ -202,125 +205,123 @@ const lib = () =>
       return (
         (function (e) {
           if (Array.isArray(e)) return e;
-        })(e) ||
+        }(e)) ||
         (function (e, t) {
-          var o =
-            null == e
+          let o =
+            e == null
               ? null
-              : ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
-          if (null != o) {
-            var n,
-              r,
-              i,
-              a,
-              s = [],
-              l = !0,
-              d = !1;
+              : (typeof Symbol !== 'undefined' && e[Symbol.iterator]) || e['@@iterator'];
+          if (o != null) {
+            let n;
+              let r;
+              let i;
+              let a;
+              const s = [];
+              let l = !0;
+              let d = !1;
             try {
-              if (((i = (o = o.call(e)).next), 0 === t)) {
+              if (((i = (o = o.call(e)).next), t === 0)) {
                 if (Object(o) !== o) return;
                 l = !1;
-              } else
-                for (; !(l = (n = i.call(o)).done) && (s.push(n.value), s.length !== t); l = !0);
+              } else for (; !(l = (n = i.call(o)).done) && (s.push(n.value), s.length !== t); l = !0);
             } catch (c) {
               (d = !0), (r = c);
             } finally {
               try {
-                if (!l && null != o.return && ((a = o.return()), Object(a) !== a)) return;
+                if (!l && o.return != null && ((a = o.return()), Object(a) !== a)) return;
               } finally {
                 if (d) throw r;
               }
             }
             return s;
           }
-        })(e, t) ||
+        }(e, t)) ||
         b(e, t) ||
         (function () {
           throw new TypeError(
             'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.'
           );
-        })()
+        }())
       );
     }
     function y(e) {
       return (
         (function (e) {
           if (Array.isArray(e)) return w(e);
-        })(e) ||
+        }(e)) ||
         (function (e) {
           if (
-            ('undefined' != typeof Symbol && null != e[Symbol.iterator]) ||
-            null != e['@@iterator']
-          )
-            return Array.from(e);
-        })(e) ||
+            (typeof Symbol !== 'undefined' && e[Symbol.iterator] != null) ||
+            e['@@iterator'] != null
+          ) return Array.from(e);
+        }(e)) ||
         b(e) ||
         (function () {
           throw new TypeError(
             'Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.'
           );
-        })()
+        }())
       );
     }
     function b(e, t) {
       if (e) {
-        if ('string' == typeof e) return w(e, t);
-        var o = Object.prototype.toString.call(e).slice(8, -1);
+        if (typeof e === 'string') return w(e, t);
+        let o = Object.prototype.toString.call(e).slice(8, -1);
         return (
-          'Object' === o && e.constructor && (o = e.constructor.name),
-          'Map' === o || 'Set' === o
+          o === 'Object' && e.constructor && (o = e.constructor.name),
+          o === 'Map' || o === 'Set'
             ? Array.from(e)
-            : 'Arguments' === o || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o)
+            : o === 'Arguments' || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(o)
             ? w(e, t)
             : void 0
         );
       }
     }
     function w(e, t) {
-      (null == t || t > e.length) && (t = e.length);
+      (t == null || t > e.length) && (t = e.length);
       for (var o = 0, n = new Array(t); o < t; o++) n[o] = e[o];
       return n;
     }
     function _(e) {
-      var t = (function (e, t) {
-        if ('object' != typeof e || null === e) return e;
-        var o = e[Symbol.toPrimitive];
+      const t = (function (e, t) {
+        if (typeof e !== 'object' || e === null) return e;
+        const o = e[Symbol.toPrimitive];
         if (void 0 !== o) {
-          var n = o.call(e, t || 'default');
-          if ('object' != typeof n) return n;
+          const n = o.call(e, t || 'default');
+          if (typeof n !== 'object') return n;
           throw new TypeError('@@toPrimitive must return a primitive value.');
         }
-        return ('string' === t ? String : Number)(e);
-      })(e, 'string');
-      return 'symbol' == typeof t ? t : String(t);
+        return (t === 'string' ? String : Number)(e);
+      }(e, 'string'));
+      return typeof t === 'symbol' ? t : String(t);
     }
-    var k,
-      P,
-      x,
-      C,
-      S,
-      L,
-      U,
-      I,
-      R,
-      O,
-      T,
-      A = function (e) {
-        var t = document.createElement('a');
+    let k;
+      let P;
+      let x;
+      let C;
+      let S;
+      let L;
+      let U;
+      let I;
+      let R;
+      let O;
+      let T;
+      const A = function (e) {
+        const t = document.createElement('a');
         return (t.href = e), t.hostname;
-      },
-      N = function () {
+      };
+      const N = function () {
         return window.roomvoLocation ? window.roomvoLocation : window.location;
-      },
-      E = function (e) {
+      };
+      const E = function (e) {
         return (function (e) {
-          var t = document.createElement('a');
+          const t = document.createElement('a');
           t.href = e;
-          var o = t.pathname;
-          return o.length > 0 && '/' != o[0] && (o = '/' + o), o;
-        })(decodeURIComponent(e.href));
-      },
-      F = new ((function () {
+          let o = t.pathname;
+          return o.length > 0 && o[0] != '/' && (o = `/${o}`), o;
+        }(decodeURIComponent(e.href)));
+      };
+      const F = new ((function () {
         function e() {
           n(this, e);
         }
@@ -328,13 +329,13 @@ const lib = () =>
           i(e, [
             {
               key: 'getUrl',
-              value: function () {
+              value() {
                 return new URL(window.location.href);
               }
             },
             {
               key: 'getNextLevelUrl',
-              value: function () {
+              value() {
                 try {
                   return new URL(window.parent.location.href);
                 } catch (e) {}
@@ -347,7 +348,7 @@ const lib = () =>
             },
             {
               key: 'getTopLevelUrl',
-              value: function () {
+              value() {
                 try {
                   return new URL(window.top.location.href);
                 } catch (e) {}
@@ -362,69 +363,72 @@ const lib = () =>
             },
             {
               key: 'getHostname',
-              value: function () {
-                var e = this.getUrl();
+              value() {
+                const e = this.getUrl();
                 return e ? e.hostname : '';
               }
             },
             {
               key: 'getNextLevelHostname',
-              value: function () {
-                var e = this.getNextLevelUrl();
+              value() {
+                const e = this.getNextLevelUrl();
                 return e ? e.hostname : '';
               }
             },
             {
               key: 'getTopLevelHostname',
-              value: function () {
-                var e = this.getTopLevelUrl();
+              value() {
+                const e = this.getTopLevelUrl();
                 return e ? e.hostname : '';
               }
             }
           ]),
           e
         );
-      })())(),
-      M = function (e) {
+      })())();
+      const M = function (e) {
         return B()[e];
-      },
-      B = function () {
-        for (var e = {}, t = document.cookie.split(';'), o = 0; o < t.length; ++o) {
-          var n = t[o].trim(),
-            r = n.indexOf('=');
-          if (-1 !== r) {
-            var i = n.substring(0, n.indexOf('=')),
-              a = n.substring(r + 1);
+      };
+      var B = function () {
+        for (var e = {
+}, t = document.cookie.split(';'), o = 0; o < t.length; ++o) {
+          const n = t[o].trim();
+            const r = n.indexOf('=');
+          if (r !== -1) {
+            const i = n.substring(0, n.indexOf('='));
+              const a = n.substring(r + 1);
             e[i] = a;
           }
         }
         return e;
-      },
-      q = function (e, t) {
-        var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
-          n = o.cookieExpiration ? o.cookieExpiration : 'Fri, 31 Dec 9999 23:59:59 GMT',
-          r = [''.concat(e, '=').concat(t), 'expires='.concat(n), 'path=/', ''.concat(V())];
+      };
+      const q = function (e, t) {
+        const o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {
+};
+          const n = o.cookieExpiration ? o.cookieExpiration : 'Fri, 31 Dec 9999 23:59:59 GMT';
+          const r = [''.concat(e, '=').concat(t), 'expires='.concat(n), 'path=/', ''.concat(V())];
         o.domain && r.push('domain='.concat(o.domain)), (document.cookie = r.join('; '));
-      },
-      V = function () {
-        return 'https:' === F.getUrl().protocol ? 'SameSite=None; Secure' : 'SameSite=Lax';
-      },
-      j = 'ffPopup',
-      z = 'roomvoProductCatalog',
-      D = 'roomvoProductDisplay',
-      H = 'roomvoStoreLocator',
-      G = j,
-      W = 'roomvo-stimr',
-      Z = 'roomvo_add_to_cart',
-      J = 'ffvendorids',
-      Y = 'ffvisitorids',
-      K = 'ffvendorurlpath',
-      X = 'fftrackingcode',
-      $ = 'ffagreedtermsofuse',
-      Q = 'roomvoLaunchSequenceRecentUseFlag',
-      ee = 'roomvoLaunchSequence',
-      te =
-        ((k = {}),
+      };
+      var V = function () {
+        return F.getUrl().protocol === 'https:' ? 'SameSite=None; Secure' : 'SameSite=Lax';
+      };
+      const j = 'ffPopup';
+      const z = 'roomvoProductCatalog';
+      const D = 'roomvoProductDisplay';
+      const H = 'roomvoStoreLocator';
+      const G = j;
+      const W = 'roomvo-stimr';
+      const Z = 'roomvo_add_to_cart';
+      const J = 'ffvendorids';
+      const Y = 'ffvisitorids';
+      const K = 'ffvendorurlpath';
+      const X = 'fftrackingcode';
+      const $ = 'ffagreedtermsofuse';
+      const Q = 'roomvoLaunchSequenceRecentUseFlag';
+      const ee = 'roomvoLaunchSequence';
+      const te =
+        ((k = {
+}),
         a(k, 0, 'unknown'),
         a(k, 1, 'floor'),
         a(k, 2, 'rug'),
@@ -434,8 +438,8 @@ const lib = () =>
         a(k, 6, 'cabinet'),
         a(k, 7, 'wall_decor'),
         a(k, 8, 'ceiling'),
-        k),
-      oe = {
+        k);
+      const oe = {
         'en-us':
           ((P = {
             'Embed this Roomvo share link on your website':
@@ -446,32 +450,34 @@ const lib = () =>
           a(P, 'Close', 'Close'),
           a(P, 'Loading...', 'Loading...'),
           P)
-      },
-      ne =
-        ((x = {}),
+      };
+      const ne =
+        ((x = {
+}),
         a(x, 0, 'none'),
         a(x, 1, 'standalone'),
         a(x, 2, 'product_integration'),
-        (C = {}),
+        (C = {
+}),
         a(C, 0, 'desktop'),
         a(C, 1, 'touch'),
         a(C, 2, 'kiosk'),
-        'roomvoOpenProductVisualizer'),
-      re = 'roomvoResizeCatalog',
-      ie = 'roomvoOpenProductPage',
-      ae = 'roomvoOpenCatalog',
-      se = 'ffSaveVisitor',
-      le = 'ffFocusPopup',
-      de = 'roomvoCloseProductDisplay',
-      ce = 'roomvoAgreeToTermsOfUse',
-      ue = 'roomvoAddToCart',
-      pe = 'roomvoLoadPopupFromProductDisplay',
-      fe = 'resizeStoreLocatorIframe',
-      me = 'ffTrack',
-      he = 'roomvoFocusIframe',
-      ve = 'roomvoCloseMeasurement',
-      ge = ['roomvobot', 'googlebot', 'bingbot'],
-      ye = new RegExp(
+        'roomvoOpenProductVisualizer');
+      const re = 'roomvoResizeCatalog';
+      const ie = 'roomvoOpenProductPage';
+      const ae = 'roomvoOpenCatalog';
+      const se = 'ffSaveVisitor';
+      const le = 'ffFocusPopup';
+      const de = 'roomvoCloseProductDisplay';
+      const ce = 'roomvoAgreeToTermsOfUse';
+      const ue = 'roomvoAddToCart';
+      const pe = 'roomvoLoadPopupFromProductDisplay';
+      const fe = 'resizeStoreLocatorIframe';
+      const me = 'ffTrack';
+      const he = 'roomvoFocusIframe';
+      const ve = 'roomvoCloseMeasurement';
+      const ge = ['roomvobot', 'googlebot', 'bingbot'];
+      const ye = new RegExp(
         [
           '(android|bb\\d+|meego).+mobile|avantgo|bada/|blackberry',
           '|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp',
@@ -480,9 +486,10 @@ const lib = () =>
           '|xiino|android|ipad|playbook|silk'
         ].join(''),
         'i'
-      ),
-      be = function () {
-        var e, t;
+      );
+      const be = function () {
+        let e; let
+t;
         return (
           (e = navigator.userAgent || navigator.vendor || window.opera),
           (t = new RegExp(
@@ -514,34 +521,37 @@ const lib = () =>
           )),
           !!e && (ye.test(e) || t.test(e.substring(0, 4))) ? 1 : 0
         );
-      },
-      we = function (e) {
-        for (var t in e) if (Object.prototype.hasOwnProperty.call(e, t)) return !1;
-        return ke(e) === ke({});
-      },
-      _e = function (e, t, o) {
-        var n;
+      };
+      const we = function (e) {
+        for (const t in e) if (Object.prototype.hasOwnProperty.call(e, t)) return !1;
+        return ke(e) === ke({
+});
+      };
+      const _e = function (e, t, o) {
+        let n;
         return function () {
-          var r = this,
-            i = arguments,
-            a = o && !n;
+          const r = this;
+            const i = arguments;
+            const a = o && !n;
           clearTimeout(n),
-            (n = setTimeout(function () {
+            (n = setTimeout(() => {
               (n = null), o || e.apply(r, i);
             }, t)),
             a && e.apply(r, i);
         };
-      },
-      ke = function (e) {
+      };
+      var ke = function (e) {
         return !JSON.stringify && JSON.serialize ? JSON.serialize(e) : JSON.stringify(e);
-      },
-      Pe = function (e) {
+      };
+      const Pe = function (e) {
         return !JSON.parse && JSON.deserialize ? JSON.deserialize(e) : JSON.parse(e);
-      },
-      xe = function (e) {
-        return Bt(e, 'read', { cookieName: X }) || '';
-      },
-      Ce = {
+      };
+      const xe = function (e) {
+        return Bt(e, 'read', {
+ cookieName: X
+}) || '';
+      };
+      const Ce = {
         animation: 'none',
         'animation-delay': '0',
         'animation-direction': 'normal',
@@ -688,64 +698,67 @@ const lib = () =>
         width: 'auto',
         'word-spacing': 'normal',
         'z-index': 'auto'
-      },
-      Se = function () {
+      };
+      const Se = function () {
         try {
-          var e = document.createElement('canvas');
-          if (null == (e.getContext('webgl') || e.getContext('experimental-webgl')))
-            throw 'nowebgl';
+          const e = document.createElement('canvas');
+          if ((e.getContext('webgl') || e.getContext('experimental-webgl')) == null) throw 'nowebgl';
         } catch (t) {
           return !1;
         }
         return !0;
-      },
-      Le = function (e, t, o) {
+      };
+      const Le = function (e, t, o) {
         Ue(e, t, o);
-      },
-      Ue = function e(t, o, n) {
+      };
+      var Ue = function e(t, o, n) {
         !(function (e, t) {
           if (!e) return !1;
-          for (var o = 0; o < t.length; ++o) if (!e.querySelector(t[o])) return !1;
+          for (let o = 0; o < t.length; ++o) if (!e.querySelector(t[o])) return !1;
           return !0;
-        })(t, o)
+        }(t, o))
           ? setTimeout(e, 60, t, o, n)
           : n();
-      },
-      Ie = function () {
-        var e = (function () {
-          var e = function (e) {
+      };
+      const Ie = function () {
+        const e = (function () {
+          const e = function (e) {
             return !e.roomvo;
           };
           if (Array.prototype.slice.call(document.styleSheets).every(e)) {
-            var t = document.createElement('style');
+            const t = document.createElement('style');
             t.appendChild(document.createTextNode('')), document.head.appendChild(t);
-            var o = t.sheet;
+            const o = t.sheet;
             return (o.roomvo = !0), o;
           }
-        })();
+        }());
         return (
           e ||
-          y(document.styleSheets).find(function (e) {
+          y(document.styleSheets).find((e) => {
             return e.roomvo;
           })
         );
-      },
-      Re = function (e, t) {
+      };
+      const Re = function (e, t) {
         t || (t = Ie());
-        var o,
-          n = (function (e, t) {
-            var o = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
+        let o;
+          const n = (function (e, t) {
+            let o = (typeof Symbol !== 'undefined' && e[Symbol.iterator]) || e['@@iterator'];
             if (!o) {
-              if (Array.isArray(e) || (o = b(e)) || (t && e && 'number' == typeof e.length)) {
+              if (Array.isArray(e) || (o = b(e)) || (t && e && typeof e.length === 'number')) {
                 o && (e = o);
-                var n = 0,
-                  r = function () {};
+                let n = 0;
+                  const r = function () {};
                 return {
                   s: r,
-                  n: function () {
-                    return n >= e.length ? { done: !0 } : { done: !1, value: e[n++] };
+                  n() {
+                    return n >= e.length ? {
+ done: !0
+} : {
+ done: !1, value: e[n++]
+};
                   },
-                  e: function (e) {
+                  e(e) {
                     throw e;
                   },
                   f: r
@@ -755,32 +768,32 @@ const lib = () =>
                 'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.'
               );
             }
-            var i,
-              a = !0,
-              s = !1;
+            let i;
+              let a = !0;
+              let s = !1;
             return {
-              s: function () {
+              s() {
                 o = o.call(e);
               },
-              n: function () {
-                var e = o.next();
+              n() {
+                const e = o.next();
                 return (a = e.done), e;
               },
-              e: function (e) {
+              e(e) {
                 (s = !0), (i = e);
               },
-              f: function () {
+              f() {
                 try {
-                  a || null == o.return || o.return();
+                  a || o.return == null || o.return();
                 } finally {
                   if (s) throw i;
                 }
               }
             };
-          })(Oe(e));
+          }(Oe(e)));
         try {
-          for (n.s(); !(o = n.n()).done; ) {
-            var r = o.value;
+          for (n.s(); !(o = n.n()).done;) {
+            const r = o.value;
             t.insertRule(r, t.cssRules.length);
           }
         } catch (i) {
@@ -789,16 +802,16 @@ const lib = () =>
           n.f();
         }
         return t;
-      },
-      Oe = function (e) {
+      };
+      var Oe = function (e) {
         for (var t = [], o = 0; o < e.length; o++) {
-          var n = 1,
-            r = e[o],
-            i = r[0],
-            a = '';
+          let n = 1;
+            let r = e[o];
+            const i = r[0];
+            let a = '';
           Array.isArray(r[1][0]) && ((r = r[1]), (n = 0));
-          for (var s = r.length; n < s; n++) {
-            var l = r[n];
+          for (let s = r.length; n < s; n++) {
+            const l = r[n];
             a += ''
               .concat(l[0], ': ')
               .concat(l[1])
@@ -807,27 +820,29 @@ const lib = () =>
           t.push(''.concat(i, '{').concat(a, '}'));
         }
         return t;
-      },
-      Te = function (e) {
-        Object.keys(Ce).forEach(function (t) {
+      };
+      const Te = function (e) {
+        Object.keys(Ce).forEach((t) => {
           e.style.setProperty(t, Ce[t], 'important');
         });
-      },
-      Ae = function (e, t) {
+      };
+      const Ae = function (e, t) {
         try {
           e.log.length + t.length < 1e6
-            ? (e.log += t + '\n')
+            ? (e.log += `${t}\n`)
             : e.log.endsWith('.....\n') || (e.log += '.....\n');
         } catch (o) {
           e.log = o.toString();
         }
-      },
-      Ne =
-        (a((S = {}), 0, 'shade.unknown'),
+      };
+      const Ne =
+        (a((S = {
+}), 0, 'shade.unknown'),
         a(S, 1, 'shade.light'),
         a(S, 2, 'shade.medium'),
         a(S, 3, 'shade.dark'),
-        a((L = {}), 0, 'color.unknown'),
+        a((L = {
+}), 0, 'color.unknown'),
         a(L, 1, 'color.beige'),
         a(L, 2, 'color.black'),
         a(L, 3, 'color.blue'),
@@ -839,7 +854,8 @@ const lib = () =>
         a(L, 9, 'color.red'),
         a(L, 10, 'color.white'),
         a(L, 11, 'color.yellow'),
-        a((U = {}), 0, 'unknown'),
+        a((U = {
+}), 0, 'unknown'),
         a(U, 1, 'floor'),
         a(U, 2, 'rug'),
         a(U, 3, 'furniture'),
@@ -848,7 +864,8 @@ const lib = () =>
         a(U, 6, 'cabinet'),
         a(U, 7, 'wall_decor'),
         a(U, 8, 'ceiling'),
-        a((I = {}), 1, 'Floors'),
+        a((I = {
+}), 1, 'Floors'),
         a(I, 2, 'Rugs'),
         a(I, 3, 'Furniture'),
         a(I, 4, 'Countertops'),
@@ -856,7 +873,8 @@ const lib = () =>
         a(I, 6, 'Cabinets'),
         a(I, 7, 'Wall Decors'),
         a(I, 8, 'Ceilings'),
-        a((R = {}), 19, 'Area Rugs'),
+        a((R = {
+}), 19, 'Area Rugs'),
         a(R, 17, 'Boards and Panels'),
         a(R, 18, 'Brick and Stone'),
         a(R, 14, 'Butcher Block'),
@@ -884,13 +902,15 @@ const lib = () =>
         a(R, 26, 'Thermofoil Cabinet'),
         a(R, 27, 'Glass Cabinet'),
         a(R, 28, 'Artwork'),
-        a((O = {}), 0, 'Warm White'),
+        a((O = {
+}), 0, 'Warm White'),
         a(O, 1, 'Soft White'),
         a(O, 2, 'Daylight'),
         a(O, 3, 'Crystal White'),
-        'en-us'),
-      Ee =
-        (a((T = {}), 0, 'pricing_unit.unspecified'),
+        'en-us');
+      const Ee =
+        (a((T = {
+}), 0, 'pricing_unit.unspecified'),
         a(T, 1, 'pricing_unit.each'),
         a(T, 2, 'pricing_unit.square_meter'),
         a(T, 3, 'pricing_unit.square_foot'),
@@ -898,68 +918,74 @@ const lib = () =>
         a(T, 5, 'pricing_unit.box'),
         function (e) {
           for (
-            var t = Object.assign({}, oe),
+            var t = {
+ ...oe
+},
               o = e.getLocalizedStringOverrides(),
               n = 0,
               r = Object.entries(o);
             n < r.length;
             n++
           ) {
-            var i = g(r[n], 2),
-              a = i[0],
-              s = i[1];
+            const i = g(r[n], 2);
+              const a = i[0];
+              const s = i[1];
             a === Ne ? Object.assign(t['en-us'], s) : (t[a] = s);
           }
           return (e._localizedStrings = t), null;
-        }),
-      Fe = function (e) {
-        var t = { alpha: 255 };
-        if (3 === (e = e.replace('#', '')).length) {
-          var o = function (e) {
+        });
+      const Fe = function (e) {
+        const t = {
+ alpha: 255
+};
+        if ((e = e.replace('#', '')).length === 3) {
+          const o = function (e) {
             return parseInt(e + e, 16);
           };
           (t.red = parseInt(o(e.slice(0, 1)))),
             (t.green = parseInt(o(e.slice(1, 2)))),
             (t.blue = parseInt(o(e.slice(2, 3))));
         } else {
-          if (6 !== e.length) return;
+          if (e.length !== 6) return;
           (t.red = parseInt(e.slice(0, 2), 16)),
             (t.green = parseInt(e.slice(2, 4), 16)),
             (t.blue = parseInt(e.slice(4, 6), 16));
         }
         return t;
-      },
-      Me = function (e) {
-        var t = e.toString('16');
-        return 1 === t.length ? '0' + t : t;
-      },
-      Be = function (e, t) {
-        var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : 50;
+      };
+      const Me = function (e) {
+        const t = e.toString('16');
+        return t.length === 1 ? `0${t}` : t;
+      };
+      const Be = function (e, t) {
+        const o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : 50;
         return (
           (e = Fe(e)),
           (t = Fe(t)),
-          '#' +
+          `#${
             ['red', 'green', 'blue']
-              .map(function (n) {
+              .map((n) => {
                 return Me(Math.round(t[n] + (e[n] - t[n]) * (o / 100)));
               })
-              .join('')
+              .join('')}`
         );
-      },
-      qe = function (e, t) {
+      };
+      const qe = function (e, t) {
         return Be('#FFFFFF', e, t);
-      },
-      Ve = function (e, t) {
+      };
+      const Ve = function (e, t) {
         return Be('#000000', e, t);
-      },
-      je = (function (e) {
+      };
+      const je = (function (e) {
         s(r, e);
-        var t = m(r);
+        const t = m(r);
         function r() {
-          var e;
+          let e;
           return (
             n(this, r),
-            (e = t.call(this)).attachShadow({ mode: 'open' }),
+            (e = t.call(this)).attachShadow({
+ mode: 'open'
+}),
             (e.cssRules =
               '\n/***\n The new CSS reset - version 1.7.3 (last updated 7.8.2022)\n GitHub page: https://github.com/elad2412/the-new-css-reset\n***/\n\n/*\n Remove all the styles of the "User-Agent-Stylesheet", except for the \'display\' property\n - The "symbol *" part is to solve Firefox SVG sprite bug\n*/\n*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {\n all: unset;\n display: revert;\n}\n\n/* Preferred box-sizing value */\n*,\n*::before,\n*::after {\n box-sizing: border-box;\n}\n\n/* Reapply the pointer cursor for anchor tags */\na, button {\n cursor: revert;\n}\n\n/* Remove list styles (bullets/numbers) */\nol, ul, menu {\n list-style: none;\n}\n\n/* For images to not be able to exceed their container */\nimg {\n max-width: 100%;\n}\n\n/* removes spacing between cells in tables */\ntable {\n border-collapse: collapse;\n}\n\n/* Safari - solving issue when using user-select:none on the <body> text input doesn\'t working */\ninput, textarea {\n -webkit-user-select: auto;\n}\n\n/* revert the \'white-space\' property for textarea elements on Safari */\ntextarea {\n white-space: revert;\n}\n\n/* minimum style to allow to style meter element */\nmeter {\n -webkit-appearance: revert;\n appearance: revert;\n}\n\n/* reset default text opacity of input placeholder */\n::placeholder {\n color: unset;\n}\n\n/* fix the feature of \'hidden\' attribute.\ndisplay:revert; revert to element instead of attribute */\n:where([hidden]) {\n display: none;\n}\n\n/* revert for bug in Chromium browsers\n- fix for the content editable attribute will work properly.\n- webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/\n:where([contenteditable]:not([contenteditable="false"])) {\n -moz-user-modify: read-write;\n -webkit-user-modify: read-write;\n overflow-wrap: break-word;\n -webkit-line-break: after-white-space;\n -webkit-user-select: auto;\n}\n\n/* apply back the draggable feature - exist only in Chromium and Safari */\n:where([draggable="true"]) {\n -webkit-user-drag: element;\n}\n'),
             e.shouldHide,
@@ -979,7 +1005,7 @@ const lib = () =>
             [
               {
                 key: 'applyCssRules',
-                value: function () {
+                value() {
                   this.styleNode || (this.styleNode = document.createElement('style')),
                     (this.styleNode.textContent = this.cssRules),
                     this.shadowRoot.appendChild(this.styleNode);
@@ -987,13 +1013,13 @@ const lib = () =>
               },
               {
                 key: 'addCssRules',
-                value: function (e) {
+                value(e) {
                   this.cssRules += Oe(e).join('\n');
                 }
               },
               {
                 key: 'connectedCallback',
-                value: function () {
+                value() {
                   this.isConnected &&
                     ((this.color = this.getAttribute('color')),
                     (this.src = this.getAttribute('src')),
@@ -1006,9 +1032,9 @@ const lib = () =>
               },
               {
                 key: 'attributeChangedCallback',
-                value: function (e, t, o) {
-                  if (this.isConnected)
-                    switch (e) {
+                value(e, t, o) {
+                  if (this.isConnected) {
+ switch (e) {
                       case 'color':
                         (this.color = o), this.updateLoaderColor();
                         break;
@@ -1021,43 +1047,46 @@ const lib = () =>
                       case 'text':
                         (this.text = o), this.updateOrInsertText();
                     }
+}
                 }
               },
               {
                 key: 'updateDisplay',
-                value: function (e) {
-                  var t = this.shadowRoot.firstChild;
-                  null !== this.shouldHide
+                value(e) {
+                  const t = this.shadowRoot.firstChild;
+                  this.shouldHide !== null
                     ? (e ||
                         this.shadowRoot.addEventListener(
                           'transitionend',
-                          function () {
+                          () => {
                             t.style.display = 'none';
                           },
-                          { once: !0 }
+                          {
+ once: !0
+}
                         ),
                       t.classList.add('roomvo-launch-sequence--hide'))
                     : ((t.style.display = 'grid'),
-                      window.requestAnimationFrame(function () {
+                      window.requestAnimationFrame(() => {
                         return t.classList.remove('roomvo-launch-sequence--hide');
                       }));
                 }
               },
               {
                 key: 'create',
-                value: function () {
-                  var e = this.createModal();
+                value() {
+                  const e = this.createModal();
                   e.append(this.createContent()), e.append(this.createRoomvoBranding());
-                  var t = this.createContainer();
+                  const t = this.createContainer();
                   return t.append(e), this.shadowRoot.append(t), t;
                 }
               },
               {
                 key: 'createModal',
-                value: function () {
-                  var e = document.createElement('div');
+                value() {
+                  const e = document.createElement('div');
                   e.classList.add('roomvo-launch-sequence__modal');
-                  var t = [
+                  const t = [
                     [
                       '.'.concat(e.className),
                       ['width', '80%'],
@@ -1082,11 +1111,11 @@ const lib = () =>
               },
               {
                 key: 'createContent',
-                value: function () {
-                  var e = this;
+                value() {
+                  const e = this;
                   (this.contentNode = document.createElement('div')),
                     this.contentNode.classList.add('roomvo-launch-sequence__content');
-                  var t = [
+                  const t = [
                     [
                       '.'.concat(this.contentNode.className),
                       [
@@ -1102,8 +1131,7 @@ const lib = () =>
                   ];
                   this.addCssRules(t);
                   !(function (e, t) {
-                    if ('function' != typeof t || !e || 'object' !== o(e))
-                      throw new Error('Invalid Arguments');
+                    if (typeof t !== 'function' || !e || o(e) !== 'object') throw new Error('Invalid Arguments');
                     document.querySelector(
                       'meta[name="viewport"][content*="device-width"][content*="initial-scale=1"]'
                     ) ||
@@ -1112,33 +1140,33 @@ const lib = () =>
                         '<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />'
                       ),
                       t(e),
-                      !0 !== (null == e ? void 0 : e.isListenedTo) &&
+                      !0 !== (e == null ? void 0 : e.isListenedTo) &&
                         ((e.isListenedTo = !0),
                         'addEventListener' in e
                           ? e.addEventListener('change', t)
                           : e.addListener(t));
-                  })(window.matchMedia('(min-width: 600px)'), function (t) {
+                  }(window.matchMedia('(min-width: 600px)'), (t) => {
                     e.contentNode.style.setProperty(
                       'padding',
                       t.matches ? '12.5vh 0' : '7.5vh 0',
                       'important'
                     );
-                  }),
+                  })),
                     (this.logoNode = this.createLogo()),
                     this.logoNode && this.contentNode.append(this.logoNode),
                     (this.textNode = this.createText()),
                     this.textNode && this.contentNode.append(this.textNode);
-                  var n = this.createLoader();
+                  const n = this.createLoader();
                   return n && this.contentNode.append(n), this.contentNode;
                 }
               },
               {
                 key: 'createLogo',
-                value: function () {
+                value() {
                   if (!this.src) return null;
-                  var e = document.createElement('div');
+                  const e = document.createElement('div');
                   e.style.setProperty('max-width', '70%');
-                  var t = document.createElement('img');
+                  const t = document.createElement('img');
                   return (
                     (t.src = this.src),
                     (t.alt = ''),
@@ -1157,7 +1185,7 @@ const lib = () =>
               },
               {
                 key: 'updateOrInsertLogo',
-                value: function () {
+                value() {
                   this.logoNode && this.src
                     ? (this.logoNode.firstChild.src = this.src)
                     : this.logoNode
@@ -1169,9 +1197,9 @@ const lib = () =>
               },
               {
                 key: 'createText',
-                value: function () {
+                value() {
                   if (!this.text) return null;
-                  var e = document.createElement('p');
+                  const e = document.createElement('p');
                   return (
                     e.append(this.text),
                     e.style.setProperty('font', 'normal normal normal 1rem/1.5rem Sans-Serif'),
@@ -1184,7 +1212,7 @@ const lib = () =>
               },
               {
                 key: 'updateOrInsertText',
-                value: function () {
+                value() {
                   this.textNode && this.text
                     ? (this.textNode.innerText = this.text)
                     : this.textNode
@@ -1198,10 +1226,10 @@ const lib = () =>
               },
               {
                 key: 'createLoader',
-                value: function () {
-                  var e = document.createElement('div');
+                value() {
+                  const e = document.createElement('div');
                   e.classList.add('roomvo-launch-sequence__loader-cubes');
-                  var t = [
+                  const t = [
                     [
                       '.'.concat(e.className),
                       ['position', 'relative'],
@@ -1224,12 +1252,12 @@ const lib = () =>
               },
               {
                 key: 'colorLoader',
-                value: function () {
-                  var e,
-                    t = null !== (e = this.color) && void 0 !== e ? e : '#818C98',
-                    o = Ve.bind(null, t),
-                    n = [qe.bind(null, t)(10), o(10), o(42), o(30)],
-                    r = [
+                value() {
+                  let e;
+                    const t = (e = this.color) !== null && void 0 !== e ? e : '#818C98';
+                    const o = Ve.bind(null, t);
+                    const n = [qe.bind(null, t)(10), o(10), o(42), o(30)];
+                    const r = [
                       ['path.cube__top', ['fill', n[0]]],
                       ['path.cube__left-side', ['fill', n[1]]],
                       ['path.cube__shadow', ['fill', n[2]]],
@@ -1240,7 +1268,7 @@ const lib = () =>
               },
               {
                 key: 'updateLoaderColor',
-                value: function () {
+                value() {
                   this.cssRules.replaceAll(/path\.cube[\s\S]*?\}/g, ''),
                     this.colorLoader(),
                     this.applyCssRules();
@@ -1248,9 +1276,9 @@ const lib = () =>
               },
               {
                 key: 'animateLoader',
-                value: function (e) {
-                  var t = this,
-                    o = [
+                value(e) {
+                  const t = this;
+                    const o = [
                       ['.'.concat(e, '>.loader-cubes__cube'), ['position', 'absolute']],
                       [
                         [
@@ -1259,7 +1287,7 @@ const lib = () =>
                           'loader-cubes__three',
                           'loader-cubes__two'
                         ]
-                          .map(function (t) {
+                          .map((t) => {
                             return '.'.concat(e, '>.').concat(t);
                           })
                           .join(','),
@@ -1294,21 +1322,21 @@ const lib = () =>
                       '@keyframes loader-cubes__two {\n                0%,\n                50% {\n                  transform: translate(-10%, 0);\n                }\n                100% {\n                  transform: translate(-36%, -16%);\n                }\n              }\n              ',
                       '@keyframes loader-cubes__three {\n                0%,\n                50% {\n                  transform: translate(16%, -16%);\n                }\n                100% {\n                  transform: translate(42%, 0);\n                }\n              }\n              ',
                       '@keyframes loader-cubes__four {\n                0% {\n                  transform: translate(42%, 0);\n                }\n                50% {\n                  transform: translate(16%, 16%);\n                }\n                100% {\n                  transform: translate(-10%, 0);\n                }\n              }\n              '
-                    ].forEach(function (e) {
+                    ].forEach((e) => {
                       return (t.cssRules += e);
                     });
                 }
               },
               {
                 key: 'createRoomvoBranding',
-                value: function () {
-                  var e = document.createElement('p');
+                value() {
+                  const e = document.createElement('p');
                   e.style.setProperty('font', 'normal normal normal 0.875rem/1.25rem Sans-Serif'),
                     e.style.setProperty('text-align', 'center'),
                     e.style.setProperty('color', '#818C98'),
                     e.style.setProperty('margin-bottom', '0.3rem'),
                     (e.innerText = 'Powered by ');
-                  var t = document.createElement('strong');
+                  const t = document.createElement('strong');
                   return (
                     t.style.setProperty('font-weight', '500'),
                     t.style.setProperty('color', '#FF3D00'),
@@ -1320,10 +1348,10 @@ const lib = () =>
               },
               {
                 key: 'createContainer',
-                value: function () {
-                  var e = document.createElement('div');
+                value() {
+                  const e = document.createElement('div');
                   e.classList.add('roomvo-launch-sequence__container');
-                  var t = [
+                  const t = [
                     [
                       '.'.concat(e.className),
                       ['position', 'fixed'],
@@ -1353,7 +1381,7 @@ const lib = () =>
             [
               {
                 key: 'observedAttributes',
-                get: function () {
+                get() {
                   return ['color', 'hide', 'src', 'text'];
                 }
               }
@@ -1361,55 +1389,65 @@ const lib = () =>
           ),
           r
         );
-      })(p(HTMLElement)),
-      ze = function (e) {
-        var t,
-          o = document.getElementById(ee) || Ze(e);
+      }(p(HTMLElement)));
+      const ze = function (e) {
+        let t;
+          const o = document.getElementById(ee) || Ze(e);
         o.hasAttribute('hide') &&
-          window.requestAnimationFrame(function () {
+          window.requestAnimationFrame(() => {
             return o.removeAttribute('hide');
           }),
-          (null !== (t = o.dataset) && void 0 !== t && t.closingTimerId) ||
+          ((t = o.dataset) !== null && void 0 !== t && t.closingTimerId) ||
             (o.dataset.closingTimerId = setTimeout(He, e.launchSequenceTimeoutDuration, e)),
           (o.dataset.startTime = Date.now());
-      },
-      De = function () {
-        var e,
-          t = document.getElementById(ee);
+      };
+      const De = function () {
+        let e;
+          const t = document.getElementById(ee);
         t &&
           (t.setAttribute('hide', ''),
-          'null' !== (null === (e = t.dataset) || void 0 === e ? void 0 : e.closingTimerId) &&
+          ((e = t.dataset) === null || void 0 === e ? void 0 : e.closingTimerId) !== 'null' &&
             (clearTimeout(t.dataset.closingTimerId), delete t.dataset.closingTimerId));
-      },
-      He = function (e) {
-        document.getElementById(G).addEventListener('transitionend', De, { once: !0 }),
+      };
+      var He = function (e) {
+        document.getElementById(G).addEventListener('transitionend', De, {
+ once: !0
+}),
           We(e) ? setTimeout(Qe, Ge()) : Qe();
-      },
-      Ge = function () {
-        var e,
-          t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 1500,
-          o =
+      };
+      var Ge = function () {
+        let e;
+          const t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 1500;
+          const o =
             Number(
-              null === (e = document.getElementById(ee).dataset) || void 0 === e
+              (e = document.getElementById(ee).dataset) === null || void 0 === e
                 ? void 0
                 : e.startTime
             ) || 0;
         return Math.max(o + t - Date.now(), 0);
-      },
-      We = function (e) {
-        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 1,
-          o = !Bt(e, 'check', { cookieName: Q }),
-          n = new Date();
+      };
+      var We = function (e) {
+        const t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 1;
+          const o = !Bt(e, 'check', {
+ cookieName: Q
+});
+          const n = new Date();
         n.setTime(n.getTime() + 60 * t * 60 * 1e3);
-        var r = n.toUTCString();
+        const r = n.toUTCString();
         return (
-          Bt(e, 'write', { cookieName: Q, cookieValue: '', config: { cookieExpiration: r } }), o
+          Bt(e, 'write', {
+ cookieName: Q,
+cookieValue: '',
+config: {
+ cookieExpiration: r
+}
+}), o
         );
-      },
-      Ze = function (e) {
+      };
+      var Ze = function (e) {
         void 0 === window.customElements.get('launch-sequence') &&
           window.customElements.define('launch-sequence', je);
-        var t = document.createElement('launch-sequence');
+        const t = document.createElement('launch-sequence');
         return (
           (t.id = ee),
           t.setAttribute('src', e.vendorLogoUrl),
@@ -1419,45 +1457,44 @@ const lib = () =>
           document.body.append(t),
           t
         );
-      },
-      Je = function (e) {
+      };
+      var Je = function (e) {
         return (
           Ee(e),
           (function (e, t) {
-            var o = arguments.length > 2 && void 0 !== arguments[2] && arguments[2],
-              n = e.getLocale();
-            if (n in e._localizedStrings && t in e._localizedStrings[n])
-              return e._localizedStrings[n][t];
-            var r = Object.keys(e._localizedStrings),
-              i = function (e) {
+            const o = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+              const n = e.getLocale();
+            if (n in e._localizedStrings && t in e._localizedStrings[n]) return e._localizedStrings[n][t];
+            const r = Object.keys(e._localizedStrings);
+              const i = function (e) {
                 return e.split('-')[0];
-              },
-              a = r.map(i).indexOf(i(n));
-            if (-1 !== a) {
-              var s,
-                l = null === (s = e._localizedStrings[r[a]]) || void 0 === s ? void 0 : s[t];
+              };
+              const a = r.map(i).indexOf(i(n));
+            if (a !== -1) {
+              let s;
+                const l = (s = e._localizedStrings[r[a]]) === null || void 0 === s ? void 0 : s[t];
               if (l) return l;
             }
             return o ? '' : t in e._localizedStrings['en-us'] ? e._localizedStrings['en-us'][t] : t;
-          })(e, 'Loading...', !0)
+          }(e, 'Loading...', !0))
         );
-      },
-      Ye = function (e) {
+      };
+      const Ye = function (e) {
         return ['number', 'string'].includes(o(e))
           ? !isNaN(e) && Number.isInteger(parseFloat(e))
             ? e in te
               ? parseInt(e)
               : 0
             : parseInt(
-                Object.keys(te).find(function (t) {
+                Object.keys(te).find((t) => {
                   return te[t] === e;
                 })
               ) || 0
           : 0;
-      },
-      Ke = function () {
+      };
+      const Ke = function () {
         if (!document.getElementById(G)) {
-          var e = document.createElement('iframe');
+          const e = document.createElement('iframe');
           Te(e),
             e.style.setProperty('display', 'none', 'important'),
             e.style.setProperty('position', 'fixed', 'important'),
@@ -1475,9 +1512,9 @@ const lib = () =>
             (e.tabIndex = '-1'),
             document.body.appendChild(e);
         }
-      },
-      Xe = function (e) {
-        var t;
+      };
+      const Xe = function (e) {
+        let t;
         if (
           (e.style.setProperty('background-color', ''),
           e.style.setProperty('box-shadow', ''),
@@ -1487,10 +1524,10 @@ const lib = () =>
           e.style.setProperty('transition-duration', ''),
           e.style.setProperty('transition-property', ''),
           e.style.setProperty('transition-timing-function', ''),
-          'true' !==
-            (null === (t = document.head.dataset) || void 0 === t ? void 0 : t.popupStylized))
+          ((t = document.head.dataset) === null || void 0 === t ? void 0 : t.popupStylized) !==
+            'true')
         ) {
-          var o = [
+          const o = [
             [
               '#'.concat(G),
               ['background-color', 'white', !0],
@@ -1508,54 +1545,57 @@ const lib = () =>
           Re(o), (document.head.dataset.popupStylized = 'true');
         }
         e.classList.add('roomvo-popup--loading'), (e.ariaHidden = !0);
-      },
-      $e = function (e, t) {
-        null == t ||
+      };
+      const $e = function (e, t) {
+        t == null ||
           t.addEventListener(
             'load',
-            function () {
+            () => {
               return He(e);
             },
-            { once: !0 }
+            {
+ once: !0
+}
           );
-      },
-      Qe = function () {
-        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null;
+      };
+      var Qe = function () {
+        let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null;
         e || (e = document.getElementById(G)),
           e.classList.contains('roomvo-popup--loading') &&
             (e.classList.remove('roomvo-popup--loading'),
             (e.ariaHidden = !1),
-            window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(() => {
               e.classList.add('roomvo-popup--show');
             }));
-      },
-      et = function (e) {
+      };
+      const et = function (e) {
         try {
-          var t = window.getComputedStyle(document.body).getPropertyValue('overflow');
-          'hidden' !== t &&
+          const t = window.getComputedStyle(document.body).getPropertyValue('overflow');
+          t !== 'hidden' &&
             ((e.dataset.previousBodyStyleOverflow = t), (document.body.style.overflow = 'hidden'));
         } catch (o) {}
-      },
-      tt = function (e) {
-        var t = document.getElementById(e);
+      };
+      const tt = function (e) {
+        const t = document.getElementById(e);
         return !!t && t && t.src && t.contentWindow;
-      },
-      ot = function (e, t) {
-        var o = !(arguments.length > 2 && void 0 !== arguments[2]) || arguments[2];
+      };
+      const ot = function (e, t) {
+        const o = !(arguments.length > 2 && void 0 !== arguments[2]) || arguments[2];
         if (!e.isWebGlNeeded() || Se()) {
-          if (((t = new URL(t)), 'about:srcdoc' == window.location.href))
-            return t.searchParams.delete('visitor_id'), void window.open(t.href);
+          if (((t = new URL(t)), window.location.href == 'about:srcdoc')) return t.searchParams.delete('visitor_id'), void window.open(t.href);
           t.searchParams.set('domain', F.getTopLevelHostname()),
             t.searchParams.set('is_in_top_window', 0),
             !o ||
               (window.history.state && window.history.state.roomvoPopupUrl) ||
               (t.searchParams.set('use_history_padding', 0),
               window.history.pushState(
-                { roomvoPopupUrl: t.href, integratorVendorUrlPath: e.getVendorUrlPath() },
+                {
+ roomvoPopupUrl: t.href, integratorVendorUrlPath: e.getVendorUrlPath()
+},
                 ''
               )),
             Ke();
-          var n = document.getElementById(G);
+          const n = document.getElementById(G);
           n && n.parentNode == document.body && document.body.removeChild(n),
             (n.style.display = 'block'),
             e.shouldShowLaunchSequence
@@ -1569,63 +1609,65 @@ const lib = () =>
             document.body.appendChild(n),
             et(n),
             setTimeout(dt, 10, G);
-        } else
-          alert(
+        } else {
+ alert(
             'Your browser or device does not support WebGL. Please try a different browser or device.'
           );
-      },
-      nt = function () {
-        var e, t, o;
-        return null !==
-          ((t = N()), (o = 'originator'), (e = new URL(t.href).searchParams.get(o))) && void 0 !== e
+}
+      };
+      const nt = function () {
+        let e; let t; let
+o;
+        return ((t = N()), (o = 'originator'), (e = new URL(t.href).searchParams.get(o))) !==
+          null && void 0 !== e
           ? e
           : '';
-      },
-      rt = function (e, t, o, n, r, i) {
-        (void 0 !== n && '' !== n) || (n = '/'), void 0 === r && (r = ''), null == i && (i = '');
-        var a = e.visitorIds[t] || '',
-          s =
-            e.serverUrl +
-            '/my/' +
-            t +
-            n +
-            '?visitor_id=' +
-            encodeURIComponent(a) +
-            '&tracking_code=' +
-            encodeURIComponent(xe(e)) +
-            '&locale=' +
-            encodeURIComponent(e.getLocale()) +
-            '&prefilter=' +
-            encodeURIComponent(e.prefilter) +
-            r +
-            '&iframe_id=' +
-            'ffPopup&originator=' +
-            encodeURIComponent(nt());
+      };
+      const rt = function (e, t, o, n, r, i) {
+        (void 0 !== n && n !== '') || (n = '/'), void 0 === r && (r = ''), i == null && (i = '');
+        const a = e.visitorIds[t] || '';
+          let s =
+            `${e.serverUrl
+            }/my/${
+            t
+            }${n
+            }?visitor_id=${
+            encodeURIComponent(a)
+            }&tracking_code=${
+            encodeURIComponent(xe(e))
+            }&locale=${
+            encodeURIComponent(e.getLocale())
+            }&prefilter=${
+            encodeURIComponent(e.prefilter)
+            }${r
+            }&iframe_id=` +
+            `ffPopup&originator=${
+            encodeURIComponent(nt())}`;
         (function () {
           try {
             return window.self !== window.top;
           } catch (e) {
             return !0;
           }
-        })() || (s += '&use_host_navigation=1'),
+        }()) || (s += '&use_host_navigation=1'),
           e.agreedTermsOfUse && (s += '&agreed_terms_of_use=1');
-        var l = pt(e, o, i);
+        const l = pt(e, o, i);
         (s += l
-          ? '&product_ids=' + encodeURIComponent(l)
-          : '&vendor_code=' + encodeURIComponent(o) + '&product_type=' + encodeURIComponent(i)),
+          ? `&product_ids=${encodeURIComponent(l)}`
+          : `&vendor_code=${encodeURIComponent(o)}&product_type=${encodeURIComponent(i)}`),
           ot(e, s),
           e.trackActionInHostAnalytics('see this in my room', o);
-      },
-      it = function (e, t, o, n, r, i) {
+      };
+      const it = function (e, t, o, n, r, i) {
         try {
           i = i || e.getProductCode(t);
         } catch (a) {
           i = '';
         }
         rt(e, e.getVendorUrlPathForStimr(), i, o, n, r);
-      },
-      at = function (e) {
-        var t = document.createElement('iframe');
+      };
+      const at = function (e) {
+        const t = document.createElement('iframe');
         return (
           Te(t),
           t.style.setProperty('display', 'none', 'important'),
@@ -1634,34 +1676,34 @@ const lib = () =>
           (t.allow = 'clipboard-write'),
           t
         );
-      },
-      st = function (e, t, o) {
-        var n = e.getVendorUrlPath(),
-          r = e.visitorIds[n] || '';
+      };
+      const st = function (e, t, o) {
+        const n = e.getVendorUrlPath();
+          const r = e.visitorIds[n] || '';
         t = lt(t, o);
-        var i =
-          e.serverUrl +
-          '/my/' +
-          n +
-          '/catalog?visitor_id=' +
-          encodeURIComponent(r) +
-          '&tracking_code=' +
-          encodeURIComponent(xe(e)) +
-          '&locale=' +
-          encodeURIComponent(e.getLocale()) +
-          t +
-          '&iframe_id=' +
-          G;
-        o && (i += '&product_id=' + o), ot(e, i);
-      },
-      lt = function () {
-        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : '',
-          t = arguments.length > 1 ? arguments[1] : void 0,
-          o = new URL(N().href).searchParams;
+        let i =
+          `${e.serverUrl
+          }/my/${
+          n
+          }/catalog?visitor_id=${
+          encodeURIComponent(r)
+          }&tracking_code=${
+          encodeURIComponent(xe(e))
+          }&locale=${
+          encodeURIComponent(e.getLocale())
+          }${t
+          }&iframe_id=${
+          G}`;
+        o && (i += `&product_id=${o}`), ot(e, i);
+      };
+      var lt = function () {
+        let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : '';
+          const t = arguments.length > 1 ? arguments[1] : void 0;
+          const o = new URL(N().href).searchParams;
         if (!t) {
           if (!e.includes('product_type') && o.get('product_type')) {
-            var n = Ye(o.get('product_type'));
-            0 !== n && (e += '&product_type='.concat(n));
+            const n = Ye(o.get('product_type'));
+            n !== 0 && (e += '&product_type='.concat(n));
           }
           !e.includes('vendor_code') &&
             o.get('sku') &&
@@ -1680,99 +1722,100 @@ const lib = () =>
             (e += '&page='.concat(encodeURIComponent(o.get('page')))),
           e
         );
-      },
-      dt = function (e) {
+      };
+      var dt = function (e) {
         for (
-          var t = Array.from(document.querySelectorAll('*')).filter(function (e) {
-              return '2147483647' == window.getComputedStyle(e).getPropertyValue('z-index');
+          let t = Array.from(document.querySelectorAll('*')).filter((e) => {
+              return window.getComputedStyle(e).getPropertyValue('z-index') == '2147483647';
             }),
             o = 0;
           o < t.length;
           ++o
         ) {
-          var n = t[o];
+          const n = t[o];
           n.id != e &&
             (n.style.setProperty('z-index', '2147483646', 'important'), (n.dataset.trampled = '1'));
         }
-      },
-      ct = function () {
+      };
+      const ct = function () {
         for (
-          var e = Array.from(document.querySelectorAll('*')).filter(function (e) {
-              return '1' == e.dataset.trampled;
+          let e = Array.from(document.querySelectorAll('*')).filter((e) => {
+              return e.dataset.trampled == '1';
             }),
             t = 0;
           t < e.length;
           ++t
-        )
-          e[t].style.setProperty('z-index', '2147483647');
-      },
-      ut = function (e, t, o) {
-        if (e.productCodeMap && t in e.productCodeMap && 0 !== e.productCodeMap[t].length) {
+        ) e[t].style.setProperty('z-index', '2147483647');
+      };
+      const ut = function (e, t, o) {
+        if (e.productCodeMap && t in e.productCodeMap && e.productCodeMap[t].length !== 0) {
           if (!o) return e.productCodeMap[t][0].product;
-          for (var n = 0; n < e.productCodeMap[t].length; ++n)
-            if (e.productCodeMap[t][n].productType === o) return e.productCodeMap[t][n].product;
+          for (let n = 0; n < e.productCodeMap[t].length; ++n) if (e.productCodeMap[t][n].productType === o) return e.productCodeMap[t][n].product;
         }
-      },
-      pt = function (e, t, o) {
-        if (e.productCodeMap && t in e.productCodeMap && 0 !== e.productCodeMap[t].length)
-          return []
+      };
+      var pt = function (e, t, o) {
+        if (e.productCodeMap && t in e.productCodeMap && e.productCodeMap[t].length !== 0) {
+ return []
             .concat(
               y(
                 e.productCodeMap[t]
-                  .filter(function (e) {
+                  .filter((e) => {
                     return e.productType === o;
                   })
-                  .map(function (e) {
+                  .map((e) => {
                     return e.product;
                   })
               ),
               y(
                 e.productCodeMap[t]
-                  .filter(function (e) {
+                  .filter((e) => {
                     return e.productType !== o;
                   })
-                  .map(function (e) {
+                  .map((e) => {
                     return e.product;
                   })
               )
             )
-            .filter(function (e) {
+            .filter((e) => {
               return Boolean(e);
             })
             .join(',');
-      },
-      ft = function () {
-        var e = document.getElementById(D);
+}
+      };
+      const ft = function () {
+        const e = document.getElementById(D);
         e && e.parentNode && e.parentNode.removeChild(e),
           setTimeout(ct, 10),
           window._roomvo.previouslyFocusedElement &&
             (window._roomvo.previouslyFocusedElement.focus(),
             delete window._roomvo.previouslyFocusedElement);
-      },
-      mt = function () {
-        var e = document.getElementById('roomvoMeasurement');
+      };
+      const mt = function () {
+        const e = document.getElementById('roomvoMeasurement');
         e && e.parentNode && e.parentNode.removeChild(e), setTimeout(ct, 10);
-      },
-      ht = {
+      };
+      const ht = {
         entryType: 0,
         styleFn: void 0,
         popupId: '',
         afterLoad: void 0,
         createPopupFn: void 0,
-        insertFn: function (e) {
+        insertFn(e) {
           return document.body.appendChild(e);
         },
-        shouldAddPopup: function (e) {
+        shouldAddPopup(e) {
           return !0;
         },
         eventAction: '',
         eventLabel: ''
-      },
-      vt = t(
-        t({}, ht),
-        {},
+      };
+      const vt = t(
+        t({
+}, ht),
         {
-          styleFn: function (e, t) {
+},
+        {
+          styleFn(e, t) {
             t.style.setProperty('position', 'fixed', 'important'),
               t.style.setProperty('top', '0', 'important'),
               t.style.setProperty('left', '0', 'important'),
@@ -1786,8 +1829,8 @@ const lib = () =>
               ));
           },
           popupId: G,
-          createPopupFn: function () {
-            var e = at(G);
+          createPopupFn() {
+            const e = at(G);
             return (
               (e.title = 'Roomvo Visualizer, Powered by Roomvo'),
               (e.ariaLabel = 'Roomvo Visualizer, Powered by Roomvo'),
@@ -1795,7 +1838,7 @@ const lib = () =>
               e
             );
           },
-          shouldAddPopup: function (e) {
+          shouldAddPopup(e) {
             return (
               !(e.isWebGlNeeded() && !Se()) ||
               (alert(
@@ -1804,30 +1847,44 @@ const lib = () =>
               !1)
             );
           },
-          afterLoad: function (e, t) {
+          afterLoad(e, t) {
             et(t), setTimeout(dt, 10, t.id);
           },
           eventAction: 'see this in my room'
         }
-      ),
-      gt =
-        (t(t({}, vt), {}, { eventAction: 'open product catalog' }),
-        t(t({}, vt), {}, { eventAction: 'open shopping cart' }),
-        t(t({}, vt), {}, { eventAction: 'open surface designer' }),
+      );
+      const gt =
+        (t(t({
+}, vt), {
+}, {
+ eventAction: 'open product catalog'
+}),
+        t(t({
+}, vt), {
+}, {
+ eventAction: 'open shopping cart'
+}),
+        t(t({
+}, vt), {
+}, {
+ eventAction: 'open surface designer'
+}),
         t(
-          t({}, ht),
-          {},
+          t({
+}, ht),
           {
-            styleFn: function (e, t) {
+},
+          {
+            styleFn(e, t) {
               t.style.display = 'block';
             },
             popupId: H,
-            createPopupFn: function () {
-              var e = at(H);
+            createPopupFn() {
+              const e = at(H);
               return e.setAttribute('allow', 'geolocation'), e;
             },
-            afterLoad: function (e, t) {
-              window.addEventListener('message', function (e) {
+            afterLoad(e, t) {
+              window.addEventListener('message', (e) => {
                 e.data &&
                   e.data.action === fe &&
                   t.style.setProperty('height', ''.concat(e.data.height, 'px'), 'important');
@@ -1837,10 +1894,12 @@ const lib = () =>
           }
         ),
         t(
-          t({}, ht),
-          {},
+          t({
+}, ht),
           {
-            styleFn: function (e, t) {
+},
+          {
+            styleFn(e, t) {
               (t.style.display = 'block'),
                 (t.style.position = 'fixed'),
                 (t.style.backgroundColor = '#FFFFFF'),
@@ -1856,10 +1915,10 @@ const lib = () =>
                 t.style.setProperty('z-index', '2147483647', 'important');
             },
             popupId: D,
-            createPopupFn: function () {
+            createPopupFn() {
               return at(D);
             },
-            afterLoad: function (e, t) {
+            afterLoad(e, t) {
               setTimeout(dt, 10, t.id);
             },
             eventAction: 'open product display'
@@ -1876,123 +1935,122 @@ const lib = () =>
             e.debouncedFetchProductCodeMappings ||
               (e.debouncedFetchProductCodeMappings = _e(yt, 50, !1)),
             e.debouncedFetchProductCodeMappings(e));
-        }),
-      yt = function (e) {
+        });
+      var yt = function (e) {
         for (
           var t = '?vendor__url_path='.concat(e.getVendorUrlPathForStimr()), o = new Set(), n = 0;
           n < e.queuedProductCodeRequests.length;
           ++n
-        )
-          e.queuedProductCodeRequests[n].hasBeenSentOff ||
+        ) {
+ e.queuedProductCodeRequests[n].hasBeenSentOff ||
             (o.add(e.queuedProductCodeRequests[n].productCode),
             (e.queuedProductCodeRequests[n].hasBeenSentOff = !0));
-        var r = 0,
-          i = {};
+}
+        let r = 0;
+          const i = {
+};
         (i[r] = []),
-          o.forEach(function (e) {
-            var t = i[r].concat(e);
+          o.forEach((e) => {
+            const t = i[r].concat(e);
             encodeURIComponent(ke(t)).length > 4e3 ? (i[++r] = [e]) : i[r].push(e);
           });
-        for (var a = e.hasDesignerProducts ? '&has_designer_products=1' : '', s = 0; s <= r; ++s) {
-          var l = '&vendor_code__in=' + encodeURIComponent(ke(i[s])),
-            d = e.serverUrl + '/services/product/product_mappings/' + t + l + a,
-            c = new XMLHttpRequest();
+        for (let a = e.hasDesignerProducts ? '&has_designer_products=1' : '', s = 0; s <= r; ++s) {
+          const l = `&vendor_code__in=${encodeURIComponent(ke(i[s]))}`;
+            const d = `${e.serverUrl}/services/product/product_mappings/${t}${l}${a}`;
+            const c = new XMLHttpRequest();
           (c.bucketIndex = s),
             c.open('GET', d, !0),
             (c.onreadystatechange = function () {
-              4 == this.readyState &&
-                200 == this.status &&
-                (Pe(this.response).forEach(function (t) {
+              this.readyState == 4 &&
+                this.status == 200 &&
+                (Pe(this.response).forEach((t) => {
                   void 0 === e.productCodeMap[t.productCode] &&
                     (e.productCodeMap[t.productCode] = []),
                     e.productCodeMap[t.productCode].push(t);
                 }),
-                i[this.bucketIndex].forEach(function (t) {
+                i[this.bucketIndex].forEach((t) => {
                   void 0 === e.productCodeMap[t] && (e.productCodeMap[t] = []);
-                  for (var o = e.queuedProductCodeRequests.length - 1; o >= 0; --o)
-                    if (e.queuedProductCodeRequests[o].productCode == t) {
-                      var n = e.queuedProductCodeRequests[o],
-                        r =
+                  for (let o = e.queuedProductCodeRequests.length - 1; o >= 0; --o) {
+ if (e.queuedProductCodeRequests[o].productCode == t) {
+                      const n = e.queuedProductCodeRequests[o];
+                        const r =
                           !n.ignoreCallbackIfNotAvailable ||
                           (e.productCodeMap[t] && e.productCodeMap[t].length);
                       n.callback && r && n.callback.apply(null, n.callbackArguments),
                         e.queuedProductCodeRequests.splice(o, 1);
                     }
+}
                 }));
             }),
             c.send();
         }
-      },
-      bt = function (e, t, o, n, r, i, a, s) {
-        null == r &&
+      };
+      const bt = function (e, t, o, n, r, i, a, s) {
+        r == null &&
           (r = function (e, t) {
             e.appendChild(t);
           }),
           (a = a || 'roomvo-button');
-        var l = function () {
+        const l = function () {
             Ae(e, 'About to add buttons to all containers');
-            for (var t = document.querySelectorAll(o), n = 0; n < t.length; n++) {
-              var r = '';
+            for (let t = document.querySelectorAll(o), n = 0; n < t.length; n++) {
+              let r = '';
               try {
                 r = e.getProductCode(t[n]);
               } catch (a) {
-                Ae(e, 'Exception getting product code on ' + t[n].toString() + ': ' + a.toString());
+                Ae(e, `Exception getting product code on ${t[n].toString()}: ${a.toString()}`);
                 continue;
               }
               void 0 === e.productCodeMap[r]
-                ? (Ae(e, 'Checking unknown: "' + r + '" on ' + t[n]), gt(e, r, d, [t[n], r, i]))
+                ? (Ae(e, `Checking unknown: "${r}" on ${t[n]}`), gt(e, r, d, [t[n], r, i]))
                 : d(t[n], r, i);
             }
-          },
-          d = function (t, o, n) {
+          };
+          var d = function (t, o, n) {
             !(function (o) {
-              if (void 0 === e.productCodeMap[o])
-                return Ae(e, 'ERROR: unknown, should not be: "' + o + '" on ' + t), !1;
-              if (0 === e.productCodeMap[o].length)
-                return (
+              if (void 0 === e.productCodeMap[o]) return Ae(e, `ERROR: unknown, should not be: "${o}" on ${t}`), !1;
+              if (e.productCodeMap[o].length === 0) {
+ return (
                   /\u200b/.test(o)
                     ? Ae(
                         e,
-                        'NOT available: "' +
-                          o.replace(/\u200b/, '​') +
-                          '" (zero space character detected) on ' +
-                          t
+                        `NOT available: "${
+                          o.replace(/\u200b/, '​')
+                          }" (zero space character detected) on ${
+                          t}`
                       )
-                    : Ae(e, 'NOT available: "' + o + '" on ' + t),
+                    : Ae(e, `NOT available: "${o}" on ${t}`),
                   !1
                 );
+}
               if (
-                'roomvo-designer' === a &&
-                e.productCodeMap[o].every(function (e) {
+                a === 'roomvo-designer' &&
+                e.productCodeMap[o].every((e) => {
                   return !e.isDesignerCompatible;
                 })
-              )
-                return Ae(e, 'Designer not available for ' + o), !1;
+              ) return Ae(e, `Designer not available for ${o}`), !1;
               if (
-                'roomvo-product-display-button' === a &&
-                e.productCodeMap[o].every(function (e) {
+                a === 'roomvo-product-display-button' &&
+                e.productCodeMap[o].every((e) => {
                   return !e.is3dProductDisplayable;
                 })
-              )
-                return Ae(e, '3D product display not available for ' + o), !1;
-              if (!n) return Ae(e, 'Available without product type: "' + o + '" on ' + t), !0;
-              for (var r = 0; r < e.productCodeMap[o].length; ++r)
-                if (e.productCodeMap[o][r].productType == n)
-                  return Ae(e, 'Available for product type ' + n + ': "' + o + '" on ' + t), !0;
-              return Ae(e, 'NOT available for product type ' + n + ': "' + o + '" on ' + t), !1;
-            })(o)
+              ) return Ae(e, `3D product display not available for ${o}`), !1;
+              if (!n) return Ae(e, `Available without product type: "${o}" on ${t}`), !0;
+              for (let r = 0; r < e.productCodeMap[o].length; ++r) if (e.productCodeMap[o][r].productType == n) return Ae(e, `Available for product type ${n}: "${o}" on ${t}`), !0;
+              return Ae(e, `NOT available for product type ${n}: "${o}" on ${t}`), !1;
+            }(o))
               ? u(t)
               : (function (e) {
-                  for (var t = e.querySelectorAll('.' + a), o = 0; o < t.length; ++o) {
-                    var r = !('productType' in t[o].dataset) || n == t[o].dataset.productType;
-                    if ('hidden' !== window.getComputedStyle(t[o]).visibility && r) return !0;
+                  for (let t = e.querySelectorAll(`.${a}`), o = 0; o < t.length; ++o) {
+                    const r = !('productType' in t[o].dataset) || n == t[o].dataset.productType;
+                    if (window.getComputedStyle(t[o]).visibility !== 'hidden' && r) return !0;
                   }
                   return !1;
-                })(t) || c(t, o);
-          },
-          c = function (o, n) {
-            var l = null;
-            t ? ((l = t(e, i)), r(o, l)) : (l = o.querySelector('.' + a)),
+                }(t)) || c(t, o);
+          };
+          var c = function (o, n) {
+            let l = null;
+            t ? ((l = t(e, i)), r(o, l)) : (l = o.querySelector(`.${a}`)),
               l
                 ? ((l.style.visibility = 'visible'),
                   l.classList.add(a),
@@ -2001,50 +2059,53 @@ const lib = () =>
                   i && (l.dataset.productType = i),
                   (l.onclick = s),
                   wt(e, l),
-                  Ae(e, 'Added button to ' + o))
-                : Ae(e, 'Could not create or find existing button in ' + o);
-          },
-          u = function (o) {
-            for (var n = o.querySelectorAll('.' + a), r = 0; r < n.length; ++r) {
-              if (t)
-                (!('productType' in n[r].dataset) || i == n[r].dataset.productType) &&
-                  (n[r].parentNode.removeChild(n[r]), Ae(e, 'Removed button from ' + o));
-              else
-                (n[r].style.visibility = 'hidden'),
+                  Ae(e, `Added button to ${o}`))
+                : Ae(e, `Could not create or find existing button in ${o}`);
+          };
+          var u = function (o) {
+            for (let n = o.querySelectorAll(`.${a}`), r = 0; r < n.length; ++r) {
+              if (t) {
+ (!('productType' in n[r].dataset) || i == n[r].dataset.productType) &&
+                  (n[r].parentNode.removeChild(n[r]), Ae(e, `Removed button from ${o}`));
+} else {
+ (n[r].style.visibility = 'hidden'),
                   (n[r].dataset.active = 'false'),
-                  Ae(e, 'Hid button inside ' + o);
+                  Ae(e, `Hid button inside ${o}`);
+}
             }
-          },
-          p = [o];
+          };
+          const p = [o];
         n && p.push(n),
-          Ae(e, 'Waiting for: ' + p.toString()),
-          Le(document, p, function () {
+          Ae(e, `Waiting for: ${p.toString()}`),
+          Le(document, p, () => {
             !(function (e, t, o) {
               if (e) {
                 if (e.querySelector(t) && o()) return;
-                new MutationObserver(function (n, r) {
-                  for (var i = 0; i < n.length; ++i)
-                    if (n[i].addedNodes)
-                      for (var a = 0; a < n[i].addedNodes.length; ++a) {
-                        var s = n[i].addedNodes[a];
-                        if (s.matches && s.matches(t) && e.querySelector(t) && o())
-                          return void r.disconnect();
-                        if (s.querySelector && s.querySelector(t) && e.querySelector(t) && o())
-                          return void r.disconnect();
+                new MutationObserver((n, r) => {
+                  for (let i = 0; i < n.length; ++i) {
+ if (n[i].addedNodes) {
+ for (let a = 0; a < n[i].addedNodes.length; ++a) {
+                        const s = n[i].addedNodes[a];
+                        if (s.matches && s.matches(t) && e.querySelector(t) && o()) return void r.disconnect();
+                        if (s.querySelector && s.querySelector(t) && e.querySelector(t) && o()) return void r.disconnect();
                       }
-                }).observe(e, { childList: !0, subtree: !0 });
+}
+}
+                }).observe(e, {
+ childList: !0, subtree: !0
+});
               }
-            })(document, o, l);
+            }(document, o, l));
           });
-      },
-      wt = function (e, t) {
-        (void 0 === t.tabIndex || null === t.tabIndex || t.tabIndex < 0) &&
+      };
+      var wt = function (e, t) {
+        (void 0 === t.tabIndex || t.tabIndex === null || t.tabIndex < 0) &&
           (t.tabIndex = e.getStimrTabIndex(t)),
           (t.onkeydown = function (e) {
-            ('Enter' !== e.key && 'Space' !== e.key) || t.click();
+            (e.key !== 'Enter' && e.key !== 'Space') || t.click();
           });
-      },
-      _t = function (e, t, o, n, r, i, s) {
+      };
+      const _t = function (e, t, o, n, r, i, s) {
         if (e.shouldShowStimrButtons()) {
           bt(e, t, o, n, r, i, W, function (t) {
             return (
@@ -2052,12 +2113,13 @@ const lib = () =>
               it(e, this, '', s, i),
               e.recordEvent(
                 (function (e, t) {
-                  var o,
-                    n = t.appPath,
-                    r = t.productCode,
-                    i = t.productType,
-                    s =
-                      (a((o = {}), 'event_model_name', 'ClickedStimrButtonEvent'),
+                  let o;
+                    const n = t.appPath;
+                    const r = t.productCode;
+                    const i = t.productType;
+                    const s =
+                      (a((o = {
+}), 'event_model_name', 'ClickedStimrButtonEvent'),
                       a(o, 'event_name', 'Clicked Stimr Button'),
                       a(o, 'app_path', n || ''),
                       a(o, 'locale', e.getLocale()),
@@ -2074,13 +2136,14 @@ const lib = () =>
             );
           });
         }
-      },
-      kt = function (e) {
-        var t;
+      };
+      const kt = function (e) {
+        let t;
         e.roomvoListeners.onKeydownInWindow ||
           (window.addEventListener('keydown', Pt), (e.roomvoListeners.onKeydownInWindow = Pt));
-        var o =
-            (a((t = {}), se, xt),
+        const o =
+            (a((t = {
+}), se, xt),
             a(t, ue, Ct),
             a(t, me, St),
             a(t, le, Lt),
@@ -2093,120 +2156,128 @@ const lib = () =>
             a(t, ie, At),
             a(t, ae, Nt),
             a(t, ve, mt),
-            t),
-          n = function (t) {
+            t);
+          const n = function (t) {
             t in e.roomvoListeners ||
               (!(function (e) {
-                var t =
+                const t =
                     arguments.length > 1 && void 0 !== arguments[1]
                       ? arguments[1]
-                      : [/^https?:\/\/.*\.roomvo\.com$/],
-                  o = function () {
-                    for (var o = arguments.length, n = new Array(o), r = 0; r < o; r++)
-                      n[r] = arguments[r];
-                    return t.some(function (e) {
+                      : [/^https?:\/\/.*\.roomvo\.com$/];
+                  const o = function () {
+                    for (var o = arguments.length, n = new Array(o), r = 0; r < o; r++) n[r] = arguments[r];
+                    return t.some((e) => {
                       return e.test(n[0].origin);
                     })
                       ? e.apply(void 0, n)
                       : null;
-                  },
-                  n = window.addEventListener ? 'addEventListener' : 'attachEvent';
-                (0, window[n])('attachEvent' == n ? 'onmessage' : 'message', o, !1);
-              })(function (e) {
+                  };
+                  const n = window.addEventListener ? 'addEventListener' : 'attachEvent';
+                (0, window[n])(n == 'attachEvent' ? 'onmessage' : 'message', o, !1);
+              }((e) => {
                 e && e.data && e.data.action && e.data.action === t && o[t](e);
-              }),
+              })),
               (e.roomvoListeners[t] = o[t]));
           };
-        for (var r in o) n(r);
+        for (const r in o) n(r);
         e.roomvoListeners.handleHostNavigation ||
           (window.addEventListener('popstate', It), (e.roomvoListeners.handleHostNavigation = It));
-      },
-      Pt = function (e) {
-        var t = document.getElementById(G);
-        if ('Tab' === e.key && t && 'none' !== t.style.display && document.activeElement != t) {
-          var o = { action: he };
+      };
+      var Pt = function (e) {
+        const t = document.getElementById(G);
+        if (e.key === 'Tab' && t && t.style.display !== 'none' && document.activeElement != t) {
+          const o = {
+ action: he
+};
           window.postMessage(o, '*');
         }
-      },
-      xt = function (e) {
-        var t = jt(e.data.integratorVendorUrlPath);
-        t.setVisitorId(e.data.vendorUrlPath, e.data.visitorId, { overwriteExisting: !0 }),
-          t.setVendorId(e.data.vendorUrlPath, e.data.vendorId, { overwriteExisting: !0 });
-      },
-      Ct = function (e) {
+      };
+      var xt = function (e) {
+        const t = jt(e.data.integratorVendorUrlPath);
+        t.setVisitorId(e.data.vendorUrlPath, e.data.visitorId, {
+ overwriteExisting: !0
+}),
+          t.setVendorId(e.data.vendorUrlPath, e.data.vendorId, {
+ overwriteExisting: !0
+});
+      };
+      var Ct = function (e) {
         jt(e.data.integratorVendorUrlPath).addToCart(e.data.customData, e.data.eventExtra);
-      },
-      St = function (e) {
+      };
+      var St = function (e) {
         jt(e.data.integratorVendorUrlPath).trackActionInHostAnalytics(
           e.data.eventAction,
           e.data.eventLabel,
           e.data.eventExtra
         );
-      },
-      Lt = function (e) {
-        var t = document.getElementById(G);
+      };
+      var Lt = function (e) {
+        const t = document.getElementById(G);
         t && t.focus();
-      },
-      Ut = function (e) {
-        var t = jt(e.data.integratorVendorUrlPath);
+      };
+      var Ut = function (e) {
+        const t = jt(e.data.integratorVendorUrlPath);
         rt(t, e.data.vendorUrlPath, e.data.vendorCode, '', '', e.data.productType);
-      },
-      It = function () {
-        var e,
-          t,
-          o = window.history.state || {},
-          n = o.roomvoPopupUrl,
-          r = o.integratorVendorUrlPath;
+      };
+      var It = function () {
+        let e;
+          let t;
+          const o = window.history.state || {
+};
+          const n = o.roomvoPopupUrl;
+          const r = o.integratorVendorUrlPath;
         if (n && r) {
-          var i = jt(r);
+          const i = jt(r);
           ot(i, n);
         } else {
-          var a =
+          const a =
             ((e = G), (t = document.getElementById(e)) && t.dataset.previousBodyStyleOverflow);
           a && (document.body.style.overflow = a),
             (function () {
-              var e = document.getElementById(G);
+              const e = document.getElementById(G);
               e && e.classList.contains('roomvo-popup--show')
-                ? (e.addEventListener('transitionend', function () {
+                ? (e.addEventListener('transitionend', () => {
                     return e.parentNode.removeChild(e);
                   }),
                   e.classList.remove('roomvo-popup--show'))
                 : e && e.parentNode && e.parentNode.removeChild(e),
                 setTimeout(ct, 10);
-            })();
+            }());
         }
-      },
-      Rt = function () {
-        var e = jt(event.data.integratorVendorUrlPath);
-        Bt(e, 'write', { cookieName: $, cookieValue: !0 }), (e.agreedTermsOfUse = !0);
-      },
-      Ot = function (e) {
-        var t = e.data.filters ? JSON.stringify(e.data.filters) : '',
-          o = e.data.integratorVendorUrlPath,
-          n = jt(o),
-          r = n.visitorIds[o] || '',
-          i = new URL(''.concat(n.serverUrl, '/my/').concat(o));
+      };
+      var Rt = function () {
+        const e = jt(event.data.integratorVendorUrlPath);
+        Bt(e, 'write', {
+ cookieName: $, cookieValue: !0
+}), (e.agreedTermsOfUse = !0);
+      };
+      var Ot = function (e) {
+        const t = e.data.filters ? JSON.stringify(e.data.filters) : '';
+          const o = e.data.integratorVendorUrlPath;
+          const n = jt(o);
+          const r = n.visitorIds[o] || '';
+          const i = new URL(''.concat(n.serverUrl, '/my/').concat(o));
         i.searchParams.set('visitor_id', r),
           i.searchParams.set('locale', n.getLocale()),
           i.searchParams.set('product_id', e.data.productId),
           i.searchParams.set('iframe_id', j),
           i.searchParams.set('raw_prefilter', t),
-          '[object AssistantIntegrator]' === n.toString() && i.searchParams.set('is_dealer', '1'),
+          n.toString() === '[object AssistantIntegrator]' && i.searchParams.set('is_dealer', '1'),
           ot(n, i.href);
-      },
-      Tt = function (e) {
+      };
+      var Tt = function (e) {
         document
           .getElementById(z)
           .style.setProperty('height', ''.concat(e.data.height, 'px'), 'important');
-        var t = jt(e.data.integratorVendorUrlPath);
+        const t = jt(e.data.integratorVendorUrlPath);
         e.data.isProductListOpen &&
           t._catalogScrollPosition &&
           (t._debouncedScroll ||
             (t._debouncedScroll = _e(
-              function () {
-                var e = g(t._catalogScrollPosition, 2),
-                  o = e[0],
-                  n = e[1];
+              () => {
+                const e = g(t._catalogScrollPosition, 2);
+                  const o = e[0];
+                  const n = e[1];
                 document.documentElement.scrollHeight < n ||
                   (window.scroll(window.pageXOffset, o), (t._catalogScrollPosition = null));
               },
@@ -2214,10 +2285,10 @@ const lib = () =>
               !1
             )),
           t._debouncedScroll());
-      },
-      At = function (e) {
+      };
+      var At = function (e) {
         if (tt(z) && !tt(j)) {
-          var t = jt(e.data.integratorVendorUrlPath);
+          const t = jt(e.data.integratorVendorUrlPath);
           t._shouldRecordProductListScrollPosition &&
             (t._catalogScrollPosition = [
               window.pageYOffset,
@@ -2225,34 +2296,38 @@ const lib = () =>
             ]),
             document.getElementById('catalog').scrollIntoView(!0),
             (t._shouldRecordProductListScrollPosition = !1);
-          var o = new URL(window.location.href);
+          const o = new URL(window.location.href);
           o.searchParams.set('product_id', e.data.productId);
-          var n = o.href !== window.location.href;
+          const n = o.href !== window.location.href;
           window.history.replaceState(window.history.state, '', o.href),
             n && t.trackPageView && t.trackPageView();
         }
-      },
-      Nt = function (e) {
+      };
+      var Nt = function (e) {
         if (tt(z) && !tt(j)) {
-          var t = jt(e.data.integratorVendorUrlPath);
+          const t = jt(e.data.integratorVendorUrlPath);
           t._shouldRecordProductListScrollPosition = !0;
-          var o = new URL(window.location.href);
+          const o = new URL(window.location.href);
           (o.pathname = o.pathname.replace(/\/products\/.*/, '/products')),
             o.searchParams.delete('product_id');
-          var n = o.href !== window.location.href;
+          const n = o.href !== window.location.href;
           window.history.replaceState(window.history.state, '', o.href),
             n && t.trackPageView && t.trackPageView();
         }
-      },
-      Et = (function (e) {
+      };
+      const Et = (function (e) {
         function o() {
           n(this, o),
             (this.serverUrl = 'https://www.roomvo.com'),
-            (this.visitorIds = {}),
+            (this.visitorIds = {
+}),
             (this.vendorUrlPath = void 0),
-            (this.vendorIds = {}),
-            (this.productCodeMap = {}),
-            (this.productShareLinkMap = {}),
+            (this.vendorIds = {
+}),
+            (this.productCodeMap = {
+}),
+            (this.productShareLinkMap = {
+}),
             (this.queuedProductCodeRequests = []),
             (this.queuedProductCodeRequestObjs = []),
             (this.hasDesignerProducts = !1),
@@ -2312,88 +2387,107 @@ const lib = () =>
                 requireConfirmation: !1
               }
             ]),
-            (this.pageTypeRules = { regexes: new Map(), functions: new Map() }),
+            (this.pageTypeRules = {
+ regexes: new Map(), functions: new Map()
+}),
             (this.launchSequenceTimeoutDuration = 15e3),
             (this.launchSequenceLoaderBaseColor = '#818C98');
-          var e = Bt(this, 'read/rewrite', { cookieName: Y });
+          const e = Bt(this, 'read/rewrite', {
+ cookieName: Y
+});
           e && (this.visitorIds = Pe(e));
-          var t = Bt(this, 'read/rewrite', { cookieName: J });
+          const t = Bt(this, 'read/rewrite', {
+ cookieName: J
+});
           t && (this.vendorIds = Pe(t));
-          var r,
-            i,
-            a = Bt(this, 'read/rewrite', { cookieName: K });
+          let r;
+            let i;
+            const a = Bt(this, 'read/rewrite', {
+ cookieName: K
+});
           a && (this.vendorUrlPath = a),
-            (this.agreedTermsOfUse = Boolean(Bt(this, 'read', { cookieName: $ }))),
+            (this.agreedTermsOfUse = Boolean(Bt(this, 'read', {
+ cookieName: $
+}))),
             this.isInAbExperimentMode() &&
               ((r = this.getCookieExpiration()),
-              Bt((i = this), 'check', { cookieName: X }) ||
+              Bt((i = this), 'check', {
+ cookieName: X
+}) ||
                 (Math.random() < 0.5
                   ? Bt(i, 'write', {
                       cookieName: X,
                       cookieValue: 'dontshow',
-                      config: { cookieExpiration: r }
+                      config: {
+ cookieExpiration: r
+}
                     })
                   : Bt(i, 'write', {
                       cookieName: X,
                       cookieValue: 'show',
-                      config: { cookieExpiration: r }
+                      config: {
+ cookieExpiration: r
+}
                     })));
         }
         return (
           i(o, [
             {
               key: Symbol.toStringTag,
-              get: function () {
+              get() {
                 return 'RoomvoIntegrator';
               }
             },
             {
               key: 'getVendorUrlPath',
-              value: function () {
+              value() {
                 return '';
               }
             },
             {
               key: 'shouldCommitVisitorToDb',
-              value: function () {
+              value() {
                 return !1;
               }
             },
             {
               key: 'getProductCode',
-              value: function (e) {
+              value(e) {
                 return 'code1';
               }
             },
             {
               key: 'autolauncherConfig',
-              set: function (e) {
-                var o = this,
-                  n = this.standaloneAutolauncherConfigs.reduce(function (e, o) {
-                    return (e[o.standaloneFnName] = t({}, o)), e;
-                  }, {}),
-                  r = [
+              set(e) {
+                const o = this;
+                  const n = this.standaloneAutolauncherConfigs.reduce((e, o) => {
+                    return (e[o.standaloneFnName] = t({
+}, o)), e;
+                  }, {
+});
+                  const r = [
                     'startStandaloneVisualizer',
                     'startProductCatalog',
                     'startStandaloneSurfaceDesigner',
                     'startVisualizerInKioskMode',
                     'addFavoriteProduct',
                     'removeFavoriteProduct'
-                  ],
-                  i = function (e) {
-                    var i = e.standaloneFnName || 'startStandaloneVisualizer',
-                      a = t(t({}, n[i]), e),
-                      s = a.standaloneFnName;
+                  ];
+                  const i = function (e) {
+                    const i = e.standaloneFnName || 'startStandaloneVisualizer';
+                      const a = t(t({
+}, n[i]), e);
+                      const s = a.standaloneFnName;
                     if (r.includes(s)) {
-                      var l = o.standaloneAutolauncherConfigs.find(function (e) {
+                      const l = o.standaloneAutolauncherConfigs.find((e) => {
                         return e.standaloneFnName === s;
                       });
-                      if (l)
-                        for (var d = 0, c = Object.keys(l); d < c.length; d++) {
-                          var u = c[d];
+                      if (l) {
+ for (let d = 0, c = Object.keys(l); d < c.length; d++) {
+                          const u = c[d];
                           l[u] = a[u];
                         }
-                      else o.standaloneAutolauncherConfigs.push(a);
+} else o.standaloneAutolauncherConfigs.push(a);
                     } else Ae(o, ''.concat(s, ' is not a permitted autolaunch function'));
                   };
                 Array.isArray(e) ? e.forEach(i) : i(e);
@@ -2401,24 +2495,24 @@ const lib = () =>
             },
             {
               key: 'getAppropriateAutolauncherConfig',
-              value: function (e) {
-                var t = this,
-                  o = E(N());
-                return this.standaloneAutolauncherConfigs.find(function (n) {
-                  var r = n.urlRegexObj,
-                    i = n.requiredUrlParameters,
-                    a = n.autolaunchConfirmationUrlParameter,
-                    s = n.vendorSlugUrlParameter,
-                    l = n.requireConfirmation;
+              value(e) {
+                const t = this;
+                  const o = E(N());
+                return this.standaloneAutolauncherConfigs.find((n) => {
+                  const r = n.urlRegexObj;
+                    const i = n.requiredUrlParameters;
+                    const a = n.autolaunchConfirmationUrlParameter;
+                    const s = n.vendorSlugUrlParameter;
+                    const l = n.requireConfirmation;
                   if (!r.test(o)) return !1;
-                  var d = e.get(a) || '';
-                  if (l && 'true' !== d.toLowerCase()) return !1;
-                  var c = e.get(s) || '';
+                  const d = e.get(a) || '';
+                  if (l && d.toLowerCase() !== 'true') return !1;
+                  const c = e.get(s) || '';
                   return (
                     (!c || c === t.getVendorUrlPath()) &&
                     (!i ||
-                      i.every(function (t) {
-                        return 'true' === (e.get(t) || '').toLowerCase();
+                      i.every((t) => {
+                        return (e.get(t) || '').toLowerCase() === 'true';
                       }))
                   );
                 });
@@ -2426,49 +2520,58 @@ const lib = () =>
             },
             {
               key: 'processAutolaunchVisualizer',
-              value: function () {
-                var e = new URL(N().href).searchParams,
-                  t = this.getAppropriateAutolauncherConfig(e);
+              value() {
+                const e = new URL(N().href).searchParams;
+                  const t = this.getAppropriateAutolauncherConfig(e);
                 if (t) {
-                  var o = t.productCodeUrlParameter,
-                    n = t.supplierUrlPathParameter,
-                    r = t.productTypeUrlParameter,
-                    i = t.prefilterUrlParameter,
-                    a = t.kioskPhysicalScannerUrlParameter,
-                    s = t.standaloneFnName,
-                    l = Ye(e.get(r)),
-                    d = e.get(o),
-                    c = e.get(a),
-                    u = n && e.get(n),
-                    p = u && d ? '&supplier_url_path='.concat(u) : '';
-                  'true' === c && (p += '&has_physical_scanner=1');
-                  var f = i && e.get(i),
-                    m = f ? { prefilter: f } : {};
+                  const o = t.productCodeUrlParameter;
+                    const n = t.supplierUrlPathParameter;
+                    const r = t.productTypeUrlParameter;
+                    const i = t.prefilterUrlParameter;
+                    const a = t.kioskPhysicalScannerUrlParameter;
+                    const s = t.standaloneFnName;
+                    const l = Ye(e.get(r));
+                    const d = e.get(o);
+                    const c = e.get(a);
+                    const u = n && e.get(n);
+                    let p = u && d ? '&supplier_url_path='.concat(u) : '';
+                  c === 'true' && (p += '&has_physical_scanner=1');
+                  const f = i && e.get(i);
+                    const m = f ? {
+ prefilter: f
+} : {
+};
                   this[s](l, d, p, m);
                 }
               }
             },
             {
               key: 'processAddToCartUrlParameter',
-              value: function () {
-                var e = new URL(N().href);
+              value() {
+                const e = new URL(N().href);
                 if (e.searchParams.has(Z) && A(document.referrer) === A(this.serverUrl)) {
-                  var t = e.searchParams.get(Z);
+                  const t = e.searchParams.get(Z);
                   e.searchParams.delete(Z),
                     window.history.replaceState(null, '', e.href),
-                    this.addToCart({ productCode: t });
+                    this.addToCart({
+ productCode: t
+});
                 }
               }
             },
-            { key: 'onBodyLoaded', value: function () {} },
-            { key: 'registerIntegratorConfigs', value: function () {} },
+            {
+ key: 'onBodyLoaded', value() {}
+},
+            {
+ key: 'registerIntegratorConfigs', value() {}
+},
             {
               key: 'pageType',
-              get: function () {
-                var e = y(this.pageTypeRules.functions.entries()).find(function (e) {
+              get() {
+                const e = y(this.pageTypeRules.functions.entries()).find((e) => {
                     return (0, g(e, 2)[1])();
-                  }),
-                  t = y(this.pageTypeRules.regexes.entries()).find(function (e) {
+                  });
+                  const t = y(this.pageTypeRules.regexes.entries()).find((e) => {
                     return (0, g(e, 2)[1])();
                   });
                 return e ? e[0] : t ? t[0] : 'ANY_PAGE';
@@ -2476,134 +2579,140 @@ const lib = () =>
             },
             {
               key: 'isWebGlNeeded',
-              value: function () {
+              value() {
                 return !0;
               }
             },
             {
               key: 'getVendorUrlPathForStimr',
-              value: function () {
+              value() {
                 return this.getVendorUrlPath();
               }
             },
             {
               key: 'getLocale',
-              value: function () {
+              value() {
                 return 'en-us';
               }
             },
             {
               key: 'getLocalizedStringOverrides',
-              value: function () {
-                return {};
+              value() {
+                return {
+};
               }
             },
             {
               key: 'getStimrButtonText',
-              value: function (e) {
+              value(e) {
                 return 'See It In My Room';
               }
             },
             {
               key: 'getCookieExpiration',
-              value: function () {
+              value() {
                 return 'Fri, 31 Dec 9999 23:59:59 GMT';
               }
             },
             {
               key: 'getCookieDomain',
-              value: function () {
+              value() {
                 return '';
               }
             },
             {
               key: 'getStimrTabIndex',
-              value: function (e) {
+              value(e) {
                 return 0;
               }
             },
-            { key: 'addToCart', value: function (e, t) {} },
+            {
+ key: 'addToCart', value(e, t) {}
+},
             {
               key: 'isInAbExperimentMode',
-              value: function () {
+              value() {
                 return !1;
               }
             },
             {
               key: 'isRoomvoCookieDisabled',
-              value: function () {
+              value() {
                 return Boolean(window.isRoomvoCookieDisabled);
               }
             },
             {
               key: 'shouldShowStimrButtons',
-              value: function () {
-                return !this.isInAbExperimentMode() || 'dontshow' !== xe(this);
+              value() {
+                return !this.isInAbExperimentMode() || xe(this) !== 'dontshow';
               }
             },
             {
               key: 'shouldShowDesignerButtons',
-              value: function () {
+              value() {
                 return this.hasDesignerProducts;
               }
             },
             {
               key: 'shouldShowMeasurementButton',
-              value: function () {
+              value() {
                 return !1;
               }
             },
             {
               key: 'trackActionInHostAnalytics',
-              value: function (e, t, o) {
-                var n = (window.dataLayer || []).some(function (e) {
-                  return 'config' === e[0] && e[1].startsWith('G-');
+              value(e, t, o) {
+                const n = (window.dataLayer || []).some((e) => {
+                  return e[0] === 'config' && e[1].startsWith('G-');
                 });
                 try {
-                  n && window.gtag('event', e, { event_category: 'Roomvo', event_label: t });
+                  n && window.gtag('event', e, {
+ event_category: 'Roomvo', event_label: t
+});
                 } catch (a) {}
                 try {
-                  for (var r = window.ga.getAll(), i = 0; i < r.length; ++i)
-                    r[i].send('event', 'Roomvo', e, t);
+                  for (let r = window.ga.getAll(), i = 0; i < r.length; ++i) r[i].send('event', 'Roomvo', e, t);
                 } catch (a) {}
               }
             },
             {
               key: 'recordEvent',
-              value: function (e) {
-                var t,
-                  o = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-                  n =
-                    (a((t = {}), 'visitor_id', this.visitorIds[this.getVendorUrlPath()]),
+              value(e) {
+                let t;
+                  const o = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+                  const n =
+                    (a((t = {
+}), 'visitor_id', this.visitorIds[this.getVendorUrlPath()]),
                     a(t, 'device_type', be()),
                     a(t, 'entry_type', 0),
-                    t),
-                  r = this.vendorIds[this.getVendorUrlPath()];
-                r && (n.vendor_id = r), (e = Object.assign({}, n, e));
-                var i = new FormData();
-                for (var s in e) void 0 !== e[s] && null !== e[s] && i.append(s, e[s]);
-                var l = new XMLHttpRequest();
-                l.open('POST', this.serverUrl + '/services/event/events/', !0),
+                    t);
+                  const r = this.vendorIds[this.getVendorUrlPath()];
+                r && (n.vendor_id = r), (e = {
+ ...n, ...e
+});
+                const i = new FormData();
+                for (const s in e) void 0 !== e[s] && e[s] !== null && i.append(s, e[s]);
+                const l = new XMLHttpRequest();
+                l.open('POST', `${this.serverUrl}/services/event/events/`, !0),
                   l.send(i),
                   o && this.trackActionInHostAnalytics(e.event_name, '', e);
               }
             },
             {
               key: 'debug',
-              value: function () {
+              value() {
                 for (
                   var e = this, t = document.querySelectorAll('.roomvo-stimr'), o = 0, n = 0;
                   n < t.length;
                   ++n
-                )
-                  'hidden' === t[n].style.visibility && ++o;
-                console.log(t.length + ' STIMRs on page, ' + o + ' hidden.'),
-                  console.log(this.log.split('\n').length + ' lines in log.');
-                var r = this.getProductCode();
+                ) t[n].style.visibility === 'hidden' && ++o;
+                console.log(`${t.length} STIMRs on page, ${o} hidden.`),
+                  console.log(`${this.log.split('\n').length} lines in log.`);
+                const r = this.getProductCode();
                 r &&
-                  (console.log('Product code on page: ' + r),
-                  gt(this, r, function () {
-                    e.productCodeMap[r] && 0 !== e.productCodeMap[r].length
+                  (console.log(`Product code on page: ${r}`),
+                  gt(this, r, () => {
+                    e.productCodeMap[r] && e.productCodeMap[r].length !== 0
                       ? console.log('Available: '.concat(r))
                       : console.log('Not available: '.concat(r));
                   }));
@@ -2611,50 +2720,52 @@ const lib = () =>
             },
             {
               key: 'startStandalone',
-              value: function () {
+              value() {
                 it(this);
               }
             },
             {
               key: 'startStandaloneSurfaceDesigner',
-              value: function (e, t) {
-                var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : '',
-                  n = Ye(e);
-                it(this, void 0, '/surface_designer', o, 0 === n ? '' : n, t);
+              value(e, t) {
+                const o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : '';
+                  const n = Ye(e);
+                it(this, void 0, '/surface_designer', o, n === 0 ? '' : n, t);
               }
             },
             {
               key: 'startVisualizerInKioskMode',
-              value: function (e, t) {
-                var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : '',
-                  n = Ye(e);
-                it(this, void 0, '/kiosk', (o += '&is_in_kiosk_mode=1'), 0 === n ? '' : n, t);
+              value(e, t) {
+                let o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : '';
+                  const n = Ye(e);
+                it(this, void 0, '/kiosk', (o += '&is_in_kiosk_mode=1'), n === 0 ? '' : n, t);
               }
             },
             {
               key: 'startStandaloneVisualizer',
-              value: function (e, t) {
-                var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : '',
-                  n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {},
-                  r = this.prefilter;
+              value(e, t) {
+                const o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : '';
+                  const n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {
+};
+                  const r = this.prefilter;
                 n.prefilter && (this.prefilter = n.prefilter);
-                var i = Ye(e);
-                it(this, void 0, void 0, o, 0 === i ? '' : i, t),
+                const i = Ye(e);
+                it(this, void 0, void 0, o, i === 0 ? '' : i, t),
                   n.prefilter && (this.prefilter = r);
               }
             },
             {
               key: 'startProductCatalog',
-              value: function (e, t) {
-                var o = this,
-                  n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : '',
-                  r = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {},
-                  i = function (t, i, a) {
-                    var s = ut(t, a, Ye(i)),
-                      l = Ye(e);
+              value(e, t) {
+                const o = this;
+                  let n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : '';
+                  const r = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {
+};
+                  const i = function (t, i, a) {
+                    const s = ut(t, a, Ye(i));
+                      const l = Ye(e);
                     s ||
                       ((n += a ? '&vendor_code='.concat(encodeURIComponent(a)) : ''),
-                      (n += 0 !== l ? '&product_type='.concat(Ye(i)) : '')),
+                      (n += l !== 0 ? '&product_type='.concat(Ye(i)) : '')),
                       r.prefilter && (n += '&prefilter='.concat(r.prefilter)),
                       st(o, n, s);
                   };
@@ -2665,32 +2776,34 @@ const lib = () =>
             },
             {
               key: 'convertProductType',
-              value: function (e) {
+              value(e) {
                 return Ye(e);
               }
             },
             {
               key: 'setVisitorId',
-              value: function (e, t) {
-                var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
-                  n = o.overwriteExisting,
-                  r = void 0 !== n && n;
+              value(e, t) {
+                const o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {
+};
+                  const n = o.overwriteExisting;
+                  const r = void 0 !== n && n;
                 Mt(this, e, 'visitorIds', Y, t, r);
               }
             },
             {
               key: 'setVendorId',
-              value: function (e, t) {
-                var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
-                  n = o.overwriteExisting,
-                  r = void 0 !== n && n;
+              value(e, t) {
+                const o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {
+};
+                  const n = o.overwriteExisting;
+                  const r = void 0 !== n && n;
                 Mt(this, e, 'vendorIds', J, t, r);
               }
             },
             {
               key: 'addFavoriteProduct',
-              value: function (e, t) {
-                var o = new FormData();
+              value(e, t) {
+                const o = new FormData();
                 o.append('visitor', this.visitorIds[this.getVendorUrlPath()]),
                   o.append('vendor', this.vendorIds[this.getVendorUrlPath()]),
                   o.append('sku', e),
@@ -2703,8 +2816,8 @@ const lib = () =>
             },
             {
               key: 'removeFavoriteProduct',
-              value: function (e, t) {
-                var o = new FormData();
+              value(e, t) {
+                const o = new FormData();
                 o.append('visitor', this.visitorIds[this.getVendorUrlPath()]),
                   o.append('vendor', this.vendorIds[this.getVendorUrlPath()]),
                   o.append('sku', e),
@@ -2717,8 +2830,8 @@ const lib = () =>
             },
             {
               key: 'vendorLogoUrl',
-              get: function () {
-                var e = new URL('/services/vendor/themes/asset/', this.serverUrl);
+              get() {
+                const e = new URL('/services/vendor/themes/asset/', this.serverUrl);
                 return (
                   e.searchParams.append('vendor_url_path', this.getVendorUrlPath()),
                   e.searchParams.append('asset_name', 'my_landing_page_logo_background_image'),
@@ -2729,20 +2842,22 @@ const lib = () =>
             },
             {
               key: 'shouldShowLaunchSequence',
-              get: function () {
+              get() {
                 return !0;
               }
             }
           ]),
           o
         );
-      })(),
-      Ft = function (e, t) {
-        var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
-          n = new XMLHttpRequest();
-        n.open('POST', e.serverUrl + '/api/visitors/', !0),
+      }());
+      const Ft = function (e, t) {
+        const o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {
+};
+          const n = new XMLHttpRequest();
+        n.open('POST', `${e.serverUrl}/api/visitors/`, !0),
           n.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-        var r = {};
+        const r = {
+};
         e.getVendorUrlPath() && (r.vendor_url_path = e.getVendorUrlPath()),
           (r.locale = e.getLocale()),
           (r.tracking_code = xe(e)),
@@ -2751,32 +2866,46 @@ const lib = () =>
           (r.device_type = be()),
           e.shouldCommitVisitorToDb() && (r.commit_to_db = !0),
           (n.onreadystatechange = function () {
-            if (4 === this.readyState && 201 === this.status) {
-              var o = Pe(this.responseText),
-                n = o.vendorUrlPath;
-              e.setVisitorId(n, o.id, { overwriteExisting: !1 }),
-                e.setVendorId(n, o.vendorId, { overwriteExisting: !1 }),
+            if (this.readyState === 4 && this.status === 201) {
+              const o = Pe(this.responseText);
+                const n = o.vendorUrlPath;
+              e.setVisitorId(n, o.id, {
+ overwriteExisting: !1
+}),
+                e.setVendorId(n, o.vendorId, {
+ overwriteExisting: !1
+}),
                 t && t(o);
             }
           }),
           o && o.timeout && ((n.timeout = o.timeout), o.ontimeout && (n.ontimeout = o.ontimeout)),
           n.send(JSON.stringify(r));
-      },
-      Mt = function (e, t, o, n, r, i) {
-        we(e[o]) && (e[o] = {});
-        var a = Bt(e, 'read', { cookieName: n });
+      };
+      var Mt = function (e, t, o, n, r, i) {
+        we(e[o]) && (e[o] = {
+});
+        const a = Bt(e, 'read', {
+ cookieName: n
+});
         a && (e[o] = Pe(a)),
           r && ((!i && t in e[o]) || (e[o][t] = r)),
-          Bt(e, 'write', { cookieName: n, cookieValue: ke(e[o]) });
-      },
-      Bt = function (e, t, o) {
+          Bt(e, 'write', {
+ cookieName: n, cookieValue: ke(e[o])
+});
+      };
+      var Bt = function (e, t, o) {
         if (!e.isRoomvoCookieDisabled()) {
-          var n = { cookieExpiration: e.getCookieExpiration(), domain: e.getCookieDomain() },
-            r = o.cookieName,
-            i = o.cookieValue,
-            a = o.config,
-            s = void 0 === a ? {} : a,
-            l = Object.assign({}, n, s);
+          const n = {
+ cookieExpiration: e.getCookieExpiration(), domain: e.getCookieDomain()
+};
+            const r = o.cookieName;
+            const i = o.cookieValue;
+            const a = o.config;
+            const s = void 0 === a ? {
+} : a;
+            const l = {
+ ...n, ...s
+};
           switch (t.toLowerCase()) {
             case 'write':
               return q(r, i, l);
@@ -2788,14 +2917,14 @@ const lib = () =>
             case 'check':
               return (function (e) {
                 return void 0 !== M(e);
-              })(r);
+              }(r));
           }
         }
         return Ae(e, 'Accessing cookies is not permitted.'), null;
-      },
-      qt = function (e) {
+      };
+      const qt = function (e) {
         if (e.getVendorUrlPath() in window._roomvo) {
-          var t = window._roomvo[e.getVendorUrlPath()];
+          const t = window._roomvo[e.getVendorUrlPath()];
           if (e.toString() === t.toString()) return;
         }
         (window._roomvo[e.getVendorUrlPath()] = e),
@@ -2807,26 +2936,23 @@ const lib = () =>
               }),
             window.roomvo.startStandaloneVisualizer ||
               (window.roomvo.startStandaloneVisualizer = function () {
-                for (var e = arguments.length, t = new Array(e), o = 0; o < e; o++)
-                  t[o] = arguments[o];
+                for (var e = arguments.length, t = new Array(e), o = 0; o < e; o++) t[o] = arguments[o];
                 t = zt.apply(void 0, y(t));
-                var n = jt(t.splice(2, 1)[0]);
+                const n = jt(t.splice(2, 1)[0]);
                 n.startStandaloneVisualizer.apply(n, y(t));
               }),
             window.roomvo.startProductCatalog ||
               (window.roomvo.startProductCatalog = function () {
-                for (var e = arguments.length, t = new Array(e), o = 0; o < e; o++)
-                  t[o] = arguments[o];
+                for (var e = arguments.length, t = new Array(e), o = 0; o < e; o++) t[o] = arguments[o];
                 t = zt.apply(void 0, y(t));
-                var n = jt(t.splice(2, 1)[0]);
+                const n = jt(t.splice(2, 1)[0]);
                 n.startProductCatalog.apply(n, y(t));
               }),
             window.roomvo.startStandaloneSurfaceDesigner ||
               (window.roomvo.startStandaloneSurfaceDesigner = function () {
-                for (var e = arguments.length, t = new Array(e), o = 0; o < e; o++)
-                  t[o] = arguments[o];
+                for (var e = arguments.length, t = new Array(e), o = 0; o < e; o++) t[o] = arguments[o];
                 t = zt.apply(void 0, y(t));
-                var n = jt(t.splice(2, 1)[0]);
+                const n = jt(t.splice(2, 1)[0]);
                 n.startStandaloneSurfaceDesigner.apply(n, y(t));
               }),
             window.roomvo.addFavoriteProduct ||
@@ -2842,46 +2968,46 @@ const lib = () =>
           we(e.visitorIds) || !(e.getVendorUrlPath() in e.visitorIds)
             ? Ft(
                 e,
-                function () {
+                () => {
                   Vt(e);
                 },
                 {
                   timeout: 1e4,
-                  ontimeout: function () {
+                  ontimeout() {
                     Vt(e);
                   }
                 }
               )
             : Vt(e);
-      },
-      Vt = function (e) {
-        var t = function () {
+      };
+      var Vt = function (e) {
+        const t = function () {
           Dt(e) && e.processAddToCartUrlParameter(),
             e.processAutolaunchVisualizer(),
             e.onBodyLoaded(),
             e.registerIntegratorConfigs();
         };
         document.body ? t() : document.addEventListener('DOMContentLoaded', t);
-      },
-      jt = function (e) {
-        var t = Object.values(window._roomvo).filter(function (e) {
+      };
+      var jt = function (e) {
+        const t = Object.values(window._roomvo).filter((e) => {
           return e.toString().endsWith('Integrator]');
         });
         return e
           ? window._roomvo[e] ||
-              t.find(function (e) {
-                return '[object AssistantIntegrator]' === e.toString();
+              t.find((e) => {
+                return e.toString() === '[object AssistantIntegrator]';
               }) ||
               t.find(Dt) ||
               t[0]
           : t.find(Dt) || t[0];
-      },
-      zt = function () {
+      };
+      var zt = function () {
         for (var e = arguments.length, t = new Array(e), o = 0; o < e; o++) t[o] = arguments[o];
         return (
-          1 === t.length &&
+          t.length === 1 &&
             t[0] instanceof Object &&
-            '[object Object]' === Object.prototype.toString.call(t[0]) &&
+            Object.prototype.toString.call(t[0]) === '[object Object]' &&
             (t = [
               t[0].productType,
               t[0].productCode,
@@ -2891,15 +3017,15 @@ const lib = () =>
             ]),
           t
         );
-      },
-      Dt = function (e) {
-        return '[object RoomvoIntegrator]' === e.toString();
-      },
-      Ht = '[data-role="roomvo"]',
-      Gt = 'div[data-code="sku"].value',
-      Wt = (function (e) {
+      };
+      var Dt = function (e) {
+        return e.toString() === '[object RoomvoIntegrator]';
+      };
+      const Ht = '[data-role="roomvo"]';
+      const Gt = 'div[data-code="sku"].value';
+      const Wt = (function (e) {
         s(o, e);
-        var t = m(o);
+        const t = m(o);
         function o() {
           return n(this, o), t.apply(this, arguments);
         }
@@ -2907,51 +3033,51 @@ const lib = () =>
           i(o, [
             {
               key: 'getVendorUrlPath',
-              value: function () {
+              value() {
                 return 'luxuryflooringandfurnishingscouk';
               }
             },
             {
               key: 'getProductCode',
-              value: function (e) {
+              value(e) {
                 return (
                   (function (e) {
-                    var t = (
+                    const t = (
                       arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : document
                     ).querySelector(e);
                     return t && t.innerText ? t.innerText.trim() : '';
-                  })(Gt) || ''
+                  }(Gt)) || ''
                 );
               }
             },
             {
               key: 'getLocale',
-              value: function () {
+              value() {
                 return 'en-gb';
               }
             },
             {
               key: 'getStimrButtonText',
-              value: function (e) {
+              value(e) {
                 return 'Try out our Room Visualiser';
               }
             },
             {
               key: 'isWebGlNeeded',
-              value: function () {
+              value() {
                 return !1;
               }
             },
             {
               key: 'onBodyLoaded',
-              value: function () {
-                var e = this;
+              value() {
+                const e = this;
                 if (E(N()).includes('/checkout/onepage/success')) this._notifyConversion();
                 else {
-                  var t = function () {
+                  const t = function () {
                     _t(e, e._createStimr, Ht, Gt);
                   };
-                  Le(document, [Ht], function () {
+                  Le(document, [Ht], () => {
                     new MutationObserver(t).observe(document.querySelector(Ht), {
                       childList: !0,
                       subtree: !0
@@ -2963,8 +3089,8 @@ const lib = () =>
             },
             {
               key: '_createStimr',
-              value: function (e) {
-                var t = document.createElement('div');
+              value(e) {
+                const t = document.createElement('div');
                 (t.style.cursor = 'pointer'),
                   (t.style.paddingTop = '10px'),
                   (t.style.paddingBottom = '10px'),
@@ -2974,29 +3100,29 @@ const lib = () =>
                   (t.style.backgroundColor = '#e5e5e5'),
                   (t.style.width = '100%'),
                   (t.style.zIndex = '1000');
-                var o = document.createElement('div');
+                const o = document.createElement('div');
                 (o.innerText = e.getStimrButtonText(e.getLocale())),
                   (o.style.display = 'inline-block'),
                   (o.style.fontFamily = 'Raleway, sans-serif'),
                   (o.style.fontSize = '18px');
-                var n = document.createElement('img');
+                const n = document.createElement('img');
                 (n.src = ''.concat(
                   e.serverUrl,
                   '/services/vendor/vendor_images/luxuryflooringandfurnishingscouk/roomvo_icon.png'
                 )),
                   (n.style.height = '25px'),
                   (n.style.marginRight = '10px');
-                var r = document.createElement('div');
+                const r = document.createElement('div');
                 (r.style.display = 'inline-block'),
                   r.appendChild(n),
                   t.appendChild(r),
                   t.appendChild(o);
-                var i = document.createElement('div');
+                const i = document.createElement('div');
                 (i.style.position = 'relative'),
                   (i.style.marginTop = '10px'),
                   (i.style.width = '100%'),
                   i.appendChild(t);
-                var a = Ie();
+                const a = Ie();
                 return (
                   a &&
                     a.insertRule(
@@ -3009,15 +3135,15 @@ const lib = () =>
             },
             {
               key: '_notifyConversion',
-              value: function () {
-                var e = this,
-                  t = 'div.c-thank-you > div.c-text-block p';
-                Le(document, [t], function () {
+              value() {
+                const e = this;
+                  const t = 'div.c-thank-you > div.c-text-block p';
+                Le(document, [t], () => {
                   !(function (e, t, o, n, r, i, a) {
-                    var s = new XMLHttpRequest();
-                    s.open('POST', e.serverUrl + '/api/notify_conversion', !0);
-                    var l = new FormData(),
-                      d = e.getVendorUrlPath();
+                    const s = new XMLHttpRequest();
+                    s.open('POST', `${e.serverUrl}/api/notify_conversion`, !0);
+                    const l = new FormData();
+                      const d = e.getVendorUrlPath();
                     l.append('visitor_id', e.visitorIds[d]),
                       l.append('vendor_url_path', d),
                       l.append('vendor_codes', r || ''),
@@ -3027,19 +3153,19 @@ const lib = () =>
                       l.append('currency', n || ''),
                       l.append('transaction_id', t || ''),
                       s.send(l);
-                  })(e, e._parseTransactionId(t));
+                  }(e, e._parseTransactionId(t)));
                 });
               }
             },
             {
               key: '_parseTransactionId',
-              value: function (e) {
+              value(e) {
                 for (
-                  var t = /Your order # is: ([0-9]+)\./, o = document.querySelectorAll(e), n = 0;
+                  let t = /Your order # is: ([0-9]+)\./, o = document.querySelectorAll(e), n = 0;
                   n < o.length;
                   n++
                 ) {
-                  var r = o[n].innerText.match(t);
+                  const r = o[n].innerText.match(t);
                   if (r) return r[1];
                 }
                 return null;
@@ -3047,18 +3173,20 @@ const lib = () =>
             },
             {
               key: 'trackActionInHostAnalytics',
-              value: function (e, t, n) {
+              value(e, t, n) {
                 v(l(o.prototype), 'trackActionInHostAnalytics', this).call(this, e, t, n);
                 try {
                   (window.dataLayer = window.dataLayer || []),
-                    window.dataLayer.push({ event: 'Roomvo', event_action: e, event_label: t });
+                    window.dataLayer.push({
+ event: 'Roomvo', event_action: e, event_label: t
+});
                 } catch (r) {}
               }
             }
           ]),
           o
         );
-      })(Et);
+      }(Et));
     !(function (e) {
       if (
         !(
@@ -3075,27 +3203,34 @@ const lib = () =>
             ).test(t.userAgent) &&
             !(function (e) {
               return !!e && e.userAgent.includes('RoomvoBot');
-            })(window.navigator)) ||
+            }(window.navigator))) ||
           (function (e) {
             return !!e && (e.userAgent.indexOf('MSIE') > 0 || e.userAgent.indexOf('Trident/') > -1);
-          })(window.navigator)
+          }(window.navigator))
         )
       ) {
         var t;
         window._roomvo ||
-          ((window._roomvo = {}),
-          Object.defineProperty(window._roomvo, 'roomvoListeners', { value: {} })),
-          window.roomvo || ((window.roomvo = {}), (window.ffViz = window.roomvo));
-        var o = new e();
+          ((window._roomvo = {
+}),
+          Object.defineProperty(window._roomvo, 'roomvoListeners', {
+ value: {
+}
+})),
+          window.roomvo || ((window.roomvo = {
+}), (window.ffViz = window.roomvo));
+        const o = new e();
         o.getVendorUrlPath()
           ? qt(o)
-          : Ft(o, function (e) {
+          : Ft(o, (e) => {
               (o.vendorUrlPath = e.vendorUrlPath),
-                Bt(o, 'write', { cookieName: K, cookieValue: o.vendorUrlPath }),
+                Bt(o, 'write', {
+ cookieName: K, cookieValue: o.vendorUrlPath
+}),
                 qt(o);
             });
       }
-    })(Wt);
-  })();
+    }(Wt));
+  }());
 
 export default lib;

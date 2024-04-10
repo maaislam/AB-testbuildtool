@@ -2,35 +2,35 @@ export const stepsCopy = [
   {
     title: {
       copy: '1. APPLY BELOW',
-      color: 'brand-red',
+      color: 'brand-red'
     },
     details:
-      'It only takes you a few minutes to complete the simple sign-up form and join our beauty community',
+      'It only takes you a few minutes to complete the simple sign-up form and join our beauty community'
   },
   {
     title: {
       copy: '2. GET SUPPORT',
-      color: 'brand-pink',
+      color: 'brand-pink'
     },
     details:
-      'Your specially appointed Sales Leader will be in touch to help you create your account and online store, choose the right Welcome Kit for you, and answer any questions',
+      'Your specially appointed Sales Leader will be in touch to help you create your account and online store, choose the right Welcome Kit for you, and answer any questions'
   },
   {
     title: {
       copy: '3. DOWNLOAD OUR APP',
-      color: 'brand-red',
+      color: 'brand-red'
     },
     details:
-      'Avon ON will open a world of beauty with training, ready-made social media posts and ready-to-share digital brochures',
+      'Avon ON will open a world of beauty with training, ready-made social media posts and ready-to-share digital brochures'
   },
   {
     title: {
       copy: '4. GET SELLING',
-      color: 'brand-black',
+      color: 'brand-black'
     },
     details:
-      'Send digital brochure links to friends and family, post your online store link on social media and share the paper brochures from your Welcome Kit. However you make your first sale, you’ll earn straight away',
-  },
+      'Send digital brochure links to friends and family, post your online store link on social media and share the paper brochures from your Welcome Kit. However you make your first sale, you’ll earn straight away'
+  }
 ];
 
 export const svgLine = `<svg xmlns="http://www.w3.org/2000/svg" width="268" height="666" viewBox="0 0 268 666" fill="none">

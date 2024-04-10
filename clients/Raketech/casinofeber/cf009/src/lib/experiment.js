@@ -8,9 +8,9 @@ const { ID, VARIATION } = shared;
 export default () => {
   setup();
 
-  // const capitalizeWords = (str) => {
-  //   return str.replace(/\b\w/g, (char) => char.toUpperCase());
-  // };
+  //const capitalizeWords = (str) => {
+  //return str.replace(/\b\w/g, (char) => char.toUpperCase());
+  //};
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;

@@ -150,7 +150,7 @@ export default () => {
   document.body.addEventListener('click', (event) => {
     const { target } = event;
 
-    if (target.classList.contains('.' + ID + '-message')) {
+    if (target.classList.contains(`.${ID}-message`)) {
       triggerEvent('product with social Proof Message Clicked');
     }
   });

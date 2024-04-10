@@ -10,17 +10,17 @@ export default () => {
   //setup(); //use if needed
 
   console.log(ID);
-  // -----------------------------
-  // If control, bail out from here
-  // -----------------------------
+  //-----------------------------
+  //If control, bail out from here
+  //-----------------------------
   if (VARIATION == 'control') {
     return;
   }
 
-  // -----------------------------
-  // Write experiment code here
-  // -----------------------------
-  // ...
+  //-----------------------------
+  //Write experiment code here
+  //-----------------------------
+  //...
 
   const controlStepsSection = document.querySelector('.tiles__item--colored1').closest('section');
   controlStepsSection.classList.add(`${ID}__hide`);
@@ -44,7 +44,7 @@ export default () => {
   };
 
   const intersectionConfig = {
-    threshold: 0.3,
+    threshold: 0.3
   };
 
   obsIntersection(newStepsElm, intersectingCalback, intersectionConfig);

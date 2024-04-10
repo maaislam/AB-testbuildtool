@@ -58,3 +58,12 @@ export const getCroStorage = (key) => {
 
   return null; //No valid data found
 };
+
+export const removeAllDataAttributes = (element) => {
+  //Convert the element's attributes to an array and filter for data attributes
+  [...element.attributes].forEach((attr) => {
+    if (attr.name.startsWith('data-')) {
+      element.removeAttribute(attr.name);
+    }
+  });
+};

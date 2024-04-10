@@ -68,9 +68,13 @@ export const displayDeliveryEstimate = () => {
   const minDeliveryDate = calculateBusinessDays(new Date(), 3);
   const maxDeliveryDate = calculateBusinessDays(new Date(), 5);
 
-  const options = { month: 'short', day: 'numeric' };
+  const options = {
+ month: 'short', day: 'numeric'
+};
   const minDeliveryDateString = minDeliveryDate.toLocaleDateString('en-US', options);
-  const maxDeliveryDateString = maxDeliveryDate.toLocaleDateString('en-US', { day: 'numeric' });
+  const maxDeliveryDateString = maxDeliveryDate.toLocaleDateString('en-US', {
+ day: 'numeric'
+});
 
   return ` ${minDeliveryDateString} - ${maxDeliveryDateString}.`;
 };

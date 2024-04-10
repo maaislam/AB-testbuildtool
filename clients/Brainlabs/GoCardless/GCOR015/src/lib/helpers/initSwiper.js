@@ -1,5 +1,5 @@
 const initSwiper = (container, configObj, fireEvent) => {
-  var swiperInterval = window.setInterval(mySlick, 300);
+  const swiperInterval = window.setInterval(mySlick, 300);
   const containerElm = document.querySelector(container);
 
   const loadSwiper = () => {

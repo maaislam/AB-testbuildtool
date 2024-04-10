@@ -8,18 +8,18 @@ export const swiperConfig = (isPDP) => {
     autoHeight: true,
     navigation: {
       nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      prevEl: '.swiper-button-prev'
     },
     breakpoints: {
       640: {
-        slidesPerView: numberOfSlidesTablet,
+        slidesPerView: numberOfSlidesTablet
       },
       768: {
-        slidesPerView: 2.5,
+        slidesPerView: 2.5
       },
       1024: {
-        slidesPerView: numberOfSlidesDesktop,
-      },
-    },
+        slidesPerView: numberOfSlidesDesktop
+      }
+    }
   };
 };

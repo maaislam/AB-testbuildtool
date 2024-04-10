@@ -49,10 +49,10 @@ const addCard = (id) => {
         </div>
     </div>`;
 
-  //   if (!document.querySelector(`.${id}_card-container`)) {
-  //     document
-  //       .querySelector('.sidebar__3SWUh .ctaWrapper__18skR')
-  //       .insertAdjacentHTML('beforebegin', htmlStr);
+  //if (!document.querySelector(`.${id}_card-container`)) {
+  //document
+  //.querySelector('.sidebar__3SWUh .ctaWrapper__18skR')
+  //.insertAdjacentHTML('beforebegin', htmlStr);
 
   return htmlStr;
 };

@@ -19,17 +19,17 @@ const getTimeToMidnight = () => {
 };
 const getThreeDaysFromToday = () => {
   const today = new Date();
-  let daysToAdd = 3;
+  const daysToAdd = 3;
 
   const isWeekend = (date) => {
     const day = date.getDay();
-    return day === 0 /* Sunday */ || day === 6; /* Saturday */
+    return day === 0 /*Sunday */ || day === 6; /*Saturday */
   };
 
   const addDaysSkippingWeekends = (date, days) => {
     const result = new Date(date);
 
-    for (let i = 0; i < days; ) {
+    for (let i = 0; i < days;) {
       result.setDate(result.getDate() + 1);
       if (!isWeekend(result)) {
         i++;

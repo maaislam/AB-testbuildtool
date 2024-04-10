@@ -1,5 +1,5 @@
 const getCatalog = async () => {
-  // eslint-disable-next-line no-undef
+  //eslint-disable-next-line no-undef
   const { campaign, mrktCd, rep_id } = PDP_MANAGER.API_DATA;
   const BASE_URL = 'we.avon.digital-catalogue.com';
   const res = await fetch(
@@ -24,7 +24,7 @@ const getCatalog = async () => {
         : repBlock
         ? repBlock.innerText
         : undefined,
-    catalogData,
+    catalogData
   };
 };
 

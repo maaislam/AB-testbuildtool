@@ -3,7 +3,7 @@
 import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { getCroStorage, setCroStorage } from './helpers/utils';
+import { getCroStorage, removeAllDataAttributes, setCroStorage } from './helpers/utils';
 import affiliateLinksConfig from './affiliateLinksConfig';
 
 const { ID, VARIATION } = shared;
@@ -12,10 +12,9 @@ const init = () => {
   const casinoData = getCroStorage(`${ID}__visitedCasinos`);
   if (!casinoData) return;
   casinoData.forEach((casino) => {
-    const casinoLinks = document.querySelectorAll(`a[data-oldhref*="${casino}"]`);
+    const casinoLinks = document.querySelectorAll(`a[data-operator*="${casino}"]`);
     casinoLinks.forEach((casinoLink) => {
-      //console.log('🚀 ~ file: experiment.js:17 ~ casinoData.forEach ~ casinoLinks:', casinoLinks);
-      const casinoCardElem = casinoLink?.closest('.toplist-item');
+      const casinoCardElem = casinoLink?.closest('.operator-container');
       if (!casinoCardElem) return;
       casinoCardElem.classList.add(`${ID}__grayscale`);
     });
@@ -27,20 +26,27 @@ export default () => {
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    if (
-      (target.closest('a[href*="/spela/"]') || target.closest(`.${ID}__affiliate`)) &&
-      target.closest('.toplist')
-    ) {
+    if (target.closest(`.${ID}__affiliate`) && target.closest('.toplist')) {
+      e.preventDefault();
+
       const closestWrapper = target.closest('a');
-      const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
-      const casinoName = casinoLink.split('/spela/')[1];
-      //const hasAffiliateLink = target.closest(`.${ID}__affiliate`);
+
+      const casinoName = closestWrapper.dataset.operator;
+      const clickedElem = closestWrapper.querySelector('img') ? 'Logo' : 'Button';
 
       gaTracking(
-        `${casinoName.replace(/\//g, '')} | CTA Clicks to Operator | Toplist${
+        `${casinoName} | CTA CTO (${clickedElem}) ${
           target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
         }`
       );
+      const rowContainer = target.closest('.operator-container');
+      const clickElem = rowContainer.querySelector(
+        `a.${ID}__hide[data-type ="${
+          clickedElem === 'Logo' ? 'logo' : 'button'
+        }"][data-element="toplist"]`
+      );
+
+      clickElem.click();
 
       const data = getCroStorage(`${ID}__visitedCasinos`);
       if (!data) {
@@ -54,27 +60,76 @@ export default () => {
       visitedCasinos.push(casinoName);
       setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
       init();
-    } else if (target.closest('a[href*="/spela/"]') && !target.closest('.toplist')) {
-      const operatorHref = target.closest('a[href*="/spela/"]').href;
-      const operatorName = operatorHref.split('/spela/')[1];
-      gaTracking(`${operatorName.replace(/\//g, '')} | CTA Clicks to Operator`);
+    } else if (target.closest('.cta-review ') && target.closest('.toplist')) {
+      const operatorHref = target.closest('a[href*="/svenska-casinon/"]').href;
+      const operatorName = operatorHref.split('/svenska-casinon/')[1];
+      gaTracking(
+        `${operatorName.replace(/\//g, '')}  CTA CTR (Button) ${
+          target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
+        }`
+      );
+    } else if (
+      target.closest(`[data-element="toplist"][data-type="logo"]:not(.${ID}__affiliate)`)
+    ) {
+      const casinoName = target.closest('a').dataset.operator;
+      gaTracking(`${casinoName} | CTA CTO (Logo) `);
+    } else if (
+      target.closest(`[data-element="toplist"][data-type="button"]:not(.${ID}__affiliate)`)
+    ) {
+      const casinoName = target.closest('a').dataset.operator;
+      gaTracking(`${casinoName} | CTA CTO (Logo) `);
     }
   });
 
   const updateAffiliateLinks = () => {
-    const casinoToplistItems = document.querySelectorAll('.toplist .toplist-item');
+    const casinoToplistItems = document.querySelectorAll('.toplist > div');
     casinoToplistItems.forEach((casinoToplistItem) => {
-      const casinoNameElem = casinoToplistItem.querySelector('a.visit');
-      if (!casinoNameElem) return;
-      const casinoHref = casinoNameElem.href;
-      const casinoName = casinoHref.split('/spela/')[1].replace(/[\/\-_]/g, '');
-      const newUrl = affiliateLinksConfig[linkType][casinoName];
-      casinoNameElem.setAttribute('data-oldhref', casinoHref);
-      if (newUrl) {
-        casinoNameElem.classList.add(`${ID}__affiliate`);
-        casinoNameElem.href = newUrl;
-      }
-      //console.log('🚀casinoName:', casinoName);
+      const cloneExist = casinoToplistItem.querySelector(`.${ID}__clonedImgElm`);
+      const casinoNameElem = casinoToplistItem.querySelector(
+        'a[data-element="toplist"][data-type="logo"]'
+      );
+      if (cloneExist || !casinoNameElem) return;
+
+      const casinoName = casinoNameElem.dataset.operator;
+      const affiliateLink = affiliateLinksConfig[linkType][casinoName];
+      if (!affiliateLink) return;
+      const originalImgElm = casinoToplistItem.querySelector(
+        '[data-element="toplist"][data-type="logo"]'
+      );
+      const originalBtnElem = casinoToplistItem.querySelector(
+        'a[data-element="toplist"][data-type="button"]'
+      );
+
+      //clone each element
+      const clonedImgElm = originalImgElm.cloneNode(true);
+      const clonedBtnElem = originalBtnElem.cloneNode(true);
+
+      //remove all data attributes from cloned elements
+      removeAllDataAttributes(clonedImgElm);
+      removeAllDataAttributes(clonedBtnElem);
+
+      //add operator as data attriibute to cloned elements
+      clonedImgElm.dataset.operator = casinoName;
+      clonedBtnElem.dataset.operator = casinoName;
+
+      //add class to cloned elements
+      clonedImgElm.classList.add(`${ID}__clonedImgElm`);
+      clonedBtnElem.classList.add(`${ID}__clonedBtnElem`);
+      clonedBtnElem.classList.add(`${ID}__affiliate`);
+      clonedImgElm.classList.add(`${ID}__affiliate`);
+
+      //add affiliate link to cloned elements
+
+      clonedImgElm.href = affiliateLink;
+      clonedBtnElem.href = affiliateLink;
+
+      //hide original elements
+      originalImgElm.classList.add(`${ID}__hide`);
+      originalBtnElem.classList.add(`${ID}__hide`);
+
+      //place next to original element
+      originalImgElm.after(clonedImgElm);
+      originalBtnElem.after(clonedBtnElem);
     });
   };
 

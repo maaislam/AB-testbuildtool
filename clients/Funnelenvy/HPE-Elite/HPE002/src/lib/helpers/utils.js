@@ -87,7 +87,7 @@ export const live = (selector, event, callback, context) => {
           while (nodes[++i] && nodes[i] != node);
           return !!nodes[i];
         };
-    })(Element.prototype);
+    }(Element.prototype));
   //live binding helper using matchesSelector
   function live(selector, event, callback, context) {
     addEvent(context || document, event, (e) => {

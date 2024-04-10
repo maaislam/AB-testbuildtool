@@ -12,7 +12,8 @@ if (!ieChecks) {
       console.log('click', e);
     });
     const urlParams = new URLSearchParams(window.location.search);
-    const paramsObj = {};
+    const paramsObj = {
+};
 
     for (const [key, value] of urlParams.entries()) {
       paramsObj[key] = value;

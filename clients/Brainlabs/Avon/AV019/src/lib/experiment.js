@@ -7,16 +7,16 @@ export default () => {
   //setup(); //use if needed
 
   console.log(ID);
-  // -----------------------------
-  // If control, bail out from here
-  // -----------------------------
+  //-----------------------------
+  //If control, bail out from here
+  //-----------------------------
   if (VARIATION == 'control') {
     return;
   }
 
-  // -----------------------------
-  // Write experiment code here
-  // -----------------------------
-  // ...
+  //-----------------------------
+  //Write experiment code here
+  //-----------------------------
+  //...
   document.body.classList.add(`${ID}__testbody`);
 };

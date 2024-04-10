@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "DM11",
-    VARIATION: "1",
-    CLIENT: "Funnelenvy",
-    SITE: "Deleteme"
+    ID: 'DM11',
+    VARIATION: '1',
+    CLIENT: 'Funnelenvy',
+    SITE: 'Deleteme'
   };

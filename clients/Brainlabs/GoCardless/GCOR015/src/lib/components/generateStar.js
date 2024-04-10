@@ -5,14 +5,14 @@ const generateStar = (rating) => {
     3: '#FFCE00',
     4: '#73CF11',
     5: '#00B67A',
-    blank: '#DCDCE6',
+    blank: '#DCDCE6'
   };
 
   const starRectangle = (fill, xposition) =>
     `<rect id="Rectangle-path" fill="${fill}" x="${xposition}" y="0" width="96" height="96"/>`;
 
   const generateColorStar = (rating) => {
-    let stars = [];
+    const stars = [];
     for (let i = 1; i < 6; i++) {
       const fillColor = colorConfig[i > rating ? 'blank' : rating];
       const xTranslateConstant = 104;

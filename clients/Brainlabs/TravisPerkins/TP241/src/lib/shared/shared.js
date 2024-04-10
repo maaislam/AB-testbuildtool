@@ -1,5 +1,5 @@
 export default {
-    ID: "TP241",
-    VARIATION: "control",
-    CLIENT: "Brainlabs",
+    ID: 'TP241',
+    VARIATION: 'control',
+    CLIENT: 'Brainlabs'
   };

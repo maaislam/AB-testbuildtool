@@ -3,7 +3,7 @@ const catalogItem = (id, data) => {
 
   const isActive = location.pathname.indexOf(slug) !== -1;
   const oldStyleUrl = location.search.indexOf('?rep_id=rep') !== -1;
-  // eslint-disable-next-line no-undef
+  //eslint-disable-next-line no-undef
   const catlogUrl = oldStyleUrl ? `${live_url}?rep_id=${PDP_MANAGER.API_DATA.rep_id}` : live_url;
   const catalogTitle = infos.publication.title;
 

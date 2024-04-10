@@ -1,18 +1,18 @@
-// import { pollerLite } from '../helpers/utils';
+//import { pollerLite } from '../helpers/utils';
 
-// const gaTracking = (label, action = 'click') => {
-//   pollerLite([() => typeof window.ga.getAll === 'function'], () => {
-//     window.ga.getAll().forEach((tracker) => {
-//       tracker.send('event', {
-//         eventCategory: 'funnelenvy',
-//         eventAction: action,
-//         eventLabel: label
-//       });
-//     });
-//   });
-// };
+//const gaTracking = (label, action = 'click') => {
+//pollerLite([() => typeof window.ga.getAll === 'function'], () => {
+//window.ga.getAll().forEach((tracker) => {
+//tracker.send('event', {
+//eventCategory: 'funnelenvy',
+//eventAction: action,
+//eventLabel: label
+//});
+//});
+//});
+//};
 
-// export default gaTracking;
+//export default gaTracking;
 
 import { pollerLite } from '../helpers/utils';
 import shared from '../shared/shared';

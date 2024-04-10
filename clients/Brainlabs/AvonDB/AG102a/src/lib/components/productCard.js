@@ -1,4 +1,4 @@
-/* eslint-disable object-curly-newline */
+/*eslint-disable object-curly-newline */
 import addToCart from './addToCart';
 import productImage from './productImage';
 import prodPrice from './productPrice';

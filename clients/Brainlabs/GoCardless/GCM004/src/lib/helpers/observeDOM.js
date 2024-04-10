@@ -2,7 +2,7 @@ const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
   const target = document.querySelector(`${targetSelectorString}`);
   let oldHref = location.href;
   const observer = new MutationObserver((mutations) => {
-    mutations.forEach(function (mutation) {
+    mutations.forEach((mutation) => {
       let urlChanged = false;
       if (oldHref !== location.href) {
         oldHref = location.href;
@@ -14,11 +14,11 @@ const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
     });
   });
 
-  // configuration of the observer:
+  //configuration of the observer:
 
   const config = configObject || {
     childList: true,
-    subtree: true,
+    subtree: true
   };
 
   observer.observe(target, config);

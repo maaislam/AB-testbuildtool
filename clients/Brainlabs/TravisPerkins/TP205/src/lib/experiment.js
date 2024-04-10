@@ -11,7 +11,7 @@ const init = () => {
   setup('Experimentation', `TravisPerkins - ${ID}`);
 
   const intersectionConfigControl = {
-    threshold: 0.3,
+    threshold: 0.3
   };
 
   const interSectionCallbackControl = (entry) => {
@@ -30,9 +30,9 @@ const init = () => {
     intersectionConfigControl,
     interSectionCallbackControl
   );
-  // -----------------------------
-  // If control, bail out from here
-  // -----------------------------
+  //-----------------------------
+  //If control, bail out from here
+  //-----------------------------
 
   if (VARIATION == 'control') {
     return;
@@ -56,7 +56,7 @@ const init = () => {
     item.remove();
   });
   //render filter button for mobile only
-  const controlFilterBtn = document.querySelector(`[data-test-id="listing-header-filter"]`);
+  const controlFilterBtn = document.querySelector('[data-test-id="listing-header-filter"]');
   const newFilterBtn = controlFilterBtn.cloneNode(true);
   paginationWrapper?.classList.add(`${ID}__hide`);
 
@@ -81,7 +81,7 @@ const init = () => {
   });
 
   document.querySelector(`.${ID}__seefullrange`)?.addEventListener('click', (e) => {
-    const target = e.target;
+    const { target } = e;
     if (target.matches(`.${ID}__seefullrange--btn`)) {
       fireEvent(
         `Test ID: ${ID} Variation: ${VARIATION} Label: Customer clicks a “See Full Range” CTA`
@@ -103,7 +103,7 @@ const init = () => {
 export default () => {
   setup('Experimentation', `TravisPerkins - ${ID}`);
   pollerLite(['#app-container', '[data-test-id="pag-button"]'], () => {
-    // const plpListContainer = document.querySelector('[class^="PLPDesktop__PLPBody-sc-"]');
+    //const plpListContainer = document.querySelector('[class^="PLPDesktop__PLPBody-sc-"]');
     const paginationWrapper = document.querySelector('footer');
 
     setTimeout(init, 2000);
@@ -115,7 +115,7 @@ export default () => {
       const isValidSearchPage = validSearchUrls.some(
         (url) =>
           url == location.pathname + location.search ||
-          url + '&pageLimit=20' == location.pathname + location.search
+          `${url}&pageLimit=20` == location.pathname + location.search
       );
 
       if ((location.href !== oldHref || isTextMutation) && isValidSearchPage) {
@@ -136,12 +136,12 @@ export default () => {
       childList: true,
       subtree: true,
       characterData: true,
-      characterDataOldValue: true,
+      characterDataOldValue: true
     };
 
     const intersectionConfig = {
-      rootMargin: `500px`,
-      threshold: 0,
+      rootMargin: '500px',
+      threshold: 0
     };
 
     const interSectionCallback = (entry) => {
@@ -150,7 +150,7 @@ export default () => {
       const isValidSearchPage = validSearchUrls.some(
         (url) =>
           url == location.pathname + location.search ||
-          url + '&pageLimit=20' == location.pathname + location.search
+          `${url}&pageLimit=20` == location.pathname + location.search
       );
 
       if (entry.isIntersecting && seeAllClicked && isValidSearchPage) {

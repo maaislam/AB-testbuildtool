@@ -12,16 +12,16 @@ const tradePriceMsg = (id, loginStatus, tradePrice, anchorElem, fireEvent, pageT
       msgClass: 'message-unlocked',
       msgLine1: `<div class="${loginStatus ? `${id}__hide-desktop` : ''}">YOUR</div>&nbsp;TRADE`,
       msgLine2: 'PRICE IS UNLOCKED',
-      specialPrice: ``,
-      lockImgClass: 'unlocked-img',
+      specialPrice: '',
+      lockImgClass: 'unlocked-img'
     },
     notLogin: {
       msgClass: 'message-locked',
       msgLine1: 'UNLOCK TRADE',
       msgLine2: 'PRICE OF',
       specialPrice: `${tradePrice}`,
-      lockImgClass: 'locked-img',
-    },
+      lockImgClass: 'locked-img'
+    }
   };
 
   const adjustedWidth = (data) => {
@@ -59,7 +59,7 @@ const tradePriceMsg = (id, loginStatus, tradePrice, anchorElem, fireEvent, pageT
   const contentToRender = loginStatus ? htmlStr(config.login) : htmlStr(config.notLogin);
 
   if (pageType === 'plp') {
-    anchorElem.insertAdjacentHTML(`beforebegin`, contentToRender);
+    anchorElem.insertAdjacentHTML('beforebegin', contentToRender);
   } else {
     anchorElem.insertAdjacentHTML(`${loginStatus ? 'afterend' : 'afterend'}`, contentToRender);
   }

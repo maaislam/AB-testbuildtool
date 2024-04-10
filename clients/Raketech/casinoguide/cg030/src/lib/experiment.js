@@ -104,9 +104,9 @@ export default () => {
         casinoBtnElem.classList.add(`${ID}__affiliate`);
         casinoBtnElem.setAttribute('data-name', casinoName);
         casinoBtnElem.href = newUrl;
-        // casinoImgElem.classList.add(`${ID}__affiliate`);
-        // casinoImgElem.setAttribute('data-name', casinoName);
-        // casinoImgElem.href = newUrl;
+        //casinoImgElem.classList.add(`${ID}__affiliate`);
+        //casinoImgElem.setAttribute('data-name', casinoName);
+        //casinoImgElem.href = newUrl;
       }
       //console.log('🚀casinoName:', casinoName);
     });

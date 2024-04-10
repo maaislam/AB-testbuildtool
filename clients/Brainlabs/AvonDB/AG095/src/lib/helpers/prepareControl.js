@@ -9,12 +9,12 @@ const prepareControl = (ID) => {
 
   //adjust catlog size
 
-  // document.querySelectorAll(`.v7__elem__catalog__slide-page-image`).forEach((item) => {
-  //   item?.classList.add(`${ID}__catalog--image`);
-  // });
-  // document.querySelectorAll(`.v7__elem__catalog__slide-page-wrapper`).forEach((item) => {
-  //   item?.classList.add(`${ID}__catalogslide--wrapper`);
-  // });
+  //document.querySelectorAll(`.v7__elem__catalog__slide-page-image`).forEach((item) => {
+  //item?.classList.add(`${ID}__catalog--image`);
+  //});
+  //document.querySelectorAll(`.v7__elem__catalog__slide-page-wrapper`).forEach((item) => {
+  //item?.classList.add(`${ID}__catalogslide--wrapper`);
+  //});
 
   //adjust height of pages
   //v7__pdp_basket mobile #pagesList
@@ -24,7 +24,7 @@ const prepareControl = (ID) => {
     '.v7__search_results': 132,
     '.products_list.search_mode': 132,
     '.v7__scroll_container': 132,
-    '.v7__pages.mobile .main_content': 175,
+    '.v7__pages.mobile .main_content': 175
   };
 
   Object.keys(pageSpecificElems).forEach((item) => {
@@ -46,13 +46,13 @@ const prepareControl = (ID) => {
   const basketSection = document.querySelector('.basket_section');
   basketSection?.classList.add(
     `${ID}__basket-section`,
-    `${isAttached ? `attached` : 'not-attached'}`
+    `${isAttached ? 'attached' : 'not-attached'}`
   );
   const isCatSwiperHidden = document
     .querySelector(`.${ID}__catalog-swiper`)
     ?.classList.contains(`${ID}__invisible`);
   if (isCatSwiperHidden) {
-    basketSection?.classList.add(`reduced-position`);
+    basketSection?.classList.add('reduced-position');
   }
 
   //hide control catalog slider

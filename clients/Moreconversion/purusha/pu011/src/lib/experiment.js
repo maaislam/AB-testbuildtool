@@ -29,5 +29,4 @@ export default () => {
   console.log(ID);
 
   !document.querySelector(`.${ID}__section`) && document.querySelector('.shopify-section--bordered .product_custom_section').insertAdjacentHTML('afterend', template());
-
 };

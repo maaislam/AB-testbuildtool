@@ -4,7 +4,7 @@ const clickHandler = (ID) => {
   document.body.addEventListener('click', (e) => {
     //setTimeout(init, 1000);
 
-    const target = e.target;
+    const { target } = e;
     const targetMatched = (targetToMatchSelector) =>
       target.matches(targetToMatchSelector) || target.closest(targetToMatchSelector);
 

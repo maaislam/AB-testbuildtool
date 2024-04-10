@@ -1,15 +1,14 @@
 (function () {
-	'use strict';
-	function getDefaultExportFromCjs (x) {
-		return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+	function getDefaultExportFromCjs(x) {
+		return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x.default : x;
 	}
-	var shared = {
-	    ID: "cf035",
-	    VARIATION: "W",
-	    CLIENT: "Raketech",
-	    SITE: "casinofeber"
+	const shared = {
+	    ID: 'cf035',
+	    VARIATION: 'W',
+	    CLIENT: 'Raketech',
+	    SITE: 'casinofeber'
 	  };
-	var shared$1 = getDefaultExportFromCjs(shared);
+	const shared$1 = getDefaultExportFromCjs(shared);
 	const setup = () => {
 	  const { ID, VARIATION } = shared$1;
 	  document.documentElement.classList.add(ID);
@@ -76,7 +75,7 @@
 	};
 	const gaTracking = (label) => {
       console.log('label: ', label);
-	  /* const { VARIATION } = shared$1;
+	  /*const { VARIATION } = shared$1;
 	  const GA4_PROPERTY_ID = 'G-H91NBPERDS';
 	  const GA4_INTERNAL_EXPERIMENT_NUM = '035';
 	  const GA4_INTERNAL_EXPERIMENT_ID = `Experiment CEO History Casinos ${GA4_INTERNAL_EXPERIMENT_NUM}`;
@@ -149,7 +148,7 @@
 	    });
 	  });
 	};
-	var activate = () => {
+	const activate = () => {
 	  setup();
 	  document.body.addEventListener('click', (e) => {
 	    const { target } = e;
@@ -218,7 +217,7 @@
 	      const casinoName = casinoHref.split('/spela/')[1].replace(/[\/\-_]/g, '');
 	      const newUrl = affiliateLinksConfig[linkType][casinoName];
 	      casinoBtnElem.setAttribute('data-oldhref', casinoHref);
-	      casinoImgElem.setAttribute('data-oldhref', casinoHref); 
+	      casinoImgElem.setAttribute('data-oldhref', casinoHref);
 	      if (newUrl) {
             casinoBtnElem.classList.add(`${ID}__affiliate`);
             casinoBtnElem.setAttribute('data-name', casinoName);
@@ -245,4 +244,4 @@
 	  const DOM_RENDER_DELAY = 1000;
 	  setTimeout(activate, DOM_RENDER_DELAY);
 	});
-})();
+}());

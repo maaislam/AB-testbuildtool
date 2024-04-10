@@ -155,7 +155,7 @@ export default () => {
     const { target } = event;
 
     if (
-      target.classList.contains('.' + ID + '-message') &&
+      target.classList.contains(`.${ID}-message`) &&
       (target.closest('.ProductName') || target.closest('.ProductImage'))
     ) {
       triggerEvent('User interacts with a view details cta');

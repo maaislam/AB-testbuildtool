@@ -36,7 +36,9 @@ export default () => {
       gaTracking('Clicks on Roomvo');
       console.log('Roomvo clicked', currentFilter);
       window.roomvo.startStandaloneVisualizer('floor', '', '', '', {
-        prefilter: JSON.stringify({ categories: currentFilter })
+        prefilter: JSON.stringify({
+ categories: currentFilter
+})
       });
     }
   });

@@ -25,7 +25,6 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
   }, POLLING_INTERVAL);
 };
 
-
 /**
  * poller() checks for specified conditions until they are true or the timeout limit is reached.
  *

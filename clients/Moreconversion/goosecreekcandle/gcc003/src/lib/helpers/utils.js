@@ -89,13 +89,13 @@ export const addToCart = (id, quantity) => {
     quantity
   };
 
-  const response = fetch(`/cart/add.js`, {
+  const response = fetch('/cart/add.js', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(payload)
   }).then((response) => {
     const res = response.json();
 

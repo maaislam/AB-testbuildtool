@@ -22,7 +22,7 @@ export const addToCart = async (sku, quantity) => {
   return result;
 };
 
-// please also send add to cart event to DY
+//please also send add to cart event to DY
 export const emitDYAddToCart = async (res, quantity) => {
   const eventTotal = res.lastProductChanged.price * quantity;
 
@@ -36,6 +36,6 @@ export const emitDYAddToCart = async (res, quantity) => {
       quantity
     }
   };
-  // emit DY event
+  //emit DY event
   await window.DY.API('event', atcJson);
 };

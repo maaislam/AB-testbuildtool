@@ -5,20 +5,20 @@
  * @param  {Integer}  refresh  How long to wait between scroll events [optional]
  */
 function scrollStop(target, callback, refresh = 60) {
-  // Make sure a valid callback was provided
+  //Make sure a valid callback was provided
   if (!callback || typeof callback !== 'function') return;
 
-  // Setup scrolling variable
+  //Setup scrolling variable
   let isScrolling;
 
-  // Listen for scroll events
+  //Listen for scroll events
   target.addEventListener(
     'scroll',
-    function (event) {
-      // Clear our timeout throughout the scroll
+    (event) => {
+      //Clear our timeout throughout the scroll
       clearTimeout(isScrolling);
 
-      // Set a timeout to run after scrolling ends
+      //Set a timeout to run after scrolling ends
       isScrolling = setTimeout(callback, refresh);
     },
     false

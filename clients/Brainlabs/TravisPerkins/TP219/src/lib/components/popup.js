@@ -48,7 +48,7 @@ const renderPopup = (id, loginStatus, fireEvent) => {
   document.body.insertAdjacentHTML('afterbegin', htmlStr);
   const overlay = document.querySelector(`.${id}__popup--overlay`);
   overlay.addEventListener('click', (e) => {
-    const target = e.target;
+    const { target } = e;
     const targetMatched = (desiredMatch) =>
       target.matches(desiredMatch) || target.closest(desiredMatch);
     if (

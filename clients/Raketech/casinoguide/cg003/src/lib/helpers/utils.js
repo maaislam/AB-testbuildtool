@@ -32,7 +32,9 @@ export const getAllAttributes = (element) => {
   Array.from(attributes).forEach((attr) => {
     const { name, value } = attr;
     if (!name.includes('style') && !name.includes('class')) {
-      const obj = { name, value };
+      const obj = {
+ name, value
+};
       filteredAttributes.push(obj);
     }
   });

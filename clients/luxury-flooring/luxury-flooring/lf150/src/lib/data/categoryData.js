@@ -196,37 +196,43 @@ const categoryData2 = {
   'solid-wood-flooring': [
     {
       title: 'Oiled',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_oiled.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_oiled.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/solid-wood-flooring/finish/oiled.html',
       alt: 'oiled'
     },
     {
       title: 'Dark',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_darkwood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_darkwood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/solid-wood-flooring/shade/dark.html',
       alt: 'dark'
     },
     {
       title: 'Medium',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_mediumwood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_mediumwood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/solid-wood-flooring/shade/medium.html',
       alt: 'medium'
     },
     {
       title: 'Light',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_lightwood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_lightwood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/solid-wood-flooring/shade/light.html',
       alt: 'light'
     },
     {
       title: 'Single Plank',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_single.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_single.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/solid-wood-flooring/plank-effect/single-plank.html',
       alt: 'single-plank'
     },
     {
       title: '140-179mm',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_140wood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_140wood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/solid-wood-flooring.html?width1=140mm+-+179mm',
       alt: '140-179mm'
     }
@@ -234,37 +240,43 @@ const categoryData2 = {
   'engineered-wood-flooring': [
     {
       title: 'Single Plank',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_single.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_single.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/engineered-wood-flooring/plank-effect/1-strip-single-plank.html',
       alt: 'Single-Plank'
     },
     {
       title: 'Herringbone',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_herringbone.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_herringbone.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/engineered-wood-flooring/plank-effect/herringbone-engineered-wood-flooring.html',
       alt: 'Herringbone'
     },
     {
       title: 'Light',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_lightwood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_lightwood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/engineered-wood-flooring/shade/light.html',
       alt: 'Light'
     },
     {
       title: 'Medium',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_mediumwood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_mediumwood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/engineered-wood-flooring/shade/medium.html',
       alt: 'Medium'
     },
     {
       title: 'Dark',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_darkwood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_darkwood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/engineered-wood-flooring/shade/dark.html',
       alt: 'Dark'
     },
     {
       title: 'Grey',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_greywood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_greywood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/engineered-wood-flooring/finish/grey-engineered-wood-flooring.html',
       alt: 'Grey'
     }
@@ -272,37 +284,43 @@ const categoryData2 = {
   'parquet-flooring': [
     {
       title: 'Herringbone',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_herringbone.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_herringbone.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/parquet-flooring/plank-effect/herringbone-parquet-flooring.html',
       alt: 'Herringbone'
     },
     {
       title: 'Light',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_lightwood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_lightwood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/parquet/colour/light-parquet-flooring.html',
       alt: 'light'
     },
     {
       title: 'Grey',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_greywood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_greywood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/parquet/colour/grey-parquet-flooring.html',
       alt: 'Grey'
     },
     {
       title: 'Medium',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_mediumwood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_mediumwood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/parquet/colour/medium-parquet-flooring.html',
       alt: 'medium'
     },
     {
       title: 'Dark',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_darkwood.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_darkwood.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/parquet/colour/dark-parquet-flooring.html',
       alt: 'dark'
     },
     {
       title: 'Oak',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_oak.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_oak.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/parquet-flooring/species/oak-parquet-flooring.html',
       alt: 'Oak'
     }
@@ -310,13 +328,15 @@ const categoryData2 = {
   'vinyl-flooring': [
     {
       title: 'Stone Effect',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_tile.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_tile.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/vinyl-flooring/plank-effect/stone-vinyl-plank-flooring.html',
       alt: 'Stone-Effect'
     },
     {
       title: 'Wood Effect',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_wodeffect.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_wodeffect.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/vinyl-flooring/plank-effect/wood-vinyl-plank-flooring.html',
       alt: 'Wood-Effect'
     },
@@ -329,19 +349,22 @@ const categoryData2 = {
     },
     {
       title: 'Grey',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_grey.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_grey.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/vinyl-flooring/shade/grey-vinyl-floor-tiles.html',
       alt: 'Grey'
     },
     {
       title: 'White',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_white.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_white.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/vinyl-flooring/shade/white-vinyl-floor-tiles.html',
       alt: 'White'
     },
     {
       title: 'Light',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_light.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_light.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/vinyl-flooring/shade/light-vinyl-floor-tiles.html',
       alt: 'Light'
     }
@@ -349,37 +372,43 @@ const categoryData2 = {
   'laminate-flooring': [
     {
       title: '12mm thick',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_12mm.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_12mm.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/laminate-flooring/thickness/12mm.html',
       alt: '12mm-thick'
     },
     {
       title: '8mm thick',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_8mm.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_8mm.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/laminate-flooring/thickness/8mm.html',
       alt: '8mm-thick'
     },
     {
       title: 'Grey',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_grey.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_grey.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/laminate-flooring/colour/grey-laminate-flooring.html',
       alt: 'Grey'
     },
     {
       title: 'White',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_white.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_white.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/laminate-flooring/colour/white-laminate-flooring.html',
       alt: 'White'
     },
     {
       title: 'Light',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_light.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_light.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/laminate-flooring/colour/light-laminate-flooring.html',
       alt: 'Light'
     },
     {
       title: 'Wood Effect',
-      image: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_wodeffect.png',
+      image:
+        'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test150/img_wodeffect.png',
       url: 'https://www.luxuryflooringandfurnishings.co.uk/laminate-flooring/plank-effect/wood-plank.html',
       alt: 'Wood-Effect'
     }
