@@ -59,6 +59,7 @@ export default () => {
       formId: 'add62d11-d7e9-440e-8811-9123fea1d1aa',
       target: `.${ID}__formContainer`,
       onFormReady: ($form, ctx) => {
+        console.log('ctx', ctx);
         $form.addClass(`${ID}__form`);
         $form.find('label').css('font-weight', '700');
         $form.find('input').css({
@@ -79,6 +80,16 @@ export default () => {
             form.submit();
             document.querySelector(`.${ID}__header`).classList.add(`${ID}__hide`);
             document.querySelector(`.${ID}__formMessage`).classList.remove(`${ID}__hide`);
+            const style = document.createElement('style');
+            style.setAttribute('type', 'text/css');
+            const css = document.createTextNode(`
+              body .submitted-message a[href="tel:0333 577 0025"], body .submitted-message a[href="tel:0333 577 0025"]:active{
+                color: #000;
+              } 
+            `);
+
+            style.appendChild(css);
+            form.closest('body').insertAdjacentElement('beforebegin', style);
           }
         });
       }
