@@ -1,5 +1,5 @@
 module.exports = {
-    ID: "ct001",
+    ID: "ct002",
     VARIATION: "1",
     CLIENT: "Raketech",
     SITE: "casinotop5"

@@ -2,7 +2,108 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+  &-1 {
+    .#{$id}__reviews-pricing-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      .product-page--pricing {
+        align-items: flex-start;
+        gap: 8px;
+        margin: 0;
+        padding-top: 7px;
+        #price-field {
+          span.money {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 22px;
+            color: #208cbe;
+          }
+        }
+
+        .compare-at-price {
+          span.money {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 24px;
+          }
+        }
+      }
+
+      div[data-oke-reviews-product-id] {
+        .okeReviews {
+          padding-top: 0;
+          .oke-stars {
+            --oke-stars-foregroundColor: #ffcf2a;
+          }
+          .oke-sr-count {
+            padding-top: 4px;
+          }
+        }
+      }
     }
+
+    .#{$id}__reviews-pricing-container-mobile {
+      display: none;
+      margin: auto;
+      div[data-oke-reviews-product-id] {
+        margin-top: 18px;
+      }
+      @include media-query(sm) {
+        display: block;
+      }
+    }
+  }
+
+  &-2 {
+    .product-info-wrapper {
+      div[data-oke-reviews-product-id] {
+        margin-bottom: 12px;
+        .okeReviews {
+          padding-top: 0;
+          .oke-stars {
+            --oke-stars-foregroundColor: #ffcf2a;
+          }
+          .oke-sr-count {
+            padding-top: 4px;
+          }
+        }
+      }
+
+      .product-page--pricing {
+        align-items: flex-start;
+        gap: 8px;
+        padding-bottom: 14px;
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+        #price-field {
+          span.money {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 22px;
+            color: #208cbe;
+          }
+        }
+
+        .compare-at-price {
+          span.money {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #363636;
+          }
+        }
+      }
+    }
+
+    .mobile-info-container {
+      .product-description-header {
+        margin-top: 11px;
+      }
+      div[data-oke-reviews-product-id] {
+        margin-top: 18px;
+      }
+    }
+  }
 }

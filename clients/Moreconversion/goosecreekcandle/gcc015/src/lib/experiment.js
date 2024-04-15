@@ -1,18 +1,75 @@
 import setup from './services/setup';
 
+import shared from './shared/shared';
+
+const { ID, VARIATION } = shared;
+
 export default () => {
   setup();
+  console.log(ID);
 
-  const priceContainer = document.querySelector('.product-page--pricing');
-  const clonedPriceContainer = priceContainer.cloneNode(true);
+  if (VARIATION === '1') {
+    //desktop portion
+    const desktopProductHeader = document.querySelector(
+      '.product-info-wrapper .product-description-header'
+    );
+    const newWrapper = document.createElement('div');
+    newWrapper.className = `${ID}__reviews-pricing-container`;
+    const desktopReviews = document.querySelector(
+      '.product-info-wrapper div[data-oke-reviews-product-id]'
+    );
+    const desktopProductPrice = document.querySelector(
+      '.product-info-wrapper .product-page--pricing'
+    );
 
-  const attachpoints = document.querySelectorAll('[data-oke-star-rating]');
-  console.log('🚀 ~ attachpoint:', attachpoints);
+    desktopProductPrice && newWrapper.appendChild(desktopProductPrice);
+    desktopReviews && newWrapper.appendChild(desktopReviews);
 
-  console.log('🚀 ~ clonedPriceContainer:', clonedPriceContainer);
-  clonedPriceContainer.classList.add('cloned-price-container');
+    if (document.querySelector(`.${ID}__reviews-pricing-container`)) {
+      document.querySelector(`.${ID}__reviews-pricing-container`).remove();
+    }
+    desktopProductHeader.insertAdjacentElement('afterend', newWrapper);
 
-  attachpoints.forEach((attachpoint) => {
-    attachpoint.insertAdjacentElement('afterbegin', clonedPriceContainer);
-  });
+    //mobile portion
+    const targetWrapperForMobile = document.querySelector(
+      '.mobile-info-container ~ .product-medias'
+    );
+    const newWrapperForMobile = document.createElement('div');
+    newWrapperForMobile.className = `mobile-info-container ${ID}__reviews-pricing-container-mobile`;
+
+    const mobileReviews = document.querySelector(
+      '.mobile-info-container div[data-oke-reviews-product-id]'
+    );
+
+    const mobilePricing = document.querySelector('.mobile-info-container .product-page--pricing');
+
+    mobileReviews && newWrapperForMobile.appendChild(mobileReviews);
+    mobilePricing && newWrapperForMobile.appendChild(mobilePricing);
+    if (document.querySelector(`.${ID}__reviews-pricing-container-mobile`)) {
+      document.querySelector(`.${ID}__reviews-pricing-container-mobile`).remove();
+    }
+    targetWrapperForMobile.insertAdjacentElement('afterend', newWrapperForMobile);
+  }
+
+  if (VARIATION === '2') {
+    //desktop portion
+    const desktopProductHeader = document.querySelector(
+      '.product-info-wrapper .product-description-header'
+    );
+
+    const desktopReviews = document.querySelector(
+      '.product-info-wrapper div[data-oke-reviews-product-id]'
+    );
+
+    desktopProductHeader.insertAdjacentElement('beforebegin', desktopReviews);
+
+    //mobile protion
+    const mobileInfoWrapper = document.querySelector('.mobile-info-container');
+    const targetWrapperForMobile = document.querySelector(
+      '.mobile-info-container ~ .product-medias'
+    );
+
+    targetWrapperForMobile &&
+      targetWrapperForMobile.insertAdjacentElement('afterend', mobileInfoWrapper);
+  }
 };
