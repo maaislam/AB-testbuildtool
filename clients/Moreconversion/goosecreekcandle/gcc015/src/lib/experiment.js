@@ -63,11 +63,9 @@ export default () => {
 
     //mobile protion
     const mobileInfoWrapper = document.querySelector('.mobile-info-container');
-    const targetWrapperForMobile = document.querySelector(
-      '.mobile-info-container ~ .product-medias'
-    );
+    const targetWrapperForMobile = document.querySelector('.product-description-main-wrapper');
 
     targetWrapperForMobile &&
-      targetWrapperForMobile.insertAdjacentElement('afterend', mobileInfoWrapper);
+      targetWrapperForMobile.insertAdjacentElement('beforebegin', mobileInfoWrapper);
   }
 };
