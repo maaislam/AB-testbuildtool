@@ -13,6 +13,7 @@ const initSwiper = (container, initConfig) => {
   };
 
   const slider = new window.Swiper(`${container}`, Object.assign(baseConfig, initConfig));
+  console.log('🚀 ~ initSwiper ~ slider:', slider);
 };
 
 export default initSwiper;

@@ -1,3 +1,6 @@
+//disable eslint
+/* eslint-disable */
+
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import shared from './shared/shared';
 import { pollerLite } from '../../../../../../globalUtil/util';
@@ -13,7 +16,7 @@ import { deviceType, isPDP, isPLP } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
-const init = (mutation) => {
+const init = () => {
   //console.log(mutation);
   setup('Experimentation', `TravisPerkins - ${ID}`);
 

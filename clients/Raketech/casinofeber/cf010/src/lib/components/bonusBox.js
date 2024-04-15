@@ -6,6 +6,7 @@ const bonusBox = (id, data) => {
   const { name, bonusAmount, spinsAmount, bonusWagering, spinsWagering, displayName } = data;
 
   const casinoName = name.replace(/-/g, ' ');
+  console.log('🚀 ~ bonusBox ~ casinoName:', casinoName);
   //const casinoName = casinoElem.querySelector('a.title').textContent.toLowerCase();
   const pageLang = document.querySelector('html').getAttribute('lang');
   const bonusText = translationConfig.bonus[pageLang];

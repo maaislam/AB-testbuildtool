@@ -12,7 +12,7 @@ const limitReached = 'Sample limit reached';
 let stage3Msg = 'Added to basket';
 
 let finalMessage = 'Order a sample';
-let clickCount = 0;
+//let clickCount;
 //const totalClickCount = 0;
 
 const init = (mutation) => {
@@ -52,7 +52,7 @@ export default () => {
     let btnSubtextMsg = '';
     //console.log('🚀 ~ cart.subscribe ~ currentSampleQty:', currentSampleQty);
 
-    clickCount += 1;
+    //clickCount += 1;
 
     if (currentSampleQty >= 2) {
       stage3Msg = limitReached;

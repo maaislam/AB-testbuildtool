@@ -42,7 +42,8 @@ const prepareControl = (ID) => {
 
   //pdp cart btn
   const isAttached =
-    location.pathname.indexOf('/avon') !== -1 || location.search.indexOf('rep_id') !== -1;
+    window.location.pathname.indexOf('/avon') !== -1 ||
+    window.location.search.indexOf('rep_id') !== -1;
   const basketSection = document.querySelector('.basket_section');
   basketSection?.classList.add(
     `${ID}__basket-section`,

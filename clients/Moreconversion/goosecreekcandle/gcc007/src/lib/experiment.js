@@ -22,6 +22,7 @@ const init = () => {
       }
     }
   });
+  console.log('🚀 ~ init ~ swiper:', swiper);
 };
 
 const adjustElements = () => {
@@ -30,7 +31,7 @@ const adjustElements = () => {
 
   reviewsContainer.classList.add('swiper-wrapper');
   reviewsContainer.parentElement.classList.add('swiper');
-  reviews.forEach((review, index) => {
+  reviews.forEach((review) => {
     const leftColumn = review.querySelector('.oke-w-review-side');
     const rightColumn = review.querySelector('.oke-w-review-main');
     const reviewerBlock = review.querySelector('.oke-w-review-reviewer');

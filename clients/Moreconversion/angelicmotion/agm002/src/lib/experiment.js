@@ -2,7 +2,7 @@ import setup from './services/setup';
 
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
 
 const fabricUpvs = {
   zipup: ['Satin lined inner hood', '100% premium brushed cotton', 'Over 100, 000+ stiches'],

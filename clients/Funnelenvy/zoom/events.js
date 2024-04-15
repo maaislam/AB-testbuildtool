@@ -1,3 +1,6 @@
+//disable eslint
+/* eslint-disable */
+
 try {
   //get latest op cache
 

@@ -142,3 +142,4 @@ const validUrls = [
   '/fr/guides/sepa/transferer-mandats/'
 ];
 //return validUrls.indexOf(location.pathname) !== -1;
+export default validUrls;

@@ -7,7 +7,7 @@ const gaTracking = (label) => {
 
   const GA4_PROPERTY_ID = 'G-P2725WEG9G';
   const GA4_INTERNAL_EXPERIMENT_NUM = '6088956437';
-  const GA4_INTERNAL_EXPERIMENT_ID = `Grayed Toplist ${GA4_INTERNAL_EXPERIMENT_NUM}`;
+  const GA4_INTERNAL_EXPERIMENT_ID = `Greyed Toplist ${GA4_INTERNAL_EXPERIMENT_NUM}`;
   const EXPERIMENT_DEVICE_CATEGORY = 'All Device Test';
 
   pollerLite([() => document.readyState === 'complete'], () => {

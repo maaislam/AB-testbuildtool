@@ -4,7 +4,7 @@ import formWrapper from './components/formWrapper';
 import { addJsToPage } from './helpers/utils';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   //setup(); //use if needed

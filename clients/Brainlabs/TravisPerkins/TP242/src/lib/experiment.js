@@ -74,7 +74,7 @@ export default () => {
     let oldHref = window.location.href;
 
     const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
+      mutations.forEach(() => {
         //console.log(mutation);
         if (
           oldLocation !== JSON.stringify(getCustomerLocation()) ||

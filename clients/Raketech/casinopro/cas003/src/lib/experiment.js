@@ -68,6 +68,7 @@ export default () => {
       const casinoHref = casinoNameElem.href;
       const casinoName = casinoHref.split('/spela/')[1].replace(/[\/\-_]/g, '');
       const newUrl = affiliateLinksConfig[linkType][casinoName];
+      console.log('🚀 ~ casinoToplistItems.forEach ~ newUrl:', newUrl);
       casinoNameElem.setAttribute('data-oldhref', casinoHref);
       //if (newUrl) {
       //casinoNameElem.classList.add(`${ID}__affiliate`);

@@ -1,5 +1,4 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { searchComponent, overlay } from './components/searchComponent';
 import { overlayWithSearch,
@@ -7,7 +6,7 @@ import { overlayWithSearch,
   overlayOpen,
   overlayClose } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   //overlay component add

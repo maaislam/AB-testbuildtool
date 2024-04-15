@@ -1,4 +1,8 @@
 //import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
+
+//disable eslint
+/* eslint-disable */
+
 import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;

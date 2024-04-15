@@ -10,5 +10,3 @@ pollerLite(
   ],
   activate
 );
-
-const test = 1;

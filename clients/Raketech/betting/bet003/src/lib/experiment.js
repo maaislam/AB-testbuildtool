@@ -4,7 +4,7 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { arrow } from './assets';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
 
 export default () => {
   setup(); //use if needed
@@ -109,7 +109,7 @@ export default () => {
     );
 
     el.querySelector('.bb-info-wrapper').classList.add('hide-content');
-    el.querySelector('.btmline-div').addEventListener('click', (e) => {
+    el.querySelector('.btmline-div').addEventListener('click', () => {
       el.querySelector('.bb-info-wrapper').classList.toggle('hide-content');
       //el.querySelector('.btmline-div').classList.toggle('hide-content');
       el.querySelector('.arrow').classList.toggle('rotate');

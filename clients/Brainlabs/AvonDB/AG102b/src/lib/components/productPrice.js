@@ -1,5 +1,3 @@
-import formatPrice from '../helpers/formatPrice';
-
 const prodPrice = (id, priceData) => {
   const { isOnSale, listPrice, salePrice } = priceData;
   const salePriceStr = parseInt(salePrice).toFixed(2);

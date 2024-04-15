@@ -3,7 +3,7 @@
 import shared from './shared/shared';
 import { cartIcon } from './components/cartIcon';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   //setup(); //use if needed

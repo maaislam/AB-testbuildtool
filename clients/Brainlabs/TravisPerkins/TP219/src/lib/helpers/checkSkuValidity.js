@@ -6,7 +6,8 @@ const skuValidity = (data, productCodePlp) => {
   };
   const isPLP = () => {
     return (
-      (window.location.pathname.indexOf('/search/') !== -1 || window.location.pathname.indexOf('/c/') !== -1) &&
+      (window.location.pathname.indexOf('/search/') !== -1 ||
+        window.location.pathname.indexOf('/c/') !== -1) &&
       !!document.querySelector('[data-test-id="plp-list"]')
     );
   };
@@ -17,10 +18,13 @@ const skuValidity = (data, productCodePlp) => {
     const isMobile = deviceType() !== 'desktop';
     const productCodeText = document.querySelector('[data-test-id="product-code"]').innerText;
     const productCode = isMobile ? productCodeText.split(': ')[1] : productCodeText;
-    return skus.some((id) => id == productCode);
-  } if (isPLP()) {
-    return skus.some((id) => id == productCodePlp);
+    return skus.some((id) => id === productCode);
   }
+  if (isPLP()) {
+    return skus.some((id) => id === productCodePlp);
+  }
+
+  return false;
 };
 
 export default skuValidity;

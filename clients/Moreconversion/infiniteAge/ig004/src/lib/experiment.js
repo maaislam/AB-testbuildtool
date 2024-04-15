@@ -22,7 +22,7 @@ export default () => {
   const subPacksArr = [...subPacks];
 
   const highestValOneTime = oneTimePacksArr.reduce(
-    (acc, curr, i) => {
+    (acc, curr) => {
       if (window.getComputedStyle(curr).display === 'none') return acc;
 
       const title = curr.querySelector('.package-card__title ').textContent;
@@ -35,12 +35,13 @@ export default () => {
       return acc;
     },
     {
- val: 0, el: null
-}
+      val: 0,
+      el: null
+    }
   );
 
   const highestValSub = subPacksArr.reduce(
-    (acc, curr, i) => {
+    (acc, curr) => {
       if (window.getComputedStyle(curr).display === 'none') return acc;
       const title = curr.querySelector('.package-card__title ').textContent;
       const getVal = Number(extractNumber(title));
@@ -54,8 +55,9 @@ export default () => {
       return acc;
     },
     {
- val: 0, el: null
-}
+      val: 0,
+      el: null
+    }
   );
   console.log('highestValOneTime:', highestValOneTime);
   console.log('highestValSub:', highestValSub);

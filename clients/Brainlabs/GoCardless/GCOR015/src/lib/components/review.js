@@ -1,6 +1,6 @@
 import generateStar from './generateStar';
 
-const review = (id, data) => {
+const reviews = (id, data) => {
   const { name, review, rating, reviewUrl } = data;
   const htmlStr = `
     <a href="${reviewUrl}" target="_blank" class="${id}__review swiper-slide">
@@ -11,4 +11,4 @@ const review = (id, data) => {
 
   return htmlStr;
 };
-export default review;
+export default reviews;

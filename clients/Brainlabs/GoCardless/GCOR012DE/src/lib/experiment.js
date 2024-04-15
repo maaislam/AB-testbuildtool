@@ -8,7 +8,6 @@ import firstHeadingElm from './helpers/getFirstHeading';
 import initSwiper from './helpers/initSwiper';
 import obsIntersection from './helpers/observeIntersection';
 import { addCssToPage, addJsToPage } from './helpers/utils';
-import wistiaTrackings from './helpers/wistiaTrackings';
 import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;

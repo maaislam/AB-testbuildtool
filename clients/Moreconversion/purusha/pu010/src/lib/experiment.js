@@ -2,7 +2,7 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { observeDOM, pollerLite } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const htmlStr = `<section class="bars-container ${ID}__bars-container">
@@ -12,7 +12,9 @@ const init = () => {
   </section>`;
 
   const setProgressBar = async () => {
-    const anchorPoint = document.querySelector('.Cart.Drawer__Content [class*="free_shipping_card_progress"]');
+    const anchorPoint = document.querySelector(
+      '.Cart.Drawer__Content [class*="free_shipping_card_progress"]'
+    );
 
     if (document.querySelector('.bars-container') && !anchorPoint) return;
     const response = await fetch('/cart.js');
@@ -35,10 +37,8 @@ const init = () => {
 
     bars.forEach((bar, index) => {
       const diff = ((percent - percentPerBar * index) / percentPerBar) * 100;
-      const progress = window.getComputedStyle(bar, '::before');
-      const barBackground = document.querySelector(
-        `.loading-bar:nth-child(${index + 1})`
-      ).style;
+      //const progress = window.getComputedStyle(bar, '::before');
+      const barBackground = document.querySelector(`.loading-bar:nth-child(${index + 1})`).style;
       barBackground.setProperty(
         '--background',
         `linear-gradient(to right, #000 ${diff}%, #E4E5E7 ${diff}%`

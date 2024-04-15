@@ -52,7 +52,7 @@ export default async (pageData) => {
 
     //check if matinfoBomSkusData has ref model id
 
-    const isMatinfoSku = matinfoBomSkusData.filter((item) => item.bundle_id === refModelId * 1);
+    //const isMatinfoSku = matinfoBomSkusData.filter((item) => item.bundle_id === refModelId * 1);
     //console.log('isMatinfoSku:', isMatinfoSku);
 
     //if yes, get carbon_sku from matinfoBomSkusData....check with Sam

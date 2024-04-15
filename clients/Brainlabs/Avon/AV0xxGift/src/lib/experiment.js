@@ -1,8 +1,8 @@
 //import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import App from './Components/App';
-import shared from './shared/shared';
+//import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+//const { ID, VARIATION } = shared;
 
 export default () => {
   const { React, ReactDOM } = window;

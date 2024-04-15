@@ -11,10 +11,10 @@ const generateStar = (rating) => {
   const starRectangle = (fill, xposition) =>
     `<rect id="Rectangle-path" fill="${fill}" x="${xposition}" y="0" width="96" height="96"/>`;
 
-  const generateColorStar = (rating) => {
+  const generateColorStar = (ratings) => {
     const stars = [];
-    for (let i = 1; i < 6; i++) {
-      const fillColor = colorConfig[i > rating ? 'blank' : rating];
+    for (let i = 1; i < 6; i += 1) {
+      const fillColor = colorConfig[i > ratings ? 'blank' : ratings];
       const xTranslateConstant = 104;
       const xposition = 0 + xTranslateConstant * (i - 1);
       stars.push(starRectangle(fillColor, xposition));

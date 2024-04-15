@@ -10,6 +10,7 @@ pollerLite(['body'], () => {
     <div class="left-text bar-text bar-content-item">on MiniMeis Carrier,</div>
     <div class="right-text bar-text bar-content-item">shop now before stocks run out!</div>
     <div class="right-title bar-title bar-content-item">super summer sale</div>`;
+    //eslint-disable-next-line no-param-reassign
     bar.innerHTML = newHtml;
   });
 });

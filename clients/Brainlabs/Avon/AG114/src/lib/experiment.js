@@ -4,7 +4,7 @@ import { addHashToUrl } from './helpers/utils';
 
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const { priceFilters, typeFilters, bannerData } = window.AG114Data;

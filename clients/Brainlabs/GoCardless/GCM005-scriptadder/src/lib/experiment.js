@@ -1,7 +1,7 @@
 import { pollerLite } from '../../../../../../globalUtil/util';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   const addJsToPage = (src, id, cb, classes) => {

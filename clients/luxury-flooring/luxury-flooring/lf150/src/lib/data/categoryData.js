@@ -192,7 +192,7 @@ export const categoryData = {
   ]
 };
 
-const categoryData2 = {
+export const categoryData2 = {
   'solid-wood-flooring': [
     {
       title: 'Oiled',

@@ -1,4 +1,3 @@
-import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 

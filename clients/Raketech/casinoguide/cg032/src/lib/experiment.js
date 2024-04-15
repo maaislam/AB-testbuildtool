@@ -3,7 +3,6 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { pollerLite, onUrlChange } from './helpers/utils';
 import addBreadcrumb from './addBreadcrumb';
-import addCard from './addCard';
 
 const { ID, VARIATION } = shared;
 

@@ -3,7 +3,7 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { getCookie, setCookie } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup(); //use if needed

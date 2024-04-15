@@ -1,5 +1,5 @@
 const viewOptionLogo = (id, data) => {
-  const { imageAlt, imageLink, optionLink, viewType } = data;
+  const { imageAlt, optionLink, viewType } = data;
   const aws = 'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/tvmatchen/';
   const paidCustomers = ['discovery+', 'c more live', 'viaplay.se', 'c more stream'];
 

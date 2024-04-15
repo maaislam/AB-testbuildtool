@@ -14,6 +14,7 @@ const validPaths = [
   '//www.dice.com/hiring/contact-us/post-jobs?QA=true',
   '//www.dice.com/hiring/contact-us/source-talent?QA=true'
 ];
+console.log('🚀 ~ validPaths:', validPaths);
 
 if (!ieChecks) {
   pollerLite(['body', 'header'], activate);

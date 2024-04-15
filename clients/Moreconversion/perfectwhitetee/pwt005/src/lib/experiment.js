@@ -1,7 +1,5 @@
 import setup from './services/setup';
 
-import shared from './shared/shared';
-
 export default () => {
   setup(); //use if needed
 

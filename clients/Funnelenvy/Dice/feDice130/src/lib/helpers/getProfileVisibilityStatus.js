@@ -1,5 +1,3 @@
-import { getCookie } from './utils';
-
 const getProlfileVisibilityStatus = async (value) => {
     //const value = getCookie('searchableProfileId');
 

@@ -30,7 +30,7 @@ const homePageChanges = () => {
 
     //click on product
 
-    live('.fe-homepage-products>div.fe-home-prod', 'click', function (e) {
+    live('.fe-homepage-products>div.fe-home-prod', 'click', function () {
       const product = this.querySelector('a.row').innerHTML;
       const prodList = document.querySelectorAll('.nav-catalogs > li >  a');
       prodList.forEach((el) => {

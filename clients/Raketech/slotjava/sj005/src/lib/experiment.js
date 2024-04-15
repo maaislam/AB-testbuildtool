@@ -27,7 +27,7 @@ const init = () => {
   let currentPage = 1;
 
   const hideRows = (index) => {
-    for (let i = 0; i < rows.length; i++) {
+    for (let i = 0; i < rows.length; i += 1) {
       if (i < index) {
         rows[i].classList.add(`${ID}__show`);
       } else {
@@ -40,7 +40,7 @@ const init = () => {
   VARIATION !== 'Control' && hideRows(itemsPerPage * currentPage);
 
   const showMore = () => {
-    currentPage++;
+    currentPage += 1;
     hideRows(itemsPerPage * currentPage);
 
     if (itemsPerPage * currentPage >= rows.length) {

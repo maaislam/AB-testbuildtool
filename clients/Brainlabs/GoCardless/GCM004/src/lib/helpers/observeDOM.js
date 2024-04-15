@@ -1,11 +1,11 @@
 const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
   const target = document.querySelector(`${targetSelectorString}`);
-  let oldHref = location.href;
+  let oldHref = window.location.href;
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       let urlChanged = false;
-      if (oldHref !== location.href) {
-        oldHref = location.href;
+      if (oldHref !== window.location.href) {
+        oldHref = window.location.href;
         urlChanged = true;
       }
       setTimeout(() => {
