@@ -1,6 +1,6 @@
 module.exports = {
-  ID: 'gcc014',
-  VARIATION: '2',
-  CLIENT: 'Moreconversion',
-  SITE: 'goosecreekcandle'
-};
+    ID: "gcc014",
+    VARIATION: "1",
+    CLIENT: "Moreconversion",
+    SITE: "goosecreekcandle"
+  };

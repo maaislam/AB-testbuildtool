@@ -2,13 +2,14 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id}.#{$id}-1 {
-  &__shipping-msg {
+  .#{$id}__shipping-msg {
     display: flex;
     align-items: center;
     padding: 8px 10px;
     color: #000;
+    text-align: left;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     border: 1px solid #eaecf0;
     border-radius: 5px;
