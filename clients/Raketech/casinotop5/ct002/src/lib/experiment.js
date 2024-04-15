@@ -28,20 +28,6 @@ export default () => {
     const { target } = e;
 
     if (
-      target.closest('img.scfeat_logo') &&
-      target.closest('a[href*="/visit/"]') &&
-      target.closest('.fcrp-scfeatured')
-    ) {
-      const closestWrapper = target.closest('a');
-      const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
-      const casinoName = casinoLink.split('/visit/')[1];
-
-      gaTracking(
-        `${casinoName.replace(/\//g, '')} | CTA CTO | Logo${
-          target.closest(`.${ID}__grayscale`) ? ' | Yellow' : ''
-        }`
-      );
-    } else if (
       (target.closest('a[href*="/visit/"]') || target.closest(`.${ID}__affiliate`)) &&
       target.closest('.tdi_26 .wpb_wrapper')
     ) {
@@ -50,9 +36,9 @@ export default () => {
       const casinoName = casinoLink.split('/visit/')[1];
 
       gaTracking(
-        `${casinoName.replace(/\//g, '')} | CTA CTO | Button${
-          target.closest(`.${ID}__grayscale`) ? ' | Yellow' : ''
-        }`
+        `${casinoName.replace(/\//g, '')} | CTA CTO | ${
+          target.closest('img.scfeat_logo') ? 'Logo' : 'Button'
+        }${target.closest(`.${ID}__grayscale`) ? ' | Yellow' : ''}`
       );
 
       const data = getCroStorage(`${ID}__visitedCasinos`);
