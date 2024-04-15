@@ -8,7 +8,7 @@ const gaTracking = (label) => {
 
   const GA4_PROPERTY_ID = 'G-H91NBPERDS';
   const GA4_INTERNAL_EXPERIMENT_NUM = '6332138618';
-  const GA4_INTERNAL_EXPERIMENT_ID = `Experiment CEO History Casinos ${GA4_INTERNAL_EXPERIMENT_NUM}`;
+  const GA4_INTERNAL_EXPERIMENT_ID = `Previously visited operators ${GA4_INTERNAL_EXPERIMENT_NUM}`;
   const EXPERIMENT_DEVICE_CATEGORY = 'All Devices';
 
   pollerLite([() => document.readyState === 'complete'], () => {
