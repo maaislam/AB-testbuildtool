@@ -30,6 +30,13 @@
             line-height: 24px;
           }
         }
+
+        @media screen and (max-width: 1024px) and (min-width: 769px) {
+          gap: 0px;
+          .compare-at-price {
+            margin-right: 0px;
+          }
+        }
       }
 
       div[data-oke-reviews-product-id] {
@@ -40,6 +47,18 @@
           }
           .oke-sr-count {
             padding-top: 4px;
+          }
+        }
+
+        @media screen and (max-width: 1024px) and (min-width: 769px) {
+          .oke-sr-stars {
+            margin-right: 2px;
+          }
+          .oke-sr-count {
+            .oke-sr-label-text,
+            .oke-sr-count-number {
+              font-size: 12px;
+            }
           }
         }
       }
