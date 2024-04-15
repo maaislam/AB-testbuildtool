@@ -31,9 +31,7 @@ export default () => {
     desktopProductHeader.insertAdjacentElement('afterend', newWrapper);
 
     //mobile portion
-    const targetWrapperForMobile = document.querySelector(
-      '.mobile-info-container ~ .product-medias'
-    );
+    const targetWrapperForMobile = document.querySelector('.product-description-main-wrapper');
     const newWrapperForMobile = document.createElement('div');
     newWrapperForMobile.className = `mobile-info-container ${ID}__reviews-pricing-container-mobile`;
 
@@ -48,7 +46,7 @@ export default () => {
     if (document.querySelector(`.${ID}__reviews-pricing-container-mobile`)) {
       document.querySelector(`.${ID}__reviews-pricing-container-mobile`).remove();
     }
-    targetWrapperForMobile.insertAdjacentElement('afterend', newWrapperForMobile);
+    targetWrapperForMobile.insertAdjacentElement('beforebegin', newWrapperForMobile);
   }
 
   if (VARIATION === '2') {
