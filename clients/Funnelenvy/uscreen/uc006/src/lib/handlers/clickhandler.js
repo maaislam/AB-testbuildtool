@@ -1,10 +1,10 @@
 //import gaTracking from '../services/gaTracking';
 
-const pageNameConfig = {
-  '/pricing/': 'pricing',
-  '/plans-comparison/': 'comparison',
-  '/bullet/upgrade': 'upgrade'
-};
+//const pageNameConfig = {
+//'/pricing/': 'pricing',
+//'/plans-comparison/': 'comparison',
+//'/bullet/upgrade': 'upgrade'
+//};
 const basicPlanLink = '?package=price_1HL9MSFJDrKkwzVpVSTP9uwO';
 const basicUpgradeLink = '/bullet/upgrade/basic';
 
@@ -15,6 +15,7 @@ const bookDemoLink = 'https://www.uscreen.tv/request-demo/';
 const clickHandler = (event) => {
   const { target } = event;
   const action = window.location.pathname === '/bullet/upgrade' ? 'select_plan' : 'start_trial';
+  console.log('🚀 ~ clickHandler ~ action:', action);
   if (
     target.closest(`a[href*="${basicPlanLink}"]`) ||
     target.closest(`[href*="${basicUpgradeLink}"]`)

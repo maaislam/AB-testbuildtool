@@ -48,7 +48,8 @@ const events = {
    * @param {object} userOptions
    */
   send(evCategory, evAction, evLabel, userOptions, evVariation = null) {
-    const options = userOptions || {};
+    const options = userOptions || {
+};
     let label = evLabel;
     const category = evCategory || this.category;
     const action = evAction || this.action;

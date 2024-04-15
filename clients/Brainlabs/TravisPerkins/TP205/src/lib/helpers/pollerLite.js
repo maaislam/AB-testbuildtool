@@ -1,9 +1,13 @@
+//disable esliint
+/* eslint-disable */
+
 export const mergeObjects = (target, source) => {
   const merged = target;
   Object.keys(source).forEach((key) => {
     const sourceValue = source[key];
     const targetValue = merged[key];
-    const isObject = targetValue && typeof targetValue === 'object' && !(targetValue instanceof Array);
+    const isObject =
+      targetValue && typeof targetValue === 'object' && !(targetValue instanceof Array);
 
     if (isObject) {
       //If object, call function recursively to overwrite subproperties individually

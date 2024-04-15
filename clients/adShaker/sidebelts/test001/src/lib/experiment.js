@@ -1,10 +1,8 @@
 import setup from './services/setup';
 //import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import obsIntersection from './helpers/observeIntersection';
-import stickyAtc from './components/stickyAtc';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup(); //use if needed

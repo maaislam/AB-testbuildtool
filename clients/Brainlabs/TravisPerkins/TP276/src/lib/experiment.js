@@ -1,9 +1,8 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { tradeContainer } from './components/tradeContainer';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const homePageContainer = document.querySelector('div[data-test-id="homepage-main"]');

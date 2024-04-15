@@ -5,7 +5,7 @@ import benefitStr from './components/benefitstr';
 import images from './data/images';
 import wistiaOverlay from './components/wistiaOverlay';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const setVideo = () => {
   const videoHTML = `<div class="${ID}__video-wrapper"><span class="video-overlay">${wistiaOverlay()}</span><video class='${ID}__heroVideo' autoplay muted controls poster="https://cdn.shopify.com/s/files/1/0267/7080/0737/files/thumbnail-v3.jpg?v=1707493234"><source src="https://cdn.shopify.com/videos/c/o/v/df5f1d4db2a845c19092e87b653e6ffc.mp4" type="video/mp4"></video></div>`;

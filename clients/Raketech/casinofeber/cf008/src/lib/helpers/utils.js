@@ -1,5 +1,4 @@
 import { casinoFeberData } from '../data/casinoFeberData';
-import getData from './getData';
 import modifyData from './modifyData';
 
 /**

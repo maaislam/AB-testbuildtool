@@ -7,7 +7,6 @@ import {
   addCssToPage,
   addJsToPage,
   getOperatorFromUrl,
-  getStringBetween,
   pollerLite
 } from './helpers/utils';
 import piwikTrack from './services/gaTracking';

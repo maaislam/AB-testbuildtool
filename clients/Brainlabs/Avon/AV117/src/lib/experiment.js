@@ -13,7 +13,7 @@ export default () => {
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
-  if (VARIATION == 'control') {
+  if (VARIATION === 'control') {
     return;
   }
 

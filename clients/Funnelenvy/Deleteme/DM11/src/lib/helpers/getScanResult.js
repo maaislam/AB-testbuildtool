@@ -4,7 +4,7 @@ const getScanResult = (id) => {
   const scanLogId = sessionStorage.getItem(`${id}__scanLogId`);
   const city = sessionStorage.getItem(`${id}__city`);
   const state = sessionStorage.getItem(`${id}__state`);
-  const countryCode = sessionStorage.getItem(`${id}__countryCode`);
+  //const countryCode = sessionStorage.getItem(`${id}__countryCode`);
   const location = sessionStorage.getItem(`${id}__currentlocation`);
   const visitorId = sessionStorage.getItem('visitorId');
 

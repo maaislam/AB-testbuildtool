@@ -5,7 +5,7 @@ import setup from './services/setup';
 //import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup(); //use if needed
@@ -22,25 +22,25 @@ export default () => {
   //-----------------------------
   //...
 
-  const sizes = [
-    'XX-Small',
-    'X-Small',
-    'Small',
-    'Small/Medium',
-    'Medium',
-    'Large',
-    'Extra Large',
-    'Large/X-large',
-    'L/XL',
-    'Large/Extra Large',
-    'X-Large',
-    'XX-Large',
-    'XXX-Large',
-    '4XL',
-    '5XL',
-    'XXL',
-    'S/M'
-  ];
+  //const sizes = [
+  //'XX-Small',
+  //'X-Small',
+  //'Small',
+  //'Small/Medium',
+  //'Medium',
+  //'Large',
+  //'Extra Large',
+  //'Large/X-large',
+  //'L/XL',
+  //'Large/Extra Large',
+  //'X-Large',
+  //'XX-Large',
+  //'XXX-Large',
+  //'4XL',
+  //'5XL',
+  //'XXL',
+  //'S/M'
+  //];
 
   const cartItems = document.querySelectorAll('.cart .product-item-name a');
 

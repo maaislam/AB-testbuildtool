@@ -25,10 +25,10 @@ export const mergeObjects = (target, source) => {
       targetValue && typeof targetValue === 'object' && !(targetValue instanceof Array);
 
     if (isObject) {
-      // If object, call function recursively to overwrite subproperties individually
+      //If object, call function recursively to overwrite subproperties individually
       merged[key] = mergeObjects(targetValue, sourceValue);
     } else {
-      // Overwrite default with value from options
+      //Overwrite default with value from options
       merged[key] = sourceValue;
     }
   });
@@ -49,10 +49,10 @@ export const pollerLite = (conditions, callback, userOptions) => {
   let options = {
     wait: 50,
     multiplier: 1.1,
-    timeout: 0,
+    timeout: 0
   };
 
-  // Overwrite any default options with user supplied options
+  //Overwrite any default options with user supplied options
   if (userOptions) {
     options = mergeObjects(options, userOptions);
   }
@@ -91,7 +91,7 @@ export const pollerLite = (conditions, callback, userOptions) => {
 
     const types = {
       function: () => condition(),
-      string: () => document.querySelector(condition),
+      string: () => document.querySelector(condition)
     };
 
     const evaluate = types[typeof condition];
@@ -111,7 +111,7 @@ export const pollerLite = (conditions, callback, userOptions) => {
    * @param {boolean} skipWait Bypasses the wait period if true
    */
   const pollForCondition = (condition, waitTime, skipWait) => {
-    // End recursion if timeout has passed
+    //End recursion if timeout has passed
     if (timeout && isTimedOut()) {
       return false;
     }
@@ -121,7 +121,7 @@ export const pollerLite = (conditions, callback, userOptions) => {
     if (result) {
       successfulConditions.push(result);
       if (allConditionsPassed()) {
-        // Run the callback and pass the results as the first argument
+        //Run the callback and pass the results as the first argument
         callback(successfulConditions);
       }
     } else {
@@ -134,9 +134,9 @@ export const pollerLite = (conditions, callback, userOptions) => {
     }
   };
 
-  // Start polling for all conditions
+  //Start polling for all conditions
   for (let i = 0; i < conditions.length; i += 1) {
-    if (typeof conditions[i] != 'string' && typeof conditions[i] != 'function') {
+    if (typeof conditions[i] !== 'string' && typeof conditions[i] !== 'function') {
       throw 'Every item in the poller array should be a function or a string';
     }
     pollForCondition(conditions[i], wait, true);
@@ -146,25 +146,25 @@ export const pollerLite = (conditions, callback, userOptions) => {
 export const formatPrice = (amount, code = 'en-GB', currency = 'GBP') =>
   new Intl.NumberFormat(code, {
     style: 'currency',
-    currency,
+    currency
   }).format(amount);
 
 export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
   const target = document.querySelector(`${targetSelectorString}`);
 
   const observer = new MutationObserver((mutations) => {
-    mutations.forEach(function (mutation) {
+    mutations.forEach((mutation) => {
       callbackFunction(mutation);
     });
   });
 
-  // configuration of the observer:
+  //configuration of the observer:
 
   const config = configObject || {
     attributes: true,
     childList: true,
     characterData: false,
-    subtree: true,
+    subtree: true
   };
 
   target && observer.observe(target, config);
@@ -173,9 +173,9 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 export const obsIntersection = (target, config, callback) => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      // if (entry.intersectionRatio > 0 && entry.isIntersecting && entry.boundingClientRect.y > 0) {
+      //if (entry.intersectionRatio > 0 && entry.isIntersecting && entry.boundingClientRect.y > 0) {
 
-      // }
+      //}
       callback(entry);
     });
   }, config);
@@ -226,7 +226,7 @@ export const getCurrMonth = () => {
     'September',
     'October',
     'November',
-    'December',
+    'December'
   ];
 
   const date = new Date();
@@ -239,14 +239,14 @@ export const getCurrMonth = () => {
 function triggerEvent(eventName, eventProperties, isDelayed) {
   const eventData = {
     name: eventName,
-    properties: eventProperties,
+    properties: eventProperties
   };
-  // eslint-disable-next-line no-undef
+  //eslint-disable-next-line no-undef
   if (isDelayed && DY.Detectors && DY.Detectors.ua && DY.Detectors.ua().safari) {
-    // eslint-disable-next-line no-undef
+    //eslint-disable-next-line no-undef
     DY.ServerUtil.delayedLogEvent(eventData);
   } else {
-    // eslint-disable-next-line no-undef
+    //eslint-disable-next-line no-undef
     DY.API('event', eventData);
   }
 }
@@ -258,20 +258,20 @@ function triggerEvent(eventName, eventProperties, isDelayed) {
 /***********************************************************/
 
 export const setCookie = (cName, cValue, expDays) => {
-  let date = new Date();
+  const date = new Date();
 
   date.setTime(date.getTime() + expDays * 24 * 60 * 60 * 1000);
 
-  let expires = `expires= ${date.toUTCString()}`;
+  const expires = `expires= ${date.toUTCString()}`;
 
-  // eslint-disable-next-line prefer-template
+  //eslint-disable-next-line prefer-template
   document.cookie = cName + '=' + cValue + '; ' + expires;
 };
 
 export const getCookie = (name) => {
-  let value = `; ${document.cookie}`;
+  const value = `; ${document.cookie}`;
 
-  let parts = value.split(`; ${name}=`);
+  const parts = value.split(`; ${name}=`);
 
   if (parts.length == 2) {
     return parts.pop().split(';').shift();

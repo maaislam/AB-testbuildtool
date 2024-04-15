@@ -3,7 +3,7 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import newContent from './newContent';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup(); //use if needed

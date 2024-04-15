@@ -9,7 +9,7 @@ const initSwiper = (id) => {
   document.head.appendChild(script);
 
   script.onload = () => {
-    const swiper = new Swiper(`.${id}__swiper`, {
+    const swiper = new window.Swiper(`.${id}__swiper`, {
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
@@ -21,6 +21,7 @@ const initSwiper = (id) => {
         delay: 5000
       }
     });
+    console.log('🚀 ~ initSwiper ~ swiper:', swiper);
   };
 };
 

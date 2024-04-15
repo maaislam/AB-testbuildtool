@@ -1,3 +1,6 @@
+//disaable eslint
+/* eslint-disable */
+
 const initSwiper = (container, configObj, fireEvent) => {
   const swiperInterval = window.setInterval(mySlick, 300);
   const containerElm = document.querySelector(container);

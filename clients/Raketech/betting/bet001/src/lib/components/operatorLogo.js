@@ -1,7 +1,7 @@
 import { processForImageName } from '../helpers/utils';
 
 const operatorLogo = (id, data) => {
-  const { domainFlagSrc, link, gaLabel } = data;
+  const { link, gaLabel } = data;
   const imageName = gaLabel.toLowerCase().split(' ').join('-');
 
   const aws = 'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/betting.se/';

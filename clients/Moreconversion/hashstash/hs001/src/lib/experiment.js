@@ -5,7 +5,7 @@ import { progressHeader } from './components/progressHeader';
 import { progressBar } from './components/progressBar';
 import { observeDOM } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   if (!document.querySelector('body .cart-drawer .free-shipping-bar')) {

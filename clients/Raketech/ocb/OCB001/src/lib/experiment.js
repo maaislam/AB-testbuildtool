@@ -4,7 +4,7 @@ import shared from './shared/shared';
 import { removeElements } from './data/data';
 import { betContainer } from './components/betContainer';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup(); //use if needed

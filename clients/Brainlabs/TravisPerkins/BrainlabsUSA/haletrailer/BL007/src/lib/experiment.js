@@ -20,5 +20,5 @@ export default () => {
   //-----------------------------
   //...
   //selectors
-  const postContentSelector = 'div.post-content';
+  //const postContentSelector = 'div.post-content';
 };

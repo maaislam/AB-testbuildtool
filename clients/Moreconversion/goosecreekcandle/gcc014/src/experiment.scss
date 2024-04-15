@@ -1,0 +1,46 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id}.#{$id}-1 {
+  &__shipping-msg {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #eaecf0;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.12);
+
+    svg {
+      margin-right: 12px;
+    }
+  }
+}
+.#{$id}.#{$id}-2 {
+  .custom-delivery {
+    .#{$id}__shipping-msg {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 8px 10px;
+      text-align: center;
+      color: #000;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+      border: 1px solid #eaecf0;
+      border-radius: 5px;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.12);
+      span {
+        font-weight: 600;
+        color: #0bae39;
+      }
+      svg {
+        margin-right: 12px;
+      }
+    }
+  }
+}

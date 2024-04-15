@@ -1,9 +1,11 @@
 import { pollerLite } from '../../../../../../../globalUtil/util';
 
-export const initSwiper = (container, configObj, fireEvent) => {
+export const initSwiper = (container, configObj) => {
   const loadSwiper = () => {
     //eslint-disable-next-line no-undef
     const slider = new Swiper(`${container}`, configObj);
+
+    console.log('🚀 ~ loadSwiper ~ slider:', slider);
   };
   pollerLite([() => window.Swiper !== undefined], () => {
     loadSwiper();

@@ -32,7 +32,7 @@ const getThreeDaysFromToday = () => {
     for (let i = 0; i < days;) {
       result.setDate(result.getDate() + 1);
       if (!isWeekend(result)) {
-        i++;
+        i += 1;
       }
     }
 

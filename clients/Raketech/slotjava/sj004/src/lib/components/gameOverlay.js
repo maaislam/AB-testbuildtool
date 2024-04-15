@@ -1,7 +1,5 @@
-import { truncateText } from '../helpers/utils';
-
 const gameOverlay = (id, gameData) => {
-  const { gameName, gameLink, numOfLikes, gameGif, gameDesc, gameId } = gameData;
+  const { gameName, gameLink, numOfLikes, gameGif, gameId } = gameData;
   const awsImgPath =
     'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/slot-card-redesign';
   const htmlString = `

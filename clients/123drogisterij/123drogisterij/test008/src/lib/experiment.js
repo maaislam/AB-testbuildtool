@@ -4,7 +4,7 @@ import shared from './shared/shared';
 import { addTitle } from './components/addTitle';
 import { bulkMessage } from './components/bulkMessage';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup(); //use if needed

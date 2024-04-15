@@ -96,8 +96,8 @@ export const addToCart = (id, quantity) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(payload)
-  }).then((response) => {
-    const res = response.json();
+  }).then((result) => {
+    const res = result.json();
 
     return res;
   });

@@ -9,9 +9,9 @@ const initSwiper = (container, initConfig) => {
   };
 
   const slider = new window.Swiper(`${container}`, Object.assign(baseConfig, initConfig));
-  //slider.on('slideChange', () => {
-  //console.log('change');
-  //});
+  slider.on('slideChange', () => {
+  console.log('change');
+  });
 };
 
 export default initSwiper;

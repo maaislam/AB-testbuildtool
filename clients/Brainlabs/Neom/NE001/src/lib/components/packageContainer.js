@@ -1,4 +1,3 @@
-import { header } from './header';
 import { product } from './product';
 
 export const packageContainer = (ID, data) => {

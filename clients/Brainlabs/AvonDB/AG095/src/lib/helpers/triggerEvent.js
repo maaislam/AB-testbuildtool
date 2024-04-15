@@ -1,10 +1,10 @@
 const triggerEvent = (el) => {
-  function createEvent(el, type) {
+  function createEvent(elm, type) {
     if ('createEvent' in document) {
       //modern browsers, IE9+
       const e = document.createEvent('HTMLEvents');
       e.initEvent(type, true, true);
-      el.dispatchEvent(e);
+      elm.dispatchEvent(e);
     }
   }
   createEvent(el, 'mousedown');

@@ -1,7 +1,7 @@
 //import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   //setup(); //use if needed
@@ -10,8 +10,8 @@ export default () => {
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
-  if (VARIATION === 'control') {
-  }
+  //if (VARIATION === 'control') {
+  //}
 
   //-----------------------------
   //Write experiment code here

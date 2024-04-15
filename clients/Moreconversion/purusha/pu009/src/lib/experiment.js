@@ -2,7 +2,6 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { observeIntersection } from './helpers/utils';
 import stickyATC from './components/stickyATC';
-import handleATC from './handlers/handleATC';
 
 const { ID } = shared;
 

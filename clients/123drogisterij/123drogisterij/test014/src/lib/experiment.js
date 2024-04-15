@@ -40,8 +40,8 @@ export default () => {
     if (target.closest(`.${ID}__atc`)) {
       const modalForm = target.closest('.ppatc__popup-form');
       const variantsWrapper = modalForm.querySelector(`.${ID}__variants`);
-      const sku = variantsWrapper.getAttribute('data-active-sku');
-      const primaryForm = document.querySelector(`form[data-product-sku="${sku}"]`);
+      const id = variantsWrapper.getAttribute('data-active-sku');
+      const primaryForm = document.querySelector(`form[data-product-sku="${id}"]`);
       primaryForm.querySelector(`button[type="submit"]:not(.${ID}__openmodal)`).click();
     } else if (target.closest(`.${ID}__denyoffer`)) {
       const modalForm = target.closest('.ppatc__popup-form');
@@ -62,10 +62,10 @@ export default () => {
       )?.value;
 
       if (productsData.variants.length > 1 && parseInt(quantity) < parseInt(firstOptionQuantity)) {
-        const { sku } = target.closest('button').dataset;
+        const id = target.closest('button').dataset.sku;
         const modalInnerContent = document.querySelector('.ppatc__popup-items');
         modalInnerContent.innerHTML = '';
-        modalInnerContent.insertAdjacentHTML('afterbegin', modalContent(ID, productsData, sku));
+        modalInnerContent.insertAdjacentHTML('afterbegin', modalContent(ID, productsData, id));
         modalInnerContent.querySelector('label[data-quantity="1"]')?.click();
         modalInnerContent.setAttribute('data-href', window.location.href);
         document.body.classList.add('ppatc__popup-enabled');

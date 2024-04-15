@@ -4,7 +4,7 @@ import setup from './services/setup';
 //import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
 
 export default () => {
   setup(); //use if needed
@@ -49,7 +49,8 @@ export default () => {
   const allCasino = [
     {
       gameUrl: 'https://www.casinoguide.se/prontolive',
-      imgUrl: 'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinoguide/prontolive-mob.png',
+      imgUrl:
+        'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinoguide/prontolive-mob.png',
       imgUrlsv2: 'https://www.casinoguide.se/wp-content/uploads/2020/02/Prontolive-logga.png.webp',
       gameName: 'ProntoLive',
       btnUrl: '/go/prontolive',
@@ -62,7 +63,8 @@ export default () => {
 
     {
       gameUrl: 'https://www.casinoguide.se/ninjacasino',
-      imgUrl: 'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinoguide/ninja-mob.png',
+      imgUrl:
+        'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinoguide/ninja-mob.png',
       imgUrlsv2: 'https://www.casinoguide.se/wp-content/uploads/2023/05/ninjacasino-7.png.webp',
       gameName: 'Ninja Casino',
       btnUrl: '/go/ninjacasino',
@@ -75,7 +77,8 @@ export default () => {
     },
     {
       gameUrl: 'https://www.casinoguide.se/happycasino',
-      imgUrl: 'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinoguide/happy-mob.png',
+      imgUrl:
+        'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinoguide/happy-mob.png',
       imgUrlsv2: 'https://www.casinoguide.se/wp-content/uploads/2023/05/happy-casino-4.png.webp',
       gameName: 'Happy Casino',
       btnUrl: '/go/happycasino',
@@ -103,7 +106,9 @@ export default () => {
     <a href="${item.gameUrl}"><img src="${item.imgUrl}" alt="${item.gameName}" /></a>
   </div>
   <div class="game-cardright">
-    <a class="game-name titleWrapper__22jhQ" href="${item.gameUrl}"><div class="title__2-ppJ"> ${item.gameName}</div></a>
+    <a class="game-name titleWrapper__22jhQ" href="${item.gameUrl}"><div class="title__2-ppJ"> ${
+            item.gameName
+          }</div></a>
     <div class="game-info toplistOfferContainer__A_vaq">
       <p>${item.gameInfo}</p>
       
@@ -139,18 +144,25 @@ export default () => {
   if (VARIATION === '2') {
     console.log('var 2 cg006');
 
-    document.querySelector('#topplista').insertAdjacentHTML('beforebegin', '<div class="gameCardWrapper"></div>');
+    document
+      .querySelector('#topplista')
+      .insertAdjacentHTML('beforebegin', '<div class="gameCardWrapper"></div>');
 
     const cardWrapper = document.querySelector('.gameCardWrapper');
 
     allCasino.forEach((data) => {
-      const mainCard = document.querySelector(`.container__1Sosv[data-toplist-item='${data.dataToplistitem}']`);
+      const mainCard = document.querySelector(
+        `.container__1Sosv[data-toplist-item='${data.dataToplistitem}']`
+      );
       const cloneCard = mainCard.cloneNode(true);
       cardWrapper.appendChild(cloneCard);
       const newCardImg = cloneCard.querySelector('img');
       if (!newCardImg) {
         const logoContainer = cloneCard.querySelector('.logoContainer__2kEvL');
-        logoContainer.insertAdjacentHTML('afterbegin', `<img src="${data.imgUrlsv2}" alt="Mr Vegas Casino logo" class="logo__s8dmk" height="184px" width="110px">`);
+        logoContainer.insertAdjacentHTML(
+          'afterbegin',
+          `<img src="${data.imgUrlsv2}" alt="Mr Vegas Casino logo" class="logo__s8dmk" height="184px" width="110px">`
+        );
       }
     });
   }

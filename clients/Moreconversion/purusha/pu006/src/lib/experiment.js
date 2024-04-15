@@ -2,7 +2,7 @@ import setup from './services/setup';
 
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
 
 export default () => {
   setup();

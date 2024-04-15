@@ -21,7 +21,7 @@ export default () => {
   setup();
   init();
 
-  document.body.addEventListener('click', (e) => {
+  document.body.addEventListener('click', () => {
     //console.log('in');
     setTimeout(init, 500);
   });

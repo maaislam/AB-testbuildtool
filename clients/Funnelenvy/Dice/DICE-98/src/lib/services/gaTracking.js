@@ -1,7 +1,7 @@
 import shared from '../shared/shared';
 
 const gaTracking = (label, action = 'click') => {
-  const { ID, VARIATION, CLIENT } = shared;
+  const { ID, VARIATION } = shared;
   document.documentElement.classList.add(ID);
   document.documentElement.classList.add(`${ID}-${VARIATION}`);
   //const labelMessage = `Test ID: ${ID} Variation: ${VARIATION} Label: ${label}`;

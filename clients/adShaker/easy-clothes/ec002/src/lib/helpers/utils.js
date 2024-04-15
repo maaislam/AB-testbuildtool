@@ -57,7 +57,8 @@ export const resetSizeSelection = (ID) => {
   const urlParams = new URLSearchParams(queryString);
   const selectedSizes = urlParams.getAll('filter.v.option.size');
   document.querySelectorAll(`.${ID}__size`).forEach((item) => {
-    item.querySelector('input').checked = false;
+    const input = item.querySelector('input');
+    input.checked = false;
   });
   selectedSizes.forEach((size) => {
     const sizeElm = document.querySelector(`.${ID}__size > [value="${size}"]`);

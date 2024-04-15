@@ -1,4 +1,3 @@
-import { decrementIcon, incrementIcon } from '../assets/icons';
 import { star } from './star';
 
 export const product = (ID, data) => {

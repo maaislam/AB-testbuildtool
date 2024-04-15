@@ -83,7 +83,7 @@ export default () => {
   init();
 
   let oldURL = window.location.href;
-  const mutationCallback = (mutation) => {
+  const mutationCallback = () => {
     if (oldURL !== window.location.href) {
       if (!oldURL.includes('/product') && !window.location.href.includes('/product')) {
         sessionStorage.setItem(`${ID}__seen`, 'true');

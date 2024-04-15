@@ -6,7 +6,7 @@ import { contactInfoStr } from './components/contactInfoStr';
 import { promoBanner } from './components/promoBanner';
 import { pollerLite, timerCountdown } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup(); //use if needed
@@ -38,7 +38,6 @@ export default () => {
     ).innerText;
     //const reviewElement = doc.querySelector('.product-info-wrapper .oke-sr-stars');
     const reviewCount = doc.querySelector('.product-info-wrapper .oke-sr-count-number').innerText;
-    //const productPricing = doc.querySelector('.product-info-wrapper .product-page--pricing .product-page--pricing--variant-price .money');
     const productSalePricing = doc.querySelector(
       '.product-info-wrapper .product-page--pricing .product-page--pricing--variant-price .money'
     )?.innerText;
@@ -64,8 +63,11 @@ export default () => {
       }));
 
     const responses = await Promise.all(promises);
+    //eslint-disable-next-line no-restricted-syntax
     for (const [index, response] of responses.entries()) {
+      console.log('🚀 ~ parseHTML ~ index:', index);
       if (response) {
+        //eslint-disable-next-line no-await-in-loop
         const html = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');

@@ -1,4 +1,4 @@
-import { siteRatingStar, trustPilotLogo, trustpilotLogo1 } from '../reviewData';
+import { siteRatingStar, trustpilotLogo1 } from '../reviewData';
 import review from './review';
 
 const reviews = (id, reviewsData) => {

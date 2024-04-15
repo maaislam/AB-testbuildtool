@@ -4,7 +4,7 @@
     "prefer-template": 1,
     "no-else-return": 1,
     "no-var": 1,
-    "no-unused-vars": 1,
+
     "camelcase": 0,
     "no-nested-ternary": 0,
     "no-console": 1,
@@ -23,6 +23,7 @@
     "spaced-comment": ["error", "never"],
     "implicit-arrow-linebreak": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-shadow": ["error", { "allow": ["done"] }],
     "object-curly-newline": [
       "error",
       {
@@ -31,7 +32,9 @@
         "ImportDeclaration": "never",
         "ExportDeclaration": { "multiline": true, "minProperties": 3 }
       }
-    ]
+    ],
+
+    "no-unused-vars": "error"
   },
   "ignorePatterns": ["dist", "public", "node_modules", "webpack.*", "config/paths.js"],
   "env": {

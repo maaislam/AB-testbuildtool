@@ -1,3 +1,6 @@
+//disable eslint
+/* eslint-disable */
+
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import { observeDOM, obsIntersection } from '../../../../../../globalUtil/util';
 import renderSeeAll from './components/seeAll';

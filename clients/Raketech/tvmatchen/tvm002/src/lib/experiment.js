@@ -105,7 +105,7 @@ export default () => {
   );
 
   if (matchData.length > 0) {
-    matchData.forEach((item, index) => {
+    matchData.forEach((item) => {
       if (!item.querySelector('img.tv-icon')) {
         const anchorTag = item;
         const href = anchorTag.getAttribute('href');
@@ -142,7 +142,7 @@ export default () => {
   }
   let isOnlineStream = false;
   if (matchData2.length > 0) {
-    matchData2.forEach((item, index) => {
+    matchData2.forEach((item) => {
       if (!item.querySelector('img.tv-icon')) {
         isOnlineStream = true;
         const anchorTag = item;
@@ -350,7 +350,7 @@ export default () => {
     pollerLite(['.match_details__item__nav'], () => {
       const nav = document.querySelectorAll('.match_details__item__nav a');
       const tab = document.querySelectorAll('.table_tabs');
-      nav.forEach((item, index) => {
+      nav.forEach((item) => {
         item.addEventListener('click', (e) => {
           e.preventDefault();
           const id = item.getAttribute('href');

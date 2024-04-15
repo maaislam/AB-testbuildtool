@@ -2,7 +2,7 @@ import addViewAll from './helpers/addViewAll';
 import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const anchorPointSelectors = ['#navigation', '#desktop-navigation'];
@@ -22,7 +22,10 @@ export default () => {
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    if (target.closest(`#navigation .${ID}__viewAllUrl`) || target.closest(`#desktop-navigation .${ID}__viewAllUrl`)) {
+    if (
+      target.closest(`#navigation .${ID}__viewAllUrl`) ||
+      target.closest(`#desktop-navigation .${ID}__viewAllUrl`)
+    ) {
       sessionStorage.setItem('isViewAllClicked', 'true');
     }
   });

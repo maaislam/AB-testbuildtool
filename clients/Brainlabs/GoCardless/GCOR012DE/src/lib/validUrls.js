@@ -83,3 +83,4 @@ const validUrls = [
   '/de/handbuch/artikel/sepa-lastschrift-online/'
 ];
 //return validUrls.indexOf(location.pathname) !== -1;
+export default validUrls;

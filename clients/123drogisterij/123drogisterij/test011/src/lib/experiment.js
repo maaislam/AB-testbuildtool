@@ -27,7 +27,7 @@ export default () => {
     pageTitleElem.insertAdjacentHTML('afterend', callUs(ID));
   }
 
-  const expectedDeliveryElem = document.querySelector('.cart.main.actions');
+  //const expectedDeliveryElem = document.querySelector('.cart.main.actions');
   const cartBtn = document.querySelector('.cart-summary ul.checkout-methods-items');
   if (document.querySelector(`.${ID}__deliverytime`)) return;
   cartBtn.insertAdjacentHTML('afterend', deliveryTime(ID));

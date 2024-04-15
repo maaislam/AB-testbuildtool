@@ -37,7 +37,7 @@ export default () => {
   //...
   init();
 
-  document.body.addEventListener('click', (e) => {
+  document.body.addEventListener('click', () => {
     init();
   });
   document.body.addEventListener('change', (e) => {

@@ -1,7 +1,7 @@
 import { removeAppBanner, testRemoveConditions } from '../helpers/utils';
 
 export const clickHandler = (anchorElm, shared, fireEvent) => {
-  const { ID, VARIATION } = shared;
+  const { ID } = shared;
 
   anchorElm.addEventListener('click', ({ target }) => {
     const targetMatched = (desiredMatch) =>

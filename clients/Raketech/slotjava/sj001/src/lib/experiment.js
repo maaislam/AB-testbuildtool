@@ -4,9 +4,9 @@ import setup from './services/setup';
 //import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
 
-const game_name = document.querySelector('.game__iframe').dataset.slotName;
+const gameName = document.querySelector('.game__iframe').dataset.slotName;
 
 const init = (game_name) => {
   document.body.classList.add('test_001');
@@ -135,13 +135,13 @@ export default () => {
       const { href } = target.closest('a');
       const operatorName = href.split('/visita/')[1];
       piwikTrack(
-        `Slot Review Page | ${game_name} | ${operatorName} | CTA Clicks to operator (Bonus Intent)`
+        `Slot Review Page | ${gameName} | ${operatorName} | CTA Clicks to operator (Bonus Intent)`
       );
     } else if (target.closest('a[href*="/visita/"]') && !target.closest('.second_popup')) {
       const { href } = target.closest('a');
       const operatorName = href.split('/visita/')[1];
       piwikTrack(
-        `Slot Review Page | ${game_name} | ${operatorName} | CTA Clicks to operator (Bonus Intent)`
+        `Slot Review Page | ${gameName} | ${operatorName} | CTA Clicks to operator (Bonus Intent)`
       );
     } else if (target.closest('.game__controls #refillButton_custom')) {
       document.querySelector('.game__controls #refillButton').click();
@@ -159,7 +159,7 @@ export default () => {
       target.closest('#custom_modal_close') ||
       (target.closest('.modal_bg') && !target.closest('.first_pop_up'))
     ) {
-      piwikTrack(`1st Popup | ${game_name}  | Clicks on 'Close Popup'`);
+      piwikTrack(`1st Popup | ${gameName}  | Clicks on 'Close Popup'`);
       first_popUp_hide();
     } else if (target.closest('.first_btn')) {
       piwikTrack("1st Popup | Clicks on 'No, Play for Free'");
@@ -177,14 +177,14 @@ export default () => {
         ? 'Casino Name / Bonus'
         : 'Button';
       piwikTrack(
-        `2nd Popup | ${game_name} | ${operatorName} | CTA Clicks to Operator (Bonus Intent) | ${position}`
+        `2nd Popup | ${gameName} | ${operatorName} | CTA Clicks to Operator (Bonus Intent) | ${position}`
       );
     } else if (
       target.closest('.cancel_btn') ||
       target.closest('#custom_modal_close_2') ||
       (target.closest('.second_popUp_overlay') && !target.closest('.second_popup'))
     ) {
-      piwikTrack(`2nd Popup | ${game_name}  | Clicks on 'Close Popup'`);
+      piwikTrack(`2nd Popup | ${gameName}  | Clicks on 'Close Popup'`);
       second_popup_hide();
     } else if (target.closest('#playButton')) {
       piwikTrack("Slot Review Page | Clicks on 'Start Game'");
@@ -201,5 +201,5 @@ export default () => {
   //Write experiment code here
   //-----------------------------
   //...
-  init(game_name);
+  init(gameName);
 };

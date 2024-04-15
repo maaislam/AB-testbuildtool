@@ -14,7 +14,7 @@ function scrollStop(target, callback, refresh = 60) {
   //Listen for scroll events
   target.addEventListener(
     'scroll',
-    (event) => {
+    () => {
       //Clear our timeout throughout the scroll
       clearTimeout(isScrolling);
 

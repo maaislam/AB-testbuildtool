@@ -4,7 +4,7 @@ import shared from './shared/shared';
 import { timerStr } from './components/timerStr';
 import { displayTimeRemaining } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 export default () => {
   setup(); //use if needed

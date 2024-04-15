@@ -1,7 +1,6 @@
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import contactPage from './contactPage';
 import shared from './shared/shared';
-import observeDOM from './utils';
 
 const { ID, VARIATION } = shared;
 

@@ -9,7 +9,6 @@ import firstHeadingElm from './helpers/getFirstHeading';
 import initSwiper from './helpers/initSwiper';
 import obsIntersection from './helpers/observeIntersection';
 import { addCssToPage, addJsToPage } from './helpers/utils';
-import wistiaTrackings from './helpers/wistiaTrackings';
 
 const { ID, VARIATION } = shared;
 
@@ -165,7 +164,7 @@ export default () => {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach(() => {
         setTimeout(() => {
-          //init();
+          init();
         }, DOM_RENDER_DELAY);
       });
     });

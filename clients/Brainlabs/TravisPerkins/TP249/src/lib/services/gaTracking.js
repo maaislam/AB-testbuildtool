@@ -1,7 +1,6 @@
-import { pollerLite } from '../../../../../../../globalUtil/util';
 import shared from '../shared/shared';
 
-const gaTracking = (label, nonInteraction = false) => {
+const gaTracking = (label) => {
   const { ID, VARIATION, SITE } = shared;
   document.documentElement.classList.add(ID);
   document.documentElement.classList.add(`${ID}-${VARIATION}`);

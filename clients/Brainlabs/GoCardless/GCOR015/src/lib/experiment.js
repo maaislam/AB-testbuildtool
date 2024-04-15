@@ -8,11 +8,9 @@
 import { setup, fireEvent } from '../../../../../../globalUtil/trackings/services';
 import { pollerLite } from '../../../../../../globalUtil/util';
 import shared from './shared/shared';
-import reviewBanner from './components/reviewBanner';
 import reviews from './components/reviews';
 import { initExternalLib } from './helpers/addExternalLib';
 import initSwiper from './helpers/initSwiper';
-import obsIntersection from './helpers/observeIntersection';
 import { swiperConfig } from './helpers/swiperConfigs';
 import { reviewData } from './reviewData';
 

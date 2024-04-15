@@ -6,7 +6,7 @@ import { blendContainer } from './components/blendContainer';
 import { header } from './components/header';
 import { packages, pods } from './data/data';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const targetDiv = document.querySelector('#MainContent > .container');

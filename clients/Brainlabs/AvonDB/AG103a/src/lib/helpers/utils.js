@@ -1,3 +1,5 @@
+/*eslint-disable consistent-return */
+/*eslint-disable no-throw-literal */
 export const isMobile = window.DY.deviceInfo.type === 'smartphone';
 export const removeExisting = (ID) =>
   document.querySelectorAll(`.${ID}__slidecatalog`).forEach((item) => {

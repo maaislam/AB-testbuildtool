@@ -8,13 +8,28 @@ import affiliateLinksConfig from './affiliateLinksConfig';
 
 const { ID, VARIATION } = shared;
 const linkType = VARIATION === 'Control' ? 'A Link' : 'B Link';
-const init = () => {
+
+const init = (casinoName) => {
+  if (VARIATION === 'Control') return;
+
+  const data = getCroStorage(`${ID}__visitedCasinos`);
+  if (!data) {
+    const casinoNameArr = [casinoName];
+    setCroStorage(`${ID}__visitedCasinos`, casinoNameArr);
+    init();
+    return;
+  }
+  const visitedCasinos = getCroStorage(`${ID}__visitedCasinos`) || [];
+  if (visitedCasinos.includes(casinoName)) return;
+  visitedCasinos.push(casinoName);
+  setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
+
   const casinoData = getCroStorage(`${ID}__visitedCasinos`);
   if (!casinoData) return;
   casinoData.forEach((casino) => {
     const casinoLinks = document.querySelectorAll(`a[data-operator*="${casino}"]`);
     casinoLinks.forEach((casinoLink) => {
-      const casinoCardElem = casinoLink?.closest('.operator-container');
+      const casinoCardElem = casinoLink.closest('.operator-container');
       if (!casinoCardElem) return;
       casinoCardElem.classList.add(`${ID}__grayscale`);
     });
@@ -35,7 +50,7 @@ export default () => {
       const clickedElem = closestWrapper.querySelector('img') ? 'Logo' : 'Button';
 
       gaTracking(
-        `${casinoName} | CTA CTO (${clickedElem}) ${
+        `${linkType} | ${casinoName} | CTA CTO (${clickedElem}) ${
           target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
         }`
       );
@@ -48,18 +63,7 @@ export default () => {
 
       clickElem.click();
 
-      const data = getCroStorage(`${ID}__visitedCasinos`);
-      if (!data) {
-        const casinoNameArr = [casinoName];
-        setCroStorage(`${ID}__visitedCasinos`, casinoNameArr);
-        init();
-        return;
-      }
-      const visitedCasinos = getCroStorage(`${ID}__visitedCasinos`) || [];
-      if (visitedCasinos.includes(casinoName)) return;
-      visitedCasinos.push(casinoName);
-      setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
-      init();
+      init(casinoName);
     } else if (target.closest('.cta-review ') && target.closest('.toplist')) {
       const operatorHref = target.closest('a[href*="/svenska-casinon/"]').href;
       const operatorName = operatorHref.split('/svenska-casinon/')[1];
@@ -69,15 +73,27 @@ export default () => {
         }`
       );
     } else if (
-      target.closest(`[data-element="toplist"][data-type="logo"]:not(.${ID}__affiliate)`)
+      target.closest(`[data-element="toplist"][data-type="logo"]:not(.${ID}__affiliate)`) &&
+      !target.closest(`.${ID}__hide`)
     ) {
       const casinoName = target.closest('a').dataset.operator;
-      gaTracking(`${casinoName} | CTA CTO (Logo) `);
+      gaTracking(
+        `Default Link | ${casinoName} | CTA CTO (Logo) ${
+          target.closest(`.${ID}__grayscale`) && VARIATION !== 'Control' ? ' | Greyscaled' : ''
+        }`
+      );
+      init(casinoName);
     } else if (
-      target.closest(`[data-element="toplist"][data-type="button"]:not(.${ID}__affiliate)`)
+      target.closest(`[data-element="toplist"][data-type="button"]:not(.${ID}__affiliate)`) &&
+      !target.closest(`.${ID}__hide`)
     ) {
       const casinoName = target.closest('a').dataset.operator;
-      gaTracking(`${casinoName} | CTA CTO (Logo) `);
+      gaTracking(
+        `Default Link | ${casinoName} | CTA CTO (Button) ${
+          target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
+        } `
+      );
+      init(casinoName);
     }
   });
 

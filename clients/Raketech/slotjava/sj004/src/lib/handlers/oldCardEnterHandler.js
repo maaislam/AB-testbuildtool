@@ -1,5 +1,4 @@
 import gameOverlay from '../components/gameOverlay';
-import getGameDesc from '../helpers/getGameDesc';
 import { extractNumberFromString } from '../helpers/utils';
 import shared from '../shared/shared';
 

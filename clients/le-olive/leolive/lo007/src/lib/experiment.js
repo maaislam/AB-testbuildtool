@@ -1,8 +1,8 @@
 import setup from './services/setup';
 
-import shared from './shared/shared';
+//import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+//const { ID, VARIATION } = shared;
 
 export default () => {
   if (document.querySelector('.selected_size_wrapper')) {
@@ -10,7 +10,7 @@ export default () => {
   }
   setup();
   //execution time console log
-  const start = new Date().getTime();
+  //const start = new Date().getTime();
 
   const productWrapper = document.querySelector('.product-form__header');
   const kidSizeBtn = document.querySelector('.product-form__kids-size');
@@ -78,7 +78,10 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
 
-    if (target.closest('.ps__klaviyo-popup__container .ps__klaviyo-popup__bg') || target.closest('.ps__klaviyo-popup__container .ps__klaviyo-popup__close')) {
+    if (
+      target.closest('.ps__klaviyo-popup__container .ps__klaviyo-popup__bg') ||
+      target.closest('.ps__klaviyo-popup__container .ps__klaviyo-popup__close')
+    ) {
       let isSelected = false;
       allProductOption.forEach((productOption) => {
         if (!productOption.classList.contains('disabled') && !isSelected) {

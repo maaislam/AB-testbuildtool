@@ -2,7 +2,7 @@
 
 //eslint-disable-next-line default-param-last
 export const bulkMessage = (element, ID, Highest_Number, data, mainProdPrice) => {
-  const { quantity: dataQuantity, showPrice: dataShowPrice, actualPrice } = data;
+  const { quantity: dataQuantity, actualPrice } = data;
   console.log(data, mainProdPrice);
 
   const percentageSaving = ((mainProdPrice - actualPrice) / mainProdPrice) * 100;

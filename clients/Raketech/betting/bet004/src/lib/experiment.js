@@ -3,7 +3,7 @@
 import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { getCroStorage, observeDOM, setCroStorage } from './helpers/utils';
+import { getCroStorage, setCroStorage } from './helpers/utils';
 import affiliateLinksConfig from './affiliateLinksConfig';
 
 const { ID, VARIATION } = shared;
@@ -29,16 +29,25 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
 
-    if (!target.closest('a[href*="/redirect/"]') && target.closest(`.${ID}__affiliate`) && target.closest('[data-ga-action="Operators > Bonus index"]')) {
+    if (
+      !target.closest('a[href*="/redirect/"]') &&
+      target.closest(`.${ID}__affiliate`) &&
+      target.closest('[data-ga-action="Operators > Bonus index"]')
+    ) {
       const closestWrapper = target.closest('a');
       const casinoLink = closestWrapper.dataset.oldhref || closestWrapper.href;
+      console.log('🚀 ~ document.body.addEventListener ~ casinoLink:', casinoLink);
       //const casinoName = casinoLink.split('/redirect/')[1];
       const casinoName = closestWrapper.dataset.gaLabel.replace(/[\/\-_]/g, '').toLowerCase();
 
       //const hasAffiliateLink = target.closest(`.${ID}__affiliate`);
       const clikedElem = target.closest('a').querySelector('img') ? 'logo' : 'button';
 
-      gaTracking(`${linkType} | ${casinoName.replace(/\//g, '')} | CTA Clicks to Operator | Toplist${target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''} (${clikedElem})`);
+      gaTracking(
+        `${linkType} | ${casinoName.replace(/\//g, '')} | CTA Clicks to Operator | Toplist${
+          target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
+        } (${clikedElem})`
+      );
 
       const data = getCroStorage(`${ID}__visitedCasinos`);
       if (!data) {
@@ -52,14 +61,23 @@ export default () => {
       visitedCasinos.push(casinoName);
       setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
       init();
-    } else if (target.closest('a[href*="/redirect/"]') && !target.closest(`.${ID}__affiliate`) && target.closest('[data-ga-action="Operators > Bonus index"]')) {
+    } else if (
+      target.closest('a[href*="/redirect/"]') &&
+      !target.closest(`.${ID}__affiliate`) &&
+      target.closest('[data-ga-action="Operators > Bonus index"]')
+    ) {
       const operatorHref = target.closest('a[href*="/redirect/"]').href;
+      console.log('🚀 ~ document.body.addEventListener ~ operatorHref:', operatorHref);
       //const casinoName = casinoLink.split('/redirect/')[1];
       const casinoLink = target.closest('a[href*="/redirect/"]');
       const operatorName = casinoLink.dataset.gaLabel.replace(/[\/\-_]/g, '').toLowerCase();
       const clikedElem = target.closest('a').querySelector('img') ? 'logo' : 'button';
 
-      gaTracking(`Default link | ${operatorName.replace(/\//g, '')} | CTA Clicks to Operator${target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''} (${clikedElem})`);
+      gaTracking(
+        `Default link | ${operatorName.replace(/\//g, '')} | CTA Clicks to Operator${
+          target.closest(`.${ID}__grayscale`) ? ' | Greyscaled' : ''
+        } (${clikedElem})`
+      );
       const data = getCroStorage(`${ID}__visitedCasinos`);
       if (!data) {
         const casinoNameArr = [operatorName];
@@ -76,7 +94,9 @@ export default () => {
   });
 
   const updateAffiliateLinks = () => {
-    const casinoToplistItems = document.querySelectorAll('[data-ga-action="Operators > Bonus index"] .bb-box-wrapper');
+    const casinoToplistItems = document.querySelectorAll(
+      '[data-ga-action="Operators > Bonus index"] .bb-box-wrapper'
+    );
     casinoToplistItems.forEach((casinoToplistItem) => {
       const casinoBtnElem = casinoToplistItem.querySelector('a[data-ga-action]');
       const casinoImgElems = casinoToplistItem.querySelectorAll('a[data-ga-label]');

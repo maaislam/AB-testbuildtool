@@ -9,6 +9,7 @@ const initSwiper = (container) => {
       prevEl: '.swiper-button-prev'
     }
   });
+  console.log('🚀 ~ initSwiper ~ slider:', slider);
 };
 
 export default initSwiper;

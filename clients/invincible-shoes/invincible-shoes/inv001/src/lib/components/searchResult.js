@@ -1,5 +1,5 @@
 const searchResult = (id, index, data) => {
-  const { image, title, type, url } = data;
+  const { image, title, url } = data;
 
   const htmlString = ` 
     <li id="search-result-${index}"

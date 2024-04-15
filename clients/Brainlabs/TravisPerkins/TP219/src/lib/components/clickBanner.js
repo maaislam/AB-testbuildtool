@@ -30,7 +30,7 @@ const clickCollectMessages = (id, anchorElm, pageType, plpCard) => {
     }
   };
   const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
+    mutations.forEach(() => {
       changeUnderBtnText();
     });
   });
