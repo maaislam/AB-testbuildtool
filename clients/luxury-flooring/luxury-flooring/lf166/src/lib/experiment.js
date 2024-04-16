@@ -92,6 +92,14 @@ export default () => {
             form.closest('body').insertAdjacentElement('beforebegin', style);
           }
         });
+      },
+      onFormSubmitted: () => {
+        console.log('form submit');
+        //eslint-disable-next-line no-underscore-dangle
+        window._conv_q = window._conv_q || [];
+
+        //eslint-disable-next-line no-undef
+        _conv_q.push(['triggerConversion', '100448303']);
       }
     });
   });
