@@ -1,0 +1,20 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__hide {
+    display: none !important;
+  }
+
+  &__grayscale {
+    background-color: #fffce3 !important;
+    .badges-container {
+      background-color: #ebe8d1;
+    }
+    .perks-container {
+      .perk {
+        background-color: #ebe8d1;
+      }
+    }
+  }
+}
