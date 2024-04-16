@@ -31,8 +31,8 @@ export default () => {
 
     //Format the month and day
     const month = now.toLocaleString('default', {
- month: 'long'
-});
+      month: 'long'
+    });
     const day = now.getDate();
 
     return `Expected to ship from our Warehouse before <b>${dayName}, ${month} ${day}</b>`;
@@ -40,15 +40,17 @@ export default () => {
 
   const getOrderDeadlineMessage = () => {
     const now = new Date();
-    const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+    const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 14, 59, 59);
 
     //Calculate remaining time until the end of the day
     const timeLeft = endOfDay - now;
     const hours = Math.floor(timeLeft / (1000 * 60 * 60));
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    //add seconds
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
     //Shipping message
-    const shippingMessage = `Leaves our warehouse within 24-48 hours. Order within <span>${hours} hrs ${minutes} mins.</span>`;
+    const shippingMessage = `Leaves our warehouse within 24-48 hours. Order within <span>${hours} hrs ${minutes} mins ${seconds} secs.</span>`;
 
     return shippingMessage;
   };
@@ -87,6 +89,8 @@ export default () => {
   const shippingMsg = VARIATION === '1' ? v1Msg : v2Msg;
   if (customerDelivery) {
     customerDelivery.innerHTML = shippingMsg;
+    const payImages = document.querySelector('.gcc002__container');
+    customerDelivery.insertAdjacentElement('afterend', payImages);
   }
 
   if (VARIATION === '2') {
@@ -96,6 +100,6 @@ export default () => {
       if (shippingMsgText) {
         shippingMsgText.innerHTML = message;
       }
-    }, 60000);
+    }, 1000);
   }
 };
