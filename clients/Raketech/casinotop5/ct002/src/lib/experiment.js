@@ -38,7 +38,7 @@ export default () => {
       gaTracking(
         `${casinoName.replace(/\//g, '')} | CTA CTO | ${
           target.closest('img.scfeat_logo') ? 'Logo' : 'Button'
-        }${target.closest(`.${ID}__grayscale`) ? ' | Yellow' : ''}`
+        }${target.closest(`.${ID}__grayscale`) && VARIATION === '1' ? ' | Yellow' : ''}`
       );
 
       const data = getCroStorage(`${ID}__visitedCasinos`);
@@ -64,7 +64,7 @@ export default () => {
 
       gaTracking(
         `${casinoName.replace(/\//g, '')} | CTA CTR ${
-          target.closest(`.${ID}__grayscale`) ? ' | Yellow' : ''
+          target.closest(`.${ID}__grayscale`) && VARIATION === '1' ? ' | Yellow' : ''
         }`
       );
     }
@@ -83,7 +83,6 @@ export default () => {
         casinoNameElem.classList.add(`${ID}__affiliate`);
         casinoNameElem.href = newUrl;
       }
-      //console.log('🚀casinoName:', casinoName);
     });
   };
 
