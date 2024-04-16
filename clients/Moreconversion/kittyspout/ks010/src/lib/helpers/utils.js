@@ -1,4 +1,4 @@
-export const pollerLite = (conditions, callback, maxTime = 10000) => {
+export const pollerLite = (conditions, callback, maxTime = 30000) => {
   const POLLING_INTERVAL = 25;
   const startTime = Date.now();
   const interval = setInterval(() => {
@@ -42,11 +42,6 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
-export const formatPrice = (number) =>
-  new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
-  }).format(number / 100);
 
 export const getCartVal = async () => {
   return fetch('/cart.js').then((res) => res.json());

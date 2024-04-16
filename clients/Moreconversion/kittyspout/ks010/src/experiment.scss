@@ -5,7 +5,7 @@
     .cart__item-row.text-center {
         margin-top: 8px;
     }
-    
+
     &__row {
         .#{$id}__shippingTextRow {
             font-size: 10px;
@@ -16,7 +16,7 @@
         }
 
         .#{$id}__grandTotalRow {
-            margin-top: 10px;
+            margin: 10px 0;
             font-size: 16px;
             font-weight: 700;
             line-height: 26px;
