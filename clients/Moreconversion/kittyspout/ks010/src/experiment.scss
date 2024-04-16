@@ -1,0 +1,31 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .cart__item-row.text-center {
+        margin-top: 8px;
+    }
+    
+    &__row {
+        .#{$id}__shippingTextRow {
+            font-size: 10px;
+            font-weight: 600;
+            font-style: italic;
+            line-height: 15px;
+            color: #777;
+        }
+
+        .#{$id}__grandTotalRow {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 26px;
+            color: #000;
+        }
+    }
+
+    &__shippingTextRow, &__grandTotalRow {
+        display: flex;
+        justify-content: space-between;
+    }
+}
