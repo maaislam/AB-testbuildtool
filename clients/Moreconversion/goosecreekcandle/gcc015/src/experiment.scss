@@ -69,6 +69,9 @@
       margin: auto;
       div[data-oke-reviews-product-id] {
         margin-top: 18px;
+        .oke-sr-count {
+          padding-top: 4px;
+        }
       }
       @include media-query(sm) {
         display: block;
@@ -122,6 +125,9 @@
       }
       div[data-oke-reviews-product-id] {
         margin-top: 18px;
+        .oke-sr-count {
+          padding-top: 4px;
+        }
       }
     }
   }
