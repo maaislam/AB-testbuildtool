@@ -13,7 +13,6 @@ const init = () => {
 
   getCartVal().then((data) => {
     const isIdAvailable = data.items.some((item) => validIds.includes(item.id));
-    console.log('isIdAvailable', isIdAvailable);
 
     if (!isIdAvailable) return;
 
