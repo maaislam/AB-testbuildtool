@@ -7,6 +7,7 @@
   }
 
   &__grayscale {
+    position: relative;
     background-color: #fffce3 !important;
     .badges-container {
       background-color: #ebe8d1;
@@ -15,6 +16,18 @@
       .perk {
         background-color: #ebe8d1;
       }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAbCAYAAADMIInqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQtSURBVHgB5VhbaNRoFD5JJjO9TFfdZXG7C0uXtfuwLHR2Zd31gm29VVRU9EUF9cGqWBG8oD6prb61eHtQ8fKiIvriDStoUayiongbQRC8gKKgPthWZ9ppMp3E8502w4yMTQaqoPkgzPxJ/nP+853vnPyJ0jZuhE3fOBSFopatRE3LaChtjT7LuuYHAjJhk71DtZINQ1qjHRir5DMopKy0teCl9qrIYIx9R4DApoil6pvw13clkImUZVX7UwF9UFVlpq8J4H4wI0B5IlDxDwVHV5I+ppLUoaVyLvX0MaWePKLEof1kvX5FXxHK8uoBRctXUWjWHPlvd8Yoee8uqeES0srLSSkukfPG8WPUtXs75QuF7QRrppA29GfqefqIzPNn6UvAMwHhzY2kc+YBZDy2ehnZ8ZiM1Z9K+XoTab+Xy7jn/l25ng8GHTkldhxASe+Xzk/7+BSgSMxzCNOGlbNCqyhxcD95gaceULBwcTp4LCi+ca2MB5++IAsPVAzPIgSLKqpbRV7hBNHN6mkf/1+vghSoIpy9WC45KCUThby20KSp6bE+qpIKFtSSV7j2ACysMMMgah3ZKdxaK4vBUVS3kjrON0vmQQzKw3LJXCbszrj8auwL/lBGOBwEa6aJDyd4p8wyVTPk4k3xDzKdcWfjZtdSciXAjsezxlbfYjOzY6fPlZD15pWoIZ9mCFKR/YLZc2gQE4hADCYUi0eAxes2yDncgzHUhT7Rffwoz5krajHONYtvCYpJQAmknjx29a2t/+2X+n7vME0JLPDnXzJUv/+BjOaT4iww7A9xnti3S0iAUmIrFuUMXpTR3ib2cqHn1g0yW87CnPgKcdbhA31FHzFSbCrsG/6hFAqGKLF7BwX5aWTHYtTVtEV6E8pEjwyn+Jo69veW3OCpByRYbsgAADJKtu2R8bt5M6lj+gRKXr9C4YYmMq9dyRk8egiaaKDi75z2YRO1jLmQ9vsl8ylNWp+6pL+gXfNhXmU/rJqBgOd9AGRdyNKDTJGV7/YeFsaxMEgOQaDmRC08Tl67LPMQPJTRzZJMMkG5EKyZKo1LHzWWSbzcm2GGzYRgjgTP0jBbmsW+zvaNlt7advzDRvpe8VsrJeRWiu4lkAFHpirXv8IShFS1X8vIbmsTZ7im/ztSsq3wS3iApegEnzh04JN2Uw8f9O4DWM6Qr8al1RO9Q107GyWg1IvnFJo8TcgPVk9kJgxRHfoTykKPMAHVk8g4c4Ksl8/FDjZrKe4TSFJ/+CwvQ8gmJA24BZ+1GDxVisMi+1zPf2fn6TS7gUDeW2Ev6O4LGBkyThzzPA9B97fxGcjAHfj6dRjAU+AZ+RgqfyM7TT6Galn2KfIx1B9bb7eyCnaSTyE7Qf5MXM87rCj5EEIAvpErtlntRyUoH59or/q/zFKser5QwVcj9I3jA82c81ttqIp0AAAAAElFTkSuQmCC');
+      background-repeat: no-repeat;
+      width: 64px;
+      height: 27px;
+      top: 0;
+      right: -2px;
+      z-index: 9;
     }
   }
 }

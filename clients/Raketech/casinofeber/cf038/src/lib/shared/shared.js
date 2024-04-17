@@ -1,6 +1,6 @@
 module.exports = {
     ID: "cf038",
-    VARIATION: "Control",
+    VARIATION: "1",
     CLIENT: "Raketech",
     SITE: "casinofeber"
   };
