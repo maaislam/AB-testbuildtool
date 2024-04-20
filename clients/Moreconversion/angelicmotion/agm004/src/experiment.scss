@@ -1,0 +1,29 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    media-gallery {
+        .slider-buttons {
+            display: none;
+        }
+
+        .slider.slider--mobile {
+            margin-bottom: 0 ;
+        }
+        slider-component.thumbnail-slider {
+            display: block !important;
+
+
+            li {
+                width: 68px;
+
+                &:first-child {
+                    margin-left: auto;
+                }
+                &:last-child {
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}
