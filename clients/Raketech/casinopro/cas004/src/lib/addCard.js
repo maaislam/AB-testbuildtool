@@ -26,14 +26,15 @@ const addCard = (id) => {
                     </div>
                 </div>
                 <p>200 freespins på + Ancient Fortunes Poseidon Megaways</p>
-                <a href="/till/jalla-casino/" target="_blank" rel="nofollow" class="cta__1q8ve ${id}__casino-cta">Besök Casinot</a>
+                <a href="/till/jalla-casino/" target="_blank" rel="nofollow" class="mui-5zfb5a ${id}__casino-cta">Besök Casinot</a>
             </div>
         </div>
-        <div class="tc__17EP- row">
+        <div class="mui-zxrxtl">
             <li>
                 Reklamlänk |<a href="/tc/jallacasino/" rel="nofollow" target="_blank"
                 >Villkor gäller</a
                 >| 18+ år | Spela ansvarsfull | Regler &amp; villkor gäller |
+                
             </li>
             <li>
                 <a href="https://stodlinjen.se/" rel="nofollow" target="_blank"

@@ -1,6 +1,6 @@
 module.exports = {
-    ID: 'cf038',
+    ID: 'cg034',
     VARIATION: '1',
     CLIENT: 'Raketech',
-    SITE: 'casinofeber'
+    SITE: 'casinoguide'
   };

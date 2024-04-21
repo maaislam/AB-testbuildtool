@@ -8,8 +8,8 @@ const { ID, VARIATION } = shared;
 
 const init = () => {
   if (!window.location.href.includes('/svenska-casinon/jallacasino/')) return;
-  pollerLite(['.sidebar__3SWUh .ctaWrapper__18skR'], () => {
-    document.querySelector('.sidebar__3SWUh .ctaWrapper__18skR').innerHTML = addCard(ID);
+  pollerLite(['.mui-psyrto'], () => {
+    document.querySelector('.mui-psyrto').innerHTML = addCard(ID);
   });
 };
 
@@ -25,23 +25,25 @@ export default () => {
       //console.log(target.closest('div[class^="mobSticky"]'));
       if (target.closest(`.${ID}__casino-cta`) && target.closest(`.${ID}_card-container`)) {
         gaTracking('Card | Button');
-      } else if (
-        target.closest('.cta__1q8ve') &&
-        target.closest('.ctaWrapper__18skR') &&
-        target.closest('.sidebar__3SWUh')
-      ) {
+      } else if (target.closest('.mui-5zfb5a') && target.closest('.mui-psyrto')) {
         gaTracking('Card | Button');
       } else if (target.closest(`.${ID}__casino-logo`)) {
         gaTracking(' Card | Logo');
       } else if (
         target.closest('a[href="/till/jalla-casino/"]') &&
-        target.closest('div[class^="logoWrapper"]') &&
-        target.closest('.sidebar__3SWUh')
+        !target.closest('[stickbottom="0"]') &&
+        target.closest('.mui-83jy48')
       ) {
         gaTracking(' Card | Logo');
       } else if (
         target.closest('a[href="/till/jalla-casino/"]') &&
-        target.closest('div[class*="mobSticky"]')
+        target.closest('[stickbottom="0"]') &&
+        target.closest('.mui-83jy48')
+      ) {
+        gaTracking('Sticky Card | Logo');
+      } else if (
+        target.closest('a.mui-5zfb5a[href="/till/jalla-casino/"]') &&
+        target.closest('[stickbottom="0"]')
       ) {
         gaTracking('Sticky Card | Button');
       }
@@ -53,5 +55,5 @@ export default () => {
   //eslint-disable-next-line no-useless-return
   if (VARIATION === 'Control') return;
 
-  init();
+  setTimeout(init, 1500);
 };

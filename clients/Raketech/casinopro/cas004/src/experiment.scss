@@ -3,7 +3,10 @@
 
 .#{$id} {
   &-1 {
-    .sidebar__3SWUh {
+    [stickbottom='0'] {
+      //background-color: #8f32f5;
+    }
+    .mui-psyrto {
       .ctaWrapper__18skR {
         & + div.sidebarCard__3QkR_ {
           display: none;
@@ -15,7 +18,8 @@
           &-icon {
             width: 146px;
             border-top-left-radius: 0.5rem;
-            background: #8f32f5;
+            //background: #8f32f5;
+            background: #fcca03;
             a {
               img {
                 min-width: 146px;
@@ -67,7 +71,7 @@
           }
         }
 
-        .tc__17EP-.row {
+        .mui-zxrxtl {
           margin: 0;
           background-color: #e8e8e8;
           color: #555555;
