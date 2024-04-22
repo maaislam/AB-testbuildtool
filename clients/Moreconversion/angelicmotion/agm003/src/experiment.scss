@@ -5,31 +5,38 @@
   .product-grid {
     .grid__item {
       position: relative;
+
       .card-wrapper {
         .card {
           position: relative;
-          & > .card__inner {
+
+          &>.card__inner {
             cursor: pointer;
           }
-          & > .card__content {
+
+          &>.card__content {
             cursor: pointer;
-            & > .card__information {
+
+            &>.card__information {
               display: flex;
               align-items: baseline;
               justify-content: space-between;
-              padding: 12px 0;
+              flex-wrap: wrap;
+              padding: 12px 2px !important;
+
               h3 {
                 @include media-query(sm) {
                   font-size: 10px;
                   text-align: left;
                 }
               }
+
               .card-information {
                 width: auto;
 
                 .price {
                   @include media-query(sm) {
-                    font-size: 12px;
+                    font-size: 10px;
                     text-align: end;
                   }
                 }
@@ -40,6 +47,7 @@
               }
             }
           }
+
           .#{$id}__variants-list {
             display: flex;
             width: 100%;
@@ -47,10 +55,12 @@
             flex-wrap: wrap;
             gap: 8px;
             font-family: var(--font-heading-family);
+
             @include media-query(sm) {
               gap: 4px;
               padding: 0 0 9px 0;
             }
+
             li {
               list-style-type: none;
               width: 35px;
@@ -60,12 +70,14 @@
               border: solid 1px #000;
               padding: 0 0 0 2px;
               cursor: pointer;
+
               @include media-query(sm) {
                 font-size: 10px;
                 width: 28px;
-                height: 22px;
+                height: 23px;
                 padding: 2px 0 0 2px;
               }
+
               &.#{$id}__selected {
                 background-color: #000;
                 color: #fff;
@@ -75,6 +87,7 @@
                 position: relative;
                 opacity: 0.6;
                 pointer-events: none;
+
                 &::after {
                   content: '';
                   position: absolute;
@@ -92,9 +105,11 @@
           .#{$id}__atcForm {
             margin-bottom: 32px;
             font-family: var(--font-heading-family);
+
             button {
               padding: 0;
               font-size: 12px;
+
               span {
                 font-weight: 700;
               }
@@ -115,6 +130,35 @@
 
           .alireviews-review-star-rating {
             display: block !important;
+            width: 100%;
+            text-align: left;
+
+            .alr-wh-star-rating {
+              padding-bottom: 0 !important;
+            }
+
+            .alr-wh-star-rating-list {
+              margin-right: 8px !important;
+              
+              .alr-wh-star-rating-icon {
+                .alr-wh-star-rating-icon-bound,
+                .alr-wh-star-rating-icon-fill {
+                  svg {
+                    @include media-query(sm) {
+                      width: 10px;
+                      height: 10px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .alr-wh-star-rating-average-number {
+              @include media-query(sm) {
+                font-size: 10px;
+                letter-spacing: 0px !important;
+              }
+            }
           }
         }
       }
