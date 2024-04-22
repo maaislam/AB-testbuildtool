@@ -1,4 +1,4 @@
 import activate from './lib/experiment';
 import { pollerLite } from './lib/helpers/utils';
 
-pollerLite(['body #ProductGridContainer'], setTimeout(activate, 2000));
+pollerLite(['body #ProductGridContainer'], activate);

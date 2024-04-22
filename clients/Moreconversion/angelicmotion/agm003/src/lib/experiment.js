@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { retrieveDataFromStorage } from './helpers/utils';
+import { pollerLite, retrieveDataFromStorage } from './helpers/utils';
 import { variants } from './components/variants';
 import { addToCard } from './components/addToCard';
 
@@ -16,11 +16,13 @@ const init = () => {
   const productsData = retrieveDataFromStorage(collectUrls);
 
   document.querySelectorAll('.product-grid .card-wrapper').forEach((item) => {
-    const prodUrl = item.querySelector('.card__inner .card__content a').getAttribute('href');
-    const title = item.querySelector('h3.card__heading');
-    const reviews = item.querySelector('.alireviews-review-star-rating');
+    const prodUrlElem = item.querySelector('.card__inner .card__content a');
+    const prodUrl = prodUrlElem.getAttribute('href');
+    const title = item.querySelector('.card > .card__content h3.card__heading');
+
     if (productsData[prodUrl] && productsData[prodUrl].variants.length > 0) {
       const targetPoint = item.querySelector('.card > .card__content');
+
       const isAvailable = productsData[prodUrl].variants.find(
         (element) => element.available === true
       );
@@ -38,30 +40,17 @@ const init = () => {
       item
         .querySelector(`.${ID}__variants-list`)
         .insertAdjacentHTML('afterend', addToCard(ID, isAvailable || null));
-      reviews && title.insertAdjacentElement('beforebegin', reviews);
+
+      pollerLite([() => item.querySelector('.alr-wh-star-rating-list')], () => {
+        const reviews = item.querySelector('.alireviews-review-star-rating');
+        reviews && title.insertAdjacentElement('beforebegin', reviews);
+      });
     }
   });
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
-
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
-  if (VARIATION === 'control') {
-    return;
-  }
-  init();
+  setup();
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
@@ -91,4 +80,10 @@ export default () => {
       parent.querySelector('.card__inner .card__content a').click();
     }
   });
+
+  if (VARIATION === 'control') {
+    return;
+  }
+
+  init();
 };
