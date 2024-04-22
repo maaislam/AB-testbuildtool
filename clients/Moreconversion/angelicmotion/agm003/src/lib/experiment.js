@@ -17,6 +17,8 @@ const init = () => {
 
   document.querySelectorAll('.product-grid .card-wrapper').forEach((item) => {
     const prodUrl = item.querySelector('.card__inner .card__content a').getAttribute('href');
+    const title = item.querySelector('h3.card__heading');
+    const reviews = item.querySelector('.alireviews-review-star-rating');
     if (productsData[prodUrl] && productsData[prodUrl].variants.length > 0) {
       const targetPoint = item.querySelector('.card > .card__content');
       const isAvailable = productsData[prodUrl].variants.find(
@@ -36,6 +38,7 @@ const init = () => {
       item
         .querySelector(`.${ID}__variants-list`)
         .insertAdjacentHTML('afterend', addToCard(ID, isAvailable || null));
+      reviews && title.insertAdjacentElement('beforebegin', reviews);
     }
   });
 };
