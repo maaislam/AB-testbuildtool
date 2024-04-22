@@ -1,4 +1,4 @@
-export const variant = (id, index, item, isAvailable) => {
+export const variant = (id, item, isAvailable) => {
   const isSeleced = isAvailable && item.id === isAvailable.id ? `${id}__selected` : '';
   const isStockout = !item.available ? `${id}__stockout` : '';
   const html = `

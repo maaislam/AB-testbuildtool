@@ -1,7 +1,6 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite, fetchAllData, retrieveDataFromStorage } from './helpers/utils';
+import { retrieveDataFromStorage } from './helpers/utils';
 import { variants } from './components/variants';
 import { addToCard } from './components/addToCard';
 
