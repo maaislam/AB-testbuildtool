@@ -6,21 +6,17 @@ import { addToCard } from './components/addToCard';
 
 const { ID, VARIATION } = shared;
 
-const init = () => {
-  const collectUrls = [];
-  document.querySelectorAll('.product-grid .card__inner .card__content a').forEach((item) => {
-    const url = item.getAttribute('href');
-    collectUrls.push(url);
-  });
-
-  const productsData = retrieveDataFromStorage(collectUrls);
-
+const mainFn = (productsData) => {
   document.querySelectorAll('.product-grid .card-wrapper').forEach((item) => {
     const prodUrlElem = item.querySelector('.card__inner .card__content a');
     const prodUrl = prodUrlElem.getAttribute('href');
     const title = item.querySelector('.card > .card__content h3.card__heading');
 
-    if (productsData[prodUrl] && productsData[prodUrl].variants.length > 0) {
+    if (
+      productsData[prodUrl] &&
+      productsData[prodUrl].variants &&
+      productsData[prodUrl].variants.length > 0
+    ) {
       const targetPoint = item.querySelector('.card > .card__content');
 
       const isAvailable = productsData[prodUrl].variants.find(
@@ -47,6 +43,18 @@ const init = () => {
       });
     }
   });
+};
+
+const init = () => {
+  const collectUrls = [];
+  document.querySelectorAll('.product-grid .card__inner .card__content a').forEach((item) => {
+    const url = item.getAttribute('href');
+    collectUrls.push(url);
+  });
+
+  retrieveDataFromStorage(collectUrls)
+    .then((res) => res)
+    .then((data) => mainFn(data));
 };
 
 export default () => {

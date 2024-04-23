@@ -52,42 +52,76 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   observer.observe(target, config);
 };
 
-//Function to fetch all data and store as a single object in session storage
-export const fetchAllData = (links) => {
-  //Create an object to accumulate all data
+// //Function to fetch all data and store as a single object in session storage
+// export const fetchAllData = (links) => {
+//   //Create an object to accumulate all data
+//   const allData = {};
+
+//   //Generate promises for each URL
+//   const promises = links.map((url) => {
+//     const urlWithJS = url.endsWith('.js') ? url : `${url}.js`;
+
+//     //Fetch each URL if not already cached
+//     return fetch(urlWithJS)
+//       .then((response) => response.json())
+//       .then((data) => {
+//         allData[url] = data; //Add data to the allData object
+//       });
+//   });
+
+//   //Use Promise.all to wait for all fetches to complete
+//   Promise.all(promises)
+//     .then(() => {
+//       console.log('All data fetched and stored in a single object:', allData);
+//       //Store the combined data object in session storage
+//       sessionStorage.setItem(storageKey, JSON.stringify(allData));
+//     })
+//     .catch((error) => {
+//       console.error('Error in fetching data:', error);
+//     });
+// };
+
+// //Function to retrieve data from session storage
+// export const retrieveDataFromStorage = (productUrls) => {
+//   const cachedData = sessionStorage.getItem(storageKey);
+//   if (cachedData) {
+//     console.log('Returning data from session storage.');
+//     return JSON.parse(cachedData);
+//   }
+//   console.error('No data found in session storage. Fetching new data.');
+//   return fetchAllData(productUrls);
+// };
+
+export const fetchAllData = async (links) => {
   const allData = {};
 
-  //Generate promises for each URL
-  const promises = links.map((url) => {
+  const promises = links.map(async (url) => {
     const urlWithJS = url.endsWith('.js') ? url : `${url}.js`;
 
-    //Fetch each URL if not already cached
-    return fetch(urlWithJS)
-      .then((response) => response.json())
-      .then((data) => {
-        allData[url] = data; //Add data to the allData object
-      });
+    try {
+      const response = await fetch(urlWithJS);
+      const data = await response.json();
+      allData[url] = data;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   });
 
-  //Use Promise.all to wait for all fetches to complete
-  Promise.all(promises)
-    .then(() => {
-      console.log('All data fetched and stored in a single object:', allData);
-      //Store the combined data object in session storage
-      sessionStorage.setItem(storageKey, JSON.stringify(allData));
-    })
-    .catch((error) => {
-      console.error('Error in fetching data:', error);
-    });
+  try {
+    await Promise.all(promises);
+    console.log('All data fetched and stored in a single object:', allData);
+    sessionStorage.setItem(storageKey, JSON.stringify(allData));
+  } catch (error) {
+    console.error('Error in fetching data:', error);
+  }
 };
 
-//Function to retrieve data from session storage
-export const retrieveDataFromStorage = (productUrls) => {
+export const retrieveDataFromStorage = async (productUrls) => {
   const cachedData = sessionStorage.getItem(storageKey);
   if (cachedData) {
     console.log('Returning data from session storage.');
     return JSON.parse(cachedData);
   }
   console.error('No data found in session storage. Fetching new data.');
-  return fetchAllData(productUrls);
+  await fetchAllData(productUrls);
 };
