@@ -10,14 +10,14 @@
         .card {
           position: relative;
 
-          &>.card__inner {
+          & > .card__inner {
             cursor: pointer;
           }
 
-          &>.card__content {
+          & > .card__content {
             cursor: pointer;
 
-            &>.card__information {
+            & > .card__information {
               display: flex;
               align-items: baseline;
               justify-content: space-between;
@@ -139,7 +139,7 @@
 
             .alr-wh-star-rating-list {
               margin-right: 8px !important;
-              
+
               .alr-wh-star-rating-icon {
                 .alr-wh-star-rating-icon-bound,
                 .alr-wh-star-rating-icon-fill {
@@ -168,7 +168,7 @@
         position: absolute;
         top: 10px;
         left: 10px;
-        z-index: 99;
+        z-index: 2;
 
         @include media-query(sm) {
           img {
