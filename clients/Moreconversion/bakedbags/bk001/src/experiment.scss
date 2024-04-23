@@ -1,0 +1,25 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .productpage-section {
+    .product-single-wrapper {
+      .productpage-left {
+        .slide-bottom {
+          position: static;
+          .slick-list {
+            display: none;
+          }
+          button.slick-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        @include media-query(lg) {
+          margin-bottom: 0.2rem;
+        }
+      }
+    }
+  }
+}

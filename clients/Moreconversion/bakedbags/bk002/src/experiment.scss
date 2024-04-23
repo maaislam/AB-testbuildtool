@@ -1,0 +1,25 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__sellingPoints {
+    margin-bottom: 0.27rem;
+    &-list {
+      list-style-type: disc;
+      &-item {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'American Purpose';
+        line-height: 14px;
+        color: #512e1f;
+
+        &::marker {
+          color: #512e1f;
+        }
+        &:nth-child(2) {
+          margin: 8px 0;
+        }
+      }
+    }
+  }
+}

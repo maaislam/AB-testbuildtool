@@ -4,21 +4,31 @@
 .#{$id} {
   media-gallery {
     .slider-buttons {
-      //display: none;
+      display: none;
     }
 
     .slider.slider--mobile {
-      margin-bottom: 0;
+      @media screen and (max-width: 749px) {
+        margin-bottom: 0;
+        padding: 0.5rem 1px;
+      }
     }
+
     slider-component.thumbnail-slider {
-      display: block !important;
+      @media screen and (max-width: 749px) {
+        margin-left: 0;
+        margin-right: 0;
+        display: block !important;
+      }
 
       li {
         width: 68px;
 
-        &:first-child {
-          margin-left: auto;
-        }
+        // &:first-child {
+        //   @media screen and (max-width: 749px) {
+        //     margin-left: auto;
+        //   }
+        // }
         &:last-child {
           margin-right: auto;
         }
