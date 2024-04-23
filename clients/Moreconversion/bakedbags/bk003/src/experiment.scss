@@ -1,0 +1,168 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .product-single-wrapper {
+    #appstle_subscription_widget0 {
+      .appstle_tooltip_wrapper {
+        display: none;
+      }
+      .appstle_subscription_wrapper {
+        .appstle_subscription_wrapper_option:not(.payAsYouGoPlansDropdownWrapper) {
+          display: none;
+        }
+
+        .payAsYouGoPlansDropdownWrapper {
+          .#{$id}__subscription {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            &-switch {
+              .switch {
+                position: relative;
+                display: inline-block;
+                width: 55px;
+                height: 28px;
+              }
+
+              .switch input {
+                display: none !important;
+              }
+
+              .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: lightgray;
+                -webkit-transition: 0.4s;
+                transition: 0.4s;
+              }
+
+              .slider:before {
+                position: absolute;
+                content: '';
+                height: 22px;
+                width: 22px;
+                left: 4px;
+                bottom: 3px;
+                background-color: white;
+                -webkit-transition: 0.4s;
+                transition: 0.4s;
+              }
+
+              input:checked + .slider {
+                background-color: #582b1b;
+              }
+
+              input:focus + .slider {
+                box-shadow: 0 0 1px #2196f3;
+              }
+
+              input:checked + .slider:before {
+                -webkit-transform: translateX(25px);
+                -ms-transform: translateX(25px);
+                transform: translateX(25px);
+              }
+
+              .on {
+                display: none;
+              }
+
+              .on,
+              .off {
+                color: white;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+                font-size: 10px;
+                font-family: Verdana, sans-serif;
+                user-select: none;
+              }
+
+              input:checked + .slider .on {
+                display: block;
+              }
+
+              input:checked + .slider .off {
+                display: none;
+              }
+
+              /* Rounded sliders */
+              .slider.round {
+                border-radius: 34px;
+              }
+
+              .slider.round:before {
+                border-radius: 50%;
+              }
+            }
+            &-info {
+              margin-left: 15px;
+              color: #582b1b;
+              &-title {
+                margin-bottom: 10px;
+                .#{$id}__monthlyAmount {
+                  font-weight: 700;
+                  font-size: 24px;
+                  @include media-query(xsm) {
+                    font-size: 18px;
+                  }
+
+                  @include media-query(xxsm) {
+                    font-size: 14px;
+                  }
+                }
+                .#{$id}__savingAmount {
+                  background: #fed83f;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                  @include media-query(xsm) {
+                    font-size: 15px;
+                  }
+                  @include media-query(xxsm) {
+                    font-size: 11px;
+                  }
+                }
+              }
+
+              @include media-query(xxsm) {
+                margin-left: 12px;
+              }
+            }
+          }
+
+          .appstle_subscription_radio_wrapper {
+            display: none;
+          }
+
+          .appstle_subscribe_option {
+            margin-left: 69px;
+            label.appstle_select_label {
+              display: none !important;
+            }
+            select {
+              max-width: 255px;
+              color: #000;
+              position: relative;
+              &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 24px;
+                height: 24px;
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m7 10l5 5m0 0l5-5'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
