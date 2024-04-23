@@ -129,6 +129,11 @@
                 }
               }
 
+              &-subtext {
+                font-size: 14px;
+                font-weight: 400;
+              }
+
               @include media-query(xxsm) {
                 margin-left: 12px;
               }
