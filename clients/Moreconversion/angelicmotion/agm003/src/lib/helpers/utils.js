@@ -109,19 +109,20 @@ export const fetchAllData = async (links) => {
 
   try {
     await Promise.all(promises);
-    console.log('All data fetched and stored in a single object:', allData);
     sessionStorage.setItem(storageKey, JSON.stringify(allData));
   } catch (error) {
     console.error('Error in fetching data:', error);
   }
 };
 
+//eslint-disable-next-line consistent-return
 export const retrieveDataFromStorage = async (productUrls) => {
   const cachedData = sessionStorage.getItem(storageKey);
   if (cachedData) {
-    console.log('Returning data from session storage.');
     return JSON.parse(cachedData);
   }
   console.error('No data found in session storage. Fetching new data.');
   await fetchAllData(productUrls);
+  const newData = sessionStorage.getItem(storageKey);
+  return JSON.parse(newData);
 };

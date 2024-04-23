@@ -7,6 +7,7 @@ import { addToCard } from './components/addToCard';
 const { ID, VARIATION } = shared;
 
 const mainFn = (productsData) => {
+  console.log(productsData);
   document.querySelectorAll('.product-grid .card-wrapper').forEach((item) => {
     const prodUrlElem = item.querySelector('.card__inner .card__content a');
     const prodUrl = prodUrlElem.getAttribute('href');
