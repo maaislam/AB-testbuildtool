@@ -37,10 +37,28 @@ const init = () => {
 
     toggleSwitch.addEventListener('change', (e) => {
       if (e.target.checked) {
+        document.querySelector(`.${ID}__monthlyAmount`).innerText = `${monthlyAmount} /month`;
+        document.querySelector(`.${ID}__savingAmount`).classList.remove(`${ID}__hide`);
+        document.querySelector(`.${ID}__savingAmount`).innerText = `(${savingAmount})`;
+        document
+          .querySelector('.payAsYouGoPlansDropdownWrapper .appstle_subscribe_option')
+          .classList.remove(`${ID}__hide`);
         document
           .querySelector('.appstle_subscription_radio_wrapper label.appstle_radio_label')
           .click();
       } else {
+        const onetimePurchase = document.querySelector(
+          '.appstle_one_time_details_wrapper .appstle_subscription_amount'
+        );
+
+        document.querySelector(
+          `.${ID}__monthlyAmount`
+        ).innerText = `${onetimePurchase.innerText} /month`;
+        document.querySelector(`.${ID}__savingAmount`).classList.add(`${ID}__hide`);
+        document.querySelector(`.${ID}__subscription-info-subtext`).innerText = 'One Time Purchase';
+        document
+          .querySelector('.payAsYouGoPlansDropdownWrapper .appstle_subscribe_option')
+          .classList.add(`${ID}__hide`);
         document
           .querySelector('.appstle_one_time_details_wrapper label.appstle_radio_label')
           .click();
