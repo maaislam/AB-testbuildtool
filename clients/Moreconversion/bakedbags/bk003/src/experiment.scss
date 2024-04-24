@@ -162,6 +162,10 @@
         }
       }
     }
+
+    .#{$id}__hide {
+      display: none;
+    }
   }
   .iconamoon--arrow-down-2 {
     display: inline-block;
