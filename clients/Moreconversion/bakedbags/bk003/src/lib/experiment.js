@@ -40,6 +40,8 @@ const init = () => {
         document.querySelector(`.${ID}__monthlyAmount`).innerText = `${monthlyAmount} /month`;
         document.querySelector(`.${ID}__savingAmount`).classList.remove(`${ID}__hide`);
         document.querySelector(`.${ID}__savingAmount`).innerText = `(${savingAmount})`;
+        document.querySelector(`.${ID}__subscription-info-subtext`).innerText =
+          'Modify Skip or cancel anytime!';
         document
           .querySelector('.payAsYouGoPlansDropdownWrapper .appstle_subscribe_option')
           .classList.remove(`${ID}__hide`);
