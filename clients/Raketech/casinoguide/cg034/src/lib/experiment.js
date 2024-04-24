@@ -52,14 +52,14 @@ export default () => {
 
       const { target } = e;
 
-      if (
-        target.closest(
-          '[data-operator="Mr Vegas Casino"][data-click-target="Toplist"][data-btn-type="Bonus"]'
-        )
-      ) {
-        gaTracking(`mr vegas | Button | ${pageType}`);
-      } else if (target.closest('.mui-a3ufvb[href*="/go/"]')) {
-        gaTracking(`mr vegas | Logo | ${pageType}`);
+      if (target.closest('[data-operator="Mr Vegas Casino"][data-click-target="Toplist"]')) {
+        gaTracking(`CTO mr vegas | Button | ${pageType}`);
+      } else if (target.closest('.mui-a3ufvb[href*="/mr-vegas-casino"]')) {
+        gaTracking(`CTR mr vegas | Logo | ${pageType}`);
+      } else if (target.closest('.mui-1uaejwu')) {
+        gaTracking(`CTR mr vegas | Button | ${pageType}`);
+      } else if (target.closest('.mui-1civ9s6[href*="/mr-vegas-casino"]')) {
+        gaTracking(`CTR mr vegas | Title | ${pageType}`);
       }
     });
   }

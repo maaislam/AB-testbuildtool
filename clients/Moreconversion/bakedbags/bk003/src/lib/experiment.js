@@ -1,8 +1,10 @@
+/*eslint-disable no-param-reassign */
 import { subscriptionElement } from './components/subscriptionElement';
 import setup from './services/setup';
 import shared from './shared/shared';
 import { pollerLite } from './helpers/utils';
 import { optionsObj } from './data/info';
+
 const { ID, VARIATION } = shared;
 
 const init = () => {
@@ -66,12 +68,18 @@ const init = () => {
           .click();
       }
     });
+    if (VARIATION === '2') {
+      //console.log('🚀 ~ pollerLite ~ VARIATION:', VARIATION);
+      const toggleBtn = document.getElementById('togBtn');
+      toggleBtn.parentElement.querySelector('.slider').classList.add('v2');
+      toggleBtn.click();
+    }
   });
 };
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
+  //console.log(ID);
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (target.closest('label') && target.closest('.productpage-right-size-tabs')) {

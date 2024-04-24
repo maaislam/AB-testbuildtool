@@ -37,8 +37,10 @@
                 right: 0;
                 bottom: 0;
                 background-color: lightgray;
-                -webkit-transition: 0.4s;
                 transition: 0.4s;
+                &.v2 {
+                  background-color: #582b1b;
+                }
               }
 
               .slider:before {
@@ -166,5 +168,15 @@
     .#{$id}__hide {
       display: none;
     }
+  }
+  .iconamoon--arrow-down-2 {
+    display: inline-block;
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 }
