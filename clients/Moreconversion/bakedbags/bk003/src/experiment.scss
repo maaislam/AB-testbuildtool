@@ -37,8 +37,10 @@
                 right: 0;
                 bottom: 0;
                 background-color: lightgray;
-                -webkit-transition: 0.4s;
                 transition: 0.4s;
+                &.v2 {
+                  background-color: #582b1b;
+                }
               }
 
               .slider:before {
