@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { variationOneInfo, variationTwoInfo } from './data/info';
+import { variationOneInfo } from './data/info';
 import { sellingPoints } from './components/sellingPoints';
 
 const { ID, VARIATION } = shared;
@@ -51,6 +51,6 @@ export default () => {
   if (VARIATION === 'Control') {
     return;
   }
-  const mainData = VARIATION === '1' ? variationOneInfo : variationTwoInfo;
-  init(mainData);
+
+  init(variationOneInfo);
 };
