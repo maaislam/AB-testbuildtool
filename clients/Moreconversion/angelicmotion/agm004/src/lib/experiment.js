@@ -44,8 +44,7 @@ const storageKey = 'fetchedData';
 //Function to fetch all data and store as a single object in session storage
 const fetchAllData = (links) => {
   //Create an object to accumulate all data
-  const allData = {
-};
+  const allData = {};
 
   //Generate promises for each URL
   const promises = links.map((item) => {
