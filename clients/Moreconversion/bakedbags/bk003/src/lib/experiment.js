@@ -1,13 +1,19 @@
+/*eslint-disable no-param-reassign */
 import { subscriptionElement } from './components/subscriptionElement';
 import setup from './services/setup';
 import shared from './shared/shared';
 import { pollerLite } from './helpers/utils';
+import { optionsObj } from './data/info';
 
 const { ID } = shared;
 
 const init = () => {
   const targetPoint = document.querySelector(
     '#appstle_subscription_widget0 .payAsYouGoPlansDropdownWrapper .appstle_subscription_radio_wrapper'
+  );
+
+  const parentOptionElement = document.querySelector(
+    '#appstle_subscription_widget0 .payAsYouGoPlansDropdownWrapper .appstle_subscribe_option'
   );
 
   pollerLite([() => targetPoint.querySelector('label.appstle_radio_label')], () => {
@@ -25,11 +31,14 @@ const init = () => {
         subscriptionElement(ID, savingAmount, monthlyAmount)
       );
 
+    //options change
+    parentOptionElement.querySelectorAll('option').forEach((item, index) => {
+      item.innerText = optionsObj[index];
+    });
     const toggleSwitch = document.getElementById('togBtn');
 
     toggleSwitch.addEventListener('change', (e) => {
       if (e.target.checked) {
-        console.log('ON');
         document
           .querySelector('.appstle_subscription_radio_wrapper label.appstle_radio_label')
           .click();
