@@ -24,13 +24,13 @@ const init = () => {
     <div class="${ID}__subscriptionwrap">
       <div class="${ID}__switch">
         <label class="switch">
-          <input type="checkbox" id="toggleSwitch">
+          <input type="checkbox" id="toggleSwitch" checked>
           <div class="slider round v2"></div>
         </label>
       </div>
 
       <div id="content">
-        <div id="content1" style="display:none;">
+        <div id="content1" >
           <div class="${ID}__subscriptionwrap-info">
             <div class="${ID}__subscriptionwrap-info-title">
                 <span class="${ID}__monthlyAmount">${subPrice} /month </span>
@@ -44,11 +44,10 @@ const init = () => {
               </select>
             </div>
           </div>
-        <div id="content2">
+        <div id="content2" style="display:none;">
           <div class="${ID}__subscriptionwrap-info">
             <div class="${ID}__subscriptionwrap-info-title">
                 <span class="${ID}__monthlyAmount">${oneTimePrice} /month </span>
-                
             </div>
             <div class="${ID}__subscriptionwrap-info-subtext">One Time Purchase</div>
           </div>
@@ -65,17 +64,31 @@ const init = () => {
   const oneTimePurchaseControl = document.querySelector('#appstle_selling_plan_label_10');
   const subPurchaseControl = document.querySelector('#appstle_selling_plan_label_20');
   document.getElementById('toggleSwitch').addEventListener('change', (e) => {
-    if (e.target.checked) {
+    if (e.target.checked && VARIATION === '2') {
       content1.style.display = 'block';
       content2.style.display = 'none';
       subPurchaseControl.click();
       //subPurchaseControl.checked = true;
-    } else {
+    } else if (!e.target.checked && VARIATION === '2') {
+      content1.style.display = 'none';
+      content2.style.display = 'block';
+      oneTimePurchaseControl.checked = true;
+    } else if (e.target.checked && VARIATION === '1') {
+      content1.style.display = 'block';
+      content2.style.display = 'none';
+      subPurchaseControl.click();
+      //subPurchaseControl.checked = true;
+    } else if (!e.target.checked && VARIATION === '1') {
       content1.style.display = 'none';
       content2.style.display = 'block';
       oneTimePurchaseControl.checked = true;
     }
   });
+
+  if (VARIATION === '1') {
+    subPurchaseControl.click();
+  }
+
   setup();
 };
 
