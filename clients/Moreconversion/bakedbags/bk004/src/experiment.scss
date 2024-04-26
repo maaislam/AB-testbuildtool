@@ -2,7 +2,154 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    .appstle_subscription_wrapper,
+    #appstle_subscription_widget0 .appstle_widget_title {
+        display: none;
+    }
+
+    &__wrapper {
+        .#{$id}__headerTitle {
+            font-family: 'LatoLatin-Medium';
+            font-size: 12px;
+            color: #000;
+        }
+
+        .#{$id}__subscriptionwrap {
+            margin-top: 0.08rem;
+            margin-bottom: 0;
+            padding: 0.16rem 0.24rem;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            background: #f6e9cf;
+            border-radius: 0.08rem;
+            border: 1px solid #f1d0c2 !important;
+    
+            select.#{$id}__select {
+                margin-top: 4px;
+                color: #000;
+                padding: 5px 4px;
+                background: #fff;
+                appearance: auto;
+                -webkit-appearance: auto;
+    
+                option {
+                    color: #000;
+                }
+            }
+    
+            .#{$id}__switch {
+                .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 40px;
+                    height: 21px;
+                }
+    
+                .switch input {
+                    display: none !important;
+                }
+    
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #582b1b;
+                    transition: 0.4s;
+                }
+    
+                .slider:before {
+                    position: absolute;
+                    content: '';
+                    height: 17px;
+                    width: 17px;
+                    left: 4px;
+                    bottom: 2px;
+                    background-color: white;
+                    -webkit-transition: 0.4s;
+                    transition: 0.4s;
+                }
+    
+                input:checked+.slider {
+                    background-color: #582b1b;
+                }
+    
+                input:focus+.slider {
+                    box-shadow: 0 0 1px #2196f3;
+                }
+    
+                input:checked+.slider:before {
+                    -webkit-transform: translateX(16px);
+                    -ms-transform: translateX(16px);
+                    transform: translateX(16px);
+                }
+    
+                .on {
+                    display: none;
+                }
+    
+                .on,
+                .off {
+                    color: white;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+                    left: 50%;
+                    font-size: 10px;
+                    font-family: Verdana, sans-serif;
+                    user-select: none;
+                }
+    
+                input:checked+.slider .on {
+                    display: block;
+                }
+    
+                input:checked+.slider .off {
+                    display: none;
+                }
+    
+                .slider.round {
+                    border-radius: 34px;
+                }
+    
+                .slider.round:before {
+                    border-radius: 50%;
+                }
+            }
+    
+            &-info {
+                margin-left: 20px;
+                color: #582b1b;
+    
+                &-title {
+                    margin-bottom: 10px;
+    
+                    .#{$id}__monthlyAmount {
+                        font-weight: 500;
+                        font-size: 16px;
+                        color: #582b1b;
+                    }
+    
+                    .#{$id}__savingAmount {
+                        margin-left: 16px;
+                        padding: 5px 10px;
+                        font-size: 11px;
+                        font-weight: 500;
+                        background: #fed83f;
+                        border-radius: 5px;
+                    }
+                }
+    
+                &-subtext {
+                    font-weight: 400;
+                    font-family: 'LatoLatin-Medium';
+                    font-size: 13px;
+                    color: #582b1b;
+                }
+            }
+        }
     }
 }
