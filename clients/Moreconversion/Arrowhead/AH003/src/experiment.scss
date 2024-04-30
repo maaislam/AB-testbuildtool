@@ -6,6 +6,11 @@
     max-width: 1024px;
     background-color: #f2f4f7;
     margin: 30px auto;
+
+    @include media-query(xsm) {
+      margin: 20px 27px;
+    }
+
     &-content {
       display: flex;
       max-width: 100%;
@@ -14,6 +19,11 @@
       padding: 14px 80px;
       @include media-query(sm) {
         padding: 14px 20px;
+      }
+
+      @include media-query(xsm) {
+        padding: 14px 16px;
+        gap: 4px;
       }
     }
     &-item {
@@ -28,6 +38,7 @@
         img {
           width: 100%;
           height: 100%;
+          object-fit: contain;
         }
         @include media-query(sm) {
           width: 20px;
@@ -41,6 +52,10 @@
         @include media-query(sm) {
           font-size: 10px;
           line-height: 14px;
+        }
+
+        @include media-query(xsm) {
+          font-size: 9px;
         }
       }
 
