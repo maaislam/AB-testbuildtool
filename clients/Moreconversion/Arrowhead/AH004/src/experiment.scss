@@ -1,0 +1,8 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .cart__checkout-wrapper + .cart__item-row {
+    display: none;
+  }
+}
