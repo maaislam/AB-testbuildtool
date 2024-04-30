@@ -3,13 +3,10 @@
 
 .#{$id} {
   .#{$id}__upvSection {
+    width: calc(100% - 40px);
     max-width: 1024px;
     background-color: #f2f4f7;
     margin: 30px auto;
-
-    @include media-query(xsm) {
-      margin: 20px 27px;
-    }
 
     &-content {
       display: flex;
@@ -17,13 +14,12 @@
       align-items: center;
       justify-content: space-between;
       padding: 14px 80px;
-      @include media-query(sm) {
-        padding: 14px 20px;
+      & > .#{$id}__upvSection-item:not(:last-child) {
+        margin-right: 8px;
       }
 
-      @include media-query(xsm) {
-        padding: 14px 16px;
-        gap: 4px;
+      @include media-query(sm) {
+        padding: 14px 20px;
       }
     }
     &-item {
@@ -53,10 +49,6 @@
           font-size: 10px;
           line-height: 14px;
         }
-
-        @include media-query(xsm) {
-          font-size: 9px;
-        }
       }
 
       @include media-query(sm) {
@@ -67,10 +59,10 @@
 
     @include media-query(lg) {
       max-width: 976px;
-      margin: 30px 30px;
     }
     @include media-query(sm) {
-      margin: 20px 30px;
+      margin: 20px auto;
+      width: calc(100% - 20px);
     }
   }
 }
