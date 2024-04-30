@@ -17,6 +17,7 @@
       img {
         height: 100%;
         width: 100%;
+        object-fit: contain;
       }
       @include media-query(sm) {
         width: 22px;
@@ -35,6 +36,7 @@
 
     @include media-query(sm) {
       padding: 10px 0;
+      gap: 8px;
     }
   }
 }
