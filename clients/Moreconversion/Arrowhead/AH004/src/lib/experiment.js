@@ -5,7 +5,6 @@ const { ID, VARIATION } = shared;
 
 export default () => {
   setup();
-  console.log(ID);
   if (VARIATION === 'Control') {
     return;
   }

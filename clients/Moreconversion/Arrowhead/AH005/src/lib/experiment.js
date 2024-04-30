@@ -1,17 +1,21 @@
 import setup from './services/setup';
 import shared from './shared/shared';
 import { heroLink } from './component/heroLink';
+import { image } from './component/image';
 
 const { ID, VARIATION } = shared;
 const desktopImageAdd = (targetImage) => {
-  //DESKTOP
   if (document.querySelector(`.${ID}__hero-bg-desktop`)) {
     document.querySelector(`.${ID}__hero-bg-desktop`).remove();
   }
   targetImage &&
     targetImage.insertAdjacentHTML(
       'beforebegin',
-      `<img class="hero__image ${ID}__hero__image ${ID}__hero-bg-desktop" src="https://cdn.shopify.com/s/files/1/0346/8741/8505/files/v2-bg-image.png?v=1714476252"/>`
+      image(
+        ID,
+        'desktop',
+        'https://cdn.shopify.com/s/files/1/0346/8741/8505/files/v2-bg-image.png?v=1714476252'
+      )
     );
 };
 const mobileImageAdd = (targetImage) => {
@@ -21,7 +25,11 @@ const mobileImageAdd = (targetImage) => {
   targetImage &&
     targetImage.insertAdjacentHTML(
       'beforebegin',
-      `<img class="hero__image ${ID}__hero__image ${ID}__hero-bg-mobile" src="https://cdn.shopify.com/s/files/1/0346/8741/8505/files/v2-bg-image-mobile.png?v=1714476467"/>`
+      image(
+        ID,
+        'mobile',
+        'https://cdn.shopify.com/s/files/1/0346/8741/8505/files/v2-bg-image-mobile.png?v=1714476467'
+      )
     );
 };
 const init = () => {
@@ -46,7 +54,7 @@ const init = () => {
       .insertAdjacentHTML('beforebegin', heroLink(ID, VARIATION));
 };
 export default () => {
-  setup(); //use if needed
+  setup();
   console.log(ID);
 
   if (VARIATION === 'Control') {
