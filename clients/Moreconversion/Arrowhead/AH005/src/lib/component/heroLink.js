@@ -12,7 +12,7 @@ export const heroLink = (id, VARIATION) => {
 
   const htmlV2 = `
   <div class="hero__link ${id}__hero-link">
-      <a href="/collections/new-launches" class="btn">
+      <a href="/collections/new-launches" class="btn new-launches">
       Explore New Launches
       </a>
       <a href="/collections/on-sale" class="btn">
