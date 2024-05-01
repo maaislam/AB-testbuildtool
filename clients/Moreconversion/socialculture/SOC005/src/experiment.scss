@@ -1,0 +1,40 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .upcart-rewards {
+        display: none;
+    }
+
+    &__container {
+        padding: 18px 30px;
+
+        p.#{$id}__message {
+            margin-bottom: 4px !important;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2%;
+            color: #000;
+            text-align: center;
+        }
+
+        .#{$id}__discountProgress {
+            height: 10px;
+            width: 100%;
+            background: #e4e5e7;
+            border-radius: 20px;
+            overflow: hidden;
+
+            &-bar {
+                height: 100%;
+                max-width: 100% !important;
+                background: #117B00;
+            }
+
+            // @include media-query(sm) {
+            //     height: 10px;
+            //     width: 100%;
+            // }
+        }
+    }
+}
