@@ -1,7 +1,7 @@
 import progressBar from './components/progressBar';
 import getCart from './helpers/getCart';
 import setDiscount from './helpers/setDiscount';
-import { observeDOM } from './helpers/utils';
+
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -17,7 +17,10 @@ const init = () => {
 
     if (item_count === 0) return;
 
-    const messageText = item_count < 2 ? 'You’re 1 Item(s) away from get 20% Discount!' : "You've unlocked one item free!";
+    const messageText =
+      item_count < 2
+        ? 'You’re 1 Item(s) away from get 20% Discount!'
+        : "You've unlocked one item free!";
     const barWidth = item_count === 0 ? 0 : item_count === 1 ? 50 : 100;
     const discountCode = 'abtestbuy2get20%';
     const discountCodeBadge = document.querySelector('.upcart-discount-code-badge');
@@ -33,7 +36,9 @@ const init = () => {
     attachPoint.insertAdjacentHTML('beforebegin', htmlStr);
 
     if (item_count > 1 && !discountCodeBadge) {
-      setDiscount(discountCode);
+      setDiscount(discountCode).then(() => {
+        window.upcartRegisterAddToCart();
+      });
     }
   });
 };
@@ -43,5 +48,7 @@ export default () => {
 
   init();
 
-  observeDOM('.upcart-header-text', init);
+  //observeDOM('.upcart-header-text', init);
+  //for checking if cart updated
+  window.upcartOnCartUpdated = init;
 };

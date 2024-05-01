@@ -1,22 +1,16 @@
 import setup from './services/setup';
 
-import shared from './shared/shared';
-
-const { ID } = shared;
-
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
+  const regularPriceContainer = document.getElementById('regular-pricing');
+  const regularPriceSection = regularPriceContainer.closest('section');
 
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
+  const articles = document.querySelectorAll('article');
+  const lastArticle = articles[articles.length - 1];
+  const lastArticleSection = lastArticle.closest('section');
 
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+  const mainElem = document.querySelector('main > section');
+
+  mainElem.insertAdjacentElement('afterend', lastArticleSection);
+  mainElem.insertAdjacentElement('afterend', regularPriceSection);
+  setup();
 };
