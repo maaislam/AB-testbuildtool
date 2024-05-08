@@ -1,0 +1,11 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .#{$id}__fakeButton + button {
+      display: none;
+      margin-left: 0;
+    }
+  }
+}
