@@ -1,0 +1,226 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .page-wrapper {
+    overflow-x: visible !important;
+    @include media-query(md) {
+      overflow-x: hidden !important;
+    }
+  }
+
+  // .makeSticky .product-info-main {
+  //   position: sticky;
+  //   top: 0;
+  //   @include media-query(md) {
+  //     position: relative;
+  //     top: auto;
+  //   }
+  // }
+
+  // .pushtobottom .product-info-main {
+  //   position: relative;
+  //   margin-top: auto;
+  //   @include media-query(md) {
+  //     margin-top: 0;
+  //   }
+  // }
+
+  .#{$id}__wrapper-class {
+    position: sticky;
+    top: 0;
+    @include media-query(sm) {
+      margin-top: 10px;
+    }
+  }
+
+  .product.media {
+    &.#{$id}__overflow {
+      overflow-y: scroll;
+    }
+    .gallery-placeholder {
+      .fotorama__stage {
+        position: relative;
+
+        .fotorama__stage__frame {
+          img {
+            width: 100%;
+          }
+        }
+
+        .#{$id}__room-visualiser {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          max-height: fit-content;
+          z-index: 9999;
+          cursor: pointer;
+
+          &.#{$id}__hide {
+            display: none;
+          }
+
+          @include media-query(md) {
+            top: 10px;
+            bottom: 0;
+            right: 10px;
+          }
+          &-box {
+            display: flex;
+            align-items: center;
+            width: 280px;
+            @include media-query(sm) {
+              width: 200px;
+            }
+            &-text {
+              padding: 2px 15px;
+              transform: translateX(3px);
+              color: #fff;
+              background: #231f20;
+            }
+          }
+        }
+
+        .#{$id}__counter {
+          position: absolute;
+          background: #fff;
+          z-index: 999;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 2px 15px;
+          font-weight: 700;
+          display: none;
+
+          @include media-query(md) {
+            display: block;
+          }
+        }
+      }
+      .fotorama__nav-wrap {
+        display: none !important;
+      }
+    }
+
+    .#{$id}__images-wrapper {
+      .#{$id}__images-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        @include media-query(md) {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          max-width: 100%;
+        }
+
+        @include media-query(sm) {
+          margin-right: -15px;
+          max-width: calc(100% + 15px);
+        }
+        .#{$id}__image-item {
+          width: 50%;
+
+          &.#{$id}__hide {
+            display: none;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+          }
+
+          &:nth-child(odd) {
+            padding-right: 5px;
+            padding-bottom: 10px;
+          }
+          &:nth-child(even) {
+            padding-left: 5px;
+            padding-bottom: 10px;
+          }
+
+          @include media-query(md) {
+            flex-basis: 22%;
+            flex-shrink: 0;
+          }
+        }
+
+        [data-type='video'] {
+          position: relative;
+
+          &::after {
+            z-index: 999;
+            background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png')
+              bottom left;
+            bottom: 0;
+            content: '';
+            height: 40px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 10px;
+            width: 49px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .#{$id}__button-wrapper.less {
+        display: none;
+      }
+
+      &:not(.open) {
+        .#{$id}__button-wrapper.more {
+          display: block;
+          margin-top: 16px;
+          margin-bottom: 0;
+          padding: 10px;
+          color: #000;
+          background: #fff;
+          border: solid 1px #000;
+        }
+      }
+
+      &.open {
+        .#{$id}__button-wrapper.less {
+          display: block;
+          margin-top: 16px;
+          margin-bottom: 0;
+          padding: 10px;
+          color: #000;
+          background: #fff;
+          border: solid 1px #000;
+        }
+
+        .#{$id}__button-wrapper.more {
+          display: none;
+        }
+      }
+
+      &.mobile {
+        display: none;
+      }
+
+      @include media-query(md) {
+        &.desktop {
+          display: none;
+        }
+
+        &.mobile {
+          display: block;
+          .#{$id}__image-item {
+            padding-right: 5px !important;
+            padding-bottom: 0 !important;
+            .#{$id}__button-wrapper.more {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    div[data-role='roomvo'] {
+      display: none;
+    }
+  }
+}
