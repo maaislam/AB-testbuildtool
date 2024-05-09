@@ -2,6 +2,7 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { modal } from './components/modal';
 import { observeDOM } from './helpers/utils';
+import { modalContentObj } from './data/data';
 
 const { ID, VARIATION } = shared;
 
@@ -9,7 +10,7 @@ const init = () => {
   if (document.querySelector(`.${ID}__modal`)) {
     document.querySelector(`.${ID}__modal`).remove();
   }
-  document.body.insertAdjacentHTML('beforeend', modal(ID));
+  document.body.insertAdjacentHTML('beforeend', modal(ID, modalContentObj));
 };
 
 const modalOpen = () => {

@@ -14,21 +14,87 @@
     z-index: 9999;
     .#{$id}__modal-content {
       position: relative;
-      padding: 0;
+      padding: 22px 20px;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: 90%;
-      height: 60vh;
+      max-width: 260px;
+      width: 100%;
+      height: fit-content;
       background-color: #fff;
-      outline: 0;
+      border-radius: 4px;
       animation: animatetop 0.4s;
-    }
 
-    .#{$id}__close {
-      position: absolute;
-      right: 10px;
-      cursor: pointer;
+      .#{$id}__modalType {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 12px;
+        margin-bottom: 12px;
+      }
+
+      .#{$id}__casinoContent {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        .#{$id}__casinoImage {
+          padding: 16px 10px 19px;
+          border-radius: 2px;
+          background-color: rgba(0, 0, 0, 1);
+          img {
+            max-width: 130px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        .#{$id}__casinoTitle {
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 23px;
+          color: #212529;
+        }
+      }
+
+      .#{$id}__casinoHeading {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        margin: 12px 0 17px;
+        color: #606366;
+      }
+
+      .#{$id}__buttons {
+        display: flex;
+        gap: 15px;
+
+        .#{$id}__close {
+          width: calc(100% / 2);
+          font-size: 12px;
+          font-weight: 900;
+          line-height: 16px;
+          text-transform: uppercase;
+          padding: 7px 0;
+          background-color: #d1d8e8;
+          color: #2f3c7f;
+          border: none;
+          border-radius: 4px;
+          box-shadow: 0px 4px 6px 0px #00000026;
+        }
+
+        .#{$id}__casinoButton {
+          width: calc(100% / 2);
+          font-size: 12px;
+          font-weight: 900;
+          line-height: 18px;
+          text-decoration: none;
+          text-transform: uppercase;
+          text-align: center;
+          padding: 7px 0;
+          background-color: #ff7556;
+          color: #6b1400;
+          border-radius: 4px;
+        }
+      }
     }
 
     &.#{$id}__open {
