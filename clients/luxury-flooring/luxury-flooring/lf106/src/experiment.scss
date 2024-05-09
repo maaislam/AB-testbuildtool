@@ -1,0 +1,11 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+@import './trustpilot';
+
+.#{$id} {
+  .usps-main {
+    ul > li:nth-child(2) {
+      display: none;
+    }
+  }
+}
