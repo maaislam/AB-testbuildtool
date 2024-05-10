@@ -10,6 +10,8 @@ const init = () => {
     document.querySelector(`.${ID}__trustpilotSection`).remove();
   }
   targetElement && targetElement.insertAdjacentHTML('beforebegin', trustpilot(ID));
+  const trustbox = document.querySelector(`.${ID}__trustpilotSection .trustpilot-widget`);
+  window.Trustpilot.loadFromElement(trustbox);
 };
 
 export default () => {
