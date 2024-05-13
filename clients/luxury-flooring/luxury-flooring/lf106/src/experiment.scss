@@ -7,5 +7,39 @@
     ul > li:nth-child(2) {
       display: none;
     }
+
+    ul > li {
+      .usp-text-wrap {
+        h4 {
+          font-size: 15px;
+          @include media-query(lg) {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  .#{$id}__images {
+    width: 100%;
+    max-width: 850px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+
+    &-item {
+      &.#{$id}__mobileIcon {
+        display: none;
+      }
+
+      @include media-query(sm) {
+        &.#{$id}__desktopIcon {
+          display: none;
+        }
+
+        &.#{$id}__mobileIcon {
+          display: block;
+        }
+      }
+    }
   }
 }

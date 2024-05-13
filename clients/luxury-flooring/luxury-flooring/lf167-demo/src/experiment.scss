@@ -1,0 +1,112 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__calculateBox {
+    margin: 20px auto 0;
+    background-color: #eef4ed;
+    &-wrapper {
+      padding: 15px 25px;
+    }
+    &-content {
+      display: flex;
+      &-input {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 20px 20px 20px 0;
+        p {
+          font-weight: 700;
+          margin-bottom: 0;
+        }
+        .#{$id}__input-box {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          margin-bottom: 15px;
+          background-color: #fff;
+          border: solid 1px #959595;
+          input {
+            max-width: 140px;
+            width: 100%;
+            margin-bottom: 0;
+            background-color: #fff;
+          }
+        }
+        .#{$id}__quantity {
+          color: #959595;
+        }
+        a {
+          text-decoration: underline;
+          color: #000;
+        }
+      }
+
+      .#{$id}__vertical-line {
+        border-left: solid 1px #959595;
+      }
+      &-summery {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0px 20px 20px;
+        p {
+          font-weight: 700;
+          margin-bottom: 0;
+        }
+        .#{$id}__subtotal {
+          font-weight: 700;
+          font-size: 35px;
+          line-height: 24px;
+          margin: 10px 0;
+        }
+        .#{$id}__checkBox {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          input {
+            top: 0;
+            width: 25px;
+            height: 25px;
+            margin: 0;
+          }
+          label {
+            display: flex;
+            margin-bottom: 0;
+            gap: 5px;
+            .tooltip-toggle {
+              display: flex;
+              border-radius: 100%;
+              border: 1px solid #000;
+              width: 24px;
+              height: 24px;
+              display: -webkit-inline-box;
+              display: -ms-inline-flexbox;
+              display: inline-flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              font-weight: 700;
+            }
+          }
+        }
+        .#{$id}__extraInfo {
+          margin-top: 10px;
+          color: #959595;
+        }
+      }
+    }
+    &-atc {
+      button {
+        width: 90%;
+        margin-top: 15px;
+      }
+    }
+    &-message {
+    }
+  }
+}
