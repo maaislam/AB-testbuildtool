@@ -24,7 +24,7 @@
       height: fit-content;
       background-color: #fff;
       border-radius: 4px;
-      animation: animatetop 0.4s;
+      animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
       .#{$id}__modalType {
         font-size: 12px;
@@ -104,12 +104,13 @@
   }
 }
 
-@keyframes animatetop {
+@keyframes slide-in-top {
   0% {
-    top: -300px;
+    transform: translateY(-100px);
     opacity: 0;
   }
   100% {
+    transform: translateY(0);
     opacity: 1;
   }
 }
