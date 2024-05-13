@@ -7,6 +7,17 @@
     ul > li:nth-child(2) {
       display: none;
     }
+
+    ul > li {
+      .usp-text-wrap {
+        h4 {
+          font-size: 15px;
+          @include media-query(lg) {
+            font-size: 13px;
+          }
+        }
+      }
+    }
   }
 
   .#{$id}__images {
