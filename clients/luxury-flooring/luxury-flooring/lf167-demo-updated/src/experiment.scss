@@ -1,0 +1,400 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .#{$id}__priceWrapper {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 15px 0;
+
+      @include media-query(md) {
+        max-width: 385px;
+        margin: 0 auto;
+      }
+    }
+
+    .#{$id}__priceContainer {
+      width: 50%;
+      .#{$id}__availability {
+        width: 100%;
+        max-width: 75px;
+        background: #deeadc;
+        padding: 5px 10px;
+
+        span {
+          font-weight: bold;
+          font-size: 13px;
+        }
+      }
+
+      .#{$id}__priceBox {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 5px;
+        &-price {
+          font-size: 17px;
+          font-weight: 700;
+          color: #d53333;
+          margin-right: 5px;
+          &::before {
+            content: 'Only ';
+          }
+          @include media-query(xsm) {
+            font-size: 13px;
+          }
+        }
+
+        &-compare-price {
+          font-size: 12px;
+          font-weight: 700;
+          text-decoration: line-through;
+          @include media-query(xsm) {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+
+    .#{$id}__orderSampleWrapper {
+      width: 50%;
+      &-button {
+        button {
+          span {
+            @include media-query(xlg) {
+              font-size: 14px;
+            }
+
+            @include media-query(xsm) {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+      &-text {
+      }
+
+      .#{$id}__uspsList {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        &-item {
+          font-size: 12px;
+
+          &:first-child {
+            margin-right: 5px;
+          }
+
+          &::before {
+            content: '\e906';
+            font-family: 'icomoon';
+            font-size: 10px;
+            margin-right: 5px;
+            line-height: 10px;
+            color: #202020;
+
+            @include media-query(xsm) {
+              font-size: 8px;
+              margin-right: 2px;
+            }
+          }
+
+          @include media-query(xlg) {
+            font-size: 9px;
+          }
+
+          @include media-query(xsm) {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  &-2 {
+    .#{$id}__priceWrapper {
+      @include media-query(md) {
+        max-width: 385px;
+        margin: 0 auto;
+      }
+    }
+
+    .#{$id}__priceContainer {
+      display: flex;
+      margin: 15px 0;
+      .#{$id}__availability {
+        width: 100%;
+        max-width: 75px;
+        background: #deeadc;
+        padding: 5px 10px;
+
+        span {
+          font-weight: bold;
+          font-size: 13px;
+        }
+      }
+
+      .#{$id}__priceBox {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 5px;
+        &-price {
+          font-size: 17px;
+          font-weight: 700;
+          color: #d53333;
+          margin-right: 5px;
+          &::before {
+            content: 'Only ';
+          }
+          @include media-query(xsm) {
+            font-size: 13px;
+          }
+        }
+
+        &-compare-price {
+          font-size: 12px;
+          font-weight: 700;
+          text-decoration: line-through;
+          @include media-query(xsm) {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .#{$id}__divider {
+        border-left: solid 1px #dedede;
+        margin: 0 27px;
+
+        @include media-query(lg) {
+          margin: 0 20px;
+        }
+        @include media-query(xsm) {
+          margin: 0 auto;
+        }
+      }
+
+      .#{$id}__tradePrice {
+        display: flex;
+        align-items: center;
+        &-icon {
+          margin-right: 5px;
+          svg {
+            width: 35px;
+            height: 35px;
+          }
+        }
+        &-link {
+          font-size: 12px;
+          text-decoration: underline;
+          color: #000;
+        }
+      }
+    }
+
+    .#{$id}__orderSampleWrapper {
+      padding: 10px 0;
+      &-button {
+        button {
+          max-width: 320px !important;
+        }
+      }
+      &-text {
+      }
+
+      .#{$id}__uspsList {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        &-item {
+          font-size: 12px;
+
+          &:first-child {
+            margin-right: 5px;
+          }
+
+          &::before {
+            content: '\e906';
+            font-family: 'icomoon';
+            font-size: 10px;
+            margin-right: 5px;
+            line-height: 10px;
+            color: #202020;
+
+            @include media-query(xsm) {
+              font-size: 8px;
+              margin-right: 2px;
+            }
+          }
+
+          //   @include media-query(xlg) {
+          //     font-size: 9px;
+          //   }
+
+          @include media-query(xsm) {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  &-3 {
+    .#{$id}__priceWrapper {
+      @include media-query(md) {
+        max-width: 385px;
+        margin: 0 auto;
+      }
+    }
+
+    .#{$id}__priceContainer {
+      display: flex;
+      margin: 15px 0;
+      .#{$id}__availability {
+        width: 100%;
+        max-width: 75px;
+        background: #deeadc;
+        padding: 5px 10px;
+
+        span {
+          font-weight: bold;
+          font-size: 13px;
+        }
+      }
+
+      .#{$id}__priceBox {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 5px;
+        &-price {
+          font-size: 17px;
+          font-weight: 700;
+          color: #d53333;
+          margin-right: 5px;
+          &::before {
+            content: 'Only ';
+          }
+          @include media-query(xsm) {
+            font-size: 13px;
+          }
+        }
+
+        &-compare-price {
+          font-size: 12px;
+          font-weight: 700;
+          text-decoration: line-through;
+          @include media-query(xsm) {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .#{$id}__divider {
+        border-left: solid 1px #dedede;
+        margin: 0 27px;
+
+        @include media-query(lg) {
+          margin: 0 20px;
+        }
+        @include media-query(xsm) {
+          margin: 0 auto;
+        }
+      }
+
+      .#{$id}__tradePrice {
+        display: flex;
+        align-items: center;
+        &-icon {
+          margin-right: 5px;
+          svg {
+            width: 35px;
+            height: 35px;
+          }
+        }
+        &-link {
+          font-size: 12px;
+          text-decoration: underline;
+          color: #000;
+        }
+      }
+    }
+
+    .#{$id}__orderSampleWrapper {
+      background-color: #f2f7f2;
+      padding: 10px;
+      &-button {
+        button {
+          max-width: 320px !important;
+        }
+      }
+      &-text {
+      }
+
+      .#{$id}__floorStr {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+        &-icon {
+          margin-right: 5px;
+          svg {
+            width: 35px;
+            height: 35px;
+          }
+        }
+
+        &-text {
+          font-size: 12px;
+          font-weight: 700;
+        }
+      }
+
+      .#{$id}__uspsList {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        &-item {
+          font-size: 12px;
+
+          &:first-child {
+            margin-right: 5px;
+          }
+
+          &::before {
+            content: '\e906';
+            font-family: 'icomoon';
+            font-size: 10px;
+            margin-right: 5px;
+            line-height: 10px;
+            color: #202020;
+
+            @include media-query(xsm) {
+              font-size: 8px;
+              margin-right: 2px;
+            }
+          }
+
+          //   @include media-query(xlg) {
+          //     font-size: 9px;
+          //   }
+
+          @include media-query(xsm) {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  .product-info-price,
+  .fp-calculator,
+  .product-info-cta {
+    display: none;
+  }
+}
