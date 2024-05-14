@@ -1,0 +1,47 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .gcc002__container {
+        display: none;
+    }
+
+    &__container {
+        width: 100%;
+        max-width: calc(100% - 36px);
+        margin: 0 auto 10px;
+
+        @include media-query('sm') {
+            max-width: calc(100% - 10px);
+        }
+
+        .usps-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p {
+                margin: 0;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                color: #363636;
+
+                @include media-query('sm') {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+            }
+
+            div {
+                height: 20px;
+                width: 1px;
+                background: #9B9B9B;
+
+                @include media-query('sm') {
+                    height: 18px;
+                }
+            }
+        }
+    }
+}
