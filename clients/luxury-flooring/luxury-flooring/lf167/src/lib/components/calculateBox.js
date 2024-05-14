@@ -1,4 +1,6 @@
-export const calculateBox = (id) => {
+import { deliveryMessage } from './deliveryMessage';
+
+export const calculateBox = (id, deliveryData) => {
   const html = `
         <div class="${id}__calculateBox">
             <div class="${id}__calculateBox-wrapper">
@@ -31,7 +33,7 @@ export const calculateBox = (id) => {
                         <span>Add to Basket</span>
                     </button>
                 </div>
-                <div class="${id}__calculateBox-message">Delivery available from <strong>Monday, 26 June</strong></div>
+                ${deliveryMessage(id, deliveryData)}
             </div>
         </div>
     `;

@@ -160,7 +160,8 @@
 
           &::after {
             z-index: 999;
-            background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png') bottom left;
+            background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png')
+              bottom left;
             bottom: 0;
             content: '';
             height: 40px;
@@ -236,7 +237,7 @@
     }
   }
 
-  // right side css 
+  // right side css
   .#{$id}__hide {
     display: none;
   }
@@ -245,44 +246,236 @@
     display: none !important;
   }
 
+  .fp-calculator {
+    .#{$id}__fpCalculator,
+    .#{$id}__delivery-message,
+    .product-add-form {
+      display: none;
+    }
+
+    & .fp-require.complete {
+      padding: 25px;
+      .#{$id}__fpCalculator {
+        display: flex;
+        &-input {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 15px 0;
+          p {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 0;
+            @media screen and (max-width: 430px) {
+              font-size: 10px;
+            }
+          }
+          a {
+            font-size: 14px;
+            text-decoration: underline;
+            color: #000;
+            @media screen and (max-width: 430px) {
+              font-size: 10px;
+            }
+          }
+          .fp-controls {
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #fff;
+            border: solid 1px #959595;
+            margin-bottom: 15px;
+            padding: 0 10px;
+            .fp-controls-label {
+              display: none;
+            }
+
+            input {
+              width: 100%;
+              max-width: 130px;
+              height: 100%;
+              font-size: 20px;
+              line-height: 21px;
+              background-color: #fff;
+              margin: 0;
+              border: none;
+              text-align: left;
+              @media screen and (max-width: 430px) {
+                max-width: 90px;
+              }
+            }
+
+            span {
+              color: #959595;
+            }
+          }
+        }
+
+        .#{$id}__divider {
+          border-left: solid 1px #959595;
+          margin: 0 22px;
+
+          @include media-query(lg) {
+            margin: 0 18px;
+          }
+
+          @media screen and (max-width: 430px) {
+            margin: 0 10px;
+          }
+        }
+
+        &-calculation {
+          padding: 15px 0;
+          & > p {
+            font-weight: 700;
+            margin-bottom: 0;
+            text-align: left;
+          }
+          .fp-require-statement {
+            text-align: left;
+            .fp-require-price,
+            .hr {
+              display: none;
+            }
+
+            p[data-bind='text: total_info'] {
+              color: #959595;
+              font-size: 12px;
+              margin: 10px 0 0;
+            }
+          }
+        }
+      }
+
+      .#{$id}__delivery-message,
+      .product-add-form {
+        display: block;
+      }
+
+      .wastage-details {
+        display: none !important;
+      }
+
+      @include media-query(lg) {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto 25px;
+        padding: 15px;
+      }
+
+      @media screen and (max-width: 767px) {
+        &::before {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .#{$id}__checkBox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    input {
+      top: 0;
+      width: 20px;
+      height: 20px;
+      margin: 0;
+
+      @media screen and (max-width: 430px) {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 0;
+      //white-space: nowrap;
+
+      .tooltip-toggle {
+        display: flex;
+        width: 18px;
+        height: 18px;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        border: 1px solid #000;
+        border-radius: 100%;
+        margin-left: 5px;
+        @media screen and (max-width: 430px) {
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+      @media screen and (max-width: 430px) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .#{$id}__delivery-message {
+    font-size: 14px;
+    margin-top: 15px;
+
+    @media screen and (max-width: 430px) {
+      font-size: 12px;
+    }
+  }
+
   .#{$id}__calculateBox {
     margin: 20px auto 0;
     background-color: #eef4ed;
 
     &-wrapper {
-      padding: 32px;
+      padding: 25px;
+      @include media-query(lg) {
+        padding: 15px;
+      }
     }
 
     &-content {
       display: flex;
-      justify-content: space-between;
 
       &-input {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0 20px 20px 0;
+        padding: 15px 0;
 
         p {
+          font-size: 14px;
           font-weight: 700;
           margin-bottom: 0;
+          @media screen and (max-width: 430px) {
+            font-size: 10px;
+          }
         }
 
         .#{$id}__input-box {
           display: flex;
           align-items: center;
           padding: 4px 10px;
-          margin-bottom: 15px;
+          margin-bottom: 10px;
           background-color: #fff;
           border: solid 1px #959595;
 
           input {
-            max-width: 140px;
+            max-width: 130px;
             width: 100%;
+            height: 100%;
             margin-bottom: 0;
+            padding: 10px 0;
             font-size: 20px;
             line-height: 21px;
             background-color: #fff;
+
+            @media screen and (max-width: 430px) {
+              max-width: 90px;
+            }
           }
         }
 
@@ -291,20 +484,32 @@
         }
 
         a {
+          font-size: 14px;
           text-decoration: underline;
           color: #000;
+          @media screen and (max-width: 430px) {
+            font-size: 10px;
+          }
         }
       }
 
       .#{$id}__vertical-line {
         border-left: solid 1px #959595;
+        margin: 0 22px;
+        @include media-query(lg) {
+          margin: 0 18px;
+        }
+
+        @media screen and (max-width: 430px) {
+          margin: 0 10px;
+        }
       }
 
       &-summery {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0 0px 20px 20px;
+        padding: 15px 0;
 
         p {
           font-weight: 700;
@@ -313,49 +518,12 @@
 
         .#{$id}__subtotal {
           font-weight: 700;
-          font-size: 35px;
-          line-height: 24px;
-          margin: 10px 0;
-        }
-
-        .#{$id}__checkBox {
-          display: flex;
-          align-items: center;
-          gap: 5px;
-
-          input {
-            top: 0;
-            width: 25px;
-            height: 25px;
-            margin: 0;
-          }
-
-          label {
-            display: flex;
-            margin-bottom: 0;
-            gap: 5px;
-
-            .tooltip-toggle {
-              display: flex;
-              border-radius: 100%;
-              border: 1px solid #000;
-              width: 24px;
-              height: 24px;
-              display: -webkit-inline-box;
-              display: -ms-inline-flexbox;
-              display: inline-flex;
-              -webkit-box-align: center;
-              -ms-flex-align: center;
-              align-items: center;
-              -webkit-box-pack: center;
-              -ms-flex-pack: center;
-              justify-content: center;
-              font-weight: 700;
-            }
-          }
+          font-size: 25px;
+          line-height: 37.5px;
         }
 
         .#{$id}__extraInfo {
+          font-size: 12px;
           margin-top: 10px;
           color: #959595;
         }
@@ -364,12 +532,23 @@
 
     &-atc {
       button {
-        width: 370px;
-        height: 56px;
-        margin-top: 15px;
+        max-width: 385px;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 0;
+        padding: 20px;
       }
     }
 
-    &-message {}
+    @include media-query(lg) {
+      width: 100%;
+      max-width: 420px;
+    }
+  }
+
+  .product-info-price,
+  .product-info-cta,
+  .sample-add-form {
+    display: none;
   }
 }
