@@ -31,7 +31,10 @@ const stickyATC = (id, productData, priceData) => {
 
 
             <div class='${id}__atcBtn'>
-                <button type="submit" name="add" id="purchase" class="btn" data-cart-action="drawer">Add to cart</button>
+                <button type="button" name="add" id="purchase" class="btn" data-cart-action="drawer">
+                    <span class='atc-text'>Add to cart</span>
+                    <div class="${id}__lds-dual-ring ${id}__hide"></div>
+                </button>
             </div>
         </div>
     </div>`;

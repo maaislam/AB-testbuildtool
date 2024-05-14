@@ -17,10 +17,38 @@ const handleATC = (id) => {
             quantityInput.value = incrementValue;
             quantityInputCtrl.value = incrementValue;
         } else if (target.closest(`.${id}__atcBtn`) && !isMobile) {
+            const atcBtnElem = target.closest(`.${id}__atcBtn button`);
+            const atcTextElem = document.querySelector(`.${id}__atcBtn .atc-text`);
+            const loaderElem = document.querySelector(`.${id}__lds-dual-ring`);
+
             quantityInputCtrl.value = quantityInput.value;
             atcCtrl.click();
+
+            atcBtnElem.disabled = true;
+            atcTextElem.classList.add(`${id}__hide`);
+            loaderElem.classList.remove(`${id}__hide`);
+
+            setTimeout(() => {
+                atcBtnElem.disabled = false;
+                loaderElem.classList.add(`${id}__hide`);
+                atcTextElem.classList.remove(`${id}__hide`);
+            }, 1500);
         } else if (target.closest(`.${id}__atcBtn`) && isMobile) {
+            const atcBtnElem = target.closest(`.${id}__atcBtn button`);
+            const atcTextElem = document.querySelector(`.${id}__atcBtn .atc-text`);
+            const loaderElem = document.querySelector(`.${id}__lds-dual-ring`);
+
             atcCtrl.click();
+
+            atcBtnElem.disabled = true;
+            atcTextElem.classList.add(`${id}__hide`);
+            loaderElem.classList.remove(`${id}__hide`);
+
+            setTimeout(() => {
+                atcBtnElem.disabled = false;
+                loaderElem.classList.add(`${id}__hide`);
+                atcTextElem.classList.remove(`${id}__hide`);
+            }, 1500);
         }
     });
 };
