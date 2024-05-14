@@ -12,15 +12,19 @@ const anchorPoint = document.body;
 const productImgElem = document.querySelector('.product-single__thumbnail__wrapper img');
 const productImg = productImgElem?.getAttribute('src');
 const productTitleElem = document.querySelector('.product-info-wrapper h1');
-const productTitle = productTitleElem.textContent.trim();
-const productSalePrice = document.querySelector('.product-info-wrapper .money').cloneNode(true);
-const productOriginalPrice = document.querySelector('.compare-at-price .money').cloneNode(true);
+const productTitle = productTitleElem?.textContent.trim();
 
 const productData = {
   productImg,
-  productTitle,
-  productOriginalPrice,
-  productSalePrice
+  productTitle
+};
+
+const productDataElem = document.querySelector('.product-json');
+const productAllData = JSON.parse(productDataElem.innerHTML);
+
+const priceData = {
+  salePrice: productAllData.price,
+  compareAtPrice: productAllData.compare_at_price
 };
 
 const init = () => {
@@ -34,23 +38,23 @@ const init = () => {
       if (entry.isIntersecting) {
         stickySection.classList.remove(`${ID}__show`);
         stickySection.classList.add('slide-out-bottom');
-        chatWidgetDisplay.classList.add(`${ID}__hide`);
         document.body.classList.remove('atc-show');
+        chatWidgetDisplay && chatWidgetDisplay.classList.add(`${ID}__hide`);
 
         scrollTimer = setTimeout(() => {
           stickySection.classList.add(`${ID}__hide`);
         }, 250);
       } else {
         document.body.classList.add('atc-show');
-        chatWidgetDisplay.classList.remove(`${ID}__hide`);
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
         stickySection.classList.add(`${ID}__show`);
+        chatWidgetDisplay && chatWidgetDisplay.classList.remove(`${ID}__hide`);
       }
     });
   };
 
-  anchorPoint.insertAdjacentHTML('beforeend', stickyATC(ID, productData));
+  anchorPoint.insertAdjacentHTML('beforeend', stickyATC(ID, productData, priceData));
 
   observeIntersection(intersectionAnchor, 0, handleIntersection);
 

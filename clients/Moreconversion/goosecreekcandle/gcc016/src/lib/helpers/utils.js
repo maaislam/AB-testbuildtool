@@ -62,3 +62,9 @@ export const observeIntersection = (target, threshold, callback) => {
 
   observer?.observe(target);
 };
+
+export const formatPrice = (amount, code = 'en-US', currency = 'USD') =>
+  new Intl.NumberFormat(code, {
+    style: 'currency',
+    currency
+  }).format(amount / 100);
