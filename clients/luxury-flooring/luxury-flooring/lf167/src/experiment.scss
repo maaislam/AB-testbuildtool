@@ -4,6 +4,7 @@
 .#{$id} {
   .page-wrapper {
     overflow-x: visible !important;
+
     @include media-query(md) {
       overflow-x: hidden !important;
     }
@@ -29,6 +30,7 @@
   .#{$id}__wrapper-class {
     position: sticky;
     top: 0;
+
     @include media-query(sm) {
       margin-top: 10px;
     }
@@ -38,6 +40,7 @@
     &.#{$id}__overflow {
       overflow-y: scroll;
     }
+
     .gallery-placeholder {
       .fotorama__stage {
         position: relative;
@@ -65,13 +68,16 @@
             bottom: 0;
             right: 10px;
           }
+
           &-box {
             display: flex;
             align-items: center;
             width: 280px;
+
             @include media-query(sm) {
               width: 200px;
             }
+
             &-text {
               padding: 2px 15px;
               transform: translateX(3px);
@@ -97,6 +103,7 @@
           }
         }
       }
+
       .fotorama__nav-wrap {
         display: none !important;
       }
@@ -107,6 +114,7 @@
         display: flex;
         flex-wrap: wrap;
         margin-top: 10px;
+
         @include media-query(md) {
           flex-wrap: nowrap;
           overflow-x: auto;
@@ -117,12 +125,14 @@
           margin-right: -15px;
           max-width: calc(100% + 15px);
         }
+
         .#{$id}__image-item {
           width: 50%;
 
           &.#{$id}__hide {
             display: none;
           }
+
           img {
             width: 100%;
             height: 100%;
@@ -133,6 +143,7 @@
             padding-right: 5px;
             padding-bottom: 10px;
           }
+
           &:nth-child(even) {
             padding-left: 5px;
             padding-bottom: 10px;
@@ -149,8 +160,7 @@
 
           &::after {
             z-index: 999;
-            background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png')
-              bottom left;
+            background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png') bottom left;
             bottom: 0;
             content: '';
             height: 40px;
@@ -208,9 +218,11 @@
 
         &.mobile {
           display: block;
+
           .#{$id}__image-item {
             padding-right: 5px !important;
             padding-bottom: 0 !important;
+
             .#{$id}__button-wrapper.more {
               display: none;
             }
@@ -222,5 +234,142 @@
     div[data-role='roomvo'] {
       display: none;
     }
+  }
+
+  // right side css 
+  .#{$id}__hide {
+    display: none;
+  }
+
+  .fp-require-statement.-bold {
+    display: none !important;
+  }
+
+  .#{$id}__calculateBox {
+    margin: 20px auto 0;
+    background-color: #eef4ed;
+
+    &-wrapper {
+      padding: 32px;
+    }
+
+    &-content {
+      display: flex;
+      justify-content: space-between;
+
+      &-input {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 20px 20px 0;
+
+        p {
+          font-weight: 700;
+          margin-bottom: 0;
+        }
+
+        .#{$id}__input-box {
+          display: flex;
+          align-items: center;
+          padding: 4px 10px;
+          margin-bottom: 15px;
+          background-color: #fff;
+          border: solid 1px #959595;
+
+          input {
+            max-width: 140px;
+            width: 100%;
+            margin-bottom: 0;
+            font-size: 20px;
+            line-height: 21px;
+            background-color: #fff;
+          }
+        }
+
+        .#{$id}__quantity {
+          color: #959595;
+        }
+
+        a {
+          text-decoration: underline;
+          color: #000;
+        }
+      }
+
+      .#{$id}__vertical-line {
+        border-left: solid 1px #959595;
+      }
+
+      &-summery {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 0px 20px 20px;
+
+        p {
+          font-weight: 700;
+          margin-bottom: 0;
+        }
+
+        .#{$id}__subtotal {
+          font-weight: 700;
+          font-size: 35px;
+          line-height: 24px;
+          margin: 10px 0;
+        }
+
+        .#{$id}__checkBox {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          input {
+            top: 0;
+            width: 25px;
+            height: 25px;
+            margin: 0;
+          }
+
+          label {
+            display: flex;
+            margin-bottom: 0;
+            gap: 5px;
+
+            .tooltip-toggle {
+              display: flex;
+              border-radius: 100%;
+              border: 1px solid #000;
+              width: 24px;
+              height: 24px;
+              display: -webkit-inline-box;
+              display: -ms-inline-flexbox;
+              display: inline-flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              font-weight: 700;
+            }
+          }
+        }
+
+        .#{$id}__extraInfo {
+          margin-top: 10px;
+          color: #959595;
+        }
+      }
+    }
+
+    &-atc {
+      button {
+        width: 370px;
+        height: 56px;
+        margin-top: 15px;
+      }
+    }
+
+    &-message {}
   }
 }
