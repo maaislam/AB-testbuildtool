@@ -3,6 +3,6 @@ const setDiscount = (discountCode) => {
     headers: {
       accept: '*/*'
     }
-  }).then((res) => res.json());
+  }).then((res) => res);
 };
 export default setDiscount;
