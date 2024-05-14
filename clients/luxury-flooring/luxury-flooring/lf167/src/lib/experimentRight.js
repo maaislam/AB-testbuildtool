@@ -39,7 +39,7 @@ export default () => {
 
   const fpControls = document.querySelector('.fp-controls');
   const fpRequire = document.querySelector('.fp-require');
-  const wastageDetails = document.querySelector('.wastage-details');
+  //const wastageDetails = document.querySelector('.wastage-details');
   const fpTotalAmount = document.querySelector('.fp-require-statement:not(.-bold)');
 
   if (document.querySelector(`.${ID}__fpCalculator`)) {

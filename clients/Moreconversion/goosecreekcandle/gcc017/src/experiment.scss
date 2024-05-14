@@ -2,7 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
-    }
+  [data-rebuy-id='148921'] {
+    display: block;
+  }
+  [data-rebuy-id='57186'] {
+    display: none;
+  }
 }
