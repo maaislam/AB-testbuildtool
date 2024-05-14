@@ -11,7 +11,7 @@
         max-width: calc(100% - 36px);
         margin: 0 auto 10px;
 
-        @include media-query('sm') {
+        @include media-query('xl') {
             max-width: calc(100% - 10px);
         }
 
