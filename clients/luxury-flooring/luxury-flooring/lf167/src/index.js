@@ -4,6 +4,7 @@ import { pollerLite } from './lib/helpers/utils';
 
 pollerLite(
   [
+    '.fp-calculator',
     'body.catalog-product-view',
     '.fotorama',
     () => window.jQuery !== 'undefined',
