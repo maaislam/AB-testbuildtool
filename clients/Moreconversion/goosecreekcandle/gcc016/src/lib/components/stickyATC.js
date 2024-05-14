@@ -1,9 +1,10 @@
-const stickyATC = (id, productData) => {
+import { formatPrice } from '../helpers/utils';
+
+const stickyATC = (id, productData, priceData) => {
+    const { compareAtPrice, salePrice } = priceData;
     const {
         productImg,
-        productTitle,
-        productOriginalPrice,
-        productSalePrice
+        productTitle
     } = productData;
 
     const htmlStr = `<div class="${id}__hide ${id}__stickyATCContainer">
@@ -14,8 +15,8 @@ const stickyATC = (id, productData) => {
             <div class="${id}__productInfoWrapper">
                 <div class="${id}__productTitle">${productTitle}</div>
                 <div class="${id}__productPriceWrapper">
-                    <span class="${id}__productSalePrice">${productSalePrice.innerHTML}</span>
-                    <span class="${id}__productOriginalPrice">${productOriginalPrice.innerHTML}</span>
+                    <span class="${id}__productSalePrice">${formatPrice(salePrice)}</span>
+                    <span class="${id}__productOriginalPrice">${formatPrice(compareAtPrice)}</span>
                 </div>
             </div>
         </div>
