@@ -44,4 +44,16 @@
             }
         }
     }
+
+    &-2 {
+        &__container {
+            .usps-item {
+                p {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+            }
+        }
+    }
 }
