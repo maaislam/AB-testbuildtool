@@ -1,9 +1,9 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
+
 import { calculateBox } from './components/calculateBox';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const targetElement = document.querySelector('.product-info-main .product-info-cta');

@@ -3,7 +3,7 @@ import shared from './shared/shared';
 import { confirmEmail } from './components/confirmEmail';
 import { fakeButton } from './components/fakeButton';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const signupElement = document.querySelector('.opc-checkout__main .opc-signup__main');

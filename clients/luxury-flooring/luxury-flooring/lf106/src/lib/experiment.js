@@ -2,7 +2,7 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { trustpilot } from './components/trustpilot';
 import { imageStr } from './components/imageStr';
-import { pollerLite } from './helpers/utils';
+import { addJsToPage, pollerLite } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
@@ -33,7 +33,7 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
+  addJsToPage('//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js');
 
   //eslint-disable-next-line no-useless-return
   if (VARIATION === 'Control') return;
