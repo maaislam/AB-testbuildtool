@@ -36,6 +36,9 @@
             font-size: 14px;
             font-weight: 700;
             margin-bottom: 0;
+            @media screen and (max-width: 1250px) {
+              font-size: 12px;
+            }
             @media screen and (max-width: 430px) {
               font-size: 10px;
             }
@@ -44,6 +47,9 @@
             font-size: 14px;
             text-decoration: underline;
             color: #000;
+            @media screen and (max-width: 1250px) {
+              font-size: 12px;
+            }
             @media screen and (max-width: 430px) {
               font-size: 10px;
             }
@@ -84,6 +90,9 @@
           border-left: solid 1px #959595;
           margin: 0 22px;
 
+          @include media-query(xlg) {
+            margin: 0 9px;
+          }
           @include media-query(lg) {
             margin: 0 18px;
           }
@@ -163,7 +172,7 @@
       align-items: center;
       font-size: 12px;
       margin-bottom: 0;
-      //white-space: nowrap;
+      white-space: nowrap;
 
       .tooltip-toggle {
         display: flex;
@@ -220,6 +229,9 @@
           font-size: 14px;
           font-weight: 700;
           margin-bottom: 0;
+          @media screen and (max-width: 1250px) {
+            font-size: 12px;
+          }
           @media screen and (max-width: 430px) {
             font-size: 10px;
           }
@@ -257,6 +269,9 @@
           font-size: 14px;
           text-decoration: underline;
           color: #000;
+          @media screen and (max-width: 1250px) {
+            font-size: 12px;
+          }
           @media screen and (max-width: 430px) {
             font-size: 10px;
           }
@@ -266,6 +281,11 @@
       .#{$id}__vertical-line {
         border-left: solid 1px #959595;
         margin: 0 22px;
+
+        @include media-query(xlg) {
+          margin: 0 9px;
+        }
+
         @include media-query(lg) {
           margin: 0 18px;
         }
@@ -290,6 +310,11 @@
           font-weight: 700;
           font-size: 25px;
           line-height: 37.5px;
+
+          @media screen and (max-width: 767px) {
+            font-size: 18px;
+            line-height: 27px;
+          }
         }
 
         .#{$id}__extraInfo {
@@ -357,6 +382,9 @@
           &::before {
             content: 'Only ';
           }
+          @media screen and (max-width: 1024px) {
+            font-size: 15px;
+          }
           @include media-query(xsm) {
             font-size: 13px;
           }
@@ -378,6 +406,7 @@
       &-button {
         button {
           span {
+            text-transform: lowercase;
             @include media-query(xlg) {
               font-size: 14px;
             }
@@ -385,6 +414,14 @@
             @include media-query(xsm) {
               font-size: 11px;
             }
+          }
+
+          @include media-query(lg) {
+            padding: 19px !important;
+          }
+
+          @include media-query(xsm) {
+            padding: 15px !important;
           }
         }
       }
@@ -400,7 +437,7 @@
           font-size: 12px;
 
           &:first-child {
-            margin-right: 5px;
+            margin-right: 2px;
           }
 
           &::before {
@@ -466,6 +503,11 @@
           &::before {
             content: 'Only ';
           }
+
+          @include media-query(lg) {
+            font-size: 15px;
+          }
+
           @include media-query(xsm) {
             font-size: 13px;
           }
@@ -517,6 +559,9 @@
       &-button {
         button {
           max-width: 320px !important;
+          span {
+            text-transform: lowercase;
+          }
         }
       }
       &-text {
@@ -650,6 +695,9 @@
       &-button {
         button {
           max-width: 320px !important;
+          span {
+            text-transform: lowercase;
+          }
         }
       }
       &-text {

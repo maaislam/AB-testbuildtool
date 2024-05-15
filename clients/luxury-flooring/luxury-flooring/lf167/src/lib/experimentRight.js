@@ -8,20 +8,8 @@ import { deliveryMessage } from './components/deliveryMessage';
 import { priceWrapperV4, priceWrapperV5, priceWrapperV6 } from './components/priceWrapper';
 
 const { ID, VARIATION } = shared;
-const DOM_RENDER_DELAY = 200;
-const finalMessage = 'Order a free sample';
-
-const renderText = (mutation) => {
-  const { addedNodes, target } = mutation;
-  const orderSampleButton = document.querySelector(
-    `.${ID}__orderSampleWrapper-button button > span`
-  );
-  if (addedNodes.length > 0 && target.innerText === 'Order a sample') {
-    setTimeout(() => {
-      orderSampleButton.innerText = finalMessage;
-    }, DOM_RENDER_DELAY);
-  }
-};
+const DOM_RENDER_DELAY = 2000;
+const finalMessage = 'order a free sample';
 
 const renderPriceSection = () => {
   const priceElement = document.querySelector('.product-info-price');
@@ -71,13 +59,29 @@ const renderPriceSection = () => {
     renderSampleElement(orderSampleWrapper);
     textChangeHandler(orderSampleWrapper);
   }
+
+  const renderText = (mutation) => {
+    const { addedNodes, target } = mutation;
+    const orderSampleButton = document.querySelector(
+      `.${ID}__orderSampleWrapper-button button > span`
+    );
+
+    if (addedNodes.length > 0 && target.innerText.toLowerCase() === 'order a sample') {
+      setTimeout(() => {
+        orderSampleButton.innerText = finalMessage;
+      }, DOM_RENDER_DELAY);
+    }
+  };
+
+  //text chnage handler
+  observeDOM('#product-addtocart-button1 span', renderText);
 };
 
 export default () => {
   if (!document.documentElement.classList.contains('lf167')) {
     setup();
   }
-  console.log('right side', ID);
+
   //render price section
   renderPriceSection();
   const targetElement = document.querySelector('.product-info-main .product-info-cta');
@@ -111,7 +115,7 @@ export default () => {
 
   const fpControls = document.querySelector('.fp-controls');
   const fpRequire = document.querySelector('.fp-require');
-  //const wastageDetails = document.querySelector('.wastage-details');
+  const wastageDetails = document.querySelector('.wastage-details');
   const fpTotalAmount = document.querySelector('.fp-require-statement:not(.-bold)');
 
   if (document.querySelector(`.${ID}__fpCalculator`)) {
@@ -137,6 +141,23 @@ export default () => {
     .querySelector('.product-add-form')
     .insertAdjacentHTML('afterend', deliveryMessage(ID, deliveryData));
 
-  //text chnage handler
-  observeDOM('#product-addtocart-button1 span', renderText);
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (
+      (target.closest('input') || target.closest('label[for="add-10%-wastage"]')) &&
+      target.closest(`.${ID}__calculateBox`)
+    ) {
+      console.log('enter');
+      target.closest(`.${ID}__calculateBox`).querySelector('input').click();
+      document.querySelector(`.${ID}__fpCalculator-calculation input`).click();
+      wastageDetails.querySelector('.missing-wastage').click();
+    } else if (
+      (target.closest('input') || target.closest('label[for="add-10%-wastage"]')) &&
+      target.closest(`.${ID}__fpCalculator`)
+    ) {
+      console.log('enter......');
+      document.querySelector(`.${ID}__calculateBox input`).click();
+      wastageDetails.querySelector('.missing-wastage').click();
+    }
+  });
 };
