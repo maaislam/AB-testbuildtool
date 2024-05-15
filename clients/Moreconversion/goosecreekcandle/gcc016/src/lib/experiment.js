@@ -44,7 +44,7 @@ const init = () => {
         scrollTimer = setTimeout(() => {
           stickySection.classList.add(`${ID}__hide`);
         }, 250);
-      } else {
+      } else if (entry.boundingClientRect.top < 0 && !entry.isIntersecting) {
         document.body.classList.add('atc-show');
         stickySection.classList.remove('slide-out-bottom');
         stickySection.classList.remove(`${ID}__hide`);
