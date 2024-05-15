@@ -1,6 +1,9 @@
 import activateLeft from './lib/experimentLeft';
 import activateRight from './lib/experimentRight';
 import { pollerLite } from './lib/helpers/utils';
+import shared from './lib/shared/shared';
+
+const { VARIATION } = shared;
 
 pollerLite(
   [
@@ -11,7 +14,10 @@ pollerLite(
     () => window.jQuery('.fotorama').data('fotorama') !== 'undefined'
   ],
   () => {
-    activateLeft();
+    if (VARIATION !== '1' && VARIATION !== '2' && VARIATION !== '3') {
+      activateLeft();
+    }
+
     activateRight();
   }
 );

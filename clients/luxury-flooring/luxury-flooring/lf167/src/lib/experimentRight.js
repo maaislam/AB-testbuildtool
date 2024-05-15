@@ -1,13 +1,85 @@
+import setup from './services/setup';
+import { observeDOM } from './helpers/utils';
+import shared from './shared/shared';
 import { calculateBox } from './components/calculateBox';
 import { fpCalculator } from './components/fpCalculator';
 import { checkBox } from './components/checkBox';
 import { deliveryMessage } from './components/deliveryMessage';
-import shared from './shared/shared';
+import { priceWrapperV4, priceWrapperV5, priceWrapperV6 } from './components/priceWrapper';
 
-const { ID } = shared;
+const { ID, VARIATION } = shared;
+const DOM_RENDER_DELAY = 200;
+const finalMessage = 'Order a free sample';
+
+const renderText = (mutation) => {
+  const { addedNodes, target } = mutation;
+  const orderSampleButton = document.querySelector(
+    `.${ID}__orderSampleWrapper-button button > span`
+  );
+  if (addedNodes.length > 0 && target.innerText === 'Order a sample') {
+    setTimeout(() => {
+      orderSampleButton.innerText = finalMessage;
+    }, DOM_RENDER_DELAY);
+  }
+};
+
+const renderPriceSection = () => {
+  const priceElement = document.querySelector('.product-info-price');
+  const sellPrice = priceElement
+    .querySelector('.final-price > .price-including-tax:last-child')
+    .innerText.trim();
+  const comparePrice = priceElement
+    .querySelector('.old-price > .price-including-tax:last-child')
+    .innerText.trim();
+  const orderASampleElement = document.querySelector('.product-info-main .sample-add-form');
+
+  const renderSampleElement = (element) => {
+    element.insertAdjacentElement('beforeend', orderASampleElement);
+  };
+
+  const textChangeHandler = (element) => {
+    //eslint-disable-next-line no-param-reassign
+    element.querySelector('button > span').innerText = finalMessage;
+  };
+
+  if (VARIATION === '4' || VARIATION === '1') {
+    if (document.querySelector(`.${ID}__priceWrapper`)) {
+      document.querySelector(`.${ID}__priceWrapper`).remove();
+    }
+    priceElement.insertAdjacentHTML('beforebegin', priceWrapperV4(ID, sellPrice, comparePrice));
+    const orderSampleWrapper = document.querySelector(`.${ID}__orderSampleWrapper-button`);
+    renderSampleElement(orderSampleWrapper);
+    textChangeHandler(orderSampleWrapper);
+  }
+
+  if (VARIATION === '5' || VARIATION === '2') {
+    if (document.querySelector(`.${ID}__priceWrapper`)) {
+      document.querySelector(`.${ID}__priceWrapper`).remove();
+    }
+    priceElement.insertAdjacentHTML('beforebegin', priceWrapperV5(ID, sellPrice, comparePrice));
+    const orderSampleWrapper = document.querySelector(`.${ID}__orderSampleWrapper-button`);
+    renderSampleElement(orderSampleWrapper);
+    textChangeHandler(orderSampleWrapper);
+  }
+
+  if (VARIATION === '6' || VARIATION === '3') {
+    if (document.querySelector(`.${ID}__priceWrapper`)) {
+      document.querySelector(`.${ID}__priceWrapper`).remove();
+    }
+    priceElement.insertAdjacentHTML('beforebegin', priceWrapperV6(ID, sellPrice, comparePrice));
+    const orderSampleWrapper = document.querySelector(`.${ID}__orderSampleWrapper-button`);
+    renderSampleElement(orderSampleWrapper);
+    textChangeHandler(orderSampleWrapper);
+  }
+};
 
 export default () => {
+  if (!document.documentElement.classList.contains('lf167')) {
+    setup();
+  }
   console.log('right side', ID);
+  //render price section
+  renderPriceSection();
   const targetElement = document.querySelector('.product-info-main .product-info-cta');
   const deliveryData = document.querySelector('#del_date').innerText;
 
@@ -64,4 +136,7 @@ export default () => {
   fpRequire
     .querySelector('.product-add-form')
     .insertAdjacentHTML('afterend', deliveryMessage(ID, deliveryData));
+
+  //text chnage handler
+  observeDOM('#product-addtocart-button1 span', renderText);
 };
