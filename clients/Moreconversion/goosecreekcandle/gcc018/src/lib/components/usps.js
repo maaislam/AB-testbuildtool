@@ -1,5 +1,5 @@
 const usps = (id) => {
-    const htmlStr = `<div class='${id}__container'>
+  const htmlStr = `<div class='${id}__container'>
         <div class='usps-item'>
             <p>✅ 35+ hour burn time</p>
             <div></div>
@@ -9,6 +9,6 @@ const usps = (id) => {
         </div>
     </div>`;
 
-    return htmlStr;
+  return htmlStr;
 };
 export default usps;
