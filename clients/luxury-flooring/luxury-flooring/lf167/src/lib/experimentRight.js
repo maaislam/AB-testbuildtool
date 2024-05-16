@@ -74,7 +74,17 @@ const renderPriceSection = () => {
   };
 
   //text chnage handler
-  observeDOM('#product-addtocart-button1 span', renderText);
+  //observeDOM('#product-addtocart-button1 span', renderText);
+  observeDOM('.missing-wastage', () => {
+    const missingDetails = document.querySelector('.missing-wastage');
+    const wastageCheckbox = document.querySelector(`.${ID}__checkBox`);
+    const isMissingDetailsHidden = missingDetails.getAttribute('style') === 'display: none;';
+      if (isMissingDetailsHidden) {
+        wastageCheckbox.classList.add(`${ID}__hide`);
+      } else {
+        wastageCheckbox.classList.remove(`${ID}__hide`);
+      }
+  });
 };
 
 export default () => {

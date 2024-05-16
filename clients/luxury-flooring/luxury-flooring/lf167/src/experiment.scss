@@ -5,7 +5,7 @@
 
   // right side css
   .#{$id}__hide {
-    display: none;
+    display: none !important;
   }
 
   .fp-require-statement.-bold {
