@@ -141,23 +141,23 @@ export default () => {
     .querySelector('.product-add-form')
     .insertAdjacentHTML('afterend', deliveryMessage(ID, deliveryData));
 
-  // document.body.addEventListener('click', (e) => {
-  //   const { target } = e;
-  //   if (
-  //     (target.closest('input') || target.closest('label[for="add-10%-wastage"]')) &&
-  //     target.closest(`.${ID}__calculateBox`)
-  //   ) {
-  //     console.log('enter');
-  //     target.closest(`.${ID}__calculateBox`).querySelector('input').click();
-  //     document.querySelector(`.${ID}__fpCalculator-calculation input`).click();
-  //     wastageDetails.querySelector('.missing-wastage').click();
-  //   } else if (
-  //     (target.closest('input') || target.closest('label[for="add-10%-wastage"]')) &&
-  //     target.closest(`.${ID}__fpCalculator`)
-  //   ) {
-  //     console.log('enter......');
-  //     document.querySelector(`.${ID}__calculateBox input`).click();
-  //     wastageDetails.querySelector('.missing-wastage').click();
-  //   }
-  // });
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (
+      target.closest('label[for="add-10percent-wastage"]') &&
+      target.closest(`.${ID}__calculateBox`)
+    ) {
+      console.log('enter');
+      target.closest(`.${ID}__calculateBox`).querySelector('input').click();
+      document.querySelector(`.${ID}__fpCalculator-calculation input`).click();
+      wastageDetails.querySelector('.missing-wastage').click();
+    } else if (
+      target.closest('label[for="add-10percent-wastage"]') &&
+      target.closest(`.${ID}__fpCalculator`)
+    ) {
+      console.log('enter......');
+      document.querySelector(`.${ID}__calculateBox input`).click();
+      wastageDetails.querySelector('.missing-wastage').click();
+    }
+  });
 };
