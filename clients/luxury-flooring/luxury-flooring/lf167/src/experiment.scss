@@ -25,8 +25,12 @@
     & .fp-require.complete {
       margin-top: 0px;
       padding: 25px;
+      background: #EEF4ED;
+
       .#{$id}__fpCalculator {
         display: flex;
+        justify-content: center;
+
         &-input {
           display: flex;
           flex-direction: column;
@@ -218,6 +222,7 @@
 
     &-content {
       display: flex;
+      justify-content: center;
 
       &-input {
         display: flex;
