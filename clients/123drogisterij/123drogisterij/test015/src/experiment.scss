@@ -2,7 +2,60 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    &-1 {
+        .#{$id}__price {
+            display: flex;
+
+            .#{$id}__friction {
+                margin-top: 4px;
+                align-self: baseline;
+                font-size: 14px;
+                line-height: 19px;
+            }
+        }
+
+        .product-info-price {
+            .#{$id}__price {
+                font-size: 30px;
+            }
+            .#{$id}__friction {
+                line-height: 16px;
+                @include media-query(sm) {
+                    margin-top: 0;
+                    line-height: 9px;
+                }
+            }
+        }
+    }
+
+    &-2 {
+        .#{$id}__price {
+            display: flex;
+            font-weight: 400;
+            font-family: fantasy;
+            font-size: 28px;
+            letter-spacing: 1px;
+
+            .#{$id}__friction {
+                margin-top: 4px;
+                align-self: baseline;
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+
+        .product-info-price {
+            .#{$id}__price {
+                font-size: 30px;
+            }
+            .#{$id}__friction {
+                line-height: 17px;
+                
+                @include media-query(sm) {
+                    margin-top: 0;
+                    line-height: 9px;
+                }
+            }
+        }
     }
 }
