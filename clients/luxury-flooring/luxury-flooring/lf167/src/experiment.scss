@@ -33,6 +33,10 @@
         display: flex;
         justify-content: center;
 
+        @include media-query(lg) {
+          justify-content: space-around;
+        }
+
         &-input {
           display: flex;
           flex-direction: column;
@@ -135,10 +139,27 @@
               display: none;
             }
 
+            .fp-require-price {
+              font-size: 32px;
+              line-height: 50px;
+              color: #202020;
+
+              @include media-query(sm) {
+                font-size: 28px;
+                line-height: 40px;
+              }
+            }
+
             p[data-bind='text: total_info'] {
-              color: #959595;
-              font-size: 12px;
+              color: #202020;
+              opacity: 0.54;
+              font-size: 13px;
+              line-height: 22px;
               margin: 10px 0 0;
+
+              @include media-query(sm) {
+                margin: 5px 0 0;
+              }
             }
           }
         }
@@ -228,7 +249,9 @@
     label {
       display: flex;
       align-items: center;
-      font-size: 12px;
+      font-size: 13px;
+      color: #202020;
+      line-height: 30px;
       margin-bottom: 0;
       white-space: nowrap;
 
@@ -281,7 +304,7 @@
       justify-content: center;
 
       @include media-query(sm) {
-        justify-content: space-between;
+        justify-content: space-around;
       }
 
       &-input {
@@ -292,6 +315,7 @@
 
         p {
           font-size: 14px;
+          line-height: 22px;
           font-weight: 700;
           margin-bottom: 0;
 
@@ -377,19 +401,22 @@
 
         .#{$id}__subtotal {
           font-weight: 700;
-          font-size: 25px;
-          line-height: 37.5px;
+          font-size: 32px;
+          line-height: 50px;
+          color: #202020;
 
-          @media screen and (max-width: 767px) {
-            font-size: 18px;
-            line-height: 27px;
+          @include media-query(sm) {
+            font-size: 28px;
+            line-height: 40px;
           }
         }
 
         .#{$id}__extraInfo {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 22px;
           margin-top: 10px;
-          color: #959595;
+          color: #202020;
+          opacity: 0.54;
         }
       }
     }
@@ -431,11 +458,11 @@
         width: 100%;
         max-width: 75px;
         background: #deeadc;
-        padding: 5px 10px;
+        padding: 4px 10px;
 
         span {
           font-weight: bold;
-          font-size: 13px;
+          font-size: 12px;
         }
       }
 
@@ -446,8 +473,9 @@
         margin-top: 5px;
 
         &-price {
-          font-size: 17px;
           font-weight: 700;
+          font-size: 24px;
+          line-height: 50px;
           color: #d53333;
           margin-right: 5px;
 
@@ -455,22 +483,19 @@
             content: 'Only ';
           }
 
-          @media screen and (max-width: 1024px) {
-            font-size: 15px;
-          }
-
-          @include media-query(xsm) {
-            font-size: 13px;
+          @include media-query(lg) {
+            font-size: 18px;
+            line-height: 30px;
           }
         }
 
         &-compare-price {
-          font-size: 12px;
+          font-size: 16px;
           font-weight: 700;
           text-decoration: line-through;
 
-          @include media-query(xsm) {
-            font-size: 10px;
+          @include media-query(sm) {
+            font-size: 14px;
           }
         }
       }
@@ -478,11 +503,12 @@
 
     .#{$id}__orderSampleWrapper {
       width: 50%;
+      margin-left: 10px;
 
       &-button {
         button {
           span {
-            text-transform: lowercase;
+            // text-transform: lowercase;
 
             @include media-query(xlg) {
               font-size: 14px;
@@ -512,7 +538,8 @@
         padding: 5px;
 
         &-item {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 17px;
 
           &:first-child {
             margin-right: 2px;
@@ -576,7 +603,8 @@
         margin-top: 5px;
 
         &-price {
-          font-size: 17px;
+          font-size: 24px;
+          line-height: 50px;
           font-weight: 700;
           color: #d53333;
           margin-right: 5px;
@@ -586,28 +614,25 @@
           }
 
           @include media-query(lg) {
-            font-size: 15px;
-          }
-
-          @include media-query(xsm) {
-            font-size: 13px;
+            font-size: 18px;
+            line-height: 30px;
           }
         }
 
         &-compare-price {
-          font-size: 12px;
+          font-size: 16px;
           font-weight: 700;
           text-decoration: line-through;
 
-          @include media-query(xsm) {
-            font-size: 10px;
+          @include media-query(sm) {
+            font-size: 14px;
           }
         }
       }
 
       .#{$id}__divider {
         border-left: solid 1px #dedede;
-        margin: 0 27px;
+        margin: 0 36px;
 
         @include media-query(lg) {
           margin: 0 20px;
@@ -628,11 +653,17 @@
           svg {
             width: 35px;
             height: 35px;
+
+            @include media-query(sm) {
+              width: 22px;
+              height: 22px;
+            }
           }
         }
 
         &-link {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 22px;
           text-decoration: underline;
           color: #000;
           cursor: pointer;
@@ -648,7 +679,7 @@
           max-width: 320px !important;
 
           span {
-            text-transform: lowercase;
+            // text-transform: lowercase;
           }
         }
       }
@@ -662,7 +693,8 @@
         padding: 5px;
 
         &-item {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 17px;
 
           &:first-child {
             margin-right: 5px;
@@ -728,7 +760,8 @@
         margin-top: 5px;
 
         &-price {
-          font-size: 17px;
+          font-size: 24px;
+          line-height: 50px;
           font-weight: 700;
           color: #d53333;
           margin-right: 5px;
@@ -737,18 +770,19 @@
             content: 'Only ';
           }
 
-          @include media-query(xsm) {
-            font-size: 13px;
+          @include media-query(lg) {
+            font-size: 18px;
+            line-height: 30px;
           }
         }
 
         &-compare-price {
-          font-size: 12px;
+          font-size: 16px;
           font-weight: 700;
           text-decoration: line-through;
 
-          @include media-query(xsm) {
-            font-size: 10px;
+          @include media-query(sm) {
+            font-size: 14px;
           }
         }
       }
@@ -776,11 +810,17 @@
           svg {
             width: 35px;
             height: 35px;
+
+            @include media-query(sm) {
+              width: 22px;
+              height: 22px;
+            }
           }
         }
 
         &-link {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 22px;
           text-decoration: underline;
           color: #000;
           cursor: pointer;
@@ -789,15 +829,15 @@
     }
 
     .#{$id}__orderSampleWrapper {
-      background-color: #e2e8e1;
       padding: 10px;
+      background: #eef4ed;
 
       &-button {
         button {
           max-width: 320px !important;
 
           span {
-            text-transform: lowercase;
+            // text-transform: lowercase;
           }
         }
       }
@@ -816,11 +856,17 @@
           svg {
             width: 35px;
             height: 35px;
+
+            @include media-query(sm) {
+              width: 22px;
+              height: 22px;
+            }
           }
         }
 
         &-text {
-          font-size: 12px;
+          font-size: 15px;
+          line-height: 22px;
           font-weight: 700;
         }
       }
@@ -832,7 +878,8 @@
         padding: 5px;
 
         &-item {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 17px;
 
           &:first-child {
             margin-right: 5px;
