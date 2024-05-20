@@ -61,7 +61,7 @@
             overflow-y: hidden;
 
             .header {
-                padding: 20px 22px;
+                padding: 20px;
                 width: 100%;
                 display: flex;
                 align-items: center;
@@ -81,7 +81,7 @@
             }
 
             .content {
-                padding: 20px;
+                padding: 20px 20px 0;
             }
 
             .#{$id}__productCard {
@@ -247,16 +247,48 @@
         .#{$id}__modal {
             &-container {
                 max-width: 600px;
+                overflow: hidden;
+            }
+        }
+
+        .content {
+            max-height: 500px;
+            overflow-y: auto;
+
+            @include media-query(lg) {}
+        }
+
+        .#{$id}__productCard {
+            padding-top: 20px;
+
+            &:first-child {
+                padding-top: 0;
             }
         }
 
         .#{$id}__cardContent {
+            margin-top: 10px;
             display: flex;
+            align-items: center;
 
             img {
                 width: 100px;
                 height: 100px;
                 margin-right: 20px;
+            }
+
+            .#{$id}__badges {
+                margin-bottom: 15px;
+            }
+
+            .#{$id}__swatches,
+            .#{$id}__sizes {
+                margin-top: 5px;
+            }
+
+            .#{$id}__sizesWrapper {
+                margin-bottom: 8px;
+                align-self: flex-end;
             }
         }
 
@@ -264,8 +296,16 @@
             margin-right: 20px;
         }
 
-        .#{$id}__size, .#{$id}__swatch {
+        .#{$id}__size,
+        .#{$id}__swatch {
             margin-right: 10px;
+        }
+
+        .#{$id}__cardFooter {
+            margin: 0 auto 0;
+            padding: 16px 20px;
+            width: 100%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
         }
     }
 
@@ -324,12 +364,14 @@
                     padding-right: 20px;
                 }
             }
+
             &:first-child {
                 padding-left: 0;
             }
         }
 
-        .#{$id}__size, .#{$id}__swatch {
+        .#{$id}__size,
+        .#{$id}__swatch {
             margin-right: 5px;
         }
 
