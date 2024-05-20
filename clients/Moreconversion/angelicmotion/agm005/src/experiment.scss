@@ -2,7 +2,22 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    &__offerBtn {
+        height: 47px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Anonymous Pro';
+        font-size: 15px;
+        line-height: 18px;
+        font-weight: 700;
+        background: #FFF;
+        border: 1px solid #000;
+        cursor: pointer;
+
+        svg {
+            margin-right: 10px;
+        }
     }
 }
