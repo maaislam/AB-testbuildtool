@@ -64,7 +64,6 @@ export default () => {
   init();
 
   observeDOM('#CartPopup', () => {
-    console.log('DOM changed');
     init();
   });
 };
