@@ -108,7 +108,7 @@
                         .#{$id}__badge {
                             height: 30px;
                             width: 74px;
-                            padding: 8px 10px;
+                            padding: 8px;
                             text-align: center;
                             border: 1px solid #000;
                             border-radius: 4px;
@@ -123,13 +123,18 @@
                         display: flex;
 
                         .#{$id}__swatch {
+                            margin-right: 10px;
                             display: block;
                             height: 24px;
                             width: 24px;
-                            border: 1.5px solid #DCDCDC;
-                            outline: 2px solid #fff;
+                            outline: 1.5px solid #DCDCDC;
+                            border: 2px solid #fff;
                             border-radius: 50%;
-                            margin-right: 10px;
+                            cursor: pointer;
+
+                            &.active {
+                                outline: 1.5px solid #000;
+                            }
                         }
                     }
 

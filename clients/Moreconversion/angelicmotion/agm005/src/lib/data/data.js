@@ -7,27 +7,32 @@ export const hoodiesData = [
             {
                 swatchName: 'black',
                 color: '#000',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: true
             },
             {
                 swatchName: 'purple',
                 color: '#650FA4',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=208',
+                isActive: false
             },
             {
                 swatchName: 'dimgray',
                 color: '#4C4C4C',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: false
             },
             {
                 swatchName: 'turquoise',
                 color: '#09D6CB',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208',
+                isActive: false
             },
             {
                 swatchName: 'darkslategray',
                 color: '#473B33',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: false
             }
         ],
         sizes: ['S', 'M', 'L', 'XL', '2XL']
@@ -40,27 +45,32 @@ export const hoodiesData = [
             {
                 swatchName: 'black',
                 color: '#000',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: false
             },
             {
                 swatchName: 'purple',
                 color: '#650FA4',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=208',
+                isActive: false
             },
             {
                 swatchName: 'dimgray',
                 color: '#4C4C4C',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: false
             },
             {
                 swatchName: 'turquoise',
                 color: '#09D6CB',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208',
+                isActive: true
             },
             {
                 swatchName: 'darkslategray',
                 color: '#473B33',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: false
             }
         ],
         sizes: ['S', 'M', 'L', 'XL', '2XL']
@@ -73,27 +83,32 @@ export const hoodiesData = [
             {
                 swatchName: 'black',
                 color: '#000',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: true
             },
             {
                 swatchName: 'purple',
                 color: '#650FA4',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=208',
+                isActive: false
             },
             {
                 swatchName: 'dimgray',
                 color: '#4C4C4C',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: false
             },
             {
                 swatchName: 'turquoise',
                 color: '#09D6CB',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208',
+                isActive: false
             },
             {
                 swatchName: 'darkslategray',
                 color: '#473B33',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: false
             }
         ],
         sizes: ['S', 'M', 'L', 'XL', '2XL']
@@ -106,27 +121,32 @@ export const hoodiesData = [
             {
                 swatchName: 'black',
                 color: '#000',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: false
             },
             {
                 swatchName: 'purple',
                 color: '#650FA4',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=208',
+                isActive: true
             },
             {
                 swatchName: 'dimgray',
                 color: '#4C4C4C',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: false
             },
             {
                 swatchName: 'turquoise',
                 color: '#09D6CB',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208',
+                isActive: false
             },
             {
                 swatchName: 'darkslategray',
                 color: '#473B33',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208'
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                isActive: false
             }
         ],
         sizes: ['S', 'M', 'L', 'XL', '2XL']

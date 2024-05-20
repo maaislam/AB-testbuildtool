@@ -34,6 +34,15 @@ export default () => {
 
     if (target.closest(`.${ID}__offerBtn`)) {
       document.querySelector(`.${ID}__modal`).classList.add('active');
+    } else if (target.closest(`.${ID}__swatch`)) {
+      const swatch = target.closest(`.${ID}__swatch`);
+      const image = swatch.getAttribute('data-image');
+      const productImage = target.closest(`.${ID}__cardContent`).querySelector(`.${ID}__productCardImage`);
+      const swatches = document.querySelectorAll(`.${ID}__swatch`);
+
+      swatches.forEach((s) => s.classList.remove('active'));
+      swatch.classList.add('active');
+      productImage.src = image;
     }
   });
 

@@ -1,5 +1,4 @@
 const card = (id, product, index) => {
-    console.log('product', product);
     const htmlStr = `<div class='${id}__productCard'>
         <div class='${id}__select'>Select ${index + 1}:</div>
         <div class='${id}__cardContent'>
@@ -11,7 +10,7 @@ const card = (id, product, index) => {
                 <div>Color: Black</div>
                 <div class='${id}__swatches'>
                     ${product.swatches.map((swatch) => `
-                        <div class='${id}__swatch' style='background-color: ${swatch.color}'></div>
+                        <div class='${id}__swatch ${swatch.isActive ? 'active' : ''}' style='background-color: ${swatch.color}' data-image='${swatch.swatchImage}'></div>
                     `).join('')}
                 </div>
             </div>
