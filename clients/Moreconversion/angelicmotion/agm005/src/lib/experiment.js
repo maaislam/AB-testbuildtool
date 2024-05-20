@@ -35,14 +35,22 @@ export default () => {
     if (target.closest(`.${ID}__offerBtn`)) {
       document.querySelector(`.${ID}__modal`).classList.add('active');
     } else if (target.closest(`.${ID}__swatch`)) {
+      const swatches = target.closest(`.${ID}__swatches`).querySelectorAll(`.${ID}__swatch`);
       const swatch = target.closest(`.${ID}__swatch`);
-      const image = swatch.getAttribute('data-image');
       const productImage = target.closest(`.${ID}__cardContent`).querySelector(`.${ID}__productCardImage`);
-      const swatches = document.querySelectorAll(`.${ID}__swatch`);
+      const image = swatch.getAttribute('data-image');
 
       swatches.forEach((s) => s.classList.remove('active'));
       swatch.classList.add('active');
       productImage.src = image;
+    } else if (target.closest(`.${ID}__size`)) {
+      const sizeParent = target.closest(`.${ID}__sizes`);
+      const allSizes = sizeParent.querySelectorAll(`.${ID}__size`);
+      const size = target.closest(`.${ID}__size`);
+
+      allSizes.forEach((s) => s.classList.remove('active'));
+      size.classList.add('active');
+      sizeParent.setAttribute('data-size', size.textContent);
     }
   });
 
