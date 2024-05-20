@@ -13,7 +13,7 @@ const card = (id, product, index) => {
             <img src='${image}' alt='${name}' class='${id}__productCardImage'>
             <div class='${id}__swatchesDetails'>
                 <div class='${id}__badges'>
-                    ${badges.map((badge) => `<div class='${id}__badge ${badge.isActive ? 'active' : ''}'>${badge.badgeName}</div>`).join('')}
+                    ${badges.map((badge) => `<div class='${id}__badge ${id}__${badge.badgeName} ${badge.isActive ? 'active' : ''}'>${badge.badgeName}</div>`).join('')}
                 </div>
                 <div class='${id}__colorText'>Color: ${swatchName}</div>
                 <div class='${id}__swatches'>
@@ -37,7 +37,7 @@ const card = (id, product, index) => {
         <div class='${id}__select'>Select ${index + 1}:</div>
         <div class='${id}__cardContent'>
             <div class='${id}__badges'>
-                ${badges.map((badge) => `<div class='${id}__badge ${badge.isActive ? 'active' : ''}'>${badge.badgeName}</div>`).join('')}
+                ${badges.map((badge) => `<div class='${id}__badge ${id}__${badge.badgeName} ${badge.isActive ? 'active' : ''}'>${badge.badgeName}</div>`).join('')}
             </div>
             <img src='${image}' alt='${name}' class='${id}__productCardImage'>
             <div class='${id}__swatchesDetails'>
