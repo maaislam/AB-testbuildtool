@@ -6,19 +6,43 @@
         .upcart-checkout-button {
             background: #000;
         }
-    
+
         .#{$id}__atcText {
             display: flex;
             justify-content: center;
-    
+
             svg {
                 margin-right: 5px;
             }
+
             span {
                 color: #fff;
                 background: #000 !important;
             }
-    
+
+        }
+    }
+
+    &-2 {
+        .#{$id}__guaranteeText {
+            height: 34px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+
+            svg {
+                margin-right: 10px;
+            }
+
+            span {
+                color: #fff;
+                font-size: 15px;
+                line-height: 20px;
+                letter-spacing: 0.6px;
+                font-weight: 700;
+            }
         }
     }
 }
