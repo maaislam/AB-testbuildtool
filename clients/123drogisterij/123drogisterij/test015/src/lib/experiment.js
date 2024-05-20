@@ -4,7 +4,7 @@ import shared from './shared/shared';
 
 //import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const priceBox = document.querySelectorAll('[data-role="priceBox"]');
