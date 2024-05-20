@@ -54,7 +54,6 @@
             position: relative;
             width: auto;
             height: auto;
-            max-width: 600px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -77,6 +76,7 @@
                     font-weight: 700;
                     font-family: 'Helvetica';
                     color: #000;
+                    text-transform: uppercase;
                 }
             }
 
@@ -88,18 +88,17 @@
                 padding-bottom: 20px;
                 border-bottom: 1px solid #0000001A;
 
+                .#{$id}__select {
+                    font-size: 16px;
+                    line-height: 18px;
+                    color: #000;
+                    font-weight: 700;
+                    font-family: 'Helvetica';
+                }
+
                 .#{$id}__cardContent {
-                    display: flex;
-
                     img {
-                        width: 100px;
-                        height: 100px;
                         object-fit: cover;
-                        margin-right: 20px;
-                    }
-
-                    .#{$id}__swatchesDetails {
-                        margin-right: 20px;
                     }
 
                     .#{$id}__badges {
@@ -108,22 +107,38 @@
                         .#{$id}__badge {
                             height: 30px;
                             width: 74px;
-                            padding: 8px;
-                            text-align: center;
-                            border: 1px solid #000;
-                            border-radius: 4px;
                             margin-right: 10px;
+                            padding: 8px;
                             font-size: 14px;
                             line-height: 14px;
                             font-weight: 700;
+                            text-align: center;
+                            border: 1px solid #000;
+                            border-radius: 4px;
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
                         }
+
+                        .#{$id}__badge.active {
+                            background: #000;
+                            color: #fff;
+                        }
+                    }
+
+                    .#{$id}__colorText {
+                        font-size: 12px;
+                        line-height: 12px;
+                        font-weight: 400;
+                        color: #000000BF;
+                        text-transform: capitalize;
                     }
 
                     .#{$id}__swatches {
                         display: flex;
 
                         .#{$id}__swatch {
-                            margin-right: 10px;
                             display: block;
                             height: 24px;
                             width: 24px;
@@ -149,7 +164,6 @@
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            margin-right: 10px;
                             font-size: 12px;
                             line-height: 12px;
                             font-weight: 700;
@@ -160,7 +174,18 @@
                                 background: #000;
                                 color: #fff;
                             }
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
                         }
+                    }
+
+                    .#{$id}__sizeText {
+                        font-size: 12px;
+                        line-height: 12px;
+                        font-weight: 400;
+                        color: #000000BF;
                     }
                 }
 
@@ -168,11 +193,12 @@
             }
 
             .#{$id}__cardFooter {
-                margin-top: 20px;
+                // margin-top: 20px;
 
                 button {
                     width: 100%;
                     padding: 14px;
+                    font-family: 'Anonymous Pro';
                     font-size: 15px;
                     line-height: 18px;
                     font-weight: 400;
@@ -180,16 +206,17 @@
                     background: #000;
                     letter-spacing: 1px;
                     text-align: center;
+                    text-transform: uppercase;
+                    cursor: pointer;
                 }
             }
         }
 
         .close {
-            color: #aaa;
-            width: 20px;
-            height: 20px;
-            font-size: 28px;
-            font-weight: 700;
+            background: #0000000D;
+            width: 30px;
+            height: 30px;
+            text-align: center;
         }
 
         .close:hover,
@@ -214,5 +241,121 @@
         visibility: visible;
         opacity: 1;
         z-index: 9999;
+    }
+
+    &-1 {
+        .#{$id}__modal {
+            &-container {
+                max-width: 600px;
+            }
+        }
+
+        .#{$id}__cardContent {
+            display: flex;
+
+            img {
+                width: 100px;
+                height: 100px;
+                margin-right: 20px;
+            }
+        }
+
+        .#{$id}__swatchesDetails {
+            margin-right: 20px;
+        }
+
+        .#{$id}__size, .#{$id}__swatch {
+            margin-right: 10px;
+        }
+    }
+
+    &-2 {
+        .#{$id}__modal {
+            &-container {
+                max-width: 1100px;
+                overflow: hidden;
+            }
+
+            .content {
+                @include media-query(lg) {
+                    width: 100%;
+                    overflow-x: auto;
+                }
+            }
+        }
+
+        .#{$id}__productCards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include media-query(lg) {
+                justify-content: flex-start;
+            }
+        }
+
+        .#{$id}__cardContent {
+            // margin-right: 20px;
+
+            img {
+                width: 100%;
+                height: 235px;
+            }
+
+            .#{$id}__badges {
+                margin: 10px 0;
+            }
+
+            .#{$id}__swatches {
+                margin: 5px 0 10px 0;
+            }
+        }
+
+        .#{$id}__productCard {
+            padding: 0 20px;
+            border-right: 1px solid #E6E6E6;
+            border-bottom: 0;
+
+            &:last-child {
+                padding-right: 0;
+                border-right: 0;
+
+                @include media-query(lg) {
+                    padding-right: 20px;
+                }
+            }
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+
+        .#{$id}__size, .#{$id}__swatch {
+            margin-right: 5px;
+        }
+
+        .#{$id}__size {
+            margin-top: 5px;
+        }
+
+        .#{$id}__cardFooter {
+            margin: 10px auto 20px;
+
+            button {
+                width: 528px;
+                padding: 14px;
+                font-size: 15px;
+                line-height: 18px;
+                font-weight: 400;
+                color: #fff;
+                background: #000;
+                letter-spacing: 1px;
+                text-align: center;
+                cursor: pointer;
+
+                @include media-query(sm) {
+                    width: 320px;
+                }
+            }
+        }
     }
 }
