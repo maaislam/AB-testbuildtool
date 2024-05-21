@@ -1,7 +1,7 @@
 export const hoodiesData = [
     {
-        image: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
-        name: 'OBSIDIAN HOODIE',
+        image: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=823',
+        name: '"Obsidian" Hoodie',
         badges: [
             {
                 badgeName: 'hoodies',
@@ -14,9 +14,9 @@ export const hoodiesData = [
         ],
         swatches: [
             {
-                swatchName: 'black',
+                swatchName: '"Obsidian" Hoodie',
                 color: '#000',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=823',
                 isActive: true,
                 sizes: [
                     {
@@ -43,9 +43,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'purple',
+                swatchName: '"Grape" Hoodie',
                 color: '#650FA4',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=208',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -72,9 +72,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'dimgray',
+                swatchName: '"Graphite" Hoodie',
                 color: '#4C4C4C',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPHITE_F.png?v=1692518395&width=104',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPHITE_F.png?v=1692518395&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -101,9 +101,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'turquoise',
+                swatchName: '"Opal" Hoodie',
                 color: '#09D6CB',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -130,9 +130,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'darkslategray',
+                swatchName: '"Cocoa" Hoodie',
                 color: '#473B33',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/COCOA_F.png?v=1692518010&width=104',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/COCOA_F.png?v=1692518010&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -161,8 +161,8 @@ export const hoodiesData = [
         ]
     },
     {
-        image: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=104',
-        name: 'Hoodie 1',
+        image: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=823',
+        name: '"Opal" Hoodie',
         badges: [
             {
                 badgeName: 'hoodies',
@@ -175,7 +175,7 @@ export const hoodiesData = [
         ],
         swatches: [
             {
-                swatchName: 'black',
+                swatchName: '"Obsidian" Hoodie',
                 color: '#000',
                 swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
                 isActive: false,
@@ -204,9 +204,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'purple',
+                swatchName: '"Grape" Hoodie',
                 color: '#650FA4',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=208',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -233,9 +233,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'dimgray',
+                swatchName: '"Graphite" Hoodie',
                 color: '#4C4C4C',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPHITE_F.png?v=1692518395&width=104',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPHITE_F.png?v=1692518395&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -262,9 +262,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'turquoise',
+                swatchName: '"Opal" Hoodie',
                 color: '#09D6CB',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=823',
                 isActive: true,
                 sizes: [
                     {
@@ -291,9 +291,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'darkslategray',
+                swatchName: '"Cocoa" Hoodie',
                 color: '#473B33',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/COCOA_F.png?v=1692518010&width=104',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/COCOA_F.png?v=1692518010&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -322,7 +322,7 @@ export const hoodiesData = [
         ]
     },
     {
-        image: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
+        image: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=823',
         name: 'Hoodie 1',
         badges: [
             {
@@ -336,7 +336,7 @@ export const hoodiesData = [
         ],
         swatches: [
             {
-                swatchName: 'black',
+                swatchName: '"Obsidian" Hoodie',
                 color: '#000',
                 swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
                 isActive: true,
@@ -365,9 +365,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'purple',
+                swatchName: '"Grape" Hoodie',
                 color: '#650FA4',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=208',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -394,9 +394,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'dimgray',
+                swatchName: '"Graphite" Hoodie',
                 color: '#4C4C4C',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPHITE_F.png?v=1692518395&width=104',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPHITE_F.png?v=1692518395&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -423,9 +423,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'turquoise',
+                swatchName: '"Opal" Hoodie',
                 color: '#09D6CB',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -452,9 +452,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'darkslategray',
+                swatchName: '"Cocoa" Hoodie',
                 color: '#473B33',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/COCOA_F.png?v=1692518010&width=104',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/COCOA_F.png?v=1692518010&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -483,8 +483,8 @@ export const hoodiesData = [
         ]
     },
     {
-        image: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=104',
-        name: 'Hoodie 1',
+        image: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=823',
+        name: '"Grape" Hoodie',
         badges: [
             {
                 badgeName: 'hoodies',
@@ -497,7 +497,7 @@ export const hoodiesData = [
         ],
         swatches: [
             {
-                swatchName: 'black',
+                swatchName: '"Obsidian" Hoodie',
                 color: '#000',
                 swatchImage: 'https://angelicmotion.com/cdn/shop/files/OBSIDIAN_F.png?v=1692518471&width=208',
                 isActive: false,
@@ -526,9 +526,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'purple',
+                swatchName: '"Grape" Hoodie',
                 color: '#650FA4',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=208',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPE_F.png?v=1692517897&width=823',
                 isActive: true,
                 sizes: [
                     {
@@ -555,9 +555,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'dimgray',
+                swatchName: '"Graphite" Hoodie',
                 color: '#4C4C4C',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPHITE_F.png?v=1692518395&width=104',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/GRAPHITE_F.png?v=1692518395&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -584,9 +584,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'turquoise',
+                swatchName: '"Opal" Hoodie',
                 color: '#09D6CB',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=208',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/OPAL_F.png?v=1692517733&width=823',
                 isActive: false,
                 sizes: [
                     {
@@ -613,9 +613,9 @@ export const hoodiesData = [
                 ]
             },
             {
-                swatchName: 'darkslategray',
+                swatchName: '"Cocoa" Hoodie',
                 color: '#473B33',
-                swatchImage: 'https://angelicmotion.com/cdn/shop/files/COCOA_F.png?v=1692518010&width=104',
+                swatchImage: 'https://angelicmotion.com/cdn/shop/files/COCOA_F.png?v=1692518010&width=823',
                 isActive: false,
                 sizes: [
                     {
