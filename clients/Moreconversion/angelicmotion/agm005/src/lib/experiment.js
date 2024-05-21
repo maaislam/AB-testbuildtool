@@ -37,6 +37,7 @@ export default () => {
 
     if (target.closest(`.${ID}__offerBtn`)) {
       document.querySelector(`.${ID}__modal`).classList.add('active');
+      document.querySelector(`.${ID}__modal-overlay`).classList.add('active');
     } else if (target.closest(`.${ID}__swatch`)) {
       const productCard = target.closest(`.${ID}__productCard`);
       const { pagename } = productCard.dataset;
