@@ -6,6 +6,7 @@ import { hoodiesData, zipupData } from './data/data';
 import addToCart from './helpers/addToCart';
 import swatchHandler from './handlers/swatchHandler';
 import cardModules from './components/card';
+import applyDiscountCode from './helpers/applyDiscountCode';
 
 const { cardDetails, cardDetails2 } = cardModules;
 
@@ -66,10 +67,14 @@ export default () => {
         };
       });
 
+      document.querySelector(`.${ID}__modal`).classList.remove('active');
+
       try {
         await products.reduce((promise, product) => {
           return promise.then(() => addToCart(product));
-        }, Promise.resolve());
+        }, Promise.resolve()).then(() => {
+          return applyDiscountCode('Buy3Get1Free');
+        });
       } catch (error) {
         console.error('Failed to add products:', error);
       }
