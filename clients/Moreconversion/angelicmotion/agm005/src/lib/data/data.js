@@ -4,11 +4,11 @@ export const hoodiesData = [
         name: 'OBSIDIAN HOODIE',
         badges: [
             {
-                badgeName: 'Hoodies',
+                badgeName: 'hoodies',
                 isActive: true
             },
             {
-                badgeName: 'Zipup',
+                badgeName: 'zipup',
                 isActive: false
             }
         ],
@@ -165,11 +165,11 @@ export const hoodiesData = [
         name: 'Hoodie 1',
         badges: [
             {
-                badgeName: 'Hoodies',
+                badgeName: 'hoodies',
                 isActive: true
             },
             {
-                badgeName: 'Zipup',
+                badgeName: 'zipup',
                 isActive: false
             }
         ],
@@ -326,11 +326,11 @@ export const hoodiesData = [
         name: 'Hoodie 1',
         badges: [
             {
-                badgeName: 'Hoodies',
+                badgeName: 'hoodies',
                 isActive: true
             },
             {
-                badgeName: 'Zipup',
+                badgeName: 'zipup',
                 isActive: false
             }
         ],
@@ -487,11 +487,11 @@ export const hoodiesData = [
         name: 'Hoodie 1',
         badges: [
             {
-                badgeName: 'Hoodies',
+                badgeName: 'hoodies',
                 isActive: true
             },
             {
-                badgeName: 'Zipup',
+                badgeName: 'zipup',
                 isActive: false
             }
         ],
@@ -651,11 +651,11 @@ export const zipupData = [
         name: '"Onyx" Zipup',
         badges: [
             {
-                badgeName: 'Hoodies',
+                badgeName: 'hoodies',
                 isActive: false
             },
             {
-                badgeName: 'Zipup',
+                badgeName: 'zipup',
                 isActive: true
             }
         ],
@@ -816,11 +816,11 @@ export const zipupData = [
         name: '"Onyx" Zipup',
         badges: [
             {
-                badgeName: 'Hoodies',
+                badgeName: 'hoodies',
                 isActive: false
             },
             {
-                badgeName: 'Zipup',
+                badgeName: 'zipup',
                 isActive: true
             }
         ],
@@ -981,11 +981,11 @@ export const zipupData = [
         name: '"Onyx" Zipup',
         badges: [
             {
-                badgeName: 'Hoodies',
+                badgeName: 'hoodies',
                 isActive: false
             },
             {
-                badgeName: 'Zipup',
+                badgeName: 'zipup',
                 isActive: true
             }
         ],
@@ -1146,11 +1146,11 @@ export const zipupData = [
         name: '"Onyx" Zipup',
         badges: [
             {
-                badgeName: 'Hoodies',
+                badgeName: 'hoodies',
                 isActive: false
             },
             {
-                badgeName: 'Zipup',
+                badgeName: 'zipup',
                 isActive: true
             }
         ],

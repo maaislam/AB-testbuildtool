@@ -5,6 +5,7 @@ import modal from './components/modal';
 import { hoodiesData, zipupData } from './data/data';
 import addToCart from './helpers/addToCart';
 import swatchHandler from './handlers/swatchHandler';
+import card from './components/card';
 
 const { ID } = shared;
 
@@ -48,8 +49,8 @@ export default () => {
     } else if (target.closest(`.${ID}__addToCart`)) {
       const cards = document.querySelectorAll(`.${ID}__productCard`);
 
-      const products = [...cards].map((card) => {
-        const size = card.querySelector(`.${ID}__size.active`);
+      const products = [...cards].map((cardElem) => {
+        const size = cardElem.querySelector(`.${ID}__size.active`);
         const { variantid } = size.dataset;
 
         return {
@@ -65,6 +66,18 @@ export default () => {
       } catch (error) {
         console.error('Failed to add products:', error);
       }
+    } else if (target.closest(`.${ID}__hoodies`)) {
+      const productCardWrapper = target.closest(`.${ID}__productCardWrapper`);
+      const { index } = productCardWrapper.dataset;
+
+      const cardHtml = card(ID, hoodiesData[index], +index);
+      productCardWrapper.innerHTML = cardHtml;
+    } else if (target.closest(`.${ID}__zipup`)) {
+      const productCardWrapper = target.closest(`.${ID}__productCardWrapper`);
+      const { index } = productCardWrapper.dataset;
+
+      const cardHtml = card(ID, zipupData[index], +index);
+      productCardWrapper.innerHTML = cardHtml;
     }
   });
 
