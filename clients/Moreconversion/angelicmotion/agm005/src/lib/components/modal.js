@@ -1,6 +1,6 @@
 import cards from './cards';
 
-const modal = (id, data) => {
+const modal = (id, data, page) => {
     const htmlStr = `
         <div class="${id}__modal">
             <div class="${id}__modal-overlay"></div>
@@ -15,7 +15,7 @@ const modal = (id, data) => {
                 </div>
                 
                 <div class="content">
-                    ${cards(id, data)}
+                    ${cards(id, data, page)}
                 </div>
 
                 <div class='${id}__cardFooter'>

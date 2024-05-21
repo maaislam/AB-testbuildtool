@@ -1,7 +1,8 @@
-$media: (xsm:360px,
+$media: (xsm:380px,
     sm: 768px,
     md: 850px,
     lg: 1088px,
+    xl: 1440px
 );
 
 @mixin media-query($breakpoint) {

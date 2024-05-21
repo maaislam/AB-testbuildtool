@@ -1,8 +1,10 @@
-import card from './card';
+import cardModule from './card';
 
-const cards = (id, products) => {
+const { card } = cardModule;
+
+const cards = (id, products, page) => {
     const htmlStr = `<div class='${id}__productCards'>
-        ${products.map((product, index) => card(id, product, index)).join('')}
+        ${products.map((product, index) => card(id, product, index, page)).join('')}
     </div>`;
 
     return htmlStr;

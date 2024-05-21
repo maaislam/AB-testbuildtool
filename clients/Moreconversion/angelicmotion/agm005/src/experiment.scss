@@ -41,6 +41,14 @@
         visibility: hidden;
         opacity: 0;
 
+        @include media-query(md) {
+            padding: 32px 16px;
+        }
+
+        @include media-query(xsm) {
+            padding: 32px 12px;
+        }
+
         &-overlay {
             position: fixed;
             top: 0;
@@ -77,6 +85,11 @@
                     font-family: 'Helvetica';
                     color: #000;
                     text-transform: uppercase;
+
+                    @include media-query(lg) {
+                        font-size: 16px;
+                        line-height: 22px;
+                    }
                 }
             }
 
@@ -250,57 +263,153 @@
             &-container {
                 max-width: 600px;
                 overflow: hidden;
+
+                .#{$id}__productCardWrapper {
+                    padding-top: 20px;
+
+                    @include media-query(md) {
+                        padding-top: 15px;
+                    }
+
+                    &:first-child {
+                        padding-top: 0;
+                    }
+
+                    .#{$id}__productCard {
+                        .#{$id}__select {
+                            @include media-query(lg) {
+                                font-size: 14px;
+                                line-height: 16px;
+                            }
+                        }
+
+                        .#{$id}__cardContent {
+                            margin-top: 10px;
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                width: 100px;
+                                height: 100px;
+                                margin-right: 20px;
+
+                                @include media-query(lg) {
+                                    width: 70px;
+                                    height: 70px;
+                                    margin-right: 10px;
+                                }
+
+                                @include media-query(xsm) {
+                                    width: 60px;
+                                    height: 64px;
+                                    margin-right: 10px;
+                                }
+                            }
+
+                            .#{$id}__colorText {
+                                @include media-query(sm) {
+                                    font-size: 10px;
+                                    line-height: 10px;
+                                }
+                            }
+
+                            .#{$id}__swatches {
+                                margin-top: 5px;
+
+                                .#{$id}__swatch {
+                                    @include media-query(sm) {
+                                        height: 20px;
+                                        width: 20px;
+                                    }
+                                }
+                            }
+
+                            .#{$id}__sizes {
+                                margin-top: 5px;
+
+                                .#{$id}__size {
+                                    @include media-query(sm) {
+                                        width: auto;
+                                        padding: 3px;
+                                        min-width: 22px;
+                                        height: 23px;
+                                        font-size: 10px;
+                                        line-height: 10px;
+                                    }
+                                }
+                            }
+
+                            .#{$id}__sizesWrapper {
+                                margin-bottom: 8px;
+                                align-self: flex-end;
+                            }
+                        }
+                    }
+
+                    .#{$id}__badges {
+                        margin-bottom: 15px;
+
+                        .#{$id}__badge {
+                            @include media-query(sm) {
+                                height: 24px;
+                                width: 60px;
+                                padding: 6px;
+                                margin-right: 5px;
+                                font-size: 10px;
+                                line-height: 10px;
+                            }
+
+                            @include media-query(xsm) {
+                                width: 54px;
+                                padding: 6px 3px;
+                                margin-right: 4px;
+                            }
+                        }
+                    }
+                }
             }
         }
 
         .content {
-            max-height: 500px;
+            max-height: 600px;
             overflow-y: auto;
 
-            @include media-query(lg) {}
-        }
-
-        .#{$id}__productCard {
-            padding-top: 20px;
-
-            &:first-child {
-                padding-top: 0;
-            }
-        }
-
-        .#{$id}__cardContent {
-            margin-top: 10px;
-            display: flex;
-            align-items: center;
-
-            img {
-                width: 100px;
-                height: 100px;
-                margin-right: 20px;
+            @include media-query(xl) {
+                max-height: 500px;
             }
 
-            .#{$id}__badges {
-                margin-bottom: 15px;
+            @include media-query(lg) {
+                max-height: 460px;
             }
 
-            .#{$id}__swatches,
-            .#{$id}__sizes {
-                margin-top: 5px;
-            }
-
-            .#{$id}__sizesWrapper {
-                margin-bottom: 8px;
-                align-self: flex-end;
+            @include media-query(xsm) {
+                max-height: 360px;
             }
         }
 
         .#{$id}__swatchesDetails {
             margin-right: 20px;
+
+            @include media-query(lg) {
+                margin-right: 10px;
+            }
+
+            @include media-query(xsm) {
+                margin-right: 8px;
+            }
         }
 
         .#{$id}__size,
         .#{$id}__swatch {
             margin-right: 10px;
+
+            @include media-query(lg) {
+                margin-right: 5px;
+            }
+
+            @include media-query(xsm) {
+                margin-right: 4px;
+            }
         }
 
         .#{$id}__cardFooter {
@@ -353,7 +462,7 @@
             }
         }
 
-        .#{$id}__productCard {
+        .#{$id}__productCardWrapper {
             padding: 0 20px;
             border-right: 1px solid #E6E6E6;
             border-bottom: 0;
@@ -397,7 +506,7 @@
                 cursor: pointer;
 
                 @include media-query(sm) {
-                    width: 320px;
+                    width: 300px;
                 }
             }
         }
