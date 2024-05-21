@@ -17,13 +17,7 @@ export const calculateBox = (id, deliveryData) => {
                     <div class="${id}__calculateBox-content-summery">
                         <p>Total</p>
                         <div class="${id}__subtotal">£0.00</div>
-                        <div class="${id}__checkBox">
-                            <input type="checkbox" id="add-10percent-wastage" name="add-10percent-wastage" value="10">
-                            <label for="add-10percent-wastage">
-                                Add 10% wastage 
-                                <div class="tooltip-toggle">?</div>
-                            </label>
-                        </div>
+                        
                         <div class="${id}__extraInfo">(0 packs / 0m²)</div>
                     </div>
                 </div>

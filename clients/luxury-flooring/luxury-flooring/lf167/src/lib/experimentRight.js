@@ -8,7 +8,7 @@ import { deliveryMessage } from './components/deliveryMessage';
 import { priceWrapperV4, priceWrapperV5, priceWrapperV6 } from './components/priceWrapper';
 
 const { ID, VARIATION } = shared;
-const DOM_RENDER_DELAY = 2000;
+//const DOM_RENDER_DELAY = 2000;
 const finalMessage = 'order a free sample';
 
 const renderPriceSection = () => {
@@ -60,21 +60,31 @@ const renderPriceSection = () => {
     textChangeHandler(orderSampleWrapper);
   }
 
-  const renderText = (mutation) => {
-    const { addedNodes, target } = mutation;
-    const orderSampleButton = document.querySelector(
-      `.${ID}__orderSampleWrapper-button button > span`
-    );
+  //const renderText = (mutation) => {
+  //const { addedNodes, target } = mutation;
+  //const orderSampleButton = document.querySelector(
+  //`.${ID}__orderSampleWrapper-button button > span`
+  //);
 
-    if (addedNodes.length > 0 && target.innerText.toLowerCase() === 'order a sample') {
-      setTimeout(() => {
-        orderSampleButton.innerText = finalMessage;
-      }, DOM_RENDER_DELAY);
-    }
-  };
+  //if (addedNodes.length > 0 && target.innerText.toLowerCase() === 'order a sample') {
+  //setTimeout(() => {
+  //orderSampleButton.innerText = finalMessage;
+  //}, DOM_RENDER_DELAY);
+  //}
+  //};
 
   //text chnage handler
-  observeDOM('#product-addtocart-button1 span', renderText);
+  //observeDOM('#product-addtocart-button1 span', renderText);
+  observeDOM('.missing-wastage', () => {
+    const missingDetails = document.querySelector('.missing-wastage');
+    const wastageCheckbox = document.querySelector(`.${ID}__checkBox`);
+    const isMissingDetailsHidden = missingDetails.getAttribute('style') === 'display: none;';
+    if (isMissingDetailsHidden) {
+      wastageCheckbox.classList.add(`${ID}__hide`);
+    } else {
+      wastageCheckbox.classList.remove(`${ID}__hide`);
+    }
+  });
 };
 
 export default () => {
@@ -96,7 +106,7 @@ export default () => {
   const controlInputElement = document.querySelector('.fp-calculator .fp-controls input');
 
   controlInputElement.addEventListener('input', () => {
-    if (controlInputElement.value === '') {
+    if (controlInputElement.value === '' || controlInputElement.value === '0') {
       document.querySelector(`.${ID}__calculateBox`).classList.remove(`${ID}__hide`);
       inputElem.value = '';
       inputElem.focus();
@@ -107,6 +117,7 @@ export default () => {
     //const areaInput = document.querySelector('.fp-calculator .fp-controls input');
     controlInputElement.value = inputElem.value;
     controlInputElement.dispatchEvent(new Event('change'));
+
     if (inputElem.value > '0') {
       document.querySelector(`.${ID}__calculateBox`).classList.add(`${ID}__hide`);
       controlInputElement.focus();
@@ -115,7 +126,6 @@ export default () => {
 
   const fpControls = document.querySelector('.fp-controls');
   const fpRequire = document.querySelector('.fp-require');
-  const wastageDetails = document.querySelector('.wastage-details');
   const fpTotalAmount = document.querySelector('.fp-require-statement:not(.-bold)');
 
   if (document.querySelector(`.${ID}__fpCalculator`)) {
@@ -141,23 +151,24 @@ export default () => {
     .querySelector('.product-add-form')
     .insertAdjacentHTML('afterend', deliveryMessage(ID, deliveryData));
 
-  document.body.addEventListener('click', (e) => {
+  document.body.addEventListener('change', (e) => {
     const { target } = e;
-    if (
-      target.closest('label[for="add-10percent-wastage"]') &&
-      target.closest(`.${ID}__calculateBox`)
-    ) {
-      console.log('enter');
-      target.closest(`.${ID}__calculateBox`).querySelector('input').click();
-      document.querySelector(`.${ID}__fpCalculator-calculation input`).click();
-      wastageDetails.querySelector('.missing-wastage').click();
-    } else if (
-      target.closest('label[for="add-10percent-wastage"]') &&
-      target.closest(`.${ID}__fpCalculator`)
-    ) {
-      console.log('enter......');
-      document.querySelector(`.${ID}__calculateBox input`).click();
+
+    const wastageDetails = document.querySelector('.wastage-details');
+    if (target.matches('#add-10percent-wastage')) {
+      //document.querySelector(`.${ID}__calculateBox input`).click();
       wastageDetails.querySelector('.missing-wastage').click();
     }
+  });
+
+  const tooltipToggle = document.querySelector('.tooltip-toggle');
+  tooltipToggle.addEventListener('mouseover', () => {
+    const tooltipContent = document.querySelector('.tooltip-contents');
+    tooltipContent.classList.remove(`${ID}__hide`);
+  });
+
+  tooltipToggle.addEventListener('mouseout', () => {
+    const tooltipContent = document.querySelector('.tooltip-contents');
+    tooltipContent.classList.add(`${ID}__hide`);
   });
 };

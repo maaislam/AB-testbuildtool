@@ -1,9 +1,10 @@
 import { observeDOM } from './helpers/utils';
 import setup from './services/setup';
+import shared from './shared/shared';
 
 //import shared from './shared/shared';
 
-//const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const priceBox = document.querySelectorAll('[data-role="priceBox"]');
@@ -17,11 +18,22 @@ const init = () => {
     };
     const priceElm = box.querySelector('[id*="product-price-"]');
     const { priceAmount } = priceElm.dataset;
-    const pricetext = formatNumberGermanStyle(priceAmount);
-    //console.log('🚀 ~ priceBox.forEach ~ pricetext:', pricetext);
+
+    const pricetext = formatNumberGermanStyle(Number(priceAmount));
     const priceContainer = priceElm.querySelector('.price');
     priceContainer.style.color = 'red';
-    priceElm.querySelector('.price').textContent = pricetext;
+
+    const mainPrice = pricetext.split(',')[0];
+    const subPrice = pricetext.split(',')[1];
+
+    const priceStr = `<div class="${ID}__pricing">
+        <span class="${ID}__price">
+          ${mainPrice},<span class="${ID}__friction">${subPrice}</span>
+        </span>
+      </div>`;
+    priceElm.querySelector('.price').innerHTML = priceStr;
+
+    //priceElm.querySelector('.price').textContent = pricetext;
   });
 };
 

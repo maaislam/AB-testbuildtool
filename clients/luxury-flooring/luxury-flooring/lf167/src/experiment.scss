@@ -2,9 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+
   // right side css
   .#{$id}__hide {
-    display: none;
+    display: none !important;
   }
 
   .fp-require-statement.-bold {
@@ -12,6 +13,7 @@
   }
 
   .fp-calculator {
+
     .#{$id}__fpCalculator,
     .#{$id}__delivery-message,
     .product-add-form {
@@ -31,33 +33,44 @@
         display: flex;
         justify-content: center;
 
+        @include media-query(lg) {
+          justify-content: space-around;
+        }
+
         &-input {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           padding: 15px 0;
+
           p {
             font-size: 14px;
             font-weight: 700;
             margin-bottom: 0;
+
             @media screen and (max-width: 1250px) {
-              font-size: 12px;
+              font-size: 14px;
             }
+
             @media screen and (max-width: 430px) {
-              font-size: 10px;
+              font-size: 13px;
             }
           }
+
           a {
             font-size: 14px;
             text-decoration: underline;
             color: #000;
+
             @media screen and (max-width: 1250px) {
               font-size: 12px;
             }
+
             @media screen and (max-width: 430px) {
-              font-size: 10px;
+              font-size: 13px;
             }
           }
+
           .fp-controls {
             align-items: center;
             justify-content: flex-start;
@@ -65,6 +78,7 @@
             border: solid 1px #959595;
             margin-bottom: 15px;
             padding: 0 10px;
+
             .fp-controls-label {
               display: none;
             }
@@ -79,6 +93,7 @@
               margin: 0;
               border: none;
               text-align: left;
+
               @media screen and (max-width: 430px) {
                 max-width: 90px;
               }
@@ -97,6 +112,7 @@
           @include media-query(xlg) {
             margin: 0 9px;
           }
+
           @include media-query(lg) {
             margin: 0 18px;
           }
@@ -108,22 +124,46 @@
 
         &-calculation {
           padding: 15px 0;
-          & > p {
+
+          &>p {
             font-weight: 700;
             margin-bottom: 0;
             text-align: left;
+
+            @include media-query(sm) {
+              font-size: 14px;
+            }
           }
+
           .fp-require-statement {
             text-align: left;
+
             .fp-require-price,
             .hr {
               display: none;
             }
 
+            .fp-require-price {
+              font-size: 32px;
+              line-height: 50px;
+              color: #202020;
+
+              @include media-query(sm) {
+                font-size: 28px;
+                line-height: 40px;
+              }
+            }
+
             p[data-bind='text: total_info'] {
-              color: #959595;
-              font-size: 12px;
+              color: #202020;
+              opacity: 0.54;
+              font-size: 13px;
+              line-height: 22px;
               margin: 10px 0 0;
+
+              @include media-query(sm) {
+                margin: 5px 0 0;
+              }
             }
           }
         }
@@ -159,6 +199,45 @@
     align-items: center;
     gap: 5px;
 
+    .tooltip {
+      position: relative;
+      display: inline-block;
+
+      .tooltip-toggle {
+        width: 18px;
+        height: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: .8em;
+        vertical-align: text-bottom;
+        border-radius: 100%;
+        border: 1px solid #333;
+        position: relative;
+        top: 2px;
+        margin-top: 0;
+        cursor: help;
+      }
+
+      .tooltip-contents {
+        padding: 20px;
+        margin-left: -255px;
+        min-width: 310px;
+        position: absolute;
+        left: 0;
+        top: 160%;
+        bottom: auto;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        z-index: 9;
+      }
+    }
+
+    .tooltip span.tooltip-content>p {
+      line-height: 22px;
+      margin: 0;
+    }
+
     input {
       top: 0;
       width: 20px;
@@ -174,7 +253,9 @@
     label {
       display: flex;
       align-items: center;
-      font-size: 12px;
+      font-size: 13px;
+      color: #202020;
+      line-height: 30px;
       margin-bottom: 0;
       white-space: nowrap;
 
@@ -188,6 +269,7 @@
         border: 1px solid #000;
         border-radius: 100%;
         margin-left: 5px;
+
         @media screen and (max-width: 430px) {
           width: 14px;
           height: 14px;
@@ -195,7 +277,7 @@
       }
 
       @media screen and (max-width: 430px) {
-        font-size: 10px;
+        font-size: 12px;
       }
     }
   }
@@ -205,7 +287,7 @@
     margin-top: 15px;
 
     @media screen and (max-width: 430px) {
-      font-size: 12px;
+      font-size: 13px;
     }
   }
 
@@ -215,6 +297,7 @@
 
     &-wrapper {
       padding: 25px;
+
       @include media-query(lg) {
         padding: 15px;
       }
@@ -224,6 +307,10 @@
       display: flex;
       justify-content: center;
 
+      @include media-query(sm) {
+        justify-content: space-around;
+      }
+
       &-input {
         display: flex;
         flex-direction: column;
@@ -232,13 +319,16 @@
 
         p {
           font-size: 14px;
+          line-height: 22px;
           font-weight: 700;
           margin-bottom: 0;
+
           @media screen and (max-width: 1250px) {
-            font-size: 12px;
+            font-size: 14px;
           }
+
           @media screen and (max-width: 430px) {
-            font-size: 10px;
+            font-size: 13px;
           }
         }
 
@@ -274,11 +364,13 @@
           font-size: 14px;
           text-decoration: underline;
           color: #000;
+
           @media screen and (max-width: 1250px) {
             font-size: 12px;
           }
+
           @media screen and (max-width: 430px) {
-            font-size: 10px;
+            font-size: 13px;
           }
         }
       }
@@ -309,23 +401,30 @@
         p {
           font-weight: 700;
           margin-bottom: 0;
+
+          @include media-query(sm) {
+            font-size: 14px;
+          }
         }
 
         .#{$id}__subtotal {
           font-weight: 700;
-          font-size: 25px;
-          line-height: 37.5px;
+          font-size: 32px;
+          line-height: 50px;
+          color: #202020;
 
-          @media screen and (max-width: 767px) {
-            font-size: 18px;
-            line-height: 27px;
+          @include media-query(sm) {
+            font-size: 28px;
+            line-height: 40px;
           }
         }
 
         .#{$id}__extraInfo {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 22px;
           margin-top: 10px;
-          color: #959595;
+          color: #202020;
+          opacity: 0.54;
         }
       }
     }
@@ -346,6 +445,13 @@
     }
   }
 
+  @media screen and (min-width: 1440px) and (max-width: 1700px) {
+    .product.media  {
+      flex: 1 0 64%;
+      max-width: 64%;
+    }
+  }
+
   &-4,
   &-1 {
     .#{$id}__priceWrapper {
@@ -362,15 +468,21 @@
 
     .#{$id}__priceContainer {
       width: 50%;
+
       .#{$id}__availability {
+        height: 24px;
         width: 100%;
-        max-width: 75px;
+        max-width: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: #deeadc;
-        padding: 5px 10px;
+        padding: 0 10px;
 
         span {
           font-weight: bold;
-          font-size: 13px;
+          font-size: 12px;
+          line-height: 19px;
         }
       }
 
@@ -379,28 +491,46 @@
         align-items: center;
         justify-content: flex-start;
         margin-top: 5px;
+
         &-price {
-          font-size: 17px;
           font-weight: 700;
+          font-size: 24px;
+          line-height: 50px;
           color: #d53333;
           margin-right: 5px;
+
           &::before {
             content: 'Only ';
           }
-          @media screen and (max-width: 1024px) {
-            font-size: 15px;
+
+          @include media-query(xxlg) {
+            font-size: 20px;
+            line-height: 30px;
           }
-          @include media-query(xsm) {
-            font-size: 13px;
+
+          @include media-query(xlg) {
+            font-size: 18px;
+            line-height: 28px;
+          }
+
+          @include media-query(sm) {
+            font-size: 14px;
+            line-height: 24px;
           }
         }
 
         &-compare-price {
-          font-size: 12px;
+          font-size: 16px;
           font-weight: 700;
           text-decoration: line-through;
-          @include media-query(xsm) {
-            font-size: 10px;
+
+          @include media-query(xxlg) {
+            font-size: 14px;
+          }
+
+          @include media-query(sm) {
+            font-size: 13px;
+            line-height: 22px;
           }
         }
       }
@@ -408,10 +538,17 @@
 
     .#{$id}__orderSampleWrapper {
       width: 50%;
+      margin-left: 10px;
+
+      @include media-query(md) {
+        margin-left: 0;
+      }
+
       &-button {
         button {
           span {
-            text-transform: lowercase;
+            // text-transform: lowercase;
+
             @include media-query(xlg) {
               font-size: 14px;
             }
@@ -430,16 +567,24 @@
           }
         }
       }
-      &-text {
-      }
 
       .#{$id}__uspsList {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 5px;
+
+        @include media-query(xxlg) {
+          justify-content: space-between;
+        }
+
         &-item {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 17px;
+
+          @include media-query(xxlg) {
+            font-size: 12px;
+          }
 
           &:first-child {
             margin-right: 2px;
@@ -453,14 +598,14 @@
             line-height: 10px;
             color: #202020;
 
-            @include media-query(xsm) {
-              font-size: 8px;
+            @include media-query(sm) {
+              font-size: 7px;
               margin-right: 2px;
             }
           }
 
           @include media-query(xlg) {
-            font-size: 9px;
+            font-size: 10px;
           }
 
           @include media-query(xsm) {
@@ -483,15 +628,21 @@
     .#{$id}__priceContainer {
       display: flex;
       margin: 15px 0;
+
       .#{$id}__availability {
+        height: 24px;
         width: 100%;
-        max-width: 75px;
+        max-width: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: #deeadc;
-        padding: 5px 10px;
+        padding: 0 10px;
 
         span {
           font-weight: bold;
-          font-size: 13px;
+          font-size: 12px;
+          line-height: 19px;
         }
       }
 
@@ -500,41 +651,48 @@
         align-items: center;
         justify-content: flex-start;
         margin-top: 5px;
+
         &-price {
-          font-size: 17px;
+          font-size: 24px;
+          line-height: 50px;
           font-weight: 700;
           color: #d53333;
           margin-right: 5px;
+
           &::before {
             content: 'Only ';
           }
 
-          @include media-query(lg) {
-            font-size: 15px;
+          @include media-query(xxlg) {
+            font-size: 20px;
+            line-height: 30px;
           }
 
-          @include media-query(xsm) {
-            font-size: 13px;
+          @include media-query(xlg) {
+            font-size: 18px;
+            line-height: 28px;
           }
         }
 
         &-compare-price {
-          font-size: 12px;
+          font-size: 16px;
           font-weight: 700;
           text-decoration: line-through;
-          @include media-query(xsm) {
-            font-size: 10px;
+
+          @include media-query(xxlg) {
+            font-size: 14px;
           }
         }
       }
 
       .#{$id}__divider {
         border-left: solid 1px #dedede;
-        margin: 0 27px;
+        margin: 0 36px;
 
         @include media-query(lg) {
           margin: 0 20px;
         }
+
         @include media-query(xsm) {
           margin: 0 auto;
         }
@@ -542,16 +700,27 @@
 
       .#{$id}__tradePrice {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
+        margin-bottom: 6px;
+
         &-icon {
           margin-right: 5px;
+          display: flex;
+
           svg {
             width: 35px;
             height: 35px;
+
+            @include media-query(sm) {
+              width: 22px;
+              height: 22px;
+            }
           }
         }
+
         &-link {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 22px;
           text-decoration: underline;
           color: #000;
           cursor: pointer;
@@ -561,24 +730,40 @@
 
     .#{$id}__orderSampleWrapper {
       padding: 10px 0;
+
+      @include media-query(md) {
+        margin-left: 0;
+      }
+
       &-button {
         button {
           max-width: 320px !important;
+
           span {
-            text-transform: lowercase;
+            // text-transform: lowercase;
           }
         }
       }
-      &-text {
-      }
+
+      &-text {}
 
       .#{$id}__uspsList {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 5px;
+
+        // @include media-query(xxlg) {
+        //   justify-content: space-between;
+        // }
+
         &-item {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 17px;
+
+          // @include media-query(xxlg) {
+          //   font-size: 12px;
+          // }
 
           &:first-child {
             margin-right: 5px;
@@ -614,6 +799,7 @@
   &-3 {
     .#{$id}__priceWrapper {
       margin-bottom: 20px;
+
       @include media-query(md) {
         max-width: 420px;
         margin: 0 auto 20px;
@@ -623,15 +809,21 @@
     .#{$id}__priceContainer {
       display: flex;
       margin: 15px 0;
+
       .#{$id}__availability {
+        height: 24px;
         width: 100%;
-        max-width: 75px;
+        max-width: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: #deeadc;
-        padding: 5px 10px;
+        padding: 0 10px;
 
         span {
           font-weight: bold;
-          font-size: 13px;
+          font-size: 12px;
+          line-height: 19px;
         }
       }
 
@@ -640,25 +832,36 @@
         align-items: center;
         justify-content: flex-start;
         margin-top: 5px;
+
         &-price {
-          font-size: 17px;
+          font-size: 24px;
+          line-height: 50px;
           font-weight: 700;
           color: #d53333;
           margin-right: 5px;
+
           &::before {
             content: 'Only ';
           }
-          @include media-query(xsm) {
-            font-size: 13px;
+
+          @include media-query(xxlg) {
+            font-size: 20px;
+            line-height: 30px;
+          }
+
+          @include media-query(xlg) {
+            font-size: 18px;
+            line-height: 28px;
           }
         }
 
         &-compare-price {
-          font-size: 12px;
+          font-size: 16px;
           font-weight: 700;
           text-decoration: line-through;
-          @include media-query(xsm) {
-            font-size: 10px;
+
+          @include media-query(xxlg) {
+            font-size: 14px;
           }
         }
       }
@@ -670,6 +873,7 @@
         @include media-query(lg) {
           margin: 0 20px;
         }
+
         @include media-query(xsm) {
           margin: 0 auto;
         }
@@ -677,16 +881,27 @@
 
       .#{$id}__tradePrice {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
+        margin-bottom: 6px;
+
         &-icon {
           margin-right: 5px;
+          display: flex;
+
           svg {
             width: 35px;
             height: 35px;
+
+            @include media-query(sm) {
+              width: 22px;
+              height: 22px;
+            }
           }
         }
+
         &-link {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 22px;
           text-decoration: underline;
           color: #000;
           cursor: pointer;
@@ -695,34 +910,48 @@
     }
 
     .#{$id}__orderSampleWrapper {
-      background-color: #e2e8e1;
       padding: 10px;
+      background: #eef4ed;
+
+      @include media-query(md) {
+        margin-left: 0;
+      }
+
       &-button {
         button {
           max-width: 320px !important;
+
           span {
-            text-transform: lowercase;
+            // text-transform: lowercase;
           }
         }
       }
-      &-text {
-      }
+
+      &-text {}
 
       .#{$id}__floorStr {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 5px;
+
         &-icon {
           margin-right: 5px;
+
           svg {
             width: 35px;
             height: 35px;
+
+            @include media-query(sm) {
+              width: 22px;
+              height: 22px;
+            }
           }
         }
 
         &-text {
-          font-size: 12px;
+          font-size: 15px;
+          line-height: 22px;
           font-weight: 700;
         }
       }
@@ -732,8 +961,18 @@
         align-items: center;
         justify-content: center;
         padding: 5px;
+
+        // @include media-query(xxlg) {
+        //   justify-content: space-between;
+        // }
+
         &-item {
-          font-size: 12px;
+          font-size: 13px;
+          line-height: 17px;
+
+          // @include media-query(xxlg) {
+          //   font-size: 12px;
+          // }
 
           &:first-child {
             margin-right: 5px;
@@ -927,8 +1166,7 @@
 
             &::after {
               z-index: 999;
-              background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png')
-                bottom left;
+              background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png') bottom left;
               bottom: 0;
               content: '';
               height: 40px;
