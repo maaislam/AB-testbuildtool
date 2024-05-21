@@ -6,7 +6,7 @@ import counter from './components/counter';
 
 import { wrapInner, pollerLite } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 const MIN_IMAGES_OF_PROD = 5;
 
 const insertRoomVisualiser = (parentElem) => {
