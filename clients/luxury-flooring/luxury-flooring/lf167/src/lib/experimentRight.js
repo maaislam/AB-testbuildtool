@@ -106,7 +106,7 @@ export default () => {
   const controlInputElement = document.querySelector('.fp-calculator .fp-controls input');
 
   controlInputElement.addEventListener('input', () => {
-    if (controlInputElement.value === '') {
+    if (controlInputElement.value === '' || controlInputElement.value === '0') {
       document.querySelector(`.${ID}__calculateBox`).classList.remove(`${ID}__hide`);
       inputElem.value = '';
       inputElem.focus();
@@ -117,6 +117,7 @@ export default () => {
     //const areaInput = document.querySelector('.fp-calculator .fp-controls input');
     controlInputElement.value = inputElem.value;
     controlInputElement.dispatchEvent(new Event('change'));
+
     if (inputElem.value > '0') {
       document.querySelector(`.${ID}__calculateBox`).classList.add(`${ID}__hide`);
       controlInputElement.focus();
