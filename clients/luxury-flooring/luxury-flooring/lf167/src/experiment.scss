@@ -9,6 +9,7 @@
 
   .fp-require-statement.-bold, 
   .including-wastage,
+  .missing-wastage,
   .wastage-details .tooltip-toggle {
     display: none !important;
   }
@@ -85,6 +86,7 @@
             }
 
             input {
+              padding: 0.7em 0.5em;
               width: 100%;
               max-width: 130px;
               height: 100%;
