@@ -14,8 +14,17 @@
     display: none !important;
   }
 
-  .fp-calculator {
+  .fotorama__img {
+    width: 100%;
+  }
 
+  .fotorama__stage {
+    @media screen and (min-width: 1580px) {
+      margin-bottom: 70px;
+    }
+  }
+
+  .fp-calculator {
     .#{$id}__fpCalculator,
     .#{$id}__delivery-message,
     .product-add-form {
