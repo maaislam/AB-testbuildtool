@@ -2,13 +2,14 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-
   // right side css
   .#{$id}__hide {
     display: none !important;
   }
 
-  .fp-require-statement.-bold {
+  .fp-require-statement.-bold, 
+  .including-wastage,
+  .wastage-details .tooltip-toggle {
     display: none !important;
   }
 
