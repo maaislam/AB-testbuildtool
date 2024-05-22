@@ -8,7 +8,7 @@ import { deliveryMessage } from './components/deliveryMessage';
 import { priceWrapperV4, priceWrapperV5, priceWrapperV6 } from './components/priceWrapper';
 
 const { ID, VARIATION } = shared;
-const DOM_RENDER_DELAY = 2000;
+//const DOM_RENDER_DELAY = 2000;
 const finalMessage = 'order a free sample';
 
 const renderPriceSection = () => {
@@ -60,18 +60,18 @@ const renderPriceSection = () => {
     textChangeHandler(orderSampleWrapper);
   }
 
-  const renderText = (mutation) => {
-    const { addedNodes, target } = mutation;
-    const orderSampleButton = document.querySelector(
-      `.${ID}__orderSampleWrapper-button button > span`
-    );
+  //const renderText = (mutation) => {
+  //const { addedNodes, target } = mutation;
+  //const orderSampleButton = document.querySelector(
+  //`.${ID}__orderSampleWrapper-button button > span`
+  //);
 
-    if (addedNodes.length > 0 && target.innerText.toLowerCase() === 'order a sample') {
-      setTimeout(() => {
-        orderSampleButton.innerText = finalMessage;
-      }, DOM_RENDER_DELAY);
-    }
-  };
+  //if (addedNodes.length > 0 && target.innerText.toLowerCase() === 'order a sample') {
+  //setTimeout(() => {
+  //orderSampleButton.innerText = finalMessage;
+  //}, DOM_RENDER_DELAY);
+  //}
+  //};
 
   //text chnage handler
   //observeDOM('#product-addtocart-button1 span', renderText);
@@ -79,11 +79,11 @@ const renderPriceSection = () => {
     const missingDetails = document.querySelector('.missing-wastage');
     const wastageCheckbox = document.querySelector(`.${ID}__checkBox`);
     const isMissingDetailsHidden = missingDetails.getAttribute('style') === 'display: none;';
-      if (isMissingDetailsHidden) {
-        wastageCheckbox.classList.add(`${ID}__hide`);
-      } else {
-        wastageCheckbox.classList.remove(`${ID}__hide`);
-      }
+    if (isMissingDetailsHidden) {
+      wastageCheckbox.classList.add(`${ID}__hide`);
+    } else {
+      wastageCheckbox.classList.remove(`${ID}__hide`);
+    }
   });
 };
 
