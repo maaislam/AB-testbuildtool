@@ -1,0 +1,50 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__stickySection {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 16px;
+    background: #222222;
+    animation: 0.4s cubic-bezier(0, 1, 0.5, 1) 0s 1 normal none running animation-sticky-section;
+    display: none;
+    z-index: 99999;
+
+    &.#{$id}__show {
+      display: block;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19px;
+      letter-spacing: 0.25px;
+      color: #fff;
+      margin-bottom: 9px;
+      text-align: center;
+    }
+    a {
+      display: block;
+      background-color: #49d900;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #fff;
+      padding: 5px 0;
+      text-align: center;
+    }
+  }
+}
+
+@keyframes animation-sticky-section {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
