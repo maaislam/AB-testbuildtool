@@ -95,7 +95,8 @@ export default () => {
   //render price section
   renderPriceSection();
   const targetElement = document.querySelector('.product-info-main .product-info-cta');
-  const deliveryData = document.querySelector('#del_date').innerText;
+  const deliveryDataElem = document.querySelector('#del_date');
+  const deliveryData = deliveryDataElem ? deliveryDataElem?.innerText : '';
 
   if (document.querySelector(`.${ID}__calculateBox`)) {
     document.querySelector(`.${ID}__calculateBox`).remove();
