@@ -34,7 +34,9 @@ const updateCartText = () => {
 const init = () => {
   if (VARIATION === '1') {
     const upsellTitleElem = document.querySelector('.upcart-upsells-title ins');
-    upsellTitleElem.textContent = 'Add & Get Free Shipping';
+    if (upsellTitleElem) {
+      upsellTitleElem.textContent = 'Add & Get Free Shipping';
+    }
 
     updateCartText();
   } else if (VARIATION === '2' && !document.querySelector(`.${ID}__guaranteeText`)) {
