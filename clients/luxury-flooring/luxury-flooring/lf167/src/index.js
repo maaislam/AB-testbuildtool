@@ -21,3 +21,7 @@ pollerLite(
     activateRight();
   }
 );
+
+pollerLite(['.catalog-product-view'], () => {
+  activateLeft();
+});

@@ -70,25 +70,34 @@ export default () => {
       document.querySelector(`.${ID}__modal`).classList.remove('active');
 
       try {
-        await products.reduce((promise, product) => {
-          return promise.then(() => addToCart(product));
-        }, Promise.resolve()).then(() => {
-          return applyDiscountCode('Buy3Get1Free');
-        });
+        await products
+          .reduce((promise, product) => {
+            return promise.then(() => addToCart(product));
+          }, Promise.resolve())
+          .then(() => {
+            return applyDiscountCode('Buy3Get1Free');
+          });
       } catch (error) {
         console.error('Failed to add products:', error);
       }
     } else if (target.closest(`.${ID}__hoodies`)) {
       const productCardWrapper = target.closest(`.${ID}__productCardWrapper`);
+      if (!productCardWrapper) return;
       const { index } = productCardWrapper.dataset;
 
-      const cardHtml = VARIATION === '1' ? cardDetails(ID, hoodiesData[index], +index, 'hoodies') : cardDetails2(ID, hoodiesData[index], +index, 'hoodies');
+      const cardHtml =
+        VARIATION === '1'
+          ? cardDetails(ID, hoodiesData[index], +index, 'hoodies')
+          : cardDetails2(ID, hoodiesData[index], +index, 'hoodies');
       productCardWrapper.innerHTML = cardHtml;
     } else if (target.closest(`.${ID}__zipup`)) {
       const productCardWrapper = target.closest(`.${ID}__productCardWrapper`);
       const { index } = productCardWrapper.dataset;
 
-      const cardHtml = VARIATION === '1' ? cardDetails(ID, zipupData[index], +index, 'zipup') : cardDetails2(ID, zipupData[index], +index, 'zipup');
+      const cardHtml =
+        VARIATION === '1'
+          ? cardDetails(ID, zipupData[index], +index, 'zipup')
+          : cardDetails2(ID, zipupData[index], +index, 'zipup');
       productCardWrapper.innerHTML = cardHtml;
     }
   });

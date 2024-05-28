@@ -2,7 +2,6 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-
   // right side css
   .#{$id}__hide {
     display: none !important;
@@ -13,7 +12,6 @@
   }
 
   .fp-calculator {
-
     .#{$id}__fpCalculator,
     .#{$id}__delivery-message,
     .product-add-form {
@@ -27,7 +25,7 @@
     & .fp-require.complete {
       margin-top: 0px;
       padding: 25px;
-      background: #EEF4ED;
+      background: #eef4ed;
 
       .#{$id}__fpCalculator {
         display: flex;
@@ -125,7 +123,7 @@
         &-calculation {
           padding: 15px 0;
 
-          &>p {
+          & > p {
             font-weight: 700;
             margin-bottom: 0;
             text-align: left;
@@ -209,7 +207,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: .8em;
+        font-size: 0.8em;
         vertical-align: text-bottom;
         border-radius: 100%;
         border: 1px solid #333;
@@ -233,7 +231,7 @@
       }
     }
 
-    .tooltip span.tooltip-content>p {
+    .tooltip span.tooltip-content > p {
       line-height: 22px;
       margin: 0;
     }
@@ -446,7 +444,7 @@
   }
 
   @media screen and (min-width: 1440px) and (max-width: 1700px) {
-    .product.media  {
+    .product.media {
       flex: 1 0 64%;
       max-width: 64%;
     }
@@ -745,7 +743,8 @@
         }
       }
 
-      &-text {}
+      &-text {
+      }
 
       .#{$id}__uspsList {
         display: flex;
@@ -927,7 +926,8 @@
         }
       }
 
-      &-text {}
+      &-text {
+      }
 
       .#{$id}__floorStr {
         display: flex;
@@ -1004,7 +1004,7 @@
     }
   }
 
-  //left side css
+  //right side css
   &-4,
   &-5,
   &-6 {
@@ -1166,7 +1166,8 @@
 
             &::after {
               z-index: 999;
-              background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png') bottom left;
+              background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png')
+                bottom left;
               bottom: 0;
               content: '';
               height: 40px;
@@ -1246,5 +1247,23 @@
   .product-info-price,
   .product-info-cta {
     display: none;
+  }
+
+  &-1,
+  &-2,
+  &-3 {
+    .fotorama__img {
+      width: 100%;
+    }
+    .fotorama__nav-wrap.fotorama__nav-wrap--horizontal {
+      margin-top: 70px;
+
+      @include media-query(xlg) {
+        margin-top: 30px;
+      }
+      @include media-query(lg) {
+        margin-top: 0;
+      }
+    }
   }
 }
