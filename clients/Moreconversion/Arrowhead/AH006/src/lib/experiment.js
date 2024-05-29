@@ -1,7 +1,8 @@
 import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
+
 const removeClass = () => {
   const thumbItems = document.querySelectorAll('.product__thumb-item');
   thumbItems.forEach((item) => {
@@ -12,7 +13,6 @@ const removeClass = () => {
 };
 export default () => {
   setup();
-  console.log(ID);
 
   //eslint-disable-next-line no-useless-return
   if (VARIATION === 'Control') return;

@@ -1,0 +1,108 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .#{$id}__freeExChange {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 0;
+      border-bottom: solid 1px #bababa;
+      gap: 10px;
+
+      &-icon {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+        @include media-query(sm) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      &-text {
+        font-size: 16px;
+        line-height: 23px;
+        font-weight: 700;
+        @include media-query(sm) {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+
+      @include media-query(sm) {
+        padding: 10px 0;
+        gap: 8px;
+      }
+    }
+  }
+
+  &-2 {
+    .#{$id}__freeExChange {
+      display: flex;
+      align-items: center;
+      padding: 15px 0 15px 20px;
+      margin-top: 20px;
+      background-color: #f5f5f5;
+
+      &-icon {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+        @include media-query(sm) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      &-text {
+        border-left: solid 1px #9f9f9f;
+        padding-left: 15px;
+        margin-left: 15px;
+
+        & > div {
+          text-align: left !important;
+        }
+
+        .#{$id}__freeExChange-title {
+          font-size: 16px;
+          line-height: 23px;
+          font-weight: 700;
+          @include media-query(sm) {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+        .#{$id}__freeExChange-subtitle {
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 17px;
+          color: #666666;
+          @include media-query(sm) {
+            font-size: 10px;
+            line-height: 14px;
+          }
+        }
+        @include media-query(sm) {
+          font-size: 13px;
+        }
+      }
+
+      @include media-query(sm) {
+        padding: 10px 0 10px 15px;
+        margin-top: 15px;
+      }
+    }
+  }
+}
