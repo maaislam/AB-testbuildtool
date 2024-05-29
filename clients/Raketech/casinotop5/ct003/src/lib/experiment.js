@@ -9,12 +9,13 @@ const { ID, VARIATION } = shared;
 const init = () => {
   const parentElement = document.querySelector('#td-outer-wrap');
   const featuredImageLink = parentElement.querySelector('.td-post-featured-image > a').href;
+  const casinoName = featuredImageLink.split('/visit/')[1].split('/')[0];
   const casinoTitle = parentElement.querySelector('.entry-title').textContent;
 
   parentElement &&
     parentElement.insertAdjacentHTML(
       'beforeend',
-      stickySection(ID, featuredImageLink, casinoTitle)
+      stickySection(ID, featuredImageLink, casinoName, casinoTitle)
     );
 };
 
@@ -24,13 +25,14 @@ export default () => {
   const allLinks = document.querySelectorAll('[href*="/visit"]');
   allLinks.forEach((link, index) => {
     //eslint-disable-next-line no-param-reassign
-    link.dataset.count = index + 1;
+    link.dataset.count = index;
   });
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (target.closest(`.${ID}__link`)) {
-      gaTracking('Sticky');
+      const { casino } = target.closest(`.${ID}__link`).dataset;
+      gaTracking(`${casino} | CTA CTO | Sticky`);
     } else if (target.closest('[href*="/visit"]')) {
       const { count } = target.closest('[href*="/visit"]').dataset;
       gaTracking(`CTA CTO ${count}`);
