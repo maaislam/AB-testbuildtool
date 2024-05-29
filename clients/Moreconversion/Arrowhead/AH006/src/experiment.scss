@@ -1,0 +1,37 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .product__photos {
+    flex-direction: column;
+
+    .product__thumbs {
+      display: block !important;
+      margin: 0 8px;
+    }
+    .product__thumbs-sticky {
+      display: flex;
+      overflow-x: scroll;
+      width: 100%;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .product__thumb-item {
+        min-width: 75px;
+        margin-right: 6px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @include media-query(sm) {
+      .product__main-photos {
+        padding-bottom: 8px;
+      }
+    }
+  }
+}
