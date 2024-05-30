@@ -1,0 +1,40 @@
+.product-form__buttons .buy2Btn {
+    margin-bottom: 8px;
+}
+
+.product-form__buttons .buy2Btn,
+.product-form__buttons .buy3Btn {
+    height: 45px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #505655;
+    background-color: #C8EDF1;
+    border: 1px solid #505655;
+}
+
+.product__tax.caption.rte,
+lb-upsell-product-page-addon,
+.product-form__quantity,
+.shopify-payment-button a[href*="https://www.amazon.com"] {
+    display: none;
+}
+
+#delivery-message-container {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: #5C5C5C;
+    margin: 10px 0;
+}
+
+#delivery-message-container svg {
+    margin-right: 8px;
+}
+
+#delivery-message-container span {
+    margin-left: 4px;
+    color: #272727;
+    font-weight: 700;
+}
