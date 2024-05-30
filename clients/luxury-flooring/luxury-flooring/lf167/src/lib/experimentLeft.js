@@ -70,6 +70,12 @@ export default () => {
     if (document.querySelector(`.${ID}__images-wrapper.mobile`)) {
       document.querySelector(`.${ID}__images-wrapper.mobile`).remove();
     }
+
+    //remove loader if exists
+    if (document.querySelector(`.${ID}__loaderWrapper`)) {
+      document.querySelector(`.${ID}__loaderWrapper`).remove();
+    }
+    //desktop
     data.slice(1).length &&
       gallery.insertAdjacentHTML(
         'afterend',

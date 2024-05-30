@@ -1,9 +1,16 @@
+import activateLoader from './lib/activateLoader';
 import activateLeft from './lib/experimentLeft';
 import activateRight from './lib/experimentRight';
 import { pollerLite } from './lib/helpers/utils';
 import shared from './lib/shared/shared';
 
-const { VARIATION } = shared;
+const { ID, VARIATION } = shared;
+
+if (VARIATION !== '1' && VARIATION !== '2' && VARIATION !== '3') {
+  pollerLite(['.gallery-placeholder'], () => {
+    activateLoader(ID);
+  });
+}
 
 pollerLite(
   [
@@ -21,7 +28,3 @@ pollerLite(
     activateRight();
   }
 );
-
-pollerLite(['.catalog-product-view'], () => {
-  activateLeft();
-});

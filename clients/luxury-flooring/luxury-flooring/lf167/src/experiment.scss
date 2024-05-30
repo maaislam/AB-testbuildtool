@@ -7,6 +7,115 @@
     display: none !important;
   }
 
+  &__loaderWrapper {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .#{$id}__loader,
+    .#{$id}__loader div,
+    .#{$id}__loader div:after {
+      box-sizing: border-box;
+    }
+
+    .#{$id}__loader {
+      color: currentColor;
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+
+    .#{$id}__loader div {
+      transform-origin: 40px 40px;
+      animation: lds-spinner 1.2s linear infinite;
+    }
+
+    .#{$id}__loader div:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 3.2px;
+      left: 36.8px;
+      width: 6.4px;
+      height: 17.6px;
+      border-radius: 20%;
+      background: currentColor;
+    }
+
+    .#{$id}__loader div:nth-child(1) {
+      transform: rotate(0deg);
+      animation-delay: -1.1s;
+    }
+
+    .#{$id}__loader div:nth-child(2) {
+      transform: rotate(30deg);
+      animation-delay: -1s;
+    }
+
+    .#{$id}__loader div:nth-child(3) {
+      transform: rotate(60deg);
+      animation-delay: -0.9s;
+    }
+
+    .#{$id}__loader div:nth-child(4) {
+      transform: rotate(90deg);
+      animation-delay: -0.8s;
+    }
+
+    .#{$id}__loader div:nth-child(5) {
+      transform: rotate(120deg);
+      animation-delay: -0.7s;
+    }
+
+    .#{$id}__loader div:nth-child(6) {
+      transform: rotate(150deg);
+      animation-delay: -0.6s;
+    }
+
+    .#{$id}__loader div:nth-child(7) {
+      transform: rotate(180deg);
+      animation-delay: -0.5s;
+    }
+
+    .#{$id}__loader div:nth-child(8) {
+      transform: rotate(210deg);
+      animation-delay: -0.4s;
+    }
+
+    .#{$id}__loader div:nth-child(9) {
+      transform: rotate(240deg);
+      animation-delay: -0.3s;
+    }
+
+    .#{$id}__loader div:nth-child(10) {
+      transform: rotate(270deg);
+      animation-delay: -0.2s;
+    }
+
+    .#{$id}__loader div:nth-child(11) {
+      transform: rotate(300deg);
+      animation-delay: -0.1s;
+    }
+
+    .#{$id}__loader div:nth-child(12) {
+      transform: rotate(330deg);
+      animation-delay: 0s;
+    }
+  }
+
+  @keyframes lds-spinner {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
   .fp-require-statement.-bold,
   .including-wastage,
   .missing-wastage,
@@ -15,6 +124,7 @@
   }
 
   .fp-calculator {
+
     .#{$id}__fpCalculator,
     .#{$id}__delivery-message,
     .product-add-form {
@@ -127,7 +237,7 @@
         &-calculation {
           padding: 15px 0;
 
-          & > p {
+          &>p {
             font-weight: 700;
             margin-bottom: 0;
             text-align: left;
@@ -235,7 +345,7 @@
       }
     }
 
-    .tooltip span.tooltip-content > p {
+    .tooltip span.tooltip-content>p {
       line-height: 22px;
       margin: 0;
     }
@@ -747,8 +857,7 @@
         }
       }
 
-      &-text {
-      }
+      &-text {}
 
       .#{$id}__uspsList {
         display: flex;
@@ -930,8 +1039,7 @@
         }
       }
 
-      &-text {
-      }
+      &-text {}
 
       .#{$id}__floorStr {
         display: flex;
@@ -1170,8 +1278,7 @@
 
             &::after {
               z-index: 999;
-              background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png')
-                bottom left;
+              background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png') bottom left;
               bottom: 0;
               content: '';
               height: 40px;
@@ -1259,12 +1366,14 @@
     .fotorama__img {
       width: 100%;
     }
+
     .fotorama__nav-wrap.fotorama__nav-wrap--horizontal {
       margin-top: 70px;
 
       @include media-query(xlg) {
         margin-top: 30px;
       }
+
       @include media-query(lg) {
         margin-top: 0;
       }
