@@ -6,11 +6,9 @@ import shared from './lib/shared/shared';
 
 const { ID, VARIATION } = shared;
 
-if (VARIATION !== '1' && VARIATION !== '2' && VARIATION !== '3') {
-  pollerLite(['.gallery-placeholder'], () => {
-    activateLoader(ID);
-  });
-}
+pollerLite(['.gallery-placeholder'], () => {
+  activateLoader(ID);
+});
 
 pollerLite(
   [
@@ -21,6 +19,11 @@ pollerLite(
     () => window.jQuery('.fotorama').data('fotorama') !== 'undefined'
   ],
   () => {
+    //remove loader if exists
+    if (document.querySelector(`.${ID}__loaderWrapper`)) {
+      document.querySelector(`.${ID}__loaderWrapper`).remove();
+    }
+
     if (VARIATION !== '1' && VARIATION !== '2' && VARIATION !== '3') {
       activateLeft();
     }

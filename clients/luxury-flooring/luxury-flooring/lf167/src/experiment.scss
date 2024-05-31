@@ -2,6 +2,7 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+
   // right side css
   .#{$id}__hide {
     display: none !important;
@@ -31,6 +32,10 @@
     .#{$id}__loader div {
       transform-origin: 40px 40px;
       animation: lds-spinner 1.2s linear infinite;
+
+      @include media-query(sm) {
+        transform-origin: 40px 34px;
+      }
     }
 
     .#{$id}__loader div:after {
@@ -294,7 +299,7 @@
         width: 100%;
         max-width: 420px;
         margin: 0 auto 25px;
-        padding: 15px;
+        padding: 15px 12px 15px 13px;
       }
 
       @media screen and (max-width: 767px) {
@@ -389,7 +394,7 @@
       }
 
       @media screen and (max-width: 430px) {
-        font-size: 12px;
+        // font-size: 12px;
       }
     }
   }
@@ -548,6 +553,12 @@
         margin-top: 20px;
         margin-bottom: 0;
         padding: 20px;
+
+        span {
+          @include media-query(md) {
+            text-transform: none !important;
+          }
+        }
       }
     }
 
@@ -561,6 +572,25 @@
     .product.media {
       flex: 1 0 64%;
       max-width: 64%;
+    }
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    .lf143__order-button {
+      text-transform: none !important;
+    }
+
+    #product-addtocart-button {
+      text-transform: none !important;
+    }
+
+    #product-addtocart-button,
+    #product-addtocart-button1 {
+      text-transform: none !important;
+    }
+
+    button#product-addtocart-button1::first-letter {
+      text-transform: uppercase !important;
     }
   }
 
@@ -659,7 +689,6 @@
       &-button {
         button {
           span {
-            // text-transform: lowercase;
 
             @include media-query(xlg) {
               font-size: 14px;
@@ -1335,7 +1364,7 @@
           }
 
           &.mobile {
-            display: block;
+            // display: block;
 
             .#{$id}__image-item {
               padding-right: 5px !important;
@@ -1355,7 +1384,7 @@
     }
   }
 
-  .product-info-price,
+  .product-info-price>div:not(.flockr),
   .product-info-cta {
     display: none;
   }
