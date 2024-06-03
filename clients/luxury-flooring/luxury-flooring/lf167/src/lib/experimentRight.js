@@ -18,7 +18,7 @@ const renderPriceSection = () => {
     .innerText.trim();
   const comparePrice = priceElement
     .querySelector('.old-price > .price-including-tax:last-child')
-    .innerText.trim();
+    ?.innerText.trim();
   const orderASampleElement = document.querySelector('.product-info-main .sample-add-form');
 
   const renderSampleElement = (element) => {
