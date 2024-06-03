@@ -5,7 +5,7 @@ export const price = (id, sellPrice, comparePrice) => {
             </div>
             <div class="${id}__priceBox">
                 <span class="${id}__priceBox-price">${sellPrice}</span>
-                <span class="${id}__priceBox-compare-price">${comparePrice || null}</span>
+                <span class="${id}__priceBox-compare-price">${comparePrice || ''}</span>
             </div>
     `;
   return html;
