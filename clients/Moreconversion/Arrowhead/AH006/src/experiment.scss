@@ -25,6 +25,10 @@
         &:last-child {
           margin-right: 0;
         }
+
+        img {
+          animation: fade-in 0.6s ease 0s forwards !important;
+        }
       }
     }
 
