@@ -25,10 +25,8 @@ export default () => {
   });
 
   document.addEventListener('flickity-slide-changed', (e) => {
-    if (e.detail.slideIndex) {
-      removeClass();
-      const parentNode = document.querySelector('.product__thumbs-sticky');
-      parentNode.childNodes[e.detail.slideIndex].classList.add('thumb--current');
-    }
+    removeClass();
+    const parentNode = document.querySelector('.product__thumbs-sticky');
+    parentNode.childNodes[e.detail.slideIndex].classList.add('thumb--current');
   });
 };
