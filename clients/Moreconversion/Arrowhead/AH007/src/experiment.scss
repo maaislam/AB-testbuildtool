@@ -96,6 +96,8 @@
         }
         @include media-query(sm) {
           font-size: 13px;
+          padding-left: 10px;
+          margin-left: 10px;
         }
       }
 
