@@ -10,21 +10,22 @@ const init = () => {
   const priceBox = document.querySelectorAll('[data-role="priceBox"]');
 
   priceBox.forEach((box) => {
-    const formatNumberGermanStyle = (number) => {
-      return number.toLocaleString('de-DE', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-    };
-    const priceElm = box.querySelector('[id*="product-price-"]');
-    const { priceAmount } = priceElm.dataset;
+    // const formatNumberGermanStyle = (number) => {
+    //   return number.toLocaleString('de-DE', {
+    //     minimumFractionDigits: 2,
+    //     maximumFractionDigits: 2
+    //   });
+    // };
+    const priceElm = box.querySelector('[id*="product-price-"]'); 
+    //const { priceAmount } = priceElm.dataset;
 
-    const pricetext = formatNumberGermanStyle(Number(priceAmount));
+    //const pricetext = formatNumberGermanStyle(Number(priceAmount));
+    const priceText = priceElm.innerText.split('€')[1].trim();
     const priceContainer = priceElm.querySelector('.price');
     priceContainer.style.color = 'red';
 
-    const mainPrice = pricetext.split(',')[0];
-    const subPrice = pricetext.split(',')[1];
+    const mainPrice = priceText.split(',')[0];
+    const subPrice = priceText.split(',')[1];
 
     const priceStr = `<div class="${ID}__pricing">
         <span class="${ID}__price">
