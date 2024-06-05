@@ -29,6 +29,16 @@ const init = () => {
   }
   //mobile
   targetElementForMobile.insertAdjacentHTML('afterbegin', videoPlayer(ID, data, 'mobile'));
+};
+
+export default () => {
+  setup();
+  console.log(ID);
+
+  //eslint-disable-next-line no-useless-return
+  if (VARIATION === 'control') return;
+
+  init();
 
   const videoSection = document.querySelector(`.${ID}__video`);
 
@@ -45,14 +55,4 @@ const init = () => {
   //Add event listeners
   videoSection.addEventListener('playing', videoPausePlayHandler, false);
   videoSection.addEventListener('pause', videoPausePlayHandler, false);
-};
-
-export default () => {
-  setup();
-  console.log(ID);
-
-  //eslint-disable-next-line no-useless-return
-  if (VARIATION === 'control') return;
-
-  init();
 };
