@@ -2,6 +2,11 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+
+  &__hide {
+    display: none;
+  }
+
   .#{$id}__videoContainer {
     width: 480px;
     height: 742px;
@@ -20,7 +25,7 @@
       outline: 1px solid #000;
     }
 
-    & + img {
+    &+img {
       display: none;
     }
 
@@ -31,6 +36,7 @@
       transform: translate(-50%, -50%);
       cursor: pointer;
       z-index: 99;
+
       svg {
         @include media-query(sm) {
           width: 37px;
@@ -88,5 +94,48 @@
         display: none;
       }
     }
+  }
+
+  &__volumnPillBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 8px 5px 9px;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+    background: #fff;
+    cursor: pointer;
+    z-index: 99;
+
+    &-text {
+      margin-left: 2px;
+      font-weight: 500;
+      font-size: 8px;
+      line-height: 10px;
+      color: #626262;
+    }
+
+    &-icon {
+      display: flex;
+    }
+  }
+
+  .#{$id}__video::-webkit-media-controls {
+    opacity: 0 !important;
+  }
+
+  .#{$id}__video::-webkit-media-controls-enclosure {
+    opacity: 0 !important;
+  }
+
+  .#{$id}__video::-webkit-media-controls-panel {
+    opacity: 0 !important;
+  }
+
+  .#{$id}__video::-webkit-media-controls-play-button {
+    opacity: 0 !important;
   }
 }
