@@ -1,17 +1,16 @@
-$media: (xsm:360px,
-    sm: 768px,
-    md: 850px,
-    lg: 1024px,
+$media: (
+  xsm: 360px,
+  sm: 767px,
+  md: 850px,
+  lg: 1023px
 );
 
 @mixin media-query($breakpoint) {
-
-    @each $breakpoints,
-    $size in $media {
-        @if $breakpoint==$breakpoints {
-            @media screen and (max-width: $size) {
-                @content;
-            }
-        }
+  @each $breakpoints, $size in $media {
+    @if $breakpoint==$breakpoints {
+      @media screen and (max-width: $size) {
+        @content;
+      }
     }
+  }
 }
