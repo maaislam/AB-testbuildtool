@@ -29,6 +29,8 @@
       left: 63%;
       top: 45%;
       transform: translate(-50%, -50%);
+      cursor: pointer;
+      z-index: 99;
       svg {
         @include media-query(sm) {
           width: 37px;

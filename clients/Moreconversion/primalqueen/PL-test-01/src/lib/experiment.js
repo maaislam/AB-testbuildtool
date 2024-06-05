@@ -40,19 +40,35 @@ export default () => {
 
   init();
 
-  const videoSection = document.querySelector(`.${ID}__video`);
+  document.body.addEventListener('click', ({ target }) => {
+    if (target.closest(`.${ID}__playButton`)) {
+      const videoWrapper = target.closest(`.${ID}__videoContainer`);
+      videoWrapper.querySelector('video').click();
+    }
+  });
+
+  const videoSection = document.querySelectorAll(`.${ID}__video`);
 
   const videoPausePlayHandler = (e) => {
     if (e.type === 'playing') {
       //add controls
-      videoSection.setAttribute('controls', 'controls');
+      e.target.setAttribute('controls', 'controls');
+      e.target.closest(`.${ID}__videoContainer`).querySelector(`.${ID}__playButton`).style.display =
+        'none';
     } else if (e.type === 'pause') {
       //remove controls
-      videoSection.removeAttribute('controls');
+      e.target.removeAttribute('controls');
+      e.target.closest(`.${ID}__videoContainer`).querySelector(`.${ID}__playButton`).style.display =
+        'block';
     }
   };
 
   //Add event listeners
-  videoSection.addEventListener('playing', videoPausePlayHandler, false);
-  videoSection.addEventListener('pause', videoPausePlayHandler, false);
+  videoSection.forEach((item) => {
+    item.addEventListener('playing', videoPausePlayHandler, false);
+  });
+
+  videoSection.forEach((item) => {
+    item.addEventListener('pause', videoPausePlayHandler, false);
+  });
 };
