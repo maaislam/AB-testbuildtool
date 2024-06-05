@@ -1,4 +1,4 @@
-import { playButton } from '../assets/icons';
+import { playButton, muteIcon } from '../assets/icons';
 
 export const videoPlayer = (id, data, className) => {
   const { desktopPosterURL, mobilePosterURL, videoSource } = data;
@@ -8,7 +8,18 @@ export const videoPlayer = (id, data, className) => {
       <div class="${id}__videoContainer ${id}__${className} s6_product_model">
           <video class="${id}__video" preload="auto" width="420" height="550" onclick="this.play()" poster="${selectedPoster}">
               <source src="${videoSource}" type="video/mp4">
+              <p>hello</p>
           </video>
+
+          <div class="${id}__soundController" data-attr="mute">
+            <div class="${id}__icon">${muteIcon}</div>
+            <span class="${id}__text">Click to mute</span>
+          </div>
+
+          <div class="${id}__soundController" data-attr="unmute" style="display:none;">
+            <div class="${id}__icon">${muteIcon}</div>
+            <span class="${id}__text">Click to unmute</span>
+          </div>
 
           <div class="${id}__playButton">
             ${playButton}

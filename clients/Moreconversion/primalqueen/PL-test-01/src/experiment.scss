@@ -29,6 +29,38 @@
       display: none;
     }
 
+    .#{$id}__soundController {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 90px;
+      padding: 5px 9px;
+      background: #fff;
+      border-radius: 100px;
+      left: 63%;
+      top: 80%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+
+      @media only screen and (max-width: 1023px) and (min-width: 768px) {
+        top: 120%;
+      }
+
+      @include media-query(sm) {
+        left: 50%;
+        top: 87%;
+      }
+
+      .#{$id}__text {
+        font-size: 8px;
+        line-height: 10px;
+        color: #626262;
+        margin-left: 5px;
+      }
+    }
+
     .#{$id}__playButton {
       position: absolute;
       left: 63%;
