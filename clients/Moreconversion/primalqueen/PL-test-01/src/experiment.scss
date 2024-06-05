@@ -1,0 +1,72 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .section_6 {
+    .#{$id}__videoContainer {
+      max-width: 409px;
+      height: 570px;
+      padding: 10px;
+      border: solid 1px black;
+      border-radius: 204px;
+
+      video {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        border-radius: 204px;
+        width: 100%;
+
+        @media screen and (max-width: 1023px) {
+          height: 440px;
+        }
+
+        @media screen and (max-width: 550px) {
+          height: 342px;
+        }
+      }
+
+      & + .s6_product_model {
+        display: none;
+      }
+
+      @media screen and (max-width: 1023px) {
+        & {
+          width: fit-content;
+          height: 470px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        left: 50%;
+        top: 49%;
+        transform: translate(-50%, 35%);
+      }
+
+      @media screen and (max-width: 550px) {
+        height: 377px;
+      }
+    }
+
+    .s6_model_color {
+      @media screen and (max-width: 767px) {
+        display: block;
+        top: 120px;
+        height: 580px;
+        left: 0;
+      }
+
+      @media screen and (max-width: 550px) {
+        top: 127px;
+        height: 420px;
+      }
+    }
+
+    .s6_product_model_mob {
+      @media screen and (max-width: 767px) {
+        opacity: 0;
+      }
+    }
+  }
+}
