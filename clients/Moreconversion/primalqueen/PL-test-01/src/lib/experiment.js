@@ -74,24 +74,6 @@ export default () => {
       const videoPillIcon = video.muted ? muteIcon : unMuteIcon;
       const videoIconElem = videoWrapper.querySelector(`.${ID}__volumnPillBtn-icon`);
       videoIconElem.innerHTML = videoPillIcon;
-    } else if (target.closest(`.${ID}__soundController`)) {
-      const mode = target.closest(`.${ID}__soundController`).dataset.attr;
-      const videoElement = target.closest(`.${ID}__videoContainer`);
-
-      if (mode === 'mute') {
-        //eslint-disable-next-line no-param-reassign
-        videoElement.querySelector('video').muted = true;
-        videoElement.querySelector(`.${ID}__soundController[data-attr="${mode}"]`).style.display =
-          'none';
-        videoElement.querySelector(`.${ID}__soundController[data-attr="unmute"]`).style.display =
-          'flex';
-      } else {
-        videoElement.querySelector('video').muted = false;
-        videoElement.querySelector(`.${ID}__soundController[data-attr="${mode}"]`).style.display =
-          'none';
-        videoElement.querySelector(`.${ID}__soundController[data-attr="mute"]`).style.display =
-          'flex';
-      }
     }
   });
 
@@ -103,21 +85,11 @@ export default () => {
       e.target.setAttribute('controls', 'controls');
       e.target.closest(`.${ID}__videoContainer`).querySelector(`.${ID}__playButton`).style.display =
         'none';
-      e.target
-        .closest(`.${ID}__videoContainer`)
-        .querySelector(`.${ID}__soundController[data-attr="unmute"]`)
-        .click();
     } else if (e.type === 'pause') {
       //remove controls
       e.target.removeAttribute('controls');
       e.target.closest(`.${ID}__videoContainer`).querySelector(`.${ID}__playButton`).style.display =
         'block';
-      e.target
-        .closest(`.${ID}__videoContainer`)
-        .querySelector(`.${ID}__soundController[data-attr="mute"]`).style.display = 'flex';
-      e.target
-        .closest(`.${ID}__videoContainer`)
-        .querySelector(`.${ID}__soundController[data-attr="unmute"]`).style.display = 'none';
     }
   };
 

@@ -1,7 +1,7 @@
 import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
 
 const init = () => {
   const targetElement = document.querySelector('#MainContent .banner .banner_heading');
@@ -16,9 +16,7 @@ const init = () => {
 
 export default () => {
   setup();
-  console.log(ID);
 
-  //eslint-disable-next-line no-useless-return
   if (VARIATION === 'control') return;
 
   init();
