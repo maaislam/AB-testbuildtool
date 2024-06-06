@@ -1,0 +1,38 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__product-template {
+    .product-page--pricing {
+      align-items: center;
+      margin-top: 10px !important;
+      .product-page--pricing--variant-compare-at-price {
+        display: none;
+      }
+
+      .#{$id}__savingAmount {
+        width: 60px;
+        height: 22px;
+        justify-content: center;
+        font-family: 'inter';
+        margin-left: 10px;
+        border-radius: 100px;
+        background-color: #d41908;
+        span {
+          font-size: 10px;
+          font-weight: 600;
+          line-height: 12px;
+          color: #fff;
+        }
+      }
+    }
+
+    .product-info-wrapper {
+      .product-page--pricing {
+        & > li:not(.#{$id}__savingAmount) {
+          padding-top: 3px;
+        }
+      }
+    }
+  }
+}
