@@ -26,6 +26,7 @@ const init = () => {
     return;
   }
 
+  document.body.classList.add(`${ID}__product-template`);
   const targetelement = document.querySelector('.product-medias');
   const pricingElement = document.querySelector('.product-info-wrapper .product-page--pricing');
   const pricingElementMobile = document.querySelector(
