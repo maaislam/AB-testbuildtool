@@ -41,7 +41,7 @@ const init = () => {
   if (modifiedNewPrice && modifiedOldPrice) {
     document.body.classList.add(`${ID}__product-template`);
     const savePrice = calculateDiscount(modifiedNewPrice[1], modifiedOldPrice[1]);
-    insertDiscountElement(pricingElement, pricingElementMobile, savePrice);
+    savePrice > 0 && insertDiscountElement(pricingElement, pricingElementMobile, savePrice);
   }
 };
 export default () => {

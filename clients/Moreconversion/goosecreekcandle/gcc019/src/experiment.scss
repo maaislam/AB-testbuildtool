@@ -25,12 +25,18 @@
           color: #fff;
         }
       }
+
+      @include media-query(sm) {
+        margin-top: 0px !important;
+      }
     }
 
-    .product-info-wrapper {
-      .product-page--pricing {
-        & > li:not(.#{$id}__savingAmount) {
-          padding-top: 3px;
+    .product-page--pricing {
+      & > li:not(.#{$id}__savingAmount) {
+        padding-top: 4px;
+
+        @include media-query(sm) {
+          padding-top: 2px;
         }
       }
     }
