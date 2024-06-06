@@ -16,7 +16,7 @@
         background-color: #6cafc5;
         padding: 8px 0;
         border-radius: 5px;
-        z-index: 999;
+        z-index: 2;
 
         @include media-query(sm) {
           width: 75px;

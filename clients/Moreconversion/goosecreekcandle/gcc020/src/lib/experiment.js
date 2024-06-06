@@ -14,6 +14,18 @@ const insertSaleComponent = (element, elementForMobile) => {
   elementForMobile.insertAdjacentHTML('beforeend', sale(ID));
 };
 const init = () => {
+  const compareAtPriceElements = document.querySelectorAll(
+    '.product-info-wrapper .compare-at-price'
+  );
+
+  const hasDiscount = Array.from(compareAtPriceElements).some(
+    (element) => !element.classList.contains('hide') && element.innerText.trim() !== ''
+  );
+
+  if (!hasDiscount) {
+    return;
+  }
+
   const targetelement = document.querySelector('.product-medias');
   const pricingElement = document.querySelector('.product-info-wrapper .product-page--pricing');
   const pricingElementMobile = document.querySelector(
