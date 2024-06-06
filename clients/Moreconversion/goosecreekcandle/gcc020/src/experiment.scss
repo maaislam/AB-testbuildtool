@@ -3,47 +3,45 @@
 
 .#{$id} {
   &-1 {
-    .#{$id}__product-template {
-      .product-medias {
-        position: relative;
-        .#{$id}__saleBadge {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          top: 0;
-          left: 15px;
-          width: 100px;
-          background-color: #6cafc5;
-          padding: 8px 0;
-          border-radius: 5px;
-          z-index: 2;
+    .product-medias {
+      position: relative;
+      .#{$id}__saleBadge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 15px;
+        width: 100px;
+        background-color: #6cafc5;
+        padding: 8px 0;
+        border-radius: 5px;
+        z-index: 2;
+
+        @include media-query(sm) {
+          width: 75px;
+        }
+        .#{$id}__icon {
+          @include media-query(sm) {
+            svg {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+
+        span {
+          font-family: 'inter';
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 19px;
+          margin-left: 8px;
+          color: #fff;
 
           @include media-query(sm) {
-            width: 75px;
-          }
-          .#{$id}__icon {
-            @include media-query(sm) {
-              svg {
-                width: 18px;
-                height: 18px;
-              }
-            }
-          }
-
-          span {
-            font-family: 'inter';
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 19px;
-            margin-left: 8px;
-            color: #fff;
-
-            @include media-query(sm) {
-              font-size: 12px;
-              line-height: 15px;
-              margin-left: 5px;
-            }
+            font-size: 12px;
+            line-height: 15px;
+            margin-left: 5px;
           }
         }
       }
@@ -51,31 +49,29 @@
   }
 
   &-2 {
-    .#{$id}__product-template {
-      .product-info-wrapper {
-        .product-page--pricing {
-          & > li:not(.#{$id}__sale) {
-            padding-top: 3px;
-          }
+    .product-info-wrapper {
+      .product-page--pricing {
+        & > li:not(.#{$id}__sale) {
+          padding-top: 3px;
         }
       }
-      .product-page--pricing {
-        align-items: center;
-        margin-top: 10px !important;
-        .#{$id}__sale {
-          width: 50px;
-          justify-content: center;
-          border-radius: 5px;
-          background-color: #d41908;
-          padding: 4px 0;
-          margin-left: 5px;
-          span {
-            font-size: 12px;
-            font-family: 'inter';
-            font-weight: 600;
-            line-height: 15px;
-            color: #fff;
-          }
+    }
+    .product-page--pricing {
+      align-items: center;
+      margin-top: 10px !important;
+      .#{$id}__sale {
+        width: 50px;
+        justify-content: center;
+        border-radius: 5px;
+        background-color: #d41908;
+        padding: 4px 0;
+        margin-left: 5px;
+        span {
+          font-size: 12px;
+          font-family: 'inter';
+          font-weight: 600;
+          line-height: 15px;
+          color: #fff;
         }
       }
     }
