@@ -13,6 +13,7 @@ const insertSaleComponent = (element, elementForMobile) => {
   element.insertAdjacentHTML('beforeend', sale(ID));
   elementForMobile.insertAdjacentHTML('beforeend', sale(ID));
 };
+
 const init = () => {
   const compareAtPriceElements = document.querySelectorAll(
     '.product-info-wrapper .compare-at-price'
@@ -40,6 +41,7 @@ const init = () => {
     ? targetelement.insertAdjacentHTML('beforeend', saleBadge(ID))
     : insertSaleComponent(pricingElement, pricingElementMobile);
 };
+
 export default () => {
   setup(); //use if needed
 

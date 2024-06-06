@@ -74,6 +74,10 @@
           color: #fff;
         }
       }
+
+      @include media-query(sm) {
+        margin-top: 0px !important;
+      }
     }
   }
 }
