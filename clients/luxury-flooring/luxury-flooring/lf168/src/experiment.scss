@@ -4,6 +4,14 @@
 .#{$id} {
   &-1 {
     .page-wrapper {
+      .panel.wrapper {
+        .widget.block-static-block {
+          justify-content: flex-end;
+          ul.left {
+            display: none;
+          }
+        }
+      }
       .page-header .header.content {
         .c-header__main__logo {
           order: 0;
@@ -82,7 +90,6 @@
 
               &:last-child {
                 margin-left: 25px;
-                cursor: pointer;
                 @media screen and (max-width: 1100px) {
                   margin-left: 10px;
                 }
