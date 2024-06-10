@@ -121,6 +121,16 @@
     }
   }
 
+  .product-info-price {
+    margin: 0 !important;
+  }
+
+  &-3, &-6 {
+    .product-info-price {
+      margin-top: 24px !important;
+    }
+  }
+
   .fp-require-statement.-bold,
   .including-wastage,
   .missing-wastage,
@@ -637,9 +647,9 @@
         &-price {
           font-weight: 700;
           font-size: 24px;
-          line-height: 50px;
+          line-height: 30px;
           color: #d53333;
-          margin-right: 5px;
+          margin-right: 4px;
 
           &::before {
             content: 'Only ';
@@ -768,6 +778,7 @@
 
     .#{$id}__priceContainer {
       display: flex;
+      // justify-content: center;
       margin: 15px 0;
 
       .#{$id}__availability {
@@ -842,7 +853,8 @@
       .#{$id}__tradePrice {
         display: flex;
         align-items: flex-end;
-        margin-bottom: 6px;
+        margin-bottom: 16px;
+        gap: 8px;
 
         &-icon {
           margin-right: 5px;
@@ -893,6 +905,7 @@
         align-items: center;
         justify-content: center;
         padding: 5px;
+        margin-bottom: 16px;
 
         // @include media-query(xxlg) {
         //   justify-content: space-between;
@@ -950,6 +963,7 @@
     .#{$id}__priceContainer {
       display: flex;
       margin: 15px 0;
+      justify-content: center;
 
       .#{$id}__availability {
         height: 24px;
@@ -1023,7 +1037,11 @@
       .#{$id}__tradePrice {
         display: flex;
         align-items: flex-end;
-        margin-bottom: 6px;
+        margin-bottom: 16px;
+
+        @include media-query(xxlg) {
+          margin-bottom: 6px;
+        }
 
         &-icon {
           margin-right: 5px;

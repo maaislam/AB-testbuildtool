@@ -9,7 +9,7 @@ import { priceWrapperV4, priceWrapperV5, priceWrapperV6 } from './components/pri
 
 const { ID, VARIATION } = shared;
 //const DOM_RENDER_DELAY = 2000;
-const finalMessage = 'order a free sample';
+const finalMessage = 'Order a free sample';
 
 const renderPriceSection = () => {
   const priceElement = document.querySelector('.product-info-price');
@@ -58,6 +58,9 @@ const renderPriceSection = () => {
     const orderSampleWrapper = document.querySelector(`.${ID}__orderSampleWrapper-button`);
     renderSampleElement(orderSampleWrapper);
     textChangeHandler(orderSampleWrapper);
+    //priceElement insertion
+    const priceContainer = document.querySelector(`.${ID}__priceContainer`);
+    priceContainer.insertAdjacentElement('afterend', priceElement);
   }
 
   //const renderText = (mutation) => {
