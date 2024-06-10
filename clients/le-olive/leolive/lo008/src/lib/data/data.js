@@ -353,7 +353,7 @@ export const robesProductData = {
   },
   'badjas-sand': {
     colorArray: colorObj.classic,
-    perSelectedColor: ''
+    perSelectedColor: 'sand'
   },
   'badjas-double-piping': {
     colorArray: colorObj.classic,
@@ -425,7 +425,7 @@ export const robesProductData = {
   //long
   'badjas-bordeaux-red': {
     colorArray: colorObj.long,
-    perSelectedColor: ''
+    perSelectedColor: 'red'
   },
   'badjas-emerald-green': {
     colorArray: colorObj.long,
@@ -433,11 +433,11 @@ export const robesProductData = {
   },
   'kimono-deluxe-long-midnight-black': {
     colorArray: colorObj.long,
-    perSelectedColor: ''
+    perSelectedColor: 'black'
   },
   'kopie-van-kimono-deluxe-long-cream': {
     colorArray: colorObj.long,
-    perSelectedColor: ''
+    perSelectedColor: 'cream'
   },
   'kimono-deluxe-long-white': {
     colorArray: colorObj.long,
