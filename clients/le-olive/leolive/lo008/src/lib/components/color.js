@@ -1,6 +1,6 @@
 export const color = (id, item, index, perSelectedColor) => {
   const { name, imageUrl, productUrl } = item;
-  const isSelected = name === perSelectedColor ? true : false;
+  const isSelected = name === perSelectedColor;
 
   const html = `
     <a class="${id}__color-item ${isSelected ? `${id}__selected` : ''} ${
