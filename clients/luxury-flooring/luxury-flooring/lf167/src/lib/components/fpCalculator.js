@@ -3,7 +3,7 @@ export const fpCalculator = (id) => {
         <div class="${id}__fpCalculator">
             <div class="${id}__fpCalculator-input">
                 <p>Number of m² required</p>
-                <a href="#">How much do I need?</a>
+                <div class='${id}__calculator-openner'>How much do I need?</div>
             </div>
             <div class="${id}__divider"></div>
             <div class="${id}__fpCalculator-calculation">

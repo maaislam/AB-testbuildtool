@@ -6,10 +6,11 @@ import { fpCalculator } from './components/fpCalculator';
 import { checkBox } from './components/checkBox';
 import { deliveryMessage } from './components/deliveryMessage';
 import { priceWrapperV4, priceWrapperV5, priceWrapperV6 } from './components/priceWrapper';
+import renderModal from './helpers/renderModal';
 
 const { ID, VARIATION } = shared;
 //const DOM_RENDER_DELAY = 2000;
-const finalMessage = 'Order a free sample';
+const finalMessage = 'Order a Free Sample';
 
 const renderPriceSection = () => {
   const priceElement = document.querySelector('.product-info-price');
@@ -95,6 +96,9 @@ export default () => {
     setup();
   }
 
+  //render modal
+  renderModal(ID);
+
   //render price section
   renderPriceSection();
   const targetElement = document.querySelector('.product-info-main .product-info-cta');
@@ -160,8 +164,22 @@ export default () => {
 
     const wastageDetails = document.querySelector('.wastage-details');
     if (target.matches('#add-10percent-wastage')) {
-      //document.querySelector(`.${ID}__calculateBox input`).click();
       wastageDetails.querySelector('.missing-wastage').click();
+    }
+  });
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    const overlay = document.querySelector(`.${ID}__overlay`);
+    const modal = document.querySelector(`.${ID}__modal`);
+
+    if (target.closest(`.${ID}__calculator-openner`)) {
+      overlay.classList.remove(`${ID}__hide`);
+      modal.classList.remove(`${ID}__hide`);
+    } else if (target.closest(`.${ID}__close`) || target.closest(`.${ID}__overlay`)) {
+      overlay.classList.add(`${ID}__hide`);
+      modal.classList.add(`${ID}__hide`);
     }
   });
 

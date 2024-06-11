@@ -11,7 +11,7 @@ export const calculateBox = (id, deliveryData) => {
                             <input type="number" value="0"/>
                             <span class="${id}__quantity">m²</span>
                         </div>
-                        <a href="#">How much do I need?</a>
+                        <div class='${id}__calculator-openner'>How much do I need?</div>
                     </div>
                     <div class="${id}__vertical-line"></div>
                     <div class="${id}__calculateBox-content-summery">
