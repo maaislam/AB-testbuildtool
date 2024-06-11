@@ -26,7 +26,9 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      grid-gap: 4px;
+      max-width: 300px;
+      width: 100%;
+      grid-gap: 12px;
 
       .#{$id}__color-item {
         &.#{$id}__selected {
@@ -45,6 +47,10 @@
         &.#{$id}__hide {
           display: none;
         }
+      }
+
+      @include media-query(xsm) {
+        grid-gap: 6px;
       }
     }
 
