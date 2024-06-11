@@ -39,6 +39,7 @@ const init = () => {
       colorSwatches(ID, data, colorMsg, THRESHOLD_IMAGE_NUMBER)
     );
 };
+
 export default () => {
   setup();
 
