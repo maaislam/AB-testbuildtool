@@ -1,7 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
 import { colorSwatches } from './components/colorSwatches';
 import { robesProductData } from './data/data';
 import { minusIcon, plusIcon } from './assets/icons';
@@ -16,18 +14,30 @@ const changeIcon = (icon, text) => {
 };
 
 const init = () => {
-  console.log(ID);
-
   const targetElement = document.querySelector('form[id^="product_form"]');
   const { pathname } = window.location;
   const productHandle = pathname.split('/products/')[1];
   const data = robesProductData[productHandle];
 
+  const translationConfig = {
+    nl: 'Kleur',
+    de: 'Farbe',
+    fr: 'Couleur',
+    es: 'color',
+    en: 'Color'
+  };
+
+  const lang = window.langify.locale.iso_code;
+  const colorMsg = translationConfig[lang];
+
   if (document.querySelector(`.${ID}__colorSwatches`)) {
     document.querySelector(`.${ID}__colorSwatches`).remove();
   }
   data &&
-    targetElement.insertAdjacentHTML('afterbegin', colorSwatches(ID, data, THRESHOLD_IMAGE_NUMBER));
+    targetElement.insertAdjacentHTML(
+      'afterbegin',
+      colorSwatches(ID, data, colorMsg, THRESHOLD_IMAGE_NUMBER)
+    );
 };
 export default () => {
   setup();
