@@ -674,8 +674,10 @@
     .#{$id}__priceWrapper {
       display: flex;
       width: 100%;
-      justify-content: space-between;
-      padding: 20px 0;
+      justify-content: center;
+      padding: 20px 0 30px 0;
+      max-width: 550px;
+      margin: 0 auto;
 
       @include media-query(md) {
         max-width: 420px;
@@ -684,7 +686,7 @@
     }
 
     .#{$id}__priceContainer {
-      width: 50%;
+      // width: 50%;
 
       .#{$id}__availability {
         height: 24px;
@@ -726,7 +728,7 @@
           }
 
           @include media-query(xlg) {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 28px;
           }
 
@@ -742,7 +744,7 @@
           text-decoration: line-through;
 
           @include media-query(xxlg) {
-            font-size: 14px;
+            font-size: 13px;
           }
 
           @include media-query(sm) {
@@ -754,11 +756,16 @@
     }
 
     .#{$id}__orderSampleWrapper {
-      width: 50%;
-      margin-left: 10px;
+      // width: 50%;
+      margin-left: 20px;
+
+      @include media-query(xxlg) {
+        margin-left: 16px;
+      }
 
       @include media-query(md) {
-        margin-left: 0;
+        margin-left: 6px;
+        width: 48%;
       }
 
       &-button {
@@ -792,6 +799,11 @@
 
         @include media-query(xxlg) {
           justify-content: space-between;
+        }
+
+        @include media-query(md) {
+          justify-content: flex-start;
+          padding-left: 0;
         }
 
         &-item {
@@ -843,7 +855,7 @@
 
     .#{$id}__priceContainer {
       display: flex;
-      // justify-content: center;
+      justify-content: center;
       margin: 15px 0;
 
       .#{$id}__availability {
