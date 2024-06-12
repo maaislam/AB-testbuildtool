@@ -576,7 +576,7 @@ const colorObj = {
       productUrl:
         lang === 'en'
           ? '/collections/fleece-badjassen/products/kimono-velvet-midnight-black'
-          : `${urlPortion}`
+          : `${urlPortion}/collections/fleece-badjassen/products/kimono-velvet-midnight-black`
     },
     {
       name: translationConfigForColors.blue[lang],
