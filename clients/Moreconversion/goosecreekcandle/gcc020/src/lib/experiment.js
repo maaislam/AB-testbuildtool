@@ -22,6 +22,7 @@ const init = () => {
   const hasDiscount = Array.from(compareAtPriceElements).some(
     (element) => !element.classList.contains('hide') && element.innerText.trim() !== ''
   );
+  console.log('🚀 ~ init ~ hasDiscount:', hasDiscount);
 
   if (!hasDiscount) {
     return;

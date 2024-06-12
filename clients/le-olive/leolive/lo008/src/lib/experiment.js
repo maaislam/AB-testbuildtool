@@ -66,6 +66,7 @@ export default () => {
       changeIcon(plusIcon, 'more');
     }
   };
+  document.body.removeEventListener('click', handleIconClick);
 
   document.body.addEventListener('click', handleIconClick);
 

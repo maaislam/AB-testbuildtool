@@ -10,13 +10,13 @@ const init = () => {
   const priceBox = document.querySelectorAll('[data-role="priceBox"]');
 
   priceBox.forEach((box) => {
-    // const formatNumberGermanStyle = (number) => {
-    //   return number.toLocaleString('de-DE', {
-    //     minimumFractionDigits: 2,
-    //     maximumFractionDigits: 2
-    //   });
-    // };
-    const priceElm = box.querySelector('[id*="product-price-"]'); 
+    //const formatNumberGermanStyle = (number) => {
+    //return number.toLocaleString('de-DE', {
+    //minimumFractionDigits: 2,
+    //maximumFractionDigits: 2
+    //});
+    //};
+    const priceElm = box.querySelector('[id*="product-price-"]');
     //const { priceAmount } = priceElm.dataset;
 
     //const pricetext = formatNumberGermanStyle(Number(priceAmount));
