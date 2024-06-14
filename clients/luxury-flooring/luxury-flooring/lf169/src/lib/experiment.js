@@ -1,4 +1,5 @@
 import keyBenefits from './components/keyBenefits';
+import { keyBenefitsData } from './data/data';
 import reviews from './helpers/reviews';
 import setup from './services/setup';
 import shared from './shared/shared';
@@ -10,7 +11,10 @@ const init = () => {
   reviews(ID, reviewContainer);
 
   //sakib
-  keyBenefits(ID);
+  if (!document.querySelector(`.${ID}__benefits`)) {
+    const atfMediaElem = document.querySelector('.product.media');
+    atfMediaElem.insertAdjacentHTML('afterend', keyBenefits(ID, keyBenefitsData));
+  }
 };
 
 export default () => {

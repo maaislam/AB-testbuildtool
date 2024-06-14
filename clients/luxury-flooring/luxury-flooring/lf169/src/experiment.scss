@@ -2,42 +2,67 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  // kabir
-  &-1 {
-    .pdp-reviews#reviews {
-      background-color: #f9f2e4;
-      .pdp-reviews-summary {
-        & > .pdp-reviews-cms,
-        & > button {
-          display: none;
-        }
-      }
 
-      &::before {
-        content: '';
-        height: 100%;
-        position: absolute;
-        width: 200vw;
-        left: -50vw;
-        display: block;
-        top: 0;
-        background-color: #f9f2e4;
-        z-index: -1;
-      }
+    // kabir
+    &-1 {
+        .pdp-reviews#reviews {
+            background-color: #f9f2e4;
 
-      .pdp-reviews-list-container {
-        @media (min-width: 768px) {
-          margin-bottom: 38px;
-        }
-      }
+            .pdp-reviews-summary {
 
-      .pdp-review {
-        &.#{$id}__hide {
-          display: none;
+                &>.pdp-reviews-cms,
+                &>button {
+                    display: none;
+                }
+            }
+
+            &::before {
+                content: '';
+                height: 100%;
+                position: absolute;
+                width: 200vw;
+                left: -50vw;
+                display: block;
+                top: 0;
+                background-color: #f9f2e4;
+                z-index: -1;
+            }
+
+            .pdp-reviews-list-container {
+                @media (min-width: 768px) {
+                    margin-bottom: 38px;
+                }
+            }
+
+            .pdp-review {
+                &.#{$id}__hide {
+                    display: none;
+                }
+            }
         }
-      }
     }
-  }
 
-  //sakib
+    //sakib
+    .sp_accordion,
+    .product-features,
+    .product-accordion {
+        display: none;
+    }
+
+    .#{$id}__benefits {
+        padding: 0 80px;
+        background: #FFF;
+
+        &-title {
+            font-size: 30px;
+            color: #2F2F2F;
+            line-height: 40px;
+        }
+
+        .#{$id}__benefit {
+            color: #202020;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
 }
