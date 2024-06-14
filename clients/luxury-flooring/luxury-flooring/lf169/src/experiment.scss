@@ -36,6 +36,19 @@
           display: none;
         }
       }
+
+      .#{$id}__readMoreReviews {
+        display: flex;
+        justify-content: center;
+        line-height: 17px;
+        color: #202020;
+        text-decoration: underline;
+        cursor: pointer;
+
+        & + button {
+          display: none;
+        }
+      }
     }
   }
 
