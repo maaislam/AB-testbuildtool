@@ -2,7 +2,15 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__hide {
+    &__hide,
+    .product-sizes,
+    .product-info-price .flockr,
+    .product-info-price #price_match,
+    #preoderblock,
+    .product-info-cta,
+    .sp_accordion,
+    .product-features,
+    .product-accordion {
         display: none;
     }
 
@@ -62,18 +70,6 @@
         &+button {
             display: none;
         }
-    }
-
-    //sakib
-    .product-sizes,
-    .product-info-price .flockr,
-    .product-info-price #price_match,
-    #preoderblock,
-    .product-info-cta,
-    .sp_accordion,
-    .product-features,
-    .product-accordion {
-        display: none;
     }
 
     .#{$id}__benefitSection {
