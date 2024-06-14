@@ -1,5 +1,6 @@
+import cards from './components/cards';
 import keyBenefits from './components/keyBenefits';
-import { keyBenefitsData } from './data/data';
+import { cardData, keyBenefitsData } from './data/data';
 //import { initExternalLib } from './helpers/utils';
 import reviews from './helpers/reviews';
 import setup from './services/setup';
@@ -20,6 +21,8 @@ const init = () => {
     const atfMediaElem = document.querySelector('.product.media');
     atfMediaElem.insertAdjacentHTML('afterend', keyBenefits(ID, keyBenefitsData));
   }
+
+  reviewContainer.insertAdjacentHTML('afterend', cards(ID, cardData));
 };
 
 export default () => {
