@@ -5,21 +5,16 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  reviews(ID);
-
-
-
-
-
-
-
+  const reviewContainer = document.querySelector('.pdp-reviews#reviews');
+  reviews(ID, reviewContainer);
 
   //sakib
-  
 };
 
 export default () => {
   setup();
+
+  console.log('id', ID);
 
   init();
 };

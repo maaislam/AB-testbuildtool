@@ -2,14 +2,42 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    // kabir 
+  // kabir
+  &-1 {
+    .pdp-reviews#reviews {
+      background-color: #f9f2e4;
+      .pdp-reviews-summary {
+        & > .pdp-reviews-cms,
+        & > button {
+          display: none;
+        }
+      }
 
+      &::before {
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 200vw;
+        left: -50vw;
+        display: block;
+        top: 0;
+        background-color: #f9f2e4;
+        z-index: -1;
+      }
 
+      .pdp-reviews-list-container {
+        @media (min-width: 768px) {
+          margin-bottom: 38px;
+        }
+      }
 
+      .pdp-review {
+        &.#{$id}__hide {
+          display: none;
+        }
+      }
+    }
+  }
 
-
-
-
-    //sakib
-    
+  //sakib
 }
