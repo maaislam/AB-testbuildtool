@@ -4,7 +4,7 @@ import reviews from './helpers/reviews';
 import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const reviewContainer = document.querySelector('.pdp-reviews#reviews');
@@ -19,8 +19,6 @@ const init = () => {
 
 export default () => {
   setup();
-
-  console.log('id', ID);
 
   document.body.addEventListener('click', ({ target }) => {
     if (
