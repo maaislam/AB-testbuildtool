@@ -14,6 +14,8 @@
           line-height: 20px;
           color: #141416;
           @media screen and (min-width: 990px) {
+            max-width: 51px;
+            width: 100%;
             font-size: 16px;
             line-height: normal;
           }
@@ -24,6 +26,7 @@
           line-height: 20px;
           color: #000;
           text-transform: capitalize;
+          margin-left: 3px;
           @media screen and (min-width: 990px) {
             font-size: 16px;
             line-height: normal;
@@ -31,8 +34,8 @@
         }
 
         @media screen and (min-width: 990px) {
-          white-space: nowrap;
-          max-width: 195px;
+          display: flex;
+          max-width: 150px;
           width: 100%;
         }
       }
@@ -44,17 +47,26 @@
         grid-gap: 12px;
 
         .#{$id}__color-item {
+          padding: 3px;
+          border-radius: 13px;
+
           &.#{$id}__selected {
-            img {
-              border: solid 2px #ac6b78;
-              border-radius: 11px;
-            }
+            border: solid 2px #ac6b78;
           }
 
-          img {
-            width: 38px;
-            height: 53px;
-            padding: 3px;
+          span {
+            display: block;
+            width: 44px;
+            height: 66px;
+            border-radius: 13px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            @media screen and (max-width: 989px) {
+              width: 38px;
+              height: 50px;
+            }
           }
 
           &.#{$id}__hide {
@@ -67,11 +79,12 @@
         }
 
         @media screen and (max-width: 989px) {
-          max-width: 300px;
+          max-width: 320px;
+          grid-gap: 7px;
         }
 
         @media screen and (min-width: 990px) {
-          width: calc(100% - 200px);
+          width: calc(100% - 155px);
         }
       }
 
@@ -91,19 +104,20 @@
         display: flex;
         align-items: center;
         grid-gap: 5px;
+        margin-top: 20px;
       }
     }
 
     .product-form__options-wrapper {
       .product-form__options-title {
         @media screen and (min-width: 990px) {
-          max-width: 195px;
+          max-width: 150px;
           width: 100%;
         }
       }
       .product-form__options {
         @media screen and (min-width: 990px) {
-          width: calc(100% - 200px);
+          width: calc(100% - 155px);
           padding-left: 5px;
         }
       }
