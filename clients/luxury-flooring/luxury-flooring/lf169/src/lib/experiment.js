@@ -11,7 +11,7 @@ const swiperCss = 'https://dev.m7cdn.io//common/css/swiper.css';
 
 const init = () => {
   //init swiper
-  initExternalLib(swiperJs, swiperCss);
+  //initExternalLib(swiperJs, swiperCss);
 
   const reviewContainer = document.querySelector('.pdp-reviews#reviews');
   reviews(ID, reviewContainer);
@@ -48,6 +48,11 @@ export default () => {
     ) {
       const reviewList = target.closest('.pdp-reviews-list');
       reviewList.querySelector('button').click();
+    } else if (target.closest(`.${ID}__benifitDetailsCta`)) {
+      const benifits = document.querySelectorAll(`.${ID}__benefit.${ID}__hide`);
+      benifits.forEach((item) => {
+        item.classList.remove(`${ID}__hide`);
+      });
     }
   });
 

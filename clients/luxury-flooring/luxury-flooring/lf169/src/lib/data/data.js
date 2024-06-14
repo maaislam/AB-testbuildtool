@@ -19,5 +19,11 @@ export const keyBenefitsData = [
     },
     {
         benifit: '<b>25-years</b> manufacturing guarantee'
+    },
+    {
+        benifit: '<b>Underfloor heating</b> compatible'
+    },
+    {
+        benifit: '<b>25-years</b> manufacturing guarantee'
     }
 ];

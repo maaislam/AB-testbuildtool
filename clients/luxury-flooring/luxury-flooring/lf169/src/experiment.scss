@@ -2,8 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    &__hide {
+        display: none;
+    }
 
-    // kabir
     &-1 {
         .pdp-reviews#reviews {
             background-color: #f9f2e4;
@@ -100,6 +102,16 @@
                     }
                 }
             }
+
+            .#{$id}__benefit-image {
+                width: 300px;
+                object-fit: contain;
+            }
+        }
+
+        .#{$id}__benifitDetailsCta {
+            text-decoration: underline;
+            cursor: pointer;
         }
     }
 }
