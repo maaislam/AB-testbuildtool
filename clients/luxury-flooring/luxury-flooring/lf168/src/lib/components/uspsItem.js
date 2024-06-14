@@ -1,3 +1,4 @@
+/*eslint-disable no-unused-vars */
 export const uspsItem = (id, data) => {
   const { icon, iconType, title, subtitle, link } = data;
   const selectedTag =

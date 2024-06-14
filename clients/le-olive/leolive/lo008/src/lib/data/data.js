@@ -270,7 +270,7 @@ const colorObj = {
           : `/${urlPortion}/collections/fleece-badjassen/products/fleece-badjas-donkerblauw`
     },
     {
-      name: translationConfigForColors.brown[lang],
+      name: translationConfigForColors['chocolate brown'][lang],
       imageUrl:
         'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/le-olive/brown.png',
       productUrl:
@@ -576,7 +576,7 @@ const colorObj = {
       productUrl:
         lang === 'en'
           ? '/collections/fleece-badjassen/products/kimono-velvet-midnight-black'
-          : `${urlPortion}`
+          : `${urlPortion}/collections/fleece-badjassen/products/kimono-velvet-midnight-black`
     },
     {
       name: translationConfigForColors.blue[lang],
@@ -719,7 +719,7 @@ export const robesProductData = {
   },
   'badjas-chocolate-brown': {
     colorArray: colorObj.classic,
-    perSelectedColor: translationConfigForColors.brown[lang]
+    perSelectedColor: translationConfigForColors['chocolate brown'][lang]
   },
   'fleece-badjas-wit': {
     colorArray: colorObj.classic,

@@ -4,13 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const priceBadgeSaleElement = document.querySelector('.price__badge-sale');
 
     if (compareAtPriceElement && priceElement && priceBadgeSaleElement) {
-        const compareAtPrice = parseFloat(compareAtPriceElement.textContent.replace(/[^0-9.-]+/g, ""));
-        const price = parseFloat(priceElement.textContent.replace(/[^0-9.-]+/g, ""));
+        const compareAtPrice = parseFloat(compareAtPriceElement.textContent.replace(/[^0-9.-]+/g, ''));
+        const price = parseFloat(priceElement.textContent.replace(/[^0-9.-]+/g, ''));
 
         if (compareAtPrice > price) {
             const savingAmount = compareAtPrice - price;
 
-            const formattedSavingAmount = savingAmount.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            const formattedSavingAmount = savingAmount.toLocaleString('en-US', {
+ style: 'currency', currency: 'USD'
+});
 
             //Update the content of the price__badge-sale element
             priceBadgeSaleElement.textContent = `Save ${formattedSavingAmount}`;
@@ -83,7 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const deliveryDate = new Date(today);
     deliveryDate.setDate(today.getDate() + 4);
 
-    const options = { month: 'long', day: 'numeric' };
+    const options = {
+ month: 'long', day: 'numeric'
+};
     const formattedDate = deliveryDate.toLocaleDateString('en-US', options);
 
     const deliveryMessage = `<div id="delivery-message-container">
