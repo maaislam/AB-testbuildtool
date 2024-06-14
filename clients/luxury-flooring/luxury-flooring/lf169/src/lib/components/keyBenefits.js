@@ -5,9 +5,9 @@ const keyBenefits = (id, data) => {
         <div class="${id}__benefitSection">
             <h2 class='${id}__benefitsTitle'>Why you'll love it</h2>
             <div class='${id}__benefits-wrapper'>
-                <div class='${id}__benefit'>
+                <div class='${id}__benefit-content'>
                     ${data.map((item, index) => {
-                        const isHidden = index > 7 ? `${id}__hide` : '';
+                        const isHidden = index > 6 ? `${id}__hide` : '';
                         return `
                             <div class="${id}__benefit ${isHidden}" data-index='${index + 1}'>
                                 <span class='${id}__icon'>${checkMark}</span>
