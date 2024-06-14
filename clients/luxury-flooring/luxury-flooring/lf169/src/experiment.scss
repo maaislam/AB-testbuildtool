@@ -63,20 +63,38 @@
         display: none;
     }
 
-    .#{$id}__benefits {
-        padding: 0 80px;
+    .#{$id}__benefitSection {
+        padding: 64px 40px 52px;
         background: #FFF;
 
-        &-title {
+        .#{$id}__benefitsTitle {
             font-size: 30px;
             color: #2F2F2F;
             line-height: 40px;
         }
 
-        .#{$id}__benefit {
-            color: #202020;
-            font-size: 16px;
-            line-height: 20px;
+        .#{$id}__benefits-wrapper {
+            display: flex;
+
+            .#{$id}__benefit {
+                margin: 0 40px 12px 0;
+
+                &-text {
+                    position: relative;
+                    margin-left: 4px;
+                    color: #202020;
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+
+                .#{$id}__icon {
+                    svg {
+                        width: 13px;
+                        height: 12px;
+                    }
+                }
+            }
         }
+
     }
 }
