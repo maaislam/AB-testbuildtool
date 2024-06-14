@@ -1,12 +1,18 @@
 import keyBenefits from './components/keyBenefits';
 import { keyBenefitsData } from './data/data';
+import { initExternalLib } from './helpers/utils';
 import reviews from './helpers/reviews';
 import setup from './services/setup';
 import shared from './shared/shared';
 
 const { ID } = shared;
+const swiperJs = 'https://m7cdn.io/common/js/swiper.js';
+const swiperCss = 'https://dev.m7cdn.io//common/css/swiper.css';
 
 const init = () => {
+  //init swiper
+  initExternalLib(swiperJs, swiperCss);
+
   const reviewContainer = document.querySelector('.pdp-reviews#reviews');
   reviews(ID, reviewContainer);
 
