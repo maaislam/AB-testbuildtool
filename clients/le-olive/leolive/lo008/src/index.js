@@ -4,7 +4,7 @@ import shared from './lib/shared/shared';
 
 const { ID } = shared;
 
-if (!document.documentElement.classList.contains(ID)) {
+if (window.location.href.includes('qa=true') && !document.documentElement.classList.contains(ID)) {
   pollerLite(
     [
       'body.template-product',

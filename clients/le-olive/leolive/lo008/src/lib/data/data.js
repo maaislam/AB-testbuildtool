@@ -201,6 +201,8 @@ const colorObj = {
       name: translationConfigForColors['powder pink'][lang],
       imageUrl:
         'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/le-olive/powder-pink.png',
+      modelImg:
+        'https://us.le-olive.com/cdn/shop/products/20210603_DSC9844-Edit_12aaee6a-5ffd-4fb8-a898-6a2dc2f5ad24_600x.jpg?v=1715588333',
       productUrl:
         lang === 'en'
           ? '/collections/fleece-badjassen/products/fleece-badjas-poeder-roze'
@@ -210,6 +212,8 @@ const colorObj = {
       name: translationConfigForColors.taupe[lang],
       imageUrl:
         'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/le-olive/taupe.png',
+      modelImg:
+        'https://us.le-olive.com/cdn/shop/products/20200903_DSC6837-Edit-2_77fb7c93-200b-46b1-b882-42d258694fca_750x.jpg?v=1714055075',
       productUrl:
         lang === 'en'
           ? '/collections/fleece-badjassen/products/fleece-badjas-taupe'
@@ -219,6 +223,8 @@ const colorObj = {
       name: translationConfigForColors['cream pearl'][lang],
       imageUrl:
         'https://abtest-luxuryflooring-salyenz.s3.us-west-2.amazonaws.com/le-olive/cream-pearl.png',
+      modelImg:
+        'https://us.le-olive.com/cdn/shop/products/20211020_DSC6720-Edit_43730648-c8eb-490f-9849-3f747f05bd35_750x.jpg?v=1707407081',
       productUrl:
         lang === 'en'
           ? '/collections/fleece-badjassen/products/robe-beige-white-piping'
