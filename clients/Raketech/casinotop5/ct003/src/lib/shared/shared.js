@@ -1,6 +1,6 @@
 module.exports = {
     ID: 'ct003',
     VARIATION: '1',
-    CLIENT: 'Raketech',
+    CLIENT: 'raketech',
     SITE: 'casinotop5'
   };
