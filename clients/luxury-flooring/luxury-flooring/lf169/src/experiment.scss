@@ -2,7 +2,6 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-
   &__hide,
   .product-sizes,
   .product-info-price .flockr,
@@ -11,13 +10,13 @@
   .product-info-cta,
   .sp_accordion,
   .product-features,
-  .product-accordion {
+  .product-accordion:not(.#{$id}__product-accordion) {
     display: none;
   }
 
   &-1 {
     .column.main {
-      &>.upsell-title {
+      & > .upsell-title {
         position: relative;
         margin: 0;
         padding: 45px 0 50px 0;
@@ -36,7 +35,7 @@
         }
       }
 
-      &>.products.wrapper {
+      & > .products.wrapper {
         position: relative;
         margin: 0;
         padding-bottom: 45px;
@@ -56,7 +55,7 @@
       }
 
       .product-info-main {
-        &>.product-reviews-summary {
+        & > .product-reviews-summary {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -74,9 +73,8 @@
       position: relative;
 
       .pdp-reviews-summary {
-
-        &>.pdp-reviews-cms,
-        &>button {
+        & > .pdp-reviews-cms,
+        & > button {
           display: none;
         }
       }
@@ -98,7 +96,7 @@
           height: min-content !important;
           overflow: hidden;
 
-          &>.pdp-review:not(.#{$id}__hide) {
+          & > .pdp-review:not(.#{$id}__hide) {
             border-bottom: none;
           }
         }
@@ -172,6 +170,54 @@
         }
       }
     }
+
+    .#{$id}__product-section {
+      background-color: #fff;
+      .#{$id}__product-accordion-tab.#{$id}__open {
+        border-bottom: none;
+        h2 {
+          &::after {
+            content: '\e91a';
+          }
+        }
+      }
+
+      &::before {
+        background-color: #fff;
+      }
+    }
+
+    .#{$id}__productDesWrapper {
+      .#{$id}__title {
+        font-size: 30px;
+        line-height: 40px;
+        color: #2f2f2f;
+        margin-bottom: 19px;
+      }
+      .#{$id}__content {
+        list-style: outside none;
+        .#{$id}__item {
+          display: flex;
+          margin-bottom: 15px;
+          font-size: 16px;
+          line-height: 22px;
+          color: #202020;
+          &::before {
+            content: '\25CF';
+            top: 1px;
+            position: relative;
+            float: left;
+            color: #000;
+            text-indent: 0px;
+            speak: none;
+            padding-right: 6px;
+            font-size: 8px;
+          }
+        }
+      }
+      .#{$id}__subtitle {
+      }
+    }
   }
 
   .#{$id}__readMoreReviews {
@@ -182,7 +228,7 @@
     text-decoration: underline;
     cursor: pointer;
 
-    &+button {
+    & + button {
       display: none;
     }
   }
@@ -371,7 +417,7 @@
       padding: 0;
 
       .room-preview-text {
-        background: #BE903B;
+        background: #be903b;
       }
 
       .#{$id}__floorMeasurement {

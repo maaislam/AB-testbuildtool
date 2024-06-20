@@ -1,3 +1,7 @@
+import { deliveryReturns } from '../components/deliveryReturns';
+import { installation } from '../components/installation';
+import { warranty } from '../components/warranty';
+
 export const keyBenefitsData = [
   {
     benifit: '<b>Real Oak</b> wood flooring sourced from Europe'
@@ -78,67 +82,100 @@ export const uspsData = [
 ];
 
 export const floorSpecifications = [
-    {
-        'Product Code:': 'HE6000'
-    },
-    {
-        'Species:': 'Oak'
-    },
-    {
-        'Finish:': 'Unfinished'
-    },
-    {
-        'Surface:': 'Smooth'
-    },
-    {
-        'Grade:': 'Rustic'
-    },
-    {
-        'Edge Detail:': '4 Sides Micro Bevel'
-    },
-    {
-        'Construction:': 'Multi Ply'
-    },
-    {
-        'Underfloor Heating:': 'Suitable'
-    },
-    {
-        'Product Origin:': 'Europe'
-    },
-    {
-        'Installation Method:': 'Nailed or Glued Down'
-    },
-    {
-        'Room Suitability:': 'Bedroom, Dining, Kitchen, Lounge'
-    },
-    {
-        'Range:': 'Painswick'
-    },
-    {
-        'Plank Style:': 'Herringbone/Parquet'
-    },
-    {
-        'Guarantee:': '25 Years'
-    }
+  {
+    'Product Code:': 'HE6000'
+  },
+  {
+    'Species:': 'Oak'
+  },
+  {
+    'Finish:': 'Unfinished'
+  },
+  {
+    'Surface:': 'Smooth'
+  },
+  {
+    'Grade:': 'Rustic'
+  },
+  {
+    'Edge Detail:': '4 Sides Micro Bevel'
+  },
+  {
+    'Construction:': 'Multi Ply'
+  },
+  {
+    'Underfloor Heating:': 'Suitable'
+  },
+  {
+    'Product Origin:': 'Europe'
+  },
+  {
+    'Installation Method:': 'Nailed or Glued Down'
+  },
+  {
+    'Room Suitability:': 'Bedroom, Dining, Kitchen, Lounge'
+  },
+  {
+    'Range:': 'Painswick'
+  },
+  {
+    'Plank Style:': 'Herringbone/Parquet'
+  },
+  {
+    'Guarantee:': '25 Years'
+  }
 ];
 
 export const floorMeasurements = [
-    {
-        'Length:': '300mm'
-    },
-    {
-        'Width:': '80mm'
-    },
-    {
-        'Thickness:': '10mm'
-    },
-    {
-        'Wear layer:': '3mm'
-    },
-    {
-        'Pack Weight:': '7kg'
-    },
-    {
-        'Pack Size:': '0.96m2'
-    }
+  {
+    'Length:': '300mm'
+  },
+  {
+    'Width:': '80mm'
+  },
+  {
+    'Thickness:': '10mm'
+  },
+  {
+    'Wear layer:': '3mm'
+  },
+  {
+    'Pack Weight:': '7kg'
+  },
+  {
+    'Pack Size:': '0.96m2'
+  }
+];
+
+export const accordionData = [
+  {
+    uid: 'Delivery & Returns',
+    key: 'Delivery-Returns',
+    body: deliveryReturns()
+  },
+  {
+    uid: 'Installation &amp; Care',
+    key: 'Installation-Care',
+    body: installation()
+  },
+  {
+    uid: 'Warranty',
+    key: 'Warranty',
+    body: warranty()
+  }
+];
+
+export const productDescData = [
+  {
+    text: `If you’re a fan of rustic charm, you’ll fall in love with our Painswick Fresh Engineered Oak floor. Knots and grains
+          dance across the surface of the real wood top layer, creating a look that simply exudes character.`
+  },
+  {
+    text: 'Featuring a sought-after herringbone design, this gorgeous floor is guaranteed to capture attention.'
+  },
+  {
+    text: `Crafted from engineered oak,
+          it boasts all the beauty of solid wood with the practicality of engineered construction, making it a top choice for
+          your modern home.`
+  }
 ];

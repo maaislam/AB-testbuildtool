@@ -23,7 +23,10 @@ const reviews = (id, element) => {
     );
 
   //mobile
-  element.insertAdjacentElement('beforebegin', mobileReviewSection);
+  if (!document.querySelector(`.${id}__mobileReviewSection`)) {
+    element.insertAdjacentElement('beforebegin', mobileReviewSection);
+  }
+
   const listsForMobile = mobileReviewSection
     .querySelector('.pdp-reviews-list-container')
     .cloneNode(true);
