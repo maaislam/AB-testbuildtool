@@ -50,3 +50,69 @@ export const cardData = [
         description: "We hope you’ll love your new floor as much as we do! But in the unlikely event that you’re not happy or if you have any leftover packs, our 30-day hassle free returns policy is here to save the day. Head to our <a href=''>returns page</a> for full details."
     }
 ];
+
+export const floorSpecifications = [
+    {
+        'Product Code:': 'HE6000'
+    },
+    {
+        'Species:': 'Oak'
+    },
+    {
+        'Finish:': 'Unfinished'
+    },
+    {
+        'Surface:': 'Smooth'
+    },
+    {
+        'Grade:': 'Rustic'
+    },
+    {
+        'Edge Detail:': '4 Sides Micro Bevel'
+    },
+    {
+        'Construction:': 'Multi Ply'
+    },
+    {
+        'Underfloor Heating:': 'Suitable'
+    },
+    {
+        'Product Origin:': 'Europe'
+    },
+    {
+        'Installation Method:': 'Nailed or Glued Down'
+    },
+    {
+        'Room Suitability:': 'Bedroom, Dining, Kitchen, Lounge'
+    },
+    {
+        'Range:': 'Painswick'
+    },
+    {
+        'Plank Style:': 'Herringbone/Parquet'
+    },
+    {
+        'Guarantee:': '25 Years'
+    }
+];
+
+export const floorMeasurements = [
+    {
+        'Length:': '300mm'
+    },
+    {
+        'Width:': '80mm'
+    },
+    {
+        'Thickness:': '10mm'
+    },
+    {
+        'Wear layer:': '3mm'
+    },
+    {
+        'Pack Weight:': '7kg'
+    },
+    {
+        'Pack Size:': '0.96m2'
+    }
+];

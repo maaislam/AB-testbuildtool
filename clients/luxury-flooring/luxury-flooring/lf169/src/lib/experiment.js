@@ -6,6 +6,7 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import scrollToBottom from './helpers/scrollToBottom';
 import atfCustomization from './helpers/atfCustomization';
+import floorDetails from './helpers/floorDetails';
 
 const { ID } = shared;
 
@@ -27,6 +28,12 @@ const init = () => {
   //cards section
   if (!document.querySelector(`.${ID}__cardSection`)) {
     reviewContainer.insertAdjacentHTML('afterend', cards(ID, cardData));
+  }
+
+  //about the floor section
+  if (!document.querySelector(`.${ID}__floorDetailsSection`)) {
+    const cardSection = document.querySelector(`.${ID}__cardSection`);
+    cardSection.insertAdjacentHTML('afterend', floorDetails(ID));
   }
 };
 
