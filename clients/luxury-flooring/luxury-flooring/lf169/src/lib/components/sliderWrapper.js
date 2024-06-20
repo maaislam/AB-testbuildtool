@@ -6,7 +6,7 @@ const sliderWrapper = (id, element) => {
   });
 
   const htmlStr = `
-          <div class="${id}__slider swiper">
+          <div class="${id}__slider ${id}__swiper">
               <div class="swiper-wrapper">
                     ${updatedLists.join('\n')}
               </div>

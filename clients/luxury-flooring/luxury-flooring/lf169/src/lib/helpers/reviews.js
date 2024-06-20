@@ -1,23 +1,19 @@
 import linkButton from '../components/linkButton';
 import sliderWrapper from '../components/sliderWrapper';
-import { pollerLite } from './utils';
-import initSwiper from './initSwiper';
+import { initSwiper } from './utils';
 
 const reviews = (id, element) => {
   const mobileReviewSection = element.cloneNode(true);
   mobileReviewSection.classList.add(`${id}__mobileReviewSection`);
 
-  const listContainer = element.querySelector('.pdp-reviews-list-container');
-  const actualHeiight = window.getComputedStyle(listContainer).height;
-  listContainer.setAttribute('data-height', actualHeiight);
-
   const lists = Array.from(element.querySelectorAll('.pdp-review'));
-  const firstReviewHeight = lists[0].getBoundingClientRect().height;
-  listContainer.style.height = `${firstReviewHeight}px`;
 
   lists.slice(1).forEach((list) => {
     list.classList.add(`${id}__hide`);
   });
+
+  document.querySelector(`.${id}__benefitSection`).insertAdjacentElement('afterend', element);
+  element.querySelector('.pdp-reviews-list-container').classList.add(`${id}__addHeight`);
 
   element
     .querySelector('.pdp-reviews-list-container + button')
@@ -27,7 +23,7 @@ const reviews = (id, element) => {
     );
 
   //mobile
-  element.insertAdjacentElement('afterend', mobileReviewSection);
+  element.insertAdjacentElement('beforebegin', mobileReviewSection);
   const listsForMobile = mobileReviewSection
     .querySelector('.pdp-reviews-list-container')
     .cloneNode(true);
@@ -37,8 +33,6 @@ const reviews = (id, element) => {
     .querySelector('.pdp-reviews-summary')
     .insertAdjacentHTML('afterend', sliderWrapper(id, listsForMobile));
 
-  pollerLite([() => typeof window.Swiper === 'function'], () => {
-    initSwiper('.swiper');
-  });
+  initSwiper(id);
 };
 export default reviews;

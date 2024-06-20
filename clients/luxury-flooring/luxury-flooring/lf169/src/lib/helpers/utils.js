@@ -50,16 +50,42 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   observer.observe(target, config);
 };
 
-export const initExternalLib = (jsUrl, cssUrl) => {
+export const initSwiper = (id) => {
+  let init = false;
+  let swiper;
+
+  const styleSheet = document.createElement('link');
+  styleSheet.rel = 'stylesheet';
+  styleSheet.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
+  document.head.appendChild(styleSheet);
+
   const script = document.createElement('script');
-  const link = document.createElement('link');
+  script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+  document.head.appendChild(script);
 
-  script.type = 'text/javascript';
-  script.src = `${jsUrl}`;
-  link.type = 'text/css';
-  link.rel = 'stylesheet';
-  link.href = `${cssUrl}`;
+  const swiperReviews = () => {
+    if (window.innerWidth <= 992) {
+      if (!init) {
+        init = true;
+        swiper = new window.Swiper(`.${id}__swiper`, {
+          slidesPerView: 1.2,
+          spaceBetween: 38,
+          loop: true,
+          delay: 2000,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        });
+      }
+    } else if (init) {
+      swiper.destroy();
+      init = false;
+    }
+  };
 
-  document.querySelector('head').append(script);
-  document.querySelector('head').append(link);
+  script.onload = () => {
+    swiperReviews();
+    window.addEventListener('resize', swiperReviews);
+  };
 };
