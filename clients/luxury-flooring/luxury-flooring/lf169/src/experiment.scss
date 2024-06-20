@@ -11,7 +11,7 @@
   .sp_accordion,
   .product-features,
   .product-accordion {
-    display: none;
+    //display: none;
   }
 
   &-1 {
@@ -293,8 +293,61 @@
   }
 
   //kabir
-  
+
+  &-1 {
+    .sample-add-form {
+      max-width: 385px;
+      margin: 0 auto;
+      form {
+        display: flex;
+        button {
+          width: 50% !important;
+          padding: 20px 0;
+        }
+
+        .#{$id}__roomVisualizerBtn {
+          margin: 0 0 0 6px;
+          background-color: #fff;
+          color: #000 !important;
+          border: 1px solid #000000;
+          box-shadow: none;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .#{$id}__uspsWrapper {
+      max-width: 385px;
+      margin: 0 auto;
+      .uspsList {
+        display: flex;
+        margin-top: 30px;
+        .#{$id}__uspsItem {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: calc(100% / 3);
+
+          .#{$id}__text {
+            font-size: 13px;
+            line-height: 16px;
+            color: #202020;
+            margin-top: 6px;
+
+            a {
+              font-weight: bold;
+              text-decoration: underline;
+              color: #202020;
+            }
+          }
+
+          &:nth-child(2) {
+            margin: 0 8px;
+          }
+        }
+      }
+    }
+  }
 
   // sakib
-
 }
