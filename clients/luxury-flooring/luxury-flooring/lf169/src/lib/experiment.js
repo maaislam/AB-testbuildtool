@@ -70,7 +70,7 @@ export default () => {
       benifits.forEach((item) => {
         item.classList.remove(`${ID}__hide`);
       });
-    } else if (target.closest(`.${ID}__roomVisualizerBtn`)) {
+    } else if (target.closest(`.${ID}__roomVisualizerBtn`) || target.closest(`.${ID}__roomPreviewBtn`)) {
       const roomVisualizer = document.querySelector('.roomvo-stimr');
       roomVisualizer.click();
     }

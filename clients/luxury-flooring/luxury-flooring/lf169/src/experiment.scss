@@ -2,6 +2,7 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+
   &__hide,
   .product-sizes,
   .product-info-price .flockr,
@@ -16,11 +17,12 @@
 
   &-1 {
     .column.main {
-      & > .upsell-title {
+      &>.upsell-title {
         position: relative;
         margin: 0;
         padding: 45px 0 50px 0;
         background-color: #f9f2e4;
+
         &::before {
           content: '';
           height: 100%;
@@ -33,11 +35,13 @@
           z-index: -1;
         }
       }
-      & > .products.wrapper {
+
+      &>.products.wrapper {
         position: relative;
         margin: 0;
         padding-bottom: 45px;
         background-color: #f9f2e4;
+
         &::before {
           content: '';
           height: 100%;
@@ -52,7 +56,7 @@
       }
 
       .product-info-main {
-        & > .product-reviews-summary {
+        &>.product-reviews-summary {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -64,13 +68,15 @@
         }
       }
     }
+
     .pdp-reviews#reviews:not(.#{$id}__mobileReviewSection) {
       background-color: #f9f2e4;
       position: relative;
 
       .pdp-reviews-summary {
-        & > .pdp-reviews-cms,
-        & > button {
+
+        &>.pdp-reviews-cms,
+        &>button {
           display: none;
         }
       }
@@ -91,10 +97,12 @@
         &.#{$id}__addHeight {
           height: min-content !important;
           overflow: hidden;
-          & > .pdp-review:not(.#{$id}__hide) {
+
+          &>.pdp-review:not(.#{$id}__hide) {
             border-bottom: none;
           }
         }
+
         @media (min-width: 768px) {
           margin-bottom: 38px;
         }
@@ -113,6 +121,7 @@
 
     .#{$id}__mobileReviewSection {
       display: none;
+
       .pdp-reviews-list,
       .pdp-reviews-cms,
       button[data-role='revform'] {
@@ -138,15 +147,18 @@
 
         .swiper-pagination {
           position: static;
+
           .swiper-pagination-bullet {
             border: solid 1px #000;
             background-color: #f9f2e4;
             opacity: 1;
           }
+
           .swiper-pagination-bullet-active {
             background-color: #000;
           }
         }
+
         &::before {
           content: '';
           height: 100%;
@@ -170,7 +182,7 @@
     text-decoration: underline;
     cursor: pointer;
 
-    & + button {
+    &+button {
       display: none;
     }
   }
@@ -298,8 +310,10 @@
     .sample-add-form {
       max-width: 385px;
       margin: 0 auto;
+
       form {
         display: flex;
+
         button {
           width: 50% !important;
           padding: 20px 0;
@@ -319,9 +333,11 @@
     .#{$id}__uspsWrapper {
       max-width: 385px;
       margin: 0 auto;
+
       .uspsList {
         display: flex;
         margin-top: 30px;
+
         .#{$id}__uspsItem {
           display: flex;
           flex-direction: column;
@@ -350,4 +366,76 @@
   }
 
   // sakib
+  &__floorDetailsSection {
+    .product-details {
+      padding: 0;
+
+      .room-preview-text {
+        background: #BE903B;
+      }
+
+      .#{$id}__floorMeasurement {
+        .#{$id}__floorDetailsTitle {
+          font-weight: 500;
+          font-size: 30px;
+          line-height: 40px;
+          color: #2f2f2f;
+        }
+
+        .#{$id}__floorMeasurementCol {
+          margin-top: 38px;
+
+          h4 {
+            font-weight: 600;
+            font-size: 19px;
+            line-height: 26px;
+            color: #202020;
+          }
+
+          .#{$id}__measurementTitle {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 36px;
+            color: #202020;
+          }
+
+          .#{$id}__measurementValue {
+            font-size: 16px;
+            line-height: 36px;
+            color: #202020;
+          }
+        }
+      }
+
+      .#{$id}__floorSpecification {
+        .#{$id}__floorSpecificationCol {
+          margin-top: calc(40px + 38px);
+
+          h4 {
+            font-weight: 600;
+            font-size: 19px;
+            line-height: 26px;
+            color: #202020;
+          }
+
+          .#{$id}__specificationTitle {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 36px;
+            color: #202020;
+          }
+
+          .#{$id}__specificationValue {
+            font-size: 16px;
+            line-height: 36px;
+            color: #202020;
+          }
+        }
+      }
+
+      .#{$id}__roomPreview {
+        margin-top: calc(40px + 38px);
+      }
+    }
+  }
 }
