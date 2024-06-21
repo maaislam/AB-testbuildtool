@@ -1,6 +1,6 @@
 const card = (id, item) => {
   const htmlStr = `<div class="${id}__card">
-        <div>
+        <div class="${id}__image">
             <img loading="eager"
                     src="${item.image}" 
                     class="lazyautosizes lazyloaded" data-sizes="auto">

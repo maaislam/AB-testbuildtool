@@ -7,6 +7,7 @@ import shared from './shared/shared';
 import scrollToBottom from './helpers/scrollToBottom';
 import atfCustomization from './helpers/atfCustomization';
 import floorDetails from './helpers/floorDetails';
+import { stickyCombineBtn } from './helpers/stickyCombineBtn';
 
 const { ID } = shared;
 
@@ -36,6 +37,9 @@ const init = () => {
     const cardSection = document.querySelector(`.${ID}__cardSection`);
     cardSection.insertAdjacentHTML('afterend', floorDetails(ID));
   }
+
+  //sticky section in mobile devices
+  stickyCombineBtn(ID);
 };
 
 export default () => {
@@ -94,6 +98,10 @@ export default () => {
       const targetTab = target.closest(`.${ID}__product-accordion-tab`);
       targetTab.classList.remove(`${ID}__open`);
       targetTab.nextElementSibling.style.display = 'none';
+    } else if (target.closest(`.${ID}__orderSampleWrapper`)) {
+      document.querySelector('.sample-add-form button[type="submit"]').click();
+    } else if (target.closest(`.${ID}__atcBtn`)) {
+      document.querySelector('#product-addtocart-button').click();
     }
   });
 

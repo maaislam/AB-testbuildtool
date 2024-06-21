@@ -1,3 +1,4 @@
+import { bestsellerTag } from '../components/bestsellerTag';
 import { uspsWrapper } from '../components/uspsWrapper';
 import { uspsData } from '../data/data';
 
@@ -13,6 +14,9 @@ const atfCustomization = (id) => {
     reviewsSummary.insertAdjacentHTML('afterbegin', bestSellerImgHTML);
   }
 
+  //text change
+  sampleAddForm.querySelector('button[type="submit"] > span').innerText = 'Order a free sample';
+
   const roomVisualizerHTML = `
       <button class="${id}__roomVisualizerBtn" type="button">
         <span>See it in your room</span>
@@ -26,6 +30,11 @@ const atfCustomization = (id) => {
   //add usps icon section
   if (!document.querySelector(`.${id}__uspsWrapper`)) {
     sampleAddForm.insertAdjacentHTML('afterend', uspsWrapper(id, uspsData));
+  }
+
+  //bestseller tag add section
+  if (!document.querySelector(`.${id}__bestsellerTag`)) {
+    galarry.insertAdjacentHTML('beforeend', bestsellerTag(id));
   }
 
   //mobile

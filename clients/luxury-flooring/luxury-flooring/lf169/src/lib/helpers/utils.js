@@ -24,31 +24,6 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
     }
   }, POLLING_INTERVAL);
 };
-export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
-  const target = document.querySelector(`${targetSelectorString}`);
-
-  if (!target) return;
-  //configuration of the observer:
-
-  const config = configObject || {
-    childList: true,
-    subtree: true,
-    attributes: true,
-    characterData: true,
-    characterDataOldValue: true
-  };
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      //console.log(mutation);
-      observer.disconnect();
-
-      callbackFunction(mutation);
-      observer.observe(target, config);
-    });
-  });
-
-  observer.observe(target, config);
-};
 
 export const initSwiper = (id) => {
   let init = false;
@@ -88,4 +63,35 @@ export const initSwiper = (id) => {
     swiperReviews();
     window.addEventListener('resize', swiperReviews);
   };
+};
+
+export const observeIntersection = (target, threshold, callback) => {
+  const observer = new IntersectionObserver(callback, {
+    root: null,
+    rootMargin: '0px',
+    threshold
+  });
+  if (!target) {
+    return;
+  }
+
+  observer?.observe(target);
+};
+
+export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
+  const target = document.querySelector(`${targetSelectorString}`);
+
+  if (!target) return;
+  //configuration of the observer:
+
+  const config = configObject || {
+    childList: true
+  };
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      callbackFunction(mutation);
+    });
+  });
+
+  observer.observe(target, config);
 };

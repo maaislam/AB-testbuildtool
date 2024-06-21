@@ -32,7 +32,7 @@ const floorDetails = (id) => {
                       .join('')}
                 </div>
             </div>
-            <div class='${id}__floorSpecification product-detail-col'>
+            <div class='${id}__floorSpecification product-detail-col ${id}__floorSpecification-last-child'>
                 <div class='${id}__floorSpecificationCol'>
                     <h4>Specifications</h4>
                     ${floorSpecifications
