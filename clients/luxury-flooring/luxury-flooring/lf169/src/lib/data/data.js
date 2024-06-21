@@ -77,7 +77,7 @@ export const uspsData = [
   {
     imageUrl:
       'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test303/icon_price.png',
-    text: 'Price Match Promise'
+    text: '<span>Price Match</span> Promise'
   }
 ];
 

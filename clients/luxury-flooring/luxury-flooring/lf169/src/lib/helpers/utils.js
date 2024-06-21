@@ -64,7 +64,7 @@ export const initSwiper = (id) => {
   document.head.appendChild(script);
 
   const swiperReviews = () => {
-    if (window.innerWidth <= 992) {
+    if (window.innerWidth <= 767) {
       if (!init) {
         init = true;
         swiper = new window.Swiper(`.${id}__swiper`, {
