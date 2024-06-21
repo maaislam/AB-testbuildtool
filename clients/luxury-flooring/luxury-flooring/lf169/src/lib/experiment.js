@@ -20,7 +20,7 @@ const init = () => {
   atfCustomization(ID);
 
   //keyBenefits section
-  if (!document.querySelector(`.${ID}__benefits`)) {
+  if (!document.querySelector(`.${ID}__benefitSection`)) {
     const atfMediaElem = document.querySelector('.product.media');
     atfMediaElem.insertAdjacentHTML('afterend', keyBenefits(ID, keyBenefitsData));
   }
@@ -39,15 +39,15 @@ const init = () => {
     cardSection.insertAdjacentHTML('afterend', floorDetails(ID));
   }
 
-  //accordion section add
-  if (!document.querySelector(`.${ID}__product-section`)) {
-    mainColumn.insertAdjacentHTML('beforeend', accordionWrapper(ID, accordionData));
-  }
+  ////accordion section add
+  //if (!document.querySelector(`.${ID}__product-section`)) {
+  //mainColumn.insertAdjacentHTML('beforeend', accordionWrapper(ID, accordionData));
+  //}
 
   //product desctions section add
-  if (!document.querySelector(`.${ID}__productDesWrapper`)) {
-    mainColumn.insertAdjacentHTML('beforeend', productDesWrapper(ID, productDescData));
-  }
+  //if (!document.querySelector(`.${ID}__productDesWrapper`)) {
+  //mainColumn.insertAdjacentHTML('beforeend', productDesWrapper(ID, productDescData));
+  //}
 };
 
 export default () => {

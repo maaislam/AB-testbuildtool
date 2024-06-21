@@ -83,46 +83,60 @@ export const uspsData = [
 
 export const floorSpecifications = [
   {
-    'Product Code:': 'HE6000'
+    'Product Code:': 'HE6000',
+    isTooltip: false
   },
   {
-    'Species:': 'Oak'
+    'Species:': 'Oak',
+    isTooltip: false
   },
   {
-    'Finish:': 'Unfinished'
+    'Finish:': 'Unfinished',
+    isTooltip: false
   },
   {
-    'Surface:': 'Smooth'
+    'Surface:': 'Smooth',
+    isTooltip: false
   },
   {
-    'Grade:': 'Rustic'
+    'Grade:': 'Rustic',
+    isTooltip: true
   },
   {
-    'Edge Detail:': '4 Sides Micro Bevel'
+    'Edge Detail:': '4 Sides Micro Bevel',
+    isTooltip: false
   },
   {
-    'Construction:': 'Multi Ply'
+    'Construction:': 'Multi Ply',
+    isTooltip: false
   },
   {
-    'Underfloor Heating:': 'Suitable'
+    'Underfloor Heating:': 'Suitable',
+    isTooltip: false
   },
   {
-    'Product Origin:': 'Europe'
+    'Product Origin:': 'Europe',
+    isTooltip: false
   },
   {
-    'Installation Method:': 'Nailed or Glued Down'
+    'Installation Method:': 'Nailed or Glued Down',
+    isTooltip: false
   },
   {
-    'Room Suitability:': 'Bedroom, Dining, Kitchen, Lounge'
+    'Room Suitability:': 'Bedroom, Dining, Kitchen, Lounge',
+    isTooltip: false
   },
   {
-    'Range:': 'Painswick'
+    'Range:': 'Painswick',
+    isTooltip: false
   },
   {
-    'Plank Style:': 'Herringbone/Parquet'
+    'Plank Style:': 'Herringbone/Parquet',
+    isTooltip: false
   },
   {
-    'Guarantee:': '25 Years'
+    'Guarantee:': '25 Years',
+    isTooltip: false
   }
 ];
 

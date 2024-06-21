@@ -10,7 +10,8 @@
   .product-info-cta,
   .sp_accordion,
   .product-features,
-  .product-accordion:not(.#{$id}__product-accordion) {
+  .product-accordion:not(.#{$id}__product-accordion),
+  [data-role='roomvo'] {
     display: none;
   }
 
@@ -66,11 +67,28 @@
           }
         }
       }
+
+      .gallery-placeholder {
+        .fotorama__stage {
+          .fotorama__stage__frame img {
+            width: 100%;
+          }
+        }
+        .fotorama__nav-wrap {
+          .fotorama__nav {
+            margin-top: 0;
+          }
+        }
+      }
     }
 
     .pdp-reviews#reviews:not(.#{$id}__mobileReviewSection) {
       background-color: #f9f2e4;
       position: relative;
+
+      .pdp-reviews-container {
+        margin: 45px 40px;
+      }
 
       .pdp-reviews-summary {
         & > .pdp-reviews-cms,
@@ -107,6 +125,7 @@
       }
 
       .pdp-review {
+        padding: 20px 40px 40px 0px;
         &.#{$id}__hide {
           display: none;
         }
@@ -172,7 +191,10 @@
     }
 
     .#{$id}__product-section {
+      max-width: 1100px;
+      width: 100%;
       background-color: #fff;
+      padding: 50px 0px 50px 40px;
       .#{$id}__product-accordion-tab.#{$id}__open {
         border-bottom: none;
         h2 {
@@ -185,9 +207,20 @@
       &::before {
         background-color: #fff;
       }
+
+      @media screen and (max-width: 1023px) {
+        padding: 30px 0px 40px 0px;
+        .#{$id}__product-accordion {
+          max-width: 100%;
+          margin: 0;
+        }
+      }
     }
 
     .#{$id}__productDesWrapper {
+      max-width: 1030px;
+      width: 100%;
+      padding: 0 40px 0 40px;
       .#{$id}__title {
         font-size: 30px;
         line-height: 40px;
@@ -216,6 +249,10 @@
         }
       }
       .#{$id}__subtitle {
+      }
+
+      @media screen and (max-width: 1023px) {
+        padding: 0 20px 0 0px;
       }
     }
   }
@@ -481,6 +518,26 @@
 
       .#{$id}__roomPreview {
         margin-top: calc(40px + 38px);
+      }
+
+      .#{$id}__product-detail-col-desktop {
+        @media screen and (max-width: 1023px) {
+          display: none;
+        }
+      }
+
+      @include media-query(sm) {
+        max-width: 100%;
+      }
+    }
+
+    .#{$id}__product-detail-col-mobile {
+      display: none;
+      @media screen and (max-width: 1023px) {
+        display: block;
+        .room-preview-text {
+          background: #be903b;
+        }
       }
     }
   }
