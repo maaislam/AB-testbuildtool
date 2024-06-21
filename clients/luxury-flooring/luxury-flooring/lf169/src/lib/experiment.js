@@ -1,14 +1,12 @@
 import cards from './components/cards';
 import keyBenefits from './components/keyBenefits';
-import { accordionData, cardData, keyBenefitsData, productDescData } from './data/data';
+import { cardData, keyBenefitsData } from './data/data';
 import reviews from './helpers/reviews';
 import setup from './services/setup';
 import shared from './shared/shared';
 import scrollToBottom from './helpers/scrollToBottom';
 import atfCustomization from './helpers/atfCustomization';
 import floorDetails from './helpers/floorDetails';
-import { accordionWrapper } from './components/accordionWrapper';
-import { productDesWrapper } from './components/productDesWrapper';
 
 const { ID } = shared;
 
@@ -38,16 +36,6 @@ const init = () => {
     const cardSection = document.querySelector(`.${ID}__cardSection`);
     cardSection.insertAdjacentHTML('afterend', floorDetails(ID));
   }
-
-  ////accordion section add
-  //if (!document.querySelector(`.${ID}__product-section`)) {
-  //mainColumn.insertAdjacentHTML('beforeend', accordionWrapper(ID, accordionData));
-  //}
-
-  //product desctions section add
-  //if (!document.querySelector(`.${ID}__productDesWrapper`)) {
-  //mainColumn.insertAdjacentHTML('beforeend', productDesWrapper(ID, productDescData));
-  //}
 };
 
 export default () => {
