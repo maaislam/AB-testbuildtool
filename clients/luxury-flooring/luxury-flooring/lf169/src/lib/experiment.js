@@ -38,6 +38,18 @@ const init = () => {
     cardSection.insertAdjacentHTML('afterend', floorDetails(ID));
   }
 
+  //for mobile aapend you might also like under the reviews section.
+  const parentElement = document.createElement('div');
+  parentElement.classList.add(`${ID}__parentWrapper`);
+  parentElement.appendChild(document.querySelector(`.${ID}__cardSection`));
+  parentElement.appendChild(document.querySelector(`.${ID}__floorDetailsSection`));
+  parentElement.appendChild(document.querySelector('.column.main > .upsell-title'));
+  parentElement.appendChild(document.querySelector('.column.main > .products.wrapper'));
+
+  document
+    .querySelector(`.pdp-reviews:not(.${ID}__mobileReviewSection)`)
+    .insertAdjacentElement('afterend', parentElement);
+
   //sticky section in mobile devices
   stickyCombineBtn(ID);
 };

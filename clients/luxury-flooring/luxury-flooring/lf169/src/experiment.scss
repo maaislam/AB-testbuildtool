@@ -17,51 +17,71 @@
 
   &-1 {
     .column.main {
-      & > .upsell-title {
-        position: relative;
-        margin: 0;
-        padding: 45px 0 50px 0;
-        background-color: #f9f2e4;
-
-        &::before {
-          content: '';
-          height: 100%;
-          position: absolute;
-          width: 200vw;
-          left: -50vw;
-          display: block;
-          top: 0;
+      .#{$id}__parentWrapper {
+        & > .upsell-title {
+          position: relative;
+          margin: 0;
+          padding: 45px 0 50px 0;
           background-color: #f9f2e4;
-          z-index: -1;
+
+          &::before {
+            content: '';
+            height: 100%;
+            position: absolute;
+            width: 200vw;
+            left: -50vw;
+            display: block;
+            top: 0;
+            background-color: #f9f2e4;
+            z-index: -1;
+          }
+
+          @media screen and (max-width: 767px) {
+            padding: 35px 0 20px 0;
+            text-align: left;
+            order: -1;
+            background-color: #fff;
+            &:before {
+              background-color: #fff;
+            }
+          }
+        }
+        & > .products.wrapper {
+          position: relative;
+          margin: 0;
+          padding-bottom: 45px;
+          background-color: #f9f2e4;
+
+          &::before {
+            content: '';
+            height: 100%;
+            position: absolute;
+            width: 200vw;
+            left: -50vw;
+            display: block;
+            top: 0;
+            background-color: #f9f2e4;
+            z-index: -1;
+          }
+
+          @media screen and (max-width: 767px) {
+            padding-bottom: 0;
+            background-color: #fff;
+            order: -1;
+            &:before {
+              background-color: #fff;
+            }
+          }
         }
 
         @media screen and (max-width: 767px) {
-          padding: 35px 0 20px 0;
-          text-align: left;
+          display: flex;
+          flex-direction: column;
         }
       }
 
       & > .product-section.accfeat {
         display: none;
-      }
-
-      & > .products.wrapper {
-        position: relative;
-        margin: 0;
-        padding-bottom: 45px;
-        background-color: #f9f2e4;
-
-        &::before {
-          content: '';
-          height: 100%;
-          position: absolute;
-          width: 200vw;
-          left: -50vw;
-          display: block;
-          top: 0;
-          background-color: #f9f2e4;
-          z-index: -1;
-        }
       }
 
       .product-info-main {
@@ -123,6 +143,7 @@
           }
           .fotorama__nav {
             margin-top: 0;
+            height: max-content !important;
           }
         }
 
@@ -146,6 +167,11 @@
 
       & > .product-section.details {
         display: none;
+      }
+
+      .product-reviews-summary div.reviews-actions {
+        font-size: 14px !important;
+        margin-top: 0;
       }
     }
 
@@ -379,6 +405,7 @@
       }
 
       .#{$id}__benefit {
+        display: flex;
         margin: 0 40px 12px 0;
 
         @include media-query(md) {
@@ -387,7 +414,7 @@
 
         &-text {
           position: relative;
-          margin-left: 4px;
+          margin-left: 13px;
           color: #202020;
           font-size: 16px;
           line-height: 20px;
@@ -414,9 +441,11 @@
     }
 
     .#{$id}__benifitDetailsCta {
+      display: block;
       width: max-content;
       text-decoration: underline;
       cursor: pointer;
+      color: #000;
 
       @media screen and (max-width: 767px) {
         text-decoration: none;

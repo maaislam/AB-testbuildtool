@@ -8,16 +8,15 @@ const keyBenefits = (id, data) => {
                 <div class='${id}__benefit-content'>
                     ${data
                       .map((item, index) => {
-                        const isHidden = index > 6 ? `${id}__hide` : '';
                         return `
-                            <div class="${id}__benefit ${isHidden}" data-index='${index + 1}'>
+                            <div class="${id}__benefit" data-index='${index + 1}'>
                                 <span class='${id}__icon'>${checkMark}</span>
                                 <span class='${id}__benefit-text'>${item.benifit}</span>
                             </div>
                         `;
                       })
                       .join('')}
-                    <div class='${id}__benifitDetailsCta'>Read all product details</div>
+                    <a class='${id}__benifitDetailsCta' href="#${id}__floor-section">Read all product details</a>
                 </div>
                 <img src="https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test303/icon_flooring_size.png" alt="placeholder" class="${id}__benefit-image" />
             </div>

@@ -9,7 +9,7 @@ import { accordionWrapper } from '../components/accordionWrapper';
 import { productDesWrapper } from '../components/productDesWrapper';
 
 const floorDetails = (id) => {
-  const htmlStr = `<div class='${id}__floorDetailsSection'>
+  const htmlStr = `<div class='${id}__floorDetailsSection' id="${id}__floor-section">
         
         <div class='${id}__floorDetails product-details'>
             <div class='${id}__floorMeasurement product-detail-col'>
