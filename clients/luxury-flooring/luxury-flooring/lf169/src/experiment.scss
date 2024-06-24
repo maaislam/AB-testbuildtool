@@ -163,6 +163,10 @@
         .flockr-base.flockr-mes {
           padding: 8px 0;
         }
+
+        @media screen and (max-width: 375px) {
+          min-height: max-content;
+        }
       }
 
       & > .product-section.details {
@@ -379,6 +383,11 @@
 
     @include media-query(md) {
       padding: 0;
+    }
+
+    @media screen and (max-width: 991px) and (min-width: 768px) {
+      max-width: 385px;
+      margin: 40px auto 35px auto;
     }
 
     @media screen and (max-width: 767px) {
@@ -600,7 +609,7 @@
         align-items: center;
         justify-content: center;
         margin-top: 0;
-        padding: 13px 4px 18px;
+        padding: 13px 4px 19px;
         border-top: 1px solid #c4c4c4;
         .#{$id}__uspsItem {
           max-width: 144px;
@@ -623,8 +632,9 @@
             }
           }
 
-          @media screen and (max-width: 390px) {
-            .#{$id}__text {
+          .#{$id}__text {
+            margin-top: 0;
+            @media screen and (max-width: 390px) {
               font-size: 10px;
             }
           }
