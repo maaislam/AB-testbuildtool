@@ -1,6 +1,7 @@
 import { deliveryReturns } from '../components/deliveryReturns';
 import { installation } from '../components/installation';
 import { warranty } from '../components/warranty';
+import { getFormattedDeliveryDate } from '../helpers/dataFormater';
 
 export const keyBenefitsData = [
   {
@@ -67,7 +68,7 @@ export const uspsData = [
   {
     imageUrl:
       'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test303/icon_delivery.png',
-    text: 'Delivery Available from&nbsp<strong>Mon, 26 Sept</strong>'
+    text: `Delivery Available from&nbsp<strong>${getFormattedDeliveryDate()}</strong>`
   },
   {
     imageUrl:

@@ -1,8 +1,7 @@
 export const bestsellerTag = (id) => {
   const html = `
         <div class="flockr-base flockr-b-1 flockr-c-p ${id}__bestsellerTag">
-            <div id="flockr-balloon-"
-                class="flockr-base flockr-balloon flockr-quantity_orders flockr-QP ">
+            <div id="flockr-balloon-">
                 <div class="flockr-base flockr-glp"></div>
                 <div class="flockr-base flockr-mes">
                     <div class="flockr-dt">

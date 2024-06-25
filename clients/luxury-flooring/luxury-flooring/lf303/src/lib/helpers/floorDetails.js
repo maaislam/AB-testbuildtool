@@ -9,6 +9,9 @@ import { accordionWrapper } from '../components/accordionWrapper';
 import { productDesWrapper } from '../components/productDesWrapper';
 
 const floorDetails = (id) => {
+  const videoSource =
+    'https://endtest-videos.s3-us-west-2.amazonaws.com/documentation/endtest_data_driven_testing_csv.mp4';
+
   const htmlStr = `<div class='${id}__floorDetailsSection' id="${id}__floor-section">
         
         <div class='${id}__floorDetails product-details'>
@@ -56,7 +59,9 @@ const floorDetails = (id) => {
             </div>
             <div class="product-detail-col ${id}__product-detail-col-desktop">
                 <div class="${id}__roomPreview room-preview">
-                    <img src="https://www.luxuryflooringandfurnishings.co.uk/media/pdp/preview.png" width="353" height="353" loading="lazy" alt="room preview">
+                    <video autoplay="" loop="" controls="" width="640" height="480">
+                        <source type="video/mp4" src="${videoSource}">
+                    </video>
                     <div class="${id}__roomPreviewBtn room-preview-text">See this floor in your home</div>
                 </div>
             </div>
@@ -66,7 +71,9 @@ const floorDetails = (id) => {
         ${productDesWrapper(id, productDescData)}
         <div class="product-detail-col ${id}__product-detail-col-mobile">
             <div class="${id}__roomPreview room-preview">
-                <img src="https://www.luxuryflooringandfurnishings.co.uk/media/pdp/preview.png" width="353" height="353" loading="lazy" alt="room preview">
+                <video autoplay="" loop="" controls="" width="640" height="480">
+                    <source type="video/mp4" src="${videoSource}">
+                </video>
                 <div class="${id}__roomPreviewBtn room-preview-text">See this floor in your home</div>
             </div>
         </div>
