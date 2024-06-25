@@ -112,6 +112,7 @@ export default () => {
         item.classList.remove(`${ID}__open`);
       });
       allAccordionPane.forEach((item) => {
+        //eslint-disable-next-line no-param-reassign
         item.style.display = 'none';
       });
 

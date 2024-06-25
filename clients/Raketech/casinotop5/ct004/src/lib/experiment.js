@@ -1,12 +1,9 @@
+/*eslint-disable no-param-reassign */
 import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
-const indicatorObject = {
-  0: 'reviews',
-  1: 'bonus'
-};
 
 const init = (targetElement) => {
   const featuredImage = document.querySelector('.td-post-featured-image');
@@ -21,16 +18,23 @@ export default () => {
   setup(); //use if needed
 
   const targetElement = document.querySelector('.fcrp-scfeatured');
-  document.querySelectorAll('.fcrp-scfeatured').forEach((item, index) => {
-    item.dataset.position = index;
-  });
+  document.querySelectorAll('.fcrp-scfeatured').forEach((item, i) => {
+    item.dataset.position = i;
+    console.log('🚀 ~ document.querySelectorAll ~ item:', item);
 
-  //document.querySelectorAll('.scfeatright > button').forEach((item, index) => {
-  //item.setAttribute('data-attr', indicatorObject[index]);
-  //const url = item.getAttribute('onClick').match(/'([^']+)'/)[1];
-  //window[`url${index + 1}`] = url;
-  //item.removeAttribute('onClick');
-  //});
+    item.querySelectorAll('button[onClick]').forEach((btn, index) => {
+      //clone the original buttons
+      const clonedBtn = btn.cloneNode(true);
+      //remove onclik attribute from the cloned btn
+      clonedBtn.removeAttribute('onclick');
+      //add new class to the cloned btn
+      clonedBtn.classList.add(`${ID}-fcrp-button-${index === 0 ? 'reviews' : 'bonus'}`);
+      //hide original button
+      btn.style.display = 'none';
+      //append the cloned btn
+      btn.insertAdjacentElement('afterend', clonedBtn);
+    });
+  });
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
@@ -60,6 +64,10 @@ export default () => {
       const targetedEl = target.closest('.td-post-featured-image');
       const casinoName = targetedEl.querySelector('a').href.split('visit/')[1].split('/')[0];
       gaTracking(`${casinoName} Click Banner 1 CTA`);
+    } else if (target.closest(`.${ID}-fcrp-button-reviews`)) {
+      //add tracking here
+    } else if (target.closest(`.${ID}-fcrp-button-bonus`)) {
+      //add tracking here
     }
   });
 
