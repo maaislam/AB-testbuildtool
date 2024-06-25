@@ -21,7 +21,8 @@
     }
     .#{$id}__wrapper-class {
       position: sticky;
-      top: 0;
+      top: 20px;
+      padding-bottom: 20px;
       @include media-query(sm) {
         margin-top: 10px;
       }

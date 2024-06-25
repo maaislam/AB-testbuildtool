@@ -130,4 +130,8 @@ export default () => {
   });
 
   init();
+  const edistoModalCloseBtn = document.querySelector('.edisto-ClosePosition--top-right');
+  if (edistoModalCloseBtn) {
+    edistoModalCloseBtn.click();
+  }
 };
