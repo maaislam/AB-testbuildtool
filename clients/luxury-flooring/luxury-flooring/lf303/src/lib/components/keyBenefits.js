@@ -1,8 +1,8 @@
 import { checkMark } from '../assets/svgs';
 
-const keyBenefits = (id, data) => {
+const keyBenefits = (id, data, screen) => {
   const htmlStr = `
-        <div class="${id}__benefitSection">
+        <div class="${id}__benefitSection ${screen}">
             <h2 class='${id}__benefitsTitle'>Why you'll love it</h2>
             <div class='${id}__benefits-wrapper'>
                 <div class='${id}__benefit-content'>

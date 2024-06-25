@@ -8,21 +8,28 @@ import scrollToBottom from './helpers/scrollToBottom';
 import atfCustomization from './helpers/atfCustomization';
 import floorDetails from './helpers/floorDetails';
 import { stickyCombineBtn } from './helpers/stickyCombineBtn';
+import { wrapInner } from './helpers/utils';
 
 const { ID } = shared;
 
 const init = () => {
-  const mainColumn = document.querySelector('.column.main');
+  const productInfo = document.querySelector('.product-info-main');
   const reviewContainer = document.querySelector('.pdp-reviews#reviews');
 
   //ATF customization
   atfCustomization(ID);
 
   //keyBenefits section
-  if (!document.querySelector(`.${ID}__benefitSection`)) {
-    const atfMediaElem = document.querySelector('.product.media');
-    atfMediaElem.insertAdjacentHTML('afterend', keyBenefits(ID, keyBenefitsData));
-  }
+  const benefitSections = document.querySelectorAll(`.${ID}__benefitSection`);
+  benefitSections.forEach((section) => {
+    section.remove();
+  });
+
+  const atfMediaElem = document.querySelector('.product.media');
+  //desktop
+  atfMediaElem.insertAdjacentHTML('beforeend', keyBenefits(ID, keyBenefitsData, 'desktop'));
+  //mobile
+  productInfo.insertAdjacentHTML('afterend', keyBenefits(ID, keyBenefitsData, 'mobile'));
 
   //reviews section
   reviews(ID, reviewContainer);
@@ -52,6 +59,10 @@ const init = () => {
 
   //sticky section in mobile devices
   stickyCombineBtn(ID);
+
+  wrapInner('.product-info-main', {
+    class: `${ID}__wrapper-class`
+  });
 };
 
 export default () => {

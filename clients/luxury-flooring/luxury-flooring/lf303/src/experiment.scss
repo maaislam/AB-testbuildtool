@@ -16,6 +16,16 @@
   }
 
   &-1 {
+    .page-wrapper {
+      overflow-x: visible !important;
+    }
+    .#{$id}__wrapper-class {
+      position: sticky;
+      top: 0;
+      @include media-query(sm) {
+        margin-top: 10px;
+      }
+    }
     .column.main {
       .#{$id}__parentWrapper {
         & > .upsell-title {
@@ -85,33 +95,35 @@
       }
 
       .product-info-main {
-        & > .product-reviews-summary {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 16px;
+        .#{$id}__wrapper-class {
+          & > .product-reviews-summary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
 
-          .#{$id}__bestsellerImage {
-            margin-right: 12px;
+            .#{$id}__bestsellerImage {
+              margin-right: 12px;
+            }
+
+            @media screen and (max-width: 992px) {
+              margin-top: 16px;
+            }
+
+            @media screen and (max-width: 767px) {
+              display: none;
+            }
           }
 
-          @media screen and (max-width: 992px) {
-            margin-top: 16px;
+          & > .page-title-wrapper {
+            @media screen and (max-width: 767px) {
+              display: none;
+            }
           }
 
-          @media screen and (max-width: 767px) {
+          & > .widget.block-static-block {
             display: none;
           }
-        }
-
-        & > .page-title-wrapper {
-          @media screen and (max-width: 767px) {
-            display: none;
-          }
-        }
-
-        & > .widget.block-static-block {
-          display: none;
         }
 
         @media screen and (max-width: 767px) {
@@ -385,7 +397,6 @@
             float: left;
             color: #000;
             text-indent: 0px;
-            speak: none;
             padding-right: 6px;
             font-size: 8px;
           }
@@ -417,6 +428,25 @@
   .#{$id}__benefitSection {
     padding: 52px 40px;
     background: #fff;
+
+    &.mobile {
+      display: none;
+      @include media-query(md) {
+        display: block;
+      }
+    }
+
+    &.desktop {
+      .#{$id}__benefits-wrapper {
+        flex-wrap: wrap;
+        .#{$id}__benefit-content {
+          margin-bottom: 30px;
+        }
+      }
+      @include media-query(md) {
+        display: none;
+      }
+    }
 
     @include media-query(md) {
       padding: 0;

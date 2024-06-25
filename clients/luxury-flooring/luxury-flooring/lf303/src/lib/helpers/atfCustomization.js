@@ -3,7 +3,7 @@ import { uspsWrapper } from '../components/uspsWrapper';
 import { uspsData } from '../data/data';
 
 const atfCustomization = (id) => {
-  const reviewsSummary = document.querySelector('.product-info-main > .product-reviews-summary');
+  const reviewsSummary = document.querySelector('.product-info-main .product-reviews-summary');
   const sampleAddForm = document.querySelector('.sample-add-form');
   const galarry = document.querySelector('.gallery-placeholder');
   //best seller imag add on the right side
@@ -40,10 +40,10 @@ const atfCustomization = (id) => {
   //mobile
   const uspsWrapperMobile = document.querySelector(`.${id}__uspsWrapper`).cloneNode(true);
   const mobileReviewSection = document
-    .querySelector('.product-info-main > .product-reviews-summary')
+    .querySelector('.product-info-main .product-reviews-summary')
     .cloneNode(true);
   const productTitleMobile = document
-    .querySelector('.product-info-main > .page-title-wrapper')
+    .querySelector('.product-info-main .page-title-wrapper')
     .cloneNode(true);
 
   const mobileHeader = document.createElement('div');

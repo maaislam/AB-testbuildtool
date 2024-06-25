@@ -21,22 +21,27 @@ export default () => {
   setup(); //use if needed
 
   const targetElement = document.querySelector('.fcrp-scfeatured');
-
-  targetElement.querySelectorAll('.scfeatright > button').forEach((item, index) => {
-    item.setAttribute('data-attr', indicatorObject[index]);
-    const url = item.getAttribute('onClick').match(/'([^']+)'/)[1];
-    window[`url${index + 1}`] = url;
-    item.removeAttribute('onClick');
+  document.querySelectorAll('.fcrp-scfeatured').forEach((item, index) => {
+    item.dataset.position = index;
   });
+
+  //document.querySelectorAll('.scfeatright > button').forEach((item, index) => {
+  //item.setAttribute('data-attr', indicatorObject[index]);
+  //const url = item.getAttribute('onClick').match(/'([^']+)'/)[1];
+  //window[`url${index + 1}`] = url;
+  //item.removeAttribute('onClick');
+  //});
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (target.closest('a.ex-links') && target.closest('.fcrp-scfeatured')) {
       const casinoName = target.closest('a.ex-links').href.split('visit/')[1].split('/')[0];
-      gaTracking(`${casinoName} Bonus Page CTA | Logo`);
+      const { position } = target.closest('.fcrp-scfeatured').dataset;
+      gaTracking(`${casinoName} Bonus Page CTA | Logo ${position}`);
     } else if (target.closest('a.fcrp-button') && target.closest('.fcrp-scfeatured')) {
       const casinoName = target.closest('a.fcrp-button').href.split('visit/')[1].split('/')[0];
-      gaTracking(`${casinoName} CTO CTA | Button`);
+      const { position } = target.closest('.fcrp-scfeatured').dataset;
+      gaTracking(`${casinoName} CTO CTA | Button ${position}`);
     } else if (
       target.closest('figure.wp-block-image.size-large') &&
       target.closest('.td-post-content')

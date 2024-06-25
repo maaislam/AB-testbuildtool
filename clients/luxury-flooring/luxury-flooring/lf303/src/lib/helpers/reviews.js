@@ -12,7 +12,7 @@ const reviews = (id, element) => {
     list.classList.add(`${id}__hide`);
   });
 
-  document.querySelector(`.${id}__benefitSection`).insertAdjacentElement('afterend', element);
+  document.querySelector('.product.media').insertAdjacentElement('afterend', element);
   element.querySelector('.pdp-reviews-list-container').classList.add(`${id}__addHeight`);
 
   element
