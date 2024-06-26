@@ -20,13 +20,18 @@ export default () => {
   const targetElement = document.querySelector('.fcrp-scfeatured');
   document.querySelectorAll('.fcrp-scfeatured').forEach((item, i) => {
     item.dataset.position = i;
-    console.log('🚀 ~ document.querySelectorAll ~ item:', item);
-
     item.querySelectorAll('button[onClick]').forEach((btn, index) => {
+      const parentElement = btn.closest('.fcrp-scfeatured');
+      const casinoName = parentElement
+        .querySelector('a.ex-links')
+        .href.split('/visit/')[1]
+        .split('/')[0];
       //clone the original buttons
       const clonedBtn = btn.cloneNode(true);
       //remove onclik attribute from the cloned btn
       clonedBtn.removeAttribute('onclick');
+      clonedBtn.setAttribute('data-casinoname', casinoName);
+
       //add new class to the cloned btn
       clonedBtn.classList.add(`${ID}-fcrp-button-${index === 0 ? 'reviews' : 'bonus'}`);
       //hide original button
@@ -66,44 +71,25 @@ export default () => {
       gaTracking(`${casinoName} Click Banner 1 CTA`);
     } else if (target.closest(`.${ID}-fcrp-button-reviews`)) {
       //add tracking here
+      const parentElement = target.closest('.fcrp-scfeatured');
+      const targetedElement = target.closest(`.${ID}-fcrp-button-reviews`);
+      const { casinoname } = targetedElement.dataset;
+      const { position } = parentElement.dataset;
+      gaTracking(`${casinoname} Review Page CTA | Button ${position}`);
+
+      setTimeout(() => {
+        targetedElement.previousElementSibling.click();
+      }, 500);
     } else if (target.closest(`.${ID}-fcrp-button-bonus`)) {
       //add tracking here
-    }
-  });
-
-  document.body.addEventListener('pointerup', (e) => {
-    const { target } = e;
-    if (
-      target.closest('button') &&
-      target.closest('button').dataset.attr === 'reviews' &&
-      target.closest('.fcrp-scfeatured')
-    ) {
       const parentElement = target.closest('.fcrp-scfeatured');
-      const casinoName = parentElement
-        .querySelector('a.ex-links')
-        .href.split('/visit/')[1]
-        .split('/')[0];
-
-      gaTracking(`${casinoName} Review Page CTA | Button`);
+      const targetedElement = target.closest(`.${ID}-fcrp-button-bonus`);
+      const { casinoname } = targetedElement.dataset;
+      const { position } = parentElement.dataset;
+      gaTracking(`${casinoname} Bonus Page CTA | Button ${position}`);
       setTimeout(() => {
-        window.location.href = window.url1;
-      }, 1000);
-    } else if (
-      target.closest('button') &&
-      target.closest('button').dataset.attr === 'bonus' &&
-      target.closest('.fcrp-scfeatured')
-    ) {
-      const parentElement = target.closest('.fcrp-scfeatured');
-      const casinoName = parentElement
-        .querySelector('a.ex-links')
-        .href.split('/visit/')[1]
-        .split('/')[0];
-
-      gaTracking(`${casinoName} Bonus Page CTA | Button`);
-
-      setTimeout(() => {
-        window.location.href = window.url2;
-      }, 1000);
+        targetedElement.previousElementSibling.click();
+      }, 500);
     }
   });
 
