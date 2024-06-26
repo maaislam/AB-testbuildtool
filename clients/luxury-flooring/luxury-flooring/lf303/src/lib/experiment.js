@@ -8,13 +8,12 @@ import scrollToBottom from './helpers/scrollToBottom';
 import atfCustomization from './helpers/atfCustomization';
 import floorDetails from './helpers/floorDetails';
 import { stickyCombineBtn } from './helpers/stickyCombineBtn';
-import { wrapInner } from './helpers/utils';
+import { observeIntersection, pollerLite, wrapInner } from './helpers/utils';
 
 const { ID } = shared;
 
 const init = () => {
   const productInfo = document.querySelector('.product-info-main');
-  const reviewContainer = document.querySelector('.pdp-reviews#reviews');
 
   //ATF customization
   atfCustomization(ID);
@@ -32,43 +31,64 @@ const init = () => {
   productInfo.insertAdjacentHTML('afterend', keyBenefits(ID, keyBenefitsData, 'mobile'));
 
   //reviews section
-  reviews(ID, reviewContainer);
+  pollerLite(['.pdp-reviews#reviews'], () => {
+    const reviewContainer = document.querySelector('.pdp-reviews#reviews');
+    reviews(ID, reviewContainer);
+    //cards section
+    if (!document.querySelector(`.${ID}__cardSection`)) {
+      reviewContainer.insertAdjacentHTML('afterend', cards(ID, cardData));
+    }
 
-  //cards section
-  if (!document.querySelector(`.${ID}__cardSection`)) {
-    reviewContainer.insertAdjacentHTML('afterend', cards(ID, cardData));
-  }
+    //about the floor section
+    if (!document.querySelector(`.${ID}__floorDetailsSection`)) {
+      const cardSection = document.querySelector(`.${ID}__cardSection`);
+      cardSection.insertAdjacentHTML('afterend', floorDetails(ID));
+    }
 
-  //about the floor section
-  if (!document.querySelector(`.${ID}__floorDetailsSection`)) {
-    const cardSection = document.querySelector(`.${ID}__cardSection`);
-    cardSection.insertAdjacentHTML('afterend', floorDetails(ID));
-  }
+    //for mobile aapend you might also like under the reviews section.
+    const parentElement = document.createElement('div');
+    parentElement.classList.add(`${ID}__parentWrapper`);
+    parentElement.appendChild(document.querySelector(`.${ID}__cardSection`));
+    parentElement.appendChild(document.querySelector(`.${ID}__floorDetailsSection`));
+    parentElement.appendChild(document.querySelector('.column.main > .upsell-title'));
+    parentElement.appendChild(document.querySelector('.column.main > .products.wrapper'));
 
-  //for mobile aapend you might also like under the reviews section.
-  const parentElement = document.createElement('div');
-  parentElement.classList.add(`${ID}__parentWrapper`);
-  parentElement.appendChild(document.querySelector(`.${ID}__cardSection`));
-  parentElement.appendChild(document.querySelector(`.${ID}__floorDetailsSection`));
-  parentElement.appendChild(document.querySelector('.column.main > .upsell-title'));
-  parentElement.appendChild(document.querySelector('.column.main > .products.wrapper'));
+    document
+      .querySelector(`.pdp-reviews:not(.${ID}__mobileReviewSection)`)
+      .insertAdjacentElement('afterend', parentElement);
 
-  document
-    .querySelector(`.pdp-reviews:not(.${ID}__mobileReviewSection)`)
-    .insertAdjacentElement('afterend', parentElement);
+    //sticky section in mobile devices
+    stickyCombineBtn(ID);
 
-  //sticky section in mobile devices
-  stickyCombineBtn(ID);
+    wrapInner('.product-info-main', {
+      class: `${ID}__wrapper-class`
+    });
 
-  wrapInner('.product-info-main', {
-    class: `${ID}__wrapper-class`
+    const intersectionAnchor = document.querySelectorAll(`.${ID}__roomPreview video`);
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        const videoElement = entry.target;
+        let scrollTimer;
+        clearTimeout(scrollTimer);
+        if (entry.isIntersecting) {
+          videoElement.play();
+        } else {
+          videoElement.pause();
+        }
+      });
+    };
+
+    intersectionAnchor.forEach((video) => {
+      observeIntersection(video, 0, handleIntersection);
+    });
   });
 };
 
 export default () => {
   setup();
 
-  document.body.addEventListener('click', ({ target }) => {
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
     if (
       target.closest(`.${ID}__readMoreReviews`) &&
       target.closest(`.${ID}__readMoreReviews`).dataset.initial === 'true'
@@ -94,9 +114,11 @@ export default () => {
       listContainer.querySelector('button').click();
       scrollToBottom(listContainer, list);
     } else if (target.closest(`.${ID}__benifitDetailsCta`)) {
-      const benifits = document.querySelectorAll(`.${ID}__benefit.${ID}__hide`);
-      benifits.forEach((item) => {
-        item.classList.remove(`${ID}__hide`);
+      const floorSection = document.querySelector(`.${ID}__floorDetailsSection`);
+      floorSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
       });
     } else if (
       target.closest(`.${ID}__roomVisualizerBtn`) ||
@@ -126,6 +148,30 @@ export default () => {
       document.querySelector('.sample-add-form button[type="submit"]').click();
     } else if (target.closest(`.${ID}__atcBtn`)) {
       document.querySelector('#product-addtocart-button').click();
+    } else if (
+      (target.closest('.product-reviews-summary .rating-summary') ||
+        target.closest('.product-reviews-summary .reviews-actions')) &&
+      target.closest(`.${ID}__wrapper-class`)
+    ) {
+      e.preventDefault();
+      const reviewSection = document.querySelector(`.pdp-reviews:not(.${ID}__mobileReviewSection)`);
+      reviewSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    } else if (
+      (target.closest('.product-reviews-summary .rating-summary') ||
+        target.closest('.product-reviews-summary .reviews-actions')) &&
+      target.closest(`.${ID}__mobileHeader`)
+    ) {
+      e.preventDefault();
+      const reviewSectionForMobile = document.querySelector(`.${ID}__mobileReviewSection`);
+      reviewSectionForMobile.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
     }
   });
 
@@ -134,4 +180,6 @@ export default () => {
   if (edistoModalCloseBtn) {
     edistoModalCloseBtn.click();
   }
+
+  //for user interaction proof
 };

@@ -16,7 +16,7 @@ const keyBenefits = (id, data, screen) => {
                         `;
                       })
                       .join('')}
-                    <a class='${id}__benifitDetailsCta' href="#${id}__floor-section">Read all product details</a>
+                    <button class='${id}__benifitDetailsCta'>Read all product details</button>
                 </div>
                 <img src="https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test303/icon_flooring_size.png" alt="placeholder" class="${id}__benefit-image" />
             </div>

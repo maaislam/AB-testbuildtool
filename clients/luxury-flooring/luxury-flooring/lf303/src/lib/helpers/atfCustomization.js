@@ -8,7 +8,7 @@ const atfCustomization = (id) => {
   const galarry = document.querySelector('.gallery-placeholder');
   //best seller imag add on the right side
   const bestSellerImgHTML = `<div class="${id}__bestsellerImage">
-      <img src="https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test303/badge_bestseller.png"/>
+      BESTSELLER
     </div>`;
   if (!document.querySelector(`.${id}__bestsellerImage`)) {
     reviewsSummary.insertAdjacentHTML('afterbegin', bestSellerImgHTML);

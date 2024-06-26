@@ -1,16 +1,18 @@
-import { accordionData,
+import {
+  accordionData,
   floorMeasurements,
   floorSpecifications,
-  productDescData } from '../data/data';
+  productDescData
+} from '../data/data';
 import { tooltip } from '../components/tooltip';
 import { accordionWrapper } from '../components/accordionWrapper';
 import { productDesWrapper } from '../components/productDesWrapper';
 
 const floorDetails = (id) => {
   const videoSource =
-    'https://endtest-videos.s3-us-west-2.amazonaws.com/documentation/endtest_data_driven_testing_csv.mp4';
+    'https://www.luxuryflooringandfurnishings.co.uk/media/videos/2024-06-25/roomvo_video_v2.mp4';
 
-  const htmlStr = `<div class='${id}__floorDetailsSection' id="${id}__floor-section">
+  const htmlStr = `<div class='${id}__floorDetailsSection'>
         
         <div class='${id}__floorDetails product-details'>
             <div class='${id}__floorMeasurement product-detail-col'>
@@ -57,7 +59,7 @@ const floorDetails = (id) => {
             </div>
             <div class="product-detail-col ${id}__product-detail-col-desktop">
                 <div class="${id}__roomPreview room-preview">
-                    <video autoplay="" loop="" controls="" width="640" height="480">
+                    <video loop muted width="640" height="480">
                         <source type="video/mp4" src="${videoSource}">
                     </video>
                     <div class="${id}__roomPreviewBtn room-preview-text">See this floor in your home</div>
@@ -69,7 +71,7 @@ const floorDetails = (id) => {
         ${productDesWrapper(id, productDescData)}
         <div class="product-detail-col ${id}__product-detail-col-mobile">
             <div class="${id}__roomPreview room-preview">
-                <video autoplay="" loop="" controls="" width="640" height="480">
+                <video loop muted width="640" height="480">
                     <source type="video/mp4" src="${videoSource}">
                 </video>
                 <div class="${id}__roomPreviewBtn room-preview-text">See this floor in your home</div>
