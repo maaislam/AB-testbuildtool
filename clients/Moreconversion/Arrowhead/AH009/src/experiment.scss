@@ -1,0 +1,14 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .rte {
+        .highlights-title,
+        .highlights-first-card,
+        .highlights-second-card,
+        .highlights-third-card,
+        .highlights-gap {
+            display: none;
+        }
+    }
+}
