@@ -4,6 +4,8 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
+let blockCountForLowCta = 0;
+let blockCountForBannerCta = 1;
 
 const init = (targetElement) => {
   const featuredImage = document.querySelector('.td-post-featured-image');
@@ -18,6 +20,24 @@ export default () => {
   setup(); //use if needed
 
   const targetElement = document.querySelector('.fcrp-scfeatured');
+  const blockImages = document.querySelectorAll('.td-post-content figure.size-large');
+
+  const lowctas = document.querySelectorAll('.td-post-content figure.size-full');
+
+  lowctas.forEach((item) => {
+    if (item.querySelector('a')) {
+      blockCountForLowCta += 1;
+      item.setAttribute('data-position', blockCountForLowCta);
+    }
+  });
+
+  blockImages.forEach((item) => {
+    if (item.querySelector('a')) {
+      blockCountForBannerCta += 1;
+      item.setAttribute('data-position', blockCountForBannerCta);
+    }
+  });
+
   document.querySelectorAll('.fcrp-scfeatured').forEach((item, i) => {
     item.dataset.position = i;
     item.querySelectorAll('button[onClick]').forEach((btn, index) => {
@@ -51,20 +71,16 @@ export default () => {
       const casinoName = target.closest('a.fcrp-button').href.split('visit/')[1].split('/')[0];
       const { position } = target.closest('.fcrp-scfeatured').dataset;
       gaTracking(`${casinoName} CTO CTA | Button ${position}`);
-    } else if (
-      target.closest('figure.wp-block-image.size-large') &&
-      target.closest('.td-post-content')
-    ) {
-      const targetedEl = target.closest('figure.wp-block-image.size-large');
-      const casinoName = targetedEl.querySelector('a').href.split('visit/')[1].split('/')[0];
-      gaTracking(`${casinoName} Click Banner 2 CTA`);
-    } else if (
-      target.closest('figure.wp-block-image.size-full') &&
-      target.closest('.td-post-content')
-    ) {
-      const targetedEl = target.closest('figure.wp-block-image.size-full');
-      const casinoName = targetedEl.querySelector('a').href.split('visit/')[1].split('/')[0];
-      gaTracking(`${casinoName} Click Banner Low CTA 1`);
+    } else if (target.closest('figure.size-large') && target.closest('.td-post-content')) {
+      const targetedEl = target.closest('figure.size-large');
+      const { position } = targetedEl.dataset;
+      const casinoName = targetedEl.querySelector('a')?.href.split('visit/')[1].split('/')[0];
+      casinoName && gaTracking(`${casinoName} Click Banner ${position} CTA`);
+    } else if (target.closest('figure.size-full') && target.closest('.td-post-content')) {
+      const targetedEl = target.closest('figure.size-full');
+      const { position } = targetedEl.dataset;
+      const casinoName = targetedEl.querySelector('a')?.href.split('visit/')[1].split('/')[0];
+      casinoName && gaTracking(`${casinoName} Click Banner Low CTA ${position}`);
     } else if (target.closest('.td-post-featured-image')) {
       const targetedEl = target.closest('.td-post-featured-image');
       const casinoName = targetedEl.querySelector('a').href.split('visit/')[1].split('/')[0];

@@ -9,7 +9,7 @@ const gaTracking = (label) => {
   const GA4_PROPERTY_ID = 'G-H91NBPERDS';
   const GA4_INTERNAL_EXPERIMENT_NUM = '6879822412';
   const GA4_INTERNAL_EXPERIMENT_ID = `Replace top banner with Casino CTA component on /operator-signup-bonus pages ${GA4_INTERNAL_EXPERIMENT_NUM}`;
-  const EXPERIMENT_DEVICE_CATEGORY = 'All Devices';
+  const EXPERIMENT_DEVICE_CATEGORY = 'Mobile Only';
 
   pollerLite([() => document.readyState === 'complete'], () => {
     if (window.gtag !== undefined) {
