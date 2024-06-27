@@ -1,0 +1,67 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__uspsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid #bababa;
+    padding: 15px 0 17px 0;
+    .#{$id}__uspsItem {
+      width: 50%;
+      display: flex;
+      align-items: center;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: 11px;
+      }
+      .#{$id}__icon {
+        display: flex;
+
+        svg {
+          @media screen and (max-width: 1024px) {
+            width: 20px;
+            height: 20px;
+          }
+
+          @media screen and (max-width: 890px) {
+            width: 18px;
+            height: 18px;
+          }
+
+          @media screen and (max-width: 768px) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      .#{$id}__text {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0.45px;
+        margin-left: 10px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 12px;
+          margin-left: 5px;
+        }
+
+        @media screen and (max-width: 890px) {
+          font-size: 9px;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    & + .AH002__freeExChange {
+      display: none;
+    }
+  }
+}
