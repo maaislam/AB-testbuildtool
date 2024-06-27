@@ -9,6 +9,7 @@
         margin-bottom: 10px;
         text-align: left;
         .#{$id}__title {
+          display: none;
           font-size: 13px;
           font-weight: 500;
           line-height: 20px;
@@ -31,12 +32,19 @@
             font-size: 16px;
             line-height: normal;
           }
+
+          @media screen and (max-width: 1260px) and (min-width: 1024px) {
+            font-size: 14px;
+          }
         }
 
         @media screen and (min-width: 990px) {
           display: flex;
           max-width: 150px;
           width: 100%;
+        }
+        @media screen and (max-width: 1260px) and (min-width: 1024px) {
+          max-width: 125px;
         }
       }
       .#{$id}__colorBox {
@@ -67,6 +75,10 @@
               width: 38px;
               height: 50px;
             }
+
+            @media screen and (max-width: 1260px) and (min-width: 1024px) {
+              width: 36px;
+            }
           }
 
           &.#{$id}__hide {
@@ -85,6 +97,10 @@
 
         @media screen and (min-width: 990px) {
           width: calc(100% - 155px);
+        }
+
+        @media screen and (max-width: 1260px) and (min-width: 1024px) {
+          grid-gap: 6px;
         }
       }
 
@@ -106,6 +122,10 @@
         grid-gap: 5px;
         margin-top: 20px;
       }
+
+      @media screen and (max-width: 1260px) and (min-width: 1024px) {
+        justify-content: space-between;
+      }
     }
 
     .product-form__options-wrapper {
@@ -126,6 +146,12 @@
         display: flex;
         align-items: center;
         grid-gap: 5px;
+      }
+    }
+
+    .product-form {
+      @media screen and (max-width: 1260px) and (min-width: 1024px) {
+        padding: 0.5rem 5px 35px;
       }
     }
   }

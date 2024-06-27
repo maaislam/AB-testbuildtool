@@ -1,0 +1,14 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .shipping-protection-title,
+  .shipping-protection-description {
+    width: 100%;
+    max-width: 250px;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .shipping-protection-description {
+    font-size: 12px !important;
+  }
+}

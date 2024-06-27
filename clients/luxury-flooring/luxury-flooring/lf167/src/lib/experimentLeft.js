@@ -95,8 +95,11 @@ export default () => {
     } else if (target.closest(`.${ID}__button-wrapper.more`)) {
       document.querySelector(`.${ID}__images-wrapper.desktop`).classList.add('open');
       document.body.classList.add('makeSticky');
+      //document
+      //.querySelectorAll(`.${ID}__hide`)
+      //.forEach((item) => item && item.classList.remove(`${ID}__hide`));
       document
-        .querySelectorAll(`.${ID}__hide`)
+        .querySelectorAll(`.${ID}__image-item.${ID}__hide`)
         .forEach((item) => item && item.classList.remove(`${ID}__hide`));
     } else if (target.closest(`.${ID}__button-wrapper.less`)) {
       document.querySelector(`.${ID}__images-wrapper.desktop`).classList.remove('open');
