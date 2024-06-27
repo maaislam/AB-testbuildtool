@@ -5,7 +5,7 @@ import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
 let blockCountForLowCta = 0;
-let blockCountForBannerCta = 1;
+let blockCountForBannerCta = 0;
 
 const init = (targetElement) => {
   const featuredImage = document.querySelector('.td-post-featured-image');
@@ -20,7 +20,10 @@ export default () => {
   setup(); //use if needed
 
   const targetElement = document.querySelector('.fcrp-scfeatured');
-  const blockImages = document.querySelectorAll('.td-post-content figure.size-large');
+  const blockImages =
+    VARIATION === '1'
+      ? document.querySelectorAll('.td-post-content figure.size-large')
+      : document.querySelectorAll('.td-post-featured-image, figure.size-large');
 
   const lowctas = document.querySelectorAll('.td-post-content figure.size-full');
 
@@ -83,8 +86,9 @@ export default () => {
       casinoName && gaTracking(`${casinoName} Click Banner Low CTA ${position}`);
     } else if (target.closest('.td-post-featured-image')) {
       const targetedEl = target.closest('.td-post-featured-image');
+      const { position } = targetedEl.dataset;
       const casinoName = targetedEl.querySelector('a').href.split('visit/')[1].split('/')[0];
-      gaTracking(`${casinoName} Click Banner 1 CTA`);
+      gaTracking(`${casinoName} Click Banner ${position} CTA`);
     } else if (target.closest(`.${ID}-fcrp-button-reviews`)) {
       //add tracking here
       const parentElement = target.closest('.fcrp-scfeatured');

@@ -47,7 +47,7 @@ export default () => {
     }
   });
 
-  if (VARIATION === 'control') return;
+  if (VARIATION === 'Control') return;
 
   init(casinos);
 };
