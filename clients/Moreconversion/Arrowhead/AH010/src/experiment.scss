@@ -9,7 +9,7 @@
       gap: 10px;
       margin-bottom: 0;
       .variant-input {
-        flex: 0 0 68px !important;
+        flex: 0 0 56px !important;
         text-align: center;
 
         label.disabled::after {
@@ -58,6 +58,10 @@
 
         @media screen and (max-width: 768px) {
           flex: 0 0 50px !important;
+        }
+
+        @media screen and (max-width: 480px) {
+          flex: 0 0 35px !important;
         }
       }
 
