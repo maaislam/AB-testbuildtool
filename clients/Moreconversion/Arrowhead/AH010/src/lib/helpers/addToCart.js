@@ -1,5 +1,5 @@
 const updateCount = (count) => {
-  const countEls = document.querySelectorAll('.cart-link__bubble-num');
+  const countEls = document.querySelectorAll('.cart-link__bubble-num , .custom-cart span');
 
   if (countEls.length) {
     countEls.forEach((el) => {
@@ -12,6 +12,7 @@ const updateCount = (count) => {
   const bubbles = document.querySelectorAll('.cart-link__bubble');
   if (bubbles.length) {
     if (count > 0) {
+      document.body.classList.add('cart-has-items');
       bubbles.forEach((b) => {
         b.classList.add('cart-link__bubble--visible');
       });
