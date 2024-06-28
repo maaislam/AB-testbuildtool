@@ -42,6 +42,7 @@ const init = () => {
 };
 export default () => {
   setup();
+
   const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
   if (!isListenerAdded) {
     document.body.addEventListener('click', (e) => {
@@ -50,16 +51,25 @@ export default () => {
 
       const pageType = pathname === '/' ? 'Home' : 'Natcasino';
 
+      const typeChecker = VARIATION === '1' ? '| Popular | ' : '|';
+
       const { target } = e;
 
-      if (target.closest('[data-operator="Mr Vegas Casino"][data-click-target="Toplist"]')) {
-        gaTracking(`CTO mr vegas | Button | ${pageType}`);
+      if (target.closest('[data-operator="Mr Vegas Casino"][data-type="button"]')) {
+        gaTracking(`CTO mr vegas | Button ${typeChecker} ${pageType}`);
       } else if (target.closest('.mui-a3ufvb[href*="/mr-vegas-casino"]')) {
-        gaTracking(`CTR mr vegas | Logo | ${pageType}`);
-      } else if (target.closest('.mui-1uaejwu')) {
-        gaTracking(`CTR mr vegas | Button | ${pageType}`);
+        gaTracking(`CTR mr vegas | Logo ${typeChecker} ${pageType}`);
+      } else if (
+        target.closest('a[data-type="review-button"][data-operator="Mr Vegas Casino"]') &&
+        target.closest('.mui-1uaejwu')
+      ) {
+        const parentEl = target.closest('.MuiGrid-root.MuiGrid-item');
+        const container = parentEl.closest('.MuiGrid-root.MuiGrid-container');
+        if (container.childNodes[0] === parentEl) {
+          gaTracking(`CTR mr vegas | Button ${typeChecker} ${pageType}`);
+        }
       } else if (target.closest('.mui-1civ9s6[href*="/mr-vegas-casino"]')) {
-        gaTracking(`CTR mr vegas | Title | ${pageType}`);
+        gaTracking(`CTR mr vegas | Title ${typeChecker} ${pageType}`);
       }
     });
   }
