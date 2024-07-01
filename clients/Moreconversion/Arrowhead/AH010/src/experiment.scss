@@ -5,11 +5,13 @@
   .#{$id}__variant-wrapper {
     margin-bottom: 15px !important;
     .variant-input-wrap {
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
       gap: 10px;
-      margin-bottom: 0;
+      max-width: 280px;
+      width: 100%;
+      margin: 0 auto;
       .variant-input {
-        flex: 0 0 56px !important;
         text-align: center;
 
         label.disabled::after {
@@ -23,12 +25,8 @@
           height: 34px;
           cursor: pointer;
 
-          @media screen and (max-width: 1024px) {
+          @media screen and (max-width: 480px) {
             font-size: 10px;
-          }
-
-          @media screen and (max-width: 768px) {
-            height: 26px;
           }
         }
 
@@ -56,24 +54,18 @@
             ) !important;
           }
         }
-
-        @media screen and (max-width: 768px) {
-          flex: 0 0 50px !important;
-        }
-
-        @media screen and (max-width: 480px) {
-          flex: 0 0 35px !important;
-        }
       }
 
       @media screen and (max-width: 512px) {
-        justify-content: flex-start;
+        justify-content: center;
       }
     }
   }
 
   .#{$id}__atcBtn {
-    margin-bottom: 15px;
+    max-width: 280px;
+    width: 100%;
+    margin: 0 auto 15px;
     @media screen and (max-width: 480px) {
       span {
         font-size: 12px !important;
@@ -88,11 +80,64 @@
   #CollectionAjaxContent > .grid {
     .grid__item {
       margin-bottom: 16px;
+
+      @media screen and (min-width: 769px) {
+        &.fade-in {
+          .#{$id}__variant-wrapper,
+          .#{$id}__atcBtn {
+            animation: fade-in 0.3s ease-in both;
+          }
+        }
+
+        &.fade-out {
+          .#{$id}__variant-wrapper,
+          .#{$id}__atcBtn {
+            animation: fade-out 0.3s ease-out both;
+          }
+        }
+
+        & {
+          .#{$id}__variant-wrapper,
+          .#{$id}__atcBtn {
+            display: none;
+          }
+        }
+
+        &.#{$id}__show {
+          .grid-product__meta {
+            display: none;
+          }
+          .#{$id}__variant-wrapper {
+            display: block;
+          }
+          .#{$id}__atcBtn {
+            display: flex;
+          }
+        }
+      }
     }
     .grid-product__content {
       @media screen and (min-width: 769px) {
         margin-bottom: 15px;
       }
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 }

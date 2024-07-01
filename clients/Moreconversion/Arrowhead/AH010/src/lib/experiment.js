@@ -31,11 +31,33 @@ const init = async () => {
       item.querySelector(`.${ID}__variant-wrapper`).insertAdjacentHTML('afterend', atcBtn(ID));
     }
   });
+
+  let timer;
+
+  productsItems.forEach((item) => {
+    item.addEventListener('mouseenter', (e) => {
+      //clearTimeout(timer);
+      const wrapper = e.target.closest('.grid__item');
+      wrapper.classList.remove('fade-out');
+      wrapper.classList.add(`${ID}__show`);
+      wrapper.classList.add('fade-in');
+    });
+  });
+
+  productsItems.forEach((item) => {
+    item.addEventListener('mouseleave', (e) => {
+      const wrapper = e.target.closest('.grid__item');
+      wrapper.classList.remove('fade-in');
+      wrapper.classList.add('fade-out');
+      timer = setTimeout(() => {
+        wrapper.classList.remove(`${ID}__show`);
+      }, 300);
+    });
+  });
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
+  setup();
   //eslint-disable-next-line no-useless-return
   if (VARIATION === 'Control') return;
 

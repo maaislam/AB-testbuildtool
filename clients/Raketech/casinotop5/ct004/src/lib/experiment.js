@@ -5,7 +5,7 @@ import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
 let blockCountForLowCta = 0;
-let blockCountForBannerCta = 0;
+let blockCountForBannerCta = 1;
 
 const init = (targetElement) => {
   const featuredImage = document.querySelector('.td-post-featured-image');
@@ -20,10 +20,7 @@ export default () => {
   setup(); //use if needed
 
   const targetElement = document.querySelector('.fcrp-scfeatured');
-  const blockImages =
-    VARIATION === '1'
-      ? document.querySelectorAll('.td-post-content figure.size-large')
-      : document.querySelectorAll('.td-post-featured-image, figure.size-large');
+  const blockImages = document.querySelectorAll('.td-post-content figure.size-large');
 
   const lowctas = document.querySelectorAll('.td-post-content figure.size-full');
 
@@ -74,6 +71,10 @@ export default () => {
       const casinoName = target.closest('a.fcrp-button').href.split('visit/')[1].split('/')[0];
       const { position } = target.closest('.fcrp-scfeatured').dataset;
       gaTracking(`${casinoName} CTO CTA | Button ${position}`);
+    } else if (target.closest('.td-post-featured-image')) {
+      const targetedEl = target.closest('.td-post-featured-image');
+      const casinoName = targetedEl.querySelector('a')?.href.split('visit/')[1].split('/')[0];
+      casinoName && gaTracking(`${casinoName} Click Banner 1 CTA`);
     } else if (target.closest('figure.size-large') && target.closest('.td-post-content')) {
       const targetedEl = target.closest('figure.size-large');
       const { position } = targetedEl.dataset;

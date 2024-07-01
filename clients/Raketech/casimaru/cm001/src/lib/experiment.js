@@ -26,9 +26,19 @@ export default () => {
 
     item.querySelectorAll('a.btn').forEach((btn) => {
       if (btn.href.includes('/all-bonuses/non-deposit-bonus/')) {
-        btn.setAttribute('data-attr', 'bonus');
+        const clonedBtn = btn.cloneNode(true);
+        clonedBtn.removeAttribute('href');
+        clonedBtn.setAttribute('data-attr', 'bonus');
+        if (!item.querySelector('a[data-attr="bonus"]')) {
+          btn.insertAdjacentElement('beforebegin', clonedBtn);
+        }
       } else if (!btn.href.includes('/all-bonuses/non-deposit-bonus/')) {
-        btn.setAttribute('data-attr', 'reviews');
+        const clonedBtn = btn.cloneNode(true);
+        clonedBtn.removeAttribute('href');
+        clonedBtn.setAttribute('data-attr', 'reviews');
+        if (!item.querySelector('a[data-attr="reviews"]')) {
+          btn.insertAdjacentElement('beforebegin', clonedBtn);
+        }
       }
     });
   });
@@ -36,11 +46,20 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (target.closest('a.btn') && target.closest('a.btn').dataset.attr === 'bonus') {
+      const targetedEl = target.closest('a.btn');
       const { casino } = target.closest('.block-wrapper').dataset;
       gaTracking(`${casino} Click Bonus Page`);
+      setTimeout(() => {
+        targetedEl.nextElementSibling.click();
+      }, 300);
     } else if (target.closest('a.btn') && target.closest('a.btn').dataset.attr === 'reviews') {
+      const targetedEl = target.closest('a.btn');
       const { casino } = target.closest('.block-wrapper').dataset;
       gaTracking(`${casino} Click Review Page`);
+
+      setTimeout(() => {
+        targetedEl.nextElementSibling.click();
+      }, 300);
     } else if (target.closest(`.${ID}__buttonWrapper a.btn`)) {
       const { casino } = target.closest('.block-wrapper').dataset;
       gaTracking(`${casino} Click Banner Button`);

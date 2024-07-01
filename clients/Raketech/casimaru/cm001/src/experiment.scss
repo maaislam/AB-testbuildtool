@@ -24,6 +24,16 @@
           }
         }
       }
+
+      .bottun-set-rev {
+        a[data-attr='bonus'] + a.btn {
+          display: none;
+        }
+
+        a[data-attr='reviews'] + a.btn {
+          display: none;
+        }
+      }
     }
   }
 }
