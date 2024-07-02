@@ -31,57 +31,65 @@ const init = () => {
   productInfo.insertAdjacentHTML('afterend', keyBenefits(ID, keyBenefitsData, 'mobile'));
 
   //reviews section
-  pollerLite(['.pdp-reviews#reviews'], () => {
-    const reviewContainer = document.querySelector('.pdp-reviews#reviews');
-    reviews(ID, reviewContainer);
-    //cards section
-    if (!document.querySelector(`.${ID}__cardSection`)) {
-      reviewContainer.insertAdjacentHTML('afterend', cards(ID, cardData));
-    }
+  pollerLite(
+    [
+      '.pdp-reviews#reviews .pdp-reviews-list-container .pdp-review',
+      () =>
+        document.querySelectorAll('.pdp-reviews#reviews .pdp-reviews-list-container .pdp-review')
+          .length >= 3
+    ],
+    () => {
+      const reviewContainer = document.querySelector('.pdp-reviews#reviews');
 
-    //about the floor section
-    if (!document.querySelector(`.${ID}__floorDetailsSection`)) {
-      const cardSection = document.querySelector(`.${ID}__cardSection`);
-      cardSection.insertAdjacentHTML('afterend', floorDetails(ID));
-    }
+      //cards section
+      if (!document.querySelector(`.${ID}__cardSection`)) {
+        reviewContainer.insertAdjacentHTML('afterend', cards(ID, cardData));
+      }
 
-    //for mobile aapend you might also like under the reviews section.
-    const parentElement = document.createElement('div');
-    parentElement.classList.add(`${ID}__parentWrapper`);
-    parentElement.appendChild(document.querySelector(`.${ID}__cardSection`));
-    parentElement.appendChild(document.querySelector(`.${ID}__floorDetailsSection`));
-    parentElement.appendChild(document.querySelector('.column.main > .upsell-title'));
-    parentElement.appendChild(document.querySelector('.column.main > .products.wrapper'));
+      //about the floor section
+      if (!document.querySelector(`.${ID}__floorDetailsSection`)) {
+        const cardSection = document.querySelector(`.${ID}__cardSection`);
+        cardSection.insertAdjacentHTML('afterend', floorDetails(ID));
+      }
 
-    document
-      .querySelector(`.pdp-reviews:not(.${ID}__mobileReviewSection)`)
-      .insertAdjacentElement('afterend', parentElement);
+      reviews(ID, reviewContainer);
 
-    //sticky section in mobile devices
-    stickyCombineBtn(ID);
+      //for mobile aapend you might also like under the reviews section.
+      const parentElement = document.createElement('div');
+      parentElement.classList.add(`${ID}__parentWrapper`);
+      parentElement.appendChild(document.querySelector(`.${ID}__cardSection`));
+      parentElement.appendChild(document.querySelector(`.${ID}__floorDetailsSection`));
+      parentElement.appendChild(document.querySelector('.column.main > .upsell-title'));
+      parentElement.appendChild(document.querySelector('.column.main > .products.wrapper'));
 
-    wrapInner('.product-info-main', {
-      class: `${ID}__wrapper-class`
-    });
+      document
+        .querySelector(`.pdp-reviews:not(.${ID}__mobileReviewSection)`)
+        .insertAdjacentElement('afterend', parentElement);
 
-    const intersectionAnchor = document.querySelectorAll(`.${ID}__roomPreview video`);
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        const videoElement = entry.target;
-        let scrollTimer;
-        clearTimeout(scrollTimer);
-        if (entry.isIntersecting) {
-          videoElement.play();
-        } else {
-          videoElement.pause();
-        }
+      //sticky section in mobile devices
+      stickyCombineBtn(ID);
+
+      wrapInner('.product-info-main', {
+        class: `${ID}__wrapper-class`
       });
-    };
 
-    intersectionAnchor.forEach((video) => {
-      observeIntersection(video, 0, handleIntersection);
-    });
-  });
+      const intersectionAnchor = document.querySelector(`.${ID}__roomPreview video`);
+      const handleIntersection = (entries) => {
+        entries.forEach((entry) => {
+          const videoElement = entry.target;
+          let scrollTimer;
+          clearTimeout(scrollTimer);
+          if (entry.isIntersecting) {
+            videoElement.play();
+          } else {
+            videoElement.pause();
+          }
+        });
+      };
+
+      observeIntersection(intersectionAnchor, 0, handleIntersection);
+    }
+  );
 };
 
 export default () => {
@@ -147,7 +155,20 @@ export default () => {
     } else if (target.closest(`.${ID}__orderSampleWrapper`)) {
       document.querySelector('.sample-add-form button[type="submit"]').click();
     } else if (target.closest(`.${ID}__atcBtn`)) {
-      document.querySelector('#product-addtocart-button').click();
+      e.preventDefault();
+
+      const element = document.querySelector('.product-info-price .flooring-price');
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+      const areaInput = document.querySelector('.fp-calculator .fp-controls input');
+      setTimeout(() => {
+        areaInput.value = 1;
+        areaInput.dispatchEvent(new Event('change'));
+        areaInput.value = '';
+        areaInput.focus();
+      }, 500);
     } else if (
       (target.closest('.product-reviews-summary .rating-summary') ||
         target.closest('.product-reviews-summary .reviews-actions')) &&
@@ -180,6 +201,4 @@ export default () => {
   if (edistoModalCloseBtn) {
     edistoModalCloseBtn.click();
   }
-
-  //for user interaction proof
 };

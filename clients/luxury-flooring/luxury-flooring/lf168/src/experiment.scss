@@ -61,6 +61,7 @@
           .#{$id}__uspsItem {
             display: flex;
             align-items: center;
+            padding: 3px 0;
 
             .#{$id}__svg {
               svg {
@@ -118,8 +119,44 @@
           @media screen and (min-width: 1024px) {
             max-width: 212px;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 9px;
             order: 2;
+
+            .icon-phone {
+              display: none;
+            }
+            .minicart-wrapper {
+              margin-top: 25px;
+            }
           }
+        }
+
+        .minicart-wrapper .action.showcart {
+          @media screen and (min-width: 1024px) {
+            display: flex;
+            align-items: center;
+            .text {
+              display: contents;
+              text-transform: capitalize;
+            }
+
+            .counter.qty {
+              position: static !important;
+              padding-left: 3px;
+            }
+
+            &::before {
+              width: 50px;
+            }
+          }
+        }
+
+        @media screen and (min-width: 1024px) {
+          padding: 12px 40px;
         }
       }
     }
