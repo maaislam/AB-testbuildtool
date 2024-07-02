@@ -1,9 +1,7 @@
-import {
-  accordionData,
+import { accordionData,
   floorMeasurements,
   floorSpecifications,
-  productDescData
-} from '../data/data';
+  productDescData } from '../data/data';
 import { tooltip } from '../components/tooltip';
 import { accordionWrapper } from '../components/accordionWrapper';
 import { productDesWrapper } from '../components/productDesWrapper';

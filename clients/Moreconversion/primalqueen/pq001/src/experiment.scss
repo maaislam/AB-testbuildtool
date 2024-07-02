@@ -1,0 +1,245 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__test {
+    display: block;
+  }
+
+  .package1 {
+    background: #fe549a;
+    display: flex;
+    flex-direction: column;
+  }
+  .package1 .swiper-wrapper {
+    height: auto;
+  }
+
+  .package .mySwiper2 .swiper-slide {
+    border: 1px solid #ffffff;
+    margin-top: 32px;
+    padding: 16px;
+    background: #f675ae;
+    border-radius: 20px;
+  }
+  .mySwiper2 .swiper-slide img {
+    width: 75%;
+  }
+  .pkf_strip {
+    position: absolute;
+    left: 0;
+    top: 0px;
+
+    transform: unset;
+    color: #2f0147;
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: unset;
+    width: 224px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+
+    height: 50px;
+    align-items: center;
+    background: #2f0147;
+    color: #fe549a;
+    font-size: 24px;
+  }
+  div[thumbsslider] {
+    width: 85%;
+  }
+  div[thumbsslider] img {
+    width: 70px;
+    border-radius: 10px;
+  }
+
+  .package1 .pakge_heading {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 16px;
+  }
+
+  .price_text2 {
+    display: flex;
+    flex-direction: row-reverse;
+
+    gap: 10px;
+    font-size: 35px;
+    line-height: 42px;
+    font-weight: 800;
+  }
+  .package1 .price_text2 {
+    color: #ffffff;
+    justify-content: center;
+  }
+
+  .package1 .price_text2 span:after {
+    border-top: 2px solid #ffffff;
+  }
+
+  .package1 .price_text2 span {
+    position: relative;
+    font-weight: 600;
+    margin: 0 15px 0 0;
+    line-height: 36px;
+    color: #fff;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .cstm_item img {
+    width: 68px;
+    border-radius: 10px;
+  }
+  .cstm_list_items {
+    margin-top: 15pxpx;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid #ffff;
+    border-left: none;
+    border-right: none;
+    padding: 20px 0;
+    margin-top: 15px;
+  }
+  .cstm_item {
+    max-width: 116px;
+    width: 100%;
+  }
+
+  .text_div {
+    display: flex;
+  }
+  .info_text {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .info_text::before {
+    content: 'Free';
+    font-size: 14px;
+    background: #fff3f7;
+    color: #2f0147;
+    font-weight: 800;
+
+    border-radius: 5px;
+    line-height: 18px;
+    margin-left: 5px;
+    padding: 0 1px;
+    margin-right: 1px;
+  }
+
+  .package1 .pkage_list li:nth-child(2),
+  .package1 .pkage_list li:nth-child(3),
+  .package1 .pkage_list li:nth-child(4) {
+    display: none;
+  }
+
+  .package1 .pkg_comn_btn_box .btn_point {
+    display: none;
+  }
+  #stamped-reviews-widget {
+    display: none;
+  }
+
+  .packge_button_outer {
+    padding: unset;
+    background: none;
+    height: unset;
+  }
+
+  .packge_button_outer a img {
+    display: none;
+  }
+  .package1 .packge_button_outer a {
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    margin: 15px 0 50px;
+    box-shadow: none;
+  }
+
+  .package1 .pkage_list li {
+    color: #ffffff;
+  }
+
+  .package1 .pkg_color {
+    font-size: 14px;
+    background: #fff3f7;
+    color: #2f0147;
+    font-weight: 800;
+
+    border-radius: 5px;
+    line-height: 18px;
+    margin-left: 5px;
+    padding: 0 3px;
+    margin-right: 1px;
+  }
+  .package1 ul.pkage_list li .cut_price:after {
+    border-top: 1px solid #fff;
+    transform: unset;
+  }
+
+  .package2 .pakge_heading {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+  }
+  .package2 .price_text2 {
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 5px;
+  }
+  .package2 .price_text2 span {
+    font-size: 20px;
+    color: #ff68a2;
+    font-weight: 600;
+  }
+  .package2 .pkage_list li {
+    border-bottom: none;
+    color: #2f0147;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .package2 .packge_button_outer a {
+    box-shadow: none;
+  }
+
+  .package2 .btn_point {
+    justify-content: left;
+    display: flex;
+    margin-top: 12px;
+  }
+  // .package2 .pkage_list li:nth-child(2)::before {
+
+  //     content:url('https://primalqueen.com/cdn/shop/files/1_700x535.png?v=1696349447')
+  // }
+  // .package2 .pkage_list li:nth-child(3)::before,
+  // .package2 .pkage_list li:nth-child(4)::before {
+  //
+
+  // }
+  #free_text {
+    content: 'Free';
+    color: #fe549a;
+  }
+  .bullet_img {
+    width: 40px;
+    border: 1px solid #fe5097;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bullet_img img {
+    width: 30px;
+  }
+}

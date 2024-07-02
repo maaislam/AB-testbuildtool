@@ -1,5 +1,5 @@
 import stickyNav from './components/stickyNav';
-import { observeIntersection } from './helpers/utils';
+
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -26,14 +26,16 @@ const init = () => {
     //Check if the user has scrolled down 100px
     scrollAmount += scrollPos - currentScrollPos;
 
-    if (scrollAmount >= 100) { //Scrolling down 100px or more
+    if (scrollAmount >= 100) {
+      //Scrolling down 100px or more
       headerElem.classList.add('slide-out-top');
 
       stickySection.classList.remove('slide-out-bottom');
       stickySection.classList.remove(`${ID}__hide`);
       stickySection.classList.add(`${ID}__show`);
       scrollAmount = 0; //Reset scroll amount
-    } else if (currentScrollPos > scrollPos) { //Scrolling up
+    } else if (currentScrollPos > scrollPos) {
+      //Scrolling up
       headerElem.classList.remove('slide-out-top');
 
       stickySection.classList.remove(`${ID}__show`);
@@ -47,7 +49,6 @@ const init = () => {
     scrollPos = currentScrollPos;
   });
 };
-
 
 export default () => {
   setup();

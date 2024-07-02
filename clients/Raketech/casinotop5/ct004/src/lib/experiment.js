@@ -85,7 +85,7 @@ export default () => {
       const { position } = targetedEl.dataset;
       const casinoName = targetedEl.querySelector('a')?.href.split('visit/')[1].split('/')[0];
       casinoName && gaTracking(`${casinoName} Click Banner Low CTA ${position}`);
-    } else if (target.closest('.td-post-featured-image')) {
+    } else if (target.closest('.td-post-featured-imagexx')) {
       const targetedEl = target.closest('.td-post-featured-image');
       const { position } = targetedEl.dataset;
       const casinoName = targetedEl.querySelector('a').href.split('visit/')[1].split('/')[0];

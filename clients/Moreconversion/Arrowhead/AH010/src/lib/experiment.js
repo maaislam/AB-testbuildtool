@@ -32,8 +32,6 @@ const init = async () => {
     }
   });
 
-  let timer;
-
   productsItems.forEach((item) => {
     item.addEventListener('mouseenter', (e) => {
       //clearTimeout(timer);
@@ -49,7 +47,7 @@ const init = async () => {
       const wrapper = e.target.closest('.grid__item');
       wrapper.classList.remove('fade-in');
       wrapper.classList.add('fade-out');
-      timer = setTimeout(() => {
+      setTimeout(() => {
         wrapper.classList.remove(`${ID}__show`);
       }, 300);
     });
