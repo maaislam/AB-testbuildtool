@@ -1,14 +1,14 @@
-const ratingStars = (rating) => {
+const ratingStars = (rating, className) => {
   const stars = [];
   for (let i = 1; i <= 5; i += 1) {
     const rounderRating = Math.floor(rating);
     console.log('🚀 ~ ratingStars ~ rounderRating:', rounderRating);
     if (i <= rounderRating) {
-      stars.push('<i class="stamped-fa stamped-fa-star"></i>');
+      stars.push(`<i class="stamped-fa stamped-fa-star ${className}"></i>`);
     } else if (i === rounderRating + 1 && (rating * 10) % 5) {
-      stars.push('<i class="stamped-fa stamped-fa-star-0"></i>');
+      stars.push(`<i class="stamped-fa stamped-fa-star-0 ${className}"></i>`);
     } else {
-      stars.push('<i class="stamped-fa stamped-fa-star-0"></i>');
+      stars.push(`<i class="stamped-fa stamped-fa-star-0 ${className}"></i>`);
     }
   }
 
