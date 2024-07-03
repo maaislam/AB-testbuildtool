@@ -23,6 +23,21 @@ export default () => {
     }
   ];
 
+  const notIncludedItems = [
+    {
+      img_src: 'https://cdn.shopify.com/s/files/1/0805/3971/3813/files/lid-jar-not-included.png?v=1719998857',
+      text: 'Bamboo lid glass jar'
+    },
+    {
+      img_src: 'https://cdn.shopify.com/s/files/1/0805/3971/3813/files/pill-case-not-included.png?v=1719998856',
+      text: 'On-the-go pill case'
+    },
+    {
+      img_src: 'https://cdn.shopify.com/s/files/1/0805/3971/3813/files/mystery-gift-not-included.png?v=1719998857',
+      text: 'Mystery gift'
+    }
+  ];
+
   const packageListData = [
     {
       description: "<div><span>30-day supply</span> <span class='extra-text'>delivered monthly</span></div>",
@@ -125,14 +140,14 @@ export default () => {
 
   const packageBox2 = `<div class="cstm_package_list ${ID}__packageBox2">
     <div class="free-items-wrapper">
-      <div class="free-items">FREE ITEMS</div>
+      <div class="free-items">Free Items Not Included</div>
     </div>
     <div class="cstm_list_items">
-      ${itemData.map((data) => {
+      ${notIncludedItems.map((data, index) => {
         return `<div class="cstm_item">
                 <img src="${data.img_src}" alt="">
                 <div class="text_div">
-                  <div class="info_text">${data.text}</div>
+                  <div class="info_text info_text-${index + 1}">${data.text}</div>
                 </div>
               </div>`;
       }).join('')}
@@ -151,4 +166,28 @@ export default () => {
   if (!document.querySelector(`.${ID}__packageBox2`)) {
     document.querySelector('.package2 .price_text2').insertAdjacentHTML('afterend', packageBox2);
   }
+
+  //set price on buttons
+  const packageOneBtn = document.querySelector(`.${ID}__packageBox1 .atc-btn .atc-price`);
+  const packageTwoBtn = document.querySelector(`.${ID}__packageBox2 .atc-btn .atc-price`);
+  const packageOnePriceElem = document.querySelector('.package1 .price_text2');
+  const packageTwoPriceElem = document.querySelector('.package2 .price_text2');
+
+  const packageOnePrice = packageOnePriceElem.innerText.split('\n')[1];
+  const packageTwoPrice = packageTwoPriceElem.innerText.split('\n')[1];
+
+  packageOneBtn.textContent = `${packageOnePrice} - `;
+  packageTwoBtn.textContent = `${packageTwoPrice} - `;
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest(`.${ID}__packageBox1 .atc-btn`)) {
+      const ctrlBtn = document.querySelector('.package1 .pakge_btn');
+      ctrlBtn.click();
+    } else if (target.closest(`.${ID}__packageBox2 .atc-btn`)) {
+      const ctrlBtn = document.querySelector('.package2 .pakge_btn');
+      ctrlBtn.click();
+    }
+  });
 };
