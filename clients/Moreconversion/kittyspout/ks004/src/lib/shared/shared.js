@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "ks004",
-    VARIATION: "1",
-    CLIENT: "Moreconversion",
-    SITE: "kittyspout"
+    ID: 'ks004',
+    VARIATION: '1',
+    CLIENT: 'Moreconversion',
+    SITE: 'kittyspout'
   };
