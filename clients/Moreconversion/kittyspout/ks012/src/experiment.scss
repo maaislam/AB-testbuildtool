@@ -1,0 +1,60 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__shippingInfo {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 19px;
+    .#{$id}__discountProgressCard {
+      .#{$id}__discountProgressContainer {
+        .#{$id}__shippingMessage {
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 18px;
+          text-align: center;
+          color: #3d3d3d;
+          margin-bottom: 7px;
+        }
+
+        .#{$id}__discountProgress {
+          height: 16px;
+          width: 80%;
+          position: relative;
+          background: #f2f2f2;
+          border-radius: 30px;
+          overflow: hidden;
+          padding: 4px;
+
+          &-bar {
+            height: 100%;
+            max-width: 100% !important;
+            border-radius: 10px;
+            background: #dd9933;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='25' viewBox='0 0 20 25' fill='none'%3E%3Cpath opacity='0.05' d='M10 0.589996H20L10 24.59H0L10 0.589996Z' fill='#EEEEEE'");
+          }
+        }
+      }
+
+      .#{$id}__discountProgress-container {
+        display: flex;
+        justify-content: center;
+
+        .#{$id}__first,
+        .#{$id}__last {
+          font-size: 10px;
+          font-weight: 600;
+          line-height: 15px;
+          color: #999999;
+        }
+        .#{$id}__first {
+          margin-right: 6px;
+        }
+
+        .#{$id}__last {
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+}

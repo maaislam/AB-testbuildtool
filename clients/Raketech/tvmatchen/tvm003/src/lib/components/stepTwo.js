@@ -1,6 +1,7 @@
 const stepTwo = (id) => {
   const html = `
      <div class="${id}__validateUserModal-container-content-step-2 ${id}__step" data-attr='2'>
+            <form class="${id}__form-two">
                 <div class="${id}__formWrapper">
                     <div class="${id}__form-field ${id}__name">
                         <input id="name"
@@ -41,14 +42,13 @@ const stepTwo = (id) => {
                         </div>
                     </div>
 
-                    <button type="button"
-                            class="${id}__subscribeBtn">Subscribe</button>
+                    <button type="button" class="${id}__subscribeBtn">Subscribe</button>
 
                     <p class="${id}__message">Please note: Hard-coded promo content might still be visible but will not
                         disrupt your experience.</p>
                 </div>
-
-            </div>
+            </form>
+        </div>
   `;
   return html.trim();
 };
