@@ -1,0 +1,157 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__validateUserModal {
+    &-overlay {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      opacity: 0.5;
+      background: #000;
+      z-index: 999;
+      top: 0;
+    }
+    &-container {
+      &-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 335px;
+        background: #fff;
+        padding: 30px 12px 12px;
+        height: max-content;
+        z-index: 9999;
+        .#{$id}__closeIcon {
+          position: absolute;
+          top: 6px;
+          right: 12px;
+          cursor: pointer;
+        }
+
+        &-step-1 {
+          text-align: center;
+          h1 {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+            color: #222222;
+            margin-bottom: 8px;
+          }
+          p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            margin-bottom: 36px;
+          }
+          .#{$id}__buttonsWrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .#{$id}__noThanksBtn {
+              width: 50%;
+              color: #0081b8;
+              border: solid 2px #0081b8;
+              border-radius: 2px;
+            }
+            .#{$id}__continue {
+              width: 50%;
+              color: #fff;
+              background-color: #0081b8;
+              border: solid 2px #0081b8;
+              border-radius: 2px;
+              margin-left: 8px;
+            }
+          }
+
+          .#{$id}__button {
+            font-size: 14px;
+            line-height: 21px;
+            font-weight: 400;
+          }
+        }
+        &-step-2 {
+          .#{$id}__formWrapper {
+            .#{$id}__form-field {
+              input {
+                width: 100%;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 21px;
+                padding: 8px 7px;
+                border: solid 1px #94a3b8;
+                border-radius: 2px;
+              }
+            }
+
+            .#{$id}__name {
+              margin-bottom: 8px;
+            }
+
+            .#{$id}__email {
+              margin-bottom: 25px;
+            }
+            .#{$id}__creditCradNumber {
+            }
+            .#{$id}__cxprationCvc {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 8px 0;
+              #expiring-date {
+                width: calc(100% - 104px);
+              }
+
+              #cvc {
+                width: 96px;
+                margin-left: 8px;
+              }
+            }
+
+            .toggle__agree {
+              display: flex;
+              align-items: center;
+
+              input {
+                width: 20px;
+                height: 19px;
+              }
+
+              .toggle__button {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                margin-left: 8px;
+              }
+            }
+
+            .#{$id}__subscribeBtn {
+              width: 100%;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 21px;
+              background-color: #0081b8;
+              color: #fff;
+              padding: 8px 0;
+              margin-top: 8px;
+              border: solid 1px #0081b8;
+              border-radius: 2px;
+            }
+
+            .#{$id}__message {
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 20px;
+              color: #222222;
+              padding: 32px 0 0;
+            }
+          }
+        }
+        &-step3 {
+        }
+      }
+    }
+  }
+}
