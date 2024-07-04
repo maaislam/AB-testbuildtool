@@ -90,6 +90,13 @@ const init = () => {
       observeIntersection(intersectionAnchor, 0, handleIntersection);
     }
   );
+  pollerLite(['.fp-calculator .fp-controls input'], () => {
+    const areaInput = document.querySelector('.fp-calculator .fp-controls input');
+    setTimeout(() => {
+      areaInput.value = 1;
+      areaInput.dispatchEvent(new Event('change'));
+    }, 2000);
+  });
 };
 
 export default () => {
@@ -166,7 +173,7 @@ export default () => {
       setTimeout(() => {
         areaInput.value = 1;
         areaInput.dispatchEvent(new Event('change'));
-        areaInput.value = '';
+        //areaInput.value = '';
         areaInput.focus();
       }, 500);
     } else if (

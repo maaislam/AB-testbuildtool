@@ -8,6 +8,7 @@ const initSwiper = (container, initConfig) => {
     }
   };
 
+  //eslint-disable-next-line no-unused-vars
   const slider = new window.Swiper(`${container}`, Object.assign(baseConfig, initConfig));
   //slider.on('slideChange', () => {
   //console.log('change');

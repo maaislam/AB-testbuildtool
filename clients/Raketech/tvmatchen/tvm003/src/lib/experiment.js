@@ -1,7 +1,7 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
+
 import modalWrapper from './components/modalWrapper';
 
 const { ID, VARIATION } = shared;

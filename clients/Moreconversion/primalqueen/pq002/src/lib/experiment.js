@@ -1,3 +1,4 @@
+/*eslint-disable max-len */
 import reviewcards from './components/reviewCards';
 import { swiperConfig, swiperConfig5 } from './configs/swiperConfigs';
 import initSwiper from './helpers/initSwiper';
@@ -6,14 +7,14 @@ import data from './data/data';
 import setup from './services/setup';
 
 import shared from './shared/shared';
-import { startIcon } from './assets/icon';
+//import { startIcon } from './assets/icon';
 
 const { ID, VARIATION } = shared;
 
 const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
 const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
 
-const init = (data) => {
+const init = () => {
   const carouselAttachPoint = document.querySelector('.banner_rev.hideMob');
   const primalBtn = document.querySelector('.comn_btn_box');
 
