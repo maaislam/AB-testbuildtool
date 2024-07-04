@@ -49,3 +49,23 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
+//eslint-disable-next-line consistent-return
+export const getCookie = (name) => {
+  const value = `; ${document.cookie}`;
+
+  const parts = value.split(`; ${name}=`);
+
+  if (parts.length === 2) {
+    return parts.pop().split(';').shift();
+  }
+};
+
+export const deleteCookie = (cookieName) => {
+  document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+};
+
+export const setCookie = (cName, cValue) => {
+  const path = 'path=/';
+  document.cookie = `${cName}=${cValue}; ${path}`;
+};

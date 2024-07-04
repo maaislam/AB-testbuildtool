@@ -16,6 +16,7 @@
       }
 
       .page-header .header.content {
+        padding: 12px 40px 0 40px;
         .c-header__main__logo {
           @media screen and (min-width: 1024px) {
             order: 0;
@@ -82,9 +83,10 @@
               .#{$id}__title {
                 font-size: 12px;
                 font-weight: 700;
-                line-height: 20px;
+                //line-height: 20px;
+                line-height: 12px;
                 @media screen and (max-width: 1150px) {
-                  font-size: 10px;
+                  //font-size: 10px;
                 }
               }
 
@@ -93,7 +95,8 @@
                 font-weight: 400;
                 line-height: 19px;
                 @media screen and (max-width: 1150px) {
-                  font-size: 9px;
+                  font-size: 11px;
+                  white-space: nowrap;
                 }
               }
             }
@@ -155,8 +158,12 @@
           }
         }
 
-        @media screen and (min-width: 1024px) {
-          padding: 12px 40px;
+        ul.links-wrapper {
+          line-height: 17px;
+        }
+
+        @media screen and (max-width: 1150px) {
+          padding: 12px 20px 0 20px;
         }
       }
     }
