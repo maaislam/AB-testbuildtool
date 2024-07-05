@@ -1,0 +1,17 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .#{$id}__product-single__sticky {
+      .product__thumbs {
+        .product__thumb-item[data-index='1'],
+        .product__thumb-item[data-index='2'],
+        .product__thumb-item[data-index='4'],
+        .product__thumb-item[data-index='5'] {
+          display: none;
+        }
+      }
+    }
+  }
+}
