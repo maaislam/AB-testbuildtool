@@ -28,16 +28,18 @@ const stepTwo = (id) => {
                     <div class="${id}__form-field ${id}__cxprationCvc">
                         <div class="" id="cxprationCvc">
                             <input id="expiring-date"
-                               type="number"
+                               type="text"
                                name="expiration"
+                               maxlength="7"
                                placeholder="Expiring Date MM/YY">
                             <small>Error Message</small>
                         </div>
-                        <div class="" id="cvc">
+                        <div class="" id="cvcDiv">
                             <input id="cvc"
                                type="number"
                                name="CVC"
                                inputmode="numeric"
+                                maxlength="3"
                                placeholder="CVC">
                             <small>Error Message</small>
                         </div>
@@ -49,7 +51,7 @@ const stepTwo = (id) => {
                                 <input type="checkbox"
                                        class="checkbox">
                                 <span class="control-indicator"></span>
-                                <span class="toggle__button">I agree. <a href="#">Term and Conditions</a> applies</span>
+                                <span class="toggle__button">I agree. <a href="/page/anvandarvillkor/">Term and Conditions</a> applies</span>
                             </label>
                         </div>
                     </div>

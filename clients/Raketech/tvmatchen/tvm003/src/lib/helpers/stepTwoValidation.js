@@ -1,4 +1,8 @@
+/*eslint-disable no-param-reassign */
+import { expireDateInputHandler } from './expireDateInputHandler';
+import { expireDateValidation } from './expireDateValidation';
 import { formatCardNumber } from './formatCreditCardNumber';
+import gaTracking from '../services/gaTracking';
 
 const stepTwoValidation = (id) => {
   //Dom elements
@@ -6,46 +10,15 @@ const stepTwoValidation = (id) => {
   const userName = form.querySelector('#name');
   const email = form.querySelector('#email');
   const creditCardNumber = form.querySelector('#cc');
-  //const password = document.querySelector('#password');
-  //const confirmPassword = document.querySelector('#cpassword');
-  //To check if email is valid or not ?
+  const expireDateElem = form.querySelector('#expiring-date');
+  const cvcNumber = form.querySelector('#cvc');
+  const checkbox = form.querySelector('input[type="checkbox"]');
+
   const isEmail = (email) => {
     const re =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   };
-
-  const validateInput = (event) => {
-    const input = event.target;
-    const value = input.value.replace(/\D/g, '');
-    input.value = value;
-  };
-
-  //Validate credit card number using Luhn algorithm
-  //const isCreditCard = (number) => {
-  //const re = /^\d{13,19}$/; //Check for a valid credit card number format
-  //if (!re.test(String(number))) {
-  //return false;
-  //}
-
-  //let sum = 0;
-  //let shouldDouble = false;
-  //for (let i = number.length - 1; i >= 0; i--) {
-  //let digit = parseInt(number.charAt(i), 10);
-
-  //if (shouldDouble) {
-  //digit *= 2;
-  //if (digit > 9) {
-  //digit -= 9;
-  //}
-  //}
-
-  //sum += digit;
-  //shouldDouble = !shouldDouble;
-  //}
-
-  //return sum % 10 === 0;
-  //};
 
   const valid_credit_card = (value) => {
     //Accept only digits, dashes or spaces
@@ -76,17 +49,17 @@ const stepTwoValidation = (id) => {
     small.innerText = message;
   };
 
-  //If there is no error, than what we want to do with input ?
   const setSuccessFor = (input) => {
     const formControl = input.parentElement;
     formControl.className = `${id}__form-field success`;
   };
 
   const handleInput = () => {
-    //Values from dom elements ( input )
     const userNameValue = userName.value.trim();
     const emailValue = email.value.trim();
     const creditCardValue = valid_credit_card(creditCardNumber.value.trim().toString());
+    const expireDateValue = expireDateValidation(expireDateElem.value);
+    const cvcValue = cvcNumber.value;
 
     //Checking for username
     if (userNameValue === '') {
@@ -105,18 +78,45 @@ const stepTwoValidation = (id) => {
     }
 
     //checking for credit card
-    console.log(
-      'value checking for credit',
-      creditCardValue,
-      valid_credit_card(creditCardValue) === false
-    );
     if (creditCardNumber.value.trim().toString() === '') {
       setErrorFor(creditCardNumber, 'Card cannot be blank');
     } else if (!creditCardValue) {
-      console.log('enter');
       setErrorFor(creditCardNumber, 'Card is not valid');
     } else {
       setSuccessFor(creditCardNumber);
+    }
+
+    //checking for credit card expire date
+    if (expireDateElem.value === '') {
+      setErrorFor(expireDateElem, 'date cannot be blank');
+    } else if (!expireDateValue) {
+      setErrorFor(expireDateElem, 'date is not valid');
+    } else {
+      setSuccessFor(expireDateElem);
+    }
+
+    //checking for credit card expire date
+    if (cvcValue === '') {
+      setErrorFor(cvcNumber, 'cvc cannot be blank');
+    } else if (cvcValue && cvcValue.length < 3) {
+      setErrorFor(cvcNumber, 'cvc is not valid');
+    } else {
+      setSuccessFor(cvcNumber);
+    }
+
+    if (
+      userNameValue &&
+      isEmail(emailValue) &&
+      creditCardValue &&
+      expireDateValue &&
+      cvcValue &&
+      checkbox.checked === true
+    ) {
+      gaTracking('Subscribe Button');
+      const parentEl = form.closest(`.${id}__step`);
+      parentEl.classList.remove(`${id}__show`);
+      const nextEl = parentEl.nextElementSibling;
+      nextEl.classList.add(`${id}__show`);
     }
   };
 
@@ -160,6 +160,20 @@ const stepTwoValidation = (id) => {
     node.selectionEnd = cursor;
     //store last value
     document.querySelector('#cc').setAttribute('data-lastvalue', formattedValue);
+  });
+
+  //Event listener to expire date input field
+  expireDateInputHandler(expireDateElem);
+
+  //cvc
+  cvcNumber.addEventListener('input', (event) => {
+    let value = event.target.value.replace(/\D/g, ''); //Remove non-digit characters
+
+    if (value.length > 3) {
+      value = value.slice(0, 3); //Limit to maximum 3 digits
+    }
+
+    event.target.value = value;
   });
 
   //Event listener to submit form

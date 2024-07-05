@@ -157,12 +157,8 @@
               display: none;
             }
 
-            .error small {
-              display: block;
-            }
-
             .error input {
-              border-color: #e75c3c;
+              border-color: #e75c3c !important;
             }
 
             .success input {
