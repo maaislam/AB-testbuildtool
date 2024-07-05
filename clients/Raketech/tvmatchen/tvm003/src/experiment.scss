@@ -151,6 +151,51 @@
               }
             }
 
+            .#{$id}__step-2-content {
+              .#{$id}__image-with-text {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .icon {
+                }
+
+                .text {
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 20px;
+                  color: #222222;
+                  margin-left: 8px;
+                }
+
+                &:not(:last-child) {
+                  margin-bottom: 8px;
+                }
+
+                &:last-child {
+                  margin: 24px 0;
+                }
+              }
+            }
+
+            .#{$id}__step-2-title {
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 19px;
+              margin-bottom: 19px;
+              color: #222222;
+              margin-bottom: 8px;
+              text-align: center;
+            }
+
+            .#{$id}__price-per-month {
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 19px;
+              margin-bottom: 19px;
+              color: #222222;
+              text-align: center;
+            }
+
             small {
               color: #e75c3c;
               margin-top: 5px;

@@ -1,6 +1,28 @@
+import { noAds, speedIcon, privacyIcon, getStartedIcon } from '../assets/icons';
+
 const stepTwo = (id) => {
   const html = `
      <div class="${id}__validateUserModal-container-content-step-2 ${id}__step" data-attr='2'>
+            <div class="${id}__step-2-title">Say Goodbye to Ads</div>
+            <div class="${id}__step-2-content">
+                <div class="${id}__image-with-text">
+                    <span class="icon">${noAds}</span>
+                    <span class="text">No More Ads!</span>
+                </div>
+                <div class="${id}__image-with-text">
+                    <span class="icon">${speedIcon}</span>
+                    <span class="text">Faster Speed!</span>
+                </div>
+                <div class="${id}__image-with-text">
+                    <span class="icon">${privacyIcon}</span>
+                    <span class="text">Enhanced Privacy!</span>
+                </div>
+                <div class="${id}__image-with-text">
+                    <span class="icon">${getStartedIcon}</span>
+                    <span class="text">Get Started Now</span>
+                </div>           
+            </div>
+            <div class="${id}__price-per-month">€ 1.00/month</div>
             <form class="${id}__form-two">
                 <div class="${id}__formWrapper">
                     <div class="${id}__form-field ${id}__name">
