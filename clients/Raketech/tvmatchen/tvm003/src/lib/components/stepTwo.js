@@ -8,28 +8,40 @@ const stepTwo = (id) => {
                                type="text"
                                name="full-name"
                                placeholder="Full Name">
+                        <small>Error Message</small>
                     </div>
                     <div class="${id}__form-field ${id}__email">
                         <input id="email"
                                type="email"
                                name="email"
                                placeholder="Email address">
+                        <small>Error Message</small>
                     </div>
                     <div class="${id}__form-field ${id}__creditCradNumber">
                         <input id="cc"
-                               type="number"
+                               type="text"
                                name="creditcard"
+                               inputmode="numeric"
                                placeholder="Credit Card Number">
+                        <small>Error Message</small>
                     </div>
                     <div class="${id}__form-field ${id}__cxprationCvc">
-                        <input id="expiring-date"
+                        <div class="" id="cxprationCvc">
+                            <input id="expiring-date"
                                type="number"
                                name="expiration"
                                placeholder="Expiring Date MM/YY">
-                        <input id="cvc"
+                            <small>Error Message</small>
+                        </div>
+                        <div class="" id="cvc">
+                            <input id="cvc"
                                type="number"
                                name="CVC"
+                               inputmode="numeric"
                                placeholder="CVC">
+                            <small>Error Message</small>
+                        </div>
+                        
                     </div>
                     <div class="legal__rule">
                         <div class="toggle--checkbox">
@@ -42,7 +54,7 @@ const stepTwo = (id) => {
                         </div>
                     </div>
 
-                    <button type="button" class="${id}__subscribeBtn">Subscribe</button>
+                    <button type="submit" class="${id}__subscribeBtn">Subscribe</button>
 
                     <p class="${id}__message">Please note: Hard-coded promo content might still be visible but will not
                         disrupt your experience.</p>

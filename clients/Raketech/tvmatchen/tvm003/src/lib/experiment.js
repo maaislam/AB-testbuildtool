@@ -4,6 +4,7 @@ import shared from './shared/shared';
 
 import { getCookie, setCookie } from './helpers/utils';
 import modalWrapper from './components/modalWrapper';
+import stepTwoValidation from './helpers/stepTwoValidation';
 
 const { ID, VARIATION } = shared;
 const init = () => {
@@ -15,6 +16,8 @@ const init = () => {
     targetPoint.insertAdjacentHTML('beforeend', modalWrapper(ID));
     targetPoint.classList.add(`${ID}__modalOpen`);
     setCookie(`${ID}__tracker`, true);
+
+    stepTwoValidation(ID);
   }
 };
 export default () => {
@@ -31,11 +34,11 @@ export default () => {
       const nextEl = parentEl.nextElementSibling;
       nextEl.classList.add(`${ID}__show`);
     } else if (target.closest(`.${ID}__subscribeBtn`)) {
-      const targetedEl = target.closest(`.${ID}__subscribeBtn`);
-      const parentEl = targetedEl.closest(`.${ID}__step`);
-      parentEl.classList.remove(`${ID}__show`);
-      const nextEl = parentEl.nextElementSibling;
-      nextEl.classList.add(`${ID}__show`);
+      //const targetedEl = target.closest(`.${ID}__subscribeBtn`);
+      //const parentEl = targetedEl.closest(`.${ID}__step`);
+      //parentEl.classList.remove(`${ID}__show`);
+      //const nextEl = parentEl.nextElementSibling;
+      //nextEl.classList.add(`${ID}__show`);
     }
   });
   if (VARIATION === 'control') return;

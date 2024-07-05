@@ -110,16 +110,22 @@
               .#{$id}__cxprationCvc {
                 display: flex;
                 align-items: center;
-                justify-content: center;
                 margin: 8px 0;
-                #expiring-date {
+                #cxprationCvc {
                   width: calc(100% - 104px);
                 }
-
                 #cvc {
                   width: 96px;
-                  margin-left: 8px;
+                  margin-left: 4px;
                 }
+                // #expiring-date {
+                //   width: calc(100% - 104px);
+                // }
+
+                // #cvc {
+                //   width: 96px;
+                //   margin-left: 8px;
+                // }
               }
 
               .#{$id}__subscribeBtn {
@@ -143,6 +149,24 @@
                 padding: 32px 0 0;
                 margin-bottom: 0;
               }
+            }
+
+            small {
+              color: #e75c3c;
+              margin-top: 5px;
+              display: none;
+            }
+
+            .error small {
+              display: block;
+            }
+
+            .error input {
+              border-color: #e75c3c;
+            }
+
+            .success input {
+              border-color: #2ecc71 !important;
             }
           }
           &-step-3 {

@@ -9,7 +9,11 @@ const init = () => {
   //eslint-disable-next-line no-undef
 
   if (window.location.pathname === '/products/metalbundles') {
-    gallaryImage.classList.add(`${ID}__product-single__sticky`);
+    gallaryImage.classList.add(`${ID}__product-single__sticky-metalbundles`);
+  }
+
+  if (window.location.pathname === '/products/the-kittyspout-kit') {
+    gallaryImage.classList.add(`${ID}__product-single__sticky-kittyspout-kit`);
   }
 };
 
