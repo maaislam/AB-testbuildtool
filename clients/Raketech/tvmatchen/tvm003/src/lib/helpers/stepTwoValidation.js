@@ -22,7 +22,7 @@ const stepTwoValidation = (id) => {
 
   const valid_credit_card = (value) => {
     //Accept only digits, dashes or spaces
-    if (/[^0-9-\s]+/.test(value)) return false;
+    if (/[^0-9-\s]+/.test(value) || value === '') return false;
 
     //The Luhn Algorithm. It's so pretty.
     let nCheck = 0;
@@ -44,14 +44,16 @@ const stepTwoValidation = (id) => {
 
   const setErrorFor = (input, message) => {
     const formControl = input.parentElement;
-    formControl.className = `${id}__form-field error`;
+    formControl.classList.remove('success');
+    formControl.classList.add('error');
     const small = formControl.querySelector('small');
     small.innerText = message;
   };
 
   const setSuccessFor = (input) => {
     const formControl = input.parentElement;
-    formControl.className = `${id}__form-field success`;
+    formControl.classList.remove('error');
+    formControl.classList.add('success');
   };
 
   const handleInput = () => {
@@ -110,7 +112,7 @@ const stepTwoValidation = (id) => {
       creditCardValue &&
       expireDateValue &&
       cvcValue &&
-      checkbox.checked === true
+      checkbox.checked
     ) {
       gaTracking('Subscribe Button');
       const parentEl = form.closest(`.${id}__step`);

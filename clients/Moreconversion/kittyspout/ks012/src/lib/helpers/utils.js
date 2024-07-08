@@ -62,13 +62,16 @@ export const getLocalThreshold = (amountInUSD) => {
       : '{{amount_with_comma_separator}}';
     //Replace '{{amount}}' in the format string with the rounded amount
     let formattedAmount = moneyFormat.replace(stringToReplace, roundedAmount.toFixed(2));
+    const formattedAmount1 = moneyFormat.replace(stringToReplace, roundedAmount.toFixed(0));
+
     //Adjust for currencies that use comma as decimal separator
     if (storeCurrency === 'EUR') {
       formattedAmount = formattedAmount.replace('.', ',');
     }
     return {
       formattedAmount,
-      roundedAmount
+      roundedAmount,
+      formattedAmount1
     };
   }
   throw new Error('Shopify currency rate is not available.');

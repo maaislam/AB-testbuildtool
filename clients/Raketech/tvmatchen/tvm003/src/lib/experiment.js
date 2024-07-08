@@ -53,7 +53,7 @@ export default () => {
       document.body.classList.remove(`${ID}__modalOpen`);
     }
   });
-  if (VARIATION === 'control') return;
+  if (VARIATION === 'Control') return;
 
   init();
 };

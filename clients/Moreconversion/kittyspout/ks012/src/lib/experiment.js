@@ -1,3 +1,4 @@
+/*eslint-disable prefer-destructuring */
 import setup from './services/setup';
 import shared from './shared/shared';
 import { getCartCallback, getLocalThreshold, pollerLite } from './helpers/utils';
@@ -7,7 +8,39 @@ const { ID } = shared;
 
 const init = () => {
   const DOLLAR_THRESHOLD = 125;
-  const { formattedAmount, roundedAmount } = getLocalThreshold(DOLLAR_THRESHOLD);
+  //eslint-disable-next-line no-unused-vars
+  let dollar;
+  const { formattedAmount, roundedAmount, formattedAmount1 } = getLocalThreshold(DOLLAR_THRESHOLD);
+
+  if (formattedAmount1.includes('USD')) {
+    //eslint-disable-next-line no-const-assign
+    dollar = formattedAmount1.split('USD</span>')[0].split('class=money>')[1].trim();
+  }
+
+  const stickyFirstMsg = document.querySelector(
+    'div[data-section-type="header"] .acc-top-bar__left .acc-top-bar__text'
+  );
+
+  const productPolicy = document.querySelector(
+    '.product-price-copy-coupon-code .product__policies'
+  );
+
+  const imageSource = document.querySelector(
+    '.product-single__meta .product-block .image-wrap img'
+  );
+  imageSource.src =
+    'https://cdn.shopify.com/s/files/1/0541/4132/1390/files/new_delivery_usp.png?v=1720468883';
+
+  imageSource.srcset =
+    'https://cdn.shopify.com/s/files/1/0541/4132/1390/files/new_delivery_usp.png?v=1720468883';
+
+  if (dollar) {
+    stickyFirstMsg.innerHTML = `FREE SHIPPING OVER ${dollar}+`;
+    productPolicy.innerHTML = `Free shipping on orders over ${dollar}`;
+  } else {
+    stickyFirstMsg.innerHTML = `FREE SHIPPING OVER ${formattedAmount1}+`;
+    productPolicy.innerHTML = `Free shipping on orders over ${formattedAmount1}`;
+  }
 
   getCartCallback((cartData) => {
     const subTotal = cartData.total_price / 100;
@@ -47,6 +80,21 @@ const init = () => {
 
 export default () => {
   setup();
+
+  const { pathname } = window.location;
+  const isMetalBundles =
+    pathname.includes('/products/metalbundles') && !pathname.includes('/products/metalbundles6');
+  const isKittyspoutKit =
+    pathname.includes('/products/the-kittyspout-kit') &&
+    !pathname.includes('/products/the-kittyspout-kit6');
+  if (isMetalBundles) {
+    document.body.style = 'display: none';
+    window.location.href = 'https://www.kittyspout.com/products/metalbundles6';
+  } else if (isKittyspoutKit) {
+    document.body.style = 'display: none';
+    window.location.href = 'https://www.kittyspout.com/products/the-kittyspout-kit6';
+  }
+
   init();
 
   document.addEventListener('rebuy:cart.change', () => {

@@ -60,7 +60,6 @@ const stepTwo = (id) => {
                             <input id="cvc"
                                type="number"
                                name="CVC"
-                               inputmode="numeric"
                                 maxlength="3"
                                placeholder="CVC">
                             <small>Error Message</small>
