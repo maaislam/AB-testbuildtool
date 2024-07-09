@@ -23,13 +23,7 @@ export const keyBenefitsData = [
     benifit: '<b>Underfloor heating</b> compatible'
   },
   {
-    benifit: '<b>25-years</b> manufacturing guarantee'
-  },
-  {
-    benifit: '<b>Underfloor heating</b> compatible'
-  },
-  {
-    benifit: '<b>25-years</b> manufacturing guarantee'
+    benifit: '<b>25 year</b> manufacturing guarantee'
   }
 ];
 
@@ -58,9 +52,9 @@ export const cardData = [
   {
     image:
       'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test303/img_warranty.png',
-    title: '30-day Hassle Free Returns',
+    title: '30-day Hassle-Free Returns',
     description:
-      "We hope you’ll love your new floor as much as we do! But in the unlikely event that you’re not happy or if you have any leftover packs, our 30-day hassle free returns policy is here to save the day. Head to our <a href='https://www.luxuryflooringandfurnishings.co.uk/return'>returns page</a> for full details."
+      "We hope you’ll love your new floor as much as we do! But in the unlikely event that you’re not happy or if you have any leftover packs, our 30-day hassle-free returns policy is here to save the day. Head to our <a href='https://www.luxuryflooringandfurnishings.co.uk/return'>returns page</a> for full details."
   }
 ];
 
@@ -152,13 +146,13 @@ export const floorMeasurements = [
     'Thickness:': '10mm'
   },
   {
-    'Wear layer:': '3mm'
+    'Wear Layer:': '3mm'
   },
   {
-    'Pack Weight:': '7kg'
+    'Pack Weight:': '6.5kg'
   },
   {
-    'Pack Size:': '0.96m2'
+    'Pack Size:': '0.96m²'
   }
 ];
 

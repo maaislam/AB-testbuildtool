@@ -37,6 +37,7 @@ export default () => {
       parentEl.classList.remove(`${ID}__show`);
       const nextEl = parentEl.nextElementSibling;
       nextEl.classList.add(`${ID}__show`);
+      document.body.classList.add('step-one');
     } else if (target.closest(`.${ID}__closeIcon`)) {
       if (document.querySelector(`.${ID}__step[data-attr="1"]`).classList.contains(`${ID}__show`)) {
         gaTracking('Close 1st Popup Cross');
@@ -44,10 +45,12 @@ export default () => {
         document.querySelector(`.${ID}__step[data-attr="2"]`).classList.contains(`${ID}__show`)
       ) {
         gaTracking('Close 2nd Popup');
+        document.body.classList.remove('step-one');
       } else if (
         document.querySelector(`.${ID}__step[data-attr="3"]`).classList.contains(`${ID}__show`)
       ) {
         gaTracking('Close 3rd Popup');
+        document.body.classList.remove('step-two');
       }
 
       document.body.classList.remove(`${ID}__modalOpen`);

@@ -200,6 +200,8 @@ export default () => {
         block: 'start',
         inline: 'nearest'
       });
+    } else if (target.closest(`.${ID}__roomPreview video`)) {
+      document.querySelector(`.${ID}__roomPreviewBtn`).click();
     }
   });
 

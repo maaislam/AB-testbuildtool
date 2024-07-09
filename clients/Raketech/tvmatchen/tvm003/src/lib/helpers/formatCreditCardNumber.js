@@ -1,22 +1,30 @@
 export const formatCardNumber = (value1) => {
-  //remove all non digit characters
+  //Remove all non-digit characters
   const value = value1.replace(/\D/g, '');
   let formattedValue;
   let maxLength;
-  //american express, 15 digits
-  if (/^3[47]\d{0,13}$/.test(value)) {
+
+  //American Express, 15 digits, starts with 3
+  if (/^3\d{0,14}$/.test(value)) {
     formattedValue = value.replace(/(\d{4})/, '$1 ').replace(/(\d{4}) (\d{6})/, '$1 $2 ');
     maxLength = 17;
-  } else if (/^3(?:0[0-5]|[68]\d)\d{0,11}$/.test(value)) {
-    //diner's club, 14 digits
-    formattedValue = value.replace(/(\d{4})/, '$1 ').replace(/(\d{4}) (\d{6})/, '$1 $2 ');
-    maxLength = 16;
-  } else if (/^\d{0,16}$/.test(value)) {
-    //regular cc number, 16 digits
+  } else if (/^4\d{0,15}$/.test(value)) {
+    //Visa, 16 digits, starts with 4
     formattedValue = value
       .replace(/(\d{4})/, '$1 ')
       .replace(/(\d{4}) (\d{4})/, '$1 $2 ')
       .replace(/(\d{4}) (\d{4}) (\d{4})/, '$1 $2 $3 ');
+    maxLength = 19;
+  } else if (/^5\d{0,15}$/.test(value)) {
+    //MasterCard, 16 digits, starts with 5
+    formattedValue = value
+      .replace(/(\d{4})/, '$1 ')
+      .replace(/(\d{4}) (\d{4})/, '$1 $2 ')
+      .replace(/(\d{4}) (\d{4}) (\d{4})/, '$1 $2 $3 ');
+    maxLength = 19;
+  } else {
+    //Default case for other cards
+    formattedValue = value.replace(/(\d{4})/g, '$1 ').trim();
     maxLength = 19;
   }
 

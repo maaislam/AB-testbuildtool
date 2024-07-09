@@ -11,7 +11,7 @@ const stepThree = (id) => {
                         <input id="email"
                             type="email"
                             name="email"
-                            placeholder="Email address">
+                            placeholder="Email address*">
                     </div>
                     <div class="legal__rule">
                         <div class="toggle--checkbox">
@@ -19,7 +19,7 @@ const stepThree = (id) => {
                                 <input type="checkbox"
                                     class="checkbox">
                                 <span class="control-indicator"></span>
-                                <span class="toggle__button">I agree. <a href="/page/anvandarvillkor/">Term and Conditions</a> applies</span>
+                                <span class="toggle__button">I agree. <a href="/page/anvandarvillkor/">Term and Conditions</a> applies*</span>
                             </label>
                         </div>
                     </div>

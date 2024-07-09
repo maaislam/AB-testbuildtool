@@ -20,26 +20,23 @@ const stepTwoValidation = (id) => {
     return re.test(String(email).toLowerCase());
   };
 
-  const valid_credit_card = (value) => {
-    //Accept only digits, dashes or spaces
-    if (/[^0-9-\s]+/.test(value) || value === '') return false;
+  const validateCardNumber = (number) => {
+    const visaRegex = /^4\d{15}$/;
+    const mcRegex = /^5\d{15}$/;
+    const amexRegex = /^3\d{14}$/;
 
-    //The Luhn Algorithm. It's so pretty.
-    let nCheck = 0;
-    let bEven = false;
-    value = value.replace(/\D/g, '');
+    const cleanedValue = number.replace(/\D/g, '');
 
-    for (let n = value.length - 1; n >= 0; n--) {
-      const cDigit = value.charAt(n);
-      let nDigit = parseInt(cDigit, 10);
-
-      if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
-
-      nCheck += nDigit;
-      bEven = !bEven;
+    if (visaRegex.test(cleanedValue)) {
+      return true;
     }
-
-    return nCheck % 10 == 0;
+    if (mcRegex.test(cleanedValue)) {
+      return true;
+    }
+    if (amexRegex.test(cleanedValue)) {
+      return true;
+    }
+    return false;
   };
 
   const setErrorFor = (input, message) => {
@@ -59,9 +56,11 @@ const stepTwoValidation = (id) => {
   const handleInput = () => {
     const userNameValue = userName.value.trim();
     const emailValue = email.value.trim();
-    const creditCardValue = valid_credit_card(creditCardNumber.value.trim().toString());
+    const creditCardValue = validateCardNumber(creditCardNumber.value.trim().toString());
     const expireDateValue = expireDateValidation(expireDateElem.value);
     const cvcValue = cvcNumber.value;
+
+    console.log('creditCardValue', creditCardValue);
 
     //Checking for username
     if (userNameValue === '') {
@@ -119,6 +118,17 @@ const stepTwoValidation = (id) => {
       parentEl.classList.remove(`${id}__show`);
       const nextEl = parentEl.nextElementSibling;
       nextEl.classList.add(`${id}__show`);
+      document.body.classList.remove('step-one');
+      document.body.classList.add('step-two');
+    } else if (
+      userNameValue &&
+      isEmail(emailValue) &&
+      creditCardValue &&
+      expireDateValue &&
+      cvcValue &&
+      !checkbox.checked
+    ) {
+      checkbox.closest('.legal__rule').classList.add('error');
     }
   };
 
@@ -176,6 +186,13 @@ const stepTwoValidation = (id) => {
     }
 
     event.target.value = value;
+  });
+
+  //checkbox input field
+  checkbox.addEventListener('click', (e) => {
+    if (e.target.checked) {
+      checkbox.closest('.legal__rule').classList.remove('error');
+    }
   });
 
   //Event listener to submit form

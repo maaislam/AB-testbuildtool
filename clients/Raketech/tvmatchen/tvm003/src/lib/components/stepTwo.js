@@ -29,14 +29,14 @@ const stepTwo = (id) => {
                         <input id="name"
                                type="text"
                                name="full-name"
-                               placeholder="Full Name">
+                               placeholder="Full Name*">
                         <small>Error Message</small>
                     </div>
                     <div class="${id}__form-field ${id}__email">
                         <input id="email"
                                type="email"
                                name="email"
-                               placeholder="Email address">
+                               placeholder="Email address*">
                         <small>Error Message</small>
                     </div>
                     <div class="${id}__form-field ${id}__creditCradNumber">
@@ -44,7 +44,7 @@ const stepTwo = (id) => {
                                type="text"
                                name="creditcard"
                                inputmode="numeric"
-                               placeholder="Credit Card Number">
+                               placeholder="Credit Card Number*">
                         <small>Error Message</small>
                     </div>
                     <div class="${id}__form-field ${id}__cxprationCvc">
@@ -53,7 +53,7 @@ const stepTwo = (id) => {
                                type="text"
                                name="expiration"
                                maxlength="7"
-                               placeholder="Expiring Date MM/YY">
+                               placeholder="Expiring Date MM/YY*">
                             <small>Error Message</small>
                         </div>
                         <div class="" id="cvcDiv">
@@ -61,7 +61,7 @@ const stepTwo = (id) => {
                                type="number"
                                name="CVC"
                                 maxlength="3"
-                               placeholder="CVC">
+                               placeholder="CVC*">
                             <small>Error Message</small>
                         </div>
                         
@@ -72,7 +72,7 @@ const stepTwo = (id) => {
                                 <input type="checkbox"
                                        class="checkbox">
                                 <span class="control-indicator"></span>
-                                <span class="toggle__button">I agree. <a href="/page/anvandarvillkor/">Term and Conditions</a> applies</span>
+                                <span class="toggle__button">I agree. <a href="/page/anvandarvillkor/">Term and Conditions</a> applies*</span>
                             </label>
                         </div>
                     </div>

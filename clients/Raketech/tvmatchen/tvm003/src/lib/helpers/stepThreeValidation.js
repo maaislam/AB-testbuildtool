@@ -39,11 +39,21 @@ const stepThreeValidation = (id) => {
       setSuccessFor(email);
     }
 
-    if (isEmail(emailValue) && checkbox.checked === true) {
+    if (isEmail(emailValue) && checkbox.checked) {
       gaTracking('DB_NoAds Button');
       document.body.classList.remove(`${id}__modalOpen`);
+      document.body.classList.remove('step-two');
+    } else if (isEmail(emailValue) && !checkbox.checked) {
+      checkbox.closest('.legal__rule').classList.add('error');
     }
   };
+
+  //checkbox input field
+  checkbox.addEventListener('click', (e) => {
+    if (e.target.checked) {
+      checkbox.closest('.legal__rule').classList.remove('error');
+    }
+  });
 
   //Event listener to submit form
   form.addEventListener('submit', (e) => {
