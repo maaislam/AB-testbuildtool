@@ -1,4 +1,5 @@
 import gaTracking from '../services/gaTracking';
+import { setCookie } from './utils';
 
 const stepThreeValidation = (id) => {
   //Dom elements
@@ -43,6 +44,7 @@ const stepThreeValidation = (id) => {
       gaTracking('DB_NoAds Button');
       document.body.classList.remove(`${id}__modalOpen`);
       document.body.classList.remove('step-two');
+      setCookie(`${id}__tracker`, true);
     } else if (isEmail(emailValue) && !checkbox.checked) {
       checkbox.closest('.legal__rule').classList.add('error');
     }

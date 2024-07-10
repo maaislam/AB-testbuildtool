@@ -16,7 +16,6 @@ const init = () => {
   if (!document.querySelector(`.${ID}__validateUserModal`) && !experimentCookie) {
     targetPoint.insertAdjacentHTML('beforeend', modalWrapper(ID));
     targetPoint.classList.add(`${ID}__modalOpen`);
-    setCookie(`${ID}__tracker`, true);
 
     stepTwoValidation(ID);
     stepThreeValidation(ID);
@@ -30,6 +29,7 @@ export default () => {
     if (target.closest(`.${ID}__noThanksBtn`)) {
       gaTracking('Close Popup Button');
       document.body.classList.remove(`${ID}__modalOpen`);
+      setCookie(`${ID}__tracker`, true);
     } else if (target.closest(`.${ID}__continue`)) {
       gaTracking('Continue Popup Button');
       const targetedEl = target.closest(`.${ID}__continue`);
@@ -54,6 +54,10 @@ export default () => {
       }
 
       document.body.classList.remove(`${ID}__modalOpen`);
+      setCookie(`${ID}__tracker`, true);
+    } else if (target.closest(`.${ID}__validateUserModal-overlay`)) {
+      document.body.classList.remove(`${ID}__modalOpen`);
+      setCookie(`${ID}__tracker`, true);
     }
   });
   if (VARIATION === 'Control') return;

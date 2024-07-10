@@ -67,5 +67,5 @@ export const deleteCookie = (cookieName) => {
 
 export const setCookie = (cName, cValue) => {
   const path = 'path=/';
-  document.cookie = `${cName}=${cValue}; ${path}`;
+  document.cookie = `${cName}=${cValue}; expires=0; ${path}`;
 };
