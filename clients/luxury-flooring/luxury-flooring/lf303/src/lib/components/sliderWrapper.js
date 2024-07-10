@@ -11,6 +11,7 @@ const sliderWrapper = (id, element) => {
                     ${updatedLists.join('\n')}
               </div>
               <div class="swiper-pagination"></div>
+              <span class="${id}__linkButton ${id}__readMoreReviews ${id}__reviewsForMobile">Read more reviews</span>
           </div>
       `;
   return htmlStr.trim();

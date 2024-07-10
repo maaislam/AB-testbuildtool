@@ -128,6 +128,11 @@ export default () => {
 
       listContainer.querySelector('button').click();
       scrollToBottom(listContainer, list);
+      setTimeout(() => {
+        if (listContainer.querySelector('button').getAttribute('style') === 'display: none;') {
+          target.closest(`.${ID}__readMoreReviews`).style.display = 'none';
+        }
+      }, 1000);
     } else if (target.closest(`.${ID}__benifitDetailsCta`)) {
       const floorSection = document.querySelector(`.${ID}__floorDetailsSection`);
       floorSection.scrollIntoView({
@@ -202,6 +207,61 @@ export default () => {
       });
     } else if (target.closest(`.${ID}__roomPreview video`)) {
       document.querySelector(`.${ID}__roomPreviewBtn`).click();
+    } else if (target.closest(`.${ID}__reviewsForMobile`)) {
+      document
+        .querySelector(`.pdp-reviews:not(.${ID}__mobileReviewSection) .pdp-reviews-list button`)
+        .click();
+
+      pollerLite([() => window.reviewsArrayForMobile.length > 0], () => {
+        const reviewsForMobileWrapper = document.querySelector(`.${ID}__reviewModal-wrapper`);
+        window.reviewsArrayForMobile.forEach((item) => {
+          //const lists = Array.from(reviewsForMobileWrapper.querySelectorAll('.pdp-review'));
+          //const isItem = lists?.find((list) => list === item);
+          //if (!isItem) {
+          reviewsForMobileWrapper.appendChild(item);
+          //}
+        });
+
+        //class add in body
+        document.body.classList.add(`${ID}__modalOpen`);
+        reviewsForMobileWrapper.firstElementChild.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end'
+        });
+      });
+    } else if (
+      target.closest(`.${ID}__reviewModal-overlay`) ||
+      target.closest(`.${ID}__reviewCloseWrapper svg`)
+    ) {
+      document.body.classList.remove(`${ID}__modalOpen`);
+    } else if (target.closest(`.${ID}__reviewsForModal`)) {
+      const moreReviewButton = document.querySelector(
+        `.pdp-reviews:not(.${ID}__mobileReviewSection) .pdp-reviews-list button`
+      );
+
+      moreReviewButton.click();
+
+      setTimeout(() => {
+        pollerLite([() => window.reviewsArrayForMobile.length > 0], () => {
+          const reviewsForMobileWrapper = document.querySelector(`.${ID}__reviewModal-wrapper`);
+          window.reviewsArrayForMobile.forEach((item) => {
+            const lists = Array.from(reviewsForMobileWrapper.querySelectorAll('.pdp-review'));
+            const isItem = lists?.find((list) => list === item);
+            if (!isItem) {
+              reviewsForMobileWrapper.appendChild(item);
+            }
+          });
+
+          reviewsForMobileWrapper.lastElementChild.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end'
+          });
+        });
+
+        if (moreReviewButton.getAttribute('style') === 'display: none;') {
+          target.closest(`.${ID}__reviewsForModal`).classList.add(`${ID}__hide`);
+        }
+      }, 1500);
     }
   });
 
