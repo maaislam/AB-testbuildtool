@@ -7,16 +7,62 @@ import addCard from './addCard';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  pollerLite(['.mui-psyrto .MuiGrid-grid-xs-7'], () => {
-    const casinoTitle = document.querySelector('.mui-psyrto + div span').textContent.trim();
-    if (document.querySelector(`.${ID}_card-container`)) {
-      document.querySelector(`.${ID}_card-container`).remove();
-    }
+  if (VARIATION === '1') {
+    pollerLite(['.mui-psyrto .MuiGrid-grid-xs-7'], () => {
+      if (document.querySelector('.mui-psyrto > div').classList.contains('noBgColor')) {
+        document.querySelector('.mui-psyrto > div').classList.remove('noBgColor');
+      }
 
-    document
-      .querySelector('.mui-psyrto .MuiGrid-grid-xs-7')
-      .insertAdjacentHTML('afterbegin', addCard(ID, casinoTitle));
-  });
+      const casinoTitle = document.querySelector('.mui-psyrto + div span').textContent.trim();
+      const collectBgColor = getComputedStyle(
+        document.querySelector('.mui-psyrto > div')
+      ).backgroundColor;
+
+      const applyBgColorElem = document.querySelector('.mui-psyrto .MuiGrid-grid-xs-5');
+      applyBgColorElem.style.backgroundColor = collectBgColor;
+
+      document.querySelector('.mui-psyrto > div').classList.add('noBgColor');
+
+      if (document.querySelector(`.${ID}_card-container`)) {
+        document.querySelector(`.${ID}_card-container`).remove();
+      }
+
+      document
+        .querySelector('.mui-psyrto .MuiGrid-grid-xs-7')
+        .insertAdjacentHTML('afterbegin', addCard(ID, casinoTitle, VARIATION));
+    });
+  }
+
+  if (VARIATION === '2') {
+    pollerLite(['.mui-psyrto .MuiGrid-grid-xs-7'], () => {
+      const collectColor = getComputedStyle(
+        document.querySelector('.mui-psyrto .MuiGrid-grid-xs-7 span')
+      ).color;
+
+      const casinoTitle = document.querySelector('.mui-psyrto + div span').textContent.trim();
+
+      const reviewPageButton = document.querySelector(
+        '.mui-psyrto .MuiGrid-grid-xs-7 a[data-type="button"]'
+      );
+
+      reviewPageButton &&
+        document
+          .querySelector('.mui-psyrto .MuiGrid-grid-xs-7')
+          .insertAdjacentElement('afterend', reviewPageButton);
+
+      if (document.querySelector(`.${ID}_card-container`)) {
+        document.querySelector(`.${ID}_card-container`).remove();
+      }
+
+      document
+        .querySelector('.mui-psyrto .MuiGrid-grid-xs-7 span')
+        .insertAdjacentHTML('afterend', addCard(ID, casinoTitle, VARIATION));
+
+      const applyBgColorElem = document.querySelector(`.${ID}_card-container`);
+      applyBgColorElem.querySelector('p').style.color = collectColor;
+      applyBgColorElem.style.borderColor = collectColor;
+    });
+  }
 };
 
 export default () => {
@@ -30,7 +76,10 @@ export default () => {
       const { target } = e;
       if (target.closest('.mui-psyrto .MuiGrid-grid-xs-5 a')) {
         gaTracking('Card | Logo');
-      } else if (target.closest('.mui-psyrto .MuiGrid-grid-xs-7 a[data-type="button"]')) {
+      } else if (
+        target.closest('.mui-psyrto .MuiGrid-grid-xs-7 a[data-type="button"]') ||
+        target.closest('.mui-psyrto .MuiGrid-container > a')
+      ) {
         gaTracking('Card | Button');
       }
     });

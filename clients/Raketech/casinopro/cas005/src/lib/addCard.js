@@ -1,7 +1,7 @@
 import { swish, trustly } from './icons';
 
-const addCard = (id, casinoTitle) => {
-  const htmlStr = `
+const addCard = (id, casinoTitle, VARIATION) => {
+  const htmlStrV1 = `
     <div class="${id}_card-container">
         <div class="${id}_card-container-infos">
             <div class="${id}_card-container-infos-texts">
@@ -19,7 +19,17 @@ const addCard = (id, casinoTitle) => {
             </div>
         </div>
     </div>`;
-  return htmlStr;
+
+  const htmlStrV2 = `
+        <div class="${id}_card-container">
+        <div class="${id}_card-container-infos">
+            <div class="${id}_card-container-infos-texts">
+                <p>${casinoTitle}</p>
+            </div>
+        </div>
+    </div>`;
+
+  return VARIATION === '1' ? htmlStrV1 : htmlStrV2;
 };
 
 export default addCard;

@@ -90,13 +90,13 @@ const init = () => {
       observeIntersection(intersectionAnchor, 0, handleIntersection);
     }
   );
-  pollerLite(['.fp-calculator .fp-controls input'], () => {
-    const areaInput = document.querySelector('.fp-calculator .fp-controls input');
-    setTimeout(() => {
-      areaInput.value = 1;
-      areaInput.dispatchEvent(new Event('change'));
-    }, 2000);
-  });
+  //pollerLite(['.fp-calculator .fp-controls input'], () => {
+  //const areaInput = document.querySelector('.fp-calculator .fp-controls input');
+  //setTimeout(() => {
+  //areaInput.value = 1;
+  //areaInput.dispatchEvent(new Event('change'));
+  //}, 2000);
+  //});
 };
 
 export default () => {
@@ -176,7 +176,9 @@ export default () => {
 
       const areaInput = document.querySelector('.fp-calculator .fp-controls input');
       setTimeout(() => {
-        areaInput.value = 1;
+        if (areaInput.value === '') {
+          areaInput.value = 1;
+        }
         areaInput.dispatchEvent(new Event('change'));
         //areaInput.value = '';
         areaInput.focus();
@@ -215,11 +217,7 @@ export default () => {
       pollerLite([() => window.reviewsArrayForMobile.length > 0], () => {
         const reviewsForMobileWrapper = document.querySelector(`.${ID}__reviewModal-wrapper`);
         window.reviewsArrayForMobile.forEach((item) => {
-          //const lists = Array.from(reviewsForMobileWrapper.querySelectorAll('.pdp-review'));
-          //const isItem = lists?.find((list) => list === item);
-          //if (!isItem) {
           reviewsForMobileWrapper.appendChild(item);
-          //}
         });
 
         //class add in body
