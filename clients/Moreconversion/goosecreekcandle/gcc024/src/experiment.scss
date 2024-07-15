@@ -2,4 +2,9 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  #CollectionProductGrid {
+    .collection-pagination {
+      display: none;
+    }
+  }
 }
