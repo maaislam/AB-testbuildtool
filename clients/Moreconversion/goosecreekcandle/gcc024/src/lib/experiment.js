@@ -7,6 +7,8 @@ import { obsIntersection, observeDOM } from './helpers/utils';
 const { ID, VARIATION } = shared;
 
 let pageCounter = 0;
+//eslint-disable-next-line prefer-const
+let paginantionIndex = [];
 
 const init = () => {
   const paginationLastItem = document.querySelector('.pagination')?.lastElementChild;
@@ -20,26 +22,32 @@ const init = () => {
   const url = new URL(nextButtonUrl);
   url.searchParams.set('page', pageCounter);
   const currentPageList = document.querySelector('#template--collection');
-  const loadingElem = `<div class="${ID}__loader">Loading more</div>`;
 
-  currentPageList.insertAdjacentHTML('afterend', loadingElem);
-  fetch(url)
-    .then((response) => response.text())
-    .then((html) => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const collection = doc.querySelectorAll('#template--collection li');
-      collection.forEach((item) => {
-        currentPageList.insertAdjacentElement('beforeend', item);
+  const isPaginationIndex = paginantionIndex.find((item) => item === pageCounter);
+
+  if (isPaginationIndex) {
+    const loadingElem = `<div class="${ID}__loader">Loading more...</div>`;
+    if (!document.querySelector(`.${ID}__loader`)) {
+      currentPageList.insertAdjacentHTML('afterend', loadingElem);
+    }
+    fetch(url)
+      .then((response) => response.text())
+      .then((html) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const collection = doc.querySelectorAll('#template--collection li');
+        collection.forEach((item) => {
+          currentPageList.insertAdjacentElement('beforeend', item);
+        });
+
+        pageCounter += 1;
+        const loaderElem = document.querySelector(`.${ID}__loader`);
+        loaderElem.remove();
+      })
+      .catch((error) => {
+        console.log('An error occurred:', error);
       });
-
-      pageCounter += 1;
-      const loaderElem = document.querySelector(`.${ID}__loader`);
-      loaderElem.remove();
-    })
-    .catch((error) => {
-      console.log('An error occurred:', error);
-    });
+  }
 };
 
 export default () => {
@@ -52,6 +60,11 @@ export default () => {
     const listItems = document.querySelectorAll('.pagination .page-item');
     const listArray = Array.from(listItems);
     const activeIndex = listArray?.findIndex((item) => item.classList.contains('active'));
+    const modifiedList = listArray.slice(activeIndex + 1, -1);
+    modifiedList.forEach((item) => {
+      paginantionIndex.push(listArray.indexOf(item));
+    });
+
     if (activeIndex) {
       pageCounter = activeIndex + 1;
     }
@@ -69,6 +82,7 @@ export default () => {
 
   observeDOM('#CollectionProductGrid', (mutation) => {
     pageCounter = 0;
+    paginantionIndex = [];
     getActiveFn();
   });
 };
