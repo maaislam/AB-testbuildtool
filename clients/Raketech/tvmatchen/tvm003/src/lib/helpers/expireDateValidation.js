@@ -17,7 +17,7 @@ export const expireDateValidation = (expiryDate) => {
   const mm = expiryDate.substring(0, 2);
   const yy = expiryDate.substring(5);
 
-  if (yy > today_yy || (yy == today_yy && mm >= today_mm)) {
+  if (yy > today_yy || (yy === today_yy && mm >= today_mm)) {
     //all good because the yy from expiryDate is greater than the current yy
     //or if the yy from expiryDate is the same as the current yy but the mm
     //from expiryDate is greater than the current mm

@@ -1,11 +1,11 @@
 /*eslint-disable no-unused-vars */
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 import { obsIntersection } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
-//eslint-disable-next-line prefer-const
+
 let pageCounter = 0;
 
 const init = () => {
@@ -15,19 +15,23 @@ const init = () => {
 
   const url = new URL(nextButtonUrl);
   url.searchParams.set('page', pageCounter);
+  const currentPageList = document.querySelector('#template--collection');
+  const loadingElem = `<div class="${ID}__loader">Loading more</div>`;
 
+  currentPageList.insertAdjacentHTML('afterend', loadingElem);
   fetch(url)
     .then((response) => response.text())
     .then((html) => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
       const collection = doc.querySelectorAll('#template--collection li');
-      const currentPageList = document.querySelector('#template--collection');
       collection.forEach((item) => {
         currentPageList.insertAdjacentElement('beforeend', item);
       });
 
       pageCounter += 1;
+      const loaderElem = document.querySelector(`.${ID}__loader`);
+      loaderElem.remove();
     })
     .catch((error) => {
       console.log('An error occurred:', error);
@@ -36,7 +40,7 @@ const init = () => {
 
 export default () => {
   setup();
-  console.log(ID);
+  //console.log(ID);
 
   if (VARIATION === 'control') return;
 

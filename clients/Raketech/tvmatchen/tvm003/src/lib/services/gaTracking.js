@@ -11,7 +11,7 @@ const mainConfig = {
 };
 
 const gaTracking = (label) => {
-  const { ID, TAG, VARIATION, SITE, CATEGORY, GA_ID } = mainConfig;
+  const { TAG, VARIATION, SITE, CATEGORY, GA_ID } = mainConfig;
   pollerLite([() => document.readyState === 'complete'], () => {
     window.dataLayer.push({
       event: 'cro_event',

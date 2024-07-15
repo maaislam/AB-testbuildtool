@@ -1,3 +1,4 @@
+/*eslint-disable no-useless-escape */
 /*eslint-disable no-param-reassign */
 import { expireDateInputHandler } from './expireDateInputHandler';
 import { expireDateValidation } from './expireDateValidation';
@@ -14,10 +15,10 @@ const stepTwoValidation = (id) => {
   const cvcNumber = form.querySelector('#cvc');
   const checkbox = form.querySelector('input[type="checkbox"]');
 
-  const isEmail = (email) => {
+  const isEmail = (emailInput) => {
     const re =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+    return re.test(String(emailInput).toLowerCase());
   };
 
   const validateCardNumber = (number) => {
@@ -150,7 +151,7 @@ const stepTwoValidation = (id) => {
         document
           .querySelector('#cc')
           .getAttribute('data-lastvalue')
-          .charAt(cursor - 1) == ' '
+          .charAt(cursor - 1) === ' '
       ) {
         //eslint-disable-next-line no-plusplus
         cursor--;
@@ -161,7 +162,7 @@ const stepTwoValidation = (id) => {
     if (lastValue != formattedValue) {
       //increment cursor when inserting character before a space
       //i.e. "1234| 6" => "5" typed => "1234 5|6"
-      if (lastValue.charAt(cursor) == ' ' && formattedValue.charAt(cursor - 1) == ' ') {
+      if (lastValue.charAt(cursor) === ' ' && formattedValue.charAt(cursor - 1) === ' ') {
         //eslint-disable-next-line no-plusplus
         cursor++;
       }
