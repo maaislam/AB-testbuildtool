@@ -2,16 +2,20 @@
 import setup from './services/setup';
 
 import shared from './shared/shared';
-import { obsIntersection } from './helpers/utils';
+import { obsIntersection, observeDOM } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
 let pageCounter = 0;
 
 const init = () => {
-  const paginationLastItem = document.querySelector('.pagination').lastElementChild;
-  const nextButtonElem = paginationLastItem.querySelector('a');
-  const nextButtonUrl = nextButtonElem.href;
+  const paginationLastItem = document.querySelector('.pagination')?.lastElementChild;
+  const nextButtonElem = paginationLastItem?.querySelector('a');
+  const nextButtonUrl = nextButtonElem?.href;
+
+  if (!nextButtonUrl) {
+    return;
+  }
 
   const url = new URL(nextButtonUrl);
   url.searchParams.set('page', pageCounter);
@@ -44,11 +48,16 @@ export default () => {
 
   if (VARIATION === 'control') return;
 
-  const listItems = document.querySelectorAll('.pagination .page-item');
-  const listArray = Array.from(listItems);
-  const activeIndex = listArray.findIndex((item) => item.classList.contains('active'));
+  const getActiveFn = () => {
+    const listItems = document.querySelectorAll('.pagination .page-item');
+    const listArray = Array.from(listItems);
+    const activeIndex = listArray?.findIndex((item) => item.classList.contains('active'));
+    if (activeIndex) {
+      pageCounter = activeIndex + 1;
+    }
+  };
 
-  pageCounter = activeIndex;
+  getActiveFn();
 
   const obserElem = document.querySelector('.collection-bottom-description > span');
   const callBackHandler = (entry) => {
@@ -57,4 +66,9 @@ export default () => {
     }
   };
   obsIntersection(obserElem, 1, callBackHandler);
+
+  observeDOM('#CollectionProductGrid', (mutation) => {
+    pageCounter = 0;
+    getActiveFn();
+  });
 };

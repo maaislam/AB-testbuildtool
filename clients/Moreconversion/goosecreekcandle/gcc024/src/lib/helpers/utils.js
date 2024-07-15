@@ -33,9 +33,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   const config = configObject || {
     childList: true,
     subtree: false,
-    attributes: true,
-    characterData: false,
-    characterDataOldValue: false
+    attributes: true
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
@@ -61,6 +59,7 @@ export const obsIntersection = (target, threshold, callback) => {
       threshold
     }
   );
+
   if (!target) {
     return;
   }
