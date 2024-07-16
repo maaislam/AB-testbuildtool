@@ -2,7 +2,7 @@
 import setup from './services/setup';
 
 import shared from './shared/shared';
-import { obsIntersection, observeDOM } from './helpers/utils';
+import { obsIntersection, observeDOM, pollerLite } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
@@ -25,29 +25,29 @@ const init = () => {
 
   const isPaginationIndex = paginantionIndex.find((item) => item === pageCounter);
 
-  if (isPaginationIndex) {
-    const loadingElem = `<div class="${ID}__loader">Loading more...</div>`;
-    if (!document.querySelector(`.${ID}__loader`)) {
-      currentPageList.insertAdjacentHTML('afterend', loadingElem);
-    }
-    fetch(url)
-      .then((response) => response.text())
-      .then((html) => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const collection = doc.querySelectorAll('#template--collection li');
-        collection.forEach((item) => {
-          currentPageList.insertAdjacentElement('beforeend', item);
-        });
+  if (!isPaginationIndex) return;
 
-        pageCounter += 1;
-        const loaderElem = document.querySelector(`.${ID}__loader`);
-        loaderElem.remove();
-      })
-      .catch((error) => {
-        console.log('An error occurred:', error);
-      });
+  const loadingElem = `<div class="${ID}__loader">Loading more...</div>`;
+  if (!document.querySelector(`.${ID}__loader`)) {
+    currentPageList.insertAdjacentHTML('afterend', loadingElem);
   }
+  fetch(url)
+    .then((response) => response.text())
+    .then((html) => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const collection = doc.querySelectorAll('#template--collection li');
+      collection.forEach((item) => {
+        currentPageList.insertAdjacentElement('beforeend', item);
+      });
+
+      pageCounter += 1;
+      const loaderElem = document.querySelector(`.${ID}__loader`);
+      loaderElem?.remove();
+    })
+    .catch((error) => {
+      console.log('An error occurred:', error);
+    });
 };
 
 export default () => {
@@ -81,8 +81,10 @@ export default () => {
   obsIntersection(obserElem, 1, callBackHandler);
 
   observeDOM('#CollectionProductGrid', (mutation) => {
-    pageCounter = 0;
-    paginantionIndex = [];
-    getActiveFn();
+    pollerLite(['.collection-grid-wrapper > #CollectionProductGrid', 'ol.pagination'], () => {
+      pageCounter = 0;
+      paginantionIndex = [];
+      getActiveFn();
+    });
   });
 };

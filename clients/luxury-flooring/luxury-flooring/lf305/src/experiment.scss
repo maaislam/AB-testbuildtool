@@ -1,0 +1,106 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__uspsWrapperContainer {
+    max-width: 1100px;
+    margin: 13px auto 45px;
+    .#{$id}__uspsWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .#{$id}__item {
+        display: flex;
+        align-items: center;
+        flex: 0 0 calc(100% / 3);
+        margin-right: 10px;
+
+        &:nth-child(2) {
+          margin-left: 40px;
+          @media screen and (max-width: 1023px) {
+            margin-left: 0;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+          @media screen and (max-width: 1023px) {
+            margin-top: 15px;
+          }
+        }
+
+        @media screen and (max-width: 1180px) {
+          margin-right: 5px;
+        }
+
+        @media screen and (max-width: 1023px) {
+          flex-direction: column;
+          flex: 1 1 calc(100% / 3);
+        }
+      }
+
+      .#{$id}__icon {
+        .floorFree {
+          width: 61px;
+          height: 46px;
+          @media screen and (max-width: 1023px) {
+            width: 62px;
+            height: 59px;
+          }
+        }
+
+        .priceMatch {
+          width: 62px;
+          height: 59px;
+        }
+        .freeSample {
+          width: 54px;
+          height: 39px;
+
+          @media screen and (max-width: 1023px) {
+            width: 62px;
+            height: 59px;
+          }
+        }
+      }
+
+      .#{$id}__text {
+        font-size: 16px;
+        font-family: 'lucida-bright';
+        line-height: 1.2;
+        color: #202020;
+        margin-left: 8px;
+
+        @media screen and (max-width: 1180px) {
+          font-size: 14px;
+          line-height: 1.2;
+        }
+
+        @media screen and (max-width: 1023px) {
+          text-align: center;
+          margin-left: 0;
+        }
+      }
+
+      @media screen and (max-width: 1023px) {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media screen and (max-width: 1023px) {
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 992px) {
+      margin: 13px auto 0px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin: 13px auto 45px;
+    }
+
+    @media screen and (max-width: 767px) {
+      //display: none;
+    }
+  }
+}
