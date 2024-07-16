@@ -61,6 +61,8 @@ const stepTwoValidation = (id) => {
     const expireDateValue = expireDateValidation(expireDateElem.value);
     const cvcValue = cvcNumber.value;
 
+    console.log('creditCardValue', creditCardValue);
+
     //Checking for username
     if (userNameValue === '') {
       setErrorFor(userName, 'Username cannot be blank');

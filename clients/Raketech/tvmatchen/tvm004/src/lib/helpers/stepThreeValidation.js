@@ -46,6 +46,10 @@ const stepThreeValidation = (id) => {
       document.body.classList.remove('step-two');
       //setCookie(`${id}__tracker`, true);
       window.sessionStorage.setItem(`${id}__tracker`, true);
+
+      document.querySelectorAll(`.${id}__crossAds`).forEach((item) => {
+        item.remove();
+      });
     } else if (isEmail(emailValue) && !checkbox.checked) {
       checkbox.closest('.legal__rule').classList.add('error');
     }
