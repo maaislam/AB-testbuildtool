@@ -1,0 +1,56 @@
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.location.pathname.includes('/products/')) {
+
+            const hasDiscount = document.querySelector('.product__price--compare');
+
+            const targetElement = document.querySelector('.jdgm-widget');
+
+            if (targetElement && !hasDiscount) {
+                const priceElement = document.querySelector('.product__price');
+                const priceClone = priceElement.cloneNode(true);
+                targetElement.appendChild(priceClone);
+            } else if (targetElement && hasDiscount) {
+                const oldPriceElement = document.querySelector('.product__price--compare');
+                const newPriceElement = document.querySelector('.product__price.on-sale');
+                const oldPriceClone = oldPriceElement.cloneNode(true);
+                const newPriceClone = newPriceElement.cloneNode(true);
+                targetElement.appendChild(oldPriceClone);
+                targetElement.appendChild(newPriceElement);
+            }
+        }
+    });
+</script>
+
+<style>
+    [data-product-thumbs].small--hide {
+        display: block !important;
+    }
+
+    .product__main-photos .flickity-page-dots {
+        display: none;
+    }
+
+    .product__thumb-arrow {
+        display: none !important;
+    }
+
+    .product-block--price {
+        display: none;
+    }
+
+    .jdgm-widget.jdgm-widget {
+        display: flex !important;
+        align-items: center;
+        margin-top: 32px;
+    }
+
+    .jdgm-widget.jdgm-widget [data-product-price],
+    .jdgm-widget.jdgm-widget [data-compare-price] {
+        margin-left: 10px;
+    }
+
+    .variant__button-label.color-swatch {
+        box-shadow: 0 0 0 1px #000;
+    }
+</style>
