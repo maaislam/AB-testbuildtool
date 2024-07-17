@@ -1,4 +1,4 @@
 import activate from './lib/experiment';
 import { pollerLite } from './lib/helpers/utils';
 
-pollerLite(['body.template-product', '#AddToCartForm'], activate);
+pollerLite(['html.hydrated', 'body.template-product', '#AddToCartForm'], activate);

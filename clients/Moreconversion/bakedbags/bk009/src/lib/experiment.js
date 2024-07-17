@@ -1,28 +1,27 @@
-import { uspsWrapper } from './components/uspsWrapper';
-import { uspsData } from './data/data';
+import { widgetWrapper } from './components/widgetWrapper';
+import { widgetData } from './data/data';
 import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
 
 const init = () => {
   //Add your custom code here
 
-  const targetForm = document.querySelector('#AddToCartForm');
-  if (!document.querySelector(`.${ID}__uspsWrapperContainer`)) {
-    targetForm.insertAdjacentHTML('beforeend', uspsWrapper(ID, uspsData));
+  if (!document.querySelector('.custom_widget_wrapper')) {
+    document
+      .querySelector('.paymentButtonsWrapper')
+      .insertAdjacentHTML('afterend', widgetWrapper(widgetData));
   }
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
+  setup();
 
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
-  if (VARIATION === 'control') return; //
+  if (VARIATION === 'Control') return; //
 
   init(); //use if needed
 };

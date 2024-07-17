@@ -2,8 +2,8 @@ import { pollerLite } from '../helpers/utils';
 
 const mainConfig = {
   ID: 'web6454260285 ',
-  TAG: '5759568764',
-  VARIATION: 'V2',
+  TAG: '7006172557',
+  VARIATION: 'V1',
   CLIENT: 'Raketech',
   SITE: 'TVMatchen',
   CATEGORY: 'Mobile',

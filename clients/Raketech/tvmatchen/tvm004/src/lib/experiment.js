@@ -2,7 +2,7 @@ import setup from './services/setup';
 
 import shared from './shared/shared';
 import gaTracking from './services/gaTracking';
-import { pollerLite, observeDOM } from './helpers/utils';
+import { pollerLite } from './helpers/utils';
 import modalWrapper from './components/modalWrapper';
 import stepTwoValidation from './helpers/stepTwoValidation';
 import stepThreeValidation from './helpers/stepThreeValidation';
@@ -10,11 +10,22 @@ import { crossForAds } from './components/crossForAds';
 
 const { ID, VARIATION } = shared;
 
+const callWithInterval = (fn, interval = 500, duration = 10000) => {
+  const intervalId = setInterval(fn, interval);
+
+  setTimeout(() => {
+    clearInterval(intervalId);
+  }, duration);
+};
+
 const renderCloseAds = () => {
+  if (window.sessionStorage.getItem(`${ID}__tracker`)) {
+    return;
+  }
+
   pollerLite([() => document.querySelectorAll('div[data-google-query-id]').length > 0], () => {
     const googleAds = document.querySelectorAll('div[data-google-query-id]');
     googleAds.forEach((googleAd) => {
-      console.log('googleAd', googleAd);
       if (googleAd.querySelector(`.${ID}__crossAds`)) {
         googleAd.querySelector(`.${ID}__crossAds`).remove();
       }
@@ -30,7 +41,6 @@ const init = () => {
 
   if (!document.querySelector(`.${ID}__validateUserModal`) && !experimentCookie) {
     targetPoint.insertAdjacentHTML('beforeend', modalWrapper(ID));
-    //targetPoint.classList.add(`${ID}__modalOpen`);
 
     stepTwoValidation(ID);
     stepThreeValidation(ID);
@@ -38,8 +48,6 @@ const init = () => {
 };
 export default () => {
   setup();
-  renderCloseAds();
-  //setInterval(renderCloseAds, 500);
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
@@ -91,4 +99,5 @@ export default () => {
   if (VARIATION === 'Control') return;
 
   init();
+  callWithInterval(renderCloseAds);
 };

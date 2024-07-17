@@ -52,13 +52,15 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
 export const getDeliveryMessage = () => {
   const orderDate = new Date();
-  const daysToAdd = 4 + Math.floor(Math.random() * 3); //4-6 days delivery
   const deliveryDate = new Date(orderDate);
-  deliveryDate.setDate(deliveryDate.getDate() + daysToAdd);
+  let daysAdded = 0;
 
-  //Check if the delivery date is a Sunday (0) and adjust if necessary
-  if (deliveryDate.getDay() === 0) {
-    deliveryDate.setDate(deliveryDate.getDate() + 1); //Move to Monday
+  while (daysAdded < 6) {
+    deliveryDate.setDate(deliveryDate.getDate() + 1);
+    //Skip weekends
+    if (deliveryDate.getDay() !== 0 && deliveryDate.getDay() !== 6) {
+      daysAdded++;
+    }
   }
 
   const options = {
@@ -68,5 +70,5 @@ export const getDeliveryMessage = () => {
   };
   const formattedDeliveryDate = deliveryDate.toLocaleDateString('en-US', options);
 
-  return `${formattedDeliveryDate}`;
+  return formattedDeliveryDate;
 };

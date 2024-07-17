@@ -11,7 +11,7 @@
         height: 100vh;
         opacity: 0.5;
         background: #000;
-        z-index: 999;
+        z-index: 9999;
         top: 0;
       }
       &-container {
@@ -24,7 +24,7 @@
           max-width: 335px;
           background: #fff;
           height: max-content;
-          z-index: 9999;
+          z-index: 99999;
           opacity: 0;
           animation: scaleUp 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
           .#{$id}__closeIcon {
@@ -84,7 +84,7 @@
             display: none;
             &.#{$id}__show {
               display: block;
-              padding: 42px 12px 12px;
+              padding: 11px 12px 12px;
             }
             .#{$id}__formWrapper {
               margin-top: 12px;
@@ -109,7 +109,7 @@
               }
 
               .#{$id}__email {
-                margin-bottom: 25px;
+                margin-bottom: 8px;
               }
               .#{$id}__creditCradNumber {
               }
@@ -145,17 +145,28 @@
                 font-weight: 400;
                 line-height: 20px;
                 color: #222222;
-                padding: 32px 0 0;
+                padding: 15px 0 0;
                 margin-bottom: 0;
               }
             }
 
             .#{$id}__step-2-content {
+              .#{$id}__sameRow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 8px;
+
+                & > div:last-child {
+                  margin-left: 8px;
+                }
+              }
               .#{$id}__image-with-text {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 .icon {
+                  display: flex;
                 }
 
                 .text {
@@ -164,16 +175,24 @@
                   line-height: 20px;
                   color: #222222;
                   margin-left: 8px;
+
+                  @media screen and (max-width: 390px) {
+                    font-size: 12px;
+                  }
                 }
 
                 &:not(:last-child) {
-                  margin-bottom: 8px;
+                  //margin-bottom: 8px;
                 }
 
-                &:last-child {
-                  margin: 24px 0;
-                }
+                // &:last-child {
+                //   margin: 24px 0;
+                // }
               }
+
+              // .#{$id}__getStarted {
+              //   margin: 8px 0;
+              // }
             }
 
             .#{$id}__step-2-title {
@@ -190,7 +209,7 @@
               font-size: 16px;
               font-weight: 600;
               line-height: 19px;
-              margin-bottom: 19px;
+              margin-bottom: 10px;
               color: #222222;
               text-align: center;
             }
@@ -214,8 +233,8 @@
             }
 
             @media screen and (max-width: 390px) {
-              height: 450px;
-              overflow: scroll;
+              // height: 450px;
+              // overflow: scroll;
             }
           }
           &-step-3 {
@@ -368,6 +387,10 @@
           }
         }
       }
+
+      @media screen and (min-width: 769px) {
+        display: none;
+      }
     }
   }
 
@@ -378,22 +401,22 @@
   .step-one,
   .step-two {
     .#{$id}__validateUserModal-container-content {
-      top: 110px;
-      transform: translate(-50%, 0%);
+      // top: 110px;
+      // transform: translate(-50%, 0%);
     }
   }
 
-  div[data-google-query-id],
-  #betEAcontainer {
+  div[data-google-query-id] {
     position: relative;
     .#{$id}__crossAds {
       display: flex;
       align-items: center;
       justify-content: center;
       position: absolute;
-      top: 0;
-      right: 0;
+      top: -5px;
+      right: -10px;
       width: 47px;
+      height: 21px;
       background-color: #fff;
       padding: 2px;
       border-radius: 4px;

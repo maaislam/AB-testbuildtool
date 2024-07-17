@@ -6,7 +6,7 @@ export const deliveryDate = (id) => {
         <div class="${id}__deliveryDate">
             <div class="${id}__icon">${deliveryDateIcon}</div>
             <div class="${id}__text">
-                <strong>Free 4-6 Day delivery - </strong>
+                <strong>Fast 4-6 Day delivery - </strong>
                 <span>${getDeliveryMessage()}</span>
             </div>
         </div>
