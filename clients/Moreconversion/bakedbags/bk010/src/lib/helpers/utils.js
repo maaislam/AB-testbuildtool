@@ -49,3 +49,16 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
+export const observeIntersection = (target, threshold, callback) => {
+  const observer = new IntersectionObserver(callback, {
+    root: null,
+    rootMargin: '-64px 0px 0px 0px',
+    threshold
+  });
+  if (!target) {
+    return;
+  }
+
+  observer?.observe(target);
+};

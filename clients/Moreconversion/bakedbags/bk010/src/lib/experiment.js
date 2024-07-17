@@ -1,13 +1,14 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
+import { observeIntersection } from './helpers/utils';
+import { atcWrapper } from './components/atcWrapper';
 
 const { ID, VARIATION } = shared;
 
 const init = () => {
   const leftPortion = document.querySelector('.productpage-left');
   const rightPortion = document.querySelector('.productpage-right');
+  const intersectionAnchor = document.querySelector('#AddToCart');
 
   const bundleOptions = [];
   const purchaseOptions = [];
@@ -20,6 +21,12 @@ const init = () => {
   const productPrice = rightPortion
     .querySelector('.productpage-right-title span.money')
     .textContent.trim();
+
+  const productObj = {
+    productImage,
+    productTitle,
+    productPrice
+  };
 
   const bundleList = rightPortion.querySelector('.ast-container .ast-vd-options');
   bundleList.querySelectorAll('.ast-vd-option').forEach((option, index) => {
@@ -39,6 +46,7 @@ const init = () => {
     const isActive = option.classList.contains('ast-vd-option-active');
 
     bundleOptions.push({
+      id: option.querySelector('input[type="radio"]').id,
       quantity,
       price,
       image,
@@ -57,7 +65,8 @@ const init = () => {
       purchaseOptions.push({
         title,
         price,
-        isActive: item.classList.contains('appstle-active-option')
+        isActive: item.classList.contains('appstle-active-option'),
+        id: item.querySelector('input[type="radio"]').id
       });
     } else {
       const radioItems = item.querySelector('.appstleRadioSellingPlanWrapper');
@@ -69,12 +78,42 @@ const init = () => {
         purchaseOptions.push({
           title,
           price,
-          isActive: option.querySelector('input[type="radio"]')?.checked
+          isActive: option.querySelector('input[type="radio"]')?.checked,
+          id: option.querySelector('input[type="radio"]').id
         });
       });
     }
   });
+
   console.log('rightPortion', bundleOptions, purchaseOptions);
+
+  if (!document.querySelector(`.${ID}__atcWrapper`)) {
+    document.body.insertAdjacentHTML(
+      'beforeend',
+      atcWrapper(ID, productObj, bundleOptions, purchaseOptions)
+    );
+  }
+
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      const stickySection = document.querySelector(`.${ID}__atcWrapper`);
+      let scrollTimer;
+      clearTimeout(scrollTimer);
+      if (entry.isIntersecting) {
+        stickySection.classList.remove(`${ID}__show`);
+        stickySection.classList.add('slide-out-bottom');
+        scrollTimer = setTimeout(() => {
+          stickySection.classList.add(`${ID}__hide`);
+        }, 250);
+      } else {
+        stickySection.classList.remove('slide-out-bottom');
+        stickySection.classList.remove(`${ID}__hide`);
+        stickySection.classList.add(`${ID}__show`);
+      }
+    });
+  };
+
+  observeIntersection(intersectionAnchor, 0, handleIntersection);
 };
 
 export default () => {
@@ -85,6 +124,13 @@ export default () => {
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    //if (target.closest('.selector')) {
+    //}
+  });
   if (VARIATION === 'Control') return; //
 
   init(); //
