@@ -1,6 +1,7 @@
 import linkButton from '../components/linkButton';
+import reviewModal from '../components/reviewModal';
 import sliderWrapper from '../components/sliderWrapper';
-import { initSwiper } from './utils';
+import { initSwiper, observeDOM } from './utils';
 
 const reviews = (id, element) => {
   const mobileReviewSection = element.cloneNode(true);
@@ -37,5 +38,21 @@ const reviews = (id, element) => {
     .insertAdjacentHTML('afterend', sliderWrapper(id, listsForMobile));
 
   initSwiper(id);
+
+  //insert the modal
+  document.body.insertAdjacentHTML('beforeend', reviewModal(id));
+
+  window.reviewsArrayForMobile = [];
+  const handlerForReviews = (mutationsList) => {
+    const { addedNodes } = mutationsList;
+    if (addedNodes.length > 0 && addedNodes[0].classList?.contains('pdp-review')) {
+      window.reviewsArrayForMobile.push(addedNodes[0].cloneNode(true));
+    }
+  };
+
+  observeDOM(
+    `.pdp-reviews:not(.${id}__mobileReviewSection) .pdp-reviews-list-container`,
+    handlerForReviews
+  );
 };
 export default reviews;

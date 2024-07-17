@@ -1,0 +1,206 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .mui-psyrto {
+      & > .MuiBox-root {
+        padding: 0;
+
+        &.noBgColor {
+          background-color: unset !important;
+        }
+      }
+      .MuiGrid-container {
+        .MuiGrid-grid-xs-5 {
+          border-top: solid 1px #e7e7e7;
+          border-left: solid 1px #e7e7e7;
+          border-top-left-radius: 0.5rem;
+          a {
+            height: 100%;
+
+            img {
+              height: 100%;
+            }
+          }
+        }
+
+        .MuiGrid-grid-xs-7 {
+          border-top: solid 1px #e7e7e7;
+          border-right: solid 1px #e7e7e7;
+          border-top-right-radius: 0.5rem;
+          background-color: #fff;
+          padding: 12px 8px;
+        }
+
+        & + div {
+          margin-top: 0;
+          margin-inline: 0;
+          background-color: #e8e8e8;
+          color: #555555;
+
+          & a {
+            color: #555555;
+          }
+        }
+      }
+
+      .ctaWrapper__18skR {
+        & + div.sidebarCard__3QkR_ {
+          display: none;
+        }
+      }
+      .#{$id}_card-container {
+        &-infos {
+          display: flex;
+
+          &-texts {
+            width: 100%;
+
+            &-box {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              padding: 8px 0;
+              margin-bottom: 8px;
+              border-radius: 7px;
+              background: #e1e1e1;
+
+              &-icon {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                & p {
+                  font-size: 12px;
+                  line-height: 14px;
+                  margin-bottom: 0;
+                }
+              }
+            }
+
+            & > p {
+              font-size: 16px;
+              font-weight: 700;
+              line-height: 19px;
+              color: #1d254f;
+              margin-bottom: 8px;
+            }
+          }
+        }
+
+        & + span {
+          display: none;
+        }
+      }
+
+      & + div {
+        display: none;
+      }
+    }
+  }
+
+  &-2 {
+    .mui-psyrto {
+      & > .MuiBox-root {
+        padding: 0;
+      }
+      .MuiGrid-container {
+        padding: 10px;
+        .MuiGrid-grid-xs-5 {
+          border-top-left-radius: 0.5rem;
+          a {
+            img {
+            }
+          }
+        }
+
+        .MuiGrid-grid-xs-7 {
+          // border-top: solid 1px #e7e7e7;
+          // border-right: solid 1px #e7e7e7;
+          // border-top-right-radius: 0.5rem;
+          //background-color: #fff;
+          padding-left: 10px;
+
+          & > span {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 24px;
+          }
+        }
+
+        & > a {
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        & + div {
+          margin-top: 0;
+          margin-inline: 0;
+          // background-color: #e8e8e8;
+          // color: #555555;
+
+          & a {
+            //color: #555555;
+          }
+        }
+      }
+
+      .ctaWrapper__18skR {
+        & + div.sidebarCard__3QkR_ {
+          display: none;
+        }
+      }
+      .#{$id}_card-container {
+        border-width: 2px;
+        border-left-style: solid;
+        padding-bottom: 2px;
+        &-infos {
+          display: flex;
+
+          &-texts {
+            width: 100%;
+
+            &-box {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              padding: 8px 0;
+              margin-bottom: 8px;
+              border-radius: 7px;
+              background: #e1e1e1;
+
+              &-icon {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                & p {
+                  font-size: 12px;
+                  line-height: 14px;
+                  margin-bottom: 0;
+                }
+              }
+            }
+
+            & > p {
+              font-size: 16px;
+              font-weight: 700;
+              line-height: 19px;
+              margin-bottom: 0px;
+              padding-left: 8px;
+            }
+          }
+        }
+
+        & + a {
+          display: none;
+        }
+      }
+
+      & + div {
+        display: none;
+      }
+    }
+  }
+}

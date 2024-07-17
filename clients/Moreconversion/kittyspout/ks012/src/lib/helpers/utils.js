@@ -53,16 +53,25 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
 export const getLocalThreshold = (amountInUSD) => {
   if (window.Shopify && window.Shopify.currency && window.Shopify.currency.rate) {
-    const { rate: conversionRate } = window.Shopify.currency;
+    const { rate: conversionRate, active: storeCurrency } = window.Shopify.currency;
     const convertedAmount = amountInUSD * conversionRate;
     const roundedAmount = Math.ceil(convertedAmount); //Round up to the nearest dollar
     const moneyFormat = window.theme.settings.moneyFormat || '$ {{amount}}';
-
+    const stringToReplace = moneyFormat.includes('{{amount}}')
+      ? '{{amount}}'
+      : '{{amount_with_comma_separator}}';
     //Replace '{{amount}}' in the format string with the rounded amount
-    const formattedAmount = moneyFormat.replace('{{amount}}', roundedAmount.toFixed(2));
+    let formattedAmount = moneyFormat.replace(stringToReplace, roundedAmount.toFixed(2));
+    const formattedAmount1 = moneyFormat.replace(stringToReplace, roundedAmount.toFixed(0));
+
+    //Adjust for currencies that use comma as decimal separator
+    if (storeCurrency === 'EUR') {
+      formattedAmount = formattedAmount.replace('.', ',');
+    }
     return {
       formattedAmount,
-      roundedAmount
+      roundedAmount,
+      formattedAmount1
     };
   }
   throw new Error('Shopify currency rate is not available.');
@@ -75,4 +84,11 @@ export const getCartCallback = async (callback) => {
   if (callback) return callback(cartData);
 
   return cartData;
+};
+
+export const formatPrice = (number) => {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  }).format(number / 100);
 };

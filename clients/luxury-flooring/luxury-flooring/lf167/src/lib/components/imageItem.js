@@ -5,7 +5,7 @@ const imageItem = (ID, item, isShowMore, className) => {
   }
 
   const type = item.type === 'video' ? 'video' : 'image';
-  const imageSrc = className === 'desktop' ? item.full : item.thumb;
+  const imageSrc = item.thumb;
 
   return `
     <div class="${classes}" data-key="${item.i - 1}" data-type="${type}">

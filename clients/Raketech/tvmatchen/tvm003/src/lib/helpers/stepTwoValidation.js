@@ -1,3 +1,4 @@
+/*eslint-disable no-useless-escape */
 /*eslint-disable no-param-reassign */
 import { expireDateInputHandler } from './expireDateInputHandler';
 import { expireDateValidation } from './expireDateValidation';
@@ -14,50 +15,49 @@ const stepTwoValidation = (id) => {
   const cvcNumber = form.querySelector('#cvc');
   const checkbox = form.querySelector('input[type="checkbox"]');
 
-  const isEmail = (email) => {
+  const isEmail = (emailInput) => {
     const re =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+    return re.test(String(emailInput).toLowerCase());
   };
 
-  const valid_credit_card = (value) => {
-    //Accept only digits, dashes or spaces
-    if (/[^0-9-\s]+/.test(value)) return false;
+  const validateCardNumber = (number) => {
+    const visaRegex = /^4\d{15}$/;
+    const mcRegex = /^5\d{15}$/;
+    const amexRegex = /^3\d{14}$/;
 
-    //The Luhn Algorithm. It's so pretty.
-    let nCheck = 0;
-    let bEven = false;
-    value = value.replace(/\D/g, '');
+    const cleanedValue = number.replace(/\D/g, '');
 
-    for (let n = value.length - 1; n >= 0; n--) {
-      const cDigit = value.charAt(n);
-      let nDigit = parseInt(cDigit, 10);
-
-      if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
-
-      nCheck += nDigit;
-      bEven = !bEven;
+    if (visaRegex.test(cleanedValue)) {
+      return true;
     }
-
-    return nCheck % 10 == 0;
+    if (mcRegex.test(cleanedValue)) {
+      return true;
+    }
+    if (amexRegex.test(cleanedValue)) {
+      return true;
+    }
+    return false;
   };
 
   const setErrorFor = (input, message) => {
     const formControl = input.parentElement;
-    formControl.className = `${id}__form-field error`;
+    formControl.classList.remove('success');
+    formControl.classList.add('error');
     const small = formControl.querySelector('small');
     small.innerText = message;
   };
 
   const setSuccessFor = (input) => {
     const formControl = input.parentElement;
-    formControl.className = `${id}__form-field success`;
+    formControl.classList.remove('error');
+    formControl.classList.add('success');
   };
 
   const handleInput = () => {
     const userNameValue = userName.value.trim();
     const emailValue = email.value.trim();
-    const creditCardValue = valid_credit_card(creditCardNumber.value.trim().toString());
+    const creditCardValue = validateCardNumber(creditCardNumber.value.trim().toString());
     const expireDateValue = expireDateValidation(expireDateElem.value);
     const cvcValue = cvcNumber.value;
 
@@ -110,13 +110,24 @@ const stepTwoValidation = (id) => {
       creditCardValue &&
       expireDateValue &&
       cvcValue &&
-      checkbox.checked === true
+      checkbox.checked
     ) {
       gaTracking('Subscribe Button');
       const parentEl = form.closest(`.${id}__step`);
       parentEl.classList.remove(`${id}__show`);
       const nextEl = parentEl.nextElementSibling;
       nextEl.classList.add(`${id}__show`);
+      document.body.classList.remove('step-one');
+      document.body.classList.add('step-two');
+    } else if (
+      userNameValue &&
+      isEmail(emailValue) &&
+      creditCardValue &&
+      expireDateValue &&
+      cvcValue &&
+      !checkbox.checked
+    ) {
+      checkbox.closest('.legal__rule').classList.add('error');
     }
   };
 
@@ -138,7 +149,7 @@ const stepTwoValidation = (id) => {
         document
           .querySelector('#cc')
           .getAttribute('data-lastvalue')
-          .charAt(cursor - 1) == ' '
+          .charAt(cursor - 1) === ' '
       ) {
         //eslint-disable-next-line no-plusplus
         cursor--;
@@ -149,7 +160,7 @@ const stepTwoValidation = (id) => {
     if (lastValue != formattedValue) {
       //increment cursor when inserting character before a space
       //i.e. "1234| 6" => "5" typed => "1234 5|6"
-      if (lastValue.charAt(cursor) == ' ' && formattedValue.charAt(cursor - 1) == ' ') {
+      if (lastValue.charAt(cursor) === ' ' && formattedValue.charAt(cursor - 1) === ' ') {
         //eslint-disable-next-line no-plusplus
         cursor++;
       }
@@ -174,6 +185,13 @@ const stepTwoValidation = (id) => {
     }
 
     event.target.value = value;
+  });
+
+  //checkbox input field
+  checkbox.addEventListener('click', (e) => {
+    if (e.target.checked) {
+      checkbox.closest('.legal__rule').classList.remove('error');
+    }
   });
 
   //Event listener to submit form

@@ -2,7 +2,6 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-
   // right side css
   .#{$id}__hide {
     display: none !important;
@@ -39,7 +38,7 @@
     }
 
     .#{$id}__loader div:after {
-      content: " ";
+      content: ' ';
       display: block;
       position: absolute;
       top: 3.2px;
@@ -148,11 +147,17 @@
   }
 
   .fp-calculator {
+    // display: none;
+
+    & > div > div {
+      opacity: 0;
+    }
 
     .#{$id}__fpCalculator,
     .#{$id}__delivery-message,
     .product-add-form {
       display: none;
+      opacity: 1;
     }
 
     .fp-require:not(.complete) {
@@ -261,7 +266,7 @@
         &-calculation {
           padding: 15px 0;
 
-          &>p {
+          & > p {
             font-weight: 700;
             margin-bottom: 0;
             text-align: left;
@@ -369,7 +374,7 @@
       }
     }
 
-    .tooltip span.tooltip-content>p {
+    .tooltip span.tooltip-content > p {
       line-height: 22px;
       margin: 0;
     }
@@ -608,7 +613,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #F9F2E4;
+    background: #f9f2e4;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 999;
 
@@ -715,7 +720,7 @@
           font-weight: 700;
           font-size: 24px;
           line-height: 30px;
-          color: #A6383E;
+          color: #a6383e;
           margin-right: 4px;
 
           &::before {
@@ -771,7 +776,6 @@
       &-button {
         button {
           span {
-
             @include media-query(xlg) {
               font-size: 14px;
             }
@@ -885,7 +889,7 @@
           font-size: 24px;
           line-height: 50px;
           font-weight: 700;
-          color: #A6383E;
+          color: #a6383e;
           margin-right: 5px;
 
           &::before {
@@ -975,7 +979,8 @@
         }
       }
 
-      &-text {}
+      &-text {
+      }
 
       .#{$id}__uspsList {
         display: flex;
@@ -1069,7 +1074,7 @@
           font-size: 24px;
           line-height: 50px;
           font-weight: 700;
-          color: #A6383E;
+          color: #a6383e;
           margin-right: 5px;
 
           &::before {
@@ -1163,7 +1168,8 @@
         }
       }
 
-      &-text {}
+      &-text {
+      }
 
       .#{$id}__floorStr {
         display: flex;
@@ -1402,7 +1408,8 @@
 
             &::after {
               z-index: 999;
-              background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png') bottom left;
+              background: url('https://www.luxuryflooringandfurnishings.co.uk/static/version1709793603/frontend/Ayko/lff/en_GB/Magento_ProductVideo/img/gallery-sprite.png')
+                bottom left;
               bottom: 0;
               content: '';
               height: 40px;
@@ -1479,7 +1486,7 @@
     }
   }
 
-  .product-info-price>div:not(.flockr),
+  .product-info-price > div:not(.flockr),
   .product-info-cta {
     display: none;
   }

@@ -1,0 +1,13 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .collection-pagination {
+    display: none !important;
+  }
+
+  &__loader {
+    text-align: center;
+    transform: translateY(-25px);
+  }
+}
