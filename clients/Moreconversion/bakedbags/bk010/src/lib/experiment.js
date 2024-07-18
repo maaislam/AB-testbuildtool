@@ -2,16 +2,17 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { observeIntersection } from './helpers/utils';
 import { atcWrapper } from './components/atcWrapper';
+import { activeBundleOption } from './components/activeBundleOption';
+import { activePurchaseOption } from './components/activePurchaseOption';
 
 const { ID, VARIATION } = shared;
+const bundleOptions = [];
+const purchaseOptions = [];
 
 const init = () => {
   const leftPortion = document.querySelector('.productpage-left');
   const rightPortion = document.querySelector('.productpage-right');
   const intersectionAnchor = document.querySelector('#AddToCart');
-
-  const bundleOptions = [];
-  const purchaseOptions = [];
 
   const productImage = leftPortion.querySelector('.slick-slide.slick-active img').src;
   const productTitle = rightPortion
@@ -70,18 +71,20 @@ const init = () => {
       });
     } else {
       const radioItems = item.querySelector('.appstleRadioSellingPlanWrapper');
-      radioItems.querySelectorAll('.appstle-radio-wrapper').forEach((option) => {
-        title = option.innerText.split('\n').join(' ').trim();
-        //eslint-disable-next-line prefer-destructuring
-        price = `$${title.split('$')[1].split('/delivery')[0]}`;
+      radioItems
+        .querySelectorAll('.appstle-radio-wrapper .appstle-radio-input-wrapper')
+        .forEach((option) => {
+          title = option.innerText.split('\n').join(' ').trim();
+          //eslint-disable-next-line prefer-destructuring
+          price = `$${title.split('$')[1].split('/delivery')[0]}`;
 
-        purchaseOptions.push({
-          title,
-          price,
-          isActive: option.querySelector('input[type="radio"]')?.checked,
-          id: option.querySelector('input[type="radio"]').id
+          purchaseOptions.push({
+            title,
+            price,
+            isActive: option.querySelector('input[type="radio"]')?.checked,
+            id: option.querySelector('input[type="radio"]').id
+          });
         });
-      });
     }
   });
 
@@ -128,8 +131,97 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
 
-    //if (target.closest('.selector')) {
-    //}
+    if (target.closest(`.${ID}__bundleOptionsContainer .${ID}__activeBundleOption`)) {
+      const parentElement = target.closest(`.${ID}__bundleOptionsContainer`);
+      parentElement.classList.toggle('active');
+    } else if (target.closest(`.${ID}__purchaseOptionsContainer .${ID}__activeBundleOption`)) {
+      const parentElement = target.closest(`.${ID}__purchaseOptionsContainer`);
+      parentElement.classList.toggle('active');
+    } else if (target.closest(`.${ID}__bundleOptionsContainer .bundleOptionLists .bundleOption`)) {
+      const parentElement = target.closest(`.${ID}__bundleOptionsContainer`);
+      const { id } = target.closest(
+        `.${ID}__bundleOptionsContainer .bundleOptionLists .bundleOption`
+      );
+
+      const activeBundle = bundleOptions.find((item) => item.id === id);
+      document.querySelector(
+        `.${ID}__bundleOptionsContainer .${ID}__activeBundleOption`
+      ).innerHTML = activeBundleOption(activeBundle);
+      parentElement.classList.remove('active');
+
+      document.querySelector(`.productpage-right #${id}`).click();
+    } else if (
+      target.closest(`.${ID}__purchaseOptionsContainer .bundleOptionLists .bundleOption`)
+    ) {
+      const parentElement = target.closest(`.${ID}__purchaseOptionsContainer`);
+      const { id } = target.closest(
+        `.${ID}__purchaseOptionsContainer .bundleOptionLists .bundleOption`
+      );
+
+      const activeBundle = purchaseOptions.find((item) => item.id === id);
+      const isActiveIndex = purchaseOptions.findIndex((item) => item.id === id);
+      document.querySelector(
+        `.${ID}__purchaseOptionsContainer .${ID}__activeBundleOption`
+      ).innerHTML = activePurchaseOption(activeBundle, isActiveIndex);
+      parentElement.classList.remove('active');
+
+      if (id.includes('appstle_subscription')) {
+        document
+          .querySelector('.appstle_include_dropdown .appstle_subscription_radio_wrapper input')
+          .click();
+      }
+
+      setTimeout(() => {
+        document
+          .querySelector(`.productpage-right .appstle_subscription_wrapper_option #${id}`)
+          .click();
+      }, 100);
+    } else if (target.closest('.ast-vd-options .ast-vd-option')) {
+      const clickcedItem = target.closest('.ast-vd-options .ast-vd-option').querySelector('input');
+      const { id } = clickcedItem;
+      document.querySelector(`.${ID}__bundleOptionsContainer .bundleOptionLists #${id}`).click();
+    } else if (target.closest('.appstle_sub_widget')) {
+      const clickcedItem = target.closest('.appstle_subscription_wrapper_option');
+
+      setTimeout(() => {
+        if (clickcedItem.classList.contains('appstle_include_dropdown')) {
+          const inputs = document.querySelectorAll('.appstleRadioSellingPlanWrapper input');
+          const activeInput = Array.from(inputs).find((item) => item.checked);
+          const { id } = activeInput;
+
+          const activeBundle = purchaseOptions.find((item) => item.id === id);
+          const isActiveIndex = purchaseOptions.findIndex((item) => item.id === id);
+          document.querySelector(
+            `.${ID}__purchaseOptionsContainer .${ID}__activeBundleOption`
+          ).innerHTML = activePurchaseOption(activeBundle, isActiveIndex);
+        } else {
+          const activeItem = clickcedItem.querySelector(
+            '.appstle_subscription_wrapper_option input'
+          );
+          const { id } = activeItem;
+          const activeBundle = purchaseOptions.find((item) => item.id === id);
+          const isActiveIndex = purchaseOptions.findIndex((item) => item.id === id);
+          document.querySelector(
+            `.${ID}__purchaseOptionsContainer .${ID}__activeBundleOption`
+          ).innerHTML = activePurchaseOption(activeBundle, isActiveIndex);
+        }
+      }, 500);
+    } else if (
+      target.closest(`.${ID}__atcButtonContainer`) ||
+      target.closest(`.${ID}__atcButtonContainer-mobile`)
+    ) {
+      document.querySelector('#AddToCart').click();
+    } else if (target.closest(`.${ID}__atcWrapper-container`)) {
+      const activeEl = target.closest(`.${ID}__atcWrapper-container`).querySelectorAll('.active');
+      activeEl.forEach((el) => el.classList.remove('active'));
+    } else if (target.closest(`.${ID}__crossIcon`)) {
+      const parentElement = document.querySelector(`.${ID}__atcWrapper`);
+      parentElement.classList.remove(`${ID}__show`);
+      parentElement.classList.add('slide-out-bottom');
+      setTimeout(() => {
+        parentElement.classList.add(`${ID}__hide`);
+      }, 250);
+    }
   });
   if (VARIATION === 'Control') return; //
 
