@@ -98,11 +98,11 @@ const init = () => {
     );
   }
 
+  let scrollTimer;
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
       console.log('🚀 ~ entries.forEach ~ entry:', entry);
       const stickySection = document.querySelector(`.${ID}__atcWrapper`);
-      let scrollTimer;
       clearTimeout(scrollTimer);
       if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
         stickySection.classList.remove('slide-out-bottom');
@@ -248,7 +248,7 @@ export default () => {
       target.closest(`.${ID}__atcButtonContainer-mobile`)
     ) {
       const atcBtn = target.closest('[class*="__atcButtonContainer"]');
-      console.log('🚀 ~ document.body.addEventListener ~ atcBtn:', atcBtn);
+      //console.log('🚀 ~ document.body.addEventListener ~ atcBtn:', atcBtn);
       const controlAtc = document.querySelector('#AddToCart');
       const clickCount = Number(atcBtn.dataset.quantity) || 1;
 
