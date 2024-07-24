@@ -1,3 +1,4 @@
+/*eslint-disable no-param-reassign */
 import setup from './services/setup';
 import shared from './shared/shared';
 import { observeIntersection } from './helpers/utils';
@@ -38,10 +39,10 @@ const init = () => {
     const price = option.querySelector('.ast-vd-option-price-wrapper .money.ast-price').textContent;
     const image =
       index === 0
-        ? 'https://www.bakedbags.com/cdn/shop/files/badge-1.svg?v=1699302651'
+        ? '/cdn/shop/files/badge-1.svg?v=1699302651'
         : index === '1'
-        ? 'https://www.bakedbags.com/cdn/shop/files/badge-2.svg?v=1699302652'
-        : 'https://www.bakedbags.com/cdn/shop/files/badge-3.svg?v=1699302652';
+        ? '/cdn/shop/files/badge-2.svg?v=1699302652'
+        : '/cdn/shop/files/badge-3.svg?v=1699302652';
     const savings = option.querySelector('.discount-badge span.money')?.textContent || 0;
 
     const isActive = option.classList.contains('ast-vd-option-active');
@@ -57,7 +58,7 @@ const init = () => {
   });
 
   const purchaseList = rightPortion.querySelector('.appstle_subscription_wrapper');
-  purchaseList.querySelectorAll('.appstle_subscription_wrapper_option').forEach((item, index) => {
+  purchaseList.querySelectorAll('.appstle_subscription_wrapper_option').forEach((item) => {
     let title;
     let price;
     if (!item.classList.contains('appstle_include_dropdown')) {
@@ -99,19 +100,20 @@ const init = () => {
 
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
+      console.log('🚀 ~ entries.forEach ~ entry:', entry);
       const stickySection = document.querySelector(`.${ID}__atcWrapper`);
       let scrollTimer;
       clearTimeout(scrollTimer);
-      if (entry.isIntersecting) {
+      if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+        stickySection.classList.remove('slide-out-bottom');
+        stickySection.classList.remove(`${ID}__hide`);
+        stickySection.classList.add(`${ID}__show`);
+      } else {
         stickySection.classList.remove(`${ID}__show`);
         stickySection.classList.add('slide-out-bottom');
         scrollTimer = setTimeout(() => {
           stickySection.classList.add(`${ID}__hide`);
         }, 250);
-      } else {
-        stickySection.classList.remove('slide-out-bottom');
-        stickySection.classList.remove(`${ID}__hide`);
-        stickySection.classList.add(`${ID}__show`);
       }
     });
   };
@@ -150,6 +152,11 @@ export default () => {
       parentElement.classList.remove('active');
 
       document.querySelector(`.productpage-right #${id}`).click();
+
+      document.querySelector(
+        `.${ID}__purchaseOptionsContainer .${ID}__activeBundleOption`
+      ).innerHTML = activePurchaseOption(purchaseOptions[0], 0);
+      document.querySelector(`.productpage-right #${purchaseOptions[0].id}`).click();
     } else if (
       target.closest(`.${ID}__purchaseOptionsContainer .bundleOptionLists .bundleOption`)
     ) {
@@ -163,7 +170,13 @@ export default () => {
       document.querySelector(
         `.${ID}__purchaseOptionsContainer .${ID}__activeBundleOption`
       ).innerHTML = activePurchaseOption(activeBundle, isActiveIndex);
+
+      document.querySelector(
+        `.${ID}__bundleOptionsContainer .${ID}__activeBundleOption`
+      ).innerHTML = activeBundleOption(bundleOptions[0]);
       parentElement.classList.remove('active');
+
+      const atcBtns = document.querySelectorAll('[class*="__atcButtonContainer"]');
 
       if (id.includes('appstle_subscription')) {
         document
@@ -194,6 +207,9 @@ export default () => {
           document.querySelector(
             `.${ID}__purchaseOptionsContainer .${ID}__activeBundleOption`
           ).innerHTML = activePurchaseOption(activeBundle, isActiveIndex);
+          //document.querySelector(
+          //`.${ID}__bundleOptionsContainer .${ID}__activeBundleOption`
+          //).innerHTML = activeBundleOption(bundleOptions[0]);
         } else {
           const activeItem = clickcedItem.querySelector(
             '.appstle_subscription_wrapper_option input'
@@ -204,13 +220,18 @@ export default () => {
           document.querySelector(
             `.${ID}__purchaseOptionsContainer .${ID}__activeBundleOption`
           ).innerHTML = activePurchaseOption(activeBundle, isActiveIndex);
+          //document.querySelector(
+          //`.${ID}__bundleOptionsContainer .${ID}__activeBundleOption`
+          //).innerHTML = activeBundleOption(bundleOptions[0]);
         }
       }, 500);
     } else if (
       target.closest(`.${ID}__atcButtonContainer`) ||
       target.closest(`.${ID}__atcButtonContainer-mobile`)
     ) {
-      document.querySelector('#AddToCart').click();
+      const atcBtn = document.querySelector('#AddToCart');
+
+      atcBtn.click();
     } else if (target.closest(`.${ID}__atcWrapper-container`)) {
       const activeEl = target.closest(`.${ID}__atcWrapper-container`).querySelectorAll('.active');
       activeEl.forEach((el) => el.classList.remove('active'));
