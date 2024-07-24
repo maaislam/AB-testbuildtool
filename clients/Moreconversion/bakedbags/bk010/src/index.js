@@ -2,7 +2,7 @@ import activate from './lib/experiment';
 import { pollerLite } from './lib/helpers/utils';
 
 pollerLite(
-  ['html.hydrated', 'body.template-product', '.ast-container .ast-vd-options', '#AddToCartForm'],
+  ['.hydrated', 'body.template-product', '.ast-container .ast-vd-options', '#AddToCartForm'],
   () => {
     setTimeout(activate, 2000);
   }
