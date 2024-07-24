@@ -1,0 +1,8 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .indiv-product .hp-title {
+        margin-top: 0;
+    }
+}
