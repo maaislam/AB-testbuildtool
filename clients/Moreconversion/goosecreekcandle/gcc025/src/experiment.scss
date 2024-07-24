@@ -1,0 +1,11 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .product-recommendations-wrapper:not(.#{$id}__rebuyRecomendations) {
+        display: none;
+    }
+    .indiv-product .hp-title {
+        margin-top: 0;
+    }
+}
