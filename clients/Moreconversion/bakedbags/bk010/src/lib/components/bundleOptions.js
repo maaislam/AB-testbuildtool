@@ -15,7 +15,7 @@ export const bundleOptions = (id, data) => {
           return `
       <div class="bundleOption" isActive="${el.isActive}" id="${el.id}">
       <div class="bundleContents">
-      <span class="bundleQnty">${el.quantity}</span>
+      <span class="bundleQnty" data-quantity="${el.quantity}">${el.quantity}</span>
       <span class="multiple_sign">X</span>
       <img class="bundleOptionImage" width="30px" src="${el.image}" alt="">
       <span class="bundleOptionPrice">${el.price}</span>
