@@ -7,7 +7,6 @@ const { ID } = shared;
 const init = () => {
   const { data } = window.rebuyRecommended;
   const firstFourItems = data.slice(0, 4);
-
   const attachPoint = document.querySelector('.product-recommendations-wrapper');
   attachPoint.insertAdjacentHTML('afterend', cards(ID, firstFourItems));
 };
