@@ -424,6 +424,7 @@
       }
 
       @media screen and (max-width: 1024px) {
+        min-width: auto;
         padding-left: 0;
         padding-right: 12px;
         border-left: none;
@@ -621,7 +622,7 @@
         }
 
         @media screen and (max-width: 570px) {
-          max-width: 151px;
+          max-width: 170px;
         }
 
         // @media screen and (max-width: 400px) {

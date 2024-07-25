@@ -98,11 +98,11 @@ const init = () => {
     );
   }
 
+  let scrollTimer;
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
       console.log('🚀 ~ entries.forEach ~ entry:', entry);
       const stickySection = document.querySelector(`.${ID}__atcWrapper`);
-      let scrollTimer;
       clearTimeout(scrollTimer);
       if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
         stickySection.classList.remove('slide-out-bottom');
@@ -156,6 +156,17 @@ export default () => {
       document.querySelector(
         `.${ID}__purchaseOptionsContainer .${ID}__activeBundleOption`
       ).innerHTML = activePurchaseOption(purchaseOptions[0], 0);
+      const atcBtns = document.querySelectorAll('[class*="__atcButtonContainer"]');
+
+      if (!id.includes('appstle_subscription')) {
+        atcBtns.forEach((btn) => {
+          //get quantity
+          const { quantity } = target.closest('.bundleOption').querySelector('.bundleQnty').dataset;
+          console.log('🚀 ~ atcBtns.forEach ~ quantity:', quantity);
+          btn.dataset.quantity = quantity;
+        });
+      }
+
       document.querySelector(`.productpage-right #${purchaseOptions[0].id}`).click();
     } else if (
       target.closest(`.${ID}__purchaseOptionsContainer .bundleOptionLists .bundleOption`)
@@ -177,6 +188,12 @@ export default () => {
       parentElement.classList.remove('active');
 
       const atcBtns = document.querySelectorAll('[class*="__atcButtonContainer"]');
+
+      atcBtns.forEach((btn) => {
+        //get quantity
+
+        btn.removeAttribute('data-quantity');
+      });
 
       if (id.includes('appstle_subscription')) {
         document
@@ -229,9 +246,18 @@ export default () => {
       target.closest(`.${ID}__atcButtonContainer`) ||
       target.closest(`.${ID}__atcButtonContainer-mobile`)
     ) {
-      const atcBtn = document.querySelector('#AddToCart');
+      const atcBtn = target.closest('[class*="__atcButtonContainer"]');
+      //console.log('🚀 ~ document.body.addEventListener ~ atcBtn:', atcBtn);
+      const controlAtc = document.querySelector('#AddToCart');
+      const clickCount = Number(atcBtn.dataset.quantity) || 1;
 
-      atcBtn.click();
+      for (let index = 0; index < clickCount; index += 1) {
+        setTimeout(() => {
+          controlAtc.click();
+        }, index * 500);
+      }
+
+      //atcBtn.click();
     } else if (target.closest(`.${ID}__atcWrapper-container`)) {
       const activeEl = target.closest(`.${ID}__atcWrapper-container`).querySelectorAll('.active');
       activeEl.forEach((el) => el.classList.remove('active'));

@@ -1,0 +1,64 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__highlightedCollections {
+        margin: 34px auto 47px auto;
+        padding-left: 3%;
+        padding-right: 3%;
+        max-width: 1600px;
+
+        .#{$id}__cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
+
+            @include media-query(xxl) {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            @include media-query(xl) {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            @include media-query(lg) {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        .#{$id}__card {
+            // max-width: 309px;
+            // max-height: 309px;
+            padding: 19px 28px 17px 28px;
+            background: #fff;
+            box-shadow: 0px 0px 12px 0px #00000014;
+        }
+
+        .#{$id}__title {
+            font-family: "Raleway";
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+            color: #000
+        }
+
+        .#{$id}__image {
+            margin-top: 12px;
+
+            .mobileImage {
+                display: none;
+            }
+
+            @include media-query(md) {
+                .mobileImage {
+                    display: block;
+                }
+
+                .desktopImage {
+                    display: none;
+                }
+            }
+        }
+    }
+}
