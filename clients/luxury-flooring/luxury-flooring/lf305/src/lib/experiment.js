@@ -22,15 +22,16 @@ const init = () => {
       if (document.querySelector(`.${ID}__trustpilotSection`)) {
         document.querySelector(`.${ID}__trustpilotSection`).remove();
       }
-      document.querySelector('.breadcrumbs').insertAdjacentHTML('beforeend', trustpilot(ID));
+      document
+        .querySelector(`.${ID}__uspsWrapper`)
+        .insertAdjacentHTML('beforebegin', trustpilot(ID));
       const trustbox = document.querySelector(`.${ID}__trustpilotSection .trustpilot-widget`);
       window.Trustpilot.loadFromElement(trustbox);
     }
   );
 };
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
+  setup();
 
   if (VARIATION === 'Control') return;
 
