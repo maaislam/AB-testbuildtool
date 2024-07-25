@@ -89,7 +89,7 @@ const init = () => {
     }
   });
 
-  console.log('rightPortion', bundleOptions, purchaseOptions);
+  //console.log('rightPortion', bundleOptions, purchaseOptions);
 
   if (!document.querySelector(`.${ID}__atcWrapper`)) {
     document.body.insertAdjacentHTML(
@@ -101,7 +101,7 @@ const init = () => {
   let scrollTimer;
   const handleIntersection = (entries) => {
     entries.forEach((entry) => {
-      console.log('🚀 ~ entries.forEach ~ entry:', entry);
+      //console.log('🚀 ~ entries.forEach ~ entry:', entry);
       const stickySection = document.querySelector(`.${ID}__atcWrapper`);
       clearTimeout(scrollTimer);
       if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {

@@ -1,0 +1,10 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #trustpilot-widget-trustbox-0-wrapper {
+    display: block;
+    background-color: #f8f9fa;
+    padding: 24px 20px;
+  }
+}
