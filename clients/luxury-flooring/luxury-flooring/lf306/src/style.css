@@ -1,0 +1,75 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.hero-banner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.sale-banner {
+    flex: 1 1 30%;
+    background-color: #c62828;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.sale-banner h1 {
+    font-size: 2.5em;
+    margin: 0 0 10px;
+}
+
+.sale-banner p {
+    margin: 10px 0;
+}
+
+.sale-banner button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #c62828;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.image-section {
+    flex: 2 1 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.before-after {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.before, .after {
+    flex: 1 1 45%;
+    text-align: center;
+}
+
+.before img, .after img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+
+.before span, .after span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+}

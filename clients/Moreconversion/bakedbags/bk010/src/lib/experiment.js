@@ -146,7 +146,6 @@ export default () => {
       );
 
       const activeBundle = bundleOptions.find((item) => item.id === id);
-
       document.querySelector(
         `.${ID}__bundleOptionsContainer .${ID}__activeBundleOption`
       ).innerHTML = activeBundleOption(activeBundle);
@@ -258,7 +257,7 @@ export default () => {
         }, index * 500);
       }
 
-      atcBtn.click();
+      //atcBtn.click();
     } else if (target.closest(`.${ID}__atcWrapper-container`)) {
       const activeEl = target.closest(`.${ID}__atcWrapper-container`).querySelectorAll('.active');
       activeEl.forEach((el) => el.classList.remove('active'));

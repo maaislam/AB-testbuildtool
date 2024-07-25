@@ -1,3 +1,5 @@
+import { formatPrice } from '../helpers/utils';
+
 const card = (id, data) => {
     const { featured_image, title, compare_at_price, price, url } = data;
 
@@ -21,9 +23,9 @@ const card = (id, data) => {
                     <span class="indiv-product-title-text">${title}</span>
                     <span class="money-styling">
                         <span class="compare-at-price">
-                            <span class="money">$${compare_at_price}</span>
+                            <span class="money">${formatPrice(compare_at_price)}</span>
                         </span>
-                        <span class="money">$${price}</span>
+                        <span class="money">${formatPrice(price)}</span>
                     </span>
                 </a>
             </div>

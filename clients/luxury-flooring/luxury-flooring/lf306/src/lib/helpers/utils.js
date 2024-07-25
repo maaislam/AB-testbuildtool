@@ -24,13 +24,6 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
     }
   }, POLLING_INTERVAL);
 };
-
-export const formatPrice = (amount, code = 'en-US', currency = 'USD') =>
-  new Intl.NumberFormat(code, {
-    style: 'currency',
-    currency
-  }).format(amount / 100);
-
 export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
   const target = document.querySelector(`${targetSelectorString}`);
 

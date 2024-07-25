@@ -5,4 +5,14 @@
     .indiv-product .hp-title {
         margin-top: 0;
     }
+
+    &__recentlyViewed {
+        .indiv-product-title-text {
+            min-height: 40px;
+
+            @include media-query(sm) {
+                min-height: 59px;
+            }
+        }
+    }
 }

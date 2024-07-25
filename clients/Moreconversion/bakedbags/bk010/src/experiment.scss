@@ -2,11 +2,14 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  button.needsclick[aria-label='Open Form'] {
+    z-index: 89998 !important;
+  }
   &__show {
     position: fixed;
     bottom: 0px;
     left: 0;
-    z-index: 99999;
+    z-index: 89999;
     animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
   .#{$id}__atcWrapper {
@@ -236,6 +239,7 @@
       }
 
       @media screen and (max-width: 1024px) {
+        min-width: auto;
         padding-left: 0;
         padding-right: 12px;
         border-left: none;
@@ -314,7 +318,7 @@
         }
 
         @media screen and (max-width: 570px) {
-          max-width: 151px;
+          max-width: 170px;
         }
 
         // @media screen and (max-width: 400px) {

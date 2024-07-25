@@ -8,4 +8,14 @@
     .indiv-product .hp-title {
         margin-top: 0;
     }
+
+    .#{$id}__rebuyRecomendations {
+        .indiv-product-title-text {
+            min-height: 40px;
+
+            @include media-query(sm) {
+                min-height: 59px;
+            }
+        }
+    }
 }

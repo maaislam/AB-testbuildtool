@@ -13,7 +13,7 @@ export const uspsData = [
   },
   {
     icon: floorFree,
-    title: 'Store your floor for 3 months, for free',
+    title: 'Store your floor for</br> 3 months, for free',
     url: 'https://www.luxuryflooringandfurnishings.co.uk/hold-your-stock'
   }
 ];

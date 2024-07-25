@@ -2,40 +2,118 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__highlightedCollections {
-        margin-top: 0px;
-        margin-left: auto;
-        margin-bottom: 54px;
-        margin-right: auto;
-        padding-left: 2%;
-        padding-right: 2%;
-        max-width: 1600px;
+  &__highlightedCollections {
+    margin: 34px auto 47px auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    max-width: 1600px;
 
-        .#{$id}__cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+    .#{$id}__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 32px;
 
-        .#{$id}__card {
-            max-width: 309px;
-            max-height: 309px;
-        }
+      @include media-query(xxl) {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
 
-        .#{$id}__image {
-            .mobileImage {
-                display: none;
-            }
+      @include media-query(xl) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
 
-            @include media-query(lg) {
-                .mobileImage {
-                    display: block;
-                }
-
-                .desktopImage {
-                    display: none;
-                }
-            }
-        }
+      @include media-query(lg) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
     }
+
+    .#{$id}__card {
+      // max-width: 309px;
+      // max-height: 309px;
+      padding: 19px 28px 17px 28px;
+      background: #fff;
+      box-shadow: 0px 0px 12px 0px #00000014;
+
+      @include media-query(sm) {
+        padding: 12px 16px;
+      }
+
+      @media screen and (max-width: 380px) {
+        padding: 10px 12px;
+      }
+    }
+
+    .#{$id}__title {
+      font-family: 'Raleway';
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      color: #000;
+
+      @include media-query(sm) {
+        font-size: 14px;
+        line-height: 17px;
+      }
+
+      @media screen and (max-width: 380px) {
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+
+    .#{$id}__image {
+      margin-top: 12px;
+
+      .mobileImage {
+        display: none;
+      }
+
+      @include media-query(md) {
+        .mobileImage {
+          display: block;
+        }
+
+        .desktopImage {
+          display: none;
+        }
+      }
+    }
+
+    @include media-query(sm) {
+      margin: 30px auto 37px auto;
+    }
+  }
+
+  .#{$id}__mobileSection {
+    & + .#{$id}__highlightedCollections {
+      .#{$id}__cards {
+        @include media-query(sm) {
+          gap: 10px;
+        }
+        @media screen and (max-width: 672px) {
+          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        }
+
+        @media screen and (max-width: 480px) {
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        }
+
+        @media screen and (max-width: 400px) {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+    }
+  }
+
+  .shg-box-vertical-align-wrapper:not(.#{$id}__mobileSection) {
+    & + .#{$id}__highlightedCollections {
+      @media screen and (max-width: 991px) {
+        display: none;
+      }
+    }
+  }
 }
