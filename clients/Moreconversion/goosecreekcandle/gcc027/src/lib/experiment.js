@@ -41,21 +41,43 @@ const data = [
 
 const init = () => {
   //desktop attachpoint
-  const attachPoint = document.querySelector(
-    '.shogun-root > .shg-box-vertical-align-wrapper .shg-box-vertical-align-wrapper'
-  );
 
-  if (!document.querySelector(`.${ID}__highlightedCollections`)) {
-    attachPoint.insertAdjacentHTML('afterend', cards(ID, data));
+  if (VARIATION === '1') {
+    const attachPoint = document.querySelector(
+      '.shogun-root > .shg-box-vertical-align-wrapper .shg-box-vertical-align-wrapper'
+    );
+
+    if (!document.querySelector(`.${ID}__highlightedCollections`)) {
+      attachPoint.insertAdjacentHTML('afterend', cards(ID, data));
+    }
+
+    //mobile attachpoint
+    const mobileAttachPoint = document.querySelector(
+      '[data-shogun-id] .shg-box-vertical-align-wrapper:nth-child(7)'
+    );
+    mobileAttachPoint.classList.add(`${ID}__mobileSection`);
+    if (!document.querySelector(`.${ID}__mobileSection + .${ID}__highlightedCollections`)) {
+      mobileAttachPoint.insertAdjacentHTML('afterend', cards(ID, data));
+    }
   }
 
-  //mobile attachpoint
-  const mobileAttachPoint = document.querySelector(
-    '[data-shogun-id] .shg-box-vertical-align-wrapper:nth-child(7)'
-  );
-  mobileAttachPoint.classList.add(`${ID}__mobileSection`);
-  if (!document.querySelector(`.${ID}__mobileSection + .${ID}__highlightedCollections`)) {
-    mobileAttachPoint.insertAdjacentHTML('afterend', cards(ID, data));
+  if (VARIATION === '2') {
+    const attachPoint = document.querySelector(
+      '[data-shogun-id] .shg-box-vertical-align-wrapper:nth-child(8)'
+    );
+
+    if (!document.querySelector(`.${ID}__highlightedCollections`)) {
+      attachPoint.insertAdjacentHTML('afterend', cards(ID, data));
+    }
+
+    //mobile attachpoint
+    const mobileAttachPoint = document.querySelector(
+      '[data-shogun-id] .shg-box-vertical-align-wrapper + .shg-c.shg-category '
+    );
+    mobileAttachPoint.classList.add(`${ID}__mobileSection`);
+    if (!document.querySelector(`.${ID}__mobileSection + .${ID}__highlightedCollections`)) {
+      mobileAttachPoint.insertAdjacentHTML('afterend', cards(ID, data));
+    }
   }
 };
 
