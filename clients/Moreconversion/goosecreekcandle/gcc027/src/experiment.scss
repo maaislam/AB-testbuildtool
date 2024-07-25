@@ -32,6 +32,14 @@
       padding: 19px 28px 17px 28px;
       background: #fff;
       box-shadow: 0px 0px 12px 0px #00000014;
+
+      @include media-query(sm) {
+        padding: 12px 16px;
+      }
+
+      @media screen and (max-width: 380px) {
+        padding: 10px 12px;
+      }
     }
 
     .#{$id}__title {
@@ -45,6 +53,11 @@
       @include media-query(sm) {
         font-size: 14px;
         line-height: 17px;
+      }
+
+      @media screen and (max-width: 380px) {
+        font-size: 12px;
+        line-height: 15px;
       }
     }
 
