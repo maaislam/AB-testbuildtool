@@ -78,6 +78,10 @@
         }
       }
     }
+
+    @include media-query(sm) {
+      margin: 30px auto 37px auto;
+    }
   }
 
   .#{$id}__mobileSection {
