@@ -11,7 +11,7 @@ const data = [
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-1-desktop.png?v=1721866848',
     mobileImage:
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-1-mobile.png?v=1721866848',
-    url: 'https://goosecreekcandle.com/collections/lush-foaming-hand-soap'
+    url: 'https://goosecreekcandle.com/collections/new-arrivals'
   },
   {
     title: 'New Fall Fragrances',
@@ -19,7 +19,7 @@ const data = [
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-2-desktop.png?v=1721866848',
     mobileImage:
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-2-mobile.png?v=1721866848',
-    url: ''
+    url: 'https://goosecreekcandle.com/collections/first-look-at-fall'
   },
   {
     title: 'Seasonal Fragrances',
@@ -27,7 +27,7 @@ const data = [
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-3-desktop.png?v=1721866849',
     mobileImage:
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-3-desktop.png?v=1721866849',
-    url: ''
+    url: 'https://goosecreekcandle.com/collections/3-wick-candles'
   },
   {
     title: 'Fruity Fragrances',
@@ -35,7 +35,7 @@ const data = [
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-4-desktop.png?v=1721866848',
     mobileImage:
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-4-mobile.png?v=1721866848',
-    url: ''
+    url: 'https://goosecreekcandle.com/collections/3-wick-candles?pf_t_scent=Fruity'
   }
 ];
 
