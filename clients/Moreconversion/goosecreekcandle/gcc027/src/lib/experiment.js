@@ -11,7 +11,7 @@ const data = [
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-1-desktop.png?v=1721866848',
     mobileImage:
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-1-mobile.png?v=1721866848',
-    url: 'https://goosecreekcandle.com/collections/new-arrivals'
+    url: 'https://goosecreekcandle.com/collections/sale?pf_pt_product_type=3-Wick+Candles'
   },
   {
     title: 'New Fall Fragrances',
@@ -27,7 +27,7 @@ const data = [
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-3-desktop.png?v=1721866849',
     mobileImage:
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-3-desktop.png?v=1721866849',
-    url: 'https://goosecreekcandle.com/collections/3-wick-candles'
+    url: 'https://goosecreekcandle.com/collections/new-arrivals'
   },
   {
     title: 'Fruity Fragrances',

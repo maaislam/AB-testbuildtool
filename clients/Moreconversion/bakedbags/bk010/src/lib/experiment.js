@@ -77,7 +77,7 @@ const init = () => {
         .forEach((option) => {
           title = option.innerText.split('\n').join(' ').trim();
           //eslint-disable-next-line prefer-destructuring
-          price = `$${title.split('$')[1].split('/delivery')[0]}`;
+          price = option.querySelector('.transcy-money').textContent;
 
           purchaseOptions.push({
             title,
@@ -123,7 +123,7 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
+  //console.log(ID);
   //gaTracking('Conditions Met'); //use if needed
 
   //-----------------------------
