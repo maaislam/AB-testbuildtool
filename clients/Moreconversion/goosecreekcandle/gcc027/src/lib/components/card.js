@@ -5,8 +5,8 @@ const card = (id, data) => {
         <a href='${url}' class='${id}__card'>
             <div class='${id}__title'>${title}</div>
             <div class='${id}__image'>
-                <img class='desktopImage' src='${desktopImage}' alt='${title}' />
-                <img class='mobileImage' src='${mobileImage}' alt='${title}' />
+                <img loading="lazy" class='desktopImage' src='${desktopImage}' alt='${title}' />
+                <img loading="lazy" class='mobileImage' src='${mobileImage}' alt='${title}' />
             </div>
         </a>
     `;

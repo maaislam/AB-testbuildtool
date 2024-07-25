@@ -258,7 +258,7 @@ export default () => {
         }, index * 500);
       }
 
-      atcBtn.click();
+      //atcBtn.click();
     } else if (target.closest(`.${ID}__atcWrapper-container`)) {
       const activeEl = target.closest(`.${ID}__atcWrapper-container`).querySelectorAll('.active');
       activeEl.forEach((el) => el.classList.remove('active'));
