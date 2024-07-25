@@ -6,27 +6,27 @@ const { ID, VARIATION } = shared;
 
 const data = [
   {
-    title: 'Title 1',
-    desktopImage: 'https://i.shgcdn.com/ac107369-6742-4e61-be09-752afec3a1fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/-/resize/1920x/',
-    mobileImage: 'https://i.shgcdn.com/ac107369-6742-4e61-be09-752afec3a1fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/-/resize/1920x/',
+    title: 'Today’s deals',
+    desktopImage: 'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-1-desktop.png?v=1721866848',
+    mobileImage: 'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-1-mobile.png?v=1721866848',
     url: ''
   },
   {
-    title: 'Title 2',
-    desktopImage: 'https://i.shgcdn.com/ac107369-6742-4e61-be09-752afec3a1fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/-/resize/1920x/',
-    mobileImage: 'https://i.shgcdn.com/ac107369-6742-4e61-be09-752afec3a1fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/-/resize/1920x/',
+    title: 'New Fall Fragrances',
+    desktopImage: 'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-2-desktop.png?v=1721866848',
+    mobileImage: 'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-2-mobile.png?v=1721866848',
     url: ''
   },
   {
-    title: 'Title 3',
-    desktopImage: 'https://i.shgcdn.com/ac107369-6742-4e61-be09-752afec3a1fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/-/resize/1920x/',
-    mobileImage: 'https://i.shgcdn.com/ac107369-6742-4e61-be09-752afec3a1fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/-/resize/1920x/',
+    title: 'Seasonal Fragrances',
+    desktopImage: 'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-3-desktop.png?v=1721866849',
+    mobileImage: 'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-3-desktop.png?v=1721866849',
     url: ''
   },
   {
-    title: 'Title 4',
-    desktopImage: 'https://i.shgcdn.com/ac107369-6742-4e61-be09-752afec3a1fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/-/resize/1920x/',
-    mobileImage: 'https://i.shgcdn.com/ac107369-6742-4e61-be09-752afec3a1fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/-/resize/1920x/',
+    title: 'Fruity Fragrances',
+    desktopImage: 'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-4-desktop.png?v=1721866848',
+    mobileImage: 'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/image-4-mobile.png?v=1721866848',
     url: ''
   }
 ];
