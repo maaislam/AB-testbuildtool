@@ -39,6 +39,7 @@
             right: 0;
             height: 128px;
             width: 128px;
+            transform: translate(-6px, -12px);
         }
 
         &.mobile {
@@ -95,7 +96,7 @@
         background-color: #fff;
         // aspect-ratio: 16/4;
 
-        @include media-query(xxl) {
+        @include media-query(lg) {
             flex-direction: column-reverse;
             max-height: 100%;
         }
@@ -229,6 +230,10 @@
     
                 @include media-query(xxl) {
                     font-size: 22px;
+                }
+
+                @include media-query(sm) {
+                    font-size: 30px;
                 }
             }
     
