@@ -11,31 +11,150 @@
         max-height: 482px;
         padding: 0;
         background-color: #fff;
+        // aspect-ratio: 16/4;
+
+        @include media-query(xxl) {
+            flex-direction: column-reverse;
+            max-height: 100%;
+        }
+
+        .#{$id}__saleCard {
+            margin: 0 auto;
+            padding: 30px 50px;
+            max-width: 550px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include media-query(xxl) {
+                padding: 20px 50px;
+            }
+            
+            .designed_icon {
+                max-width: 346px;
+                width: 100%;
+                margin: auto;
+                line-height: 0.7;
+                margin-bottom: 10px;
+                margin-top: 0;
+                position: relative;
+                z-index: 1;
+            }
+
+            .icon {
+                max-width: 206px;
+                height: auto;
+                margin-top: 0;
+                margin-bottom: -25px;
+
+                @include media-query(xxl) {
+                    max-width: 180px;
+                    margin-left: 30px;
+                }
+
+                @include media-query(xl) {
+                    margin-bottom: -16px;
+                    max-width: 150px;
+                    margin-left: 0;
+                }
+            }
+
+            h2 {
+                font-size: 127px;
+                line-height: 1.078014184;
+                font-family: var(--ff-lb);
+                font-weight: normal;
+                text-transform: uppercase;
+                margin-bottom: 0;
+
+                @include media-query(xxl) {
+                    font-size: 90px;
+                }
+
+                @include media-query(lg) {
+                    font-size: 70px;
+                }
+            }
+
+            h3 {
+                margin: 0;
+                font-family: var(--ff-ws);
+                font-size: 34px;
+                line-height: 1.15;
+                font-weight: 700;
+                letter-spacing: 1.51px;
+                text-transform: uppercase;
+
+                @include media-query(xxl) {
+                    font-size: 24px;
+                }
+            }
+
+            .built_icon p {
+                margin: 0;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 21px;
+                letter-spacing: 0.79px;
+                text-transform: uppercase;
+                letter-spacing: 0.71px;
+
+                @include media-query(xxl) {
+                    font-size: 16px;
+                }
+            }
+
+            .actions {
+                width: 206px;
+                height: 50px;
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 17px auto 50px;
+
+                @include media-query(xxl) {
+                    margin: 12px auto 30px;
+                }
+
+                @include media-query(xl) {
+                    margin: 12px auto 20px;
+                }
+
+                a {
+                    width: 100%;
+                    height: 100%;
+                    padding: 13px 35px 16px;
+                    color: #000;
+                    font-weight: 600;
+                }
+            }
+
+            .offer_end p {
+                font-size: 17px;
+                line-height: 1.2;
+                letter-spacing: 1.5px;
+
+                @include media-query(xxl) {
+                    font-size: 13px;
+                }
+
+                @include media-query(xl) {
+                    font-size: 11px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
 
         .#{$id}__saleBanner {
             flex: 1 1 30%;
             background-color: #B2263F;
             color: #fff;
-            padding: 20px;
             box-sizing: border-box;
             text-align: center;
 
-            h1 {
-                font-size: 2.5em;
-                margin: 0 0 10px;
-            }
-
-            p {
-                margin: 10px 0;
-            }
-
-            button {
-                padding: 10px 20px;
-                background-color: #fff;
-                color: #000;
-                border: none;
-                cursor: pointer;
-                font-size: 1em;
+            @include media-query(xxl) {
+                flex: 1 1 100%;
             }
         }
 
@@ -47,6 +166,10 @@
             align-items: center;
             padding: 0;
             box-sizing: border-box;
+
+            @include media-query(xxl) {
+                flex: 2 1 100%;
+            }
         }
 
         .before-after {
@@ -58,44 +181,47 @@
 
         .before {
             flex: 1 1 35%;
-        }
-
-        .after {
-            flex: 1 1 45%;
-        }
-
-        .before {
             position: relative;
-            padding-right: 11px;
+            margin-right: 11px;
+
+            @include media-query(xxl) {
+                flex: 1 1 45%;
+                margin-right: 4px;
+            }
 
             .text {
                 position: absolute;
-                top: 0;
+                top: 0px;
                 right: 18px;
                 font-weight: 600;
                 font-size: 16px;
-                line-height: 30px;
+                line-height: 1.2;
                 color: #222221;
                 background-color: #fff;
-                padding: 11px 24px;
+                padding: 12px 24px;
                 border-radius: 13px;
                 z-index: 1;
             }
         }
 
         .after {
+            flex: 1 1 45%;
             position: relative;
+
+            @include media-query(xxl) {
+                flex: 1 1 55%;
+            }
 
             .text {
                 position: absolute;
-                top: 0;
+                top: 0px;
                 left: 18px;
                 font-weight: 600;
                 font-size: 16px;
-                line-height: 30px;
+                line-height: 1.2;
                 color: #222221;
                 background-color: #fff;
-                padding: 11px 24px;
+                padding: 12px 24px;
                 border-radius: 13px;
                 z-index: 1;
             }

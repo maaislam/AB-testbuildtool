@@ -7,7 +7,9 @@ const { ID, VARIATION } = shared;
 const init = () => {
   const attachPoint = document.querySelector('.homepage-banner .promo_list');
 
-  attachPoint.insertAdjacentHTML('beforebegin', banner(ID));
+  if (!document.querySelector(`.${ID}__banner`)) {
+    attachPoint.insertAdjacentHTML('beforebegin', banner(ID));
+  }
 };
 
 export default () => {
