@@ -711,7 +711,8 @@
                         display: flex;
                     }
 
-                    .shop-sale-btn-icon {
+                    .shop-sale-btn-icon svg {
+                        display: flex;
                         width: 30px;
                         height: 30px;
                     }
