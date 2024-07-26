@@ -1,5 +1,5 @@
-const discountBadge = (id, classes) => {
-    const htmlStr = `<div class="${id}__discountBadge ${classes}">
+const discountBadge = (id) => {
+    const htmlStr = `<div class="${id}__discountBadge">
         <p>Extra</p>
         <p class='bold'>10% OFF</p>
         <p>with code</p>

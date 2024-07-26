@@ -49,10 +49,3 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
-
-export const setAspectRatio = (imageNumber) => {
-  const imageElement = document.querySelector(`.image-${imageNumber}`);
-  const aspectRatio = imageElement.naturalWidth / imageElement.naturalHeight;
-  const aspectRatioString = aspectRatio.toString();
-  document.querySelector('.image-container').style.setProperty('--aspect-ratio', aspectRatioString);
-};
