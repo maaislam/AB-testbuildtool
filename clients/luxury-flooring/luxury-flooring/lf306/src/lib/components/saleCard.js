@@ -1,7 +1,9 @@
 import { summerIcon } from '../assets/icons';
+import discountBadge from './discountBadge';
 
 const saleCard = (id) => {
     const htmlStr = `
+        ${discountBadge(id)}
         <div class="card ${id}__saleCard">
             ${summerIcon}
             <div class="designed_icon">

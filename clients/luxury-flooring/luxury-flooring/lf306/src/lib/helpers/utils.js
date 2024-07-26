@@ -20,7 +20,7 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
       callback();
     } else if (Date.now() - startTime >= maxTime) {
       clearInterval(interval);
-      console.error('Polling exceeded maximum time limit');
+      console.error('lf-306 - Polling exceeded maximum time limit');
     }
   }, POLLING_INTERVAL);
 };
@@ -48,4 +48,11 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
+};
+
+export const setAspectRatio = (imageNumber) => {
+  const imageElement = document.querySelector(`.image-${imageNumber}`);
+  const aspectRatio = imageElement.naturalWidth / imageElement.naturalHeight;
+  const aspectRatioString = aspectRatio.toString();
+  document.querySelector('.image-container').style.setProperty('--aspect-ratio', aspectRatioString);
 };
