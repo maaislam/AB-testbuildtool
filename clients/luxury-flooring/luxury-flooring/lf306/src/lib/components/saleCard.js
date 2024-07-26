@@ -3,9 +3,10 @@ import discountBadge from './discountBadge';
 
 const saleCard = (id) => {
     const htmlStr = `
-        ${discountBadge(id)}
+        ${discountBadge(id, 'desktop')}
         <div class="card ${id}__saleCard">
             ${summerIcon}
+            ${discountBadge(id, 'mobile')}
             <div class="designed_icon">
                 <h2>Sale</h2>
             </div>
