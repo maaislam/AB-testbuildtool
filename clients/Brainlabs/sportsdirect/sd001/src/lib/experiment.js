@@ -47,7 +47,8 @@ const init = () => {
   document.getElementById('item-quantity').addEventListener('input', (e) => {
     const quantity = e.target.value;
     const discount = calculateDiscount(quantity);
-    document.getElementById('discount-percentage').innerText = `${discount}% & the qty - ${quantity}`;
+    document.getElementById('discount-percentage').innerText = `${discount}%`;
+    document.getElementById('quantity-display').value = quantity;
   });
 };
 
