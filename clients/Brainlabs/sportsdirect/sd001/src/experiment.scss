@@ -1,0 +1,30 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .volume-discount {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    #item-quantity {
+        width: 100%;
+    }
+
+    #discount-info {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    #add-to-bag {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #ff0000;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+    }
+}
