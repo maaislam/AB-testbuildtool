@@ -2,50 +2,90 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    .volume-discount {
-        margin-top: 20px;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-    }
+  .AltProdDet #productDetails .productVariantContainer > #notification.visible {
+    z-index: 99 !important;
+  }
+  .volume-discount-container {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
 
-    #item-quantity {
-        width: 100%;
-    }
+  #quantity-slider {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-    #discount-info {
-        margin-top: 10px;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-    }
+  #quantity-input {
+    width: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 
-    #quantity-display {
-        margin-left: 10px;
-        padding: 5px;
-        width: 50px;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        text-align: center;
-        background-color: #fff;
-        color: #333;
-    }
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 12px;
+  }
 
-    #add-to-bag {
-        margin-top: 10px;
-        padding: 10px 20px;
-        background-color: #80e096;
-        color: #131313;
-        opacity: 1;
-        border: none;
-        cursor: pointer;
-    }
+  #add-to-bag-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
-    .quantity-range {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-    }
+  #add-to-bag-btn:hover {
+    background-color: #0056b3;
+  }
 
+  .notification {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    z-index: 99 !important;
+    width: 250px;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: right 0.5s ease;
+  }
+
+  .notification.hidden {
+    right: -300px;
+  }
+
+  .notification.visible {
+    right: 20px;
+    animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .notification-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
