@@ -42,9 +42,14 @@ const init = () => {
     quantityInput.value = value;
     updateSavingsMessage(value);
 
-    //Update filled percentage for the slider
-    const percentage = (value / 20) * 100;
-    quantitySlider.style.setProperty('--filled-percentage', `${percentage}%`);
+    const min = parseInt(quantitySlider.min);
+    const max = parseInt(quantitySlider.max);
+    const sliderVal = parseInt(quantitySlider.value);
+
+    const percentage = ((sliderVal - min) / (max - min)) * 100;
+
+    //quantityInput.removeAttribute('style');
+    quantitySlider.style.setProperty('--filled-percentage', `${percentage}% `);
   };
 
   quantitySlider.addEventListener('input', () => {
@@ -71,7 +76,7 @@ const init = () => {
     let hideTimeout = setTimeout(() => {
       notification.classList.remove('visible');
       notification.classList.add('hidden');
-    }, 2000);
+    }, 4000);
 
     notification.addEventListener('mouseenter', () => {
       clearTimeout(hideTimeout);
@@ -81,7 +86,7 @@ const init = () => {
       hideTimeout = setTimeout(() => {
         notification.classList.remove('visible');
         notification.classList.add('hidden');
-      }, 2000);
+      }, 4000);
     });
 
     notificationCloseBtn.addEventListener('click', () => {
@@ -136,10 +141,15 @@ const init = () => {
         showNotification(
           `You have added ${quantity} items to your basket at a total of ${totalPrice}, saving you ${savings}%`
         );
+        window.updateSkinBag();
         setTimeout(() => {
           addToBagBtn.textContent = 'Add To Bag';
           addToBagBtn.disabled = false;
+          window.showShoppingBag();
         }, 1500);
+        setTimeout(() => {
+          window.hideShoppingBag();
+        }, 5000);
       } else {
         console.log('Failed to add items to the basket');
         addToBagBtn.disabled = false;
@@ -156,13 +166,4 @@ export default () => {
   setup();
 
   init();
-
-  document.addEventListener('input', (event) => {
-    if (event.target.type === 'range') {
-      const { value } = event.target;
-      const { max } = event.target;
-      const percentage = Math.round(((value / max) * 100) - 1);
-      event.target.style.setProperty('--filled-percentage', `${percentage}%`);
-    }
-  });
 };
