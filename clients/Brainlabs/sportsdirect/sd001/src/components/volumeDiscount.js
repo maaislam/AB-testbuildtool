@@ -1,9 +1,9 @@
 import notification from './notification';
 
-const volumeDiscount = () => {
+const volumeDiscount = (id) => {
   const htmlStr = `
-    <div class="volume-discount-container">
-      <label for="quantity-slider">Select Quantity:</label>
+    <div class="volume-discount-container col-xs-12">
+      <label class="header-title" for="quantity-slider">Buy more, get more off!</label>
       <div class="slider-container">
         <div class="slider-labels">
           <span class="hidden-label">1</span>
@@ -29,9 +29,11 @@ const volumeDiscount = () => {
         </div>
         <input type="range" id="quantity-slider" min="1" max="20" value="1">
       </div>
-      <input type="number" id="quantity-input" min="1" value="1">
-      <p id="savings-message">You will save 0%</p>
-      <button id="add-to-bag-btn">Add to Bag</button>
+      <div class='${id}__atcContainer'>
+        <p id="savings-message">You would save 0%</p>
+        <input type="number" id="quantity-input" min="1" value="1">
+        <button id="add-to-bag-btn">Add to Bag</button>
+      </div>
     </div>
 
     ${notification()}

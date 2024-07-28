@@ -30,7 +30,7 @@ const init = () => {
 
   const updateSavingsMessage = (quantity) => {
     const savings = calculateSavings(quantity);
-    savingsMessage.textContent = `You will save ${savings}%`;
+    savingsMessage.textContent = `You would save ${savings}%`;
   };
 
   const syncSliderAndInput = (value) => {
@@ -152,4 +152,13 @@ export default () => {
   setup();
 
   init();
+
+  document.addEventListener('input', (event) => {
+    if (event.target.type === 'range') {
+      const { value } = event.target;
+      const { max } = event.target;
+      const percentage = Math.round(((value / max) * 100) - 1);
+      event.target.style.setProperty('--filled-percentage', `${percentage}%`);
+    }
+  });
 };
