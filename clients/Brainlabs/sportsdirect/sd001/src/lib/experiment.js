@@ -156,7 +156,7 @@ const init = () => {
       }
     } catch (error) {
       console.error('Error:', error);
-      console.log('An error occurred while adding items to the basket');
+
       addToBagBtn.disabled = false;
     }
   });
