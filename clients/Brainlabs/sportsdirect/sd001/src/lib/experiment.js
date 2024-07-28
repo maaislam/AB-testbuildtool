@@ -41,6 +41,10 @@ const init = () => {
     }
     quantityInput.value = value;
     updateSavingsMessage(value);
+
+    //Update filled percentage for the slider
+    const percentage = (value / 20) * 100;
+    quantitySlider.style.setProperty('--filled-percentage', `${percentage}%`);
   };
 
   quantitySlider.addEventListener('input', () => {
