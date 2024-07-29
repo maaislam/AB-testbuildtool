@@ -16,8 +16,8 @@ const volumeDiscount = (id) => {
             <option class="hidden-label">7</option>
             <option class="hidden-label">8</option>
             <option class="hidden-label">9</option>
-            <option>10</option>
-            <option class="hidden-label">11</option>
+            <option class="hidden-label">10</option>
+            <option >11</option>
             <option class="hidden-label">12</option>
             <option class="hidden-label">13</option>
             <option class="hidden-label">14</option>
