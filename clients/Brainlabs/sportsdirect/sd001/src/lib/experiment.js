@@ -4,6 +4,10 @@ import shared from './shared/shared';
 
 const { ID } = shared;
 
+const NOTIFICATION_CLOSE_TIMEOUT = 4000;
+const BUTTON_COPY_RESET_TIMEOUT = 1500;
+const BAG_HIDE_TIMEOUT = 5000;
+
 const init = () => {
   const attachpoint = document.getElementById('productVariantAndPrice');
 
@@ -76,7 +80,7 @@ const init = () => {
     let hideTimeout = setTimeout(() => {
       notification.classList.remove('visible');
       notification.classList.add('hidden');
-    }, 4000);
+    }, NOTIFICATION_CLOSE_TIMEOUT);
 
     notification.addEventListener('mouseenter', () => {
       clearTimeout(hideTimeout);
@@ -86,7 +90,7 @@ const init = () => {
       hideTimeout = setTimeout(() => {
         notification.classList.remove('visible');
         notification.classList.add('hidden');
-      }, 4000);
+      }, NOTIFICATION_CLOSE_TIMEOUT);
     });
 
     notificationCloseBtn.addEventListener('click', () => {
@@ -146,10 +150,10 @@ const init = () => {
           addToBagBtn.textContent = 'Add To Bag';
           addToBagBtn.disabled = false;
           window.showShoppingBag();
-        }, 1500);
+        }, BUTTON_COPY_RESET_TIMEOUT);
         setTimeout(() => {
           window.hideShoppingBag();
-        }, 5000);
+        }, BAG_HIDE_TIMEOUT);
       } else {
         console.log('Failed to add items to the basket');
         addToBagBtn.disabled = false;
