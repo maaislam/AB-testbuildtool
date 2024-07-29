@@ -26,12 +26,17 @@
         }
 
         @include media-query(xxxl) {
+            height: 140px;
+            width: 140px;
             transform: translate(-10px, -12px);
         }
 
         @include media-query(xxl) {
-            height: 130px;
-            width: 130px;
+            height: 128px;
+            width: 128px;
+            position: absolute;
+            right: -62px;
+            transform: translate(0, 0);
         }
 
         @include media-query(lg) {
@@ -69,6 +74,10 @@
                 font-size: 18px;
             }
 
+            @include media-query(xxxl) {
+                font-size: 17px;
+            }
+
             @include media-query(xxl) {
                 font-size: 15px;
             }
@@ -80,6 +89,10 @@
 
             @include media-query(4xl) {
                 font-size: 20px;
+            }
+
+            @include media-query(xxxl) {
+                font-size: 19px;
             }
 
             @include media-query(xxl) {
@@ -171,7 +184,11 @@
                 margin-right: 16px;
             }
 
-            @include media-query(lg) {
+            @media screen and (max-width: 1680px) {
+                margin-right: 0;
+            }
+
+            @include media-query(xxl) {
                 margin-right: 0;
                 justify-content: center;
             }
@@ -212,7 +229,7 @@
             }
 
             h2 {
-                font-size: 127px;
+                font-size: 110px;
                 line-height: 1.078014184;
                 font-family: var(--ff-lb);
                 font-weight: normal;
@@ -220,14 +237,14 @@
                 margin-bottom: 0;
 
                 @media screen and (max-width: 1640px) {
-                    font-size: 100px;
+                    font-size: 90px;
                 }
 
                 @include media-query(xxl) {
                     font-size: 80px;
                 }
 
-                @include media-query(lg) {
+                @include media-query(xl) {
                     font-size: 70px;
                 }
             }
@@ -238,18 +255,18 @@
                 margin: 0 0 -25px -200px;
 
                 @include media-query(xxxl) {
-                    max-width: 180px;
-                    margin: 0 0 -25px -220px;
+                    max-width: 170px;
+                    margin: 0 0 -25px -180px;
                 }
 
                 @media screen and (max-width: 1640px) {
-                    max-width: 150px;
-                    margin: 0 0 -25px -160px;
+                    max-width: 140px;
+                    margin: 0 0 -25px -140px;
                 }
 
                 @include media-query(xxl) {
                     max-width: 140px;
-                    margin: 0 0 -15px -110px;
+                    margin: 0 0 -15px -130px;
                 }
 
                 @include media-query(lg) {
@@ -268,11 +285,11 @@
                 text-transform: uppercase;
 
                 @media screen and (max-width: 1640px) {
-                    font-size: 28px;
+                    font-size: 32px;
                 }
 
                 @include media-query(xxl) {
-                    font-size: 22px;
+                    font-size: 28px;
                 }
 
                 @include media-query(lg) {
@@ -376,17 +393,13 @@
             box-sizing: border-box;
             text-align: center;
 
-            @include media-query(xxl) {
-                flex: 1 1 40%;
-            }
-
             @include media-query(lg) {
                 flex: 1 1 100%;
             }
         }
 
         .image-section {
-            flex: 2 1 60%;
+            flex: 2 1 70%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -395,11 +408,11 @@
             box-sizing: border-box;
 
             @include media-query(xxl) {
-                flex: 2 1 100%;
+                flex: 2 1 70%;
             }
 
             @include media-query(lg) {
-                flex: 2 1 60%;
+                flex: 2 1 100%;
             }
         }
 
@@ -411,7 +424,7 @@
         }
 
         .before {
-            flex: 1 1 35%;
+            flex: 1 1 40%;
             position: relative;
             margin-right: 11px;
 
@@ -451,7 +464,7 @@
         }
 
         .after {
-            flex: 1 1 45%;
+            flex: 1 1 60%;
             position: relative;
 
             @include media-query(xxl) {
@@ -535,6 +548,11 @@
             position: relative;
             overflow: hidden;
             --position: 30%;
+
+            @include media-query(xl) {
+                --position: 35%;
+                flex: 1 1 65%
+            }
 
             @include media-query(lg) {
                 --position: 40%;
@@ -762,7 +780,7 @@
                 margin-right: 16px;
             }
 
-            @include media-query(lg) {
+            @include media-query(xxl) {
                 margin-right: 0;
                 justify-content: center;
             }
@@ -815,10 +833,10 @@
                 }
 
                 @include media-query(xxl) {
-                    font-size: 80px;
+                    font-size: 90px;
                 }
 
-                @include media-query(lg) {
+                @include media-query(xl) {
                     font-size: 70px;
                 }
             }
@@ -860,10 +878,6 @@
 
                 @media screen and (max-width: 1640px) {
                     font-size: 28px;
-                }
-
-                @include media-query(xxl) {
-                    font-size: 22px;
                 }
 
                 @include media-query(lg) {
@@ -944,11 +958,11 @@
                 }
 
                 @include media-query(xxl) {
-                    font-size: 13px;
+                    font-size: 14px;
                 }
 
                 @include media-query(xl) {
-                    font-size: 11px;
+                    // font-size: 14px;
                     letter-spacing: 1px;
                 }
 
@@ -971,8 +985,8 @@
                 flex: 1 1 40%;
             }
 
-            @include media-query(xxl) {
-                flex: 1 1 44%;
+            @include media-query(xl) {
+                flex: 1 1 35%;
             }
 
             @include media-query(lg) {
