@@ -33,7 +33,7 @@ const saleCard = (id) => {
                 ${discountBadge(id)}
             </div>
             <div class="offer_end">
-                <p>HURRY! OFFERS END FRIDAY 16TH AUGUST</p>
+                <p>HURRY! OFFERS END <b>FRIDAY 16TH AUGUST</b> </p>
             </div>
         </div>
     `;
