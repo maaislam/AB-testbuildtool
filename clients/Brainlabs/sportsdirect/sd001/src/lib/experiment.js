@@ -143,7 +143,7 @@ const init = () => {
       if (response.ok) {
         addToBagBtn.textContent = 'Added To Bag';
         showNotification(
-          `You have added ${quantity} items to your basket at a total of ${totalPrice}, saving you ${savings}%`
+          `You have added ${quantity} items to your basket at a total of ${totalPrice.toFixed(2)}, saving you ${savings}%`
         );
         window.updateSkinBag();
         setTimeout(() => {
