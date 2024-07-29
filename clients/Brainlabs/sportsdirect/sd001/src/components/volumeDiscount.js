@@ -1,32 +1,19 @@
 import notification from './notification';
 
 const volumeDiscount = (id) => {
+  const visibleOptions = [1, 2, 5, 11, 20];
+  let optionsHtml = '';
+  for (let i = 1; i <= 20; i += 1) {
+    const className = visibleOptions.includes(i) ? '' : 'hidden-label';
+    optionsHtml += `<option class="${className}">${i}</option>`;
+  }
   const htmlStr = `
     <div class="volume-discount-wrapper col-xs-12">
       <div class="volume-discount-container">
         <label class="header-title" for="quantity-slider">Buy more, get more off!</label>
         <div class="slider-container">
           <datalist class="slider-labels">
-            <option>1</option>
-            <option>2</option>
-            <option class="hidden-label">3</option>
-            <option class="hidden-label">4</option>
-            <option>5</option>
-            <option class="hidden-label">6</option>
-            <option class="hidden-label">7</option>
-            <option class="hidden-label">8</option>
-            <option class="hidden-label">9</option>
-            <option class="hidden-label">10</option>
-            <option >11</option>
-            <option class="hidden-label">12</option>
-            <option class="hidden-label">13</option>
-            <option class="hidden-label">14</option>
-            <option class="hidden-label">15</option>
-            <option class="hidden-label">16</option>
-            <option class="hidden-label">17</option>
-            <option class="hidden-label">18</option>
-            <option class="hidden-label">19</option>
-            <option>20</option>
+            ${optionsHtml}
           </datalist>
           <input type="range" id="quantity-slider" min="1" max="20" value="1" step="1" list="values">
         </div>
