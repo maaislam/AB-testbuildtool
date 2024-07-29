@@ -34,7 +34,7 @@
             width: 130px;
         }
 
-        @include media-query(sm) {
+        @include media-query(lg) {
             position: absolute;
             right: 0;
             height: 128px;
@@ -134,6 +134,7 @@
             }
 
             @include media-query(lg) {
+                margin-right: 0;
                 justify-content: center;
             }
         }
@@ -152,6 +153,10 @@
             @include media-query(xxxl) {
                 padding: 20px 0;
             }
+
+            @include media-query(lg) {
+                max-width: 392px;
+            }
     
             .designed_icon {
                 max-width: 346px;
@@ -163,7 +168,7 @@
                 position: relative;
                 z-index: 1;
 
-                @include media-query(sm) {
+                @include media-query(lg) {
                     transform: translate(-34px, 0px);
                 }
             }
@@ -209,7 +214,7 @@
                     margin: 0 0 -15px -110px;
                 }
 
-                @include media-query(sm) {
+                @include media-query(lg) {
                     max-width: 148px;
                     margin: 0 0 -18px -170px;
                 }
@@ -232,7 +237,7 @@
                     font-size: 22px;
                 }
 
-                @include media-query(sm) {
+                @include media-query(lg) {
                     font-size: 30px;
                 }
             }
@@ -303,6 +308,7 @@
                 font-size: 17px;
                 line-height: 1.2;
                 letter-spacing: 1.5px;
+                margin: 0;
     
                 @include media-query(xxxl) {
                     font-size: 15px;
@@ -314,6 +320,11 @@
     
                 @include media-query(xl) {
                     font-size: 11px;
+                    letter-spacing: 1px;
+                }
+
+                @include media-query(lg) {
+                    font-size: 13px;
                     letter-spacing: 1px;
                 }
             }
@@ -701,6 +712,7 @@
             }
 
             @include media-query(lg) {
+                margin-right: 0;
                 justify-content: center;
             }
         }
@@ -719,6 +731,10 @@
             @include media-query(xxxl) {
                 padding: 20px 0;
             }
+
+            @include media-query(lg) {
+                max-width: 392px;
+            }
     
             .designed_icon {
                 max-width: 346px;
@@ -730,7 +746,7 @@
                 position: relative;
                 z-index: 1;
 
-                @include media-query(sm) {
+                @include media-query(lg) {
                     transform: translate(-34px, 0px);
                 }
             }
@@ -776,7 +792,7 @@
                     margin: 0 0 -15px -110px;
                 }
 
-                @include media-query(sm) {
+                @include media-query(lg) {
                     max-width: 148px;
                     margin: 0 0 -18px -170px;
                 }
@@ -799,7 +815,7 @@
                     font-size: 22px;
                 }
 
-                @include media-query(sm) {
+                @include media-query(lg) {
                     font-size: 30px;
                 }
             }
@@ -870,6 +886,7 @@
                 font-size: 17px;
                 line-height: 1.2;
                 letter-spacing: 1.5px;
+                margin: 0;
     
                 @include media-query(xxxl) {
                     font-size: 15px;
@@ -881,6 +898,11 @@
     
                 @include media-query(xl) {
                     font-size: 11px;
+                    letter-spacing: 1px;
+                }
+
+                @include media-query(lg) {
+                    font-size: 14px;
                     letter-spacing: 1px;
                 }
             }
