@@ -27,8 +27,12 @@
         display: none;
       }
     }
+
+    .page-wrapper {
+      overflow-x: visible;
+    }
     .page-header {
-      position: fixed;
+      position: sticky;
       top: 0;
       z-index: 1000;
       width: 100%;
