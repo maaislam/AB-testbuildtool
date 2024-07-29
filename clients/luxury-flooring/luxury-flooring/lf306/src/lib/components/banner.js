@@ -63,7 +63,7 @@ const banner = (id, VARIATION) => {
                 class="slider ${id}__slider">
             <div class="slider-line" aria-hidden="true"></div>
             <div class="slider-button" aria-hidden="true">
-                <img class="" src="https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test306/icon_controls.svg">
+                <img class="" src="https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test306/icon_control.png">
             </div>
         </div>
     </div>`;

@@ -302,7 +302,6 @@
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 21px;
-                letter-spacing: 0.79px;
                 text-transform: uppercase;
                 letter-spacing: 0.71px;
 
@@ -647,9 +646,6 @@
 
             .slider-button {
                 position: absolute;
-                background-color: #fff;
-                color: black;
-                // padding: 0.5rem;
                 border-radius: 100vw;
                 display: grid;
                 place-items: center;
@@ -657,8 +653,6 @@
                 left: var(--position);
                 transform: translate(-50%, -50%);
                 pointer-events: none;
-                -webkit-box-shadow: 1px 1px 1px rgba(8, 3, 3, 0.5);
-                box-shadow: 1px 1px 1px rgba(8, 3, 3, 0.5);
                 width: 55px;
                 height: 55px;
             }
@@ -894,7 +888,6 @@
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 21px;
-                letter-spacing: 0.79px;
                 text-transform: uppercase;
                 letter-spacing: 0.71px;
 
