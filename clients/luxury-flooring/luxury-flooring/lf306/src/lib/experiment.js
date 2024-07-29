@@ -17,7 +17,7 @@ const init = () => {
 
       let currentSlideBefore = 0;
       let currentSlideAfter = 0;
-      const slideInterval = 5000; //5 seconds
+      const slideInterval = 3000; //3 seconds
 
       const showNextSlide = () => {
         beforeSlides[currentSlideBefore].classList.remove('active');
