@@ -28,6 +28,10 @@ const stepThree = (id) => {
                 </form>
                 <p class="${id}__thirdMsg">Thank you for your patience,</p>
                 <p class="${id}__forthMsg">and we look forward to enhancing your experience soon!</p>
+                <div class="${id}__questions">
+                    <p>Got burning questions or rad suggestions?</p>
+                    <a href="mailto: kontakt@tvmatchen.nu">Contact Us</a>
+                </div>
             </div>
     `;
   return html.trim();
