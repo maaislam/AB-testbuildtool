@@ -56,7 +56,7 @@ export default () => {
         const input = document.querySelector(`.${ID}__modal input`);
         input.value = '';
         input.focus();
-      }, 500);
+      }, 100);
     } else if (
       target.closest('label[data-role="minisearch-label"]') &&
       target.closest(`.${ID}__modal`)
