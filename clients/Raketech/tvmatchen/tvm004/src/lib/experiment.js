@@ -13,9 +13,9 @@ const { ID, VARIATION } = shared;
 const callWithInterval = (fn, interval = 500, duration = 100000) => {
   window.intervalId = setInterval(fn, interval);
 
-  setTimeout(() => {
-    clearInterval(window.intervalId);
-  }, duration);
+  //setTimeout(() => {
+  //clearInterval(window.intervalId);
+  //}, duration);
 };
 
 const renderCloseAds = () => {
@@ -73,10 +73,10 @@ export default () => {
       ) {
         gaTracking('Close 2nd Popup');
         document.body.classList.remove('step-two');
+        window.sessionStorage.setItem(`${ID}__tracker`, true);
       }
 
       document.body.classList.remove(`${ID}__modalOpen`);
-      window.sessionStorage.setItem(`${ID}__tracker`, true);
     } else if (target.closest(`.${ID}__crossAds`)) {
       gaTracking('Close Ads');
       document.body.classList.add(`${ID}__modalOpen`);
