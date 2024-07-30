@@ -5,16 +5,18 @@ import searchForm from './components/searchForm';
 const { ID, VARIATION } = shared;
 
 const init = () => {
+  const url = new URL(window.location.href);
+  const searchValue = url.searchParams.get('q');
   const targetPoint = document.querySelector('.site-nav__icons');
   const controlPageWidth = document.querySelector('header .page-width');
   //DESKTOP
   if (!document.querySelector(`.${ID}__searchForm.desktop-search`)) {
-    targetPoint.insertAdjacentHTML('beforebegin', searchForm(ID, 'desktop-search'));
+    targetPoint.insertAdjacentHTML('beforebegin', searchForm(ID, 'desktop-search', searchValue));
   }
 
   //mobile
   if (!document.querySelector(`.${ID}__searchForm.mobile-search`)) {
-    controlPageWidth.insertAdjacentHTML('afterend', searchForm(ID, 'mobile-search'));
+    controlPageWidth.insertAdjacentHTML('afterend', searchForm(ID, 'mobile-search', searchValue));
   }
 };
 

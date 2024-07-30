@@ -1,4 +1,4 @@
-const searchForm = (id, className) => {
+const searchForm = (id, className, value) => {
   const html = `
     <div class="${id}__searchForm ${className}">
         <form action="/search" method="get" class="search-modal__wrapper" role="search">
@@ -8,7 +8,9 @@ const searchForm = (id, className) => {
           </button>
           <input type="hidden" name="type" value="product">
           <input type="hidden" name="options[prefix]" value="last">
-          <input type="search" name="q" value="" placeholder="Search for Joggers, Shorts, Etc." id="SearchModalInput" class="search-modal__input" aria-label="Search our store">
+          <input type="search" name="q" value="${
+            value || ''
+          }" placeholder="Search for Joggers, Shorts, Etc." id="SearchModalInput" class="search-modal__input" aria-label="Search our store">
         </form>
     </div>
     `;
