@@ -41,10 +41,25 @@ const init = () => {
     slider.addEventListener('input', (e) => {
       container.style.setProperty('--position', `${e.target.value}%`);
     });
+    slider.addEventListener('change', () => {
+      _conv_q.push(["triggerConversion", "100462022"]);
+    });
   }
 };
 
 export default () => {
   setup();
+
+  window._conv_q = window._conv_q || [];
+
   init();
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest('[href*="/sale.html"]')) {
+      console.log('sale button click');
+      _conv_q.push(["triggerConversion", "100462022"]);
+    }
+  });
 };
