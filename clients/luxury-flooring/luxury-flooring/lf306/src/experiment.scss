@@ -20,7 +20,7 @@
         z-index: 9;
         position: absolute;
         right: -85px;
-        // transform: translate(-10px, -20px);
+        transform: translate(0px, -10px);
 
         // @include media-query(4xl) {
         //     height: 150px;
@@ -29,17 +29,17 @@
         // }
 
         @include media-query(xxxl) {
-            height: 150px;
-            width: 150px;
-            right: -76px;
+            height: 160px;
+            width: 160px;
+            right: -80px;
         }
 
         @include media-query(xxl) {
-            height: 128px;
-            width: 128px;
+            height: 140px;
+            width: 140px;
             position: absolute;
-            right: -62px;
-            transform: translate(0, 0);
+            right: -70px;
+            transform: translate(0, -10px);
         }
 
         @include media-query(lg) {
@@ -78,7 +78,7 @@
             // }
 
             @include media-query(xxxl) {
-                font-size: 17px;
+                font-size: 19px;
             }
 
             @include media-query(xxl) {
@@ -95,7 +95,7 @@
             // }
 
             @include media-query(xxxl) {
-                font-size: 19px;
+                font-size: 22px;
             }
 
             @include media-query(xxl) {
@@ -826,7 +826,7 @@
                 margin-bottom: 0;
 
                 @media screen and (max-width: 1640px) {
-                    font-size: 90px;
+                    font-size: 100px;
                 }
 
                 @include media-query(xxl) {
@@ -848,10 +848,10 @@
                     margin: 0 0 -25px -180px;
                 }
 
-                @media screen and (max-width: 1640px) {
-                    max-width: 140px;
-                    margin: 0 0 -25px -140px;
-                }
+                // @media screen and (max-width: 1640px) {
+                //     max-width: 140px;
+                //     margin: 0 0 -25px -140px;
+                // }
 
                 @include media-query(xxl) {
                     max-width: 140px;
@@ -873,9 +873,9 @@
                 letter-spacing: 1.51px;
                 text-transform: uppercase;
 
-                @media screen and (max-width: 1640px) {
-                    font-size: 32px;
-                }
+                // @media screen and (max-width: 1640px) {
+                //     font-size: 32px;
+                // }
 
                 @include media-query(xxl) {
                     font-size: 28px;
