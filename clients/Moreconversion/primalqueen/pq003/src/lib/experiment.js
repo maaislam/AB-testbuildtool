@@ -5,19 +5,49 @@ import { pollerLite } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
+const init = () => {
+  const mainWrapper = document.querySelector('#MainContent .overflow');
+  if (VARIATION === '1') {
+    mainWrapper
+      .querySelector('.section_1')
+      .insertAdjacentElement('beforebegin', mainWrapper.querySelector('.section_4'));
+  }
+
+  if (VARIATION === '2') {
+    mainWrapper
+      .querySelector('.section_1')
+      .insertAdjacentElement('beforebegin', mainWrapper.querySelector('.section_4'));
+
+    mainWrapper
+      .querySelector('.section_1')
+      .insertAdjacentElement('beforebegin', mainWrapper.querySelector('.section_5'));
+  }
+
+  if (VARIATION === '3') {
+    mainWrapper
+      .querySelector('.section_1')
+      .insertAdjacentElement('beforebegin', mainWrapper.querySelector('.section_10'));
+  }
+
+  if (VARIATION === '4') {
+    mainWrapper
+      .querySelector('.section_1')
+      .insertAdjacentElement('beforebegin', mainWrapper.querySelector('.queen_promise_section'));
+    mainWrapper
+      .querySelector('.section_1')
+      .insertAdjacentElement('beforebegin', mainWrapper.querySelector('.section_4'));
+
+    mainWrapper
+      .querySelector('.section_1')
+      .insertAdjacentElement('beforebegin', mainWrapper.querySelector('.section_2'));
+  }
+};
+
 export default () => {
-  setup(); //use if needed
+  setup();
   console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
 
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
+  if (VARIATION === 'Control') return;
 
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+  init();
 };

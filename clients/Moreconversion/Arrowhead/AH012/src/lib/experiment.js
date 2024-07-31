@@ -22,7 +22,6 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
 
   if (VARIATION === 'Control') return;
 

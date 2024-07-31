@@ -1,6 +1,6 @@
 module.exports = {
-  ID: 'pq003',
-  VARIATION: '1',
+  ID: 'pq004',
+  VARIATION: '7',
   CLIENT: 'Moreconversion',
   SITE: 'primalqueen'
 };
