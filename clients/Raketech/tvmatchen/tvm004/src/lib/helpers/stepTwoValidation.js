@@ -61,8 +61,6 @@ const stepTwoValidation = (id) => {
     const expireDateValue = expireDateValidation(expireDateElem.value);
     const cvcValue = cvcNumber.value;
 
-    console.log('creditCardValue', creditCardValue);
-
     //Checking for username
     if (userNameValue === '') {
       setErrorFor(userName, 'Username cannot be blank');
@@ -121,6 +119,12 @@ const stepTwoValidation = (id) => {
       nextEl.classList.add(`${id}__show`);
       document.body.classList.remove('step-one');
       document.body.classList.add('step-two');
+      document.querySelector(`.step-two .${id}__form-three input[type="email"]`).value = emailValue;
+
+      clearInterval(window.intervalId);
+      document.querySelectorAll(`.${id}__crossAds`)?.forEach((item) => {
+        item.remove();
+      });
     } else if (
       userNameValue &&
       isEmail(emailValue) &&

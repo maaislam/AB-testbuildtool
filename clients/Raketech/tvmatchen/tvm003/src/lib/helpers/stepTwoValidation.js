@@ -119,6 +119,7 @@ const stepTwoValidation = (id) => {
       nextEl.classList.add(`${id}__show`);
       document.body.classList.remove('step-one');
       document.body.classList.add('step-two');
+      document.querySelector(`.${id}__form-three input[type="email"]`).value = emailValue;
     } else if (
       userNameValue &&
       isEmail(emailValue) &&

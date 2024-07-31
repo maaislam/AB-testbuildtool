@@ -10,12 +10,12 @@ import { crossForAds } from './components/crossForAds';
 
 const { ID, VARIATION } = shared;
 
-const callWithInterval = (fn, interval = 500, duration = 10000) => {
-  const intervalId = setInterval(fn, interval);
+const callWithInterval = (fn, interval = 500, duration = 100000) => {
+  window.intervalId = setInterval(fn, interval);
 
-  setTimeout(() => {
-    clearInterval(intervalId);
-  }, duration);
+  //setTimeout(() => {
+  //clearInterval(window.intervalId);
+  //}, duration);
 };
 
 const renderCloseAds = () => {
@@ -55,7 +55,6 @@ export default () => {
     if (target.closest(`.${ID}__noThanksBtn`)) {
       gaTracking('Close Popup Button');
       document.body.classList.remove(`${ID}__modalOpen`);
-      //setCookie(`${ID}__tracker`, true);
       window.sessionStorage.setItem(`${ID}__tracker`, true);
     } else if (target.closest(`.${ID}__continue`)) {
       gaTracking('Continue Popup Button');
@@ -74,23 +73,10 @@ export default () => {
       ) {
         gaTracking('Close 2nd Popup');
         document.body.classList.remove('step-two');
+        window.sessionStorage.setItem(`${ID}__tracker`, true);
       }
 
       document.body.classList.remove(`${ID}__modalOpen`);
-      //setCookie(`${ID}__tracker`, true);
-      window.sessionStorage.setItem(`${ID}__tracker`, true);
-
-      document.querySelectorAll(`.${ID}__crossAds`).forEach((item) => {
-        item.remove();
-      });
-    } else if (target.closest(`.${ID}__validateUserModal-overlay`)) {
-      document.body.classList.remove(`${ID}__modalOpen`);
-      //setCookie(`${ID}__tracker`, true);
-      window.sessionStorage.setItem(`${ID}__tracker`, true);
-
-      document.querySelectorAll(`.${ID}__crossAds`).forEach((item) => {
-        item.remove();
-      });
     } else if (target.closest(`.${ID}__crossAds`)) {
       gaTracking('Close Ads');
       document.body.classList.add(`${ID}__modalOpen`);

@@ -56,10 +56,6 @@ export default () => {
       document.body.classList.remove(`${ID}__modalOpen`);
       //setCookie(`${ID}__tracker`, true);
       window.sessionStorage.setItem(`${ID}__tracker`, true);
-    } else if (target.closest(`.${ID}__validateUserModal-overlay`)) {
-      document.body.classList.remove(`${ID}__modalOpen`);
-      //setCookie(`${ID}__tracker`, true);
-      window.sessionStorage.setItem(`${ID}__tracker`, true);
     }
   });
   if (VARIATION === 'Control') return;

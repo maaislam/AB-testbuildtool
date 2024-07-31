@@ -1,0 +1,139 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  div.homepage-banner:not(.product_strip) {
+    margin-top: 0;
+  }
+  .blog_head_aa {
+    margin-top: 0px;
+  }
+  .bg-overlay {
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    z-index: 9999999999;
+    opacity: 1;
+    visibility: visible;
+
+    @media screen and (max-width: 1023px) {
+      background-color: #fff;
+    }
+  }
+
+  .search_content .block-search {
+    width: 100%;
+    padding-left: 0;
+
+    @media screen and (max-width: 1023px) {
+      margin: 0;
+    }
+  }
+
+  .custom_searchBar .block.block-content {
+    @media screen and (max-width: 1023px) {
+      display: none !important;
+    }
+  }
+
+  .hide_content {
+    opacity: 0;
+  }
+
+  .hide_content .overlay-contents {
+    transform: translateY(-300px);
+  }
+  .#{$id}__modal:not(.hide_content) .overlay-contents {
+    transform: translateY(0);
+
+    label[for='minisearch-input-top-search'] {
+      position: absolute;
+      top: 56%;
+      transform: translateY(-50%);
+      left: 15px;
+      overflow: unset;
+      border: 0;
+      clip: unset;
+      height: max-content;
+      margin: 0px;
+      padding: 0;
+      position: absolute;
+      width: auto;
+
+      &::before {
+        content: '';
+        background-image: url(https://www.luxuryflooringandfurnishings.co.uk/static/version1721728202/frontend/Ayko/lff/en_GB/images/search-icon.png);
+        height: 25px;
+        width: 25px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        background-position: center center;
+      }
+    }
+
+    #minisearch-autocomplete-top-search {
+      @media screen and (max-width: 767px) {
+        margin-top: 0px;
+        left: 0;
+      }
+
+      @media screen and (max-width: 375px) {
+        height: 80vh;
+        overflow-y: overlay;
+      }
+    }
+  }
+  .overlay-contents {
+    background: #ffffff;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 9999999999;
+    transition: transform 0.5s ease-in-out;
+  }
+  .search_content {
+    position: relative;
+  }
+
+  .search_content form #minisearch-input-top-search {
+    height: 66px;
+    border-top: 1px solid #000;
+    border-bottom: 2px solid #000;
+    background: #fff;
+    padding-left: 45px;
+    margin: 0;
+    padding-right: 35px;
+    position: static;
+  }
+
+  .block-search .control {
+    @media screen and (max-width: 992px) {
+      padding: 0;
+    }
+  }
+
+  .custom_cross_btn {
+    position: absolute;
+    width: 25px;
+    height: 16px;
+    right: 20px;
+    top: 26px;
+    cursor: pointer;
+    z-index: 11;
+  }
+
+  .custom_logo_div {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0 10px;
+  }
+
+  .custorm_logo {
+    width: 60px;
+  }
+}
