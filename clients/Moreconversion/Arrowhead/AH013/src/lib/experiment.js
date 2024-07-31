@@ -1,7 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
 import reviewHtml from './components/reviewHtml';
 import data from './data/data';
 
@@ -35,7 +33,6 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
 
   if (VARIATION === 'Control') return;
 
