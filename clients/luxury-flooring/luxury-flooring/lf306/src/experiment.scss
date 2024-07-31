@@ -84,6 +84,10 @@
             @include media-query(xxl) {
                 font-size: 17px;
             }
+
+            @include media-query(lg) {
+                font-size: 15px;
+            }
         }
 
         .bold {
@@ -100,6 +104,10 @@
 
             @include media-query(xxl) {
                 font-size: 19px;
+            }
+
+            @include media-query(lg) {
+                font-size: 17px;
             }
         }
     }
