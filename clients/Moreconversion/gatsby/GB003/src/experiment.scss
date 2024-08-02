@@ -1,0 +1,34 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__freeWarranty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0px 20px;
+    border-bottom: solid 1px #d4d4d4;
+    margin-bottom: 30px;
+
+    .#{$id}__icon {
+      display: flex;
+    }
+
+    .#{$id}__text {
+      font-size: 14px;
+      font-weight: 700;
+      font-family: 'Lucida Grande';
+      line-height: 17px;
+      margin-left: 10px;
+      color: #202020;
+    }
+    & + h5 {
+      display: none;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: 3px 0px 15px;
+      margin-bottom: 20px;
+    }
+  }
+}
