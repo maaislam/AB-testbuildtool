@@ -1,0 +1,358 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  header.section-features-2 {
+    .image-wrapper-1-1-30 {
+      position: relative;
+      .#{$id}__limitedTimeOffer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Inter';
+        line-height: 20px;
+        padding: 20px 0;
+        background-color: #00ae74;
+        color: #fff;
+        text-align: center;
+
+        @media screen and (max-width: 767px) {
+          font-size: 12px;
+          line-height: 15px;
+          padding: 13px 0;
+        }
+      }
+    }
+
+    .header92_card-content {
+      position: relative;
+      padding: 3.7rem 2rem 2rem;
+      .text-size-medium-98.mk {
+        width: 100%;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        margin-bottom: 15px;
+      }
+
+      #bfcm_01 {
+        grid-column-gap: 11px;
+        background-color: #00ae74;
+        color: #fff;
+        border: solid 2px #1b3854;
+      }
+
+      .margin-top ~ div:not(.#{$id}__usps-wrapper) {
+        display: none;
+      }
+
+      .product-header6_reviews-wrapper-3 {
+        padding-top: 40px;
+        padding-bottom: 0;
+        img {
+          margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 767px) {
+          padding-top: 15px;
+        }
+      }
+
+      @media screen and (min-width: 1280px) {
+        justify-content: flex-start;
+      }
+    }
+
+    .header92_card-content-2 {
+      position: relative;
+      background-color: #fff;
+      background-image: unset;
+      .text-size-medium-98.mk {
+        width: 100%;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        margin-bottom: 15px;
+      }
+
+      #bfcm_01 {
+        grid-column-gap: 11px;
+        background-color: #00ae74;
+        color: #fff;
+        border: solid 2px #1b3854;
+      }
+
+      .header92_card-content-top-2 {
+        & ~ * {
+          display: none;
+        }
+
+        .margin-bottom {
+          & ~ div:not(.#{$id}__usps-wrapper) {
+            display: none;
+          }
+
+          .text-size-medium-98,
+          .heading-192,
+          .div-block-44194 {
+            display: none;
+          }
+
+          @media screen and (max-width: 479px) {
+            padding-top: 0 !important;
+            margin-bottom: 0;
+            .product-header6_reviews-wrapper-3 {
+              margin-top: 15px;
+              margin-bottom: 0;
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 479px) {
+        padding: 2.5rem 1rem 1.1rem;
+      }
+    }
+
+    .#{$id}__timer-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 60px;
+      width: 100%;
+      background-color: #1b3854;
+      color: #fff;
+      .timer-text {
+        font-size: 12px;
+        font-family: 'Inter';
+        font-weight: 700;
+        line-height: 15px;
+
+        @media screen and (max-width: 390px) {
+          font-size: 10px;
+          line-height: 13px;
+        }
+      }
+
+      .timer-label {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        .timer-days {
+          display: flex;
+          align-items: center;
+          margin-right: 10px;
+          @media screen and (max-width: 390px) {
+            margin-right: 6px;
+          }
+        }
+        .timer-hours {
+          display: flex;
+          align-items: center;
+          margin-right: 10px;
+          @media screen and (max-width: 390px) {
+            margin-right: 6px;
+          }
+        }
+
+        .timer-minutes {
+          display: flex;
+          align-items: center;
+        }
+
+        .timer-seconds {
+          display: flex;
+          align-items: center;
+          opacity: 0;
+        }
+
+        .timer-text {
+          font-size: 10px;
+          font-weight: 500;
+          font-family: 'Inter';
+          line-height: 12px;
+          margin-left: 8px;
+
+          @media screen and (max-width: 390px) {
+            font-size: 10px;
+            margin-left: 5px;
+          }
+        }
+
+        .timer-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          font-size: 12px;
+          font-weight: 700;
+          font-family: 'Inter';
+          line-height: 15px;
+          background-color: #fff;
+          color: #fd0000;
+          @media screen and (max-width: 390px) {
+            width: 20px;
+            height: 20px;
+            font-size: 10px;
+            line-height: 13px;
+          }
+        }
+
+        @media screen and (max-width: 390px) {
+          margin-left: 6px;
+        }
+      }
+      & + .nav__banner-4 {
+        display: none;
+      }
+
+      @media screen and (max-width: 479px) {
+        height: 40px;
+      }
+    }
+
+    .#{$id}__content {
+      max-width: 380px;
+      width: 100%;
+      margin: 0 auto;
+      & + .margin-bottom {
+        display: none;
+      }
+
+      &-header {
+        font-size: 29px;
+        font-family: 'Inter';
+        font-weight: 700;
+        line-height: 35px;
+        text-align: center;
+        margin-top: 30px;
+        padding-bottom: 8px;
+        border-bottom: solid 2px #000;
+
+        @media screen and (max-width: 767px) {
+          font-size: 18px;
+          line-height: 22px;
+          margin-top: 15px;
+          padding-bottom: 5px;
+        }
+      }
+
+      &-subheader {
+        font-size: 55px;
+        font-family: 'Inter';
+        font-weight: 700;
+        line-height: 67px;
+        text-align: center;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: solid 2px #000;
+        color: #00ae74;
+        @media screen and (max-width: 767px) {
+          font-size: 34px;
+          line-height: 41px;
+          letter-spacing: 2%;
+          margin-top: 5px;
+          padding-bottom: 5px;
+        }
+      }
+      &-footer {
+        &-text {
+          font-size: 16px;
+          font-family: 'Inter';
+          font-weight: 700;
+          line-height: 22px;
+          text-align: center;
+          margin-top: 8px;
+          margin-bottom: 0;
+          padding-bottom: 20px;
+
+          @media screen and (max-width: 767px) {
+            font-size: 10px;
+            line-height: 14px;
+            margin-top: 5px;
+            padding-bottom: 15px;
+          }
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        max-width: 235px;
+      }
+    }
+
+    .#{$id}__arrow {
+      display: flex;
+      & + .icon-embed-xxsmall-8 {
+        display: none;
+      }
+    }
+
+    .#{$id}__limitedTimeDeal {
+      font-size: 10px;
+      font-weight: 400;
+      font-family: 'Inter';
+      line-height: 10px;
+      margin-bottom: 10px;
+
+      @media screen and (max-width: 400px) {
+        font-size: 8px;
+      }
+    }
+
+    .#{$id}__usps-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      .usps-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 0 0 calc(100% / 3);
+      }
+      .usps-icon {
+        svg {
+          @media screen and (max-width: 480px) {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .usps-text {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        text-align: center;
+        margin-top: 8px;
+        min-height: 33px;
+
+        span {
+          color: #fd0000;
+        }
+
+        @media screen and (max-width: 480px) {
+          font-size: 9px;
+          line-height: 11px;
+          margin-top: 4px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        margin-top: 15px;
+      }
+    }
+  }
+}
