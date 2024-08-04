@@ -1,60 +1,33 @@
+/*eslint-disable no-param-reassign */
 import setup from './services/setup';
 import shared from './shared/shared';
-import button from './components/button';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
 
 const init = () => {
-  const targetPoint = document.querySelector('.banner .comn_btn_box');
+  //javascript:bookmarkscroll.scrollTo('join_pkg')
 
-  if (document.querySelector(`.${ID}__button`)) {
-    document.querySelector(`.${ID}__button`).remove();
-  }
+  const primaryCtas = document.querySelectorAll(
+    '.common_btn.shadow-pulse[href*="javascript:bookmarkscroll.scrollTo(\'join_pkg\')"]'
+  );
 
-  if (VARIATION === '1') {
-    targetPoint
-      .querySelector('.button_outer')
-      .insertAdjacentHTML('afterbegin', button(ID, 'Get Yours Today'));
-  }
+  const btnTextConfig = {
+    1: 'Get Yours Today',
+    2: 'Get Yours Now',
+    3: 'Unleash Your Primal Queen',
+    4: 'Boost my energy now',
+    5: 'Step into Your Power',
+    6: 'Unlock Your True Power',
+    7: 'UNLOCK YOUR INNER QUEEN'
+  };
 
-  if (VARIATION === '2') {
-    targetPoint
-      .querySelector('.button_outer')
-      .insertAdjacentHTML('afterbegin', button(ID, 'Get Yours Now'));
-  }
-
-  if (VARIATION === '3') {
-    targetPoint
-      .querySelector('.button_outer')
-      .insertAdjacentHTML('afterbegin', button(ID, 'Unleash Your Primal Queen'));
-  }
-
-  if (VARIATION === '4') {
-    targetPoint
-      .querySelector('.button_outer')
-      .insertAdjacentHTML('afterbegin', button(ID, 'Boost my energy now'));
-  }
-
-  if (VARIATION === '5') {
-    targetPoint
-      .querySelector('.button_outer')
-      .insertAdjacentHTML('afterbegin', button(ID, 'Step into Your Power'));
-  }
-
-  if (VARIATION === '6') {
-    targetPoint
-      .querySelector('.button_outer')
-      .insertAdjacentHTML('afterbegin', button(ID, 'Unlock Your True Power'));
-  }
-  if (VARIATION === '7') {
-    targetPoint
-      .querySelector('.button_outer')
-      .insertAdjacentHTML('afterbegin', button(ID, 'UNLOCK YOUR INNER QUEEN'));
-  }
+  primaryCtas.forEach((cta) => {
+    cta.childNodes[0].nodeValue = btnTextConfig[VARIATION];
+  });
 };
 
 export default () => {
-  setup(); //use if needed
+  setup();
 
   if (VARIATION === 'Control') return;
   init();
