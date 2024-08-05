@@ -200,8 +200,7 @@ const init = () => {
       desc: 'Enjoy fast delivery with DHL/UPS, ensuring your shoes arrive promptly.'
     },
     {
-      img_ur:
-        'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/moneyback.png?v=1722863039',
+      img_ur: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/moneyback.png?v=1722863039',
       heading: 'Money Back Guarantee',
       desc: "Shop with confidence knowing we offer a money-back guarantee if you're not satisfied."
     },

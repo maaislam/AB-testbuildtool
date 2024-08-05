@@ -24,49 +24,21 @@
       width: 100%;
       height: max-content;
       &-content {
-
-        //padding: 80px 0 40px 135px;
-
-        padding: 110px 0 97px 100px;
-
+        // padding: 110px 0 97px 100px;
 
         &-box {
           max-width: 513px;
           text-align: center;
-
         }
 
         @media screen and (min-width: 1280px) {
-          //padding: 80px 0 40px 100px;
-          padding: 80px 0 40px 135px;
-        }
-
-        // @media screen and (max-width: 767px) {
-        //   max-width: 523px;
-        //   margin: 0 auto;
-        //   padding: 80px 26px 40px 26px;
-        // }
-
-
-          @media screen and (max-width: 1024px) {
-            max-width: 523px;
-            margin: 0 auto;
-          }
-        }
-
-        @media screen and (min-width: 1280px) {
-          padding: 110px 0 97px 135px;
+          //padding: 110px 0 40px 135px;
         }
 
         @media screen and (max-width: 1024px) {
-          padding: 53px 0 48px;
+          max-width: 523px;
+          margin: 0 auto;
         }
-
-        @media screen and (max-width: 767px) {
-          max-width: 100%;
-          padding: 53px 26px 48px;
-        }
-
       }
 
       &-review {
@@ -143,7 +115,6 @@
         @media screen and (max-width: 767px) {
           margin-bottom: 19px;
         }
-
       }
 
       &-footer {
@@ -180,13 +151,23 @@
         }
       }
 
-      @media screen and (max-width: 767px) {
-        background-image: url(https://cdn.shopify.com/s/files/1/0464/9346/6777/files/mobile-Background.png?v=1722861632);
-        height: 738px;
+      @media screen and (min-width: 1280px) {
+        padding: 110px 0 97px 135px;
       }
 
-        //height: 738px;
+      @media screen and (max-width: 1024px) {
+        padding: 53px 0 48px;
       }
+
+      @media screen and (max-width: 767px) {
+        max-width: 100%;
+        padding: 53px 26px 48px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      background-image: url(https://cdn.shopify.com/s/files/1/0464/9346/6777/files/mobile-Background.png?v=1722861632);
+      height: 738px;
     }
   }
 
