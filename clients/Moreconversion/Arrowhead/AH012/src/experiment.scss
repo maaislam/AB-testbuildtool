@@ -4,6 +4,17 @@
 .#{$id} {
   header {
     & > .page-width {
+      .header-layout {
+        .header-item--icons {
+          @media screen and (max-width: 1299px) and (min-width: 1065px) {
+            width: 100%;
+          }
+        }
+
+        @media screen and (max-width: 1299px) and (min-width: 1065px) {
+          flex-wrap: wrap;
+        }
+      }
       @media screen and (min-width: 1280px) {
         padding: 0 5px;
       }
