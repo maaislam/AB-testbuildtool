@@ -16,7 +16,7 @@ const bannerSection = (id, data) => {
                         <a class="${id}__banner-button">Buy Now With -50%</a>
                         <div class="${id}__banner-footer">
                             <div class="${id}__banner-footer-text">Our Biggest Sale to Date</div>
-                            <div class="${id}__banner-footer-subtext">Now $130.00  $64.99</div>
+                            <div class="${id}__banner-footer-subtext">Now <span>$130.00</span>  $64.99</div>
                         </div>
                     </div>
                 </div>
