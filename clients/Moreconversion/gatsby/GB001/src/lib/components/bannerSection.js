@@ -1,4 +1,4 @@
-const bannerSection = (id) => {
+const bannerSection = (id, data) => {
   const html = `
         <div class="${id}__bannerSection">
             <div class="${id}__banner">
@@ -16,13 +16,27 @@ const bannerSection = (id) => {
                         <a class="${id}__banner-button">Buy Now With -50%</a>
                         <div class="${id}__banner-footer">
                             <div class="${id}__banner-footer-text">Our Biggest Sale to Date</div>
+
                             <div class="${id}__banner-footer-subtext">Now $130.00  $64.99</div>
+
+                            <div class="${id}__banner-footer-subtext">Now <span>$130.00</span>  $64.99</div>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="${id}__banner-usps">
-                
+                    <div class="${id}__banner-usps-container">
+                        ${data
+                          .map((item) => {
+                            return `
+                                <div class="${id}__uspsitem">
+                                    <img src="${item.icon}" alt="${item.title}"/>
+                                </div>
+                            `;
+                          })
+                          .join('\n')}
+                    </div>
                 </div>
             </div>
             
