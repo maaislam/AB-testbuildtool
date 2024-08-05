@@ -159,11 +159,11 @@
   .bullet_point {
     display: flex;
     margin-top: 16px;
-    align-items: baseline;
+    // align-items: baseline;
     gap: 5px;
   }
 
-  .bullet_point img {
+  .bullet_point svg {
     width: 26px;
   }
 
