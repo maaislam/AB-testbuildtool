@@ -23,6 +23,7 @@
       background-size: cover;
       width: 100%;
       height: max-content;
+      padding: 110px 0 0px 0px;
       &-content {
         margin-bottom: 97px;
 
@@ -31,12 +32,14 @@
           text-align: center;
         }
 
-        @media screen and (min-width: 1280px) {
+        @media screen and (max-width: 1280px) {
+          padding-left: 100px;
         }
 
         @media screen and (max-width: 1024px) {
           max-width: 523px;
           margin: 0 auto 60px;
+          padding-left: 0px;
         }
       }
 
@@ -171,7 +174,6 @@
 
   .#{$id}__banner-usps {
     max-width: 1170px;
-    margin: 0 auto;
     padding-bottom: 80px;
     &-container {
       display: grid;
@@ -194,8 +196,12 @@
       }
     }
 
+    @media screen and (max-width: 1280px) {
+      margin: 0 auto;
+    }
+
     @media screen and (max-width: 767px) {
-      padding: 0 42px 0px;
+      padding: 0;
     }
   }
 
