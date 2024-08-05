@@ -16,6 +16,104 @@
     display: none !important;
   }
 
+  .#{$id}__timer-wrapper {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #001f4d;
+    color: #fff;
+    padding: 24px 0;
+    .timer-header-text {
+      font-size: 13px;
+      font-family: 'Inter';
+      font-weight: 700;
+      line-height: 17px;
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 13px;
+      }
+    }
+
+    .timer-label {
+      display: flex;
+      margin-left: 10px;
+      .timer-days {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 5px;
+        @media screen and (max-width: 390px) {
+          margin-right: 6px;
+        }
+      }
+      .timer-hours {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 5px;
+        @media screen and (max-width: 390px) {
+          margin-right: 6px;
+        }
+      }
+
+      .timer-minutes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 5px;
+        @media screen and (max-width: 390px) {
+          margin-right: 6px;
+        }
+      }
+
+      .timer-seconds {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .timer-text {
+        font-size: 13px;
+        font-weight: 700;
+        font-family: 'Inter';
+        line-height: 14px;
+        margin-top: 5px;
+        margin-left: 8px;
+
+        @media screen and (max-width: 390px) {
+          font-size: 10px;
+          margin-left: 5px;
+        }
+      }
+
+      .timer-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        font-family: 'Inter';
+        line-height: 12px;
+        @media screen and (max-width: 390px) {
+          font-size: 10px;
+          line-height: 13px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        margin-left: 0px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      padding: 17px 0;
+    }
+  }
+
   .#{$id}__bannerSection {
     .#{$id}__banner {
       background-image: url(https://cdn.shopify.com/s/files/1/0464/9346/6777/files/Hero-Background_0d3d7de0-c3be-4aac-8282-0cb141a23548.png?v=1721916864);

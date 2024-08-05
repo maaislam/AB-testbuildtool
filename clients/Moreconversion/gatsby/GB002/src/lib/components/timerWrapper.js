@@ -8,15 +8,15 @@ const timerWrapper = (id) => {
             <div class="timer-days-text timer-text">Days</div>
         </div>
         <div class="timer-hours">
-            <div class="timer-hours-box timer-box"></div>
+            <div class="timer-hours-box timer-box">00</div>
             <div class="timer-hours-text timer-text">Hours</div>
         </div>
         <div class="timer-minutes">
-            <div class="timer-minutes-box timer-box"></div>
+            <div class="timer-minutes-box timer-box">00</div>
             <div class="timer-minutes-text timer-text">Minutes</div>
         </div>
         <div class="timer-seconds">
-            <div class="timer-seconds-box timer-box"></div>
+            <div class="timer-seconds-box timer-box">00</div>
             <div class="timer-seconds-text timer-text">Seconds</div>
         </div>
       </div>

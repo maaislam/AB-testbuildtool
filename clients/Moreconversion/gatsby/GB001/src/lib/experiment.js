@@ -2,10 +2,27 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import bannerSection from './components/bannerSection';
 import { uspsData } from './data/data';
+import timerWrapper from './components/timerWrapper';
 
 const { ID, VARIATION } = shared;
+const domChecker = () => {
+  const hours = document.querySelector(`.${ID}__timer-wrapper .timer-hours-box`);
+  const minutes = document.querySelector(`.${ID}__timer-wrapper .timer-minutes-box`);
+  const seconds = document.querySelector(`.${ID}__timer-wrapper .timer-seconds-box`);
+
+  const controlHours = document.querySelector('#timer span').textContent || '00';
+  const controlMinutes = document.querySelector('#timer span:nth-child(2)').textContent || '00';
+  const controlSeconds = document.querySelector('#timer span:last-child').textContent || '00';
+
+  hours.textContent = controlHours;
+  minutes.textContent = controlMinutes;
+  seconds.textContent = controlSeconds;
+};
 
 const init = () => {
+  if (!document.querySelector(`.${ID}__timer-wrapper`)) {
+    document.querySelector('main').insertAdjacentHTML('beforebegin', timerWrapper(ID, uspsData));
+  }
   if (!document.querySelector(`.${ID}__bannerSection`)) {
     document.querySelector('main').insertAdjacentHTML('beforebegin', bannerSection(ID, uspsData));
   }
@@ -298,6 +315,8 @@ const init = () => {
 </div>
 </div>`
   );
+
+  window.intervalId = setInterval(domChecker, 1000);
 };
 
 export default () => {
