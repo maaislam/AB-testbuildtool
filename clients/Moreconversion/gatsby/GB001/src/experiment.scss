@@ -277,9 +277,8 @@
     display: flex;
     margin-top: 66px;
     gap: 30px;
-
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .sec_4_itm {
@@ -478,6 +477,7 @@
     height: 364px;
   }
   .sec_8_card img {
+    object-fit: contain;
     width: 99px;
     height: 99px;
   }
@@ -665,7 +665,7 @@
       padding: 0 15px;
     }
     .sec_2_points {
-      padding: 0 15px;
+      // padding: 0 15px;
     }
     .sec_2_points h4 {
       font-size: 28px;
@@ -697,7 +697,6 @@
     .sec_4_items {
       margin-top: 30px;
       gap: 15px;
-
       flex-direction: column;
       padding: 0 15px;
     }
