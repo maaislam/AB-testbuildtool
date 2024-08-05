@@ -6,6 +6,7 @@
 .#{$id} {
   .promo-bar-2,
   header.section_header64,
+  header + .padding-global-94,
   .listicle_reasons,
   .section_listicle_1,
   .sticky-sector,
@@ -270,6 +271,7 @@
   }
 
   .bullet_point svg {
+    margin-top: 4px;
     width: 26px;
   }
 
