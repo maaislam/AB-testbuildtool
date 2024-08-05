@@ -118,13 +118,13 @@ const init = () => {
 
   const sectionFiveData = [
     {
-      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/sl1_png.png?v=1722863040'
+      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/T1_png.png?v=1722869782'
     },
     {
-      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/sl2_png.png?v=1722863040'
+      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/T2_png.png?v=1722869782'
     },
     {
-      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/sl3_png.png?v=1722863040'
+      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/T3_png.png?v=1722869782'
     }
   ];
 
@@ -148,13 +148,13 @@ const init = () => {
 
   const sectionSIxData = [
     {
-      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/mc-export-download---2023-12-19T132856.395-min-p-500.png'
+      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/sl1_png.png?v=1722863040'
     },
     {
-      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/mc-export-download---2023-12-19T132856.395-min-p-500.png'
+      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/sl2_png.png?v=1722863040'
     },
     {
-      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/mc-export-download---2023-12-19T132856.395-min-p-500.png'
+      src: 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/sl3_png.png?v=1722863040'
     }
   ];
 
@@ -195,19 +195,19 @@ const init = () => {
   const sectionEightData = [
     {
       img_ur:
-        'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/mc-export-download---2023-12-19T132856.395-min-p-500.png',
+        'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/fast-delivery.png?v=1722863039',
       heading: 'Fast Delivery',
       desc: 'Enjoy fast delivery with DHL/UPS, ensuring your shoes arrive promptly.'
     },
     {
       img_ur:
-        'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/mc-export-download---2023-12-19T132856.395-min-p-500.png',
+        'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/moneyback.png?v=1722863039',
       heading: 'Money Back Guarantee',
       desc: "Shop with confidence knowing we offer a money-back guarantee if you're not satisfied."
     },
     {
       img_ur:
-        'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/mc-export-download---2023-12-19T132856.395-min-p-500.png',
+        'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/true-to-size-fit.png?v=1722863039',
       heading: 'True to Size Fit',
       desc: 'Our shoes fit true to size. Wear what you usually wear with ease'
     }

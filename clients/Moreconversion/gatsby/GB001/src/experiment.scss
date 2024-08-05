@@ -24,11 +24,29 @@
       width: 100%;
       height: max-content;
       &-content {
+
+        //padding: 80px 0 40px 135px;
+
         padding: 110px 0 97px 100px;
+
 
         &-box {
           max-width: 513px;
           text-align: center;
+
+        }
+
+        @media screen and (min-width: 1280px) {
+          //padding: 80px 0 40px 100px;
+          padding: 80px 0 40px 135px;
+        }
+
+        // @media screen and (max-width: 767px) {
+        //   max-width: 523px;
+        //   margin: 0 auto;
+        //   padding: 80px 26px 40px 26px;
+        // }
+
 
           @media screen and (max-width: 1024px) {
             max-width: 523px;
@@ -48,6 +66,7 @@
           max-width: 100%;
           padding: 53px 26px 48px;
         }
+
       }
 
       &-review {
@@ -124,6 +143,7 @@
         @media screen and (max-width: 767px) {
           margin-bottom: 19px;
         }
+
       }
 
       &-footer {
@@ -162,6 +182,9 @@
 
       @media screen and (max-width: 767px) {
         background-image: url(https://cdn.shopify.com/s/files/1/0464/9346/6777/files/mobile-Background.png?v=1722861632);
+        height: 738px;
+      }
+
         //height: 738px;
       }
     }
@@ -351,9 +374,8 @@
     display: flex;
     margin-top: 66px;
     gap: 30px;
-
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .sec_4_itm {
@@ -552,6 +574,7 @@
     height: 364px;
   }
   .sec_8_card img {
+    object-fit: contain;
     width: 99px;
     height: 99px;
   }
@@ -739,7 +762,7 @@
       padding: 0 15px;
     }
     .sec_2_points {
-      padding: 0 15px;
+      // padding: 0 15px;
     }
     .sec_2_points h4 {
       font-size: 28px;
@@ -771,7 +794,6 @@
     .sec_4_items {
       margin-top: 30px;
       gap: 15px;
-
       flex-direction: column;
       padding: 0 15px;
     }
