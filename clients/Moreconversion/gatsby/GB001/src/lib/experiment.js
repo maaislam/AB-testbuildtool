@@ -1,12 +1,13 @@
 import setup from './services/setup';
 import shared from './shared/shared';
 import bannerSection from './components/bannerSection';
+import { uspsData } from './data/data';
 
 const { ID, VARIATION } = shared;
 
 const init = () => {
   if (!document.querySelector(`.${ID}__bannerSection`)) {
-    document.querySelector('main').insertAdjacentHTML('beforebegin', bannerSection(ID));
+    document.querySelector('main').insertAdjacentHTML('beforebegin', bannerSection(ID, uspsData));
   }
 
   document.querySelector('main').insertAdjacentHTML(
