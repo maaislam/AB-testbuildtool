@@ -97,7 +97,7 @@ export const onUrlChange = (callback, onError = null) => {
   }
 };
 
-const initSwiper = (id) => {
+export const initSwiper = (id) => {
   const styleSheet = document.createElement('link');
   styleSheet.rel = 'stylesheet';
   styleSheet.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
@@ -120,4 +120,34 @@ const initSwiper = (id) => {
   };
 };
 
-export default initSwiper;
+export const setCroStorage = (key, data, expirationDays = 30) => {
+  const expirationDate = new Date();
+  expirationDate.setDate(expirationDate.getDate() + expirationDays);
+
+  const dataToStore = {
+    data,
+    expires: expirationDate.toISOString()
+  };
+
+  localStorage.setItem(key, JSON.stringify(dataToStore));
+};
+
+export const getCroStorage = (key) => {
+  const storedData = localStorage.getItem(key);
+
+  if (storedData) {
+    const { data, expires } = JSON.parse(storedData);
+
+    const expirationTime = new Date(expires);
+    const currentTime = new Date();
+
+    if (currentTime <= expirationTime) {
+      return data;
+    }
+    //Data has expired, remove it from Local Storage
+    localStorage.removeItem(key);
+    console.log('Stored data has expired and has been removed.');
+  }
+
+  return null; //No valid data found
+};
