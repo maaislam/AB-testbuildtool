@@ -1,0 +1,23 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__hide.#{$id}__atc-btn {
+        display: none !important;
+    }
+
+    &__hide.btn.btn--full.add-to-cart.omni-carry-fakeout {
+        display: none !important;
+    }
+    
+    .custom-checkbox:not(.#{$id}__checkbox) {
+        display: none;
+    }
+    .custom-checkbox {
+        max-width: 335px;
+    }
+
+    .#{$id}__atc-btn.btn.btn--full.add-to-cart:not(.omni-carry-fakeout) {
+        display: block;
+    }
+}
