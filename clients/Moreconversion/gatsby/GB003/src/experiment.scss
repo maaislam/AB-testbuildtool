@@ -2,6 +2,11 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  .#{$id}__image {
+    & + img {
+      display: none !important;
+    }
+  }
   .#{$id}__freeWarranty {
     display: flex;
     align-items: center;
@@ -18,12 +23,13 @@
       font-size: 14px;
       font-weight: 700;
       font-family: 'Lucida Grande';
+      font-style: normal;
       line-height: 17px;
       margin-left: 10px;
       color: #202020;
     }
-    & + h5 {
-      display: none;
+    & + img {
+      display: none !important;
     }
 
     @media screen and (max-width: 767px) {

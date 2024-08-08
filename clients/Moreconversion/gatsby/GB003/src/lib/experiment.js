@@ -2,11 +2,24 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { freeWarranty } from './components/freeWarranty';
 import { easyReturn, oneYearWarranty } from './data/icons';
+import image from './components/image';
 
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  const targetElement = document.querySelector('.product-single__description > h5');
+  const targetElement =
+    document.querySelector('.product-single__description img[data-mce-fragment="1"]') ||
+    document.querySelector('.product-single__description img[data-mce-src]');
+
+  if (VARIATION === '1' || VARIATION === '2') {
+    const imagePath =
+      VARIATION === '1'
+        ? 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/icons-v1.png?v=1722930772'
+        : 'https://cdn.shopify.com/s/files/1/0464/9346/6777/files/icons-v2.png?v=1722931288';
+    if (!document.querySelector(`.${ID}__image`)) {
+      targetElement.insertAdjacentHTML('beforebegin', image(ID, imagePath));
+    }
+  }
 
   if (VARIATION === '3' || VARIATION === '4') {
     const text = VARIATION === '3' ? 'Free 1-Year Warranty' : 'Easy Free Returns';

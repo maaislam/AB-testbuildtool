@@ -1,0 +1,30 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__operatorSliderSection {
+    .#{$id}__swiper {
+      padding-bottom: 15px;
+    }
+    .swiper-slide {
+      display: flex;
+      padding: 5px 0;
+      .terms {
+        margin-top: 4px;
+      }
+    }
+
+    .swiper-pagination {
+      bottom: 0;
+
+      .swiper-pagination-bullet {
+        width: 18px;
+        height: 18px;
+
+        &.swiper-pagination-bullet-active {
+          background: #636363;
+        }
+      }
+    }
+  }
+}
