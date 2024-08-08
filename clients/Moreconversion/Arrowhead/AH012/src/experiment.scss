@@ -5,14 +5,46 @@
   header {
     & > .page-width {
       .header-layout {
-        .header-item--icons {
-          @media screen and (max-width: 1299px) and (min-width: 1065px) {
-            width: 100%;
+        .header-item--logo {
+          @media screen and (max-width: 1299px) and (min-width: 1024px) {
+            flex: 0 0 180px;
+          }
+
+          @media screen and (max-width: 1023px) and (min-width: 769px) {
+            flex: 0 0 105px;
           }
         }
 
-        @media screen and (max-width: 1299px) and (min-width: 1065px) {
-          flex-wrap: wrap;
+        .header-item--navigation {
+          flex: 0 0 auto;
+
+          a.site-nav__link {
+            padding: 7.5px 10px;
+            font-size: 18px;
+            @media screen and (max-width: 1299px) and (min-width: 1024px) {
+              font-size: 16px;
+            }
+
+            @media screen and (max-width: 1023px) and (min-width: 769px) {
+              font-size: 14px;
+            }
+          }
+
+          @media screen and (max-width: 1023px) {
+            flex: 0 0 auto;
+          }
+        }
+
+        .header-item--icons {
+          .site-nav__link--cart {
+            @media screen and (max-width: 1023px) and (min-width: 769px) {
+              padding-left: 4px;
+              padding-right: 4px;
+            }
+          }
+          @media screen and (max-width: 1299px) and (min-width: 1024px) {
+            justify-content: flex-start;
+          }
         }
       }
       @media screen and (min-width: 1280px) {
@@ -24,39 +56,80 @@
       padding-bottom: 0;
     }
   }
-  .#{$id}__searchForm {
-    .search-modal__wrapper {
-      display: flex;
-      border-bottom: none;
-      background-color: #f1f1f1;
-      padding: 14px 25px 14px 14px;
-      border-radius: 100px;
-      height: 44px;
-      align-items: center;
 
-      @media screen and (max-width: 767px) {
-        padding: 14px 25px 14px 20px;
-        border-radius: 0;
-      }
-    }
+  &-1 {
+    .#{$id}__searchForm {
+      &.desktop-search {
+        form {
+          border: solid 1px #777777;
 
-    button {
-      margin-right: 10px;
-      svg {
-        width: 20px;
-        height: 20px;
+          @media screen and (min-width: 1200px) {
+            width: 305px;
+          }
+
+          @media screen and (max-width: 1299px) and (min-width: 1024px) {
+            padding: 14px 14px 14px 10px;
+          }
+
+          @media screen and (max-width: 1023px) and (min-width: 769px) {
+            padding: 8px;
+          }
+        }
       }
-    }
-    input[type='search'] {
-      font-size: 18px;
-      padding: 0;
-      color: #000;
-      width: 100%;
-      &::placeholder {
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 17px;
-        color: #333333;
+      .#{$id}__formWrapper {
+        background-color: #f1f1f1;
+      }
+      .search-modal__wrapper {
+        display: flex;
+        border-bottom: none;
+        background-color: #f1f1f1;
+        padding: 14px 25px 14px 14px;
+        border-radius: 100px;
+        height: 44px;
+        align-items: center;
+
+        @media screen and (max-width: 767px) {
+          max-width: 310px;
+          padding: 14px 25px 14px 20px;
+          border-radius: 0;
+          margin: 0 auto;
+        }
+      }
+
+      button {
+        margin-right: 10px;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        @media screen and (max-width: 1299px) and (min-width: 1024px) {
+          margin-right: 5px;
+        }
+
+        @media screen and (max-width: 1023px) and (min-width: 769px) {
+          margin-right: 5px;
+        }
+      }
+      input[type='search'] {
+        font-size: 18px;
+        padding: 0;
+        color: #000;
+        width: 100%;
+        &::placeholder {
+          font-size: 12px;
+          font-weight: 400;
+          font-style: italic;
+          line-height: 17px;
+          color: #333333;
+        }
+
+        @media screen and (max-width: 1299px) and (min-width: 1024px) {
+          font-size: 16px;
+        }
+        @media screen and (max-width: 1023px) and (min-width: 769px) {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -66,6 +139,99 @@
     @media screen and (max-width: 767px) {
       display: block;
     }
+  }
+
+  &-2 {
+    .#{$id}__searchForm {
+      &.desktop-search {
+        form {
+          border-bottom: solid 1px #777777;
+          @media screen and (min-width: 1200px) {
+            width: 305px;
+          }
+
+          @media screen and (max-width: 1299px) and (min-width: 1024px) {
+            padding: 14px 14px 14px 10px;
+          }
+
+          @media screen and (max-width: 1023px) and (min-width: 769px) {
+            padding: 8px;
+          }
+        }
+      }
+
+      .#{$id}__formWrapper {
+        display: flex;
+        align-items: center;
+        background-color: #f1f1f1;
+      }
+      .search-modal__wrapper {
+        display: flex;
+        border-bottom: none;
+        background-color: #f1f1f1;
+        padding: 11px 20px 11px 10px;
+        height: 44px;
+        align-items: center;
+      }
+
+      button {
+        margin-right: 10px;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        @media screen and (max-width: 1299px) and (min-width: 1024px) {
+          margin-right: 5px;
+        }
+
+        @media screen and (max-width: 1023px) and (min-width: 769px) {
+          margin-right: 5px;
+        }
+      }
+      input[type='search'] {
+        font-size: 18px;
+        padding: 0;
+        color: #000;
+        width: 100%;
+        &::placeholder {
+          font-size: 12px;
+          font-weight: 400;
+          font-style: italic;
+          line-height: 17px;
+          color: #333333;
+        }
+
+        @media screen and (max-width: 1299px) and (min-width: 1024px) {
+          font-size: 16px;
+        }
+        @media screen and (max-width: 1023px) and (min-width: 769px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .#{$id}__searchForm.mobile-search {
+      .search-modal__wrapper {
+        display: flex;
+        border-bottom: none;
+        background-color: #f1f1f1;
+        padding: 14px 25px 14px 14px;
+        border-radius: 100px;
+        height: 44px;
+        align-items: center;
+
+        @media screen and (max-width: 767px) {
+          width: calc(100% - 35px);
+          padding: 14px 25px 14px 20px;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  .#{$id}__cross {
+    display: flex;
   }
 
   .custom-search {
