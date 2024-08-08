@@ -2,11 +2,9 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    &__hide.#{$id}__visibleAtcBtn,
+    &__hide.#{$id}__visibleAtcBtn.btn.btn--full.add-to-cart.omni-carry-fakeout,
     &__hide.#{$id}__atc-btn {
-        display: none !important;
-    }
-
-    &__hide.btn.btn--full.add-to-cart.omni-carry-fakeout {
         display: none !important;
     }
     
@@ -15,6 +13,40 @@
     }
     .custom-checkbox {
         max-width: 335px;
+
+        @include media-query(xl) {
+            max-width: 100%;
+        }
+
+        @include media-query(sm) {
+            max-width: 335px;
+        }
+    }
+
+    &__checkbox {
+        .custom-check {
+            @include media-query(xl) {
+                width: 22px;
+                height: 22px;
+            }
+        }
+        .custom-checkbox-label {
+            @include media-query(xl) {
+                font-size: 14px;
+                padding-left: 30px;
+            }
+
+            @include media-query(sm) {
+                font-size: 16px;
+                padding-left: 35px;
+            }
+        }
+        .custom-checkbox-label .custom-check::after {
+            @include media-query(xl) {
+                top: 3px;
+                left: 7px;
+            }
+        }
     }
 
     .#{$id}__atc-btn.btn.btn--full.add-to-cart:not(.omni-carry-fakeout) {

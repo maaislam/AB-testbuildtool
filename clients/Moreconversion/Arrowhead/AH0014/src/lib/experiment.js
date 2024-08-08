@@ -11,7 +11,7 @@ const getCartInfo = async () => {
 
 const atcBtnVisibilityAndClick = () => {
   const atcBtnElem = document.querySelector(`.${ID}__atc-btn`);
-  const atcBtnCtrlElem = document.querySelector('.add-to-cart.omni-carry-fakeout');
+  const atcBtnCtrlElem = document.querySelector(`.${ID}__visibleAtcBtn`);
 
   atcBtnElem.classList.add(`${ID}__hide`);
   atcBtnCtrlElem.classList.remove(`${ID}__hide`);
@@ -25,7 +25,7 @@ const init = () => {
     attachPoint.insertAdjacentHTML('afterend', customCheckbox(ID));
   }
 
-  const atcBtnCtrl = document.querySelector('.add-to-cart.omni-carry-fakeout');
+  const atcBtnCtrl = document.querySelector(`.${ID}__visibleAtcBtn`);
   atcBtnCtrl.classList.add(`${ID}__hide`);
 
   if (!document.querySelector(`.${ID}__atc-btn`)) {
@@ -36,10 +36,22 @@ const init = () => {
 export default () => {
   setup();
 
+  const atcBtnCtrlElems = document.querySelectorAll('.atc-qty-merge .add-to-cart');
+  atcBtnCtrlElems.forEach((btn) => {
+    const style = getComputedStyle(btn);
+    //style display flex
+    if (style.display === 'flex' || style.display === 'block') {
+      btn.classList.add(`${ID}__visibleAtcBtn`);
+    }
+  });
+
   init();
 
   document.addEventListener('click', (e) => {
     const { target } = e;
+
+    const productPrice = window.normalPrice;
+    const productPriceElem = document.querySelector('.product__price');
 
     if (target.closest(`.${ID}__atc-btn`)) {
       const checkboxElem = document.querySelector(`.${ID}__checkbox #belt-checkbox`);
@@ -84,6 +96,14 @@ export default () => {
         });
       } else {
         atcBtnVisibilityAndClick();
+      }
+    } else if (target.closest(`.${ID}__checkbox`)) {
+      const checkboxElem = document.querySelector(`.${ID}__checkbox #belt-checkbox`);
+
+      if (checkboxElem.checked) {
+        productPriceElem.textContent = `$${productPrice + 15}`;
+      } else {
+        productPriceElem.textContent = `$${productPrice}`;
       }
     }
   });
