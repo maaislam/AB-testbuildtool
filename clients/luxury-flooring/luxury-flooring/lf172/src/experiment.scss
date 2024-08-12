@@ -1,253 +1,236 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
-// QA purpose show the control banner
-.lf306 .banner_for_july .promo_image .promo_content_inner .promo_list {
-    display: flex;
+
+.lf306__banner-container {
+    display: none;
 }
 
 .#{$id} {
-    .offer_end:not(.#{$id}__offerEnd) {
-        display: none;
-    }
-
-    .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed {
-        background: #B2263F !important;
-    }
-
-    .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card {
-        background: #B2263F !important;
-    }
-
-    .actions {
-        width: 206px !important;
-        height: 50px;
-        background: #fff;
+    &__banner {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 17px auto 0;
+        flex: 1 1 65%;
+        max-height: 100%;
+        padding: 0 10px;
+        background-color: #fff;
 
-        @include media-query(xxl) {
-            width: 190px;
-            margin: 12px auto 0;
+        @include media-query(lg) {
+            padding: 0;
+            flex-direction: column-reverse;
+            max-height: 100%;
         }
 
-        @include media-query(xl) {
-            margin: 12px auto 0;
+        .mobile-img {
+            display: none;
+
+            @include media-query(lg) {
+                display: block;
+            }
         }
 
-        a {
-            padding: 11px 38px 16px !important;
-            font-weight: 600;
-            font-size: 17px !important;
-            line-height: 19px;
+        .desktop-img {
+            display: block;
+
+            @include media-query(lg) {
+                display: none;
+            }
+        }
+
+        // fade-in-out-slide
+        .slide-wrapper {
+            position: relative;
             width: 100%;
             height: 100%;
-            color: #000 !important;
+
+            @include media-query(lg) {
+                min-height: 380px;
+            }
+
+            @include media-query(sm) {
+                min-height: 243px;
+            }
+        }
+
+        .before-slide,
+        .after-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sale-box-container {
+            display: flex;
+            width: 100%;
+            margin-top: 30px;
+
+            @include media-query(lg) {
+                margin-top: 20px;
+            }
+        }
+
+        .sale-box-content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex: 1;
+
+            @media screen and (max-width: 1680px) {
+                margin-right: 0;
+            }
 
             @include media-query(xxl) {
-                padding: 11px 30px 16px !important;
-            }
-
-            .shop-sale-btn {
-                display: flex;
-                align-items: center;
-            }
-
-            .shop-sale-btn-text {
-                display: flex;
-            }
-
-            .shop-sale-btn-icon svg {
-                display: flex;
-                width: 30px;
-                height: 30px;
+                margin-right: 0;
+                justify-content: center;
             }
         }
-    }
 
-    .roundel {
-        position: absolute;
-        top: 8px;
-        right: -22px;
-        z-index: 99;
-    }
-
-    .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .designed_icon h2 {
-        font-size: 115px;
-    }
-
-    .roundel {
-        right: 4px;
-    }
-
-    @include media-query(4xl) {
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .designed_icon h2 {
-            font-size: 100px;
-        }
-    }
-
-    @include media-query(xxxl) {
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .designed_icon h2 {
-            font-size: 90px;
+        .image-section {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .built_icon h3 {
-            font-size: 32px;
+        .before-after {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: space-around;
         }
 
-        .roundel {
-            right: 4px;
+        .before {
+            flex: 1 1 33.33%;
+            position: relative;
+            margin-right: 11px;
+
+            @include media-query(lg) {
+                flex: 1 1 50%;
+            }
+
+            @include media-query(xsm) {
+                flex: 1 1 100%;
+                margin-right: 0;
+            }
+
+            .text {
+                position: absolute;
+                top: 13px;
+                right: 18px;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 1.2;
+                color: #222221;
+                background-color: #fff;
+                padding: 15px 16px;
+                border-radius: 13px;
+                z-index: 1;
+
+                @include media-query(lg) {
+                    top: 7px;
+                    right: 8px;
+                    font-size: 13px;
+                    padding: 9px 13px;
+                    height: 33px;
+                    width: 69px;
+                    border-radius: 5px;
+                }
+            }
         }
 
-        .roundel svg {
-            width: 145px;
-            height: 145px;
-        }
-    }
+        .after {
+            flex: 1 1 33.33%;
+            position: relative;
+            margin-right: 11px;
 
-    @media screen and (max-width: 1680px) {
-        .roundel {
-            right: 2px;
-        }
+            @include media-query(lg) {
+                flex: 1 1 50%;
+                margin-right: 0;
+            }
 
-        .roundel svg {
-            width: 135px;
-            height: 135px;
-        }
-    }
+            @include media-query(xsm) {
+                flex: 1 1 0;
+                margin-right: 0;
+            }
 
-    @include media-query(xxl) {
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .designed_icon h2 {
-            font-size: 80px;
-            transform: translate(-10px, 0px);
-        }
+            .text {
+                position: absolute;
+                top: 13px;
+                left: 18px;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 1.2;
+                color: #222221;
+                background-color: #fff;
+                padding: 15px 16px;
+                border-radius: 13px;
+                z-index: 1;
 
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .icon {
-            max-width: 170px;
-            margin: 0 0 -15px 20px;
-        }
-
-        .roundel {
-            right: 0px;
-        }
-
-        .roundel svg {
-            width: 130px;
-            height: 130px;
-        }
-    }
-
-    @include media-query(xl) {
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .designed_icon h2 {
-            font-size: 60px;
-            transform: translate(-20px, 0px);
+                @include media-query(lg) {
+                    top: 7px;
+                    left: 6px;
+                    font-size: 13px;
+                    padding: 9px 12px;
+                    height: 33px;
+                    width: 54px;
+                    border-radius: 5px;
+                }
+            }
         }
 
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .actions {
-            margin-top: 0px;
+        .third-image {
+            flex: 1 1 33.33%;
+            position: relative;
+
+            @include media-query(lg) {
+                flex: 1 1 0;
+            }
+
+            .text {
+                position: absolute;
+                top: 13px;
+                left: 18px;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 1.2;
+                color: #222221;
+                background-color: #fff;
+                padding: 15px 16px;
+                border-radius: 13px;
+                z-index: 1;
+
+                @include media-query(lg) {
+                    top: 7px;
+                    left: 6px;
+                    font-size: 13px;
+                    padding: 9px 12px;
+                    height: 33px;
+                    width: 54px;
+                    border-radius: 5px;
+                }
+            }
         }
 
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .actions a {
-            font-size: 16px;
-            padding: 12px 54px;
+        .before img,
+        .after img,
+        .third-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            // max-width: 500px;
         }
 
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .built_icon h3 {
-            font-size: 24px;
-        }
-
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .icon {
-            max-width: 130px;
-            margin: 0 0 -10px 20px;
-        }
-
-        .roundel {
-            right: 0;
-        }
-
-        .roundel svg {
-            width: 118px;
-            height: 118px;
-        }
-    }
-
-    @include media-query(lg) {
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .designed_icon h2 {
-            font-size: 90px;
-        }
-
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .built_icon h3 {
-            font-size: 38px;
-        }
-
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .icon {
-            max-width: 170px;
-            margin: 0 0 -10px 20px;
-        }
-
-        .roundel {
-            right: 8px;
-        }
-
-        .roundel svg {
-            width: 145px;
-            height: 145px;
-        }
-    }
-
-    @include media-query(md) {
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .designed_icon h2 {
-            font-size: 80px;
-
-        }
-
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .built_icon h3 {
-            font-size: 38px;
-        }
-
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .icon {
-            max-width: 170px;
-            margin: 0 0 -10px 0px;
-        }
-
-        .roundel {
-            top: 4px;
-            right: 0;
-        }
-
-        .roundel svg {
-            width: 120px;
-            height: 120px;
-        }
-    }
-
-    @include media-query(sm) {
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .designed_icon h2 {
-            font-size: 70px;
-            transform: translate(0px, 0px);
-        }
-
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .built_icon h3 {
-            font-size: 32px;
-        }
-
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .icon {
-            max-width: 150px;
-            margin: 0 0 -10px 20px;
-        }
-
-        .roundel {
-            top: 4px;
-            right: 2px;
-        }
-    }
-
-    @include media-query(sm) {
-        .banner_for_july .promo_image .promo_content_inner .promo_list li.item.item_designed .card .designed_icon h2 {
-            font-size: 70px;
-            transform: translate(-20px, 0px);
+        .before span,
+        .after span,
+        .third-image span {
+            display: block;
+            // margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
         }
     }
 }
