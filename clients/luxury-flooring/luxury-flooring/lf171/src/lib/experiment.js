@@ -2,17 +2,9 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { observeDOM } from './helpers/utils';
 import calculateBox from './components/calculateBox';
-import totalPriceStr from './components/totalPriceStr';
+import fetchProductData from './helpers/fetchProductData';
 
 const { ID, VARIATION } = shared;
-
-const renderDomPriceElement = (element, totalPrice) => {
-  const targetPoint = element.querySelector('.product-item-details');
-  if (targetPoint.querySelector(`.${ID}__totalPrice`)) {
-    targetPoint.querySelector(`.${ID}__totalPrice`).remove();
-  }
-  targetPoint.insertAdjacentHTML('afterbegin', totalPriceStr(ID, totalPrice));
-};
 
 const removePriceElement = () => {
   const priceElements = document.querySelectorAll(`.${ID}__totalPrice`);
@@ -21,62 +13,11 @@ const removePriceElement = () => {
   });
 };
 
-const calculateTotalPrice = (packSize, quantity, oneSqmPrice) => {
-  const priePerPack = packSize * oneSqmPrice;
-  const quantityRequired = Math.ceil(quantity / packSize);
-  const totalPrice = priePerPack * quantityRequired;
-
-  return totalPrice;
-};
-
-//Network call function
-const fetchProductData = (productCard) => {
-  const inputValue = document.querySelector(`.${ID}__calculateBox input`)?.value;
-  if (!inputValue) {
-    return;
-  }
-  const getPackSize = () => parseFloat(productCard.dataset.packsize);
-  if (productCard.dataset.packsize) {
-    //code for calculating
-    const packSize = getPackSize();
-    const quantity = parseInt(document.querySelector(`.${ID}__calculateBox input`)?.value);
-    const oneSqmPrice = parseFloat(productCard.querySelector('.price').textContent.split('£')[1]);
-    const totalPrice = calculateTotalPrice(packSize, quantity, oneSqmPrice);
-    renderDomPriceElement(productCard, totalPrice);
-    return;
-  }
-
-  const productUrl = productCard.querySelector('a.product-item-photo').href;
-  //Example network call
-  fetch(productUrl)
-    .then((response) => response.text())
-    .then((data) => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(data, 'text/html');
-      const packSize = doc.getElementById('attr_pack_size');
-      if (packSize) {
-        const packSizeNumber = parseFloat(packSize.textContent.trim().split('m²')[0]);
-        if (packSizeNumber) {
-          productCard.setAttribute('data-packSize', packSizeNumber);
-          //code for calculation
-          const packetSize = getPackSize();
-          const quantity = parseInt(document.querySelector(`.${ID}__calculateBox input`).value);
-          const oneSqmPrice = parseFloat(
-            productCard.querySelector('.price').textContent.split('£')[1]
-          );
-          const totalPrice = calculateTotalPrice(packetSize, quantity, oneSqmPrice);
-          renderDomPriceElement(productCard, totalPrice);
-        }
-      }
-    })
-    .catch((error) => console.error('Error fetching product data:', error));
-};
-
 //Intersection Observer setup
 const observerOptions = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.1
+  threshold: 0.4
 };
 
 const observerCallback = (entries, observer) => {
@@ -142,8 +83,8 @@ export default () => {
   init();
 
   const calculateForm = document.querySelector(`.${ID}__calculateBox form`);
-  calculateForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  calculateForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
     quantityInputHandler();
   });
 
