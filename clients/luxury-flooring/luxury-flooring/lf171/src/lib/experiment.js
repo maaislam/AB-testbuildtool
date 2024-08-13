@@ -142,6 +142,13 @@ export default () => {
   init();
 
   const calculateForm = document.querySelector(`.${ID}__calculateBox form`);
+  const inputElement = calculateForm.querySelector('input');
+  inputElement.addEventListener('input', (e) => {
+    if (!e.target.value) {
+      const clearTextElement = document.querySelector(`.${ID}__clearText`);
+      clearTextElement.click();
+    }
+  });
   calculateForm.addEventListener('submit', (e) => {
     e.preventDefault();
     quantityInputHandler();
