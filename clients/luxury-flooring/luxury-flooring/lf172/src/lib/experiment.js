@@ -4,17 +4,32 @@ import shared from './shared/shared';
 
 const { ID } = shared;
 
-const bannerImages = {
-  image1: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test306/aug_promo_ugc1.jpg',
-  image2: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test306/aug_promo_ugc_2-2.jpg',
-  image3: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test306/aug_promo_ugc_3-2.jpg'
-};
-
 const init = () => {
   const attachPoint = document.querySelector('.lf306__banner-container');
 
   if (!document.querySelector(`.${ID}__banner`)) {
-    attachPoint.insertAdjacentHTML('afterend', banner(ID, bannerImages));
+    attachPoint.insertAdjacentHTML('beforebegin', banner(ID));
+
+    //add fade in-out effect to the slider images for V1
+    const beforeSlides = document.querySelectorAll('.before-slide');
+    const afterSlides = document.querySelectorAll('.after-slide');
+
+    let currentSlideBefore = 0;
+    let currentSlideAfter = 0;
+    const slideInterval = 3000; //3 seconds
+
+    const showNextSlide = () => {
+      beforeSlides[currentSlideBefore].classList.remove('active');
+      afterSlides[currentSlideAfter].classList.remove('active');
+
+      currentSlideBefore = (currentSlideBefore + 1) % beforeSlides.length;
+      currentSlideAfter = (currentSlideAfter + 1) % afterSlides.length;
+
+      beforeSlides[currentSlideBefore].classList.add('active');
+      afterSlides[currentSlideAfter].classList.add('active');
+    };
+
+    setInterval(showNextSlide, slideInterval);
   }
 };
 
