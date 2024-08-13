@@ -193,4 +193,8 @@ export default () => {
     const tooltipContent = document.querySelector('.tooltip-contents');
     tooltipContent.classList.add(`${ID}__hide`);
   });
+
+  const pricePerPackElem = document.querySelector('.flooring-price-pack-price');
+  const pricePerPackClone = pricePerPackElem && pricePerPackElem.cloneNode(true);
+  document.querySelector(`.${ID}__priceBox`).insertAdjacentElement('afterend', pricePerPackClone);
 };
