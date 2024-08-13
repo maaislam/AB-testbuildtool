@@ -3,10 +3,10 @@ import shared from '../shared/shared';
 
 const { ID } = shared;
 
-const calculateTotalPrice = (packSize, quantity, oneSqmPrice) => {
-  const priePerPack = packSize * oneSqmPrice;
+const calculateTotalPrice = (packSize, quantity, oneSqmPrice, pricePerPack) => {
+  const pricePerPacket = packSize * oneSqmPrice;
   const quantityRequired = Math.ceil(quantity / packSize);
-  const totalPrice = priePerPack * quantityRequired;
+  const totalPrice = (pricePerPack || pricePerPacket) * quantityRequired;
 
   return totalPrice;
 };
@@ -29,7 +29,10 @@ const fetchProductData = (productCard) => {
     const packSize = getPackSize();
     const quantity = parseInt(document.querySelector(`.${ID}__calculateBox input`)?.value);
     const oneSqmPrice = parseFloat(productCard.querySelector('.price').textContent.split('£')[1]);
-    const totalPrice = calculateTotalPrice(packSize, quantity, oneSqmPrice);
+
+    const pricePerPack = parseFloat(productCard.dataset.priceperpack);
+
+    const totalPrice = calculateTotalPrice(packSize, quantity, oneSqmPrice, pricePerPack);
     renderDomPriceElement(productCard, totalPrice);
     return;
   }
@@ -42,6 +45,11 @@ const fetchProductData = (productCard) => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(data, 'text/html');
       const packSize = doc.getElementById('attr_pack_size');
+      const pricePerpackElem = doc.querySelector('.flooring-price-pack-price .price-wrapper');
+
+      const pricePerPack = parseFloat(pricePerpackElem.getAttribute('data-price-amount'));
+      productCard.setAttribute('data-pricePerPack', pricePerPack);
+
       if (packSize) {
         const packSizeNumber = parseFloat(packSize.textContent.trim().split('m²')[0]);
         if (packSizeNumber) {
@@ -52,7 +60,8 @@ const fetchProductData = (productCard) => {
           const oneSqmPrice = parseFloat(
             productCard.querySelector('.price').textContent.split('£')[1]
           );
-          const totalPrice = calculateTotalPrice(packetSize, quantity, oneSqmPrice);
+
+          const totalPrice = calculateTotalPrice(packetSize, quantity, oneSqmPrice, pricePerPack);
           renderDomPriceElement(productCard, totalPrice);
         }
       }
