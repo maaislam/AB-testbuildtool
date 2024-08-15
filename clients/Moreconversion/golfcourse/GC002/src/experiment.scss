@@ -1,0 +1,107 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__search-section {
+    margin: 30px 15px;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1230px;
+      margin: 0 auto;
+      padding: 30px 60px;
+      background-color: #f1f1f1;
+
+      &-text {
+        width: 50%;
+
+        h2 {
+          font-size: 20px;
+          font-weight: 700;
+          font-family: 'Segoe UI';
+          line-height: 27px;
+          letter-spacing: 0.81px;
+          margin-bottom: 5px;
+        }
+        p {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: 'Segoe UI';
+          line-height: 19px;
+          letter-spacing: 0.81px;
+          margin-bottom: 0;
+          @media screen and (max-width: 768px) {
+            margin-bottom: 15px;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      &-element {
+        width: 50%;
+        predictive-search {
+          width: 100%;
+          max-width: 560px;
+          overflow: hidden;
+
+          @media screen and (max-width: 768px) {
+            max-width: 100%;
+          }
+        }
+
+        input#Search {
+          border-radius: 50px;
+          background: #ffffffd1;
+          padding: 8px 25px;
+        }
+        .btn--search {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          width: 160px;
+          height: 45px;
+          top: 22px;
+          right: 0;
+          border-radius: 0 50px 50px 0px;
+          font-size: 16px;
+          font-weight: 600;
+          justify-content: center;
+          background: #5c9735;
+          color: #fff;
+          gap: 7px;
+          z-index: 0;
+
+          .custom {
+            display: inline-block !important;
+          }
+
+          @media screen and (max-width: 768px) {
+            position: static;
+            transform: translateY(0);
+          }
+        }
+
+        .icon-search,
+        .icon__fallback-text {
+          display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        padding: 20px;
+      }
+    }
+  }
+}
