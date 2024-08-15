@@ -1,6 +1,6 @@
 module.exports = {
-  ID: 'GC002',
-  VARIATION: '1',
+  ID: 'GC003',
+  VARIATION: '2',
   CLIENT: 'Moreconversion',
   SITE: 'golfcourse'
 };
