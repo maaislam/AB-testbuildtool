@@ -1,0 +1,96 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    [data-handle="size"] {
+        margin-bottom: 10px;
+    }
+
+    &__productTypeWrapper[data-handle="type-of-product"] {
+        margin-bottom: 10px;
+
+        .#{$id}__productTypeImg {
+            width: 100%;
+            height: 88px;
+            object-fit: contain;
+        }
+
+        .#{$id}__productTypeImgContainer {
+            width: 100%;
+            border: 1px solid #E8E8E1;
+            margin-bottom: 4px;
+        }
+
+        input[type=radio]:checked + label > .#{$id}__productTypeImgContainer  {
+            border: 1.5px solid #000;
+        }
+
+
+        label {
+            width: 88px;
+            height: 112px;
+            margin-right: 12px;
+            margin-bottom: 19px;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__colorVariant {
+        margin: 0 15px;
+        max-width: 54px;
+
+        label {
+            margin: 0 !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    // &__colorVariant:first-child {
+    //     margin-left: 0 !important;
+    // }
+
+    &__colorSwatch {
+        margin-bottom: 4px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid #E8E8E1;
+    }
+
+    [data-handle="frame-color"] {
+        display: flex;
+        justify-content: stretch;
+        margin-bottom: 6px;
+
+        @include media-query(sm) {
+            justify-content: center;
+        }
+
+        input[type=radio].disabled + label {
+            display: none !important;
+        }
+
+        input[type=radio]+label {
+            box-shadow: none !important;
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        input[type=radio]:checked + label > .#{$id}__colorSwatch {
+            border: 1.5px solid #000;
+        }
+    }
+}
