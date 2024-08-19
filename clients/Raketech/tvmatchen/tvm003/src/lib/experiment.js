@@ -4,7 +4,6 @@ import shared from './shared/shared';
 import gaTracking from './services/gaTracking';
 import modalWrapper from './components/modalWrapper';
 import stepTwoValidation from './helpers/stepTwoValidation';
-import stepThreeValidation from './helpers/stepThreeValidation';
 
 const { ID, VARIATION } = shared;
 const init = () => {
@@ -17,7 +16,6 @@ const init = () => {
     targetPoint.classList.add(`${ID}__modalOpen`);
 
     stepTwoValidation(ID);
-    stepThreeValidation(ID);
   }
 };
 export default () => {

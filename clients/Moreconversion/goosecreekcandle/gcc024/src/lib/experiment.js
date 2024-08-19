@@ -11,21 +11,28 @@ let pageCounter = 0;
 let paginantionIndex = [];
 
 const init = () => {
-  const paginationLastItem = document.querySelector('.pagination')?.lastElementChild;
-  const nextButtonElem = paginationLastItem?.querySelector('a');
-  const nextButtonUrl = nextButtonElem?.href;
+  const paginationParent = document.querySelector('.boost-sd__pagination');
+  const paginations = paginationParent.querySelectorAll('.boost-sd__pagination-number');
+  const paginationLastItem = paginations[paginations.length - 1];
+  const lastPagination = parseInt(paginationLastItem.textContent);
+  //const nextButtonElem = paginationLastItem?.querySelector('a');
+  //const nextButtonUrl = nextButtonElem?.href;
 
-  if (!nextButtonUrl) {
+  if (lastPagination === pageCounter) {
     return;
   }
 
-  const url = new URL(nextButtonUrl);
+  const { href } = window.location;
+
+  const url = new URL(href);
+
   url.searchParams.set('page', pageCounter);
-  const currentPageList = document.querySelector('#template--collection');
+  console.log('url', url);
+  const currentPageList = document.querySelector('.boost-sd__product-list');
 
-  const isPaginationIndex = paginantionIndex.find((item) => item === pageCounter);
+  //const isPaginationIndex = paginantionIndex.find((item) => item === pageCounter);
 
-  if (!isPaginationIndex) return;
+  //if (!isPaginationIndex) return;
 
   const loadingElem = `<div class="${ID}__loader">Loading more...</div>`;
   if (!document.querySelector(`.${ID}__loader`)) {
@@ -36,14 +43,16 @@ const init = () => {
     .then((html) => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
-      const collection = doc.querySelectorAll('#template--collection li');
-      collection.forEach((item) => {
-        currentPageList.insertAdjacentElement('beforeend', item);
-      });
+      setTimeout(() => {
+        const collection = doc.querySelectorAll('.boost-sd__product-list > div');
+        collection.forEach((item) => {
+          currentPageList.insertAdjacentElement('beforeend', item);
+        });
 
-      pageCounter += 1;
-      const loaderElem = document.querySelector(`.${ID}__loader`);
-      loaderElem?.remove();
+        pageCounter += 1;
+        const loaderElem = document.querySelector(`.${ID}__loader`);
+        loaderElem?.remove();
+      }, 5000);
     })
     .catch((error) => {
       console.log('An error occurred:', error);
@@ -57,16 +66,19 @@ export default () => {
   if (VARIATION === 'control') return;
 
   const getActiveFn = () => {
-    const listItems = document.querySelectorAll('.pagination .page-item');
+    const listItems = document.querySelectorAll('.boost-sd__pagination-number');
     const listArray = Array.from(listItems);
-    const activeIndex = listArray?.findIndex((item) => item.classList.contains('active'));
-    const modifiedList = listArray.slice(activeIndex + 1, -1);
-    modifiedList.forEach((item) => {
-      paginantionIndex.push(listArray.indexOf(item));
-    });
+    const activeIndex = listArray?.find(
+      (item) => item.classList.contains('boost-sd__pagination-number--active')
+      //eslint-disable-next-line function-paren-newline
+    );
 
-    if (activeIndex) {
-      pageCounter = activeIndex + 1;
+    const activeIndexNum = parseInt(activeIndex.textContent);
+
+    console.log('activeIndexNum', activeIndexNum);
+
+    if (activeIndexNum) {
+      pageCounter = activeIndexNum + 1;
     }
   };
 
@@ -80,8 +92,8 @@ export default () => {
   };
   obsIntersection(obserElem, 1, callBackHandler);
 
-  observeDOM('#CollectionProductGrid', (mutation) => {
-    pollerLite(['.collection-grid-wrapper > #CollectionProductGrid', 'ol.pagination'], () => {
+  observeDOM('.boost-sd__filter-product-list .boost-sd-container', (mutation) => {
+    pollerLite(['.boost-sd__product-list', '.boost-sd__pagination'], () => {
       pageCounter = 0;
       paginantionIndex = [];
       getActiveFn();

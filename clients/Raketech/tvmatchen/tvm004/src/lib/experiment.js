@@ -5,7 +5,6 @@ import gaTracking from './services/gaTracking';
 import { pollerLite } from './helpers/utils';
 import modalWrapper from './components/modalWrapper';
 import stepTwoValidation from './helpers/stepTwoValidation';
-import stepThreeValidation from './helpers/stepThreeValidation';
 import { crossForAds } from './components/crossForAds';
 
 const { ID, VARIATION } = shared;
@@ -43,7 +42,7 @@ const init = () => {
     targetPoint.insertAdjacentHTML('beforeend', modalWrapper(ID));
 
     stepTwoValidation(ID);
-    stepThreeValidation(ID);
+    //stepThreeValidation(ID);
   }
 };
 export default () => {
