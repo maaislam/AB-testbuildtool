@@ -1,0 +1,156 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__casinoWrapper {
+    .mui-t5yac0 {
+      .mui-uzk0s {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 23px;
+        min-height: 30px;
+        left: -1px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 14px;
+        border-radius: 0;
+        border-bottom-left-radius: 5px;
+        background-color: #0e812f;
+        color: #f2f2f2;
+      }
+
+      .mui-qqopv4 {
+        @media screen and (min-width: 992px) {
+          margin-left: 14px;
+          max-width: 40%;
+          flex-basis: 40%;
+        }
+
+        @media screen and (min-width: 1200px) {
+          max-width: 40%;
+          flex-basis: 40%;
+        }
+
+        @media screen and (max-width: 567px) {
+          margin-bottom: 36px;
+        }
+      }
+
+      .mui-1xqlz4u {
+        @media screen and (min-width: 992px) {
+          justify-content: flex-start;
+        }
+
+        @media screen and (max-width: 567px) {
+          margin-bottom: 36px;
+        }
+      }
+
+      .mui-1k04mn {
+        align-items: center;
+        flex-wrap: nowrap;
+
+        @media screen and (max-width: 991px) {
+          flex-wrap: wrap;
+        }
+      }
+
+      .mui-jcipg8 {
+        flex-wrap: nowrap;
+        .#{$id}__bonusElement {
+          max-width: 100%;
+          margin-left: 25px;
+          & + div {
+            @media screen and (min-width: 992px) {
+              display: none;
+            }
+          }
+
+          @media screen and (max-width: 991px) {
+            display: none;
+          }
+        }
+      }
+
+      .#{$id}__depositeWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        margin-left: 8px;
+
+        & > .MuiGrid-root {
+          max-width: 100%;
+        }
+
+        .#{$id}__bonusElement {
+          display: none;
+
+          @media screen and (max-width: 991px) {
+            display: block;
+          }
+        }
+
+        .#{$id}__depositeContainer {
+          margin-top: 8px;
+
+          @media screen and (max-width: 991px) {
+            margin-top: 16px;
+          }
+
+          @media screen and (max-width: 567px) {
+            margin-top: 0px;
+          }
+        }
+
+        .#{$id}__minimumDeposit {
+          word-spacing: 0px;
+        }
+
+        @media screen and (max-width: 991px) {
+          flex-direction: row;
+
+          & > div:first-child {
+            display: none;
+          }
+        }
+      }
+
+      .mui-1ckvxhl {
+        @media screen and (min-width: 992px) {
+          font-size: 10px;
+        }
+      }
+
+      .outButton[data-click-target='Toplist General'] {
+        border: 3px solid;
+        border-radius: 6px;
+        background: linear-gradient(85deg, #0e832f -15.44%, #0c762a 117.59%);
+        box-shadow: none;
+        .mui-aw3xrg {
+          & + span {
+            display: none;
+          }
+        }
+
+        .#{$id}__imageWrapper {
+          width: 62px;
+          height: 31px;
+          margin: 0 auto;
+          @media screen and (max-width: 567px) {
+            width: 98px;
+            height: 49px;
+            margin: 0 0 0 5px;
+          }
+        }
+
+        @media screen and (max-width: 567px) {
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

@@ -51,7 +51,7 @@
         align-items: center;
         justify-content: center;
         padding-right: 10px;
-        border: solid 1px #ededed;
+        border: 1px solid #3d3d3d26;
         border-radius: 100px;
         background-color: #fff8f5;
         height: 40px;
@@ -65,7 +65,7 @@
 
           @media screen and (max-width: 980px) {
             margin-left: 0;
-            margin-right: 8px;
+            margin-right: 0;
           }
         }
 
@@ -75,15 +75,22 @@
           align-items: center;
           justify-content: center;
           input#Search {
-            width: 168px;
-            font-size: 12px;
-            line-height: 17px;
+            width: 192px;
+            font-size: 16px;
+            transform: scale(0.875);
+            transform-origin: left center;
+            padding-left: 10px;
+            //font-size: 12px;
+            //line-height: 17px;
             padding-bottom: 0;
             border-bottom: none;
             background-color: #fff8f5;
             transform: translateY(0);
             text-overflow: ellipsis;
             &::placeholder {
+              font-size: 12px;
+              font-weight: 390;
+              line-height: 17px;
               font-style: italic;
               color: #333333;
             }
@@ -192,7 +199,7 @@
         align-items: center;
         justify-content: center;
         padding-right: 10px;
-        border-bottom: solid 2px #000;
+        border-bottom: 1px solid #3d3d3d;
         height: 40px;
         overflow: hidden;
 
@@ -215,8 +222,10 @@
           justify-content: center;
           input#Search {
             width: 168px;
-            font-size: 12px;
-            line-height: 17px;
+            font-size: 16px;
+            transform: scale(0.875);
+            transform-origin: left center;
+            padding-left: 10px;
             padding-bottom: 0;
             border-bottom: none;
             transform: translateY(0);
