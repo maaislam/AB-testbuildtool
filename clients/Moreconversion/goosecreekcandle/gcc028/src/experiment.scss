@@ -1,0 +1,10 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    @include media-query('sm') {
+        #afterpay-info {
+            text-align: left !important;
+        }
+    }
+}
