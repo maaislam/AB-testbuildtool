@@ -5,7 +5,7 @@
  * @param {function} callback The callback function when all conditions are true.
  * @param {number} maxTime max time the check witll run before abort.
  */
-export const pollerLite = (conditions, callback, maxTime = 10000) => {
+export const pollerLite = (conditions, callback, maxTime = 100000) => {
   const POLLING_INTERVAL = 25;
   const startTime = Date.now();
   const interval = setInterval(() => {
@@ -127,4 +127,31 @@ export const getCroStorage = (key) => {
   }
 
   return null; //No valid data found
+};
+
+export const fetchCasinoData = (type = 'default', startNumber = 0, limit = 20) => {
+  const casinoResponse = fetch(
+    `https://www.turtlebet.com/api/wp-json/rest/v1/casinos_list?start=${startNumber}&limit=${limit}&filters=%7B%7D&sort=${type}&extended=true&hub_toplist_id=1925&custom_casino_ids=`,
+    {
+      referrer: 'https://www.turtlebet.com/fi',
+      referrerPolicy: 'same-origin',
+      body: null,
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'omit'
+    }
+  );
+
+  return casinoResponse;
+};
+
+//eslint-disable-next-line default-param-last
+export const fetchCasinoHelper = (value, casinoLength = 0, isLoaded, callback) => {
+  fetchCasinoData(value, casinoLength, 10)
+    .then((res) => res.json())
+    .then(({ data }) => {
+      pollerLite([() => isLoaded === true && data.casinos.length], () => {
+        callback('.mui-t5yac0', data.casinos);
+      });
+    });
 };

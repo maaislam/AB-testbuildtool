@@ -6,13 +6,13 @@ export const tagData = [
     tinyPortionColor: '#F98D27'
   },
   {
-    tag: 'Talleta & Pelaa!',
+    tag: 'Ei rekisteröintiä',
     srcName: 'Ribbon-G%402x.png',
     colorCode: '#2ba84a',
     tinyPortionColor: '#1d5c2f'
   },
   {
-    tag: 'Talleta & Pelaa!',
+    tag: 'Uusi nettikasino!',
     srcName: 'ribbon-O%402x.png',
     colorCode: '#d55900',
     tinyPortionColor: '#a64700' //Tiny portion color derived
@@ -24,13 +24,13 @@ export const tagData = [
     tinyPortionColor: '#144a83' //Tiny portion color derived
   },
   {
-    tag: 'Talleta & Pelaa!',
+    tag: 'Bonus vain<br/> Turtlebetiltä!',
     srcName: 'Ribbon-GOx200.png',
     colorCode: '#e8c148',
     tinyPortionColor: '#d2aa35' //Tiny portion color derived
   },
   {
-    tag: 'Talleta & Pelaa!',
+    tag: 'Hyvä bonus!',
     srcName: 'Ribbon-R%402x.png',
     colorCode: '#b41d1e',
     tinyPortionColor: '#8f1717' //Tiny portion color derived

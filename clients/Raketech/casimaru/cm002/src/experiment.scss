@@ -6,6 +6,9 @@
     .space-page-section-ins {
       padding-bottom: 0;
     }
+    .#{$id}__best {
+      margin-bottom: 1.45em;
+    }
     .space-page-content {
       .#{$id}__hideCasinoRanking,
       & > .wp-block-liquid-speech-balloon,
@@ -14,14 +17,14 @@
         display: none;
       }
 
-      .post-modified-info + p ~ div:not(.#{$id}__showCasinoRanking),
-      .post-modified-info + p ~ p,
-      .post-modified-info + p ~ ul,
-      .post-modified-info + p ~ h2,
-      .post-modified-info + p ~ h3,
-      .post-modified-info + p ~ h4,
-      .post-modified-info + p ~ ol,
-      .post-modified-info + p ~ hr {
+      .post-modified-info + p + h2 ~ div:not(.#{$id}__showCasinoRanking),
+      .post-modified-info + p + h2 ~ p,
+      .post-modified-info + p + h2 ~ ul,
+      .post-modified-info + p + h2 ~ h2,
+      .post-modified-info + p + h2 ~ h3,
+      .post-modified-info + p + h2 ~ h4,
+      .post-modified-info + p + h2 ~ ol,
+      .post-modified-info + p + h2 ~ hr {
         display: none;
       }
 
