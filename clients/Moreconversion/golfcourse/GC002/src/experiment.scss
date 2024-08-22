@@ -77,16 +77,32 @@
         }
 
         input#Search {
-          border-radius: 50px;
-          background: #ffffffd1;
-          padding: 8px 25px;
+          font-family: 'Segoe UI';
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 20px;
+          //letter-spacing: 0.01em;
+          text-align: left;
+          border-radius: 100px;
+          background: #ffffff;
+          color: #5f6060 !important;
+          padding: 13px 25px;
+
+          &::placeholder {
+            color: #5f6060 !important;
+          }
 
           @media screen and (max-width: 1080px) and (min-width: 769px) {
-            padding: 8px 15px;
+            padding: 13px 15px;
             font-size: 12px !important;
           }
 
           @media screen and (max-width: 768px) {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 19px;
+
+            padding: 11px 25px 12px;
             &::placeholder {
               text-align: center;
             }
@@ -97,16 +113,19 @@
           align-items: center;
           position: absolute;
           width: 160px;
-          height: 42px;
-          top: 22px;
+          height: 100%;
+          top: 24px;
           right: 0;
-          border-radius: 0 50px 50px 0px;
+          border-radius: 0 100px 100px 0px;
           font-size: 17px;
           font-weight: 700;
           font-family: 'Segoe UI';
           line-height: 23px;
+          //letter-spacing: 0.01em;
+          text-align: left;
+
           justify-content: center;
-          background: #5c9735;
+          background: #4b8c36;
           color: #fff;
           z-index: 0;
 
@@ -122,8 +141,7 @@
 
           @media screen and (max-width: 1080px) and (min-width: 769px) {
             width: 120px;
-            height: 40px;
-            top: 18px;
+            top: 24px;
             font-size: 11px;
           }
 
@@ -133,6 +151,7 @@
             font-size: 14px;
             line-height: 19px;
             border-radius: 100px;
+            height: 42px;
             transform: translateY(0);
           }
         }

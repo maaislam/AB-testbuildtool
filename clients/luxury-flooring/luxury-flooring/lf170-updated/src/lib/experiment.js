@@ -1,7 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
 import modal from './components/modal';
 import fakeSearchBar from './components/fakeSearchBar';
 
@@ -12,44 +10,58 @@ const init = () => {
     document.querySelector('.page-wrapper').insertAdjacentHTML('beforebegin', modal(ID));
   }
 
-  if (!document.querySelector('.custom_searchBar')) {
-    document.querySelector('.header-usps-search').insertAdjacentHTML('afterend', fakeSearchBar());
+  if (!document.querySelector(`.${ID}__fakeSearchBar`)) {
+    document
+      .querySelector('.header-usps-search > .block.block-search')
+      .insertAdjacentHTML('afterend', fakeSearchBar(ID));
   }
 
-  if (!document.querySelector('.bg-overlay .search_content .header-usps-search')) {
+  if (!document.querySelector(`.${ID}__modal .header-usps-search .block.block-search`)) {
     document
-      .querySelector('.search_content')
+      .querySelector(`.${ID}__modal .header-usps-search`)
       .insertAdjacentElement(
-        'afterbegin',
-        document.querySelector('.header-usps-search:not(.custom_searchBar)')
+        'beforeend',
+        document.querySelector(
+          `.header-usps-search > .block.block-search:not(.${ID}__fakeSearchBar)`
+        )
       );
   }
 };
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
 
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
   if (VARIATION === 'control') return; //
   document.body.addEventListener('click', (e) => {
     const { target } = e;
 
-    if (target.closest('.custom_searchBar .block-content #minisearch-form-top-search')) {
+    if (
+      target.closest(`.${ID}__fakeSearchBar .block-content #minisearch-form-top-search`) &&
+      target.closest(`.${ID}__fakeSearchBar .control`)
+    ) {
       document.querySelector(`.${ID}__modal`).classList.remove('hide_content');
       const input = document.querySelector(`.${ID}__modal input`);
       input.value = '';
       input.focus();
-    } else if (target.closest('.custom_cross_btn') || target.closest('.bg-overlay')) {
+    } else if (target.closest('.custom_cross_btn')) {
       document.querySelector(`.${ID}__modal`).classList.add('hide_content');
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-    } else if (target.closest('.block.block-title') && target.closest('.custom_searchBar')) {
+    } else if (target.closest('.bg-overlay')) {
+      const windowWidth = window.innerWidth;
+      if (windowWidth >= 1024) {
+        document.querySelector(`.${ID}__modal`).classList.add('hide_content');
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    } else if (
+      target.closest(`.${ID}__fakeSearchBar .block.block-title`) &&
+      target.closest(`.${ID}__fakeSearchBar`)
+    ) {
       document.querySelector(`.${ID}__modal`).classList.remove('hide_content');
       setTimeout(() => {
         document.querySelector(`.${ID}__modal .block.block-content`).removeAttribute('style');

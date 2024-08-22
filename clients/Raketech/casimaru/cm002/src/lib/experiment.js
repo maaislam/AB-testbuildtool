@@ -1,11 +1,16 @@
 import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
+import header from './components/header';
 
 const { ID, VARIATION } = shared;
 
 const init = () => {
   const casinoRankings = document.querySelectorAll('.space-page-content > .casino-ranking');
+  const banner = document.querySelector('.post-modified-info + p');
+  if (!document.querySelector(`.${ID}__best`)) {
+    banner.insertAdjacentHTML('afterend', header(ID));
+  }
   casinoRankings.forEach((ranking, index) => {
     if (index === 0 || index === 1) {
       ranking.classList.add(`${ID}__showCasinoRanking`);

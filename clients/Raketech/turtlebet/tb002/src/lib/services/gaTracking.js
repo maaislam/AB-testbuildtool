@@ -17,7 +17,7 @@ const gaTracking = (label) => {
   pollerLite([() => document.readyState === 'complete'], () => {
     window.dataLayer.push({
       event: 'cro_event',
-      event_detail: `${SITE} - Previously visited operators - ${TAG}`,
+      event_detail: `${SITE} - Redesign toplist card + adding more information - ${TAG}`,
       event_category: CATEGORY,
       event_label: `${TAG} | ${VARIATION_TYPE} | ${label}`,
       send_to: GA_ID

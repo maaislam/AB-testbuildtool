@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "lf170-updated",
-    VARIATION: "1",
-    CLIENT: "luxury-flooring",
-    SITE: "luxury-flooring"
-  };
+  ID: 'lf170',
+  VARIATION: '1',
+  CLIENT: 'luxury-flooring',
+  SITE: 'luxury-flooring'
+};
