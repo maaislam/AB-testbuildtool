@@ -1,55 +1,15 @@
 import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import {
-  fetchCasinoData,
-  getCroStorage,
-  observeDOM,
-  onUrlChange,
-  setCroStorage,
-  pollerLite
-} from './helpers/utils';
+import { fetchCasinoData, observeDOM, onUrlChange, pollerLite } from './helpers/utils';
 import bonusElement from './components/bonusElement';
 import depositeElement from './components/depositElement';
-import image from './components/image';
 import { tagData } from './data/tagData';
 import ribbon from './components/ribbon';
 import sortingCasinoArray from './data/sortingCasino';
+import selectedCasinos from './data/selectedCasinos';
 
 const { ID, VARIATION } = shared;
-
-const visitedCasinoFn = () => {
-  const casinoData = getCroStorage(`${ID}__visitedCasinos`);
-  if (!casinoData) return;
-  casinoData.forEach((casino) => {
-    const casinoLinks = document.querySelectorAll(
-      `a[data-click-target="Toplist General"][data-operator="${casino}"]`
-    );
-    casinoLinks.forEach((casinoLink) => {
-      //console.log('🚀 ~ file: experiment.js:17 ~ casinoData.forEach ~ casinoLinks:', casinoLinks);
-      const casinoCardElem = casinoLink?.closest('.mui-t5yac0');
-      if (!casinoCardElem) return;
-      casinoCardElem.classList.add(`${ID}__highlighted`);
-    });
-  });
-};
-
-const setCasinoLocalStorage = (operatorName) => {
-  if (VARIATION === '1') {
-    const data = getCroStorage(`${ID}__visitedCasinos`);
-    if (!data) {
-      const casinoNameArr = [operatorName];
-      setCroStorage(`${ID}__visitedCasinos`, casinoNameArr);
-      visitedCasinoFn();
-      return;
-    }
-    const visitedCasinos = getCroStorage(`${ID}__visitedCasinos`) || [];
-    if (visitedCasinos.includes(operatorName)) return;
-    visitedCasinos.push(operatorName);
-    setCroStorage(`${ID}__visitedCasinos`, visitedCasinos);
-    visitedCasinoFn();
-  }
-};
 
 const renderElements = (selector, casinoData) => {
   if (window.location.pathname !== '/fi') return;
@@ -58,17 +18,26 @@ const renderElements = (selector, casinoData) => {
   elements.forEach((element) => {
     const container = element.querySelector('.mui-1k04mn');
     const spinContainer = element.querySelector('.mui-jcipg8');
-    const spinElement = spinContainer.querySelector('.mui-1orysjz');
-    const cloneSpinElement = spinElement.cloneNode(true);
+    const spinElement = spinContainer?.querySelector('.mui-1orysjz');
+    const cloneSpinElement = spinElement?.cloneNode(true);
     const ribbonElement = element.querySelector('img[alt="ribbon"]');
     const numberElement = element.querySelector('.mui-uzk0s');
 
-    const casinoImage = element.querySelector('[data-click-target="Toplist General"] > img');
+    //const casinoImage = element.querySelector('[data-click-target="Toplist General"] > img');
     const buttonWrapper = element.querySelector('.outButton[data-click-target="Toplist General"]');
+    const operatorName = buttonWrapper.dataset.operator.toLowerCase().trim();
 
-    const buttonLink = buttonWrapper.href;
+    const isHighlighted = selectedCasinos.filter(
+      (item) => item.name.toLowerCase().trim() === operatorName
+    );
 
-    const isCasino = casinoData.filter((item) => buttonLink.includes(item.out_link_slug));
+    if (isHighlighted[0]) {
+      element.classList.add(`${ID}__highlighted`);
+    }
+
+    const isCasino = casinoData.filter(
+      (item) => item.post_title.toLowerCase().trim() === operatorName
+    );
 
     if (isCasino[0]) {
       const { min_deposit, sportsbook } = isCasino[0];
@@ -79,11 +48,7 @@ const renderElements = (selector, casinoData) => {
         );
       }
       if (!spinContainer.querySelector(`.${ID}__bonusElement`)) {
-        spinElement.insertAdjacentHTML('beforebegin', bonusElement(ID, sportsbook));
-      }
-
-      if (!buttonWrapper.querySelector(`.${ID}__imageWrapper`)) {
-        buttonWrapper.insertAdjacentHTML('beforeend', image(ID, casinoImage?.src));
+        spinElement?.insertAdjacentHTML('beforebegin', bonusElement(ID, sportsbook));
       }
     }
 
@@ -102,7 +67,7 @@ const renderElements = (selector, casinoData) => {
   });
 
   window.isLoaded = false;
-  visitedCasinoFn();
+  //visitedCasinoFn();
 };
 
 const casinoDomHandler = () => {
@@ -133,14 +98,12 @@ const init = () => {
   mainElement.dataset[`${ID}__mutationAdded`] = true;
 
   //collect default casino data
-  console.log('start');
+
   fetchCasinoData()
     .then((res) => res.json())
     .then(({ data }) => {
       renderElements('.mui-t5yac0', data.casinos);
     });
-
-  visitedCasinoFn();
 };
 
 export default () => {
@@ -162,7 +125,6 @@ export default () => {
             parentElement.classList.contains(`${ID}__highlighted`) ? '| Highlighted' : ''
           }`
         );
-        setCasinoLocalStorage(operatorName);
       } else if (target.closest('a.outButton[data-click-target="Toplist General"]')) {
         const clickedItem = target.closest('a.outButton[data-click-target="Toplist General"]');
         const parentElement = clickedItem.closest('.mui-t5yac0');
@@ -172,7 +134,6 @@ export default () => {
             parentElement.classList.contains(`${ID}__highlighted`) ? '| Highlighted' : ''
           }`
         );
-        setCasinoLocalStorage(operatorName);
       } else if (target.closest('a.mui-1wi8pyb') && target.closest('.mui-t5yac0')) {
         const clickedItem = target.closest('a.mui-1wi8pyb');
         const parentElement = clickedItem.closest('.mui-t5yac0');
@@ -183,8 +144,6 @@ export default () => {
             parentElement.classList.contains(`${ID}__highlighted`) ? '| Highlighted' : ''
           }`
         );
-
-        setCasinoLocalStorage(operatorName);
       } else if (target.closest('button') && target.closest('.mui-1lmnmy5')) {
         const clickedItem = target.closest('button');
         const { value } = clickedItem.dataset;
@@ -193,7 +152,6 @@ export default () => {
           .then((res) => res.json())
           .then(({ data }) => {
             pollerLite([() => window.isLoaded && data.casinos.length], () => {
-              window.isLoaded = false;
               renderElements('.mui-t5yac0', data.casinos);
             });
           });
@@ -208,7 +166,6 @@ export default () => {
           .then((res) => res.json())
           .then(({ data }) => {
             pollerLite([() => window.isLoaded && data.casinos.length], () => {
-              window.isLoaded = false;
               renderElements('.mui-t5yac0', data.casinos);
             });
           });
