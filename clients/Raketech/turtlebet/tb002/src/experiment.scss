@@ -183,7 +183,7 @@
       }
 
       .mui-1k04mn {
-        align-items: center;
+        align-items: flex-start;
         flex-wrap: nowrap;
 
         @media screen and (max-width: 991px) {
@@ -195,7 +195,9 @@
         flex-wrap: nowrap;
         .#{$id}__bonusElement {
           max-width: 100%;
+          margin-top: 0;
           margin-left: 25px;
+
           & + div {
             @media screen and (min-width: 992px) {
               display: none;
@@ -271,6 +273,16 @@
         }
       }
 
+      .mui-1sawerp {
+        margin-top: 0;
+        @media screen and (max-width: 991px) {
+          margin-top: 16px;
+        }
+
+        @media screen and (max-width: 567px) {
+          margin-top: 0px;
+        }
+      }
       // .outButton[data-click-target='Toplist General'] {
       //   // border: 3px solid;
       //   // border-radius: 6px;
