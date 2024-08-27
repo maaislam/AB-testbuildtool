@@ -24,7 +24,11 @@ const init = () => {
         const upsellOptions = doc.querySelectorAll('.custom-child-upsel-checkbox input');
         const rowItem = document.querySelectorAll(`.${ID}__cartItem`)[index];
         const qtyInputElem = rowItem.querySelector('.input-text.qty');
-        const prdItemDetailsElem = rowItem.querySelector(`.${ID}__cartItem .product-item-details`);
+        //const prdItemDetailsElem = rowItem.querySelector(`.${ID}__cartItem .product-item-details`);
+        const prdItemColElem = rowItem.querySelector(`.${ID}__cartItem .col.qty`);
+        const incrementQtyBtn = rowItem.querySelector('.increment_qty');
+        incrementQtyBtn.setAttribute('data-index', index + 1);
+
         const qtyValue = qtyInputElem.value;
         const options = [];
 
@@ -45,14 +49,14 @@ const init = () => {
 
         const nextPossibleUpgrades = possibleUpgrades && possibleUpgrades.length > 0 ? Math.min(...possibleUpgrades) : null;
 
-        if (nextPossibleUpgrades && !rowItem.querySelector(`.${ID}__textMsg`)) {
-          prdItemDetailsElem.insertAdjacentHTML('beforeend', textMsgHtml(nextPossibleUpgrades));
+        const clickedIndices = JSON.parse(sessionStorage.getItem('clickedIndices')) || [];
+        const isItemPresent = clickedIndices.includes((index + 1).toString());
+
+        const conditionsMet = nextPossibleUpgrades && !rowItem.querySelector(`.${ID}__textMsg`) && isItemPresent;
+
+        if (conditionsMet) {
+          prdItemColElem.insertAdjacentHTML('afterbegin', textMsgHtml(nextPossibleUpgrades));
         }
-        // qtyInputElem.addEventListener('change', (e) => {
-        //   const { target } = e;
-        //   const qtyValue = target.value;
-        //   console.log('qtyValue: ', qtyValue);
-        // });
       });
     })
     .catch((error) => {
@@ -61,7 +65,7 @@ const init = () => {
 };
 
 export default () => {
-  setup(); //use if needed
+  setup();
 
   init();
 
@@ -77,6 +81,17 @@ export default () => {
       qtyInputElem.value = Number(nextPossibleUpgrade);
 
       updateCartElem.click();
+    } else if (target.closest('.increment_qty')) {
+      const incrementQtyBtn = target.closest('.increment_qty');
+      const { index } = incrementQtyBtn.dataset;
+
+      const clickedIndices = JSON.parse(sessionStorage.getItem('clickedIndices')) || [];
+
+      if (!clickedIndices.includes(index)) {
+        clickedIndices.push(index);
+      }
+
+      sessionStorage.setItem('clickedIndices', JSON.stringify(clickedIndices));
     }
   });
 };
