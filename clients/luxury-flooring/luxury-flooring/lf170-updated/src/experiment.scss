@@ -59,7 +59,7 @@
 
     label[for='minisearch-input-top-search'] {
       position: absolute;
-      top: 56%;
+      top: 50%;
       transform: translateY(-50%);
       left: 15px;
       overflow: unset;
@@ -116,7 +116,7 @@
     border-top: 1px solid #000;
     border-bottom: 2px solid #000;
     background: #fff;
-    padding-left: 50px;
+    padding-left: 55px;
     margin: 0;
     padding-right: 50px;
     position: static;
@@ -128,14 +128,20 @@
     }
   }
 
-  .custom_cross_btn {
+  .custom_cross_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    width: 25px;
-    height: 16px;
-    right: 20px;
-    top: 26px;
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
     z-index: 11;
+    .custom_cross_btn {
+    }
   }
 
   .custom_logo_div {

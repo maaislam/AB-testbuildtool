@@ -46,7 +46,7 @@ export default () => {
   if (VARIATION === 'control') return; //
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-
+    console.log(target);
     if (
       target.closest(`.${ID}__fakeSearchBar .block-content #minisearch-form-top-search`) &&
       target.closest(`.${ID}__fakeSearchBar .control`)
@@ -55,7 +55,7 @@ export default () => {
       const input = document.querySelector(`.${ID}__modal input`);
       input.value = '';
       input.focus();
-    } else if (target.closest('.custom_cross_btn')) {
+    } else if (target.closest('.custom_cross_btn') || target.closest('.custom_cross_wrapper')) {
       document.querySelector(`.${ID}__modal`).classList.add('hide_content');
       window.scrollTo({
         top: 0,
