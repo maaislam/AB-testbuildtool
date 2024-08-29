@@ -2,10 +2,22 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import modal from './components/modal';
 import fakeSearchBar from './components/fakeSearchBar';
+import { widget } from './components/widget';
+import { uspsData } from './data/data';
 
 const { ID, VARIATION } = shared;
 
 const init = () => {
+  const header = document.querySelector('header > .header');
+  const searchElement = header.querySelector('.header-usps-search');
+
+  //insert usps list into search element
+  if (document.querySelector(`.${ID}__widgetContainer`)) {
+    document.querySelector(`.${ID}__widgetContainer`).remove();
+  }
+
+  searchElement.insertAdjacentHTML('beforeend', widget(ID, uspsData));
+
   if (!document.querySelector(`.${ID}__modal`)) {
     document.querySelector('.page-wrapper').insertAdjacentHTML('beforebegin', modal(ID));
   }
@@ -78,6 +90,8 @@ export default () => {
           .querySelector('#minisearch-form-top-search button[type="submit"]:not([disabled])')
           ?.click();
       }, 100);
+    } else if (target.closest(`.${ID}__roomVisualizer`)) {
+      window.roomvo.startStandaloneVisualizer();
     }
   });
 
