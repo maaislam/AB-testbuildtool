@@ -1,0 +1,84 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .PL-test-01__volumnPillBtn {
+        z-index: 9 !important;
+    }
+
+    .section-header {
+        display: block !important;
+    }
+
+    .#{$id}__fixedNavbar {
+        background: #fff !important;
+        box-shadow: 0px 2px 15px 0px #00000026;
+    }
+
+    .#{$id}__nav {
+        position: fixed;
+        top: 35px;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .top-fix-bar {
+        margin-bottom: 0;
+    }
+
+    .#{$id}__topBar .top_strip {
+        position: fixed;
+        z-index: 11;
+        -webkit-transition: margin .3s ease-out;
+        transition: margin .3s ease-out;
+        margin-top: 0;
+        top: 0;
+    }
+
+    sticky-header {
+        background: transparent;
+    }
+
+    &__homePage {
+        #MainContent {
+            margin-top: -47px;
+
+            @include media-query(md) {
+                margin-top: -50px;
+            }
+        }
+
+        .section-header {
+            top: 35px;
+            position: sticky;
+            z-index: 9999;
+            background: transparent;
+
+            @include media-query(md) {
+                top: 32px;
+            }
+        }
+    }
+
+    &__shopifyPage {
+        .section-header {
+            top: 35px;
+            position: sticky;
+            z-index: 9999;
+            background: #fff1f6;
+
+            @include media-query(md) {
+                top: 32px;
+                background: #fff1f6;
+            }
+        }
+
+        #MainContent {
+            padding-top: 0;
+    
+            @include media-query(md) {
+                padding-top: 30px;
+            }
+        }
+    }
+}
