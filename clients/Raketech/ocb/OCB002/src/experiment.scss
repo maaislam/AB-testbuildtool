@@ -1,0 +1,58 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .newsletter {
+    padding: 29px 15px 70px 15px;
+    background: #ffffff;
+    .row {
+      h2 {
+        font-weight: 700;
+        margin: 0 auto 21px auto;
+        color: #000000;
+
+        @media screen and (max-width: 667px) {
+          margin: 0 auto 20px auto;
+        }
+      }
+
+      & > p {
+        margin: 0 auto 21px auto;
+
+        @media screen and (max-width: 667px) {
+          margin: 0 auto 28px auto;
+        }
+      }
+    }
+
+    .message {
+      margin: 0 auto;
+    }
+
+    form#mailing-list {
+      input#inputBOX {
+        line-height: 17px;
+        background: #1f1f1f;
+        color: #c6c6c6;
+        padding: 17px 15px 18px;
+
+        &::placeholder {
+          color: #c6c6c6;
+        }
+      }
+
+      #submitBTN {
+        font-weight: 700;
+        line-height: 17px;
+
+        @media screen and (max-width: 667px) {
+          line-height: 21px;
+        }
+      }
+    }
+
+    @media screen and (min-width: 668px) {
+      padding: 40px 15px 69px 15px;
+    }
+  }
+}
