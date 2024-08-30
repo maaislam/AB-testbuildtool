@@ -1,3 +1,5 @@
+import image from '../components/image';
+
 /**
  * Polls the DOM for a condition to be met before executing a callback.
  *
@@ -20,7 +22,7 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
       callback();
     } else if (Date.now() - startTime >= maxTime) {
       clearInterval(interval);
-      console.error('Polling exceeded maximum time limit');
+      //console.error('Polling exceeded maximum time limit');
     }
   }, POLLING_INTERVAL);
 };
@@ -32,10 +34,9 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   const config = configObject || {
     childList: true,
-    subtree: true,
-    attributes: true,
-    characterData: true,
-    characterDataOldValue: true
+    subtree: false,
+    characterData: false,
+    characterDataOldValue: false
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
@@ -48,4 +49,34 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
+};
+
+export const parseHTML = async (urls) => {
+  const promises = urls.map((url) =>
+    fetch(url).catch((error) => {
+      console.error(`Error fetching ${url}: ${error.message}`);
+      return Promise.resolve(null);
+    })
+  );
+  const responses = await Promise.all(promises);
+  //eslint-disable-next-line no-restricted-syntax
+  for (const [index, response] of responses.entries()) {
+    if (response) {
+      const html = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const imageElement = doc.querySelector('.gallery-placeholder  img');
+      const imgSource = imageElement?.src;
+      if (imgSource) {
+        const imageWrapper = document.querySelector(`dd[href="${decodeURI(response.url)}"]`);
+        if (!imageWrapper?.classList.contains('new-image-wrapper')) {
+          const getImageComponent = image(imgSource);
+          imageWrapper
+            ?.querySelector('.product-image-box')
+            .insertAdjacentHTML('afterbegin', getImageComponent);
+          imageWrapper?.classList.add('new-image-wrapper');
+        }
+      }
+    }
+  }
 };
