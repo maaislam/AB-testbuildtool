@@ -53,6 +53,7 @@
         .smile-elasticsuite-autocomplete-result {
           padding: 30px 20px;
           background: #fff;
+          overflow: hidden;
 
           dt.title-term {
             font-size: 0;
@@ -274,6 +275,10 @@
           dd {
             padding: 0;
             border: none;
+          }
+
+          @media screen and (max-width: 1023px) {
+            padding: 25px 19px;
           }
         }
 
