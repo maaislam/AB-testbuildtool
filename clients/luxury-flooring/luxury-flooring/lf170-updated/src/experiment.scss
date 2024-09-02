@@ -9,13 +9,13 @@
     margin-top: 0px;
   }
   .bg-overlay {
-    height: 100vh;
     position: fixed;
-    background-color: #f9f2e4;
     width: 100%;
-    z-index: 9999999999;
+    height: 100vh;
+    background-color: #f9f2e4;
     opacity: 0.96;
     visibility: visible;
+    z-index: 9999999999;
 
     @media screen and (max-width: 1023px) {
       background-color: #fff;
@@ -25,7 +25,7 @@
 
   .search_content .block-search {
     width: 100%;
-    max-width: 639px;
+    max-width: 640px;
     margin: 0 auto;
     padding-left: 0;
     float: none;
@@ -42,14 +42,14 @@
     }
     .search-autocomplete {
       margin-top: 0;
-
       &.#{$id}__searchResultWrapper {
-        box-shadow: 12px 9px 17px #0000006b;
+        width: 640px;
+        min-height: max-content;
+        max-height: 580px;
         border: 1px solid #707070;
         border-top: none;
+        box-shadow: 12px 9px 17px #0000006b;
         overflow-y: overlay;
-        min-height: max-content;
-        max-height: 500px;
 
         .smile-elasticsuite-autocomplete-result {
           padding: 30px 20px;
@@ -59,7 +59,7 @@
           dt.title-term {
             font-size: 0;
             padding: 0;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             grid-column: 1 / -1;
             &::after {
               content: 'TOP SUGGESTIONS';
@@ -95,7 +95,7 @@
               }
 
               .amount {
-                font: normal normal normal 15px/36px Work Sans;
+                font: normal normal normal 14px/36px Work Sans;
                 color: #202020;
                 position: static;
               }
@@ -203,6 +203,11 @@
                   font: normal normal normal 16px/22px Work Sans;
                   margin-top: 8px;
                   color: #202020;
+
+                  @media screen and (max-width: 360px) {
+                    font-size: 14px;
+                    line-height: 19px;
+                  }
                 }
               }
 
@@ -291,6 +296,7 @@
         @media screen and (max-width: 1023px) {
           box-shadow: none;
           border: none;
+          width: 100%;
           max-height: 80dvh;
         }
       }

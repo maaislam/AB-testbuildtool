@@ -102,7 +102,7 @@ export default () => {
 
   init();
 
-  observeDOM(`.${ID}__modal #minisearch-autocomplete-top-search`, (mutation) => {
+  const searchResultHandler = (mutation) => {
     const { addedNodes, removedNodes } = mutation;
     if (addedNodes.length) {
       const modalInput = document.querySelector(`.${ID}__modal #minisearch-input-top-search`);
@@ -139,5 +139,7 @@ export default () => {
         item.remove();
       });
     }
-  });
+  };
+
+  observeDOM(`.${ID}__modal #minisearch-autocomplete-top-search`, searchResultHandler);
 };
