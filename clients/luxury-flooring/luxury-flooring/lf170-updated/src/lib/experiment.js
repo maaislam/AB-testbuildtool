@@ -4,8 +4,14 @@ import modal from './components/modal';
 import fakeSearchBar from './components/fakeSearchBar';
 import { widget } from './components/widget';
 import { uspsData } from './data/data';
+import { parseHTML, pollerLite, observeDOM } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
+
+const collectAllLinks = (element) => {
+  const links = Array.from(element).map((item) => item.getAttribute('href'));
+  parseHTML(links);
+};
 
 const init = () => {
   const header = document.querySelector('header > .header');
@@ -46,7 +52,6 @@ export default () => {
   if (VARIATION === 'control') return; //
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    console.log(target);
     if (
       target.closest(`.${ID}__fakeSearchBar .block-content #minisearch-form-top-search`) &&
       target.closest(`.${ID}__fakeSearchBar .control`)
@@ -96,4 +101,45 @@ export default () => {
   });
 
   init();
+
+  const searchResultHandler = (mutation) => {
+    const { addedNodes, removedNodes } = mutation;
+    if (addedNodes.length) {
+      const modalInput = document.querySelector(`.${ID}__modal #minisearch-input-top-search`);
+      pollerLite([() => modalInput && modalInput.getAttribute('aria-haspopup') === 'true'], () => {
+        const searchResultWrapper = document.querySelector(
+          `.${ID}__modal #minisearch-autocomplete-top-search`
+        );
+        searchResultWrapper?.classList.add(`${ID}__searchResultWrapper`);
+        pollerLite(
+          [
+            () =>
+              searchResultWrapper?.querySelector('.title-product') &&
+              searchResultWrapper?.querySelectorAll('.title-product ~ dd').length
+          ],
+          () => {
+            setTimeout(() => {
+              const allProductLinks = searchResultWrapper?.querySelectorAll('.title-product ~ dd');
+              collectAllLinks(allProductLinks);
+            }, 500);
+          }
+        );
+      });
+      pollerLite([() => modalInput && modalInput.getAttribute('aria-haspopup') === 'false'], () => {
+        const searchResultWrapper = document.querySelector(
+          `.${ID}__modal #minisearch-autocomplete-top-search`
+        );
+        searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
+      });
+    } else if (removedNodes.length) {
+      document.querySelectorAll('.new-image-wrapper').forEach((item) => {
+        item.classList.remove('new-image');
+      });
+      document.querySelectorAll('.new-image-element').forEach((item) => {
+        item.remove();
+      });
+    }
+  };
+
+  observeDOM(`.${ID}__modal #minisearch-autocomplete-top-search`, searchResultHandler);
 };
