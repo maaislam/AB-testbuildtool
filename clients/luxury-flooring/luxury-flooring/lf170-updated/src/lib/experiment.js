@@ -52,6 +52,7 @@ export default () => {
   if (VARIATION === 'control') return; //
   document.body.addEventListener('click', (e) => {
     const { target } = e;
+
     if (
       target.closest(`.${ID}__fakeSearchBar .block-content #minisearch-form-top-search`) &&
       target.closest(`.${ID}__fakeSearchBar .control`)
@@ -62,19 +63,14 @@ export default () => {
       input.focus();
     } else if (target.closest('.custom_cross_btn') || target.closest('.custom_cross_wrapper')) {
       document.querySelector(`.${ID}__modal`).classList.add('hide_content');
+      const searchResultWrapper = document.querySelector(
+        `.${ID}__modal #minisearch-autocomplete-top-search`
+      );
+      searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-    } else if (target.closest('.bg-overlay')) {
-      const windowWidth = window.innerWidth;
-      if (windowWidth >= 1024) {
-        document.querySelector(`.${ID}__modal`).classList.add('hide_content');
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }
     } else if (
       target.closest(`.${ID}__fakeSearchBar .block.block-title`) &&
       target.closest(`.${ID}__fakeSearchBar`)
@@ -102,14 +98,27 @@ export default () => {
 
   init();
 
+  const searchInput = document.querySelector(`.${ID}__modal input`);
+
+  searchInput.addEventListener('input', (e) => {
+    if (!e.target.value) {
+      const searchResultWrapper = document.querySelector(
+        `.${ID}__modal #minisearch-autocomplete-top-search`
+      );
+      searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
+    }
+  });
+
   const searchResultHandler = (mutation) => {
     const { addedNodes, removedNodes } = mutation;
     if (addedNodes.length) {
-      const modalInput = document.querySelector(`.${ID}__modal #minisearch-input-top-search`);
-      pollerLite([() => modalInput && modalInput.getAttribute('aria-haspopup') === 'true'], () => {
-        const searchResultWrapper = document.querySelector(
-          `.${ID}__modal #minisearch-autocomplete-top-search`
-        );
+      const searchResultWrapper = document.querySelector(
+        `.${ID}__modal #minisearch-autocomplete-top-search`
+      );
+
+      if (!addedNodes[0]?.childNodes.length) {
+        searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
+      } else if (addedNodes[0]?.childNodes.length) {
         searchResultWrapper?.classList.add(`${ID}__searchResultWrapper`);
         pollerLite(
           [
@@ -124,13 +133,7 @@ export default () => {
             }, 500);
           }
         );
-      });
-      pollerLite([() => modalInput && modalInput.getAttribute('aria-haspopup') === 'false'], () => {
-        const searchResultWrapper = document.querySelector(
-          `.${ID}__modal #minisearch-autocomplete-top-search`
-        );
-        searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
-      });
+      }
     } else if (removedNodes.length) {
       document.querySelectorAll('.new-image-wrapper').forEach((item) => {
         item.classList.remove('new-image');

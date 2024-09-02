@@ -42,10 +42,9 @@
     }
     .search-autocomplete {
       margin-top: 0;
+      display: none !important;
       &.#{$id}__searchResultWrapper {
-        width: 640px;
-        min-height: max-content;
-        max-height: 580px;
+        display: block !important;
         border: 1px solid #707070;
         border-top: none;
         box-shadow: 12px 9px 17px #0000006b;
@@ -70,6 +69,7 @@
             }
 
             &:hover {
+              background: #fff;
               &::before {
                 content: '';
                 position: absolute;
@@ -77,7 +77,7 @@
                 left: -20px;
                 width: calc(100% + 40px);
                 height: 100%;
-                background: #e8e8e8;
+                //background: #e8e8e8;
               }
             }
 
@@ -150,6 +150,7 @@
             margin-bottom: 20px;
             grid-column: 1 / -1;
             &:hover {
+              background-color: #fff;
               &::before {
                 content: '';
                 position: absolute;
@@ -157,7 +158,6 @@
                 left: -20px;
                 width: 20px;
                 height: 100%;
-                background: #e8e8e8;
               }
 
               &::after {
@@ -214,6 +214,11 @@
               .flockr-s {
                 margin-top: 5px;
               }
+
+              &:hover,
+              &.selected {
+                background: #fff;
+              }
             }
           }
 
@@ -225,6 +230,7 @@
             margin-bottom: 20px;
             grid-column: 1 / -1;
             &:hover {
+              background: #fff;
               &::before {
                 content: '';
                 position: absolute;
@@ -232,7 +238,7 @@
                 left: -20px;
                 width: 20px;
                 height: 100%;
-                background: #e8e8e8;
+                //background: #e8e8e8;
               }
 
               &::after {
@@ -297,7 +303,12 @@
           box-shadow: none;
           border: none;
           width: 100%;
-          max-height: 80dvh;
+          height: 100dvh;
+        }
+
+        @media screen and (min-width: 1024px) {
+          min-height: max-content;
+          max-height: 580px;
         }
       }
 
@@ -362,11 +373,6 @@
         margin-top: 0px;
         left: 0;
       }
-
-      // @media screen and (max-width: 480px) {
-      //   height: 75dvh;
-      //   overflow-y: overlay;
-      // }
     }
   }
   .overlay-contents {
@@ -377,7 +383,7 @@
     top: 0;
     width: 100%;
     z-index: 9999999999;
-    transition: transform 0.5s ease-in-out;
+    transition: tarnsform 0.5s ease-in-out;
   }
   .search_content {
     position: relative;
