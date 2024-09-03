@@ -1,3 +1,4 @@
+import updateMenus from './helpers/updateMenus';
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -17,6 +18,8 @@ const observeIntersection = (target, threshold, callback, rootMargin = '-150px')
 };
 
 const init = () => {
+  updateMenus();
+
   if (window.location.pathname === '/') {
     document.body.classList.add(`${ID}__homePage`);
     const header = document.querySelector('.section-header');
@@ -60,4 +63,22 @@ export default () => {
   setup();
 
   init();
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest('#HeaderDrawer-redeem-offer')) {
+      const buyBoxElem = document.querySelector('.section_12');
+      if (buyBoxElem) {
+        document.querySelector('.header__icon--menu').click();
+        buyBoxElem.scrollIntoView();
+      }
+    } else if (target.closest('#HeaderDrawer-ingredients')) {
+      const ingredientsElem = document.querySelector('.section_11');
+      if (ingredientsElem) {
+        document.querySelector('.header__icon--menu').click();
+        ingredientsElem.scrollIntoView();
+      }
+    }
+  });
 };

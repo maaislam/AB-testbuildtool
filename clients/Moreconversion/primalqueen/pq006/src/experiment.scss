@@ -2,8 +2,24 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    scroll-behavior: smooth;
+
     .PL-test-01__volumnPillBtn {
         z-index: 9 !important;
+    }
+
+    #HeaderDrawer-reviews {
+        display: flex !important;
+    }
+
+    #HeaderDrawer-shop,
+    #HeaderDrawer-manage-subscription {
+        display: none;
+    }
+
+    #HeaderDrawer-redeem-offer,
+    #HeaderDrawer-ingredients {
+        cursor: pointer !important;
     }
 
     .section-header {
