@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { observeDOM } from './helpers/utils';
+import { observeDOM, pollerLite } from './helpers/utils';
 import calculateBox from './components/calculateBox';
 import fetchProductData from './helpers/fetchProductData';
 
@@ -40,6 +40,13 @@ const quantityInputHandler = () => {
     clearTextElement.classList.remove(`${ID}__hide`);
     const productCards = document.querySelectorAll(`.item.product.${ID}__loaded-product`);
     productCards.forEach((card) => observer.observe(card));
+
+    const firstItem = document.querySelector('.products .product-item');
+    firstItem.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'nearest'
+    });
   }
 };
 
@@ -77,6 +84,16 @@ export default () => {
       inputElement.value = '';
       clearTextElement.classList.add(`${ID}__hide`);
       removePriceElement();
+    } else if (target.closest(`.${ID}__options-price`)) {
+      const calBox = document.querySelector(`.${ID}__calculateBox`);
+      calBox.classList.toggle('open');
+    } else if (target.closest(`.${ID}__options-visualiser`)) {
+      pollerLite(
+        [() => window.roomvo && typeof window.roomvo.startStandaloneVisualizer === 'function'],
+        () => {
+          window.roomvo.startStandaloneVisualizer();
+        }
+      );
     }
   });
 
