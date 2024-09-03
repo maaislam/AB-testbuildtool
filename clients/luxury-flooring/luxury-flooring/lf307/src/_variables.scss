@@ -2,6 +2,9 @@ $media: (xsm:360px,
     sm: 768px,
     md: 850px,
     lg: 1024px,
+    xl: 1280px,
+    xxl: 1440px,
+    xxxl: 1700px
 );
 
 @mixin media-query($breakpoint) {
@@ -10,6 +13,18 @@ $media: (xsm:360px,
     $size in $media {
         @if $breakpoint==$breakpoints {
             @media screen and (max-width: $size) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin media-query-min($breakpoint) {
+
+    @each $breakpoints,
+    $size in $media {
+        @if $breakpoint==$breakpoints {
+            @media screen and (min-width: $size) {
                 @content;
             }
         }
