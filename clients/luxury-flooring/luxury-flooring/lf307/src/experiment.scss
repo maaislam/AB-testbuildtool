@@ -2,7 +2,32 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+    &__quickLinks {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 56px;
+        margin-bottom: 12px;
+        border-bottom: 0.5px solid #9A9A9A;
+
+        img {
+            margin-bottom: 10px;
+            width: 102px;
+            height: 102px;
+            object-fit: cover;
+        }
+
+        p {
+            margin: 0;
+            font: normal normal normal 16px/16px Work Sans;
+            color: #202020;
+            text-decoration: underline;
+        }
+
+        .#{$id}__card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 17px;
+        }
     }
 }
