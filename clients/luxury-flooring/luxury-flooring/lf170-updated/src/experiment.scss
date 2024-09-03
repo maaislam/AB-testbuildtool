@@ -253,7 +253,10 @@
             }
 
             & ~ dd {
+              display: flex;
               grid-column: 1 / -1;
+              overflow: hidden;
+              white-space: nowrap;
               &:hover {
                 &::before {
                   content: '';
@@ -282,6 +285,9 @@
               }
 
               .qs-option-name {
+                text-overflow: ellipsis;
+                margin-left: 8px;
+                overflow: hidden;
                 font: normal normal normal 15px / 22px Work Sans;
                 color: #202020;
               }
@@ -406,7 +412,7 @@
     }
 
     @media screen and (max-width: 1023px) {
-      font: normal normal normal 14px/22px Work Sans;
+      font: normal normal normal 16px/22px Work Sans;
       height: 64px;
       padding: 23px 50px 25px 53px;
       border-right: none;
@@ -534,6 +540,7 @@
           display: flex;
           align-items: center;
           padding: 3px 0;
+          cursor: pointer;
 
           .#{$id}__svg {
             svg {

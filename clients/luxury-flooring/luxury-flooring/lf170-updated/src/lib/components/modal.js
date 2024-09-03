@@ -3,7 +3,7 @@ const modal = (id) => {
     <div class="${id}__modal hide_content">
         <div class="bg-overlay"></div>
         <div class="overlay-contents">  
-                <div class="search-header">Looking for something specific?</div>
+                <div class="search-header">Got something in mind?</div>
                 <div class="search_content">
                     <div class="header-usps-search"></div>  
                     <div class="custom_cross_wrapper-mobile">
