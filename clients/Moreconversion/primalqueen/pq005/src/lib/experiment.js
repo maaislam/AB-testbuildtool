@@ -3,11 +3,18 @@ import quantity from './components/quantity';
 import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID } = shared;
+const { ID, VARIATION } = shared;
+
+const updateHref = (qty) => {
+  const addToCartElem = VARIATION === '1' ? document.querySelector('.package2 .packge_button_outer a') : document.querySelector('.package1 .packge_button_outer a');
+  const addToCartHref = addToCartElem.getAttribute('href');
+  const newHref = addToCartHref.replace(/items\[\]\[quantity\]=\d+/, `items[][quantity]=${qty}`);
+  addToCartElem.setAttribute('href', newHref);
+};
 
 const init = () => {
   if (document.querySelector(`.${ID}__quantity`)) return;
-  const priceElem = document.querySelector('.package2 .price_text2');
+  const priceElem = VARIATION === '1' ? document.querySelector('.package2 .price_text2') : document.querySelector('.package1 .price_text2');
   priceElem.insertAdjacentHTML('beforebegin', `<div class='${ID}__qtyTitle'>Quantity</div>`);
   priceElem.insertAdjacentHTML('afterbegin', quantity(ID));
 };
@@ -19,14 +26,6 @@ export default () => {
 
   document.body.addEventListener('click', (e) => {
     const input = document.querySelector(`#${ID}__input`);
-    const addToCartElem = document.querySelector('.package2 .packge_button_outer a');
-    const addToCartHref = addToCartElem.getAttribute('href'); //https://primalqueen.com/cart/clear?return_to=/cart/add?items[][id]=46296750096661%26items[][quantity]=1%26return_to=/checkout
-
-    const updateHref = (qty) => {
-      const newHref = addToCartHref.replace(/items\[\]\[quantity\]=\d+/, `items[][quantity]=${qty}`);
-      addToCartElem.setAttribute('href', newHref);
-      console.log('Updated addToCartHref: ', newHref);
-    };
 
     if (e.target.closest(`.${ID}__minus`)) {
       if (input.value > 1) {
@@ -52,7 +51,7 @@ export default () => {
 
     //set new quantity in href and update add to cart button href
     if (!Number.isNaN(qty) && qty > 0) {
-      const addToCartElem = document.querySelector('.package2 .packge_button_outer a');
+      const addToCartElem = VARIATION === '1' ? document.querySelector('.package2 .packge_button_outer a') : document.querySelector('.package1 .packge_button_outer a');
       const addToCartHref = addToCartElem.getAttribute('href');
       const newHref = addToCartHref.replace(/items\[\]\[quantity\]=\d+/, `items[][quantity]=${qty}`);
       addToCartElem.setAttribute('href', newHref);

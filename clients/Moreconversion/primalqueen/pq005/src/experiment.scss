@@ -2,31 +2,76 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    .package2 {
-        .price_text2 {
-            display: flex;
-            align-items: center;
-            margin-top: 11px;
-            margin-bottom: 20px;
-
-            @include media-query(md) {
-                margin-bottom: 10px;
+    &-1 {
+        .package2 {
+            .price_text2 {
+                display: flex;
+                align-items: center;
+                margin-top: 11px;
+                margin-bottom: 20px;
+    
+                @include media-query(md) {
+                    margin-bottom: 10px;
+                }
+    
+                span {
+                    margin: 0 15px 0 auto;
+                }
+    
+                span:after {
+                    top: 14px;
+                }
             }
-
-            span {
-                margin: 0 15px 0 auto;
-            }
-
-            span:after {
-                top: 14px;
+    
+            ul.pkage_list {
+                margin-bottom: 18px;
+    
+                @include media-query(md) {
+                    margin-bottom: 10px;
+                }
             }
         }
 
-        ul.pkage_list {
-            margin-bottom: 18px;
+        .#{$id}__quantity {
+            width: 170px;
+        }
+    }
 
-            @include media-query(md) {
-                margin-bottom: 10px;
+    &-2 {
+        .package1 {
+            .price_text2 {
+                display: flex;
+                align-items: center;
+                margin-top: 11px;
+                margin-bottom: 20px;
+    
+                @include media-query(md) {
+                    margin-bottom: 10px;
+                }
+    
+                span {
+                    margin: 0 15px 0 auto;
+                }
+    
+                span:after {
+                    top: 14px;
+                }
+            }
+    
+            ul.pkage_list {
+                margin-bottom: 18px;
+    
+                @include media-query(md) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .#{$id}__quantity {
+            width: 160px;
+
+            @include media-query(lg) {
+                width: 140px;
             }
         }
     }
@@ -49,7 +94,6 @@
         display: flex;
         justify-content: space-around;
         height: 44px;
-        width: 170px;
         border: 1px solid #E94480;
 
         @include media-query(md) {
