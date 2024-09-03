@@ -9,7 +9,7 @@ export const uspsItem = (id, data) => {
   const isClickAble = iconType === 'image' ? `${id}__roomVisualizer` : '';
 
   const html = `
-    <a class="${id}__uspsItem" href="${link}">
+    <a class="${id}__uspsItem ${isClickAble}" ${iconType !== 'image' ? `href="${link}"` : ''}>
         ${selectedTag}
         <div class="${id}__content">
             <div class="${id}__title">${title}</div>

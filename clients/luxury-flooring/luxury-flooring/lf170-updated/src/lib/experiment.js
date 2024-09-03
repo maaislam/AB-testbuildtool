@@ -92,7 +92,12 @@ export default () => {
           ?.click();
       }, 100);
     } else if (target.closest(`.${ID}__roomVisualizer`)) {
-      window.roomvo.startStandaloneVisualizer();
+      pollerLite(
+        [() => window.roomvo && typeof window.roomvo.startStandaloneVisualizer === 'function'],
+        () => {
+          window.roomvo.startStandaloneVisualizer();
+        }
+      );
     }
   });
 
@@ -130,7 +135,7 @@ export default () => {
             setTimeout(() => {
               const allProductLinks = searchResultWrapper?.querySelectorAll('.title-product ~ dd');
               collectAllLinks(allProductLinks);
-            }, 500);
+            }, 100);
           }
         );
       }

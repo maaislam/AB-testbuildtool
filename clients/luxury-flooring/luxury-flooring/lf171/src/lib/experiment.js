@@ -45,7 +45,7 @@ const quantityInputHandler = () => {
     firstItem.scrollIntoView({
       behavior: 'smooth',
       block: 'end',
-      inline: 'nearest'
+      inline: 'center'
     });
   }
 };
