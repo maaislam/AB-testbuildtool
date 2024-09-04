@@ -7,10 +7,16 @@
     }
 
     &__slider-item {
-        // margin: 0 20px;
+        &:first-child {
+            margin-left: 40px;
+        }
 
-        @include media-query(sm) {
-            // margin-left: 30px;
+        &:last-child {
+            margin-right: 40px;
+        }
+
+        .grid-product__content {
+            margin: 0 20px;
         }
     }
 }

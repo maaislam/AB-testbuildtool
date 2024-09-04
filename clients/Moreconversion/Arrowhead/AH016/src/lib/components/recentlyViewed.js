@@ -89,9 +89,9 @@ const recentlyViewed = (id, pageType) => {
                                 <div class="swiper">
                                     <div class="swiper-wrapper  aos-init ${setAosAnimation} " data-aos="overflow__animation">
                                         ${productHtml}
-                                        <div class="swiper-button-prev"></div>
-                                        <div class="swiper-button-next"></div>
                                     </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
                                 </div>
                             </div>
                         </div>

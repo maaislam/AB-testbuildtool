@@ -105,15 +105,13 @@ export const initSwiper = (container) => {
     breakpoints: {
       320: {
         slidesPerView: 1.5,
-        spaceBetween: 0,
         allowTouchMove: true,
         freeMode: true
       },
       768: {
-        slidesPerView: 3.5,
-        spaceBetween: 40,
-        allowTouchMove: false,
-        slidesPerGroup: 3
+        slidesPerView: 4,
+        allowTouchMove: false
+        // slidesPerGroup: 3
       }
     }
   };
