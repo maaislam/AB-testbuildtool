@@ -143,9 +143,9 @@ export default () => {
       document.querySelectorAll('.new-image-wrapper').forEach((item) => {
         item.classList.remove('new-image');
       });
-      document.querySelectorAll('.new-image-element').forEach((item) => {
-        item.remove();
-      });
+      //document.querySelectorAll('.new-image-element').forEach((item) => {
+      //item.remove();
+      //});
     }
   };
 

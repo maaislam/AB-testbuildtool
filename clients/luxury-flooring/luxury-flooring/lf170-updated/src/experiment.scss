@@ -43,8 +43,10 @@
     .search-autocomplete {
       margin-top: 0;
       display: none !important;
+
       &.#{$id}__searchResultWrapper {
         display: block !important;
+        width: 640px;
         border: 1px solid #707070;
         border-top: none;
         box-shadow: 12px 9px 17px #0000006b;
@@ -161,13 +163,13 @@
               }
 
               &::after {
+                background-color: #fff;
                 content: '';
                 position: absolute;
                 top: 0;
                 left: 100%;
                 width: 20px;
                 height: 100%;
-                background: #e8e8e8;
               }
             }
 
@@ -176,6 +178,7 @@
               flex-direction: column;
               padding-bottom: 15px;
               .product-image-box {
+                max-width: 300px;
                 width: 100%;
                 height: 180px;
                 padding: 0;
@@ -186,14 +189,29 @@
                   object-fit: cover;
                 }
 
-                .new-image-element {
-                  & + img {
-                    display: none;
-                  }
+                @media screen and (max-width: 1023px) {
+                  max-width: 100%;
+                  height: 260px;
                 }
 
-                @media screen and (max-width: 1023px) {
-                  height: auto;
+                @media screen and (max-width: 767px) {
+                  height: 180px;
+                }
+
+                @media screen and (max-width: 580px) {
+                  height: 150px;
+                }
+
+                @media screen and (max-width: 480px) {
+                  height: 120px;
+                }
+
+                @media screen and (max-width: 390px) {
+                  height: 108px;
+                }
+
+                @media screen and (max-width: 375px) {
+                  height: 100px;
                 }
               }
 
@@ -227,7 +245,7 @@
             font: normal normal 600 14px/22px Work Sans;
             color: #202020;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             grid-column: 1 / -1;
             &:hover {
               background: #fff;
@@ -238,25 +256,26 @@
                 left: -20px;
                 width: 20px;
                 height: 100%;
-                //background: #e8e8e8;
               }
 
               &::after {
+                background: #fff;
                 content: '';
                 position: absolute;
                 top: 0;
                 left: 100%;
                 width: 20px;
                 height: 100%;
-                background: #e8e8e8;
               }
             }
 
             & ~ dd {
               display: flex;
+              flex-direction: column;
+              justify-content: center;
               grid-column: 1 / -1;
-              overflow: hidden;
-              white-space: nowrap;
+              margin-bottom: 8px;
+              height: 36px;
               &:hover {
                 &::before {
                   content: '';
@@ -280,15 +299,21 @@
               }
 
               .category-mini-crumb {
-                font: normal normal normal 15px/22px Work Sans;
+                //font: normal normal normal 15px/22px Work Sans;
+                font-family: 'Work Sans';
                 font-style: italic;
+                line-height: 1;
+                margin-bottom: 2px;
               }
 
               .qs-option-name {
-                text-overflow: ellipsis;
-                margin-left: 8px;
-                overflow: hidden;
-                font: normal normal normal 15px / 22px Work Sans;
+                //text-overflow: ellipsis;
+                //margin-left: 8px;
+                //overflow: hidden;
+                //font: normal normal normal 15px / 22px Work Sans;
+                font-size: 15px;
+                font-family: 'Work Sans';
+                line-height: 1;
                 color: #202020;
               }
             }
@@ -309,7 +334,8 @@
           box-shadow: none;
           border: none;
           width: 100%;
-          height: 100dvh;
+          height: 100vh;
+          padding-bottom: 200px;
         }
 
         @media screen and (min-width: 1024px) {
