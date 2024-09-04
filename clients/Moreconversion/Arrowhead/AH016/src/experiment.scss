@@ -1,0 +1,14 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__slider-item {
+        &:first-child {
+            margin-left: 80px;
+
+            @include media-query(sm) {
+                margin-left: 30px;
+            }
+        }
+    }
+}
