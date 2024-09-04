@@ -2,13 +2,15 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__slider-item {
-        &:first-child {
-            margin-left: 80px;
+    .recently-viewed-section .overflow-scroller {
+        overflow: visible !important;
+    }
 
-            @include media-query(sm) {
-                margin-left: 30px;
-            }
+    &__slider-item {
+        // margin: 0 20px;
+
+        @include media-query(sm) {
+            // margin-left: 30px;
         }
     }
 }

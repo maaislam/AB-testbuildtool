@@ -1,41 +1,62 @@
-const recentlyViewed = (id) => {
+const recentlyViewed = (id, pageType) => {
     const storedData = JSON.parse(localStorage.getItem('__kla_viewed')) || [];
     const recentlyViewedPrds = storedData.length > 0 ? storedData.map((item) => item[0]) : [];
 
-    const productHtml = recentlyViewedPrds.map(({ Title, ItemId, ImageUrl, Url, Metadata }) => `
-        <div class="swiper-slide ${id}__slider-item aos-init aos-animate"
-            data-aos="">
-            <div class="grid-product__content">
-                <a href="${Url}" class="grid-product__link" data-product-id="${ItemId}">
-                    <div id="ProductGridSlider-${ItemId}"
-                        class="slideshow-wrapper product-slider" >
-                        <div class="product-slide">
-                            <div class="image-wrap">
-                                <div class="grid__image-ratio grid__image-ratio--square lazyload"
-                                    style="background-image: url('${ImageUrl}'); background-size: cover;">
+    const isCartPage = pageType === 'cart';
+    const setAosAnimation = isCartPage ? 'aos-animate' : '';
+
+    const productHtml = recentlyViewedPrds.map(({ Title, ItemId, ImageUrl, Url, Metadata }) => {
+        const oldPriceWithCur = Metadata.CompareAtPrice ? Metadata.CompareAtPrice : '';
+        const newPriceWithCur = Metadata.Price;
+
+        const oldPrice = parseFloat(oldPriceWithCur.replace(/[^0-9.-]+/g, ''));
+        const newPrice = parseFloat(newPriceWithCur.replace(/[^0-9.-]+/g, ''));
+        const compareTwoPrices = oldPrice > newPrice;
+        const renderOldPrice = oldPrice > 0 ? oldPrice : '';
+
+        return `
+            <div class="swiper-slide ${id}__slider-item aos-init ${setAosAnimation}"
+                data-aos="" data-product-grid="" data-id="${ItemId}">
+                <div class="grid-product__content">
+                    ${compareTwoPrices ? '<div class="grid-product__tag grid-product__tag--sale">Sale</div>' : ''}
+                    <a href="${Url}" class="grid-product__link" data-product-id="${ItemId}">
+                        <div id="ProductGridSlider-${ItemId}"
+                            class="slideshow-wrapper product-slider" data-image-count="1"
+                            data-id="${ItemId}">
+                            <div class="product-slide">
+                                <div class="image-wrap">
+                                    <div class="grid__image-ratio grid__image-ratio--square lazyload"
+                                        style="background-image: url('${ImageUrl}'); background-size: contain;">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="grid-product__meta">
-                        <div class="grid-product__title">
-                            <span class="productTitle">${Title.split(' - ')[0]}</span><br>
-                            ${Title.split(' - ')[1] ? `<span class="productSubTitle">${Title.split(' - ')[1]}</span>` : ''}
+                        <div class="grid-product__meta">
+                            <div class="grid-product__title">
+                                <span class="productTitle">${Title.split(' - ')[0]}</span><br>
+                                ${Title.split(' - ')[1] ? `<span class="productSubTitle">${Title.split(' - ')[1]}</span>` : ''}
+                            </div>
+                            <div class="grid-product__price">
+                                <span class="visually-hidden">Regular price</span>
+                                <del class="grid-product__price--original">${renderOldPrice}</del>
+                                <span class="visually-hidden">Sale price</span>
+                                <span class="sale-price">
+                                    ${newPriceWithCur}
+                                </span>
+                            </div>
                         </div>
-                        <div class="grid-product__price">
-                            <span>${Metadata.Price}</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>`).join('');
+                    </a>
+                </div>
+            </div>`;
+        }).join('');
 
     const htmlStr = `
-        <div id="shopify-section-template--18153288433923__product-recommendations" class="shopify-section">
+        <div class="shopify-section recently-viewed-section">
             <div data-subsection=""  data-enable="true">
-                <div>
+                <div data-subsection=" data-section-type="featured-collection" >
+
                     <div class="page-width">
-                        <header class="section-header aos-init aos-animate" data-aos="">
+                        <header class="section-header aos-init ${setAosAnimation} " data-aos="">
                             <h2 class="section-header__title appear-delay">
                                 Recently Viewed
                             </h2>
@@ -66,7 +87,7 @@ const recentlyViewed = (id) => {
                         <div class="overflow-scroller" data-pagination-wrapper="">
                             <div class="product-recommendations-placeholder">
                                 <div class="swiper">
-                                    <div class="swiper-wrapper  aos-init aos-animate" data-aos="overflow__animation">
+                                    <div class="swiper-wrapper  aos-init ${setAosAnimation} " data-aos="overflow__animation">
                                         ${productHtml}
                                         <div class="swiper-button-prev"></div>
                                         <div class="swiper-button-next"></div>

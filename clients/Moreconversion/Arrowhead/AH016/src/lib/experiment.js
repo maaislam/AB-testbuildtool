@@ -11,14 +11,14 @@ const init = () => {
   if (pathname.includes('/products')) {
     const recommendationElem = document.querySelector('[id*="__product-recommendations"]');
     pollerLite([() => recommendationElem, () => typeof window.Swiper === 'function'], () => {
-      recommendationElem.insertAdjacentHTML('beforebegin', recentlyViewed(ID));
+      recommendationElem.insertAdjacentHTML('beforebegin', recentlyViewed(ID, 'pdp'));
 
       initSwiper('.swiper');
     });
   } else if (pathname.includes('/cart')) {
     const featuredCollectionElem = document.querySelector('[id*="__featured-collection"]');
     pollerLite([() => featuredCollectionElem, () => typeof window.Swiper === 'function'], () => {
-      featuredCollectionElem.insertAdjacentHTML('beforebegin', recentlyViewed(ID));
+      featuredCollectionElem.insertAdjacentHTML('beforebegin', recentlyViewed(ID, 'cart'));
 
       initSwiper('.swiper');
     });

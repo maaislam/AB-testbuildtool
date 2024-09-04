@@ -95,7 +95,6 @@ export const addJsToPage = (src, id, classes, integrity = '') => {
 };
 
 export const initSwiper = (container) => {
-  console.log('window.Swiper:', window.Swiper);
   //const { slidesPerView, spaceBetween, direction } = initConfig;
 
   const baseConfig = {
@@ -104,10 +103,17 @@ export const initSwiper = (container) => {
       prevEl: '.swiper-button-prev'
     },
     breakpoints: {
-      1024: {
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 0,
+        allowTouchMove: true,
+        freeMode: true
+      },
+      768: {
         slidesPerView: 3.5,
         spaceBetween: 40,
-        allowTouchMove: false
+        allowTouchMove: false,
+        slidesPerGroup: 3
       }
     }
   };
