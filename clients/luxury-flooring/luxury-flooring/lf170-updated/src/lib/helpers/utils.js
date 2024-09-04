@@ -69,11 +69,13 @@ export const parseHTML = async (urls) => {
       const imgSource = imageElement?.src;
       if (imgSource) {
         const imageWrapper = document.querySelector(`dd[href="${decodeURI(response.url)}"]`);
-        if (!imageWrapper?.classList.contains('new-image-wrapper')) {
-          const getImageComponent = image(imgSource);
-          imageWrapper
-            ?.querySelector('.product-image-box')
-            .insertAdjacentHTML('afterbegin', getImageComponent);
+        if (!imageWrapper?.classList.contains('new-image-wrapper') && imageWrapper) {
+          //const getImageComponent = image(imgSource);
+          //imageWrapper
+          //?.querySelector('.product-image-box')
+          //.insertAdjacentHTML('afterbegin', getImageComponent);
+
+          imageWrapper.querySelector('.product-image-box img').src = imgSource;
           imageWrapper?.classList.add('new-image-wrapper');
         }
       }
