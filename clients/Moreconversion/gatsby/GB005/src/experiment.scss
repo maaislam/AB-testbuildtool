@@ -51,6 +51,7 @@
             line-height: 15px;
             font-style: normal;
             color: #000 !important;
+            text-align: center;
             
             @include media-query(sm) {
                 min-width: 88px;
