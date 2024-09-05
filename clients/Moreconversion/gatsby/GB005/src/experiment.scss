@@ -1,0 +1,55 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__hide {
+        display: none;
+    }
+
+    &__usps {
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media-query(sm) {
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .usp {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 4px;
+        }
+
+        .usp-icon {
+            display: block;
+            height: 60px;
+            width: 60px;
+
+            svg {
+                height: 100%;
+                width: 100%;
+            }
+
+            @include media-query(sm) {
+                height: 50px;
+                width: 50px;
+            }
+        }
+
+        .usp-title {
+            font-family: "Abril Fatface", serif;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 15px;
+            font-style: normal;
+            
+            @include media-query(sm) {
+                min-width: 88px;
+            }
+        }
+    }
+}
