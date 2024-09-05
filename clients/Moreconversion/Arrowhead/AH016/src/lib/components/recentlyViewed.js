@@ -1,24 +1,35 @@
 const recentlyViewed = (id, pageType) => {
-    const storedData = JSON.parse(localStorage.getItem('__kla_viewed')) || [];
-    const recentlyViewedPrds = storedData.length > 0 ? storedData.map((item) => item[0]) : [];
+  const storedData = JSON.parse(localStorage.getItem('__kla_viewed')) || [];
+  const recentlyViewedPrds = storedData.length > 0 ? storedData.map((item) => item[0]) : [];
 
-    const isCartPage = pageType === 'cart';
-    const setAosAnimation = isCartPage ? 'aos-animate' : '';
+  const isCartPage = pageType === 'cart';
+  const setAosAnimation = isCartPage ? 'aos-animate' : '';
 
-    const productHtml = recentlyViewedPrds.map(({ Title, ItemId, ImageUrl, Url, Metadata }) => {
-        const oldPriceWithCur = Metadata.CompareAtPrice ? Metadata.CompareAtPrice : '';
-        const newPriceWithCur = Metadata.Price;
+  const lastItem = recentlyViewedPrds[recentlyViewedPrds.length - 1];
+  recentlyViewedPrds.push(lastItem);
 
-        const oldPrice = parseFloat(oldPriceWithCur.replace(/[^0-9.-]+/g, ''));
-        const newPrice = parseFloat(newPriceWithCur.replace(/[^0-9.-]+/g, ''));
-        const compareTwoPrices = oldPrice > newPrice;
-        const renderOldPrice = oldPrice > 0 ? oldPrice : '';
+  const productHtml = recentlyViewedPrds
+    .map(({ Title, ItemId, ImageUrl, Url, Metadata }, index) => {
+      const oldPriceWithCur = Metadata.CompareAtPrice ? Metadata.CompareAtPrice : '';
+      const newPriceWithCur = Metadata.Price;
 
-        return `
-            <div class="swiper-slide ${id}__slider-item aos-init ${setAosAnimation}"
-                data-aos="" data-product-grid="" data-id="${ItemId}">
+      const oldPrice = parseFloat(oldPriceWithCur.replace(/[^0-9.-]+/g, ''));
+      const newPrice = parseFloat(newPriceWithCur.replace(/[^0-9.-]+/g, ''));
+      const compareTwoPrices = oldPrice > newPrice;
+      const renderOldPrice = oldPrice > 0 ? oldPrice : '';
+
+      const isLastItem = index === recentlyViewedPrds.length - 1;
+
+      return `
+            <div class="swiper-slide ${id}__slider-item "
+                data-aos="" data-product-grid="" data-id="${ItemId}" 
+                ${isLastItem ? 'style="opacity:0; pointerEvents: none "' : ''}>
                 <div class="grid-product__content">
-                    ${compareTwoPrices ? '<div class="grid-product__tag grid-product__tag--sale">Sale</div>' : ''}
+                    ${
+                      compareTwoPrices
+                        ? '<div class="grid-product__tag grid-product__tag--sale">Sale</div>'
+                        : ''
+                    }
                     <a href="${Url}" class="grid-product__link" data-product-id="${ItemId}">
                         <div id="ProductGridSlider-${ItemId}"
                             class="slideshow-wrapper product-slider" data-image-count="1"
@@ -34,7 +45,13 @@ const recentlyViewed = (id, pageType) => {
                         <div class="grid-product__meta">
                             <div class="grid-product__title">
                                 <span class="productTitle">${Title.split(' - ')[0]}</span><br>
-                                ${Title.split(' - ')[1] ? `<span class="productSubTitle">${Title.split(' - ')[1]}</span>` : ''}
+                                ${
+                                  Title.split(' - ')[1]
+                                    ? `<span class="productSubTitle">${
+                                        Title.split(' - ')[1]
+                                      }</span>`
+                                    : ''
+                                }
                             </div>
                             <div class="grid-product__price">
                                 <span class="visually-hidden">Regular price</span>
@@ -48,9 +65,10 @@ const recentlyViewed = (id, pageType) => {
                     </a>
                 </div>
             </div>`;
-        }).join('');
+    })
+    .join('');
 
-    const htmlStr = `
+  const htmlStr = `
         <div class="shopify-section recently-viewed-section">
             <div data-subsection=""  data-enable="true">
                 <div data-subsection=" data-section-type="featured-collection" >
@@ -100,7 +118,7 @@ const recentlyViewed = (id, pageType) => {
             </div>
         </div>`;
 
-    return htmlStr;
+  return htmlStr;
 };
 
 export default recentlyViewed;

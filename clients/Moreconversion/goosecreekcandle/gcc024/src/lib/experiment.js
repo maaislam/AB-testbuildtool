@@ -42,7 +42,11 @@ const init = () => {
     currentPageList.insertAdjacentHTML('afterend', loadingElem);
   }
 
-  const fetchUrl = `https://services.mybcapps.com/bc-sf-filter/filter?_=pf&shop=goose-creek-co.myshopify.com&page=${pageCounter}&limit=24&sort=manual&locale=en&event_type=init&pg=collection_page&build_filter_tree=true&collection_scope=129543700555&money_format=%26%2336%3B%7B%7Bamount%7D%7D&money_format_with_currency=%26%2336%3B%7B%7Bamount%7D%7D+USD&viewAs=grid--4&device=&first_load=false&productImageWidth=300&productPerRow=4&widget_updated_at=${Date.now()}&templateId=hWrzPXMYu4&isMobile=false&isTabletPortraitMax=false&behavior=refresh&tag=&t=${Date.now()}&sid=9f1bbba0-f15d-3974-2d7c-4baf3609519f&sort_first=available&product_available=false&variant_available=false`;
+  const activeSortElem = document.querySelector('.boost-sd__sorting-option--active');
+  const activeSort = activeSortElem.dataset.value;
+  const collectionScopeId = window.StatusInitData?.page?.collectionId;
+
+  const fetchUrl = `https://services.mybcapps.com/bc-sf-filter/filter?_=pf&shop=goose-creek-co.myshopify.com&page=${pageCounter}&limit=24&sort=${activeSort}&locale=en&event_type=init&pg=collection_page&build_filter_tree=true&collection_scope=${collectionScopeId}&money_format=%26%2336%3B%7B%7Bamount%7D%7D&money_format_with_currency=%26%2336%3B%7B%7Bamount%7D%7D+USD&viewAs=grid--4&device=&first_load=false&productImageWidth=300&productPerRow=4&widget_updated_at=${Date.now()}&templateId=hWrzPXMYu4&isMobile=false&isTabletPortraitMax=false&behavior=refresh&tag=&t=${Date.now()}&sid=9f1bbba0-f15d-3974-2d7c-4baf3609519f&sort_first=available&product_available=false&variant_available=false`;
   console.log('🚀 ~ init ~ pageCounter:', pageCounter);
   fetch(fetchUrl)
     .then((response) => response.json())
@@ -91,7 +95,9 @@ export default () => {
 
   getActiveFn();
 
-  const obserElem = document.querySelector('.collection-bottom-description > span');
+  const obserElem =
+    document.querySelector('.collection-bottom-description > :first-child') ||
+    document.querySelector('.collection-bottom-description');
   const callBackHandler = (entry) => {
     if (entry.isIntersecting) {
       init();

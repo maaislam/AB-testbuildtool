@@ -2,21 +2,18 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    .recently-viewed-section .overflow-scroller {
-        overflow: visible !important;
+  .recently-viewed-section .overflow-scroller {
+    overflow: visible !important;
+  }
+
+  &__slider-item {
+    &:first-child {
+      margin-left: 80px;
+      @media screen and (max-width: 600px) {
+        margin-left: 40px;
+      }
     }
 
-    &__slider-item {
-        &:first-child {
-            margin-left: 40px;
-        }
-
-        &:last-child {
-            margin-right: 40px;
-        }
-
-        .grid-product__content {
-            margin: 0 20px;
-        }
-    }
+    //margin: 0 20px;
+  }
 }
