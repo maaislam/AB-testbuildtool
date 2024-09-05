@@ -12,7 +12,7 @@ const calculateBox = (id) => {
                     </div>
                 </div>
             </div>
-            <div class="${id}___calculateBox-form-container">
+           
                 <form class="${id}__calculateBox-form">
                     <label for="fnumber">Price your room</label>
                     <div class="${id}__calculate-control">        
@@ -23,14 +23,7 @@ const calculateBox = (id) => {
                     <span class="${id}__clearText ${id}__hide">Clear pricing</span>
                 </form>
 
-                <div class="${id}__options-visualiser">
-                    <div class="${id}__options-icon">
-                        <img src="https://www.roomvo.com/services/vendor/vendor_images/luxuryflooringandfurnishingscouk/roomvo_icon.png">
-                    </div>
-                    <div class="${id}__options-text">Room Visualiser</div>
-                </div>
-            
-            </div>
+          
             
         </div>
     `;
