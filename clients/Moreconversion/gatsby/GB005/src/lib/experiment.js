@@ -5,10 +5,16 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  const attachPoint = document.querySelector('.product-single__description img[data-mce-fragment="1"]');
+  const attachPoint = document.querySelector('.product-single__description img');
   const guaranteeItem = document.querySelector('#section-guarantee .grid__item:last-child');
+  const isPrdDescHasBtn = document.querySelector('.product-single__description:has(button)');
+
   attachPoint.classList.add(`${ID}__hide`);
   guaranteeItem.classList.add(`${ID}__guaranteeItem`);
+
+  if (!isPrdDescHasBtn) {
+    document.querySelector('.btn--add-to-cart').classList.add(`${ID}__addToCart`);
+  }
 
   const data = VARIATION === '1' ? dataV1 : dataV2;
 
