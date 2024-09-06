@@ -1,8 +1,11 @@
+/*eslint-disable max-len */
+/*eslint-disable no-param-reassign */
 import setup from './services/setup';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
+import { observeDOM, pollerLite } from './helpers/utils';
+import cartPage from './pages/cartPage';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
 
 const typeObj = {
   'Tank Top': 'tank',
@@ -42,7 +45,9 @@ const init = () => {
         fetchPromises.push(
           fetch(url)
             .then((response) => response.json())
-            .then((fileData) => ({ fileData, collectionTitle, variantId }))
+            .then((fileData) => ({
+              fileData, collectionTitle, variantId
+            }))
         );
       });
 
@@ -62,6 +67,8 @@ const init = () => {
               if (variants) {
                 const prdId = Number(variantId);
                 const currentVariant = variants.find((variant) => variant.id === prdId);
+
+                if ((collectionTitle.textContent.includes(macthedPrdType) || collectionTitle.textContent.includes(prdType))) return;
 
                 if (currentVariant && currentVariant.option2) {
                   const { option2 } = currentVariant;
@@ -83,77 +90,19 @@ const init = () => {
   }
 
   if (VARIATION === '2') {
-    const cartTitles = document.querySelectorAll('#slidecarthq .item .title');
-    pollerLite([() => cartTitles.length > 0], () => {
-      const fetchPromises = [];
-
-      cartTitles.forEach((cartTitle) => {
-        let newVariantId;
-
-        const { variantId } = cartTitle.closest('.item').dataset;
-        const linkElem = cartTitle.querySelector('a');
-        const link = linkElem.getAttribute('href');
-
-        //const url = link.replace(/\?.*$/, '.js');
-        const urlObj = new URL(link, window.location.origin);
-
-        if (urlObj.search.length > 0) {
-          newVariantId = urlObj.searchParams.get('variant');
-        } else {
-          newVariantId = variantId;
-        }
-
-        urlObj.search = '';
-        const url = `${urlObj.href}.js`;
-
-        fetchPromises.push(
-          fetch(url)
-            .then((response) => response.json())
-            .then((fileData) => ({ fileData, cartTitle, newVariantId }))
-        );
-      });
-
-      Promise.all(fetchPromises)
-        .then((fileDataArray) => {
-          fileDataArray.forEach(({ fileData, cartTitle, newVariantId }) => {
-            const { type, variants } = fileData;
-            const macthedPrdType = typeObj[type];
-            const [titleFirstPart, ...rest] = cartTitle.textContent.trim().split(' ');
-            const productColor = rest.join(' ');
-            const prdType = type.toLowerCase();
-
-            //Update the product title to include the product type
-            if (macthedPrdType || type) {
-              cartTitle.textContent = `${titleFirstPart} ${macthedPrdType || prdType} ${productColor}`;
-            }
-
-            if (macthedPrdType || type) {
-              if (variants) {
-                const prdId = Number(newVariantId);
-                const currentVariant = variants.find((variant) => variant.id === prdId);
-
-                if (currentVariant && currentVariant.option2) {
-                  const { option2 } = currentVariant;
-                  const color = option2.toLowerCase();
-                  const productTitleText = `${titleFirstPart} ${macthedPrdType || prdType} ${color}`;
-                  cartTitle.textContent = productTitleText;
-                } else {
-                  const productTitleText = `${titleFirstPart} ${macthedPrdType || prdType} ${productColor}`;
-                  cartTitle.textContent = productTitleText;
-                }
-              }
-            }
-          });
-        })
-        .catch((err) => {
-          console.log('Something went wrong with one or more fetch requests.', err);
-        });
-    });
-
+    cartPage(typeObj);
   }
 };
 
 export default () => {
   setup(); //use if needed
   init();
+
+  if (VARIATION === '2') {
+    pollerLite(['.slidecarthq'], () => {
+      observeDOM('.slidecarthq', () => {
+        init();
+      });
+    });
+  }
 };
