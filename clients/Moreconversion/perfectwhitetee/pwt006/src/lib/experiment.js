@@ -7,7 +7,8 @@ const { ID, VARIATION } = shared;
 const typeObj = {
   'Tank Top': 'tank',
   'Shirts & Tops': 'tee',
-  'Hoodies & Sweatshirts': 'sweatshirts'
+  'Hoodies & Sweatshirts': 'sweatshirts',
+  'Apparel & Accessories > Clothing > Shirts & Tops': 'tee'
 };
 
 const init = () => {
@@ -34,16 +35,19 @@ const init = () => {
     Promise.all(fetchPromises)
       .then((fileDataArray) => {
         fileDataArray.forEach(({ fileData, collectionTitle }) => {
+          console.log('fileData: ', fileData);
           const { type } = fileData;
-          const productType = typeObj[type];
+          const macthedPrdType = typeObj[type];
           const [titleFirstPart, ...rest] = collectionTitle.textContent.trim().split(' ');
           const productColor = rest.join(' ');
+          const prdType = type.toLowerCase();
 
+          console.log('productType: ', prdType);
           console.log('productColor: ', productColor);
 
           //Update the product title to include the product type
-          if (productType || type) {
-            collectionTitle.textContent = `${titleFirstPart} ${productType || type} ${productColor}`;
+          if (macthedPrdType || type) {
+            collectionTitle.textContent = `${titleFirstPart} ${macthedPrdType || prdType} ${productColor}`;
           }
         });
       })
