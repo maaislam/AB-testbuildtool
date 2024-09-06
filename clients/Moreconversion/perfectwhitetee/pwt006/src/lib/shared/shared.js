@@ -1,6 +1,6 @@
 module.exports = {
     ID: "pwt006",
-    VARIATION: "2",
+    VARIATION: "1",
     CLIENT: "Moreconversion",
     SITE: "perfectwhitetee"
   };

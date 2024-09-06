@@ -98,11 +98,18 @@ export default () => {
   setup(); //use if needed
   init();
 
-  if (VARIATION === '2') {
-    pollerLite(['.slidecarthq'], () => {
-      observeDOM('.slidecarthq', () => {
-        init();
-      });
-    });
-  }
+  // if (VARIATION === '1') {
+  //   pollerLite(['.page-width.page-content'], () => {
+  //     observeDOM('.page-width.page-content', () => {
+  //       init();
+  //     });
+  //   });
+  // }
+  // if (VARIATION === '2') {
+  //   pollerLite(['.slidecarthq'], () => {
+  //     observeDOM('.slidecarthq', () => {
+  //       init();
+  //     });
+  //   });
+  // }
 };
