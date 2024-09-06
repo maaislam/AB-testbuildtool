@@ -98,22 +98,38 @@ export default () => {
   setup(); //use if needed
   init();
 
+  const configure = {
+    childList: true,
+    subtree: false,
+    attributes: false,
+    characterData: false,
+    characterDataOldValue: false
+  };
+
   if (VARIATION === '1') {
     pollerLite(['#CollectionAjaxContent'], () => {
-      observeDOM('#CollectionAjaxContent', () => {
-        const productsWrapper = document.querySelector('#CollectionAjaxContent > .grid');
-        const productsItems = productsWrapper.querySelectorAll('.grid__item');
-        if (productsItems.length && window.location.pathname.includes('/collections/')) {
-          init();
-        }
-      });
+      observeDOM(
+        '#CollectionAjaxContent',
+        () => {
+          const productsWrapper = document.querySelector('#CollectionAjaxContent > .grid');
+          const productsItems = productsWrapper.querySelectorAll('.grid__item');
+          if (productsItems.length && window.location.pathname.includes('/collections/')) {
+            init();
+          }
+        },
+        configure
+      );
     });
   }
-  // if (VARIATION === '2') {
-  //   pollerLite(['.slidecarthq'], () => {
-  //     observeDOM('.slidecarthq', () => {
-  //       init();
-  //     });
-  //   });
-  // }
+  if (VARIATION === '2') {
+    pollerLite(
+      ['.slidecarthq'],
+      () => {
+        observeDOM('.slidecarthq', () => {
+          init();
+        });
+      },
+      configure
+    );
+  }
 };
