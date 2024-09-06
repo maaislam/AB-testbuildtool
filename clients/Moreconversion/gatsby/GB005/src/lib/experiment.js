@@ -33,6 +33,15 @@ const init = () => {
 
   if (!document.querySelector(`.${ID}__usps`)) {
     attachPoint.insertAdjacentHTML('beforebegin', usps());
+
+    const uspsElem = document.querySelector(`.${ID}__usps`);
+    const spanElem = uspsElem.closest('span');
+    if (spanElem) {
+      const isUnderLine = spanElem.style.textDecoration;
+      if (isUnderLine) {
+        spanElem.style.textDecoration = 'none';
+      }
+    }
   }
 
   const guaranteeItemElem = document.querySelector(`.${ID}__guaranteeItem`);

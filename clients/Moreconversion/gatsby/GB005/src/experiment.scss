@@ -55,6 +55,11 @@
             
             @include media-query(sm) {
                 min-width: 88px;
+                margin-top: 2px;
+            }
+
+            @include media-query(xsm) {
+                min-width: min-content;
             }
         }
     }
