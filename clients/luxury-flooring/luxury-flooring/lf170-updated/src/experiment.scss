@@ -42,7 +42,8 @@
     }
     .search-autocomplete {
       margin-top: 0;
-      display: none !important;
+      opacity: 0;
+      //display: none !important;
 
       &.#{$id}__searchResultWrapper {
         display: block !important;
@@ -51,6 +52,7 @@
         border-top: none;
         box-shadow: 12px 9px 17px #0000006b;
         overflow-y: overlay;
+        opacity: 1;
 
         .smile-elasticsuite-autocomplete-result {
           padding: 30px 20px;

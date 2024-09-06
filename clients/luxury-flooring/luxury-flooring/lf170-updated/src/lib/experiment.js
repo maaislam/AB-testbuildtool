@@ -111,6 +111,9 @@ export default () => {
         `.${ID}__modal #minisearch-autocomplete-top-search`
       );
       searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
+      pollerLite([() => searchResultWrapper.style.display === 'none'], () => {
+        searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
+      });
     }
   });
 
@@ -124,7 +127,6 @@ export default () => {
       if (!addedNodes[0]?.childNodes.length) {
         searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
       } else if (addedNodes[0]?.childNodes.length) {
-        searchResultWrapper?.classList.add(`${ID}__searchResultWrapper`);
         pollerLite(
           [
             () =>
@@ -132,20 +134,22 @@ export default () => {
               searchResultWrapper?.querySelectorAll('.title-product ~ dd').length
           ],
           () => {
+            searchResultWrapper?.classList.add(`${ID}__searchResultWrapper`);
             setTimeout(() => {
               const allProductLinks = searchResultWrapper?.querySelectorAll('.title-product ~ dd');
               collectAllLinks(allProductLinks);
             }, 100);
           }
         );
+
+        pollerLite([() => searchResultWrapper.style.display === 'none'], () => {
+          searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
+        });
       }
     } else if (removedNodes.length) {
       document.querySelectorAll('.new-image-wrapper').forEach((item) => {
         item.classList.remove('new-image');
       });
-      //document.querySelectorAll('.new-image-element').forEach((item) => {
-      //item.remove();
-      //});
     }
   };
 

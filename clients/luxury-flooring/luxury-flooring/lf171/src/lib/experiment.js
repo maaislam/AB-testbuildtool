@@ -41,11 +41,9 @@ const quantityInputHandler = () => {
     const productCards = document.querySelectorAll(`.item.product.${ID}__loaded-product`);
     productCards.forEach((card) => observer.observe(card));
 
-    const firstItem = document.querySelector('.products .product-item');
+    const firstItem = document.querySelector('.filter-toolbar');
     firstItem.scrollIntoView({
-      behavior: 'smooth',
-      block: 'end',
-      inline: 'center'
+      behavior: 'smooth'
     });
   }
 };
