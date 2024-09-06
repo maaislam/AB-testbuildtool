@@ -98,13 +98,17 @@ export default () => {
   setup(); //use if needed
   init();
 
-  // if (VARIATION === '1') {
-  //   pollerLite(['.page-width.page-content'], () => {
-  //     observeDOM('.page-width.page-content', () => {
-  //       init();
-  //     });
-  //   });
-  // }
+  if (VARIATION === '1') {
+    pollerLite(['#CollectionAjaxContent'], () => {
+      observeDOM('#CollectionAjaxContent', () => {
+        const productsWrapper = document.querySelector('#CollectionAjaxContent > .grid');
+        const productsItems = productsWrapper.querySelectorAll('.grid__item');
+        if (productsItems.length && window.location.pathname.includes('/collections/')) {
+          init();
+        }
+      });
+    });
+  }
   // if (VARIATION === '2') {
   //   pollerLite(['.slidecarthq'], () => {
   //     observeDOM('.slidecarthq', () => {
