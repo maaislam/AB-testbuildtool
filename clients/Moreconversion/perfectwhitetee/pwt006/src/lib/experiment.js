@@ -11,7 +11,20 @@ const typeObj = {
   'Tank Top': 'tank',
   'Shirts & Tops': 'tee',
   'Hoodies & Sweatshirts': 'sweatshirts',
-  'Apparel & Accessories > Clothing > Shirts & Tops': 'tee'
+  'Apparel & Accessories > Clothing > Shirts & Tops': 'tee',
+  'Pants & Trousers': 'sweatpant',
+  Shorts: 'sweatshort'
+};
+
+const essentialTypeObj = {
+  blondie: 'tank',
+  harley: 'tee',
+  hendrix: 'tee',
+  johnny: 'sweatpants',
+  layla: 'sweatshort',
+  ziggy: 'sweatshirt',
+  tyler: 'sweatshirt',
+  springsteen: 'tee'
 };
 
 const colorInBracket = ['/collections/new', '/collections/ziggy', '/collections/layla', '/collections/hendrix', '/collections/johnny', '/collections/blondie-1', '/collections/springsteen', '/collections/tyler'];
@@ -25,6 +38,7 @@ const init = () => {
       const fetchPromises = [];
 
       collectionTitles.forEach((collectionTitle) => {
+        if (collectionTitle.textContent.includes('pack')) return; //Skip pack/bundle products
         let variantId;
         const { productId } = collectionTitle.closest('.grid-product').dataset;
         const linkElem = collectionTitle.closest('.grid-product__link');
@@ -92,11 +106,43 @@ const init = () => {
   if (VARIATION === '2') {
     cartPage(typeObj);
   }
+
+  if (VARIATION === '3') {
+    const essentialMenuTitles = document.querySelectorAll('a.site-nav__link[href="/collections/essentials"] + .site-nav__dropdown .megamenu__link-label');
+    const mobileEssentialNav = document.querySelector('.mobile-nav__link[href="/collections/essentials"]').closest('.mobile-nav__has-sublist');
+    const mobileEssentialMenuTitles = mobileEssentialNav.nextElementSibling.querySelectorAll('.mobile-nav__sublist .mobile-nav__link');
+
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const titles = isMobile ? mobileEssentialMenuTitles : essentialMenuTitles;
+
+    titles.forEach((essentialMenuTitle) => {
+      const text = essentialMenuTitle.textContent.trim();
+
+      const type = essentialTypeObj[text];
+      if (type) {
+        essentialMenuTitle.textContent = `${text} ${type}`;
+      }
+    });
+  }
 };
 
 export default () => {
   setup(); //use if needed
   init();
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest('.upsell-add') && VARIATION === '2') {
+      const addBtn = target.closest('.upsell-add');
+      const textElem = addBtn.closest('.upsell-item').querySelector('.upsell-text a');
+
+      setTimeout(() => {
+        const upsellPopupText = document.querySelector('.upsell-options.active .title h2 a');
+        upsellPopupText.textContent = textElem.textContent;
+      }, 250);
+    }
+  });
 
   const configure = {
     childList: true,
