@@ -31,17 +31,25 @@ const cartPage = (typeObj) => {
         fetch(url)
           .then((response) => response.json())
           .then((fileData) => ({
+<<<<<<< HEAD
             fileData,
             cartTitle,
             newVariantId
+=======
+            fileData, cartTitle, newVariantId
+>>>>>>> 2243136991f6e0ac8e3e71c0358dd9aa5beab4fd
           }))
       );
     });
 
     upsellTitles.forEach((upsellTitle) => {
+<<<<<<< HEAD
       const variantId = upsellTitle
         .closest('.upsell.multi')
         .getAttribute('data-slidecart-product-id');
+=======
+      const variantId = upsellTitle.closest('.upsell.multi').getAttribute('data-slidecart-product-id');
+>>>>>>> 2243136991f6e0ac8e3e71c0358dd9aa5beab4fd
       const cartTitle = upsellTitle.querySelector('a');
       const link = cartTitle.getAttribute('href');
 
@@ -54,9 +62,13 @@ const cartPage = (typeObj) => {
         fetch(url)
           .then((response) => response.json())
           .then((fileData) => ({
+<<<<<<< HEAD
             fileData,
             cartTitle,
             variantId
+=======
+            fileData, cartTitle, variantId
+>>>>>>> 2243136991f6e0ac8e3e71c0358dd9aa5beab4fd
           }))
       );
     });
@@ -76,11 +88,15 @@ const cartPage = (typeObj) => {
               const prdId = Number(newVariantId);
               const currentVariant = variants.find((variant) => variant.id === prdId);
 
+<<<<<<< HEAD
               if (
                 cartTitle.textContent.includes(macthedPrdType) ||
                 cartTitle.textContent.includes(prdType)
               )
                 return;
+=======
+              if ((cartTitle.textContent.includes(macthedPrdType) || cartTitle.textContent.includes(prdType))) return;
+>>>>>>> 2243136991f6e0ac8e3e71c0358dd9aa5beab4fd
 
               if (currentVariant && currentVariant.option2) {
                 const { option2 } = currentVariant;
@@ -88,9 +104,13 @@ const cartPage = (typeObj) => {
                 const productTitleText = `${titleFirstPart} ${macthedPrdType || prdType} ${color}`;
                 cartTitle.textContent = productTitleText;
               } else {
+<<<<<<< HEAD
                 const productTitleText = `${titleFirstPart} ${
                   macthedPrdType || prdType
                 } ${productColor}`;
+=======
+                const productTitleText = `${titleFirstPart} ${macthedPrdType || prdType} ${productColor}`;
+>>>>>>> 2243136991f6e0ac8e3e71c0358dd9aa5beab4fd
                 cartTitle.textContent = productTitleText;
               }
             }
@@ -116,11 +136,15 @@ const cartPage = (typeObj) => {
               const prdId = Number(newVariantId);
               const currentVariant = variants.find((variant) => variant.id === prdId);
 
+<<<<<<< HEAD
               if (
                 cartTitle.textContent.includes(macthedPrdType) ||
                 cartTitle.textContent.includes(prdType)
               )
                 return;
+=======
+              if ((cartTitle.textContent.includes(macthedPrdType) || cartTitle.textContent.includes(prdType))) return;
+>>>>>>> 2243136991f6e0ac8e3e71c0358dd9aa5beab4fd
 
               if (currentVariant && currentVariant.option2) {
                 const { option2 } = currentVariant;
@@ -128,9 +152,13 @@ const cartPage = (typeObj) => {
                 const productTitleText = `${titleFirstPart} ${macthedPrdType || prdType} ${color}`;
                 cartTitle.textContent = productTitleText;
               } else {
+<<<<<<< HEAD
                 const productTitleText = `${titleFirstPart} ${
                   macthedPrdType || prdType
                 } ${productColor}`;
+=======
+                const productTitleText = `${titleFirstPart} ${macthedPrdType || prdType} ${productColor}`;
+>>>>>>> 2243136991f6e0ac8e3e71c0358dd9aa5beab4fd
                 cartTitle.textContent = productTitleText;
               }
             }
