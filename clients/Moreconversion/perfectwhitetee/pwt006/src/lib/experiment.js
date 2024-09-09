@@ -14,7 +14,16 @@ const typeObj = {
   'Apparel & Accessories > Clothing > Shirts & Tops': 'tee'
 };
 
-const colorInBracket = ['/collections/new', '/collections/ziggy', '/collections/layla', '/collections/hendrix', '/collections/johnny', '/collections/blondie-1', '/collections/springsteen', '/collections/tyler'];
+const colorInBracket = [
+  '/collections/new',
+  '/collections/ziggy',
+  '/collections/layla',
+  '/collections/hendrix',
+  '/collections/johnny',
+  '/collections/blondie-1',
+  '/collections/springsteen',
+  '/collections/tyler'
+];
 
 const init = () => {
   const { pathname } = window.location;
@@ -46,7 +55,9 @@ const init = () => {
           fetch(url)
             .then((response) => response.json())
             .then((fileData) => ({
-              fileData, collectionTitle, variantId
+              fileData,
+              collectionTitle,
+              variantId
             }))
         );
       });
@@ -60,7 +71,10 @@ const init = () => {
             const productColor = rest.join(' ');
             const prdType = type.toLowerCase();
 
-            const isNewCategory = (pathname.startsWith('/collections/new') && !pathname.includes('/collections/new-lounge')) || colorInBracket.includes(pathname);
+            const isNewCategory =
+              (pathname.startsWith('/collections/new') &&
+                !pathname.includes('/collections/new-lounge')) ||
+              colorInBracket.includes(pathname);
 
             //Update the product title to include the product type
             if (macthedPrdType || type) {
@@ -68,15 +82,23 @@ const init = () => {
                 const prdId = Number(variantId);
                 const currentVariant = variants.find((variant) => variant.id === prdId);
 
-                if ((collectionTitle.textContent.includes(macthedPrdType) || collectionTitle.textContent.includes(prdType))) return;
+                if (
+                  collectionTitle.textContent.includes(macthedPrdType) ||
+                  collectionTitle.textContent.includes(prdType)
+                )
+                  return;
 
                 if (currentVariant && currentVariant.option2) {
                   const { option2 } = currentVariant;
                   const color = option2.toLowerCase();
-                  const productTitleText = isNewCategory ? `${titleFirstPart} ${macthedPrdType || prdType} (${color})` : `${titleFirstPart} ${macthedPrdType || prdType} ${color}`;
+                  const productTitleText = isNewCategory
+                    ? `${titleFirstPart} ${macthedPrdType || prdType} (${color})`
+                    : `${titleFirstPart} ${macthedPrdType || prdType} ${color}`;
                   collectionTitle.textContent = productTitleText;
                 } else {
-                  const productTitleText = `${titleFirstPart} ${macthedPrdType || prdType} ${productColor}`;
+                  const productTitleText = `${titleFirstPart} ${
+                    macthedPrdType || prdType
+                  } ${productColor}`;
                   collectionTitle.textContent = productTitleText;
                 }
               }
@@ -98,22 +120,38 @@ export default () => {
   setup(); //use if needed
   init();
 
+  const configure = {
+    childList: true,
+    subtree: false,
+    attributes: false,
+    characterData: false,
+    characterDataOldValue: false
+  };
+
   if (VARIATION === '1') {
     pollerLite(['#CollectionAjaxContent'], () => {
-      observeDOM('#CollectionAjaxContent', () => {
-        const productsWrapper = document.querySelector('#CollectionAjaxContent > .grid');
-        const productsItems = productsWrapper.querySelectorAll('.grid__item');
-        if (productsItems.length && window.location.pathname.includes('/collections/')) {
-          init();
-        }
-      });
+      observeDOM(
+        '#CollectionAjaxContent',
+        () => {
+          const productsWrapper = document.querySelector('#CollectionAjaxContent > .grid');
+          const productsItems = productsWrapper.querySelectorAll('.grid__item');
+          if (productsItems.length && window.location.pathname.includes('/collections/')) {
+            init();
+          }
+        },
+        configure
+      );
     });
   }
-  // if (VARIATION === '2') {
-  //   pollerLite(['.slidecarthq'], () => {
-  //     observeDOM('.slidecarthq', () => {
-  //       init();
-  //     });
-  //   });
-  // }
+  if (VARIATION === '2') {
+    pollerLite(
+      ['.slidecarthq'],
+      () => {
+        observeDOM('.slidecarthq', () => {
+          init();
+        });
+      },
+      configure
+    );
+  }
 };
