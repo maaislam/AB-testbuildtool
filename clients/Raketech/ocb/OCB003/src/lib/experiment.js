@@ -63,6 +63,10 @@ export default () => {
       const clickedItem = target.closest('.betting-site .why a.guide');
       const operatorName = clickedItem.href.split('/go/')[1].split('/')[0];
       gaTracking(`${operatorName} CTA CTO | Grey Button`);
+    } else if (target.closest('.betting-site .name a')) {
+      const clickedItem = target.closest('.betting-site .name a');
+      const operatorName = clickedItem.href.split('/betting-sites/')[1].split('/')[0];
+      gaTracking(`${operatorName} CTA CTR | Star`);
     }
   });
   if (VARIATION === 'Control') return; //
