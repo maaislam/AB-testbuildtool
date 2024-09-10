@@ -2,6 +2,9 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  body.#{$id}__scroll--off {
+    overflow: hidden;
+  }
   div.homepage-banner:not(.product_strip) {
     margin-top: 0;
   }
@@ -341,6 +344,11 @@
         }
 
         @media screen and (min-width: 1024px) {
+          min-height: max-content;
+          max-height: 480px;
+        }
+
+        @media screen and (min-width: 1441px) {
           min-height: max-content;
           max-height: 580px;
         }

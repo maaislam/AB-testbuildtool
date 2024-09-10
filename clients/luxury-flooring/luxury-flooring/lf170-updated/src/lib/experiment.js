@@ -61,6 +61,7 @@ export default () => {
       const input = document.querySelector(`.${ID}__modal input`);
       input.value = '';
       input.focus();
+      document.body.classList.toggle(`${ID}__scroll--off`);
     } else if (target.closest('.custom_cross_btn') || target.closest('.custom_cross_wrapper')) {
       document.querySelector(`.${ID}__modal`).classList.add('hide_content');
       const searchResultWrapper = document.querySelector(
@@ -71,6 +72,7 @@ export default () => {
         top: 0,
         behavior: 'smooth'
       });
+      document.body.classList.toggle(`${ID}__scroll--off`);
     } else if (
       target.closest(`.${ID}__fakeSearchBar .block.block-title`) &&
       target.closest(`.${ID}__fakeSearchBar`)
@@ -82,6 +84,7 @@ export default () => {
         input.value = '';
         input.focus();
       }, 100);
+      document.body.classList.toggle(`${ID}__scroll--off`);
     } else if (
       target.closest('label[data-role="minisearch-label"]') &&
       target.closest(`.${ID}__modal`)
@@ -116,6 +119,20 @@ export default () => {
       });
     }
   });
+
+  //searchInput.addEventListener('blur', (e) => {
+  //const searchResultWrapper = document.querySelector(
+  //`.${ID}__modal #minisearch-autocomplete-top-search`
+  //);
+  //if (!e.target.value) {
+  //searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
+  //pollerLite([() => searchResultWrapper.style.display === 'none'], () => {
+  //searchResultWrapper?.classList.remove(`${ID}__searchResultWrapper`);
+  //});
+  //} else {
+  //searchResultWrapper?.classList.add(`${ID}__searchResultWrapper`);
+  //}
+  //});
 
   const searchResultHandler = (mutation) => {
     const { addedNodes, removedNodes } = mutation;

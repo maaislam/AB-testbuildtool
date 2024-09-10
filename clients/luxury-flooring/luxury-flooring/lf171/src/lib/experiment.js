@@ -41,6 +41,14 @@ const quantityInputHandler = () => {
     const productCards = document.querySelectorAll(`.item.product.${ID}__loaded-product`);
     productCards.forEach((card) => observer.observe(card));
 
+    localStorage.setItem(
+      `${ID}__value`,
+      JSON.stringify({
+        path: window.location.pathname,
+        value: inputValue
+      })
+    );
+
     const firstItem = document.querySelector('.filter-toolbar');
     firstItem.scrollIntoView({
       behavior: 'smooth'
@@ -67,6 +75,19 @@ const init = () => {
   productCards.forEach((card) => {
     card.classList.add(`${ID}__loaded-product`);
   });
+
+  const inputValue = localStorage.getItem(`${ID}__value`);
+
+  if (!inputValue) return;
+  const { path, value } = JSON.parse(inputValue);
+
+  if (path === window.location.pathname && value) {
+    const inputElement = document.querySelector(`.${ID}__calculateBox form input`);
+    inputElement.value = value;
+    quantityInputHandler();
+  } else if (path !== window.location.pathname && value) {
+    window.localStorage.removeItem(`${ID}__value`);
+  }
 };
 
 export default () => {
@@ -82,6 +103,7 @@ export default () => {
       inputElement.value = '';
       clearTextElement.classList.add(`${ID}__hide`);
       removePriceElement();
+      window.localStorage.removeItem(`${ID}__value`);
     } else if (target.closest(`.${ID}__options-price`)) {
       const calBox = document.querySelector(`.${ID}__calculateBox`);
       calBox.classList.toggle('open');
