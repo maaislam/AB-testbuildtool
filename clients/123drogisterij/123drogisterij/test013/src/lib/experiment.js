@@ -15,8 +15,6 @@ const init = () => {
 
   if (!isProductType) return;
 
-  console.log('isProductType: ', isProductType);
-
   const mobileAnchorPoint = document.querySelector('.custpro .product.mob-name-cust');
   const desktopAnchorPoint = document.querySelector('.page-title');
 
@@ -33,9 +31,9 @@ const init = () => {
     const opnamecapaciteitValue = document.querySelector('[data-th="Opnamecapaciteit (ml)"]').textContent;
 
     htmlStr = `<div class='${ID}__productAttributes'>
+    <span>${opnamecapaciteitValue} ${opnamecapaciteit}</span> |
     <span>${absorptievermogenValue} ${absorptievermogen}</span> | 
-    <span>${heupomvangValue} ${heupomvang}</span> | 
-    <span>${opnamecapaciteitValue} ${opnamecapaciteit}</span>
+    <span>${heupomvangValue} ${heupomvang}</span>
   </div>`;
   } else if (productTypeText.includes('onderlegger') || productTypeText.includes('stoelbeschermer')) {
     const verpakking = document.querySelector('[data-th="Verpakking"]').closest('tr').querySelector('th').textContent;
