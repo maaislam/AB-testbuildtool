@@ -1,0 +1,58 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    product-recommendations {
+      & > div {
+        @media screen and (min-width: 768px) {
+          margin: 0 0 75px 0;
+        }
+
+        @media screen and (max-width: 767px) {
+          margin: 0 0 40px 0;
+        }
+      }
+    }
+    .#{$id}__returnLinkWrapper {
+      .page-content--bottom {
+        padding-bottom: 0;
+
+        .return-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: Segoe UI;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 20px;
+          letter-spacing: 1px;
+
+          .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+          }
+
+          @media screen and (max-width: 767px) {
+            width: calc(100% + 34px);
+            margin-left: -17px;
+          }
+
+          @media screen and (max-width: 480px) {
+            font-size: 12px;
+            line-height: 18px;
+          }
+
+          @media screen and (max-width: 390px) {
+            font-size: 11px;
+          }
+
+          @media screen and (max-width: 360px) {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
