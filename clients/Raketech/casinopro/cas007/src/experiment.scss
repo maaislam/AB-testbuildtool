@@ -96,61 +96,28 @@
           padding-left: 19px;
           padding-right: 13px;
 
-          @media screen and (max-width: 410px) {
-            padding-left: 8px;
-            padding-right: 8px;
-          }
-
-          @media screen and (max-width: 365px) {
-            padding-left: 4px;
-            padding-right: 3px;
-          }
-        }
-
-        .#{$id}__casinoFooter {
-          position: relative;
-          grid-column: 1 / -1;
-          font-size: 10.4px;
-          font-weight: 400;
-          line-height: 16.64px;
-          text-align: center;
-          padding-top: 12px;
-
-          &::before {
-            content: '';
-            position: absolute;
-            top: 4px;
-            display: block;
-            border-top: solid 1px #dddddd;
-            width: 100%;
-          }
-
-          span {
-            font-size: 10px;
-            font-weight: 400;
-            line-height: 17px;
-            text-align: center;
-            color: #00002a;
-            padding-left: 4px;
-            padding-right: 4px;
-          }
-
-          a {
-            padding-left: 4px;
-            padding-right: 4px;
-          }
+          padding-left: 4px;
+          padding-right: 3px;
         }
       }
 
-      .mui-1wb35ae {
-        display: block;
-        position: static;
-        font-size: 10px;
+      .#{$id}__casinoFooter {
+        position: relative;
+        grid-column: 1 / -1;
         font-weight: 400;
-        line-height: 17px;
+        line-height: 16.64px;
         text-align: center;
-        background-color: #fff;
-        padding-top: 8px;
+        padding-top: 12px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 4px;
+          display: block;
+          border-top: solid 1px #dddddd;
+          width: 100%;
+        }
+
         span {
           font-size: 10px;
           font-weight: 400;
@@ -162,88 +129,113 @@
         }
 
         a {
-          font-size: 10px;
-          font-weight: 400;
-          line-height: 17px;
           padding-left: 4px;
           padding-right: 4px;
         }
       }
+    }
 
-      .custom-arrow {
-        display: flex;
-        & + svg {
-          display: none;
-        }
+    .mui-1wb35ae {
+      display: block;
+      position: static;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 17px;
+      text-align: center;
+      background-color: #fff;
+      padding-top: 8px;
+      span {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 17px;
+        text-align: center;
+        color: #00002a;
+        padding-left: 4px;
+        padding-right: 4px;
       }
 
-      .mui-17fv5fu {
-        padding: 0;
+      a {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 17px;
+        padding-left: 4px;
+        padding-right: 4px;
       }
-      .mui-138k1zx,
-      .mui-bqabed {
+    }
+
+    .custom-arrow {
+      display: flex;
+      & + svg {
         display: none;
       }
-      .mui-1noa8nw {
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 19px;
-        text-align: left;
-        color: #0e3153;
-
-        @media screen and (max-width: 450px) {
-          font-size: 14px;
-        }
-
-        @media screen and (max-width: 390px) {
-          font-size: 12px;
-        }
-
-        @media screen and (max-width: 360px) {
-          font-size: 11px;
-        }
-      }
-
-      img {
-        @media screen and (max-width: 480px) {
-          width: 60px;
-          height: 45px;
-        }
-      }
-
-      img[title='Spelklubben logo '] {
-        @media screen and (min-width: 480px) {
-          width: 100%;
-        }
-      }
     }
 
-    .swiper-pagination {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      bottom: 0;
-
-      .swiper-pagination-bullet {
-        width: 18px;
-        height: 18px;
-
-        &.swiper-pagination-bullet-active {
-          background: #636363;
-        }
-      }
+    .mui-17fv5fu {
+      padding: 0;
     }
-
-    & + .MuiBox-root.mui-r310n7 {
+    .mui-138k1zx,
+    .mui-bqabed {
       display: none;
+    }
+    .mui-1noa8nw {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 19px;
+      text-align: left;
+      color: #0e3153;
 
-      @media screen and (min-width: 1024px) {
-        display: block;
+      @media screen and (max-width: 450px) {
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 390px) {
+        font-size: 12px;
+      }
+
+      @media screen and (max-width: 360px) {
+        font-size: 11px;
       }
     }
+
+    img {
+      @media screen and (max-width: 480px) {
+        width: 60px;
+        height: 45px;
+      }
+    }
+
+    img[title='Spelklubben logo '] {
+      @media screen and (min-width: 480px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+
+    .swiper-pagination-bullet {
+      width: 18px;
+      height: 18px;
+
+      &.swiper-pagination-bullet-active {
+        background: #636363;
+      }
+    }
+  }
+
+  & + .MuiBox-root.mui-r310n7 {
+    display: none;
 
     @media screen and (min-width: 1024px) {
-      display: none;
+      display: block;
     }
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: none;
   }
 }
