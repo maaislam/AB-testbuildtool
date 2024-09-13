@@ -1,0 +1,225 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__operatorSliderSection {
+    margin-top: 17px;
+    margin-bottom: 28px;
+    .#{$id}__swiper {
+      padding-bottom: 20px;
+    }
+
+    .swiper-wrapper {
+      padding-bottom: 14px;
+    }
+    .swiper-slide {
+      .MuiBox-root.mui-1c7567h {
+        grid-template-columns: auto 1fr auto;
+        padding: 6px 0 8px 5px;
+        border-top: solid 1px #dddddd;
+        border-right: none;
+        border-left: none;
+        border-bottom: solid 1px #dddddd;
+        border-radius: 0;
+        grid-gap: 0;
+        a[modifier='cta'] {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          padding: 8px 14px;
+          border-radius: 2px;
+        }
+
+        .MuiBox-root.mui-1ykx59 {
+          background-color: #fff;
+          padding-left: 19px;
+          padding-right: 13px;
+
+          @media screen and (max-width: 375px) {
+            padding-left: 8px;
+            padding-right: 8px;
+          }
+        }
+
+        .mui-1wb35ae {
+          display: block;
+          span {
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 17px;
+            text-align: center;
+            color: #00002a;
+            padding-left: 4px;
+            padding-right: 4px;
+          }
+
+          a {
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 17px;
+            padding-left: 4px;
+            padding-right: 4px;
+          }
+        }
+      }
+
+      &.MuiBox-root.mui-1c7567h {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        padding: 6px 0 0px 5px;
+        border-top: solid 1px #dddddd;
+        border-right: none;
+        border-left: none;
+        border-bottom: none;
+        border-radius: 0;
+        grid-gap: 0;
+        a[modifier='cta'] {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          padding: 8px 14px;
+          border-radius: 2px;
+        }
+
+        .MuiBox-root.mui-1ykx59 {
+          background-color: #fff;
+          margin-bottom: 8px;
+          padding-left: 19px;
+          padding-right: 13px;
+
+          @media screen and (max-width: 375px) {
+            padding-left: 8px;
+            padding-right: 8px;
+          }
+        }
+
+        .#{$id}__casinoFooter {
+          position: relative;
+          grid-column: 1 / -1;
+          font-size: 10.4px;
+          font-weight: 400;
+          line-height: 16.64px;
+          text-align: center;
+          padding-top: 12px;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            display: block;
+            border-top: solid 1px #dddddd;
+            width: 100%;
+          }
+
+          span {
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 17px;
+            text-align: center;
+            color: #00002a;
+            padding-left: 4px;
+            padding-right: 4px;
+          }
+
+          a {
+            padding-left: 4px;
+            padding-right: 4px;
+          }
+        }
+      }
+
+      .mui-1wb35ae {
+        display: block;
+        position: static;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 17px;
+        text-align: center;
+        background-color: #fff;
+        padding-top: 8px;
+        span {
+          font-size: 10px;
+          font-weight: 400;
+          line-height: 17px;
+          text-align: center;
+          color: #00002a;
+          padding-left: 4px;
+          padding-right: 4px;
+        }
+
+        a {
+          font-size: 10px;
+          font-weight: 400;
+          line-height: 17px;
+          padding-left: 4px;
+          padding-right: 4px;
+        }
+      }
+
+      .custom-arrow {
+        display: flex;
+        & + svg {
+          display: none;
+        }
+      }
+
+      .mui-17fv5fu {
+        padding: 0;
+      }
+      .mui-138k1zx,
+      .mui-bqabed {
+        display: none;
+      }
+      .mui-1noa8nw {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19px;
+        text-align: left;
+        color: #0e3153;
+
+        @media screen and (max-width: 375px) {
+          font-size: 12px;
+        }
+      }
+
+      img {
+        @media screen and (max-width: 480px) {
+          width: 60px;
+          height: 45px;
+        }
+      }
+    }
+
+    .swiper-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      bottom: 0;
+
+      .swiper-pagination-bullet {
+        width: 18px;
+        height: 18px;
+
+        &.swiper-pagination-bullet-active {
+          background: #636363;
+        }
+      }
+    }
+
+    & + .MuiBox-root.mui-r310n7 {
+      display: none;
+
+      @media screen and (min-width: 1024px) {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+}

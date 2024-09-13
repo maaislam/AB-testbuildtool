@@ -1,0 +1,194 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__bundleWrapper {
+    margin-bottom: 68px;
+    &-header {
+      //font-family: Montserrat;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 32px;
+      text-align: center;
+      margin-bottom: 21px;
+
+      @media screen and (max-width: 1023px) {
+        line-height: 33px;
+        margin-top: 27px;
+        margin-bottom: 36px;
+      }
+    }
+
+    &-content {
+      display: flex;
+      max-width: 420px;
+      width: 100%;
+      padding: 12px 8px 14px;
+      margin: 0 auto 18px;
+      border: 1px solid #135d4b;
+      border-radius: 8px;
+      &-image {
+        max-width: 165px;
+        width: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        @media screen and (max-width: 1023px) {
+          max-width: 100%;
+          margin-bottom: 5px;
+        }
+      }
+
+      &-text {
+        margin-left: 5px;
+        h2 {
+          //font-family: Montserrat;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 20px;
+          letter-spacing: 0.47999998927116394px;
+          text-align: left;
+          margin-bottom: 5px;
+
+          @media screen and (max-width: 1023px) {
+            font-size: 14px;
+            line-height: 19px;
+          }
+        }
+        p {
+          // font-family: Montserrat;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 19px;
+          letter-spacing: 0.47999998927116394px;
+          text-align: left;
+          margin-bottom: 5px;
+        }
+
+        .priceWrapper {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          .price {
+            //font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 17px;
+            letter-spacing: 0.41999998688697815px;
+            text-align: left;
+            color: #cf5729;
+            margin-top: 2px;
+          }
+          .original-price {
+            // font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: 0.41999998688697815px;
+            text-align: left;
+            color: #707070;
+            margin-top: 2px;
+            margin-left: 5px;
+            margin-right: 5px;
+            text-decoration: line-through;
+          }
+          .discount {
+            // font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 17px;
+            text-align: left;
+            background-color: #d8b47f;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 90px;
+            //margin-left: 5px;
+
+            @media screen and (max-width: 1023px) {
+              font-size: 12px;
+              line-height: 15px;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 1023px) {
+        flex-direction: column;
+        padding: 12px 8px 17px;
+        margin: 0 auto 19px;
+      }
+
+      @media screen and (max-width: 768px) {
+        max-width: 230px;
+      }
+    }
+    &-total {
+      p {
+        //font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 35px;
+        text-align: left;
+        color: #686868;
+        margin-bottom: 14px;
+
+        span {
+          // font-family: Montserrat;
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 35px;
+          text-align: left;
+          color: #686868;
+          @media screen and (max-width: 1023px) {
+            font-size: 16px;
+            line-height: 20px;
+          }
+        }
+        .original-price {
+          text-decoration: line-through;
+        }
+        .price {
+          color: #e04c0e;
+        }
+        @media screen and (max-width: 1023px) {
+          font-size: 16px;
+          line-height: 20px;
+          text-align: center;
+        }
+      }
+    }
+
+    &-button {
+      background-color: #135d4b;
+      color: #fff;
+      box-shadow: 3px 3px 4px 0px #808080;
+      border-radius: 5px;
+      transition: box-shadow 0.3s linear;
+      button {
+        width: 100%;
+        //font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+        text-align: center;
+        padding: 13px 0 12px 0;
+        color: #fff;
+
+        @media screen and (max-width: 1023px) {
+          font-size: 16px;
+          line-height: 28px;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 2px 6px #00000080;
+      }
+
+      @media screen and (max-width: 768px) {
+        margin: 0 6px;
+      }
+    }
+  }
+}
