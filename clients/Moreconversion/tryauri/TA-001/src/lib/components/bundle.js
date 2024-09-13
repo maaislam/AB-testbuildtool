@@ -39,28 +39,28 @@ export const Bundle = (id, data) => {
   const extraMsg = extraMsgConfig[mainProductId] || '';
 
   const html = `
-  <div class="${id}__bundleWrapper-content" id="${productId}">
-    <div class="${id}__bundleWrapper-content-image">
-        <img src="${imageSrc}"
-        alt="Super Mushroom Elixir Full Bundle"
-        class="product-image">
-    </div>
-    <div class="${id}__bundleWrapper-content-text">
-         <h2>${title}</h2>
-         <span class="subtitle">${extraMsg}</span>
-        <div class="priceWrapper">
-        <span class="price">$${price}</span>
-        ${compare_at_price ? `<span class="original-price">$${compare_at_price}</span>` : ''}
+  <label class="checkbox">
+    <div class="${id}__bundleWrapper-content" id="${productId}">
+      <div class="${id}__bundleWrapper-content-image">
+          <img src="${imageSrc}"
+          alt="Super Mushroom Elixir Full Bundle"
+          class="product-image">
+      </div>
+      <div class="${id}__bundleWrapper-content-text">
+          <h2>${title}</h2>
+          <span class="subtitle">${extraMsg}</span>
+          <div class="priceWrapper">
+          <span class="price">$${price}</span>
+          ${compare_at_price ? `<span class="original-price">$${compare_at_price}</span>` : ''}
 
-        </div>
-    </div>
-    <div class="checkboxes__item">
-      <label class="checkbox">
-        <input type="checkbox" class='${id}__checkbox' data-product-id="${productId}" data-price="${price}" data-compare-price="${compare_at_price}">
+          </div>
+      </div>
+      <div class="checkboxes__item">
+          <input type="checkbox" class='${id}__checkbox' data-product-id="${productId}" data-price="${price}" data-compare-price="${compare_at_price}">
         <div class="checkbox__checkmark"></div>
-      </label>
-    </div>
-  </div>
+          </div>
+        </div>
+    </label>
   `;
   return html.trim();
 };
