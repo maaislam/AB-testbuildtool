@@ -1,40 +1,46 @@
 export const data = [
-    {
-        title: 'Living Room',
-        url: 'https://www.luxuryflooringandfurnishings.co.uk/laminate-flooring.html',
-        imageUrl: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_livingroom.png'
-    },
-    {
-        title: 'Kitchen',
-        url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Kitchen',
-        imageUrl: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_kitchen.png'
-    },
-    {
-        title: 'Dining Room',
-        url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Dining',
-        imageUrl: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_diningroom.png'
-    },
-    {
-        title: 'Bathroom',
-        url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Bathroom',
-        imageUrl: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_bathroom.png'
-    },
-    {
-        title: 'Hallway',
-        url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Lounge',
-        imageUrl: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_hallway.png'
-    },
-    {
-        title: 'Bedroom',
-        url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Bedroom',
-        imageUrl: 'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_bedroom.png'
-    }
+  {
+    title: 'Living Room',
+    url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Living+Room',
+    imageUrl:
+      'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_livingroom.png'
+  },
+  {
+    title: 'Kitchen',
+    url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Kitchen',
+    imageUrl:
+      'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_kitchen.png'
+  },
+  {
+    title: 'Dining Room',
+    url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Dining',
+    imageUrl:
+      'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_diningroom.png'
+  },
+  {
+    title: 'Bathroom',
+    url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Bathroom',
+    imageUrl:
+      'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_bathroom.png'
+  },
+  {
+    title: 'Hallway',
+    url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Hallway',
+    imageUrl:
+      'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_hallway.png'
+  },
+  {
+    title: 'Bedroom',
+    url: 'https://www.luxuryflooringandfurnishings.co.uk/order-free-samples.html?room_suitability=Bedroom',
+    imageUrl:
+      'https://www.luxuryflooringandfurnishings.co.uk/media/wysiwyg/ab_tests/test307/PLP_icon_bedroom.png'
+  }
 ];
 
 export const uspData = [
-    {
-        title: 'Unlimited Free XL Samples',
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="54.567" height="39.56" viewBox="0 0 54.567 39.56">
+  {
+    title: 'Unlimited Free XL Samples',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="54.567" height="39.56" viewBox="0 0 54.567 39.56">
                     <g id="Group_464" data-name="Group 464" transform="translate(0 0)">
                         <g id="Group_61" data-name="Group 61" transform="translate(0)">
                             <g id="Free_Samples" data-name="Free Samples">
@@ -52,10 +58,10 @@ export const uspData = [
                         </g>
                     </g>
                 </svg>`
-    },
-    {
-        title: 'Free 1st Class Delivery',
-        icon: `<svg id="Group_648" data-name="Group 648" xmlns="http://www.w3.org/2000/svg" width="72.008" height="38.074" viewBox="0 0 72.008 38.074">
+  },
+  {
+    title: 'Free 1st Class Delivery',
+    icon: `<svg id="Group_648" data-name="Group 648" xmlns="http://www.w3.org/2000/svg" width="72.008" height="38.074" viewBox="0 0 72.008 38.074">
                     <path id="Path_1085" data-name="Path 1085" d="M158.476,111.028l-2.38-9.944a2.343,2.343,0,0,0-2.165-1.712H145.1l-2.7,14.13a.6.6,0,0,1-.586.483h-35.6l-1.036,5.643a1.414,1.414,0,0,0,1.44,1.727H112.6a5.729,5.729,0,0,1,11.444,0h16.17c-.008-.11-.01-.219-.01-.331a5.729,5.729,0,1,1,11.457,0c0,.111,0,.221-.01.331h3.9a2.195,2.195,0,0,0,2.072-1.727l.952-5.168A9.884,9.884,0,0,0,158.476,111.028Zm-5.136-2.452-.3,1.608h-5.39a.717.717,0,0,1-.7-.847l1.013-5.51a.716.716,0,0,1,.7-.587h2.514a1.255,1.255,0,0,1,1.221.962l.925,3.854A1.269,1.269,0,0,1,153.34,108.576Z" transform="translate(-89.393 -92.974)"></path>
                     <path id="Path_1086" data-name="Path 1086" d="M92.868,128.9H83.974a.591.591,0,1,1,0-1.182h8.894a.591.591,0,1,1,0,1.182Z" transform="translate(-79.443 -105.934)"></path>
                     <path id="Path_1087" data-name="Path 1087" d="M87.061,121.072H76.715a.591.591,0,1,1,0-1.182H87.061a.591.591,0,1,1,0,1.182Z" transform="translate(-76.124 -102.355)"></path>
@@ -85,10 +91,10 @@ export const uspData = [
                         <path id="Path_1108" data-name="Path 1108" d="M148.81,117.258c1.107.019,2.215.033,3.322.027s2.216-.026,3.325-.072q-1.659-.135-3.319-.2c-1.107-.049-2.213-.079-3.321-.1s-2.215-.033-3.322-.027-2.216.025-3.324.071q1.658.134,3.319.2C146.6,117.2,147.7,117.233,148.81,117.258Z" transform="translate(-123.419 -100.978)"></path>
                     </g>
                 </svg>`
-    },
-    {
-        title: 'XL Sample Sizes',
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="59.23" height="64.611" viewBox="0 0 59.23 64.611">
+  },
+  {
+    title: 'XL Sample Sizes',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="59.23" height="64.611" viewBox="0 0 59.23 64.611">
                     <defs>
                         <clipPath id="clip-path-sizes">
                             <rect id="Rectangle_1940" data-name="Rectangle 1940" width="40.383" height="44.754" transform="translate(0 0)" fill="none"></rect>
@@ -112,10 +118,10 @@ export const uspData = [
                         </g>
                     </g>
                 </svg>`
-    },
-    {
-        title: 'Price Match Promise',
-        icon: `<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.74 85.74" style="width: 60px; height: 60px;" class="icon_mobile">
+  },
+  {
+    title: 'Price Match Promise',
+    icon: `<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.74 85.74" style="width: 60px; height: 60px;" class="icon_mobile">
                     <defs>
                         <style>
                             .cls-1 { stroke-width: .85px;}
@@ -156,5 +162,5 @@ export const uspData = [
                         </g>
                     </g>
                 </svg>`
-    }
+  }
 ];

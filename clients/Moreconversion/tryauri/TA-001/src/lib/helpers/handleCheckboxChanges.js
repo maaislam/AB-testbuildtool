@@ -34,8 +34,8 @@ const handleCheckboxChanges = (id) => {
             return acc + parseFloat(comparePriceWithoutCurrency);
         }, 0);
 
-        priceTotal.textContent = totalPrice.toFixed(2);
-        comparePriceTotal.textContent = totalComparePrice.toFixed(2);
+        priceTotal.textContent = `$${totalPrice.toFixed(2)}`;
+        comparePriceTotal.textContent = `$${totalComparePrice.toFixed(2)}`;
     };
 
     const updateButtonDataAttr = () => {
