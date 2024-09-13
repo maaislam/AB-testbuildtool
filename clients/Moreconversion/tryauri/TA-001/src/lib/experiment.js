@@ -2,11 +2,13 @@ import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { fetchProducts, pollerLite } from './helpers/utils';
+import wrapper from './components/wrapper';
 
 const { ID, VARIATION } = shared;
 
 const init = () => {
   const formWrapper = document.querySelector('form.ntg-product-add-form');
+  const benefitElement = document.querySelector('.custom-product-benefits');
   const productId = formWrapper.querySelector('input[name="id"]').value;
   const existingProductImageElem = document.querySelector('.main_gallery_container img');
   const imageSrc = existingProductImageElem.src;
@@ -17,13 +19,25 @@ const init = () => {
     '.product__price-wrap- #ComparePrice-'
   );
   const sellPrice = existingSellPriceElement.textContent.trim();
-  const ComparePrice = existingComparePriceElement.textContent.trim();
+  const comparePrice = existingComparePriceElement?.textContent.trim();
 
   fetchProducts(productId).then((result) => {
     if (result.data.length) {
-      // eslint-disable-next-line object-curly-newline
-      const allProducts = [{ title, imageSrc, sellPrice, ComparePrice }, ...result.data];
-      console.log(allProducts);
+      //eslint-disable-next-line object-curly-newline
+      console.log(result.data);
+      const allProducts = [
+        {
+          title,
+          imageSrc,
+          sellPrice,
+          comparePrice,
+          id: productId
+        },
+        ...result.data
+      ];
+      if (!document.querySelector(`.${ID}__wrapper`)) {
+        benefitElement.insertAdjacentHTML('beforebegin', wrapper(ID, allProducts));
+      }
     }
   });
 };
