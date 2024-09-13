@@ -1,12 +1,12 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
-import { fetchProducts, pollerLite } from './helpers/utils';
+import { fetchProducts } from './helpers/utils';
 import wrapper from './components/wrapper';
 import handleCheckboxChanges from './helpers/handleCheckboxChanges';
 import addToCart from './helpers/addToCart';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const formWrapper = document.querySelector('form.ntg-product-add-form');
