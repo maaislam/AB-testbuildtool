@@ -3,6 +3,8 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { fetchProducts, pollerLite } from './helpers/utils';
 import wrapper from './components/wrapper';
+import handleCheckboxChanges from './helpers/handleCheckboxChanges';
+import addToCart from './helpers/addToCart';
 
 const { ID, VARIATION } = shared;
 
@@ -38,25 +40,32 @@ const init = () => {
       if (!document.querySelector(`.${ID}__wrapper`)) {
         benefitElement.insertAdjacentHTML('beforebegin', wrapper(ID, allProducts));
       }
+
+      handleCheckboxChanges(ID);
     }
   });
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
-
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+  setup();
 
   init();
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest(`.${ID}__button`)) {
+      const button = target.closest(`.${ID}__button`);
+      const productIds = button.dataset.addedProductIds;
+
+      if (productIds.length > 0) {
+        const productsData = productIds?.split(',').map((id) => ({
+          id,
+          quantity: 1
+        }));
+
+        addToCart(productsData);
+      }
+    }
+  });
 };

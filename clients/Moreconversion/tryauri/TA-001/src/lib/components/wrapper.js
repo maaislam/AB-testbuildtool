@@ -17,7 +17,7 @@ const wrapper = (id, data) => {
                  <p>Total price: <span class="original-price">100.00</span>           
                   <span class="price">0.00</span>
                 </p>
-                <button class="button">Add to cart</button>
+                <button class="${id}__button button">Add to cart</button>
             </div>
         </div>
     </div>
