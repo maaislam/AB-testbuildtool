@@ -6,7 +6,7 @@ import wrapper from './components/wrapper';
 import handleCheckboxChanges from './helpers/handleCheckboxChanges';
 import addToCart from './helpers/addToCart';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const formWrapper = document.querySelector('form.ntg-product-add-form');
