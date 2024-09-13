@@ -1,0 +1,30 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .#{$id}__frequetlyBought {
+      .color-.gradient {
+        & > div {
+          padding-top: 0px;
+          padding-bottom: 0px;
+        }
+      }
+      .cbb-frequently-bought-container {
+        max-width: 1240px !important;
+        margin-top: 0 !important;
+        &.cbb-mobile-view.cbb-mobile-view > h2 {
+          @media screen and (max-width: 767px) {
+            text-align: left !important;
+          }
+        }
+      }
+    }
+
+    .#{$id}__mightLikeAlso {
+      @media screen and (min-width: 769px) {
+        margin: 70px 0;
+      }
+    }
+  }
+}

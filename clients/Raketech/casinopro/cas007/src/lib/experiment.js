@@ -1,7 +1,7 @@
 import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { initSwiper, onUrlChange, pollerLite } from './helpers/utils';
+import { initSwiper, onUrlChange } from './helpers/utils';
 import slider from './components/slider';
 import casinoFooter from './components/casinoFooter';
 import { arrowIcon } from './assets/icon';
@@ -55,7 +55,6 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
 
   const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
   if (!isListenerAdded) {
@@ -108,9 +107,9 @@ export default () => {
   //eslint-disable-next-line no-useless-return
   if (VARIATION === 'Control') return;
 
-  setTimeout(init, 2000);
+  setTimeout(init, 500);
 
   onUrlChange(() => {
-    setTimeout(init, 2000);
+    setTimeout(init, 500);
   });
 };

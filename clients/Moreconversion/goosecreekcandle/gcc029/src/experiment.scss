@@ -1,0 +1,89 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .template-collection #trustpilot-widget-trustbox-0-wrapper {
+      display: block;
+    }
+
+    .template-collection #trustpilot-widget-trustbox-1-wrapper,
+    .template-collection #trustpilot-widget-trustbox-2-wrapper {
+      display: none;
+    }
+
+    @media screen and (max-width: 590px) {
+      .template-collection #trustpilot-widget-trustbox-0-wrapper {
+        display: none;
+      }
+
+      .template-collection #trustpilot-widget-trustbox-1-wrapper,
+      .template-collection #trustpilot-widget-trustbox-2-wrapper {
+        display: block;
+      }
+    }
+  }
+
+  &-2 {
+    .template-collection #trustpilot-widget-trustbox-0-wrapper {
+      display: block;
+    }
+
+    .template-collection #trustpilot-widget-trustbox-1-wrapper,
+    .template-collection #trustpilot-widget-trustbox-2-wrapper {
+      display: none;
+    }
+  }
+
+  &-3 {
+    .template-collection #trustpilot-widget-trustbox-0-wrapper {
+      display: none;
+    }
+
+    .template-collection #trustpilot-widget-trustbox-1-wrapper {
+      display: block;
+    }
+
+    .template-collection #trustpilot-widget-trustbox-2-wrapper {
+      display: none;
+    }
+  }
+}
+
+/*
+.template-collection #trustpilot-widget-trustbox-0-wrapper,
+.template-collection #trustpilot-widget-trustbox-1-wrapper,
+.template-collection #trustpilot-widget-trustbox-2-wrapper {
+  display: none;
+  background-color: #f8f9fa;
+  padding: 24px 20px;
+}
+
+.template-collection #trustpilot-widget-trustbox-1-wrapper,
+.template-collection #trustpilot-widget-trustbox-2-wrapper {
+  display: none;
+}
+
+@media screen and (max-width: 590px) {
+
+  .template-collection #trustpilot-widget-trustbox-0-wrapper {
+    display: none;
+  }
+
+  .template-collection #trustpilot-widget-trustbox-1-wrapper,
+  .template-collection #trustpilot-widget-trustbox-2-wrapper {
+    display: none;
+  }
+
+  .template-collection #trustpilot-widget-trustbox-1-wrapper {
+    padding: 0 0 10px 0;
+    margin-top: -20px !important;
+  }
+
+  .template-collection #trustpilot-widget-trustbox-2-wrapper {
+    margin-top: -20px !important;
+    padding: 20px 20px 0 20px;
+  }
+}
+
+*/

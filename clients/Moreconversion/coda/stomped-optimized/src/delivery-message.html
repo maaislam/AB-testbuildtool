@@ -1,0 +1,49 @@
+<!-- html block  -->
+
+<style>
+    #delivery-message-container {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 13px;
+        color: #101D42;
+        margin-top: 10px;
+    }
+
+    #delivery-message-container svg {
+        margin-right: 8px;
+    }
+
+    #delivery-message-container span {
+        font-weight: 700;
+    }
+</style>
+
+<div id="delivery-message-container">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M1.32213 2.65933C0.736223 2.75088 0.269318 3.14536 0.0736051 3.71423C0.0130001 3.89035 0.0106201 4.06383 0.0106201 8.30805V12.7189H0.770435H1.53021L1.55405 12.943C1.80259 15.281 4.98822 15.8054 5.98735 13.6728C6.10053 13.4312 6.14435 13.2624 6.20708 12.8268L6.22263 12.7189H8.51062H10.7986L10.8142 12.8268C10.8769 13.2624 10.9207 13.4312 11.0339 13.6728C12.033 15.8054 15.2186 15.281 15.4672 12.943L15.491 12.7189H16.2508H17.0106V10.7598V8.80058L15.8568 7.25826L14.703 5.71593L13.5492 5.71449L12.3954 5.71304V4.16906V2.62512L6.94178 2.62929C3.9423 2.63154 1.41346 2.6451 1.32213 2.65933ZM15.0076 7.82759C15.4062 8.33317 15.7442 8.76646 15.7589 8.79047C15.7807 8.8263 15.4819 8.83412 14.0904 8.83412H12.3954V7.87124V6.90836H13.3392H14.283L15.0076 7.82759ZM4.33912 11.6667C5.13404 12.0306 5.23532 13.1517 4.516 13.6254C3.74148 14.1355 2.74992 13.6172 2.74992 12.7023C2.74992 11.8733 3.59197 11.3246 4.33912 11.6667ZM13.6372 11.6855C14.3543 12.0385 14.4984 12.955 13.9247 13.5139C13.2206 14.1997 12.0188 13.688 12.0185 12.7023C12.0183 11.8571 12.8828 11.3141 13.6372 11.6855Z"
+            fill="#101D42" />
+    </svg>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const today = new Date();
+        const deliveryDate = new Date(today);
+        deliveryDate.setDate(today.getDate() + 2);
+
+        const options = { month: 'long', day: 'numeric' };
+        const formattedDate = deliveryDate.toLocaleDateString('en-US', options);
+
+        const deliveryMessage = `Estimated Delivery for your order is <span>${formattedDate}</span>`;
+
+        const deliveryElement = document.createElement('div');
+        deliveryElement.innerHTML = deliveryMessage;
+
+        const targetElement = document.getElementById('delivery-message-container');
+        if (targetElement) {
+            targetElement.appendChild(deliveryElement);
+        }
+    });
+</script>

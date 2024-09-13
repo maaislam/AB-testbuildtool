@@ -1,0 +1,11 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-3 {
+    .section_10 {
+      margin-bottom: 0;
+      background: #fff;
+    }
+  }
+}

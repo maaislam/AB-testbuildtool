@@ -1,0 +1,129 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .route-div {
+        display: none;
+    }
+
+    &__shippingProtectionWrapper {
+        background: #F1F1F1;
+        margin: -10px auto 10px;
+        padding: 20px;
+        max-width: 413px;
+
+        @include media-query(sm) {
+            padding: 15px;
+            max-width: 350px;
+        }
+
+        .#{$id}__shippingProtection.damage-message-wrapper {
+            .protection-message {
+                max-width: 100%;
+                margin: 0 0 0 12px;
+
+                @include media-query(sm) {
+                    margin: 0 0 0 3px;
+                }
+            }
+            .protection-icon-wrapper {
+                opacity: 0;
+                height: 0;
+            }
+
+            .toggle-switch {
+                display: none;
+            }
+
+            .damage-message {
+                font-family: Quantico;
+                font-size: 11px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0.36800000071525574px;
+                text-align: left;
+                color: #000;
+                opacity: 0.7;
+            }
+        }
+
+        .#{$id}__shippingProtection {
+            display: flex;
+            align-items: flex-start;
+            background: #F1F1F1;
+        }
+
+        p {
+            margin: 0;
+            text-align: left;
+        }
+
+        .protection-message {
+            max-width: 267px;
+            margin: 0 20px 0 10px;
+
+            .price-message {
+                margin-bottom: 3px;
+                font-family: Quantico;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 19px;
+                color: #000;
+
+                @include media-query(sm) {
+                    font-size: 12px;
+                    font-weight: 700;
+                    line-height: 17px;
+                }
+            }
+        }
+
+        .toggle-switch {
+            .switch {
+                display: inline-block;
+            }
+
+            .switch input {
+                display: none;
+            }
+
+            .switch label {
+                margin-bottom: 0;
+                display: block;
+                width: 36px;
+                height: 20px;
+                padding: 2px 0 2px 2px;
+                border-radius: 12px;
+                background: #c2c2c2;
+                cursor: pointer;
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+            }
+
+            .switch label::after {
+                content: "";
+                display: inherit;
+                width: 16px;
+                height: 16px;
+                border-radius: 12px;
+                background: #ffffff;
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+            }
+
+            .switch input:checked~label {
+                background: #1B8C52;
+            }
+
+            .switch input:checked~label::after {
+                translate: 16px 0;
+                background: #ffffff;
+            }
+
+            .switch input:disabled~label {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

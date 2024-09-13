@@ -1,0 +1,94 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .marquee {
+        display: none;
+    }
+
+    &__usps {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background: #990000;
+        padding: 14px 100px;
+
+        @include media-query(xxl) {
+            padding: 14px 50px;
+        }
+
+        @include media-query(sm) {
+            overflow-y: auto;
+            display: -webkit-box;
+            padding: 8px 0;
+        }
+
+        .usp {
+            display: flex;
+            align-items: center;
+
+            @include media-query(sm) {
+                margin: 0 20px;
+                justify-content: flex-start;
+            }
+
+            .usp-icon {
+                max-width: 40px;
+                max-height: 40px;
+
+                @include media-query(lg) {
+                    max-width: 34px;
+                    max-height: 34px;
+                }
+
+                @include media-query(lg) {
+                    max-width: 24px;
+                    max-height: 24px;
+                }
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .title {
+                margin-left: 15px;
+                color: #fff;
+                font-family: var(--typeBasePrimary);
+                font-size: 24px;
+                line-height: 34px;
+                font-weight: 400;
+
+                @include media-query(xl) {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+
+                @include media-query(lg) {
+                    font-size: 16px;
+                    line-height: 26px;
+                }
+            }
+
+            &:last-child {
+                @include media-query(sm) {
+                    .title {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+
+        .usp-bar {
+            height: 30px;
+            width: 1px;
+            background: #fff;
+            opacity: 0.3;
+
+            @include media-query(sm) {
+                height: 20px;
+            }
+        }
+    }
+}

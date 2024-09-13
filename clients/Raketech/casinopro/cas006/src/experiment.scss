@@ -1,0 +1,56 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__operatorSliderSection {
+    p {
+      margin: 0;
+      padding: 5px;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1;
+    }
+    .#{$id}__swiper {
+      padding-bottom: 20px;
+    }
+    .swiper-slide {
+      display: flex;
+      padding: 5px 0;
+      .terms {
+        margin-top: 4px;
+      }
+
+      &.#{$id}__grayscale {
+        background-color: rgb(255, 248, 229);
+      }
+    }
+
+    .swiper-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      bottom: 0;
+
+      .swiper-pagination-bullet {
+        width: 18px;
+        height: 18px;
+
+        &.swiper-pagination-bullet-active {
+          background: #636363;
+        }
+      }
+    }
+
+    & + div {
+      display: none;
+
+      @media screen and (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+}

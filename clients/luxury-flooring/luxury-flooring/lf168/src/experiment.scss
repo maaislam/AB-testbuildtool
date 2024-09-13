@@ -6,106 +6,164 @@
     .page-wrapper {
       .panel.wrapper {
         .widget.block-static-block {
-          justify-content: flex-end;
-          ul.left {
-            display: none;
+          @media screen and (min-width: 1024px) {
+            justify-content: flex-end;
+            ul.left {
+              display: none;
+            }
           }
         }
       }
+
       .page-header .header.content {
+        padding: 12px 40px 0 40px;
         .c-header__main__logo {
-          order: 0;
-          margin-left: 0;
+          @media screen and (min-width: 1024px) {
+            order: 0;
+            margin-left: 0;
+          }
         }
         .header-usps-search {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 70%;
-          order: 1;
-          margin-left: 10px;
+          @media screen and (min-width: 1024px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 75%;
+            order: 1;
+            margin-left: 10px;
 
-          & > .block-search {
-            width: 40%;
-            margin-top: 0;
-            padding-top: 0;
-            input {
-              height: 45px !important;
-              padding-left: 50px !important;
-              border: none !important;
-              background-color: #f4f4f4 !important;
-            }
+            & > .block-search {
+              width: 45%;
+              margin-top: 0;
+              padding-top: 0;
+              input {
+                height: 45px !important;
+                padding-left: 50px !important;
+                border: none !important;
+                background-color: #f4f4f4 !important;
+              }
 
-            button.action.search {
-              &::before {
-                color: #c1c1c1 !important;
-                margin-left: 20px !important;
+              button.action.search {
+                &::before {
+                  color: #c1c1c1 !important;
+                  margin-left: 20px !important;
+                }
               }
             }
           }
-          .#{$id}__widgetContainer {
-            margin-left: 25px;
-            .#{$id}__widgetBox {
-              display: flex;
+        }
+
+        .#{$id}__widgetContainer {
+          margin-left: 25px;
+          .#{$id}__widgetBox {
+            display: flex;
+          }
+
+          .#{$id}__uspsItem {
+            display: flex;
+            align-items: center;
+            padding: 3px 0;
+
+            .#{$id}__svg {
+              svg {
+                width: 30px;
+                height: 22px;
+              }
             }
 
-            .#{$id}__uspsItem {
-              display: flex;
-              align-items: center;
+            .#{$id}__image {
+              width: 40px;
+              height: 21px;
+              margin-bottom: 4px;
+            }
 
-              .#{$id}__svg {
-                svg {
-                  width: 30px;
-                  height: 22px;
+            .#{$id}__content {
+              margin-left: 9px;
+              color: #202020;
+              .#{$id}__title {
+                font-size: 12px;
+                font-weight: 700;
+                //line-height: 20px;
+                line-height: 12px;
+                @media screen and (max-width: 1150px) {
+                  //font-size: 10px;
                 }
               }
 
-              .#{$id}__image {
-                width: 40px;
-                height: 21px;
-                margin-bottom: 4px;
-              }
-
-              .#{$id}__content {
-                margin-left: 9px;
-                color: #202020;
-                .#{$id}__title {
-                  font-size: 12px;
-                  font-weight: 700;
-                  line-height: 20px;
-                  @media screen and (max-width: 1100px) {
-                    font-size: 10px;
-                  }
-                }
-
-                .#{$id}__subtitle {
+              .#{$id}__subtitle {
+                font-size: 11px;
+                font-weight: 400;
+                line-height: 19px;
+                @media screen and (max-width: 1150px) {
                   font-size: 11px;
-                  font-weight: 400;
-                  line-height: 19px;
-                  @media screen and (max-width: 1100px) {
-                    font-size: 9px;
-                  }
-                }
-              }
-
-              &:last-child {
-                margin-left: 25px;
-                @media screen and (max-width: 1100px) {
-                  margin-left: 10px;
+                  white-space: nowrap;
                 }
               }
             }
 
-            @media screen and (max-width: 1100px) {
-              margin-left: 10px;
+            &:last-child {
+              margin-left: 25px;
+              @media screen and (max-width: 1150px) {
+                margin-left: 10px;
+              }
             }
+          }
+
+          @media screen and (max-width: 1023px) {
+            display: none;
+          }
+
+          @media screen and (max-width: 1150px) {
+            margin-left: 10px;
           }
         }
 
         .header-right {
-          max-width: 212px;
-          width: 100%;
-          order: 2;
+          @media screen and (min-width: 1024px) {
+            max-width: 212px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 9px;
+            order: 2;
+
+            .icon-phone {
+              display: none;
+            }
+            .minicart-wrapper {
+              margin-top: 25px;
+            }
+          }
+        }
+
+        .minicart-wrapper .action.showcart {
+          @media screen and (min-width: 1024px) {
+            display: flex;
+            align-items: center;
+            .text {
+              display: contents;
+              text-transform: capitalize;
+            }
+
+            .counter.qty {
+              position: static !important;
+              padding-left: 3px;
+            }
+
+            &::before {
+              width: 50px;
+            }
+          }
+        }
+
+        ul.links-wrapper {
+          line-height: 17px;
+        }
+
+        @media screen and (max-width: 1150px) {
+          padding: 12px 20px 0 20px;
         }
       }
     }

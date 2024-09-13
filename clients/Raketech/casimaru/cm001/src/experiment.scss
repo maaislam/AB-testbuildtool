@@ -1,0 +1,39 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .casino-ranking {
+    .block-wrapper {
+      .ranking-banner {
+        margin-bottom: 25px !important;
+      }
+      .#{$id}__buttonWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //padding-left: 11px;
+
+        & + .bottun-set-rev {
+          margin: 0px 0px 0px 0px;
+        }
+        & + .tbl-brief-rev {
+          margin: 0px 0px 0px 12px;
+
+          & > table {
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .bottun-set-rev {
+        a[data-attr='bonus'] + a.btn {
+          display: none;
+        }
+
+        a[data-attr='reviews'] + a.btn {
+          display: none;
+        }
+      }
+    }
+  }
+}

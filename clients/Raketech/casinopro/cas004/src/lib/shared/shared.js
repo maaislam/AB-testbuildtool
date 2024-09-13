@@ -1,6 +1,6 @@
 module.exports = {
-  ID: 'cas004',
-  VARIATION: 'Control',
-  CLIENT: 'Raketech',
-  SITE: 'casinopro'
-};
+    ID: 'cas004',
+    VARIATION: '1',
+    CLIENT: 'Raketech',
+    SITE: 'casinopro'
+  };

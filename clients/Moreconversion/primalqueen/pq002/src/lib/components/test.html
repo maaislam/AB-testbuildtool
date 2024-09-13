@@ -1,0 +1,25 @@
+<a href="${productUrl}"
+   class="${id}__reviewCard swiper-slide" ">
+    <div class="
+   ${id}__review">
+    <div class="${id}__review-col1">
+        <img src="${imageCdn}${reviewUserPhotos.split(',')[0]}"
+             alt="" />
+    </div>
+    <div class="${id}__review-col2">
+        <div class="row1">
+            <div class="reviewer-name">
+                ${author}
+            </div>
+            <div class="reviewer-rating">
+                ${ratingStars(reviewRating)}
+            </div>
+        </div>
+        <div class="row2">
+            <div class="review-msg">
+                ${reviewMessage}
+            </div>
+        </div>
+    </div>
+    </div>
+</a>

@@ -1,0 +1,338 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+    "sections": {
+      "advanced_content_kwEVRj": {
+        "type": "advanced-content",
+        "blocks": {
+          "liquid_Dgm6WG": {
+            "type": "liquid",
+            "settings": {
+              "code": "<script>\ndocument.addEventListener('DOMContentLoaded', () => {\n  \n  if (window.location.pathname.includes('\/products\/')) {\n\n    const hasDiscount = document.querySelector('.product__price--compare');\n\n    \n    \n    \n    const targetElement = document.querySelector('.jdgm-widget');\n\n    if ( targetElement && !hasDiscount) {\n      const priceElement = document.querySelector('.product__price');\n      const priceClone = priceElement.cloneNode(true);\n      targetElement.appendChild(priceClone);\n    }else if(targetElement && hasDiscount){\n        const oldPriceElement = document.querySelector('.product__price--compare');\n        const newPriceElement = document.querySelector('.product__price.on-sale');\n        const oldPriceClone = oldPriceElement.cloneNode(true);\n        const newPriceClone = newPriceElement.cloneNode(true);\n        targetElement.appendChild(oldPriceClone);\n        targetElement.appendChild(newPriceElement);\n    }\n  }\n});\n<\/script>\n\n<style>\n[data-product-thumbs].small--hide {\n  display: block !important;\n}\n.product__main-photos .flickity-page-dots {\n  display: none;\n}\n.product__thumb-arrow {\n  display: none !important;\n}\n.product-block--price{\ndisplay:none;\n}\n.jdgm-widget.jdgm-widget{\n  display: flex !important;\n  align-items: center;\n  margin-top: 32px;\n}\n.jdgm-widget.jdgm-widget [data-product-price], .jdgm-widget.jdgm-widget [data-compare-price]{\n  margin-left: 10px;\n}\n.variant__button-label.color-swatch{\n box-shadow: 0 0 0 1px #000;\n}\n<\/style>",
+              "width": "100%",
+              "alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "liquid_Dgm6WG"
+        ],
+        "settings": {
+          "full_width": false,
+          "space_around": false
+        }
+      },
+      "main": {
+        "type": "main-product",
+        "blocks": {
+          "price": {
+            "type": "price",
+            "settings": {
+            }
+          },
+          "separator": {
+            "type": "separator",
+            "disabled": true,
+            "settings": {
+            }
+          },
+          "feature_teFteq": {
+            "type": "feature",
+            "settings": {
+              "feature_item0": "With just a tap of your foot",
+              "feature_item1": "Effortlessly turn or scroll through pages on your setlist & sheet music.",
+              "feature_item2": "Instantly start or stop your metronome.",
+              "feature_item3": "Easily trigger backing tracks."
+            }
+          },
+          "variant_picker": {
+            "type": "variant_picker",
+            "settings": {
+              "variant_labels": true,
+              "picker_type": "button",
+              "color_swatches": true
+            }
+          },
+          "sales_point": {
+            "type": "sales_point",
+            "disabled": true,
+            "settings": {
+              "icon": "truck",
+              "text": "Free USA Shipping, Discounted Worldwide Shipping"
+            }
+          },
+          "5a139a4b-0d11-47c3-aba5-21946f824bb7": {
+            "type": "sales_point",
+            "disabled": true,
+            "settings": {
+              "icon": "checkmark",
+              "text": "60 Day Money-Back Guarantee"
+            }
+          },
+          "inventory_status": {
+            "type": "inventory_status",
+            "disabled": true,
+            "settings": {
+              "inventory_threshold": 10,
+              "inventory_transfers_enable": true
+            }
+          },
+          "custom_3kCbYn": {
+            "type": "custom",
+            "settings": {
+              "code": "<style>\n  #delivery-message-container {\n    display: flex;\n    align-items: center;\n    font-weight: 400;\n    font-size: 13px; \n    color: #101D42; \n    margin-top: 10px;\n  }\n\n  #delivery-message-container svg {\n    margin-right: 8px;\n  }\n\n  #delivery-message-container span {\n    font-weight: 700;\n  }\n<\/style>\n\n<div id=\"delivery-message-container\">\n  <svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\">\n    <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.32213 2.65933C0.736223 2.75088 0.269318 3.14536 0.0736051 3.71423C0.0130001 3.89035 0.0106201 4.06383 0.0106201 8.30805V12.7189H0.770435H1.53021L1.55405 12.943C1.80259 15.281 4.98822 15.8054 5.98735 13.6728C6.10053 13.4312 6.14435 13.2624 6.20708 12.8268L6.22263 12.7189H8.51062H10.7986L10.8142 12.8268C10.8769 13.2624 10.9207 13.4312 11.0339 13.6728C12.033 15.8054 15.2186 15.281 15.4672 12.943L15.491 12.7189H16.2508H17.0106V10.7598V8.80058L15.8568 7.25826L14.703 5.71593L13.5492 5.71449L12.3954 5.71304V4.16906V2.62512L6.94178 2.62929C3.9423 2.63154 1.41346 2.6451 1.32213 2.65933ZM15.0076 7.82759C15.4062 8.33317 15.7442 8.76646 15.7589 8.79047C15.7807 8.8263 15.4819 8.83412 14.0904 8.83412H12.3954V7.87124V6.90836H13.3392H14.283L15.0076 7.82759ZM4.33912 11.6667C5.13404 12.0306 5.23532 13.1517 4.516 13.6254C3.74148 14.1355 2.74992 13.6172 2.74992 12.7023C2.74992 11.8733 3.59197 11.3246 4.33912 11.6667ZM13.6372 11.6855C14.3543 12.0385 14.4984 12.955 13.9247 13.5139C13.2206 14.1997 12.0188 13.688 12.0185 12.7023C12.0183 11.8571 12.8828 11.3141 13.6372 11.6855Z\" fill=\"#101D42\"\/>\n  <\/svg>\n<\/div>\n\n<script>\ndocument.addEventListener('DOMContentLoaded', () => {\n    const today = new Date();\n    const deliveryDate = new Date(today);\n    deliveryDate.setDate(today.getDate() + 2);\n\n    const options = { month: 'long', day: 'numeric' };\n    const formattedDate = deliveryDate.toLocaleDateString('en-US', options);\n\n    const deliveryMessage = `Estimated Delivery for your order is <span>${formattedDate}<\/span>`;\n\n    const deliveryElement = document.createElement('div');\n    deliveryElement.innerHTML = deliveryMessage;\n\n    const targetElement = document.getElementById('delivery-message-container');\n    if (targetElement) {\n        targetElement.appendChild(deliveryElement);\n    }\n});\n<\/script>"
+            }
+          },
+          "buy_buttons": {
+            "type": "buy_buttons",
+            "settings": {
+              "show_dynamic_checkout": false,
+              "surface_pickup_enable": false
+            }
+          },
+          "custom_K3dXp4": {
+            "type": "custom",
+            "disabled": true,
+            "settings": {
+              "code": "<style>\n  .usp-section {\n     width: 100%;\n     max-width: 480px;\n    display: flex;\n    justify-content: space-between;\n    margin: 20px auto 0;\n  }\n\n  .usp {\n    text-align: center;\n    width: 30%;\n  }\n\n  .usp img {\n    width: 25px;\n    height: 25px;\n  }\n\n  .usp p {\n    font-size: 12px;\n    font-weight: 500;\n    margin: 4px 0;\n    text-transform: none; \n    color: #000;\n  }\n<\/style>\n\n<div class=\"usp-section\">\n  <div class=\"usp\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1546\/4159\/files\/truck.png?v=1715978339\" alt=\"Free USA Shipping\">\n    <p>Free USA Shipping<\/p>\n  <\/div>\n  <div class=\"usp\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1546\/4159\/files\/check-circle.png?v=1715978309\" alt=\"60 Day Money-Back Guarantee\">\n    <p>60 Day Money-Back Guarantee<\/p>\n  <\/div>\n  <div class=\"usp\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1546\/4159\/files\/medal.png?v=1715978322\" alt=\"1 Year Warranty\">\n    <p>1 Year Warranty<\/p>\n  <\/div>\n<\/div>"
+            }
+          },
+          "usp_Q89x9a": {
+            "type": "usp",
+            "settings": {
+              "usp_image1": "shopify:\/\/shop_images\/truck.png",
+              "usp_text1": "Free USA Shipping",
+              "usp_image2": "shopify:\/\/shop_images\/check-circle.png",
+              "usp_text2": "60 Day Money-Back Guarantee",
+              "usp_image3": "shopify:\/\/shop_images\/medal.png",
+              "usp_text3": "1 Year Warranty"
+            }
+          },
+          "description": {
+            "type": "description",
+            "settings": {
+              "is_tab": false
+            }
+          }
+        },
+        "block_order": [
+          "price",
+          "separator",
+          "feature_teFteq",
+          "variant_picker",
+          "sales_point",
+          "5a139a4b-0d11-47c3-aba5-21946f824bb7",
+          "inventory_status",
+          "custom_3kCbYn",
+          "buy_buttons",
+          "custom_K3dXp4",
+          "usp_Q89x9a",
+          "description"
+        ],
+        "custom_css": [
+          ".shopify-payment-terms.product__policies {display: none !important;}",
+          ".variant-wrapper {text-align: left;}",
+          ".product__thumbs-placement--right {display: none !important;}"
+        ],
+        "settings": {
+          "sku_enable": false,
+          "image_position": "left",
+          "image_size": "medium",
+          "product_zoom_enable": true,
+          "thumbnail_position": "below",
+          "thumbnail_arrows": true,
+          "mobile_layout": "full",
+          "enable_video_looping": false,
+          "product_video_style": "unmuted"
+        }
+      },
+      "rowimage": {
+        "type": "row-with-image",
+        "settings": {
+          "image_1": "shopify:\/\/shop_images\/stomp_2_web.jpeg",
+          "image_1_link": "",
+          "image_2": "shopify:\/\/shop_images\/stomp_9_web.jpeg",
+          "image_2_link": "",
+          "image_3": "shopify:\/\/shop_images\/stomp_4_web.jpeg",
+          "image_3_link": "",
+          "image_4_link": "",
+          "enable_gutter": false,
+          "enable_zoom": true
+        }
+      },
+      "sub": {
+        "type": "product-full-width",
+        "disabled": true,
+        "settings": {
+          "max_width": true
+        }
+      },
+      "1632379815cc5db233": {
+        "type": "rich-text",
+        "blocks": {
+          "1632379815cc5db233-0": {
+            "type": "heading",
+            "settings": {
+              "title": "Control all your favorite music apps with just the tap of your foot"
+            }
+          },
+          "1632379815cc5db233-1": {
+            "type": "text",
+            "settings": {
+              "enlarge_text": true,
+              "text": "<p>As a gigging musician your hands should be focused on playing music. Not fumbling with your iPad screen. While smartphones and tablets have made it easier to carry your charts and lyrics, you still have to take your hands off of your instrument to change pages. With STOMP you can seamlessly turn or scroll through pages on your setlist, start & stop your metronome and much more!<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1632379815cc5db233-0",
+          "1632379815cc5db233-1"
+        ],
+        "settings": {
+          "align_text": "left",
+          "narrow_column": true,
+          "divider": false
+        }
+      },
+      "16323806879a26fdbd": {
+        "type": "advanced-content",
+        "blocks": {
+          "16323806879a26fdbd-1": {
+            "type": "liquid",
+            "settings": {
+              "code": "<div style=\"text-align:center;\">\n<iframe frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" width=\"1281.6\" height=\"720\" type=\"text\/html\" src=\"https:\/\/www.youtube.com\/embed\/l6F_L2KanHk?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0\"><div><\/div><\/iframe>\n<\/div>",
+              "width": "100%",
+              "alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "16323806879a26fdbd-1"
+        ],
+        "settings": {
+          "full_width": false,
+          "space_around": true
+        }
+      },
+      "16323806838528724e": {
+        "type": "rich-text",
+        "blocks": {
+          "16323806838528724e-0": {
+            "type": "heading",
+            "settings": {
+              "title": "What Sets STOMP Apart from Any Other Music Page Turner or Bluetooth Pedal?"
+            }
+          },
+          "16323806838528724e-1": {
+            "type": "text",
+            "settings": {
+              "enlarge_text": true,
+              "text": "<p>STOMP is the most rugged, durable, and reliable app controller on the market, making it the obvious choice for professionals and hobbyists alike. Unlike all of the other page turners made of cheap plastic, STOMP is 100% made in America and housed in a solid metal enclosure. It’s rugged enough to be run over by a truck (seriously, we tested it), so you know it will handle any gig, night after night. Just throw it in your bag or attach it to your pedalboard and go off to the next gig.<\/p><p><strong>Don’t turn it, STOMP it!<\/strong><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "16323806838528724e-0",
+          "16323806838528724e-1"
+        ],
+        "settings": {
+          "align_text": "left",
+          "narrow_column": true,
+          "divider": false
+        }
+      },
+      "1632380902cd0cea2d": {
+        "type": "text-and-image",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/stomp.portrait.studio_web.jpg",
+          "image_width": 700,
+          "subtitle": "",
+          "title": "Features",
+          "text": "<p><strong>Durable and solid, withstands any environment<\/strong><\/p><p>100% American Made, and housed in a solid metal enclosure, STOMP is built for the gigging musician. The pedal buttons are quiet and have first class tactile feedback.<\/p><p><strong>Extended range and compatibility, it just works 100% of the time<\/strong><\/p><p>50+ foot range that always maintains connection. Configure with selected apps to control multiple devices at once and turn the whole band’s page together.<\/p><p>Works with any iPad, iPhone, Android, Mac or Windows Bluetooth 4.0 enabled device.<br\/><\/p><p><strong>Multiple power options, so you never run out of juice<\/strong><\/p><p>Stomp will run for 150+ hours on a single 9v battery or you can power it using a 9VDC 1700mA power adapter (sold separately).<\/p><p>When plugged into 9VDC you can charge your phone or tablet with the built-in USB port while you’re performing.<\/p>",
+          "button_label": "",
+          "button_link": "",
+          "button_style": "primary",
+          "align_text": "left",
+          "layout": "left",
+          "divider": false
+        }
+      },
+      "1632380968d623b774": {
+        "type": "advanced-content",
+        "blocks": {
+          "1632380968d623b774-1": {
+            "type": "liquid",
+            "settings": {
+              "code": "<div style=\"text-align:center;\">\n<iframe frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" width=\"1281.6\" height=\"720\" type=\"text\/html\" src=\"https:\/\/www.youtube.com\/embed\/YpSIY7BY35M\" autoplay='0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0\"'><div><\/div><\/iframe>\n<\/div>",
+              "width": "100%",
+              "alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "1632380968d623b774-1"
+        ],
+        "disabled": true,
+        "settings": {
+          "full_width": false,
+          "space_around": true
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "disabled": true,
+        "settings": {
+          "show_product_recommendations": true,
+          "product_recommendations_heading": "You may also like",
+          "related_count": 5
+        }
+      },
+      "recently-viewed": {
+        "type": "recently-viewed",
+        "disabled": true,
+        "settings": {
+          "recent_count": 5
+        }
+      },
+      "collection-return": {
+        "type": "collection-return",
+        "settings": {
+        }
+      },
+      "16378806083acc34b9": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "Featured collection",
+          "home_featured_products": "musicians-performers",
+          "per_row": 4,
+          "rows": 1,
+          "mobile_scrollable": true,
+          "view_all": true,
+          "divider": false
+        }
+      }
+    },
+    "order": [
+      "advanced_content_kwEVRj",
+      "main",
+      "rowimage",
+      "sub",
+      "1632379815cc5db233",
+      "16323806879a26fdbd",
+      "16323806838528724e",
+      "1632380902cd0cea2d",
+      "1632380968d623b774",
+      "product-recommendations",
+      "recently-viewed",
+      "collection-return",
+      "16378806083acc34b9"
+    ]
+  }
+  

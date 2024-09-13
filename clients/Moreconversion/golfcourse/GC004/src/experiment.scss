@@ -1,0 +1,39 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .product-full-width {
+    .product-block:not(.product-block--tab) {
+      display: none;
+    }
+    .page-width--narrow {
+      @media screen and (max-width: 767px) {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .#{$id}__container {
+    margin-bottom: 25px;
+    & > h1 {
+      font-family: Segoe UI;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 32px;
+      letter-spacing: 0.8080000281333923px;
+      text-align: left;
+      color: #000000;
+      margin-bottom: 56px;
+
+      span {
+        text-transform: capitalize;
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 28px;
+        line-height: 28px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

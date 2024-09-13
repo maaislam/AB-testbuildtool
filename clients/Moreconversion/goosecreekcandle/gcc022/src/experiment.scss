@@ -1,0 +1,66 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__shippingInfo {
+    width: 100%;
+    margin-top: 12px;
+    padding-bottom: 13px;
+    border-bottom: solid 1px #eeeeee;
+    .#{$id}__discountProgressCard {
+      padding: 0 16px;
+      .#{$id}__discountProgressContainer {
+        .#{$id}__shippingMessage {
+          font-size: 12px;
+          font-family: 'Inter';
+          line-height: 17px;
+          text-align: center;
+          color: #2e261c;
+          margin: 10px 0 0;
+        }
+        .#{$id}__discountProgress {
+          height: 8px;
+          width: 100%;
+          position: relative;
+          background: #eeeeee;
+          border-radius: 30px;
+          overflow: hidden;
+          margin: 0 auto;
+
+          &-bar {
+            height: 100%;
+            max-width: 100% !important;
+            border-radius: 10px;
+            background: #9888b4;
+            //background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='25' viewBox='0 0 20 25' fill='none'%3E%3Cpath opacity='0.05' d='M10 0.589996H20L10 24.59H0L10 0.589996Z' fill='#EEEEEE'");
+          }
+        }
+      }
+    }
+
+    .#{$id}__imageBoxContainer {
+      display: flex;
+      margin-bottom: 15px;
+      .#{$id}__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 calc(100% / 3);
+        .#{$id}__icon {
+        }
+
+        .#{$id}__text {
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 16px;
+          margin-left: 10px;
+          color: #2e261c;
+        }
+      }
+    }
+  }
+
+  .gcc009__uspWrapper {
+    display: none;
+  }
+}

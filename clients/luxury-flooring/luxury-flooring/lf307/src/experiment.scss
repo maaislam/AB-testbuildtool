@@ -1,0 +1,123 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__quickLinks {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 56px;
+        margin-bottom: 12px;
+        border-bottom: 0.5px solid #9A9A9A;
+
+        @include media-query(sm) {
+            justify-content: flex-start;
+            padding-bottom: 30px;
+            margin-bottom: 24px;
+            overflow-x: scroll;
+        }
+
+        img {
+            margin-bottom: 10px;
+            width: 102px;
+            height: 102px;
+            object-fit: cover;
+        }
+
+        p {
+            margin: 0;
+            font: normal normal normal 16px/16px Work Sans;
+            color: #202020;
+            text-decoration: underline;
+            text-align: center;
+
+            @include media-query(sm) {
+                min-width: 102px;
+            }
+        }
+
+        .#{$id}__card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 17px;
+
+            @include media-query(sm) {
+                margin: 0 10px 0 0;
+
+            }
+        }
+    }
+
+    &__usps {
+        margin: 20px 140px 40px;
+        max-height: 59px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @include media-query(lg) {
+            max-height: max-content
+        }
+
+        @include media-query(xxxl) {
+            margin: 20px 40px 40px;
+        }
+
+        @include media-query(xl) {
+            margin: 20px 0px 40px;
+        }
+
+        @include media-query(lg) {
+            justify-content: space-between;
+        }
+
+        @include media-query(md) {
+            margin: 0 0 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 16px;
+        }
+
+        .#{$id}__usp {
+            display: flex;
+            align-items: center;
+
+            @include media-query(md) {
+                flex-direction: column;
+            }
+
+            p {
+                margin: 0 0 0 15px;
+                font: normal normal normal 16px/50px Lucida Bright;
+                color: #202020;
+
+                @include media-query(xxxl) {
+                    margin: 0 0 0 10px;
+                    font: normal normal normal 14px/50px Lucida Bright;
+                }
+
+                @include media-query(lg) {
+                    margin: 0 0 0 10px;
+                    font: normal normal normal 13px/30px Lucida Bright;
+                }
+
+                @include media-query(md) {
+                    margin: 0;
+                }
+            }
+
+            svg {
+                @include media-query(xxxl) {
+                    max-width: 50px;
+                    max-height: 50px;
+                }
+            }
+
+            &:nth-child(3) {
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
