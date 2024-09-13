@@ -13,7 +13,12 @@ const wrapper = (id, data) => {
                 return Bundle(id, item);
               })}
             </div>
-            <div class="${id}__wrapper-total"></div>
+            <div class="${id}__wrapper-total">
+                 <p>Total price: <span class="original-price">100.00</span>           
+                  <span class="price">0.00</span>
+                </p>
+                <button class="button">Add to cart</button>
+            </div>
         </div>
     </div>
   `;

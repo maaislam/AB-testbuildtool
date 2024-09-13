@@ -9,7 +9,6 @@ export const existingBundle = (id, data) => {
                 </div>
                 <div class="${id}__bundleWrapper-content-text">
                     <h2>${title}</h2>
-                    <p>type</p>
                     <div class="priceWrapper">
                         <span class="price"> ${sellPrice}</span>
                         ${comparePrice ? `<span class="original-price">${comparePrice}</span>` : ''}
@@ -25,6 +24,7 @@ export const Bundle = (id, data) => {
   const { title } = data;
   const imageSrc = data.images[0].src;
   const { price, compare_at_price, id: productId } = data.variants[0];
+
   const html = `
   <div class="${id}__bundleWrapper-content" id="${productId}">
     <div class="${id}__bundleWrapper-content-image">
@@ -34,7 +34,6 @@ export const Bundle = (id, data) => {
     </div>
     <div class="${id}__bundleWrapper-content-text">
          <h2>${title}</h2>
-        <p>type</p>
         <div class="priceWrapper">
         <span class="price"> ${price}</span>
         ${compare_at_price ? `<span class="original-price">${compare_at_price}</span>` : ''}
