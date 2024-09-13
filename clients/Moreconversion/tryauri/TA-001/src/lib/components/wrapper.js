@@ -17,8 +17,8 @@ const wrapper = (id, data) => {
                 .join('\n')}
             </div>
             <div class="${id}__wrapper-total">
-                 <p>Total price: <span class="original-price">100.00</span>           
-                  <span class="price">0.00</span>
+                 <p>Total price: <span class="${id}__compare-price-total original-price">100.00</span>           
+                  <span class="${id}__price-total price">0.00</span>
                 </p>
                 <button class="${id}__button button">Add to cart</button>
             </div>
