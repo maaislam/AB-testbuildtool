@@ -14,7 +14,6 @@ export const existingBundle = (id, data) => {
                         ${comparePrice ? `<span class="original-price">${comparePrice}</span>` : ''}
                     </div>
                 </div>
-                <input type="checkbox" id="product" name="product">
             </div>
   `;
   return html.trim();
@@ -39,7 +38,12 @@ export const Bundle = (id, data) => {
         ${compare_at_price ? `<span class="original-price">${compare_at_price}</span>` : ''}
         </div>
     </div>
-    <input type="checkbox" id="product" name="product">
+    <div class="checkboxes__item">
+      <label class="checkbox">
+        <input type="checkbox">
+        <div class="checkbox__checkmark"></div>
+      </label>
+    </div>
   </div>
   `;
   return html.trim();
