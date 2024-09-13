@@ -20,7 +20,7 @@ const wrapper = (id, data) => {
                  <p>Total price: <span class="${id}__compare-price-total original-price"></span>           
                   <span class="${id}__price-total price"></span>
                 </p>
-                <button class="${id}__button button">Add to cart</button>
+                <button class="${id}__button button">Add selected to cart</button>
             </div>
         
         </div>
