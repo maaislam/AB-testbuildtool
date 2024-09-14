@@ -1,6 +1,5 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { fetchProduct, findMostExpensiveProduct } from './helpers/utils';
 import bundleWrapper from './components/bundleWrapper';
 
 const { ID, VARIATION } = shared;

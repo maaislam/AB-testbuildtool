@@ -26,7 +26,7 @@ const init = () => {
   fetchProducts(productId).then((result) => {
     if (result.data.length) {
       //eslint-disable-next-line object-curly-newline
-      console.log(result.data);
+
       const allProducts = [
         {
           title,
