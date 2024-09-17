@@ -1,0 +1,53 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__stripeButtons {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    &__stripeButton,
+    &__nonStripeButton {
+        padding: 7px 8px;
+        font-family: Abril Fatface;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 25.5px;
+        letter-spacing: 0.5px;
+        text-align: center;
+        color: #50709F;
+        border: 1px solid #50709F;
+        border-radius: 3px;
+
+        &:hover {
+            background-color: #50709F;
+            color: #fff;
+            opacity: 1;
+        }
+
+        @include media-query(lg) {
+            padding: 6px 7px;
+        }
+    }
+
+    &__stripeButton.active,
+    &__nonStripeButton.active {
+        background-color: #50709F;
+        color: #fff;
+        opacity: 1;
+    }
+
+    &__stripeButton {
+        margin-right: 8px;
+
+        @include media-query(xl) {
+            margin-bottom: 8px;
+        }
+
+        @include media-query(lg) {
+            margin-bottom: 0;
+        }
+    }
+}
