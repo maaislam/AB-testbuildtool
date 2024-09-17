@@ -1,0 +1,11 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    #wpfront-notification-bar-table,
+    #wpfront-notification-bar-spacer {
+      display: none;
+    }
+  }
+}

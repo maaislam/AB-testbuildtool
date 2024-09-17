@@ -1,7 +1,7 @@
 const genericQuestionsWrapper = (id, title) => {
   const html = `
         <div class="rte rte--nomargin ${id}__container">
-             <h1>Frequently Asked Questions about <span>${title}</span></h1>
+             <h1>Frequently Asked Questions</h1>
             <h2><span class="fontstyle2"><strong>When will I&nbsp;receive my order?</strong><br></span></h2>
             <p><span class="fontstyle0">Due to demand of the holidays it may take 2-3 weeks&nbsp;to print and package your
                     order,

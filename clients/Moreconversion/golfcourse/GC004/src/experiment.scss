@@ -4,7 +4,7 @@
 .#{$id} {
   .product-full-width {
     .product-block:not(.product-block--tab) {
-      display: none;
+      //display: none;
     }
     .page-width--narrow {
       @media screen and (max-width: 767px) {

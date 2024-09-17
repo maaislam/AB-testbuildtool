@@ -112,6 +112,10 @@
             }
           }
         }
+
+        @media screen and (max-width: 1023px) {
+          margin-left: 0;
+        }
       }
 
       @media screen and (max-width: 1023px) {
@@ -150,6 +154,7 @@
           text-decoration: line-through;
         }
         .price {
+          font-weight: 600;
           color: #e04c0e;
         }
         @media screen and (max-width: 1023px) {

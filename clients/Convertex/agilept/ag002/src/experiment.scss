@@ -1,0 +1,21 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #sidr-id-menu-main-menu {
+    & a[href*='/request-an-appointment'] {
+      max-width: 265px;
+      padding: 0.5em 0;
+      background-color: #54b5a7;
+      margin: 8px 0 8px 20px;
+      border-radius: 3px;
+      text-align: center;
+
+      span {
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 700;
+      }
+    }
+  }
+}
