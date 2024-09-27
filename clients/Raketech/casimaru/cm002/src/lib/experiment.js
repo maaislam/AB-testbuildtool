@@ -26,39 +26,31 @@ export default () => {
   document.querySelectorAll('.bottun-set-rev').forEach((item) => {
     const bonusItem = item.childNodes[0];
     const reviewItem = item.childNodes[1];
+    const bonusItemLink = bonusItem?.href;
+    const reviewItemLink = reviewItem?.href;
+    const operatorName = bonusItemLink
+      ?.split('/non-deposit-bonus/')[1]
+      .split('-no-deposit-bonus/')[0];
+    item.setAttribute('data-operator', operatorName);
+    bonusItem && item.setAttribute('data-bonus', bonusItemLink);
+    reviewItem && item.setAttribute('data-review', reviewItemLink);
 
-    const cloneBonusItem = bonusItem?.cloneNode(true);
-    cloneBonusItem?.classList.add(`${ID}__bonus`);
-    cloneBonusItem?.removeAttribute('href');
-    const cloneReviewItem = reviewItem?.cloneNode(true);
-    cloneReviewItem?.classList.add(`${ID}__reviews`);
-    cloneReviewItem?.removeAttribute('href');
-
-    if (item.querySelector(`.${ID}__bonus`) || item.querySelector(`.${ID}__reviews`)) {
-      item.querySelector(`.${ID}__bonus`)?.remove();
-      item.querySelector(`.${ID}__reviews`).remove();
-    }
-
-    bonusItem && bonusItem.insertAdjacentElement('beforebegin', cloneBonusItem);
-    reviewItem && reviewItem.insertAdjacentElement('beforebegin', cloneReviewItem);
+    bonusItem?.removeAttribute('href');
+    reviewItem?.removeAttribute('href');
   });
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    if (target.closest(`.${ID}__bonus`) || target.closest(`.${ID}__reviews`)) {
-      const clickedElement = target.closest('a.btn');
+    if (target.closest('.bottun-set-rev .btn')) {
       const parentElement = target.closest('.bottun-set-rev');
-
-      const casinoName = parentElement
-        .querySelector(`.${ID}__bonus + a`)
-        .href.split('/non-deposit-bonus/')[1]
-        .split('-no-deposit-bonus/')[0];
-      if (clickedElement.classList.contains(`${ID}__bonus`)) {
-        gaTracking(`${casinoName} Bonus Page`);
+      const operatorName = parentElement.dataset.operator;
+      if (target === parentElement.querySelector('a.btn + a.btn')) {
+        gaTracking(`${operatorName} Review Page`);
+        window.location.href = parentElement.dataset.review;
       } else {
-        gaTracking(`${casinoName} Review Page`);
+        gaTracking(`${operatorName} Bonus Page`);
+        window.location.href = parentElement.dataset.bonus;
       }
-      clickedElement.nextElementSibling.click();
     }
   });
 

@@ -6,8 +6,8 @@ const gaTracking = (label) => {
   const variationType = VARIATION === '1' ? '1' : 'C';
 
   const GA4_PROPERTY_ID = 'G-P2725WEG9G';
-  const GA4_INTERNAL_EXPERIMENT_NUM = '7370790941';
-  const GA4_INTERNAL_EXPERIMENT_ID = `CF - 4 casino cards in 1 view - better comparison ${GA4_INTERNAL_EXPERIMENT_NUM}`;
+  const GA4_INTERNAL_EXPERIMENT_NUM = '7508786569';
+  const GA4_INTERNAL_EXPERIMENT_ID = `CF - 4 casino cards in 1 view ${GA4_INTERNAL_EXPERIMENT_NUM}`;
   const EXPERIMENT_DEVICE_CATEGORY = 'Mobile Only';
 
   pollerLite([() => document.readyState === 'complete'], () => {

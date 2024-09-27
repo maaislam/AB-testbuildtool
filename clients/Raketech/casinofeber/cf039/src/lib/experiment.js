@@ -12,7 +12,6 @@ const { ID, VARIATION } = shared;
 const init = () => {
   const casinoCardConatiner = document.querySelector('.block-toplist .toplist-holder');
   const casinos = casinoCardConatiner.querySelectorAll('.toplist > div');
-  console.log(casinos, 'casinos');
   casinos.forEach((casino) => {
     const logoContainer = casino.querySelector('.logo-container');
     const logoBgColor = getComputedStyle(logoContainer)?.getPropertyValue('background-color');
@@ -47,6 +46,9 @@ const init = () => {
       logoContainer.insertAdjacentHTML('afterend', bonusContainer(ID, bonusData));
     }
   });
+
+  const mainCsinoWrapper = document.querySelector('.block-toplist .toplist-holder .toplist');
+  mainCsinoWrapper.style.opacity = '1';
 };
 
 export default () => {
@@ -54,7 +56,6 @@ export default () => {
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    console.log(target);
     if (
       target.closest('.logo-container a[data-type="logo"]') &&
       target.closest('.operator-container')
@@ -83,6 +84,15 @@ export default () => {
         }
       }, 1000);
     }
+  });
+
+  const casinoCardConatiner = document.querySelector('.block-toplist .toplist-holder');
+  const casinos = casinoCardConatiner.querySelectorAll('.toplist > div');
+
+  casinos.forEach((casino) => {
+    const logoContainer = casino.querySelector('.logo-container');
+    const logo = logoContainer.querySelector('a[data-type="logo"]');
+    logo && logo.setAttribute('target', '_blank');
   });
 
   if (VARIATION === 'Control') {
