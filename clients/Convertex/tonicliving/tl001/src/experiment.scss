@@ -1,0 +1,17 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #main-nav .navigation__tier-1-container {
+    &:not(.#{$id}__navigation__tier) {
+      display: none;
+    }
+    &.#{$id}__navigation__tier {
+      .navigation__item--with-children {
+        a {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

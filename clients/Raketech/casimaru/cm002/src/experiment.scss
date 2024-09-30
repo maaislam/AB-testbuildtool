@@ -13,7 +13,8 @@
       .#{$id}__hideCasinoRanking,
       & > .wp-block-liquid-speech-balloon,
       & > .ranking-banner,
-      & > .update-log {
+      & > .update-log,
+      & > ul {
         display: none;
       }
 
