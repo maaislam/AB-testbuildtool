@@ -1,0 +1,152 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    // #maincontent * {
+    //     display: none;
+    // }
+
+    &__semiBold {
+        font-weight: 600;
+    }
+
+    &__subBanner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 11px 10px 13px;
+        background: #374A53;
+
+        span {
+            font-family: 'Work Sans';
+            font-size: 16px;
+            line-height: 19px;
+            color: #FFF;
+            letter-spacing: 0.63px;
+        }
+    }
+
+    &__lfClub {
+        max-width: 682px;
+        margin: 35px auto 37px;
+
+        .#{$id}__lfClubText {
+            font-family: 'Work Sans';
+            font-size: 16px;
+            line-height: 24px;
+            color: #202020;
+            text-align: center;
+            letter-spacing: 0;
+        }
+    }
+
+    &__authContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #707070;
+        padding: 24px 20px 20px;
+        max-width: 740px;
+        margin: 45px auto 65px;
+
+        .divider {
+            margin: 0 30px;
+            height: 100px;
+            width: 1px;
+            background-color: #707070;
+        }
+
+        .#{$id}__registrationBox,
+        .#{$id}__loginBox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 20px;
+
+            p {
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+
+            .register-btn,
+            .login-btn {
+                width: 150px;
+                padding: 14px 20px;
+                font-size: 16px;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+
+            .register-btn {
+                background-color: #b6955e;
+            }
+
+            .login-btn {
+                background-color: #37474f;
+            }
+        }
+    }
+
+    &__faqContainer {
+        width: 100%;
+        max-width: 842px;
+        margin: auto;
+
+        .#{$id}__faqTitle {
+            font-family: 'Work Sans';
+            font-size: 24px;
+            line-height: 29px;
+            color: #202020;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .#{$id}__faqAccordion {
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 10px;
+        }
+
+        .#{$id}__faqAccordion-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #f8f8f8;
+            cursor: pointer;
+            align-items: center;
+        }
+
+        .#{$id}__faqAccordion-title {
+            font-size: 18px;
+        }
+
+        .#{$id}__faqAccordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .#{$id}__faqAccordion-content.open {
+            max-height: 300px;
+        }
+
+        .#{$id}__faqAccordion-content p {
+            padding: 15px;
+            margin: 0;
+            background-color: #fff;
+        }
+
+        .#{$id}__faqAccordion-icon i {
+            border: solid black;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            transition: transform 0.5s ease-out;
+        }
+
+        .#{$id}__faqAccordion-icon i.down {
+            transform: rotate(-135deg);
+        }
+    }
+}
