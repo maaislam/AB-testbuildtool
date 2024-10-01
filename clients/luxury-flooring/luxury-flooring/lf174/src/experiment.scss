@@ -6,6 +6,21 @@
     //     display: none;
     // }
 
+    &__tradeDiscountsPage {
+        .usps-main-footer:after {
+            display: none;
+        }
+
+        #maincontent {
+            padding: 0;
+
+            .trade-container,
+            >.columns {
+                display: none;
+            }
+        }
+    }
+
     &__semiBold {
         font-weight: 600;
     }
@@ -17,12 +32,22 @@
         padding: 11px 10px 13px;
         background: #374A53;
 
+        @include media-query(lg) {
+            flex-direction: column;
+        }
+
         span {
             font-family: 'Work Sans';
             font-size: 16px;
             line-height: 19px;
             color: #FFF;
             letter-spacing: 0.63px;
+
+            @include media-query(lg) {
+                font-size: 17px;
+                line-height: 20px;
+                letter-spacing: 0.67px;
+            }
         }
     }
 
@@ -30,13 +55,150 @@
         max-width: 682px;
         margin: 35px auto 37px;
 
+        @include media-query(lg) {
+            margin: 20px 20px 25px;
+        }
+
         .#{$id}__lfClubText {
+            margin: 35px auto 37px;
             font-family: 'Work Sans';
             font-size: 16px;
             line-height: 24px;
             color: #202020;
             text-align: center;
             letter-spacing: 0;
+
+            @include media-query(lg) {
+                font-size: 15px;
+                line-height: 23px;
+                margin: 0;
+            }
+        }
+    }
+
+    &__usps {
+        margin: 0 auto;
+        padding: 37px 10px 0;
+        max-width: 1140px;
+        display: flex;
+        justify-content: space-evenly;
+
+        @include media-query(md) {
+            padding: 0 10px;
+            gap: 20px;
+            justify-content: center;
+            max-height: max-content;
+            flex-wrap: wrap;
+        }
+
+        @include media-query(xsm) {
+            gap: 14px;
+        }
+
+        // @include media-query(xxxl) {
+        //     margin: 20px 40px 40px;
+        // }
+
+        // @include media-query(xl) {
+        //     margin: 20px 0px 40px;
+        // }
+
+        // @include media-query(lg) {
+        //     justify-content: space-between;
+        // }
+
+        // @include media-query(md) {
+        //     margin: 0 0 30px;
+        //     display: grid;
+        //     grid-template-columns: repeat(2, 1fr);
+        //     row-gap: 16px;
+        // }
+
+        .#{$id}__usp {
+            width: 208px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            @include media-query(md) {
+                width: 116px;
+            }
+
+            @include media-query(xsm) {
+                width: 105px;
+            }
+
+            // @include media-query(sm) {
+            //     width: 90px;
+            //     flex-direction: column;
+            // }
+
+            p {
+                margin: 15px 0 0;
+                max-width: 150px;
+                font: normal normal normal 19px/25px Work Sans;
+                font-weight: 600;
+                color: #374A53;
+                text-align: center;
+
+                // @include media-query(xxxl) {
+                //     margin: 0 0 0 10px;
+                //     font: normal normal normal 14px/50px Work Sans;
+                // }
+
+                // @include media-query(lg) {
+                //     margin: 0 0 0 10px;
+                //     font: normal normal normal 13px/30px Work Sans;
+                // }
+
+                @include media-query(md) {
+                    font: normal normal normal 16px/22px Work Sans;
+                    font-weight: 600;
+                }
+
+                @include media-query(xsm) {
+                    font: normal normal normal 14px/20px Work Sans;
+                    font-weight: 600;
+                }
+            }
+
+            // svg {
+            //     @include media-query(xxxl) {
+            //         max-width: 50px;
+            //         max-height: 50px;
+            //     }
+            // }
+
+            // &:nth-child(3) {
+            //     p {
+            //         margin: 0;
+            //     }
+            // }
+        }
+
+        .usp-icon {
+            height: 138px;
+            width: 138px;
+
+            @include media-query(md) {
+                width: 105px;
+                height: 105px;
+            }
+
+            @include media-query(xsm) {
+                width: 95px;
+                height: 95px;
+            }
+
+            // @include media-query(sm) {
+            //     width: 90px;
+            //     height: 90px;
+            // }
+
+            svg {
+                height: 100%;
+                width: 100%;
+            }
         }
     }
 
@@ -49,11 +211,34 @@
         max-width: 740px;
         margin: 45px auto 65px;
 
+        @include media-query(lg) {
+            margin: 30px 20px;
+            flex-direction: column;
+            padding: 30px 10px;
+        }
+
         .divider {
-            margin: 0 30px;
+            margin: 0 40px;
             height: 100px;
             width: 1px;
             background-color: #707070;
+
+            @include media-query(lg) {
+                display: none;
+            }
+        }
+
+        .divider-horizontal {
+            display: none;
+            margin: 20px 0;
+            width: 60%;
+            // width: calc(100% - 40px);
+            height: 1px;
+            background-color: #707070;
+
+            @include media-query(lg) {
+                display: block;
+            }
         }
 
         .#{$id}__registrationBox,
@@ -65,12 +250,13 @@
 
             p {
                 margin-bottom: 10px;
-                font-size: 16px;
+                font-weight: 600;
+                font-size: 15px;
             }
 
             .register-btn,
             .login-btn {
-                width: 150px;
+                width: 190px;
                 padding: 14px 20px;
                 font-size: 16px;
                 color: #fff;
@@ -83,41 +269,65 @@
             }
 
             .login-btn {
-                background-color: #37474f;
+                background-color: #374A53;
             }
         }
     }
 
     &__faqContainer {
         width: 100%;
-        max-width: 842px;
-        margin: auto;
+        background: #F9F2E4;
+
+        .#{$id}__faqWrapper {
+            width: 100%;
+            max-width: 842px;
+            margin: auto;
+            padding: 50px 0;
+
+            @include media-query(lg) {
+                padding: 24px 20px;
+            }
+        }
 
         .#{$id}__faqTitle {
-            font-family: 'Work Sans';
-            font-size: 24px;
-            line-height: 29px;
+            font-family: 'Lucida Bright, Regular';
+            font-size: 40px;
+            line-height: 50px;
             color: #202020;
             text-align: center;
-            margin-bottom: 30px;
+            margin: 0 auto 43px;
+
+            @include media-query(lg) {
+                font-size: 30px;
+                line-height: 40px;
+                margin: 0 auto 20px;
+            }
         }
 
         .#{$id}__faqAccordion {
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #C5C1B8;
             margin-bottom: 10px;
+        }
+
+        .#{$id}__faqAccordion:first-child {
+            border-top: 1px solid #C5C1B8;
         }
 
         .#{$id}__faqAccordion-header {
             display: flex;
             justify-content: space-between;
             padding: 15px;
-            background-color: #f8f8f8;
+            // background-color: #f8f8f8;
             cursor: pointer;
             align-items: center;
         }
 
         .#{$id}__faqAccordion-title {
-            font-size: 18px;
+            font-family: 'Work Sans';
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #0F0F0F;
         }
 
         .#{$id}__faqAccordion-content {
@@ -133,7 +343,8 @@
         .#{$id}__faqAccordion-content p {
             padding: 15px;
             margin: 0;
-            background-color: #fff;
+            font-size: 15px;
+            line-height: 1.5;
         }
 
         .#{$id}__faqAccordion-icon i {
