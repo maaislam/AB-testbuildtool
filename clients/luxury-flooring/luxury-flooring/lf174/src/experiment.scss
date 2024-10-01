@@ -2,10 +2,6 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    // #maincontent * {
-    //     display: none;
-    // }
-
     &__tradeDiscountsPage {
         .usps-main-footer:after {
             display: none;
@@ -17,6 +13,75 @@
             .trade-container,
             >.columns {
                 display: none;
+            }
+        }
+    }
+
+    &__tradeRegPage {
+        #maincontent {
+            >.columns {
+                display: none;
+            }
+        }
+
+        .trade-banner-container,
+        .hs-richtext.hs-main-font-element {
+            display: none;
+        }
+
+        .#{$id}__headerTitle {
+            margin: 32px auto 0;
+            font: normal normal normal 48px/60px Lucida Bright;
+            color: #202020;
+            text-align: center;
+        }
+
+        .#{$id}__formContainer {
+            margin: 0 auto;
+            max-width: 1024px;
+            display: flex;
+            justify-content: center;
+
+            .#{$id}__columns {
+                flex: 0 0 55%;
+                padding-right: 48px;
+            }
+
+            .#{$id}__verticalUspContainer {
+                flex: 0 0 45%;
+
+                .#{$id}__verticalUsps {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background: #F9F2E4;
+                }
+
+                .#{$id}__verticalUsp {
+                    margin-bottom: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    // max-width: 230px;
+
+                    p {
+                        max-width: 140px;
+                        margin-left: 20px;
+                        font: normal normal 600 19px/25px Work Sans;
+                        color: #374A53;
+                    }
+                }
+
+                .usp-icon {
+                    height: 110px;
+                    width: 110px;
+
+                    svg {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
             }
         }
     }
