@@ -19,7 +19,9 @@ const progressBar = (id, progressWidth, status, extraPrice, data) => {
                           .map((item) => {
                             return `
                                 <div class="${id}__item">
-                                  <div class="${id}__icon">${item.icon}</div>
+                                  <div class="${id}__icon">
+                                    <img src="${item.activeImg}" class="active-img"/>
+                                  </div>
                                   <div class="${id}__text">${item.title}</div>
                                 </div>
                           `;
