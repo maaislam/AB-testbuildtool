@@ -5,7 +5,7 @@ const formatPrice = (amount, code = 'en-US', currency = 'USD') => {
   }).format(amount);
 };
 
-const progressBar = (id, progressWidth, status, extraPrice, data) => {
+const progressBar = (id, status, extraPrice, data) => {
   const message =
     extraPrice !== 0
       ? `<span>Add more ${formatPrice(extraPrice)}</span> items to <span>${status}</span> ${
@@ -29,7 +29,9 @@ const progressBar = (id, progressWidth, status, extraPrice, data) => {
                           .join('\n')}
                       </div>
                       <div class='${id}__discountProgress'>
-                          <div class="${id}__discountProgress-bar" style='width:${progressWidth}%'></div>
+                          <div class="${id}__discountProgress-bar" id="firstBar" style='width:0%'></div>
+                          <div class="${id}__discountProgress-bar" id="secondBar" style='width:0%'></div>
+                          <div class="${id}__discountProgress-bar" id="thirdBar" style='width:0%'></div>
                       </div>
                       <p class='${id}__shippingMessage'>${message}</p>
                    </div>
