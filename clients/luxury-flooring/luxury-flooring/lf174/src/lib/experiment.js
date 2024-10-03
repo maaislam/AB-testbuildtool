@@ -1,9 +1,15 @@
+import productPage from './pages/productPage';
 import tradeDiscountsPage from './pages/tradeDiscountPage';
 import tradeRegistrationPage from './pages/tradeRegistrationPage';
 import setup from './services/setup';
 import shared from './shared/shared';
 
 const { ID } = shared;
+
+const isPdp = () => document.body.classList.contains('catalog-product-view');
+const isPlp = () =>
+  document.body.classList.contains('catalog-category-view') ||
+  document.body.classList.contains('catalogsearch-result-index');
 
 const init = () => {
   const { pathname } = window.location;
@@ -12,6 +18,8 @@ const init = () => {
     tradeDiscountsPage(ID);
   } else if (pathname.includes('/trade-registration')) {
     tradeRegistrationPage(ID);
+  } else if (isPdp()) {
+    productPage(ID);
   }
 };
 

@@ -19,7 +19,7 @@ const tradeRegistrationPage = (ID) => {
     <div class="${ID}__formContainer">
         ${columnsElem.outerHTML}
         <div class='${ID}__verticalUspContainer'>
-            <div>Don't miss out on:</div>
+            <div class='${ID}__verticalUspContainer-title'>Don't miss out on:</div>
             <div class="${ID}__verticalUsps">${uspData.map((item) => verticalUsp(ID, item)).join('')}</div>
         </div>
     </div>`;

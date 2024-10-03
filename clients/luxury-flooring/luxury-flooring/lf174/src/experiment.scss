@@ -2,6 +2,15 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    &__loggedInPdp .lf167__priceContainer .lf167__priceBox-price::before,
+    &__loggedInPdp .lf167__priceContainer .lf167__priceBox-price::before {
+        content: 'Trade Price ';
+    }
+    
+    &__loggedInPdp .tax .price-wrapper .price::before {
+        content: 'Retail ';
+    }
+
     &__tradeDiscountsPage {
         .usps-main-footer:after {
             display: none;
@@ -34,6 +43,11 @@
             font: normal normal normal 48px/60px Lucida Bright;
             color: #202020;
             text-align: center;
+
+            @include media-query(lg) {
+                font: normal normal normal 28px/36px Lucida Bright;
+                margin: 12px auto 0;
+            }
         }
 
         .#{$id}__formContainer {
@@ -45,12 +59,31 @@
             .#{$id}__columns {
                 flex: 0 0 55%;
                 padding-right: 48px;
+
+                @include media-query(lg) {
+                    padding-right: 0;
+                    flex: 0 0 100%;
+                }
             }
 
             .#{$id}__verticalUspContainer {
+                margin-top: 28px;
                 flex: 0 0 45%;
 
+                @include media-query(lg) {
+                    display: none;
+                }
+                
+                &-title {
+                    padding: 36px 0 30px;
+                    font: normal normal normal 30px/40px Lucida Bright;
+                    color: #2F2F2F;
+                    text-align: center;
+                    background: #F9F2E4;
+                }
+
                 .#{$id}__verticalUsps {
+                    padding-bottom: 50px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
