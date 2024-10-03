@@ -1,0 +1,18 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__test {
+    display: block;
+  }
+
+  .site-navigation [href='/collections/essentials'] + div.site-nav__dropdown {
+    .megamenu__promo {
+      img {
+        width: 320px;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+  }
+}

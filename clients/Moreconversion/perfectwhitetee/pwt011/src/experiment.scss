@@ -1,0 +1,134 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__recentlyViewed {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    h1 {
+      font-family: 'Futura' !important;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 29px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #000000;
+      letter-spacing: 1.1px;
+    }
+
+    .variant-input-wrap input[type='radio']:checked + label {
+      box-shadow: none !important;
+    }
+
+    .grid-product__colors {
+      .legend,
+      .variant__label {
+        display: none;
+      }
+      fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        .variant-input-wrap label {
+          width: 17px;
+          height: 17px;
+        }
+        .custom-label {
+          width: 17px;
+          height: 17px;
+          padding: 8px 8px;
+          margin: 0 4px 4px;
+          &:hover {
+            box-shadow: 0 0 0 1px var(--colorTextBody);
+          }
+
+          &:before {
+            border: 2px solid var(--colorBody);
+          }
+
+          @media screen and (max-width: 767px) {
+            width: 14px;
+            height: 14px;
+            padding: 7px 7px;
+          }
+        }
+        .variant-input {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .grid-product__title {
+      font-family: 'Futura' !important;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 26px;
+      letter-spacing: 0.4000000059604645px;
+      text-align: left;
+      margin-bottom: 3px;
+      color: #000000;
+
+      @media screen and (max-width: 767px) {
+        font-size: 15px;
+        line-height: 22px;
+      }
+    }
+    .grid-product__vendor {
+      font-family: 'Futura' !important;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 23px;
+      letter-spacing: 0.375px;
+      text-align: left;
+      color: #000000;
+      margin-bottom: 6px;
+      @media screen and (max-width: 992px) {
+        height: 45px;
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 13px;
+        line-height: 19px;
+        height: max-content;
+      }
+    }
+    .grid-product__price {
+      span {
+        font-family: 'Futura' !important;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0.4000000059604645px;
+        text-align: left;
+      }
+    }
+
+    .#{$id}__productsContainer {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      padding-bottom: 25px;
+      .grid__item {
+        width: 25%;
+        flex: 0 0 25%;
+
+        @media screen and (max-width: 767px) {
+          width: 50%;
+          flex: 0 0 50%;
+        }
+      }
+
+      //   @media screen and (min-width: 768px) {
+      //     &::-webkit-scrollbar {
+      //       display: none;
+      //     }
+      //   }
+      @media screen and (max-width: 767px) {
+        margin-left: 0;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: 2.5rem 1.25rem 2.5rem 0;
+    }
+  }
+}
