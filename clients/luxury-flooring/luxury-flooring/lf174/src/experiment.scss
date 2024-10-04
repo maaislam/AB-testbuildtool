@@ -2,13 +2,314 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    &__hide {
+        display: none;
+    }
+
+    &__loggedInPdp .sp_accordion #sp_accordion .collapsible .trigger h4 .icon svg {
+        width: 55px;
+        max-width: 55px;
+    }
+
+    .price-match-promise-icon {
+        max-width: 40px !important;
+        width: 40px !important;
+    }
+
     &__loggedInPdp .lf167__priceContainer .lf167__priceBox-price::before,
     &__loggedInPdp .lf167__priceContainer .lf167__priceBox-price::before {
         content: 'Trade Price ';
     }
-    
+
     &__loggedInPdp .tax .price-wrapper .price::before {
         content: 'Retail ';
+    }
+
+    &__plp {
+        .homepage-banner,
+        .banner_for_may {
+            display: none;
+        }
+    }
+
+    &__bannerWrapper {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+
+        .countdown {
+            padding: 0;
+            min-height: auto;
+        }
+
+        .countdown::before {
+            display: none;
+        }
+
+        .countdown-timer .value.day:after,
+        .countdown-timer .value.hou:after,
+        .countdown-timer .value.min:after {
+            display: none;
+        }
+
+        .countdown-timer .value.day,
+        .countdown-timer .value.hou,
+        .countdown-timer .value.min,
+        .countdown-timer .value.sec {
+            margin: 0 5px;
+            width: 50px;
+            height: 32px;
+            color: #A6383E;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .promo_top {
+            background: #A6383E;
+        }
+
+        .promo_top_inner {
+            max-width: 1595px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            padding: 16px 15px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+
+            @include media-query(lg) {
+                flex-direction: row;
+                padding: 16px 15px 24px 15px;
+            }
+        }
+
+        .promo {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+
+            @include media-query(lg) {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        .promo_top_inner .promo .code {
+            margin: 0;
+            padding: 0;
+            font-size: 19px;
+            line-height: 1.2;
+            font-family: 'Work Sans', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.75px;
+            padding-right: 70px;
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+
+            @include media-query(xl) {
+                padding-right: 50px;
+            }
+
+            @include media-query(lg) {
+                padding-right: 0;
+            }
+        }
+
+        .promo_top .promo_top_inner .promo div.end {
+            font-size: 19px;
+            line-height: 1.2;
+            font-family: 'Work Sans', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.75px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 96px;
+
+            @include media-query(xl) {
+                gap: 40px;
+            }
+
+            @include media-query(lg) {
+                flex-direction: column;
+                gap: 26px;
+            }
+        }
+
+        .promo_top_inner .promo div.end .extra_off {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .promo_top .promo_top_inner .promo div.end .extra_off h4 {
+            font-size: 32px;
+            line-height: 38px;
+            font-family: 'Work Sans';
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.26px;
+            margin: 0;
+            color: #FFF;
+            text-align: center;
+
+            @include media-query(xl) {
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+
+        .promo_top .promo_top_inner .promo div.end .extra_off .coupon_code {
+            background: #fff;
+            margin: 0;
+            padding: 5px 20px;
+        }
+
+        .promo div.end .extra_off .coupon_code h3 {
+            margin: 0;
+            font-size: 18px;
+            line-height: 21px;
+            font-family: 'Work Sans';
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #A6383E;
+            letter-spacing: 1.44px;
+
+            @include media-query(xl) {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        // .promo div.end .extra_off .coupon_code h3 b {
+        //     font-weight: 600;
+        //     margin-left: 5px;
+        // }
+
+        .promo_top_inner .promo div.end .offer_end {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .promo_top_inner .promo div.end .offer_end p {
+            font-family: 'Work Sans';
+            font-size: 17px;
+            line-height: 20px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.36px;
+            color: #FFFFFF;
+
+            @include media-query(xl) {
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+
+        .promo_top:not(.top_with_timer) .promo_top_inner .promo div.end .offer_end {
+            justify-content: center;
+        }
+
+        .#{$id}__plusIcon {
+            font: normal normal normal 40px/47px Work Sans;
+            letter-spacing: 3.2px;
+            color: #FFFFFF;
+            display: none;
+
+            @include media-query(lg) {
+                display: block;
+            }
+        }
+
+        .promo_top .promo_top_inner .promo .code:before {
+            width: 22px;
+            height: 2px;
+            content: '';
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            position: absolute;
+            background: #fff;
+
+            @include media-query(lg) {
+                display: none;
+            }
+        }
+
+        .promo_top .promo_top_inner .promo .code:after {
+            width: 2px;
+            height: 22px;
+            right: 10px;
+            content: '';
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            position: absolute;
+            background: #ffffff;
+
+            @include media-query(lg) {
+                display: none;
+            }
+        }
+
+        .promo .code .save_upto_icon h4 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-transform: uppercase;
+            font-size: 32px;
+            line-height: 38px;
+            gap: 9px;
+            letter-spacing: 1.26px;
+            color: #FFF;
+            font-family: 'Work Sans';
+
+            @include media-query(xl) {
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+
+        .promo_top .promo_top_inner .promo .code p {
+            text-transform: uppercase;
+            font-size: 19px;
+            line-height: 1.2;
+            color: #ffffff;
+            letter-spacing: 0.74px;
+            margin: 0;
+            font-family: 'Work Sans';
+            font-weight: 400;
+
+            @include media-query(xl) {
+                font-size: 16px;
+            }
+        }
     }
 
     &__tradeDiscountsPage {
@@ -73,7 +374,7 @@
                 @include media-query(lg) {
                     display: none;
                 }
-                
+
                 &-title {
                     padding: 36px 0 30px;
                     font: normal normal normal 30px/40px Lucida Bright;

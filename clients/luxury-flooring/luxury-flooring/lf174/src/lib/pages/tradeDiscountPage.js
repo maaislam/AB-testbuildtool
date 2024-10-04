@@ -1,3 +1,5 @@
+import banner from '../components/banner';
+import subBanner from '../components/subBanner';
 import usp from '../components/usp';
 import { uspData } from '../data/data';
 
@@ -5,10 +7,6 @@ const tradeDiscountsPage = (ID) => {
     const attachPoint = document.querySelector('#maincontent');
 
     document.body.classList.add(`${ID}__tradeDiscountsPage`);
-    const subBanner = () => `<div class="${ID}__subBanner">
-      <span class="${ID}__semiBold">Price Match Promise</span>
-      <span>&nbsp;- Found it cheaper? We'll match it!</span>
-    </div>`;
 
     const lfClubHTML = () => `<div class="${ID}__lfClub">
       <div class="${ID}__lfClubText">Whether you’re a seasoned pro or new to the game, you need a flooring supplier you can trust. Sign up to our exclusive club to <span class="${ID}__semiBold">get first-class products</span> you can rely on <span class="${ID}__semiBold">at discounted prices</span>. Luxury Made Affordable is what we do best.
@@ -71,7 +69,8 @@ const tradeDiscountsPage = (ID) => {
     </div>`;
 
     const mainContainer = `<div class="${ID}__mainContainer">
-      ${subBanner()}
+      ${banner(ID)}
+      ${subBanner(ID)}
       ${lfClubHTML()}
       ${usps()}
       ${authContainerHTML()}

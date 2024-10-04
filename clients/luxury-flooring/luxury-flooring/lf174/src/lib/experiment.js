@@ -1,3 +1,5 @@
+import isLogin from './helpers/isLogin';
+import productLandingPage from './pages/productLandingPage';
 import productPage from './pages/productPage';
 import tradeDiscountsPage from './pages/tradeDiscountPage';
 import tradeRegistrationPage from './pages/tradeRegistrationPage';
@@ -18,8 +20,10 @@ const init = () => {
     tradeDiscountsPage(ID);
   } else if (pathname.includes('/trade-registration')) {
     tradeRegistrationPage(ID);
-  } else if (isPdp()) {
+  } else if (isPdp() && !isLogin()) {
     productPage(ID);
+  } else if (isPlp() && !isLogin()) {
+    productLandingPage(ID);
   }
 };
 
