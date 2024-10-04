@@ -20,7 +20,7 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
       callback();
     } else if (Date.now() - startTime >= maxTime) {
       clearInterval(interval);
-      //console.error('Polling exceeded maximum time limit');
+      console.error('Polling exceeded maximum time limit');
     }
   }, POLLING_INTERVAL);
 };
@@ -48,13 +48,4 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
-};
-
-export const deleteCookie = (cookieName) => {
-  document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-};
-
-export const setCookie = (cName, cValue) => {
-  const path = 'path=/';
-  document.cookie = `${cName}=${cValue}; ${path}`;
 };

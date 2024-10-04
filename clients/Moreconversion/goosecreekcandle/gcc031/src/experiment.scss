@@ -1,0 +1,90 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .desktop-banner {
+    position: relative;
+    .#{$id}__buttonWrapper {
+      display: flex;
+      position: absolute;
+      max-width: 435px;
+      width: 100%;
+      bottom: 65px;
+      right: 123px;
+
+      .shop-link {
+        display: inline-block;
+        max-width: 210px;
+        width: 100%;
+        font-family: 'Poppins';
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        text-align: center;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        padding: 12px;
+      }
+
+      .best-seller-link {
+        display: inline-block;
+        max-width: 210px;
+        width: 100%;
+        font-family: 'Poppins';
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        text-align: center;
+        color: #393939;
+        padding: 12px;
+        border: 1px solid #9d5d00;
+        background-color: #e79620;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .mobile-banner {
+    position: relative;
+    .#{$id}__buttonWrapper {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      max-width: 210px;
+      width: 100%;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .shop-link {
+        display: inline-block;
+        max-width: 210px;
+        width: 100%;
+        font-family: 'Poppins';
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 21px;
+        text-align: center;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        padding: 14px 14px 13px;
+      }
+
+      .best-seller-link {
+        display: inline-block;
+        max-width: 210px;
+        width: 100%;
+        font-family: 'Poppins';
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 21px;
+        text-align: center;
+        color: #393939;
+        padding: 14px 14px 13px;
+        border: 1px solid #9d5d00;
+        background-color: #e79620;
+        margin-top: 15px;
+      }
+    }
+  }
+}

@@ -12,7 +12,7 @@ const wrapper = (id, data) => {
                   if (index === 0) {
                     return existingBundle(id, item);
                   }
-                  return Bundle(id, item);
+                  return Bundle(id, item, data[0].id);
                 })
                 .join('\n')}
             </div>

@@ -34,10 +34,13 @@ export const existingBundle = (id, data) => {
   return html.trim();
 };
 
-export const Bundle = (id, data) => {
-  const { title, id: mainProductId } = data;
+export const Bundle = (id, data, currentPageVariantID) => {
+  const { title, id: mainProductId, variants } = data;
   const imageSrc = data.images[0].src;
-  const { price, compare_at_price, id: productId } = data.variants[0];
+  const filteredVarinats = variants.filter((item) => item.id !== currentPageVariantID);
+  //console.log('🚀 ~ Bundle ~ filteredVarinats:', filteredVarinats);
+
+  const { price, compare_at_price, id: productId } = filteredVarinats[0];
 
   const extraMsg = extraMsgConfig[mainProductId] || '';
 
@@ -52,7 +55,11 @@ export const Bundle = (id, data) => {
                 <span class="subtitle">${extraMsg}</span>
                 <div class="priceWrapper">
                     <span class="price">$${price}</span>
-                    ${compare_at_price ? `<span class="original-price">$${compare_at_price}</span>` : ''}
+                    ${
+                      compare_at_price
+                        ? `<span class="original-price">$${compare_at_price}</span>`
+                        : ''
+                    }
 
                 </div>
             </div>

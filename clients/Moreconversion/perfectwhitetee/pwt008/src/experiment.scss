@@ -2,6 +2,11 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  #slidecarthq {
+    .custom-order-progress {
+      display: none !important;
+    }
+  }
   .#{$id}__shippingInfo {
     width: 100%;
     padding: 15px 30px;
@@ -24,6 +29,7 @@
           }
         }
         .#{$id}__discountProgress {
+          display: flex;
           height: 6px;
           width: 100%;
           position: relative;
@@ -34,8 +40,6 @@
 
           &-bar {
             height: 100%;
-            max-width: 100% !important;
-            border-radius: 10px;
             background: #000000;
           }
         }
