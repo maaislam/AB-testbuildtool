@@ -1,4 +1,4 @@
-const pdpDeliveryIcon = `<svg xmlns="http://www.w3.org/2000/svg" id="Group_25631" data-name="Group 25631" width="55.01" height="26.812" viewBox="0 0 55.01 26.812">
+const pdpDeliveryIcon = `<svg class='pdpIcon' xmlns="http://www.w3.org/2000/svg" id="Group_25631" data-name="Group 25631" width="55.01" height="26.812" viewBox="0 0 55.01 26.812">
   <g id="Group_25635" data-name="Group 25635" transform="translate(0 0)">
     <path id="Path_10771" data-name="Path 10771" d="M71.364,21.042l-1.889-7.895a1.861,1.861,0,0,0-1.719-1.359H60.74L58.6,23.007a.474.474,0,0,1-.465.384H29.867l-.822,4.48a1.123,1.123,0,0,0,1.143,1.371h4.755a4.548,4.548,0,0,1,9.086,0H56.867c-.006-.087-.009-.174-.009-.262a4.548,4.548,0,1,1,9.1,0c0,.088,0,.175-.008.262H69.04a1.742,1.742,0,0,0,1.645-1.371l.756-4.1a7.847,7.847,0,0,0-.076-2.725M67.286,19.1l-.235,1.277H62.772a.57.57,0,0,1-.559-.673l.8-4.375a.569.569,0,0,1,.559-.466h2a1,1,0,0,1,.969.764l.734,3.06a1,1,0,0,1,.011.412" transform="translate(-16.515 -6.708)" fill="#374a53"/>
     <path id="Path_10772" data-name="Path 10772" d="M14.789,41.074H7.728a.469.469,0,0,1,0-.939h7.061a.469.469,0,0,1,0,.939" transform="translate(-4.131 -22.839)" fill="#374a53"/>
@@ -23,7 +23,7 @@ const pdpDeliveryIcon = `<svg xmlns="http://www.w3.org/2000/svg" id="Group_25631
   </g>
 </svg>`;
 
-const pdpStockIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="45.445" height="23.709" viewBox="0 0 45.445 23.709">
+const pdpStockIcon = `<svg class='pdpIcon' xmlns="http://www.w3.org/2000/svg" width="45.445" height="23.709" viewBox="0 0 45.445 23.709">
   <g id="Group_25633" data-name="Group 25633" transform="translate(0 0)">
     <g id="Group_25634" data-name="Group 25634" transform="translate(0 0)">
       <path id="Path_10793" data-name="Path 10793" d="M45.111,14.407l-.522-.389-2.008-1.5-3.047-2.274L35.951,7.571l-3.617-2.7L29.186,2.523,27.01.9C26.821.758,26.14.258,26,.173A2.392,2.392,0,0,0,24.444.086L21.623.4,17.511.854l-4.6.51-4.281.475-3.16.35-1.233.137a.833.833,0,0,0-.741.828V8.588a.829.829,0,0,0,.05.272l-2.76.153A.833.833,0,0,0,0,9.846v5.906a.833.833,0,0,0,.833.834H.852l1.2-.027a.833.833,0,0,0-.32.651v5.666a.834.834,0,0,0,.833.834h41.6A.835.835,0,0,0,45,22.875V20.716a.835.835,0,0,0-.666-.816V18.209a.822.822,0,0,0,.28.055.835.835,0,0,0,.833-.834V15.075a.836.836,0,0,0-.335-.668M26.156,1.747l18.1,13.507v1.583l-18.1-9.547ZM43.142,17.761v1.906l-.783-.153-19.7-4.471V9.319ZM4.688,3.475,24.966,1.226V7.087L4.688,8.211Zm-3.5,6.709L21.469,9.059v5.878l-20.279.45Zm1.735,7.374,20.278-.45v5.409H2.925Zm40.883,4.96H24.393v-5.3l19.415,3.788Z" transform="translate(0 0)" fill="#374a53"/>
@@ -44,7 +44,7 @@ const pdpStockIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="45.445" hei
   </g>
 </svg>`;
 
-const pdpPriceMatchPromiseIcon = `<svg class='price-match-promise-icon' id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.74 85.74" style="width: 86px; height: 86px;" class="icon_desktop">
+const pdpPriceMatchPromiseIcon = `<svg class='pdpIcon price-match-promise-icon' id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.74 85.74" style="width: 86px; height: 86px;" class="icon_desktop">
                         <defs>
                             <style>
                                 .cls-1 { stroke-width: .85px;}
@@ -86,7 +86,7 @@ const pdpPriceMatchPromiseIcon = `<svg class='price-match-promise-icon' id="Laye
                         </g>
                     </svg>`;
 
-const pdpFlexiblePaymentIcon = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="138" height="138" viewBox="0 0 138 138">
+const pdpFlexiblePaymentIcon = `<svg class='pdpIcon' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="138" height="138" viewBox="0 0 138 138">
   <defs>
     <clipPath id="clip-path">
       <rect id="Rectangle_8229" data-name="Rectangle 8229" width="60.21" height="47.529" fill="none"/>
