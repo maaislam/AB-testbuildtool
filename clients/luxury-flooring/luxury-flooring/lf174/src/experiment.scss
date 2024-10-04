@@ -6,29 +6,42 @@
         display: none;
     }
 
-    &__loggedInPdp .sp_accordion #sp_accordion .collapsible .trigger h4 .icon svg {
-        width: 55px;
-        max-width: 55px;
-    }
+    &__loggedInPdp {
+        .#{$id}__content {
+            margin-top: 10px;
+        }
 
-    .price-match-promise-icon {
-        max-width: 40px !important;
-        width: 40px !important;
-    }
+        .sp_accordion #sp_accordion .collapsible .trigger h4 .icon svg {
+            width: 55px;
+            max-width: 55px;
+            height: 40px;
+        }
 
-    &__loggedInPdp .lf167__priceContainer .lf167__priceBox-price::before,
-    &__loggedInPdp .lf167__priceContainer .lf167__priceBox-price::before {
-        content: 'Trade Price ';
-    }
+        .price-match-promise-icon {
+            max-width: 55px !important;
+            width: 55px !important;
+            height: 40px !important;
+        }
 
-    &__loggedInPdp .tax .price-wrapper .price::before {
-        content: 'Retail ';
+        .tax .price-wrapper .price::before {
+            content: 'Retail ';
+        }
+
+        .lf167__priceContainer .lf167__priceBox-price::before,
+        .lf167__priceContainer .lf167__priceBox-price::before {
+            content: 'Trade Price ';
+        }
     }
 
     &__plp {
         .homepage-banner,
         .banner_for_may {
             display: none;
+        }
+
+        .products .product-item .price-box,
+        .products .product-item .price-box .price {
+            color: #A6383E
         }
     }
 
