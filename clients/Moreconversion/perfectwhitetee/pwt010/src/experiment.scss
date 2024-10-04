@@ -2,10 +2,19 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  .section-header__title {
+    display: none;
+  }
+
   .#{$id}__categoryWrapper {
     background: linear-gradient(180deg, #f1f1f1 0%, rgba(241, 241, 241, 0) 100%);
-    padding: 30px 0 20px;
     border-bottom: solid 1px #c6c6c6;
+
+    & > div {
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+
     h1 {
       font-family: 'Inter' !important;
       font-size: 25px;
@@ -27,19 +36,26 @@
       margin: 0;
       li {
         white-space: nowrap;
-        padding: 0 20px;
+        padding: 0 10px;
         margin-bottom: 0;
+
+        &:hover {
+          a {
+            color: #000;
+          }
+        }
 
         &.item-hide {
           display: none;
         }
         a {
-          font-family: 'Futura';
+          //font-family: 'Futura';
           font-size: 14px;
-          font-weight: 600;
+          font-weight: 500;
           line-height: 24px;
-          color: #333333;
+          color: #000;
           //padding: 0 20px;
+          text-transform: capitalize;
 
           @media screen and (max-width: 450px) {
             font-size: 12px;
