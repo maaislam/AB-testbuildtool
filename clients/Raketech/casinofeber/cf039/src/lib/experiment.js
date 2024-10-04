@@ -23,11 +23,11 @@ const init = () => {
     vistCasino.innerText = visitCasinoText;
     const ctaReview = mainCtaContainer.querySelector('.cta-review');
     const ctaLink = ctaReview?.href;
-    const bonusElement = casino.querySelector('.bonus-container');
-    const bonus = bonusElement?.querySelector('.bonus .amount')?.innerText || 0;
-    const freeSpin = bonusElement?.querySelector('.freespins .amount')?.innerText || 0;
-    const omsBonus = bonusElement?.querySelector('.bonus-turnover > strong')?.innerText || 0;
-    const omsSpin = bonusElement?.querySelector('.freespins-turnover > strong')?.innerText || 0;
+    //const bonusElement = casino.querySelector('.bonus-container');
+    //const bonus = bonusElement?.querySelector('.bonus .amount')?.innerText || 0;
+    //const freeSpin = bonusElement?.querySelector('.freespins .amount')?.innerText || 0;
+    //const omsBonus = bonusElement?.querySelector('.bonus-turnover > strong')?.innerText || 0;
+    //const omsSpin = bonusElement?.querySelector('.freespins-turnover > strong')?.innerText || 0;
     if (ratingElement && !casino.querySelector(`.${ID}__ratingsContainer`)) {
       ratingElement.insertAdjacentHTML(
         'afterbegin',
@@ -35,16 +35,16 @@ const init = () => {
       );
     }
 
-    const bonusData = {
-      bonus,
-      freeSpin,
-      omsBonus,
-      omsSpin
-    };
+    //const bonusData = {
+    //bonus,
+    //freeSpin,
+    //omsBonus,
+    //omsSpin
+    //};
 
-    if (logoContainer && !casino.querySelector(`.${ID}__bonusContainer`)) {
-      logoContainer.insertAdjacentHTML('afterend', bonusContainer(ID, bonusData));
-    }
+    //if (logoContainer && !casino.querySelector(`.${ID}__bonusContainer`)) {
+    //logoContainer.insertAdjacentHTML('afterend', bonusContainer(ID, bonusData));
+    //}
   });
 
   const mainCsinoWrapper = document.querySelector('.block-toplist .toplist-holder .toplist');

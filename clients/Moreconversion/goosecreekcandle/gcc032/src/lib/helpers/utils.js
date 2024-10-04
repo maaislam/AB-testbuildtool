@@ -5,7 +5,7 @@
  * @param {function} callback The callback function when all conditions are true.
  * @param {number} maxTime max time the check witll run before abort.
  */
-export const pollerLite = (conditions, callback, maxTime = 10000) => {
+export const pollerLite = (conditions, callback, maxTime = 10000000) => {
   const POLLING_INTERVAL = 25;
   const startTime = Date.now();
   const interval = setInterval(() => {
@@ -48,4 +48,17 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
+};
+
+export const fetchProducts = async (url) => {
+  try {
+    const response = await fetch(`${url}.js`); //Replace with the actual API endpoint
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching products:', error);
+  }
 };

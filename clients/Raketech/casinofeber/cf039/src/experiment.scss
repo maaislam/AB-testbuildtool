@@ -8,16 +8,19 @@
         & > div {
           .operator-container {
             @media screen and (max-width: 991px) {
-              grid-template-rows: 0fr 0fr 0fr 0fr;
+              grid-template-rows: 0fr 1.6fr 0fr 0fr;
               grid-template-areas:
                 'LOGO LOGO'
-                'CUSTOMBONUS CUSTOMBONUS'
                 'BONUS BONUS'
                 'BADGES BADGES'
                 'CTA CTA'
                 'PERKS PERKS';
               border: 1px solid #cacaca !important;
               border-radius: 8px;
+            }
+
+            @media screen and (max-width: 400px) {
+              grid-template-rows: 0fr 1.4fr 0fr 0fr;
             }
           }
           .logo-container {
@@ -290,8 +293,117 @@
           }
 
           .bonus-container {
-            @media screen and (max-width: 991px) {
-              display: none;
+            //@media screen and (max-width: 991px) {
+            //height: 130px;
+            margin: 12px 5px 0;
+            .bonus {
+              font-size: 18px;
+              line-height: 23px;
+              .amount {
+                font-size: 18px;
+                line-height: 23px;
+                & + span {
+                  font-size: 14px;
+                  line-height: 18px;
+
+                  @media screen and (max-width: 390px) {
+                    font-size: 13px;
+                    line-height: 18px;
+                  }
+                }
+
+                @media screen and (max-width: 390px) {
+                  font-size: 13px;
+                  line-height: 20px;
+                }
+              }
+
+              .fallback {
+                font-size: 14px;
+                line-height: 23px;
+                @media screen and (max-width: 390px) {
+                  font-size: 13px;
+                  line-height: 20px;
+                }
+              }
+            }
+
+            .freespins {
+              font-size: 18px;
+              line-height: 23px;
+              .amount {
+                font-size: 18px;
+                line-height: 23px;
+                & + span {
+                  font-size: 14px;
+                  line-height: 18px;
+                  @media screen and (max-width: 390px) {
+                    font-size: 13px;
+                    line-height: 18px;
+                  }
+                }
+                @media screen and (max-width: 390px) {
+                  font-size: 13px;
+                  line-height: 20px;
+                }
+              }
+              .fallback {
+                font-size: 14px;
+                line-height: 23px;
+
+                @media screen and (max-width: 390px) {
+                  font-size: 13px;
+                  line-height: 20px;
+                }
+              }
+            }
+            .bonus-wagering {
+              margin-top: auto;
+              .bonus-turnover {
+                gap: 2px;
+                font-size: 11px;
+                .bonus-icon-mobile {
+                  svg {
+                    width: 16px;
+                    height: 16px;
+
+                    @media screen and (max-width: 400px) {
+                      width: 13px;
+                      height: 13px;
+                    }
+                  }
+                }
+
+                @media screen and (max-width: 420px) {
+                  font-size: 10px;
+                }
+
+                @media screen and (max-width: 400px) {
+                  font-size: 9px;
+                }
+              }
+
+              .freespins-turnover {
+                gap: 2px;
+                font-size: 11px;
+                .freespins-icon-mobile {
+                  svg {
+                    width: 16px;
+                    height: 16px;
+                    @media screen and (max-width: 400px) {
+                      width: 13px;
+                      height: 13px;
+                    }
+                  }
+                }
+                @media screen and (max-width: 420px) {
+                  font-size: 10px;
+                }
+
+                @media screen and (max-width: 400px) {
+                  font-size: 9px;
+                }
+              }
             }
           }
 
@@ -348,9 +460,3 @@
     }
   }
 }
-
-// @media screen and (max-width: 480px) {
-//   .cf039-1 .block-toplist:not(.cards) .toplist > div .logo-container .logo {
-//     //height: 36px;
-//   }
-// }

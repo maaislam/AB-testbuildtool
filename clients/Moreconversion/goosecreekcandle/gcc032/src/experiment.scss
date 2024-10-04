@@ -2,9 +2,22 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  .boost-sd__toolbar-content {
+    @media screen and (max-width: 991px) {
+      padding-top: 0;
+    }
+  }
+  // #pf_t_scent-toggle,
+  // div[data-filteroptionid='pf_t_scent'] {
+  //   display: none !important;
+  // }
   .#{$id}__scentWrapper {
     margin-top: 40px;
     .container {
+      @media screen and (max-width: 991px) {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
     .#{$id}__scentWrapper-list {
       display: flex;
@@ -12,7 +25,7 @@
       list-style-type: none;
       padding: 0;
       margin: 0;
-      border-bottom: solid 1px #ebebeb;
+      //border-bottom: solid 1px #ebebeb;
       .#{$id}__scentWrapper-item {
         font-family: 'Gill Sans Nova';
         font-size: 16px;
@@ -42,11 +55,42 @@
             border-radius: 4px 4px 0 0;
           }
         }
+
+        @media screen and (max-width: 767px) {
+          font-size: 14px;
+          line-height: 20px;
+          padding: 10px 10px;
+          margin-right: 8px;
+        }
       }
 
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 500px) {
         justify-content: flex-start;
         overflow-x: auto;
+      }
+    }
+  }
+
+  .#{$id}__tagWrapper {
+    margin-top: 15px;
+    margin-bottom: 13px;
+    .#{$id}__tagWrapper-list {
+      display: flex;
+      .#{$id}__item {
+        font-family: 'Gill Sans Nova';
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        text-align: center;
+        padding: 6px 25px 7px 25px;
+        border: 2px solid #6dafc7;
+        background: #6dafc726;
+        border-radius: 100px;
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
