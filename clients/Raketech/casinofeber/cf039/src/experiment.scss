@@ -8,7 +8,7 @@
         & > div {
           .operator-container {
             @media screen and (max-width: 991px) {
-              grid-template-rows: 0fr 1.6fr 0fr 0fr;
+              grid-template-rows: 0fr 0fr 0fr 0fr;
               grid-template-areas:
                 'LOGO LOGO'
                 'BONUS BONUS'
@@ -17,10 +17,6 @@
                 'PERKS PERKS';
               border: 1px solid #cacaca !important;
               border-radius: 8px;
-            }
-
-            @media screen and (max-width: 400px) {
-              grid-template-rows: 0fr 1.4fr 0fr 0fr;
             }
           }
           .logo-container {
@@ -293,9 +289,7 @@
           }
 
           .bonus-container {
-            //@media screen and (max-width: 991px) {
-            //height: 130px;
-            margin: 12px 5px 0;
+            margin: 12px 3px 0;
             .bonus {
               font-size: 18px;
               line-height: 23px;
@@ -444,9 +438,10 @@
           }
 
           @media screen and (max-width: 991px) {
-            flex-basis: calc(50% - 8px);
+            flex-basis: calc(50% - 6px);
           }
         }
+
         @media screen and (max-width: 991px) {
           display: flex;
           flex-direction: row;
