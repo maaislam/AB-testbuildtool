@@ -1,3 +1,5 @@
+import { regDiscountIcon, regFreeSampleIcon, regPaymentIcon, regShippingIcon, regStockLevelIcon } from "../assets/icons";
+
 export const uspData = [
     {
         title: 'Exclusive discounts',
@@ -176,5 +178,28 @@ export const uspData = [
     </g>
   </g>
 </svg>`
+    }
+];
+
+export const regUspData = [
+    {
+        title: 'Exclusive discounts',
+        icon: regDiscountIcon
+    },
+    {
+        title: 'Next-day delivery to site',
+        icon: regShippingIcon
+    },
+    {
+        title: 'Huge stock levels',
+        icon: regStockLevelIcon
+    },
+    {
+        title: 'Cash and credit',
+        icon: regPaymentIcon
+    },
+    {
+        title: 'Unlimited free samples',
+        icon: regFreeSampleIcon
     }
 ];

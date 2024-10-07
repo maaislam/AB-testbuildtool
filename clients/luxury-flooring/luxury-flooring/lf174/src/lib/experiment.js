@@ -8,6 +8,8 @@ import shared from './shared/shared';
 
 const { ID } = shared;
 
+const endDate = '10/12/2024'; //MM/DD/YYYY
+
 const isPdp = () => document.body.classList.contains('catalog-product-view');
 const isPlp = () =>
   document.body.classList.contains('catalog-category-view') ||
@@ -17,13 +19,13 @@ const init = () => {
   const { pathname } = window.location;
 
   if (pathname.includes('/trade-discounts')) {
-    tradeDiscountsPage(ID);
+    tradeDiscountsPage(ID, endDate);
   } else if (pathname.includes('/trade-registration')) {
     tradeRegistrationPage(ID);
-  } else if (isPdp() && !isLogin()) {
+  } else if (isPdp() && isLogin()) {
     productPage(ID);
-  } else if (isPlp() && !isLogin()) {
-    productLandingPage(ID);
+  } else if (isPlp() && isLogin()) {
+    productLandingPage(ID, endDate);
   }
 };
 

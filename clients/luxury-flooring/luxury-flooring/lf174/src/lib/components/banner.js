@@ -53,6 +53,12 @@ const banner = (id) => {
                                                         margin: 0 .3em
                                                     }
 
+                                                    .countdown .label {
+                                                        text-align: center;
+                                                        margin-top:4px;
+                                                        text-transform: capitalize;
+                                                    }
+
                                                     @media (min-width: 768px) {
                                                         .countdown .countdown-content span:after {
                                                             content: '|';
@@ -75,16 +81,15 @@ const banner = (id) => {
                                                     }
                                                 </style>
                                             </div>
-                                            <div class="countdown-timer apply-grid show-day"
-                                                data-bind="css: { 'apply-grid': showTimer, 'show-day': showDay, 'triple-days': day.length > 2 }">
-                                                <span class="label day ${id}__hide">Days</span>
-                                                <span class="label hou ${id}__hide">Hrs</span>
-                                                <span class="label min ${id}__hide">Mins</span>
-                                                <span class="label sec ${id}__hide">Sec</span>
-                                                <span class="value day">19</span>
-                                                <span class="value hou">05</span>
-                                                <span class="value min">30</span>
-                                                <span class="value sec">10</span>
+                                            <div class="countdown-timer apply-grid show-day">
+                                                <span class="value day" id="${id}__days"></span>
+                                                <span class="value hou" id="${id}__hours"></span>
+                                                <span class="value min" id="${id}__minutes"></span>
+                                                <span class="value sec" id="${id}__seconds"></span>
+                                                <span class="label day">Days</span>
+                                                <span class="label hou">Hrs</span>
+                                                <span class="label min">Mins</span>
+                                                <span class="label sec">Sec</span>
                                             </div>
                                         </div>
                                     </div>

@@ -1,6 +1,7 @@
 /*eslint-disable no-param-reassign */
 import banner from '../components/banner';
 import subBanner from '../components/subBanner';
+import startTimer from '../helpers/startTimer';
 import { observeDOM, pollerLite } from '../helpers/utils';
 
 const setTradePriceText = () => {
@@ -12,7 +13,7 @@ const setTradePriceText = () => {
     });
 };
 
-const productLandingPage = (ID) => {
+const productLandingPage = (ID, endDate) => {
     document.body.classList.add(`${ID}__plp`);
 
     pollerLite(['.nav-sections', '.only-price'], () => {
@@ -21,6 +22,7 @@ const productLandingPage = (ID) => {
         if (!document.querySelector(`.${ID}__banner`)) {
             const banners = `${banner(ID)}${subBanner(ID)}`;
             attachPoint.insertAdjacentHTML('afterend', banners);
+            startTimer(ID, endDate);
         }
 
         setTradePriceText();
