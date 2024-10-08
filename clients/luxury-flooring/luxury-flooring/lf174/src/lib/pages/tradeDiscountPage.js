@@ -1,3 +1,4 @@
+import { uspFreeSampleIcon } from '../assets/icons';
 import banner from '../components/banner';
 import subBanner from '../components/subBanner';
 import usp from '../components/usp';
@@ -6,6 +7,7 @@ import startTimer from '../helpers/startTimer';
 
 const tradeDiscountsPage = (ID, endDate) => {
     const attachPoint = document.querySelector('#maincontent');
+    document.body.insertAdjacentHTML('afterbegin', `<div style='display:none'>${uspFreeSampleIcon}</div>`);
 
     document.body.classList.add(`${ID}__tradeDiscountsPage`);
 
