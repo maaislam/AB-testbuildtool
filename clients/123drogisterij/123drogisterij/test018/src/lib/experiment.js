@@ -6,6 +6,7 @@ import initialProductsFetch from './helpers/initialProductsFetch';
 import notification from './components/notification';
 
 const { ID, VARIATION } = shared;
+const freeShipping = 4.95;
 
 const formatPrice = (amount, code = 'en-GB', currency = 'EUR') =>
   new Intl.NumberFormat(code, {
@@ -95,7 +96,7 @@ const init = () => {
         }
 
         //Add the item's savings to the accumulated total
-        return accumulatedSavings + itemSavings + 4.95;
+        return accumulatedSavings + itemSavings;
       }, 0);
 
       //Log the total savings for all cart items
@@ -103,7 +104,7 @@ const init = () => {
         const cartSummary = document.querySelector('.cart-summary');
         cartSummary.insertAdjacentHTML(
           'beforeend',
-          notification(ID, formatPrice(totalSavings), 'active')
+          notification(ID, formatPrice(totalSavings + freeShipping), 'active')
         );
       }
     })
