@@ -289,7 +289,7 @@
           }
 
           .bonus-container {
-            margin: 12px 3px 0;
+            margin: 12px 5px 0;
             .bonus {
               font-size: 18px;
               line-height: 23px;
@@ -325,6 +325,13 @@
             .freespins {
               font-size: 18px;
               line-height: 23px;
+
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+
               .amount {
                 font-size: 18px;
                 line-height: 23px;
@@ -355,46 +362,41 @@
               margin-top: auto;
               .bonus-turnover {
                 gap: 2px;
-                font-size: 11px;
-                .bonus-icon-mobile {
-                  svg {
-                    width: 16px;
-                    height: 16px;
-
-                    @media screen and (max-width: 400px) {
-                      width: 13px;
-                      height: 13px;
-                    }
-                  }
-                }
+                font-size: 12px;
+                line-height: 20px;
 
                 @media screen and (max-width: 420px) {
-                  font-size: 10px;
+                  font-size: 11px;
                 }
 
                 @media screen and (max-width: 400px) {
+                  font-size: 10px;
+                }
+
+                @media screen and (max-width: 370px) {
                   font-size: 9px;
                 }
               }
 
+              .bonus-icon-mobile,
+              .freespins-icon-mobile {
+                display: none;
+              }
+
               .freespins-turnover {
                 gap: 2px;
-                font-size: 11px;
-                .freespins-icon-mobile {
-                  svg {
-                    width: 16px;
-                    height: 16px;
-                    @media screen and (max-width: 400px) {
-                      width: 13px;
-                      height: 13px;
-                    }
-                  }
-                }
+                font-size: 12px;
+                line-height: 20px;
+
                 @media screen and (max-width: 420px) {
-                  font-size: 10px;
+                  font-size: 11px;
                 }
 
                 @media screen and (max-width: 400px) {
+                  font-size: 10px;
+                }
+
+                @media screen and (max-width: 370px) {
                   font-size: 9px;
                 }
               }

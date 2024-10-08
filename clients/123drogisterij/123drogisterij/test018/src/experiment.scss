@@ -1,0 +1,82 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #shopping-cart-table {
+    thead {
+      .main-price-tag {
+        span {
+          color: #000000;
+        }
+        & + th {
+          white-space: nowrap;
+          span {
+            color: #000000;
+          }
+        }
+      }
+    }
+  }
+  .#{$id}__cartItem {
+    .main-price {
+      &:not(.has-multipack) {
+        & + .col.price {
+          opacity: 0;
+        }
+      }
+
+      &.has-multipack {
+        & + .col.price {
+          span {
+            color: red;
+          }
+        }
+
+        span.price {
+          position: relative;
+          color: #000000;
+          &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            top: 50%;
+            left: 50%;
+            background-color: red;
+            transform: translate(-50%, -50%) rotate(18deg);
+          }
+        }
+      }
+    }
+
+    & > .col:not(.item) {
+      @media screen and (max-width: 767px) {
+        width: calc(100% / 4) !important;
+
+        &.qty {
+          padding-left: 0 !important;
+        }
+
+        .input-text {
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  .#{$id}__upsell-notification.active {
+    display: flex;
+    margin-top: 20px;
+    max-width: 100%;
+    margin-bottom: 0;
+
+    .upsell-notification-alert {
+      top: unset;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+}
