@@ -16,15 +16,32 @@
         }
       }
     }
+
+    &:has(.has-multipack) {
+      .main-price {
+        & + .col.price {
+          opacity: 1;
+        }
+      }
+    }
+
+    .main-price:not(.has-multipack) {
+      & + .col.price {
+        display: none;
+      }
+    }
+
+    &:has(.main-price-tag) {
+      .main-price:not(.has-multipack) {
+        & + .col.price {
+          opacity: 0;
+          display: block;
+        }
+      }
+    }
   }
   .#{$id}__cartItem {
     .main-price {
-      &:not(.has-multipack) {
-        & + .col.price {
-          opacity: 0;
-        }
-      }
-
       &.has-multipack {
         & + .col.price {
           span {
@@ -69,9 +86,19 @@
     margin-top: 20px;
     max-width: 100%;
     margin-bottom: 0;
+    padding: 8px 5px;
+    justify-content: center;
+    .upsell-notification-title {
+      margin-left: 8px;
+    }
 
     .upsell-notification-alert {
-      top: unset;
+      position: static;
+    }
+
+    &::after,
+    &::before {
+      display: none;
     }
 
     @media screen and (max-width: 767px) {

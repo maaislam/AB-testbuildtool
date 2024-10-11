@@ -3,7 +3,7 @@ const notification = (id, price, className) => {
     <div class="upsell-notification ${id}__upsell-notification ${className}">
         <div class="upsell-notification-alert">!</div>
         <div class="upsell-notification-title">
-            <strong>Uw voordel: ${price}</strong>
+            <strong>Uw voordeel: ${price}</strong>
         </div>
     </div>
   

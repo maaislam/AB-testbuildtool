@@ -64,31 +64,34 @@ const init = () => {
     vistCasino.innerText = visitCasinoText;
     const ctaReview = mainCtaContainer.querySelector('.cta-review');
     const ctaLink = ctaReview?.href;
-    //const bonusElement = casino.querySelector('.bonus-container');
-    //const bonus = bonusElement?.querySelector('.bonus .amount')?.innerText || 0;
-    //const freeSpin = bonusElement?.querySelector('.freespins .amount')?.innerText || 0;
-    //const omsBonus = bonusElement?.querySelector('.bonus-turnover > strong')?.innerText || 0;
-    //const omsSpin = bonusElement?.querySelector('.freespins-turnover > strong')?.innerText || 0;
+    const bonusElement = casino.querySelector('.bonus-container');
+    const bonusTurnOver = bonusElement.querySelector('.bonus-turnover');
+    const freeSpinElement = bonusElement.querySelector('.freespins-turnover > span');
+    const childBonusTurnOver = bonusTurnOver.childNodes;
+    const childFreeSpin = freeSpinElement.childNodes;
+    childBonusTurnOver.forEach((child) => {
+      if (child.nodeName === '#text' && child.nodeValue.includes('Omsättningskrav på bonus')) {
+        child.nodeValue = 'Oms.krav bonus';
+      }
+    });
+
+    childFreeSpin.forEach((child) => {
+      if (child.nodeName === '#text' && child.nodeValue.includes('Omsättningskrav på spin')) {
+        child.nodeValue = 'Oms.kra free spins';
+      }
+    });
+
     if (ratingElement && !casino.querySelector(`.${ID}__ratingsContainer`)) {
       ratingElement.insertAdjacentHTML(
         'afterbegin',
         ratingsConatiner(ID, ratings, logoBgColor, ctaLink)
       );
     }
-
-    //const bonusData = {
-    //bonus,
-    //freeSpin,
-    //omsBonus,
-    //omsSpin
-    //};
-
-    //if (logoContainer && !casino.querySelector(`.${ID}__bonusContainer`)) {
-    //logoContainer.insertAdjacentHTML('afterend', bonusContainer(ID, bonusData));
-    //}
   });
 
-  adjustHeights('.block-toplist .toplist-holder', '.bonus-container');
+  setTimeout(() => {
+    adjustHeights('.block-toplist .toplist-holder', '.bonus-container');
+  }, 100);
 
   const mainCsinoWrapper = document.querySelector('.block-toplist .toplist-holder .toplist');
   mainCsinoWrapper.style.opacity = '1';
@@ -122,7 +125,9 @@ export default () => {
       setTimeout(() => {
         if (document.querySelector('.toplist-holder .toplist.show-full')) {
           gaTracking('Load More');
-          adjustHeights('.block-toplist .toplist-holder', '.bonus-container');
+          setTimeout(() => {
+            adjustHeights('.block-toplist .toplist-holder', '.bonus-container');
+          }, 100);
         } else if (document.querySelector('.toplist-holder .toplist:not(.show-full)')) {
           gaTracking('See Less');
         }

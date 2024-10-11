@@ -1,7 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
 import initialProductsFetch from './helpers/initialProductsFetch';
 import notification from './components/notification';
 
@@ -48,7 +46,8 @@ const init = () => {
           const inputValue = upsellOption.value;
           if (inputValue > 1) {
             rowItem.setAttribute(`data-bulk-option-${upsellIndex + 1}`, inputValue);
-            parseInt(qtyValue) >= parseInt(inputValue) &&
+            parseInt(qtyValue) !== 1 &&
+              parseInt(qtyValue) >= parseInt(inputValue) &&
               rowItem.setAttribute('data-multipack', true);
           }
         });
@@ -85,12 +84,12 @@ const init = () => {
             priceValueElement.insertAdjacentHTML(
               'beforebegin',
               `<td class="col price main-price" data-th="Prijs">
-              <span class="price-including-tax" data-label="Incl. BTW">
-                <span class="cart-price">
-                  <span class="price">${price}</span>
-                </span>
-              </span>
-            </td>`
+          <span class="price-including-tax" data-label="Incl. BTW">
+          <span class="cart-price">
+          <span class="price">${price}</span>
+          </span>
+          </span>
+          </td>`
             );
           }
         }
@@ -100,7 +99,11 @@ const init = () => {
       }, 0);
 
       //Log the total savings for all cart items
-      if (formatPrice(totalSavings) && !document.querySelector(`.${ID}__upsell-notification`)) {
+      if (
+        formatPrice(totalSavings) &&
+        formatPrice(totalSavings) !== '€0.00' &&
+        !document.querySelector(`.${ID}__upsell-notification`)
+      ) {
         const cartSummary = document.querySelector('.cart-summary');
         cartSummary.insertAdjacentHTML(
           'beforeend',
@@ -115,7 +118,6 @@ const init = () => {
 
 export default () => {
   setup();
-  console.log(ID);
 
   init();
 };
