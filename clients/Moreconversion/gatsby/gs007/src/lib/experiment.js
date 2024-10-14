@@ -1,4 +1,4 @@
-import { addToCart, deleteCookie, setCookie } from './helpers/utils';
+import { addToCart } from './helpers/utils';
 import setup from './services/setup';
 
 import shared from './shared/shared';
@@ -32,12 +32,7 @@ export default () => {
       const variantSelectElem = document.querySelector('#ProductSelect');
       const variantId = variantSelectElem?.value;
 
-      addToCart(variantId, 2).then(() => {
-        deleteCookie('discount_code');
-        setCookie('discount_code', 'BUY1GET1FREE');
-
-        window.location.href = '/cart';
-      });
+      addToCart(variantId, 2);
     }
   });
 };

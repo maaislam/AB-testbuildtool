@@ -50,6 +50,15 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   observer.observe(target, config);
 };
 
+export const deleteCookie = (cookieName) => {
+  document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+};
+
+export const setCookie = (cName, cValue) => {
+  const path = 'path=/';
+  document.cookie = `${cName}=${cValue}; ${path}`;
+};
+
 export const addToCart = (id, quantity) => {
   const payload = {
     id,
@@ -66,15 +75,10 @@ export const addToCart = (id, quantity) => {
   }).then((responses) => {
     const res = responses.json();
     return res;
+  }).then(() => {
+    setCookie('discount_code', 'BUY1GET1FREE');
+
+    window.location.href = '/cart';
   });
   return response;
-};
-
-export const deleteCookie = (cookieName) => {
-  document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-};
-
-export const setCookie = (cName, cValue) => {
-  const path = 'path=/';
-  document.cookie = `${cName}=${cValue}; ${path}`;
 };
