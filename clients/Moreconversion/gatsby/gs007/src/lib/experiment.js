@@ -1,3 +1,4 @@
+import { addToCart, deleteCookie, setCookie } from './helpers/utils';
 import setup from './services/setup';
 
 import shared from './shared/shared';
@@ -23,4 +24,20 @@ export default () => {
   //attachpoint.style.display = 'none';
 
   attachpoint.insertAdjacentHTML('beforebegin', htmlStr);
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest(`.${ID}__title`)) {
+      const variantSelectElem = document.querySelector('#ProductSelect');
+      const variantId = variantSelectElem?.value;
+
+      addToCart(variantId, 2).then(() => {
+        deleteCookie('discount_code');
+        setCookie('discount_code', 'BUY1GET1FREE');
+
+        window.location.href = '/cart';
+      });
+    }
+  });
 };

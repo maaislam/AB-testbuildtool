@@ -49,3 +49,32 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
+export const addToCart = (id, quantity) => {
+  const payload = {
+    id,
+    quantity
+  };
+
+  const response = fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  }).then((responses) => {
+    const res = responses.json();
+    return res;
+  });
+  return response;
+};
+
+export const deleteCookie = (cookieName) => {
+  document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+};
+
+export const setCookie = (cName, cValue) => {
+  const path = 'path=/';
+  document.cookie = `${cName}=${cValue}; ${path}`;
+};
