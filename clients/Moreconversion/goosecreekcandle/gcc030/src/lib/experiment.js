@@ -13,20 +13,16 @@ const init = () => {
     '#main-navigation-wrapper ul > li:nth-child(2) > div .nav-label'
   );
   const mobileMenu = document.querySelector('.mobile-menu .mobile-menu-link__has-submenu button');
+  mobileMenu.classList.add('custom-candles');
 
   desktopMenu.textContent = 'Candles';
   mobileMenu.textContent = 'Candles';
 
   //desktop
-  if (!document.querySelector(`${ID}__desktopMenu`)) {
+  if (!document.querySelector(`${ID}__newDesktopMenu`)) {
     document
       .querySelector('#main-navigation-wrapper > ul > li:nth-child(5)')
       .insertAdjacentHTML('afterend', newMenuDesktop(ID));
-
-    document.querySelector(`.${ID}__desktopMenu`).addEventListener('mouseenter', (e) => {
-      const wrapper = e.target.querySelector('.mega-menu--dropdown-wrapper');
-      wrapper.classList.add('open');
-    });
   }
 
   //mobile
@@ -38,31 +34,30 @@ const init = () => {
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
+  setup();
 
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
-
-  document.body.addEventListener('click', () => {
-    pollerLite(
-      ['.mobile-menu .mobile-menu-link__has-submenu button + div ul > li:first-child .top-link'],
-      () => {
-        const mobileMenuChild = document.querySelector(
-          '.mobile-menu .mobile-menu-link__has-submenu button + div ul > li:first-child .top-link'
-        );
-        mobileMenuChild.textContent = 'Candles';
-      }
-    );
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (target.closest('.custom-candles')) {
+      const clickedItem = target.closest('.custom-candles');
+      const parent = clickedItem.closest('li');
+      pollerLite([() => parent.querySelector('.mobile-menu #mobile-menu')], () => {
+        const list = parent.querySelector('.mobile-menu #mobile-menu');
+        list.style.opacity = '0';
+        const candlesList = list.querySelector('li:nth-child(2) > button');
+        candlesList.closest('li').classList.add('has-submenu-candles');
+        candlesList.click();
+        list.style.opacity = '1';
+      });
+    } else if (target.closest('.has-submenu-candles #mobile-submenu > li > button')) {
+      e.preventDefault();
+      const clickedItem = target.closest('.has-submenu-candles #mobile-submenu > li > button');
+      const parent = clickedItem.closest('.mobile-menu.mobile-menu-child');
+      parent.classList.add('mobile-menu-hidden');
+      pollerLite([() => parent.classList.contains('active')], () => {
+        parent.classList.remove('active');
+      });
+    }
   });
 
   init();

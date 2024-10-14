@@ -1,0 +1,17 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__colorOptions {
+    display: inline-block;
+    font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0.44999998807907104px;
+    text-align: left;
+    color: #990000;
+    text-decoration: underline;
+    margin: 5px 0 20px;
+  }
+}

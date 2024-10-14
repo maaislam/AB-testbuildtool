@@ -16,7 +16,7 @@ const categoryWrapper = (id, data) => {
   const html = `
         <div class="${id}__categoryWrapper">
           <div class=" page-width page-content">
-            <h1>${formatString(currentItem ? currentItem.name : topNameFallback)}</h1>
+            <h1>${currentItem ? currentItem.name : topNameFallback}</h1>
             <ul class="${id}__category-list">
               ${modifiedData
                 .map((item) => {

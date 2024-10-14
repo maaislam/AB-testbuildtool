@@ -3,6 +3,7 @@ import shared, { VARIATION } from './shared/shared';
 import { pollerLite, observeDOM, setCookie, deleteCookie } from './helpers/utils';
 import progressBar from './components/progressBar';
 import data from './data/data';
+import getTotalPrice from './helpers/getTotalPrice';
 
 const { ID } = shared;
 
@@ -35,15 +36,15 @@ const updateProgressBar = (amount) => {
     amount > firstThreshold && amount <= secondThreshold
       ? ((amount - firstThreshold) / (secondThreshold - firstThreshold)) * secondMaxWidth
       : amount > secondThreshold
-      ? secondMaxWidth
-      : 0;
+        ? secondMaxWidth
+        : 0;
 
   const thirdBarWidth =
     amount > secondThreshold && amount <= thirdThreshold
       ? ((amount - secondThreshold) / (thirdThreshold - secondThreshold)) * thirdMaxWidth
       : amount > thirdThreshold
-      ? thirdMaxWidth
-      : 0;
+        ? thirdMaxWidth
+        : 0;
 
   //Set the widths for each progress bar
   firstBar.style.width = `${firstBarWidth}%`;
@@ -56,53 +57,72 @@ const init = () => {
   const freeShippingThreshold = 200;
   const getFivePercentThreshold = 250;
 
-  const basketTotalPriceCtrl = () => document.querySelector('.slidecart-subtotal');
+  // const basketTotalPriceCtrl = () => document.querySelector('.slidecart-subtotal');
 
-  pollerLite([() => basketTotalPriceCtrl()], () => {
-    const match = basketTotalPriceCtrl().textContent.match(/\d+\.\d+/);
-    const basketTotalPrice = match ? +match[0] : 0;
+  (async () => {
+    const totalPrice = await getTotalPrice();
+    console.log(`Total Price: ${totalPrice}`);
+    pollerLite([() => totalPrice], () => {
+      const basketTotalPrice = totalPrice || 0;
 
-    const status =
-      basketTotalPrice < freeShippingThreshold
-        ? 'Get Free Shipping'
-        : basketTotalPrice >= freeShippingThreshold && basketTotalPrice < getFivePercentThreshold
-        ? 'Get 5% OFF'
-        : basketTotalPrice >= getFivePercentThreshold && basketTotalPrice < thresholdPrice
-        ? 'Get 10% OFF'
-        : 'full';
+      const status =
+        basketTotalPrice < freeShippingThreshold
+          ? 'Get Free Shipping'
+          : basketTotalPrice >= freeShippingThreshold && basketTotalPrice < getFivePercentThreshold
+            ? 'Get 5% OFF'
+            : basketTotalPrice >= getFivePercentThreshold && basketTotalPrice < thresholdPrice
+              ? 'Get 10% OFF'
+              : 'full';
 
-    const extraPrice =
-      basketTotalPrice < freeShippingThreshold
-        ? (freeShippingThreshold - basketTotalPrice).toFixed(2)
-        : basketTotalPrice < getFivePercentThreshold
-        ? (getFivePercentThreshold - basketTotalPrice).toFixed(2)
-        : basketTotalPrice < thresholdPrice
-        ? (thresholdPrice - basketTotalPrice).toFixed(2)
-        : 0;
+      const extraPrice =
+        basketTotalPrice < freeShippingThreshold
+          ? (freeShippingThreshold - basketTotalPrice).toFixed(2)
+          : basketTotalPrice < getFivePercentThreshold
+            ? (getFivePercentThreshold - basketTotalPrice).toFixed(2)
+            : basketTotalPrice < thresholdPrice
+              ? (thresholdPrice - basketTotalPrice).toFixed(2)
+              : 0;
 
-    const shippingInfoHtml = `
-    <div class='${ID}__shippingInfo'>
-    <div class="${ID}__discountProgressCard">
-    ${progressBar(ID, status, extraPrice, data)}
-    </div>
-    </div>
-    `;
+      const shippingInfoHtml = `
+      <div class='${ID}__shippingInfo'>
+      <div class="${ID}__discountProgressCard">
+      ${progressBar(ID, status, extraPrice, data)}
+      </div>
+      </div>
+      `;
 
-    const anchorPoint = document.querySelector('#slidecarthq .items');
-    removeElementFromDOM(`.${ID}__shippingInfo`);
-    anchorPoint?.insertAdjacentHTML('beforebegin', shippingInfoHtml);
-    updateProgressBar(basketTotalPrice);
+      const discountInputElem = document.querySelector('[name="discount_code"]');
+      const discountSubmitBtnElem = document.querySelector('.discount-box button[type="submit"]');
 
-    if (basketTotalPrice >= getFivePercentThreshold && basketTotalPrice < thresholdPrice) {
-      deleteCookie('discount_code');
-      setCookie('discount_code', 'GET5OFF');
-    } else if (basketTotalPrice >= thresholdPrice) {
-      deleteCookie('discount_code');
-      setCookie('discount_code', 'GET1OFF');
-    } else {
-      deleteCookie('discount_code');
-    }
-  });
+      const anchorPoint = document.querySelector('#slidecarthq .items');
+      removeElementFromDOM(`.${ID}__shippingInfo`);
+      anchorPoint?.insertAdjacentHTML('beforebegin', shippingInfoHtml);
+      updateProgressBar(basketTotalPrice);
+
+      if (sessionStorage.getItem('SLIDECART_CHECKOUT_DATA')) {
+        console.log('Removing checkout data from session storage');
+        sessionStorage.removeItem('SLIDECART_CHECKOUT_DATA');
+      }
+
+      if (basketTotalPrice >= getFivePercentThreshold && basketTotalPrice < thresholdPrice) {
+        deleteCookie('discount_code');
+        setCookie('discount_code', 'GET5OFF');
+
+        console.log('add GET5OFF');
+        if (discountInputElem) discountInputElem.value = 'GET5OFF';
+        if (discountSubmitBtnElem) discountSubmitBtnElem.click();
+      } else if (basketTotalPrice >= thresholdPrice) {
+        deleteCookie('discount_code');
+        setCookie('discount_code', 'GET10OFF');
+
+        console.log('add GET10OFF');
+        if (discountInputElem) discountInputElem.value = 'GET10OFF';
+        if (discountSubmitBtnElem) discountSubmitBtnElem.click();
+      } else {
+        deleteCookie('discount_code');
+      }
+    });
+  })();
 };
 
 export default () => {

@@ -8,7 +8,8 @@ const init = () => {
   const desktopBanner = document.querySelectorAll('.shogun-image-container')[0];
   desktopBanner.classList.add('desktop-banner');
   if (!document.querySelector(`.esktop-banner .${ID}__buttonWrapper`)) {
-    desktopBanner.insertAdjacentHTML('beforeend', buttonWrapper(ID));
+    const bannerLink = desktopBanner.querySelector('.shogun-image-link').href;
+    desktopBanner.insertAdjacentHTML('beforeend', buttonWrapper(ID, bannerLink));
     document.querySelector('.desktop-banner img').src =
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/hero-desktop.png?v=1727966510';
   }
@@ -17,7 +18,8 @@ const init = () => {
   const mobileBanner = document.querySelectorAll('.shogun-image-container')[2];
   mobileBanner.classList.add('mobile-banner');
   if (!document.querySelector(`.mobile-banner .${ID}__buttonWrapper`)) {
-    mobileBanner.insertAdjacentHTML('beforeend', buttonWrapper(ID));
+    const bannerLink = mobileBanner.querySelector('.shogun-image-link').href;
+    mobileBanner.insertAdjacentHTML('beforeend', buttonWrapper(ID, bannerLink));
     document.querySelector('.mobile-banner img').src =
       'https://cdn.shopify.com/s/files/1/0016/9092/7179/files/hero-mobile.png?v=1727966509';
   }

@@ -11,13 +11,44 @@
               grid-template-rows: 0fr 0fr 0fr 0fr;
               grid-template-areas:
                 'LOGO LOGO'
-                'CUSTOMBONUS CUSTOMBONUS'
                 'BONUS BONUS'
                 'BADGES BADGES'
                 'CTA CTA'
                 'PERKS PERKS';
               border: 1px solid #cacaca !important;
               border-radius: 8px;
+
+              .logo-container:has(img[alt='Knight Slots']) {
+                background-color: rgb(142 130 130) !important;
+                .item-rating {
+                  --star-color: rgb(142 130 130) !important;
+                }
+              }
+
+              .logo-container:has(img[alt='Yoyo Casino']) {
+                background-color: rgb(200 163 90) !important;
+                .item-rating {
+                  --star-color: rgb(200 163 90) !important;
+                }
+                .ratings-average,
+                .cta-review {
+                  color: #000;
+                }
+              }
+
+              .logo-container:has(img[alt='Bethard']) {
+                .ratings-average,
+                .cta-review {
+                  color: #000;
+                }
+              }
+
+              .logo-container[style*='background-color: rgb(255,255,255,1);'] {
+                border-bottom: 1px solid #cacaca;
+              }
+              .logo-container[style='background-color: rgb(255, 255, 255, 1);'] {
+                border-bottom: 1px solid #cacaca;
+              }
             }
           }
           .logo-container {
@@ -35,21 +66,28 @@
                 object-fit: contain;
               }
 
-              // @media screen and (max-width: 480px) {
-              //   height: 36px;
-              // }
+              &[alt='Pop Casino'] {
+                scale: 1.7;
+              }
+              &[alt='GoGoCasino'] {
+                scale: 1.7;
+              }
+
+              &[alt='Kungaslottet'] {
+                scale: 1.7;
+              }
+              &[alt='10Bet'] {
+                scale: 1.7;
+              }
             }
             .rating {
               @media screen and (max-width: 991px) {
                 position: static;
-                margin-top: 11px;
+                margin-top: 2px;
                 .item-rating {
-                  padding: 0 8px 8px;
+                  padding: 0 8px 5px;
                 }
               }
-            }
-
-            .badge-icon {
             }
 
             .#{$id}__ratingsContainer {
@@ -60,11 +98,12 @@
                 display: none;
               }
               .ratings-average {
-                font-size: 8px;
+                font-size: 10px;
                 font-weight: 500;
-                line-height: 13px;
+                line-height: 10.18px;
                 text-align: center;
-                color: #fff;
+                color: #f4f4f4;
+                padding-top: 2px;
               }
               .bg-color-change {
                 svg {
@@ -79,13 +118,10 @@
                 display: flex;
                 align-items: center;
                 margin: 0 3px;
-                svg {
-                  //   width: 100px;
-                  //   height: 15px;
-                }
               }
 
               .cta-review {
+                font-family: 'Gilroy';
                 position: relative;
                 font-size: 10px;
                 font-weight: 400;
@@ -102,9 +138,19 @@
             @media screen and (max-width: 991px) {
               display: flex;
               flex-direction: column;
-              padding: 14px 14px 0;
+              padding: 8px 14px 0;
               min-width: 100%;
               max-width: 100%;
+
+              .ribbon {
+                transform: translate(-7px, -7px);
+                & > span {
+                  font-size: 9px;
+                  line-height: 18px;
+                  top: 15px;
+                  left: -27px;
+                }
+              }
             }
           }
           .badges-container {
@@ -234,16 +280,16 @@
                 border-radius: 6px;
               }
               .cta-text-strong {
-                font-size: 12px;
-                line-height: 14px;
-                font-weight: 800;
+                font-size: 16px;
+                line-height: 18px;
+                font-weight: 600;
                 text-transform: capitalize;
               }
 
               .cta-text-small {
-                font-size: 12px;
-                line-height: 14px;
-                font-weight: 800;
+                font-size: 16px;
+                line-height: 18px;
+                font-weight: 600;
                 text-transform: capitalize;
               }
               .cta-review {
@@ -290,8 +336,76 @@
           }
 
           .bonus-container {
-            @media screen and (max-width: 991px) {
-              display: none;
+            margin: 12px 8px 0;
+            .bonus {
+              font-size: 18px;
+              line-height: 23px;
+              .amount {
+                font-size: 18px;
+                line-height: 23px;
+                & + span {
+                  font-size: 14px;
+                  line-height: 23px;
+                }
+              }
+
+              .fallback {
+                font-size: 14px;
+                line-height: 23px;
+              }
+            }
+
+            .freespins {
+              font-size: 18px;
+              line-height: 23px;
+
+              .amount {
+                font-size: 18px;
+                line-height: 23px;
+                & + span {
+                  font-size: 14px;
+                  line-height: 23px;
+                }
+              }
+              .fallback {
+                font-size: 14px;
+                line-height: 23px;
+              }
+            }
+            .bonus-wagering {
+              margin-top: auto;
+              .bonus-turnover {
+                gap: 5px;
+                font-size: 14px;
+                line-height: 20px;
+
+                strong {
+                  font-size: 13px;
+                }
+
+                @media screen and (max-width: 375px) {
+                  font-size: 13px;
+                }
+              }
+
+              .bonus-icon-mobile,
+              .freespins-icon-mobile {
+                display: none;
+              }
+
+              .freespins-turnover {
+                gap: 5px;
+                font-size: 14px;
+                line-height: 20px;
+
+                strong {
+                  font-size: 13px;
+                }
+
+                @media screen and (max-width: 375px) {
+                  font-size: 13px;
+                }
+              }
             }
           }
 
@@ -332,9 +446,10 @@
           }
 
           @media screen and (max-width: 991px) {
-            flex-basis: calc(50% - 8px);
+            flex-basis: calc(50% - 6px);
           }
         }
+
         @media screen and (max-width: 991px) {
           display: flex;
           flex-direction: row;
@@ -348,9 +463,3 @@
     }
   }
 }
-
-// @media screen and (max-width: 480px) {
-//   .cf039-1 .block-toplist:not(.cards) .toplist > div .logo-container .logo {
-//     //height: 36px;
-//   }
-// }

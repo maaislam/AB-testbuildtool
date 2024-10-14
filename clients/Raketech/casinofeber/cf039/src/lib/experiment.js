@@ -9,6 +9,47 @@ import { pollerLite } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
+function adjustHeights(selector, insideChildSelector) {
+  const container = document.querySelector(selector); //Change the selector accordingly
+  const { children } = container; //Get all children inside the container
+
+  const allCasinos = container.querySelectorAll('.toplist > div');
+  allCasinos &&
+    allCasinos.forEach((casino, index) => {
+      const middleElement = casino.querySelector(insideChildSelector);
+      if (!middleElement) return;
+      const middleElementHeight = parseFloat(window.getComputedStyle(middleElement).height);
+      //even
+      if (index % 2 === 0) {
+        const nextElementIndex = index + 1;
+        const nextElement = allCasinos[nextElementIndex];
+        if (nextElement) {
+          const nextMiddleElement = nextElement.querySelector(insideChildSelector);
+          const nextMiddleElementHeight = parseFloat(
+            window.getComputedStyle(nextMiddleElement).height
+          );
+          const largestHeight = Math.max(middleElementHeight, nextMiddleElementHeight);
+          middleElement.style.height = `${largestHeight}px`;
+          nextMiddleElement.style.height = `${largestHeight}px`;
+        }
+      } else if (index % 2 !== 0) {
+        //odd
+
+        const previousIndex = index - 1;
+        const previousElement = allCasinos[previousIndex];
+        if (previousElement) {
+          const nextMiddleElement = previousElement.querySelector(insideChildSelector);
+          const nextMiddleElementHeight = parseFloat(
+            window.getComputedStyle(nextMiddleElement).height
+          );
+          const largestHeight = Math.max(middleElementHeight, nextMiddleElementHeight);
+          middleElement.style.height = `${largestHeight}px`;
+          nextMiddleElement.style.height = `${largestHeight}px`;
+        }
+      }
+    });
+}
+
 const init = () => {
   const casinoCardConatiner = document.querySelector('.block-toplist .toplist-holder');
   const casinos = casinoCardConatiner.querySelectorAll('.toplist > div');
@@ -24,28 +65,33 @@ const init = () => {
     const ctaReview = mainCtaContainer.querySelector('.cta-review');
     const ctaLink = ctaReview?.href;
     const bonusElement = casino.querySelector('.bonus-container');
-    const bonus = bonusElement?.querySelector('.bonus .amount')?.innerText || 0;
-    const freeSpin = bonusElement?.querySelector('.freespins .amount')?.innerText || 0;
-    const omsBonus = bonusElement?.querySelector('.bonus-turnover > strong')?.innerText || 0;
-    const omsSpin = bonusElement?.querySelector('.freespins-turnover > strong')?.innerText || 0;
+    const bonusTurnOver = bonusElement.querySelector('.bonus-turnover');
+    const freeSpinElement = bonusElement.querySelector('.freespins-turnover > span');
+    const childBonusTurnOver = bonusTurnOver.childNodes;
+    const childFreeSpin = freeSpinElement.childNodes;
+    childBonusTurnOver.forEach((child) => {
+      if (child.nodeName === '#text' && child.nodeValue.includes('Omsättningskrav på bonus')) {
+        child.nodeValue = 'Oms.krav bonus';
+      }
+    });
+
+    childFreeSpin.forEach((child) => {
+      if (child.nodeName === '#text' && child.nodeValue.includes('Omsättningskrav på spin')) {
+        child.nodeValue = 'Oms.kra free spins';
+      }
+    });
+
     if (ratingElement && !casino.querySelector(`.${ID}__ratingsContainer`)) {
       ratingElement.insertAdjacentHTML(
         'afterbegin',
         ratingsConatiner(ID, ratings, logoBgColor, ctaLink)
       );
     }
-
-    const bonusData = {
-      bonus,
-      freeSpin,
-      omsBonus,
-      omsSpin
-    };
-
-    if (logoContainer && !casino.querySelector(`.${ID}__bonusContainer`)) {
-      logoContainer.insertAdjacentHTML('afterend', bonusContainer(ID, bonusData));
-    }
   });
+
+  setTimeout(() => {
+    adjustHeights('.block-toplist .toplist-holder', '.bonus-container');
+  }, 100);
 
   const mainCsinoWrapper = document.querySelector('.block-toplist .toplist-holder .toplist');
   mainCsinoWrapper.style.opacity = '1';
@@ -79,6 +125,9 @@ export default () => {
       setTimeout(() => {
         if (document.querySelector('.toplist-holder .toplist.show-full')) {
           gaTracking('Load More');
+          setTimeout(() => {
+            adjustHeights('.block-toplist .toplist-holder', '.bonus-container');
+          }, 100);
         } else if (document.querySelector('.toplist-holder .toplist:not(.show-full)')) {
           gaTracking('See Less');
         }

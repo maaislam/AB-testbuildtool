@@ -41,6 +41,11 @@
         background-color: #e79620;
         margin-left: 15px;
       }
+
+      @media screen and (max-width: 1200px) {
+        bottom: 50px;
+        right: 80px;
+      }
     }
   }
 

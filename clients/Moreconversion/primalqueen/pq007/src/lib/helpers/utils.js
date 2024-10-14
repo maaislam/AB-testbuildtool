@@ -49,3 +49,22 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
+export const obsIntersection = (target, threshold, callback) => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        callback(entry);
+      });
+    },
+    {
+      threshold
+    }
+  );
+  if (!target) {
+    return;
+  }
+
+  observer?.observe(target);
+};
+export default obsIntersection;

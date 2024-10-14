@@ -1,3 +1,5 @@
+import isLogin from './helpers/isLogin';
+import productLandingPage from './pages/productLandingPage';
 import productPage from './pages/productPage';
 import tradeDiscountsPage from './pages/tradeDiscountPage';
 import tradeRegistrationPage from './pages/tradeRegistrationPage';
@@ -5,6 +7,8 @@ import setup from './services/setup';
 import shared from './shared/shared';
 
 const { ID } = shared;
+
+const endDate = '10/12/2024'; //MM/DD/YYYY
 
 const isPdp = () => document.body.classList.contains('catalog-product-view');
 const isPlp = () =>
@@ -15,11 +19,13 @@ const init = () => {
   const { pathname } = window.location;
 
   if (pathname.includes('/trade-discounts')) {
-    tradeDiscountsPage(ID);
+    tradeDiscountsPage(ID, endDate);
   } else if (pathname.includes('/trade-registration')) {
     tradeRegistrationPage(ID);
-  } else if (isPdp()) {
+  } else if (isPdp() && isLogin()) {
     productPage(ID);
+  } else if (isPlp() && isLogin()) {
+    productLandingPage(ID, endDate);
   }
 };
 
