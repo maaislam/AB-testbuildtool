@@ -1,0 +1,27 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__offer {
+    padding: 16px 32px 0;
+    border: 1px solid #328964;
+  }
+
+  &__title {
+    text-decoration: underline;
+    font-size: 17px;
+    line-height: 1.2;
+    color: #328964;
+    cursor: pointer;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #515151;
+    span {
+      font-weight: 700;
+    }
+  }
+}

@@ -127,6 +127,7 @@ export default () => {
   observeDOM('#slidecarthq header .cart-count', () => {
     const cartElement = document.querySelector('#slidecarthq .slidecarthq');
     const isCartItems = cartElement?.querySelector('.items')?.childElementCount;
+    console.log('🚀 ~ observeDOM ~ isCartItems:', isCartItems);
     if (isCartItems) {
       init();
     } else {
