@@ -228,11 +228,6 @@
       }
     }
 
-    // .promo div.end .extra_off .coupon_code h3 b {
-    //     font-weight: 600;
-    //     margin-left: 5px;
-    // }
-
     .promo_top_inner .promo div.end .offer_end {
       display: flex;
       align-items: center;
@@ -407,10 +402,28 @@
           margin-bottom: 30px;
         }
 
-        // @include media-query(md) {
-        //   width: calc(100% + 10px);
-        //   margin-left: -5px;
-        // }
+        @include media-query(md) {
+          position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 100%;
+            top: 0;
+            right: -15px;
+            background-color: #f9f2e4;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 100%;
+            top: 0;
+            left: -15px;
+            background-color: #f9f2e4;
+          }
+        }
 
         &-title {
           padding: 36px 0 30px;
@@ -617,25 +630,6 @@
       gap: 14px;
     }
 
-    // @include media-query(xxxl) {
-    //     margin: 20px 40px 40px;
-    // }
-
-    // @include media-query(xl) {
-    //     margin: 20px 0px 40px;
-    // }
-
-    // @include media-query(lg) {
-    //     justify-content: space-between;
-    // }
-
-    // @include media-query(md) {
-    //     margin: 0 0 30px;
-    //     display: grid;
-    //     grid-template-columns: repeat(2, 1fr);
-    //     row-gap: 16px;
-    // }
-
     .#{$id}__usp {
       width: 208px;
       display: flex;
@@ -650,11 +644,6 @@
         width: 105px;
       }
 
-      // @include media-query(sm) {
-      //     width: 90px;
-      //     flex-direction: column;
-      // }
-
       p {
         margin: 15px 0 0;
         max-width: 150px;
@@ -662,16 +651,6 @@
         font-weight: 600;
         color: #374a53;
         text-align: center;
-
-        // @include media-query(xxxl) {
-        //     margin: 0 0 0 10px;
-        //     font: normal normal normal 14px/50px Work Sans;
-        // }
-
-        // @include media-query(lg) {
-        //     margin: 0 0 0 10px;
-        //     font: normal normal normal 13px/30px Work Sans;
-        // }
 
         @include media-query(md) {
           font: normal normal normal 16px/22px Work Sans;
@@ -683,19 +662,6 @@
           font-weight: 600;
         }
       }
-
-      // svg {
-      //     @include media-query(xxxl) {
-      //         max-width: 50px;
-      //         max-height: 50px;
-      //     }
-      // }
-
-      // &:nth-child(3) {
-      //     p {
-      //         margin: 0;
-      //     }
-      // }
     }
 
     .usp-icon {
@@ -711,11 +677,6 @@
         width: 95px;
         height: 95px;
       }
-
-      // @include media-query(sm) {
-      //     width: 90px;
-      //     height: 90px;
-      // }
 
       svg {
         height: 100%;
@@ -754,7 +715,6 @@
       display: none;
       margin: 20px 0;
       width: 60%;
-      // width: calc(100% - 40px);
       height: 1px;
       background-color: #707070;
 
@@ -784,6 +744,7 @@
         font-size: 16px;
         color: #fff;
         border: none;
+        box-shadow: none;
         cursor: pointer;
       }
 

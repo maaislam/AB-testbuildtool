@@ -18,6 +18,17 @@
               border: 1px solid #cacaca !important;
               border-radius: 8px;
 
+              .logo-container:has(img[alt='Pop Casino']) {
+                background-color: rgb(21, 21, 21, 1) !important;
+                .item-rating {
+                  --star-color: rgb(21, 21, 21, 1) !important;
+                }
+                .ratings-average,
+                .cta-review {
+                  color: #fff;
+                }
+              }
+
               .logo-container:has(img[alt='Knight Slots']) {
                 background-color: rgb(142 130 130) !important;
                 .item-rating {
@@ -36,7 +47,9 @@
                 }
               }
 
-              .logo-container:has(img[alt='Bethard']) {
+              .logo-container:has(img[alt='Bethard']),
+              .logo-container:has(img[alt='Vera & John']),
+              .logo-container:has(img[alt='Prank Casino']) {
                 .ratings-average,
                 .cta-review {
                   color: #000;
@@ -53,31 +66,32 @@
           }
           .logo-container {
             a[data-type='logo'] {
-              display: flex;
-              max-width: 150px;
-              width: 100%;
-              height: 50px;
-              align-items: center;
+              @media screen and (max-width: 991px) {
+                display: flex;
+                max-width: 150px;
+                width: 100%;
+                height: 50px;
+                align-items: center;
+              }
             }
             .logo {
               @media screen and (max-width: 991px) {
                 max-width: 100%;
                 height: 50px;
                 object-fit: contain;
-              }
+                &[alt='Pop Casino'] {
+                  scale: 1.7;
+                }
+                &[alt='GoGoCasino'] {
+                  scale: 1.7;
+                }
 
-              &[alt='Pop Casino'] {
-                scale: 1.7;
-              }
-              &[alt='GoGoCasino'] {
-                scale: 1.7;
-              }
-
-              &[alt='Kungaslottet'] {
-                scale: 1.7;
-              }
-              &[alt='10Bet'] {
-                scale: 1.7;
+                &[alt='Kungaslottet'] {
+                  scale: 1.7;
+                }
+                &[alt='10Bet'] {
+                  scale: 1.7;
+                }
               }
             }
             .rating {
@@ -280,16 +294,16 @@
                 border-radius: 6px;
               }
               .cta-text-strong {
-                font-size: 16px;
-                line-height: 18px;
-                font-weight: 600;
+                font-size: 15px;
+                line-height: 17px;
+                font-weight: 400;
                 text-transform: capitalize;
               }
 
               .cta-text-small {
-                font-size: 16px;
-                line-height: 18px;
-                font-weight: 600;
+                font-size: 15px;
+                line-height: 17px;
+                font-weight: 400;
                 text-transform: capitalize;
               }
               .cta-review {
