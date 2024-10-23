@@ -1,6 +1,13 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
+// .block-toplist .toplist-holder .toplist{
+//   opacity:0;
+// }
+// .block-toplist:not(.cards) .toplist > div .logo-container .item-rating > span{
+//   display:none;
+// }
+
 .#{$id} {
   &-1 {
     .block-toplist:not(.cards) {
@@ -22,6 +29,24 @@
                 .ratings-average,
                 .cta-review {
                   color: #000000;
+                }
+              }
+
+              .logo-container:has(img[alt='Expekt']) {
+                .logo {
+                  scale: 0.8;
+                }
+              }
+
+              .logo-container:has(img[alt='Prank Casino']) {
+                background-color: #3182fb !important;
+                .item-rating {
+                  --star-color: #3182fb !important;
+                }
+
+                .ratings-average,
+                .cta-review {
+                  color: #fff;
                 }
               }
 
@@ -48,11 +73,18 @@
                 .cta-review {
                   color: #000;
                 }
+
+                .#{$id}__ratingsContainer {
+                  svg {
+                    path {
+                      fill: #000000;
+                    }
+                  }
+                }
               }
 
               .logo-container:has(img[alt='Bethard']),
-              .logo-container:has(img[alt='Vera & John']),
-              .logo-container:has(img[alt='Prank Casino']) {
+              .logo-container:has(img[alt='Vera & John']) {
                 .ratings-average,
                 .cta-review {
                   color: #000;

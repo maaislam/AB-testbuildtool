@@ -69,6 +69,10 @@ const init = () => {
     const freeSpinElement = bonusElement.querySelector('.freespins-turnover > span');
     const childBonusTurnOver = bonusTurnOver.childNodes;
     const childFreeSpin = freeSpinElement.childNodes;
+    const casinoName = casino.querySelector('.cta-text-small');
+    if (casinoName.textContent.includes('svenska spel')) {
+      casinoName.textContent = 'Svenska Spel';
+    }
     childBonusTurnOver.forEach((child) => {
       if (child.nodeName === '#text' && child.nodeValue.includes('Omsättningskrav på bonus')) {
         child.nodeValue = 'Oms.krav bonus';
