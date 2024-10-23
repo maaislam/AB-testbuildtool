@@ -1,6 +1,6 @@
 export const crossIcon = `
-    <svg role="img" width="35" height="35" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="needsclick  kl-private-reset-css-Xuajs1"><title id="title-Close dialog">Close dialog</title><circle cx="10" cy="10" r="9.5" fill="rgba(255,255,255,1)" stroke="rgba(255,255,255,1)" style="cursor: pointer;"></circle><path d="M6 6L14 14M6 14L14 6L6 14Z" stroke="#EDCFD1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer;"></path></svg>
-    
+   <svg role="img" width="35" height="35" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="needsclick  kl-private-reset-css-Xuajs1"><title id="title-Close dialog">Close dialog</title><circle cx="10" cy="10" r="9.5" fill="rgba(180,187,195,0)" stroke="rgba(255,255,255,0)" style="cursor: pointer;"></circle><path d="M6 6L14 14M6 14L14 6L6 14Z" stroke="#373F47" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="cursor: pointer;"></path></svg>
+
     `;
 
 export const arrow = `

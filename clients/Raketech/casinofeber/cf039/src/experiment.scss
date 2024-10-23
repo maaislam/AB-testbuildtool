@@ -18,10 +18,17 @@
               border: 1px solid #cacaca !important;
               border-radius: 8px;
 
+              .logo-container:has(img[alt='Quick Casino']) {
+                .ratings-average,
+                .cta-review {
+                  color: #000000;
+                }
+              }
+
               .logo-container:has(img[alt='Pop Casino']) {
-                background-color: rgb(21, 21, 21, 1) !important;
+                background-color: #fa8500 !important;
                 .item-rating {
-                  --star-color: rgb(21, 21, 21, 1) !important;
+                  --star-color: #fa8500 !important;
                 }
                 .ratings-average,
                 .cta-review {
@@ -37,10 +44,6 @@
               }
 
               .logo-container:has(img[alt='Yoyo Casino']) {
-                background-color: rgb(200 163 90) !important;
-                .item-rating {
-                  --star-color: rgb(200 163 90) !important;
-                }
                 .ratings-average,
                 .cta-review {
                   color: #000;
@@ -388,6 +391,7 @@
             }
             .bonus-wagering {
               margin-top: auto;
+              gap: 2px;
               .bonus-turnover {
                 gap: 5px;
                 font-size: 14px;

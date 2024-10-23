@@ -1,7 +1,6 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
+import { pollerLite, collectionName } from './helpers/utils';
 import modal from './components/modal';
 
 const { ID, VARIATION } = shared;
@@ -30,21 +29,18 @@ const init = () => {
   const promoTitleElement = promoElement.querySelector('center');
   const mainPromoText = promoTitleElement.querySelector('b').innerText.trim();
   const promoDesc = promoTitleElement.innerText.trim().split(mainPromoText)[1];
-  const navElement = document.querySelector('.breadcrumb-nav > span');
-  const collectionElement =
-    navElement.querySelector('.breadcrumb-nav__separator + span[itemprop="itemListElement"] a') ||
-    document.querySelector('.product-single__subtitle');
-  const colectionUrl = collectionElement.href;
-  const collectionName =
-    collectionElement.querySelector('span')?.innerText.trim() || collectionElement.innerText.trim();
+  const isCollection = collectionName.filter((item) =>
+    window.location.href.includes(item.urlPortion)
+  );
+
   const cartUrl = window.Shopify.locale === 'en' ? '/cart' : `/${window.Shopify.locale}/cart`;
 
   const data = {
     text: mainPromoText,
     desc: promoDesc,
-    colectionName: collectionName,
+    colectionName: isCollection[0].name,
     commonText: gotoText[window.Shopify.locale],
-    colectionUrl,
+    colectionUrl: isCollection[0].link,
     cartText: cartName[window.Shopify.locale],
     cartUrl
   };
@@ -71,15 +67,15 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (target.closest('#AddToCartNew') || target.closest('.product-single__floating-bar button')) {
+      const cartQuantity = Number(cartCountElem.innerText.trim());
+      if (cartQuantity > 1) return;
+      const modalWrapper = document.querySelector(`.${ID}__modal`);
+      modalWrapper.classList.add('open');
       pollerLite(['body.header-cart__sidebar-visible'], () => {
         const bodyElement = document.body;
-        const modalWrapper = document.querySelector(`.${ID}__modal`);
-        const cartQuantity = Number(cartCountElem.innerText.trim());
-        if (cartQuantity > 1) return;
         bodyElement.classList.remove('header-cart__sidebar-visible');
-        modalWrapper.classList.add('open');
       });
-    } else if (target.closest(`.${ID}__closeModal`)) {
+    } else if (target.closest(`.${ID}__closeModal`) || target.closest(`.${ID}__modal-overlay`)) {
       const modalWrapper = document.querySelector(`.${ID}__modal`);
       modalWrapper.classList.remove('open');
       window.location.reload();
