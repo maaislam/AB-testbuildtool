@@ -1,0 +1,16 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__ourGamesSection {
+        @include media-query(sm) {
+            padding-top: 64px;
+        }
+    }
+
+    &__bestSellerSection {
+        @include media-query(sm) {
+            padding-top: 32px;
+        }
+    }
+}

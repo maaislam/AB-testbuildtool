@@ -1,0 +1,62 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &-2 {
+        .#{$id}__icon {
+            display: none;
+        }
+    }
+    &__benefitWrapper {
+        max-width: 654px;
+        margin-top: 20px;
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #fff3;
+
+        @include media-query(sm) {
+            max-width: 400px;
+            padding: 20px 10px;
+        }
+
+        @include media-query(xsm) {
+            max-width: 340px;
+        }
+
+        .#{$id}__text {
+            margin-top: 8px;
+            // font-family: Inter;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+
+            @include media-query(xl) {
+                font-size: 14px;
+                line-height: 17px;
+            }
+
+            @include media-query(sm) {
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+
+        .divider {
+            margin: 0 4px 3px;
+            width: 1px;
+            height: 15px;
+            align-self: end;
+            background: #ffff;
+
+            @include media-query(sm) {
+                height: 30px;
+                margin: 0 30px 3px;
+            }
+
+            @include media-query(xsm) {
+                margin: 0 20px 0px 10px;
+            }
+        }
+    }
+}
