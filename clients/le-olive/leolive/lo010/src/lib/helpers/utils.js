@@ -78,65 +78,57 @@ export const collectionName = [
   {
     urlPortion: 'badjas',
     name: collectionNameLang.robes[window.Shopify.locale],
-    link:
-      window.Shopify.locale === 'en'
-        ? '/collections/badjassen'
-        : `/${window.Shopify.locale}/collections/badjassen`
+    link: window.location.href.includes(`/${window.Shopify.locale}/`)
+      ? `/${window.Shopify.locale}/collections/badjassen`
+      : '/collections/badjassen'
   },
   {
     urlPortion: 'robe',
     name: collectionNameLang.robes[window.Shopify.locale],
-    link:
-      window.Shopify.locale === 'en'
-        ? '/collections/badjassen'
-        : `/${window.Shopify.locale}/collections/badjassen`
+    link: window.location.href.includes(`/${window.Shopify.locale}/`)
+      ? `/${window.Shopify.locale}/collections/badjassen`
+      : '/collections/badjassen'
   },
   {
     urlPortion: 'kimono',
     name: collectionNameLang.kimonos[window.Shopify.locale],
-    link:
-      window.Shopify.locale === 'en'
-        ? '/collections/kimonos'
-        : `/${window.Shopify.locale}/collections/kimonos`
+    link: window.location.href.includes(`/${window.Shopify.locale}/`)
+      ? `/${window.Shopify.locale}/collections/kimonos`
+      : '/collections/kimonos'
   },
   {
     urlPortion: '/products/ruffle',
     name: collectionNameLang.kimonos[window.Shopify.locale],
-    link:
-      window.Shopify.locale === 'en'
-        ? '/collections/kimonos'
-        : `/${window.Shopify.locale}/collections/kimonos`
+    link: window.location.href.includes(`/${window.Shopify.locale}/`)
+      ? `/${window.Shopify.locale}/collections/kimonos`
+      : '/collections/kimonos'
   },
   {
     urlPortion: 'pyjama',
     name: collectionNameLang.pyjama[window.Shopify.locale],
-    link:
-      window.Shopify.locale === 'en'
-        ? '/collections/pyjamas'
-        : `/${window.Shopify.locale}/collections/pyjamas`
+    link: window.location.href.includes(`/${window.Shopify.locale}/`)
+      ? `/${window.Shopify.locale}/collections/pyjamas`
+      : '/collections/pyjamas'
   },
   {
     urlPortion: '/products/sleeping-dress-lace-champagne',
     name: collectionNameLang.pyjama[window.Shopify.locale],
-    link:
-      window.Shopify.locale === 'en'
-        ? '/collections/pyjamas'
-        : `/${window.Shopify.locale}/collections/pyjamas`
+    link: window.location.href.includes(`/${window.Shopify.locale}/`)
+      ? `/${window.Shopify.locale}/collections/pyjamas`
+      : '/collections/pyjamas'
   },
   {
     urlPortion: '/products/sleeping-dress-lace-snow-white',
     name: collectionNameLang.pyjama[window.Shopify.locale],
-    link:
-      window.Shopify.locale === 'en'
-        ? '/collections/pyjamas'
-        : `/${window.Shopify.locale}/collections/pyjamas`
+    link: window.location.href.includes(`/${window.Shopify.locale}/`)
+      ? `/${window.Shopify.locale}/collections/pyjamas`
+      : '/collections/pyjamas'
   },
   {
     urlPortion: '/products/sleeping-dress-lace-valentine-red',
     name: collectionNameLang.pyjama[window.Shopify.locale],
-    link:
-      window.Shopify.locale === 'en'
-        ? '/collections/pyjamas'
-        : `/${window.Shopify.locale}/collections/pyjamas`
+    link: window.location.href.includes(`/${window.Shopify.locale}/`)
+      ? `/${window.Shopify.locale}/collections/pyjamas`
+      : '/collections/pyjamas'
   }
 ];
