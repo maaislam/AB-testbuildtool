@@ -33,7 +33,9 @@ const init = () => {
     window.location.href.includes(item.urlPortion)
   );
 
-  const cartUrl = window.Shopify.locale === 'en' ? '/cart' : `/${window.Shopify.locale}/cart`;
+  const cartUrl = window.location.href.includes(`/${window.Shopify.locale}/`)
+    ? `/${window.Shopify.locale}/cart`
+    : '/cart';
 
   const data = {
     text: mainPromoText,
