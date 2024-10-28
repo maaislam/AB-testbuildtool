@@ -1,4 +1,5 @@
 import badge from './components/badge';
+import { observeDOM } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -12,6 +13,8 @@ const extractNumber = (str) => {
 
 const init = () => {
   const modalButtons = document.querySelectorAll('section[role="dialog"] div button[data-price]');
+  if (modalButtons.length === 0) return;
+
   let largestBundle = 0;
   let largestBundleButton = null;
 
@@ -25,7 +28,7 @@ const init = () => {
     }
   });
 
-  if (largestBundleButton) {
+  if (largestBundleButton && !document.querySelector(`.${ID}__badge`)) {
     largestBundleButton.insertAdjacentHTML('afterbegin', badge(ID, VARIATION));
   }
 };
@@ -34,4 +37,12 @@ export default () => {
   setup();
 
   init();
+
+  observeDOM('body', init, {
+    childList: true,
+    subtree: false,
+    attributes: true,
+    characterData: false,
+    characterDataOldValue: false
+  });
 };
