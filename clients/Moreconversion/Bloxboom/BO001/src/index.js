@@ -4,5 +4,5 @@ import { pollerLite } from './lib/helpers/utils';
 pollerLite(['section.bg-transparent'], () => {
     setTimeout(() => {
         activate();
-    }, 500);
+    }, 1000);
 });
