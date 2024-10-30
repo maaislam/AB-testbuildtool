@@ -1,7 +1,7 @@
 const expTimer = (id) => {
   const html = `
     <div class="${id}__timer" >
-        <div class="${id}__mainDiv" style="opacity:0;">
+        <div class="${id}__mainDiv">
             <div class="countdown_wrapper">
                 <div class="countdown">
                   <span id="${id}__hrs" class="${id}__time">00</span>

@@ -1,0 +1,122 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #main-cart-items:has(.#{$id}__productWrapper) {
+    padding-bottom: 20px;
+  }
+  .#{$id}__productWrapper {
+    margin-top: 30px;
+  }
+  .#{$id}__productContainer {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: #ffdfea;
+    padding: 5px 20px;
+
+    @media screen and (max-width: 630px) {
+      margin: 0 auto;
+      padding: 5px 15px;
+    }
+
+    @media screen and (max-width: 630px) {
+      margin: 0 auto;
+      padding: 5px 10px;
+    }
+  }
+  .#{$id}__image {
+    width: 70px;
+    height: 70px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media screen and (max-width: 630px) {
+      width: 54px;
+      height: 54px;
+    }
+  }
+  .#{$id}__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 170px);
+    padding: 0 20px;
+
+    @media screen and (max-width: 630px) {
+      width: calc(100% - 124px);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 10px;
+    }
+  }
+  .#{$id}__text {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+    color: #2e2a39;
+    @media screen and (max-width: 630px) {
+      font-size: 12px;
+      line-height: 15px;
+      margin-bottom: 6px;
+    }
+  }
+  .#{$id}__price {
+    display: flex;
+    .#{$id}__sellPrice {
+      font-family: 'Inter';
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 19.36px;
+      color: #2e2a39;
+      @media screen and (max-width: 630px) {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+    .#{$id}__ComparePrice {
+      font-family: 'Inter';
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.36px;
+      text-align: left;
+      color: #2e2a39;
+      padding-left: 7px;
+      text-decoration: line-through;
+      opacity: 0.7;
+      @media screen and (max-width: 630px) {
+        font-size: 14px;
+        line-height: 17px;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .#{$id}__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+    text-align: left;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #00ad21;
+    text-decoration: none;
+
+    @media screen and (max-width: 630px) {
+      width: 70px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+}

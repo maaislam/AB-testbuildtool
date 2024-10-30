@@ -1,10 +1,17 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite, startTimer } from './helpers/utils';
+import { startTimer } from './helpers/utils';
 import expTimer from './components/expTimer';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
+
+const today = new Date();
+const tomorrow = new Date(today);
+tomorrow.setDate(today.getDate() + 1);
+const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
+const day = String(tomorrow.getDate()).padStart(2, '0');
+const year = tomorrow.getFullYear();
+const formattedDate = `${month}/${day}/${year}`;
 
 const init = () => {
   const target = document.querySelector('.top-fix-bar');
@@ -13,13 +20,10 @@ const init = () => {
   }
   target && target.querySelector('.container').insertAdjacentHTML('beforeend', expTimer(ID));
 
-  startTimer(ID, 30, VARIATION);
+  startTimer(ID, formattedDate);
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID, 'ID');
-  //gaTracking('Conditions Met'); //use if needed
-
+  setup();
   init();
 };
