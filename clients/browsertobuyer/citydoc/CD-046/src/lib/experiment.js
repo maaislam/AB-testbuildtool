@@ -8,12 +8,9 @@ import vaccineWrapper from './components/vaccineWrapper';
 import partnersWrapper from './components/partnersWrapper';
 import titleWrapper from './components/titleWrapper';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
-  //Initialize experiment-specific code here
-  //...
-
   const mainWrapper = document.querySelector('#main');
   const footer = document.querySelector('footer');
   const heroElement = mainWrapper.querySelector('.c-info-hero');

@@ -8,7 +8,7 @@ const vaccineDescription = (id, info) => {
             <div class="${id}__infoWrapper">
                 <div class="${id}__infoContainer">
                     <h2 class="${id}__title">Why choose CityDoc?</h2>
-                    <p class="${id}__subtitle">Specialising in a personalised approach to travel health, our clinic ensures you receive the vaccinations and care you need promptly. Our focus on convenience and comprehensive services makes us a preferred choice for local and traveling patients alike</p>
+                    <p class="${id}__subtitle">Specialising in a personalised approach to travel health, our clinic ensures you receive the vaccinations and care you need promptly. Our focus on convenience and comprehensive services makes us a preferred choice for local and traveling patients&nbspalike.</p>
                     <ul class="${id}__info-list">
                         ${info.map((item) => `<li class="${id}__c-usp">${item}</li>`).join('\n')}
                     </ul>
