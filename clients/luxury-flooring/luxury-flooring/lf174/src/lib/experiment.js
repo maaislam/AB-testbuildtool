@@ -8,7 +8,7 @@ import shared from './shared/shared';
 
 const { ID } = shared;
 
-const endDate = '10/12/2024'; //MM/DD/YYYY
+const endDate = '12/03/2024'; //MM/DD/YYYY
 
 const isPdp = () => document.body.classList.contains('catalog-product-view');
 const isPlp = () =>
@@ -24,7 +24,7 @@ const init = () => {
     tradeRegistrationPage(ID);
   } else if (isPdp() && isLogin()) {
     productPage(ID);
-  } else if (isPlp() && isLogin()) {
+  } else if (isPlp() && !isLogin()) {
     productLandingPage(ID, endDate);
   }
 };

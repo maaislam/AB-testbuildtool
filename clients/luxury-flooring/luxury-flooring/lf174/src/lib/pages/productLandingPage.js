@@ -1,5 +1,6 @@
 /*eslint-disable no-param-reassign */
-import banner from '../components/banner';
+//import banner from '../components/banner';
+import blackFridayBanner from '../components/blackFridayBanner';
 import subBanner from '../components/subBanner';
 import startTimer from '../helpers/startTimer';
 import { observeDOM, pollerLite } from '../helpers/utils';
@@ -20,7 +21,7 @@ const productLandingPage = (ID, endDate) => {
         const attachPoint = document.querySelector('.nav-sections');
 
         if (!document.querySelector(`.${ID}__banner`)) {
-            const banners = `${banner(ID)}${subBanner(ID)}`;
+            const banners = `${blackFridayBanner(ID)}${subBanner(ID)}`;
             attachPoint.insertAdjacentHTML('afterend', banners);
             startTimer(ID, endDate);
         }
