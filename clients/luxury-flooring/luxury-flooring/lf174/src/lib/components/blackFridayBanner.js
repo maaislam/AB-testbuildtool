@@ -1,5 +1,7 @@
+import subBanner from './subBanner';
+
 const blackFridayBanner = (id) => {
-    const htmlStr = `<div class="${id}__blackFridayBanner">
+  const htmlStr = `<div class="${id}__blackFridayBanner">
         <div class="${id}__banner">
             <div class="${id}__promo_top promo_top">
                 <a href="https://www.luxuryflooringandfurnishings.co.uk/sale.html/">
@@ -8,11 +10,13 @@ const blackFridayBanner = (id) => {
                             <div class="code black-side">
                                 <div class="black-side-skew">
                                     <div class="save_upto_icon">
+                                        <span>TRADE MEMBER ONLY</span>
                                         <h4>
-                                            <strong>Save Up To 70%</strong>
+                                            <strong>EXCLUSIVE OFFER</strong>
                                         </h4>
                                     </div>
-                                    <p>ON SELECTED LINES</p>
+                                    <p><span>10% OFF</span> RETAIL PRICES</p>
+                                    ${subBanner(id)}
                                 </div>
                             </div>
                             <div class="red-side">
@@ -112,6 +116,6 @@ const blackFridayBanner = (id) => {
             </div>
         </div>
     </div>`;
-    return htmlStr;
+  return htmlStr;
 };
 export default blackFridayBanner;

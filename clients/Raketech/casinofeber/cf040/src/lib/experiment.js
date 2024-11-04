@@ -5,9 +5,25 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import ratingsConatiner from './components/ratings';
 import bonusContainer from './components/bonusContainer';
-import { pollerLite } from './helpers/utils';
+import { parseHTML, pollerLite } from './helpers/utils';
+import { casinoFeaturesData } from './data/data';
 
 const { ID, VARIATION } = shared;
+const allDataUrl = 'https://www.casinofeber.se/casinon-med-svensk-licens';
+
+const renderCasinoFeaturesData = (allBoxesData, casino) => {
+  allBoxesData.forEach((item, index) => {
+    if (index === 0) {
+      casino.querySelector('.first-box .value').textContent = item;
+    }
+    if (index === 1) {
+      casino.querySelector('.second-box .value').textContent = item;
+    }
+    if (index === 2) {
+      casino.querySelector('.third-box .value').textContent = item;
+    }
+  });
+};
 
 const init = () => {
   const casinoCardConatiner = document.querySelector('.block-toplist .toplist-holder');
@@ -34,21 +50,22 @@ const init = () => {
       bonusElement.querySelector('.freespins .amount')?.textContent ||
       bonusElement.querySelector('.freespins .fallback')?.textContent;
     const freeSpinValuex = freeSpinElement.querySelector('strong')?.textContent;
-    console.log('bonusValue', bonusValuex, bonusValue);
-    console.log('freeSpinValue', freeSpinValuex, freeSpinValue);
     const casinoName = casino.querySelector('.cta-text-small');
     const parksContainer = casino.querySelector('.perks-container');
     parksContainer.querySelectorAll('.perk').forEach((item, index) => {
       if (index === 0) {
         item.querySelector('.title').innerText = 'oms.krav insättning';
+        item.classList.add('first-box');
       }
 
       if (index === 4) {
         item.querySelector('.title').innerText = 'svarstid chatt';
+        item.classList.add('second-box');
       }
 
       if (index === 3) {
         item.querySelector('.title').innerText = 'uttagstid Swish';
+        item.classList.add('third-box');
       }
     });
     if (casinoName.textContent.includes('svenska spel')) {
@@ -68,8 +85,41 @@ const init = () => {
           'afterbegin',
           ratingsConatiner(ID, ratings, logoBgColor, ctaLink)
         );
+
+        const desktopRatings = document.createElement('div');
+        desktopRatings.classList.add(`${ID}__desktopRatingsContainer`);
+        const existingRatingContainer = ratingElement.closest('.rating').cloneNode(true);
+        desktopRatings.innerHTML = existingRatingContainer.outerHTML;
+        logoContainer.insertAdjacentElement('afterend', desktopRatings);
       }, 2000);
     }
+  });
+
+  parseHTML([allDataUrl]).then((doc) => {
+    const allCasinoWrapper = doc.querySelector('.block-toplist .toplist-holder');
+    const otherPageCasinos = Array.from(allCasinoWrapper.querySelectorAll('.toplist > div'));
+    casinos.forEach((casino) => {
+      const casinoName = casino.querySelector('.logo-container > a')?.dataset.operator;
+      const isExistCasino = otherPageCasinos.filter((item) => {
+        const name = item.querySelector('.logo-container > a').dataset.operator;
+        if (name === casinoName) {
+          return item;
+        }
+      });
+
+      if (isExistCasino && isExistCasino.length) {
+        const allBoxes = isExistCasino[0].querySelectorAll('.perk-container');
+        const allBoxesData = Array.from(allBoxes).map((item) => {
+          if (item.querySelector('span.value')) {
+            return item.querySelector('span.value').textContent;
+          }
+        });
+        renderCasinoFeaturesData(allBoxesData, casino);
+      } else {
+        const casinoBoxesData = casinoFeaturesData[`${casinoName}`];
+        casinoBoxesData && renderCasinoFeaturesData(casinoBoxesData, casino);
+      }
+    });
   });
 
   const mainCsinoWrapper = document.querySelector('.block-toplist .toplist-holder .toplist');

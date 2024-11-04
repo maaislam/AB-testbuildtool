@@ -48,6 +48,12 @@
         line-height: 12px;
         padding-left: 8px;
         color: #000;
+
+        @media screen and (max-width: 767px) {
+          font-size: 9px;
+          line-height: 11px;
+          padding-left: 6px;
+        }
       }
 
       .#{$id}__time {
@@ -70,6 +76,8 @@
         @media screen and (max-width: 767px) {
           width: 35px;
           height: 22px;
+          font-size: 11px;
+          line-height: 13px;
         }
       }
     }

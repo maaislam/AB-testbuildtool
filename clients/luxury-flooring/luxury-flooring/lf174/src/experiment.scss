@@ -42,7 +42,6 @@
   }
 
   &__plp {
-
     .homepage-banner,
     .banner_for_may {
       display: none;
@@ -210,7 +209,7 @@
     .promo_top .promo_top_inner .promo div.end .extra_off .coupon_code {
       background: #fff;
       margin: 0;
-      padding: 5px 20px;
+      padding: 9px 20px;
     }
 
     .promo div.end .extra_off .coupon_code h3 {
@@ -358,11 +357,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
 
         .discount-percentage {
-          font-family: "Work Sans";
-          font-size: 15px;
-          line-height: 18px;
+          font-family: 'Work Sans';
+          font-size: 18px;
+          line-height: 19px;
           font-weight: 700;
           text-transform: uppercase;
           // letter-spacing: 1.36px;
@@ -370,15 +370,21 @@
         }
 
         .discount-text {
-          font-family: "Work Sans";
-          font-size: 15px;
-          line-height: 18px;
+          display: block !important;
+          font-family: 'Work Sans';
+          font-size: 16px;
+          line-height: 19px;
           font-weight: 400;
           text-transform: uppercase;
+          padding: 0;
 
           span {
             font-weight: 700;
           }
+        }
+
+        @include media-query(lg) {
+          height: max-content;
         }
       }
     }
@@ -417,7 +423,17 @@
     }
 
     .promo_top {
-      background: transparent;
+      background: #a6383e;
+      //background: transparent;
+      background-image: linear-gradient(236deg, #a6383e 61%, #374a53 50%);
+
+      @include media-query(lg) {
+        background-image: linear-gradient(357deg, #a6383e 59%, #374a53 50%);
+      }
+
+      @include media-query(sm) {
+        background-image: linear-gradient(357deg, #a6383e 56%, #374a53 50%);
+      }
     }
 
     .promo_top_inner {
@@ -453,32 +469,41 @@
       }
 
       .black-side {
-        background: #374a53;
+        // background: #374a53;
         position: relative;
         width: 40%;
         height: 100%;
 
-        &-skew {
-          background: #374a53;
-          transform: skew(45deg);
-          position: absolute;
-          top: 0;
-          left: 0;
+        @include media-query(lg) {
           width: 100%;
+        }
+
+        &-skew {
+          // background: #374a53;
+          // transform: skew(45deg);
+          // position: absolute;
+          // top: 0;
+          // left: 0;
+          // width: 100%;
         }
       }
 
       .red-side {
         width: 60%;
         height: 100%;
-        background: #a6383e;
+        // background: #a6383e;
         padding: 19px 15px 19px 0;
+
+        @include media-query(lg) {
+          width: 100%;
+          padding: 19px 0 0px 0;
+        }
       }
     }
 
     .promo_top_inner .promo .code {
       margin: 0;
-      padding: 0;
+      padding: 20px 0 15px 0;
       font-size: 19px;
       line-height: 1.2;
       font-family: 'Work Sans', sans-serif;
@@ -497,6 +522,7 @@
       }
 
       @include media-query(lg) {
+        padding-top: 0;
         padding-right: 0;
       }
     }
@@ -536,8 +562,8 @@
     }
 
     .promo_top .promo_top_inner .promo div.red-side .extra_off h4 {
-      font-size: 32px;
-      line-height: 38px;
+      font-size: 28px;
+      line-height: 33px;
       font-family: 'Work Sans';
       font-weight: 700;
       text-transform: uppercase;
@@ -555,7 +581,7 @@
     .promo_top .promo_top_inner .promo div.red-side .extra_off .coupon_code {
       background: #fff;
       margin: 0;
-      padding: 5px 20px;
+      padding: 9px 20px;
     }
 
     .promo div.red-side .extra_off .coupon_code h3 {
@@ -612,6 +638,15 @@
       }
     }
 
+    .promo .code .save_upto_icon span {
+      font-family: 'Work Sans';
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 0.79px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
     .promo .code .save_upto_icon h4 {
       margin: 0;
       display: flex;
@@ -619,36 +654,44 @@
       justify-content: center;
       position: relative;
       text-transform: uppercase;
-      font-size: 32px;
-      line-height: 38px;
-      gap: 9px;
-      letter-spacing: 1.26px;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: 1.11px;
       color: #fff;
       font-family: 'Work Sans';
 
-      @include media-query(xl) {
-        font-size: 24px;
-        line-height: 28px;
-      }
+      // @include media-query(xl) {
+      //   font-size: 24px;
+      //   line-height: 28px;
+      // }
     }
 
     .promo_top .promo_top_inner .promo .code p {
-      text-transform: uppercase;
-      font-size: 19px;
-      line-height: 1.2;
-      color: #ffffff;
-      letter-spacing: 0.74px;
-      margin: 0;
+      display: inline-block;
       font-family: 'Work Sans';
+      font-size: 18px;
       font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 1.44px;
+      text-transform: uppercase;
+      margin: 5px 0 12px 0;
+      color: #374a53;
+      background-color: #fff;
+      padding: 8px 16px;
 
+      span {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 21px;
+        letter-spacing: 1.44px;
+        color: #374a53;
+        text-transform: uppercase;
+      }
       @include media-query(xl) {
         font-size: 16px;
       }
     }
   }
-
-
 
   &__tradeDiscountsPage {
     .usps-main-footer:after {
@@ -659,7 +702,7 @@
       padding: 0;
 
       .trade-container,
-      >.columns {
+      > .columns {
         display: none;
       }
     }
@@ -667,7 +710,7 @@
 
   &__tradeRegPage {
     #maincontent {
-      >.columns {
+      > .columns {
         display: none;
       }
     }
@@ -886,11 +929,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 11px 10px 13px;
-    background: #374a53;
+    //padding: 11px 10px 13px;
+    // background: #374a53;
 
     @include media-query(lg) {
       flex-direction: column;
+    }
+
+    .#{$id}__semiBold {
+      span {
+        font-weight: 400;
+      }
+
+      br {
+        display: none;
+
+        @include media-query(lg) {
+          display: block;
+        }
+      }
     }
 
     span {
@@ -901,9 +958,9 @@
       letter-spacing: 0.63px;
 
       @include media-query(lg) {
-        font-size: 17px;
-        line-height: 20px;
-        letter-spacing: 0.67px;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.6px;
       }
     }
   }
