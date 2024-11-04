@@ -34,7 +34,7 @@ export const vaccineData = {
   '/conditions/yellow-fever/': {
     Name: 'Yellow Fever',
     'About the heading': 'About the Yellow Fever vaccine',
-    'When to get vaccinated': 'Atleast 10 days before travel.',
+    'When to get vaccinated': 'At least 10 days before travel.',
     Course: '1 dose.',
     Boosters: 'Lasts a lifetime for most travellers.',
     'How is it given':
@@ -52,7 +52,7 @@ export const vaccineData = {
   },
   '/conditions/rabies/': {
     Name: 'Rabies',
-    'When to get vaccinated': 'Ideally atleast 4 weeks before travel to complete the course.',
+    'When to get vaccinated': 'Ideally at least 4 weeks before travel to complete the course.',
     Course: '3 doses.',
     Boosters: 'Recommended for high risk travellers and those working with animals.',
     'How is it given': 'Injection in the upper arm.',
@@ -60,14 +60,14 @@ export const vaccineData = {
     'Side effects': 'Common side effects are headache, fever and muscle aches.',
     Children: 'Can be given from birth.',
     'Additional precautions':
-      'Avoid contact with animals while travelling. If bitten, scrathced or licked on an open wound, by any mammal, wash with soap & water and seek immediate medical advice.',
+      'Avoid contact with animals while travelling. If bitten, scratched or licked on an open wound, by any mammal, wash with soap & water and seek immediate medical advice.',
     'Certificate requirements': null,
     'Risk if you contract': 'There is no cure for rabies and it is usually fatal.',
     'About the heading': 'About the Rabies vaccine'
   },
   '/conditions/hepatitis-a/': {
     Name: 'Hep A',
-    'When to get vaccinated': 'Ideally atleast 10 days before travel.',
+    'When to get vaccinated': 'Ideally at least 10 days before travel.',
     Course: '2 doses.',
     Boosters: '6-12 months apart.',
     'How is it given': 'Injection in the upper arm.',
@@ -96,7 +96,7 @@ export const vaccineData = {
   },
   '/conditions/diphtheria-tetanus-polio-dtp/': {
     Name: 'DTP',
-    'When to get vaccinated': 'Ideally atleast 10 days before travel.',
+    'When to get vaccinated': 'Ideally at least 10 days before travel.',
     Course: '1 dose.',
     Boosters: null,
     'How is it given': 'Injection in the upper arm.',
@@ -110,7 +110,7 @@ export const vaccineData = {
   },
   '/conditions/dengue-fever/': {
     Name: 'Dengue Fever',
-    'When to get vaccinated': 'Ideally atleast 3 months before travel.',
+    'When to get vaccinated': 'Ideally at least 3 months before travel.',
     Course: '2 doses.',
     Boosters: null,
     'How is it given': 'Injection in the upper arm.',
@@ -126,7 +126,7 @@ export const vaccineData = {
   },
   '/conditions/japanese-encephalitis/': {
     Name: 'Jap E',
-    'When to get vaccinated': 'Ideally atleast 4 weeks before travel.',
+    'When to get vaccinated': 'Ideally at least 4 weeks before travel.',
     Course: '2 doses.',
     Boosters: '1 year.',
     'How is it given': 'Injection in the upper arm.',
@@ -142,7 +142,7 @@ export const vaccineData = {
   },
   '/conditions/typhoid/': {
     Name: 'Typhoid',
-    'When to get vaccinated': 'Ideally atleast 2 weeks before travel.',
+    'When to get vaccinated': 'Ideally at least 2 weeks before travel.',
     Course: '1 dose.',
     Boosters: null,
     'How is it given': 'Injection in the upper arm.',
