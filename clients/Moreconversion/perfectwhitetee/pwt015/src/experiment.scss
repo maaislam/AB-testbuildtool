@@ -1,0 +1,42 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__hide {
+        display: none;
+    }
+
+    &__centeredTitle {
+        margin-bottom: 35px;
+        font-family: 'Inter';
+        font-size: 22px;
+        line-height: 32px;
+        font-weight: 400;
+        letter-spacing: -0.68px;
+        text-align: center;
+        color: #000;
+
+        @include media-query(sm) {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    &__viewAll {
+        margin: 0 auto;
+        max-width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: -0.35px;
+        color: #FFF;
+        background: #111111;
+        padding: 8px 20px 9px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}

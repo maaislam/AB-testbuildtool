@@ -209,7 +209,7 @@
     .promo_top .promo_top_inner .promo div.end .extra_off .coupon_code {
       background: #fff;
       margin: 0;
-      padding: 5px 20px;
+      padding: 9px 20px;
     }
 
     .promo div.end .extra_off .coupon_code h3 {
@@ -334,6 +334,365 @@
     }
   }
 
+  &__blackFridayBanner {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+
+    .#{$id}__couponCodeWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .plus_icon {
+        margin: 0 -10px;
+      }
+
+      .coupon_code {
+        color: #a6383e;
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .discount-percentage {
+          font-family: 'Work Sans';
+          font-size: 18px;
+          line-height: 19px;
+          font-weight: 700;
+          text-transform: uppercase;
+          // letter-spacing: 1.36px;
+          // color: #ffffff;
+        }
+
+        .discount-text {
+          display: block !important;
+          font-family: 'Work Sans';
+          font-size: 16px;
+          line-height: 19px;
+          font-weight: 400;
+          text-transform: uppercase;
+          padding: 0;
+
+          span {
+            font-weight: 700;
+          }
+        }
+
+        @include media-query(lg) {
+          height: max-content;
+        }
+      }
+    }
+
+    .countdown {
+      padding: 0;
+      min-height: auto;
+    }
+
+    .countdown::before {
+      display: none;
+    }
+
+    .countdown-timer .value.day:after,
+    .countdown-timer .value.hou:after,
+    .countdown-timer .value.min:after {
+      display: none;
+    }
+
+    .countdown-timer .value.day,
+    .countdown-timer .value.hou,
+    .countdown-timer .value.min,
+    .countdown-timer .value.sec {
+      margin: 0 5px;
+      width: 50px;
+      height: 32px;
+      color: #a6383e;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .promo_top {
+      background: #a6383e;
+      //background: transparent;
+      background-image: linear-gradient(236deg, #a6383e 61%, #374a53 50%);
+
+      @include media-query(lg) {
+        background-image: linear-gradient(357deg, #a6383e 59%, #374a53 50%);
+      }
+
+      @include media-query(sm) {
+        background-image: linear-gradient(357deg, #a6383e 56%, #374a53 50%);
+      }
+    }
+
+    .promo_top_inner {
+      max-width: 1595px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      //padding: 16px 15px 24px;
+      // padding: 19px 15px 19px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      flex-direction: column;
+
+      @include media-query(lg) {
+        flex-direction: row;
+        padding: 16px 15px 24px 15px;
+      }
+    }
+
+    .promo {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+
+      @include media-query(lg) {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .black-side {
+        // background: #374a53;
+        position: relative;
+        width: 40%;
+        height: 100%;
+
+        @include media-query(lg) {
+          width: 100%;
+        }
+
+        &-skew {
+          // background: #374a53;
+          // transform: skew(45deg);
+          // position: absolute;
+          // top: 0;
+          // left: 0;
+          // width: 100%;
+        }
+      }
+
+      .red-side {
+        width: 60%;
+        height: 100%;
+        // background: #a6383e;
+        padding: 19px 15px 19px 0;
+
+        @include media-query(lg) {
+          width: 100%;
+          padding: 19px 0 0px 0;
+        }
+      }
+    }
+
+    .promo_top_inner .promo .code {
+      margin: 0;
+      padding: 20px 0 15px 0;
+      font-size: 19px;
+      line-height: 1.2;
+      font-family: 'Work Sans', sans-serif;
+      color: #ffffff;
+      letter-spacing: 0.75px;
+      padding-right: 70px;
+      position: relative;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+
+      @include media-query(xl) {
+        padding-right: 50px;
+      }
+
+      @include media-query(lg) {
+        padding-top: 0;
+        padding-right: 0;
+      }
+    }
+
+    .promo_top .promo_top_inner .promo div.red-side {
+      font-size: 19px;
+      line-height: 1.2;
+      font-family: 'Work Sans', sans-serif;
+      color: #ffffff;
+      letter-spacing: 0.75px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 40px;
+
+      @include media-query(xl) {
+        gap: 40px;
+      }
+
+      @include media-query(lg) {
+        flex-direction: column;
+        gap: 26px;
+
+        span.label {
+          font-size: 13px !important;
+          line-height: 1.153846154 !important;
+        }
+      }
+    }
+
+    .promo_top_inner .promo div.red-side .extra_off {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .promo_top .promo_top_inner .promo div.red-side .extra_off h4 {
+      font-size: 28px;
+      line-height: 33px;
+      font-family: 'Work Sans';
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.26px;
+      margin: 0;
+      color: #fff;
+      text-align: center;
+
+      @include media-query(xl) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+
+    .promo_top .promo_top_inner .promo div.red-side .extra_off .coupon_code {
+      background: #fff;
+      margin: 0;
+      padding: 9px 20px;
+    }
+
+    .promo div.red-side .extra_off .coupon_code h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 21px;
+      font-family: 'Work Sans';
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #a6383e;
+      letter-spacing: 1.44px;
+
+      @include media-query(xl) {
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+
+    .promo_top_inner .promo div.red-side .offer_end {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-direction: column;
+      margin: 0;
+    }
+
+    .promo_top_inner .promo div.red-side .offer_end p {
+      font-family: 'Work Sans';
+      font-size: 17px;
+      line-height: 20px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1.36px;
+      color: #ffffff;
+
+      @include media-query(xl) {
+        font-size: 15px;
+        line-height: 18px;
+      }
+    }
+
+    .promo_top:not(.top_with_timer) .promo_top_inner .promo div.red-side .offer_end {
+      justify-content: center;
+    }
+
+    .#{$id}__plusIcon {
+      font: normal normal normal 40px/47px Work Sans;
+      letter-spacing: 3.2px;
+      color: #ffffff;
+      display: none;
+
+      @include media-query(lg) {
+        display: block;
+      }
+    }
+
+    .promo .code .save_upto_icon span {
+      font-family: 'Work Sans';
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 0.79px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .promo .code .save_upto_icon h4 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-transform: uppercase;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: 1.11px;
+      color: #fff;
+      font-family: 'Work Sans';
+
+      // @include media-query(xl) {
+      //   font-size: 24px;
+      //   line-height: 28px;
+      // }
+    }
+
+    .promo_top .promo_top_inner .promo .code p {
+      display: inline-block;
+      font-family: 'Work Sans';
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 1.44px;
+      text-transform: uppercase;
+      margin: 5px 0 12px 0;
+      color: #374a53;
+      background-color: #fff;
+      padding: 8px 16px;
+
+      span {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 21px;
+        letter-spacing: 1.44px;
+        color: #374a53;
+        text-transform: uppercase;
+      }
+      @include media-query(xl) {
+        font-size: 16px;
+      }
+    }
+  }
+
   &__tradeDiscountsPage {
     .usps-main-footer:after {
       display: none;
@@ -354,6 +713,10 @@
       > .columns {
         display: none;
       }
+    }
+
+    select.is-placeholder {
+      color: #000;
     }
 
     .trade-banner-container,
@@ -404,6 +767,7 @@
 
         @include media-query(md) {
           position: relative;
+
           &::before {
             content: '';
             position: absolute;
@@ -523,6 +887,7 @@
           @include media-query(md) {
             width: 114px;
           }
+
           @include media-query(xsm) {
             width: 102px;
           }
@@ -564,11 +929,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 11px 10px 13px;
-    background: #374a53;
+    //padding: 11px 10px 13px;
+    // background: #374a53;
 
     @include media-query(lg) {
       flex-direction: column;
+    }
+
+    .#{$id}__semiBold {
+      span {
+        font-weight: 400;
+      }
+
+      br {
+        display: none;
+
+        @include media-query(lg) {
+          display: block;
+        }
+      }
     }
 
     span {
@@ -579,9 +958,9 @@
       letter-spacing: 0.63px;
 
       @include media-query(lg) {
-        font-size: 17px;
-        line-height: 20px;
-        letter-spacing: 0.67px;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.6px;
       }
     }
   }

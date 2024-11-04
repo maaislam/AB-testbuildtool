@@ -49,3 +49,21 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
+export const parseHTML = async (urls) => {
+  const promises = urls.map((url) =>
+    fetch(url).catch((error) => {
+      console.error(`Error fetching ${url}: ${error.message}`);
+      return Promise.resolve(null);
+    })
+  );
+  const responses = await Promise.all(promises);
+  for (const [index, response] of responses.entries()) {
+    if (response) {
+      const html = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      return doc;
+    }
+  }
+};

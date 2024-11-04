@@ -99,8 +99,24 @@
                 border-bottom: 1px solid #cacaca;
               }
             }
+
+            @media screen and (min-width: 992px) {
+              padding: 0;
+              -moz-column-gap: 4px;
+              column-gap: 4px;
+              grid-auto-flow: column;
+              grid-template-rows: 100px;
+              grid-template-columns: 140px 1.3fr 1.2fr 1.2fr 2.25fr 1.4fr;
+              grid-template-areas: 'LOGO RATINGREVIEW CUSTOMBONUS CUSTOMBONUS PERKS CTA';
+              height: max-content;
+            }
+
+            @media screen and (min-width: 1200px) {
+              grid-template-columns: 1.5fr 1.1fr 1.2fr 1.2fr 2.25fr 1.4fr;
+            }
           }
           .logo-container {
+            max-width: 100%;
             a[data-type='logo'] {
               @media screen and (max-width: 991px) {
                 display: flex;
@@ -129,10 +145,22 @@
                   scale: 1.7;
                 }
               }
+
+              @media screen and (min-width: 992px) {
+                &[alt='Pop Casino'],
+                &[alt='Jalla Casino'],
+                &[alt='Mr Green'],
+                &[alt='Cherry.com'],
+                &[alt='PlayOJO'] {
+                  scale: 0.7;
+                }
+                &[alt='Frank & Fred Casino'] {
+                  scale: 0.5;
+                }
+              }
             }
             .rating {
               @media screen and (max-width: 991px) {
-                //display: none;
                 position: static;
               }
             }
@@ -194,31 +222,89 @@
               }
             }
 
-            @media screen and (max-width: 991px) {
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-              padding: 21px 14px 21px;
-              min-width: 100%;
-              max-width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 21px 14px 21px;
+            min-width: 100%;
+            max-width: 100%;
 
-              .ribbon {
-                transform: translate(-7px, -7px);
-                & > span {
-                  font-size: 9px;
-                  line-height: 18px;
-                  top: 15px;
-                  left: -27px;
-                }
+            .ribbon {
+              transform: translate(-7px, -7px);
+              & > span {
+                font-size: 9px;
+                line-height: 18px;
+                top: 15px;
+                left: -27px;
               }
             }
           }
-          .badges-container {
+          .#{$id}__desktopRatingsContainer {
+            grid-area: RATINGREVIEW;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+            .#{$id}__ratingsContainer {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-wrap: wrap;
+              & + span {
+                display: none;
+              }
+              .ratings-average {
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 15px;
+                text-align: center;
+                color: #333333;
+                padding-top: 2px;
+              }
+              span {
+                display: flex;
+                align-items: center;
+                margin: 0 3px 0 0;
+
+                &::after {
+                  background-color: #fff;
+                }
+
+                svg {
+                  width: 90px;
+                  height: 15px;
+                }
+              }
+
+              .cta-review {
+                width: 100%;
+                font-family: 'Gilroy';
+                font-size: 13px;
+                font-style: italic;
+                font-weight: 600;
+                line-height: 28px;
+                text-align: center;
+                text-decoration: underline;
+                color: #333333;
+              }
+
+              & ~ * {
+                display: none;
+              }
+            }
+
             @media screen and (max-width: 991px) {
               display: none;
             }
           }
+          .badges-container {
+            display: none;
+          }
           .cta-container {
+            .cta-review {
+              display: none;
+            }
             @media screen and (max-width: 991px) {
               margin: 4px 11px 12px;
               .cta {
@@ -246,44 +332,83 @@
                 display: none;
               }
             }
+
+            @media screen and (min-width: 992px) {
+              width: 190px;
+              padding: 5px 5px 5px 0;
+
+              .cta {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                white-space: normal;
+              }
+              .cta-text-strong {
+                font-size: 18px;
+                line-height: 25px;
+                font-weight: 400;
+                text-transform: capitalize;
+              }
+              .cta-text-small {
+                font-size: 18px;
+                line-height: 1;
+                font-weight: 600;
+                text-transform: uppercase;
+              }
+            }
           }
           .perks-container {
-            @media screen and (max-width: 991px) {
-              display: grid;
-              grid-template-rows: repeat(1, 1fr);
-              padding: 0 12px;
+            display: grid;
+            grid-template-rows: repeat(1, 1fr);
+            padding: 0 12px;
 
-              .perk {
-                flex-direction: column-reverse;
-                align-items: center;
+            .perk {
+              flex-direction: column-reverse;
+              align-items: center;
 
-                .title {
-                  max-width: 75px;
-                  font-size: 12px;
-                  font-weight: 400;
-                  line-height: 14px;
-                  text-align: center;
-                  text-transform: lowercase;
-                }
+              .title {
+                max-width: 75px;
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 14px;
+                text-align: center;
+                text-transform: lowercase;
 
-                .value {
-                  font-size: 14px;
-                  font-weight: 900;
-                  line-height: 22px;
+                @media screen and (min-width: 992px) {
+                  padding: 0 10px;
                 }
               }
-              .perk:nth-child(4) {
-                order: 1;
+
+              .value {
+                font-size: 14px;
+                font-weight: 900;
+                line-height: 22px;
               }
 
-              .perk:nth-child(5) {
-                order: 0;
+              @media screen and (min-width: 992px) {
+                padding: 3px;
+                margin: 5px 0;
+                justify-content: center;
               }
-              .perk:nth-child(2),
-              .perk:nth-child(3),
-              .perk:nth-child(6) {
-                display: none;
-              }
+            }
+
+            .perk:nth-child(4) {
+              order: 1;
+            }
+
+            .perk:nth-child(5) {
+              order: 0;
+            }
+            .perk:nth-child(2),
+            .perk:nth-child(3),
+            .perk:nth-child(6) {
+              display: none;
+            }
+
+            @media screen and (min-width: 992px) {
+              padding: 0;
             }
           }
           .terms-container {
@@ -320,113 +445,68 @@
           }
 
           .bonus-container {
-            margin: 12px 12px 4px;
-            .bonus {
-              font-size: 18px;
-              line-height: 23px;
-              .amount {
-                font-size: 18px;
-                line-height: 23px;
-                & + span {
-                  font-size: 14px;
-                  line-height: 23px;
-                }
-              }
-
-              .fallback {
-                font-size: 14px;
-                line-height: 23px;
-              }
-            }
-
-            .freespins {
-              font-size: 18px;
-              line-height: 23px;
-
-              .amount {
-                font-size: 18px;
-                line-height: 23px;
-                & + span {
-                  font-size: 14px;
-                  line-height: 23px;
-                }
-              }
-              .fallback {
-                font-size: 14px;
-                line-height: 23px;
-              }
-            }
-            .bonus-wagering {
-              margin-top: auto;
-              gap: 2px;
-              .bonus-turnover {
-                gap: 5px;
-                font-size: 14px;
-                line-height: 20px;
-
-                strong {
-                  font-size: 13px;
-                }
-
-                @media screen and (max-width: 375px) {
-                  font-size: 13px;
-                }
-              }
-
-              .bonus-icon-mobile,
-              .freespins-icon-mobile {
-                display: none;
-              }
-
-              .freespins-turnover {
-                gap: 5px;
-                font-size: 14px;
-                line-height: 20px;
-
-                strong {
-                  font-size: 13px;
-                }
-
-                @media screen and (max-width: 375px) {
-                  font-size: 13px;
-                }
-              }
-            }
+            display: none;
           }
 
           .#{$id}__bonusContainer {
+            display: flex;
             grid-area: CUSTOMBONUS;
-            padding: 12px 8px 0;
+
             &-list {
-              display: grid;
-              grid-template-columns: repeat(2, minmax(10px, 1fr));
-              place-items: center;
+              display: flex;
               align-items: center;
-              justify-items: center;
-              gap: 12px;
+              width: 100%;
+
+              @media screen and (max-width: 991px) {
+                min-height: 70px;
+              }
             }
 
             &-item {
+              width: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+              height: 100%;
               &-quantity {
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 29px;
+                font-size: 11px;
+                font-weight: 300;
+                line-height: 17px;
                 text-align: center;
-                color: #46b0e7;
+                color: #000;
                 white-space: nowrap;
+                span {
+                  font-weight: 400;
+                }
               }
               &-text {
-                max-width: 70px;
-                font-size: 10px;
-                font-weight: 400;
-                line-height: 14px;
+                .#{$id}__bonusValue {
+                  font-size: 20px;
+                  font-weight: 500;
+                  line-height: 31px;
+                  color: #65c82d;
+                }
+
+                .#{$id}__bonusValue-text {
+                  font-size: 16px;
+                  font-weight: 300;
+                  line-height: 31px;
+                  color: #333333;
+                }
+              }
+
+              &-text-only {
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 300;
                 text-align: center;
                 color: #333333;
               }
             }
 
-            @media screen and (min-width: 992px) {
-              display: none;
+            @media screen and (max-width: 991px) {
+              padding: 12px 12px 8px;
             }
           }
 

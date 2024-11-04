@@ -4,7 +4,9 @@ const appoinmentItem = (id, data) => {
   const html = `
         <div class="${id}__appoinment-item">
             <div class="${id}__appoinment-item-header">
-                <span class="${id}__icon">${icon}</span>
+                <div class="${id}__icon">
+                  <img src="${icon}"/>
+                </div>
                 <span class="${id}__text">${text}</span>
             </div>
             <div class="${id}__appoinment-item-text">

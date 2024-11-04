@@ -1,5 +1,6 @@
 import { uspFreeSampleIcon } from '../assets/icons';
 import banner from '../components/banner';
+import blackFridayBanner from '../components/blackFridayBanner';
 import subBanner from '../components/subBanner';
 import usp from '../components/usp';
 import { uspData } from '../data/data';
@@ -109,8 +110,7 @@ after a quote. Drop them a call or an email and they’ll be happy to help.</p>
     </div>`;
 
   const mainContainer = `<div class="${ID}__mainContainer">
-      ${banner(ID)}
-      ${subBanner(ID)}
+      ${blackFridayBanner(ID)}
       ${lfClubHTML()}
       ${usps()}
       ${authContainerHTML()}

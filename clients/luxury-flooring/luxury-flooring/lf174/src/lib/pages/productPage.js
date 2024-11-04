@@ -37,7 +37,7 @@ const productPage = (ID) => {
 
     pollerLite(['.final-price'], () => {
         const priceWrapper = document.querySelector('.final-price');
-        const tradePriceTextElem = `<span class="${ID}__tradePriceText only-price">Trade Price</span>`;
+        const tradePriceTextElem = `<span class="${ID}__tradePriceText only-price">Trade Price: </span>`;
 
         if (!priceWrapper.querySelector(`.${ID}__tradePriceText`)) {
             priceWrapper.insertAdjacentHTML('afterbegin', tradePriceTextElem);

@@ -22,7 +22,7 @@
             font-weight: 700;
             line-height: 67px;
             letter-spacing: -0.04em;
-            margin-bottom: 8px;
+            margin-bottom: 16px;
             padding-right: 20px;
 
             @media screen and (max-width: 1023px) {
@@ -78,6 +78,7 @@
 
       .#{$id}__buttonWrapper {
         display: none;
+
         @media screen and (max-width: 767px) {
           display: block;
           margin-top: 15px;
@@ -186,8 +187,12 @@
       .#{$id}__appoinment-item-header {
         display: flex;
         flex-direction: column;
+
         .#{$id}__icon {
+          width: 40px;
+          height: 40px;
         }
+
         .#{$id}__text {
           //styleName: body-lg;
           font-family: 'Lato';
@@ -208,6 +213,7 @@
         }
 
         @media screen and (max-width: 767px) {
+          margin-bottom: 15px;
           flex-direction: row;
           align-items: center;
         }
@@ -254,6 +260,7 @@
           padding-left: 0;
           padding-right: 0;
           border-bottom: 1px solid #d6d6d6;
+
           & > button.o-btn {
             display: flex;
             justify-content: space-between;
@@ -272,8 +279,8 @@
               position: absolute;
               right: 0;
               display: inline-block;
-              width: 1em;
-              height: 1em;
+              width: 1.4em;
+              height: 1.4em;
               --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m12 13.171l4.95-4.95l1.414 1.415L12 16L5.636 9.636L7.05 8.222z'/%3E%3C/svg%3E");
               background-color: currentColor;
               -webkit-mask-image: var(--svg);
@@ -294,7 +301,7 @@
             @media screen and (max-width: 767px) {
               font-size: 18px;
               line-height: 25px;
-              padding-right: 15px;
+              padding-right: 30px;
             }
           }
         }
@@ -356,6 +363,7 @@
       background-color: #faefef;
       padding: 32px;
       margin: 0 auto;
+      border: 1px solid #F6E5E5;
 
       @media screen and (max-width: 820px) {
         padding: 20px;
@@ -409,7 +417,7 @@
     }
     .#{$id}__imageWrapper {
       width: 50%;
-      background-image: url('https://www.citydoc.org.uk/wp-content/uploads/2021/12/serey-kim-hKOLya_3VzA-unsplash-1280x853-c-center.jpg');
+      background-image: url('https://cdn-3.convertexperiments.com/uf/10021806/10025581/Frame%20998.png');
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -517,8 +525,13 @@
       display: flex;
       .#{$id}__buttonWrapper {
         display: none;
+
         @media screen and (min-width: 768px) {
           display: block;
+        }
+
+        @media screen and (min-width: 1280px) {
+          margin-right: 35px;
         }
       }
     }

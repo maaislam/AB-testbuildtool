@@ -1,0 +1,70 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__buttonWrapper {
+    position: absolute;
+    bottom: 0;
+
+    .#{$id}__buttonContainer {
+      display: flex;
+      padding: 20px;
+
+      .#{$id}__meta {
+        a {
+          width: 196px;
+          font-family: 'Helvetica';
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 22px;
+          letter-spacing: 1px;
+          text-align: center;
+          color: #000000;
+          border: solid 2px #000000;
+          background-color: #fff;
+          padding: 15px;
+
+          @media screen and (max-width: 767px) {
+            width: 300px;
+          }
+        }
+
+        &:last-child {
+          padding-left: 10px;
+
+          a {
+            color: #fff;
+            border: solid 2px #fff;
+            background-color: #000000;
+          }
+
+          @media screen and (max-width: 767px) {
+            padding-left: 0;
+            padding-top: 8px;
+          }
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        flex-direction: column;
+        padding: 15px 20px;
+      }
+    }
+
+    & + .meta {
+      display: none;
+    }
+
+    &.right-aligned {
+      right: 0px;
+      @media screen and (max-width: 767px) {
+        right: unset;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

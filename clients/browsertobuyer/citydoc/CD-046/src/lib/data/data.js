@@ -234,8 +234,8 @@ export const info = [
 export const images = [
   'https://www.citydoc.org.uk/wp-content/uploads/2021/12/s-globalsign.webp',
   'https://www.citydoc.org.uk/wp-content/uploads/2021/12/s-cqc.webp',
-  'https://www.citydoc.org.uk/wp-content/uploads/2021/12/s-cqc.webp',
-  'https://www.citydoc.org.uk/wp-content/uploads/2021/12/s-cqc.webp'
+  'https://cdn-3.convertexperiments.com/uf/10021806/10025581/Frame%201028.png',
+  'https://cdn-3.convertexperiments.com/uf/10021806/10025581/Frame%201029.png'
 ];
 
 export const descriptionData = {

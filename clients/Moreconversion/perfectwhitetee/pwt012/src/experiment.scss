@@ -1,0 +1,39 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__offer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid #E6E6E6;
+
+        @include media-query(sm) {
+            padding: 10px 0;
+        }
+
+        &-icon {
+            display: flex;
+
+            @include media-query(sm) {
+                width: 22px;
+            }
+        }
+
+        &-text {
+            margin-left: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 17px;
+            color: #000;
+
+            @include media-query(sm) {
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+    }
+}

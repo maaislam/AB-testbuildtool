@@ -1,7 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
 import description from './components/description';
 import button from './components/button';
 import appointment from './components/appointment';
@@ -10,12 +8,9 @@ import vaccineWrapper from './components/vaccineWrapper';
 import partnersWrapper from './components/partnersWrapper';
 import titleWrapper from './components/titleWrapper';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
-  //Initialize experiment-specific code here
-  //...
-
   const mainWrapper = document.querySelector('#main');
   const footer = document.querySelector('footer');
   const heroElement = mainWrapper.querySelector('.c-info-hero');
@@ -28,8 +23,6 @@ const init = () => {
   const { pathname } = window.location;
   const collectedData = vaccineData[`${pathname}`];
   const collectedDesData = descriptionData[`${pathname}`];
-  console.log(collectedData);
-  console.log(collectedDesData);
 
   //add title wrapper
   if (!heroElement.querySelector(`.${ID}__titleWrapper`)) {
@@ -69,20 +62,7 @@ const init = () => {
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
-
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+  setup();
 
   init();
 };
