@@ -8,7 +8,7 @@ const gaTracking = (label) => {
   const GA4_PROPERTY_ID = 'G-P2725WEG9G';
   const GA4_INTERNAL_EXPERIMENT_NUM = '7710486157';
   const GA4_INTERNAL_EXPERIMENT_ID = `CF - JandJ TopList ${GA4_INTERNAL_EXPERIMENT_NUM}`;
-  const EXPERIMENT_DEVICE_CATEGORY = 'Mobile Only';
+  const EXPERIMENT_DEVICE_CATEGORY = 'All devices';
 
   pollerLite([() => document.readyState === 'complete'], () => {
     if (window.gtag !== undefined) {

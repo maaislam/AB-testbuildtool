@@ -1,5 +1,6 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 // .block-toplist .toplist-holder .toplist{
 //   opacity:0;
@@ -14,6 +15,7 @@
       .toplist.toplist {
         & > div {
           .operator-container {
+            border-color: #a5a5a5 !important;
             @media screen and (max-width: 991px) {
               grid-template-rows: 0fr 0fr 0fr 0fr;
               grid-template-areas:
@@ -33,9 +35,51 @@
                 }
               }
 
+              .logo-container:has(img[alt='No Account Bet']) {
+                .logo {
+                  scale: 1.2;
+                }
+              }
+
+              .logo-container:has(img[alt='Mr Green']) {
+                .logo {
+                  scale: 1.2;
+                }
+              }
+
+              .logo-container:has(img[alt='Videoslots']) {
+                .logo {
+                  scale: 1.2;
+                }
+              }
+
               .logo-container:has(img[alt='Expekt']) {
                 .logo {
                   scale: 0.8;
+                }
+              }
+
+              .logo-container:has(img[alt='Playjango']) {
+                .logo {
+                  scale: 1.9;
+                }
+              }
+
+              .logo-container:has(img[alt='PlayOJO']) {
+                .logo {
+                  scale: 1.5;
+                }
+              }
+
+              .logo-container:has(img[alt='Lucky Casino']) {
+                .logo {
+                  scale: 1.5;
+                }
+              }
+
+              .logo-container:has(img[alt='Frank & Fred Casino']) {
+                .logo {
+                  scale: 1.2;
                 }
               }
 
@@ -93,10 +137,10 @@
               }
 
               .logo-container[style*='background-color: rgb(255,255,255,1);'] {
-                border-bottom: 1px solid #cacaca;
+                border-bottom: 2px solid #a5a5a5;
               }
               .logo-container[style='background-color: rgb(255, 255, 255, 1);'] {
-                border-bottom: 1px solid #cacaca;
+                border-bottom: 2px solid #a5a5a5;
               }
             }
 
@@ -132,21 +176,22 @@
                 height: 50px;
                 object-fit: contain;
                 &[alt='Pop Casino'] {
-                  scale: 1.7;
+                  scale: 2;
                 }
                 &[alt='GoGoCasino'] {
-                  scale: 1.7;
+                  scale: 2;
                 }
 
                 &[alt='Kungaslottet'] {
-                  scale: 1.7;
+                  scale: 2;
                 }
                 &[alt='10Bet'] {
-                  scale: 1.7;
+                  scale: 2;
                 }
               }
 
               @media screen and (min-width: 992px) {
+                vertical-align: middle;
                 &[alt='Pop Casino'],
                 &[alt='Jalla Casino'],
                 &[alt='Mr Green'],
@@ -156,6 +201,34 @@
                 }
                 &[alt='Frank & Fred Casino'] {
                   scale: 0.5;
+                }
+
+                &[alt='Expekt'],
+                &[alt='Swift Casino'],
+                &[alt='Luna Casino'],
+                &[alt='Vera & John'],
+                &[alt='No Account Bet'],
+                &[alt='Videoslots'],
+                &[alt='Interwetten Casino'],
+                &[alt='Spelklubben'] {
+                  scale: 0.8;
+                }
+
+                &[alt='Lucky Casino'] {
+                  scale: 0.7;
+                }
+
+                &[alt='Playjango'] {
+                  scale: 1.3;
+                }
+
+                &[alt='Kungaslottet'] {
+                  transform: translateX(-3px);
+                  scale: 0.9;
+                }
+
+                &[alt='Mr Green'] {
+                  scale: 0.6;
                 }
               }
             }
@@ -203,10 +276,9 @@
 
               .cta-review {
                 width: 100%;
-                font-family: 'Gilroy';
                 font-size: 16px;
                 font-style: italic;
-                font-weight: 400;
+                font-weight: 600;
                 line-height: 34px;
                 color: #fff;
                 text-align: center;
@@ -225,7 +297,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 21px 14px 21px;
+            padding: 20px 14px 20px;
             min-width: 100%;
             max-width: 100%;
 
@@ -236,6 +308,25 @@
                 line-height: 18px;
                 top: 15px;
                 left: -27px;
+
+                @media screen and (max-width: 991px) {
+                  font-size: 11px;
+                  top: 17px;
+                  left: -23px;
+                }
+              }
+            }
+
+            @media screen and (min-width: 992px) {
+              &:has(img[alt='Knight Slots']) {
+                background-color: rgb(142 130 130) !important;
+              }
+
+              &[style*='background-color: rgb(255,255,255,1);'] {
+                border-right: 2px solid #a5a5a5;
+              }
+              &[style='background-color: rgb(255, 255, 255, 1);'] {
+                border-right: 2px solid #a5a5a5;
               }
             }
           }
@@ -279,7 +370,7 @@
 
               .cta-review {
                 width: 100%;
-                font-family: 'Gilroy';
+                font-family: 'Montserrat';
                 font-size: 13px;
                 font-style: italic;
                 font-weight: 600;
@@ -335,7 +426,7 @@
 
             @media screen and (min-width: 992px) {
               width: 190px;
-              padding: 5px 5px 5px 0;
+              padding: 9px 7px 9px 7px;
 
               .cta {
                 display: flex;
@@ -347,13 +438,13 @@
               }
               .cta-text-strong {
                 font-size: 18px;
-                line-height: 25px;
+                line-height: 1.2;
                 font-weight: 400;
                 text-transform: capitalize;
               }
               .cta-text-small {
                 font-size: 18px;
-                line-height: 1;
+                line-height: 1.2;
                 font-weight: 600;
                 text-transform: uppercase;
               }
@@ -383,13 +474,14 @@
 
               .value {
                 font-size: 14px;
-                font-weight: 900;
+                font-family: 'Montserrat';
+                font-weight: 600;
                 line-height: 22px;
               }
 
               @media screen and (min-width: 992px) {
                 padding: 3px;
-                margin: 5px 0;
+                margin: 9px 0;
                 justify-content: center;
               }
             }
@@ -417,10 +509,10 @@
               font-weight: 300;
               line-height: 12px;
               text-align: center;
-              height: 24px;
+              max-height: 24px;
               overflow: auto;
-              margin: 8px 4px 20px;
-              padding: 0px 3px 5px;
+              margin: 5px 4px 20px;
+              padding: 0px 3px 0px;
             }
           }
 
@@ -458,7 +550,7 @@
               width: 100%;
 
               @media screen and (max-width: 991px) {
-                min-height: 70px;
+                min-height: 57px;
               }
             }
 
@@ -469,6 +561,13 @@
               justify-content: center;
               flex-direction: column;
               height: 100%;
+
+              &:first-child {
+                @media screen and (min-width: 992px) {
+                  transform: translateX(-8px);
+                }
+              }
+
               &-quantity {
                 font-size: 11px;
                 font-weight: 300;
@@ -486,6 +585,10 @@
                   font-weight: 500;
                   line-height: 31px;
                   color: #65c82d;
+
+                  @media screen and (max-width: 1199px) and (min-width: 992px) {
+                    font-size: 15px;
+                  }
                 }
 
                 .#{$id}__bonusValue-text {
@@ -493,20 +596,35 @@
                   font-weight: 300;
                   line-height: 31px;
                   color: #333333;
+                  @media screen and (max-width: 1199px) and (min-width: 992px) {
+                    font-size: 15px;
+                  }
                 }
               }
 
               &-text-only {
+                max-width: 150px;
                 font-size: 16px;
                 line-height: 20px;
                 font-weight: 300;
                 text-align: center;
                 color: #333333;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 5;
+                overflow: hidden;
+                @media screen and (max-width: 1199px) and (min-width: 992px) {
+                  font-size: 15px;
+                }
               }
             }
 
             @media screen and (max-width: 991px) {
               padding: 12px 12px 8px;
+            }
+
+            @media screen and (min-width: 992px) {
+              padding: 0 5px;
             }
           }
 

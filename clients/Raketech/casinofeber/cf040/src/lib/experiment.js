@@ -5,7 +5,7 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import ratingsConatiner from './components/ratings';
 import bonusContainer from './components/bonusContainer';
-import { parseHTML, pollerLite } from './helpers/utils';
+import { parseHTML } from './helpers/utils';
 import { casinoFeaturesData } from './data/data';
 
 const { ID, VARIATION } = shared;
@@ -81,9 +81,10 @@ const init = () => {
 
     if (ratingElement && !casino.querySelector(`.${ID}__ratingsContainer`)) {
       setTimeout(() => {
+        const modifiedString = !ratings.includes('.') ? `${ratings}.0` : ratings;
         ratingElement.insertAdjacentHTML(
           'afterbegin',
-          ratingsConatiner(ID, ratings, logoBgColor, ctaLink)
+          ratingsConatiner(ID, modifiedString, logoBgColor, ctaLink)
         );
 
         const desktopRatings = document.createElement('div');

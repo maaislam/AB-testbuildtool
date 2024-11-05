@@ -616,6 +616,7 @@
       text-transform: uppercase;
       letter-spacing: 1.36px;
       color: #ffffff;
+      text-align: center;
 
       @include media-query(xl) {
         font-size: 15px;
@@ -929,7 +930,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    //padding: 11px 10px 13px;
+    padding: 0px 15px;
     // background: #374a53;
 
     @include media-query(lg) {
