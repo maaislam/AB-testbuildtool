@@ -137,10 +137,10 @@
               }
 
               .logo-container[style*='background-color: rgb(255,255,255,1);'] {
-                border-bottom: 2px solid #a5a5a5;
+                border-bottom: 1px solid #a5a5a5;
               }
               .logo-container[style='background-color: rgb(255, 255, 255, 1);'] {
-                border-bottom: 2px solid #a5a5a5;
+                border-bottom: 1px solid #a5a5a5;
               }
             }
 
@@ -323,10 +323,10 @@
               }
 
               &[style*='background-color: rgb(255,255,255,1);'] {
-                border-right: 2px solid #a5a5a5;
+                border-right: 1px solid #a5a5a5;
               }
               &[style='background-color: rgb(255, 255, 255, 1);'] {
-                border-right: 2px solid #a5a5a5;
+                border-right: 1px solid #a5a5a5;
               }
             }
           }
@@ -426,7 +426,7 @@
 
             @media screen and (min-width: 992px) {
               width: 190px;
-              padding: 9px 7px 9px 7px;
+              padding: 9px 7px 9px 3px;
 
               .cta {
                 display: flex;
@@ -577,6 +577,10 @@
                 white-space: nowrap;
                 span {
                   font-weight: 400;
+                }
+
+                @media screen and (max-width: 767px) {
+                  transform: translateY(-4px);
                 }
               }
               &-text {

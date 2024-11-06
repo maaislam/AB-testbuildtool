@@ -34,6 +34,10 @@ const init = () => {
     const ratingElement = casino.querySelector('.logo-container .item-rating');
     const ratings = getComputedStyle(ratingElement)?.getPropertyValue('--rating');
     const mainCtaContainer = casino.querySelector('.cta-container');
+    const casinoText = mainCtaContainer.querySelector('.cta-text-small');
+    if (casinoText.textContent.toLowerCase().trim().includes('casinocasino.com')) {
+      casinoText.innerHTML = 'casino <br>casino.com';
+    }
     const vistCasino = casino.querySelector('.cta .cta-text-small');
     const visitCasinoText = vistCasino.innerText.toLowerCase().replace('vidare till', '').trim();
     vistCasino.textContent = visitCasinoText;
