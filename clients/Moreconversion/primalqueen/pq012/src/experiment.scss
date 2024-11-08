@@ -2,8 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  .top_strip {
-    display: none;
+  .top_strip,
+  .pkf_strip,
+  .pq007__redemContainer {
+    display: none !important;
   }
   .#{$id}__stickyWrapper {
     display: none;
@@ -54,8 +56,41 @@
       padding: 18px 26px 12px;
     }
   }
-  .#{$id}__icon {
+
+  .package1 {
+    position: relative;
+    padding-top: 60px;
+
+    &::before {
+      content: 'Black Friday Special Offer';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      padding: 16px 0;
+      background-color: #f0f757;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 15px;
+      text-align: center;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 44px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      //background-color: #ffdeea;
+      border-top: 3px solid #2f0147;
+      border-radius: 10px;
+      z-index: 50;
+    }
   }
+
   .#{$id}__text {
     font-family: 'Inter';
     font-size: 24px;
