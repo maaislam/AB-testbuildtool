@@ -15,6 +15,10 @@
     margin: 0;
     @include media-query(xsm) {
       font-size: 26px;
+      padding: 30px 10px;
+    }
+    @include media-query(xxsm) {
+      font-size: 25px;
     }
     & > .highlight {
       display: inline-block;
