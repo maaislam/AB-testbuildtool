@@ -1,5 +1,5 @@
 const modal = (id, data) => {
-  const { imgUrl, mainTitle, buttonText, buttonLink, closeText, closeIcon } = data;
+  const { title, imgUrl, mainTitle, buttonText, buttonLink, closeText, closeIcon } = data;
   const html = `
         <div class="${id}__modal open">
             <div class="${id}__modal-overlay"></div>
@@ -10,7 +10,8 @@ const modal = (id, data) => {
                             <img src="${imgUrl}" alt="product_image"/>
                         </div>
                     </div>
-                    <div class="${id}__promoTitle">${mainTitle}</div>
+                    <h1 class="${id}__title">${title}</h1>
+                    <h2 class="${id}__promoTitle">${mainTitle}</h2>
                     <div class="${id}__buttonWrapper">
                         <a class="${id}__productLink" href="${buttonLink}">
                             ${buttonText}

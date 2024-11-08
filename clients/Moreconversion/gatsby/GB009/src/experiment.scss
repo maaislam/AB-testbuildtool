@@ -1,0 +1,54 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.#{$id} {
+  .essential_countdown_annoucement_bar_wrapper {
+    display: flex !important;
+
+    & + .essential_countdown_annoucement_bar_wrapper {
+      display: none !important;
+    }
+  }
+
+  .#{$id}__timer {
+    column-gap: 12px;
+    background-color: #001f4d;
+    padding: 19px 10px;
+    .#{$id}__title {
+      font-family: 'Figtree';
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: bold;
+    }
+    .#{$id}__countdownTime {
+      font-family: 'Figtree';
+      font-size: 12px;
+      line-height: 12px;
+      font-weight: bold;
+      padding-bottom: 5px;
+    }
+    .#{$id}__countdownDivider {
+      font-family: 'Figtree';
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: bold;
+    }
+    .#{$id}__countdownLegend {
+      font-family: 'Figtree';
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: 17px 10px;
+    }
+  }
+
+  [data-pf-type='Layout'] {
+    & > div[data-pf-type='Section']:first-child {
+      display: none;
+    }
+  }
+}
