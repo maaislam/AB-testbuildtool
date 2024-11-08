@@ -6,6 +6,7 @@ import { crossIcon } from './assets/icons';
 const { ID, VARIATION } = shared;
 
 const data = {
+  title: 'Beter, goedkoper én comfortabel:',
   imgUrl:
     'https://www.123drogisterij.nl/media/catalog/product/cache/13420deee3e10f6f7423a99527a61b09/z/w/zwemluiers_swimmm_medium_-_online_-_zonder_maat.jpg',
   mainTitle:

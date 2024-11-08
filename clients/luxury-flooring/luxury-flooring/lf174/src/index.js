@@ -1,4 +1,4 @@
 import activate from './lib/experiment';
 import { pollerLite } from './lib/helpers/utils';
 
-pollerLite(['#maincontent'], activate);
+pollerLite(['#maincontent', () => typeof window.dataLayer !== 'undefined'], activate);

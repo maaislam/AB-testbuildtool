@@ -65,6 +65,15 @@
         }
       }
 
+      .#{$id}__title {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.333;
+        margin-bottom: 10px;
+        margin-top: 8px !important;
+        padding: 0 5px;
+      }
+
       .#{$id}__promoTitle {
         font-size: 14px;
         font-weight: 500;

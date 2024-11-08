@@ -1241,4 +1241,49 @@
       transform: rotate(-135deg);
     }
   }
+
+  &__plp
+    .products
+    .product-item
+    .price-box
+    .special-price
+    span[data-price-type='finalPrice']
+    .price {
+    color: #a6383e !important;
+  }
+
+  .catalog-product-view {
+    .product-info-main .product-info-price-wrapper {
+      justify-content: space-between;
+      @media screen and (max-width: 522px) {
+        justify-content: center;
+      }
+    }
+    .final-price {
+      font-size: 18px !important;
+    }
+    .flooring-price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @media screen and (max-width: 522px) {
+        align-items: center;
+      }
+    }
+    .#{$id}__tradePriceText {
+      font-size: 18px !important;
+
+      & + .only-price {
+        display: none;
+      }
+
+      & ~ .price-including-tax {
+        font-size: 18px !important;
+        .price {
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }
