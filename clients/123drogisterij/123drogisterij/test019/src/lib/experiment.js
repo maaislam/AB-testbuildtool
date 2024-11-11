@@ -6,11 +6,11 @@ import { crossIcon } from './assets/icons';
 const { ID, VARIATION } = shared;
 
 const data = {
-  title: 'Beter, goedkoper én comfortabel:',
+  title: 'Beter, goedkoper én comfortabeler',
   imgUrl:
     'https://www.123drogisterij.nl/media/catalog/product/cache/13420deee3e10f6f7423a99527a61b09/z/w/zwemluiers_swimmm_medium_-_online_-_zonder_maat.jpg',
   mainTitle:
-    'Beter, goedkoper én comfortabel: ontdek de onze eigen Swimmm Zwemluier! Nu verkrijgbaar in Small & Medium en profiteer direct van onze kennismakingskorting.',
+    'Ontdek de onze eigen Swimmm Zwemluier! Nu verkrijgbaar in Small & Medium en profiteer direct van onze kennismakingskorting.',
   buttonText: 'Meer informatie',
   buttonLink: '/swimmm-wegwerp-zwemluiers-volwassenen',
   closeText: 'nee, vandaag niet',
