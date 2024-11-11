@@ -71,12 +71,27 @@ const productPage = (ID) => {
                 });
             }
 
-            const upsellWrapperElem = document.querySelector('.upsell-title + .products-grid');
-            const onlyPriceElem = upsellWrapperElem.querySelectorAll('.only-price');
-            onlyPriceElem.forEach((item) => {
-                if (!item.textContent.includes('Trade Price')) {
-                    item.classList.add(`${ID}__tradePriceText`);
-                    item.textContent = 'Trade Price: ';
+            const upsellWrapperElems = document.querySelectorAll('.upsell-title + .products-grid');
+            upsellWrapperElems.forEach((upsellWrapperElem) => {
+                const onlyPriceElems = upsellWrapperElem.querySelectorAll('.only-price');
+                if (onlyPriceElems.length > 0) {
+                    onlyPriceElems.forEach((item) => {
+                        if (!item.textContent.includes('Trade Price')) {
+                            item.classList.add(`${ID}__tradePriceText`);
+                            item.textContent = 'Trade Price: ';
+                        }
+                    });
+                } else {
+                    const priceElems = upsellWrapperElem.querySelectorAll('[data-price-type="finalPrice"] .price');
+                    priceElems.forEach((priceElem) => {
+                        const finalPriceElem = priceElem.closest('[data-price-type="finalPrice"]');
+                        const priceWrapperElem = priceElem.closest('.price-container');
+                        priceWrapperElem.classList.add(`${ID}__upsell`);
+                        if (finalPriceElem.querySelector(`.${ID}__tradePriceText`)) return;
+
+                        const tradeTextElem = `<span class="${ID}__tradePriceText only-price">Trade Price: </span>`;
+                        priceElem.insertAdjacentHTML('beforebegin', tradeTextElem);
+                    });
                 }
             });
         }, 500);

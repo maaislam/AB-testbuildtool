@@ -15,6 +15,11 @@
   }
 
   &__loggedInPdp {
+    .#{$id}__upsell {
+      .price-label {
+        display: none;
+      }
+    }
     .#{$id}__content {
       margin-top: 10px;
     }
