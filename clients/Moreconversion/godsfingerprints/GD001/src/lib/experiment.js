@@ -6,7 +6,7 @@ import wrapper from './components/wrapper';
 const { ID, VARIATION } = shared;
 
 const freeShippingThreshold = 100;
-const tooltipText = 'tooltip text';
+const tooltipText = 'We are proud to offer a 100% satisfaction guarantee on every order!';
 
 const init = () => {
   //your custom code goes here

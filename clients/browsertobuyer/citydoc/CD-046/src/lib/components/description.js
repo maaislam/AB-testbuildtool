@@ -11,9 +11,7 @@ const description = (id, data) => {
               `;
               })
               .join('\n')}
-          </div>
-          ${button(id)}
-            
+          </div>   
         </div>
     `;
   return html.trim();

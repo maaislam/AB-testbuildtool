@@ -33,11 +33,6 @@ const init = () => {
     bannerDescription.insertAdjacentHTML('beforebegin', description(ID, collectedDesData));
   }
 
-  //add button
-  if (!heroElement.querySelector(`.${ID}__buttonWrapper`)) {
-    bannerDescription.insertAdjacentHTML('afterend', button(ID));
-  }
-
   //vaccine wrapper add
   if (!document.querySelector(`.${ID}__vaccineWrapper`) && collectedData) {
     accordion.insertAdjacentHTML('beforebegin', vaccineWrapper(ID, collectedData, info));

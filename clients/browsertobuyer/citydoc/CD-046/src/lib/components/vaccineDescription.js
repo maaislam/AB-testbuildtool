@@ -1,7 +1,7 @@
 const vaccineDescription = (id, info) => {
   const html = `
     <div class="${id}__vaccineDescriptionWrapper">
-        <div class="${id}__vaccineDescriptionContainer o-wrapper">
+        <div class="${id}__vaccineDescriptionContainer">
             <div class="${id}__imageWrapper">
     
             </div>

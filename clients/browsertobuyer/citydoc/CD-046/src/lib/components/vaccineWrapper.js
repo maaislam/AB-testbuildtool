@@ -1,14 +1,21 @@
 import button from './button';
+import contact from './contact';
 import vaccine from './vaccine';
 import vaccineDescription from './vaccineDescription';
 
 const vaccineWrapper = (id, data, info) => {
   const html = `
-    <div class="${id}__vaccineWrapper">
+    <div class="${id}__vaccineWrapper o-wrapper">
         <div class="${id}__vaccineContainer">
-            ${vaccine(id, data)}    
+            <div class="${id}__vaccineTitleWrapper">
+                <div class="${id}__title">${data['About the heading']}</div>
+                ${button(id)}
+            </div>
+            <div class="${id}__vaccineContent">
+              ${vaccine(id, data)}
+              ${contact(id)}
+            </div>       
         </div>
-         ${button(id)}
          ${vaccineDescription(id, info)}
     </div>
   `;

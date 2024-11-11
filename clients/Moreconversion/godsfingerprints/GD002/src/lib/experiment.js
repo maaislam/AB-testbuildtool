@@ -13,6 +13,10 @@ const init = () => {
   editionBlock.querySelectorAll('label').forEach((item) => {
     if (item.querySelector('span').textContent.toLowerCase().includes('letterpress')) {
       item.querySelector('span').textContent = 'Classic';
+      item.classList.add(`${ID}__hasVariant`);
+    } else if (item.querySelector('span').textContent.toLowerCase().includes('gold on black')) {
+      item.querySelector('span').textContent = 'Gold Foil';
+      item.classList.add(`${ID}__hasVariant`);
     }
   });
 };

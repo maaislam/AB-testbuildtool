@@ -2,7 +2,9 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+  div[data-product-block='product_sibling'] {
+    label:not(.#{$id}__hasVariant) {
+      display: none;
     }
+  }
 }

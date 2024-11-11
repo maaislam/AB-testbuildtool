@@ -15,6 +15,9 @@
   }
 
   &__loggedInPdp {
+    .#{$id}__price-label {
+      padding-right: 3px;
+    }
     .#{$id}__upsell {
       .price-label {
         display: none;
@@ -35,19 +38,9 @@
       width: 55px !important;
       height: 40px !important;
     }
-
-    // .tax .price-wrapper .price::before {
-    //   content: 'Trade Price ';
-    // }
-
-    // .lf167__priceContainer .lf167__priceBox-price::before,
-    // .lf167__priceContainer .lf167__priceBox-price::before {
-    //   content: 'Trade Price ';
-    // }
   }
 
   &__plp {
-
     .homepage-banner,
     .banner_for_may {
       display: none;
@@ -710,7 +703,7 @@
       padding: 0;
 
       .trade-container,
-      >.columns {
+      > .columns {
         display: none;
       }
     }
@@ -718,7 +711,7 @@
 
   &__tradeRegPage {
     #maincontent {
-      >.columns {
+      > .columns {
         display: none;
       }
     }
@@ -1249,7 +1242,13 @@
     }
   }
 
-  &__plp .products .product-item .price-box .special-price span[data-price-type='finalPrice'] .price {
+  &__plp
+    .products
+    .product-item
+    .price-box
+    .special-price
+    span[data-price-type='finalPrice']
+    .price {
     color: #a6383e !important;
   }
 
@@ -1280,7 +1279,7 @@
       font-size: 18px !important;
       color: #a6383e !important;
 
-      &+.price-wrapper {
+      & + .price-wrapper {
         color: #a6383e !important;
         font-size: 18px !important;
 
@@ -1290,16 +1289,16 @@
         }
       }
 
-      &+.only-price {
+      & + .only-price {
         display: none;
       }
 
-      &~.price {
+      & ~ .price {
         color: #a6383e !important;
         font-size: 18px !important;
       }
 
-      &~.price-including-tax {
+      & ~ .price-including-tax {
         font-size: 18px !important;
 
         .price {

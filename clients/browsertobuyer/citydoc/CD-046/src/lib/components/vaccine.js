@@ -1,41 +1,69 @@
 const vaccine = (id, data) => {
   const html = `
     <div class="${id}__vaccine">
-        <div class="${id}__title">${data['About the heading']}</div>
+        <div class="${id}__vaccineItem">
+          ${
+            data['When to get vaccinated?']
+              ? `<p class="${id}__item"><span class="${id}__question">When to get vaccinated? </span><span class="${id}__answer">${data['When to get vaccinated?']}</span></p>`
+              : ''
+          }
+          ${
+            data.Course
+              ? `<p class="${id}__item"><span class="${id}__question">Course</span><span class="${id}__answer">${data.Course}</span></p>`
+              : ''
+          }  
+        </div>
+        <div class="${id}__vaccineItem">
+             ${
+               data.Boosters
+                 ? `<p class="${id}__item"><span class="${id}__question">Boosters</span><span class="${id}__answer">${data.Boosters}</span></p>`
+                 : ''
+             }
         ${
-          data['When to get vaccinated']
-            ? `<p><span>When to get vaccinated: </span>${data['When to get vaccinated']}</p>`
+          data['How is it given?']
+            ? `<p class="${id}__item"><span class="${id}__question">How is it given?</span><span class="${id}__answer">${data['How is it given?']}</span></p>`
             : ''
         }
-        ${data.Course ? `<p><span>Course: </span>${data.Course}</p>` : ''}
-        ${data.Boosters ? `<p><span>Boosters: </span>${data.Boosters}</p>` : ''}
+        
+        </div>
+        <div class="${id}__vaccineItem">
+             ${
+               data['How long does it last?']
+                 ? `<p class="${id}__item"><span class="${id}__question">How long does it last?</span><span class="${id}__answer">${data['How long does it last?']}</span></p>`
+                 : ''
+             }
         ${
-          data['How is it given']
-            ? `<p><span>How is it given: </span>${data['How is it given']}</p>`
+          data['Side effects']
+            ? `<p class="${id}__item"><span class="${id}__question">Side effects</span><span class="${id}__answer">${data['Side effects']}</span></p>`
             : ''
         }
-        ${
-          data['How long does it last']
-            ? `<p><span>How long does it last: </span>${data['How long does it last']}</p>`
-            : ''
-        }
-        ${data['Side effects'] ? `<p><span>Side effects: </span>${data['Side effects']}</p>` : ''}
-        ${data.Children ? `<p><span>Children: </span>${data.Children}</p>` : ''}
-        ${
-          data['Additional precautions']
-            ? `<p><span>Additional precautions: </span>${data['Additional precautions']}</p>`
-            : ''
-        }
-        ${
-          data['Certificate requirements']
-            ? `<p><span>Certificate requirements: </span>${data['Certificate requirements']}</p>`
-            : ''
-        }
+        
+        </div>
+        <div class="${id}__vaccineItem">
+           ${
+             data.Children
+               ? `<p class="${id}__item"><span class="${id}__question">Children</span><span class="${id}__answer">${data.Children}</span></p>`
+               : ''
+           }
+          ${
+            data['Additional precautions']
+              ? `<p class="${id}__item"><span class="${id}__question">Additional precautions</span><span class="${id}__answer">${data['Additional precautions']}</span></p>`
+              : ''
+          }
+
+        </div>
+        <div class="${id}__vaccineItem">
+           ${
+             data['Certificate requirements']
+               ? `<p class="${id}__item"><span class="${id}__question">Certificate requirements</span><span class="${id}__answer">${data['Certificate requirements']}</span></p>`
+               : ''
+           }
         ${
           data['Risk if you contract']
-            ? `<p><span>Risk if you contract: </span>${data['Risk if you contract']}</p>`
+            ? `<p class="${id}__item"><span class="${id}__question">Risk if you contract</span><span class="${id}__answer">${data['Risk if you contract']}</span></p>`
             : ''
         }
+        </div> 
     </div>
   `;
   return html.trim();
