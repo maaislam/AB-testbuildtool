@@ -4,6 +4,15 @@ import blackFridayBanner from '../components/blackFridayBanner';
 import startTimer from '../helpers/startTimer';
 import { observeDOM, pollerLite } from '../helpers/utils';
 
+const setTradePriceTextOnAccessories = () => {
+  const onlyPriceElem = document.querySelectorAll('.special-price .price');
+  onlyPriceElem.forEach((item) => {
+    const specialPrice = item.closest('.special-price');
+    if (!specialPrice.querySelector('.tradePriceText')) {
+      item.insertAdjacentHTML('beforebegin', '<span class="only-price tradePriceText">Trade Price: </span>');
+    }
+  });
+};
 const setTradePriceText = () => {
   const onlyPriceElem = document.querySelectorAll('.only-price');
   onlyPriceElem.forEach((item) => {
@@ -16,15 +25,24 @@ const setTradePriceText = () => {
 const productLandingPage = (ID, endDate) => {
   document.body.classList.add(`${ID}__plp`);
 
-  pollerLite(['.nav-sections', '.only-price'], () => {
+  if (!document.querySelector(`.${ID}__banner`)) {
     const attachPoint = document.querySelector('.nav-sections');
+    const banners = `${blackFridayBanner(ID)}`;
+    attachPoint.insertAdjacentHTML('afterend', banners);
+    startTimer(ID, endDate);
+  }
 
-    if (!document.querySelector(`.${ID}__banner`)) {
-      const banners = `${blackFridayBanner(ID)}`;
-      attachPoint.insertAdjacentHTML('afterend', banners);
-      startTimer(ID, endDate);
+  pollerLite(['.nav-sections', '.special-price'], () => {
+    if (window.location.pathname.includes('/accessories.html')) {
+      setTradePriceTextOnAccessories();
+
+      observeDOM('.products.products-grid', () => {
+       setTradePriceTextOnAccessories();
+      });
     }
+  });
 
+  pollerLite(['.nav-sections', '.only-price'], () => {
     setTradePriceText();
 
     observeDOM('.products.products-grid', () => {

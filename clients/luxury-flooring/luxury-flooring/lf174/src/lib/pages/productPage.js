@@ -35,40 +35,51 @@ const dropdownData = [
 const productPage = (ID) => {
     document.body.classList.add(`${ID}__loggedInPdp`);
 
-    pollerLite(['.final-price'], () => {
-        const priceWrapper = document.querySelector('.final-price');
-        const tradePriceTextElem = `<span class="${ID}__tradePriceText only-price">Trade Price: </span>`;
+    pollerLite(['.product-info-price'], () => {
+        setTimeout(() => {
+            const priceWrapper = document.querySelector('.final-price') || document.querySelector('.price-wrapper');
+            const tradePriceTextElem = `<span class="${ID}__tradePriceText only-price">Trade Price: </span>`;
 
-        if (!priceWrapper.querySelector(`.${ID}__tradePriceText`)) {
-            priceWrapper.insertAdjacentHTML('afterbegin', tradePriceTextElem);
-        }
+            if (!priceWrapper.querySelector(`.${ID}__tradePriceText`)) {
+                priceWrapper.insertAdjacentHTML('afterbegin', tradePriceTextElem);
+            }
 
-        if (!priceWrapper.querySelector(`.${ID}__accordion`)) {
-            const spAccordion = document.querySelector('#sp_accordion');
-            spAccordion.classList.add(`${ID}__accordion`);
-            const accordionHeaderElems = document.querySelectorAll('#sp_accordion .collapsible');
-            const accordionContentElems = document.querySelectorAll('#sp_accordion .content');
+            if (!priceWrapper.querySelector(`.${ID}__accordion`)) {
+                const spAccordion = document.querySelector('#sp_accordion');
+                spAccordion.classList.add(`${ID}__accordion`);
+                const accordionHeaderElems = document.querySelectorAll('#sp_accordion .collapsible');
+                const accordionContentElems = document.querySelectorAll('#sp_accordion .content');
 
-            accordionHeaderElems.forEach((header, index) => {
-                if (!header.querySelector('.pdpIcon')) {
-                    const iconElem = header.querySelector('h4 .icon svg');
-                    const titleElem = header.querySelector('h4 em');
+                accordionHeaderElems.forEach((header, index) => {
+                    if (!header.querySelector('.pdpIcon')) {
+                        const iconElem = header.querySelector('h4 .icon svg');
+                        const titleElem = header.querySelector('h4 em');
 
-                    const { title, icon } = dropdownData[index];
+                        const { title, icon } = dropdownData[index];
 
-                    iconElem.classList.add(`${ID}__hide`);
-                    titleElem.textContent = title;
-                    iconElem.insertAdjacentHTML('afterend', icon);
+                        iconElem.classList.add(`${ID}__hide`);
+                        titleElem.textContent = title;
+                        iconElem.insertAdjacentHTML('afterend', icon);
+                    }
+                });
+
+                accordionContentElems.forEach((content, index) => {
+                    if (!content.classList.contains(`${ID}__content`)) {
+                        content.innerHTML = dropdownData[index].content;
+                        content.classList.add(`${ID}__content`);
+                    }
+                });
+            }
+
+            const upsellWrapperElem = document.querySelector('.upsell-title + .products-grid');
+            const onlyPriceElem = upsellWrapperElem.querySelectorAll('.only-price');
+            onlyPriceElem.forEach((item) => {
+                if (!item.textContent.includes('Trade Price')) {
+                    item.classList.add(`${ID}__tradePriceText`);
+                    item.textContent = 'Trade Price: ';
                 }
             });
-
-            accordionContentElems.forEach((content, index) => {
-                if (!content.classList.contains(`${ID}__content`)) {
-                    content.innerHTML = dropdownData[index].content;
-                    content.classList.add(`${ID}__content`);
-                }
-            });
-        }
+        }, 500);
     });
 };
 export default productPage;

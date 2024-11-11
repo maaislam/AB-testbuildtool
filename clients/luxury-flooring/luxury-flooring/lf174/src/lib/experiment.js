@@ -20,7 +20,7 @@ const init = () => {
 
   if (pathname.includes('/trade-discounts')) {
     tradeDiscountsPage(ID, endDate);
-  } else if (pathname.includes('/trade-registration')) {
+  } else if (pathname.includes('/trade-registration') && !pathname.includes('/trade-registration-thanks')) {
     tradeRegistrationPage(ID);
   } else if (isPdp() && isLogin()) {
     productPage(ID);

@@ -31,17 +31,18 @@
       height: 40px !important;
     }
 
-    .tax .price-wrapper .price::before {
-      content: 'Retail ';
-    }
+    // .tax .price-wrapper .price::before {
+    //   content: 'Trade Price ';
+    // }
 
-    .lf167__priceContainer .lf167__priceBox-price::before,
-    .lf167__priceContainer .lf167__priceBox-price::before {
-      content: 'Trade Price ';
-    }
+    // .lf167__priceContainer .lf167__priceBox-price::before,
+    // .lf167__priceContainer .lf167__priceBox-price::before {
+    //   content: 'Trade Price ';
+    // }
   }
 
   &__plp {
+
     .homepage-banner,
     .banner_for_may {
       display: none;
@@ -688,6 +689,7 @@
         color: #374a53;
         text-transform: uppercase;
       }
+
       @include media-query(xl) {
         font-size: 16px;
       }
@@ -703,7 +705,7 @@
       padding: 0;
 
       .trade-container,
-      > .columns {
+      >.columns {
         display: none;
       }
     }
@@ -711,7 +713,7 @@
 
   &__tradeRegPage {
     #maincontent {
-      > .columns {
+      >.columns {
         display: none;
       }
     }
@@ -1242,26 +1244,23 @@
     }
   }
 
-  &__plp
-    .products
-    .product-item
-    .price-box
-    .special-price
-    span[data-price-type='finalPrice']
-    .price {
+  &__plp .products .product-item .price-box .special-price span[data-price-type='finalPrice'] .price {
     color: #a6383e !important;
   }
 
   .catalog-product-view {
     .product-info-main .product-info-price-wrapper {
       justify-content: space-between;
+
       @media screen and (max-width: 522px) {
         justify-content: center;
       }
     }
+
     .final-price {
       font-size: 18px !important;
     }
+
     .flooring-price {
       display: flex;
       flex-direction: column;
@@ -1271,15 +1270,33 @@
         align-items: center;
       }
     }
+
     .#{$id}__tradePriceText {
       font-size: 18px !important;
+      color: #a6383e !important;
 
-      & + .only-price {
+      &+.price-wrapper {
+        color: #a6383e !important;
+        font-size: 18px !important;
+
+        .price {
+          color: #a6383e !important;
+          font-size: 18px !important;
+        }
+      }
+
+      &+.only-price {
         display: none;
       }
 
-      & ~ .price-including-tax {
+      &~.price {
+        color: #a6383e !important;
         font-size: 18px !important;
+      }
+
+      &~.price-including-tax {
+        font-size: 18px !important;
+
         .price {
           font-size: 18px;
         }
