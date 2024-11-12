@@ -1,0 +1,12 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__banner {
+        margin: 0 auto;
+        max-width: 1120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
