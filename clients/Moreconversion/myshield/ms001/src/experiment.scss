@@ -2,6 +2,11 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    &-1 {
+        .announcement-bar__link {
+            display: none;
+        }
+    }
     &__bannerWrapper {
         background: #FEF6EA;
 
