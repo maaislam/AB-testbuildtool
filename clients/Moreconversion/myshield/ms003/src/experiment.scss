@@ -1,0 +1,14 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &-productSection {
+        @include media-query(sm) {
+            padding-top: 16px;
+        }
+    }
+    
+    &-img {
+        width: 100%;
+    }
+}
