@@ -45,25 +45,12 @@ const vaccine = (id, data) => {
                ? `<p class="${id}__item"><span class="${id}__question">Children</span><span class="${id}__answer">${data.Children}</span></p>`
                : ''
            }
-          ${
-            data['Additional precautions']
-              ? `<p class="${id}__item"><span class="${id}__question">Additional precautions</span><span class="${id}__answer">${data['Additional precautions']}</span></p>`
-              : ''
-          }
-
-        </div>
-        <div class="${id}__vaccineItem">
            ${
              data['Certificate requirements']
                ? `<p class="${id}__item"><span class="${id}__question">Certificate requirements</span><span class="${id}__answer">${data['Certificate requirements']}</span></p>`
                : ''
            }
-        ${
-          data['Risk if you contract']
-            ? `<p class="${id}__item"><span class="${id}__question">Risk if you contract</span><span class="${id}__answer">${data['Risk if you contract']}</span></p>`
-            : ''
-        }
-        </div> 
+        </div>
     </div>
   `;
   return html.trim();
