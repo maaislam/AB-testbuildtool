@@ -2,11 +2,226 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    &__bannerWrapper {
+        background: #FEF6EA;
+
+        .#{$id}__banner-mobile {
+            display: none;
+
+            @include media-query(sm) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 2px 0 16px;
+            }
+
+            &-btn {
+                @include media-query(sm) {
+                    display: block;
+                    width: 232px;
+                    height: 41px;
+                    padding: 0 10px;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #000;
+                    font-size: 16.5px;
+                    font-weight: 700;
+                    line-height: 19.5px;
+                    letter-spacing: 1.1px;
+                    background-color: #ff9900;
+                    border: 2px solid #000000 !important;
+                    -webkit-box-shadow: 3px 3px 0px 0px #535352;
+                    box-shadow: 3px 3px 0px 0px #535352;
+                    border-radius: 41px;
+                    -webkit-text-decoration: none;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
     &__banner {
         margin: 0 auto;
         max-width: 1120px;
+        padding: 15px 0 13px;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include media-query(sm) {
+            padding: 14px 18px 13px;
+            align-items: flex-start;
+        }
+
+        @include media-query(xsm) {
+            padding: 14px 12px 13px;
+        }
+
+        &-left {
+            max-width: 296px;
+
+            @include media-query(sm) {
+                max-width: 55%;
+            }
+
+            &-title {
+                margin: 0;
+                padding: 0;
+                color: #000;
+                font-size: 18px;
+                font-weight: 800;
+                line-height: 22px;
+                letter-spacing: 0.67px;
+
+                @include media-query(sm) {
+                    max-width: 200px;
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+
+            &-text {
+                margin: 0;
+                padding: 0;
+                color: #000;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 19px;
+                letter-spacing: 1.1px;
+                text-align: left;
+
+                @include media-query(sm) {
+                    max-width: 200px;
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+            }
+        }
+
+        &-center {
+            display: flex;
+            align-items: center;
+
+            @include media-query(sm) {
+                flex-direction: column;
+                align-items: flex-start;
+                max-width: 45%;
+            }
+
+            &-title,
+            &-text {
+                color: #000;
+                padding: 0;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 16px;
+                letter-spacing: 1.1px;
+
+                @include media-query(sm) {
+                    font-size: 9px;
+                    line-height: 12px;
+                }
+
+                @include media-query(xsm) {
+                    font-size: 8px;
+                }
+            }
+
+            &-title {
+                margin: 0;
+                @include media-query(sm) {
+                    margin-top: 4px;
+                }
+            }
+
+            &-text {
+                margin: 6px 0 0 0;
+                max-width: 260px;
+
+                @include media-query(sm) {
+                    margin: 2px 0 0 0;
+                }
+            }
+
+            .countdown-timer.apply-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 0 20px;
+                margin: 0 40px;
+
+                @include media-query(sm) {
+                    margin: 0;
+                    grid-gap: 0 8px;
+                }
+
+                .value {
+                    grid-row: 1;
+                    padding: 4px 12px 0 12px;
+                    font-size: 18px;
+                    font-weight: 800;
+                    line-height: 22px;
+                    letter-spacing: 0.7px;
+                    color: #000000;
+                    text-align: center;
+                    background: #C3A66D;
+                    border-top-left-radius: 2px;
+                    border-top-right-radius: 2px;
+
+                    @include media-query(sm) {
+                        font-size: 14px;
+                        line-height: 18px;
+                        padding: 3px 9px 0 9px;
+                        max-width: 47px;
+                    }
+                }
+
+                .label {
+                    text-align: center;
+                    grid-row: 2;
+                    padding: 0 12px 6px 12px;
+                    font-size: 9px;
+                    font-weight: 700;
+                    line-height: 11px;
+                    letter-spacing: 0.67px;
+                    color: #000000;
+                    background: #C3A66D;
+                    border-bottom-left-radius: 2px;
+                    border-bottom-right-radius: 2px;
+
+                    @include media-query(sm) {
+                        font-size: 7px;
+                        padding: 0 6px 4px 6px;
+                    }
+                }
+            }
+        }
+
+        &-right {
+            @include media-query(sm) {
+                display: none;
+            }
+
+            &-btn {
+                width: 274px;
+                height: 52px;
+                padding: 0 10px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                color: #000;
+                font-size: 16.5px;
+                font-weight: 700;
+                line-height: 19.5px;
+                letter-spacing: 1.1px;
+                background-color: #ff9900;
+                border: 2px solid #000000 !important;
+                box-shadow: 3px 3px 0px 0px #535352;
+                border-radius: 41px;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
     }
 }
