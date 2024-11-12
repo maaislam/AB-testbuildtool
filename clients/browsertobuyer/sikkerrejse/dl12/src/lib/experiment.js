@@ -1,7 +1,7 @@
 import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const getSearchParamValue = (param) => new URLSearchParams(window.location.search).get(param);
