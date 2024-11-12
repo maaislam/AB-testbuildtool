@@ -2,6 +2,11 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  main#content {
+    position: relative;
+    background-color: #fff !important;
+    box-shadow: 0 0 0 100vmax #fff;
+  }
   .#{$id}__page-content {
     .#{$id}__post {
       padding: 24px 0;
@@ -94,6 +99,10 @@
 
     span {
       color: #e2231a;
+    }
+
+    & + .page-header {
+      display: none;
     }
   }
 

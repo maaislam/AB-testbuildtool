@@ -60,4 +60,5 @@ export default () => {
   setup();
 
   init();
+  document.getElementById('main').style.opacity = '1';
 };
