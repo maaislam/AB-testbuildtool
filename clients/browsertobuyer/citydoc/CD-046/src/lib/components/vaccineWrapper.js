@@ -13,7 +13,7 @@ const vaccineWrapper = (id, data, info) => {
             </div>
             <div class="${id}__vaccineContent">
               ${vaccine(id, data)}
-              ${contact(id)}
+              ${contact(id, data)}
             </div>       
         </div>
          ${vaccineDescription(id, info)}

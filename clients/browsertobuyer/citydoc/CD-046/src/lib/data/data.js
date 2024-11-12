@@ -82,7 +82,7 @@ export const vaccineData = {
   },
   '/conditions/hepatitis-b/': {
     Name: 'Hep B',
-    'When to get vaccinated?': 'Ideally atleast 3-4 weeks before travel (accelerated course).',
+    'When to get vaccinated?': 'Ideally at least 3-4 weeks before travel (accelerated course).',
     Course: '3 doses.',
     Boosters: '1 year.',
     'How is it given?': 'Injection in the upper arm.',
@@ -218,7 +218,7 @@ export const vaccineData = {
     'Additional precautions': 'N/A',
     'Certificate requirements': 'N/A',
     'Risk if you contract':
-      'TB can affect any organ of the body and symptoms relate to the infected organ. However, typical symptoms of TB include:',
+      'TB can affect any organ of the body and symptoms relate to the infected organ. However, typical symptoms of TB include-:',
     'About the heading': 'About the Mantoux & TB Testing'
   }
 };
