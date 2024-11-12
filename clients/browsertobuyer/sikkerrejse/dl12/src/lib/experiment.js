@@ -4,7 +4,8 @@ import shared from './shared/shared';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  const searchResult = window.location.search.split('?s=')[1];
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchResult = urlParams.get('s');
   const mainWrapper = document.querySelector('main#content');
   const pageContentWrapper = document.querySelector('main#content .page-content');
   pageContentWrapper.classList.add(`${ID}__page-content`);
