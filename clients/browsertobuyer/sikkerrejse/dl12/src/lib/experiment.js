@@ -44,16 +44,18 @@ const init = () => {
   const allContent = pageContentWrapper.querySelectorAll('article.post');
   allContent.forEach((item) => {
     item.classList.add(`${ID}__post`);
-    const titleElement = item.querySelector('h2.entry-title');
+    const titleElement = item.querySelector('h2.entry-title a');
     const title = titleElement.textContent.trim();
     const truncatedText = limitTo75NonSpaceCharacters(title);
     titleElement.textContent = truncatedText;
     const fullText = item.querySelector('p').textContent.trim();
     const words = fullText.split(' ');
     if (words.length > 12) {
-      const truncatedText = `${words.slice(0, 12).join(' ')} […]`;
+      const truncatedText2 = `${words
+        .slice(0, 12)
+        .join(' ')} <span class="${ID}__readmore">[…]</span>`;
       const truncatedElement = document.createElement('p');
-      truncatedElement.textContent = truncatedText;
+      truncatedElement.innerHTML = truncatedText2;
       truncatedElement.classList.add(`${ID}__truncated-text`);
       if (!item.querySelector(`.${ID}__truncated-text`)) {
         item.querySelector('p').insertAdjacentElement('beforebegin', truncatedElement);
@@ -68,6 +70,20 @@ const init = () => {
       }
     }
   });
+
+  const paginationWrapper = document.querySelector('.pagination');
+  console.log(paginationWrapper);
+  const previousPage = paginationWrapper?.querySelector('.nav-previous');
+  const nextPage = paginationWrapper?.querySelector('.nav-next');
+
+  if (previousPage && previousPage.querySelector('a')) {
+    const insideChild = previousPage.querySelector('a');
+    insideChild.innerHTML = insideChild.innerHTML.replace(/Previous/g, 'Forrige');
+  }
+  if (nextPage && nextPage.querySelector('a')) {
+    const insideChild = nextPage.querySelector('a');
+    insideChild.innerHTML = insideChild.innerHTML.replace(/Next/g, 'Næste');
+  }
 };
 
 export default () => {
@@ -82,6 +98,12 @@ export default () => {
       wrapper.querySelector('a').click();
     } else if (target.matches('main#content') && document.body.classList.contains('overlay-wrap')) {
       document.querySelector('.btn-wrap .open-input')?.click();
+    } else if (target.closest(`.${ID}__readmore`)) {
+      const clickedItem = target.closest(`.${ID}__readmore`);
+      const wrapper = clickedItem.closest('.post');
+      wrapper.classList.add('show');
+      const controlTextElement = wrapper.querySelector(`p:not(.${ID}__truncated-text)`);
+      controlTextElement.innerHTML = controlTextElement.innerHTML.replace(/\[…\]/g, '');
     }
   });
   init();
