@@ -72,7 +72,6 @@ const init = () => {
   });
 
   const paginationWrapper = document.querySelector('.pagination');
-  console.log(paginationWrapper);
   const previousPage = paginationWrapper?.querySelector('.nav-previous');
   const nextPage = paginationWrapper?.querySelector('.nav-next');
 
