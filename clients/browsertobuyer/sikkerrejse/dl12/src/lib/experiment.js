@@ -1,4 +1,5 @@
 /*eslint-disable no-restricted-syntax */
+import { pollerLite } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -103,7 +104,33 @@ export default () => {
       wrapper.classList.add('show');
       const controlTextElement = wrapper.querySelector(`p:not(.${ID}__truncated-text)`);
       controlTextElement.innerHTML = controlTextElement.innerHTML.replace(/\[…\]/g, '');
+    } else if (target.closest('.post h2.entry-title a')) {
+      console.log('Search result click');
+    } else if (target.closest('button#searchBtn') && target.closest('.search-container')) {
+      const wrapper = target.closest('.search-container');
+      const inputElement = wrapper.querySelector('input');
+      if (inputElement.value !== '') {
+        console.log('search icon clicked');
+      }
     }
   });
+
+  pollerLite(
+    [
+      () =>
+        document.querySelectorAll('#searchInput') &&
+        document.querySelectorAll('#searchInput').length > 0
+    ],
+    () => {
+      const inputElements = document.querySelectorAll('#searchInput');
+      inputElements.forEach((item) => {
+        item.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' && item.value.trim() !== '') {
+            console.log('Enter key pressed with non-empty input:', item.value);
+          }
+        });
+      });
+    }
+  );
   init();
 };
