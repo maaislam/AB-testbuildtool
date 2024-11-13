@@ -269,6 +269,7 @@
   .elementor-section:has(.elementor-column) {
     [data-widget_type='uael-nav-menu.default'] {
       transform: translateX(40px);
+      margin-top: 4px;
     }
   }
 }

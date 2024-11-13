@@ -1,4 +1,5 @@
 import { pollerLite } from './helpers/utils';
+import trackGA4Event from './services/gaTracking';
 
 export default () => {
   document.body.addEventListener('click', (e) => {
@@ -10,4 +11,22 @@ export default () => {
       });
     }
   });
+
+  pollerLite(
+    [
+      () =>
+        document.querySelectorAll('#searchInput') &&
+        document.querySelectorAll('#searchInput').length > 0
+    ],
+    () => {
+      const inputElements = document.querySelectorAll('#searchInput');
+      inputElements.forEach((item) => {
+        item.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' && item.value.trim() !== '') {
+            trackGA4Event('Search performed', 'Search submitted', 'The search term used');
+          }
+        });
+      });
+    }
+  );
 };
