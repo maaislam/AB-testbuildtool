@@ -13,8 +13,11 @@ const init = () => {
   <div class='${ID}__bannerWrapper'>
     <div class='${ID}__banner'>
       <div class='${ID}__banner-left'>
-        <p class='${ID}__banner-left-title'>DON’T MISS OUT OF SHIELD’S BACK TO SCHOOL FLASH SALE!</p>
-        <p class='${ID}__banner-left-text'>(WHILE SUPPLIES LAST)</p>
+        <p class='${ID}__banner-left-title ${ID}__banner-left-title--desktop'>DON’T MISS OUT OF SHIELD’S BACK TO SCHOOL FLASH SALE!</p>
+        <p class='${ID}__banner-left-text ${ID}__banner-left-title--desktop'>(WHILE SUPPLIES LAST)</p>
+
+        <p class='${ID}__banner-left-title ${ID}__banner-left-title--mobile'>Early Black Friday</p>
+        <p class='${ID}__banner-left-text ${ID}__banner-left-title--mobile'>Up To 56% OFF + Free Gifts</p>
       </div>
       <div class='${ID}__banner-center'>
         <div class='${ID}__banner-center-timer'>
@@ -33,12 +36,9 @@ const init = () => {
         </div>
       </div>
       <div class='${ID}__banner-right'>
-        <a href="" class='${ID}__banner-right-btn'>View Offer Details →</a>
+        <a href="" class='${ID}__banner-right-btn ${ID}__banner-right-btn--desktop'>View Offer Details →</a>
+        <a href="" class='${ID}__banner-right-btn ${ID}__banner-right-btn--mobile'>View Offer →</a>
       </div>
-    </div>
-
-    <div class='${ID}__banner-mobile'>
-        <a href="https://myshieldsystem.com/products/shield-system" class='${ID}__banner-mobile-btn'>Shop Shield →</a>
     </div>
   </div>
   `;

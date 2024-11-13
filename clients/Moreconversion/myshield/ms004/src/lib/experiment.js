@@ -10,6 +10,27 @@ const newCrossIcon = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none
   </svg>
   `;
 
+const preloadImage = () => {
+  //List of image URLs you want to preload
+  const imageUrls = [
+    'https://myshieldsystem.com/cdn/shop/files/Bundle2.Pic3_fc102dd9-924a-441c-9a4d-805547b9d461.jpg?v=1686098515&width=713',
+    'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/4_month_supply.png?v=1731451444',
+    'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/6_month_supply.png?v=1731451443',
+    'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/12_month_supply.png?v=1731451444'
+  ];
+
+  //Preload images and insert them into the end of the body
+  imageUrls.forEach((url) => {
+    const img = new Image();
+    img.src = url; //Start preloading the image
+    img.style.display = 'none'; //Hide the image
+
+    img.onload = () => {
+      document.body.insertAdjacentElement('beforeend', img);
+    };
+  });
+};
+
 const init = () => {
   const variantDiscounts = document.querySelectorAll('.variant-discount');
 
@@ -23,6 +44,8 @@ const init = () => {
 export default () => {
   setup();
 
+  preloadImage();
+
   document.body.addEventListener('click', (event) => {
     const { target } = event;
 
@@ -32,17 +55,17 @@ export default () => {
 
       setTimeout(() => {
         if (value.trim() === '1 Set') {
-          productImg.setAttribute('src', 'https://myshieldsystem.com/cdn/shop/files/benefits_homepage_mobile_v4_1_ddb084c0-d21e-4b7a-b71d-2f7d777eb2a0.png?v=1713724744&width=194');
-          productImg.setAttribute('srcset', 'https://myshieldsystem.com/cdn/shop/files/benefits_homepage_mobile_v4_1_ddb084c0-d21e-4b7a-b71d-2f7d777eb2a0.png?v=1713724744&width=194');
+          productImg.setAttribute('src', 'https://myshieldsystem.com/cdn/shop/files/Bundle2.Pic3_fc102dd9-924a-441c-9a4d-805547b9d461.jpg?v=1686098515&width=713');
+          productImg.setAttribute('srcset', 'https://myshieldsystem.com/cdn/shop/files/Bundle2.Pic3_fc102dd9-924a-441c-9a4d-805547b9d461.jpg?v=1686098515&width=713');
         } else if (value.trim() === '2 Sets') {
-          productImg.setAttribute('src', 'https://myshieldsystem.com/cdn/shop/files/Bundle2.Pic3_fc102dd9-924a-441c-9a4d-805547b9d461.jpg?v=1686098515&width=1100');
-          productImg.setAttribute('srcset', 'https://myshieldsystem.com/cdn/shop/files/Bundle2.Pic3_fc102dd9-924a-441c-9a4d-805547b9d461.jpg?v=1686098515&width=1100');
+          productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/4_month_supply.png?v=1731451444');
+          productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/4_month_supply.png?v=1731451444');
         } else if (value.trim() === '3 Sets') {
-          productImg.setAttribute('src', 'https://myshieldsystem.com/cdn/shop/files/benefits_homepage_mobile_v4_1_ddb084c0-d21e-4b7a-b71d-2f7d777eb2a0.png?v=1713724744&width=194');
-          productImg.setAttribute('srcset', 'https://myshieldsystem.com/cdn/shop/files/benefits_homepage_mobile_v4_1_ddb084c0-d21e-4b7a-b71d-2f7d777eb2a0.png?v=1713724744&width=194');
+          productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/6_month_supply.png?v=1731451443');
+          productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/6_month_supply.png?v=1731451443');
         } else if (value.trim() === '6 Sets') {
-          productImg.setAttribute('src', 'https://myshieldsystem.com/cdn/shop/files/benefits_homepage_mobile_v4_1_ddb084c0-d21e-4b7a-b71d-2f7d777eb2a0.png?v=1713724744&width=194');
-          productImg.setAttribute('srcset', 'https://myshieldsystem.com/cdn/shop/files/benefits_homepage_mobile_v4_1_ddb084c0-d21e-4b7a-b71d-2f7d777eb2a0.png?v=1713724744&width=194');
+          productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/12_month_supply.png?v=1731451444');
+          productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/12_month_supply.png?v=1731451444');
         }
       }, 250);
     }
