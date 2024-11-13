@@ -14,17 +14,16 @@ const vaccine = (id, data) => {
           }  
         </div>
         <div class="${id}__vaccineItem">
+              ${
+                data['How is it given?']
+                  ? `<p class="${id}__item"><span class="${id}__question">How is it given?</span><span class="${id}__answer">${data['How is it given?']}</span></p>`
+                  : ''
+              }
              ${
                data.Boosters
                  ? `<p class="${id}__item"><span class="${id}__question">Boosters</span><span class="${id}__answer">${data.Boosters}</span></p>`
                  : ''
              }
-        ${
-          data['How is it given?']
-            ? `<p class="${id}__item"><span class="${id}__question">How is it given?</span><span class="${id}__answer">${data['How is it given?']}</span></p>`
-            : ''
-        }
-        
         </div>
         <div class="${id}__vaccineItem">
              ${
