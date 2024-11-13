@@ -2,7 +2,7 @@
 import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const limitTo75NonSpaceCharacters = (text) => {
   //Remove spaces and then limit to 75 non-space characters

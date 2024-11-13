@@ -1,0 +1,8 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .no-shipping-text {
+        color: #5F5F5F;
+    }
+}
