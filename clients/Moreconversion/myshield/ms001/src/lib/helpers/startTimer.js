@@ -1,5 +1,5 @@
-const startTimer = (id, endDate) => {
-    const endTime = new Date(endDate).getTime(); //parse 'MM/DD/YYYY'
+const startTimer = (id) => {
+    const endTime = new Date().getTime() + (3 * 60 + 34) * 60 * 1000; //parse 'MM/DD/YYYY'
 
     //Update the count down every 1 second
     const interval = setInterval(() => {
