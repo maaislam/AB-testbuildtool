@@ -1,4 +1,6 @@
 /*eslint-disable no-restricted-syntax */
+import { pollerLite } from './helpers/utils';
+import trackGA4Event from './services/gaTracking';
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -103,7 +105,16 @@ export default () => {
       wrapper.classList.add('show');
       const controlTextElement = wrapper.querySelector(`p:not(.${ID}__truncated-text)`);
       controlTextElement.innerHTML = controlTextElement.innerHTML.replace(/\[…\]/g, '');
+    } else if (target.closest('.post h2.entry-title a')) {
+      trackGA4Event('Search result click through', 'Search result click', 'The search result URL');
+    } else if (target.closest('button#searchBtn') && target.closest('.search-container')) {
+      const wrapper = target.closest('.search-container');
+      const inputElement = wrapper.querySelector('input');
+      if (inputElement.value !== '') {
+        trackGA4Event('Search performed', 'Search submitted', 'The search term used');
+      }
     }
   });
+
   init();
 };
