@@ -13,10 +13,10 @@ const newCrossIcon = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none
 const preloadImage = () => {
   //List of image URLs you want to preload
   const imageUrls = [
-    'https://myshieldsystem.com/cdn/shop/files/Bundle2.Pic3_fc102dd9-924a-441c-9a4d-805547b9d461.jpg?v=1686098515&width=713',
-    'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/4_month_supply.png?v=1731451444',
-    'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/6_month_supply.png?v=1731451443',
-    'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/12_month_supply.png?v=1731451444'
+    'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/Region_-_Gallery_Viewer.png?v=1731532814',
+    'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/4_month_supply_4b9d5502-48da-49b4-8917-3a25335a9869.png?v=1731533048',
+    'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/6_month_supply_dc1b2ce6-78a0-4c05-9114-ef052bfb5b1d.png?v=1731533047',
+    'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/12_month_supply_c4fa82f5-03dd-4463-bf76-235ced1949f5.png?v=1731533047'
   ];
 
   //Preload images and insert them into the end of the body
@@ -32,6 +32,10 @@ const preloadImage = () => {
 };
 
 const init = () => {
+  const productImg = document.querySelector('.product__media img');
+  productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/Region_-_Gallery_Viewer.png?v=1731532814');
+  productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/Region_-_Gallery_Viewer.png?v=1731532814');
+
   const variantDiscounts = document.querySelectorAll('.variant-discount');
 
   variantDiscounts.forEach((variantDiscount) => {
@@ -55,17 +59,17 @@ export default () => {
 
       setTimeout(() => {
         if (value.trim() === '1 Set') {
-          productImg.setAttribute('src', 'https://myshieldsystem.com/cdn/shop/files/Bundle2.Pic3_fc102dd9-924a-441c-9a4d-805547b9d461.jpg?v=1686098515&width=713');
-          productImg.setAttribute('srcset', 'https://myshieldsystem.com/cdn/shop/files/Bundle2.Pic3_fc102dd9-924a-441c-9a4d-805547b9d461.jpg?v=1686098515&width=713');
+          productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/Region_-_Gallery_Viewer.png?v=1731532814');
+          productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/Region_-_Gallery_Viewer.png?v=1731532814');
         } else if (value.trim() === '2 Sets') {
-          productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/4_month_supply.png?v=1731451444');
-          productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/4_month_supply.png?v=1731451444');
+          productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/4_month_supply_4b9d5502-48da-49b4-8917-3a25335a9869.png?v=1731533048');
+          productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/4_month_supply_4b9d5502-48da-49b4-8917-3a25335a9869.png?v=1731533048');
         } else if (value.trim() === '3 Sets') {
-          productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/6_month_supply.png?v=1731451443');
-          productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/6_month_supply.png?v=1731451443');
+          productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/6_month_supply_dc1b2ce6-78a0-4c05-9114-ef052bfb5b1d.png?v=1731533047');
+          productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/6_month_supply_dc1b2ce6-78a0-4c05-9114-ef052bfb5b1d.png?v=1731533047');
         } else if (value.trim() === '6 Sets') {
-          productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/12_month_supply.png?v=1731451444');
-          productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/12_month_supply.png?v=1731451444');
+          productImg.setAttribute('src', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/12_month_supply_c4fa82f5-03dd-4463-bf76-235ced1949f5.png?v=1731533047');
+          productImg.setAttribute('srcset', 'https://cdn.shopify.com/s/files/1/0644/1349/9629/files/12_month_supply_c4fa82f5-03dd-4463-bf76-235ced1949f5.png?v=1731533047');
         }
       }, 250);
     }

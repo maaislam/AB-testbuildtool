@@ -1,6 +1,6 @@
 module.exports = {
     ID: "ms001",
-    VARIATION: "1",
+    VARIATION: "2",
     CLIENT: "Moreconversion",
     SITE: "myshield"
   };
