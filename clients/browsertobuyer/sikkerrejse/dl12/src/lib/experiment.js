@@ -1,10 +1,10 @@
 /*eslint-disable no-restricted-syntax */
-import { pollerLite } from './helpers/utils';
+
 import trackGA4Event from './services/gaTracking';
 import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID } = shared;
+const { ID, VARIATION } = shared;
 
 const limitTo75NonSpaceCharacters = (text) => {
   //Remove spaces and then limit to 75 non-space characters
@@ -106,15 +106,20 @@ export default () => {
       const controlTextElement = wrapper.querySelector(`p:not(.${ID}__truncated-text)`);
       controlTextElement.innerHTML = controlTextElement.innerHTML.replace(/\[…\]/g, '');
     } else if (target.closest('.post h2.entry-title a')) {
-      trackGA4Event('Search result click through', 'Search result click', 'The search result URL');
+      const clickedItem = target.closest('.post h2.entry-title a');
+      trackGA4Event('Search result click through', 'Search result click', `${clickedItem.href}`);
     } else if (target.closest('button#searchBtn') && target.closest('.search-container')) {
       const wrapper = target.closest('.search-container');
       const inputElement = wrapper.querySelector('input');
       if (inputElement.value !== '') {
-        trackGA4Event('Search performed', 'Search submitted', 'The search term used');
+        trackGA4Event('Search performed', 'Search submitted', `${inputElement.value}`);
       }
     }
   });
+
+  if (VARIATION === 'Control') {
+    return;
+  }
 
   init();
 };
