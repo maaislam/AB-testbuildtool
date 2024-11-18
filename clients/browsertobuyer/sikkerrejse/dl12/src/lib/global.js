@@ -23,7 +23,7 @@ export default () => {
       inputElements.forEach((item) => {
         item.addEventListener('keydown', (event) => {
           if (event.key === 'Enter' && item.value.trim() !== '') {
-            trackGA4Event('Search performed', 'Search submitted', 'The search term used');
+            trackGA4Event('Search performed', 'Search submitted', `${item.value}`);
           }
         });
       });

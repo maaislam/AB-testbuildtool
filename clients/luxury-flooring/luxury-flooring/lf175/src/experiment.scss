@@ -1,0 +1,9 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .amscroll-load-button {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

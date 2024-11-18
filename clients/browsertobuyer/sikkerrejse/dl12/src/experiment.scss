@@ -173,6 +173,9 @@
 }
 
 @media screen and (max-width: 1439px) {
+  // .dl-12 .btn-wrap .open-input {
+  //   padding-top: 0;
+  // }
   .dl-12 .elementor-section .elementor-container {
     flex-wrap: wrap;
   }
@@ -198,11 +201,15 @@
   }
   .dl-12 .btn-wrap {
     display: flex;
+    align-items: center;
   }
   .dl-12 .search-container {
     display: none;
   }
   button.open-input {
+    border: none;
+    display: flex;
+    align-items: center;
     border: none;
   }
   .dl-12 .elementor-element#book-button {
@@ -224,13 +231,43 @@
   }
 }
 
+@media screen and (max-width: 1350px) {
+  .dl-12 .btn-wrap .open-input {
+    padding-top: 0;
+  }
+}
+
 @media screen and (max-width: 1439px) and (min-width: 1280px) {
   .dl-12 .elementor-10847 .elementor-element.elementor-element-b442332 {
     width: 77%;
   }
+
+  [data-widget_type='uael-nav-menu.default'] > .elementor-widget-container {
+    padding-right: 0 !important;
+  }
 }
 
 @media screen and (max-width: 1279px) {
+  .elementor-10847 .elementor-element.elementor-element-a22db1e .uael-dropdown.menu-is-active {
+    display: flex;
+    margin-top: 35px;
+  }
+  .uael-nav-menu__breakpoint-tablet .uael-active-menu + .uael-nav-menu__layout-horizontal {
+    visibility: visible;
+    opacity: 1;
+  }
+  .uael-nav-menu__breakpoint-tablet .uael-active-menu + .uael-nav-menu__layout-horizontal {
+    height: auto;
+  }
+  .uael-nav-menu__breakpoint-tablet
+    .uael-active-menu.uael-active-menu-full-width
+    + .uael-nav-menu__layout-horizontal {
+    position: absolute;
+    display: flex;
+    margin-top: 35px;
+    border-radius: 0px 0px 0px 0px;
+    background-color: #fff;
+  }
   .uael-nav-menu__breakpoint-tablet .uael-nav-menu__layout-horizontal .uael-nav-menu {
     visibility: hidden;
     opacity: 0;
@@ -246,9 +283,19 @@
     .uael-active-menu
     + .uael-nav-menu__layout-horizontal
     .uael-nav-menu {
+    position: relative;
     visibility: visible;
     opacity: 1;
     display: flex;
+    width: 100%;
+    margin-right: 0;
+    flex-wrap: wrap;
+  }
+
+  .uael-nav-menu li.parent {
+    width: 100%;
+    padding: 10px !important;
+    border-bottom-style: none !important;
   }
 
   .dl-12
@@ -257,6 +304,15 @@
     > .elementor-widget-wrap.elementor-element-populated {
     justify-content: space-between;
   }
+}
+
+#searchInput {
+  outline: none;
+  border: none;
+}
+
+div[data-elementor-type='header'] > [data-element_type='section']:first-child {
+  width: 100% !important;
 }
 
 @media screen and (max-width: 1024px) {
