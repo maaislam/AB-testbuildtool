@@ -21,8 +21,9 @@ const init = () => {
   accordion.querySelector('.c-accord__item:nth-child(2)').classList.add('add-border-top');
   accordion.querySelector('.c-accord__item:last-child').classList.add('no-border-bottom');
   const { pathname } = window.location;
-  const collectedData = vaccineData[`${pathname}`];
-  const collectedDesData = descriptionData[`${pathname}`];
+  const lowerCasedPathname = pathname.toLowerCase();
+  const collectedData = vaccineData[`${lowerCasedPathname}`];
+  const collectedDesData = descriptionData[`${lowerCasedPathname}`];
 
   //add title wrapper
   if (!heroElement.querySelector(`.${ID}__titleWrapper`)) {

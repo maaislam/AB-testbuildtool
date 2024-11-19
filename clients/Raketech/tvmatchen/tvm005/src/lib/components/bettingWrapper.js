@@ -1,10 +1,9 @@
 import { bettingIcon } from '../assets/icons';
 
-const bettingWrapper = (id) => {
+const bettingWrapper = (id, icon) => {
   const html = `
     <div class="${id}__bettingWrapper">
-        <div class="${id}__icon">${bettingIcon}</div>
-        <div class="${id}__title">Betting<br>tip</div>
+        ${icon}
     </div>
   `;
   return html.trim();
