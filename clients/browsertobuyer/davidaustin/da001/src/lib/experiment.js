@@ -1,9 +1,11 @@
 /*eslint-disable max-len */
 import inStock from './components/inStock';
 import { reset } from './helpers/reset';
+import reset2 from './helpers/reset2';
 import { onUrlChange } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
+import variation2 from './variations/variation2';
 
 const { ID, VARIATION } = shared;
 
@@ -19,6 +21,14 @@ const checkStockInUrl = () => {
 };
 
 const init = () => {
+  //VARIATION - 2
+  if (VARIATION === '2') {
+    variation2();
+
+    return;
+  }
+
+  //VARIATION - 1
   if (checkStockInUrl()) {
     localStorage.setItem('inStock', 'true');
   } else {
@@ -81,6 +91,14 @@ const init = () => {
   const moreFiltersWrapperElem = document.querySelector(`.${ID}__moreFiltersForm .flex-1.overscroll-contain`);
   moreFiltersWrapperElem.classList.add(`${ID}__moreFiltersWrapper`);
 
+  //Add arrow icon to the more filters label
+  const moreFiltersLabels = moreFiltersWrapperElem.querySelectorAll('label[data-role="button"]');
+  moreFiltersLabels.forEach((moreFiltersLabel) => {
+    moreFiltersLabel.classList.add(`${ID}__moreFiltersLabel`);
+    const moreFiltersLabelWrapper = moreFiltersLabel.closest('.border-b.border-border');
+    moreFiltersLabelWrapper.classList.add(`${ID}__moreFiltersLabelWrapper`);
+  });
+
   //align design of the toolbar
   const dataToolBarElem = document.querySelector('[data-toolbar]');
   const toolbarElem = document.querySelector('#Toolbar');
@@ -107,6 +125,9 @@ const init = () => {
 
   //move the selected filters badge
   newContentsElem.insertAdjacentElement('afterbegin', selectedFiltersWrapper);
+  const newResetFilterBtn = `<div class="${ID}__resetFiltersBtn">Reset filters</div>`;
+  const selectedFiltersWrapperElem = document.querySelector(`.${ID}__selectedFiltersWrapper`);
+  selectedFiltersWrapperElem.insertAdjacentHTML('beforeend', newResetFilterBtn);
 
   //Rose Type, Rose Colour and Planting location filter sets should be open by default
   const defaultFilters = document.querySelectorAll(`.${ID}__contents input[type="radio"][id*="product-gridfilter"]`);
@@ -123,7 +144,9 @@ const init = () => {
   });
 
   const ctrlForm = document.querySelector(`form[id*="product-grid"]:not(.${ID}__moreFiltersForm)`);
-  const applyBtn = ctrlForm.querySelector('button[type="submit"]');
+  const ctrlApplyBtn = ctrlForm.querySelector('button[type="submit"]');
+  const clearBtn = ctrlForm.querySelector('[data-reset]');
+  clearBtn?.classList.add(`${ID}__clearBtn`);
 
   //toggle and hide stock availability
   const stockAvailabilityElem = document.querySelector(`.${ID}__moreFiltersWrapper input[value="In Stock"]`);
@@ -139,12 +162,12 @@ const init = () => {
       toggleElem.classList.add('active-toggle');
       stockAvailabilityElem.checked = true;
       localStorage.setItem('inStock', 'true');
-      if (applyBtn) applyBtn.click();
+      if (ctrlApplyBtn) ctrlApplyBtn.click();
     } else {
       toggleElem.classList.remove('active-toggle');
       stockAvailabilityElem.checked = false;
       localStorage.setItem('inStock', 'false');
-      if (applyBtn) applyBtn.click();
+      if (ctrlApplyBtn) ctrlApplyBtn.click();
     }
   });
 
@@ -167,7 +190,7 @@ const init = () => {
   });
 
   //more filters checkboxes and event listener
-  const moreFltrCheckboxes = document.querySelectorAll(`.${ID}__moreFiltersForm li input[type="checkbox"]`);
+  const moreFltrCheckboxes = document.querySelectorAll(`.${ID}__moreFiltersForm li input[type="checkbox"], .${ID}__moreFiltersForm li input[type="radio"]`);
 
   moreFltrCheckboxes.forEach((checkbox) => {
     checkbox.classList.add(`${ID}__checkbox`);
@@ -175,12 +198,12 @@ const init = () => {
       const { target } = e;
 
       const value = target.value.trim();
-
+      console.log('value::::::::::', value);
       const ctrlCheckbox = ctrlForm.querySelector(`input[value='${value}']`);
       ctrlCheckbox.checked = target.checked;
 
-      if (applyBtn) {
-        applyBtn.click();
+      if (ctrlApplyBtn) {
+        ctrlApplyBtn.click();
       }
     });
   });
@@ -190,8 +213,35 @@ export default () => {
   setup();
   init();
 
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest(`.${ID}__resetFiltersBtn`)) {
+      const clearBtn = document.querySelector(`.${ID}__clearBtn`);
+
+      clearBtn.click();
+    } else if (target.closest(`.${ID}__moreFiltersLabel`)) {
+      setTimeout(() => {
+        const selectedFilterLabel = target.closest(`.${ID}__moreFiltersLabel`);
+        const filterWrapper = target.closest(`.${ID}__moreFiltersLabelWrapper`);
+        const checkboxInputElem = filterWrapper.querySelector('input[type="checkbox"]');
+
+        if (checkboxInputElem.checked) {
+          selectedFilterLabel.classList.add('active-toggle-icon');
+        } else if (!checkboxInputElem.checked) {
+          selectedFilterLabel.classList.remove('active-toggle-icon');
+        }
+      }, 100);
+    }
+  });
+
   onUrlChange(() => {
-    reset(ID);
+    if (VARIATION === '1') {
+      reset(ID);
+    } else if (VARIATION === '2') {
+      reset2(ID);
+    }
+
     init();
   });
 };
