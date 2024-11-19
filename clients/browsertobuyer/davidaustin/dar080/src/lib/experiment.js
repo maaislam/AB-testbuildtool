@@ -3,7 +3,7 @@ import inStock from './components/inStock';
 import controlTracking from './helpers/controlTracking';
 import { reset } from './helpers/reset';
 import reset2 from './helpers/reset2';
-import { onUrlChange, trackGA4Event } from './helpers/utils';
+import { onUrlChange, pollerLite, trackGA4Event } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
 import variation2 from './variations/variation2';
@@ -86,7 +86,7 @@ const init = () => {
   newMoreFiltersFormElem.id = `${ID}__moreFiltersForm`;
   newContentsElem.insertAdjacentElement('beforeend', newMoreFiltersFormElem);
   //moreFiltersFormElem.classList.add(`${ID}__hide`);
-  formButtons.classList.add(`${ID}__hide`);
+  formButtons?.classList.add(`${ID}__hide`);
 
   //change order of more filter boxes
   const moreFiltersWrapperElem = document.querySelector(`.${ID}__moreFiltersForm .flex-1.overscroll-contain`);
@@ -133,6 +133,8 @@ const init = () => {
   //Rose Type, Rose Colour and Planting location filter sets should be open by default
   const defaultFilters = document.querySelectorAll(`.${ID}__contents input[type="radio"][id*="product-gridfilter"]`);
   defaultFilters.forEach((defaultFilter) => {
+    const name = defaultFilter.getAttribute('name');
+    localStorage.setItem('defaultFilterName', name);
     defaultFilter.removeAttribute('name');
     defaultFilter.checked = true;
     //Add event listener to toggle checked state
@@ -287,6 +289,6 @@ export default () => {
       reset2(ID);
     }
 
-    init();
+    pollerLite(['.shopify-section-product-grid', 'form[id*="FilterForm-template"]'], init);
   });
 };

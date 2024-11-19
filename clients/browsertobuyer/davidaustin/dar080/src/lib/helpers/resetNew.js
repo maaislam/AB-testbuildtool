@@ -1,4 +1,4 @@
-export const reset = (ID) => {
+const reset = (ID) => {
     const customClasses = [
         `${ID}__productGrid`,
         `${ID}__contentsWrapper`,
@@ -18,14 +18,24 @@ export const reset = (ID) => {
         'active-toggle'
     ];
 
+    customClasses.forEach((className) => {
+        document.querySelectorAll(`.${className}`).forEach((elem) => {
+            elem.classList.remove(className);
+        });
+    });
+
     //Removing dynamically added elements
     const customElements = [
         `.${ID}__filterHeader`,
         `.${ID}__productCount`,
         `.${ID}__resetFiltersBtn`,
         `.${ID}__inStock`,
-        `#${ID}__moreFiltersForm`
+        `.${ID}__moreFiltersForm`
     ];
+
+    customElements.forEach((selector) => {
+        document.querySelectorAll(selector).forEach((elem) => elem.remove());
+    });
 
     //Reset default filters logic
     const defaultFilters = document.querySelectorAll(
@@ -47,11 +57,11 @@ export const reset = (ID) => {
     //Restore toolbar and other elements to original state
     const dataToolBarElem = document.querySelector('[data-toolbar]');
     if (dataToolBarElem) {
-        dataToolBarElem.className = 'color-primary bg-background text-text [--columns:6]  tablet:[--columns:2]  tablet:mb-0 sticky top-header-full z-20 tablet:contents pb-sm'; //Reset to default
+        dataToolBarElem.className = ''; //Reset to default
     }
     const toolbarElem = document.querySelector('#Toolbar');
     if (toolbarElem) {
-        toolbarElem.classList.add('top-header-full');
+        toolbarElem.classList.add('top-header-full'); //Restore original class if needed
     }
 
     //Remove event listeners added to elements
@@ -66,17 +76,7 @@ export const reset = (ID) => {
     allEventListenersSelectors.forEach((selector) => {
         document.querySelectorAll(selector).forEach((elem) => {
             const clonedElem = elem.cloneNode(true);
-            elem.parentNode.replaceChild(clonedElem, elem);
-        });
-    });
-
-    customElements.forEach((selector) => {
-        document.querySelectorAll(selector).forEach((elem) => elem.remove());
-    });
-
-    customClasses.forEach((className) => {
-        document.querySelectorAll(`.${className}`).forEach((elem) => {
-            elem.classList.remove(className);
+            elem.parentNode.replaceChild(clonedElem, elem); //This removes all listeners
         });
     });
 };
