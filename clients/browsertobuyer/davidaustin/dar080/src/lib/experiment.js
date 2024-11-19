@@ -1,5 +1,6 @@
 /*eslint-disable max-len */
 import inStock from './components/inStock';
+import controlTracking from './helpers/controlTracking';
 import { reset } from './helpers/reset';
 import reset2 from './helpers/reset2';
 import { onUrlChange, trackGA4Event } from './helpers/utils';
@@ -246,26 +247,10 @@ export default () => {
 
   //Control Tracking
   if (VARIATION === 'control') {
-    const allFilterInputs = document.querySelectorAll('#Toolbar input[type="checkbox"], #Toolbar input[type="radio"]');
-    allFilterInputs.forEach((filterInput) => {
-      filterInput.addEventListener('change', () => {
-        trackGA4Event('Filter Selected', 'Filter Used', '');
-      });
-    });
+    controlTracking();
 
-    const sortByLabelElem = document.querySelector('label[for*="product-gridsort_bydropdown"]');
-    const grandParentElem = sortByLabelElem.parentElement.parentElement;
-    const sortCheckboxes = grandParentElem.querySelectorAll('input[type="radio"]:not([data-dropdown])');
-    sortCheckboxes.forEach((sortCheckbox) => {
-        sortCheckbox.addEventListener('change', (e) => {
-            const { target } = e;
-
-            const eventName = 'Sorting Used';
-            const action = 'Sort By Change';
-            const eventLabel = target.value;
-
-            trackGA4Event(eventName, action, eventLabel);
-        });
+    onUrlChange(() => {
+      controlTracking();
     });
 
     return;
