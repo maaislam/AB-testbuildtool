@@ -111,20 +111,12 @@
       font-size: 18px;
       font-weight: 700;
       padding-left: 5px;
-      .#{$id}__first {
-      }
+
       .#{$id}__second {
         display: inline-block;
         text-indent: -5px;
         transform: translateY(-1px);
       }
-      .#{$id}__third {
-      }
-      .#{$id}__text {
-      }
-    }
-    .#{$id}__yotpo-bottomline {
-      //height: 0;
     }
     p {
       font-family: 'Montserrat';
@@ -136,16 +128,22 @@
   }
   &__yotpo-stars {
     display: inline-flex;
+  }
 
-    // background: #000;
+  body.pets-wrapper,
+  body.baby-wrapper {
+    .#{$id}__yotpo-icon {
+      color: #a8572c;
+    }
+  }
+
+  body:not(.pets-wrapper):not(.baby-wrapper) .#{$id}__yotpo-icon {
+    color: #b86678;
   }
 
   &__yotpo-icon {
     display: block;
-    color: #b86678;
     font-size: 20px;
-    //background-color: #fff;
-    //mix-blend-mode: luminosity;
   }
 
   &__yotpo-icon::before {
