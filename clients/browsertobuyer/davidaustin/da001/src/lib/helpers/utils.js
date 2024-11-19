@@ -66,7 +66,7 @@ export const onUrlChange = (callback, onError = null) => {
         try {
           setTimeout(() => {
             callback(oldHref, mutation);
-          }, 1000);
+          }, 100);
         } catch (error) {
           console.log(`Error in callback function: ${error}`);
         }

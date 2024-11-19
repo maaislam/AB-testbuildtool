@@ -76,23 +76,24 @@ export const reset = (ID) => {
     //Uncheck default filters and restore attributes
     const defaultFilters = document.querySelectorAll(`.${ID}__contents input[type="radio"][id*="product-gridfilter"]`);
     defaultFilters.forEach((defaultFilter) => {
-        defaultFilter.setAttribute('name', 'originalName'); //Replace with the original name if known
-        defaultFilter.checked = false; //Uncheck the radio button
+        //defaultFilter.setAttribute('name', ''); //Replace with the original name if known
+        //defaultFilter.checked = false; //Uncheck the radio button
         defaultFilter.removeEventListener('click', () => { }); //Remove custom event listener
     });
 
     //Uncheck all checkboxes and remove event listeners
     const allCheckboxes = document.querySelectorAll(`.${ID}__checkbox`);
     allCheckboxes.forEach((checkbox) => {
-        checkbox.checked = false; //Uncheck
-        checkbox.classList.remove(`${ID}__checkbox`);
+        //checkbox.checked = false; //Uncheck
+        //checkbox.classList.remove(`${ID}__checkbox`);
         checkbox.removeEventListener('change', () => { }); //Remove event listener
     });
     //Uncheck and reset checkboxes in the "More Filters" section
     const moreFiltersCheckboxes = document.querySelectorAll(`.${ID}__moreFiltersForm li input[type="checkbox"]`);
     moreFiltersCheckboxes.forEach((checkbox) => {
-        checkbox.checked = false; //Uncheck
-        checkbox.classList.remove(`${ID}__checkbox`);
+        console.log('checkbox::::::: ', checkbox);
+        // checkbox.checked = false; //Uncheck
+        //checkbox.classList.remove(`${ID}__checkbox`);
         checkbox.removeEventListener('change', () => { }); //Remove event listener
     });
 
