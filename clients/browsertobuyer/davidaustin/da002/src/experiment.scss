@@ -1,0 +1,96 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__hide {
+        display: none;
+    }
+
+    &__gridContents,
+    &__stockAvailabilityContents,
+    &__moreFiltersWrapper,
+    &__sortByFilterParent,
+    input[id*="product-gridsort_bydropdown"]+.w-grid {
+        max-width: 160px;
+        background: #fff;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 19.5px;
+        color: #414042;
+
+        @include media-query(xl) {
+            max-width: 140px;
+            font-size: 13px;
+            line-height: 17px;
+        }
+    }
+
+    &__sortByFilterParent {
+        margin-left: 15px;
+    }
+
+    &__sortByFilterWrapper {
+        margin-left: auto;
+        display: flex;
+    }
+
+    #Toolbar {
+        background: #F7F6F2;
+
+        .contents .w-grid.gap-gutter {
+            justify-content: flex-end;
+
+            @include media-query(xl) {
+                width: 60px;
+            }
+        }
+    }
+
+    &__moreFiltersForm {
+        // & > div {
+        //     display: none;
+        // }
+
+        &>div:first-child {
+            display: none;
+        }
+    }
+
+    label[for*="product-gridfilter"]~.z-20.absolute {
+        left: 0;
+        width: calc(100vw - 12px);
+
+        &>div:not(las) {
+            background: #F7F6F2;
+
+            ul {
+                display: grid !important;
+                grid-template-columns: repeat(6, auto);
+
+                span.checkbox {
+                    border: 1px solid #B9B8BA !important;
+                }
+            }
+        }
+    }
+
+    &__filterWrapper {
+        padding: 15px 30px;
+
+        li label {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+        }
+    }
+
+    button[form*="product-grid"][type="submit"][data-role="button"] {
+        width: calc(50% - 7.5px);
+        margin-left: 15px;
+        // order: 2;
+    }
+
+    button[form*="product-grid"][data-reset*="filter"][data-role="button"] {
+        width: calc(50% - 7.5px);
+    }
+}
