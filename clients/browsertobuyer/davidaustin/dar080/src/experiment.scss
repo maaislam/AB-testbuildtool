@@ -321,6 +321,12 @@
         .#{$id}__sortByFilterWrapper {
             margin-left: auto;
             display: flex;
+
+            .gap-gutter {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 18px;
+            }
         }
 
         #Toolbar {
