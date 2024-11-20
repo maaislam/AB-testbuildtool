@@ -22,6 +22,8 @@ const checkStockInUrl = () => {
 };
 
 const init = () => {
+  const toolbar = document.getElementById('Toolbar');
+  // toolbar.style.visibility = 'visible';
   //VARIATION - 2
   if (VARIATION === '2') {
     variation2(ID);
@@ -73,11 +75,16 @@ const init = () => {
   const newSortWrapperElem = document.querySelector(`.${ID}__sortWrapper`);
 
   if (!document.querySelector(`.${ID}__productCount`)) {
-    newSortWrapperElem.insertAdjacentHTML('afterbegin', `<span class='${ID}__productCount'>${productCountText}</span>`);
+    newSortWrapperElem.insertAdjacentHTML(
+      'afterbegin',
+      `<span class='${ID}__productCount'>${productCountText}</span>`
+    );
   }
 
   //Move the more filters form to the new contents element (bottom of the filter)
-  const moreFiltersFormElem = document.querySelector(`form[id*="FilterForm-template"]:not(.${ID}__moreFiltersForm)`);
+  const moreFiltersFormElem = document.querySelector(
+    `form[id*="FilterForm-template"]:not(.${ID}__moreFiltersForm)`
+  );
   const newMoreFiltersFormElem = moreFiltersFormElem.cloneNode(true);
   const removeClasses = ['absolute', 'top-0', 'right-0', 'translate-x-full', 'w-drawer'];
   const formButtons = newMoreFiltersFormElem.querySelector('[data-buttons]');
@@ -89,7 +96,9 @@ const init = () => {
   formButtons?.classList.add(`${ID}__hide`);
 
   //change order of more filter boxes
-  const moreFiltersWrapperElem = document.querySelector(`.${ID}__moreFiltersForm .flex-1.overscroll-contain`);
+  const moreFiltersWrapperElem = document.querySelector(
+    `.${ID}__moreFiltersForm .flex-1.overscroll-contain`
+  );
   moreFiltersWrapperElem.classList.add(`${ID}__moreFiltersWrapper`);
 
   //Add arrow icon to the more filters label
@@ -108,7 +117,9 @@ const init = () => {
   toolbarElem.classList.remove('top-header-full');
 
   //fix border color of each filter boxes
-  const filterBoxes = document.querySelectorAll(`.${ID}__contents .bg-background.border.border-border-active`);
+  const filterBoxes = document.querySelectorAll(
+    `.${ID}__contents .bg-background.border.border-border-active`
+  );
   filterBoxes.forEach((filterBox) => {
     filterBox.classList.remove('border', 'border-border-active', 'bg-background');
     filterBox.classList.add(`${ID}__filterBox`);
@@ -125,13 +136,15 @@ const init = () => {
   }
 
   //move the selected filters badge
-  newContentsElem.insertAdjacentElement('afterbegin', selectedFiltersWrapper);
+  newContentsElem.insertAdjacentElement('beforebegin', selectedFiltersWrapper);
   const newResetFilterBtn = `<div class="${ID}__resetFiltersBtn">Reset filters</div>`;
   const selectedFiltersWrapperElem = document.querySelector(`.${ID}__selectedFiltersWrapper`);
   selectedFiltersWrapperElem.insertAdjacentHTML('beforeend', newResetFilterBtn);
 
   //Rose Type, Rose Colour and Planting location filter sets should be open by default
-  const defaultFilters = document.querySelectorAll(`.${ID}__contents input[type="radio"][id*="product-gridfilter"]`);
+  const defaultFilters = document.querySelectorAll(
+    `.${ID}__contents input[type="radio"][id*="product-gridfilter"]`
+  );
   defaultFilters.forEach((defaultFilter) => {
     const name = defaultFilter.getAttribute('name');
     localStorage.setItem('defaultFilterName', name);
@@ -152,12 +165,15 @@ const init = () => {
   clearBtn?.classList.add(`${ID}__clearBtn`);
 
   //toggle and hide stock availability
-  const stockAvailabilityElem = document.querySelector(`.${ID}__moreFiltersWrapper input[value="In Stock"]`);
+  const stockAvailabilityElem = document.querySelector(
+    `.${ID}__moreFiltersWrapper input[value="In Stock"]`
+  );
   const stockAvailabilityList = stockAvailabilityElem.closest('li');
   stockAvailabilityList.classList.add(`${ID}__hide`);
 
   //toggle in-stock filter
   const toggle = document.getElementById('mode-toggle');
+
   toggle.addEventListener('change', () => {
     const toggleElem = document.querySelector('.toggle');
 
@@ -172,10 +188,13 @@ const init = () => {
       localStorage.setItem('inStock', 'false');
       if (ctrlApplyBtn) ctrlApplyBtn.click();
     }
+    // toolbar.style.visibility = 'hidden';
   });
 
   //all checkboxes and event listener
-  const allCheckboxes = document.querySelectorAll(`.${ID}__contents > div li input[type="checkbox"]`);
+  const allCheckboxes = document.querySelectorAll(
+    `.${ID}__contents > div li input[type="checkbox"]`
+  );
   allCheckboxes.forEach((checkbox) => {
     checkbox.classList.add(`${ID}__checkbox`);
     checkbox.addEventListener('change', (e) => {
@@ -200,11 +219,14 @@ const init = () => {
       if (applyBtn) {
         applyBtn.click();
       }
+      // toolbar.style.visibility = 'hidden';
     });
   });
 
   //more filters checkboxes and event listener
-  const moreFltrCheckboxes = document.querySelectorAll(`.${ID}__moreFiltersForm li input[type="checkbox"], .${ID}__moreFiltersForm li input[type="radio"]`);
+  const moreFltrCheckboxes = document.querySelectorAll(
+    `.${ID}__moreFiltersForm li input[type="checkbox"], .${ID}__moreFiltersForm li input[type="radio"]`
+  );
 
   moreFltrCheckboxes.forEach((checkbox) => {
     checkbox.classList.add(`${ID}__checkbox`);
@@ -227,10 +249,13 @@ const init = () => {
       if (ctrlApplyBtn) {
         ctrlApplyBtn.click();
       }
+      // toolbar.style.visibility = 'hidden';
     });
   });
 
-  const sortCheckboxes = document.querySelectorAll(`.${ID}__sortWrapper input[type="radio"]:not([data-dropdown])`);
+  const sortCheckboxes = document.querySelectorAll(
+    `.${ID}__sortWrapper input[type="radio"]:not([data-dropdown])`
+  );
   sortCheckboxes.forEach((sortCheckbox) => {
     sortCheckbox.addEventListener('change', (e) => {
       const { target } = e;
@@ -242,6 +267,7 @@ const init = () => {
       trackGA4Event(eventName, action, eventLabel);
     });
   });
+  //toolbar.style.visibility = 'visible';
 };
 
 export default () => {
@@ -283,11 +309,13 @@ export default () => {
   });
 
   onUrlChange(() => {
+    const toolbar = document.getElementById('Toolbar');
     if (VARIATION === '1') {
       reset(ID);
     } else if (VARIATION === '2') {
       reset2(ID);
     }
+    //toolbar.style.visibility = 'visible';
 
     pollerLite(['.shopify-section-product-grid', 'form[id*="FilterForm-template"]'], init);
   });
