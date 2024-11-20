@@ -15,7 +15,7 @@ const checkStockInUrl = () => {
 
   const availability = newUrl.searchParams.get('filter.p.m.custom.availability');
 
-  if (availability && availability.includes('Stock')) {
+  if (availability && availability === 'In Stock') {
     return true;
   }
   return false;
