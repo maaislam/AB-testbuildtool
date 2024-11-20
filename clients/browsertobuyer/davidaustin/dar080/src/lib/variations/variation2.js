@@ -11,23 +11,33 @@ const variation2 = (ID) => {
     }
 
     //Align the filter-content with figma design
-    const gridFilters = document.querySelectorAll('label[for*="product-gridfilter"]');
+    const gridFilters = document.querySelectorAll('label[for*="product-gridfilter"], label[for*="product-gridsort_bydropdown"]');
     gridFilters.forEach((gridFilter) => {
         const filterParent = gridFilter.closest('.w-grid');
         const filterWrapper = filterParent.querySelector('.z-20.absolute .bg-background');
+        const filterWrapperParent = filterWrapper.parentElement;
         const wrapperRemoveClasses = ['border', 'border-border-active'];
 
         const applyBtn = filterWrapper.querySelector('button[form*="product-grid"][type="submit"][data-role="button"]');
 
         filterParent.classList.remove('relative');
         filterWrapper.classList.remove(...wrapperRemoveClasses);
+        filterWrapperParent.classList.add(`${ID}__filterContainer`);
         filterWrapper.classList.add(`${ID}__filterWrapper`);
 
         const filterWGridElem = filterWrapper.closest('.w-grid');
         filterWGridElem.classList.add(`${ID}__gridContents`);
 
         //Move apply button to the bottom of the filter-wrapper
-        filterWrapper.insertAdjacentElement('beforeend', applyBtn);
+        if (applyBtn) {
+            filterWrapper?.insertAdjacentElement('beforeend', applyBtn);
+            //apply button text changes
+            applyBtn.textContent = 'Apply filters';
+        }
+
+        //Clear button text changes
+        const clearBtn = filterWrapper?.querySelector('button[form*="product-grid"][type="reset"]');
+        if (clearBtn) clearBtn.textContent = 'Clear all';
     });
 
     //Update the sort-by filter design

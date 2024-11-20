@@ -73,7 +73,7 @@ const stockAvailability = (id) => {
                     </li>
                 </ul>
                 <button form="FilterForm-template--16320716046417__product-grid" type="submit" data-role="button" class="appearance-none outline-none rounded-none transition-colors inline-flex items-center justify-center gap-[10px] button-primary py-[12px] px-lg border text-caps-lg border-button-border text-button-text bg-button-background supports-hover:hover:border-button-border-hover supports-hover:hover:text-button-text-hover supports-hover:hover:bg-button-background-hover flex-1 w-full mt-sm">
-                    Apply
+                    Apply filters
                 </button>
             </div>
         </div>
