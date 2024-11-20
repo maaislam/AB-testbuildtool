@@ -337,16 +337,14 @@
         gap: 3px;
 
         svg {
-          width: 14px;
-          height: 14px;
+          width: 12px;
+          height: 12px;
         }
 
         span.bg-icons {
-          @include media-query(xl) {
             width: 18px;
             height: 18px;
             font-size: 11px;
-          }
         }
       }
     }
@@ -355,8 +353,8 @@
     .#{$id}__stockAvailabilityContents {
       label {
         svg {
-          width: 14px;
-          height: 14px;
+          width: 12px;
+          height: 12px;
         }
 
         + .h-1.w-full {
