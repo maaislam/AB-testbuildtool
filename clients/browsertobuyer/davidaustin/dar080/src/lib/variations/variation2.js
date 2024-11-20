@@ -36,7 +36,8 @@ const variation2 = (ID) => {
         }
 
         //Clear button text changes
-        const clearBtn = filterWrapper?.querySelector('button[form*="product-grid"][type="reset"]');
+        const clearBtn = filterWrapper?.querySelector('button[form*="product-grid"][data-reset]');
+        //console.log('clearBtn: ', clearBtn);
         if (clearBtn) clearBtn.textContent = 'Clear all';
     });
 

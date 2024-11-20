@@ -349,6 +349,12 @@
       }
     }
 
+    .#{$id}__stockAvailabilityContents {
+      .top-full {
+        width: 100%;
+      }
+    }
+
     .#{$id}__gridContents,
     .#{$id}__stockAvailabilityContents {
       label {
