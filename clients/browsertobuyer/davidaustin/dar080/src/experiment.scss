@@ -418,7 +418,7 @@
           grid-template-columns: repeat(6, auto);
 
           span.checkbox {
-            border: 1px solid #b9b8ba !important;
+            border: 1px solid #b9b8ba;
             background: #fff;
           }
         }
@@ -472,7 +472,11 @@
 
     .#{$id}__stockReset:not(.#{$id}__hide)+button[form*='product-grid'][type='submit'] {
       width: calc(50% - 7.5px);
-      margin-left: 11px;
+      margin-left: 10px;
+    }
+
+    input[name*="filter_colour"]:checked + .checkbox {
+      border: 1px solid #414042 !important;
     }
   }
 }
