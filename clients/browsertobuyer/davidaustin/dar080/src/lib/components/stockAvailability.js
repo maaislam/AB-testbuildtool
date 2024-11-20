@@ -1,4 +1,6 @@
-const stockAvailability = (id) => {
+const stockAvailability = (id, result) => {
+    //const newInStockList = inStockLists.cloneNode(true);
+
     const htmlStr = `<div class="${id}__stockAvailability">
     <input name="template--16320716046417__product-grid" type="radio"
         id="custom-filter-stockAvailability" class="peer" hidden=""
@@ -25,7 +27,7 @@ const stockAvailability = (id) => {
                 <ul class="flex flex-col gap-[10px]">
                     <li>
                         <label class="flex items-center gap-[10px] cursor-pointer group">
-                            <input form="FilterForm-template--16320716046417__product-grid" type="checkbox" name="filter.p.m.custom.availability" value="Bare Root - In Stock" id="Filter-Stock Availability-1" class="hidden peer" data-track-filter="{&quot;filter_name&quot;:&quot;Bare Root - In Stock&quot;,&quot;filter_category&quot;:&quot;Stock Availability&quot;}">
+                            <input ${result.bareRoot ? 'checked' : ''} form="FilterForm-template--16320716046417__product-grid" type="checkbox" name="filter.p.m.custom.availability" value="Bare Root - In Stock" id="Filter-Stock Availability-1" class="${id}__stockInput hidden peer" data-track-filter="{&quot;filter_name&quot;:&quot;Bare Root - In Stock&quot;,&quot;filter_category&quot;:&quot;Stock Availability&quot;}">
                             <span class="
                                 
                         checkbox appearance-none outline-none transition-colors border border-border relative overflow-hidden shrink-0
@@ -41,7 +43,7 @@ const stockAvailability = (id) => {
                     </li>
                     <li>
                         <label class="flex items-center gap-[10px] cursor-pointer group">
-                            <input form="FilterForm-template--16320716046417__product-grid" type="checkbox" name="filter.p.m.custom.availability" value="In Stock" id="Filter-Stock Availability-2" class="hidden peer" data-track-filter="{&quot;filter_name&quot;:&quot;In Stock&quot;,&quot;filter_category&quot;:&quot;Stock Availability&quot;}">
+                            <input ${result.inStock ? 'checked' : ''} form="FilterForm-template--16320716046417__product-grid" type="checkbox" name="filter.p.m.custom.availability" value="In Stock" id="Filter-Stock Availability-2" class="${id}__stockInput hidden peer" data-track-filter="{&quot;filter_name&quot;:&quot;In Stock&quot;,&quot;filter_category&quot;:&quot;Stock Availability&quot;}">
                             <span class="
                                 
                         checkbox appearance-none outline-none transition-colors border border-border relative overflow-hidden shrink-0
@@ -57,7 +59,7 @@ const stockAvailability = (id) => {
                     </li>
                     <li>
                         <label class="flex items-center gap-[10px] cursor-pointer group">
-                            <input form="FilterForm-template--16320716046417__product-grid" type="checkbox" name="filter.p.m.custom.availability" value="Potted Rose - In Stock" id="Filter-Stock Availability-3" class="hidden peer" data-track-filter="{&quot;filter_name&quot;:&quot;Potted Rose - In Stock&quot;,&quot;filter_category&quot;:&quot;Stock Availability&quot;}">
+                            <input ${result.potterRose ? 'checked' : ''} form="FilterForm-template--16320716046417__product-grid" type="checkbox" name="filter.p.m.custom.availability" value="Potted Rose - In Stock" id="Filter-Stock Availability-3" class="${id}__stockInput hidden peer" data-track-filter="{&quot;filter_name&quot;:&quot;Potted Rose - In Stock&quot;,&quot;filter_category&quot;:&quot;Stock Availability&quot;}">
                             <span class="
                                 
                         checkbox appearance-none outline-none transition-colors border border-border relative overflow-hidden shrink-0
@@ -72,7 +74,15 @@ const stockAvailability = (id) => {
                         </label>
                     </li>
                 </ul>
-                <button form="FilterForm-template--16320716046417__product-grid" type="submit" data-role="button" class="appearance-none outline-none rounded-none transition-colors inline-flex items-center justify-center gap-[10px] button-primary py-[12px] px-lg border text-caps-lg border-button-border text-button-text bg-button-background supports-hover:hover:border-button-border-hover supports-hover:hover:text-button-text-hover supports-hover:hover:bg-button-background-hover flex-1 w-full mt-sm">
+                <a data-reset="" href="https://www.davidaustinroses.co.uk/collections/climbing-roses" data-role="button" tabindex="0" class="${id}__stockReset
+                    appearance-none outline-none rounded-none transition-colors inline-flex items-center justify-center gap-[10px]
+                    button-secondary py-[12px] px-lg border text-caps-lg
+                
+                    border-button-border text-button-text bg-button-background supports-hover:hover:border-button-border-hover
+                    supports-hover:hover:text-button-text-hover supports-hover:hover:bg-button-background-hover
+                
+                flex-1 no-js:hidden">Clear All</a>
+                <button form="FilterForm-template--16320716046417__product-grid" type="submit" data-role="button" class="${id}__applyBtn appearance-none outline-none rounded-none transition-colors inline-flex items-center justify-center gap-[10px] button-primary py-[12px] px-lg border text-caps-lg border-button-border text-button-text bg-button-background supports-hover:hover:border-button-border-hover supports-hover:hover:text-button-text-hover supports-hover:hover:bg-button-background-hover flex-1 w-full mt-sm">
                     Apply filters
                 </button>
             </div>

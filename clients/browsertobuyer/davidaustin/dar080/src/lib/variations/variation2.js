@@ -1,13 +1,54 @@
+/*eslint-disable no-unused-expressions */
+/*eslint-disable max-len */
 import stockAvailability from '../components/stockAvailability';
 import { trackGA4Event } from '../helpers/utils';
 
+const checkStockQueryParams = (url) => {
+    const urlObj = new URL(url);
+
+    const paramsArray = Array.from(urlObj.searchParams.values()).map((value) => value.toLowerCase());
+
+    const results = {
+        inStock: paramsArray.includes('in stock'),
+        potterRose: paramsArray.includes('potted rose - in stock'),
+        bareRoot: paramsArray.includes('bare root - in stock')
+    };
+
+    return results;
+};
+
 const variation2 = (ID) => {
+    const url = window.location.href;
+
+    const result = checkStockQueryParams(url);
+    //set the stock availability checkboxes based on the query params for the form and new stock availability filter
+    const inStockUlElem = document.querySelector('form[id*="product-grid"] [value="In Stock"]').closest('ul');
+    const isStockLists = inStockUlElem.querySelectorAll('li');
+    //Mapping between input values and `result` keys
+    const stockMapping = {
+        'Bare Root - In Stock': 'bareRoot',
+        'In Stock': 'inStock',
+        'Potted Rose - In Stock': 'potterRose'
+    };
+
+    isStockLists.forEach((list) => {
+        const inputElem = list.querySelector('input[type="checkbox"]');
+        const inputVal = inputElem.value;
+
+        //Check if the current input value matches any of the stock mapping
+        const resultKey = stockMapping[inputVal];
+        if (resultKey !== undefined) {
+            //Set the checkbox state based on the result
+            inputElem.checked = result[resultKey];
+        }
+    });
+
     //Add the in-stock filter to the top
     const moreFilterWrapper = document.querySelector('#Toolbar > div > .contents > .w-grid');
     moreFilterWrapper.classList.add(`${ID}__moreFiltersWrapper`);
 
     if (!document.querySelector(`.${ID}__stockAvailability`)) {
-        moreFilterWrapper.insertAdjacentHTML('beforebegin', stockAvailability(ID));
+        moreFilterWrapper.insertAdjacentHTML('beforebegin', stockAvailability(ID, result));
     }
 
     //Align the filter-content with figma design
@@ -40,6 +81,36 @@ const variation2 = (ID) => {
         //console.log('clearBtn: ', clearBtn);
         if (clearBtn) clearBtn.textContent = 'Clear all';
     });
+
+    //sidebar form checkboxes according to the new stock checkboxes
+    const newStockCheckboxes = document.querySelectorAll(`.${ID}__stockInput`);
+    let isAnyChecked = false;
+
+    newStockCheckboxes.forEach((stockCheckbox) => {
+        if (stockCheckbox.checked) {
+            isAnyChecked = true;
+        }
+
+        stockCheckbox.addEventListener('change', (e) => {
+            const { target } = e;
+            const { value } = target;
+
+            isStockLists.forEach((list) => {
+                const inputElem = list.querySelector('input[type="checkbox"]');
+                const inputVal = inputElem.value;
+
+                inputVal === value ? (inputElem.checked = target.checked) : null;
+            });
+        });
+    });
+
+    const stockResetBtn = document.querySelector(`.${ID}__stockReset`);
+    console.log('isAnyChecked: ', isAnyChecked);
+    if (!isAnyChecked) {
+        stockResetBtn.classList.add(`${ID}__hide`);
+    } else {
+        stockResetBtn.classList.remove(`${ID}__hide`);
+    }
 
     //Update the sort-by filter design
     const sortByFilterElem = document.querySelector('input[id*="product-gridsort_bydropdown"]');
