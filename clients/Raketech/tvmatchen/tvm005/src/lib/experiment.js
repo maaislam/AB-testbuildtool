@@ -10,16 +10,12 @@ const init = () => {
   const mainWrapper = document.querySelector('#match-container');
   const allTopEvents = mainWrapper.querySelectorAll('div[data-analytics-placement="topevent"]');
   allTopEvents.forEach((item) => {
-    const targetElement = item.querySelector('.match-info');
-    const matchDetails = item.querySelector('.match-detail');
     const postExcerpt = item.querySelector('.post-excerpt');
-    if (targetElement && !item.querySelector(`.${ID}__bettingWrapper`)) {
-      VARIATION === '1' &&
-        targetElement.insertAdjacentHTML('beforeend', bettingWrapper(ID, iconV1));
-      VARIATION === '2' &&
-        targetElement.insertAdjacentHTML('beforeend', bettingWrapper(ID, iconV2));
+    if (!item.querySelector(`.${ID}__bettingWrapper`)) {
+      VARIATION === '1' && item.insertAdjacentHTML('beforeend', bettingWrapper(ID, iconV1));
+      VARIATION === '2' && item.insertAdjacentHTML('beforeend', bettingWrapper(ID, iconV2));
     }
-    matchDetails && matchDetails.insertAdjacentElement('beforeend', postExcerpt);
+    item.querySelector(`.${ID}__container`).insertAdjacentElement('beforeend', postExcerpt);
   });
 };
 
@@ -51,7 +47,6 @@ export default () => {
     ) {
       const wrapper = target.closest('div[data-analytics-placement="topevent"]');
       const matchname = wrapper.dataset.analyticsMatch;
-      console.log('read-more', matchname);
       gaTracking(`${matchname} Read More`);
     } else if (target.closest('a.odds[data-analytics-placement="topevent"]')) {
       const clickedItem = target.closest('a.odds[data-analytics-placement="topevent"]');

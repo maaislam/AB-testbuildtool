@@ -1,5 +1,6 @@
 /*eslint-disable no-restricted-syntax */
 
+import { pollerLite } from './helpers/utils';
 import trackGA4Event from './services/gaTracking';
 import setup from './services/setup';
 import shared from './shared/shared';
@@ -44,14 +45,17 @@ const init = () => {
   }
 
   const allContent = pageContentWrapper.querySelectorAll('article.post');
+
   allContent.forEach((item) => {
     item.classList.add(`${ID}__post`);
     const titleElement = item.querySelector('h2.entry-title a');
     const title = titleElement.textContent.trim();
     const truncatedText = limitTo75NonSpaceCharacters(title);
     titleElement.textContent = truncatedText;
-    const fullText = item.querySelector('p').textContent.trim();
-    const words = fullText.split(' ');
+    const fullTextElement = item.querySelector('p');
+    if (!fullTextElement) return;
+    const fullText = fullTextElement.textContent.trim();
+    const words = fullText?.split(' ');
     if (words.length > 12) {
       const truncatedText2 = `${words
         .slice(0, 12)
