@@ -29,6 +29,7 @@
         align-items: center;
 
         .w-grid {
+          max-width: 217px;
           margin-left: 15px;
         }
       }
@@ -45,9 +46,27 @@
       }
 
       #Toolbar {
-        position: relative !important;
-        padding-top: 10px !important;
-        border: none !important;
+        top: 124px;
+        max-height: calc(100vh - 130px);
+        padding: 15px 0 0;
+        margin-top: 10px !important;
+        // border: none !important;
+        overflow-y: auto;
+        background: #fbfaf8;
+        border: 1px solid #e3e2de;
+
+        &::-webkit-scrollbar {
+          width: 2px;
+        }
+
+        &::-webkit-scrollbar-track {
+          box-shadow: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 4px;
+          background-color: #B9B8BA;
+        }
 
         &>.items-stretch {
           flex-direction: column;
@@ -89,10 +108,17 @@
           display: flex;
         }
 
+        .#{$id}__inStockText {
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 19px;
+          color: #414042;
+        }
+
         .#{$id}__selectedFiltersWrapper {
           display: none;
           flex-wrap: wrap;
-          padding: 15px 0 20px;
+          padding: 0 0 20px;
           border-bottom: 1px solid #e3e2de;
           margin: 0 15px;
           gap: 5px;
@@ -124,11 +150,11 @@
         .#{$id}__contentsWrapper {
           padding: 0;
           gap: 0;
-          background: #fbfaf8;
-          border: 1px solid #e3e2de;
+          // background: #fbfaf8;
+          // border: 1px solid #e3e2de;
 
           .peer:checked~.peer-checked\:border-border-active {
-            border: none !important;
+            border: none;
           }
 
           label[for*='product-gridfilter'] {
@@ -156,6 +182,31 @@
             font-size: 14px;
             font-weight: 400;
             line-height: 18px;
+
+            [name*="filter_colour"]:checked+span.peer-checked\:border-border-active,
+            [name*="filter_rose_type"]:checked+span.peer-checked\:border-border-active,
+            [name*="filter_location"]:checked+span.peer-checked\:border-border-active {
+              border: 1px solid #53684A !important;
+
+              &::after {
+                background-color: #53684A;
+              }
+            }
+
+            &:hover {
+              color: #414042;
+              
+              .supports-hover\:group-hover\:border-border-active {
+                border: 1px solid #53684A !important;
+              }
+
+              [name*="filter_rose_type"]+.supports-hover\:group-hover\:border-border-active,
+              [name*="filter_location"]+.supports-hover\:group-hover\:border-border-active {
+                &::after {
+                  background-color: #53684A;
+                }
+              }
+            }
           }
 
           .bg-putty-dark.rounded-full {
@@ -227,6 +278,29 @@
           font-size: 14px;
           font-weight: 400;
           line-height: 18px;
+
+          [name*="filter_rose_category"]:checked+span.peer-checked\:border-border-active,
+          [name*="filter_size"]:checked+span.peer-checked\:border-border-active,
+          [name*="filter_bloom_size"]:checked+span.peer-checked\:border-border-active,
+          [name*="custom.availability"]:checked+span.peer-checked\:border-border-active,
+          [name*="key_features"]:checked+span.peer-checked\:border-border-active {
+            border: 1px solid #53684A !important;
+
+            &::after {
+              background-color: #53684A;
+            }
+          }
+
+          &:hover {
+            color: #414042;
+            
+            .supports-hover\:group-hover\:border-border-active {
+              border: 1px solid #53684A !important;
+              &::after {
+                background-color: #53684A !important;
+              }
+            }
+          }
         }
       }
     }
@@ -475,7 +549,7 @@
       margin-left: 10px;
     }
 
-    input[name*="filter_colour"]:checked + .checkbox {
+    input[name*="filter_colour"]:checked+.checkbox {
       border: 1px solid #414042 !important;
     }
   }
