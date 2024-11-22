@@ -195,7 +195,7 @@
 
             &:hover {
               color: #414042;
-              
+
               .supports-hover\:group-hover\:border-border-active {
                 border: 1px solid #53684A !important;
               }
@@ -509,10 +509,11 @@
       background: #f7f6f2;
 
       ul {
-        padding-top: 15px;
+        padding: 40px 0 60px;
         display: grid;
         grid-template-columns: repeat(6, auto);
         gap: 15px;
+        border-top: 1px solid #E3E2DE;
 
         span.checkbox {
           border: 1px solid #b9b8ba;
@@ -524,10 +525,27 @@
         font-size: 14px;
         font-weight: 400;
         line-height: 18px;
+
+        .bg-putty-dark.rounded-full.ml-auto {
+          margin-left: 0;
+        }
+
+        .checkbox + .peer-checked\:text-links {
+          color: #69686A;
+        }
+
+        .#{$id}__checkbox:checked + .checkbox + .peer-checked\:text-links {
+          color: #414042;
+        }
+
+        .#{$id}__checkbox:hover + .checkbox + .peer-checked\:text-links {
+          color: #414042;
+        }
       }
     }
 
     button[form*='product-grid'][type='submit'] {
+      margin-top: 0;
       width: calc(50% - 7.5px);
       margin-left: 15px;
       // order: 2;
@@ -535,16 +553,19 @@
 
     button[form*='product-grid'][data-reset*='filter'],
     .#{$id}__stockReset:not(.#{$id}__hide) {
+      margin-top: 0;
       width: calc(50% - 7.5px);
     }
 
     .#{$id}__filterWrapper:not(:has(.button-secondary)) button[form*='product-grid'][type='submit'],
     button[form*='product-grid'][type='submit'].#{$id}__applyBtn {
+      margin-top: 0;
       width: 100%;
       margin-left: 0;
     }
 
     .#{$id}__stockReset:not(.#{$id}__hide)+button[form*='product-grid'][type='submit'] {
+      margin-top: 0;
       width: calc(50% - 7.5px);
       margin-left: 10px;
     }
