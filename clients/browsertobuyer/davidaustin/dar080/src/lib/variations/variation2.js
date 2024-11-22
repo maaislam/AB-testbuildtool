@@ -1,7 +1,7 @@
 /*eslint-disable no-unused-expressions */
 /*eslint-disable max-len */
 import stockAvailability from '../components/stockAvailability';
-import { trackGA4Event } from '../helpers/utils';
+import { disableScroll, enableScroll, trackGA4Event } from '../helpers/utils';
 
 const checkStockQueryParams = (url) => {
     const urlObj = new URL(url);
@@ -105,7 +105,7 @@ const variation2 = (ID) => {
     });
 
     const stockResetBtn = document.querySelector(`.${ID}__stockReset`);
-    console.log('isAnyChecked: ', isAnyChecked);
+
     if (!isAnyChecked) {
         stockResetBtn.classList.add(`${ID}__hide`);
     } else {
@@ -127,6 +127,8 @@ const variation2 = (ID) => {
     sortCheckboxes.forEach((sortCheckbox) => {
         sortCheckbox.addEventListener('change', (e) => {
             const { target } = e;
+
+            disableScroll(); //disable scroll when the sort by filter is changed
 
             const eventName = 'Sort By Change';
             const action = 'Sort By Change';
@@ -181,5 +183,8 @@ const variation2 = (ID) => {
             trackGA4Event(eventName, action, eventLabel);
         });
     });
+
+    //Enable scroll
+    enableScroll();
 };
 export default variation2;

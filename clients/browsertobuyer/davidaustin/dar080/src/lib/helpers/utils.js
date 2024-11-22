@@ -64,9 +64,7 @@ export const onUrlChange = (callback, onError = null) => {
         //console.log('URL changed!');
         observer.disconnect();
         try {
-          setTimeout(() => {
-            callback(oldHref, mutation);
-          }, 100);
+          callback(oldHref, mutation);
         } catch (error) {
           console.log(`Error in callback function: ${error}`);
         }
@@ -93,10 +91,21 @@ export const onUrlChange = (callback, onError = null) => {
 export const trackGA4Event = (category, action, label) => {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-      event: 'gaCustomEvent',
-      eventCategory: category,
-      eventAction: action,
-      eventLabel: label
+    event: 'gaCustomEvent',
+    eventCategory: category,
+    eventAction: action,
+    eventLabel: label
   });
   console.log('event tracked', category, action, label);
+};
+
+export const disableScroll = () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+  window.onscroll = () => window.scrollTo(scrollLeft, scrollTop);
+};
+
+export const enableScroll = () => {
+  window.onscroll = null;
 };
