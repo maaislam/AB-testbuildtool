@@ -23,7 +23,6 @@ const checkStockInUrl = () => {
 
 const init = () => {
   const toolbar = document.getElementById('Toolbar');
-  toolbar.classList.add(`${ID}__visible`);
   //toolbar.style.visibility = 'visible';
   //VARIATION - 2
   if (VARIATION === '2') {
@@ -33,6 +32,7 @@ const init = () => {
   }
 
   //VARIATION - 1
+  toolbar.classList.add(`${ID}__visible`);
   if (checkStockInUrl()) {
     localStorage.setItem('inStock', 'true');
   } else {
@@ -201,6 +201,8 @@ const init = () => {
     checkbox.addEventListener('change', (e) => {
       const { target } = e;
 
+      toolbar.classList.remove(`${ID}__visible`);
+
       const labelElem = target.closest('.w-grid')?.querySelector('label');
       const listParentElem = target.closest('ul');
       const label = labelElem.textContent.trim();
@@ -233,6 +235,8 @@ const init = () => {
     checkbox.classList.add(`${ID}__checkbox`);
     checkbox.addEventListener('change', (e) => {
       const { target } = e;
+
+      toolbar.classList.remove(`${ID}__visible`);
 
       const value = target.value.trim();
 
