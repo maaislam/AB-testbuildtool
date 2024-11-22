@@ -97,7 +97,6 @@
           //if the selectedFiltersWrapper (badges) has the class and is not an anchor tag
           .#{$id}__inStock {
             border-top: none;
-            // padding: 15px 0 15px 0;
           }
 
           .#{$id}__moreFiltersWrapper .border-b.border-border:last-child {
@@ -194,6 +193,10 @@
             [name*="filter_location"]:checked+span.peer-checked\:border-border-active {
               border: 1px solid #53684A !important;
 
+            }
+
+            [name*="filter_rose_type"]:checked+span.peer-checked\:border-border-active,
+            [name*="filter_location"]:checked+span.peer-checked\:border-border-active {
               &::after {
                 background-color: #53684A;
               }
