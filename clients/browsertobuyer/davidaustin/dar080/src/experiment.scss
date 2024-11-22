@@ -92,7 +92,7 @@
         }
 
         &::-webkit-scrollbar {
-          width: 2px;
+          width: 4px;
         }
 
         &::-webkit-scrollbar-track {
@@ -466,11 +466,14 @@
           height: 12px;
         }
 
-        span.bg-icons {
-          width: 18px;
-          height: 18px;
-          font-size: 11px;
-        }
+        // span.bg-icons {
+        //   width: 18px;
+        //   height: 18px;
+        //   font-size: 11px;
+        //   display: flex;
+        //   justify-content: center;
+        //   align-items: center;
+        // }
       }
     }
 
