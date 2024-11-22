@@ -1,0 +1,40 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .site-navigation {
+    @media screen and (max-width: 1023px) {
+      .navmenu-item.navmenu-id-sale {
+        display: flex !important;
+        align-items: center;
+        padding-left: 9px;
+
+        .navmenu-link {
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 18px;
+          text-align: center;
+          background: #d70102;
+          color: #fff;
+          padding: 2px 6px;
+        }
+      }
+    }
+  }
+
+  .mobile-nav-content {
+    .navmenu-item.navmenu-id-sale {
+      padding-left: 25px;
+
+      .navmenu-link {
+        width: max-content;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 20px;
+        background: #d70102;
+        color: #fff;
+        padding: 2px 8px;
+      }
+    }
+  }
+}

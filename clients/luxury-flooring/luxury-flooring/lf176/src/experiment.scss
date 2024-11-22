@@ -1,0 +1,18 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__hiddenWrapper {
+    .column.main {
+      .products-grid.products-grid[amscroll-page='2'] {
+        display: none;
+      }
+    }
+  }
+
+  .#{$id}__fakeBtn {
+    & + button.amscroll-load-button {
+      display: none !important;
+    }
+  }
+}

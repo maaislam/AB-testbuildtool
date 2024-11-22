@@ -6,7 +6,7 @@ const { VARIATION } = shared;
 const mainConfig = {
   ID: 'web6454260285 ',
   TAG: '7751979071',
-  VAR: VARIATION === '1' ? 'V1' : 'VC',
+  VAR: VARIATION === '1' ? 'V1' : VARIATION === '2' ? 'V2' : 'VC',
   CLIENT: 'Raketech',
   SITE: 'TVMatchen',
   CATEGORY: 'All Devices',
