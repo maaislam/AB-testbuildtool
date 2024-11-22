@@ -97,6 +97,7 @@
           //if the selectedFiltersWrapper (badges) has the class and is not an anchor tag
           .#{$id}__inStock {
             border-top: none;
+            // padding: 15px 0 15px 0;
           }
 
           .#{$id}__moreFiltersWrapper .border-b.border-border:last-child {
@@ -120,7 +121,7 @@
           flex-wrap: wrap;
           padding: 0 0 20px;
           border-bottom: 1px solid #e3e2de;
-          margin: 0 15px;
+          margin: 0 15px 20px;
           gap: 5px;
 
           a.text-lg {
@@ -134,7 +135,8 @@
           }
 
           a+.#{$id}__resetFiltersBtn {
-            margin-top: 10px;
+            // margin-top: 10px;
+            margin-top: 0;
             display: block;
             width: 100%;
             font-size: 15px;
@@ -169,6 +171,10 @@
           .text-heading-sm.text-links.font-heading,
           label[for='Filters'],
           button[type='submit'] {
+            display: none;
+          }
+
+          a {
             display: none;
           }
         }
@@ -310,7 +316,7 @@
       align-items: center;
       justify-content: space-between;
       margin: 0 15px;
-      padding: 15px 0 20px;
+      padding: 0 0 20px 0;
       border-top: 1px solid #e3e2de;
       border-bottom: 1px solid #e3e2de;
     }
@@ -405,6 +411,10 @@
     .#{$id}__contentsWrapper {
       @include media-query(xl) {
         gap: 10px;
+      }
+
+      + .gap-gutter.snap-mandatory {
+        display: none;
       }
     }
 
