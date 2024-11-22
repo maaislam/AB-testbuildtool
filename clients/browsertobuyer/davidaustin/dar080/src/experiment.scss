@@ -428,7 +428,6 @@
   }
 
   &-2 {
-
     .#{$id}__gridContents,
     .#{$id}__stockAvailabilityContents,
     .#{$id}__moreFiltersWrapper,
@@ -582,6 +581,12 @@
 
         .checkbox+.peer-checked\:text-links {
           color: #69686A;
+        }
+
+        &:hover {
+          .supports-hover\:group-hover\:border-border-active {
+            border: 1px solid #414042 !important;
+          }
         }
 
         .#{$id}__checkbox:checked+.checkbox+.peer-checked\:text-links {
