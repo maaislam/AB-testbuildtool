@@ -170,8 +170,8 @@
           }
 
           a+.#{$id}__resetFiltersBtn {
-            // margin-top: 10px;
-            margin-top: 0;
+            margin-top: 10px;
+            // margin-top: 0;
             display: block;
             width: 100%;
             font-size: 15px;
@@ -200,6 +200,10 @@
             font-weight: 400;
             line-height: 19.5px;
             color: #414042;
+
+            .bg-icons {
+              display: none;
+            }
           }
 
           button[data-reset],
@@ -209,9 +213,9 @@
             display: none;
           }
 
-          a {
-            display: none;
-          }
+          // a {
+          //   display: none;
+          // }
         }
 
         .#{$id}__filterBox {
@@ -428,6 +432,13 @@
   }
 
   &-2 {
+    .#{$id}__moreFiltersWrapper {
+      label {
+        .bg-icons {
+          display: none;
+        }
+      }
+    }
     .#{$id}__gridContents,
     .#{$id}__stockAvailabilityContents,
     .#{$id}__moreFiltersWrapper,
@@ -452,9 +463,9 @@
         gap: 10px;
       }
 
-      +.gap-gutter.snap-mandatory {
-        display: none;
-      }
+      // +.gap-gutter.snap-mandatory {
+      //   display: none;
+      // }
     }
 
     .#{$id}__gridContents {
@@ -466,14 +477,9 @@
           height: 12px;
         }
 
-        // span.bg-icons {
-        //   width: 18px;
-        //   height: 18px;
-        //   font-size: 11px;
-        //   display: flex;
-        //   justify-content: center;
-        //   align-items: center;
-        // }
+        span.bg-icons {
+          display: none;
+        }
       }
     }
 
