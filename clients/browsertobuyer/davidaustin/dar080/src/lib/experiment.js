@@ -3,7 +3,7 @@ import inStock from './components/inStock';
 import controlTracking from './helpers/controlTracking';
 import { reset } from './helpers/reset';
 import reset2 from './helpers/reset2';
-import { onUrlChange, pollerLite, trackGA4Event } from './helpers/utils';
+import { disableScroll, onUrlChange, pollerLite, trackGA4Event } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
 import variation2 from './variations/variation2';
@@ -23,7 +23,7 @@ const checkStockInUrl = () => {
 
 const init = () => {
   const toolbar = document.getElementById('Toolbar');
-  // toolbar.style.visibility = 'visible';
+  //toolbar.style.visibility = 'visible';
   //VARIATION - 2
   if (VARIATION === '2') {
     variation2(ID);
@@ -32,6 +32,7 @@ const init = () => {
   }
 
   //VARIATION - 1
+  toolbar.classList.add(`${ID}__visible`);
   if (checkStockInUrl()) {
     localStorage.setItem('inStock', 'true');
   } else {
@@ -200,6 +201,8 @@ const init = () => {
     checkbox.addEventListener('change', (e) => {
       const { target } = e;
 
+      toolbar.classList.remove(`${ID}__visible`);
+
       const labelElem = target.closest('.w-grid')?.querySelector('label');
       const listParentElem = target.closest('ul');
       const label = labelElem.textContent.trim();
@@ -232,6 +235,8 @@ const init = () => {
     checkbox.classList.add(`${ID}__checkbox`);
     checkbox.addEventListener('change', (e) => {
       const { target } = e;
+
+      toolbar.classList.remove(`${ID}__visible`);
 
       const value = target.value.trim();
 
@@ -305,17 +310,17 @@ export default () => {
           selectedFilterLabel.classList.remove('active-toggle-icon');
         }
       }, 100);
+    } else if (VARIATION === '2' && (target.closest('button[form*="product-grid"][type="submit"]') || target.closest('button.button-primary[type="submit"][data-close]') || target.closest('a[data-reset]') || target.closest('button.button-secondary[data-reset]'))) {
+      disableScroll();
     }
   });
 
   onUrlChange(() => {
-    const toolbar = document.getElementById('Toolbar');
     if (VARIATION === '1') {
       reset(ID);
     } else if (VARIATION === '2') {
       reset2(ID);
     }
-    //toolbar.style.visibility = 'visible';
 
     pollerLite(['.shopify-section-product-grid', 'form[id*="FilterForm-template"]'], init);
   });

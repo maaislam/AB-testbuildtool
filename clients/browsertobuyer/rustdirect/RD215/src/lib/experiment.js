@@ -49,9 +49,12 @@ const init = () => {
   });
 
   if (window.location.pathname.toLocaleLowerCase().includes('/collections/cheap-rugs')) {
-    pollerLite(['.template-collection', '.productgrid--wrapper'], () => {
-      addBadgeInCollectionPage();
-    });
+    pollerLite(
+      ['.template-collection', '.productgrid--wrapper', '.star_container .group-stars'],
+      () => {
+        addBadgeInCollectionPage();
+      }
+    );
   }
 };
 
