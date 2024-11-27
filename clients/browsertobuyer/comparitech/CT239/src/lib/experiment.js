@@ -1,4 +1,5 @@
 import stickyBanner from './component/stickyBanner';
+import { trackGA4Event } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -23,6 +24,8 @@ const showStickyBanner = (vpnName, logo, href) => {
   banner.classList.add(`${ID}__show`);
 
   banner.style.width = `${attachPointWidth}px`;
+
+  trackGA4Event('test_run_ct_239', 'scroll', 'User scrolls to a mini review on the page and the sticky button triggers');
 };
 
 //Function to hide the sticky banner
