@@ -1,0 +1,115 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__hide {
+        display: none;
+    }
+
+    &__show {
+        position: fixed;
+        top: 0;
+        z-index: 2147483631;
+        animation: slide-in-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    &__stickyBanner {
+        width: 100%;
+        max-width: 800px;
+        background-color: #fff;
+        box-shadow: 0px 2px 6px 0px #00000059;
+        z-index: 9999;
+
+        @include media-query(xsm) {
+            width: calc(100% - 20px);
+        }
+
+        &.slide-out-top {
+            position: fixed;
+            top: 0;
+            animation: slide-out-top 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+        }
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+
+            img {
+                width: 150px;
+            }
+        }
+
+        .#{$id}__offer {
+            display: flex;
+            justify-content: center;
+            padding: 10px 12px 12px;
+            background: #006C9B;
+
+            p {
+                display: block;
+                max-width: 600px;
+                font-size: 16px;
+                margin: 0;
+                font-family: Arial;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 18px;
+                text-align: center;
+                color: #fff;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                @include media-query(xsm) {
+                    max-width: 320px;
+                }
+            }
+        }
+
+        .#{$id}__getDealBtn {
+            width: 125px;
+            height: 36px;
+            padding: 8px 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 19px;
+            color: #fff;
+            background-color: #C8252C;
+
+            &:hover {
+                background-color: #B11D23;
+                text-decoration: none;
+            }
+        }
+    }
+
+    @keyframes slide-in-top {
+        0% {
+            transform: translateY(-1000px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-out-top {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(-1000px);
+            opacity: 0;
+        }
+    }
+}
