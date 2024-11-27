@@ -38,6 +38,10 @@
 
             img {
                 width: 150px;
+
+                @include media-query(xsm) {
+                    width: 138px;
+                }
             }
         }
 
@@ -50,7 +54,6 @@
             p {
                 display: block;
                 max-width: 600px;
-                font-size: 16px;
                 margin: 0;
                 font-family: Arial;
                 font-size: 16px;
@@ -64,6 +67,7 @@
 
                 @include media-query(xsm) {
                     max-width: 320px;
+                    font-size: 14px;
                 }
             }
         }
@@ -85,6 +89,11 @@
             &:hover {
                 background-color: #B11D23;
                 text-decoration: none;
+            }
+
+            @include media-query(xsm) {
+                font-size: 15px;
+                line-height: 17px;
             }
         }
     }
