@@ -5,6 +5,7 @@ import footerMenuData from './data/data';
 import footerWrapper from './components/footerWrapper';
 
 const { ID, VARIATION } = shared;
+let isScrolling = false;
 
 const setActiveItem = (element) => {
   const visibleElement = element;
@@ -29,6 +30,9 @@ const init = () => {
     const useSection = wrapper.querySelector('.section_7');
     useSection.id = 'use';
 
+    const reviewsSection = wrapper.querySelector('.section_5');
+    reviewsSection.id = 'custom-reviews';
+
     const faq = wrapper.querySelector('.section_13');
     faq.id = 'faq';
   });
@@ -36,8 +40,6 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
 
   //-----------------------------
   //If control, bail out from here
@@ -62,14 +64,23 @@ export default () => {
         item.classList.remove('active');
       });
 
+      //Disable scroll event temporarily
+      isScrolling = true;
+
       clickedItem.classList.add('active');
       window.bookmarkscroll.scrollTo(`${id}`);
+
+      //Re-enable scroll listener after a delay
+      setTimeout(() => {
+        isScrolling = false;
+      }, 1000);
     }
   });
 
   init();
 
-  window.addEventListener('scroll', (e) => {
+  window.addEventListener('scroll', () => {
+    if (isScrolling) return;
     if (isScrolledIntoView(document.querySelector('.section_6'))) {
       setActiveItem(document.querySelector('.section_6'));
     } else if (isScrolledIntoView(document.querySelector('.section_7'))) {
@@ -78,8 +89,10 @@ export default () => {
       setActiveItem(document.querySelector('.section_13'));
     } else if (isScrolledIntoView(document.querySelector('#join_pkg'))) {
       setActiveItem(document.querySelector('#join_pkg'));
-    } else if (isScrolledIntoView(document.querySelector('#stamped-main-widget'))) {
-      setActiveItem(document.querySelector('#stamped-main-widget'));
+    } else if (isScrolledIntoView(document.querySelector('.section_5'))) {
+      setActiveItem(document.querySelector('.section_5'));
+    } else if (isScrolledIntoView(document.querySelector('#our_story'))) {
+      setActiveItem(document.querySelector('#our_story'));
     }
   });
 };
