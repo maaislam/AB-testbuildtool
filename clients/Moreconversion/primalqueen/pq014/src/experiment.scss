@@ -1,0 +1,180 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .redem-section {
+    display: none !important;
+  }
+  .footer-wrapper {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #2f0147;
+    box-shadow: 0px -2px 15px 0px #2e2a3933;
+    padding: 15px 20px;
+    z-index: 99;
+
+    @media screen and (max-width: 1040px) {
+      padding: 10px 10px;
+    }
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1040px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .footer-menu-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-menu-item {
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    color: #fff;
+    padding: 12px 15px;
+    margin-right: 10px;
+    border: 1px solid #ffffff4d;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &.active {
+      background-color: #fff;
+      border-color: #fff;
+      color: #000000;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    @media screen and (max-width: 680px) {
+      font-size: 8px;
+      line-height: 10px;
+      padding: 10px 12px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .#{$id}__redem-section {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    max-width: 346px;
+    width: 100%;
+    padding: 10px 10px 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px 0px #0000001f;
+    .redem-section__text {
+      @media screen and (max-width: 413px) {
+        margin-bottom: 10px;
+      }
+    }
+
+    .#{$id}__text-wrapper {
+      display: flex;
+      flex-direction: column;
+      .redem-section___text-holiday-message {
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #f50e0e;
+
+        @media screen and (max-width: 767px) {
+          font-size: 10px;
+          line-height: 12px;
+        }
+      }
+      .redem-section___text-gift-message {
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        text-align: center;
+        color: #000;
+        @media screen and (max-width: 767px) {
+          font-size: 10px;
+          line-height: 12px;
+          padding-left: 5px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        flex-direction: row;
+      }
+    }
+    .redeem--btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 115px;
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 0px;
+      letter-spacing: 0.5px;
+      border-radius: 8px;
+      text-align: center;
+      border: none;
+      -webkit-box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1215686275);
+      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1215686275);
+      background-color: #00ad21;
+      color: #fff;
+      cursor: pointer;
+      padding-bottom: 3px;
+
+      @media screen and (max-width: 767px) {
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        line-height: 15px;
+        padding-bottom: 0;
+      }
+    }
+
+    @media screen and (max-width: 1040px) {
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 413px) {
+      flex-direction: column;
+    }
+  }
+
+  .footer {
+    padding-bottom: 90px;
+
+    @media screen and (max-width: 1040px) {
+      padding-bottom: 136px;
+    }
+
+    @media screen and (max-width: 500px) {
+      padding-bottom: 154px;
+    }
+
+    @media screen and (max-width: 500px) {
+      padding-bottom: 176px;
+    }
+  }
+}

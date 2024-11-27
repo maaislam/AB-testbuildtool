@@ -35,7 +35,7 @@ export const vaccineData = {
     Name: 'Yellow Fever',
     'About the heading': 'About the Yellow Fever vaccine',
     'When to get vaccinated?':
-      'Get the vaccine at least 10 weeks before travelling. It is a specific requirement for this vaccine to bring your passport to the appointment.',
+      'Get the vaccine at least 2 weeks before travelling. It is a specific requirement for this vaccine to bring your passport to the appointment.',
     Course: 'To achieve the best possible immunity, 1 dose is required.',
     Boosters: 'A booster is not usually required, with some exceptions like under 2-year-olds.',
     'How is it given?': 'Injection in the upper arm.',
@@ -51,7 +51,8 @@ export const vaccineData = {
   },
   '/conditions/rabies/': {
     Name: 'Rabies',
-    'When to get vaccinated?': 'Complete the full course at least 4 weeks before travelling.',
+    'When to get vaccinated?':
+      'Complete the full course at least 3 weeks before travelling. Accelerated course available over 7 days.',
     Course: 'To achieve the best possible immunity, 3 doses are required.',
     Boosters: 'Recommended for high-risk travellers and those working with animals.',
     'How is it given?': 'Injection in the upper arm.',
@@ -82,7 +83,7 @@ export const vaccineData = {
   '/conditions/hepatitis-b/': {
     Name: 'Hep B',
     'When to get vaccinated?':
-      'Get the first dose at least 8 weeks before travelling (Accelerated course).',
+      'Get the first dose at least 3 weeks before travelling (Accelerated course).',
     Course: 'To achieve the best possible immunity, 3 doses are required.',
     Boosters:
       'If 3 doses given before travel (accelerataed course) a booster can be given at 1 year.',
@@ -90,7 +91,7 @@ export const vaccineData = {
     'How long does it last?':
       'The full course offers lifetime protection unless exposed to the disease.',
     'Side effects': 'Common side effects are soreness at the injection site and fever.',
-    Children: 'Suitable from birth.',
+    Children: 'Suitable from 8 weeks of age.',
     'Additional precautions':
       'Practice safe sex (use a condom). For high risk countries consider carrying a sterile kit.',
     'Certificate requirements': 'No certification required.',
@@ -181,7 +182,7 @@ export const vaccineData = {
     Course: 'To achieve the best possible immunity, 2 doses are required.',
     Boosters: 'A booster is not usually required.',
     'How is it given?': 'Injection in the upper arm.',
-    'How long does it last?': 'The full course usually offers protection for 5 years.',
+    'How long does it last?': 'The full course usually offers protection up to 10 years.',
     'Side effects': 'Common side effects are pain at injection site, fever and tiredness.',
     Children: 'Not suitable for children.',
     'Additional precautions': 'N/A',
@@ -193,7 +194,7 @@ export const vaccineData = {
   '/conditions/whooping-cough/': {
     Name: 'Whooping Cough',
     'When to get vaccinated?':
-      'The vaccine is administered as a booster dose only for individuals who have had the full course of 3  doses of the vaccine during childhood or had prior infection with whooping cough.',
+      'The vaccine is administered as a booster dose for those needing cover for Whooping cough.',
     Course: 'To achieve the best possible immunity, 1 dose is required.',
     Boosters: 'A booster is not usually required.',
     'How is it given?': 'Injection in the upper arm.',
