@@ -91,6 +91,12 @@ export default () => {
         //stickyElement.textContent = `You are viewing the section for: ${header.textContent}`;
         stickyElement.style.display = 'block';
         showStickyBanner(vpnName, logo, newHref, promoText);
+        window.dataLayer.push({
+          event: 'gaCustomEvent',
+          eventCategory: 'test_run_ct_239',
+          eventAction: 'In View',
+          eventLabel: vpnName
+        });
         break;
       } else {
         const stickyElement = document.querySelector(`.${ID}__stickyBanner`);
