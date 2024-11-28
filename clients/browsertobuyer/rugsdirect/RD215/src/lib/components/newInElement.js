@@ -1,6 +1,6 @@
 const newInElement = (ID) => {
   const html = `
-      <li class="navmenu-item navmenu-basic__item ${ID}__newIn lgd:hidden">
+      <li class="navmenu-item navmenu-basic__item ${ID}__newIn ">
         <a class="
             navmenu-link
             navmenu-link-depth-1
