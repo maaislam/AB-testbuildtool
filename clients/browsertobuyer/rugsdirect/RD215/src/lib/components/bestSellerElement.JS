@@ -1,6 +1,6 @@
 const bestSellerElement = (ID) => {
   const html = `
-      <li class="navmenu-item navmenu-basic__item ${ID}__bestSellers lgd:hidden">
+      <li class="navmenu-item navmenu-basic__item ${ID}__bestSellers">
         <a class="
             navmenu-link
             navmenu-link-depth-1

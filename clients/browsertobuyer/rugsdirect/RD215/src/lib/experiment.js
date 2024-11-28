@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
+import { observeDOM, pollerLite } from './helpers/utils';
 import savings from './data/data';
 //eslint-disable-next-line import/no-unresolved
 import bestSellerElement from './components/bestSellerElement';
@@ -9,17 +9,37 @@ import newInElement from './components/newInElement';
 const { ID, VARIATION } = shared;
 
 const siteNavigationElementRender = () => {
+  const isMobile = window.innerWidth < 1024;
+
   const siteNavigation = document.querySelector('.site-navigation');
-  if (!siteNavigation.querySelector(`.${ID}__bestSellers`)) {
+  if (!siteNavigation.querySelector(`.${ID}__bestSellers`) && !isMobile) {
     siteNavigation
       .querySelector('ul > li:nth-child(2)')
       .insertAdjacentHTML('beforebegin', bestSellerElement(ID));
   }
-  if (!siteNavigation.querySelector(`.${ID}__newIn`)) {
+  if (!siteNavigation.querySelector(`.${ID}__newIn`) && !isMobile) {
     siteNavigation
       .querySelector('ul > li:nth-child(2)')
       .insertAdjacentHTML('afterend', newInElement(ID));
   }
+
+  if (!isMobile) return;
+
+  pollerLite(['.mobile-nav-content'], () => {
+    const mobSiteNav = document.querySelector('.mobile-nav-content');
+
+    if (!mobSiteNav.querySelector(`.${ID}__newIn`)) {
+      mobSiteNav
+        .querySelector(' ul > li:nth-child(2)')
+        .insertAdjacentHTML('beforebegin', newInElement(ID));
+    }
+
+    if (!mobSiteNav.querySelector(`.${ID}__bestSellers`)) {
+      mobSiteNav
+        .querySelector(' ul > li:nth-child(2)')
+        .insertAdjacentHTML('beforebegin', bestSellerElement(ID));
+    }
+  });
 };
 
 const addBadgeInCollectionPage = () => {
@@ -53,6 +73,8 @@ const init = () => {
       ['.template-collection', '.productgrid--wrapper', '.star_container .group-stars'],
       () => {
         addBadgeInCollectionPage();
+
+        observeDOM('.productgrid--items', addBadgeInCollectionPage);
       }
     );
   }
