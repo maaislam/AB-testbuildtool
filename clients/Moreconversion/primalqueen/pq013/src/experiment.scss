@@ -1,0 +1,27 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__video {
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    & + img {
+      display: none;
+    }
+  }
+
+  .section_5 {
+    .s5_row_img_box {
+      position: relative;
+    }
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      z-index: 9;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  body {
+    overflow-x: visible;
+  }
+  [data-pf-type='Layout'] > div:first-child {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+}
