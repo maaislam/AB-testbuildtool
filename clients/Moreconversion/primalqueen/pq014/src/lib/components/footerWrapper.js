@@ -4,6 +4,7 @@ const footerWrapper = (id, data) => {
   const html = `
     <div class="footer-wrapper">
         <div class="footer-container">
+          <div class="footer-box">
             <ul class="footer-menu-list">
                 ${data
                   .map((item) => {
@@ -11,6 +12,7 @@ const footerWrapper = (id, data) => {
                   })
                   .join('\n')}
             </ul>
+          </div>
             ${redemSection(id)}
         </div>
     </div>

@@ -21,6 +21,7 @@
 
   .footer-container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     @media screen and (max-width: 1040px) {
@@ -29,10 +30,25 @@
     }
   }
 
+  .footer-box {
+    @media screen and (max-width: 480px) {
+      width: calc(100% + 20px);
+      margin-left: 20px;
+    }
+  }
+
   .footer-menu-list {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+
+    @media screen and (max-width: 480px) {
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   .footer-menu-item {
@@ -56,6 +72,10 @@
 
     &:last-child {
       margin-right: 0px;
+
+      @media screen and (max-width: 480px) {
+        margin-right: 20px;
+      }
     }
 
     @media screen and (max-width: 680px) {
@@ -64,6 +84,7 @@
       padding: 10px 12px;
       margin-right: 5px;
       margin-bottom: 5px;
+      white-space: nowrap;
     }
   }
 
@@ -77,9 +98,6 @@
     border-radius: 10px;
     box-shadow: 0px 4px 12px 0px #0000001f;
     .redem-section__text {
-      @media screen and (max-width: 413px) {
-        margin-bottom: 10px;
-      }
     }
 
     .#{$id}__text-wrapper {
@@ -117,6 +135,8 @@
 
       @media screen and (max-width: 767px) {
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
     .redeem--btn {
@@ -127,24 +147,21 @@
       font-family: Inter, sans-serif;
       font-size: 14px;
       font-weight: 700;
-      line-height: 0px;
+      line-height: 1.2;
       letter-spacing: 0.5px;
       border-radius: 8px;
       text-align: center;
       border: none;
-      -webkit-box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1215686275);
-      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1215686275);
+      box-shadow: 0px 4px 12px 0px #0000001f;
       background-color: #00ad21;
       color: #fff;
       cursor: pointer;
-      padding-bottom: 3px;
 
       @media screen and (max-width: 767px) {
         width: 100px;
-        height: 30px;
         font-size: 12px;
         line-height: 15px;
-        padding-bottom: 0;
+        padding: 8px 0 8px;
       }
     }
 
@@ -155,10 +172,7 @@
     @media screen and (max-width: 767px) {
       max-width: 100%;
       align-items: center;
-    }
-
-    @media screen and (max-width: 413px) {
-      flex-direction: column;
+      padding: 10px;
     }
   }
 

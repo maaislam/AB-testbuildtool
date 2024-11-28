@@ -55,6 +55,7 @@ export const isScrolledIntoView = (el) => {
   const elemTop = rect.top;
   const elemBottom = rect.bottom;
 
-  const isVisible = elemTop < window.innerHeight && elemBottom >= 0;
-  return isVisible;
+  //Check if at least 250px of the element is visible
+  const visibleHeight = Math.min(elemBottom, window.innerHeight) - Math.max(elemTop, 0);
+  return visibleHeight >= 250;
 };

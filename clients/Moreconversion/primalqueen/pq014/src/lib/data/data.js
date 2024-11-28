@@ -9,11 +9,11 @@ const footerMenuData = [
   },
   {
     name: 'Reviews',
-    id: 'stamped-main-widget'
+    id: 'custom-reviews'
   },
   {
     name: 'About us',
-    id: 'about-us'
+    id: 'our_story'
   },
   {
     name: 'Join Primal Queen',
