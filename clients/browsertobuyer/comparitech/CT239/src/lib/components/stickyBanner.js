@@ -16,7 +16,7 @@ const stickyBanner = (id, vpnName, logo, href, promoText) => {
 
   const currentMonthName = monthNames[new Date().getMonth()];
   const fallbackText = `Best deal for ${currentMonthName}`;
-  const htmlStr = `<div class="${id}__stickyBanner ${id}__hide">
+  const htmlStr = `<div class="${id}__stickyBanner ${id}__hide" data-url="${href}">
     <div class="${id}__stickyBanner-header">
         <div class="${id}__logo">
             <img src="${logo}" alt="${vpnName}">
