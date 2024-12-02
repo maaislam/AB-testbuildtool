@@ -1,4 +1,5 @@
 import stickyBanner from './components/stickyBanner';
+import { trackGA4Event } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -37,6 +38,18 @@ const hideStickyBanner = () => {
 export default () => {
   setup();
 
+  window.vpnName = [];
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest(`.${ID}__stickyBanner`)) {
+      const banner = target.closest(`.${ID}__stickyBanner`);
+      const { url } = banner.dataset;
+      window.open(url, '_blank');
+    }
+  });
+
   //Get all section headers and CTA links
   const sectionHeaders = document.querySelectorAll('h2 [href*="/l/header"]');
   const ctaLinks = document.querySelectorAll('p a[href*="/l/cta"]');
@@ -67,7 +80,7 @@ export default () => {
       const logoElem = [...logoElems].find((elem) => {
         const getAlt = elem.alt || elem.querySelector('img').alt;
 
-        return getAlt.toLowerCase() === vpnName.toLowerCase();
+        return getAlt.replace(/[\d\s\.]+/g, '').toLowerCase() === vpnName.toLowerCase();
       });
 
       const imgElem = logoElem.querySelector('img') ? logoElem.querySelector('img') : logoElem;
@@ -78,7 +91,7 @@ export default () => {
       const promoElement = [...promoElements].find((elem) => {
         const titleElem = elem.querySelector('.title');
 
-        return titleElem.textContent.toLowerCase().includes(vpnName.toLowerCase());
+        return titleElem.textContent.replace(/[\d\s\.]+/g, '').toLowerCase().includes(vpnName.toLowerCase());
       });
 
       const promoHeader = promoElement.querySelector('.heading');
@@ -91,12 +104,12 @@ export default () => {
         //stickyElement.textContent = `You are viewing the section for: ${header.textContent}`;
         stickyElement.style.display = 'block';
         showStickyBanner(vpnName, logo, newHref, promoText);
-        window.dataLayer.push({
-          event: 'gaCustomEvent',
-          eventCategory: 'test_run_ct_239',
-          eventAction: 'In View',
-          eventLabel: vpnName
-        });
+
+        if (!window.vpnName.includes(vpnName)) {
+          trackGA4Event('test_run_ct_239', 'In View', vpnName);
+          window.vpnName = [...window.vpnName, vpnName];
+        }
+
         break;
       } else {
         const stickyElement = document.querySelector(`.${ID}__stickyBanner`);
