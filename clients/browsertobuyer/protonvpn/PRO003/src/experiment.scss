@@ -2,6 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    &__redirectLink {
+        cursor: pointer;
+    }
+
     &__heading {
         margin-bottom: 32px;
         font-family: Arizona, ArizonaFallback, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
@@ -22,17 +26,20 @@
             text-decoration: none;
         }
         .homepage .#{$id}__onlineSecurityFeatures {
-            margin-top: 96px;
+            padding-top: 96px;
+            padding-bottom: 96px;
 
             @include media-query(md) {
-                margin-top: 48px;
+                padding-top: 48px;
+                padding-bottom: 58px;
             }
         }
         .partnerPage .#{$id}__onlineSecurityFeatures {
-            margin-top: 48px;
+            padding-top: 48px;
 
             @include media-query(md) {
-                margin-top: 16px;
+                padding-top: 16px;
+                padding-bottom: 30px;
             }
         }
 
@@ -101,17 +108,21 @@
         }
         
         .homepage .#{$id}__shortBenefits {
-            margin-top: 96px;
+            padding-top: 96px;
+            padding-bottom: 48px;
 
             @include media-query(md) {
-                margin-top: 48px;
+                padding-top: 48px;
+                padding-bottom: 58px;
             }
         }
         .partnerPage .#{$id}__shortBenefits {
-            margin-top: 48px;
+            padding-top: 48px;
+            padding-bottom: 58px;
 
             @include media-query(md) {
-                margin-top: 16px;
+                padding-top: 16px;
+                padding-bottom: 30px;
             }
         }
 

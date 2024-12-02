@@ -2,7 +2,7 @@ export const securityFeatures = [
     {
         title: 'Stream content from anywhere',
         imgUrl: 'https://vpncdn.protonweb.com/image-transformation/?s=s&image=10eaeacc_42aa_42ce_9798_596283b5f127_Stream_from_anywhere_b083cd7a67.png',
-        description: 'Watch your favorite shows, movies and sports buffer-free when traveling or away from home. Access streaming services in other countries.',
+        description: 'Watch your favorite shows, movies and sports buffer-free when traveling or away from home. Access streaming services in other&nbsp;countries.',
         btnUrl: 'https://protonvpn.com/streaming',
         btnText: 'Get Proton VPN for streaming',
         icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,7 +14,7 @@ export const securityFeatures = [
     {
         title: 'Bypass content blocks',
         imgUrl: 'https://vpncdn.protonweb.com/image-transformation/?s=s&image=10eaeacc_42aa_42ce_9798_596283b5f127_Stream_from_anywhere_b083cd7a67.png',
-        description: 'Use Proton VPN to connect to the internet through a country with no censorship to access blocked content anonymously. Proton VPN’s exclusive stealth mode even avoids attempts to block VPNs.',
+        description: 'Use Proton VPN to connect to the internet through a country with no censorship to access blocked content anonymously. Proton VPN’s exclusive stealth mode even avoids attempts to block&nbsp;VPNs.',
         btnUrl: '',
         btnText: 'Unblock content with Proton VPN',
         icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@ export const securityFeatures = [
     {
         title: 'Mask your IP and browsing',
         imgUrl: 'https://vpncdn.protonweb.com/image-transformation/?s=s&image=e4ccee92_6bf9_467c_b489_31397a0b3737_Mask_your_IP_410465f89d.png&width=1121&height=700',
-        description: 'Use Proton VPN to connect to the internet through a country with no censorship to access blocked content anonymously. Proton VPN’s exclusive stealth mode even avoids attempts to block VPNs.',
+        description: "Hide your computer's identity from websites and governments - fully protected by Switzerland's world-famous privacy&nbsp;laws.",
         btnUrl: 'https://protonvpn.com/features/hide-ip',
         btnText: 'Get Swiss privacy with Proton VPN',
         icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,9 +36,9 @@ export const securityFeatures = [
         `
     },
     {
-        title: 'High-speed - no buffering or lag',
+        title: 'High-speed - no buffering or&nbsp;lag',
         imgUrl: 'https://vpncdn.protonweb.com/image-transformation/?s=s&image=25ff5f36_d535_4b47_af2c_2cf88bdb5957_Unlimited_bandwidth_1620a09eb4.png',
-        description: 'Up to 10Gbps connections, lightning fast ping times and custom technology which can make your internet connection 4 times faster.',
+        description: 'Up to 10Gbps connections, lightning fast ping times and custom technology which can make your internet connection 4 times&nbsp;faster.',
         btnUrl: 'https://protonvpn.com/features/high-speed',
         btnText: 'Get high-speed access with Proton VPN',
         icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +51,7 @@ export const securityFeatures = [
     {
         title: 'Protection on all your devices',
         imgUrl: 'https://vpncdn.protonweb.com/image-transformation/?s=s&image=2abe362c_5dc9_43ee_9e83_309874f2c57f_Up_to_10_devices_f54560fc3d.png',
-        description: 'Protect the whole family - use Proton VPN on up to 10 devices or browsers at the same time including Smart TVs iOS, Android, Mac and PC.',
+        description: 'Protect the whole family - use Proton VPN on up to 10 devices or browsers at the same time including Smart TVs iOS, Android, Mac&nbsp;and&nbsp;PC.',
         btnUrl: 'https://protonvpn.com/features/multi-platform-support',
         btnText: 'Use Proton VPN on up to 10 devices',
         icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,9 +61,9 @@ export const securityFeatures = [
         `
     },
     {
-        title: 'Block ads, trackers and malicious scripts',
+        title: 'Block ads, trackers and malicious&nbsp;scripts',
         imgUrl: 'https://vpncdn.protonweb.com/image-transformation/?s=s&image=137fef70_2268_4469_9ddd_8d9c0033c0da_Net_Shield_Ad_blocker_8c2dcb0e41.png&width=1121&height=700',
-        description: 'Proton stops you can being tracked online plus view content without annoying adverts.',
+        description: 'Proton stops you can being tracked online plus view content without annoying&nbsp;adverts.',
         btnUrl: '',
         btnText: 'Block ads with Proton VPN',
         icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">

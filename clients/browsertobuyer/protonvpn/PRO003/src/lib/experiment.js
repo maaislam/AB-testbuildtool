@@ -1,3 +1,4 @@
+/* eslint-disable spaced-comment */
 import onlineSecurityFeatures from './components/onlineSecurityFeatures';
 import shortBenefits from './components/shortBenefits';
 import setup from './services/setup';
@@ -8,16 +9,27 @@ const { ID, VARIATION } = shared;
 const init = () => {
   const { pathname } = window.location;
   const pageType = pathname.includes('/vpn-home-plans-offer') || pathname.includes('/vpn-home-offer')
-  ? 'hp'
-  : pathname.includes('/special-partner-offer') ? 'partner' : '';
+    ? 'hp'
+    : pathname.includes('/special-partner-offer') ? 'partner' : '';
 
   let attachPoint;
 
   if (pageType === 'hp') {
     document.body.classList.add('homepage');
     const gridSection = document.querySelector('[data-testid="grid-section"]');
-    const titleElem = document.querySelector('[data-testid="title"]');
-    attachPoint = titleElem.parentElement.parentElement;
+
+    if (VARIATION === '2' && pathname.includes('/vpn-home-offer')) {
+      const titleElems = document.querySelectorAll('[data-testid="title"]');
+      titleElems.forEach((elem) => {
+        const titleParent = elem.parentElement.parentElement;
+        titleParent.classList.add('hidden');
+      });
+
+      attachPoint = titleElems[0].parentElement.parentElement;
+    } else {
+      const titleElem = document.querySelector('[data-testid="title"]');
+      attachPoint = titleElem.parentElement.parentElement;
+    }
 
     attachPoint.classList.add('hidden');
     gridSection.classList.add('hidden');
@@ -41,5 +53,15 @@ const init = () => {
 
 export default () => {
   setup();
+
   init();
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest(`.${ID}__redirectLink`)) {
+      const heroCtaElem = document.querySelector('[data-testid="hero-cta"]') || document.querySelector('a[data-testid="hero-download-cta"]');
+      heroCtaElem.click();
+    }
+  });
 };
