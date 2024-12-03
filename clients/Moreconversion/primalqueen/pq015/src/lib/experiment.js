@@ -33,7 +33,7 @@ const updateCountdown = () => {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     document.querySelectorAll(`.${ID}__shippingCalculate .within-time`).forEach((item) => {
-      item.textContent = `${hours}hr ${minutes}mins ${seconds} sec`;
+      item.textContent = `${hours}hr ${minutes}mins ${seconds}sec`;
     });
     document.querySelectorAll(`.${ID}__shipping__message--today`).forEach((item) => {
       item.style.display = 'none';
@@ -52,7 +52,7 @@ const updateCountdown = () => {
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   document.querySelectorAll(`.${ID}__shippingCalculate .remain-time`).forEach((item) => {
-    item.textContent = `${hours}hr ${minutes}mins ${seconds} sec`;
+    item.textContent = `${hours}hr ${minutes}mins ${seconds}sec`;
   });
   document.querySelectorAll(`.${ID}__shipping__message--today`).forEach((item) => {
     item.style.display = 'block';
@@ -105,19 +105,6 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
-
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
 
   init();
 };

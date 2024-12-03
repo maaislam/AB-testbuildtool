@@ -9,6 +9,11 @@
       justify-content: center;
       float: left;
       width: 100%;
+      margin: 5.12px 6px;
+
+      @media screen and (max-width: 767px) {
+        margin: 0 5px;
+      }
     }
     .#{$id}__icon {
       display: flex;
@@ -33,6 +38,10 @@
     .#{$id}__shippingCalculate {
       margin-top: 5px;
       border-top: 1px solid #e94480;
+
+      @media screen and (max-width: 767px) {
+        margin-top: 8.89px;
+      }
     }
     .#{$id}__shippingCalculateBox {
       padding-top: 12px;
@@ -71,7 +80,7 @@
     .#{$id}__quantityWrapper {
       max-width: 300px;
       width: 100%;
-      margin: 7px auto 0;
+      margin: 7.23px auto 0;
       font-family: 'Inter';
       font-size: 15px;
       font-weight: 400;

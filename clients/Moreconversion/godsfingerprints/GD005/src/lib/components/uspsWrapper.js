@@ -1,15 +1,29 @@
+import { freeplacementIcon, guaranteeIcon, preminumIcon } from '../assets/icons';
+
 const uspsWrapper = (id) => {
   const html = `
     <div class="${id}__usps-wrapper">
       <div class="${id}__usps-container">
             <div class="${id}__usps-item">
-                <img src="https://godsfingerprints.co/cdn/shop/files/icon-satisfaction_c8bd216a-af6e-481c-a375-3cd0ebaa1b61.webp?v=1715278964&width=356"/>
+                <div class="${id}__icon">${guaranteeIcon}</div>
+                <div class="${id}__textWrapper">
+                  <p class="${id}__highlight">100%</p>
+                  <p class="${id}__text">SATISFACTION GUARANTEE</p>
+                </div>
             </div>
             <div class="${id}__usps-item">
-                <img src="https://godsfingerprints.co/cdn/shop/files/icons-refund.png?v=1715279101&width=256"/>
+                <div class="${id}__icon">${freeplacementIcon}</div>
+                <div class="${id}__textWrapper">
+                  <p class="${id}__highlight">FREE</p>
+                  <p class="${id}__text">REPLACEMENTS &&nbsp;REFUNDS</p>
+                </div>
             </div>
             <div class="${id}__usps-item">
-                <img src="https://godsfingerprints.co/cdn/shop/files/icon-premium_12f8d5b5-3fc6-4a3a-9f8c-2b013a2bd30f.webp?v=1715281943&width=256"/>
+                <div class="${id}__icon">${preminumIcon}</div>
+                <div class="${id}__textWrapper">
+                  <p class="${id}__highlight">PREMIUM</p>
+                  <p class="${id}__text">MUSEUM QUALITY ART PRINTS</p>
+                </div>
             </div>
       </div>
       
