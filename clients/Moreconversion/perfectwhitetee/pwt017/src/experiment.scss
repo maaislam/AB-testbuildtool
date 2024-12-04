@@ -1,0 +1,33 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    form.product-single__form a.btn.klaviyo-bis-trigger, 
+    &__hide {
+        display: none;
+    }
+
+    &__button {
+        width: 100%;
+        padding: 12px 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #C6C6C6;
+        background: #F5F5F5;
+        border-radius: 5px;
+
+        .#{$id}__text {
+            margin-left: 9px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 19px;
+            letter-spacing: 0.31px;
+            color: #333333;
+        }
+
+        span {
+            display: flex;
+        }
+    }
+}
