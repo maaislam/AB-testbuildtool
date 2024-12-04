@@ -1,0 +1,23 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__wrapper {
+    display: flex;
+    max-width: 200px;
+    width: 100%;
+    font-family: 'Inter';
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    background-color: #fdbad2;
+    padding: 2px 12px;
+    margin: 5px auto;
+
+    a {
+      font-weight: 800;
+      color: #e94480;
+      text-decoration: underline;
+    }
+  }
+}
