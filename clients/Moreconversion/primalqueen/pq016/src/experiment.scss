@@ -12,7 +12,8 @@
     line-height: 18px;
     background-color: #fdbad2;
     padding: 2px 12px;
-    margin: 5px auto;
+    margin: 0 auto 15px;
+    transform: translateY(10px);
 
     a {
       font-weight: 800;
@@ -21,55 +22,61 @@
     }
   }
 
-  #pdf-popup {
+  /* Modal styling */
+  #pdf-modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Black overlay with transparency */
     z-index: 1000;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
+    /* Allow vertical scrolling if needed */
   }
 
-
-  #pdf-popup .popup-content {
-    width: 95%;
-    height: 95%;
-    background-color: white;
+  #pdf-modal .modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    /* Enable scrolling inside the modal */
+    overflow-x: auto;
+    /* Enable horizontal scrolling if needed */
     border-radius: 8px;
-    padding: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
-
-  #pdf-popup .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    color: white;
+  /* Close button styling */
+  #pdf-modal .close-btn {
+    margin-left: auto;
+    position: sticky;
+    top: 0;
+    right: 0;
+    background: transparent;
+    color: #000;
     border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
+    font-size: 28px;
     text-align: center;
-    line-height: 30px;
     cursor: pointer;
+    z-index: 1001;
     font-weight: 400;
-    font-size: 21px;
+    line-height: 1;
   }
 
-
-  #pdf-popup iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+  #pdf-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }
