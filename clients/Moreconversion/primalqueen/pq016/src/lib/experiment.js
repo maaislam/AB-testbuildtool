@@ -13,7 +13,7 @@ const init = () => {
         .insertAdjacentHTML(
           'afterend',
           `<div class="${ID}__wrapper">Lab Verified -&nbsp;
-          <a href="https://cdn.shopify.com/s/files/1/0805/3971/3813/files/20240024_COA_of_Beef_Organs_Primal_Queen_Capsule_60ct..pdf?v=1722958015" target="_blank">View Results</a></div>`
+          <a href="https://cdn.shopify.com/s/files/1/0805/3971/3813/files/Primal_Queen_COA-combined.pdf?v=1733152358" target="_blank">View Results</a></div>`
         );
     }
   });
@@ -29,9 +29,9 @@ export default () => {
   pdfPopup.innerHTML = `
     <div class="popup-content">
         <button class="close-btn">&times;</button>
-        <iframe src="https://cdn.shopify.com/s/files/1/0805/3971/3813/files/20240024_COA_of_Beef_Organs_Primal_Queen_Capsule_60ct..pdf?v=1722958015"></iframe>
+        <iframe src="https://cdn.shopify.com/s/files/1/0805/3971/3813/files/Primal_Queen_COA-combined.pdf?v=1733152358"></iframe>
     </div>
-`;
+  `;
   document.body.appendChild(pdfPopup);
 
   document.body.addEventListener('click', (e) => {
@@ -41,10 +41,15 @@ export default () => {
     if (target.closest(`.${ID}__wrapper > a`)) {
       e.preventDefault(); //Prevent default link behavior
       popup.style.display = 'flex'; //Show the popup
+      //scroll off the page
+      document.documentElement.style.overflow = 'hidden';
     } else if (target.closest('.close-btn')) {
       popup.style.display = 'none'; //Hide the popup
+      //scroll on the page
+      document.documentElement.style.overflow = 'auto';
     } else if (target.closest('#pdf-popup')) {
       popup.style.display = 'none'; //Hide the popup
+      document.documentElement.style.overflow = 'auto';
     }
   });
 };

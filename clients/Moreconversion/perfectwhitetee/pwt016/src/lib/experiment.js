@@ -31,7 +31,7 @@ const init = () => {
     video.preload = 'auto'; //This ensures the video will preload
 
     const source = document.createElement('source');
-    source.src = 'https://cdn.shopify.com/videos/c/o/v/424000f1fc164d7a94dc8f1514bf6928.mp4';
+    source.src = 'https://cdn.shopify.com/videos/c/o/v/b737a927567145dfbf27ef334ebbff95.mp4';
     source.type = 'video/mp4';
 
     video.appendChild(source);
