@@ -12,7 +12,7 @@ const init = () => {
         .querySelector('.packge_button_outer')
         .insertAdjacentHTML(
           'afterend',
-          `<div class="${ID}__wrapper">Lab Verified -&nbsp;<a href="https://cdn.shopify.com/s/files/1/0805/3971/3813/files/20240024_COA_of_Beef_Organs_Primal_Queen_Capsule_60ct..pdf?v=1722958015" target="_blank">View Results</a></div>`
+          `<div class="${ID}__wrapper">Lab Verified -&nbsp;<a href="https://cdn.shopify.com/s/files/1/0805/3971/3813/files/Primal_Queen_COA-combined.pdf?v=1733152358" target="_blank">View Results</a></div>`
         );
     }
   });

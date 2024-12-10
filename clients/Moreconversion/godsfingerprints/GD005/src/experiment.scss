@@ -15,6 +15,10 @@
     @media screen and (max-width: 767px) {
       padding: 18px 10px;
     }
+
+    @media screen and (max-width: 374px) {
+      padding: 18px 5px 18px 10px;
+    }
   }
 
   .#{$id}__usps-container {
@@ -64,6 +68,13 @@
 
           @media screen and (max-width: 390px) {
             padding-top: 2px;
+          }
+          @media screen and (max-width: 374px) {
+            font-size: 11px;
+          }
+
+          @media screen and (max-width: 353px) {
+            font-size: 10px;
           }
         }
 
