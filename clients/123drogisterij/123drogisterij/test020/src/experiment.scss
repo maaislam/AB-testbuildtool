@@ -1,0 +1,15 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__upsell-notification.active {
+    display: flex;
+    margin-top: 10px;
+    max-width: 100%;
+    margin-bottom: 0;
+    padding: 8px 5px;
+    justify-content: center;
+    background: #f1b215;
+    color: #333;
+  }
+}

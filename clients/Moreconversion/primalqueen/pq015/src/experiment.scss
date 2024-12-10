@@ -1,0 +1,100 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .#{$id}__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      width: 100%;
+      margin: 5.12px 6px;
+
+      @media screen and (max-width: 767px) {
+        margin: 0 5px;
+      }
+    }
+    .#{$id}__icon {
+      display: flex;
+    }
+
+    .#{$id}__text {
+      font-family: 'Inter';
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 18px;
+      color: #000000;
+      padding-left: 6px;
+    }
+  }
+
+  &-2 {
+    #join_pkg {
+      .shipping-calculate-date {
+        display: none;
+      }
+    }
+    .#{$id}__shippingCalculate {
+      margin-top: 5px;
+      border-top: 1px solid #e94480;
+
+      @media screen and (max-width: 767px) {
+        margin-top: 8.89px;
+      }
+    }
+    .#{$id}__shippingCalculateBox {
+      padding-top: 12px;
+      max-width: 310px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .#{$id}__highlight {
+      font-family: 'Inter';
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 18.15px;
+      color: #2f0147;
+      background-color: #fdbad2;
+      padding: 2px 4px;
+    }
+
+    .#{$id}__text {
+      font-family: 'Inter';
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 27px;
+      color: #2f0147;
+    }
+
+    .remain-time,
+    .within-time {
+      font-family: 'Inter';
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 27px;
+      color: #00ad21;
+    }
+
+    .#{$id}__quantityWrapper {
+      max-width: 300px;
+      width: 100%;
+      margin: 7.23px auto 0;
+      font-family: 'Inter';
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 27px;
+      clear: both;
+
+      .#{$id}__highlight_month {
+        font-weight: 700;
+      }
+
+      .#{$id}__highlight_number {
+        font-weight: 700;
+        text-decoration: underline;
+      }
+    }
+  }
+}

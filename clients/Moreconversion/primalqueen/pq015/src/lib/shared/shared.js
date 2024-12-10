@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "GD003",
+    ID: "pq015",
     VARIATION: "1",
     CLIENT: "Moreconversion",
-    SITE: "godsfingerprints"
+    SITE: "primalqueen"
   };

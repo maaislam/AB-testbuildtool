@@ -2,7 +2,7 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  &__test {
-    display: block;
-  }
+    &__darkGreen {
+        background-color: #203423;
+    }
 }

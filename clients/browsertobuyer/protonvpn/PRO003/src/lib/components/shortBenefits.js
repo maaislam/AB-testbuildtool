@@ -8,7 +8,7 @@ const shortBenefits = (id) => {
             ${shortBenefitCards(id)}
         </div>
         <div class="${id}__getProtonVpnWrapper">
-            <a href="https://account.protonvpn.com/pricing?currency=USD&hfp=false" class="${id}__getProtonVpn">Get Proton VPN now</a>
+            <div class="${id}__getProtonVpn ${id}__redirectLink">Get Proton VPN now</div>
         </div>
     </div>
     `;
