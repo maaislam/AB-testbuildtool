@@ -2,30 +2,32 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &-1 {
-        .#{$id}__helpTextWrapper.p-offset {
-            padding: 20px
-        }
-    
-        .#{$id}__helpText {
-            padding: 12px 20px;
-        }
+  &-1 {
+    .#{$id}__helpTextWrapper.p-offset {
+      padding: 20px;
     }
 
-    &-2 {
-        .#{$id}__helpTextWrapper.p-offset {
-            padding: 0
-        }
-    
-        .#{$id}__helpText {
-            padding: 36px 40px;
-            background: transparent;
-            border: none;
-
-            span {
-                height: 57px;
-                width: 57px;
-            }
-        }
+    .#{$id}__helpText {
+      padding: 12px 20px;
     }
+  }
+
+  &-2 {
+    .#{$id}__helpTextWrapper.p-offset {
+      padding: 0;
+    }
+
+    .#{$id}__helpText {
+      padding: 15px 30px;
+      background: transparent;
+      border: none;
+      @media screen and (min-width: 600px) {
+        padding: 15px 15px;
+      }
+      span {
+        height: 57px;
+        width: 57px;
+      }
+    }
+  }
 }

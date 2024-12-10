@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "DAR077",
+    ID: "CT242",
     VARIATION: "1",
     CLIENT: "browsertobuyer",
-    SITE: "davidaustin"
+    SITE: "comparitech"
   };

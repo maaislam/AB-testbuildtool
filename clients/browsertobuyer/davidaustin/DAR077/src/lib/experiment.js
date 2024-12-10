@@ -3,25 +3,18 @@ import shared from './shared/shared';
 
 const { ID, VARIATION } = shared;
 
-const chatIcon = `<svg width="97" height="97" viewBox="0 0 97 97" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g filter="url(#filter0_d_0_5)">
-  <circle cx="48.5" cy="48.5" r="28.5" fill="#546848"/>
-  <path d="M46.3095 55.2471C52.8186 55.2471 58.0952 50.4083 58.0952 44.9092C58.0952 39.4102 52.8186 35.3333 46.3095 35.3333C39.8004 35.3333 34.5238 39.7912 34.5238 45.2902C34.5238 47.4373 35.3282 49.4257 36.6963 51.052L35.2604 57.7999L41.0296 54.1945C42.6179 54.868 44.4113 55.2471 46.3095 55.2471Z" stroke="white" stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round"/>
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M54.6667 62.1552C49.6041 62.1552 45.5 58.6879 45.5 54.4109C45.5 50.1339 49.6041 46.6667 54.6667 46.6667C59.7293 46.6667 63.8333 50.1339 63.8333 54.4109C63.8333 56.0809 63.2077 57.6274 62.1436 58.8922L63.2604 64.1406L58.7733 61.3365C57.5379 61.8603 56.1431 62.1552 54.6667 62.1552Z" fill="white" stroke="#546848" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M54.668 55.8333C54.0951 55.8333 53.5222 55.2604 53.5222 54.6875C53.5222 54.1146 54.0951 53.5417 54.668 53.5417C55.2409 53.5417 55.8125 54.1146 55.8125 54.6875C55.8125 55.2604 55.2409 55.8333 54.668 55.8333ZM59.2513 55.8333C58.6784 55.8333 58.1055 55.2604 58.1055 54.6875C58.1055 54.1146 58.6784 53.5417 59.2513 53.5417C59.8243 53.5417 60.3958 54.1146 60.3958 54.6875C60.3958 55.2604 59.8243 55.8333 59.2513 55.8333ZM50.084 55.8333C49.5108 55.8333 48.9375 55.2604 48.9375 54.6875C48.9375 54.1146 49.5108 53.5417 50.084 53.5417C50.6573 53.5417 51.2292 54.1146 51.2292 54.6875C51.2292 55.2604 50.6573 55.8333 50.084 55.8333Z" fill="#546848"/>
-  </g>
-  <defs>
-  <filter id="filter0_d_0_5" x="0" y="0" width="97" height="97" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-  <feOffset/>
-  <feGaussianBlur stdDeviation="10"/>
-  <feComposite in2="hardAlpha" operator="out"/>
-  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_5"/>
-  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_5" result="shape"/>
-  </filter>
-  </defs>
+const chatIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="57" height="57" viewBox="0 0 57 57" fill="none">
+<circle cx="28.5" cy="28.5" r="28.5" fill="#53684A"/>
+<path d="M28.3095 35.2471C34.8186 35.2471 40.0952 30.4083 40.0952 24.9092C40.0952 19.4102 34.8186 15.3333 28.3095 15.3333C21.8004 15.3333 16.5238 19.7912 16.5238 25.2902C16.5238 27.4373 17.3282 29.4257 18.6963 31.052L17.2604 37.7999L23.0296 34.1945C24.6179 34.868 26.4113 35.2471 28.3095 35.2471Z" stroke="white" stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round"/>
+<g clip-path="url(#clip0_1_48)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M35.6667 43.1552C30.6041 43.1552 26.5 39.6879 26.5 35.4109C26.5 31.1339 30.6041 27.6667 35.6667 27.6667C40.7293 27.6667 44.8333 31.1339 44.8333 35.4109C44.8333 37.0809 44.2077 38.6274 43.1436 39.8922L44.2604 45.1406L39.7733 42.3365C38.5379 42.8603 37.1431 43.1552 35.6667 43.1552Z" fill="white" stroke="#53684A" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M35.668 36.8333C35.0951 36.8333 34.5222 36.2604 34.5222 35.6875C34.5222 35.1146 35.0951 34.5417 35.668 34.5417C36.2409 34.5417 36.8125 35.1146 36.8125 35.6875C36.8125 36.2604 36.2409 36.8333 35.668 36.8333ZM40.2513 36.8333C39.6784 36.8333 39.1055 36.2604 39.1055 35.6875C39.1055 35.1146 39.6784 34.5417 40.2513 34.5417C40.8243 34.5417 41.3958 35.1146 41.3958 35.6875C41.3958 36.2604 40.8243 36.8333 40.2513 36.8333ZM31.084 36.8333C30.5108 36.8333 29.9375 36.2604 29.9375 35.6875C29.9375 35.1146 30.5108 34.5417 31.084 34.5417C31.6573 34.5417 32.2292 35.1146 32.2292 35.6875C32.2292 36.2604 31.6573 36.8333 31.084 36.8333Z" fill="#53684A"/>
+</g>
+<defs>
+<clipPath id="clip0_1_48">
+<rect width="23" height="23" fill="white" transform="matrix(-1 0 0 1 46 23)"/>
+</clipPath>
+</defs>
 </svg>
 `;
 
@@ -33,7 +26,7 @@ const init = () => {
   helpTextElem.classList.add(`${ID}__helpText`);
 
   if (VARIATION === '1') {
-    helpTextElem.textContent = 'Help';
+    helpTextElem.textContent = 'Help?';
   } else if (VARIATION === '2') {
     helpTextElem.innerHTML = `<span>${chatIcon}</span>`;
   }
@@ -41,5 +34,24 @@ const init = () => {
 
 export default () => {
   setup();
+
+  const trackGAEvent = (c, a, l) => {
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'gaCustomEvent',
+        eventCategory: c,
+        eventAction: a,
+        eventLabel: l
+      });
+      console.log('event tracked', c, a, l);
+    }
+  };
+
+  document.body.addEventListener('click', (e) => {
+    if (e.target.closest('[id*="help-drawer"]')) {
+      trackGAEvent('DAR 077', 'Help Click', 'help-drawer clicked');
+    }
+  });
+
   init();
 };

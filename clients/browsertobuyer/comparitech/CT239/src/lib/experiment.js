@@ -51,8 +51,8 @@ export default () => {
   });
 
   //Get all section headers and CTA links
-  const sectionHeaders = document.querySelectorAll('h2 [href*="/l/header"]');
-  const ctaLinks = document.querySelectorAll('p a[href*="/l/cta"]');
+  const sectionHeaders = document.querySelectorAll('h2 [href*="/l/"]');
+  const ctaLinks = document.querySelectorAll('p a.ctech-content-cta-link.go-link[href*="/l/"]');
 
   //Create a sticky element
   const attachPoint = document.querySelector('.main-content > .content');
@@ -91,7 +91,10 @@ export default () => {
       const promoElement = [...promoElements].find((elem) => {
         const titleElem = elem.querySelector('.title');
 
-        return titleElem.textContent.replace(/[\d\s\.]+/g, '').toLowerCase().includes(vpnName.toLowerCase());
+        return titleElem.textContent
+          .replace(/[\d\s\.]+/g, '')
+          .toLowerCase()
+          .includes(vpnName.toLowerCase());
       });
 
       const promoHeader = promoElement.querySelector('.heading');
