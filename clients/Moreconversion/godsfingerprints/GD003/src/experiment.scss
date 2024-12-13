@@ -51,7 +51,7 @@
       img {
         width: 100%;
         height: auto;
-        border-radius: 5px;
+        // border-radius: 5px;
       }
     }
   }
@@ -64,6 +64,11 @@
         width: 100%;
         height: auto;
       }
+    }
+
+    .#{$id}__collectionContainer {
+      border-top: 2px solid #EBEBEB;
+      padding: 15px 0 15px 15px;
     }
   }
 

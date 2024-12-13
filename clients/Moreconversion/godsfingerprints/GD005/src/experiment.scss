@@ -5,34 +5,28 @@
   .#{$id}__usps-wrapper {
     display: grid;
     grid-column: span 12 / span 12;
-    padding: 20px;
+    padding: 20px 30px;
     margin: 16px 0;
     background-color: #eeeeee;
-    @media screen and (max-width: 767px) {
-      padding: 20px 12px;
-    }
 
     @media screen and (max-width: 767px) {
-      padding: 18px 10px;
-    }
-
-    @media screen and (max-width: 374px) {
-      padding: 18px 5px 18px 10px;
+      padding: 15px;
     }
   }
 
   .#{$id}__usps-container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(10px, 1fr));
+    grid-template-columns: repeat(1, minmax(10px, 1fr));
     gap: 16px;
 
     .#{$id}__usps-item {
       display: flex;
-      align-items: center;
+      // align-items: center;
 
       .#{$id}__icon {
         @media screen and (max-width: 767px) {
           display: flex;
+
           svg {
             width: 24px;
             height: 32px;
@@ -41,46 +35,40 @@
       }
 
       .#{$id}__textWrapper {
-        padding-left: 17px;
+        width: 100%;
+        border-bottom: 1px solid #DBDADA;
+        padding-bottom: 16px;
+        margin-left: 17px;
         color: #827253;
-        .#{$id}__highlight {
-          font-size: 20px;
-          font-weight: 800;
-          line-height: 16px;
-
-          @media screen and (max-width: 767px) {
-            font-size: 18px;
-          }
-
-          @media screen and (max-width: 390px) {
-            font-size: 15px;
-          }
-        }
-        .#{$id}__text {
-          font-size: 12px;
-          font-weight: 700;
-          line-height: 16px;
-          letter-spacing: 0.05em;
-          @media screen and (max-width: 767px) {
-            padding-top: 3px;
-            padding-left: 5px;
-          }
-
-          @media screen and (max-width: 390px) {
-            padding-top: 2px;
-          }
-          @media screen and (max-width: 374px) {
-            font-size: 11px;
-          }
-
-          @media screen and (max-width: 353px) {
-            font-size: 10px;
-          }
-        }
 
         @media screen and (max-width: 767px) {
-          display: flex;
-          padding-left: 8px;
+          margin-left: 12px;
+        }
+
+        .#{$id}__highlight {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 22px;
+          color: #333333;
+
+          @media screen and (max-width: 490px) {
+            font-size: 12px;
+            line-height: 16px;
+          }
+        }
+
+        .#{$id}__text {
+          margin-top: 1px;
+          font-size: 14px;
+          font-style: italic;
+          font-weight: 500;
+          line-height: 19px;
+          color: #908E8E;
+
+          @media screen and (max-width: 490px) {
+            font-size: 10px;
+            line-height: 14px;
+          }
         }
       }
     }
