@@ -40,6 +40,10 @@
         .#{$id}__card {
             cursor: pointer;
 
+            img {
+                width: 100%;
+            }
+
             .#{$id}__title {
                 margin-top: 20px;
                 font-family: 'Goudy Old Style';
