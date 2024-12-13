@@ -36,13 +36,14 @@
 
       .#{$id}__textWrapper {
         width: 100%;
-        border-bottom: 1px solid #DBDADA;
+        border-bottom: 1px solid #dbdada;
         padding-bottom: 16px;
         margin-left: 17px;
         color: #827253;
 
         @media screen and (max-width: 767px) {
           margin-left: 12px;
+          padding-bottom: 10px;
         }
 
         .#{$id}__highlight {
@@ -63,12 +64,19 @@
           font-style: italic;
           font-weight: 500;
           line-height: 19px;
-          color: #908E8E;
+          color: #908e8e;
 
           @media screen and (max-width: 490px) {
             font-size: 10px;
             line-height: 14px;
           }
+        }
+      }
+
+      &:last-child {
+        .#{$id}__textWrapper {
+          border-bottom: none;
+          padding-bottom: 0;
         }
       }
     }
