@@ -29,6 +29,9 @@
   }
 
   &__bettingHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__bettingTime {
@@ -75,6 +78,18 @@
   }
 
   &__bettingCategory {
+    a {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 15.6px;
+      letter-spacing: 0.46000000834465027px;
+      border-bottom: 1px solid #f56701;
+      text-transform: capitalize;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
   &__bettingInfo {

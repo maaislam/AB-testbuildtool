@@ -72,7 +72,7 @@ const collectProductInfo = (allItemsArray, url, doc) => {
   const tipster = tipsterElement.querySelector('a')?.textContent.trim() || '';
   const tipsterLink = tipsterElement.querySelector('a')?.href || '';
 
-  const competitionElement = document.querySelector('.MuiTypography-subtitle2');
+  const competitionElement = doc.querySelector('.MuiTypography-subtitle2');
   const competitionName =
     competitionElement?.textContent?.toLocaleLowerCase()?.split('|')[1]?.trim() || '';
 

@@ -93,7 +93,21 @@ export default () => {
   pollerLite(['#salesfire-search'], () => {
     observeDOM('#salesfire-search', observerHandler); //
   });
+
   if (VARIATION === 'control') return;
+
+  if (VARIATION === '1' || VARIATION === '4') {
+    const observerHandlerHeader = () => {
+      if (!document.querySelector(`.${ID}__fakeSearchWrapper`)) {
+        const attachPoint = document.querySelector('.site-header .site-header-main');
+        attachPoint.insertAdjacentHTML(
+          'afterend',
+          fakeSearchWrapper(ID, 'Search for colour, size or room')
+        );
+      }
+    };
+    observeDOM('header', observerHandlerHeader); //
+  }
 
   //-----------------------------
   //Write experiment code here
