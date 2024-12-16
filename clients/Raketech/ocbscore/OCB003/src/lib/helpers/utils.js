@@ -74,7 +74,7 @@ const collectProductInfo = (allItemsArray, url, doc) => {
 
   const bettingItemsInfo = [];
   const allBettingItems = doc.querySelectorAll(
-    '#match-event-tabpanel-0 .MuiPaper-elevation, #match-event-tabpanel-0 + div .MuiGrid-item'
+    '#match-event-tabpanel-0 .MuiPaper-elevation.mui-veyekx, .MuiStack-root.mui-6r2fzw .MuiGrid-item'
   );
 
   allBettingItems.forEach((item, index) => {
@@ -100,6 +100,7 @@ const collectProductInfo = (allItemsArray, url, doc) => {
 
     const image = item.querySelector('[data-type="logo"]');
     const imageSource = image?.querySelector('img').src || '';
+    const bgColor = image ? image.getAttribute('bgcolor') : '#1a5685';
 
     const linkElement = item.querySelector('[data-type="button"]');
     const link = linkElement?.href || '';
@@ -108,7 +109,8 @@ const collectProductInfo = (allItemsArray, url, doc) => {
       text,
       number,
       imageSource,
-      link
+      link,
+      bgColor
     });
   });
 

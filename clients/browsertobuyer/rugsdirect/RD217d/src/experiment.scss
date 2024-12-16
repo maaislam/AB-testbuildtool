@@ -1,0 +1,40 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .site-header-main-content {
+      .live-search-form-field {
+        @media screen and (min-width: 720px) {
+          border: solid 1px #7f187f;
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  &-2 {
+    [id$='__dynamic-highlights-banner'] {
+      @media screen and (min-width: 720px) {
+        display: none;
+      }
+    }
+  }
+
+  &-3 {
+    .site-header-main-content {
+      .live-search-form-field {
+        @media screen and (min-width: 720px) {
+          border: solid 1px #7f187f;
+          border-right: none;
+        }
+      }
+    }
+
+    [id$='__dynamic-highlights-banner'] {
+      @media screen and (min-width: 720px) {
+        display: none;
+      }
+    }
+  }
+}

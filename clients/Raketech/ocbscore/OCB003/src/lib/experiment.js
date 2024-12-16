@@ -2,6 +2,7 @@ import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { parseHTML, pollerLite } from './helpers/utils';
+import bettingWrapper from './components/bettingWrapper';
 
 const { ID, VARIATION } = shared;
 
@@ -19,6 +20,12 @@ const init = () => {
 
   parseHTML(collectUrls).then((data) => {
     console.log('data', data);
+
+    const attachPoint = document.querySelector('#today.wp-block-heading');
+    const attachPointWrapper = attachPoint.closest('.MuiBox-root');
+    if (!document.querySelector(`.${ID}__bettingWrapper`)) {
+      attachPointWrapper.insertAdjacentHTML('beforeend', bettingWrapper(ID, data));
+    }
   });
 };
 
