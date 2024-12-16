@@ -8,7 +8,7 @@ const bettingWrapper = (ID, data) => {
                     ${data
                       .map((item) => {
                         return `
-                            <div class="${ID}__bettingItem">
+                            <div class="${ID}__bettingItem" data-match="${item.mainTitle}">
                                 <div class="${ID}__bettingHeader">
                                     <div class="${ID}__bettingTime">
                                         ${
@@ -44,7 +44,9 @@ const bettingWrapper = (ID, data) => {
                                           .map((info) => {
                                             return `
                                                 <div class="${ID}__bettingContentItem">
-                                                    <h2>${info.text}</h2>
+                                                    <a class="${ID}__bettingContentTitle" href="${
+                                              info.link
+                                            }">${info.text}</a>
                                                     <div class="${ID}__ratingWrapper">
                                                         <a class="${ID}__casinoLink" href="${
                                               info.link
@@ -59,7 +61,10 @@ const bettingWrapper = (ID, data) => {
                                                                 }
                                                             </span>
                                                             <span class="${ID}__number">
-                                                                ${info.number} ${rightArrow}
+                                                                <span class="${ID}__numberText">
+                                                                  ${info.number}
+                                                                </span>
+                                                                <span class="${ID}__icon">${rightArrow}</span>
                                                             </span>
                                                         </a>
                                                     </div>
@@ -71,7 +76,7 @@ const bettingWrapper = (ID, data) => {
                                     </div>
                                 </div>
                                 <div class="${ID}__bettingButton">
-                                    <a href="${item.ur}">read full prediction</a>
+                                    <a href="${item.url}">read full prediction</a>
                                 </div>
                             </div>
                         `;

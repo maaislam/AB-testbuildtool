@@ -81,8 +81,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 8px;
-    margin-bottom: 12px;
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__bettingTitle {
@@ -102,6 +107,10 @@
     span {
       display: flex;
     }
+
+    @media screen and (max-width: 767px) {
+      margin-top: 8px;
+    }
   }
 
   &__bettingContent {
@@ -118,7 +127,7 @@
     justify-content: space-between;
     border-bottom: solid 1px #aaaaaa;
 
-    h2 {
+    a.#{$id}__bettingContentTitle {
       font-size: 14px;
       font-weight: 400;
       line-height: 18.2px;
@@ -126,15 +135,32 @@
       text-align: left;
       margin: 12px 0 12px !important;
       padding: 9px 0 9px 0;
+      text-decoration: underline;
+      color: #fff;
+
+      @media screen and (max-width: 767px) {
+        padding: 0;
+        margin: 0 !important;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: 12px 0 12px;
     }
   }
 
   &__ratingWrapper {
+    margin-left: 12px;
   }
 
   &__casinoLink {
     display: flex;
     align-items: center;
+    height: 36px;
     .#{$id}__image {
       width: 36px;
       height: 36px;
@@ -154,24 +180,52 @@
       justify-content: center;
       max-width: 90px;
       min-width: 90px;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 19.6px;
-      letter-spacing: 0.4000000059604645px;
+      height: 36px;
       padding: 8px 16px;
       border-radius: 0 12px 12px 0;
       background-color: #f56701;
       color: #fff;
       text-align: center;
 
-      svg {
-        display: flex;
+      span.#{$id}__numberText {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 19.6px;
+        letter-spacing: 0.4000000059604645px;
+        padding-top: 2px;
       }
+
+      span.#{$id}__icon {
+        display: flex;
+        padding-left: 9px;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
     }
   }
 
   &__bettingButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     a {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 19.6px;
+      letter-spacing: 0.4000000059604645px;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 8px;
+      border: 1px solid #ffffff;
+      border-radius: 12px;
+      text-align: center;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }

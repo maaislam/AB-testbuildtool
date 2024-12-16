@@ -4,7 +4,6 @@ const fakeSearchWrapper = (id, text) => {
         <input class=" ${id}__inputField"
             type="text"
             aria-label="Search"
-            value="${window.fakeInputValue ? window.fakeInputValue : ''}"
             placeholder="${text}"
             autocomplete="off"
             data-live-search-input="" />

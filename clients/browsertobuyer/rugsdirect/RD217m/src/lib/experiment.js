@@ -88,19 +88,6 @@ export default () => {
         .querySelector('.site-header-mobile-search-button')
         .insertAdjacentHTML('beforebegin', fakeSearchButton(ID));
     }
-
-    const controlInput = document.querySelector('.site-header-main-content input');
-    if (controlInput && controlInput.value) {
-      window.fakeInputValue = controlInput.value;
-      if (VARIATION === '1') {
-        document.querySelector(`.${ID}__inputField`).value = controlInput.value;
-      }
-    } else {
-      window.fakeInputValue = '';
-      if (VARIATION === '1') {
-        document.querySelector(`.${ID}__inputField`).value = controlInput.value;
-      }
-    }
   };
 
   pollerLite(['#salesfire-search'], () => {

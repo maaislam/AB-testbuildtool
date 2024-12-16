@@ -72,6 +72,10 @@ const collectProductInfo = (allItemsArray, url, doc) => {
   const tipster = tipsterElement.querySelector('a')?.textContent.trim() || '';
   const tipsterLink = tipsterElement.querySelector('a')?.href || '';
 
+  const competitionElement = document.querySelector('.MuiTypography-subtitle2');
+  const competitionName =
+    competitionElement?.textContent?.toLocaleLowerCase()?.split('|')[1]?.trim() || '';
+
   const bettingItemsInfo = [];
   const allBettingItems = doc.querySelectorAll(
     '#match-event-tabpanel-0 .MuiPaper-elevation.mui-veyekx, .MuiStack-root.mui-6r2fzw .MuiGrid-item'
@@ -86,7 +90,6 @@ const collectProductInfo = (allItemsArray, url, doc) => {
         : item.querySelector('p.MuiTypography-body2');
 
     if (index === 0) {
-      console.log(item);
       text = titleElement?.textContent.trim()
         ? extractTextAndNumber(titleElement?.textContent.trim()).text
         : '';
@@ -115,6 +118,7 @@ const collectProductInfo = (allItemsArray, url, doc) => {
   });
 
   allItemsArray.push({
+    competitionName,
     eventDate,
     eventTime,
     mainTitle,
