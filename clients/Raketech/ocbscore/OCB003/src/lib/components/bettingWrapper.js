@@ -8,7 +8,11 @@ const bettingWrapper = (ID, data) => {
                     ${data
                       .map((item) => {
                         return `
-                            <div class="${ID}__bettingItem" data-match="${item.mainTitle}">
+                            <div class="${ID}__bettingItem" data-match="${
+                          item.mainTitle.includes('Prediction')
+                            ? item.mainTitle.replace('Prediction', '')
+                            : item.mainTitle
+                        }">
                                 <div class="${ID}__bettingHeader">
                                     <div class="${ID}__bettingTime">
                                         ${
@@ -49,8 +53,10 @@ const bettingWrapper = (ID, data) => {
                                                     <a class="${ID}__bettingContentTitle" href="${
                                               info.link
                                             }">${info.text}</a>
-                                                    <div class="${ID}__ratingWrapper">
-                                                        <a class="${ID}__casinoLink" href="${
+                                                    <div class="${ID}__ratingWrapper" data-operator="${
+                                              info.dataOperator
+                                            }">
+                                                        <a class="${ID}__casinoLink" target="_blank" href="${
                                               info.link
                                             }">
                                                             <span class="${ID}__image" style="--bgcolor:${
