@@ -1,6 +1,6 @@
 module.exports = {
   ID: 'RD217m',
-  VARIATION: '5',
+  VARIATION: '2',
   CLIENT: 'browsertobuyer',
   SITE: 'rugsdirect'
 };
