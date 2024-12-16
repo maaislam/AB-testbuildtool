@@ -6,6 +6,12 @@ const collectionData = [
       'https://godsfingerprints.co/cdn/shop/files/gf-letter_52543987-a90e-4a51-9ac1-17a55f2c94bd.jpg?v=1732202890&width=100'
   },
   {
+    title: 'New Arrivals',
+    link: '/collections/new-arrivals',
+    imageUrl:
+      'https://cdn.shopify.com/s/files/1/1052/4170/files/new-arrivals.png?v=1734104820'
+  },
+  {
     title: 'Best Sellers',
     link: '/collections/best-sellers',
     imageUrl:

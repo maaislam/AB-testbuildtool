@@ -5,10 +5,10 @@ import uspsWrapper from './components/uspsWrapper';
 const { ID } = shared;
 
 const init = () => {
-  const targetElement = document.querySelector('.product [data-product-block="quantity_selector"]');
+  const targetElement = document.querySelector('.product [data-product-block="buy_buttons"]');
 
   if (!document.querySelector(`.${ID}__usps-wrapper`)) {
-    targetElement.insertAdjacentHTML('beforebegin', uspsWrapper(ID));
+    targetElement.insertAdjacentHTML('afterend', uspsWrapper(ID));
   }
 };
 
