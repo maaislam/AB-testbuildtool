@@ -11,6 +11,8 @@ const init = () => {
 
   if (document.querySelector(`.${ID}__bettingWrapper`)) {
     document.querySelector(`.${ID}__bettingWrapper`).remove();
+    document.documentElement.classList.remove(ID);
+    document.documentElement.classList.remove(`${ID}-${VARIATION}`);
   }
 
   const items = document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item');
@@ -21,8 +23,13 @@ const init = () => {
   });
 
   parseHTML(collectUrls).then((data) => {
-    console.log('data', data);
+    if (data.length === 0) {
+      return;
+    }
 
+    setup();
+
+    if (VARIATION === 'control') return;
     const attachPoint = document.querySelector('#today.wp-block-heading');
     const attachPointWrapper = attachPoint.closest('.MuiBox-root');
     if (!document.querySelector(`.${ID}__bettingWrapper`)) {
@@ -32,7 +39,7 @@ const init = () => {
 };
 
 export default () => {
-  setup(); //use if needed
+  //use if needed
 
   //-----------------------------
 
@@ -47,7 +54,6 @@ export default () => {
       const tipName = clickedItem.innerText.trim();
       const wrapper = target.closest(`.${ID}__bettingItem`);
       const { match } = wrapper.dataset;
-
       gaTracking(`${match} | ${tipName} Click to Tip`);
     } else if (target.closest(`.${ID}__image`)) {
       const clickedItem = target.closest(`.${ID}__image`);
@@ -68,18 +74,21 @@ export default () => {
       const wrapper = target.closest(`.${ID}__bettingItem`);
       const name = clickedItem.innerText.trim();
       const { match } = wrapper.dataset;
-
       gaTracking(`${match} | ${name} Click to Tipster`);
     } else if (target.closest(`.${ID}__bettingCategory a`)) {
       const clickedItem = target.closest(`.${ID}__bettingCategory a`);
       const competitionName = clickedItem.innerText;
       const wrapper = target.closest(`.${ID}__bettingItem`);
       const { match } = wrapper.dataset;
-
       gaTracking(`${match} | ${competitionName} Click to Competition`);
+    } else if (target.closest('.MuiGrid-container.mui-isbt42 .MuiGrid-item a')) {
+      const clickedItem = target.closest('.MuiGrid-container.mui-isbt42 .MuiGrid-item a');
+      const wrapper = clickedItem.closest('.MuiGrid-container.mui-isbt42 .MuiGrid-item');
+      const matchnameElement = wrapper.querySelector('p');
+      const matchname = matchnameElement.innerText.split('Prediction')[0];
+      gaTracking(`${matchname} | Read Full Prediction`);
     }
   });
-  if (VARIATION === 'control') return;
 
   init(); //
 

@@ -6,18 +6,16 @@
     &:has(#today) {
       & + div {
         display: none;
+
+        & + div {
+          display: none;
+        }
       }
     }
   }
 
   &__bettingWrapper {
     font-family: '__Poppins_2dbf9b', '__Poppins_Fallback_2dbf9b', Arial, sans-serif;
-  }
-
-  &__bettingContainer {
-  }
-
-  &__bettingLists {
   }
 
   &__bettingItem {
@@ -84,7 +82,7 @@
       line-height: 15.6px;
       letter-spacing: 0.46000000834465027px;
       border-bottom: 1px solid #f56701;
-      text-transform: capitalize;
+      text-transform: uppercase;
 
       &:hover {
         text-decoration: none;
@@ -126,9 +124,6 @@
     @media screen and (max-width: 767px) {
       margin-top: 8px;
     }
-  }
-
-  &__bettingContent {
   }
 
   &__bettingContentList {
