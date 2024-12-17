@@ -2,9 +2,13 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    main [id*="featured_products"] {
+        display: none;
+    }
     &__heading {
         margin-bottom: 30px;
     }
+
     &__headingText {
         max-width: 50%;
         font-size: 15px;
@@ -87,6 +91,19 @@
                 @include media-query(md) {
                     margin-top: 15px;
                     font-size: 14px;
+                }
+            }
+        }
+    }
+
+    &-2 {
+        @include media-query(sm) {
+            .#{$id}__cards {
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 8px;
+    
+                .#{$id}__card .#{$id}__description {
+                    display: none;
                 }
             }
         }

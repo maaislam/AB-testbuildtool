@@ -81,7 +81,7 @@ export const plpData = {
             },
             {
                 title: 'White & Cream',
-                description: 'There is something quite special about white roses that is hard to explain – they are all purity and light. The majority of varieties we call white are actually creamy white with tints of apricot or pink. However, the overall effect in the mass is often pure white.',
+                description: 'There is something quite special about white roses that is hard to explain. The majority of varieties we call white are actually creamy white with tints of apricot or pink. However, the overall effect in the mass is often pure white.',
                 url: '/collections/white-cream-roses',
                 imgSrc: 'https://cdn-3.convertexperiments.com/uf/10021806/10025468/White_&_Cream_675c26d515a14.png'
             },
@@ -99,7 +99,7 @@ export const plpData = {
             },
             {
                 title: 'Purple',
-                description: 'Yellow roses are a welcome addition to any garden – their colouring seeming to denote happiness and sunshine.',
+                description: '',
                 url: '/collections/purple-roses',
                 imgSrc: 'https://www.davidaustinroses.co.uk/cdn/shop/products/ef0dbadb1f73186e884e3257f58b9c57_c20a5543-64d9-4587-ad09-712b8cf85793.jpg?v=1595547220'
             }
