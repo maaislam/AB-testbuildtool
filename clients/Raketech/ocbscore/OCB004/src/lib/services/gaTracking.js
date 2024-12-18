@@ -3,7 +3,7 @@ import shared from '../shared/shared';
 
 const gaTracking = (label) => {
   const { VARIATION } = shared;
-  const variationType = VARIATION === '1' ? '1' : VARIATION === '2' ? '2' : 'C';
+  const variationType = VARIATION === '1' ? '1' : 'C';
 
   const GA4_PROPERTY_ID = 'G-77TJP2RZPT';
   const GA4_INTERNAL_EXPERIMENT_NUM = '7973186844';

@@ -38,7 +38,7 @@ const bettingWrapper = (ID, data) => {
                                       item.tipster
                                         ? `<div class="${ID}__tipsterWrapper">
                                             <span>Tipster:</span>
-                                            <a href="${item.tipsterLink}">${item.tipster}</a>
+                                            <a href="${item.tipsterLink}" target="_blank">${item.tipster}</a>
                                             <span>${rewardIcon}</span>
                                         </div>`
                                         : ''

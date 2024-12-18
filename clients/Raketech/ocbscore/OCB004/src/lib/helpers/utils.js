@@ -63,14 +63,14 @@ const extractTextAndNumber = (input) => {
 const collectProductInfo = (allItemsArray, url, doc) => {
   //console.log(doc, 'doc');
   const mainTitleElement = doc.querySelector('#match-event-tabpanel-0 h3');
-  const mainTitle = mainTitleElement.textContent.trim();
+  const mainTitle = mainTitleElement?.textContent.trim();
   const eventDateElement = doc.querySelector('[data-testid="EventIcon"]');
   const eventDate = eventDateElement?.nextSibling?.textContent.trim() || '';
   const eventTimeElement = doc.querySelector('[data-testid="ScheduleIcon"]');
   const eventTime = eventTimeElement?.nextSibling?.textContent.trim() || '';
   const tipsterElement = doc.querySelector('.MuiPaper-elevation .MuiCardHeader-title');
-  const tipster = tipsterElement.querySelector('a')?.textContent.trim() || '';
-  const tipsterLink = tipsterElement.querySelector('a')?.href || '';
+  const tipster = tipsterElement?.querySelector('a')?.textContent.trim() || '';
+  const tipsterLink = tipsterElement?.querySelector('a')?.href || '';
 
   const competitionElement = doc.querySelector('.MuiTypography-subtitle2');
   const competitionName =
@@ -145,7 +145,6 @@ export const parseHTML = async (urls) => {
   const responses = await Promise.all(promises);
   //eslint-disable-next-line no-restricted-syntax
   for (const [index, response] of responses.entries()) {
-    console.log('🚀 ~ parseHTML ~ index:', index);
     if (response) {
       //eslint-disable-next-line no-await-in-loop
       const html = await response.text();
