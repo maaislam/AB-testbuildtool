@@ -8,11 +8,11 @@ const bettingWrapper = (ID, data) => {
                     ${data
                       .map((item) => {
                         return `
-                            <div class="${ID}__bettingItem" data-match="${
+                            <div class="${ID}__bettingItem"  data-match="${
                           item.mainTitle.includes('Prediction')
                             ? item.mainTitle.replace('Prediction', '')
                             : item.mainTitle
-                        }">
+                        }" data-link="${item.url}">
                                 <div class="${ID}__bettingHeader">
                                     <div class="${ID}__bettingTime">
                                         ${
