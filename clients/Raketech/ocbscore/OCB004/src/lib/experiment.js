@@ -62,8 +62,6 @@ const init = () => {
 
   if (document.querySelector(`.${ID}__bettingWrapper`)) {
     document.querySelector(`.${ID}__bettingWrapper`).remove();
-    document.documentElement.classList.remove(ID);
-    document.documentElement.classList.remove(`${ID}-${VARIATION}`);
   }
 
   const items = document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item');
@@ -78,16 +76,6 @@ const init = () => {
       return;
     }
 
-    //console.log(data);
-
-    setup();
-    const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
-    if (!isListenerAdded) {
-      document.body.addEventListener('click', (e) => clickHandler(e));
-    }
-    document.body.dataset[`${ID}__isListenerAdded`] = true;
-
-    if (VARIATION === 'control') return;
     const attachPoint = document.querySelector('#today.wp-block-heading');
     const attachPointWrapper = attachPoint.closest('.MuiBox-root');
     if (!document.querySelector(`.${ID}__bettingWrapper`)) {
@@ -97,13 +85,18 @@ const init = () => {
 };
 
 export default () => {
-  //use if needed
+  setup();
 
-  //-----------------------------
+  const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
+  if (!isListenerAdded) {
+    document.body.addEventListener('click', (e) => clickHandler(e));
+  }
+  document.body.dataset[`${ID}__isListenerAdded`] = true;
 
-  init(); //
+  if (VARIATION === 'control') return;
 
-  //Poll and re-run init
+  init();
+
   onUrlChange(() => {
     pollerLite(
       [
