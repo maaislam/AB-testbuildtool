@@ -31,7 +31,7 @@ const blackFridayBanner = (id) => {
                                             <svg fill="#fff" width="64px" height="64px" viewBox="0 0 1024.00 1024.00" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M486 691h52V538h153v-52H538V333h-52v153H333v52h153z"></path></g></svg>
                                         </div>
                                         <div class="coupon_code">
-                                            <p class="discount-percentage">+ 10% OFF</p>
+                                            <p class="discount-percentage tenPercentOff">+ 10% OFF</p>
                                             <p class="discount-text">WITH CODE <span>EARLY10</span></p>
                                         </div>
                                     </div>

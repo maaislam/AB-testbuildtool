@@ -1,4 +1,5 @@
 import isLogin from './helpers/isLogin';
+import { pollerLite } from './helpers/utils';
 import productLandingPage from './pages/productLandingPage';
 import productPage from './pages/productPage';
 import tradeDiscountsPage from './pages/tradeDiscountPage';
@@ -8,7 +9,41 @@ import shared from './shared/shared';
 
 const { ID } = shared;
 
-const endDate = '12/03/2024'; //MM/DD/YYYY
+let endDate = '12/03/2024'; //MM/DD/YYYY
+
+const isCurrentDateBetween = (startDateStr, endDateStr) => {
+  //Parse the input dates
+  const [startDay, startMonth, startYear] = startDateStr.split('/').map(Number);
+  const [endDay, endMonth, endYear] = endDateStr.split('/').map(Number);
+
+  //Create date objects from the input strings
+  const startDate = new Date(startYear, startMonth - 1, startDay);
+  const newEndDate = new Date(endYear, endMonth - 1, endDay);
+
+  //Get the current date (with time set to 00:00:00 for accurate comparison)
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+
+  //Check if the current date is between the start and end dates
+  if (currentDate >= startDate && currentDate <= newEndDate) {
+    return true;
+  }
+
+  return false;
+};
+
+const saleStartDate = '26/12/2024';
+const saleEndDate = '01/01/2025';
+if (isCurrentDateBetween(saleStartDate, saleEndDate)) {
+  endDate = saleEndDate;
+
+  const tenPercentOffElem = document.querySelector(`.${ID}__couponCodeWrapper .tenPercentOff`);
+  const plusIconElem = document.querySelector(`.${ID}__couponCodeWrapper .plus_icon`);
+
+  pollerLite([() => tenPercentOffElem, () => plusIconElem], () => {
+    document.body.classList.add('after-christmas-sale');
+  });
+}
 
 const isPdp = () => document.body.classList.contains('catalog-product-view');
 const isPlp = () =>
