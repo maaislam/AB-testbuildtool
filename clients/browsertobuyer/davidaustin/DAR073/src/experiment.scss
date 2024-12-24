@@ -1,0 +1,53 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    #mega-menu-shop {
+      &:has(.#{$id}__desktopMenuWrapper) {
+        overflow: hidden;
+      }
+    }
+    .#{$id}__desktopMenuWrapper {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(10px, 1fr));
+      column-gap: 15px;
+
+      .#{$id}__item {
+        width: max-content;
+      }
+
+      li:has(.#{$id}__color) {
+        a {
+          display: grid;
+          grid-template-columns: 16px auto;
+          align-items: center;
+          column-gap: 10px;
+        }
+      }
+
+      .#{$id}__color {
+        position: relative;
+        width: 16px;
+        height: 16px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 1px;
+          left: 1px;
+          right: 1px;
+          opacity: 1;
+          top: 1px;
+          border-radius: 50%;
+          background-image: var(--swatch-image, none);
+          background-size: cover;
+          background-color: var(--swatch-colour, transparent);
+        }
+      }
+      & ~ div {
+        display: none;
+      }
+    }
+  }
+}
