@@ -7,7 +7,6 @@ import bettingWrapper from './components/bettingWrapper';
 const { ID, VARIATION } = shared;
 const clickHandler = (e) => {
   const { target } = e;
-  console.log(target);
   if (target.closest(`.${ID}__bettingButton a`)) {
     const wrapper = target.closest(`.${ID}__bettingItem`);
     const { match } = wrapper.dataset;
@@ -33,7 +32,6 @@ const clickHandler = (e) => {
     const { match } = wrapper.dataset;
     gaTracking(`${match} | ${operator} CTO | Button`);
   } else if (target.closest(`.${ID}__tipsterWrapper a`)) {
-    console.log('enter');
     const clickedItem = target.closest(`.${ID}__tipsterWrapper a`);
     const wrapper = target.closest(`.${ID}__bettingItem`);
     const name = clickedItem.innerText.trim();
@@ -51,6 +49,11 @@ const clickHandler = (e) => {
     const matchnameElement = wrapper.querySelector('p');
     const matchname = matchnameElement.innerText.split('Prediction')[0];
     gaTracking(`${matchname} | Button`);
+  } else if (!target.closest('a') && target.closest(`.${ID}__bettingItem`)) {
+    const wrapper = target.closest(`.${ID}__bettingItem`);
+    const { match, link } = wrapper.dataset;
+    gaTracking(`${match} | Container Full Prediction`);
+    window.location.href = link;
   }
 };
 
@@ -59,8 +62,6 @@ const init = () => {
 
   if (document.querySelector(`.${ID}__bettingWrapper`)) {
     document.querySelector(`.${ID}__bettingWrapper`).remove();
-    document.documentElement.classList.remove(ID);
-    document.documentElement.classList.remove(`${ID}-${VARIATION}`);
   }
 
   const items = document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item');
@@ -75,16 +76,6 @@ const init = () => {
       return;
     }
 
-    console.log(data);
-
-    setup();
-    const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
-    if (!isListenerAdded) {
-      document.body.addEventListener('click', (e) => clickHandler(e));
-    }
-    document.body.dataset[`${ID}__isListenerAdded`] = true;
-
-    if (VARIATION === 'control') return;
     const attachPoint = document.querySelector('#today.wp-block-heading');
     const attachPointWrapper = attachPoint.closest('.MuiBox-root');
     if (!document.querySelector(`.${ID}__bettingWrapper`)) {
@@ -94,13 +85,18 @@ const init = () => {
 };
 
 export default () => {
-  //use if needed
+  setup();
 
-  //-----------------------------
+  const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
+  if (!isListenerAdded) {
+    document.body.addEventListener('click', (e) => clickHandler(e));
+  }
+  document.body.dataset[`${ID}__isListenerAdded`] = true;
 
-  init(); //
+  if (VARIATION === 'control') return;
 
-  //Poll and re-run init
+  init();
+
   onUrlChange(() => {
     pollerLite(
       [
