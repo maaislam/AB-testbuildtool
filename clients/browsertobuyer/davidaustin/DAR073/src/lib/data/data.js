@@ -81,34 +81,46 @@ const menuData = [
       {
         title: 'Pink',
         href: 'https://www.davidaustinroses.co.uk/collections/pink-roses',
-        colorCode: '#efc4ce'
+        colorCode: '#efc4ce',
+        mobileImage:
+          'https://www.davidaustinroses.co.uk/cdn/shop/files/6bbfa5054282f6dcf50875746068601a.jpg?v=1715855578&width=320'
       },
       {
         title: 'Red',
         href: 'https://www.davidaustinroses.co.uk/collections/red-roses',
-        colorCode: '#dd342b'
+        colorCode: '#dd342b',
+        mobileImage:
+          'https://www.davidaustinroses.co.uk/cdn/shop/products/377fd18c7968f3d51d9d2577ae72b5f6.jpg?v=1595539606&width=320'
       },
       {
         title: 'Apricot & Orange',
         href: 'https://www.davidaustinroses.co.uk/collections/apricot-orange-roses',
-        colorCode: '#efb578'
+        colorCode: '#efb578',
+        mobileImage:
+          'https://www.davidaustinroses.co.uk/cdn/shop/files/d70459fc3f6a58bf524f8ccdda19b3ef.png?v=1695806984&width=320'
       },
       {
         title: 'Yellow',
         href: 'https://www.davidaustinroses.co.uk/collections/yellow-roses',
-        colorCode: '#f6e95a'
+        colorCode: '#f6e95a',
+        mobileImage:
+          'https://www.davidaustinroses.co.uk/cdn/shop/products/2a994b4a45a18180fda642a56990f1c7_a6ffaffe-ee9f-45f3-a645-790d90e9fbc1.jpg?v=1595538638&width=320'
       },
       {
         title: 'White & Cream',
         href: 'https://www.davidaustinroses.co.uk/collections/white-cream-roses',
         swatchImage:
           'https://www.davidaustinroses.co.uk/cdn/shop/files/swatch-white-cream.svg?crop=centeru0026height=32u0026v=1714479045u0026width=32',
-        colorCode: '#ffffff'
+        colorCode: '#ffffff',
+        mobileImage:
+          'https://www.davidaustinroses.co.uk/cdn/shop/products/2e28c400a7735da1f26befa7e4af854c_011528a9-52c1-4420-8727-af4646389e53.jpg?v=1595530240&width=320'
       },
       {
         title: 'Purple',
         href: 'https://www.davidaustinroses.co.uk/collections/purple-roses',
-        colorCode: '#912d62'
+        colorCode: '#912d62',
+        mobileImage:
+          'https://www.davidaustinroses.co.uk/cdn/shop/products/520e79a6223bae15c48a05d4f3abc641_77dc0d47-d28a-4847-a3f4-91bdfd19aefc.jpg?v=1595523513&width=320'
       }
     ]
   },

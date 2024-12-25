@@ -19,7 +19,12 @@ const mobileMenuItem = (id, category, data) => {
                 return `
                         <li class="nav__item">
                             <a class="nav__link" href="${item.href}">
-                                ${item.title}
+                                ${
+                                  item.mobileImage
+                                    ? `<div class="${id}__imageWrapper"><img src="${item.mobileImage}" alt="${item.title}"/></div>`
+                                    : ''
+                                }
+                                <span>${item.title}</span>
                             </a>
                         </li>  
                     `;
