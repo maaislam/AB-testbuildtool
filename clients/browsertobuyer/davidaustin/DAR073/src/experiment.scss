@@ -14,7 +14,7 @@
       column-gap: 15px;
 
       .#{$id}__item {
-        width: max-content;
+        width: 220px;
       }
 
       li:has(.#{$id}__color) {
@@ -97,6 +97,7 @@
             left: 50%;
             transform: translateX(-50%);
             white-space: nowrap;
+            color: #4d6947;
           }
         }
       }
