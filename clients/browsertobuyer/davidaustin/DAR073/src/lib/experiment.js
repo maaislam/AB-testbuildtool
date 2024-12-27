@@ -5,6 +5,8 @@ import menuData from './data/data';
 import mobileMenuWrapper from './components/mobileMenuWrapper';
 
 const { ID, VARIATION } = shared;
+const categoryLabelName = 'DAR 073';
+const actionLabelName = 'Menu Click';
 
 const init = () => {
   const desktopTargetElement = document.querySelector('#mega-menu-shop > div');
@@ -64,14 +66,14 @@ export default () => {
       const navSubWrapper = clickedItem.closest('.nav__sub');
       const { parent } = navSubWrapper.dataset;
       const text = clickedItem.textContent.trim();
-      trackGAEvent('DAR 073', 'Menu Click', `${parent} - ${text}`);
+      trackGAEvent(categoryLabelName, actionLabelName, `${parent} - ${text}`);
     } else if (target.closest('#mega-menu-shop li a:not(.text-links)')) {
       const clickedItem = target.closest('#mega-menu-shop li a');
       const wrapper = clickedItem.closest('ul');
       const categoryElement = wrapper.querySelector('li');
       const category = categoryElement.textContent.trim();
       const text = clickedItem.textContent.trim();
-      trackGAEvent('DAR 073', 'Menu Click', `${category} - ${text}`);
+      trackGAEvent(categoryLabelName, actionLabelName, `${category} - ${text}`);
     } else if (
       target.closest('#mobile-menu-shop-shop-roses li.px-offset a') ||
       target.closest('#mobile-menu-shop-rose-garden-accessories li.px-offset a') ||
@@ -87,7 +89,7 @@ export default () => {
       const categoryElement = wrapper.querySelector('li');
       const category = categoryElement.textContent.trim();
       const text = clickedItem.textContent.trim();
-      trackGAEvent('DAR 073', 'Menu Click', `${category} - ${text}`);
+      trackGAEvent(categoryLabelName, actionLabelName, `${category} - ${text}`);
     }
   });
 
