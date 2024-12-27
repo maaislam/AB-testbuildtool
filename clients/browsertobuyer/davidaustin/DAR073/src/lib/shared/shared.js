@@ -1,6 +1,6 @@
 module.exports = {
     ID: "DAR073",
-    VARIATION: "1",
+    VARIATION: "control",
     CLIENT: "browsertobuyer",
     SITE: "davidaustin"
   };

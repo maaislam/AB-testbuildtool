@@ -29,20 +29,20 @@ const init = () => {
 export default () => {
   setup();
 
-  const trackGAEvent = (c, a, l) => {
+  const trackGAEvent = (categoryLabel, actionLabel, eventLabel) => {
     if (window.dataLayer) {
       window.dataLayer.push({
         event: 'gaCustomEvent',
-        eventCategory: c,
-        eventAction: a,
-        eventLabel: l
+        eventCategory: categoryLabel,
+        eventAction: actionLabel,
+        eventLabel
       });
-      console.log('event tracked', c, a, l);
     }
   };
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
+
     if (target.closest('.sub__close')) {
       e.preventDefault();
       const parentSubMenu = e.target.closest('.nav__sub');
@@ -90,7 +90,8 @@ export default () => {
       trackGAEvent('DAR 073', 'Menu Click', `${category} - ${text}`);
     }
   });
-  if (VARIATION === 'control') return; //
 
-  init(); //use if needed
+  if (VARIATION === 'control') return;
+
+  init();
 };

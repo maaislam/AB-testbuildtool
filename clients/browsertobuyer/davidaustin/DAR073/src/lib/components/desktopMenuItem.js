@@ -9,7 +9,6 @@ const desktopMenuItem = (id, categoryItem, data) => {
               .map((item) => {
                 return `
                     <li>
-                      
                         <a href="${
                           item.href
                         }" class="block text-xl hover:text-links hover:underline">
