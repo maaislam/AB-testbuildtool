@@ -1,4 +1,4 @@
 import activate from './lib/experiment';
 import { pollerLite } from './lib/helpers/utils';
 
-pollerLite(['body', '#mega-menu-shop'], activate);
+pollerLite(['body', '#mega-menu-shop', 'label[for="mobile-menu-shop-toggle"]'], activate);

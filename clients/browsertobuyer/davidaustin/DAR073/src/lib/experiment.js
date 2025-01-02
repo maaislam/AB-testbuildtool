@@ -3,16 +3,20 @@ import shared from './shared/shared';
 import desktopMenuWrapper from './components/desktopMenuWrapper';
 import menuData from './data/data';
 import mobileMenuWrapper from './components/mobileMenuWrapper';
+import setGiftMegaMenu from './helpers/setGiftMegaMenu';
+import { pollerLite } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 const categoryLabelName = 'DAR 073';
 const actionLabelName = 'Menu Click';
 
 const init = () => {
+  let navTitle = '';
   const desktopTargetElement = document.querySelector('#mega-menu-shop > div');
 
   if (!document.querySelector(`.${ID}__desktopMenuWrapper`)) {
-    desktopTargetElement.insertAdjacentHTML('afterbegin', desktopMenuWrapper(ID, menuData));
+    navTitle = 'Roses';
+    desktopTargetElement.insertAdjacentHTML('afterbegin', desktopMenuWrapper(ID, menuData[navTitle], `#${ID}__desktopMenuWrapper-${navTitle}`));
   }
 
   //text change for desktop menu
@@ -23,9 +27,17 @@ const init = () => {
   const mobileTargetElement = document.querySelector(
     'label[for="mobile-menu-shop-toggle"]'
   ).parentElement;
+
+  //remove mobile menu wrapper if already exists for SPA behavior
+  if (document.querySelector(`.${ID}__mobileMenuWrapper`)) document.querySelector(`.${ID}__mobileMenuWrapper`).remove();
+
   if (!document.querySelector(`.${ID}__mobileMenuWrapper`)) {
-    mobileTargetElement.insertAdjacentHTML('beforebegin', mobileMenuWrapper(ID, menuData));
+    navTitle = 'Roses';
+    const newClasses = `${ID}__mobileMenuWrapper-${navTitle}`;
+    mobileTargetElement.insertAdjacentHTML('beforebegin', mobileMenuWrapper(ID, menuData[navTitle], newClasses));
   }
+
+  setGiftMegaMenu(ID);
 };
 
 export default () => {

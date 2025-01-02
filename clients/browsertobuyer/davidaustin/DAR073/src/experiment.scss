@@ -3,6 +3,35 @@
 
 .#{$id} {
   &-1 {
+    site-header > div.min-h-header ul {
+      gap: 20px;
+
+      @include media-query(xl) {
+        gap: 12px;
+      }
+
+      li > label,
+      li > a {
+        @include media-query(xl) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    #mega-menu-gifts-and-accessories-toggle:checked ~ #mega-menu-gifts-and-accessories {
+      max-height: var(--visual-area);
+    }
+
+    #mega-menu-gifts-and-accessories-toggle:checked ~ div label[for="mega-menu-gifts-and-accessories-toggle"] {
+      border-bottom-color: #414042;
+    }
+
+    .#{$id}__desktopMenuWrapper.#{$id}__desktopMenuWrapper-Gifts-Accessories {
+      @include media-query(xl) {
+        grid-template-columns: repeat(4, minmax(10px, 1fr));
+      }
+    }
+
     #mega-menu-shop {
       &:has(.#{$id}__desktopMenuWrapper) {
         overflow: hidden;
