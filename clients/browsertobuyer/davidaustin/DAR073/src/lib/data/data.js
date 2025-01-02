@@ -201,7 +201,7 @@ const menuData = {
     title: 'Gifts & Accessories',
     hasChildren: [
       {
-        title: 'Rose and Garden accessories',
+        title: 'Rose and garden accessories',
         link: 'https://www.davidaustinroses.co.uk/collections/gifts',
         hasChildren: [
           {
@@ -217,33 +217,33 @@ const menuData = {
             href: 'https://www.davidaustinroses.co.uk/collections/garden-tools-accessories'
           },
           {
-            title: 'Training & Tying-in',
+            title: 'Training & tying-in',
             href: 'https://www.davidaustinroses.co.uk/collections/training-and-tying-in'
           }
         ]
       },
       {
-        title: 'Gifts & Homeware',
+        title: 'Gifts & homeware',
         link: 'https://www.davidaustinroses.co.uk/collections/rose-care',
         hasChildren: [
           {
-            title: 'Best Roses For Gifts',
+            title: 'Best roses for gifts',
             href: 'https://www.davidaustinroses.co.uk/collections/occasion'
           },
           {
-            title: 'Christmas Gifts',
+            title: 'Christmas gifts',
             href: 'https://www.davidaustinroses.co.uk/collections/christmas-gifting'
           },
           {
-            title: 'Gift Boxes',
+            title: 'Gift boxes',
             href: 'https://www.davidaustinroses.co.uk/collections/gift-boxes'
           },
           {
-            title: 'Gift Cards',
+            title: 'Gift cards',
             href: 'https://www.davidaustinroses.co.uk/collections/gift-cards'
           },
           {
-            title: '2025 Calendar',
+            title: '2025 calendar',
             href: 'https://www.davidaustinroses.co.uk/products/david-austin-2025-wall-calendar'
           },
           {
@@ -255,11 +255,11 @@ const menuData = {
             href: 'https://www.davidaustinroses.co.uk/collections/china-vases-and-homeware'
           },
           {
-            title: 'Festive Afternoon Tea',
+            title: 'Festive afternoon tea',
             href: 'https://www.davidaustinroses.co.uk/pages/festive-afternoon-tea'
           },
           {
-            title: 'Pruning Workshop',
+            title: 'Pruning workshop',
             href: 'https://www.davidaustinroses.co.uk/products/pruning-workshop'
           }
         ]

@@ -15,7 +15,10 @@ const init = () => {
 
   if (!document.querySelector(`.${ID}__desktopMenuWrapper`)) {
     navTitle = 'Roses';
-    desktopTargetElement.insertAdjacentHTML('afterbegin', desktopMenuWrapper(ID, menuData[navTitle], `#${ID}__desktopMenuWrapper-${navTitle}`));
+    desktopTargetElement.insertAdjacentHTML(
+      'afterbegin',
+      desktopMenuWrapper(ID, menuData[navTitle], `#${ID}__desktopMenuWrapper-${navTitle}`)
+    );
   }
 
   //text change for desktop menu
@@ -28,12 +31,16 @@ const init = () => {
   ).parentElement;
 
   //remove mobile menu wrapper if already exists for SPA behavior
-  if (document.querySelector(`.${ID}__mobileMenuWrapper`)) document.querySelector(`.${ID}__mobileMenuWrapper`).remove();
+  if (document.querySelector(`.${ID}__mobileMenuWrapper`))
+    document.querySelector(`.${ID}__mobileMenuWrapper`).remove();
 
   if (!document.querySelector(`.${ID}__mobileMenuWrapper`)) {
     navTitle = 'Roses';
     const newClasses = `${ID}__mobileMenuWrapper-${navTitle}`;
-    mobileTargetElement.insertAdjacentHTML('beforebegin', mobileMenuWrapper(ID, menuData[navTitle], newClasses));
+    mobileTargetElement.insertAdjacentHTML(
+      'beforebegin',
+      mobileMenuWrapper(ID, menuData[navTitle], newClasses)
+    );
   }
 
   setGiftMegaMenu(ID);
@@ -78,8 +85,13 @@ export default () => {
       const { parent } = navSubWrapper.dataset;
       const text = clickedItem.textContent.trim();
       trackGAEvent(categoryLabelName, actionLabelName, `${parent} - ${text}`);
-    } else if (target.closest('#mega-menu-shop li a:not(.text-links)')) {
-      const clickedItem = target.closest('#mega-menu-shop li a');
+    } else if (
+      target.closest('#mega-menu-shop li a:not(.text-links)') ||
+      target.closest(`.${ID}__desktopMenuWrapper-Gifts-Accessories li a:not(.text-links)`)
+    ) {
+      const clickedItem =
+        target.closest('#mega-menu-shop li a') ||
+        target.closest(`.${ID}__desktopMenuWrapper-Gifts-Accessories li a`);
       const wrapper = clickedItem.closest('ul');
       const categoryElement = wrapper.querySelector('li');
       const category = categoryElement.textContent.trim();
