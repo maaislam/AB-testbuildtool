@@ -4,7 +4,6 @@ import desktopMenuWrapper from './components/desktopMenuWrapper';
 import menuData from './data/data';
 import mobileMenuWrapper from './components/mobileMenuWrapper';
 import setGiftMegaMenu from './helpers/setGiftMegaMenu';
-import { pollerLite } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 const categoryLabelName = 'DAR 073';

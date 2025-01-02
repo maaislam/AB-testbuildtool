@@ -1,7 +1,6 @@
 import desktopMenuWrapper from '../components/desktopMenuWrapper';
 import mobileMenuWrapper from '../components/mobileMenuWrapper';
 import menuData from '../data/data';
-import { pollerLite } from './utils';
 
 const setGiftMegaMenu = (ID) => {
     const firstItemOfDesktop = document.querySelector('label[for="mega-menu-shop-toggle"]');
