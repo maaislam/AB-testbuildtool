@@ -202,7 +202,7 @@ const menuData = {
     hasChildren: [
       {
         title: 'Rose and garden accessories',
-        link: 'https://www.davidaustinroses.co.uk/collections/gifts',
+        link: 'https://www.davidaustinroses.co.uk/collections/rose-care',
         hasChildren: [
           {
             title: 'Rose food, sprays and compost',
@@ -224,7 +224,7 @@ const menuData = {
       },
       {
         title: 'Gifts & homeware',
-        link: 'https://www.davidaustinroses.co.uk/collections/rose-care',
+        link: 'https://www.davidaustinroses.co.uk/collections/gifts',
         hasChildren: [
           {
             title: 'Best roses for gifts',
