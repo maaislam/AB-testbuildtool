@@ -230,10 +230,10 @@ const menuData = {
             title: 'Best roses for gifts',
             href: 'https://www.davidaustinroses.co.uk/collections/occasion'
           },
-          {
-            title: 'Christmas gifts',
-            href: 'https://www.davidaustinroses.co.uk/collections/christmas-gifting'
-          },
+          // {
+          //   title: 'Christmas gifts',
+          //   href: 'https://www.davidaustinroses.co.uk/collections/christmas-gifting'
+          // },
           {
             title: 'Gift boxes',
             href: 'https://www.davidaustinroses.co.uk/collections/gift-boxes'
@@ -254,10 +254,10 @@ const menuData = {
             title: 'China & homeware',
             href: 'https://www.davidaustinroses.co.uk/collections/china-vases-and-homeware'
           },
-          {
-            title: 'Festive afternoon tea',
-            href: 'https://www.davidaustinroses.co.uk/pages/festive-afternoon-tea'
-          },
+          // {
+          //   title: 'Festive afternoon tea',
+          //   href: 'https://www.davidaustinroses.co.uk/pages/festive-afternoon-tea'
+          // },
           {
             title: 'Pruning workshop',
             href: 'https://www.davidaustinroses.co.uk/products/pruning-workshop'
