@@ -71,21 +71,42 @@ const init = () => {
     collectUrls.push(url);
   });
 
-  parseHTML(collectUrls).then((data) => {
-    if (data.length === 0) {
-      return;
-    }
+  parseHTML(collectUrls)
+    .then((data) => {
+      if (data.length === 0) {
+        return;
+      }
 
-    const attachPoint = document.querySelector('#today.wp-block-heading');
-    const attachPointWrapper = attachPoint.closest('.MuiBox-root');
-    if (!document.querySelector(`.${ID}__bettingWrapper`)) {
-      attachPointWrapper.insertAdjacentHTML('beforeend', bettingWrapper(ID, data));
-    }
-  });
+      const attachPoint = document.querySelector('#today.wp-block-heading');
+      const attachPointWrapper = attachPoint.closest('.MuiBox-root');
+      if (!document.querySelector(`.${ID}__bettingWrapper`)) {
+        attachPointWrapper.insertAdjacentHTML('beforeend', bettingWrapper(ID, data));
+      }
+      document.body.style.visibility = 'visible';
+      //remove loader
+      const loaderElem = document.querySelector(`.${ID}__loaderWrapper`);
+      loaderElem && loaderElem.remove();
+    })
+    .catch((error) => {
+      //remove loader
+      const loaderElem = document.querySelector(`.${ID}__loaderWrapper`);
+      loaderElem && loaderElem.remove();
+      document.documentElement.classList.remove(ID);
+      document.documentElement.classList.remove(`${ID}-${VARIATION}`);
+      const bettingWrapperElem = document.querySelector(`.${ID}__bettingWrapper`);
+      bettingWrapperElem && bettingWrapperElem.remove();
+    });
 };
 
 export default () => {
   setup();
+
+  //add loader
+  const attachPoint = document.querySelector('#today.wp-block-heading');
+  attachPoint.insertAdjacentHTML(
+    'afterend',
+    `<div class="${ID}__loaderWrapper"><div class="${ID}__loader"></div></div>`
+  );
 
   const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
   if (!isListenerAdded) {
@@ -100,7 +121,6 @@ export default () => {
   onUrlChange(() => {
     pollerLite(
       [
-        'body',
         () =>
           document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item') &&
           document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item').length > 0

@@ -33,7 +33,9 @@ const bettingWrapper = (ID, data) => {
                                 </div>
                                 <div class="${ID}__bettingInfo">
                                     <div class="${ID}__bettingTitle">
-                                        ${item.mainTitle} and Tips</div>
+                                        ${item.mainTitle} and Tips ${
+                          item.competitionName ? ` | ${item.competitionName}` : ''
+                        }</div>
                                     ${
                                       item.tipster
                                         ? `<div class="${ID}__tipsterWrapper">
