@@ -6,6 +6,10 @@
     display: none;
   }
 
+  .#{$id}__loggedInPdp.catalog-product-view .flooring-price .old-price {
+    text-decoration: none;
+  }
+
   .after-christmas-sale {
     .#{$id}__blackFridayBanner .promo_top .promo_top_inner .promo div.red-side {
       justify-content: space-evenly;
