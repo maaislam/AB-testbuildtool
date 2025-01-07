@@ -1,0 +1,149 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .#{$id}__announcementBar {
+      background-color: #2f0147;
+      padding: 13px 5px 14px;
+
+      & + div {
+        top: 46px;
+      }
+    }
+
+    .banner_right,
+    .banner_left {
+      .comn_btn_box {
+        max-width: 488px;
+      }
+      .button_outer {
+        @media screen and (min-width: 1025px) {
+          padding: 5px 25px;
+        }
+      }
+      .common_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24.2px;
+
+        @media screen and (max-width: 767px) {
+          font-size: 16px;
+          line-height: 19.36px;
+        }
+
+        @media screen and (max-width: 375px) {
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+    }
+
+    .banner_right .button_outer {
+      @media only screen and (max-width: 1023px) {
+        padding: 7px 5px;
+      }
+    }
+
+    .#{$id}__content {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.36px;
+      color: white;
+
+      span {
+        font-weight: 800;
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 14px;
+        line-height: 16.94px;
+      }
+    }
+  }
+
+  &-2 {
+    .#{$id}__announcementBar {
+      float: left;
+      width: 100%;
+      margin-top: 20px;
+
+      & + div {
+        top: 46px;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin-top: 30px !important;
+      }
+    }
+
+    .banner_right,
+    .banner_left {
+      .banner_text1 {
+        margin-top: 15px;
+      }
+      .comn_btn_box {
+        max-width: 488px;
+      }
+      .button_outer {
+        @media screen and (min-width: 1025px) {
+          padding: 5px 25px;
+        }
+      }
+      .common_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24.2px;
+
+        @media screen and (max-width: 767px) {
+          font-size: 16px;
+          line-height: 19.36px;
+        }
+
+        @media screen and (max-width: 375px) {
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+    }
+
+    .banner_right {
+      .#{$id}__announcementBar {
+        margin-top: 83px;
+      }
+      .button_outer {
+        @media only screen and (max-width: 1023px) {
+          padding: 7px 5px;
+        }
+      }
+    }
+
+    .#{$id}__content {
+      max-width: 360px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16.94px;
+      border: 2px solid #2f014780;
+      border-radius: 100px;
+      padding: 17px 25px 16px;
+      color: #2f0147;
+      background: #2f01471f;
+
+      span {
+        font-weight: 800;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin: 0 auto;
+        font-size: 12px;
+        line-height: 14.52px;
+      }
+    }
+  }
+}
