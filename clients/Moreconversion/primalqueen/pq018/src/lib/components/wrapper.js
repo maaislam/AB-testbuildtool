@@ -15,7 +15,7 @@ const wrapper = (id) => {
                 <div class="${id}__contentWrapper">
                     <div class="${id}__title">Join Primal Queen Today</div>
                     <div class="${id}__mainTitle">NEW YEARS<br>SPECIAL OFFER</div>
-                    <div class="${id}__subText">1 Month Subscribe & Save</div>
+                    <div class="${id}__subText">4 Free Bonuses</div>
                     <div class="comn_btn_box">
                         <div class="button_outer">
                             <a href="javascript:bookmarkscroll.scrollTo('join_pkg')" class="common_btn shadow-pulse">

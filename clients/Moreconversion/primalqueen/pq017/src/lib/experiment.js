@@ -11,8 +11,10 @@ const init = () => {
     document.querySelector('.banner_left .banner_text1') ||
     document.querySelector('.banner_right .banner_text1');
   if (!document.querySelector(`.${ID}__announcementBar`)) {
-    VARIATION === '1' && targetPoint.insertAdjacentHTML('beforebegin', announcementBar(ID));
-    VARIATION === '2' && targetPointAnother.insertAdjacentHTML('beforebegin', announcementBar(ID));
+    VARIATION === '1' &&
+      targetPoint.insertAdjacentHTML('beforebegin', announcementBar(ID, VARIATION));
+    VARIATION === '2' &&
+      targetPointAnother.insertAdjacentHTML('beforebegin', announcementBar(ID, VARIATION));
   }
 
   pollerLite(['.join_package_box .package.package1'], () => {
@@ -25,9 +27,8 @@ const init = () => {
 
     if (sellPrice && comparePrice) {
       const percentageOff = Math.round(((comparePrice - sellPrice) / comparePrice) * 100);
-      document.querySelector(
-        `.${ID}__announcementBar span`
-      ).textContent = `- Up to ${percentageOff}% OFF`;
+      document.querySelector(`.${ID}__announcementBar span`).textContent =
+        VARIATION === '2' ? `- Up to ${percentageOff}% OFF` : `${percentageOff}% OFF`;
       const bannerButton =
         document.querySelector('.banner_right .common_btn') ||
         document.querySelector('.banner_left .common_btn');
