@@ -28,7 +28,7 @@ const bettingWrapper = (ID, data) => {
                                     
                                     </div>
                                     <div class="${ID}__bettingCategory">
-                                        <a href="${item.url}">${item.competitionName}</a>
+                                        <a href="${item.eventUrl}">${item.eventName}</a>
                                     </div>
                                 </div>
                                 <div class="${ID}__bettingInfo">

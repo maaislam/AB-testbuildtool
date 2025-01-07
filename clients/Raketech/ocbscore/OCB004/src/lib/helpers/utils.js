@@ -60,7 +60,7 @@ const extractTextAndNumber = (input) => {
   };
 };
 
-const collectProductInfo = (allItemsArray, url, doc) => {
+const collectProductInfo = (allItemsArray, url, doc, eventName) => {
   //console.log(doc, 'doc');
   const mainTitleElement = doc.querySelector('#match-event-tabpanel-0 h3');
   const mainTitle = mainTitleElement?.textContent.trim();
@@ -75,6 +75,14 @@ const collectProductInfo = (allItemsArray, url, doc) => {
   const competitionElement = doc.querySelector('.MuiTypography-subtitle2');
   const competitionName =
     competitionElement?.textContent?.toLocaleLowerCase()?.split('|')[1]?.trim() || '';
+
+  const breadcrambsElement = doc.querySelector(
+    'div.MuiBox-root > div.MuiContainer-root.MuiContainer-maxWidthLg > div.MuiBox-root'
+  );
+
+  const allLinkableElements = breadcrambsElement?.querySelectorAll('a');
+  const lastBreadcrambItem = allLinkableElements[allLinkableElements.length - 1];
+  const lastBreadcrambItemUrl = lastBreadcrambItem?.getAttribute('href') || '';
 
   const bettingItemsInfo = [];
   const allBettingItems = doc.querySelectorAll(
@@ -129,13 +137,16 @@ const collectProductInfo = (allItemsArray, url, doc) => {
     tipsterLink,
     url,
     bettingItemsInfo,
+    eventName,
+    eventUrl: lastBreadcrambItemUrl,
     productInfo: doc
   });
 };
 
 export const parseHTML = async (urls) => {
   const allItemsArray = [];
-  const promises = urls.map((url) =>
+
+  const promises = urls.map(({ url }) =>
     fetch(url).catch((error) => {
       console.error(`Error fetching ${url}: ${error.message}`);
       return Promise.resolve(null);
@@ -150,7 +161,7 @@ export const parseHTML = async (urls) => {
       const html = await response.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
-      collectProductInfo(allItemsArray, response.url, doc);
+      collectProductInfo(allItemsArray, response.url, doc, urls[index].eventName);
     }
   }
 

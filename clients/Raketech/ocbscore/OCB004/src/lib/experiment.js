@@ -68,7 +68,16 @@ const init = () => {
   const collectUrls = [];
   items.forEach((item) => {
     const url = item.querySelector('a').href;
-    collectUrls.push(url);
+    const eventNameElement = item.querySelector(
+      '.MuiCardContent-root > span.MuiTypography-caption'
+    );
+
+    const eventName = eventNameElement ? eventNameElement.textContent.split(',')[0] : '';
+
+    collectUrls.push({
+      url,
+      eventName
+    });
   });
 
   parseHTML(collectUrls)
