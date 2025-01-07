@@ -41,7 +41,7 @@ export default () => {
       const clickedItem = target.closest(`.${ID}__dropdown-header`);
       const dropdown = clickedItem.closest(`.${ID}__dropdown`);
       dropdown.classList.toggle('open');
-      trackGA4Event('SCC 061', '');
+      trackGA4Event('SCC 061', 'Trusted buyer clicks', '');
     }
   });
   if (VARIATION === 'control') return; //

@@ -55,7 +55,7 @@ const init = () => {
   if (pathname.includes('/pages/go')) {
     targetElement.classList.add(`${ID}__section_5`);
   } else {
-    targetElement.classList.add(`${ID}__section`);
+    targetElement.classList.add(`${ID}__section__5`);
   }
   if (!document.querySelector(`.${ID}__wrapper`)) {
     targetElement.insertAdjacentHTML('beforeend', wrapper(ID));
