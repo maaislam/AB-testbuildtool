@@ -9,7 +9,7 @@ const banner = (id, data) => {
                     <p>We can negotiate a higher price for you with a few more details</p>
                 </div>
                 <div class="${id}__bannerContent">
-                    <img src="https://www.scrapcarcomparison.co.uk/wp-content/themes/scc/img/sidebar_quote_header.png" alt="Specialist image">
+                    <img src="https://cdn-3.convertexperiments.com/uf/10021806/10025644/stock-photography-desktop_677e4abf5c89b.png" alt="Specialist image">
                     <ul class="${id}__desktopList">
                         ${data
                           .map((item) => {
@@ -25,7 +25,7 @@ const banner = (id, data) => {
                 <div class="${id}__mobileWrapper">
                         <div class="${id}__mobileContainer">
                             <div class="${id}__mobileImage">
-                                <img src="https://www.scrapcarcomparison.co.uk/wp-content/themes/scc/img/sidebar_quote_header.png" alt="Specialist image"/>
+                                <img src="https://cdn-3.convertexperiments.com/uf/10021806/10025644/stock-photography-mobile_677e4ad954931.png" alt="Specialist image"/>
                             </div>
                             <p>We can negotiate a higher price for you with a few more details.</p>
                         </div>
