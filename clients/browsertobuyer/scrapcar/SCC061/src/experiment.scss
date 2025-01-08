@@ -34,7 +34,11 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 30px 16px;
+    padding: 30px 0;
+
+    @media screen and (max-width: 1180px) {
+      padding: 30px 16px;
+    }
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
@@ -54,6 +58,10 @@
       color: #fff;
       text-shadow: 0px 2px 0px #00000040;
       margin-bottom: 16px;
+
+      span {
+        text-transform: capitalize;
+      }
 
       @media screen and (max-width: 768px) {
         font-size: 25.6px;
@@ -140,7 +148,7 @@
 
       .#{$id}__mobileContainer {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         padding: 16px 0 8px;
         p {
@@ -153,7 +161,7 @@
         }
       }
       .#{$id}__mobileImage {
-        max-width: 150px;
+        max-width: 100px;
         width: 100%;
         margin-right: 16px;
 
@@ -209,7 +217,7 @@
 
           ul {
             list-style: none;
-            padding: 12px 0 16px;
+            padding: 12px 0 16px 8px;
             margin: 0;
 
             li {
