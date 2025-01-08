@@ -81,6 +81,10 @@
     }
   }
 
+  .#{$id}__desktopList {
+    margin-top: 16px !important;
+  }
+
   .#{$id}__bannerContent {
     max-width: 485px;
     background-color: #fff;
