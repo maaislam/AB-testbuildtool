@@ -5,7 +5,7 @@ const banner = (id, data) => {
         <div class="${id}__banner">
             <div class="${id}__bannerContainer">
                 <div class="${id}__bannerHeader">
-                    <h2>A specialist Audi buyer is interested in your vehicle</h2>
+                    <h2>A specialist <span></span> buyer is interested in your vehicle</h2>
                     <p>We can negotiate a higher price for you with a few more details</p>
                 </div>
                 <div class="${id}__bannerContent">

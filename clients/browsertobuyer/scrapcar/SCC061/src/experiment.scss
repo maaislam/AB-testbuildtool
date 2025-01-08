@@ -8,6 +8,25 @@
   .#{$id}__banner {
     background-color: #7190af;
   }
+  .offerform-wrapper .offerform-body {
+    padding-top: 40px;
+    @media screen and (max-width: 768px) {
+      padding-top: 30px;
+    }
+  }
+
+  .#{$id}__formBodyTitle {
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 27.6px;
+    color: #000;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
 
   .#{$id}__bannerContainer {
     max-width: 1046px;
@@ -146,8 +165,7 @@
 
         &.open .#{$id}__dropdown-content {
           margin-top: 5px;
-          max-height: 200px; /* Adjust according to content height */
-          transition: max-height 0.3s ease-in; /* Smooth transition */
+          transition: max-height 0.5s ease-in; /* Smooth transition */
         }
 
         &.open .arrow {
@@ -179,7 +197,7 @@
         .#{$id}__dropdown-content {
           max-height: 0;
           overflow: hidden;
-          transition: max-height 0.3s ease-out; /* Smooth transition */
+          transition: max-height 0.5s ease-out; /* Smooth transition */
 
           ul {
             list-style: none;

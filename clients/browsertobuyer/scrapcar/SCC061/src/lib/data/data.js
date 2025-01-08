@@ -17,7 +17,7 @@ export const features = [
 
 export const featuresV2 = [
   {
-    text: 'Free Collection from SE100GP',
+    text: 'Free Collection from <span></span>',
     icon: tickIcon
   },
   {
