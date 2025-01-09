@@ -1,6 +1,6 @@
 module.exports = {
     ID: "OCB005",
-    VARIATION: "control",
+    VARIATION: "1",
     CLIENT: "Raketech",
     SITE: "ocbscore"
   };
