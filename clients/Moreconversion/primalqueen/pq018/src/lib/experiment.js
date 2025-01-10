@@ -43,6 +43,9 @@ const updateCountdown = () => {
   const hours = formatTime(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
   const minutes = formatTime(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
   const seconds = formatTime(Math.floor((distance % (1000 * 60)) / 1000));
+  console.log('🚀 ~ updateCountdown ~ hours:', hours);
+  console.log('🚀 ~ updateCountdown ~ minutes:', minutes);
+  console.log('🚀 ~ updateCountdown ~ seconds:', seconds);
 
   document.querySelector(`.${ID}__hour`).textContent = `${hours}`;
   document.querySelector(`.${ID}__min`).textContent = `${minutes}`;
