@@ -1,3 +1,4 @@
+/*eslint-disable object-curly-newline */
 import setup from './services/setup';
 import shared from './shared/shared';
 import { blackCheckIcon, circleCheckIcon } from './assets/icons';
