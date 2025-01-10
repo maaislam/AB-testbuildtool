@@ -75,6 +75,10 @@ export const addToCart = (payload) => {
     const res = result.json();
 
     return res;
+  }).then(() => {
+    window.location.href = '/checkout';
+  }).catch((error) => {
+    console.error('Error:', error);
   });
   return response;
 };
