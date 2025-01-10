@@ -212,20 +212,20 @@ const setPriceForQuantity = (target, currentQuantity) => {
   }
 };
 
-const setImageForQuantity = (target, matchedCtrlInputElem) => {
-  const productBoxElem = target.closest(`.${ID}__productBox`);
-  const ctrlQuantityLabel = matchedCtrlInputElem.nextElementSibling;
-  const ctrlSelectedPackageImgElem = ctrlQuantityLabel.querySelector('img');
-  const ctrlSelectedPackageImgSrc = ctrlSelectedPackageImgElem.getAttribute('src');
+// const setImageForQuantity = (target, matchedCtrlInputElem) => {
+//   const productBoxElem = target.closest(`.${ID}__productBox`);
+//   const ctrlQuantityLabel = matchedCtrlInputElem.nextElementSibling;
+//   const ctrlSelectedPackageImgElem = ctrlQuantityLabel.querySelector('img');
+//   const ctrlSelectedPackageImgSrc = ctrlSelectedPackageImgElem.getAttribute('src');
 
-  if (productBoxElem.dataset.type === 'subscription') {
-    const productImageElem = productBoxElem.querySelector('.subs-product-image img');
-    productImageElem.src = ctrlSelectedPackageImgSrc;
-  } else if (productBoxElem.dataset.type === 'oneTimePurchase') {
-    const productImageElem = productBoxElem.querySelector('.one-time-product-image img');
-    productImageElem.src = ctrlSelectedPackageImgSrc;
-  }
-};
+//   if (productBoxElem.dataset.type === 'subscription') {
+//     const productImageElem = productBoxElem.querySelector('.subs-product-image img');
+//     productImageElem.src = ctrlSelectedPackageImgSrc;
+//   } else if (productBoxElem.dataset.type === 'oneTimePurchase') {
+//     const productImageElem = productBoxElem.querySelector('.one-time-product-image img');
+//     productImageElem.src = ctrlSelectedPackageImgSrc;
+//   }
+// };
 
 const initializeBoxes = () => {
   const ctrlCheckedQuantityElem = document.querySelector('input[name="Quantity"]:checked');
@@ -246,7 +246,7 @@ const initializeBoxes = () => {
 
         //Update price and image for the selected quantity
         setPriceForQuantity(counterInput, matchedQuantity);
-        setImageForQuantity(counterInput, ctrlCheckedQuantityElem);
+        //setImageForQuantity(counterInput, ctrlCheckedQuantityElem);
       });
     }
   }
@@ -281,7 +281,7 @@ export default () => {
       updateDataQuantity(target, value);
       setTimeout(() => {
         setPriceForQuantity(target, value);
-        setImageForQuantity(target, matchedCtrlInputElem);
+        //setImageForQuantity(target, matchedCtrlInputElem);
       }, DOMRENDERDELAY);
     } else if (target.closest('.counter-btn.minus')) {
       const counterBox = target.closest('.counter-box');
@@ -298,7 +298,7 @@ export default () => {
       updateDataQuantity(target, value);
       setTimeout(() => {
         setPriceForQuantity(target, value);
-        setImageForQuantity(target, matchedCtrlInputElem);
+        //setImageForQuantity(target, matchedCtrlInputElem);
       }, DOMRENDERDELAY);
     } else if (target.closest(`.${ID}__atc`)) { //add to cart button click
       const ctrlAtcBtn = document.querySelector('#ProductSubmitButton-main-product');
