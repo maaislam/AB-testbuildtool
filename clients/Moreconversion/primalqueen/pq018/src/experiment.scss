@@ -17,10 +17,25 @@
   }
 
   &__wrapper {
-    padding: 70px 0 80px !important;
+    padding: 70px 0 0px !important;
 
     @media screen and (max-width: 767px) {
-      padding: 35px 15px 40px !important;
+      padding: 35px 15px 0px !important;
+    }
+  }
+
+  .#{$id}__section__5 {
+    padding-bottom: 60px;
+
+    @media screen and (max-width: 767px) {
+      padding-bottom: 40px;
+    }
+  }
+
+  .#{$id}__section_5 {
+    padding-bottom: 80px;
+    @media screen and (max-width: 767px) {
+      padding-bottom: 40px;
     }
   }
 
@@ -124,7 +139,7 @@
           line-height: 18.15px;
         }
 
-        @media screen and (max-width: 374px) {
+        @media screen and (max-width: 375px) {
           font-size: 13px;
           line-height: 15.15px;
         }
@@ -135,7 +150,7 @@
         li {
           color: #fff;
 
-          @media screen and (max-width: 374px) {
+          @media screen and (max-width: 375px) {
             font-size: 11px;
 
             &:first-child {
@@ -184,7 +199,7 @@
       padding-bottom: 10px;
     }
 
-    @media screen and (max-width: 374px) {
+    @media screen and (max-width: 375px) {
       max-width: 270px;
       font-size: 20px;
       line-height: 25px;
@@ -209,7 +224,7 @@
       padding-bottom: 17px;
     }
 
-    @media screen and (max-width: 374px) {
+    @media screen and (max-width: 375px) {
       max-width: 270px;
       font-size: 30px;
       line-height: 38.41px;
@@ -230,7 +245,7 @@
       padding: 10px 0 20px;
     }
 
-    @media screen and (max-width: 374px) {
+    @media screen and (max-width: 375px) {
       font-size: 15px;
       line-height: 19px;
     }

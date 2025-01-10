@@ -7,53 +7,56 @@ const { ID, VARIATION } = shared;
 
 const formatTime = (unit) => String(unit).padStart(2, '0');
 const updateCountdown = () => {
-  const currentDate = new Date();
-  const estData = currentDate.toLocaleString('en-US', {
+  const currentDate1 = new Date();
+  const estData1 = currentDate1.toLocaleString('en-US', {
     timeZone: 'America/New_York',
     hour12: false
   });
 
-  const limitHour = parseInt(estData.split(' ')[1].split(':')[0], 10);
+  const limitHour1 = parseInt(estData1.split(' ')[1].split(':')[0], 10);
 
-  const countDownDate = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth(),
-    currentDate.getDate(),
+  const countDownDate1 = new Date(
+    currentDate1.getFullYear(),
+    currentDate1.getMonth(),
+    currentDate1.getDate(),
     14,
     0
   );
-  let distance;
+  let distance1;
 
-  if (limitHour > 14) {
-    const tomorrowTime = countDownDate.getTime() + 86400000;
-    distance = Math.abs(currentDate - tomorrowTime);
+  if (limitHour1 > 14) {
+    const tomorrowTime1 = countDownDate1.getTime() + 86400000;
+    distance1 = Math.abs(currentDate1 - tomorrowTime1);
 
-    const hours = formatTime(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-    const minutes = formatTime(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-    const seconds = formatTime(Math.floor((distance % (1000 * 60)) / 1000));
+    const hours1 = formatTime(Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    const minutes1 = formatTime(Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60)));
+    const seconds1 = formatTime(Math.floor((distance1 % (1000 * 60)) / 1000));
 
-    document.querySelector(`.${ID}__hour`).textContent = `${hours}`;
-    document.querySelector(`.${ID}__min`).textContent = `${minutes}`;
-    document.querySelector(`.${ID}__sec`).textContent = `${seconds}`;
+    document.querySelector(`.${ID}__hour`).textContent = `${hours1}`;
+    document.querySelector(`.${ID}__min`).textContent = `${minutes1}`;
+    document.querySelector(`.${ID}__sec`).textContent = `${seconds1}`;
     return;
   }
 
-  distance = Math.abs(currentDate - countDownDate.getTime());
+  distance1 = Math.abs(currentDate1 - countDownDate1.getTime());
 
-  const hours = formatTime(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-  const minutes = formatTime(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-  const seconds = formatTime(Math.floor((distance % (1000 * 60)) / 1000));
-  console.log('🚀 ~ updateCountdown ~ hours:', hours);
-  console.log('🚀 ~ updateCountdown ~ minutes:', minutes);
-  console.log('🚀 ~ updateCountdown ~ seconds:', seconds);
+  const hours1 = formatTime(Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+  const minutes1 = formatTime(Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60)));
+  const seconds1 = formatTime(Math.floor((distance1 % (1000 * 60)) / 1000));
 
-  document.querySelector(`.${ID}__hour`).textContent = `${hours}`;
-  document.querySelector(`.${ID}__min`).textContent = `${minutes}`;
-  document.querySelector(`.${ID}__sec`).textContent = `${seconds}`;
+  document.querySelector(`.${ID}__hour`).textContent = `${hours1}`;
+  document.querySelector(`.${ID}__min`).textContent = `${minutes1}`;
+  document.querySelector(`.${ID}__sec`).textContent = `${seconds1}`;
 };
 
 const init = () => {
+  const { pathname } = window.location;
   const targetElement = document.querySelector('.section_5');
+  if (pathname.includes('/pages/go')) {
+    targetElement.classList.add(`${ID}__section_5`);
+  } else {
+    targetElement.classList.add(`${ID}__section__5`);
+  }
   if (!document.querySelector(`.${ID}__wrapper`)) {
     targetElement.insertAdjacentHTML('beforeend', wrapper(ID));
   }
