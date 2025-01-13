@@ -68,7 +68,7 @@
 	const trackGA4Event = (category, action, label) =>{
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-            event: 'layout-shif',
+            event: 'layout-shift',
             eventCategory: category,
             eventAction: action,
             eventLabel: label,

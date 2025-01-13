@@ -1,0 +1,12 @@
+.lf175 .amscroll-load-button {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.lf175 .lf175__hiddenWrapper .column.main .products-grid.products-grid[amscroll-page="2"] {
+    display: none;
+}
+
+.lf175 .lf175__fakeBtn+button.amscroll-load-button {
+    display: none !important;
+}
