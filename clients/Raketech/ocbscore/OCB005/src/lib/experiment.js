@@ -3,7 +3,6 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { onUrlChange, pollerLite } from './helpers/utils';
 import { pointElement, rightArrow } from './assets/icons';
-import wrapper from './components/wrapper';
 import staticButton from './components/staticButton';
 
 const { ID, VARIATION } = shared;
@@ -20,7 +19,7 @@ const init = () => {
     const mainButton = card.querySelector('[data-type="button"]');
     if (mainCardTitleElement) mainCardTitleElement.textContent = onlyText;
     if (mainButton && !mainButton.classList.contains(`${ID}__cardButton`)) {
-      mainButton.innerHTML = `${mainButton.innerHTML}&nbsp;${rating} <span class="${ID}__arrow">${rightArrow}</span>`;
+      mainButton.innerHTML = `${mainButton.innerHTML}${rating}<span class="${ID}__arrow">${rightArrow}</span>`;
       mainButton.classList.add(`${ID}__cardButton`);
     }
 
@@ -29,6 +28,7 @@ const init = () => {
       document
         .querySelector(`.${ID}__staticButtonWrapper`)
         .insertAdjacentElement('beforeend', mainButton);
+      mainButton.childNodes[0].textContent = 'BET ON 1XBET TO WIN';
     }
 
     const allSvgIcons = card.querySelectorAll('svg.MuiSvgIcon-root');
@@ -111,6 +111,24 @@ const clickHandler = (e) => {
     pollerLite(['#match-event-tabpanel-0'], () => {
       init(); //
     });
+  } else if (target.closest('[aria-labelledby*="match-event-tab"] .mui-veyekx')) {
+    const clickedItem = target.closest('[aria-labelledby*="match-event-tab"] .mui-veyekx');
+    const linkElement = clickedItem.querySelector('a[data-type="button"]');
+    const link = linkElement.href;
+    const { operator } = linkElement.dataset;
+    gaTracking(
+      `${firstTeamName} vs ${secondTeamName} ${matchTypeName} | ${operator} | Prediction Container`
+    );
+    window.open(link, '_blank');
+  } else if (target.closest(`.${ID}__bettingItem`)) {
+    const clickedItem = target.closest(`.${ID}__bettingItem`);
+    const linkElement = clickedItem.querySelector(`.${ID}__bettingItem [data-type="button"]`);
+    const link = linkElement.href;
+    const { operator } = linkElement.dataset;
+    gaTracking(
+      `${firstTeamName} vs ${secondTeamName} ${matchTypeName} | ${operator} | Betting Tips Container`
+    );
+    window.open(link, '_blank');
   }
 };
 
