@@ -222,7 +222,7 @@ const init = () => {
       if (applyBtn) {
         applyBtn.click();
       }
-      // toolbar.style.visibility = 'hidden';
+      //toolbar.style.visibility = 'hidden';
     });
   });
 
@@ -310,7 +310,13 @@ export default () => {
           selectedFilterLabel.classList.remove('active-toggle-icon');
         }
       }, 100);
-    } else if (VARIATION === '2' && (target.closest('button[form*="product-grid"][type="submit"]') || target.closest('button.button-primary[type="submit"][data-close]') || target.closest('a[data-reset]') || target.closest('button.button-secondary[data-reset]'))) {
+    } else if (
+      VARIATION === '2' &&
+      (target.closest('button[form*="product-grid"][type="submit"]') ||
+        target.closest('button.button-primary[type="submit"][data-close]') ||
+        target.closest('a[data-reset]') ||
+        target.closest('button.button-secondary[data-reset]'))
+    ) {
       disableScroll();
     }
   });

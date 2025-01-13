@@ -4,6 +4,7 @@ import shared from './shared/shared';
 import { onUrlChange, pollerLite } from './helpers/utils';
 import { pointElement, rightArrow } from './assets/icons';
 import wrapper from './components/wrapper';
+import staticButton from './components/staticButton';
 
 const { ID, VARIATION } = shared;
 
@@ -11,33 +12,6 @@ const init = () => {
   //...
 
   const mainCard = document.querySelectorAll('[aria-labelledby*="match-event-tab"]');
-  const chancesOfWiningElement = document.querySelector(
-    '[aria-labelledby*="match-event-tab"] .MuiCard-root.mui-193qfb9'
-  );
-
-  if (chancesOfWiningElement) {
-    const chancesOfWiningArray = [];
-    const allItems = chancesOfWiningElement.querySelectorAll(
-      'h4.MuiTypography-h4 + .MuiBox-root > .MuiBox-root'
-    );
-
-    allItems.forEach((item) => {
-      const percentangeElement = item.querySelector('.MuiTypography-body2');
-      const percentageValue = percentangeElement ? percentangeElement.textContent : '';
-      const nameElement = item.querySelector('.MuiBox-root:last-child').querySelector('p');
-      const nameValue = nameElement ? nameElement.textContent : '';
-
-      chancesOfWiningArray.push({
-        name: nameValue,
-        percentage: percentageValue
-      });
-    });
-
-    if (!document.querySelector(`.${ID}__wrapper`)) {
-      chancesOfWiningElement.insertAdjacentHTML('beforebegin', wrapper(ID, chancesOfWiningArray));
-    }
-  }
-
   mainCard.forEach((card) => {
     const mainCardTitleElement = card.querySelector('.MuiTypography-body1');
     const text = mainCardTitleElement ? mainCardTitleElement.textContent : '';
@@ -48,6 +22,13 @@ const init = () => {
     if (mainButton && !mainButton.classList.contains(`${ID}__cardButton`)) {
       mainButton.innerHTML = `${mainButton.innerHTML}&nbsp;${rating} <span class="${ID}__arrow">${rightArrow}</span>`;
       mainButton.classList.add(`${ID}__cardButton`);
+    }
+
+    if (mainButton && !card.querySelector(`.${ID}__staticButtonWrapper`)) {
+      mainButton.insertAdjacentHTML('beforebegin', staticButton(ID, mainButton.href));
+      document
+        .querySelector(`.${ID}__staticButtonWrapper`)
+        .insertAdjacentElement('beforeend', mainButton);
     }
 
     const allSvgIcons = card.querySelectorAll('svg.MuiSvgIcon-root');
@@ -75,7 +56,12 @@ const init = () => {
     }
 
     if (mainButton && !mainButton.classList.contains(`${ID}__button`)) {
-      mainButton.innerHTML = `${mainButton.innerHTML}&nbsp;${rating} <span class="${ID}__arrow">${rightArrow}</span>`;
+      mainButton.innerHTML = `${mainButton.innerHTML
+        .toLowerCase()
+        .replace(
+          'visit',
+          'BET ON'
+        )}&nbsp;${rating} <span class="${ID}__arrow">${rightArrow}</span>`;
       mainButton.classList.add(`${ID}__button`);
     }
   });
@@ -83,21 +69,44 @@ const init = () => {
 
 const clickHandler = (e) => {
   const { target } = e;
-  const matchNameElement = document.querySelector('.MuiTypography-subtitle2');
-  const matchName = matchNameElement.textContent || '';
-  if (
-    target.closest('[aria-labelledby*="match-event-tab"] [data-type="button"]') ||
-    target.closest(`.${ID}__bettingItem [data-type="button"]`)
-  ) {
+
+  const firstTeam = document.querySelector('.MuiBox-root.mui-1f0m54x > p');
+  const secondTeam = document.querySelector(
+    '.MuiBox-root.mui-1f0m54x ~ .MuiBox-root.mui-1f0m54x > p'
+  );
+
+  const matchType = document.querySelector('.MuiTypography-caption.mui-l7ou8j');
+
+  const firstTeamName = firstTeam ? firstTeam.textContent : '';
+  const secondTeamName = secondTeam ? secondTeam.textContent : '';
+  const matchTypeName = matchType ? matchType.textContent : '';
+
+  if (target.closest('[aria-labelledby*="match-event-tab"] [data-type="button"]')) {
     const button =
       target.closest('[aria-labelledby*="match-event-tab"] [data-type="button"]') ||
       target.closest(`.${ID}__bettingItem [data-type="button"]`);
     const { operator } = button.dataset;
-    gaTracking(`${matchName} | ${operator} | Button`);
+    gaTracking(
+      `${firstTeamName} vs ${secondTeamName} ${matchTypeName} | ${operator} | Prediction Button`
+    );
+  } else if (target.closest(`.${ID}__bettingItem [data-type="button"]`)) {
+    const button = target.closest(`.${ID}__bettingItem [data-type="button"]`);
+    const { operator } = button.dataset;
+    gaTracking(
+      `${firstTeamName} vs ${secondTeamName} ${matchTypeName} | ${operator} | Betting Tips Button`
+    );
+  } else if (target.closest('[aria-labelledby*="match-event-tab"] [data-type="logo"]')) {
+    const button = target.closest('[aria-labelledby*="match-event-tab"] [data-type="logo"]');
+    const { operator } = button.dataset;
+    gaTracking(
+      `${firstTeamName} vs ${secondTeamName} ${matchTypeName} | ${operator} | Prediction Logo`
+    );
   } else if (target.closest(`.${ID}__bettingItem [data-type="logo"]`)) {
     const button = target.closest(`.${ID}__bettingItem [data-type="logo"]`);
     const { operator } = button.dataset;
-    gaTracking(`${matchName} | ${operator} | Logo`);
+    gaTracking(
+      `${firstTeamName} vs ${secondTeamName} ${matchTypeName} | ${operator} | Betting Tips Logo`
+    );
   } else if (target.closest('button#match-event-tab-0')) {
     pollerLite(['#match-event-tabpanel-0'], () => {
       init(); //
