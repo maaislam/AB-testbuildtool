@@ -200,5 +200,12 @@
         }
       }
     }
+
+    @media screen and (max-width: 768px) {
+      .big-header-container .row.header-bottom {
+        padding-top: 20px;
+        background: #708dab;
+      }
+    }
   }
 }
