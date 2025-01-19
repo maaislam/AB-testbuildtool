@@ -60,14 +60,15 @@ const extractTextAndNumber = (input) => {
   };
 };
 
-const collectProductInfo = (allItemsArray, url, doc, eventName) => {
+const collectProductInfo = (allItemsArray, url, doc, eventName, eventTime) => {
   //console.log(doc, 'doc');
   const mainTitleElement = doc.querySelector('#match-event-tabpanel-0 h3');
   const mainTitle = mainTitleElement?.textContent.trim();
   const eventDateElement = doc.querySelector('[data-testid="EventIcon"]');
   const eventDate = eventDateElement?.nextSibling?.textContent.trim() || '';
-  const eventTimeElement = doc.querySelector('[data-testid="ScheduleIcon"]');
-  const eventTime = eventTimeElement?.nextSibling?.textContent.trim() || '';
+  //const eventTimeElement = doc.querySelector('[data-testid="ScheduleIcon"]');
+  //const eventTime = eventTimeElement?.nextSibling?.textContent.trim() || '';
+  //console.log(`time: ${eventTime}`);
   const tipsterElement = doc.querySelector('.MuiPaper-elevation .MuiCardHeader-title');
   const tipster = tipsterElement?.querySelector('a')?.textContent.trim() || '';
   const tipsterLink = tipsterElement?.querySelector('a')?.href || '';
@@ -161,7 +162,13 @@ export const parseHTML = async (urls) => {
       const html = await response.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
-      collectProductInfo(allItemsArray, response.url, doc, urls[index].eventName);
+      collectProductInfo(
+        allItemsArray,
+        response.url,
+        doc,
+        urls[index].eventName,
+        urls[index].eventTime
+      );
     }
   }
 

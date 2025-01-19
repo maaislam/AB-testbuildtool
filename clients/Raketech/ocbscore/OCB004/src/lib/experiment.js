@@ -66,45 +66,52 @@ const init = () => {
 
   const items = document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item');
   const collectUrls = [];
-  items.forEach((item) => {
-    const url = item.querySelector('a').href;
-    const eventNameElement = item.querySelector(
-      '.MuiCardContent-root > span.MuiTypography-caption'
-    );
 
-    const eventName = eventNameElement ? eventNameElement.textContent.split(',')[0] : '';
+  setTimeout(() => {
+    items.forEach((item) => {
+      const url = item.querySelector('a').href;
+      const eventNameElement = item.querySelector(
+        '.MuiCardContent-root > span.MuiTypography-caption'
+      );
 
-    collectUrls.push({
-      url,
-      eventName
+      const eventName = eventNameElement ? eventNameElement.textContent.split(',')[0] : '';
+      const eventTimeElement = item.querySelector('[data-testid="ScheduleIcon"]');
+      const eventTime = eventTimeElement?.nextSibling?.textContent.trim() || '';
+
+      console.log(eventTime, 'eventTime1');
+      collectUrls.push({
+        url,
+        eventName,
+        eventTime
+      });
     });
-  });
 
-  parseHTML(collectUrls)
-    .then((data) => {
-      if (data.length === 0) {
-        return;
-      }
+    parseHTML(collectUrls)
+      .then((data) => {
+        if (data.length === 0) {
+          return;
+        }
 
-      const attachPoint = document.querySelector('#today.wp-block-heading');
-      const attachPointWrapper = attachPoint.closest('.MuiBox-root');
-      if (!document.querySelector(`.${ID}__bettingWrapper`)) {
-        attachPointWrapper.insertAdjacentHTML('beforeend', bettingWrapper(ID, data));
-      }
-      document.body.style.visibility = 'visible';
-      //remove loader
-      const loaderElem = document.querySelector(`.${ID}__loaderWrapper`);
-      loaderElem && loaderElem.remove();
-    })
-    .catch((error) => {
-      //remove loader
-      const loaderElem = document.querySelector(`.${ID}__loaderWrapper`);
-      loaderElem && loaderElem.remove();
-      document.documentElement.classList.remove(ID);
-      document.documentElement.classList.remove(`${ID}-${VARIATION}`);
-      const bettingWrapperElem = document.querySelector(`.${ID}__bettingWrapper`);
-      bettingWrapperElem && bettingWrapperElem.remove();
-    });
+        const attachPoint = document.querySelector('#today.wp-block-heading');
+        const attachPointWrapper = attachPoint.closest('.MuiBox-root');
+        if (!document.querySelector(`.${ID}__bettingWrapper`)) {
+          attachPointWrapper.insertAdjacentHTML('beforeend', bettingWrapper(ID, data));
+        }
+        document.body.style.visibility = 'visible';
+        //remove loader
+        const loaderElem = document.querySelector(`.${ID}__loaderWrapper`);
+        loaderElem && loaderElem.remove();
+      })
+      .catch((error) => {
+        //remove loader
+        const loaderElem = document.querySelector(`.${ID}__loaderWrapper`);
+        loaderElem && loaderElem.remove();
+        document.documentElement.classList.remove(ID);
+        document.documentElement.classList.remove(`${ID}-${VARIATION}`);
+        const bettingWrapperElem = document.querySelector(`.${ID}__bettingWrapper`);
+        bettingWrapperElem && bettingWrapperElem.remove();
+      });
+  }, 1000);
 };
 
 export default () => {
