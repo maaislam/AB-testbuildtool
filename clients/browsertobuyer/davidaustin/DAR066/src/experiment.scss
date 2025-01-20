@@ -1,0 +1,77 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__quoteContainer {
+        max-width: 630px;
+        margin: 0 auto;
+        padding: 0 0 10px 0;
+        background-color: transparent;
+        text-align: center;
+        border-radius: 10px;
+
+        .quote-text {
+            margin-bottom: 15px;
+            font-family: 'Goudy Old Style';
+            font-size: 24px;
+            line-height: 31px;
+            font-weight: 400;
+            color: #414042;
+
+            @include media-query(lg) {
+                font-size: 18px;
+                line-height: 23px;
+                padding: 0 12px;
+            }
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include media-query(lg) {
+                flex-direction: column;
+            }
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+        }
+
+        .author-details {
+            margin-left: 15px;
+            text-align: left;
+
+            @include media-query(lg) {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+
+        .author-name {
+            margin: 0;
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #414042;
+
+            @include media-query(lg) {
+                text-align: center;
+            }
+        }
+
+        .author-role {
+            margin: 0;
+            font-size: 13px;
+            line-height: 17px;
+            font-weight: 400;
+            color: #69686A;
+
+            @include media-query(lg) {
+                text-align: center;
+            }
+        }
+    }
+}
