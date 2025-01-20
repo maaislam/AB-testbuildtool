@@ -14,10 +14,10 @@ const init = () => {
   mainCard.forEach((card) => {
     const mainCardTitleElement = card.querySelector('.MuiTypography-body1');
     const text = mainCardTitleElement ? mainCardTitleElement.textContent : '';
-    const onlyText = text?.split(',')[0];
+    //const onlyText = text?.split(',')[0];
     const rating = text?.split(',')[1];
     const mainButton = card.querySelector('[data-type="button"]');
-    if (mainCardTitleElement) mainCardTitleElement.textContent = onlyText;
+    //if (mainCardTitleElement) mainCardTitleElement.textContent = onlyText;
     if (mainButton && !mainButton.classList.contains(`${ID}__cardButton`)) {
       mainButton.innerHTML = `${mainButton.innerHTML}${rating}<span class="${ID}__arrow">${rightArrow}</span>`;
       mainButton.classList.add(`${ID}__cardButton`);
@@ -28,7 +28,7 @@ const init = () => {
       document
         .querySelector(`.${ID}__staticButtonWrapper`)
         .insertAdjacentElement('beforeend', mainButton);
-      mainButton.childNodes[0].textContent = 'BET ON 1XBET TO WIN';
+      mainButton.childNodes[0].textContent = 'BET ON 1XBET FOR TEAM TO WIN';
     }
 
     const allSvgIcons = card.querySelectorAll('svg.MuiSvgIcon-root');

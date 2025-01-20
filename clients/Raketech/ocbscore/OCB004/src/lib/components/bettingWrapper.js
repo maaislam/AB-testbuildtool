@@ -54,11 +54,17 @@ const bettingWrapper = (ID, data) => {
                                                 <div class="${ID}__bettingContentItem">
                                                     <a class="${ID}__bettingContentTitle" href="${
                                               info.link
-                                            }">${info.text}</a>
+                                            }"  data-operator="${
+                                              info.dataOperator
+                                            }" data-element="clicks-to-operators" data-placement="quick-tips-block" data-type="button" rel="nofollow noopener">${
+                                              info.text
+                                            }</a>
                                                     <div class="${ID}__ratingWrapper" data-operator="${
                                               info.dataOperator
                                             }">
-                                                        <a class="${ID}__casinoLink" target="_blank" href="${
+                                                        <a class="${ID}__casinoLink"  data-operator="${
+                                              info.dataOperator
+                                            }" data-element="clicks-to-operators" data-placement="quick-tips-block" data-type="button" rel="nofollow noopener" target="_blank" href="${
                                               info.link
                                             }">
                                                             <span class="${ID}__image" style="--bgcolor:${
