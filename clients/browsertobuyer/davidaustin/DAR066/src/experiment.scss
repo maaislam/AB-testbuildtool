@@ -10,6 +10,10 @@
         text-align: center;
         border-radius: 10px;
 
+        @include media-query(lg) {
+            padding: 0 0 20px 0;
+        }
+
         .quote-text {
             margin-bottom: 15px;
             font-family: 'Goudy Old Style';
@@ -21,7 +25,7 @@
             @include media-query(lg) {
                 font-size: 18px;
                 line-height: 23px;
-                padding: 0 12px;
+                padding: 0 15px;
             }
         }
 
