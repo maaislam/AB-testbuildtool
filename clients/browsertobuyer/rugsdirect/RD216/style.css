@@ -215,6 +215,40 @@
     }
 }
 
+@media screen and (max-width: 389px) {
+    .rd216 #size-guide-modal .custom-modal-header {
+        padding: 20px 16px 8px;
+    }
+
+    .rd216 .size-guide-tabs {
+        margin-bottom: 20px;
+    }
+
+    .rd216 .tab-content h3 {
+        margin: 0 0 12px 0;
+    }
+
+    .rd216 .size-options {
+        max-width: 320px;
+    }
+
+    .rd216 .size-options .size-option {
+        margin-bottom: 16px;
+    }
+
+    .rd216 .size-options .size-icon {
+        height: 66px;
+    }
+
+    .rd216 .size-guide-note {
+        margin: 10px auto 0 auto;
+    }
+
+    .rd216 .custom-modal-footer {
+        padding: 0px 16px 8px 16px;
+    }
+}
+
 
 @keyframes fadeIn {
     from {
