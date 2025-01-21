@@ -10,6 +10,10 @@
         text-align: center;
         border-radius: 10px;
 
+        .hyphen-font {
+            font-family: 'vngage-opensans-regular';
+        }
+
         @include media-query(lg) {
             padding: 0 0 20px 0;
         }

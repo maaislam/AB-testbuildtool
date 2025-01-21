@@ -10,7 +10,7 @@ export const data = {
         person: 'Milly Cole',
         title: 'Customer Services Manager, David Austin Roses',
         rose: 'Boscobel',
-        quote: 'I find Boscobel’s colour absolutely mesmerising. I am drawn to her every time I go into my garden. Her scent is exquisite and takes me back to the days of old-fashioned pear drops.',
+        quote: 'I find Boscobel’s colour absolutely mesmerising. I am drawn to her every time I go into my garden. Her scent is exquisite and takes me back to the days of old<span class="hyphen-font">-</span>fashioned pear drops.',
         imgUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/10025468/temp-author_678e61f91bc90.png'
     },
     '/products/nye-bevan': {
@@ -31,7 +31,7 @@ export const data = {
         person: 'Milly Cole',
         title: 'Customer Services Manager, David Austin Roses',
         rose: 'Ispahan',
-        quote: 'Wonderfully free-flowering, a heady, damask fragrance, a characterful, bushy- arching habit and semi-evergreen qualities. One of the longest flowering of the group and an ideal host for a scrambling Clematis like ‘Blue River’. An outstanding flowering shrub.',
+        quote: 'Wonderfully free<span class="hyphen-font">-</span>flowering, a heady, damask fragrance, a characterful, bushy<span class="hyphen-font">- </span>arching habit and semi<span class="hyphen-font">-</span>evergreen qualities. One of the longest flowering of the group and an ideal host for a scrambling Clematis like ‘Blue River’. An outstanding flowering shrub.',
         imgUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/10025468/temp-author_678e61f91bc90.png'
     },
     '/products/emma-bridgewater': {
@@ -45,7 +45,7 @@ export const data = {
         person: 'Milly Cole',
         title: 'Customer Services Manager, David Austin Roses',
         rose: 'Strawberry Hill',
-        quote: 'My all time favourite DAR rose is Strawberry Hill . The rose never fails to send out the most beautiful flowers. So many blooms and a strong scent... I always recommend this rose to our customers.',
+        quote: 'My all time favourite DAR rose is Strawberry Hill. The rose never fails to send out the most beautiful flowers. So many blooms and a strong scent... I always recommend this rose to our customers.',
         imgUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/10025468/temp-author_678e61f91bc90.png'
     },
     '/products/desdemona': {
@@ -164,7 +164,7 @@ export const data = {
         person: 'Liam Beddall',
         title: 'Head of Professional Trade Services, David Austin Roses',
         rose: 'The Pilgrim',
-        quote: 'This beautiful pale-yellow climbing rose never fails to impress every summer, producing a magnificent display of rosette shaped blooms.',
+        quote: 'This beautiful pale<span class="hyphen-font">-</span>yellow climbing rose never fails to impress every summer, producing a magnificent display of rosette shaped blooms.',
         imgUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/10025468/temp-author_678e6abd0ed4c.png'
     }
 };
