@@ -1,0 +1,23 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__message {
+        margin: 12px 0;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        color: #333333;
+        background-color: #f1b215;
+
+        .fa-truck {
+            font-size: 20px;
+        }
+
+        &-text {
+            margin-left: 6px;
+            font-size: 13px;
+            font-weight: 400;
+        }
+    }
+}
