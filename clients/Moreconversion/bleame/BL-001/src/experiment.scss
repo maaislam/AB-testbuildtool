@@ -1,0 +1,30 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .block-swatch-list {
+    .#{$id}__block-swatch {
+      & + .block-swatch {
+        .swatch-product-free--addon {
+          display: none !important;
+        }
+
+        .remove-mb-br.block-swatch__item {
+          border-radius: 10px !important;
+          margin-bottom: 10px !important;
+        }
+      }
+    }
+  }
+
+  &-2 {
+    .block-swatch-list {
+      flex-direction: column !important;
+      .#{$id}__block-swatch {
+        .swatch-product-free--addon {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
