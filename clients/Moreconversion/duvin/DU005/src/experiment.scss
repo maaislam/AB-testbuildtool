@@ -1,0 +1,115 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__productsWrapper {
+  }
+
+  .#{$id}__productsContainer {
+    display: flex;
+    flex-direction: row;
+
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    @media screen and (max-width: 1380px) {
+      overflow-x: scroll;
+    }
+  }
+  .#{$id}__categorySection {
+    width: calc(100% / 4);
+    flex: 0 0 auto;
+    border-right: 1px solid #000000;
+    padding: 15px;
+
+    @media screen and (max-width: 1380px) {
+      width: 35%;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 45%;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 680px) {
+      width: 90%;
+    }
+  }
+  .#{$id}__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    text-decoration: none;
+    p {
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 29.9px;
+      color: #000;
+      padding-right: 8px;
+      margin-bottom: 0;
+      text-transform: capitalize;
+
+      @media screen and (max-width: 400px) {
+        font-size: 22px;
+        line-height: 25px;
+      }
+    }
+  }
+  .#{$id}__contents {
+    &[data-attr='men'] {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+      gap: 15px;
+    }
+    &[data-attr='women'] {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(10px, 1fr));
+      gap: 15px;
+    }
+    &[data-attr='kid'] {
+    }
+    &[data-attr='big_deal'] {
+      .#{$id}__item {
+        padding: 0;
+      }
+    }
+  }
+
+  .#{$id}__item {
+    position: relative;
+    display: block;
+    border: 1px solid #0000001a;
+    text-decoration: none;
+    height: 100%;
+
+    .#{$id}__image {
+      width: 100%;
+      margin: 0 auto;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .#{$id}__shadow-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    span {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18.4px;
+      text-align: left;
+      color: #000;
+    }
+  }
+}
