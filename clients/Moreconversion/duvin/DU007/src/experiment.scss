@@ -1,0 +1,10 @@
+@import './swiper';
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__productCarouselContainer {
+    padding-top: 26px;
+    padding-left: 20px;
+  }
+}
