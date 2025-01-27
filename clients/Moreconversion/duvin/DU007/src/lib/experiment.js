@@ -1,68 +1,159 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
+import { addItemToCart, pollerLite } from './helpers/utils';
 import productCarousel from './components/productCarousel';
 import swiper from './helpers/swiper';
 import initSwiper from './helpers/initSwiper';
+import modal from './components/modal';
 
 const { ID, VARIATION } = shared;
+
 const init = () => {
   const targetPoint = document.querySelector('product-content');
-  const { productId, section } = document.querySelector('.product-page').dataset;
-  const templateId = section.split('_')[0];
-  const recommendationsLink = `/recommendations/products?section_id=${templateId}__product-recommendations&product_id=${productId}&limit=3`;
 
-  const relatedProductsWrapper = document.querySelector('product-recommendations');
-  console.log(relatedProductsWrapper.dataset.url, 'relatedProductsWrapper');
+  const shopifyDomain = 'duvindesign.com'; //Replace with your store's domain
+  const productHandle = window.location.pathname.split('/products/')[1]; //Extracted from the URL
 
-  //fetch(recommendationsLink, {
-  //headers: {
-  //accept: '*/*',
-  //'accept-language': 'en-US,en;q=0.9'
-  //},
-  //body: null,
-  //method: 'GET'
-  //}).then((response) => {
-  //const html = response.text();
-  //const parser = new DOMParser();
-  //const doc = parser.parseFromString(html, 'text/html');
-  //console.log(doc, 'doc');
-  //});
+  //Fetch product details to get the product ID
+  fetch(`https://${shopifyDomain}/products/${productHandle}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then((response) => response.json())
+    .then((productData) => {
+      const productId = productData.product?.id;
+      if (productId) {
+        //Fetch product recommendations using the product ID
+        fetch(`https://${shopifyDomain}/recommendations/products.json?product_id=${productId}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.products.length === 0) {
+              return;
+            }
 
-  //const allProducts = relatedProductsWrapper.querySelectorAll('.cards > x-cell');
-  //const productsArray = Array.from(allProducts).map((product) => {
-  //const productIdElement = product.querySelector('input[name="product-id"]');
-  //const productId = productIdElement.value;
-  //product.classList.add('swiper-slide');
-  //product.setAttribute('id', productId);
+            setup();
+            swiper();
 
-  //return product.cloneNode(true);
-  //});
-
-  //swiper();
-
-  //console.log(productsArray, 'productsArray');
-  //if (!document.querySelector(`.${ID}__productCarouselWrapper`)) {
-  //targetPoint.insertAdjacentHTML('beforeend', productCarousel(ID, productsArray));
-  //initSwiper(`.${ID}__swiper`);
-  //}
+            const productsArray = data.products.slice(0, 3);
+            window[`${ID}__products`] = productsArray;
+            if (!document.querySelector(`.${ID}__productCarouselWrapper`)) {
+              targetPoint.insertAdjacentHTML('beforeend', productCarousel(ID, productsArray));
+            }
+            pollerLite([() => typeof window.Swiper === 'function'], () => {
+              initSwiper(ID, `.${ID}__swiper`);
+            });
+          })
+          .catch((error) => {
+            console.log('Error fetching product recommendations:', error);
+          });
+      } else {
+        console.log('Product ID not found.');
+      }
+    })
+    .catch((error) => {
+      console.log('Error fetching product details:', error);
+    });
 };
 export default () => {
-  setup(); //use if needed
-  console.log(ID, 'ID');
-  //gaTracking('Conditions Met'); //use if needed
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
 
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
+    if (target.closest('button.atc-btn')) {
+      const clickedItem = target.closest('button.atc-btn');
+      const buttonWrapper = clickedItem.closest('.button-wrapper');
+      const optionWrapper = buttonWrapper.querySelector('.optionsWrapper');
+      const sliderWrapper = clickedItem.closest(`.${ID}__swiper`);
 
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+      sliderWrapper.classList.add('custom-overflow');
+
+      if (optionWrapper.classList.contains('active')) {
+        optionWrapper.classList.remove('active');
+        sliderWrapper.classList.remove('custom-overflow');
+        return;
+      }
+      const allOptionsWrapper = document.querySelectorAll('.optionsWrapper');
+      allOptionsWrapper.forEach((wrapper) => {
+        wrapper.classList.remove('active');
+      });
+
+      optionWrapper.classList.toggle('active');
+    } else if (target.closest('.optionsTitle span:last-of-type')) {
+      const clickedItem = target.closest('.optionsTitle span:last-of-type');
+      const buttonWrapper = clickedItem.closest('.button-wrapper');
+      const optionWrapper = buttonWrapper.querySelector('.optionsWrapper');
+      const sliderWrapper = clickedItem.closest(`.${ID}__swiper`);
+      optionWrapper.classList.remove('active');
+      sliderWrapper.classList.remove('custom-overflow');
+    } else if (target.closest(`.${ID}__list`)) {
+      const clickedItem = target.closest(`.${ID}__list`);
+      const productId = clickedItem.getAttribute('id');
+      const buttonWrapper = clickedItem.closest('.button-wrapper');
+      const optionWrapper = buttonWrapper.querySelector('.optionsWrapper');
+      const size = clickedItem.textContent.trim();
+      const productWrapper = clickedItem.closest('.swiper-slide');
+      const { id } = productWrapper.dataset;
+
+      if (optionWrapper.classList.contains('active')) {
+        optionWrapper.classList.remove('active');
+      }
+
+      document.querySelector(`.${ID}__swiper`).classList.remove('custom-overflow');
+      document
+        .querySelectorAll(`.${ID}__productCarouselContainer .active`)
+        .forEach((item) => item.classList.remove('active'));
+
+      const modalOpen = (res) => {
+        pollerLite(
+          [
+            '#rebuy-cart.is-visible',
+            '.rebuy-cart__flyout-close',
+            () => typeof window.Rebuy.SmartCart.hide === 'function'
+          ],
+          () => {
+            window.Rebuy.SmartCart.hide();
+          }
+        );
+        const totalProducts = res.item_count;
+        const productCounterElement = document.querySelector('#counter');
+
+        if (productCounterElement) {
+          productCounterElement.setAttribute('data-count', totalProducts > 0 ? totalProducts : 0);
+        }
+
+        const activeProduct = window[`${ID}__products`].filter(
+          (product) => product.id === parseInt(id)
+        );
+
+        const otherProducts = window[`${ID}__products`].filter(
+          (product) => product.id !== parseInt(id)
+        );
+
+        const modalElem = document.querySelector(`.${ID}__modal`);
+        if (modalElem) modalElem.remove();
+        if (!document.querySelector(`.${ID}__modal`)) {
+          document.body.insertAdjacentHTML(
+            'beforeend',
+            modal(ID, size, activeProduct[0], otherProducts)
+          );
+        }
+
+        document.body.classList.remove('cart-off');
+      };
+      addItemToCart(productId, modalOpen, 1);
+    } else if (target.closest(`.${ID}__shoppingATC`) || target.closest(`.${ID}__modalClose`)) {
+      const clickedItem =
+        target.closest(`.${ID}__shoppingATC`) || target.closest(`.${ID}__modalClose`);
+      const modalElem = clickedItem.closest(`.${ID}__modal`);
+      modalElem.classList.remove('open');
+    }
+  });
 
   init();
 };

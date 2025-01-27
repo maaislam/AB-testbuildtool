@@ -49,3 +49,36 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
+export const formatPrice = (priceInCents) => {
+  if (isNaN(priceInCents)) {
+    throw new Error('Invalid price: must be a number.');
+  }
+
+  //Convert cents to dollars
+  const priceInDollars = priceInCents / 100;
+
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(priceInDollars);
+};
+
+export const addItemToCart = (variantId, callBack, quantity) => {
+  const { Cart } = window.Rebuy;
+  //Ensure Rebuy's cart API is accessible
+  if (!window.Rebuy || !window.Rebuy.Cart) {
+    console.log('Rebuy JS API is not loaded. Please check your setup.');
+    return null;
+  }
+
+  //Payload for adding to the cart
+  const payload = {
+    id: variantId,
+    quantity
+  };
+
+  return Cart.addItem(payload, callBack);
+};
