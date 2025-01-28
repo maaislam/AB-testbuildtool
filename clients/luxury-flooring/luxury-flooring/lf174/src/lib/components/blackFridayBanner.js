@@ -15,13 +15,13 @@ const blackFridayBanner = (id) => {
                                             <strong>EXCLUSIVE OFFER</strong>
                                         </h4>
                                     </div>
-                                    <p><span>10% OFF</span> RETAIL PRICES</p>
+                                    <p><span>15% OFF</span> RETAIL PRICES</p>
                                     ${subBanner(id)}
                                 </div>
                             </div>
                             <div class="red-side">
                                 <div class="extra_off">
-                                    <h4>BLACK FRIDAY SALE</h4>
+                                    <h4>FEBRUARY SALE</h4>
                                     <div class="${id}__couponCodeWrapper">
                                         <div class="coupon_code">
                                             <p class="discount-percentage">70% OFF</p>
@@ -32,7 +32,7 @@ const blackFridayBanner = (id) => {
                                         </div>
                                         <div class="coupon_code">
                                             <p class="discount-percentage tenPercentOff">+ 10% OFF</p>
-                                            <p class="discount-text">WITH CODE <span>EARLY10</span></p>
+                                            <p class="discount-text">WITH CODE <span>LOVE10</span></p>
                                         </div>
                                     </div>
                                 </div>

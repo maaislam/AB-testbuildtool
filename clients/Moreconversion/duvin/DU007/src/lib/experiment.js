@@ -2,11 +2,10 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { addItemToCart, pollerLite } from './helpers/utils';
 import productCarousel from './components/productCarousel';
-import swiper from './helpers/swiper';
 import initSwiper from './helpers/initSwiper';
 import modal from './components/modal';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const targetPoint = document.querySelector('product-content');
@@ -39,7 +38,7 @@ const init = () => {
             }
 
             setup();
-            swiper();
+            //swiper();
 
             const productsArray = data.products.slice(0, 3);
             window[`${ID}__products`] = productsArray;
@@ -76,14 +75,15 @@ export default () => {
       if (optionWrapper.classList.contains('active')) {
         optionWrapper.classList.remove('active');
         sliderWrapper.classList.remove('custom-overflow');
-        return;
-      }
-      const allOptionsWrapper = document.querySelectorAll('.optionsWrapper');
-      allOptionsWrapper.forEach((wrapper) => {
-        wrapper.classList.remove('active');
-      });
+        // return;
+      } else {
+        const allOptionsWrapper = document.querySelectorAll('.optionsWrapper');
+        allOptionsWrapper.forEach((wrapper) => {
+          wrapper.classList.remove('active');
+        });
 
-      optionWrapper.classList.toggle('active');
+        optionWrapper.classList.add('active');
+      }
     } else if (target.closest('.optionsTitle span:last-of-type')) {
       const clickedItem = target.closest('.optionsTitle span:last-of-type');
       const buttonWrapper = clickedItem.closest('.button-wrapper');
