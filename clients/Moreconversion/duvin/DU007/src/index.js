@@ -1,4 +1,13 @@
 import activate from './lib/experiment';
-import { pollerLite } from './lib/helpers/utils';
+import { addJsToPage, addCssToPage, pollerLite } from './lib/helpers/utils';
+import shared from './lib/shared/shared';
 
-pollerLite(['body', '.product-page', () => typeof window.Rebuy === 'object'], activate);
+const { ID } = shared;
+
+const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
+const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
+
+addJsToPage(swiperJs, `${ID}__swiperjs`);
+addCssToPage(swiperCss, `${ID}__swipercss`);
+
+pollerLite(['body', '.product-page', () => typeof window.Rebuy === 'object', () => typeof window.Swiper === 'function'], activate);

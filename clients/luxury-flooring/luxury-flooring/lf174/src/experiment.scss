@@ -10,18 +10,18 @@
     text-decoration: none;
   }
 
-  .after-christmas-sale {
-    .#{$id}__blackFridayBanner .promo_top .promo_top_inner .promo div.red-side {
-      justify-content: space-evenly;
-    }
+  // .after-christmas-sale {
+  //   .#{$id}__blackFridayBanner .promo_top .promo_top_inner .promo div.red-side {
+  //     justify-content: space-evenly;
+  //   }
 
-    .#{$id}__couponCodeWrapper {
-      .tenPercentOff,
-      .plus_icon {
-        display: none !important;
-      }
-    }
-  }
+  //   .#{$id}__couponCodeWrapper {
+  //     .tenPercentOff,
+  //     .plus_icon {
+  //       display: none !important;
+  //     }
+  //   }
+  // }
 
   .cms-trade-registration {
     .column.main {
@@ -597,7 +597,7 @@
     .promo_top .promo_top_inner .promo div.red-side .extra_off .coupon_code {
       background: #fff;
       margin: 0;
-      padding: 9px 20px;
+      padding: 9px 14px;
     }
 
     .promo div.red-side .extra_off .coupon_code h3 {
