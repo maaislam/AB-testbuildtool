@@ -83,7 +83,7 @@ export default () => {
         wrapper.classList.remove('active');
       });
 
-      optionWrapper.classList.toggle('active');
+      optionWrapper.classList.add('active');
     } else if (target.closest('.optionsTitle span:last-of-type')) {
       const clickedItem = target.closest('.optionsTitle span:last-of-type');
       const buttonWrapper = clickedItem.closest('.button-wrapper');
@@ -120,7 +120,8 @@ export default () => {
             window.Rebuy.SmartCart.hide();
           }
         );
-        const totalProducts = res.item_count;
+        const totalProducts = window.Rebuy.Cart.cart.item_count;
+        console.log(totalProducts, 'totalProducts');
         const productCounterElement = document.querySelector('#counter');
 
         if (productCounterElement) {
