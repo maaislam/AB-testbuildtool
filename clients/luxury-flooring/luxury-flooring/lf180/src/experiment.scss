@@ -54,6 +54,12 @@
             }
           }
 
+          @media screen and (max-width: 767px) {
+            .amlabel-position-wrapper {
+              display: none !important;
+            }
+          }
+
           @media screen and (max-width: 480px) {
             margin-bottom: 0;
           }

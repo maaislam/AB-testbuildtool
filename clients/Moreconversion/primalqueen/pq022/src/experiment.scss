@@ -1,0 +1,10 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__videoWrapper {
+    float: left;
+    width: 100%;
+    position: relative;
+  }
+}
