@@ -1,32 +1,56 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
 import wrapper from './components/wrapper';
+import videoObj from './data/data';
 
 const { ID, VARIATION } = shared;
+
+const activateVideo = () => {
+  const videoElement = document.querySelector(`.${ID}__videoWrapper .${ID}__video`);
+
+  if (!videoElement) return;
+
+  //Toggle play/pause on click
+  videoElement.addEventListener('click', () => {
+    if (videoElement.paused || videoElement.ended) {
+      videoElement.play();
+    } else {
+      videoElement.pause();
+    }
+  });
+
+  //Ensure the video stays paused when it ends
+  videoElement.addEventListener('ended', () => {
+    videoElement.pause();
+  });
+};
 
 const init = () => {
   const targetPoint = document.querySelector('.section_5');
   if (!document.querySelector(`.${ID}__videoWrapper`)) {
-    targetPoint.insertAdjacentHTML('beforebegin', wrapper(ID));
+    targetPoint.insertAdjacentHTML('beforebegin', wrapper(ID, videoObj[VARIATION], VARIATION));
   }
+
+  activateVideo();
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
+  setup();
 
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (target.closest(`.${ID}__icon.muted`)) {
+      const videoElement = document.querySelector(`.${ID}__videoWrapper .${ID}__video`);
+      const audioController = document.querySelector(`.${ID}__audioController`);
+      videoElement.muted = false;
+      audioController.setAttribute('data-attr', 'unmute');
+    } else if (target.closest(`.${ID}__icon.unmuted`)) {
+      const videoElement = document.querySelector(`.${ID}__videoWrapper .${ID}__video`);
+      const audioController = document.querySelector(`.${ID}__audioController`);
+      videoElement.muted = true;
+      audioController.setAttribute('data-attr', 'mute');
+    }
+  });
 
   init(); //
 };
