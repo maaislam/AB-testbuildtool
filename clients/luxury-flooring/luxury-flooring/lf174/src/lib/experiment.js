@@ -59,7 +59,7 @@ const init = () => {
     tradeRegistrationPage(ID);
   } else if (isPdp() && isLogin()) {
     productPage(ID);
-  } else if (isPlp() && !isLogin()) {
+  } else if (isPlp() && isLogin()) {
     productLandingPage(ID, endDate);
   }
 };
