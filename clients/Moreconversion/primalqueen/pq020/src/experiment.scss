@@ -2,7 +2,413 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+  .banner_rev {
+    display: none;
+  }
+  //    pq002 css start
+  & {
+    .#{$id}__bookmakercards {
+      overflow: hidden;
+      max-width: 527px;
+      width: 100%;
+      .#{$id}__reviewcards {
+        position: relative;
+        margin-top: 25px;
+        padding: 0px 0 15px;
+
+        @media screen and (max-width: 767px) {
+          margin-top: 20px;
+        }
+      }
+
+      .#{$id}__reviewcards-swiper {
+        position: static;
+
+        .swiper-pagination {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          bottom: 0;
+
+          .swiper-pagination-bullet {
+            width: 6px;
+            height: 6px;
+            &.swiper-pagination-bullet-active {
+              width: 8px;
+              height: 8px;
+              background: #fd689e;
+            }
+          }
+        }
+      }
+
+      .#{$id}__reviewCard {
+        .#{$id}__review {
+          display: flex;
+          padding: 20px;
+          margin-bottom: 10px;
+          border: solid 2px #2f0147;
+          border-radius: 10px;
+          background: #fff;
+        }
+
+        .#{$id}__review-col1 {
+          width: 90px;
+          height: 90px;
+
+          img {
+            width: 100%;
+            height: 100%;
+
+            border-radius: 50%;
+          }
+
+          @media screen and (max-width: 767px) {
+            width: 70px;
+            height: 70px;
+          }
+        }
+
+        .#{$id}__review-col2 {
+          width: calc(100% - 105px);
+          margin-left: 15px;
+          .row1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 8px;
+            .reviewer-name {
+              display: flex;
+              align-items: center;
+              .#{$id}__name {
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 22px;
+                color: #fd689e;
+
+                @media screen and (max-width: 767px) {
+                  font-size: 16px;
+                  line-height: 19px;
+                }
+
+                @media screen and (max-width: 390px) {
+                  font-size: 12px;
+                }
+              }
+
+              .#{$id}__icon {
+                display: flex;
+                margin-left: 5px;
+
+                @media screen and (max-width: 390px) {
+                  svg {
+                    width: 12px;
+                    height: 12px;
+                  }
+                }
+              }
+            }
+
+            .reviewer-ratings {
+              max-width: 104px;
+              height: 18px;
+              width: 100%;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+
+              @media screen and (max-width: 390px) {
+                max-width: 94px;
+                height: 16px;
+              }
+            }
+
+            @media screen and (max-width: 767px) {
+              //margin-bottom: 8px;
+            }
+          }
+
+          .row2 {
+            .review-msg {
+              font-size: 15px;
+              font-weight: 400;
+              font-style: italic;
+              line-height: 22px;
+              text-align: left;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 4;
+              overflow: hidden;
+              text-overflow: ellipsis;
+
+              strong {
+                color: #fd689e;
+              }
+
+              @media screen and (max-width: 767px) {
+                font-size: 13px;
+                line-height: 19px;
+              }
+            }
+          }
+
+          @media screen and (max-width: 767px) {
+            width: calc(100% - 80px);
+            margin-left: 10px;
+          }
+        }
+      }
+
+      &.#{$id}__mobile {
+        display: none;
+
+        @media screen and (max-width: 767px) {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
     }
+  }
+  //    pq002 css end
+
+  // pl test css start
+
+  &__hide {
+    display: none;
+  }
+
+  .#{$id}__videoContainer {
+    width: 480px;
+    height: 742px;
+    position: relative;
+    margin-left: auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      right: -40px;
+      width: 450px;
+      height: 627px;
+      background: transparent;
+      border: 1px solid #000;
+      border-radius: 250px;
+    }
+
+    video {
+      position: absolute;
+      top: 30px;
+      right: -40px;
+      border-radius: 250px;
+      width: 450px;
+      height: 627px;
+      border: 15px solid transparent;
+      object-fit: cover;
+    }
+
+    & + img {
+      display: none;
+    }
+
+    .#{$id}__playButton {
+      position: absolute;
+      left: 63%;
+      top: 45%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      z-index: 99;
+
+      svg {
+        @include media-query(sm) {
+          width: 37px;
+          height: 37px;
+        }
+      }
+
+      @media only screen and (max-width: 1023px) and (min-width: 768px) {
+        top: 83%;
+      }
+
+      @include media-query(sm) {
+        left: 50%;
+        top: 50%;
+      }
+    }
+
+    &.#{$id}__mobile {
+      display: none;
+    }
+
+    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+      &::before {
+        top: 125px;
+        right: -45px;
+        width: 330px;
+        height: 413px;
+      }
+
+      &.#{$id}__desktop {
+        width: 320px;
+        height: 403px;
+
+        video {
+          top: 130px;
+          width: 320px;
+          height: 403px;
+        }
+      }
+    }
+
+    @include media-query(sm) {
+      &::before {
+        width: 273px;
+        height: 403px;
+        top: 0px;
+        left: 0px;
+      }
+
+      &.#{$id}__mobile {
+        display: inline-block;
+        vertical-align: middle;
+        width: 273px;
+        height: 405px;
+        margin: 25px 0 5px -15px;
+        top: 0;
+
+        video {
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          width: 273px;
+          height: 405px;
+        }
+      }
+
+      &.#{$id}__desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__volumnPillBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 8px 5px 9px;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+    background: #fff;
+    cursor: pointer;
+    z-index: 99;
+
+    &-text {
+      margin-left: 2px;
+      font-weight: 500;
+      font-size: 8px;
+      line-height: 10px;
+      color: #626262;
+    }
+
+    &-icon {
+      display: flex;
+    }
+  }
+
+  .#{$id}__video::-webkit-media-controls {
+    opacity: 0 !important;
+  }
+
+  .#{$id}__video::-webkit-media-controls-enclosure {
+    opacity: 0 !important;
+  }
+
+  .#{$id}__video::-webkit-media-controls-panel {
+    opacity: 0 !important;
+  }
+
+  .#{$id}__video::-webkit-media-controls-play-button {
+    opacity: 0 !important;
+  }
+  // pl test css end
+
+  .#{$id}__homepageBanner {
+    float: left;
+    width: 100%;
+    padding: 20px 0 110px;
+    background: url('//primalqueen.com/cdn/shop/files/banner_2000x912.jpg?v=1626887448226192775')
+      no-repeat center bottom #fff1f6;
+    position: relative;
+    font-size: 1rem;
+
+    .banner_left {
+      float: left;
+      width: 56%;
+      text-align: left;
+      padding: 0 0 20px;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+      }
+    }
+
+    .banner_text1 {
+      float: left;
+      width: 100%;
+      font-size: 24px;
+      line-height: 30px;
+      color: #ff699f;
+      font-weight: 500;
+      letter-spacing: 0;
+      margin-top: 145px;
+
+      @media screen and (max-width: 767px) {
+        margin-top: 50px;
+        font-size: 17px;
+        line-height: 20px;
+      }
+    }
+
+    .alert_icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin: -4px 8px 0 0;
+      width: 20px;
+    }
+    .purple-text {
+      color: #2f0147;
+    }
+    .banner_heading {
+      float: left;
+      width: 100%;
+      font-size: 36px;
+      line-height: 58px;
+      color: #2f0147;
+      font-weight: 800;
+      letter-spacing: 0;
+      margin-top: 30px;
+      text-transform: initial;
+
+      @media screen and (max-width: 767px) {
+        font-size: 26px;
+        line-height: 36px;
+        margin-top: 10px;
+      }
+    }
+  }
 }
