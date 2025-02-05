@@ -1,11 +1,13 @@
 const product = (id, data) => {
   const { url } = data;
   const html = `
+    <div class="${id}__wrapper">
+    <div class="${id}__heading">You’ll love this!</div>
     <div class="${id}__productWrapper">
         <div class="${id}__productContainer">
             <div class="${id}__productInfo">
                 <div class="${id}__image">
-                    <img src="https://primalqueen.com/cdn/shop/files/1.png?v=1696349447&width=300"/>
+                    <img src="https://primalqueen.com/cdn/shop/files/GiftImageV3_Outline_700x535.png?v=1736889137"/>
                 </div>
                 <div class="${id}__info">
                     <div class="${id}__infoTitle">Upgrade to 1 Month Subscribe</div>
@@ -27,7 +29,11 @@ const product = (id, data) => {
                             <span class="${id}__subtext">bamboo lid glass jar</span>
                         </div>
                     </div>
-                    <div class="${id}__divider"></div>
+                    <div class="${id}__divider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
+                        <circle cx="3.35547" cy="2.5" r="2.5" fill="#271D42"/>
+                        </svg>
+                    </div>
                     <div class="${id}__freeProduct">
                         <div class="${id}__imageWrapper">
                             <img src="https://cdn-3.convertexperiments.com/uf/10042057/10049555/dscf3306-1_67a11b8f96318.png"/>
@@ -40,6 +46,7 @@ const product = (id, data) => {
                 </div>
             </div>
         </div>
+    </div>
     </div>
   `;
   return html.trim();

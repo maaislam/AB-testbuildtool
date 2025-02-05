@@ -18,8 +18,8 @@ const renderAnotherProduct = (cartItems) => {
   if (cartItems.length === 1 && oneTimeProduct.length) {
     const targetPoint = document.querySelector('.cart__footer .cart__blocks');
     const getProductData = JSON.parse(sessionStorage.getItem(`${ID}__data`));
-    if (document.querySelector(`.${ID}__productWrapper`)) {
-      document.querySelector(`.${ID}__productWrapper`).remove();
+    if (document.querySelector(`.${ID}__wrapper`)) {
+      document.querySelector(`.${ID}__wrapper`).remove();
     }
     targetPoint.insertAdjacentHTML('beforebegin', product(ID, getProductData));
   }
@@ -51,6 +51,7 @@ const cartInit = () => {
       () => document.querySelectorAll('#main-cart-items .cart-items .cart-item').length
     ],
     () => {
+      document.body.classList.add(`${ID}__cartPage`);
       const cartItems = document.querySelectorAll('#main-cart-items .cart-items .cart-item');
       renderAnotherProduct(cartItems);
 

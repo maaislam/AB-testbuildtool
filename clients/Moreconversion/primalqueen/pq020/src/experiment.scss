@@ -354,6 +354,17 @@
     position: relative;
     font-size: 1rem;
 
+    & + .banner {
+      display: none;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: 10px 0 70px;
+      background-image: url('//primalqueen.com/cdn/shop/files/banner_mob_1353x1370.png?v=4391965884626386005');
+      background-position: center;
+      background-size: 800px;
+    }
+
     .banner_left {
       float: left;
       width: 56%;
@@ -378,7 +389,7 @@
       margin-top: 145px;
 
       @media screen and (max-width: 767px) {
-        margin-top: 50px;
+        margin-top: 80px;
         font-size: 17px;
         line-height: 20px;
       }
@@ -401,13 +412,32 @@
       color: #2f0147;
       font-weight: 800;
       letter-spacing: 0;
-      margin-top: 30px;
+      margin-top: 31px;
       text-transform: initial;
 
       @media screen and (max-width: 767px) {
         font-size: 26px;
         line-height: 36px;
         margin-top: 10px;
+      }
+    }
+    .comn_btn_box {
+      margin-top: 43px;
+
+      @media screen and (max-width: 1023px) {
+        margin-top: 30px;
+      }
+
+      a.common_btn {
+        font-size: 22px;
+
+        @media screen and (max-width: 1023px) {
+          font-size: 19px;
+        }
+
+        @media screen and (max-width: 767px) {
+          font-size: 17px;
+        }
       }
     }
   }
