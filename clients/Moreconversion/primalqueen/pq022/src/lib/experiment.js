@@ -26,9 +26,9 @@ const activateVideo = () => {
 };
 
 const init = () => {
-  const targetPoint = document.querySelector('.section_5');
+  const targetPoint = document.querySelector('.queen_promise_section');
   if (!document.querySelector(`.${ID}__videoWrapper`)) {
-    targetPoint.insertAdjacentHTML('beforebegin', wrapper(ID, videoObj[VARIATION], VARIATION));
+    targetPoint.insertAdjacentHTML('afterend', wrapper(ID, videoObj[VARIATION], VARIATION));
   }
 
   activateVideo();

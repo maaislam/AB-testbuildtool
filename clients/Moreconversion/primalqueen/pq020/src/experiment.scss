@@ -249,10 +249,33 @@
       display: none;
     }
 
-    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    // @media only screen and (max-width: 1100px) {
+    //   &::before {
+    //     top: 125px;
+    //     right: -45px;
+    //     width: 330px;
+    //     height: 413px;
+    //   }
+    // }
+    @media only screen and (max-width: 1024px) {
       &::before {
         top: 125px;
-        right: -45px;
+        width: 330px;
+        height: 413px;
+        right: 15px;
+      }
+
+      video {
+        top: 130px;
+        width: 320px;
+        height: 403px;
+        right: 20px;
+      }
+    }
+    @media only screen and (max-width: 992px) and (min-width: 768px) {
+      &::before {
+        top: 125px;
+        right: -5px;
         width: 330px;
         height: 413px;
       }
@@ -265,6 +288,7 @@
           top: 130px;
           width: 320px;
           height: 403px;
+          right: 0;
         }
       }
     }
