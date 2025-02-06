@@ -68,12 +68,11 @@ export const parseHTML = async (urls) => {
       const html = await response.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
-      const getFirstProductImageElement = doc.querySelector('.grid-product img');
-      const productImageSource = getFirstProductImageElement.dataset.src;
+      const productInfo = doc.querySelector('.product-single__meta');
       allItemsArray.push({
+        id: urls[index].id,
         link: urls[index].link,
-        name: urls[index].name,
-        imgSrc: productImageSource.replace('{width}', '100')
+        element: productInfo
       });
     }
   }

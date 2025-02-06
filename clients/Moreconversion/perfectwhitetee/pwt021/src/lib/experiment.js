@@ -3,22 +3,27 @@ import shared from './shared/shared';
 import categoryWrapper from './components/categoryWrapper';
 import { parseHTML } from './helpers/utils';
 
-const { ID } = shared;
+const { ID, VARIATION } = shared;
 
 const init = (topsArray) => {
   const header = document.querySelector('#CollectionSection');
-  //console.log(topsArray, 'topsArray');
   setup();
 
   parseHTML(topsArray)
     .then((data) => {
       if (data.length === 0) {
+        return;
+      }
+
+      if (!document.querySelector(`.${ID}__categoryWrapper`)) {
+        header.insertAdjacentHTML('afterbegin', categoryWrapper(ID, data));
       }
     })
-    .catch((error) => {});
-  if (!document.querySelector(`.${ID}__categoryWrapper`)) {
-    header.insertAdjacentHTML('afterbegin', categoryWrapper(ID, topsArray));
-  }
+    .catch((error) => {
+      console.error('error', error);
+      document.documentElement.classList.remove(ID);
+      document.documentElement.classList.remove(`${ID}-${VARIATION}`);
+    });
 };
 
 export default () => {
@@ -32,7 +37,6 @@ export default () => {
     document.querySelector('.site-nav__dropdown-link[href*="/collections/womens-tops"]');
 
   const currentCategory = menuItemLink?.closest('#menu-');
-  //console.log('🚀 ~ currentCategory:', currentCategory);
 
   const quickLinks = currentCategory?.querySelectorAll('.megamenu__col-title');
 
@@ -51,7 +55,6 @@ export default () => {
     });
   });
 
-  console.log('🚀 ~ topsArray:', topsArray);
   if (topsArray.length === 0) return;
   init(topsArray); //
 };

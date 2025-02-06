@@ -49,34 +49,3 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
-
-export const parseHTML = async (urls) => {
-  const allItemsArray = [];
-
-  const promises = urls.map(({ link }) =>
-    fetch(link).catch((error) => {
-      console.error(`Error fetching ${link}: ${error.message}`);
-      return Promise.resolve(null);
-    })
-  );
-
-  const responses = await Promise.all(promises);
-  //eslint-disable-next-line no-restricted-syntax
-  for (const [index, response] of responses.entries()) {
-    if (response) {
-      //eslint-disable-next-line no-await-in-loop
-      const html = await response.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const getFirstProductImageElement = doc.querySelector('.grid-product img');
-      const productImageSource = getFirstProductImageElement.dataset.src;
-      allItemsArray.push({
-        link: urls[index].link,
-        name: urls[index].name,
-        imgSrc: productImageSource.replace('{width}', '100')
-      });
-    }
-  }
-
-  return allItemsArray;
-};
