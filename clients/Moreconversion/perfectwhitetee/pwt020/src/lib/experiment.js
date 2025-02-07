@@ -98,7 +98,8 @@ const updateLabelVisibility = () => {
   const updateLabelForGroup = (label, inputSelector) => {
     const allColorItems = root.querySelectorAll(inputSelector);
     const isHiddenClassExist = Array.from(allColorItems).every((item) =>
-      item.classList.contains('hidden'));
+      item.classList.contains('hidden')
+    );
 
     if (isHiddenClassExist) {
       label.classList.add(`${ID}__hiddenLabel`);
@@ -173,8 +174,6 @@ const init = () => {
 
 //Function to get available sizes for a selected color
 const getAvailableSizesForColor = (productInfo, variantId) => {
-  console.log('productInfo', productInfo);
-  console.log('variantId', variantId);
   //Find the selected variant using the variantId
   const selectedVariant = productInfo.variants.find((variant) => variant.id === variantId);
 
@@ -211,7 +210,9 @@ export default () => {
       const clickedItem = target.closest('.color-swatch');
 
       const itemWrapper = clickedItem.closest('.grid-product');
-      itemWrapper.querySelectorAll('.color-swatch.active-variant').forEach((item) => item.classList.remove('active-variant'));
+      itemWrapper
+        .querySelectorAll('.color-swatch.active-variant')
+        .forEach((item) => item.classList.remove('active-variant'));
 
       clickedItem.classList.add('active-variant');
       const variantId = Number(clickedItem.href.split('variant=')[1].trim());
@@ -259,6 +260,10 @@ export default () => {
       const result = getSizeAndColorById(productInfo.variants, variantId);
 
       modalElem
+        .querySelector(`[data-handle="size"] .variant-input[data-value="${result.size}"] label`)
+        .click();
+
+      modalElem
         .querySelector(`[data-handle="color"] .variant-input[data-value="${result.color}"] label`)
         .click();
     } else if (
@@ -292,6 +297,18 @@ export default () => {
 
       modalImageElem.src = isExistingVariant[0].featured_image.src;
       const [actualSize, color] = isExistingVariant[0].title.split('/').map((part) => part.trim());
+      console.log(actualSize, 'actualSize');
+      console.log(variantId, 'variantIdlook');
+      console.log(getAvailableSizesForColor(productInfo, Number(variantId)), 'look');
+
+      //const alreadySelectedSizeElement = modalElem.querySelector(
+      //'[data-handle="size"] .variant-input'
+      //);
+      //if (alreadySelectedSizeElement.querySelector('input').checked) {
+      //console.log(alreadySelectedSizeElement.dataset.value, 'whyyyy');
+      //}
+      const avaiableVariants = 
+      const selectedSize = 
       //eslint-disable-next-line no-unused-expressions
       if (modalElem.querySelector('[data-handle="color"] .variant-input.selected')) {
         modalElem
@@ -319,21 +336,18 @@ export default () => {
           const sizeVariant = modalElem.querySelector(
             `[data-handle="size"] [data-value="${item.size}"]`
           );
-          sizeVariant.classList.remove('selected');
+          //sizeVariant.classList.remove('selected');
           sizeVariant.classList.remove('available');
           sizeVariant.classList.remove('notAvailable');
-          if (item.isStock && item.size === actualSize && sizeVariant) {
-            sizeVariant.classList.add('selected');
+          if (item.isStock && sizeVariant) {
+            //sizeVariant.classList.add('selected');
             sizeVariant.classList.add('available');
-            sizeValue = item.size;
-          } else if (item.isStock && item.size !== actualSize && sizeVariant) {
-            sizeVariant.classList.add('available');
-          } else if (!item.isStock && item.size === actualSize && sizeVariant) {
-            sizeVariant.classList.add('selected');
+            //sizeValue = item.size;
+          } else if (!item.isStock && sizeVariant) {
+            //sizeVariant.classList.add('selected');
             sizeVariant.classList.add('notAvailable');
+          } else if (sizeVariant.classList.contains('selected')) {
             sizeValue = item.size;
-          } else if (!item.isStock && item.size !== actualSize && sizeVariant) {
-            sizeVariant.classList.add('notAvailable');
           }
         });
       }

@@ -1,0 +1,19 @@
+@import './variables';
+@import './ocbTest';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__text {
+    display: inline-block;
+    font-family: '__Poppins_2dbf9b', '__Poppins_Fallback_2dbf9b', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15.6px;
+    letter-spacing: 0.46000000834465027px;
+    text-align: left;
+    text-decoration: underline;
+    text-transform: uppercase;
+    // padding-top: 12px;
+    color: #f56701;
+  }
+}
