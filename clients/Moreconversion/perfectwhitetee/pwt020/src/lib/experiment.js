@@ -191,8 +191,6 @@ const getAvailableSizesForColor = (productInfo, variantId) => {
     (variant) => variant.option2 === selectedColor && variant.available
   );
 
-  console.log('filteredVariants', filteredVariants);
-
   return filteredVariants.map((variant) => ({
     size: variant.option1, //Size
     variantId: variant.id //Variant ID
@@ -259,10 +257,7 @@ export default () => {
 
       const result = getSizeAndColorById(productInfo.variants, variantId);
 
-      modalElem
-        .querySelector(`[data-handle="size"] .variant-input[data-value="${result.size}"] label`)
-        .click();
-
+      modalElem.querySelector('[data-handle="size"] .variant-input').classList.add('selected');
       modalElem
         .querySelector(`[data-handle="color"] .variant-input[data-value="${result.color}"] label`)
         .click();
@@ -296,19 +291,12 @@ export default () => {
       );
 
       modalImageElem.src = isExistingVariant[0].featured_image.src;
-      const [actualSize, color] = isExistingVariant[0].title.split('/').map((part) => part.trim());
-      console.log(actualSize, 'actualSize');
-      console.log(variantId, 'variantIdlook');
-      console.log(getAvailableSizesForColor(productInfo, Number(variantId)), 'look');
 
-      //const alreadySelectedSizeElement = modalElem.querySelector(
-      //'[data-handle="size"] .variant-input'
-      //);
-      //if (alreadySelectedSizeElement.querySelector('input').checked) {
-      //console.log(alreadySelectedSizeElement.dataset.value, 'whyyyy');
-      //}
-      const avaiableVariants = 
-      const selectedSize = 
+      const selectedSizeElem = modalElem.querySelector(
+        '[data-handle="size"] .variant-input.selected'
+      );
+      const actualSize = selectedSizeElem.dataset.value;
+
       //eslint-disable-next-line no-unused-expressions
       if (modalElem.querySelector('[data-handle="color"] .variant-input.selected')) {
         modalElem
@@ -317,7 +305,7 @@ export default () => {
       }
 
       const selectedColorItem = modalElem.querySelector(
-        `[data-handle="color"] [data-value="${color}"]`
+        `[data-handle="color"] [data-value="${colorName}"]`
       );
       selectedColorItem.classList.add('selected');
 
@@ -326,46 +314,38 @@ export default () => {
         `[data-handle="color"] .variant__label.${ID}__show`
       );
       const selectedColorElem = selectedLabelElem.querySelector('.selectedcolor');
-      selectedColorElem.innerText = `— ${color}`;
+      selectedColorElem.innerText = `— ${colorName}`;
 
       const result = getSizesByColor(productInfo.variants, colorName);
-      let sizeValue;
 
       if (result.length) {
         result.forEach((item) => {
           const sizeVariant = modalElem.querySelector(
             `[data-handle="size"] [data-value="${item.size}"]`
           );
-          //sizeVariant.classList.remove('selected');
+
           sizeVariant.classList.remove('available');
           sizeVariant.classList.remove('notAvailable');
           if (item.isStock && sizeVariant) {
-            //sizeVariant.classList.add('selected');
             sizeVariant.classList.add('available');
-            //sizeValue = item.size;
           } else if (!item.isStock && sizeVariant) {
-            //sizeVariant.classList.add('selected');
             sizeVariant.classList.add('notAvailable');
-          } else if (sizeVariant.classList.contains('selected')) {
-            sizeValue = item.size;
           }
         });
       }
 
-      console.log(`${sizeValue} / ${colorName}`, 'check', productInfo.variants);
       const selectedVariant = productInfo.variants.filter(
-        (item) => item.title.toLowerCase() === `${sizeValue} / ${colorName}`.toLowerCase()
+        (item) => item.title.toLowerCase() === `${actualSize} / ${colorName}`.toLowerCase()
       );
-      console.log('selected varianatId: :', selectedVariant);
+
       if (selectedVariant && selectedVariant[0].available) {
         atbButton.setAttribute('data-available', true);
-        atbButton.setAttribute('data-variant-id', isExistingVariant[0].id);
+        atbButton.setAttribute('data-variant-id', selectedVariant[0].id);
       } else if (selectedVariant && !selectedVariant[0].available) {
         atbButton.setAttribute('data-available', false);
-        atbButton.setAttribute('data-variant-id', isExistingVariant[0].id);
+        atbButton.setAttribute('data-variant-id', selectedVariant[0].id);
       }
 
-      console.log('selected varianatId: :', selectedVariant[0].id);
       updateLabelVisibility();
     } else if (target.closest(`.${ID}__modal [data-handle="size"] .variant-input label`)) {
       const clickedItem = target.closest(`.${ID}__modal [data-handle="size"] .variant-input`);
@@ -420,12 +400,9 @@ export default () => {
         });
       }
 
-      console.log(`${sizeName} / ${colorValue}`, 'check', productInfo.variants);
       const selectedVariant = productInfo.variants.filter(
         (item) => item.title.toLowerCase() === `${sizeName} / ${colorValue}`.toLowerCase()
       );
-
-      console.log(selectedVariant, 'selectedVariant');
 
       if (selectedVariant && selectedVariant[0].available) {
         atbButton.setAttribute('data-available', true);
@@ -435,7 +412,6 @@ export default () => {
         atbButton.setAttribute('data-variant-id', selectedVariant[0].id);
       }
 
-      console.log('selected varianatId: :', selectedVariant[0].id);
       updateLabelVisibility();
     } else if (target.closest(`.${ID}__atb`)) {
       const clickedItem = target.closest(`.${ID}__atb`);
