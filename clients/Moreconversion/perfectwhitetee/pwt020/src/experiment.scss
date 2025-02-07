@@ -261,6 +261,16 @@
       .btn--inverse {
         background-color: none !important;
       }
+
+      .variant__label.#{$id}__hiddenLabel {
+        display: none;
+      }
+
+      .variant__label.#{$id}__hide {
+        .selectedcolor {
+          display: none;
+        }
+      }
     }
   }
 }

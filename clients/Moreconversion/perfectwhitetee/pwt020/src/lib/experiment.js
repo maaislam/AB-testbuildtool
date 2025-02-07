@@ -54,11 +54,74 @@ const getColorsBySize = (items, targetSize) =>
         isStock: item.available
       };
     });
+
+const toggleVariantLabels = () => {
+  //Allow passing either a selector string or a DOM element
+  const root = document.querySelector(`.${ID}__modal [data-handle="color"]`);
+  if (!root) return;
+
+  //Get the labels within the container
+  const seasonalLabel = root.querySelector('.seasonal-label');
+  const essentialsLabel = root.querySelector('.essentials-label');
+  if (!seasonalLabel || !essentialsLabel) return;
+
+  //Check if any seasonal or essentials variant input is selected
+  const seasonalSelected = root.querySelector('.variant-input-seasonal.selected');
+  const essentialsSelected = root.querySelector('.variant-input-essentials.selected');
+
+  if (seasonalSelected) {
+    seasonalLabel.classList.add(`${ID}__show`);
+    seasonalLabel.classList.remove(`${ID}__hide`);
+    essentialsLabel.classList.add(`${ID}__hide`);
+    essentialsLabel.classList.remove(`${ID}__show`);
+  } else if (essentialsSelected) {
+    essentialsLabel.classList.add(`${ID}__show`);
+    essentialsLabel.classList.remove(`${ID}__hide`);
+    seasonalLabel.classList.add(`${ID}__hide`);
+    seasonalLabel.classList.remove(`${ID}__show`);
+  } else {
+    //If neither is selected, remove both toggle classes (or you can decide a default)
+    seasonalLabel.classList.remove(`${ID}__show`, `${ID}__hide`);
+    essentialsLabel.classList.remove(`${ID}__show`, `${ID}__hide`);
+  }
+};
+
+const updateLabelVisibility = () => {
+  //Allow passing either a DOM element or a selector string.
+  const root = document.querySelector(`.${ID}__modal [data-handle="color"]`);
+  if (!root) return;
+
+  //Helper function: for a given label and selector for its associated inputs,
+  //check if all such inputs (found among its following siblings) have the "hidden" class.
+  const updateLabelForGroup = (label, inputSelector) => {
+    const allColorItems = root.querySelectorAll(inputSelector);
+    const isHiddenClassExist = Array.from(allColorItems).every((item) =>
+      item.classList.contains('hidden')
+    );
+
+    if (isHiddenClassExist) {
+      label.classList.add(`${ID}__hiddenLabel`);
+    } else {
+      label.classList.remove(`${ID}__hiddenLabel`);
+    }
+  };
+
+  //Process seasonal-label group
+  const seasonalLabel = root.querySelector('.seasonal-label');
+  if (seasonalLabel) {
+    updateLabelForGroup(seasonalLabel, '.variant-input-seasonal');
+  }
+
+  //Process essentials-label group
+  const essentialsLabel = root.querySelector('.essentials-label');
+  if (essentialsLabel) {
+    updateLabelForGroup(essentialsLabel, '.variant-input-essentials');
+  }
+};
 const init = () => {
   const wrapper = document.querySelector('.product-single__meta');
   const targetedProducts = wrapper.querySelectorAll('.product-single__meta .grid-product');
   targetedProducts[0].parentElement.classList.add(`${ID}__productsWrapper`);
-  //color swatch placement
 
   const collectUrls = [];
   targetedProducts.forEach((product) => {
@@ -89,6 +152,7 @@ const init = () => {
   parseHTML(collectUrls)
     .then((data) => {
       if (data.length === 0) {
+        return;
       }
 
       window[`${ID}__data`] = data;
@@ -106,20 +170,6 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
-
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
-
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (target.closest('.color-swatch') && target.closest(`.${ID}__productsWrapper`)) {
@@ -152,9 +202,9 @@ export default () => {
       const { productId, value } = productWrapper.dataset;
       const productInfo = JSON.parse(value);
       const variantId = Number(activeVariantElem.href.split('variant=')[1].trim());
-      //console.log(productId, 'productId', variantId);
+
       const getProductData = window[`${ID}__data`].filter((item) => item.id === productId);
-      console.log('getproductDta', getProductData, productInfo);
+
       const modalElem = document.querySelector(`.${ID}__modal`);
       modalElem.dataset.prodId = productId;
       const modalContent = modalElem.querySelector(`.${ID}__modal-content`);
@@ -167,26 +217,22 @@ export default () => {
       }
       modalElem.classList.add(`${ID}__open`);
 
+      updateLabelVisibility();
+
       const result = getSizeAndColorById(productInfo.variants, variantId);
-
-      console.log(
-        modalElem.querySelector(`[data-handle="size"] .variant-input[data-value="${result.size}"]`),
-        'okk'
-      );
-
-      //modalElem
-      //.querySelector(`[data-handle="size"] .variant-input[data-value="${result.size}"] label`)
-      //.click();
 
       modalElem
         .querySelector(`[data-handle="color"] .variant-input[data-value="${result.color}"] label`)
         .click();
+
+      //console.log('selected varianatId: :', variantId);
     } else if (target.closest(`.${ID}__modal-overlay`)) {
       const modalElem = document.querySelector(`.${ID}__modal`);
       modalElem.classList.remove(`${ID}__open`);
-    } else if (target.closest(`.${ID}__modal [data-handle="color"] .variant-input`)) {
+    } else if (target.closest(`.${ID}__modal [data-handle="color"] .variant-input label`)) {
       const clickedItem = target.closest(`.${ID}__modal [data-handle="color"] .variant-input`);
       const modalElem = document.querySelector(`.${ID}__modal`);
+      const modalImageElem = modalElem.querySelector(`.${ID}__imageWrapper img`);
 
       const { prodId } = modalElem.dataset;
       const productInfoElem = document.querySelector(`.grid-product[data-product-id="${prodId}"]`);
@@ -195,16 +241,14 @@ export default () => {
       const colorName = clickedItem.dataset.value;
       //need that id while add to basket
       const { variantId } = clickedItem.querySelector('input').dataset;
-      console.log(colorName, variantId);
 
       const isExistingVariant = productInfo.variants.filter(
         (item) => item.id === Number(variantId)
       );
 
       const result = getSizesByColor(productInfo.variants, colorName);
-      console.log(result, 'result');
+
       if (isExistingVariant) {
-        console.log(isExistingVariant, 'isExistingVariant');
         const [actualSize, color] = isExistingVariant[0].title
           .split('/')
           .map((part) => part.trim());
@@ -213,11 +257,9 @@ export default () => {
           modalElem
             .querySelector('[data-handle="color"] .variant-input.selected')
             .classList.remove('selected');
-
-          //modalElem
-          //.querySelector('[data-handle="color"] .variant-input.selected')
-          //.classList.remove('selected');
         }
+
+        modalImageElem.src = isExistingVariant[0].featured_image.src;
 
         const selectedColorItem = modalElem.querySelector(
           `[data-handle="color"] [data-value="${color}"]`
@@ -242,8 +284,18 @@ export default () => {
             sizeVariant.classList.add('notAvailable');
           }
         });
+
+        toggleVariantLabels();
+        const selectedLabelElem = modalElem.querySelector(
+          `[data-handle="color"] .variant__label.${ID}__show`
+        );
+        const selectedColorElem = selectedLabelElem.querySelector('.selectedcolor');
+        selectedColorElem.innerText = `— ${color}`;
+
+        console.log('selected varianatId: :', isExistingVariant[0].id);
+        updateLabelVisibility();
       }
-    } else if (target.closest(`.${ID}__modal [data-handle="size"] .variant-input`)) {
+    } else if (target.closest(`.${ID}__modal [data-handle="size"] .variant-input label`)) {
       const clickedItem = target.closest(`.${ID}__modal [data-handle="size"] .variant-input`);
       const modalElem = document.querySelector(`.${ID}__modal`);
 
@@ -254,8 +306,8 @@ export default () => {
       const sizeName = clickedItem.dataset.value;
 
       const result = getColorsBySize(productInfo.variants, sizeName);
+      let colorValue;
 
-      console.log(result, 'result');
       if (result.length) {
         //eslint-disable-next-line no-unused-expressions
         if (modalElem.querySelector('[data-handle="size"] .variant-input.selected')) {
@@ -265,17 +317,16 @@ export default () => {
         }
 
         clickedItem.classList.add('selected');
-        console.log('result', result);
         result.forEach((item) => {
           const colorVariant = modalElem.querySelector(
             `[data-handle="color"] [data-value="${item.color}"]`
           );
-          //colorVariant.classList.remove('selected');
           colorVariant.classList.remove('available');
           colorVariant.classList.remove('notAvailable');
           if (item.isStock && colorVariant && colorVariant.classList.contains('selected')) {
             colorVariant.classList.add('selected');
             colorVariant.classList.add('available');
+            colorValue = colorVariant.dataset.value;
           } else if (item.isStock && colorVariant && !colorVariant.classList.contains('selected')) {
             colorVariant.classList.add('available');
           } else if (!item.isStock && colorVariant && colorVariant.classList.contains('selected')) {
@@ -289,6 +340,17 @@ export default () => {
             colorVariant.classList.add('notAvailable');
           }
         });
+
+        //const selectedColorVariant = modalElem.querySelector(
+        //'[data-handle="color"] .variant-input.selected'
+        //);
+        console.log(`${sizeName} / ${colorValue}`, 'check');
+        const selectedVariant = productInfo.variants.filter(
+          (item) => item.title.toLowerCase() === `${sizeName} / ${colorValue}`.toLowerCase()
+        );
+
+        console.log('selected varianatId: :', selectedVariant[0].id);
+        updateLabelVisibility();
       }
     }
   });
