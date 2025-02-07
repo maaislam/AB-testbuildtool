@@ -16,7 +16,6 @@ const modal = (id) => {
                 <div class="${id}__image">
                   <img src=""/>
                 </div>
-                
               </div>
             </div>
         </div>

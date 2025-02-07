@@ -5,7 +5,7 @@
  * @param {function} callback The callback function when all conditions are true.
  * @param {number} maxTime max time the check witll run before abort.
  */
-export const pollerLite = (conditions, callback, maxTime = 10000) => {
+export const pollerLite = (conditions, callback, maxTime = 1000000) => {
   const POLLING_INTERVAL = 25;
   const startTime = Date.now();
   const interval = setInterval(() => {
@@ -78,4 +78,29 @@ export const parseHTML = async (urls) => {
   }
 
   return allItemsArray;
+};
+
+export const addToCart = (id, quantity) => {
+  const payload = {
+    id,
+    quantity
+  };
+
+  const response = fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+    .then((responses) => {
+      const res = responses.json();
+      return res;
+    })
+    .then(() => {
+      console.log('success');
+      window.location.href = '/cart';
+    });
+  return response;
 };
