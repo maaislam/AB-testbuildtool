@@ -100,7 +100,6 @@ export const addToCart = (id, quantity) => {
     })
     .then(() => {
       console.log('success');
-      window.location.href = '/cart';
     });
   return response;
 };
