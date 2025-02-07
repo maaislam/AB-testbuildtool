@@ -1,7 +1,7 @@
 import { closeIcon } from '../assets/icons';
 
-export const sizeWrapper = (id) => {
-  const html = `
+export const sizeWrapper = (id, data) => {
+    const html = `
         <div class="${id}__sizeWrapper">
              <div class="${id}__modal-header">
                 <div class="${id}__mainTitle">Select size</div>
@@ -10,13 +10,9 @@ export const sizeWrapper = (id) => {
                 </div>
             </div>
             <ul class="size-list">
-                <li>XS</li>
-                <li>S</li>
-                <li>M</li>
-                <li>L</li>
-                <li>XL</li>
+                ${data.map((item) => `<li class='${id}__mobile-size-list' data-variant-id="${item.variantId}">${item.size}</li>`).join('')}
             </ul>
         </div>
     `;
-  return html.trim();
+    return html.trim();
 };

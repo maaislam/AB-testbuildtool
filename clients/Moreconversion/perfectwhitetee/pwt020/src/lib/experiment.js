@@ -98,8 +98,7 @@ const updateLabelVisibility = () => {
   const updateLabelForGroup = (label, inputSelector) => {
     const allColorItems = root.querySelectorAll(inputSelector);
     const isHiddenClassExist = Array.from(allColorItems).every((item) =>
-      item.classList.contains('hidden')
-    );
+      item.classList.contains('hidden'));
 
     if (isHiddenClassExist) {
       label.classList.add(`${ID}__hiddenLabel`);
@@ -172,6 +171,35 @@ const init = () => {
   }
 };
 
+//Function to get available sizes for a selected color
+const getAvailableSizesForColor = (productInfo, variantId) => {
+  console.log('productInfo', productInfo);
+  console.log('variantId', variantId);
+  //Find the selected variant using the variantId
+  const selectedVariant = productInfo.variants.find((variant) => variant.id === variantId);
+
+  if (!selectedVariant) {
+    console.error('Variant not found!');
+    return [];
+  }
+
+  //Extract the selected color
+  const selectedColor = selectedVariant.option2; //Color is stored in option2
+
+  //Filter all variants that have the same color and are available
+  //First, filter the variants based on the selected color and availability
+  const filteredVariants = productInfo.variants.filter(
+    (variant) => variant.option2 === selectedColor && variant.available
+  );
+
+  console.log('filteredVariants', filteredVariants);
+
+  return filteredVariants.map((variant) => ({
+    size: variant.option1, //Size
+    variantId: variant.id //Variant ID
+  }));
+};
+
 export default () => {
   setup(); //use if needed
   document.body.addEventListener('click', (e) => {
@@ -179,10 +207,12 @@ export default () => {
 
     if (target.closest('.color-swatch') && target.closest(`.${ID}__productsWrapper`)) {
       e.preventDefault();
-      if (document.querySelector('.color-swatch.active-variant')) {
-        document.querySelector('.color-swatch.active-variant').classList.remove('active-variant');
-      }
+
       const clickedItem = target.closest('.color-swatch');
+
+      const itemWrapper = clickedItem.closest('.grid-product');
+      itemWrapper.querySelectorAll('.color-swatch.active-variant').forEach((item) => item.classList.remove('active-variant'));
+
       clickedItem.classList.add('active-variant');
       const variantId = Number(clickedItem.href.split('variant=')[1].trim());
       const productWrapper = clickedItem.closest('.grid-product');
@@ -221,6 +251,7 @@ export default () => {
           .querySelector('.product-single__meta')
           .insertAdjacentHTML('beforebegin', image(ID, productImageSrc));
       }
+      modalElem.classList.remove(`${ID}__close`);
       modalElem.classList.add(`${ID}__open`);
 
       updateLabelVisibility();
@@ -236,6 +267,7 @@ export default () => {
     ) {
       const modalElem = document.querySelector(`.${ID}__modal`);
       modalElem.classList.remove(`${ID}__open`);
+      modalElem.classList.add(`${ID}__close`);
     } else if (target.closest(`.${ID}__modal [data-handle="color"] .variant-input label`)) {
       const clickedItem = target.closest(`.${ID}__modal [data-handle="color"] .variant-input`);
       const modalElem = document.querySelector(`.${ID}__modal`);
@@ -396,27 +428,31 @@ export default () => {
       const { variantId } = clickedItem.dataset;
       addToCart(variantId, 1);
     } else if (target.closest(`.${ID}__iconBag`) && window.innerWidth <= 590) {
-      //mobie
+      //mobile
       e.preventDefault();
-      console.log('not selected');
+
       const clickedItem = target.closest(`.${ID}__iconBag`);
       const productWrapper = clickedItem.closest('.grid-product');
       const activeVariantElem = productWrapper.querySelector('.active-variant');
-      const imageWrapper = productWrapper.querySelector('.image-wrap img');
 
-      const productImageSrc = imageWrapper.srcset;
       const { productId, value } = productWrapper.dataset;
       const productInfo = JSON.parse(value);
       const variantId = Number(activeVariantElem.href.split('variant=')[1].trim());
 
-      const getProductData = window[`${ID}__data`].filter((item) => item.id === productId);
+      //Example usage:
+      const availableData = getAvailableSizesForColor(productInfo, variantId);
 
       const modalElem = document.querySelector(`.${ID}__modal`);
       modalElem.dataset.prodId = productId;
       const modalContent = modalElem.querySelector(`.${ID}__modal-content`);
       modalContent.innerHTML = '';
-      modalContent.innerHTML = sizeWrapper(ID);
+      modalContent.innerHTML = sizeWrapper(ID, availableData);
+      modalElem.classList.remove(`${ID}__close`);
       modalElem.classList.add(`${ID}__open`);
+    } else if (target.closest(`.${ID}__mobile-size-list`)) {
+      const clickedItem = target.closest(`.${ID}__mobile-size-list`);
+      const { variantId } = clickedItem.dataset;
+      addToCart(variantId, 1);
     }
   });
 
