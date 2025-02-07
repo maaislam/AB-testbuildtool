@@ -48,7 +48,7 @@ const cartInit = () => {
   pollerLite(
     [
       '#main-cart-items .cart-items',
-      () => document.querySelectorAll('#main-cart-items .cart-items .cart-item').length
+      () => document.querySelectorAll('#main-cart-items .cart-items .cart-item').length > 0
     ],
     () => {
       document.body.classList.add(`${ID}__cartPage`);
@@ -72,7 +72,7 @@ const init = () => {
   pollerLite(['.join_package_box'], () => {
     const targetConatiner = document.querySelector('.join_package_box');
     const packageBoxAtcButton = targetConatiner.querySelector('.package2 a.common_btn');
-    packageBoxAtcButton.href = packageBoxAtcButton.href.replace(
+    packageBoxAtcButton.href = packageBoxAtcButton.href.replaceAll(
       'return_to=/checkout',
       'return_to=/cart'
     );

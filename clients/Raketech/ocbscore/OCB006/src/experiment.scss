@@ -4,7 +4,7 @@
 
 .#{$id} {
   .#{$id}__text {
-    display: inline-block;
+    width: max-content;
     font-family: '__Poppins_2dbf9b', '__Poppins_Fallback_2dbf9b', Arial, sans-serif;
     font-size: 13px;
     font-weight: 500;
@@ -15,5 +15,17 @@
     text-transform: uppercase;
     // padding-top: 12px;
     color: #f56701;
+  }
+
+  .OCB005__bettingItem {
+    .#{$id}__description {
+      display: none;
+    }
+
+    .#{$id}__show {
+      .#{$id}__description {
+        display: block;
+      }
+    }
   }
 }
