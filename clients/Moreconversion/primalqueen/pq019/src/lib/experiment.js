@@ -3,7 +3,7 @@ import shared from './shared/shared';
 import { pollerLite } from './helpers/utils';
 import product from './components/product';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const renderAnotherProduct = (cartItems) => {
   const oneTimeProduct = Array.from(cartItems).filter((item) => {

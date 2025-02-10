@@ -1,7 +1,7 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
-import { addToCart, parseHTML, pollerLite } from './helpers/utils';
+import { addToCart, parseHTML } from './helpers/utils';
 import { bagIcon } from './assets/icons';
 import modal from './components/modal';
 import image from './components/image';
@@ -416,7 +416,11 @@ export default () => {
     } else if (target.closest(`.${ID}__atb`)) {
       const clickedItem = target.closest(`.${ID}__atb`);
       const { variantId } = clickedItem.dataset;
-      addToCart(variantId, 1);
+      addToCart(variantId, 1).then(() => {
+        const modalElem = document.querySelector(`.${ID}__modal`);
+        modalElem.classList.remove(`${ID}__open`);
+        modalElem.classList.add(`${ID}__close`);
+      });
     } else if (target.closest(`.${ID}__iconBag`) && window.innerWidth <= 590) {
       //mobile
       e.preventDefault();
@@ -442,7 +446,11 @@ export default () => {
     } else if (target.closest(`.${ID}__mobile-size-list`)) {
       const clickedItem = target.closest(`.${ID}__mobile-size-list`);
       const { variantId } = clickedItem.dataset;
-      addToCart(variantId, 1);
+      addToCart(variantId, 1).then(() => {
+        const modalElem = document.querySelector(`.${ID}__modal`);
+        modalElem.classList.remove(`${ID}__open`);
+        modalElem.classList.add(`${ID}__close`);
+      });
     }
   });
 
