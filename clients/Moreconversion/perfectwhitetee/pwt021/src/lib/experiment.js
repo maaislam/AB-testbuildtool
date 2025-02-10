@@ -15,7 +15,7 @@ const init = (topsArray) => {
         return;
       }
 
-      if (!document.querySelector(`.${ID}__categoryWrapper`)) {
+      if (header && !document.querySelector(`.${ID}__categoryWrapper`)) {
         header.insertAdjacentHTML('afterbegin', categoryWrapper(ID, data));
       }
     })
@@ -36,9 +36,15 @@ export default () => {
     document.querySelector(`.site-nav__dropdown-link[href*="${pathname}"]`) ||
     document.querySelector('.site-nav__dropdown-link[href*="/collections/womens-tops"]');
 
+  console.log(menuItemLink, 'menuItemLink');
+
   const currentCategory = menuItemLink?.closest('#menu-');
 
+  console.log(currentCategory, 'currentCategory');
+
   const quickLinks = currentCategory?.querySelectorAll('.megamenu__col-title');
+
+  console.log(quickLinks, 'quickLinks');
 
   const topsArray = [];
 
