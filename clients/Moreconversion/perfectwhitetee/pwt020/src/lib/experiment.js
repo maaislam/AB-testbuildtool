@@ -65,7 +65,7 @@ const toggleVariantLabels = () => {
   //Get the labels within the container
   const seasonalLabel = root.querySelector('.seasonal-label');
   const essentialsLabel = root.querySelector('.essentials-label');
-  if (!seasonalLabel || !essentialsLabel) return;
+  //if (!seasonalLabel || !essentialsLabel) return;
 
   //Check if any seasonal or essentials variant input is selected
   const seasonalSelected = root.querySelector('.variant-input-seasonal.selected');
@@ -74,13 +74,13 @@ const toggleVariantLabels = () => {
   if (seasonalSelected) {
     seasonalLabel.classList.add(`${ID}__show`);
     seasonalLabel.classList.remove(`${ID}__hide`);
-    essentialsLabel.classList.add(`${ID}__hide`);
-    essentialsLabel.classList.remove(`${ID}__show`);
+    essentialsLabel && essentialsLabel.classList.add(`${ID}__hide`);
+    essentialsLabel && essentialsLabel.classList.remove(`${ID}__show`);
   } else if (essentialsSelected) {
     essentialsLabel.classList.add(`${ID}__show`);
     essentialsLabel.classList.remove(`${ID}__hide`);
-    seasonalLabel.classList.add(`${ID}__hide`);
-    seasonalLabel.classList.remove(`${ID}__show`);
+    seasonalLabel && seasonalLabel.classList.add(`${ID}__hide`);
+    seasonalLabel && seasonalLabel.classList.remove(`${ID}__show`);
   } else {
     //If neither is selected, remove both toggle classes (or you can decide a default)
     seasonalLabel.classList.remove(`${ID}__show`, `${ID}__hide`);
@@ -201,17 +201,13 @@ export default () => {
   setup(); //use if needed
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-
     if (target.closest('.color-swatch') && target.closest(`.${ID}__productsWrapper`)) {
       e.preventDefault();
-
       const clickedItem = target.closest('.color-swatch');
-
       const itemWrapper = clickedItem.closest('.grid-product');
       itemWrapper
         .querySelectorAll('.color-swatch.active-variant')
         .forEach((item) => item.classList.remove('active-variant'));
-
       clickedItem.classList.add('active-variant');
       const variantId = Number(clickedItem.href.split('variant=')[1].trim());
       const productWrapper = clickedItem.closest('.grid-product');
@@ -226,20 +222,16 @@ export default () => {
         }
       }
     } else if (target.closest(`.${ID}__iconBag`) && window.innerWidth > 590) {
-      //desktop
       e.preventDefault();
       const clickedItem = target.closest(`.${ID}__iconBag`);
       const productWrapper = clickedItem.closest('.grid-product');
       const activeVariantElem = productWrapper.querySelector('.active-variant');
       const imageWrapper = productWrapper.querySelector('.image-wrap img');
-
       const productImageSrc = imageWrapper.srcset;
       const { productId, value } = productWrapper.dataset;
       const productInfo = JSON.parse(value);
       const variantId = Number(activeVariantElem.href.split('variant=')[1].trim());
-
       const getProductData = window[`${ID}__data`].filter((item) => item.id === productId);
-
       const modalElem = document.querySelector(`.${ID}__modal`);
       modalElem.dataset.prodId = productId;
       const modalContent = modalElem.querySelector(`.${ID}__modal-content`);
@@ -252,11 +244,8 @@ export default () => {
       }
       modalElem.classList.remove(`${ID}__close`);
       modalElem.classList.add(`${ID}__open`);
-
       updateLabelVisibility();
-
       const result = getSizeAndColorById(productInfo.variants, variantId);
-
       modalElem.querySelector('[data-handle="size"] .variant-input').classList.add('selected');
       modalElem
         .querySelector(`[data-handle="color"] .variant-input[data-value="${result.color}"] label`)
@@ -272,58 +261,46 @@ export default () => {
       const clickedItem = target.closest(`.${ID}__modal [data-handle="color"] .variant-input`);
       const modalElem = document.querySelector(`.${ID}__modal`);
       const modalImageElem = modalElem.querySelector(`.${ID}__imageWrapper img`);
-
       if (!modalElem.querySelector(`.${ID}__atb`)) {
         modalElem.querySelector('form').insertAdjacentHTML('beforebegin', button(ID));
       }
       const atbButton = modalElem.querySelector(`.${ID}__atb`);
-
       const { prodId } = modalElem.dataset;
       const productInfoElem = document.querySelector(`.grid-product[data-product-id="${prodId}"]`);
       const { value } = productInfoElem.dataset;
       const productInfo = JSON.parse(value);
       const colorName = clickedItem.dataset.value;
-      //need that id while add to basket
       const { variantId } = clickedItem.querySelector('input').dataset;
-
       const isExistingVariant = productInfo.variants.filter(
         (item) => item.id === Number(variantId)
       );
-
       modalImageElem.src = isExistingVariant[0].featured_image.src;
-
       const selectedSizeElem = modalElem.querySelector(
         '[data-handle="size"] .variant-input.selected'
       );
       const actualSize = selectedSizeElem.dataset.value;
-
-      //eslint-disable-next-line no-unused-expressions
       if (modalElem.querySelector('[data-handle="color"] .variant-input.selected')) {
         modalElem
           .querySelector('[data-handle="color"] .variant-input.selected')
           .classList.remove('selected');
       }
-
       const selectedColorItem = modalElem.querySelector(
         `[data-handle="color"] [data-value="${colorName}"]`
       );
       selectedColorItem.classList.add('selected');
-
       toggleVariantLabels();
       const selectedLabelElem = modalElem.querySelector(
         `[data-handle="color"] .variant__label.${ID}__show`
       );
+
       const selectedColorElem = selectedLabelElem.querySelector('.selectedcolor');
       selectedColorElem.innerText = `— ${colorName}`;
-
       const result = getSizesByColor(productInfo.variants, colorName);
-
       if (result.length) {
         result.forEach((item) => {
           const sizeVariant = modalElem.querySelector(
             `[data-handle="size"] [data-value="${item.size}"]`
           );
-
           sizeVariant.classList.remove('available');
           sizeVariant.classList.remove('notAvailable');
           if (item.isStock && sizeVariant) {
@@ -333,11 +310,9 @@ export default () => {
           }
         });
       }
-
       const selectedVariant = productInfo.variants.filter(
         (item) => item.title.toLowerCase() === `${actualSize} / ${colorName}`.toLowerCase()
       );
-
       if (selectedVariant && selectedVariant[0].available) {
         atbButton.setAttribute('data-available', true);
         atbButton.setAttribute('data-variant-id', selectedVariant[0].id);
@@ -345,35 +320,28 @@ export default () => {
         atbButton.setAttribute('data-available', false);
         atbButton.setAttribute('data-variant-id', selectedVariant[0].id);
       }
-
       updateLabelVisibility();
     } else if (target.closest(`.${ID}__modal [data-handle="size"] .variant-input label`)) {
       const clickedItem = target.closest(`.${ID}__modal [data-handle="size"] .variant-input`);
       const modalElem = document.querySelector(`.${ID}__modal`);
-
       if (!modalElem.querySelector(`.${ID}__atb`)) {
         modalElem.querySelector('form').insertAdjacentHTML('beforebegin', button(ID));
       }
       const atbButton = modalElem.querySelector(`.${ID}__atb`);
-
       const { prodId } = modalElem.dataset;
       const productInfoElem = document.querySelector(`.grid-product[data-product-id="${prodId}"]`);
       const { value } = productInfoElem.dataset;
       const productInfo = JSON.parse(value);
       const sizeName = clickedItem.dataset.value;
-
       const result = getColorsBySize(productInfo.variants, sizeName);
       let colorValue;
-
       if (modalElem.querySelector('[data-handle="size"] .variant-input.selected')) {
         modalElem
           .querySelector('[data-handle="size"] .variant-input.selected')
           .classList.remove('selected');
       }
       clickedItem.classList.add('selected');
-
       if (result.length) {
-        //eslint-disable-next-line no-unused-expressions
         result.forEach((item) => {
           const colorVariant = modalElem.querySelector(
             `[data-handle="color"] [data-value="${item.color}"]`
@@ -399,11 +367,9 @@ export default () => {
           }
         });
       }
-
       const selectedVariant = productInfo.variants.filter(
         (item) => item.title.toLowerCase() === `${sizeName} / ${colorValue}`.toLowerCase()
       );
-
       if (selectedVariant && selectedVariant[0].available) {
         atbButton.setAttribute('data-available', true);
         atbButton.setAttribute('data-variant-id', selectedVariant[0].id);
@@ -411,31 +377,20 @@ export default () => {
         atbButton.setAttribute('data-available', false);
         atbButton.setAttribute('data-variant-id', selectedVariant[0].id);
       }
-
       updateLabelVisibility();
     } else if (target.closest(`.${ID}__atb`)) {
       const clickedItem = target.closest(`.${ID}__atb`);
       const { variantId } = clickedItem.dataset;
-      addToCart(variantId, 1).then(() => {
-        const modalElem = document.querySelector(`.${ID}__modal`);
-        modalElem.classList.remove(`${ID}__open`);
-        modalElem.classList.add(`${ID}__close`);
-      });
+      addToCart(variantId, 1);
     } else if (target.closest(`.${ID}__iconBag`) && window.innerWidth <= 590) {
-      //mobile
       e.preventDefault();
-
       const clickedItem = target.closest(`.${ID}__iconBag`);
       const productWrapper = clickedItem.closest('.grid-product');
       const activeVariantElem = productWrapper.querySelector('.active-variant');
-
       const { productId, value } = productWrapper.dataset;
       const productInfo = JSON.parse(value);
       const variantId = Number(activeVariantElem.href.split('variant=')[1].trim());
-
-      //Example usage:
       const availableData = getAvailableSizesForColor(productInfo, variantId);
-
       const modalElem = document.querySelector(`.${ID}__modal`);
       modalElem.dataset.prodId = productId;
       const modalContent = modalElem.querySelector(`.${ID}__modal-content`);
@@ -446,11 +401,7 @@ export default () => {
     } else if (target.closest(`.${ID}__mobile-size-list`)) {
       const clickedItem = target.closest(`.${ID}__mobile-size-list`);
       const { variantId } = clickedItem.dataset;
-      addToCart(variantId, 1).then(() => {
-        const modalElem = document.querySelector(`.${ID}__modal`);
-        modalElem.classList.remove(`${ID}__open`);
-        modalElem.classList.add(`${ID}__close`);
-      });
+      addToCart(variantId, 1);
     }
   });
 
