@@ -37,7 +37,6 @@ const init = () => {
 
     //NEW TEST AMENDS
     //const mainCardTitleElement = card.querySelector('.MuiTypography-body1');
-    card.classList.add(`${ID}__show`);
     const description = mainCardTitleElement ? mainCardTitleElement.nextElementSibling : '';
     if (description && description.classList.contains('MuiStack-root')) {
       description.classList.add(`${ID}__description`);
@@ -45,7 +44,7 @@ const init = () => {
       if (!card.querySelector(`.${ID}__text`)) {
         description.insertAdjacentHTML(
           'afterend',
-          `<span class="${ID}__text">Hide all Prediction</span>`
+          `<span class="${ID}__text">Read Full Prediction</span>`
         );
       }
     }
@@ -76,7 +75,7 @@ const init = () => {
       description.classList.add(`${ID}__description`);
       description.insertAdjacentHTML(
         'afterend',
-        `<span class="${ID}__text">Read all BETTING TIP</span>`
+        `<span class="${ID}__text">Read Full BETTING TIP</span>`
       );
     }
   });
@@ -169,12 +168,12 @@ export default () => {
 
       bettingItem.classList.remove(`${ID}__show`);
       if (clickedItem.closest(`.${ID}__bettingItem`)) {
-        clickedItem.textContent = 'Read all BETTING TIP';
+        clickedItem.textContent = 'Read Full BETTING TIP';
         gaTracking(
           `${firstTeamName} vs ${secondTeamName} ${matchTypeName} | ${operator} | Close Betting Tips`
         );
       } else {
-        clickedItem.textContent = 'Read all Prediction';
+        clickedItem.textContent = 'Read Full Prediction';
         gaTracking(
           `${firstTeamName} vs ${secondTeamName} ${matchTypeName} | ${operator} | Close Prediction`
         );
