@@ -17,7 +17,7 @@ const init = () => {
     const mainButton = card.querySelector('[data-type="button"]');
     if (mainCardTitleElement) mainCardTitleElement.textContent = onlyText;
     if (mainButton && !mainButton.classList.contains(`${ID}__cardButton`)) {
-      mainButton.innerHTML = `${mainButton.innerHTML}${rating}<span class="${ID}__arrow">${rightArrow}</span>`;
+      mainButton.innerHTML = `${mainButton.innerHTML}${rating}`;
       mainButton.classList.add(`${ID}__cardButton`);
     }
     if (mainButton && !card.querySelector(`.${ID}__staticButtonWrapper`)) {
@@ -64,7 +64,7 @@ const init = () => {
       logoElement.classList.add(`${ID}__logo`);
     }
     if (mainButton && !mainButton.classList.contains(`${ID}__button`)) {
-      mainButton.innerHTML = `${rating} <span class="${ID}__arrow">${rightArrow}</span>`;
+      mainButton.innerHTML = `${rating}`;
       mainButton.classList.add(`${ID}__button`);
       mainButton.closest('.MuiCardActions-root').classList.add(`${ID}__buttonWrappers`);
     }

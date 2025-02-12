@@ -27,23 +27,23 @@ a:has(img) {
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 150px;
+  width: 124px;
   height: 36px;
   padding: 0;
 }
 
 .#{$id} [aria-labelledby*='match-event-tab'] .#{$id}__staticButtonWrapper [data-type='button'] {
-  min-width: 75px;
-  max-width: 75px;
+  min-width: 64px;
+  max-width: 64px;
   height: 36px;
   font-weight: 500;
   font-size: 14px;
-  line-height: 19.6px;
+  line-height: 20px;
   letter-spacing: 0.4px;
 }
 .#{$id} [aria-labelledby*='match-event-tab'] .#{$id}__staticButtonWrapper [data-type='logo'] {
-  width: 75px;
-  min-width: 75px;
+  width: 60px;
+  min-width: 60px;
   height: 36px;
 }
 
@@ -56,7 +56,7 @@ a:has(img) {
   border: 6px solid transparent;
 }
 .#{$id} [aria-labelledby*='match-event-tab'] [data-type='button'] {
-  padding: 6px 16px;
+  padding: 8px 12px;
   margin-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -85,7 +85,7 @@ a:has(img) {
 .#{$id} .#{$id}__bettingItem p.mui-qd0sj8 {
   font-size: 16px;
   font-weight: 600;
-  line-height: 20.8px;
+  line-height: 21px;
   min-height: 36px;
 }
 .#{$id} .#{$id}__bettingItem p.mui-1egalym {
@@ -102,7 +102,7 @@ a:has(img) {
 .#{$id} .#{$id}__bettingItem [data-type='button'] {
   font-size: 14px;
   font-weight: 500;
-  line-height: 19.6px;
+  line-height: 20px;
   letter-spacing: 0.4px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -158,6 +158,18 @@ a:has(img) {
 }
 
 .#{$id} {
+  h1.mui-1b6uoil {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  [aria-labelledby='match-event-tab-0'] + div {
+    h2.wp-block-heading {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
   [aria-labelledby*='match-event-tab'] {
     .#{$id}__description {
       display: none;
@@ -169,8 +181,11 @@ a:has(img) {
     }
 
     p.MuiTypography-body1 {
-      max-width: calc(100% - 160px);
+      max-width: calc(100% - 134px);
       min-height: 36px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 21px;
     }
   }
   .#{$id}__text {
@@ -178,7 +193,7 @@ a:has(img) {
     font-family: '__Poppins_2dbf9b', '__Poppins_Fallback_2dbf9b', Arial, sans-serif;
     font-size: 13px;
     font-weight: 500;
-    line-height: 15.6px;
+    line-height: 16px;
     letter-spacing: 0.46000000834465027px;
     text-align: left;
     text-transform: uppercase;
@@ -200,25 +215,26 @@ a:has(img) {
     }
 
     .MuiStack-root.mui-j7qwjs {
-      max-width: calc(100% - 160px);
+      max-width: calc(100% - 134px);
     }
 
     .#{$id}__buttonWrappers {
       position: absolute;
       top: 28px;
       right: 16px;
-      width: 150px;
+      width: 124px;
       height: 36px;
       padding: 0;
 
       [data-type='button'] {
-        min-width: 75px;
-        max-width: 75px;
+        min-width: 64px;
+        max-width: 64px;
         height: 36px;
+        padding: 8px 12px;
       }
       [data-type='logo'] {
-        width: 75px;
-        min-width: 75px;
+        width: 60px;
+        min-width: 60px;
         height: 36px;
         border: 6px solid transparent;
       }
