@@ -1,0 +1,379 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__bettingWrapper {
+    font-family: '__Poppins_2dbf9b', '__Poppins_Fallback_2dbf9b', Arial, sans-serif;
+
+    & + .MuiCardContent-root {
+      display: none;
+    }
+  }
+
+  &__bettingItem {
+    background-color: #262626;
+    //padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  &__bettingHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__bettingTime {
+    display: flex;
+    align-items: center;
+  }
+
+  &__calender {
+    display: flex;
+    align-items: center;
+    font-family: '__Poppins_2dbf9b', '__Poppins_Fallback_2dbf9b', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    color: #aaaaaa;
+    margin-right: 4px;
+
+    span {
+      display: flex;
+      padding-right: 4px;
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+    font-family: '__Poppins_2dbf9b', '__Poppins_Fallback_2dbf9b', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    color: #aaaaaa;
+    span {
+      display: flex;
+      padding-right: 4px;
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+
+  &__bettingCategory {
+    a {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 15.6px;
+      letter-spacing: 0.46000000834465027px;
+      border-bottom: 1px solid #f56701;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__bettingInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 8px;
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__bettingTitle {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20.8px;
+  }
+
+  &__tipsterWrapper {
+    display: flex;
+    align-items: center;
+    a {
+      padding-left: 4px;
+      padding-right: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 18px;
+      text-decoration: underline;
+    }
+    span:first-child {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+    span {
+      display: flex;
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-top: 8px;
+    }
+  }
+
+  &__bettingContentList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__bettingContentItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.12);
+    padding: 12px 0;
+
+    a.#{$id}__bettingContentTitle {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18.2px;
+      letter-spacing: 0.17000000178813934px;
+      text-align: left;
+
+      text-decoration: underline;
+      color: #fff;
+
+      @media screen and (max-width: 767px) {
+        padding: 0;
+        margin: 0 !important;
+      }
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: 12px 0 12px;
+    }
+  }
+
+  &__ratingWrapper {
+    margin-left: 12px;
+  }
+
+  &__casinoLink {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    .#{$id}__image {
+      width: 36px;
+      height: 36px;
+      background-color: var(--bgcolor);
+      padding: 0 4px;
+      border-radius: 8px 0 0 8px;
+      img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .#{$id}__number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 74px;
+      min-width: 74px;
+      height: 36px;
+      padding: 8px 16px;
+      border-radius: 0 12px 12px 0;
+      background-color: #f56701;
+      color: #fff;
+      text-align: center;
+
+      span.#{$id}__numberText {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 19.6px;
+        letter-spacing: 0.4000000059604645px;
+        padding-top: 2px;
+      }
+
+      span.#{$id}__icon {
+        display: flex;
+        padding-left: 9px;
+      }
+
+      &:hover {
+        background-color: #fb8900;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__bettingButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 19.6px;
+      letter-spacing: 0.4000000059604645px;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 8px;
+      border: 1px solid #ffffff;
+      border-radius: 12px;
+      text-align: center;
+
+      &:hover {
+        opacity: 0.7;
+        background-color: rgba(255, 255, 255, 0.08);
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__eventInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    span {
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    a {
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      border-bottom: 1px solid #f56701;
+    }
+  }
+
+  &__teamInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__teamNames {
+    padding-right: 10px;
+    p {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 21px;
+      padding-bottom: 4px;
+      margin: 0;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__additionalInfo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__section {
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .#{$id}__text {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 12px;
+      padding-left: 4px;
+      color: #aaaaaa;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__eventTime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 56px;
+    width: 100%;
+    span:first-child {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: #aaaaaa;
+    }
+
+    span:last-child {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 21px;
+      color: #aaaaaa;
+    }
+  }
+
+  &__additionalInfo {
+    margin-bottom: 12px;
+  }
+
+  .mui-gr5vmq {
+    display: none;
+  }
+
+  &__mainWrapper {
+    height: 100%;
+    flex-direction: column;
+    padding: 12px;
+
+    & > a {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      background-color: transparent;
+      color: #fff;
+      border: solid 1px #fff;
+      padding: 8px;
+      margin-left: 0;
+      margin-top: auto;
+
+      &:hover {
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid #ffffff;
+        color: #ff9400;
+      }
+    }
+  }
+}
