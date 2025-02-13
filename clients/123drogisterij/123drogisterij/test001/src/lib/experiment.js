@@ -10,7 +10,7 @@ const { ID } = shared;
 
 export default () => {
   if (sessionStorage.getItem('reloaded-by-atc')) {
-    sessionStorage.removeItem('reloaded-by-atc');
+    sessionStorage.removeItem('reloaded-by-at');
     openMiniCart(ID);
   }
 
