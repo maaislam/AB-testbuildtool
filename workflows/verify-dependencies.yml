@@ -1,0 +1,38 @@
+name: Verify Dependencies Installation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  check-dependencies:
+    name: Verify Dependencies Installed
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Adjust to match your project
+
+      - name: Install Dependencies
+        run: npm ci  # Ensures a fresh install based on package-lock.json
+
+      - name: Verify Dependencies
+        run: |
+          if [ ! -d "node_modules" ]; then
+            echo "❌ node_modules is missing! Run 'npm install'."
+            exit 1
+          fi
+
+      - name: Check for Uncommitted Lockfile Changes
+        run: |
+          if [[ -n $(git status --porcelain package-lock.json) ]]; then
+            echo "❌ package-lock.json has changed! Run 'npm install' and commit the updated file."
+            exit 1
+          fi
