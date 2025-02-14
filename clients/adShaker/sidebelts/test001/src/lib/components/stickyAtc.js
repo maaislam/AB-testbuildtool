@@ -12,8 +12,8 @@ const stickyAtc = (id) => {
             </div>
         </div>
     `;
-  return htmlStr;
-
+  return htmlStr.trim();
+  
 };
 
 export default stickyAtc;
