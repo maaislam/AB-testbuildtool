@@ -16,7 +16,7 @@ const clickHandler = (event) => {
 
 const mutationCallback = (mutation) => {
   if (mutation.target.classList.contains('active')) {
-    console.log(mutation);
+    //console.log(mutation);
     //gaTracking('clicks on basket icon');
     gaTracking('clicks on basket icon');
   }
@@ -40,7 +40,7 @@ export default () => {
   //...
   document.querySelector('.nav-sections-items').style.display = 'none';
   const searchBar = document.querySelector('.header-usps-search');
-  searchBar.classList.add(`${id}__invisible`);
+  searchBar.classList.add(`${ID}__invisible`);
   if (VARIATION === '2') {
     const uspPanel = document.querySelector('.panel.wrapper');
     uspPanel.classList.add(`${ID}__hide`);
