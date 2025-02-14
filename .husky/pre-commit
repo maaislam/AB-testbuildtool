@@ -1,5 +1,5 @@
 
-
+COMMIT_MSG_FILE=$1
 # Detect if --no-verify was used
 if [ -n "$HUSKY_SKIP_HOOKS" ] || [ "$HUSKY" = 0 ]; then
   echo -e "\n⚠️ WARNING: This commit was made with --no-verify!" >> "$COMMIT_MSG_FILE"
