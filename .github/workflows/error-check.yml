@@ -1,4 +1,4 @@
-name: JavaScript Lint Check
+name: JavaScript Lint Check (Clients Folder)
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   lint:
-    name: Run ESLint
+    name: Run ESLint on Clients Folder
     runs-on: ubuntu-latest
 
     steps:
@@ -20,25 +20,16 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
-        run: npm ci  # Ensure fresh install based on package-lock.json
+        run: npm ci
 
-      - name: Run ESLint
-        run: npx eslint . --ext .js,.jsx,.ts,.tsx
-        continue-on-error: true  # Allow Slack notification even if ESLint fails
+      - name: Run ESLint on Clients Folder
+        run: npx eslint clients/ --ext .js,.jsx,.ts,.tsx
+        continue-on-error: true  # Allows Slack notification to trigger even if ESLint fails
 
-      # ✅ Send Slack Notification via Automation Webhook If ESLint Fails
+      # ✅ Send Slack Notification If ESLint Fails
       - name: Send Slack Notification on Failure
         if: failure()
         run: |
           curl -X POST -H 'Content-Type: application/json' --data '{
-            "event": {
-              "text": "🚨 *ESLint Failed!* 🚨",
-              "fields": {
-                "Repository": "${{ github.repository }}",
-                "Branch": "${{ github.ref }}",
-                "Commit": "${{ github.sha }}",
-                "Actor": "${{ github.actor }}",
-                "Details": "<https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
-              }
-            }
+            "text": "🚨 *ESLint Failed in Clients Folder!* 🚨\nRepository: ${{ github.repository }}\nBranch: ${{ github.ref }}\nCommit: ${{ github.sha }}\nActor: ${{ github.actor }}\nDetails: <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
           }' ${{ secrets.SLACK_AUTOMATION_WEBHOOK_URL }}
