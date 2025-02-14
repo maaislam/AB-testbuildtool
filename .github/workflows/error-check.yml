@@ -32,4 +32,7 @@ jobs:
         run: |
           curl -X POST -H 'Content-Type: application/json' --data '{
             "text": "🚨 *ESLint Failed in Clients Folder!* 🚨\nRepository: ${{ github.repository }}\nBranch: ${{ github.ref }}\nCommit: ${{ github.sha }}\nActor: ${{ github.actor }}\nDetails: <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
-          }' ${{ secrets.SLACK_AUTOMATION_WEBHOOK_URL }}
+          }' "https://hooks.slack.com/triggers/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"
+
+
+
