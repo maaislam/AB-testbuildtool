@@ -13,7 +13,7 @@ fi
 echo "🔍 Running ESLint on staged files..."
 
 # Run ESLint on staged files (without fixing)
-npx eslint --max-warnings=0 $STAGED_FILES
+npx eslint --max-warnings=0 $STAGED_FILES --fix
 
 # Capture ESLint exit code
 EXIT_CODE=$?
