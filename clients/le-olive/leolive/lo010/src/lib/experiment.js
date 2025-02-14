@@ -30,8 +30,7 @@ const init = () => {
   const mainPromoText = promoTitleElement.querySelector('b').innerText.trim();
   const promoDesc = promoTitleElement.innerText.trim().split(mainPromoText)[1];
   const isCollection = collectionName.filter((item) =>
-    window.location.href.includes(item.urlPortion)
-  );
+    window.location.href.includes(item.urlPortion));
 
   const cartUrl = window.location.href.includes(`/${window.Shopify.locale}/`)
     ? `/${window.Shopify.locale}/cart`

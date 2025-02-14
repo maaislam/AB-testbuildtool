@@ -151,8 +151,7 @@ export const parseHTML = async (urls) => {
     fetch(url).catch((error) => {
       console.error(`Error fetching ${url}: ${error.message}`);
       return Promise.resolve(null);
-    })
-  );
+    }));
 
   const responses = await Promise.all(promises);
   //eslint-disable-next-line no-restricted-syntax

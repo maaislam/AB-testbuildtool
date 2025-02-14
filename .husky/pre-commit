@@ -1,3 +1,18 @@
-npx eslint clients --fix --quiet
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
+# Get only staged JS files
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=d | grep '\.js$')
 
+if [ -z "$STAGED_FILES" ]; then
+  echo "No JavaScript files staged for commit."
+  exit 0
+fi
+
+echo "Running ESLint on staged JS files..."
+npx eslint --fix $STAGED_FILES
+
+# Re-add potentially fixed files
+git add $STAGED_FILES
+
+echo "ESLint check complete!"

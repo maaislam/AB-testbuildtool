@@ -1,41 +1,45 @@
+import { onUrlChange } from './helpers/utils';
 import setup from './services/setup';
 
 export default () => {
-  setup(); //use if needed
+  setup();
 
-  //Define the observer
-  const observer = new PerformanceObserver((entryList) => {
-    //eslint-disable-next-line no-restricted-syntax
-    for (const entry of entryList.getEntries()) {
-      //Get the "More Products" button
-      const moreProductsButton =
-        document.querySelector('.amscroll-load-button') ||
-        document.querySelector('.products-grid ~ .toolbar.toolbar-products');
-      if (!moreProductsButton) return;
+  const adjustPageCards = () => {
+    const getPageElement = (page, selector) =>
+      document.querySelector(`.products-grid.products-grid[amscroll-page='${page}'] ${selector}`);
 
-      //Identify the newly loaded product wrapper
-      const newMainProductWrapper = moreProductsButton.previousElementSibling;
+    //get last ol on the page
+    const amscrolls = document.querySelectorAll('[amscroll-page]');
+    const lastAmscroll = amscrolls[amscrolls.length - 1];
 
-      //Get the first product inside the new product wrapper
-      const firstProduct = newMainProductWrapper?.querySelector('.item.product');
+    //get amscroll value
 
-      //Check if the previous sibling is a product grid and contains products
-      const previousProductGrid = newMainProductWrapper?.previousElementSibling;
-      const productList = previousProductGrid?.querySelector('ol.products');
+    const newPage = lastAmscroll.getAttribute('amscroll-page');
 
-      if (
-        previousProductGrid?.classList.contains('products-grid') &&
-        //eslint-disable-next-line no-unsafe-optional-chaining
-        productList?.childElementCount % 2 !== 0
-      ) {
-        productList.insertAdjacentElement('beforeend', firstProduct);
+    if (newPage) {
+      const previouspage = newPage - 1;
+
+      //get the first li inside ol of the new page
+      const newPageFirstLi = getPageElement(newPage, 'ol li:first-child');
+
+      const previousPageOl = getPageElement(previouspage, 'ol');
+
+      //move it at the end of the previous page
+
+      //check if li count is
+      const previousPageLiCount = previousPageOl.querySelectorAll('li').length;
+
+      if (previousPageLiCount % 2 !== 0) {
+        previousPageOl.appendChild(newPageFirstLi);
       }
     }
+  };
+
+  onUrlChange(() => {
+    console.log('URL changed!');
+    adjustPageCards();
   });
 
-  //Start observing layout shifts
-  observer.observe({
-    type: 'layout-shift',
-    buffered: true
-  });
+  //add scroll listener
+  window.addEventListener('scroll', adjustPageCards);
 };

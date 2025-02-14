@@ -9,41 +9,41 @@ import shared from './shared/shared';
 
 const { ID } = shared;
 
-let endDate = '02/15/2025'; //MM/DD/YYYY
+const endDate = '02/15/2025'; //MM/DD/YYYY
 
-// const isCurrentDateBetween = (startDateStr, endDateStr) => {
-//   //Parse the input dates
-//   const [startDay, startMonth, startYear] = startDateStr.split('/').map(Number);
-//   const [endDay, endMonth, endYear] = endDateStr.split('/').map(Number);
+//const isCurrentDateBetween = (startDateStr, endDateStr) => {
+////Parse the input dates
+//const [startDay, startMonth, startYear] = startDateStr.split('/').map(Number);
+//const [endDay, endMonth, endYear] = endDateStr.split('/').map(Number);
 
-//   //Create date objects from the input strings
-//   const startDate = new Date(startYear, startMonth - 1, startDay);
-//   const newEndDate = new Date(endYear, endMonth - 1, endDay);
+////Create date objects from the input strings
+//const startDate = new Date(startYear, startMonth - 1, startDay);
+//const newEndDate = new Date(endYear, endMonth - 1, endDay);
 
-//   //Get the current date (with time set to 00:00:00 for accurate comparison)
-//   const currentDate = new Date();
-//   currentDate.setHours(0, 0, 0, 0);
+////Get the current date (with time set to 00:00:00 for accurate comparison)
+//const currentDate = new Date();
+//currentDate.setHours(0, 0, 0, 0);
 
-//   //Check if the current date is between the start and end dates
-//   if (currentDate >= startDate && currentDate <= newEndDate) {
-//     return true;
-//   }
+////Check if the current date is between the start and end dates
+//if (currentDate >= startDate && currentDate <= newEndDate) {
+//return true;
+//}
 
-//   return false;
-// };
+//return false;
+//};
 
-// const saleStartDate = '26/12/2024';
-// const saleEndDate = '02/02/2025';
-// if (isCurrentDateBetween(saleStartDate, saleEndDate)) {
-//   endDate = saleEndDate;
+//const saleStartDate = '26/12/2024';
+//const saleEndDate = '02/02/2025';
+//if (isCurrentDateBetween(saleStartDate, saleEndDate)) {
+//endDate = saleEndDate;
 
-//   const tenPercentOffElem = document.querySelector(`.${ID}__couponCodeWrapper .tenPercentOff`);
-//   const plusIconElem = document.querySelector(`.${ID}__couponCodeWrapper .plus_icon`);
+//const tenPercentOffElem = document.querySelector(`.${ID}__couponCodeWrapper .tenPercentOff`);
+//const plusIconElem = document.querySelector(`.${ID}__couponCodeWrapper .plus_icon`);
 
-//   pollerLite([() => tenPercentOffElem, () => plusIconElem], () => {
-//     document.body.classList.add('after-christmas-sale');
-//   });
-// }
+//pollerLite([() => tenPercentOffElem, () => plusIconElem], () => {
+//document.body.classList.add('after-christmas-sale');
+//});
+//}
 
 const isPdp = () => document.body.classList.contains('catalog-product-view');
 const isPlp = () =>
