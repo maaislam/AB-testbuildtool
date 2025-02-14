@@ -1,6 +1,6 @@
 
 # Get only staged JavaScript files
-STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(js|jsx|ts|tsx)$')
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(json|js|jsx|ts|tsx)$')
 
 # Exit early if no JS/TS files are staged
 if [ -z "$STAGED_FILES" ]; then
