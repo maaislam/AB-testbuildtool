@@ -5,7 +5,6 @@ import { progressBar } from './components/progressBar';
 import messageWrapper from './components/messageWrapper';
 
 const { ID, VARIATION } = shared;
-console.log(data);
 
 const init = () => {
   const thresholdPrice = 75;
