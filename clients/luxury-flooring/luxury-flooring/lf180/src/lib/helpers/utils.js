@@ -24,7 +24,12 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
     }
   }, POLLING_INTERVAL);
 };
+<<<<<<< HEAD
+
+export const onUrlChange = (callback, onError = null) => {
+=======
 export const onAmscrollChange = (callback, onError = null) => {
+>>>>>>> faffb55f3f04a36738f39e2188d62303f62dbe65
   if (typeof callback !== 'function') {
     throw new Error('Callback function must be provided');
   }

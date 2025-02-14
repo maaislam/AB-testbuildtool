@@ -49,13 +49,13 @@ const init = () => {
     }
 
     //mobile attachpoint
-    // const mobileAttachPoint = document.querySelector(
-    //   '[data-shogun-id] .shg-box-vertical-align-wrapper:nth-child(7)'
-    // );
-    // mobileAttachPoint.classList.add(`${ID}__mobileSection`);
-    // if (!document.querySelector(`.${ID}__mobileSection + .${ID}__highlightedCollections`)) {
-    //   mobileAttachPoint.insertAdjacentHTML('afterend', cards(ID, data));
-    // }
+    //const mobileAttachPoint = document.querySelector(
+    //'[data-shogun-id] .shg-box-vertical-align-wrapper:nth-child(7)'
+    //);
+    //mobileAttachPoint.classList.add(`${ID}__mobileSection`);
+    //if (!document.querySelector(`.${ID}__mobileSection + .${ID}__highlightedCollections`)) {
+    //mobileAttachPoint.insertAdjacentHTML('afterend', cards(ID, data));
+    //}
   }
 };
 

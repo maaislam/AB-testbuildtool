@@ -1,23 +1,22 @@
-if (typeof (btbTestTracking) != "undefined" && btbTestTracking.running) { btbTestTracking.running.rd216 = "v1"; }
+if (typeof (btbTestTracking) !== 'undefined' && btbTestTracking.running) { btbTestTracking.running.rd216 = 'v1'; }
 
-convert.$(document).ready(function () {
-
+convert.$(document).ready(() => {
     console.log('RD 216 - Add Size Guide - V1');
 
     function trackGAEvent(c, a, l) {
         if (window.dataLayer) {
             window.dataLayer.push({
-                'event': 'ga_event',
-                'event_category': c,
-                'event_action': a,
-                'event_label': l
+                event: 'ga_event',
+                event_category: c,
+                event_action: a,
+                event_label: l
             });
             console.log('event tracked', c, a, l);
         }
     }
 
     function waitForElem(waitFor, callback, minElements = 1, isVariable = false, timer = 15000, frequency = 25) {
-        let elements = isVariable ? window[waitFor] : document.querySelectorAll(waitFor);
+        const elements = isVariable ? window[waitFor] : document.querySelectorAll(waitFor);
         if (timer <= 0) return;
         (!isVariable && elements.length >= minElements) || (isVariable && typeof window[waitFor] !== 'undefined')
             ? callback(elements)
@@ -25,7 +24,6 @@ convert.$(document).ready(function () {
     }
 
     try {
-
         window.modalLinkAdded = false;
         if (document.location.pathname.indexOf('/products/') !== -1) {
             waitForElem('form.shopify-product-form .variant-selector__list > .variant-selector__list-item', ([sizes]) => {
@@ -33,22 +31,21 @@ convert.$(document).ready(function () {
                     convert.$('body').addClass('rd216');
                     var $chooseYourSizeLabel = document.querySelector('.variant-selector__toggle-dimensions--container > p.ff-heading');
                     if ($chooseYourSizeLabel) {
-                        $chooseYourSizeLabel.innerHTML = `<a href="javascript:void(0)" id="open-size-guide-btn" class="link-sizeguide">Size guide</a>`;
+                        $chooseYourSizeLabel.innerHTML = '<a href="javascript:void(0)" id="open-size-guide-btn" class="link-sizeguide">Size guide</a>';
                         window.modalLinkAdded = true;
                     }
                 }
             });
-        }
-        else if (document.location.pathname == '/cart') {
+        } else if (document.location.pathname == '/cart') {
             var itemsSelector = 'form[action="/cart"] [data-cart-item-list] [data-cartitem] .cart-item-remove-product';
             waitForElem(itemsSelector, ([cartitems]) => {
                 if (cartitems) {
                     convert.$('body').addClass('rd216');
-                    // code to iternate and add link
+                    //code to iternate and add link
                     var tmpl_sizeGuide = `<div class="sizeguide-wrapper">
                         <a href="javascript:void(0)" class="link-sizeguide">Check size with our size guide</a>
                     </div>`;
-                    Array.from(document.querySelectorAll(itemsSelector)).forEach(function (removeLink) {
+                    Array.from(document.querySelectorAll(itemsSelector)).forEach((removeLink) => {
                         if (removeLink) {
                             removeLink.insertAdjacentHTML('beforebegin', tmpl_sizeGuide);
                         }
@@ -59,8 +56,8 @@ convert.$(document).ready(function () {
         }
 
         waitForElem('modalLinkAdded', () => {
-            var imgBasePath = `https://d31hba4f1d8ahx.cloudfront.net/RD/216/`,
-                tmpl_modal = `<!-- RD 216: Background Overlay -->
+            var imgBasePath = 'https://d31hba4f1d8ahx.cloudfront.net/RD/216/';
+                var tmpl_modal = `<!-- RD 216: Background Overlay -->
                     <div id="size-guide-overlay" style="display: block;"></div>
                     <!-- RD 216: Custom Dialog -->
                     <div id="size-guide-modal" class="custom-modal" style="display: block;">
@@ -233,92 +230,89 @@ convert.$(document).ready(function () {
                 if ($ele.attr('dimensions-toggled') == 'true') {
                     $sizeGuideModal.find('.size-inches').show();
                     $sizeGuideModal.find('.size-cm').hide();
-                }
-                else {
+                } else {
                     $sizeGuideModal.find('.size-cm').show();
                     $sizeGuideModal.find('.size-inches').hide();
                 }
             }
 
-            convert.$('[data-dimensions-toggle]').on('click', function (e) {
+            convert.$('[data-dimensions-toggle]').on('click', (e) => {
                 handleToggle(convert.$(e.currentTarget), true);
             });
             handleToggle(convert.$('[data-dimensions-toggle]:first'));
 
-            var overlay = document.getElementById("size-guide-overlay"),
-                modal = document.getElementById("size-guide-modal"),
-                openButtons = document.querySelectorAll(".link-sizeguide"),
-                closeButtons = [document.getElementById("close-size-guide-btn"), document.getElementById("close-footer-btn")],
-                tabs = document.querySelectorAll(".rd216 .tab"),
-                tabContents = document.querySelectorAll(".rd216 .tab-content");
+            var overlay = document.getElementById('size-guide-overlay');
+                var modal = document.getElementById('size-guide-modal');
+                var openButtons = document.querySelectorAll('.link-sizeguide');
+                var closeButtons = [document.getElementById('close-size-guide-btn'), document.getElementById('close-footer-btn')];
+                var tabs = document.querySelectorAll('.rd216 .tab');
+                var tabContents = document.querySelectorAll('.rd216 .tab-content');
 
-            // Function to open the modal
+            //Function to open the modal
             function openModal() {
-                overlay.classList.add("show");
-                modal.classList.add("show");
+                overlay.classList.add('show');
+                modal.classList.add('show');
                 trackGAEvent('RD 216', 'size_guide_opened', (document.location.pathname == '/cart') ? 'cart' : 'pdp');
             }
 
-            // Function to close the modal
+            //Function to close the modal
             function closeModal() {
-                // Add a small timeout to allow fade-out animation to complete before hiding elements
-                overlay.classList.remove("show");
-                modal.classList.remove("show");
+                //Add a small timeout to allow fade-out animation to complete before hiding elements
+                overlay.classList.remove('show');
+                modal.classList.remove('show');
 
                 setTimeout(() => {
-                    overlay.style.display = "none";
-                    modal.style.display = "none";
-                }, 300); // Match this duration with the CSS transition (0.3s)
+                    overlay.style.display = 'none';
+                    modal.style.display = 'none';
+                }, 300); //Match this duration with the CSS transition (0.3s)
             }
 
-            // Tab switching functionality
+            //Tab switching functionality
             tabs.forEach((tab) => {
-                tab.addEventListener("click", () => {
-                    // Remove 'active' class from all tabs
-                    tabs.forEach((t) => t.classList.remove("active"));
+                tab.addEventListener('click', () => {
+                    //Remove 'active' class from all tabs
+                    tabs.forEach((t) => t.classList.remove('active'));
 
-                    // Add 'active' class to the clicked tab
-                    tab.classList.add("active");
+                    //Add 'active' class to the clicked tab
+                    tab.classList.add('active');
 
-                    // Remove 'active' class from all tab-content sections
-                    tabContents.forEach((content) => content.classList.remove("active"));
+                    //Remove 'active' class from all tab-content sections
+                    tabContents.forEach((content) => content.classList.remove('active'));
 
-                    // Add 'active' class to the corresponding tab-content section
-                    const targetContentId = tab.getAttribute("data-target");
+                    //Add 'active' class to the corresponding tab-content section
+                    const targetContentId = tab.getAttribute('data-target');
                     const targetContent = document.getElementById(targetContentId);
                     if (targetContent) {
-                        targetContent.classList.add("active");
+                        targetContent.classList.add('active');
                     }
                 });
             });
 
-            // Event listeners for open and close
-            openButtons.forEach(function (btn) {
-                btn.addEventListener("click", () => {
-                    overlay.style.display = "block";
-                    modal.style.display = "block";
-                    setTimeout(openModal, 10); // Small delay to ensure animation starts after display changes
+            //Event listeners for open and close
+            openButtons.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    overlay.style.display = 'block';
+                    modal.style.display = 'block';
+                    setTimeout(openModal, 10); //Small delay to ensure animation starts after display changes
                 });
             });
 
-            closeButtons.forEach((button) => button.addEventListener("click", closeModal));
+            closeButtons.forEach((button) => button.addEventListener('click', closeModal));
 
-            // Close modal by clicking on the overlay
-            overlay.addEventListener("click", closeModal);
+            //Close modal by clicking on the overlay
+            overlay.addEventListener('click', closeModal);
 
-            // Close the modal with the Escape key
-            document.addEventListener("keydown", (event) => {
-                if (event.key === "Escape" && overlay.classList.contains("show")) {
+            //Close the modal with the Escape key
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && overlay.classList.contains('show')) {
                     closeModal();
                 }
             });
-
         }, 0, true);
-
     } catch (ex) {
         throw ex;
     } finally {
-        setTimeout(function () {
+        setTimeout(() => {
             document.body.style.visibility = 'visible';
         }, 4000);
     }

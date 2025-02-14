@@ -75,7 +75,7 @@ const init = () => {
       container.style.setProperty('--position', `${e.target.value}%`);
     });
     slider.addEventListener('change', () => {
-      _conv_q.push(["triggerConversion", "100462022"]);
+      _conv_q.push(['triggerConversion', '100462022']);
     });
   }
 };
@@ -92,7 +92,7 @@ export default () => {
 
     if (target.closest('[href*="/sale.html"]')) {
       console.log('sale button click');
-      _conv_q.push(["triggerConversion", "100462022"]);
+      _conv_q.push(['triggerConversion', '100462022']);
     }
   });
 };
