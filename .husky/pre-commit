@@ -1,8 +1,8 @@
 
 
 # Detect if --no-verify was used
-if [ -n "$HUSKY_SKIP_HOOKS" ]; then
-  echo "⚠️ WARNING: This commit was made with --no-verify!"
+if [ -n "$HUSKY_SKIP_HOOKS" ] || [ "$HUSKY" = 0 ]; then
+  echo -e "\n⚠️ WARNING: This commit was made with --no-verify!" >> "$COMMIT_MSG_FILE"
 fi
 
 # Get only staged JavaScript/TypeScript/JSON files
