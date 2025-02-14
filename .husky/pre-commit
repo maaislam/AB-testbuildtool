@@ -1,4 +1,12 @@
 
+
+COMMIT_MSG_FILE=$1
+
+# Detect if --no-verify was used
+if [ -n "$HUSKY_SKIP_HOOKS" ]; then
+  echo -e "\n⚠️ WARNING: This commit was made with --no-verify!" >> "$COMMIT_MSG_FILE"
+fi
+
 # Get only staged JavaScript files
 STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(json|js|jsx|ts|tsx)$')
 
