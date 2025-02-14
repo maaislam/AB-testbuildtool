@@ -1,22 +1,20 @@
 
 
-COMMIT_MSG_FILE=$1
-
 # Detect if --no-verify was used
 if [ -n "$HUSKY_SKIP_HOOKS" ]; then
-  echo -e "\n⚠️ WARNING: This commit was made with --no-verify!" >> "$COMMIT_MSG_FILE"
+  echo "⚠️ WARNING: This commit was made with --no-verify!"
 fi
 
-# Get only staged JavaScript files
+# Get only staged JavaScript/TypeScript/JSON files
 STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(json|js|jsx|ts|tsx)$')
 
-# Exit early if no JS/TS files are staged
+# Exit early if no JS/TS/JSON files are staged
 if [ -z "$STAGED_FILES" ]; then
   echo "✅ No JavaScript/TypeScript files staged for commit."
   exit 0
 fi
 
-echo "🔍 Running ESLint on staged files..."
+echo "🔍 Running ESLint on staged files: $STAGED_FILES"
 
 # Run ESLint on staged files (without fixing)
 npx eslint --max-warnings=0 $STAGED_FILES
