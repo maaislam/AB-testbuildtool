@@ -14,6 +14,7 @@ const stickyAtc = (id) => {
     `;
   return htmlStr;
 
+  
 };
 
 export default stickyAtc;
