@@ -7,7 +7,7 @@ import messageWrapper from './components/messageWrapper';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  const thresholdPrice = 75;
+  const thresholdPrice = 750;
   const basketTotalPriceCtrl = () => document.querySelector('.rebuy-cart__flyout-subtotal-amount');
   const mainWrapper = document.querySelector('#app');
 
