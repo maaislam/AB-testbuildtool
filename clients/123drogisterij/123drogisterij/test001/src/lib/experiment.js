@@ -6,11 +6,13 @@ import openMiniCart from './helpers/openMiniCart';
 
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+//const { ID, VARIATION } = shared;
+
+await
 
 export default () => {
   if (sessionStorage.getItem('reloaded-by-atc')) {
-    sessionStorage.removeItem('reloaded-by-at');
+    sessionStorage.removeItem('reloaded-by-atc');
     openMiniCart(ID);
   }
 
