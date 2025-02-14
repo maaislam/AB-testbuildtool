@@ -3,7 +3,7 @@ name: JavaScript Lint Check (Clients Folder)
 on:
   push:
     branches:
-      - main  # Runs only on push to main
+      - main
 
 jobs:
   lint:
@@ -22,16 +22,29 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run ESLint on Clients Folder
-        run: npx eslint clients/ --ext .js,.jsx,.ts,.tsx
-        continue-on-error: true  # Allows Slack notification to trigger even if ESLint fails
+      - name: Run ESLint and Capture Output
+        id: eslint_check
+        run: |
+          ESLINT_OUTPUT=$(npx eslint clients/ --ext .js,.jsx,.ts,.tsx --format=json)
+          echo "$ESLINT_OUTPUT" > eslint_output.json
+          echo "ESLINT_FOUND_ERRORS=$(echo "$ESLINT_OUTPUT" | jq 'map(select(.errorCount > 0 or .warningCount > 0)) | length')" >> $GITHUB_ENV
 
-      # ✅ Send Slack Notification If ESLint Fails
-      - name: Send Slack Notification on Failure
+      - name: Debug ESLint Results
+        run: cat eslint_output.json
+
+      - name: Send Slack Notification on ESLint Errors or Warnings
+        if: env.ESLINT_FOUND_ERRORS != '0'
         run: |
           curl -X POST -H 'Content-Type: application/json' --data '{
-            "text": "🚨 *ESLint Failed in Clients Folder!* 🚨\nRepository: ${{ github.repository }}\nBranch: ${{ github.ref }}\nCommit: ${{ github.sha }}\nActor: ${{ github.actor }}\nDetails: <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
+            "type": "event",
+            "event": {
+              "text": "🚨 *ESLint Found Issues in Clients Folder!* 🚨",
+              "fields": {
+                "Repository": "${{ github.repository }}",
+                "Branch": "${{ github.ref }}",
+                "Commit": "${{ github.sha }}",
+                "Actor": "${{ github.actor }}",
+                "Details": "<https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
+              }
+            }
           }' ${{ secrets.SLACK_AUTOMATION_WEBHOOK_URL }}
-
-
-
