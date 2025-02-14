@@ -189,7 +189,7 @@ const init = () => {
       localStorage.setItem('inStock', 'false');
       if (ctrlApplyBtn) ctrlApplyBtn.click();
     }
-    // toolbar.style.visibility = 'hidden';
+    //toolbar.style.visibility = 'hidden';
   });
 
   //all checkboxes and event listener
@@ -254,7 +254,7 @@ const init = () => {
       if (ctrlApplyBtn) {
         ctrlApplyBtn.click();
       }
-      // toolbar.style.visibility = 'hidden';
+      //toolbar.style.visibility = 'hidden';
     });
   });
 

@@ -3,7 +3,7 @@ import shared from './shared/shared';
 import { pollerLite } from './helpers/utils';
 import fakeBtn from './components/fakeBtn';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const bodyElement = document.body;

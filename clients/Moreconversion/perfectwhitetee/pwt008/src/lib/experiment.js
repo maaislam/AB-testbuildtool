@@ -57,7 +57,7 @@ const init = () => {
   const freeShippingThreshold = 200;
   const getFivePercentThreshold = 250;
 
-  // const basketTotalPriceCtrl = () => document.querySelector('.slidecart-subtotal');
+  //const basketTotalPriceCtrl = () => document.querySelector('.slidecart-subtotal');
 
   (async () => {
     const totalPrice = await getTotalPrice();

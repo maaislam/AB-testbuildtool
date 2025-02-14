@@ -20,7 +20,7 @@ export const pollerLite = (conditions, callback, maxTime = 10000) => {
       callback();
     } else if (Date.now() - startTime >= maxTime) {
       clearInterval(interval);
-      console.error('Polling exceeded maximum time limit');
+      //console.error('Polling exceeded maximum time limit');
     }
   }, POLLING_INTERVAL);
 };
@@ -44,12 +44,12 @@ export const onAmscrollChange = (callback, onError = null) => {
         //const oldHref = observer.previousUrl;
         //Update the previous URL and execute the callback function
         observer.previousAmscrollCount = currentAmscrollCount;
-        //console.log('URL changed!');
+        //.log('URL changed!');
         observer.disconnect();
         try {
           callback(mutation);
         } catch (error) {
-          console.log(`Error in callback function: ${error}`);
+          //console.log(`Error in callback function: ${error}`);
         }
         observer.observe(document.documentElement, mutationConfig);
       }
@@ -67,7 +67,7 @@ export const onAmscrollChange = (callback, onError = null) => {
     if (onError && typeof onError === 'function') {
       onError(error);
     } else {
-      console.log(`Error starting onUrlChange observer: ${error}`);
+      //console.log(`Error starting onUrlChange observer: ${error}`);
     }
   }
 };
