@@ -40,7 +40,7 @@ export default () => {
   //...
   document.querySelector('.nav-sections-items').style.display = 'none';
   const searchBar = document.querySelector('.header-usps-search');
-  searchBar.classList.add(`${ID}__invisible`);
+  searchBar.classList.add(`${id}__invisible`);
   if (VARIATION === '2') {
     const uspPanel = document.querySelector('.panel.wrapper');
     uspPanel.classList.add(`${ID}__hide`);
