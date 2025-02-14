@@ -1,0 +1,29 @@
+name: JavaScript Lint Check
+
+on:
+  push:
+    branches:
+      - main  # Runs only on push to main
+
+jobs:
+  lint:
+    name: Run ESLint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm ci  # Ensure fresh install based on package-lock.json
+
+      - name: Run ESLint
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
+        continue-on-error: true  # Allow Slack notification even if ESLint fails
+
+      
