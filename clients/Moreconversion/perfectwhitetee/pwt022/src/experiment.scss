@@ -1,0 +1,23 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__colorWrapper {
+    &.active {
+      label {
+        box-shadow: 0 0 0 2px #000000;
+      }
+      .selectedcolor {
+        opacity: 1;
+      }
+    }
+
+    .selectedcolor {
+      opacity: 0;
+    }
+  }
+
+  .color-swatch--fresh-mint:not(.#{$id}__fresh-mint) {
+    display: none;
+  }
+}

@@ -1,0 +1,114 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__categoryWrapper {
+    background: linear-gradient(180deg, #f1f1f1 0%, rgba(241, 241, 241, 0) 100%);
+    border-bottom: solid 1px #c6c6c6;
+
+    & > div {
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      @media screen and (max-width: 767px) {
+        padding-left: 15px;
+      }
+    }
+
+    h1 {
+      font-family: 'Inter' !important;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 36px;
+      letter-spacing: -0.75px;
+      text-align: center;
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 10px;
+      }
+    }
+
+    .#{$id}__category-list {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      li {
+        padding: 0 20px;
+        margin-bottom: 0;
+        white-space: nowrap;
+
+        &.selected {
+          order: -1;
+          span.megamenu__link-label {
+            font-weight: 700;
+          }
+
+          @media screen and (max-width: 846px) {
+            padding: 0;
+          }
+        }
+
+        &:hover {
+          a {
+            color: #000;
+          }
+        }
+
+        &.item-hide {
+          display: none;
+        }
+        .#{$id}__imageWrapper {
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        a {
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+          max-width: 100px;
+          min-width: 100px;
+
+          @media screen and (max-width: 400px) {
+            max-width: 90px;
+            min-width: 90px;
+          }
+        }
+
+        span.megamenu__link-label {
+          font-family: 'Inter';
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 16px;
+          text-transform: lowercase;
+          text-align: center;
+          white-space: normal;
+          // min-height: 40px;
+        }
+
+        @media screen and (max-width: 846px) {
+          padding: 0 0 0 18px;
+
+          &:last-child {
+            padding-right: 18px;
+          }
+        }
+      }
+
+      @media screen and (max-width: 846px) {
+        overflow-x: auto;
+        justify-content: flex-start;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        width: calc(100% + 20px);
+      }
+    }
+  }
+}

@@ -54,11 +54,34 @@
             }
           }
 
+          @media screen and (max-width: 767px) {
+            .amlabel-position-wrapper {
+              display: none !important;
+            }
+          }
+
           @media screen and (max-width: 480px) {
             margin-bottom: 0;
           }
         }
       }
+    }
+  }
+
+  .primary.amscroll-load-button {
+    .amscroll-text {
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      @media screen and (max-width: 460px) {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-top: 25px;
     }
   }
 }

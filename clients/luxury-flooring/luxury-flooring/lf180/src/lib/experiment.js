@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { onUrlChange } from './helpers/utils';
 import setup from './services/setup';
 
@@ -5,6 +6,15 @@ export default () => {
   setup();
 
   const adjustPageCards = () => {
+=======
+import { onAmscrollChange } from './helpers/utils';
+import setup from './services/setup';
+
+export default () => {
+  setup(); //use if needed
+
+  const callbackHandler = () => {
+>>>>>>> faffb55f3f04a36738f39e2188d62303f62dbe65
     const getPageElement = (page, selector) =>
       document.querySelector(`.products-grid.products-grid[amscroll-page='${page}'] ${selector}`);
 
@@ -24,9 +34,13 @@ export default () => {
 
       const previousPageOl = getPageElement(previouspage, 'ol');
 
+<<<<<<< HEAD
       //move it at the end of the previous page
 
       //check if li count is
+=======
+      //check if li count is odd
+>>>>>>> faffb55f3f04a36738f39e2188d62303f62dbe65
       const previousPageLiCount = previousPageOl.querySelectorAll('li').length;
 
       if (previousPageLiCount % 2 !== 0) {
@@ -35,6 +49,7 @@ export default () => {
     }
   };
 
+<<<<<<< HEAD
   onUrlChange(() => {
     console.log('URL changed!');
     adjustPageCards();
@@ -42,4 +57,7 @@ export default () => {
 
   //add scroll listener
   window.addEventListener('scroll', adjustPageCards);
+=======
+  onAmscrollChange(callbackHandler);
+>>>>>>> faffb55f3f04a36738f39e2188d62303f62dbe65
 };

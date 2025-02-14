@@ -1,0 +1,142 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__tooltipWrapper {
+        margin-top: 9px;
+
+        .#{$id}__tooltip {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 19px;
+            color: #333333;
+
+            @include media-query(sm) {
+                font-size: 13px;
+                line-height: 18px;
+            }
+
+            .#{$id}__tooltipBtn {
+                display: inline;
+                position: relative;
+                cursor: pointer;
+                width: max-content;
+
+                @include media-query(sm) {
+                    display: block;
+                    font-size: 13px;
+                    line-height: 18px;
+                    margin-top: 8px;
+                }
+
+                .tooltipBtnText {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 19px;
+                    letter-spacing: 0%;
+                    text-decoration: underline;
+                    text-decoration-style: solid;
+                    text-decoration-offset: Auto;
+                    text-decoration-thickness: Auto;
+                    color: #333333;
+
+                    @include media-query(sm) {
+                        font-size: 13px;
+                        line-height: 18px;
+                    }
+                }
+            }
+
+            .tooltip-box {
+                position: relative;
+                margin-top: 12px;
+                padding: 12px 16px;
+                border-radius: 2px;
+                border: 1px solid #333333;
+                background-color: #fff;
+                box-shadow: 0px 0px 10px 0px #00000040;
+
+                .tooltip-text {
+                    font-weight: 400;
+                    font-size: 13px;
+                    line-height: 20px;
+                    color: #000;
+                    text-decoration: none;
+                }
+            }
+
+            .tooltip-box.#{$id}__show {
+                display: block;
+                max-height: 100px;
+                visibility: visible;
+                padding: 12px 16px;
+                animation: fade-in 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            }
+
+            .tooltip-box.#{$id}__hide {
+                display: none;
+                max-height: 0;
+                visibility: hidden;
+                padding: 0 16px;
+                animation: fade-out 0.5s ease-out both;
+            }
+
+            .#{$id}__tooltipArrow {
+                position: absolute;
+                top: -8px;
+                right: 55px;
+
+                @include media-query(sm) {
+                    top: -7px;
+                    left: 45px;
+                    right: unset;
+                }
+            }
+        }
+    }
+
+    &__counterObjectionWrapper {
+        margin-top: 12px;
+        padding: 12px 12px 16px;
+        border: 1px solid #33333333;
+        background: #FAF0E6;
+        border-radius: 4px;
+
+        .#{$id}__headerText {
+            font-family: Arial;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 16px;
+            color: #333333;
+        }
+
+        .#{$id}__detailText {
+            font-family: Arial;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: #333333;
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-out {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+}
