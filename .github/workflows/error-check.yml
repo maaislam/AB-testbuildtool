@@ -71,6 +71,7 @@ jobs:
             DETAILS=""
           fi
 
-          curl -X POST -H 'Content-type: application/json' --data "{
+          curl -X POST -H 'Content-type: application/json' --data  "{
+            \"channel\": \"#eslint-alerts\",
             \"text\": \"${STATUS}\n*Repository:* ${REPO}\n*Branch:* ${BRANCH}\n*Commit:* <${COMMIT_URL}>\n*Pushed by:* ${AUTHOR}\n\n${DETAILS}\"
           }" $SLACK_WEBHOOK_URL
