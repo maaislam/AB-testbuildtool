@@ -40,7 +40,7 @@ jobs:
       - name: Send Slack Notification
         if: always() # Always run this step
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_AUTOMATION_WEBHOOK_URL }}
         run: |
           if [ "$has_errors" = "true" ]; then
             STATUS=":x: ESLint found errors in the latest push."
