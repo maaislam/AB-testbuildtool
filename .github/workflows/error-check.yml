@@ -45,9 +45,13 @@ jobs:
         if: ${{ env.has_errors }}
         id: format_slack_message
         run: |
-          SUMMARY=$(jq -r '.[0:3] | map("*\(.file)*\n\(.errors | join("\n"))") | join("\n\n")' eslint-summary.json)
-          SUMMARY=${SUMMARY:-"No detailed errors found"}
-          echo "eslint_summary=$SUMMARY" >> $GITHUB_ENV
+          ERROR_COUNT=$(jq '[.[] | .errorCount] | add' eslint-report.json)
+          if [ "$ERROR_COUNT" -gt 0 ]; then
+            echo "has_errors=true" >> $GITHUB_ENV
+            jq -r '[.[] | select(.errorCount > 0) | {file: .filePath, errors: .messages | map("* Line \(.line), Col \(.column): \(.message)")} ]' eslint-report.json > eslint-summary.json
+          else
+            echo "has_errors=false" >> $GITHUB_ENV
+          fi
 
       - name: Send Slack Notification
         if: always() # Always run this step
