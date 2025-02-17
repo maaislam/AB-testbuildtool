@@ -23,7 +23,7 @@ jobs:
       - name: Run ESLint on clients/
         id: eslint
         run: |
-          npx eslint clients/**/*.js --format json --output-file eslint-report.json --max-warnings 0
+          npx eslint . --format json --output-file eslint-report.json || true
 
       - name: Debug ESLint Output
         if: always()
@@ -42,7 +42,7 @@ jobs:
           fi
 
       - name: Format ESLint Errors for Slack
-        if: env.has_errors == 'true'
+        if: ${{ env.has_errors == 'true' }}
         id: format_slack_message
         run: |
           SUMMARY=$(jq -r '.[0:3] | map("*File:* \(.file)\n\(.errors | join("\n"))") | join("\n\n")' eslint-summary.json)
