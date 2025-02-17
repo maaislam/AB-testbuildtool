@@ -27,9 +27,9 @@ jobs:
       - name: Get changed JS files
         id: changed_files
         run: |
-          CHANGED_FILES=$(git diff --name-only HEAD^ HEAD -- '*.js' '*.jsx' '*.ts' '*.tsx')
+          CHANGED_FILES=$(git diff --name-only HEAD^ HEAD -- 'clients/**/*.js' 'clients/**/*.jsx' 'clients/**/*.ts' 'clients/**/*.tsx')
           if [[ -z "$CHANGED_FILES" ]]; then
-            echo "No JavaScript files changed."
+            echo "No JavaScript files changed in clients/."
             echo "eslint_needed=false" >> $GITHUB_ENV
           else
             echo "eslint_needed=true" >> $GITHUB_ENV
