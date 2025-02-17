@@ -1,4 +1,4 @@
-name: JavaScript Lint Check (Clients Folder)
+name: ESLint Check and Notify Slack
 
 on:
   push:
@@ -7,49 +7,47 @@ on:
 
 jobs:
   lint:
-    name: Run ESLint on Clients Folder
+    name: Run ESLint
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: Run ESLint and Capture Output
-        id: eslint_check
+      - name: Run ESLint
+        id: eslint
         run: |
-          ESLINT_OUTPUT=$(npx eslint clients/ --ext .js,.jsx,.ts,.tsx --format=json || true)
-          echo "$ESLINT_OUTPUT" > eslint_output.json
-          ERROR_COUNT=$(echo "$ESLINT_OUTPUT" | jq '[.[] | .errorCount] | add')
-          WARNING_COUNT=$(echo "$ESLINT_OUTPUT" | jq '[.[] | .warningCount] | add')
-          echo "ESLINT_ERRORS=$ERROR_COUNT" >> $GITHUB_ENV
-          echo "ESLINT_WARNINGS=$WARNING_COUNT" >> $GITHUB_ENV
+          npx eslint . --format json --output-file eslint-report.json || true
 
-      - name: Debug ESLint Results
-        run: cat eslint_output.json
-
-      - name: Send Slack Notification on ESLint Errors or Warnings
-        if: env.ESLINT_ERRORS != '0' || env.ESLINT_WARNINGS != '0'
+      - name: Check ESLint Results
+        id: check_eslint
         run: |
-          curl -X POST -H 'Content-Type: application/json' --data '{
-            "type": "event",
-            "event": {
-              "text": "🚨 *ESLint Found Issues in Clients Folder!* 🚨",
-              "fields": {
-                "Repository": "${{ github.repository }}",
-                "Branch": "${{ github.ref }}",
-                "Commit": "${{ github.sha }}",
-                "Actor": "${{ github.actor }}",
-                "Errors": "${{ env.ESLINT_ERRORS }}",
-                "Warnings": "${{ env.ESLINT_WARNINGS }}",
-                "Details": "<https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
-              }
-            }
-          }' ${{ secrets.SLACK_AUTOMATION_WEBHOOK_URL }}
+          ERROR_COUNT=$(jq '[.[] | .errorCount] | add' eslint-report.json)
+          if [ "$ERROR_COUNT" -gt 0 ]; then
+            echo "has_errors=true" >> $GITHUB_ENV
+          else
+            echo "has_errors=false" >> $GITHUB_ENV
+          fi
+
+      - name: Send Slack Notification
+        if: always() # Always run this step
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          if [ "$has_errors" = "true" ]; then
+            STATUS=":x: ESLint found errors in the latest push."
+          else
+            STATUS=":white_check_mark: ESLint passed with no errors."
+          fi
+
+          curl -X POST -H 'Content-type: application/json' --data "{
+            \"text\": \"${STATUS}\nRepository: ${{ github.repository }}\nBranch: ${{ github.ref }}\nCommit: <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}>\"
+          }" $SLACK_WEBHOOK_URL
