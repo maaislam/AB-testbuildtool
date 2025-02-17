@@ -1,11 +1,7 @@
-name: ESLint Check in clients/ and Notify Slack
+name: ESLint on clients/ Folder and Notify Slack
 
 on:
   push:
-    branches:
-      - main
-      - develop
-      - feature/*
 
 jobs:
   lint:
@@ -24,18 +20,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run ESLint on all files in clients/
+      - name: Run ESLint on clients/
         id: eslint
         run: |
-          npx eslint "clients/**/*.js" "clients/**/*.jsx" "clients/**/*.ts" "clients/**/*.tsx" --format json --output-file eslint-report.json || true
+          npx eslint clients/**/*.js --format json --output-file eslint-report.json --max-warnings 0
+
+      - name: Debug ESLint Output
+        if: always()
+        run: cat eslint-report.json || echo "No ESLint output found"
 
       - name: Process ESLint Results
         id: parse_eslint
         run: |
-          ERROR_COUNT=$(jq '[.[] | .errorCount] | add' eslint-report.json)
+          ERROR_COUNT=$(jq '[.[] | .messages | map(select(.severity == 2)) | length] | add' eslint-report.json)
           if [ "$ERROR_COUNT" -gt 0 ]; then
             echo "has_errors=true" >> $GITHUB_ENV
-            jq -r '[.[] | select(.errorCount > 0) | 
+            jq -r '[.[] | select(.messages | map(select(.severity == 2)) | length > 0) | 
             {file: .filePath, errors: .messages | map("* Line \(.line), Col \(.column): \(.message)")} ]' eslint-report.json > eslint-summary.json
           else
             echo "has_errors=false" >> $GITHUB_ENV
@@ -60,10 +60,10 @@ jobs:
           COMMIT_URL="${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}"
 
           if [ "$has_errors" = "true" ]; then
-            STATUS=":x: *ESLint found errors in the latest push.*"
+            STATUS=":x: *ESLint found errors in clients/ folder.*"
             DETAILS="${eslint_summary}"
           else
-            STATUS=":white_check_mark: *ESLint passed with no errors.*"
+            STATUS=":white_check_mark: *No ESLint errors in clients/ folder.*"
             DETAILS=""
           fi
 
@@ -71,4 +71,4 @@ jobs:
           --data "{
             \"channel\": \"#eslint-alerts\",
             \"text\": \"${STATUS}\n*Repository:* ${REPO}\n*Branch:* ${BRANCH}\n*Commit:* <${COMMIT_URL}>\n*Pushed by:* ${AUTHOR}\n\n${DETAILS}\"
-          }" $SLACK_WEBHOOK_URL
+          }" SLACK_WEBHOOK_URL
