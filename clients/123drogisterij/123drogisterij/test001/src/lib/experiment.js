@@ -9,7 +9,7 @@ import shared from './shared/shared';
 const { ID } = shared;
 
 export default () => {
-  if (sessionStorage.getItem('reloaded-by-atc')) {
+  if (sessionStorae.getItem('reloaded-by-atc')) {
     sessionStorage.removeItem('reloaded-by-atc');
     openMiniCart(ID);
     console.log('reloaded by atc');
