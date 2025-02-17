@@ -42,7 +42,7 @@ jobs:
           fi
 
       - name: Format ESLint Errors for Slack
-        if: env.has_errors == 'true'
+        if: ${{ env.has_errors }}
         id: format_slack_message
         run: |
           SUMMARY=$(jq -r '.[0:3] | map("*\(.file)*\n\(.errors | join("\n"))") | join("\n\n")' eslint-summary.json)
