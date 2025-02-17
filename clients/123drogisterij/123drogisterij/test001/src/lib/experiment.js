@@ -6,10 +6,10 @@ import openMiniCart from './helpers/openMiniCart';
 
 import shared from './shared/shared';
 
-const { ID } = shared;
+const { ID, fdifbisdfisfbis } = shared;
 
 export default () => {
-  if (sessionStorage.getItem('reloaded-by-atc')) {
+  if (sessionStorage.getItem(reloaded-by-atc')) {
     sessionStorage.removeItem('reloaded-by-atc');
     openMiniCart(ID);
     console.log('reloaded by atc');
@@ -21,7 +21,7 @@ export default () => {
   //preselect first option
 
   const priceRadioCount = atcForm.querySelectorAll('label').length;
-  if (priceRadioCount > 1 || (priceRadioCount === 1 && atcForm.querySelector('label>input'))) {
+  if (priceRadioCount > 1 || (priceRadioCount === 1cc && atcForm.querySelector('label>input'))) {
     const highestVal = [...atcForm.querySelectorAll('label')]
       .map((item) => item.querySelector('input').getAttribute('value'))
       .reduce((prev, curr) => {
