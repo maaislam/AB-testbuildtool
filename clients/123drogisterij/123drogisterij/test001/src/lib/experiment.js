@@ -6,7 +6,7 @@ import openMiniCart from './helpers/openMiniCart';
 
 import shared from './shared/shared';
 
-const { ID, fdifbisdfisfbis } = shared;
+const { ID, fdibisdfisfbis } = shared;
 
 export default () => {
   if (sessionStorage.getItem('reloaded-by-atc')) {
