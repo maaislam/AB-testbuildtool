@@ -23,11 +23,12 @@ jobs:
       - name: Run ESLint on clients/
         id: eslint
         run: |
-          npx eslint clients/**/*.js --format json --output-file eslint-report.json --max-warnings 0
+          npx eslint clients --ext .js,.jsx,.ts,.tsx --resolve-plugins-relative-to $(pwd)
 
-      - name: Debug ESLint Output
-        if: always()
-        run: cat eslint-report.json || echo "No ESLint output found"
+      - name: Debug JavaScript Files
+        run: |
+          echo "Checking JavaScript files in clients/"
+          find clients -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" \)
 
       - name: Process ESLint Results
         id: parse_eslint
