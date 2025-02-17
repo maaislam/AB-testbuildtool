@@ -212,20 +212,20 @@ const setPriceForQuantity = (target, currentQuantity) => {
   }
 };
 
-// const setImageForQuantity = (target, matchedCtrlInputElem) => {
-//   const productBoxElem = target.closest(`.${ID}__productBox`);
-//   const ctrlQuantityLabel = matchedCtrlInputElem.nextElementSibling;
-//   const ctrlSelectedPackageImgElem = ctrlQuantityLabel.querySelector('img');
-//   const ctrlSelectedPackageImgSrc = ctrlSelectedPackageImgElem.getAttribute('src');
+//const setImageForQuantity = (target, matchedCtrlInputElem) => {
+//const productBoxElem = target.closest(`.${ID}__productBox`);
+//const ctrlQuantityLabel = matchedCtrlInputElem.nextElementSibling;
+//const ctrlSelectedPackageImgElem = ctrlQuantityLabel.querySelector('img');
+//const ctrlSelectedPackageImgSrc = ctrlSelectedPackageImgElem.getAttribute('src');
 
-//   if (productBoxElem.dataset.type === 'subscription') {
-//     const productImageElem = productBoxElem.querySelector('.subs-product-image img');
-//     productImageElem.src = ctrlSelectedPackageImgSrc;
-//   } else if (productBoxElem.dataset.type === 'oneTimePurchase') {
-//     const productImageElem = productBoxElem.querySelector('.one-time-product-image img');
-//     productImageElem.src = ctrlSelectedPackageImgSrc;
-//   }
-// };
+//if (productBoxElem.dataset.type === 'subscription') {
+//const productImageElem = productBoxElem.querySelector('.subs-product-image img');
+//productImageElem.src = ctrlSelectedPackageImgSrc;
+//} else if (productBoxElem.dataset.type === 'oneTimePurchase') {
+//const productImageElem = productBoxElem.querySelector('.one-time-product-image img');
+//productImageElem.src = ctrlSelectedPackageImgSrc;
+//}
+//};
 
 const initializeBoxes = () => {
   const ctrlCheckedQuantityElem = document.querySelector('input[name="Quantity"]:checked');

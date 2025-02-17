@@ -2,7 +2,9 @@ import { calender, clockIcon, matchIcon, rightArrow } from '../assets/icons';
 
 const bettingWrapper = (ID, data) => {
   const html = `
-        <div class="${ID}__bettingWrapper">
+        <div class="${ID}__bettingWrapper" data-match="${data.firstTeam} vs ${
+    data.secondTeam
+  }" data-event="${data.eventName}">
     <div class="${ID}__bettingContainer">
         <div class="${ID}__bettingLists">
             <div class="${ID}__bettingItem"
@@ -11,7 +13,7 @@ const bettingWrapper = (ID, data) => {
                     <div class="${ID}__contentHeader">
                       <div class="${ID}__eventInfo">
                         <span>Upcoming</span>
-                        <a href="${data.eventUrl}">${data.eventName}</a>
+                        <a href="${data.eventUrl}" class="event-link">${data.eventName}</a>
                       </div>
                     </div>
                     <div class="${ID}__teamInfo">
@@ -20,8 +22,8 @@ const bettingWrapper = (ID, data) => {
                         <p>${data.secondTeam}</p>
                       </div>
                       <div class="${ID}__eventTime">
-                        <span>${data.startingText}</span>
-                        <span>${data.textTime}</span>
+                      ${data.startingText ? `<span>${data.startingText}</span>` : ''}
+                      ${data.textTime ? ` <span>${data.textTime}</span>` : ''}
                       </div>
                     </div>
                     <div class="${ID}__additionalInfo">
@@ -52,6 +54,7 @@ const bettingWrapper = (ID, data) => {
                                data-operator="${info.dataOperator}"
                                data-element="clicks-to-operators"
                                data-placement="quick-tips-block"
+                                target="_blank"
                                data-type="button"
                                rel="nofollow noopener">${info.text}</a>
                             <div class="${ID}__ratingWrapper"

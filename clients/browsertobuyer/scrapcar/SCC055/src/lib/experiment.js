@@ -9,8 +9,12 @@ const dateHoursLater = (hours) => {
   currentDate.setHours(currentDate.getHours() + hours);
 
   //const options = { weekday: 'long', month: 'long' };
-  const dayOfWeek = currentDate.toLocaleDateString('en-GB', { weekday: 'long' });
-  const month = currentDate.toLocaleDateString('en-GB', { month: 'long' });
+  const dayOfWeek = currentDate.toLocaleDateString('en-GB', {
+ weekday: 'long'
+});
+  const month = currentDate.toLocaleDateString('en-GB', {
+ month: 'long'
+});
   const day = currentDate.getDate();
 
   //Add suffix to day

@@ -6,7 +6,7 @@ import { pollerLite } from './helpers/utils';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  
+
 };
 
 export default () => {

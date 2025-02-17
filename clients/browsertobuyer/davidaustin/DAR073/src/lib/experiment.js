@@ -31,8 +31,7 @@ const init = () => {
   ).parentElement;
 
   //remove mobile menu wrapper if already exists for SPA behavior
-  if (document.querySelector(`.${ID}__mobileMenuWrapper`))
-    document.querySelector(`.${ID}__mobileMenuWrapper`).remove();
+  if (document.querySelector(`.${ID}__mobileMenuWrapper`)) document.querySelector(`.${ID}__mobileMenuWrapper`).remove();
 
   if (!document.querySelector(`.${ID}__mobileMenuWrapper`)) {
     navTitle = 'Roses';

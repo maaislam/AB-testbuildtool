@@ -1,10 +1,8 @@
 /*eslint-disable no-param-reassign */
-import {
-  pdpDeliveryIcon,
+import { pdpDeliveryIcon,
   pdpFlexiblePaymentIcon,
   pdpPriceMatchPromiseIcon,
-  pdpStockIcon
-} from '../assets/icons';
+  pdpStockIcon } from '../assets/icons';
 import { pollerLite } from '../helpers/utils';
 
 const dropdownData = [

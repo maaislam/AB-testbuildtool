@@ -60,6 +60,12 @@ const extractTextAndNumber = (input) => {
   };
 };
 
+const removeLastUrlSegment = (url) => {
+  const parts = url.replace(/\/$/, '').split('/'); //Remove trailing slash & split
+  parts.pop(); //Remove last segment
+  return parts.join('/'); //Join back into a URL
+};
+
 const collectProductInfo = (
   allItemsArray,
   url,
@@ -74,8 +80,8 @@ const collectProductInfo = (
   //const eventTimeElement = doc.querySelector('[data-testid="ScheduleIcon"]');
   //const eventTime = eventTimeElement?.nextSibling?.textContent.trim() || '';
   //console.log(`time: ${eventTime}`);
-  const eventUrlElement = doc.querySelectorAll('.MuiTypography-caption.mui-3ck1e9')[2];
-  const eventUrl = eventUrlElement?.querySelector('a')?.href || '';
+
+  const eventUrl = removeLastUrlSegment(url);
 
   const startingTextElement = doc.querySelector('.MuiTypography-body2.mui-ih9fad');
   const startingText = startingTextElement?.textContent.trim() || '';
@@ -90,14 +96,6 @@ const collectProductInfo = (
   const competitionElement = doc.querySelector('.MuiTypography-subtitle2');
   const competitionName =
     competitionElement?.textContent?.toLocaleLowerCase()?.split('|')[1]?.trim() || '';
-
-  const breadcrambsElement = doc.querySelector(
-    'div.MuiBox-root > div.MuiContainer-root.MuiContainer-maxWidthLg > div.MuiBox-root'
-  );
-
-  const allLinkableElements = breadcrambsElement?.querySelectorAll('a');
-  const lastBreadcrambItem = allLinkableElements[allLinkableElements.length - 1];
-  const lastBreadcrambItemUrl = lastBreadcrambItem?.getAttribute('href') || '';
 
   const bettingItemsInfo = [];
   const allBettingItems = doc.querySelectorAll(
@@ -157,7 +155,6 @@ const collectProductInfo = (
     url,
     bettingItemsInfo,
     eventName,
-    eventUrl: lastBreadcrambItemUrl,
     productInfo: doc
   });
 };
