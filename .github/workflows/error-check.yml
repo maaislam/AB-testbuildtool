@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+      - develop
+      - feature/*
 
 jobs:
   lint:
@@ -27,27 +29,44 @@ jobs:
         run: |
           npx eslint . --format json --output-file eslint-report.json || true
 
-      - name: Check ESLint Results
-        id: check_eslint
+      - name: Parse ESLint Results
+        id: parse_eslint
         run: |
           ERROR_COUNT=$(jq '[.[] | .errorCount] | add' eslint-report.json)
           if [ "$ERROR_COUNT" -gt 0 ]; then
             echo "has_errors=true" >> $GITHUB_ENV
+            jq -r '[.[] | select(.errorCount > 0) | 
+            {file: .filePath, errors: .messages | map("\(.line):\(.column) \(.message)")} ]' eslint-report.json > eslint-summary.json
           else
             echo "has_errors=false" >> $GITHUB_ENV
           fi
+
+      - name: Format ESLint Errors for Slack
+        if: env.has_errors == 'true'
+        id: format_slack_message
+        run: |
+          SUMMARY=$(jq -r '.[0:3] | map("*\(.file)*\n\(.errors | join("\n"))") | join("\n\n")' eslint-summary.json)
+          SUMMARY=${SUMMARY:-"No detailed errors found"}
+          echo "eslint_summary=$SUMMARY" >> $GITHUB_ENV
 
       - name: Send Slack Notification
         if: always() # Always run this step
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_AUTOMATION_WEBHOOK_URL }}
         run: |
+          AUTHOR="${{ github.actor }}"
+          REPO="${{ github.repository }}"
+          BRANCH="${{ github.ref }}"
+          COMMIT_URL="${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}"
+
           if [ "$has_errors" = "true" ]; then
-            STATUS=":x: ESLint found errors in the latest push."
+            STATUS=":x: *ESLint found errors in the latest push.*"
+            DETAILS="*$eslint_summary*"
           else
-            STATUS=":white_check_mark: ESLint passed with no errors."
+            STATUS=":white_check_mark: *ESLint passed with no errors.*"
+            DETAILS=""
           fi
 
           curl -X POST -H 'Content-type: application/json' --data "{
-            \"text\": \"${STATUS}\nRepository: ${{ github.repository }}\nBranch: ${{ github.ref }}\nCommit: <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}>\"
+            \"text\": \"${STATUS}\n*Repository:* ${REPO}\n*Branch:* ${BRANCH}\n*Commit:* <${COMMIT_URL}>\n*Pushed by:* ${AUTHOR}\n\n${DETAILS}\"
           }" $SLACK_WEBHOOK_URL
