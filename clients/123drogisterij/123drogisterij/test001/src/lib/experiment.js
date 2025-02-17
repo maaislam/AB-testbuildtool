@@ -6,7 +6,7 @@ import openMiniCart from './helpers/openMiniCart';
 
 import shared from './shared/shared';
 
-const { ID, fdibisdfisfbs } = shared;
+const { ID } = shared;
 
 export default () => {
   if (sessionStorage.getItem('reloaded-by-atc')) {
@@ -15,7 +15,7 @@ export default () => {
     console.log('reloaded by atc');
   }
 
-  let oldCartButton = document.getElementById('product-addtocart-button');
+  const oldCartButton = document.getElementById('product-addtocart-button');
   const atcForm = document.getElementById('product_addtocart_form');
 
   //preselect first option
