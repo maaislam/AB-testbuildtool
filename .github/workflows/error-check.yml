@@ -20,21 +20,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Debug JavaScript Files in clients/
+      - name: Run ESLint on clients/
+        id: eslint
         run: |
-          echo "Checking JavaScript files inside clients/"
-          find clients -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" \)
-
-          - name: Run ESLint on clients/
-          id: eslint
-          run: |
-            FILES=$(find clients -type f -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx")
-            if [ -n "$FILES" ]; then
-              npx eslint $FILES --max-warnings 0 --format json --output-file eslint-report.json || true
-            else
-              echo "No JavaScript files found in clients/"
-              echo "{}" > eslint-report.json
-            fi
+          if find clients -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" \) | grep -q .; then
+            npx eslint "clients/**/*.js" --max-warnings 0 --format json --output-file eslint-report.json || true
+          else
+            echo "No JavaScript files found in clients/"
+            echo "{}" > eslint-report.json
+          fi
 
       - name: Debug ESLint Output
         if: always()
