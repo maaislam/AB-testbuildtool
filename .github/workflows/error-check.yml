@@ -1,79 +1,26 @@
-name: ESLint on clients/ Folder and Notify Slack
+name: ESLint Check
 
 on:
+  pull_request:
   push:
+    branches:
+      - main
 
 jobs:
   lint:
-    name: Run ESLint on clients/
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Run ESLint on clients/
-        id: eslint
-        run: |
-          if find clients -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" \) | grep -q .; then
-            npx eslint "clients/**/*.js" --max-warnings 0 --format json --output-file eslint-report.json || true
-          else
-            echo "No JavaScript files found in clients/"
-            echo "{}" > eslint-report.json
-          fi
-
-      - name: Debug ESLint Output
-        if: always()
-        run: cat eslint-report.json || echo "No ESLint output found"
-
-      - name: Process ESLint Results
-        id: parse_eslint
-        run: |
-          ERROR_COUNT=$(jq '[.[] | .messages | map(select(.severity == 2)) | length] | add' eslint-report.json)
-          if [ "$ERROR_COUNT" -gt 0 ]; then
-            echo "has_errors=true" >> $GITHUB_ENV
-            jq -r '[.[] | select(.messages | map(select(.severity == 2)) | length > 0) | 
-            {file: .filePath, errors: .messages | map("* Line \(.line), Col \(.column): \(.message)")} ]' eslint-report.json > eslint-summary.json
-          else
-            echo "has_errors=false" > $GITHUB_ENV
-          fi
-
-      - name: Format ESLint Errors for Slack
-        if: ${{ env.has_errors == 'true' }}
-        id: format_slack_message
-        run: |
-          SUMMARY=$(jq -r '.[0:3] | map("*File:* \(.file)\n\(.errors | join("\n"))") | join("\n\n")' eslint-summary.json)
-          SUMMARY=${SUMMARY:-"No detailed errors found"}
-          echo "eslint_summary=$SUMMARY" >> $GITHUB_ENV
-
-      - name: Send Slack Notification
-        if: always()
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_AUTOMATION_WEBHOOK_URL }}
-        run: |
-          AUTHOR="${{ github.actor }}"
-          REPO="${{ github.repository }}"
-          BRANCH="${{ github.ref }}"
-          COMMIT_URL="${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}"
-
-          if [ "$has_errors" = "true" ]; then
-            STATUS=":x: *ESLint found errors in clients/ folder.*"
-            DETAILS="${eslint_summary}"
-          else
-            STATUS=":white_check_mark: *No ESLint errors in clients/ folder.*"
-            DETAILS=""
-          fi
-
-          curl -X POST -H "Authorization: Bearer $SLACK_WEBHOOK_URL" -H 'Content-type: application/json' \
-          --data '{
-            "channel": "#eslint-alerts",
-            "text": "'"${STATUS}"'\n*Repository:* '"${REPO}"'\n*Branch:* '"${BRANCH}"'\n*Commit:* <'"${COMMIT_URL}"'>\n*Pushed by:* '"${AUTHOR}"'\n\n'"${DETAILS}"'"
-          }' $SLACK_WEBHOOK_URL
+      - name: Run ESLint on clients folder
+        run: npx eslint clients/**/*.js
