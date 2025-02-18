@@ -12,6 +12,7 @@ const initiallyItemsHide = () => {
   const items = document.querySelectorAll('.MuiGrid-container.mui-1m5wcm5 .MuiGrid-item');
   items.forEach((item) => {
     item.classList.add(`${ID}__item`);
+    //eslint-disable-next-line no-param-reassign
     item.style.opacity = '0';
   });
 };
@@ -152,6 +153,7 @@ const init = () => {
           const url = item.querySelector('a').href;
           const targetPoint = item.querySelector('.MuiCardActions-spacing');
           targetPoint.classList.add(`${ID}__mainWrapper`);
+          //eslint-disable-next-line no-shadow
           const isExistingPrediction = data.find((item) => item.url === url);
           if (isExistingPrediction && !item.querySelector(`.${ID}__bettingWrapper`)) {
             item
@@ -164,10 +166,11 @@ const init = () => {
         loaderElem && loaderElem.remove();
 
         items.forEach((item) => {
+          //eslint-disable-next-line no-param-reassign
           item.style.opacity = '1';
         });
       })
-      .catch((error) => {
+      .catch(() => {
         //remove loader
         const loaderElem = document.querySelector(`.${ID}__loaderWrapper`);
         loaderElem && loaderElem.remove();
@@ -176,6 +179,7 @@ const init = () => {
         const bettingWrapperElem = document.querySelector(`.${ID}__bettingWrapper`);
         bettingWrapperElem && bettingWrapperElem.remove();
         items.forEach((item) => {
+          //eslint-disable-next-line no-param-reassign
           item.style.opacity = '1';
         });
       });
