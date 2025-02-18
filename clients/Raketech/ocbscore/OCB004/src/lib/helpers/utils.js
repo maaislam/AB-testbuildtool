@@ -52,8 +52,17 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
 const extractTextAndNumber = (input) => {
   const match = input.match(/(.+?)[,\s]+([\d.,]+)/);
+
+  if (!match) {
+    return {
+      text: input.includes(',') ? input.split(',')[0].trim() : input.trim(),
+      number: null
+    };
+  }
+
   const text = match[1].trim();
   const number = match[2].replace(/,/g, '');
+
   return {
     text,
     number
@@ -62,13 +71,11 @@ const extractTextAndNumber = (input) => {
 
 const collectProductInfo = (allItemsArray, url, doc, eventName, eventTime) => {
   //console.log(doc, 'doc');
-  const mainTitleElement = doc.querySelector('#match-event-tabpanel-0 h3');
+  const mainTitleElement = doc.querySelector('.MuiTypography-h1');
   const mainTitle = mainTitleElement?.textContent.trim();
   const eventDateElement = doc.querySelector('[data-testid="EventIcon"]');
   const eventDate = eventDateElement?.nextSibling?.textContent.trim() || '';
-  //const eventTimeElement = doc.querySelector('[data-testid="ScheduleIcon"]');
-  //const eventTime = eventTimeElement?.nextSibling?.textContent.trim() || '';
-  //console.log(`time: ${eventTime}`);
+
   const tipsterElement = doc.querySelector('.MuiPaper-elevation .MuiCardHeader-title');
   const tipster = tipsterElement?.querySelector('a')?.textContent.trim() || '';
   const tipsterLink = tipsterElement?.querySelector('a')?.href || '';
@@ -90,44 +97,45 @@ const collectProductInfo = (allItemsArray, url, doc, eventName, eventTime) => {
     '#match-event-tabpanel-0 .MuiPaper-elevation.mui-veyekx, .MuiStack-root.mui-6r2fzw .MuiGrid-item'
   );
 
-  allBettingItems.forEach((item, index) => {
-    let text;
-    let number;
-    const titleElement =
-      index === 0
-        ? item.querySelector(`p.MuiTypography-body${index + 1}`)
-        : item.querySelector('p.MuiTypography-body2');
+  allBettingItems.length > 0 &&
+    allBettingItems.forEach((item, index) => {
+      let text;
+      let number;
+      const titleElement =
+        index === 0
+          ? item.querySelector(`p.MuiTypography-body${index + 1}`)
+          : item.querySelector('p.MuiTypography-body2');
 
-    if (index === 0) {
-      text = titleElement?.textContent.trim()
-        ? extractTextAndNumber(titleElement?.textContent.trim()).text
-        : '';
-      number = titleElement?.textContent.trim()
-        ? extractTextAndNumber(titleElement?.textContent.trim()).number
-        : '';
-    } else {
-      text = titleElement?.textContent.trim() || '';
-      number = titleElement?.nextSibling?.textContent.trim() || '';
-    }
+      if (index === 0) {
+        text = titleElement?.textContent.trim()
+          ? extractTextAndNumber(titleElement?.textContent.trim()).text
+          : '';
+        number = titleElement?.textContent.trim()
+          ? extractTextAndNumber(titleElement?.textContent.trim()).number
+          : '';
+      } else {
+        text = titleElement?.textContent.trim() || '';
+        number = titleElement?.nextSibling?.textContent.trim() || '';
+      }
 
-    const image = item.querySelector('[data-type="logo"]');
-    const imageSource = image?.querySelector('img').src || '';
-    const bgColor = image ? image.getAttribute('bgcolor') : '#1a5685';
+      const image = item.querySelector('[data-type="logo"]');
+      const imageSource = image?.querySelector('img').src || '';
+      const bgColor = image ? image.getAttribute('bgcolor') : '#1a5685';
 
-    const dataOperator = image ? image.getAttribute('data-operator') : '1xBet';
+      const dataOperator = image ? image.getAttribute('data-operator') : '1xBet';
 
-    const linkElement = item.querySelector('[data-type="button"]');
-    const link = linkElement?.href || '';
+      const linkElement = item.querySelector('[data-type="button"]');
+      const link = linkElement?.href || '';
 
-    bettingItemsInfo.push({
-      text,
-      number,
-      imageSource,
-      link,
-      bgColor,
-      dataOperator
+      bettingItemsInfo.push({
+        text,
+        number,
+        imageSource,
+        link,
+        bgColor,
+        dataOperator
+      });
     });
-  });
 
   allItemsArray.push({
     competitionName,
@@ -147,11 +155,14 @@ const collectProductInfo = (allItemsArray, url, doc, eventName, eventTime) => {
 export const parseHTML = async (urls) => {
   const allItemsArray = [];
 
-  const promises = urls.map(({ url }) =>
-    fetch(url).catch((error) => {
-      console.error(`Error fetching ${url}: ${error.message}`);
-      return Promise.resolve(null);
-    }));
+  const promises = urls.map(
+    ({ url }) =>
+      fetch(url).catch((error) => {
+        console.error(`Error fetching ${url}: ${error.message}`);
+        return Promise.resolve(null);
+      })
+    //eslint-disable-next-line function-paren-newline
+  );
 
   const responses = await Promise.all(promises);
   //eslint-disable-next-line no-restricted-syntax

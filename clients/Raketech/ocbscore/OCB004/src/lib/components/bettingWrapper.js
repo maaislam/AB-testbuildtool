@@ -33,9 +33,10 @@ const bettingWrapper = (ID, data) => {
                                 </div>
                                 <div class="${ID}__bettingInfo">
                                     <div class="${ID}__bettingTitle">
-                                        ${item.mainTitle} and Tips ${
-                          item.competitionName ? ` | ${item.competitionName}` : ''
-                        }</div>
+                                        ${item.mainTitle.replace(
+                                          'Prediction',
+                                          'Prediction and Tips'
+                                        )}</div>
                                     ${
                                       item.tipster
                                         ? `<div class="${ID}__tipsterWrapper">
@@ -76,12 +77,19 @@ const bettingWrapper = (ID, data) => {
                                                                     : '<img src="https://cdn.backend.ocbscores.com/wp-content/uploads/2024/08/1xbet.png"/>'
                                                                 }
                                                             </span>
-                                                            <span class="${ID}__number">
+                                                            ${
+                                                              info.number
+                                                                ? `
+                                                              <span class="${ID}__number">
                                                                 <span class="${ID}__numberText">
                                                                   ${info.number}
                                                                 </span>
                                                                 <span class="${ID}__icon">${rightArrow}</span>
                                                             </span>
+                                                            `
+                                                                : ''
+                                                            }
+                                                            
                                                         </a>
                                                     </div>
                                                 </div>
