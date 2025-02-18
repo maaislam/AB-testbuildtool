@@ -43,7 +43,7 @@ jobs:
             jq -r '[.[] | select(.messages | map(select(.severity == 2)) | length > 0) | 
             {file: .filePath, errors: .messages | map("* Line \(.line), Col \(.column): \(.message)")} ]' eslint-report.json > eslint-summary.json
           else
-            echo "has_errors=false" >> $GITHUB_ENV
+            echo "has_errors=false" > $GITHUB_ENV
           fi
 
       - name: Format ESLint Errors for Slack
