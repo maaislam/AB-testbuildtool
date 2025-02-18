@@ -12,7 +12,7 @@ export default () => {
   if (sessionStorage.getItem('reloaded-by-atc')) {
     sessionStorage.removeItem('reloaded-by-atc');
     openMiniCart(ID);
-    console.log('reloaded by atc');
+    console.log('reloaded bjkkbhjklhly atc');
   }
 
   const oldCartButton = document.getElementById('product-addtocart-button');
