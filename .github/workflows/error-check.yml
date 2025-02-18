@@ -20,6 +20,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Debug JavaScript Files in clients/
+        run: |
+          echo "Checking JavaScript files inside clients/"
+          find clients -type f \( -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" \)
+
       - name: Run ESLint on clients/
         id: eslint
         run: |
@@ -34,9 +39,9 @@ jobs:
         run: |
           ERROR_COUNT=$(jq '[.[] | .messages | map(select(.severity == 2)) | length] | add' eslint-report.json)
           if [ "$ERROR_COUNT" -gt 0 ]; then
-            echo "has_errors=true" >> $GITHUB_ENV
-            jq -r '[.[] | select(.messages | map(select(.severity == 2)) | length > 0) | 
-            {file: .filePath, errors: .messages | map("* Line \(.line), Col \(.column): \(.message)")} ]' eslint-report.json > eslint-summary.json
+          echo "has_errors=true" >> $GITHUB_ENV
+          jq -r '[.[] | select(.messages | map(select(.severity == 2)) | length > 0) | 
+          {file: .filePath, errors: .messages | map("* Line \(.line), Col \(.column): \(.message)")} ]' eslint-report.json > eslint-summary.json
           else
             echo "has_errors=false" >> $GITHUB_ENV
           fi
@@ -67,8 +72,5 @@ jobs:
             DETAILS=""
           fi
 
-          curl -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" -H 'Content-type: application/json' \
-          --data "{
-            \"channel\": \"#eslint-alerts\",
-            \"text\": \"${STATUS}\n*Repository:* ${REPO}\n*Branch:* ${BRANCH}\n*Commit:* <${COMMIT_URL}>\n*Pushed by:* ${AUTHOR}\n\n${DETAILS}\"
-          }" $SLACK_WEBHOOK_URL
+        curl -X POST -H "Authorization: Bearer $SLACK_BOT_TOKEN" -H 'Content-type: application/json' \
+        --data "{\"channel\": \"#eslint-alerts\",\"text\": \"${STATUS}\n*Repository:* ${REPO}\n*Branch:* ${BRANCH}\n*Commit:* <${COMMIT_URL}>\n*Pushed by:* ${AUTHOR}\n\n${DETAILS}\"}" $SLACK_WEBHOOK_URL
