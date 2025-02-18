@@ -440,11 +440,23 @@
   }
 
   &__morePredictionButton {
+    max-width: 259px;
     font-weight: 500;
     font-size: 15px;
     line-height: 19.5px;
     letter-spacing: 0.46px;
     padding: 12px 12px;
+  }
+
+  .MuiGrid-item:has(.#{$id}__morePredictionButton) {
+    max-width: 372px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 899px) {
+      max-width: 100%;
+    }
   }
 
   &__bannerTitle {

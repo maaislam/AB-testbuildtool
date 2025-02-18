@@ -9,7 +9,7 @@ import secondaryBgImage from './components/secondaryBgImage';
 const { ID, VARIATION } = shared;
 
 const initiallyItemsHide = () => {
-  const items = document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item');
+  const items = document.querySelectorAll('.MuiGrid-container.mui-1m5wcm5 .MuiGrid-item');
   items.forEach((item) => {
     item.classList.add(`${ID}__item`);
     item.style.opacity = '0';
@@ -20,7 +20,7 @@ const renderLoader = () => {
   const loaderElem = document.querySelector(`.${ID}__loaderWrapper`);
   loaderElem && loaderElem.remove();
   //add loader
-  const attachPoint = document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item')[0]
+  const attachPoint = document.querySelectorAll('.MuiGrid-container.mui-1m5wcm5 .MuiGrid-item')[0]
     .parentElement;
   attachPoint.insertAdjacentHTML(
     'beforebegin',
@@ -103,11 +103,11 @@ const init = () => {
   }
   const morePredictionButtonInCarousel = document.querySelector('.mui-19egsyp > a');
   if (morePredictionButtonInCarousel) {
-    morePredictionButtonInCarousel.innerText = 'more today’s match predictions';
+    morePredictionButtonInCarousel.innerText = 'more match predictions';
     morePredictionButtonInCarousel.classList.add(`${ID}__morePredictionButton`);
   }
 
-  const items = document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item');
+  const items = document.querySelectorAll('.MuiGrid-container.mui-1m5wcm5 .MuiGrid-item');
   const collectUrls = [];
 
   setTimeout(() => {
@@ -203,8 +203,8 @@ export default () => {
     pollerLite(
       [
         () =>
-          document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item') &&
-          document.querySelectorAll('.MuiGrid-container.mui-isbt42 .MuiGrid-item').length > 0
+          document.querySelectorAll('.MuiGrid-container.mui-1m5wcm5 .MuiGrid-item') &&
+          document.querySelectorAll('.MuiGrid-container.mui-1m5wcm5 .MuiGrid-item').length > 0
       ],
       () => {
         if (window.location.pathname === '/') {

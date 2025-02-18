@@ -1,6 +1,11 @@
 import { calender, clockIcon, matchIcon, rightArrow } from '../assets/icons';
 
 const bettingWrapper = (ID, data) => {
+  const firstpartOfCompitionName = data.competitionName.split(' ')[0];
+  const secondpartOfCompitionName = data.competitionName.split(' ')[1].toLocaleUpperCase();
+
+  const modifiedCompititionName = `${firstpartOfCompitionName} ${secondpartOfCompitionName}`;
+
   const html = `
         <div class="${ID}__bettingWrapper" data-match="${data.firstTeam} vs ${
     data.secondTeam
@@ -39,7 +44,7 @@ const bettingWrapper = (ID, data) => {
                         }
                         ${
                           data.competitionName
-                            ? `<span class="${ID}__section">${matchIcon} <span class="${ID}__text">${data.competitionName}</span></span>`
+                            ? `<span class="${ID}__section">${matchIcon} <span class="${ID}__text">${modifiedCompititionName}</span></span>`
                             : ''
                         }
                         
