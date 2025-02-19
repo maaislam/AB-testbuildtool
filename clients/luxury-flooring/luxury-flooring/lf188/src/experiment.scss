@@ -1,0 +1,47 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  [data-action='navigation'] {
+    @media screen and (max-width: 1023px) {
+      & > ul {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  &__staticOrder {
+    order: 100;
+  }
+  &__engineered-wood-flooring {
+    order: 0;
+  }
+
+  &__vinyl-flooring {
+    order: 1;
+  }
+
+  &__laminate-flooring {
+    order: 2;
+  }
+
+  &__parquet-flooring {
+    order: 3;
+  }
+
+  &__solid-wood-flooring {
+    order: 4;
+  }
+
+  &__accessories {
+    order: 5;
+  }
+
+  &__inspiration {
+    order: 6;
+  }
+
+  &__sale {
+    order: 7;
+  }
+}
