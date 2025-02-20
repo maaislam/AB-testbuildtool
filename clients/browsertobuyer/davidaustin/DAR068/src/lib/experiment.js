@@ -61,7 +61,7 @@ export default () => {
         const action = 'Trustpilot Link Clicks';
         const eventCategory = 'DAR 068';
         trackGA4Event(eventCategory, action, '');
-        window.location.href = 'https://uk.trustpilot.com/review/davidaustinroses.co.uk';
+        window.open('https://uk.trustpilot.com/review/davidaustinroses.co.uk', '_blank');
       }
     });
   }
