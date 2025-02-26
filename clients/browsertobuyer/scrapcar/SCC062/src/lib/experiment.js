@@ -1,20 +1,21 @@
+/*eslint-disable max-len */
 import setup from './services/setup';
 import shared from './shared/shared';
 
 const { ID } = shared;
 
 const tooltipData = {
-  engine_condition_1: `<div>
+  engine_condition_1: `<div class="${ID}__tooltipContent">
     <div><span>No faults</span> - Engine that starts and runs as intended.</div>
     <div><span>Faulty but runs</span> - There is an engine problem, but it stll drives.</div>
     <div><span>Doesn’t run</span> - The engine won’t start or cuts out shortly after starting.</div>
   <div>`,
-  gearbox_condition_1: `<div>
+  gearbox_condition_1: `<div class="${ID}__tooltipContent">
     <div><span>Drives - </span>Gearbox works as intended.</div>
     <div><span>Faulty but drives - </span>There is an issue but you can still drive the vehicle.</div>
     <div><span>Doesn’t drive - </span>The gearbox fault prevents the engine from driving.</div>
   </div>`,
-  insurance_write_off_1: `<div>
+  insurance_write_off_1: `<div class="${ID}__tooltipContent">
     <div><span>No - </span>This vehicle has never been recorded as an insurance write off.</div>
     <div><span>Cat C - </span>This vehicle has previously been, or is currently a Cat C write off.</div>
     <div><span>Cat D - </span>This vehicle has previously been, or is currently a Cat D write off.</div>
@@ -39,6 +40,8 @@ const formFlow = {
 //Define steps where multiple selections are allowed
 const multiSelectSteps = ['warning_lights_2', 'warning_lights_3', 'warning_lights_4'];
 
+//const tooltipHTML = ``;
+
 //HTML for the Next button
 const nextBtnHTML = `<button type="button" name="warning_lights_next" class="c-btn ${ID}__nextBtn">Next</button>`;
 
@@ -51,6 +54,12 @@ const init = () => {
 
   firstFormRow.classList.remove(`${ID}__hide`);
   whatlightFormGroupElem.insertAdjacentHTML('afterend', nextBtnHTML);
+
+  //const activeInputElem = document.querySelector(`.form-row:not(.${ID}__hide) [type="radio"]`);
+  //const activeInputName = activeInputElem.name;
+
+  //tooltipData[activeInputName]
+  //tooltip design
 };
 
 export default () => {
@@ -95,6 +104,12 @@ export default () => {
           formRowElem.classList.remove(`${ID}__hide`);
         });
       });
+
+      //const activeInputElem = document.querySelector(`.form-row:not(.${ID}__hide) [type="radio"]`);
+      //const activeInputName = activeInputElem.name;
+
+      //tooltipData[activeInputName]
+      //tooltip design
     } else if (target.closest(`.${ID}__nextBtn`)) {
       const nextStepBtn = target.closest(`.${ID}__nextBtn`);
       const nextInputs = formFlow[nextStepBtn.name];
