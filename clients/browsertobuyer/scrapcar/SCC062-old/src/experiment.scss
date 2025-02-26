@@ -11,7 +11,7 @@
             display: none !important;
         }
 
-        .form-row:not(.whatlight-on) {
+        .form-row {
             .c-form-group {
                 display: block;
 
@@ -27,19 +27,6 @@
                     }
                 }
             }
-        }
-    }
-
-    .offerform-wrapper .form-row .c-btn.#{$id}__nextBtn {
-        min-width: 100%;
-        height: 40px;
-        margin-top: 15px;
-        transition: all 0.5s ease;
-
-        &:hover {
-            border: 2px solid #7190AF;
-            color: #FFF;
-            background: #7190AF;
         }
     }
 }
