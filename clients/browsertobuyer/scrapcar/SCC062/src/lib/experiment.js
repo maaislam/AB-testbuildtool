@@ -1,4 +1,5 @@
 /*eslint-disable max-len */
+import { toolTipIcon } from './assets/icons';
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -9,7 +10,7 @@ const tooltipData = {
     <div><span>No faults</span> - Engine that starts and runs as intended.</div>
     <div><span>Faulty but runs</span> - There is an engine problem, but it stll drives.</div>
     <div><span>Doesn’t run</span> - The engine won’t start or cuts out shortly after starting.</div>
-  <div>`,
+  </div>`,
   gearbox_condition_1: `<div class="${ID}__tooltipContent">
     <div><span>Drives - </span>Gearbox works as intended.</div>
     <div><span>Faulty but drives - </span>There is an issue but you can still drive the vehicle.</div>
@@ -21,7 +22,30 @@ const tooltipData = {
     <div><span>Cat D - </span>This vehicle has previously been, or is currently a Cat D write off.</div>
     <div><span>Cat S - </span>This vehicle has previously been, or is currently a Cat S write off.</div>
     <div><span>Cat N - </span>This vehicle has previously been, or is currently a Cat N write off.</div>
-  </div>`
+  </div>`,
+  warning_lights_1: `
+    <div class="${ID}__tooltipContent">
+    <div><span>No - </span>There are no warning lights staying lit on the dashboard</div>
+    <div><span>Yes - </span>At least 1 warning light stays lit on the dashboard after the engine has started up and is idling.</div>
+  </div>
+  `,
+  warning_lights_2: `
+  <div class="${ID}__tooltipContent">
+    <div><span>EML - </span>Engine Management Light.</div>
+    <div><span>ABS - </span>Anti-skid Braking System.</div>
+    <div><span>SRS - </span>Supplemental Restraint System (Airbags).</div>
+    <div><span>OTHER - </span>Any other warning lights on the dashboard.</div>
+  </div>`,
+  crash_damaged_opt_1: `
+    <div class="${ID}__tooltipContent">
+    <div>Does any crash damage impact your ability to drive the vehicle safely?</div>
+  </div>
+  `,
+  interior_condition_opt_1: `
+    <div class="${ID}__tooltipContent">
+    <div>Is there normal wear and tear relative to the age of the vehicle?</div>
+  </div>
+  `
 };
 
 window.tooltipData = tooltipData;
@@ -30,9 +54,11 @@ window.tooltipData = tooltipData;
 const formFlow = {
   engine_condition_1: ['gearbox_condition_1'],
   gearbox_condition_1: ['insurance_write_off_1'],
-  insurance_write_off_1: (value) => (value === 'No' ? ['warning_lights_1'] : ['insurance_write_off_1', 'insurance_write_off_2']),
+  insurance_write_off_1: (value) =>
+    value === 'No' ? ['warning_lights_1'] : ['insurance_write_off_1', 'insurance_write_off_2'],
   insurance_write_off_2: ['warning_lights_1'],
-  warning_lights_1: (value) => (value === 'No' ? ['crash_damaged_opt_1'] : ['warning_lights_1', 'warning_lights_2']),
+  warning_lights_1: (value) =>
+    value === 'No' ? ['crash_damaged_opt_1'] : ['warning_lights_1', 'warning_lights_2'],
   warning_lights_next: ['crash_damaged_opt_1'],
   crash_damaged_opt_1: ['interior_condition_opt_1']
 };
@@ -40,10 +66,42 @@ const formFlow = {
 //Define steps where multiple selections are allowed
 const multiSelectSteps = ['warning_lights_2', 'warning_lights_3', 'warning_lights_4'];
 
-//const tooltipHTML = ``;
+const tooltipHTML = (classTag) =>
+  `<div class="${ID}__tooltipIcon ${classTag}">${toolTipIcon}</div>`;
 
 //HTML for the Next button
 const nextBtnHTML = `<button type="button" name="warning_lights_next" class="c-btn ${ID}__nextBtn">Next</button>`;
+
+const initializeTooltips = () => {
+  const formElements = document.querySelectorAll(`.offerform-body .form-row:not(.${ID}__hide)`);
+
+  formElements.forEach((formElement) => {
+    const tooltipTargetPoint = formElement.querySelector('h2.ttl > img');
+    const tooltipContentTargetPoint = formElement.querySelector('h2.ttl');
+    const activeInputElem = formElement.querySelector('[type="radio"]');
+    const activeInputName = activeInputElem?.name;
+
+    console.log(activeInputName, 'activeInputName', activeInputElem);
+
+    //Insert tooltip icon if it does not already exist
+    if (
+      tooltipData[activeInputName] &&
+      tooltipTargetPoint &&
+      !formElement.querySelector(`.${ID}__tooltipIcon`)
+    ) {
+      tooltipTargetPoint.insertAdjacentHTML('beforebegin', tooltipHTML(`${ID}__custom`));
+    }
+
+    //Insert tooltip content if it does not already exist
+    if (
+      tooltipData[activeInputName] &&
+      tooltipContentTargetPoint &&
+      !formElement.querySelector(`.${ID}__tooltipContent`)
+    ) {
+      tooltipContentTargetPoint.insertAdjacentHTML('afterend', tooltipData[activeInputName]);
+    }
+  });
+};
 
 //Function to initialize and hide all form rows except the first one
 const init = () => {
@@ -55,11 +113,8 @@ const init = () => {
   firstFormRow.classList.remove(`${ID}__hide`);
   whatlightFormGroupElem.insertAdjacentHTML('afterend', nextBtnHTML);
 
-  //const activeInputElem = document.querySelector(`.form-row:not(.${ID}__hide) [type="radio"]`);
-  //const activeInputName = activeInputElem.name;
-
-  //tooltipData[activeInputName]
-  //tooltip design
+  //tooltip start
+  initializeTooltips();
 };
 
 export default () => {
@@ -105,11 +160,7 @@ export default () => {
         });
       });
 
-      //const activeInputElem = document.querySelector(`.form-row:not(.${ID}__hide) [type="radio"]`);
-      //const activeInputName = activeInputElem.name;
-
-      //tooltipData[activeInputName]
-      //tooltip design
+      initializeTooltips();
     } else if (target.closest(`.${ID}__nextBtn`)) {
       const nextStepBtn = target.closest(`.${ID}__nextBtn`);
       const nextInputs = formFlow[nextStepBtn.name];
@@ -126,6 +177,39 @@ export default () => {
           formRowElem.classList.remove(`${ID}__hide`);
         });
       });
+
+      //tooltip start
+      initializeTooltips();
     }
   });
+
+  document.addEventListener(
+    'mouseenter',
+    (event) => {
+      if (event.target instanceof Element && event.target.matches(`.${ID}__tooltipIcon`)) {
+        const tooltip = event.target;
+        const fromWrapper = tooltip.closest('.form-row');
+        const tooltipContentElem = fromWrapper?.querySelector(`.${ID}__tooltipContent`);
+        if (tooltipContentElem) {
+          tooltipContentElem.classList.add('show');
+        }
+      }
+    },
+    true
+  );
+
+  document.addEventListener(
+    'mouseleave',
+    (event) => {
+      if (event.target instanceof Element && event.target.matches(`.${ID}__tooltipIcon`)) {
+        const tooltip = event.target;
+        const fromWrapper = tooltip.closest('.form-row');
+        const tooltipContentElem = fromWrapper?.querySelector(`.${ID}__tooltipContent`);
+        if (tooltipContentElem) {
+          tooltipContentElem.classList.remove('show');
+        }
+      }
+    },
+    true
+  );
 };

@@ -15,6 +15,12 @@
   }
   &__engineered-wood-flooring {
     order: 0;
+
+    @media screen and (min-width: 1024px) {
+      & > a {
+        padding-left: 5px !important;
+      }
+    }
   }
 
   &__vinyl-flooring {
@@ -27,10 +33,25 @@
 
   &__parquet-flooring {
     order: 3;
+
+    @media screen and (min-width: 1024px) {
+      flex: 1 1 auto !important;
+    }
   }
 
   &__solid-wood-flooring {
     order: 4;
+    @media screen and (min-width: 1024px) and (max-width: 1509px) {
+      & > a {
+        padding-left: 15px !important;
+      }
+    }
+
+    @media screen and (min-width: 1510px) {
+      & > a {
+        padding-left: 25px !important;
+      }
+    }
   }
 
   &__accessories {
