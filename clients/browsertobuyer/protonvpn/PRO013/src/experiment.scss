@@ -1,0 +1,11 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    header {
+        display: none;
+    }
+    header.#{$id}__header {
+        display: block;
+    }
+}

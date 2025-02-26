@@ -62,17 +62,19 @@
     background-color: #333333;
     padding: 10px 10px 15px 10px;
     color: #fff;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
     opacity: 0;
     visibility: hidden;
     animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
     &::before {
       content: '';
       display: block;
       pointer-events: none;
       position: absolute;
-      top: -14px;
-      right: 4px;
+      top: -13px;
+      right: 2px;
       width: 15px;
       height: 15px;
       background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNTM3MTEgMTQuNTM4MkwxLjU5NzQ5IDE0LjUzODJDMC44NTkzNzcgMTQuNTM4MiAwLjM3NTYzMSAxMy43NjU5IDAuNjk3NzM0IDEzLjEwMThMNi42MzczNSAwLjg1NTIzN0M3LjAwMTgyIDAuMTAzNzUxIDguMDcyNCAwLjEwMzc0OSA4LjQzNjg3IDAuODU1MjM0TDE0LjM3NjUgMTMuMTAxOEMxNC42OTg2IDEzLjc2NTkgMTQuMjE0OCAxNC41MzgyIDEzLjQ3NjcgMTQuNTM4Mkw3LjUzNzExIDE0LjUzODJaIiBmaWxsPSIjMzMzMzMzIi8+Cjwvc3ZnPgo=);
