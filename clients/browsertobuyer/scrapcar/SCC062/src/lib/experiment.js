@@ -1,3 +1,4 @@
+/*eslint-disable no-confusing-arrow */
 /*eslint-disable max-len */
 import { toolTipIcon } from './assets/icons';
 import setup from './services/setup';
