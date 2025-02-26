@@ -1,0 +1,14 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .inner {
+        & > .form-row {
+            display: none !important;
+        }
+
+        .#{$id}__active.form-row {
+            display: block !important;
+        }
+    }
+}
