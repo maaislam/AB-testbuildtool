@@ -23,6 +23,8 @@ const tooltipData = {
   </div>`
 };
 
+window.tooltipData = tooltipData;
+
 //Mapping input names to the next set of inputs that should be displayed
 const formFlow = {
   engine_condition_1: ['gearbox_condition_1'],
