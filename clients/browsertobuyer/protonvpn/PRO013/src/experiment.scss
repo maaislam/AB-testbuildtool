@@ -77,13 +77,20 @@
             font-size: 14px;
             line-height: 18px;
         }
+
+        .#{$id}__whyProton.#{$id}__whyProtonBtnActive {
+            color: #6d4aff;
+
+            & + .#{$id}__arrowIcon {
+                transform: rotate(180deg);
+            }
+        }
     }
 
     &__whyProtonWrapper {
         gap: 10px;
 
         &:hover {
-
             svg,
             path {
                 fill: #6d4aff;
@@ -117,6 +124,13 @@
 
     &__mobileNavItem {
         margin-top: 0 !important;
+        cursor: pointer;
+
+        &:hover {
+            h2 {
+                color: #6d4aff;
+            }
+        }
 
         h2 {
             font-weight: 600;
