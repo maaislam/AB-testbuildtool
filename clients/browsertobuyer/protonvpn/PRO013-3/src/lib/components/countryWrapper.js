@@ -26,7 +26,7 @@ const countryWrapper = (id, countryData) => {
                               .join('\n')}
                             
                         </div>
-                    </div">
+                    </div>
                 </div>
     `;
 

@@ -1,8 +1,8 @@
 const sideBarMenu = (id) => {
-    const htmlStr = `
+  const htmlStr = `
     <div class="${id}__sideBarMenuOverlay hidden fixed inset-0 z-menu bg-gray-900 opacity-50" aria-hidden="true"></div>
     <div class="${id}__sideBarMenu fixed bottom-0 right-0 top-0 z-50 flex w-full max-w-md flex-col bg-white transform translate-x-full transition-transform duration-300 ease-in-out">
-        <div class="flex h-12 items-center justify-between border-b border-gray-200 px-4 md:px-8 xl:px-16">
+        <div class="flex h-12 items-center justify-between border-b border-gray-200 px-4">
             <a href="/" aria-current="page" class="mb-1 flex h-7 flex-none">
                 <div class="inline-flex flex-row items-center justify-between w-auto h-full"
                     style="aspect-ratio: 171.457 / 36;">
@@ -45,9 +45,9 @@ const sideBarMenu = (id) => {
             </button>
         </div>
         <nav class="relative flex h-full flex-grow flex-col overflow-y-auto overflow-x-hidden">
-            <ul class="flex h-full flex-grow flex-col gap-2 overflow-y-auto overflow-x-hidden pe-4 ps-8 md:pe-8 xl:pe-16">
-                <li>
-                    <button class="${id}__whyProtonBtn w-full py-4 font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
+            <ul class="flex h-full flex-grow flex-col gap-2 overflow-y-auto overflow-x-hidden pe-4 ps-8 ${id}__mobileMenu">
+                <li class="${id}__mobileMenuItem">
+                    <button class="${id}__whyProtonBtn w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
                         <span>Why Proton VPN</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" aria-hidden="true" data-slot="icon" class="h-6 w-6">
@@ -55,21 +55,21 @@ const sideBarMenu = (id) => {
                         </svg>
                     </button>
                 </li>
-                <li>
+                <li class="${id}__mobileMenuItem">
                     <a href="/pricing"
-                        class="w-full py-4 font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
+                        class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
                         Pricing
                     </a>
                 </li>
-                <li>
+                <li class="${id}__mobileMenuItem">
                     <a href="/Devices"
-                        class="w-full py-4 font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
+                        class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
                         Devices
                     </a>
                 </li>
-                <li>
+                <li class="${id}__mobileMenuItem">
                     <a href="/Locations"
-                        class="w-full py-4 font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
+                        class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
                         Locations
                     </a>
                 </li>
@@ -77,29 +77,38 @@ const sideBarMenu = (id) => {
         </nav>
         <!-- Submenu for Why Proton VPN -->
         <div id="whyProtonSubMenu" class="fixed bottom-0 right-0 top-0 z-50 block w-full max-w-md bg-white transform translate-x-full transition-transform duration-300 ease-in-out">
-            <div class="flex h-12 items-center px-4 md:px-8 xl:px-16">
-                <button id="closeWhyProtonSubMenu" type="button" class="flex items-center text-purple-800 hover:text-purple-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+            <div class="flex h-12 items-center px-4 ${id}__backBtnWrapper">
+                <button id="closeWhyProtonSubMenu" type="button" class="flex items-center text-purple-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+                    <path d="M8.5 16.5L1 9M1 9L8.5 1.5M1 9H19" stroke="#372580" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span class="ml-2 text-lg font-semibold">Back / Why Proton VPN</span>
+                    <span class="${id}__backText text-lg font-semibold">Back / <span>Why Proton VPN</span></span>
                 </button>
             </div>
-            <nav class="p-6 space-y-4">
-                <div>
-                    <h2 class="text-lg font-semibold text-gray-900">What is a VPN?</h2>
-                    <p class="text-gray-600 text-sm">Find out what a VPN is, how it works, and when to use one.</p>
-                </div>
-                <div>
-                    <h2 class="text-lg font-semibold text-gray-900">Why Proton VPN?</h2>
-                    <p class="text-gray-600 text-sm">No logs, no ads, open-source and independently audited.</p>
-                </div>
+            <nav class="space-y-4 ${id}__mobileNav">
+
+                <a class="${id}__mobileNavItem block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
+                    <h2 class="text-lg font-semibold text-gray-900">Why do I need a VPN?</h2>
+                    <p class="text-gray-600 text-sm">Find out how a VPN can help you</p>
+                </a>
+                <a href="/features" class="${id}__mobileNavItem block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25" >
+                    <h2 class="text-lg font-semibold text-gray-900">All Features</h2>
+                    <p class="text-gray-600 text-sm">Learn how our advanced security and privacy features allow you to browse the web with peace of mind</p>
+                </a>
+                 <a href="/streaming" class="${id}__mobileNavItem block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
+                    <h2 class="text-lg font-semibold text-gray-900">VPN for Streaming</h2>
+                    <p class="text-gray-600 text-sm">Watch what you want, when you want, from wherever you want with Proton VPN</p>
+                </a>
+                 <a href="/why-proton-vpn" class="${id}__mobileNavItem block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
+                    <h2 class="text-lg font-semibold text-gray-900">Why Proton VPN</h2>
+                    <p class="text-gray-600 text-sm">See how we compare with other VPN providers</p>
+                </a>
             </nav>
         </div>
     </div>
     `;
 
-    return htmlStr;
+  return htmlStr;
 };
 
 export default sideBarMenu;

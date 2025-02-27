@@ -1,11 +1,11 @@
 import popover from './popover';
 
 const nav = (id) => {
-    const htmlStr = `
-    <nav class="nav hidden xl:block">
-        <ul class="flex flex-wrap gap-x-4 gap-y-1">
-            <li>
-                <div class="flex items-center gap-1">
+  const htmlStr = `
+    <nav class="nav hidden xl:block ${id}__nav">
+        <ul class="flex flex-wrap gap-x-4 gap-y-1 h-7 items-center">
+            <li class="${id}__item">
+                <div class="flex items-center ${id}__whyProtonWrapper">
                     <button id="whyProtonBtn" class="${id}__whyProton font-semibold text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 aria-current-page:text-purple-500"
                     >Why Proton VPN</button>
                     <span class="${id}__arrowIcon hover:text-purple-500">
@@ -17,17 +17,17 @@ const nav = (id) => {
                 ${popover(id)}
                 <div id="popoverOverlay" class="hidden ${id}__popoverOverlay"></div>
             </li>
-            <li>
+            <li class="${id}__item">
                 <a href="/pricing" 
                     class="font-semibold text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 aria-current-page:text-purple-500"
                 >Pricing</a>
-            </li>
-            <li>
+            </li class="${id}__item">
+            <li class="${id}__item">
                 <a href="/devices" 
                     class="font-semibold text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 aria-current-page:text-purple-500"
                 >Devices</a>
             </li>
-            <li>
+            <li class="${id}__item">
                 <a href="/locations" 
                     class="font-semibold text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 aria-current-page:text-purple-500"
                 >Locations</a>
@@ -35,6 +35,6 @@ const nav = (id) => {
         </ul>
     </nav>`;
 
-    return htmlStr;
+  return htmlStr;
 };
 export default nav;
