@@ -83,6 +83,10 @@
 
             & + .#{$id}__arrowIcon {
                 transform: rotate(180deg);
+
+                svg path {
+                    fill: #6d4aff;
+                }
             }
         }
     }
