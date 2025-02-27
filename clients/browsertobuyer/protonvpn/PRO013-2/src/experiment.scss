@@ -1,0 +1,395 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .pro002 .hero-wrapper::after {
+        z-index: 9;
+    }
+
+    header {
+        display: none;
+    }
+
+    header.#{$id}__header {
+        display: block;
+    }
+
+    &__sideBarMenu {
+        z-index: 999;
+    }
+
+    #whyProtonSubMenu {
+        top: 46px;
+        z-index: 999;
+    }
+
+    .#{$id}__popOver {
+        position: absolute;
+        top: 58px;
+        left: 200px;
+        width: 370px;
+        padding: 24px;
+        background: #fff;
+        border-radius: 8px;
+        z-index: 999;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                a {
+                    padding: 20px 17px;
+
+                    p {
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 18px;
+                        margin-top: 10px;
+                    }
+
+                    .#{$id}__vpnText {
+                        font-size: 17px;
+                        line-height: 21px;
+                    }
+                }
+            }
+        }
+    }
+
+    .#{$id}__popoverOverlay {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        opacity: 0.2;
+        z-index: 99;
+        background: #000;
+    }
+
+    // kabir code
+    &__item {
+
+        .#{$id}__whyProton,
+        &>a {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__whyProtonWrapper {
+        gap: 10px;
+
+        &:hover {
+
+            svg,
+            path {
+                fill: #6d4aff;
+            }
+        }
+    }
+
+    &__mobileMenu {
+        padding-left: 24px;
+        row-gap: 6px;
+    }
+
+    &__mobileMenuItem {
+        padding: 20px 0;
+
+        button span,
+        &>a {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    &__mobileNav {
+        padding: 0 24px 0 16px;
+
+        &>div {
+            padding: 20px 17px;
+        }
+    }
+
+    &__mobileNavItem {
+        margin-top: 0 !important;
+
+        h2 {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            color: #372580;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #494b7a;
+        }
+    }
+
+    &__backBtnWrapper {
+        padding-top: 16px;
+        margin-bottom: 32px;
+    }
+
+    #closeWhyProtonSubMenu {
+        padding-left: 16px;
+    }
+
+    &__backText {
+        font-weight: 400;
+        margin-left: 8px;
+
+        span {
+            color: #9ca3af;
+        }
+    }
+
+    &__countrySelected {
+        .#{$id}__defaultDropdownWrapper {
+            justify-content: start;
+
+            .#{$id}__text {
+                padding-left: 8px;
+            }
+
+            .#{$id}__icon {
+                margin-left: auto;
+            }
+        }
+    }
+
+    &__vpnLocationsWrapper {
+        padding: 40px 0;
+        font-family: Arizona, ArizonaFallback, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+
+        @media screen and (max-width: 767px) {
+            padding: 0 16px 40px;
+        }
+    }
+
+    &__vpnLocationsContainer {
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 16px 24px 32px;
+
+        .#{$id}__title {
+            padding-bottom: 10px;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 36px;
+            text-align: center;
+            color: #372580;
+
+            @include media-query(sm) {
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    &__selectedCountryDropdown {
+        border: 2px solid #6d4aff;
+        border-radius: 50px;
+
+        &.#{$id}__open {
+            background-color: #6d4aff;
+            margin-bottom: 16px;
+
+            .#{$id}__defaultDropdownWrapper {
+                justify-content: flex-start;
+            }
+
+            .#{$id}__searchIcon {
+                display: flex;
+                padding-right: 7px;
+
+                @media screen and (max-width: 767px) {
+                    display: none;
+                }
+            }
+
+            .#{$id}__text {
+                color: #fff;
+            }
+
+            .#{$id}__icon {
+                margin-left: auto;
+                transform: rotate(180deg);
+
+                svg,
+                path {
+                    fill: #fff;
+                }
+            }
+
+            &+.#{$id}__countriesWrapper {
+                display: block;
+                animation: slide-bottom 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            }
+        }
+    }
+
+    &__defaultDropdownWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        cursor: pointer;
+
+        .#{$id}__searchIcon {
+            display: none;
+        }
+
+        .#{$id}__text {
+            font-family: 'Inter';
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #6d4aff;
+        }
+    }
+
+    &__countriesWrapper {
+        display: none;
+        border: 1px solid #00000080;
+        padding: 16px 16px 0;
+
+        &.#{$id}__close {
+            animation: slide-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+    }
+
+    &__searchBar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #adaba8;
+        padding: 13px 8px 13px 12px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+
+        .#{$id}__input {
+            width: calc(100% - 30px);
+            font-family: 'Inter';
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #8f8d8a;
+
+            &:focus,
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+
+    &__contriesLists {
+        display: flex;
+        flex-direction: column;
+        height: 168px;
+        overflow-y: auto;
+
+        // &::-webkit-scrollbar {
+        //     border-radius: 5px;
+        //     width: 8px;
+        // }
+    }
+
+    &__countryItem {
+        display: flex;
+        align-items: center;
+        padding: 16px 8px;
+        margin-right: 16px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #efebff;
+            border-radius: 8px;
+        }
+
+        .#{$id}__countryChecked {
+            display: none;
+        }
+
+        &.#{$id}__active {
+            background-color: #efebff;
+            border-radius: 8px;
+
+            .#{$id}__countryServers {
+                display: none;
+            }
+
+            .#{$id}__countryChecked {
+                display: flex;
+                margin-left: auto;
+            }
+        }
+
+        .#{$id}__serverText {
+            @include media-query(sm) {
+                display: none;
+            }
+        }
+    }
+
+    &__countryImage {
+        padding-right: 14px;
+    }
+
+    &__countryName {
+        font-family: 'Inter';
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        padding-right: 14px;
+        color: #372580;
+    }
+
+    &__countryServers {
+        font-family: 'Inter';
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #9ca3af;
+        margin-left: auto;
+    }
+
+    @keyframes slide-bottom {
+        0% {
+            visibility: hidden;
+            -webkit-transform: translateY(-16px);
+            transform: translateY(-16px);
+        }
+
+        100% {
+            visibility: visible;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slide-top {
+        0% {
+            visibility: visible;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        100% {
+            visibility: hidden;
+            -webkit-transform: translateY(-16px);
+            transform: translateY(-16px);
+        }
+    }
+}
