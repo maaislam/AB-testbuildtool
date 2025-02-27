@@ -8,6 +8,7 @@ const vpnLocationsWrapper = (id, countryData) => {
                 <h3 class="${id}__title">See all Proton VPN locations</h3>
                 <div class="${id}__selectedCountryDropdown">
                     <div class="${id}__defaultDropdownWrapper">
+                        <span class="${id}__flagIcon"></span>
                         <span class="${id}__searchIcon">${searchIcon}</span>
                         <span class="${id}__text">Select one of 115+ countries</span>
                         <span class="${id}__icon">${dropdownArrow}</span>

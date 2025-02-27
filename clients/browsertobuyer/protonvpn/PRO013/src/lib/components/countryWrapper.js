@@ -1,33 +1,36 @@
 import searchWrapper from './searchWrapper';
 
+import { checkIcon } from '../assets/icons';
+
 const countryWrapper = (id, countryData) => {
   const html = `
          <div class="${id}__countriesWrapper">
-                   ${searchWrapper(id)}
-                    <div class="${id}__contriesConatiner">
-                        <div class="${id}__contriesLists">
+          <div class="${id}__countriesBox">
+            ${searchWrapper(id)}
+            <div class="${id}__contriesConatiner">
+              <div class="${id}__contriesLists">
+                ${countryData
+                  .map((country) => {
+                    const { name, flag, servers } = country;
+                    const serverText = servers === 1 ? 'server' : 'servers';
 
-                            ${countryData
-                              .map((country) => {
-                                return `
-                                    <div class="${id}__countryItem">
-                                        <div class="${id}__countryImage">
-                                            <img src="${country.flag}"/>
-                                        </div>
-                                        <div class="${id}__countryName">${country.name}</div>
-                                        <div class="${id}__countryServers">${
-                                  country.servers === 1
-                                    ? `${country.servers} server`
-                                    : `${country.servers} servers`
-                                }</div>
-                                    </div>
-                                `;
-                              })
-                              .join('\n')}
-                            
+                    return `
+                        <div class="${id}__countryItem" data-name="${name}" data-flag="${flag}">
+                            <div class="${id}__countryImage">
+                                <img src="${flag}"/>
+                            </div>
+                            <div class="${id}__countryName">${name}</div>
+                            <div class="${id}__countryServers">
+                              ${servers} <span class="${id}__serverText">${serverText}</span>
+                            </div>
+                            <div class="${id}__countryChecked">${checkIcon}</div>
                         </div>
-                    </div">
-                </div>
+                    `;
+                  }).join('\n')}
+              </div>
+            </div>
+          </div>
+        </div>
     `;
 
   return html.trim();

@@ -4,6 +4,7 @@ import header from './components/header';
 import clickHandler from './handlers/clickHandler';
 import countryData from './data/countryData';
 import vpnLocationsWrapper from './components/vpnLocationsWrapper';
+import filterCountries from './helpers/filterCountries';
 
 const { ID } = shared;
 
@@ -20,6 +21,8 @@ const init = () => {
   if (!document.querySelector(`.${ID}__vpnLocationsWrapper`)) {
     targetPoint.insertAdjacentHTML('afterend', vpnLocationsWrapper(ID, countryData));
   }
+
+  filterCountries(ID, countryData);
 };
 
 export default () => {

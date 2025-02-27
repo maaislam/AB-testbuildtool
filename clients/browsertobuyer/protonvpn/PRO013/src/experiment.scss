@@ -67,8 +67,24 @@
         background: #000;
     }
 
+    // kabir code
+
+    &__countrySelected {
+        .#{$id}__defaultDropdownWrapper {
+            justify-content: start;
+    
+            .#{$id}__text {
+                padding-left: 8px;
+            }
+    
+            .#{$id}__icon {
+                margin-left: auto;
+            }
+        }
+    }
+
     &__vpnLocationsWrapper {
-        padding-bottom: 40px;
+        padding: 40px 0;
         font-family: Arizona, ArizonaFallback, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
 
         @media screen and (max-width: 767px) {
@@ -85,12 +101,17 @@
         padding: 16px 24px 32px;
 
         .#{$id}__title {
-            font-weight: 442;
+            padding-bottom: 10px;
+            font-weight: 400;
             font-size: 24px;
             line-height: 36px;
             text-align: center;
-            padding-bottom: 10px;
             color: #372580;
+
+            @include media-query(sm) {
+                font-size: 20px;
+                line-height: 30px;
+            }
         }
     }
 
@@ -131,7 +152,7 @@
 
             &+.#{$id}__countriesWrapper {
                 display: block;
-                animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+                animation: slide-bottom 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
             }
         }
     }
@@ -154,8 +175,6 @@
             line-height: 24px;
             color: #6d4aff;
         }
-
-        .#{$id}__icon {}
     }
 
     &__countriesWrapper {
@@ -164,7 +183,7 @@
         padding: 16px 16px 0;
 
         &.#{$id}__close {
-            animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            animation: slide-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         }
     }
 
@@ -190,11 +209,7 @@
                 outline: none;
             }
         }
-
-        .#{$id}__inputSearch {}
     }
-
-    &__contriesConatiner {}
 
     &__contriesLists {
         display: flex;
@@ -202,34 +217,10 @@
         height: 168px;
         overflow-y: auto;
 
-        &::-webkit-scrollbar {
-            border-radius: 5px;
-            width: 8px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: #f2f2f2;
-            background-clip: padding-box;
-            border-bottom: 7px solid #0000;
-            border-radius: 5px;
-            border-right: 4px solid #0000;
-            border-top: 8px solid #0000;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: #d0d0d0;
-            background-clip: padding-box;
-            border-bottom: 7px solid #0000;
-            border-radius: 5px;
-            border-right: 4px solid #0000;
-            border-top: 8px solid #0000;
-        }
-
-        &::-webkit-scrollbar-thumb:hover {
-            background: #616161;
-            background-clip: padding-box;
-            border-right: 4px solid #0000;
-        }
+        // &::-webkit-scrollbar {
+        //     border-radius: 5px;
+        //     width: 8px;
+        // }
     }
 
     &__countryItem {
@@ -237,10 +228,35 @@
         align-items: center;
         padding: 16px 8px;
         margin-right: 16px;
+        cursor: pointer;
 
         &:hover {
             background-color: #efebff;
             border-radius: 8px;
+        }
+
+        .#{$id}__countryChecked {
+            display: none;
+        }
+
+        &.#{$id}__active {
+            background-color: #efebff;
+            border-radius: 8px;
+
+            .#{$id}__countryServers {
+                display: none;
+            }
+
+            .#{$id}__countryChecked {
+                display: flex;
+                margin-left: auto;
+            }
+        }
+
+        .#{$id}__serverText {
+            @include media-query(sm) {
+                display: none;
+            }
         }
     }
 

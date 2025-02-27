@@ -44,6 +44,27 @@ const clickHandler = (id, target) => {
 
         dropdownWrapper.classList.remove(`${id}__open`);
         countryWrapper.classList.add(`${id}__close`);
+    } else if (target.closest(`.${id}__countryItem`)) {
+        const clickedItem = target.closest(`.${id}__countryItem`);
+        const allCountryItems = document.querySelectorAll(`.${id}__countryItem`);
+        const dropdownWrapper = document.querySelector(`.${id}__selectedCountryDropdown`);
+        const mainWrapper = dropdownWrapper.closest(`.${id}__vpnLocationsWrapper`);
+        const countryWrapper = mainWrapper.querySelector(`.${id}__countriesWrapper`);
+        const selectedCountry = mainWrapper.querySelector(`.${id}__selectedCountryDropdown .${id}__text`);
+        const searchIconElem = mainWrapper.querySelector(`.${id}__selectedCountryDropdown .${id}__searchIcon`);
+        const selectedFlag = mainWrapper.querySelector(`.${id}__selectedCountryDropdown .${id}__flagIcon`);
+        const countryName = clickedItem.getAttribute('data-name');
+        const flag = clickedItem.getAttribute('data-flag');
+
+        selectedCountry.textContent = countryName;
+        searchIconElem.innerHTML = '';
+        selectedFlag.innerHTML = `<img src="${flag}"/>`;
+
+        allCountryItems.forEach((item) => item.classList.remove(`${id}__active`));
+        dropdownWrapper.classList.remove(`${id}__open`);
+        clickedItem.classList.add(`${id}__active`);
+        dropdownWrapper.classList.add(`${id}__countrySelected`);
+        countryWrapper.classList.add(`${id}__close`);
     }
 };
 export default clickHandler;
