@@ -49,8 +49,6 @@ const tooltipData = {
   `
 };
 
-window.tooltipData = tooltipData;
-
 //Mapping input names to the next set of inputs that should be displayed
 const formFlow = {
   engine_condition_1: ['gearbox_condition_1'],
@@ -65,7 +63,7 @@ const formFlow = {
 };
 
 //Define steps where multiple selections are allowed
-const multiSelectSteps = ['warning_lights_2', 'warning_lights_3', 'warning_lights_4'];
+const multiSelectSteps = ['warning_lights_2', 'warning_lights_3', 'warning_lights_4', 'warning_lights_5'];
 
 const tooltipHTML = (classTag) =>
   `<div class="${ID}__tooltipIcon ${classTag}">${toolTipIcon}</div>`;
@@ -81,8 +79,6 @@ const initializeTooltips = () => {
     const tooltipContentTargetPoint = formElement.querySelector('h2.ttl');
     const activeInputElem = formElement.querySelector('[type="radio"]');
     const activeInputName = activeInputElem?.name;
-
-    console.log(activeInputName, 'activeInputName', activeInputElem);
 
     //Insert tooltip icon if it does not already exist
     if (
