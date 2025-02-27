@@ -5,6 +5,10 @@
  * @param {function} callback The callback function when all conditions are true.
  * @param {number} maxTime max time the check witll run before abort.
  */
+import shared from '../shared/shared';
+
+const { ID } = shared;
+
 export const pollerLite = (conditions, callback, maxTime = 10000) => {
   const POLLING_INTERVAL = 25;
   const startTime = Date.now();
@@ -48,4 +52,35 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
+};
+
+export const openSidebar = () => {
+  const sidebarMenu = document.querySelector(`.${ID}__sideBarMenu`);
+  const sidebarOverlay = document.querySelector(`.${ID}__sideBarMenuOverlay`);
+
+  sidebarMenu.classList.remove('translate-x-full');
+  sidebarMenu.classList.add('translate-x-0');
+  sidebarOverlay.classList.remove('hidden', 'opacity-0');
+  sidebarOverlay.classList.add('opacity-50');
+};
+
+export const closeSidebar = () => {
+  const sidebarMenu = document.querySelector(`.${ID}__sideBarMenu`);
+  const sidebarOverlay = document.querySelector(`.${ID}__sideBarMenuOverlay`);
+
+  sidebarMenu.classList.remove('translate-x-0');
+  sidebarMenu.classList.add('translate-x-full');
+  sidebarOverlay.classList.add('opacity-0');
+  setTimeout(() => sidebarOverlay.classList.add('hidden'), 300);
+};
+
+export const openSubMenu = () => {
+  const subMenu = document.getElementById('whyProtonSubMenu');
+  subMenu.classList.remove('translate-x-full');
+  subMenu.classList.add('translate-x-0');
+};
+
+export const closeSubMenu = () => {
+  const subMenu = document.getElementById('whyProtonSubMenu');
+  subMenu.classList.add('translate-x-full');
 };
