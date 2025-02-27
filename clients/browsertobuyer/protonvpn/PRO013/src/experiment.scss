@@ -43,13 +43,15 @@
                     padding: 20px 17px;
 
                     p {
-                        font-size: 17px;
-                        line-height: auto;
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 18px;
+                        margin-top: 10px;
                     }
 
                     .#{$id}__vpnText {
                         font-size: 17px;
-                        line-height: auto;
+                        line-height: 21px;
                     }
                 }
             }
@@ -68,15 +70,96 @@
     }
 
     // kabir code
+    &__item {
+
+        .#{$id}__whyProton,
+        &>a {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__whyProtonWrapper {
+        gap: 10px;
+
+        &:hover {
+
+            svg,
+            path {
+                fill: #6d4aff;
+            }
+        }
+    }
+
+    &__mobileMenu {
+        padding-left: 24px;
+        row-gap: 6px;
+    }
+
+    &__mobileMenuItem {
+        padding: 20px 0;
+
+        button span,
+        &>a {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    &__mobileNav {
+        padding: 0 24px 0 16px;
+
+        &>div {
+            padding: 20px 17px;
+        }
+    }
+
+    &__mobileNavItem {
+        margin-top: 0 !important;
+
+        h2 {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            color: #372580;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #494b7a;
+        }
+    }
+
+    &__backBtnWrapper {
+        padding-top: 16px;
+        margin-bottom: 32px;
+    }
+
+    #closeWhyProtonSubMenu {
+        padding-left: 16px;
+    }
+
+    &__backText {
+        font-weight: 400;
+        margin-left: 8px;
+
+        span {
+            color: #9ca3af;
+        }
+    }
 
     &__countrySelected {
         .#{$id}__defaultDropdownWrapper {
             justify-content: start;
-    
+
             .#{$id}__text {
                 padding-left: 8px;
             }
-    
+
             .#{$id}__icon {
                 margin-left: auto;
             }
