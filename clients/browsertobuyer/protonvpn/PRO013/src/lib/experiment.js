@@ -13,6 +13,7 @@ window._conv_q = window._conv_q || [];
 
 const init = () => {
   const headerElem = document.querySelector('header');
+  const vpnServerTitleElem = document.querySelector('.bg-purple-900.text-white h1.dtc-text-white');
   const targetPoint = document.querySelector(
     '.bg-purple-900.text-white[data-testid="grid-section"]'
   );
@@ -23,6 +24,15 @@ const init = () => {
 
   if (!document.querySelector(`.${ID}__vpnLocationsWrapper`)) {
     targetPoint.insertAdjacentHTML('afterend', vpnLocationsWrapper(ID, countryData));
+  }
+
+  const vpnServerDescHTML = `<p class="${ID}__vpnServerDesc dtc-text-white">
+  Proton VPN has one of the world’s fastest and most extensive networks, with servers on every continent for truly global connectivity.
+  </p>`;
+  vpnServerTitleElem.textContent = 'Proton VPN server list and locations';
+
+  if (!document.querySelector(`.${ID}__vpnServerDesc`)) {
+    vpnServerTitleElem.insertAdjacentHTML('afterend', vpnServerDescHTML);
   }
 
   filterCountries(ID, countryData);

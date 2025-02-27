@@ -1,5 +1,16 @@
 /*eslint-disable no-underscore-dangle */
+import scrollToSection from '../helpers/scrollToSection';
 import { openSidebar, closeSidebar, openSubMenu, closeSubMenu } from '../helpers/utils';
+
+const closePopover = (id) => {
+    const popover = document.getElementById('whyProtonPopOver');
+    const overlay = document.getElementById('popoverOverlay');
+    const protonBtnElem = document.querySelector('#whyProtonBtn');
+
+    protonBtnElem.classList.remove(`${id}__whyProtonBtnActive`);
+    popover.classList.add('hidden');
+    overlay.classList.add('hidden');
+};
 
 const clickHandler = (id, target) => {
     if (target.closest('#whyProtonBtn')) {
@@ -12,13 +23,7 @@ const clickHandler = (id, target) => {
         overlay.classList.toggle('hidden', !isHidden);
         popover.classList.toggle('hidden');
     } else if (target.closest('#popoverOverlay')) {
-        const popover = document.getElementById('whyProtonPopOver');
-        const overlay = target.closest('#popoverOverlay');
-        const protonBtnElem = document.querySelector('#whyProtonBtn');
-
-        protonBtnElem.classList.remove(`${id}__whyProtonBtnActive`);
-        popover.classList.add('hidden');
-        overlay.classList.add('hidden');
+        closePopover(id);
     } else if (target.closest(`.${id}__hamburgerBtn`)) {
         window._conv_q.push(['triggerConversion', '100486511']);
         openSidebar();
@@ -73,18 +78,58 @@ const clickHandler = (id, target) => {
         countryWrapper.classList.add(`${id}__close`);
     } else if (target.closest(`.${id}__devices`)) { //TRACKINGS
         window._conv_q.push(['triggerConversion', '100486504']);
+
+        //close popover
+        closePopover(id);
+        closeSidebar();
+        scrollToSection('[src*="available_for_all_your_devices"]', 300);
     } else if (target.closest(`.${id}__locations`)) {
         window._conv_q.push(['triggerConversion', '100486505']);
+
+        //close popover
+        closePopover(id);
+        closeSidebar();
+        scrollToSection(`.${id}__vpnLocationsWrapper`, 400);
     } else if (target.closest(`.${id}__pricing`)) {
         window._conv_q.push(['triggerConversion', '100486506']);
+
+        //close popover
+        closePopover(id);
+        closeSidebar();
+        scrollToSection('.pricing-title-section');
     } else if (target.closest(`.${id}__whyVpnLink`)) {
         window._conv_q.push(['triggerConversion', '100486507']);
+
+        const faqBtn = document.querySelector('[data-testid="faq-section"] button');
+        const isFaqBtnClosed = faqBtn.getAttribute('aria-expanded') === 'false';
+
+        //close popover
+        closePopover(id);
+        closeSidebar();
+        //scroll to faq section and open it
+        if (isFaqBtnClosed) faqBtn.click();
+        scrollToSection('[data-testid="faq-section"]');
     } else if (target.closest(`.${id}__featuresLink`)) {
         window._conv_q.push(['triggerConversion', '100486508']);
+
+        //close popover
+        closePopover(id);
+        closeSidebar();
+        scrollToSection('.bg-white.text-purple-800[data-testid="grid-section"]', 200);
     } else if (target.closest(`.${id}__streamingLink`)) {
         window._conv_q.push(['triggerConversion', '100486510']);
+
+        //close popover
+        closePopover(id);
+        closeSidebar();
+        scrollToSection('[src*="protect_yourself_online"]', 400);
     } else if (target.closest(`.${id}__whyProtonVpnLink`)) {
         window._conv_q.push(['triggerConversion', '100486509']);
+
+        //close popover
+        closePopover(id);
+        closeSidebar();
+        scrollToSection('.new-comparison-table', 250);
     }
 };
 export default clickHandler;
