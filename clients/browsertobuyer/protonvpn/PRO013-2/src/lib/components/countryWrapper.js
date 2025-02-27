@@ -26,7 +26,8 @@ const countryWrapper = (id, countryData) => {
                             <div class="${id}__countryChecked">${checkIcon}</div>
                         </div>
                     `;
-                  }).join('\n')}
+                  })
+                  .join('\n')}
               </div>
             </div>
           </div>
