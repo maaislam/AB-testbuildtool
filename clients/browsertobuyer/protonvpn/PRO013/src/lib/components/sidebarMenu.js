@@ -56,7 +56,7 @@ const sideBarMenu = (id) => {
                       </button>
                   </li>
                   <li class="${id}__mobileMenuItem ${id}__pricing">
-                      <a class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
+                      <a href="#pricing" class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
                           Pricing
                       </a>
                   </li>

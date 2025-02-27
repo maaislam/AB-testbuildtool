@@ -2,6 +2,8 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    scroll-behavior: smooth;
+
     .ease-out-cubic {
         opacity: 1 !important;
         position: sticky !important;
@@ -78,7 +80,8 @@
     .#{$id}__popOver {
         position: absolute;
         top: 58px;
-        left: 200px;
+        left: auto;
+        transform: translateX(-60px);
         width: 370px;
         padding: 24px;
         background: #fff;
@@ -130,21 +133,24 @@
             font-size: 14px;
             line-height: 18px;
         }
+    }
 
-        .#{$id}__whyProton.#{$id}__whyProtonBtnActive {
+    .#{$id}__whyProtonBtnActive {
+        #whyProtonBtn {
             color: #6d4aff;
+        }
 
-            &+.#{$id}__arrowIcon {
-                transform: rotate(180deg);
+        .#{$id}__arrowIcon {
+            transform: rotate(180deg);
 
-                svg path {
-                    fill: #6d4aff;
-                }
+            svg path {
+                fill: #6d4aff;
             }
         }
     }
 
     &__whyProtonWrapper {
+        margin-right: 6px;
         gap: 10px;
 
         &:hover {

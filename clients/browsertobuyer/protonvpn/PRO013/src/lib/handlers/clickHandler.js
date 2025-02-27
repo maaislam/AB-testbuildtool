@@ -5,7 +5,7 @@ import { openSidebar, closeSidebar, openSubMenu, closeSubMenu } from '../helpers
 const closePopover = (id) => {
     const popover = document.getElementById('whyProtonPopOver');
     const overlay = document.getElementById('popoverOverlay');
-    const protonBtnElem = document.querySelector('#whyProtonBtn');
+    const protonBtnElem = document.querySelector(`.${id}__whyProtonWrapper`);
 
     protonBtnElem.classList.remove(`${id}__whyProtonBtnActive`);
     popover.classList.add('hidden');
@@ -13,8 +13,8 @@ const closePopover = (id) => {
 };
 
 const clickHandler = (id, target) => {
-    if (target.closest('#whyProtonBtn')) {
-        const clickedBtn = target.closest('#whyProtonBtn');
+    if (target.closest(`.${id}__whyProtonWrapper`)) {
+        const clickedBtn = target.closest(`.${id}__whyProtonWrapper`);
         const popover = document.getElementById('whyProtonPopOver');
         const overlay = document.getElementById('popoverOverlay');
         const isHidden = popover.classList.contains('hidden');
@@ -96,7 +96,7 @@ const clickHandler = (id, target) => {
         //close popover
         closePopover(id);
         closeSidebar();
-        scrollToSection('.pricing-title-section');
+        //scrollToSection('.pricing-title-section');
     } else if (target.closest(`.${id}__whyVpnLink`)) {
         window._conv_q.push(['triggerConversion', '100486507']);
 
