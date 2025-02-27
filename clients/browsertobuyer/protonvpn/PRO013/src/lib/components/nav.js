@@ -17,17 +17,17 @@ const nav = (id) => {
                 ${popover(id)}
                 <div id="popoverOverlay" class="hidden ${id}__popoverOverlay"></div>
             </li>
-            <li class="${id}__item">
+            <li class="${id}__item ${id}__pricing">
                 <a href="/pricing" 
                     class="font-semibold text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 aria-current-page:text-purple-500"
                 >Pricing</a>
-            </li class="${id}__item">
-            <li class="${id}__item">
+            </li">
+            <li class="${id}__item ${id}__devices">
                 <a href="/devices" 
                     class="font-semibold text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 aria-current-page:text-purple-500"
                 >Devices</a>
             </li>
-            <li class="${id}__item">
+            <li class="${id}__item ${id}__locations">
                 <a href="/locations" 
                     class="font-semibold text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 aria-current-page:text-purple-500"
                 >Locations</a>

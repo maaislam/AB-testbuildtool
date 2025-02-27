@@ -58,6 +58,7 @@ export const openSidebar = () => {
   const sidebarMenu = document.querySelector(`.${ID}__sideBarMenu`);
   const sidebarOverlay = document.querySelector(`.${ID}__sideBarMenuOverlay`);
 
+  document.documentElement.style.overflow = 'hidden';
   sidebarMenu.classList.remove('translate-x-full');
   sidebarMenu.classList.add('translate-x-0');
   sidebarOverlay.classList.remove('hidden', 'opacity-0');
@@ -68,6 +69,7 @@ export const closeSidebar = () => {
   const sidebarMenu = document.querySelector(`.${ID}__sideBarMenu`);
   const sidebarOverlay = document.querySelector(`.${ID}__sideBarMenuOverlay`);
 
+  document.documentElement.style.overflow = 'auto';
   sidebarMenu.classList.remove('translate-x-0');
   sidebarMenu.classList.add('translate-x-full');
   sidebarOverlay.classList.add('opacity-0');

@@ -1,3 +1,4 @@
+/*eslint-disable no-underscore-dangle */
 import setup from './services/setup';
 import shared from './shared/shared';
 import header from './components/header';
@@ -7,6 +8,8 @@ import vpnLocationsWrapper from './components/vpnLocationsWrapper';
 import filterCountries from './helpers/filterCountries';
 
 const { ID } = shared;
+
+window._conv_q = window._conv_q || [];
 
 const init = () => {
   const headerElem = document.querySelector('header');
