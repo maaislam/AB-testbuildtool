@@ -3,7 +3,7 @@ import protonLogo from './protonLogo';
 import sideBarMenu from './sidebarMenu';
 
 const header = (id) => {
-    const htmlStr = `<header class="header ${id}__header">
+    const htmlStr = `<div class="header ${id}__header">
         <div class="container flex h-12 items-center gap-5 duration-150 ease-linear md:h-16 xl:gap-8">
             <div class="flex flex-grow justify-between xl:justify-start">
                 ${protonLogo(id)}
@@ -17,7 +17,7 @@ const header = (id) => {
             </div>
         </div>
         ${sideBarMenu(id)}
-    </header>`;
+    </div>`;
 
     return htmlStr;
 };

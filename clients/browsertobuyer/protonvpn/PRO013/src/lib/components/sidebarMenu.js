@@ -55,21 +55,18 @@ const sideBarMenu = (id) => {
                           </svg>
                       </button>
                   </li>
-                  <li class="${id}__mobileMenuItem">
-                      <a href="/pricing"
-                          class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
+                  <li class="${id}__mobileMenuItem ${id}__pricing">
+                      <a href="#pricing" class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
                           Pricing
                       </a>
                   </li>
-                  <li class="${id}__mobileMenuItem">
-                      <a href="/Devices"
-                          class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
+                  <li class="${id}__mobileMenuItem ${id}__devices">
+                      <a class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
                           Devices
                       </a>
                   </li>
-                  <li class="${id}__mobileMenuItem">
-                      <a href="/Locations"
-                          class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
+                  <li class="${id}__mobileMenuItem ${id}__locations">
+                      <a class="w-full font-semibold text-left flex items-center justify-between text-lg text-purple-800 outline-none hover:text-purple-500 focus-visible:text-purple-500">
                           Locations
                       </a>
                   </li>
@@ -86,20 +83,19 @@ const sideBarMenu = (id) => {
                   </button>
               </div>
               <nav class="space-y-4 ${id}__mobileNav">
-  
-                  <a class="${id}__mobileNavItem block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
+                  <a class="${id}__mobileNavItem ${id}__whyVpnLink block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
                       <h2 class="text-lg font-semibold text-gray-900">Why do I need a VPN?</h2>
                       <p class="text-gray-600 text-sm">Find out how a VPN can help you</p>
                   </a>
-                  <a href="/features" class="${id}__mobileNavItem block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25" >
+                  <a class="${id}__mobileNavItem ${id}__featuresLink block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25" >
                       <h2 class="text-lg font-semibold text-gray-900">All Features</h2>
                       <p class="text-gray-600 text-sm">Learn how our advanced security and privacy features allow you to browse the web with peace of mind</p>
                   </a>
-                   <a href="/streaming" class="${id}__mobileNavItem block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
+                   <a class="${id}__mobileNavItem ${id}__streamingLink block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
                       <h2 class="text-lg font-semibold text-gray-900">VPN for Streaming</h2>
                       <p class="text-gray-600 text-sm">Watch what you want, when you want, from wherever you want with Proton VPN</p>
                   </a>
-                   <a href="/why-proton-vpn" class="${id}__mobileNavItem block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
+                   <a class="${id}__mobileNavItem ${id}__whyProtonVpnLink block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
                       <h2 class="text-lg font-semibold text-gray-900">Why Proton VPN</h2>
                       <p class="text-gray-600 text-sm">See how we compare with other VPN providers</p>
                   </a>
