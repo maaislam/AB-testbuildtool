@@ -26,10 +26,7 @@ const init = () => {
       '.productgrid--item.imagestyle--no-image .tag-2'
     );
     if (!document.querySelector(`.${ID}__tag-2`)) {
-      targetProduct.insertAdjacentHTML(
-        'beforebegin',
-        discountProd(ID, mainObject[VARIATION], VARIATION)
-      );
+      targetProduct.insertAdjacentHTML('beforebegin', discountProd(ID, mainObject[VARIATION]));
     }
   });
 
@@ -44,7 +41,7 @@ const init = () => {
   const emailRegex = /^[^@]+@[^@]+\.[^@.]{2,}$/;
 
   if (varEmailElems.length > 0) {
-    const handleInputChange = (elem, flag = false) => {
+    const handleInputChange = (elem) => {
       const { value } = elem;
       if (value.length === 0) {
         showEmailError(ID, elem, 'Please fill out this field.');

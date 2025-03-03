@@ -1,4 +1,4 @@
-const discountBanner = (id, data, VARIATION) => {
+const discountBanner = (id, data) => {
   const html = `
         <div class="discount-code__wrapper ${id}__discount-banner">
             <div class="${id}__discount-code__label">10% <br> OFF</div>

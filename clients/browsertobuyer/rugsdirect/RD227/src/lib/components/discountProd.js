@@ -1,4 +1,4 @@
-const discountProd = (id, data, VARIATION) => {
+const discountProd = (id, data) => {
   const html = `
    
             <div class="${id}__tag-2">
