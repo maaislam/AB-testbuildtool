@@ -2,6 +2,13 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  .mb-25.inline-block {
+    &:has(.#{$id}__discount-banner) {
+      @include media-query(sm) {
+        width: 100%;
+      }
+    }
+  }
   .#{$id}__discount-banner {
     display: flex;
     border-radius: 4px;
@@ -13,7 +20,12 @@
     // cursor: pointer;
 
     @include media-query(sm) {
-      max-width: 346px;
+      max-width: 440px;
+      width: 100%;
+    }
+
+    @include media-query(xsm) {
+      max-width: 100%;
     }
     & + .discount-code__wrapper {
       display: none;
@@ -42,7 +54,7 @@
       }
 
       @include media-query(sm) {
-        min-width: 50px;
+        min-width: 64px;
         font-size: 18px;
         line-height: 22px;
       }
@@ -56,6 +68,7 @@
       clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
       cursor: pointer;
       transition: background-color 0.3s ease;
+      flex-shrink: 0;
 
       @include media-query(sm) {
         width: 25px;
@@ -101,6 +114,10 @@
 
       @include media-query(sm) {
         font-size: 14px;
+      }
+
+      @include media-query(xxsm) {
+        font-size: 13px;
       }
     }
 
@@ -155,7 +172,7 @@
       content: '';
       top: 0;
       left: 0;
-      background-color: var(--color-brandPurple);
+      background-color: #7f187f;
       position: absolute;
       height: 100%;
       width: 100%;
@@ -176,6 +193,15 @@
   }
 
   &__tag-bottom-style-2 {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      width: 100%;
+      height: 2px;
+      background-color: #7f187f;
+    }
   }
 
   &__discount-container-2 {
@@ -183,7 +209,7 @@
     justify-content: center;
     text-align: center;
     display: grid;
-    background: purple;
+    background: #7f187f;
     padding: 40px 24px 53px;
   }
   &__discount-tag-heading {
@@ -217,7 +243,7 @@
     line-height: 24px;
     text-align: center;
     text-transform: capitalize;
-    padding: 16px 24px;
+    padding: 11px 24px;
     border: 1px solid #6d0d7c;
     border-radius: 3px;
     background-color: #fff;
@@ -262,7 +288,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
-      max-width: 692px;
+      max-width: 720px;
       padding: 0;
       border-radius: 0px;
       background-color: #fff;
@@ -271,10 +297,9 @@
       visibility: hidden;
       opacity: 0;
       transition: all 0.4s ease-in-out;
-      //animation: fade-in 200ms ease-out forwards;
 
       @include media-query(sm) {
-        max-width: 320px;
+        max-width: calc(100% - 60px);
       }
     }
 
@@ -351,7 +376,7 @@
   //desktiop
   &__modal-left {
     display: flex;
-    max-width: 352px;
+    max-width: 380px;
     width: 100%;
     height: auto;
   }
@@ -457,19 +482,27 @@
   }
 
   &__copyCode {
+    max-width: 234px;
     font-family: 'Inter';
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
     text-align: center;
-    padding: 16px 24px;
+    padding: 10px;
     border: 2px dashed #6d0d7c;
+    border-radius: 3px;
     color: #6d0d7c;
-    margin: 0 0 10px 0;
+    margin: 0 auto 10px auto;
+    height: 49px;
 
     @include media-query(sm) {
+      max-width: 203px;
+      font-size: 20px;
+      line-height: 24px;
       color: #fff;
       border: 2px dashed #fff;
+      padding: 10px;
+      height: 48px;
     }
   }
 
@@ -483,6 +516,8 @@
     color: #6d0d7c;
 
     @include media-query(sm) {
+      font-size: 24px;
+      line-height: 26px;
       color: #fff;
     }
   }
@@ -509,7 +544,7 @@
 
   &__modal-input {
     width: 100%;
-    padding: 12px 11px;
+    padding: 11px 11px;
     //margin-bottom: 15px;
     border: 1px solid #1b1b1c;
     border-radius: 3px;
@@ -535,7 +570,7 @@
     text-align: center;
     background: #6d0d7c;
     color: white;
-    padding: 17px;
+    padding: 12px;
     margin-top: 15px;
     margin-bottom: 10px;
     border: 0;
@@ -644,7 +679,7 @@
     background-color: #dfdfdf;
     border: 0;
     border-radius: 3px;
-    padding: 12px 11px;
+    padding: 16px 11px;
     color: #606060;
     // margin-bottom: 15px;
 
@@ -658,14 +693,14 @@
     font-family: 'Inter';
     font-weight: 700;
     font-size: 20px;
-    line-height: 24.2px;
+    line-height: 24px;
     text-align: center;
     text-transform: capitalize;
     border: 0;
     border-radius: 3px;
     background-color: #fff;
     color: #7f187f;
-    padding: 17px;
+    padding: 12px;
     margin-top: 15px;
     margin-bottom: 10px;
   }
