@@ -225,6 +225,18 @@
     cursor: pointer;
   }
 
+  .#{$id}__continueShoppingBtn {
+    margin-top: 0;
+  }
+
+  &__nogap {
+    padding-bottom: 0 !important;
+
+    @include media-query(sm) {
+      padding-top: 10px;
+    }
+  }
+
   .#{$id}__modal {
     visibility: hidden;
 

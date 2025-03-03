@@ -1,4 +1,4 @@
-const discountProd = (id) => {
+const discountProd = (id, data, VARIATION) => {
   const html = `
    
             <div class="${id}__tag-2">
@@ -8,7 +8,7 @@ const discountProd = (id) => {
                     <div class="${id}__discount-container-2">
                         <p class="${id}__discount-tag-heading">Get an extra</p>
                         <p class="${id}__discount-tag-text">10% OFF</p>
-                        <span class="${id}__discount-tag-text-small">everything</span>
+                        <span class="${id}__discount-tag-text-small">${data.mainText}</span>
                          <button class="${id}__plpClaimBtn">Claim Discount</button>
                     </div>
                 </div>

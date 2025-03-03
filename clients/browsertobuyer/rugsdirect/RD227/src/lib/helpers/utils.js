@@ -50,8 +50,8 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   observer.observe(target, config);
 };
 
-export const setTextCopy = () => {
-  const copyText = 'EVERYTHING10';
+export const setTextCopy = (VARIATION) => {
+  const copyText = VARIATION === '1' ? 'EVERYTHING10' : 'ALLRUGS10';
   navigator.clipboard.writeText(copyText);
 };
 

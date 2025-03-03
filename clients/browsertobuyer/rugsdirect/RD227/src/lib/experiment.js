@@ -7,13 +7,17 @@ import discountModal from './components/discountModal';
 import showEmailError from './helpers/showEmailError';
 import hideEmailError from './helpers/hideEmailError';
 import subscribeToRust from './helpers/subscribeToRust';
+import mainObject from './data/data';
 
 const { ID, VARIATION } = shared;
 
 const init = () => {
   const exitingDiscountCodeWrapper = document.querySelector('.discount-code__wrapper');
   if (!document.querySelector(`.${ID}__discount-banner`)) {
-    exitingDiscountCodeWrapper.insertAdjacentHTML('beforebegin', discountBanner(ID));
+    exitingDiscountCodeWrapper.insertAdjacentHTML(
+      'beforebegin',
+      discountBanner(ID, mainObject[VARIATION], VARIATION)
+    );
   }
 
   pollerLite(['.template-collection', '.productgrid--wrapper'], () => {
@@ -22,12 +26,18 @@ const init = () => {
       '.productgrid--item.imagestyle--no-image .tag-2'
     );
     if (!document.querySelector(`.${ID}__tag-2`)) {
-      targetProduct.insertAdjacentHTML('beforebegin', discountProd(ID));
+      targetProduct.insertAdjacentHTML(
+        'beforebegin',
+        discountProd(ID, mainObject[VARIATION], VARIATION)
+      );
     }
   });
 
   if (!document.querySelector(`.${ID}__modal`)) {
-    document.body.insertAdjacentHTML('beforeend', discountModal(ID));
+    document.body.insertAdjacentHTML(
+      'beforeend',
+      discountModal(ID, mainObject[VARIATION], VARIATION)
+    );
   }
 
   const varEmailElems = document.querySelectorAll(`.${ID}__input`);
@@ -98,7 +108,7 @@ export default () => {
       }
     } else if (target.closest(`.${ID}__copyWrapper`)) {
       const clickedItem = target.closest(`.${ID}__copyWrapper`);
-      setTextCopy();
+      setTextCopy(VARIATION);
       clickedItem.textContent = 'Copied';
     } else if (
       target.closest(`.${ID}__modal-mobile-button`) ||
