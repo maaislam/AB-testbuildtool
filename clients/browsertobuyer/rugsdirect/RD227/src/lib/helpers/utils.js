@@ -49,3 +49,21 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
+export const setTextCopy = () => {
+  const copyText = 'EVERYTHING10';
+  navigator.clipboard.writeText(copyText);
+};
+
+export const trackGAEvent = (eventCategory, eventAction, eventLabel) => {
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: 'gaCustomEvent',
+      eventCategory,
+      eventAction,
+      eventLabel
+    });
+
+    console.log('event tracked', eventCategory, eventAction, eventLabel);
+  }
+};
