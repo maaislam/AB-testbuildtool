@@ -1,35 +1,57 @@
 const stickyProduct = (id) => {
   const html = `
         <div class="sticky-product-warpper">
+            <div class="${id}__currentProductTag" style="opacity:0;">Current Product</div>
             <div class="static-product-container">
-                <a href="https://luxuryflooring.co.uk/painswick-amber-oak-150-x-600-x-14-3mm.html" class="product-item-photo rollover" style="overflow:hidden;opacity:0;" tabindex="0">
-                    <img class="placeholder entered loaded" src="https://luxuryflooring.co.uk/static/version1741070764/frontend/Ayko/lff/en_GB/Magento_Catalog/images/placeholder-lazyload.jpg" data-amsrc="https://luxuryflooring.co.uk/static/version1741070764/frontend/Ayko/lff/en_GB/Magento_Catalog/images/placeholder-lazyload.jpg" style="visibility: hidden" width="600" height="390" data-ll-status="loaded">
-                    <img class="default entered loaded" width="600" height="390" src="https://luxuryflooring.co.uk/media/amasty/webp/catalog/product/cache/28bf787e1d2d7360e99af1026e653801/h/e/he2020re-edited_-_copy_2__1_jpg.webp" data-amsrc="https://luxuryflooring.co.uk/media/amasty/webp/catalog/product/cache/28bf787e1d2d7360e99af1026e653801/h/e/he2020re-edited_-_copy_2__1_jpg.webp" alt="Painswick Amber Engineered Oak Click" data-ll-status="loaded">
-                    <img class="rollover" loading="lazy" width="600" height="390" rollover-src="https://luxuryflooring.co.uk/media/amasty/webp/catalog/product/cache/28bf787e1d2d7360e99af1026e653801/h/e/he2020-cat_page_re_sized_3000px_max_-_copy_jpg.webp" alt="Big open hallway with white under stairs storage drawers and golden oak herringbone flooring" src="https://luxuryflooring.co.uk/media/amasty/webp/catalog/product/cache/28bf787e1d2d7360e99af1026e653801/h/e/he2020-cat_page_re_sized_3000px_max_-_copy_jpg.webp">
-                </a>
-                <div class="product-reviews-summary short" style="opacity:0;">
+                <a class="${id}__imageWrapper" style="opacity:0;visibility:hidden;padding: 0 0 0 0;"><img src="https://luxuryflooring.co.uk/media/catalog/product/cache/3bff5d0ea8cf498b05dec932ffc11855/p/a/painswick_burnt_oak_plp1.jpg"></a>
+                <div class="${id}__productContent">
+                <div style="opacity:0;visibility:hidden;" class="product-reviews-summary" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
                     <div class="rating-summary">
-                        <span class="label"><span>Rating:</span></span>
-                        <div class="rating-result" title="96%">
-                            <span style="width:96%"><span>96%</span></span>
+                            <span class="label"><span>Rating:</span></span>
+                            <a class="rating-result" href="https://luxuryflooring.co.uk/painswick-spiced-oak-80-x-300-x-10-3mm.html#reviews" id="rating-result_75095" title="97%">
+                            <span>
+                                <span>
+                                    <span itemprop="ratingValue">97                         </span>% of <span itemprop="bestRating">100</span>
+                                </span>
+                            </span>
+                            </a>
                         </div>
-                    </div>
-                    <div class="reviews-actions">
-                        <span class="action view"><span>Customer Reviews</span>&nbsp;(37)</span>
+                                        <div class="reviews-actions">
+                        <a class="action view" href="https://luxuryflooring.co.uk/painswick-spiced-oak-80-x-300-x-10-3mm.html#reviews">
+                            <span itemprop="reviewCount">14</span>&nbsp;
+                            <span>Reviews                </span>
+                        </a>
+                        <a class="action add" href="https://luxuryflooring.co.uk/painswick-spiced-oak-80-x-300-x-10-3mm.html#review-form">
+                            Add Your Review            </a>
                     </div>
                 </div>
-                <a class="product-item-link" href="https://luxuryflooring.co.uk/painswick-amber-oak-150-x-600-x-14-3mm.html" tabindex="0" style="opacity:0;">
-                    Painswick Amber Engineered Oak Click                            
+                <a>
+                    <div class="page-title-wrapper product" style="opacity:0;visibility:hidden;">
+                        <h1 class="page-title">
+                            <span class="base" data-ui-id="page-title-wrapper">Painswick Spiced Engineered Oak</span>    </h1>
+                    </div>
                 </a>
                 <div class="${id}__tableContent">
-                    <p>Price</p>
-                    <p>Product Type</p>
-                    <p>Plank Thickness</p>
-                    <p>Plank Width</p>
-                    <p>Finish</p>
-                    <p>Surface</p>
-                </div>    
-                <div class="add-to-basket">Add to basket</div>
+                    <div>Price</div>
+                    <div>Product Type</div>
+                    <div>Plank Thickness</div>
+                    <div>Plank Width</div>
+                    <div>
+                        Finish 
+                        <div class="tooltip">
+                            <div class="tooltip-toggle">?</div>
+                            <span class="tooltip-content" id="tooltip-1" role="tooltip"><p><strong>Grades Explained</strong><br><u>Rustic planks</u> contain knots, imperfections and colour variation found in natural wood. Any open knots and imperfections will be filled in, giving your floor an aged wood effect.<br><br><u> Prime wood</u> contains minimal colour variation and knots, making it the ultimate choice for a clean, uniform finish.</p></span></div>
+                    </div>
+                    <div>Surface
+                        <div class="tooltip">
+                            <div class="tooltip-toggle">?</div>
+                            <span class="tooltip-content" id="tooltip-1" role="tooltip"><p><strong>Grades Explained</strong><br><u>Rustic planks</u> contain knots, imperfections and colour variation found in natural wood. Any open knots and imperfections will be filled in, giving your floor an aged wood effect.<br><br><u> Prime wood</u> contains minimal colour variation and knots, making it the ultimate choice for a clean, uniform finish.</p></span></div>
+                    </div>
+                </div>   
+                <div class="${id}__buttonWrapper" style="opacity:0;"> 
+                        <div class="${id}__add-to-basket" >Add to basket</div>
+                </div>
+                 </div>
             </div>
         </div>
     `;

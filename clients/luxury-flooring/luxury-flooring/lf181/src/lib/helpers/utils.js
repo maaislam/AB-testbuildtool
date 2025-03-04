@@ -94,3 +94,79 @@ export const parseHTML = async (urls) => {
 
   return allItemsArray;
 };
+
+export const fetchProductDetails = (urls) => {
+  const fetchPromises = urls.map((url) =>
+    fetch(url.link, {
+      headers: {
+        Accept: 'text/html'
+      }
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return response.text();
+      })
+      .then((html) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        const details = {};
+        const detailRows = doc.querySelectorAll('.product-details .label');
+
+        detailRows.forEach((label) => {
+          const valueElement = label.nextElementSibling;
+          if (valueElement) {
+            const key = label.getAttribute('data-code') || label.innerText;
+            const value = valueElement.textContent.trim();
+            details[key] = value;
+          }
+        });
+
+        const productImage = doc.querySelector('.gallery .gallery__item img');
+        const reviewsElement = doc.querySelector('.product-reviews-summary');
+        const productTitleElement = doc.querySelector('.page-title-wrapper.product');
+        const productPriceElement = doc.querySelector('.product-info-price');
+        const formElement = doc.querySelector('#product_addtocart_form');
+        const formAction = formElement.action;
+        const itemElement = formElement.querySelector('input[name="item"]');
+        const itemValue = itemElement ? itemElement.value : '';
+        const formKey = formElement.querySelector('input[name="form_key"]');
+        const formKeyValue = formKey ? formKey.value : '';
+
+        return {
+          sku: url.sku,
+          url,
+          details,
+          title: productTitleElement || '',
+          productImage: productImage ? productImage.src : '',
+          price: productPriceElement || '',
+          reviews: reviewsElement || '',
+          formAction,
+          itemValue,
+          formKeyValue
+        };
+      })
+      .catch((error) => ({
+        url,
+        error: error.message
+      }))
+  );
+
+  return Promise.all(fetchPromises); //Return the promise
+};
+
+export const addToCart = (action, bodyData) => {
+  return fetch(`${action}`, {
+    method: 'POST',
+    headers: {
+      accept: '*/*',
+      'accept-language': 'en-US,en;q=0.9',
+      'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      'x-requested-with': 'XMLHttpRequest'
+    },
+    body: bodyData,
+    mode: 'cors'
+  })
+    .then((response) => response.json())
+    .then((data) => data);
+};

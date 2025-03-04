@@ -1,0 +1,40 @@
+const product = (id, data, index, productType) => {
+  const html = `
+     <div class="${id}__product">
+            <div class="${id}__currentProductTag">Current Product</div>
+            <div class="${id}__product-container">
+                ${
+                  data.productImage
+                    ? `<a href="${data.url.link}" class="${id}__imageWrapper"><img src="${data.productImage}"/></a>`
+                    : ''
+                }
+                <div class="${id}__productContent">
+                    ${data.reviews ? data.reviews.outerHTML : ''}
+                    <a href="${data.url.link}">${data.title ? data.title.outerHTML : ''}</a>
+                    <div class="${id}__tableContent">
+                        <div>
+                            ${data.price.outerHTML}
+                        </div>
+                        <div>${productType}</div>
+                        <div>${data.details['Thickness:'] || ''}</div>
+                        <div>${data.details['Width:'] || ''}</div>
+                        <div>${data.details.finish_select}</div>
+                        <div>${data.details.solid_wood_surface}</div>
+                    </div>   
+                    <div class="${id}__buttonWrapper"> 
+                        <div class="${id}__add-to-basket" data-action="${
+    data.formAction
+  }" data-sku="${data.sku}" data-item="${data.itemValue}" data-key="${
+    data.formKeyValue
+  }">Add to basket</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+  
+  `;
+  return html.trim();
+};
+
+export default product;
