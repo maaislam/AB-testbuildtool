@@ -20,15 +20,18 @@ const init = () => {
     );
   }
 
-  pollerLite(['.template-collection', '.productgrid--wrapper'], () => {
-    const productsWrapper = document.querySelector('.productgrid--wrapper');
-    const targetProduct = productsWrapper.querySelector(
-      '.productgrid--item.imagestyle--no-image .tag-2'
-    );
-    if (!document.querySelector(`.${ID}__tag-2`)) {
-      targetProduct.insertAdjacentHTML('beforebegin', discountProd(ID, mainObject[VARIATION]));
+  pollerLite(
+    ['.template-collection', '.productgrid--wrapper', '.productgrid--item .discount-code__btn'],
+    () => {
+      const productsWrapper = document.querySelector('.productgrid--wrapper');
+      const targetProduct = productsWrapper.querySelector(
+        '.productgrid--item.imagestyle--no-image .tag-2'
+      );
+      if (!document.querySelector(`.${ID}__tag-2`)) {
+        targetProduct.insertAdjacentHTML('beforebegin', discountProd(ID, mainObject[VARIATION]));
+      }
     }
-  });
+  );
 
   if (!document.querySelector(`.${ID}__modal`)) {
     document.body.insertAdjacentHTML(
@@ -73,8 +76,7 @@ const init = () => {
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID, 'ID');
+  setup();
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
