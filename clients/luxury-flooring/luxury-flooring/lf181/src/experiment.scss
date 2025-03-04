@@ -2,11 +2,14 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  &__hidden {
-    @media screen and (min-width: 993px) {
-      display: none;
-    }
+  & {
+    scroll-behavior: smooth;
   }
+  // &__hidden {
+  //   @media screen and (min-width: 993px) {
+  //     display: none;
+  //   }
+  // }
   &__comparisonWrapper {
     max-width: 1496px;
     margin: 30px auto 30px;
@@ -20,6 +23,7 @@
     font-size: 40px;
     font-weight: 400;
     line-height: 48px;
+    text-align: center;
   }
   &__productsTable {
     display: flex;
@@ -137,20 +141,21 @@
         display: none;
       }
       .flooring-price {
+        display: flex;
         flex-direction: row;
         align-items: baseline;
 
         .final-price {
-          font-size: 14px !important;
+          font-size: 16px !important;
           span {
-            font-size: 14px !important;
+            font-size: 16px !important;
             @include media-query(xlg) {
-              font-size: 12px !important;
+              font-size: 13px !important;
             }
           }
 
           @include media-query(xlg) {
-            font-size: 12px !important;
+            font-size: 13px !important;
           }
         }
         .old-price {
@@ -281,11 +286,53 @@
     text-align: center;
     background-color: #6c7c69;
     color: #fff;
+    animation: 4sease 0s 4 normal none running flockr-pulse-new;
     cursor: pointer;
 
     &.#{$id}__disabled {
       opacity: 0.6;
       pointer-events: none;
     }
+
+    @include media-query(xlg) {
+      font-size: 14px;
+    }
+  }
+
+  &__slimilarProdsTag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    padding: 10px 15px;
+    margin: 15px auto;
+    border: solid 1px #000;
+    cursor: pointer;
+    .#{$id}__icon {
+      display: flex;
+      align-items: center;
+      width: 27px;
+      height: 20px;
+    }
+
+    .#{$id}__text {
+      font-family: 'work-sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      padding-left: 10px;
+      color: #202020;
+    }
+  }
+}
+
+@keyframes flockr-pulse-new {
+  0% {
+    box-shadow: 0 0 0 0 rgba(108, 125, 105, 0.8);
+  }
+  70% {
+    box-shadow: 0 0 0 15px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
   }
 }

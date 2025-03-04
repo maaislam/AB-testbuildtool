@@ -1,7 +1,8 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { addToCart, fetchProductDetails } from './helpers/utils';
+import { addToCart, fetchProductDetails, pollerLite } from './helpers/utils';
 import comparisonWrapper from './components/comparisonWrapper';
+import slimilarProdsTag from './components/slimilarProdsTag';
 
 const { ID } = shared;
 
@@ -45,6 +46,12 @@ const init = () => {
     .then((results) => {
       if (results.length === 0) return;
 
+      if (!document.querySelector(`.${ID}__slimilarProdsTag`)) {
+        document
+          .querySelector('.fp-calculator')
+          .insertAdjacentHTML('afterend', slimilarProdsTag(ID));
+      }
+
       if (!document.querySelector(`.${ID}__comparisonWrapper`)) {
         document
           .querySelector('.product-section.details')
@@ -65,24 +72,40 @@ export default () => {
     const { target } = event;
     if (target.closest(`.${ID}__add-to-basket`)) {
       const clickedItem = target.closest(`.${ID}__add-to-basket`);
+      const { sku } = clickedItem.dataset;
+      const exitingFreeSampleForm =
+        document.querySelector(`.product-item form[data-product-sku="${sku}"]`) ||
+        document.querySelector(`#sample_addtocart_form[data-product-sku="${sku}"]`);
+
+      const buttonElem = exitingFreeSampleForm.querySelector('button');
+
+      if (exitingFreeSampleForm && buttonElem) {
+        buttonElem.click();
+      }
       clickedItem.classList.add(`${ID}__disabled`);
-      clickedItem.textContent = 'Adding to basket';
-      const { action, item, key } = clickedItem.dataset;
-      const formBody = `product=${item}&item=${item}&form_key=${key}&qty=1`;
+      clickedItem.textContent = 'Adding';
+      setTimeout(() => {
+        clickedItem.textContent = 'Added to basket';
+      }, 1000);
 
-      addToCart(action, formBody)
-        .then((res) => {
-          if (res.backUrl.includes('/checkout/cart/')) {
-            clickedItem.textContent = 'Added to basket';
+      setTimeout(() => {
+        clickedItem.classList.remove(`${ID}__disabled`);
+        clickedItem.textContent = 'Order a free sample';
+      }, 2000);
 
-            setTimeout(() => {
-              clickedItem.classList.remove(`${ID}__disabled`);
-              clickedItem.textContent = 'Add to basket';
-              window.location.reload();
-            }, 1000);
-          }
-        })
-        .catch((error) => console.error(error, 'Error'));
+      setTimeout(() => {
+        pollerLite([() => buttonElem && buttonElem.classList.contains('disabled')], () => {
+          clickedItem.classList.add(`${ID}__disabled`);
+          clickedItem.textContent = 'Sample limit reached';
+        });
+      }, 5000);
+    } else if (target.closest(`.${ID}__slimilarProdsTag`)) {
+      const wrapper = document.querySelector(`.${ID}__comparisonWrapper`);
+      wrapper.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest'
+      });
     }
   });
   init();

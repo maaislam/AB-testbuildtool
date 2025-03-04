@@ -22,11 +22,9 @@ const product = (id, data, index, productType) => {
                         <div>${data.details.solid_wood_surface}</div>
                     </div>   
                     <div class="${id}__buttonWrapper"> 
-                        <div class="${id}__add-to-basket" data-action="${
-    data.formAction
-  }" data-sku="${data.sku}" data-item="${data.itemValue}" data-key="${
-    data.formKeyValue
-  }">Add to basket</div>
+                        <div class="${id}__add-to-basket" data-sku="${
+    data.sku
+  }">Order a free sample</div>
                     </div>
                 </div>
                 

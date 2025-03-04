@@ -1,0 +1,16 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__video {
+    object-fit: cover;
+
+    @media screen and (max-width: 767px) {
+      width: 319px;
+      height: 319px;
+    }
+  }
+  .#{$id}__videoThumbnail {
+    opacity: 1;
+  }
+}
