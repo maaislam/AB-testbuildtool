@@ -32,17 +32,17 @@ const stickyProduct = (id) => {
                     </div>
                 </a>
                 <div class="${id}__tableContent">
-                    <div>Price</div>
-                    <div>Product Type</div>
-                    <div>Plank Thickness</div>
-                    <div>Plank Width</div>
-                    <div>
+                    <div class="${id}__row">Price</div>
+                    <div class="${id}__row">Product Type</div>
+                    <div class="${id}__row">Plank Thickness</div>
+                    <div class="${id}__row">Plank Width</div>
+                    <div class="${id}__row">
                         Finish 
                         <div class="tooltip">
                             <div class="tooltip-toggle">?</div>
                             <span class="tooltip-content" id="tooltip-1" role="tooltip"><p><strong>Grades Explained</strong><br><u>Rustic planks</u> contain knots, imperfections and colour variation found in natural wood. Any open knots and imperfections will be filled in, giving your floor an aged wood effect.<br><br><u> Prime wood</u> contains minimal colour variation and knots, making it the ultimate choice for a clean, uniform finish.</p></span></div>
                     </div>
-                    <div>Surface
+                    <div class="${id}__row">Surface
                         <div class="tooltip">
                             <div class="tooltip-toggle">?</div>
                             <span class="tooltip-content" id="tooltip-1" role="tooltip"><p><strong>Grades Explained</strong><br><u>Rustic planks</u> contain knots, imperfections and colour variation found in natural wood. Any open knots and imperfections will be filled in, giving your floor an aged wood effect.<br><br><u> Prime wood</u> contains minimal colour variation and knots, making it the ultimate choice for a clean, uniform finish.</p></span></div>
