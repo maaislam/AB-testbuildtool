@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { addToCart, fetchProductDetails, pollerLite } from './helpers/utils';
+import { addFreeSample, fetchCartData, fetchProductDetails, pollerLite } from './helpers/utils';
 import comparisonWrapper from './components/comparisonWrapper';
 import slimilarProdsTag from './components/slimilarProdsTag';
 
@@ -30,7 +30,7 @@ const init = () => {
     });
 
   //insert current product info
-  const currentProductSkuElement = document.querySelector('#product_addtocart_form');
+  const currentProductSkuElement = document.querySelector('.sample-add-form form');
   const currentProductSku = currentProductSkuElement.dataset.productSku;
   const currentProductLink = window.location.href;
 
@@ -46,18 +46,53 @@ const init = () => {
     .then((results) => {
       if (results.length === 0) return;
 
-      if (!document.querySelector(`.${ID}__slimilarProdsTag`)) {
-        document
-          .querySelector('.fp-calculator')
-          .insertAdjacentHTML('afterend', slimilarProdsTag(ID));
-      }
+      pollerLite(
+        [
+          () => window.localStorage.getItem('mage-cache-storage'),
+          () => JSON.parse(window.localStorage.getItem('mage-cache-storage')),
+          () => JSON.parse(window.localStorage.getItem('mage-cache-storage')).cart
+        ],
+        () => {
+          const storageData = window.localStorage.getItem('mage-cache-storage');
+          const { cart } = JSON.parse(storageData);
 
-      if (!document.querySelector(`.${ID}__comparisonWrapper`)) {
-        document
-          .querySelector('.product-section.details')
-          .insertAdjacentHTML('afterend', comparisonWrapper(ID, results, productType));
-      }
-    }) //Now you get results here
+          const modifiedResults = results.map((result) => {
+            const { sku } = result;
+            const isSampleReached =
+              cart.items.length > 0 &&
+              cart.items.find((cartItem) => {
+                return cartItem.product_sku === sku && cartItem.sample_individual_limit_reached;
+              });
+
+            if (isSampleReached) {
+              return {
+                ...result,
+                instock: false
+              };
+            }
+
+            return {
+              ...result,
+              instock: true
+            };
+          });
+
+          console.log(modifiedResults, 'modifiedResults');
+
+          if (!document.querySelector(`.${ID}__slimilarProdsTag`)) {
+            document
+              .querySelector('.fp-calculator')
+              .insertAdjacentHTML('afterend', slimilarProdsTag(ID));
+          }
+
+          if (!document.querySelector(`.${ID}__comparisonWrapper`)) {
+            document
+              .querySelector('.product-section.details')
+              .insertAdjacentHTML('afterend', comparisonWrapper(ID, modifiedResults, productType));
+          }
+        }
+      );
+    })
     .catch((error) => {
       targetPoint.classList.remove(`${ID}__hidden`);
       sliderTitleElem.classList.remove(`${ID}__hidden`);
@@ -72,33 +107,52 @@ export default () => {
     const { target } = event;
     if (target.closest(`.${ID}__add-to-basket`)) {
       const clickedItem = target.closest(`.${ID}__add-to-basket`);
-      const { sku } = clickedItem.dataset;
-      const exitingFreeSampleForm =
-        document.querySelector(`.product-item form[data-product-sku="${sku}"]`) ||
-        document.querySelector(`#sample_addtocart_form[data-product-sku="${sku}"]`);
-
-      const buttonElem = exitingFreeSampleForm.querySelector('button');
-
-      if (exitingFreeSampleForm && buttonElem) {
-        buttonElem.click();
-      }
       clickedItem.classList.add(`${ID}__disabled`);
       clickedItem.textContent = 'Adding';
-      setTimeout(() => {
-        clickedItem.textContent = 'Added to basket';
-      }, 1000);
+      const { sku } = clickedItem.dataset;
+      const existingFreeSampleForm =
+        document.querySelector(`.product-item form[data-product-sku="${sku}"]`) ||
+        document.querySelector(`#sample_addtocart_form[data-product-sku="${sku}"]`);
+      const formAction = existingFreeSampleForm.action;
+      const productValueElement = existingFreeSampleForm.querySelector('input[name="product"]');
+      const productValue = productValueElement.value;
+      const formKeyElement = existingFreeSampleForm.querySelector('[name="form_key"]');
+      const formKey = formKeyElement.value;
 
-      setTimeout(() => {
-        clickedItem.classList.remove(`${ID}__disabled`);
-        clickedItem.textContent = 'Order a free sample';
-      }, 2000);
+      //Example usage:
+      addFreeSample(formAction, {
+        product: productValue,
+        is_sample: '1',
+        form_key: formKey
+      }).then((data) => {
+        if (data.length === 0) {
+          console.log('successfully added');
+          clickedItem.textContent = 'Added to basket';
+          fetchCartData([
+            'cart',
+            'directory-data',
+            'you-save',
+            'gtm',
+            'messages',
+            'apptrian_metapixelapi_matching_section',
+            'apptrian_pinteresttagapi_matching_section',
+            'apptrian_tiktokpixelapi_matching_section'
+          ]).then((res) => {
+            console.log(res);
+            const { cart } = res;
+            const isSampleReached = cart.items.find((cartItem) => {
+              return cartItem.product_sku === sku && cartItem.sample_individual_limit_reached;
+            });
 
-      setTimeout(() => {
-        pollerLite([() => buttonElem && buttonElem.classList.contains('disabled')], () => {
-          clickedItem.classList.add(`${ID}__disabled`);
-          clickedItem.textContent = 'Sample limit reached';
-        });
-      }, 5000);
+            if (isSampleReached) {
+              clickedItem.textContent = 'Sample limit reached';
+            } else {
+              clickedItem.textContent = 'Order a free sample';
+              clickedItem.classList.remove(`${ID}__disabled`);
+            }
+          });
+        }
+      });
     } else if (target.closest(`.${ID}__slimilarProdsTag`)) {
       const wrapper = document.querySelector(`.${ID}__comparisonWrapper`);
       wrapper.scrollIntoView({

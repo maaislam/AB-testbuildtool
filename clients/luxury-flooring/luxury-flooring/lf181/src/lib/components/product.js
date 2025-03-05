@@ -1,4 +1,7 @@
 const product = (id, data, index, productType) => {
+  const isActiveDisabled = data.instock ? '' : `${id}__disabled`;
+  const selectButtonText = data.instock ? 'Order a free sample' : 'Sample limit reached';
+
   const html = `
      <div class="${id}__product">
             <div class="${id}__currentProductTag">Current Product</div>
@@ -22,9 +25,9 @@ const product = (id, data, index, productType) => {
                         <div>${data.details.solid_wood_surface}</div>
                     </div>   
                     <div class="${id}__buttonWrapper"> 
-                        <div class="${id}__add-to-basket" data-sku="${
+                        <div class="${id}__add-to-basket ${isActiveDisabled}" data-sku="${
     data.sku
-  }">Order a free sample</div>
+  }">${selectButtonText}</div>
                     </div>
                 </div>
                 

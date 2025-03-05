@@ -5,7 +5,7 @@
  * @param {function} callback The callback function when all conditions are true.
  * @param {number} maxTime max time the check witll run before abort.
  */
-export const pollerLite = (conditions, callback, maxTime = 10000) => {
+export const pollerLite = (conditions, callback, maxTime = 1000000) => {
   const POLLING_INTERVAL = 25;
   const startTime = Date.now();
   const interval = setInterval(() => {
@@ -48,51 +48,6 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
-};
-
-const collectProductInfo = (allItemsArray, doc, item) => {
-  const productSectionDetails = doc.querySelector('.product-section.details');
-  const productFinishElement = doc.querySelector('#attr_finish_select');
-  console.log(productSectionDetails);
-  const productFinishText = productFinishElement ? productFinishElement.textContent : '';
-
-  const productSurfaceElement = doc.querySelector('#attr_solid_wood_surface');
-  const productSurfaceText = productSurfaceElement ? productSurfaceElement.textContent : '';
-
-  allItemsArray.push({
-    url: item.url,
-    element: item.element,
-    plankThikness: item.plankThikness,
-    plankWidth: item.plankWidth,
-    productFinishText,
-    productSurfaceText
-  });
-};
-
-export const parseHTML = async (urls) => {
-  const allItemsArray = [];
-
-  const promises = urls.map(({ url }) =>
-    fetch(url).catch((error) => {
-      console.error(`Error fetching ${url}: ${error.message}`);
-      return Promise.resolve(null);
-    })
-  );
-
-  const responses = await Promise.all(promises);
-  //eslint-disable-next-line no-restricted-syntax
-  for (const [index, response] of responses.entries()) {
-    if (response) {
-      //eslint-disable-next-line no-await-in-loop
-      const html = await response.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      console.log('doc', doc);
-      collectProductInfo(allItemsArray, doc, urls[index]);
-    }
-  }
-
-  return allItemsArray;
 };
 
 export const fetchProductDetails = (urls) => {
@@ -155,18 +110,49 @@ export const fetchProductDetails = (urls) => {
   return Promise.all(fetchPromises); //Return the promise
 };
 
-export const addToCart = (action, bodyData) => {
-  return fetch(`${action}`, {
+export const addFreeSample = (formAction, { product, is_sample, form_key }) => {
+  const formData = new FormData();
+  formData.append('product', product);
+  formData.append('is_sample', is_sample);
+  //formData.append('uenc', uenc);
+  formData.append('form_key', form_key);
+
+  return fetch(`${formAction}`, {
     method: 'POST',
+    body: formData,
     headers: {
-      accept: '*/*',
-      'accept-language': 'en-US,en;q=0.9',
-      'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      accept: 'application/json, text/javascript, */*; q=0.01',
       'x-requested-with': 'XMLHttpRequest'
     },
-    body: bodyData,
-    mode: 'cors'
+    credentials: 'include'
   })
     .then((response) => response.json())
-    .then((data) => data);
+    .catch((error) => console.error('Error:', error));
+};
+
+export const fetchCartData = async (sections) => {
+  const url = new URL('https://luxuryflooring.co.uk/customer/section/load/');
+  url.searchParams.append('sections', sections.join(','));
+  url.searchParams.append('force_new_section_timestamp', 'true');
+  url.searchParams.append('_', Date.now());
+
+  try {
+    const response = await fetch(url.toString(), {
+      method: 'GET',
+      headers: {
+        accept: 'application/json, text/javascript, */*; q=0.01',
+        'x-requested-with': 'XMLHttpRequest'
+      },
+      credentials: 'include',
+      mode: 'cors',
+      referrer: 'https://luxuryflooring.co.uk/thorpe-canvas-solid-oak-herringbone.html',
+      referrerPolicy: 'strict-origin-when-cross-origin'
+    });
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error('Error fetching cart data:', error);
+    return null;
+  }
 };

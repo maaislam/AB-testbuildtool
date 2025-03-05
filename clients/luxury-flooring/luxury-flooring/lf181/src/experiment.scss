@@ -281,6 +281,8 @@
 
   &__add-to-basket {
     width: 100%;
+    font-size: 16px;
+    line-height: 22px;
     padding: 10px;
     margin-bottom: 0;
     text-align: center;
@@ -290,8 +292,13 @@
     cursor: pointer;
 
     &.#{$id}__disabled {
-      opacity: 0.6;
+      opacity: 0.5;
+      cursor: default;
       pointer-events: none;
+    }
+
+    &:hover {
+      background-color: #546052;
     }
 
     @include media-query(xlg) {
