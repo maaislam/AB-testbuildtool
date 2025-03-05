@@ -62,7 +62,7 @@
   &-2 {
     .#{$id}__reviewsContainer {
       justify-content: flex-start;
-      margin: 11px auto 5px;
+      margin: 11px auto 5px 10px;
     }
     .pakge_heading {
       font-weight: 800;
@@ -71,6 +71,7 @@
       text-align: left;
       color: #2f0147;
       padding-top: 22px;
+      padding-left: 10px;
 
       @media screen and (max-width: 767px) {
         padding-top: 28px;

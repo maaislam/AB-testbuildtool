@@ -77,8 +77,6 @@ const init = () => {
             };
           });
 
-          console.log(modifiedResults, 'modifiedResults');
-
           if (!document.querySelector(`.${ID}__slimilarProdsTag`)) {
             document
               .querySelector('.fp-calculator')
@@ -126,6 +124,9 @@ export default () => {
         form_key: formKey
       })
         .then((data) => {
+          if (!data.success) {
+            window.location.reload();
+          }
           if (data.length === 0) {
             clickedItem.textContent = 'Added to basket';
             fetchCartData([
@@ -140,6 +141,7 @@ export default () => {
             ])
               .then((res) => {
                 const { cart } = res;
+                console.log(res, 'res');
                 const isSampleReached = cart.items.find((cartItem) => {
                   return cartItem.product_sku === sku && cartItem.sample_individual_limit_reached;
                 });
@@ -150,6 +152,8 @@ export default () => {
                   clickedItem.textContent = 'Order a free sample';
                   clickedItem.classList.remove(`${ID}__disabled`);
                 }
+
+                window.location.reload();
               })
               .catch((err) => {
                 clickedItem.textContent = 'Order a free sample';
@@ -159,7 +163,7 @@ export default () => {
           }
         })
         .catch((error) => {
-          console.error(error);
+          console.error(error, 'erorr');
         });
     } else if (target.closest(`.${ID}__slimilarProdsTag`)) {
       const wrapper = document.querySelector(`.${ID}__comparisonWrapper`);

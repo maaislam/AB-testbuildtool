@@ -5,11 +5,11 @@
   & {
     scroll-behavior: smooth;
   }
-  // &__hidden {
-  //   @media screen and (min-width: 993px) {
-  //     display: none;
-  //   }
-  // }
+  &__hidden {
+    @media screen and (min-width: 993px) {
+      display: none;
+    }
+  }
   &__comparisonWrapper {
     max-width: 1496px;
     margin: 30px auto 30px;
@@ -282,7 +282,7 @@
 
       &.empty {
         a {
-          white-space: normal;
+          white-space: normal !important;
           overflow: hidden;
           display: -webkit-box;
           -webkit-line-clamp: 1;

@@ -13,7 +13,7 @@ const init = () => {
 
   if (thirdSlide && thirdThumbSlide) {
     thirdSlide.innerHTML = `
-            <video playsinline width="378" height="378" preload="auto" autoplay muted class="${ID}__video">
+            <video playsinline  preload="auto" autoplay muted preload="auto" class="${ID}__video">
                 <source src="https://cdn.shopify.com/videos/c/o/v/94aba949ac2e4f908a4ae74581f73901.mp4" type="video/mp4">
             </video>
         `;
@@ -28,6 +28,21 @@ const init = () => {
 
     const mainSwiperInstance = document.querySelector('.swiper.mySwiper2').swiper;
     const thumbSwiperInstance = document.querySelector('.swiper.mySwiper').swiper;
+
+    if (mainSwiperInstance) {
+      mainSwiperInstance.on('slideChange', () => {
+        const allSlides = document.querySelectorAll('.package1 .swiper-slide');
+        console.log('changed slides', mainSwiperInstance.activeIndex);
+        if (mainSwiperInstance.activeIndex === 2) {
+          allSlides[mainSwiperInstance.activeIndex].classList.add(`${ID}__videoActive`);
+          allSlides[mainSwiperInstance.activeIndex].querySelector('video').play();
+        } else if (document.querySelector(`.swiper-slide.${ID}__videoActive`)) {
+          document
+            .querySelector(`.swiper-slide.${ID}__videoActive`)
+            .classList.remove(`${ID}__videoActive`);
+        }
+      });
+    }
 
     if (mainSwiperInstance) mainSwiperInstance.update();
     if (thumbSwiperInstance) thumbSwiperInstance.update();
