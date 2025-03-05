@@ -124,35 +124,43 @@ export default () => {
         product: productValue,
         is_sample: '1',
         form_key: formKey
-      }).then((data) => {
-        if (data.length === 0) {
-          console.log('successfully added');
-          clickedItem.textContent = 'Added to basket';
-          fetchCartData([
-            'cart',
-            'directory-data',
-            'you-save',
-            'gtm',
-            'messages',
-            'apptrian_metapixelapi_matching_section',
-            'apptrian_pinteresttagapi_matching_section',
-            'apptrian_tiktokpixelapi_matching_section'
-          ]).then((res) => {
-            console.log(res);
-            const { cart } = res;
-            const isSampleReached = cart.items.find((cartItem) => {
-              return cartItem.product_sku === sku && cartItem.sample_individual_limit_reached;
-            });
+      })
+        .then((data) => {
+          if (data.length === 0) {
+            clickedItem.textContent = 'Added to basket';
+            fetchCartData([
+              'cart',
+              'directory-data',
+              'you-save',
+              'gtm',
+              'messages',
+              'apptrian_metapixelapi_matching_section',
+              'apptrian_pinteresttagapi_matching_section',
+              'apptrian_tiktokpixelapi_matching_section'
+            ])
+              .then((res) => {
+                const { cart } = res;
+                const isSampleReached = cart.items.find((cartItem) => {
+                  return cartItem.product_sku === sku && cartItem.sample_individual_limit_reached;
+                });
 
-            if (isSampleReached) {
-              clickedItem.textContent = 'Sample limit reached';
-            } else {
-              clickedItem.textContent = 'Order a free sample';
-              clickedItem.classList.remove(`${ID}__disabled`);
-            }
-          });
-        }
-      });
+                if (isSampleReached) {
+                  clickedItem.textContent = 'Sample limit reached';
+                } else {
+                  clickedItem.textContent = 'Order a free sample';
+                  clickedItem.classList.remove(`${ID}__disabled`);
+                }
+              })
+              .catch((err) => {
+                clickedItem.textContent = 'Order a free sample';
+                clickedItem.classList.remove(`${ID}__disabled`);
+                console.error(err);
+              });
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     } else if (target.closest(`.${ID}__slimilarProdsTag`)) {
       const wrapper = document.querySelector(`.${ID}__comparisonWrapper`);
       wrapper.scrollIntoView({
