@@ -26,10 +26,13 @@ const init = () => {
     const vpnServerTitleElem = document.querySelector('.bg-purple-900.text-white h1.dtc-text-white');
     const serverCountMsgElem = document.querySelector('.bg-purple-900.text-white[data-testid="grid-section"] h2');
     const countryMsgElem = document.querySelector('.bg-purple-900.text-white[data-testid="grid-section"] .flex:nth-child(2) h2');
+    const getTheDealBtn = document.querySelector('a[href="#pricing"][target="_blank"]');
 
     if (vpnServerTitleElem) vpnServerTitleElem.textContent = 'Proton VPN server list and locations';
     if (serverCountMsgElem) serverCountMsgElem.textContent = '11,700+ servers worldwide';
     if (countryMsgElem) countryMsgElem.textContent = '117 countries';
+
+    if (getTheDealBtn) getTheDealBtn.removeAttribute('target');
 
     if (!document.querySelector(targetSelector)) {
       const headerElem = document.querySelector('header');
@@ -59,6 +62,6 @@ export default () => {
   document.body.addEventListener('click', (event) => {
     const { target } = event;
 
-    clickHandler(ID, target);
+    clickHandler(ID, target, event);
   });
 };

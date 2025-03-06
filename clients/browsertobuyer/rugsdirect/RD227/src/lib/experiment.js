@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { pollerLite, setTextCopy, trackGAEvent } from './helpers/utils';
+import { pollerLite, setCookie, setTextCopy, trackGAEvent } from './helpers/utils';
 import discountBanner from './components/discountBanner';
 import discountProd from './components/discountProd';
 import discountModal from './components/discountModal';
@@ -124,9 +124,16 @@ export default () => {
         subscribeToRust(inputElement.value, VARIATION)
           .then((res) => {
             if (res?.status === 'success') {
+              setCookie(`${ID}__emailSubmitted`, 'true');
               trackGAEvent('RD 227', 'submit_email');
+
+              const smallDiscountBanner = document.querySelector(`.${ID}__discount-banner`);
+              const plpDiscountBanner = document.querySelector(`.${ID}__tag-2`);
               const contentWrapper = bodyWrapper.closest(`.${ID}__modal-content`);
+
               if (contentWrapper) contentWrapper.classList.add(`${ID}__success`);
+              if (smallDiscountBanner) smallDiscountBanner.classList.add(`${ID}__emailSubmited`);
+              if (plpDiscountBanner) plpDiscountBanner.classList.add(`${ID}__emailSubmited`);
             } else {
               console.error('Failed to subscribe:', res);
             }

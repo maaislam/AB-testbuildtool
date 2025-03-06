@@ -9,6 +9,7 @@
       }
     }
   }
+
   .#{$id}__discount-banner {
     display: flex;
     border-radius: 4px;
@@ -27,9 +28,33 @@
     @include media-query(xsm) {
       max-width: 100%;
     }
-    & + .discount-code__wrapper {
+
+    .#{$id}__discountCodeText {
+      display: none;
+      background-color: #fff;
+      text-align: center;
+      width: 100%;
+      font-family: 'Inter';
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 18px;
+      text-align: center;
+      padding-bottom: 5px;
+      color: #6d0d7c;
+
+      @include media-query(sm) {
+        font-size: 14px;
+      }
+
+      @include media-query(xxsm) {
+        font-size: 13px;
+      }
+    }
+
+    &+.discount-code__wrapper {
       display: none;
     }
+
     .#{$id}__discount-code__label {
       position: relative;
       display: flex;
@@ -57,6 +82,32 @@
         min-width: 64px;
         font-size: 18px;
         line-height: 22px;
+      }
+    }
+
+    &.#{$id}__emailSubmited {
+      .#{$id}__discountCodeText {
+        display: block;
+      }
+
+      .#{$id}__claimBtn {
+        display: none;
+      }
+
+      .#{$id}__discountText {
+        padding: 13px 22px;
+
+        @include media-query(sm) {
+          padding: 13px 16px;
+        }
+      }
+
+      .#{$id}__discount-code__label {
+        min-width: 70px;
+
+        @include media-query(sm) {
+          min-width: 65px;
+        }
       }
     }
 
@@ -158,7 +209,43 @@
     color: #fff;
     //cursor: pointer;
 
-    & + .tag-2 {
+    &+.tag-2 {
+      display: none;
+    }
+
+    .#{$id}__discountCodeText {
+      font-family: 'Inter';
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+      text-transform: capitalize;
+      padding: 11px 24px;
+      border: 1px solid #6d0d7c;
+      border-radius: 3px;
+      background-color: #fff;
+      color: #7f187f;
+      margin: 0
+    }
+
+    .#{$id}__discountCode {
+      display: none;
+    }
+
+    .#{$id}__discountCodeMsg {
+      font-family: "Inter";
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.2;
+      padding-bottom: 15px;
+      margin: 0;
+    }
+
+    &.#{$id}__emailSubmited .#{$id}__discountCode {
+      display: block;
+    }
+
+    &.#{$id}__emailSubmited .#{$id}__plpClaimBtn {
       display: none;
     }
   }
@@ -194,6 +281,7 @@
 
   &__tag-bottom-style-2 {
     position: relative;
+
     &:before {
       content: '';
       position: absolute;
@@ -212,6 +300,7 @@
     background: #7f187f;
     padding: 40px 24px 53px;
   }
+
   &__discount-tag-heading {
     font-family: 'Inter';
     font-weight: 800;
@@ -312,15 +401,16 @@
     }
 
     &.#{$id}__closing {
+
       .#{$id}__modal-container,
-      .#{$id}__modal-overlay {
-      }
+      .#{$id}__modal-overlay {}
     }
 
     .#{$id}__modal-content {
       position: relative;
       width: 100%;
       height: 100%;
+
       &.#{$id}__success {
         .#{$id}__modal-right.#{$id}__successMsgDesktop {
           display: block;
@@ -380,6 +470,7 @@
     width: 100%;
     height: auto;
   }
+
   &__modal-discount-textWrapper {
     position: relative;
     display: flex;
@@ -524,21 +615,42 @@
 
   .#{$id}__gap {
     margin-bottom: 6px;
+
     @include media-query(sm) {
       margin-bottom: 0;
     }
   }
 
-  &__modal-right-heading {
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    padding-bottom: 15px;
-    margin: 0;
-    @include media-query(sm) {
-      color: #fff;
+  &-1 {
+    .#{$id}__modal-right-heading {
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      padding-bottom: 15px;
+      margin: 0;
+
+      @include media-query(sm) {
+        color: #fff;
+      }
+    }
+  }
+
+  &-2 {
+    .#{$id}__modal-right-heading {
+      font-family: "Inter";
+      font-weight: 400;
+      text-align: center;
+      padding-bottom: 15px;
+      margin: 0;
+      font-size: 12px;
+      line-height: 18px;
+      color: #1b1b1c;
+
+      @include media-query(sm) {
+        color: #fff;
+      }
     }
   }
 
@@ -615,6 +727,7 @@
   &__modal-mobile-discount-code__label-point-wrapper {
     height: 0;
   }
+
   &__modal-mobile-discount-code__label-point {
     position: relative;
     top: -49px;
@@ -645,13 +758,16 @@
       border-radius: 50%;
     }
   }
+
   &__mobile-modal-content {
     padding: 24px;
     background-color: #6d0d7c;
   }
+
   &__successMsgMobile {
     display: none;
   }
+
   &__modal-discount-mobile-heading {
     font-family: 'Inter';
     font-weight: 800;
@@ -688,6 +804,7 @@
       outline: 0;
     }
   }
+
   &__modal-mobile-button {
     width: 100%;
     font-family: 'Inter';
@@ -704,6 +821,7 @@
     margin-top: 15px;
     margin-bottom: 10px;
   }
+
   &__modal-mobile-agreement {
     font-family: 'Inter';
     font-weight: 400;
@@ -713,6 +831,7 @@
     color: #fff;
     margin: 0 0 10px 0;
   }
+
   &__modal-no-thanks-mobile {
     font-family: 'Inter';
     font-weight: 400;
@@ -760,6 +879,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

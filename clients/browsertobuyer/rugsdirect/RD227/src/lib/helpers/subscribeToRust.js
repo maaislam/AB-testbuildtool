@@ -3,7 +3,7 @@ const subscribeToRust = async (email, VARIATION) => {
     //Ensure VARIATION is correctly formatted as "v1" or "v2"
     const variation = `v${VARIATION}`.toLowerCase();
 
-    const url = `https://hooks.zapier.com/hooks/catch/3538884/2gl7tpu/?email=${encodeURIComponent(
+    const url = `https://hooks.zapier.com/hooks/catch/3538884/2gebqy2/?email=${encodeURIComponent(
       email
     )}&variation=${encodeURIComponent(variation)}`;
 

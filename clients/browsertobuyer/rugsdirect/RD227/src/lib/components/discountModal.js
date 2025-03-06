@@ -3,7 +3,9 @@ import desktopSuccessDiscountMsg from './desktopSuccessDiscountMsg';
 import mobileSuccessDiscountMsg from './mobileSuccessDiscountMsg';
 
 const discountModal = (id, data, VARIATION) => {
-  const html = `
+    const headerText = VARIATION === '1' ? 'Extra 10% off everything' : 'Extra 10% off all rugs';
+
+    const html = `
          <div class="${id}__modal">
             <div class="${id}__modal-overlay"></div>
             <div class="${id}__modal-container">
@@ -39,7 +41,7 @@ const discountModal = (id, data, VARIATION) => {
                             <div class="${id}__modal-mobile-discount-code__label-point"></div>
                         </div>
                         <div class="${id}__mobile-modal-content">
-                            <div class="${id}__modal-discount-mobile-heading">Extra 10% off everything</div>
+                            <div class="${id}__modal-discount-mobile-heading">${headerText}</div>
                             <p class="${id}__modal-right-mobile-heading">Sign up to our mailing list to get an instant <strong>10% off</strong> ${
     data.mainText
   } ${VARIATION === '1' ? 'on site' : ''}</p>

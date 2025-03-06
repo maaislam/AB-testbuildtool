@@ -67,3 +67,19 @@ export const trackGAEvent = (eventCategory, eventAction, eventLabel) => {
     console.log('event tracked', eventCategory, eventAction, eventLabel);
   }
 };
+
+export const getCookie = (name) => {
+  const value = `; ${document.cookie}`;
+
+  const parts = value.split(`; ${name}=`);
+
+  if (parts.length === 2) {
+    return parts.pop().split(';').shift();
+  }
+  return null;
+};
+
+export const setCookie = (cName, cValue) => {
+  const path = 'path=/';
+  document.cookie = `${cName}=${cValue}; ${path}`;
+};
