@@ -13,23 +13,28 @@ const { ID } = shared;
 window._conv_q = window._conv_q || [];
 
 const init = () => {
-  const vpnServerTitleElem = document.querySelector('.bg-purple-900.text-white h1.dtc-text-white');
   const targetPoint = document.querySelector(
     '.bg-purple-900.text-white[data-testid="grid-section"]'
   );
-  const targetSelector = `.${ID}__header`; //Change this to match the element you're adding
+
+  const targetSelector = `.${ID}__header`;
   const vpnServerDescHTML = `<p class="${ID}__vpnServerDesc dtc-text-white">
   Proton VPN has one of the world’s fastest and most extensive networks, with servers on every continent for truly global connectivity.
   </p>`;
 
   const reapplyChanges = () => {
-    //Check if element already exists before adding again
+    const vpnServerTitleElem = document.querySelector('.bg-purple-900.text-white h1.dtc-text-white');
+    const serverCountMsgElem = document.querySelector('.bg-purple-900.text-white[data-testid="grid-section"] h2');
+    const countryMsgElem = document.querySelector('.bg-purple-900.text-white[data-testid="grid-section"] .flex:nth-child(2) h2');
+
+    if (vpnServerTitleElem) vpnServerTitleElem.textContent = 'Proton VPN server list and locations';
+    if (serverCountMsgElem) serverCountMsgElem.textContent = '11,700+ servers worldwide';
+    if (countryMsgElem) countryMsgElem.textContent = '117 countries';
+
     if (!document.querySelector(targetSelector)) {
       const headerElem = document.querySelector('header');
       headerElem.insertAdjacentHTML('beforebegin', header(ID));
     }
-
-    vpnServerTitleElem.textContent = 'Proton VPN server list and locations';
 
     if (!document.querySelector(`.${ID}__vpnServerDesc`)) {
       vpnServerTitleElem.insertAdjacentHTML('afterend', vpnServerDescHTML);
@@ -43,7 +48,6 @@ const init = () => {
   if (!document.querySelector(`.${ID}__vpnLocationsWrapper`)) {
     targetPoint.insertAdjacentHTML('afterend', vpnLocationsWrapper(ID, countryData));
   }
-
   filterCountries(ID, countryData);
 };
 

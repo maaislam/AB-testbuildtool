@@ -85,19 +85,15 @@ const sideBarMenu = (id) => {
               <nav class="space-y-4 ${id}__mobileNav">
                   <a class="${id}__mobileNavItem ${id}__whyVpnLink block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
                       <h2 class="text-lg font-semibold text-gray-900">Why do I need a VPN?</h2>
-                      <p class="text-gray-600 text-sm">Find out how a VPN can help you</p>
+                      <p class="text-gray-600 text-sm">Find out how a VPN can help you.</p>
                   </a>
                   <a class="${id}__mobileNavItem ${id}__featuresLink block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25" >
                       <h2 class="text-lg font-semibold text-gray-900">All Features</h2>
-                      <p class="text-gray-600 text-sm">Learn how our advanced security and privacy features allow you to browse the web with peace of mind</p>
-                  </a>
-                   <a class="${id}__mobileNavItem ${id}__streamingLink block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
-                      <h2 class="text-lg font-semibold text-gray-900">VPN for Streaming</h2>
-                      <p class="text-gray-600 text-sm">Watch what you want, when you want, from wherever you want with Proton VPN</p>
+                      <p class="text-gray-600 text-sm">Learn how our advanced security and privacy features allow you to browse the web and stream your favourite content with peace of mind.</p>
                   </a>
                    <a class="${id}__mobileNavItem ${id}__whyProtonVpnLink block pl-4 pr-4 pt-5 pb-5 text-purple-800 hover:text-purple-500 focus-visible:text-purple-500 hover:bg-purple-25 focus-visible:bg-purple-25">
                       <h2 class="text-lg font-semibold text-gray-900">Why Proton VPN</h2>
-                      <p class="text-gray-600 text-sm">See how we compare with other VPN providers</p>
+                      <p class="text-gray-600 text-sm">See how we compare with other VPN providers.</p>
                   </a>
               </nav>
           </div>
