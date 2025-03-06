@@ -1,3 +1,4 @@
+/*eslint-disable global-require */
 /**
  * Polls the DOM for a condition to be met before executing a callback.
  *
@@ -77,6 +78,8 @@ export const fetchProductDetails = (urls) => {
           }
         });
 
+        const productTypeElement = doc.querySelector('.breadcrumbs ul > li:nth-child(2) a');
+        const productType = productTypeElement ? productTypeElement.textContent : '';
         const productImage = doc.querySelector('.gallery .gallery__item img');
         const reviewsElement = doc.querySelector('.product-reviews-summary');
         const productTitleElement = doc.querySelector('.page-title-wrapper.product');
@@ -91,6 +94,7 @@ export const fetchProductDetails = (urls) => {
         return {
           sku: url.sku,
           url,
+          productType,
           details,
           title: productTitleElement || '',
           productImage: productImage ? productImage.src : '',
@@ -155,4 +159,28 @@ export const fetchCartData = async (sections) => {
     console.error('Error fetching cart data:', error);
     return null;
   }
+};
+
+export const addToSampleCart = (prodId, formKey, uencValue, action) => {
+  return new Promise((resolve, reject) => {
+    window.require(['jquery'], ($) => {
+      $.ajax({
+        url: action,
+        type: 'POST',
+        data: {
+          product: prodId,
+          is_sample: 1,
+          uenc: uencValue || '',
+          form_key: formKey
+        },
+        success(response) {
+          resolve(response); //Resolve the promise with response
+        },
+        error(err) {
+          console.error('Error adding product to cart', err);
+          reject(err); //Reject the promise with error
+        }
+      });
+    });
+  });
 };
