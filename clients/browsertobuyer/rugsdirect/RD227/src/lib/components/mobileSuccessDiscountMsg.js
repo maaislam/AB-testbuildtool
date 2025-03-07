@@ -8,7 +8,7 @@ const mobileSuccessDiscountMsg = (id, data, VARIATION) => {
           <button class="${id}__modal-button ${id}__gap ${id}__continueShoppingBtn">Continue Shopping</button>
            ${
              VARIATION === '2'
-               ? ` <p class="${id}__modal-right-heading ${id}__nogap">${data.additionalMsg}</p>`
+               ? ` <p class="${id}__modal-right-heading ${id}__nogap ${id}__footerText">${data.additionalMsg}</p>`
                : ''
            }
       </div>

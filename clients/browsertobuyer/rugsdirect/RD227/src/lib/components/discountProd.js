@@ -1,7 +1,9 @@
 import { getCookie } from '../helpers/utils';
 
-const discountProd = (id, data) => {
+const discountProd = (id, data, VARIATION) => {
     const isEmailSubmited = getCookie(`${id}__emailSubmitted`);
+
+    const discountCode = VARIATION === '1' ? 'EVERYTHING10' : 'ALLRUGS10';
 
     const html = `
         <div class="${id}__tag-2 ${isEmailSubmited ? `${id}__emailSubmited` : ''}">
@@ -14,7 +16,7 @@ const discountProd = (id, data) => {
                     <span class="${id}__discount-tag-text-small">${data.mainText}</span>
                     <div class="${id}__discountCode">
                         <p class="${id}__discountCodeMsg">Enter code at checkout:</p>
-                        <p class="${id}__discountCodeText">EVERYTHING10</p>
+                        <p class="${id}__discountCodeText">${discountCode}</p>
                     </div>
                     <button class="${id}__plpClaimBtn">Claim Discount</button>
                 </div>

@@ -28,7 +28,7 @@ const init = () => {
         '.productgrid--item.imagestyle--no-image .tag-2'
       );
       if (!document.querySelector(`.${ID}__tag-2`)) {
-        targetProduct.insertAdjacentHTML('beforebegin', discountProd(ID, mainObject[VARIATION]));
+        targetProduct.insertAdjacentHTML('beforebegin', discountProd(ID, mainObject[VARIATION], VARIATION));
       }
     }
   );
@@ -149,7 +149,7 @@ export default () => {
     }
   });
 
-  if (VARIATION === 'control') return; //
+  if (VARIATION === 'control') return;
 
-  init(); //
+  init();
 };
