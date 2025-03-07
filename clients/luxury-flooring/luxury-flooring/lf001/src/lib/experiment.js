@@ -15,7 +15,7 @@ const clickHandler = (event) => {
 };
 
 const mutationCallback = (mutation) => {
-  if (mutation.target.classList.contains('active')) {
+  if (mutation.target.classList.contains('activejkh')) {
     //console.log(mutation);
     //gaTracking('clicks on basket icon');
     gaTracking('clicks on basket icon');

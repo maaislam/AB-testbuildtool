@@ -1,4 +1,4 @@
-const product = (id, data, index, productType) => {
+const product = (id, data) => {
   const isActiveDisabled = data.instock ? '' : `${id}__disabled`;
   const selectButtonText = data.instock ? 'Order a free sample' : 'Sample limit reached';
 
@@ -18,7 +18,7 @@ const product = (id, data, index, productType) => {
                         <div>
                             ${data.price.outerHTML}
                         </div>
-                        <div>${productType}</div>
+                        <div>${data.productType}</div>
                         <div>${data.details['Thickness:'] || ''}</div>
                         <div>${data.details['Width:'] || ''}</div>
                         <div>${data.details.finish_select}</div>

@@ -1,10 +1,55 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { addFreeSample, fetchCartData, fetchProductDetails, pollerLite } from './helpers/utils';
+import { addToSampleCart, fetchProductDetails, pollerLite } from './helpers/utils';
 import comparisonWrapper from './components/comparisonWrapper';
 import slimilarProdsTag from './components/slimilarProdsTag';
 
 const { ID } = shared;
+const removeSuccessNotification = () => {
+  const cloneNotificationElement = document.querySelector(`${ID}__showSuccessNotification`);
+  setTimeout(() => {
+    if (cloneNotificationElement) {
+      cloneNotificationElement.remove();
+    }
+  }, 2000);
+};
+
+const removeErrorNotification = () => {
+  const cloneNotificationElement = document.querySelector(`${ID}__showErrorNotification`);
+  setTimeout(() => {
+    if (cloneNotificationElement) {
+      cloneNotificationElement.remove();
+    }
+  }, 2000);
+};
+const showSuccessNotification = () => {
+  pollerLite(
+    [`.page.messages:not(.${ID}__showSuccessNotification) .messages .message-success`],
+    () => {
+      const controlNotificationElement = document.querySelector(
+        `.page.messages:not(.${ID}__showSuccessNotification)`
+      );
+      const cloneNotificationElement = controlNotificationElement.cloneNode(true);
+      if (!document.querySelector(`${ID}__showSuccessNotification`)) {
+        document.body.insertAdjacentElement('beforeend', cloneNotificationElement);
+        cloneNotificationElement.classList.add(`${ID}__showSuccessNotification`);
+      }
+    }
+  );
+};
+
+const showErrorNotification = () => {
+  pollerLite([`.page.messages:not(.${ID}__showErrorNotification) .messages .message-error`], () => {
+    const controlNotificationElement = document.querySelector(
+      `.page.messages:not(.${ID}__showErrorNotification)`
+    );
+    const cloneNotificationElement = controlNotificationElement.cloneNode(true);
+    if (!document.querySelector(`${ID}__showErrorNotification`)) {
+      document.body.insertAdjacentElement('beforeend', cloneNotificationElement);
+      cloneNotificationElement.classList.add(`${ID}__showErrorNotification`);
+    }
+  });
+};
 
 const init = () => {
   const targetPoint = document.querySelector('.products.wrapper.products-grid');
@@ -39,8 +84,6 @@ const init = () => {
     link: currentProductLink
   });
 
-  const productTypeElement = document.querySelector('.breadcrumbs ul > li:nth-child(2) a');
-  const productType = productTypeElement ? productTypeElement.textContent : '';
   //Usage example:
   fetchProductDetails(collectUrls)
     .then((results) => {
@@ -86,7 +129,7 @@ const init = () => {
           if (!document.querySelector(`.${ID}__comparisonWrapper`)) {
             document
               .querySelector('.product-section.details')
-              .insertAdjacentHTML('afterend', comparisonWrapper(ID, modifiedResults, productType));
+              .insertAdjacentHTML('afterend', comparisonWrapper(ID, modifiedResults));
           }
         }
       );
@@ -116,54 +159,49 @@ export default () => {
       const productValue = productValueElement.value;
       const formKeyElement = existingFreeSampleForm.querySelector('[name="form_key"]');
       const formKey = formKeyElement.value;
+      const uencElement = existingFreeSampleForm.querySelector('[name="uenc"]');
+      const uencValue = uencElement ? uencElement.value : '';
 
-      //Example usage:
-      addFreeSample(formAction, {
-        product: productValue,
-        is_sample: '1',
-        form_key: formKey
-      })
-        .then((data) => {
-          if (!data.success) {
-            window.location.reload();
+      addToSampleCart(productValue, formKey, uencValue, formAction)
+        .then((response) => {
+          if (!response.success) {
+            clickedItem.textContent = 'Sample limit reached';
+            clickedItem.classList.add(`${ID}__disabled`);
+            showErrorNotification();
+            removeErrorNotification();
           }
-          if (data.length === 0) {
+          if (response.length === 0) {
             clickedItem.textContent = 'Added to basket';
-            fetchCartData([
-              'cart',
-              'directory-data',
-              'you-save',
-              'gtm',
-              'messages',
-              'apptrian_metapixelapi_matching_section',
-              'apptrian_pinteresttagapi_matching_section',
-              'apptrian_tiktokpixelapi_matching_section'
-            ])
-              .then((res) => {
-                const { cart } = res;
-                console.log(res, 'res');
+            clickedItem.classList.add(`${ID}__disabled`);
+            pollerLite(
+              [
+                () => window.localStorage.getItem('mage-cache-storage'),
+                () => JSON.parse(window.localStorage.getItem('mage-cache-storage')),
+                () => JSON.parse(window.localStorage.getItem('mage-cache-storage')).cart
+              ],
+              () => {
+                const storageData = window.localStorage.getItem('mage-cache-storage');
+                const { cart } = JSON.parse(storageData);
                 const isSampleReached = cart.items.find((cartItem) => {
                   return cartItem.product_sku === sku && cartItem.sample_individual_limit_reached;
                 });
 
                 if (isSampleReached) {
                   clickedItem.textContent = 'Sample limit reached';
+                  clickedItem.classList.add(`${ID}__disabled`);
                 } else {
                   clickedItem.textContent = 'Order a free sample';
                   clickedItem.classList.remove(`${ID}__disabled`);
                 }
 
-                window.location.reload();
-              })
-              .catch((err) => {
-                clickedItem.textContent = 'Order a free sample';
-                clickedItem.classList.remove(`${ID}__disabled`);
-                console.error(err);
-              });
+                showSuccessNotification();
+                removeSuccessNotification();
+              }
+            );
           }
         })
-        .catch((error) => {
-          console.error(error, 'erorr');
+        .catch((err) => {
+          console.error('Error:', err);
         });
     } else if (target.closest(`.${ID}__slimilarProdsTag`)) {
       const wrapper = document.querySelector(`.${ID}__comparisonWrapper`);

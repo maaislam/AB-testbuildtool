@@ -33,7 +33,7 @@ const stickyProduct = (id) => {
                 </a>
                 <div class="${id}__tableContent">
                     <div class="${id}__row">Price</div>
-                    <div class="${id}__row">Product Type</div>
+                    <div class="${id}__row">Floor Type</div>
                     <div class="${id}__row">Plank Thickness</div>
                     <div class="${id}__row">Plank Width</div>
                     <div class="${id}__row">
