@@ -11,6 +11,7 @@ const vpnLocationsWrapper = (id, countryData) => {
                         <span class="${id}__flagIcon"></span>
                         <span class="${id}__searchIcon">${searchIcon}</span>
                         <span class="${id}__text">Select one of 115+ countries</span>
+                        <span class="${id}__servers"></span>
                         <span class="${id}__icon">${dropdownArrow}</span>
                     </div>
                 </div>

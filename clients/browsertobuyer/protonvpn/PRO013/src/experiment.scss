@@ -25,10 +25,10 @@
 
     .bg-purple-900.text-white[data-testid="grid-section"] {
         .container-grid {
-            grid-template-columns: repeat(3, minmax(0,1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
 
             @include media-query(sm) {
-                grid-template-columns: repeat(1, minmax(0,1fr));
+                grid-template-columns: repeat(1, minmax(0, 1fr));
             }
 
             .flex.space-y-4 {
@@ -39,18 +39,19 @@
                 }
             }
         }
+
         @include media-query(sm) {
             .space-y-2:not(.flex) {
                 display: flex;
                 align-items: center;
-    
+
                 h2 {
                     margin-left: 16px;
                     margin-bottom: 8px;
                 }
             }
         }
-        
+
         .space-y-4:last-child {
             display: none;
         }
@@ -231,6 +232,35 @@
         }
     }
 
+    .#{$id}__icon {
+        margin-left: auto;
+    }
+
+    &__servers {
+        margin-left: auto;
+
+        .#{$id}__serverCount,
+        .#{$id}__serverText {
+            font-family: "Inter";
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #9ca3af;
+        }
+
+        .#{$id}__serverText {
+            @include media-query(sm) {
+                display: none;
+            }
+        }
+    }
+
+    &__servers:has(.#{$id}__serverText) {
+        & + .#{$id}__icon {
+            margin-left: 8px;
+        }
+    }
+
     &__countrySelected {
         .#{$id}__defaultDropdownWrapper {
             justify-content: start;
@@ -239,9 +269,9 @@
                 padding-left: 8px;
             }
 
-            .#{$id}__icon {
-                margin-left: auto;
-            }
+            // .#{$id}__icon {
+            //     margin-left: auto;
+            // }
         }
     }
 
@@ -321,6 +351,12 @@
                 }
             }
 
+            .#{$id}__servers:has(.#{$id}__serverText) {
+                & + .#{$id}__icon {
+                    margin-left: 8px;
+                }
+            }
+
             &+.#{$id}__countriesWrapper {
                 position: absolute;
                 display: block;
@@ -351,7 +387,7 @@
     &__defaultDropdownWrapper {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        // justify-content: space-between;
         padding: 10px 20px;
         cursor: pointer;
 

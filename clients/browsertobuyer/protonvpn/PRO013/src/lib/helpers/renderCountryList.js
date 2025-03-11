@@ -1,3 +1,4 @@
+/*eslint-disable no-param-reassign */
 import { checkIcon } from '../assets/icons';
 
 const renderCountryList = (id, countryData, container) => {
@@ -7,7 +8,7 @@ const renderCountryList = (id, countryData, container) => {
             const serverText = servers === 1 ? 'server' : 'servers';
 
             return `
-                <div class="${id}__countryItem" data-name="${name}" data-flag="${flag}">
+                <div class="${id}__countryItem" data-name="${name}" data-flag="${flag}" data-server="${servers}">
                     <div class="${id}__countryImage">
                         <img src="${flag}"/>
                     </div>

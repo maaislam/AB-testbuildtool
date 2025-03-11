@@ -62,17 +62,26 @@ const clickHandler = (id, target, event) => {
         const mainWrapper = dropdownWrapper.closest(`.${id}__vpnLocationsWrapper`);
         const countryWrapper = mainWrapper.querySelector(`.${id}__countriesWrapper`);
         const selectedCountry = mainWrapper.querySelector(`.${id}__selectedCountryDropdown .${id}__text`);
+        const serverTextElem = mainWrapper.querySelector(`.${id}__selectedCountryDropdown .${id}__servers`);
         const searchIconElem = mainWrapper.querySelector(`.${id}__selectedCountryDropdown .${id}__searchIcon`);
         const selectedFlag = mainWrapper.querySelector(`.${id}__selectedCountryDropdown .${id}__flagIcon`);
         const countryName = clickedItem.getAttribute('data-name');
+        const serverCount = clickedItem.getAttribute('data-server');
         const flag = clickedItem.getAttribute('data-flag');
+        const serverTextPattern = Number(serverCount) === 1 ? 'server' : 'servers';
 
         selectedCountry.textContent = countryName;
         searchIconElem.innerHTML = '';
         selectedFlag.innerHTML = `<img src="${flag}"/>`;
+        serverTextElem.innerHTML = `<span class='${id}__serverCount'>
+            ${serverCount}
+            <span class='${id}__serverText'>${serverTextPattern}</span>
+        </span>`;
 
         allCountryItems.forEach((item) => item.classList.remove(`${id}__active`));
         dropdownWrapper.classList.remove(`${id}__open`);
+
+        //add active class to clicked item
         clickedItem.classList.add(`${id}__active`);
         dropdownWrapper.classList.add(`${id}__countrySelected`);
         countryWrapper.classList.add(`${id}__close`);

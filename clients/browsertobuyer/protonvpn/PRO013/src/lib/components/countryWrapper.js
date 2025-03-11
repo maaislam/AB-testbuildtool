@@ -15,7 +15,7 @@ const countryWrapper = (id, countryData) => {
                     const serverText = servers === 1 ? 'server' : 'servers';
 
                     return `
-                        <div class="${id}__countryItem" data-name="${name}" data-flag="${flag}">
+                        <div class="${id}__countryItem" data-name="${name}" data-flag="${flag}" data-server="${servers}">
                             <div class="${id}__countryImage">
                                 <img src="${flag}"/>
                             </div>
