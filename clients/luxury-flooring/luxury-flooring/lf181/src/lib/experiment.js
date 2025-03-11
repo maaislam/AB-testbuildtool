@@ -89,6 +89,8 @@ const init = () => {
     .then((results) => {
       if (results.length === 0) return;
 
+      console.log('data:', results);
+
       pollerLite(
         [
           () => window.localStorage.getItem('mage-cache-storage'),
