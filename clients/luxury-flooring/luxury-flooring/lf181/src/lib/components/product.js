@@ -18,11 +18,11 @@ const product = (id, data) => {
                         <div>
                             ${data.price.outerHTML}
                         </div>
-                        <div>${data.productType}</div>
+                        <div>${data.details.flooringtype || ''}</div>
                         <div>${data.details['Thickness:'] || ''}</div>
                         <div>${data.details['Width:'] || ''}</div>
-                        <div>${data.details.finish_select}</div>
-                        <div>${data.details.solid_wood_surface}</div>
+                        <div>${data.details.finish_select || ''}</div>
+                        <div>${data.details.solid_wood_surface || ''}</div>
                     </div>   
                     <div class="${id}__buttonWrapper"> 
                         <div class="${id}__add-to-basket ${isActiveDisabled}" data-sku="${
