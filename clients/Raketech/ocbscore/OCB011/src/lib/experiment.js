@@ -17,7 +17,6 @@ const renderBettingNumberDom = (bettingCard, number) => {
 const init = () => {
   const bettingCards = document.querySelectorAll('.MuiBox-root.mui-1bx5ylf');
   bettingCards.forEach((bettingCard, index) => {
-    const bettingLogo = bettingCard.querySelector('[data-type="logo"]');
     const logoInfoContainer = bettingCard.querySelector('.MuiBox-root.mui-1tvzmmu');
     const bettingBodyElem = bettingCard.querySelector('.mui-rpu3p3');
     const bonusElem = bettingCard.querySelector('.MuiBox-root.mui-cucwis');
@@ -26,6 +25,8 @@ const init = () => {
     const reviewButton = bettingCard.querySelector('a[href^="/betting-sites/"]');
 
     bettingCard.classList.add(`${ID}__bettingCard`);
+
+    if (VARIATION === 'control') return;
 
     //add betting number element
     if (!bettingCard.querySelector(`.${ID}__bettingNumber`)) {
@@ -56,7 +57,7 @@ const init = () => {
 
     //add overlay
     if (!bettingCard.querySelector(`.${ID}__overlayWrapper`)) {
-      bettingLogo.insertAdjacentHTML('beforeend', overlayWrapper(ID));
+      logoInfoContainer.insertAdjacentHTML('beforeend', overlayWrapper(ID));
     }
   });
 };
@@ -66,7 +67,33 @@ export default () => {
 
   document.body.addEventListener('click', (event) => {
     const { target } = event;
-    if (target.closest('button')) {
+    if (target.closest('[data-type="logo"]') && target.closest(`.${ID}__bettingCard`)) {
+      const bettingCard = target.closest(`.${ID}__bettingCard`);
+      const bettingLogo = bettingCard.querySelector('[data-type="logo"]');
+      const { operator } = bettingLogo.dataset;
+      gaTracking(`${operator} | Operator Logo`);
+    } else if (
+      target.closest('a[href^="/betting-sites/"]') &&
+      target.closest(`.${ID}__bettingCard`)
+    ) {
+      const bettingCard = target.closest(`.${ID}__bettingCard`);
+      const bettingLogo = bettingCard.querySelector('[data-type="logo"]');
+      const { operator } = bettingLogo.dataset;
+      gaTracking(`${operator} | Operator Review Link`);
+    } else if (target.closest('[data-type="button"]') && target.closest(`.${ID}__bettingCard`)) {
+      const bettingCard = target.closest(`.${ID}__bettingCard`);
+      const bettingButton = bettingCard.querySelector('[data-type="button"]');
+      const { operator } = bettingButton.dataset;
+      gaTracking(`${operator} | Operator Button`);
+    } else if (
+      target.closest('[data-element="clicks-to-code"]') &&
+      target.closest(`.${ID}__bettingCard`)
+    ) {
+      const bettingCard = target.closest(`.${ID}__bettingCard`);
+      const bettingPromoButton = bettingCard.querySelector('[data-element="clicks-to-code"]');
+      const { operator } = bettingPromoButton.dataset;
+      gaTracking(`${operator} | Operator Promo Code`);
+    } else if (target.closest('button.MuiButton-sizeLarge') && VARIATION !== 'control') {
       const remainingBettingCards = document.querySelectorAll(
         `.MuiBox-root.mui-1bx5ylf:not(.${ID}__bettingCard)`
       );
@@ -75,7 +102,6 @@ export default () => {
       pollerLite([`.MuiBox-root.mui-1bx5ylf:not(.${ID}__bettingCard)`], init);
     }
   });
-  if (VARIATION === 'control') return;
 
   init();
 

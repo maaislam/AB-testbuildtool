@@ -22,10 +22,11 @@
   &__bettingCard {
     border-radius: 16px;
     .mui-1tvzmmu {
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-      & > div {
-        @media screen and (max-width: 899px) {
+      border-bottom-right-radius: 16px;
+      border-bottom-left-radius: 16px;
+      & > div:not(.#{$id}__overlayWrapper) {
+        @media screen and (max-width: 1080px) {
+          grid-template: 1fr auto auto / 1fr;
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
@@ -35,15 +36,27 @@
       }
     }
 
+    &:has(.#{$id}__promoCodeWrapper) {
+      .mui-1tvzmmu {
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+    }
+
     .MuiBox-root.mui-12j22j8 {
       display: none;
+    }
+
+    [data-type='logo'] {
+      z-index: 2;
     }
 
     .mui-1pwqust {
       bottom: 16px;
 
-      @media screen and (max-width: 899px) {
+      @media screen and (max-width: 1080px) {
         position: static;
+        justify-content: flex-end;
       }
     }
 
@@ -73,6 +86,13 @@
       line-height: 1.2;
       letter-spacing: 0.17px;
       text-transform: capitalize;
+      z-index: 2;
+
+      @media screen and (max-width: 1080px) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 5px;
+      }
 
       &:hover {
         -webkit-text-decoration: none;
@@ -84,6 +104,11 @@
 
       span[role='img'] {
         padding-left: 8px;
+
+        @media screen and (max-width: 1080px) {
+          padding-top: 8px;
+          padding-left: 0;
+        }
       }
     }
 
@@ -91,7 +116,7 @@
       min-width: 130px;
       max-width: 130px;
 
-      @media screen and (max-width: 899px) {
+      @media screen and (max-width: 1080px) {
         min-width: 100%;
         max-width: 100%;
       }
@@ -99,7 +124,7 @@
 
     .mui-rpu3p3 {
       z-index: 12;
-      @media (min-width: 900px) {
+      @media (min-width: 1081px) {
         grid-template: 1fr auto/1fr 130px;
         padding: 20px 16px 16px;
 
@@ -109,7 +134,8 @@
       }
 
       .mui-145n6gp {
-        @media screen and (max-width: 899px) {
+        @media screen and (max-width: 1080px) {
+          grid-column: 1 / -1;
           padding: 12px 0 8px;
         }
       }
@@ -117,8 +143,12 @@
 
     .mui-1tvzmmu {
       position: relative;
-      @media screen and (min-width: 900px) {
+      @media screen and (min-width: 1081px) {
         grid-template: 170px / 180px 1fr;
+      }
+
+      @media screen and (max-width: 1080px) {
+        grid-template: 92px 1fr / 1fr;
       }
     }
 
@@ -130,7 +160,38 @@
     }
 
     .#{$id}__overlay {
-      background: linear-gradient(to right, transparent 70%, #262626 100%);
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background: linear-gradient(to right, transparent 10%, #262626 35%);
+
+      @media screen and (max-width: 1080px) {
+        background: linear-gradient(to bottom, transparent 13%, #262626 40%);
+      }
+
+      img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        color: transparent;
+        object-fit: cover;
+        object-position: top right;
+        max-height: 500px;
+        opacity: 0.7;
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        z-index: 0;
+      }
     }
     .mui-kh8xvn {
       @media screen and (max-width: 899px) {
@@ -169,7 +230,7 @@
     align-items: center;
     height: 100%;
 
-    @media screen and (max-width: 899px) {
+    @media screen and (max-width: 1080px) {
       flex-direction: column;
       align-items: flex-start;
     }
@@ -177,7 +238,7 @@
 
   &__bettingInfoAdditional {
     padding-left: 16px;
-    @media screen and (max-width: 899px) {
+    @media screen and (max-width: 1080px) {
       width: 100%;
       padding-top: 16px;
       padding-left: 0;
@@ -199,7 +260,7 @@
     &:nth-child(2) {
       margin: 0 4px;
 
-      @media screen and (max-width: 899px) {
+      @media screen and (max-width: 1080px) {
         margin: 0 8px;
       }
     }
@@ -222,7 +283,7 @@
       color: #fff;
     }
 
-    @media screen and (max-width: 899px) {
+    @media screen and (max-width: 1080px) {
       max-width: calc(100% / 3);
       width: calc(100% / 3);
     }
