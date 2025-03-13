@@ -1,0 +1,13 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &-control {
+        .#{$id}__hideReviews {
+            .jdgm-widget.jdgm-widget.jdgm-preview-badge,
+            #judgeme_product_reviews {
+                display: none !important;
+            }
+        }
+    }
+}
