@@ -3,11 +3,11 @@ import shared from '../shared/shared';
 
 const gaTracking = (label) => {
   const { VARIATION } = shared;
-  const variationType = VARIATION === '1' ? '1' : 'C';
+  const variationType = VARIATION === '1' ? '1' : VARIATION === '2' ? '2' : 'C';
 
   const GA4_PROPERTY_ID = 'G-77TJP2RZPT';
-  const GA4_INTERNAL_EXPERIMENT_NUM = 'PEXCROAB-452';
-  const GA4_INTERNAL_EXPERIMENT_ID = `CRO - OCB - No Odds Available Optimization ${GA4_INTERNAL_EXPERIMENT_NUM}`;
+  const GA4_INTERNAL_EXPERIMENT_NUM = 'EXCROAB-475';
+  const GA4_INTERNAL_EXPERIMENT_ID = `CRO - OCB - Match Page Bottom Call to Action ${GA4_INTERNAL_EXPERIMENT_NUM}`;
   const EXPERIMENT_DEVICE_CATEGORY = 'All Devices';
 
   pollerLite([() => document.readyState === 'complete'], () => {

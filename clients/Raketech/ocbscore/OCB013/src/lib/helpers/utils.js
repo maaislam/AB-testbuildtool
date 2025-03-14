@@ -5,7 +5,7 @@
  * @param {function} callback The callback function when all conditions are true.
  * @param {number} maxTime max time the check witll run before abort.
  */
-export const pollerLite = (conditions, callback, maxTime = 1000000000) => {
+export const pollerLite = (conditions, callback, maxTime = 10000) => {
   const POLLING_INTERVAL = 25;
   const startTime = Date.now();
   const interval = setInterval(() => {
@@ -32,9 +32,10 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   const config = configObject || {
     childList: true,
-    subtree: false,
-    attributes: false,
-    characterDataOldValue: false
+    subtree: true,
+    attributes: true,
+    characterData: true,
+    characterDataOldValue: true
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {

@@ -2,40 +2,61 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  .ab-pause-scrolling,
-  body.ab-pause-scrolling,
-  &.ab-pause-scrolling {
-    &:has(.ab-iam-root > iframe) {
-      overflow: unset;
-      touch-action: unset;
+  @media (min-width: 600px) {
+    .mui-m39ubn {
+      grid-template-columns: 0.7fr 1fr;
+      gap: 16px;
+    }
+  }
+
+  &__controlSubcribe {
+    display: none !important;
+  }
+
+  .#{$id}__subscribeModal {
+    visibility: hidden;
+
+    &.#{$id}__open {
+      width: 100%; //
+      visibility: visible;
     }
 
-    .ab-iam-root[role='complementary']:has(iframe) {
-      display: none !important;
+    .#{$id}__braze-modal-overlay {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background: #000;
+      opacity: 0.5;
+      z-index: 99999;
     }
 
-    &.#{$id}__modalShow {
-      overflow: hidden !important;
-      touch-action: none !important;
-      .ab-iam-root[role='complementary']:has(iframe) {
-        display: block !important;
+    .#{$id}__modal-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      max-width: 615px;
+      transform: translate(-50%, -50%);
+      padding: 0;
+      border-radius: 0px;
+      z-index: 999999;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__buttonWrapper {
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+
+      .#{$id}__noOddsWrapper {
+        width: 100% !important;
       }
 
-      .#{$id}__fakeCrossButton {
-        position: fixed;
-        cursor: pointer;
-        width: 25px;
-        height: 18px;
-        z-index: 99999;
-        background-color: #1e1e1e;
-
-        &::after {
-          content: '\2715';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
+      .#{$id}__subsButton {
+        width: 100%;
       }
     }
   }
@@ -47,19 +68,25 @@
     width: 50%;
     font-family: '__Poppins_2dbf9b', '__Poppins_Fallback_2dbf9b', Arial, sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 120%;
     letter-spacing: 0.46px;
     text-transform: uppercase;
     text-align: center;
     border-radius: 12px;
     background-color: #fff;
-    padding: 16px 5px;
+    padding: 11px 12px;
     color: #000;
     cursor: pointer;
+
+    &:hover {
+      background-color: rgb(200, 200, 200);
+      color: rgb(20, 20, 20);
+    }
   }
 
   &__noOddsWrapper {
     width: 50% !important;
+    padding: 11px 12px;
   }
 }

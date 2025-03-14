@@ -1,10 +1,18 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { addToSampleCart, fetchProductDetails, pollerLite } from './helpers/utils';
-import comparisonWrapper from './components/comparisonWrapper';
+import {
+  addCssToHead,
+  addScriptToHead,
+  addToSampleCart,
+  fetchProductDetails,
+  pollerLite
+} from './helpers/utils';
+import { comparisonWrapper, comparisonWrapperMobile } from './components/comparisonWrapper';
 import slimilarProdsTag from './components/slimilarProdsTag';
+import initSwiper from './helpers/initSwiper';
 
 const { ID } = shared;
+const isMobile = window.matchMedia('(max-width: 992px)').matches;
 const removeSuccessNotification = () => {
   const cloneNotificationElement = document.querySelector(`${ID}__showSuccessNotification`);
   setTimeout(() => {
@@ -51,6 +59,12 @@ const showErrorNotification = () => {
   });
 };
 
+const swiperInit = () => {
+  pollerLite([`.${ID}__comparisonWrapperMobile`, () => typeof window.Swiper === 'function'], () => {
+    initSwiper(`.${ID}__swiper`);
+  });
+};
+
 const init = () => {
   const targetPoint = document.querySelector('.products.wrapper.products-grid');
   const sliderTitleElem = targetPoint.previousElementSibling;
@@ -89,8 +103,6 @@ const init = () => {
     .then((results) => {
       if (results.length === 0) return;
 
-      console.log('data:', results);
-
       pollerLite(
         [
           () => window.localStorage.getItem('mage-cache-storage'),
@@ -128,13 +140,23 @@ const init = () => {
               .insertAdjacentHTML('afterend', slimilarProdsTag(ID));
           }
 
+          //desktop
           if (!document.querySelector(`.${ID}__comparisonWrapper`)) {
             document
               .querySelector('.product-section.details')
               .insertAdjacentHTML('afterend', comparisonWrapper(ID, modifiedResults));
           }
+
+          //mobile
+          if (!document.querySelector(`.${ID}__comparisonWrapperMobile`)) {
+            document
+              .querySelector('.product-section.details')
+              .insertAdjacentHTML('afterend', comparisonWrapperMobile(ID, modifiedResults));
+          }
         }
       );
+
+      swiperInit();
     })
     .catch((error) => {
       targetPoint.classList.remove(`${ID}__hidden`);
@@ -145,6 +167,9 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
+
+  addCssToHead('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+  addScriptToHead('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
 
   document.body.addEventListener('click', (event) => {
     const { target } = event;
@@ -192,7 +217,7 @@ export default () => {
                   clickedItem.textContent = 'Sample limit reached';
                   clickedItem.classList.add(`${ID}__disabled`);
                 } else {
-                  clickedItem.textContent = 'Order a free sample';
+                  clickedItem.textContent = isMobile ? 'Get free sample' : 'Order a free sample';
                   clickedItem.classList.remove(`${ID}__disabled`);
                 }
 
