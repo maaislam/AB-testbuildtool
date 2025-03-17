@@ -1,0 +1,58 @@
+import bestChoiceVpnCard from './components/bestChoiceVpnCard';
+import setup from './services/setup';
+import shared from './shared/shared';
+import surfSharkVpnCard from './components/surfSharkVpnCard';
+import ipVanishVpnCard from './components/ipVanishVpnCard';
+import { getProviderBaseLink, getProviderImageLink, getProviderScore } from './helpers/utils';
+
+const { ID } = shared;
+
+const providerData = {
+  id: ID,
+  nordvpn: {
+    score: getProviderScore('nordvpn') || 9.6,
+    skyGoElem: document.querySelector('[href*="/go/nordvpn"] .badge-tested-text'),
+    ctaUrl: getProviderBaseLink('nordvpn'),
+    imgUrl: getProviderImageLink('nordvpn')
+  },
+  surfshark: {
+    score: getProviderScore('surfshark') || 9.3,
+    skyGoElem: document.querySelector('[href*="/go/surfshark"] .badge-tested-text'),
+    ctaUrl: getProviderBaseLink('surfshark'),
+    imgUrl: getProviderImageLink('surfshark')
+  },
+  ipvanish: {
+    score: getProviderScore('ipvanish') || 9.0,
+    skyGoElem: document.querySelector('[href*="/go/ipvanish"] .badge-tested-text'),
+    ctaUrl: getProviderBaseLink('ipvanish'),
+    imgUrl: getProviderImageLink('ipvanish')
+  }
+};
+
+const init = () => {
+  const postDetailContainer = document.querySelector('.post-details-container');
+  const shortSubjectElem = document.querySelector('div.short-subject');
+  const attachPoint = document.querySelector('.post-title-container .wrapper');
+
+  const container = `<div class="${ID}__container wrapper">
+    ${surfSharkVpnCard(providerData)}
+    ${bestChoiceVpnCard(providerData, shortSubjectElem)}
+    ${ipVanishVpnCard(providerData)}
+  </div>`;
+
+  if (!document.querySelector(`.${ID}__container`)) {
+    attachPoint.insertAdjacentHTML('afterend', container);
+  }
+
+  if (postDetailContainer) {
+    const containerElem = document.querySelector(`.${ID}__container`);
+    postDetailContainer.classList.add('wrapper');
+    containerElem.insertAdjacentElement('afterend', postDetailContainer);
+  }
+};
+
+export default () => {
+  setup();
+
+  init();
+};
