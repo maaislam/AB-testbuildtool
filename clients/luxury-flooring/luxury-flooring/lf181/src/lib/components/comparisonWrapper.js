@@ -3,7 +3,7 @@ import stickyProduct from './stickyProduct';
 
 export const comparisonWrapper = (id, products) => {
   const html = `
-        <div class="${id}__comparisonWrapper">
+        <div class="${id}__comparisonWrapper ${id}__comparisonWrapperDesktop">
             <div class="${id}__comparisonContainer">
                 <h1 class="${id}__comparisonTitle">Compare similar products</h1>
                 <div class="${id}__productsTable">

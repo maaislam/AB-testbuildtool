@@ -1,5 +1,4 @@
 const stickyProduct = (id, data) => {
-  console.log(data[0]);
   const html = `
         <div class="sticky-product-warpper">
             <div class="${id}__currentProductTag" style="opacity:0;">Current Product</div>
@@ -40,7 +39,7 @@ const stickyProduct = (id, data) => {
                       data[0].details.flooringtype.toLowerCase().includes('vinyl') ||
                       data[0].details.flooringtype.toLowerCase().includes('laminate')
                         ? `
-                              <div class="${id}__row">shade</div>     
+                              <div class="${id}__row">Shade</div>     
                           `
                         : `
                             <div class="${id}__row">Plank Width</div>

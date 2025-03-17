@@ -16,6 +16,12 @@ const init = () => {
     const controlButtonElement = document.querySelector(
       '[aria-labelledby="match-event-tab-0"] [data-type="button"]'
     );
+
+    if (!controlButtonElement) {
+      document.documentElement.classList.remove(ID);
+      document.documentElement.classList.remove(`${ID}-${VARIATION}`);
+      return;
+    }
     const cloneControlButtonElement = controlButtonElement.cloneNode(true);
     targetPoint.classList.add(`${ID}__tipsWrapper`);
     cloneControlButtonElement.classList.add(`${ID}__newButton`);
@@ -31,6 +37,11 @@ const init = () => {
 
   if (VARIATION === '2') {
     const mainCard = document.querySelector('[aria-labelledby*="match-event-tab"] .mui-veyekx');
+    if (!mainCard) {
+      document.documentElement.classList.remove(ID);
+      document.documentElement.classList.remove(`${ID}-${VARIATION}`);
+      return;
+    }
     const cloneCard = mainCard.cloneNode(true);
     cloneCard.classList.add(`${ID}__cardWrapper`);
 
@@ -89,14 +100,6 @@ const init = () => {
 
 const clickHandler = (e) => {
   const { target } = e;
-  //const firstTeam = document.querySelector('.MuiBox-root.mui-1f0m54x > p');
-  //const secondTeam = document.querySelector(
-  //'.MuiBox-root.mui-1f0m54x ~ .MuiBox-root.mui-1f0m54x > p'
-  //);
-  //const matchType = document.querySelector('.MuiTypography-caption.mui-l7ou8j');
-  //const firstTeamName = firstTeam ? firstTeam.textContent : '';
-  //const secondTeamName = secondTeam ? secondTeam.textContent : '';
-  //const matchTypeName = matchType ? matchType.textContent : '';
   if (target.closest('[aria-labelledby*="match-event-tab"] [data-type="button"]')) {
     const button =
       target.closest('[aria-labelledby*="match-event-tab"] [data-type="button"]') ||

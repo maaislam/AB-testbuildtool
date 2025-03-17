@@ -1,3 +1,5 @@
+/*eslint-disable no-undef */
+/*eslint-disable no-underscore-dangle */
 import setup from './services/setup';
 import shared from './shared/shared';
 import {
@@ -12,6 +14,7 @@ import slimilarProdsTag from './components/slimilarProdsTag';
 import initSwiper from './helpers/initSwiper';
 
 const { ID } = shared;
+
 const isMobile = window.matchMedia('(max-width: 992px)').matches;
 const removeSuccessNotification = () => {
   const cloneNotificationElement = document.querySelector(`${ID}__showSuccessNotification`);
@@ -166,6 +169,7 @@ const init = () => {
 };
 
 export default () => {
+  window._conv_q = window._conv_q || [];
   setup(); //use if needed
 
   addCssToHead('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
@@ -198,6 +202,7 @@ export default () => {
             removeErrorNotification();
           }
           if (response.length === 0) {
+            _conv_q.push(['triggerConversion', '100489076']);
             clickedItem.textContent = 'Added to basket';
             clickedItem.classList.add(`${ID}__disabled`);
             pollerLite(
@@ -231,12 +236,25 @@ export default () => {
           console.error('Error:', err);
         });
     } else if (target.closest(`.${ID}__slimilarProdsTag`)) {
-      const wrapper = document.querySelector(`.${ID}__comparisonWrapper`);
-      wrapper.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-        inline: 'nearest'
-      });
+      const wrapper = document.querySelector(`.${ID}__comparisonWrapperDesktop`);
+      const mobileWrapper = document.querySelector(`.${ID}__comparisonWrapperMobile`);
+      isMobile
+        ? mobileWrapper.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
+          })
+        : wrapper.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'nearest'
+          });
+    } else if (
+      target.closest(`.${ID}__productContent > a`) ||
+      target.closest(`.${ID}__imageWrapper`) ||
+      target.closest(`.${ID}__productContent .product-reviews-summary`)
+    ) {
+      _conv_q.push(['triggerConversion', '100489075']);
     }
   });
   init();
