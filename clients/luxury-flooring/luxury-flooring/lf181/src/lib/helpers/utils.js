@@ -90,6 +90,8 @@ export const fetchProductDetails = (urls) => {
         const itemValue = itemElement ? itemElement.value : '';
         const formKey = formElement.querySelector('input[name="form_key"]');
         const formKeyValue = formKey ? formKey.value : '';
+        const shadeElement = doc.querySelector('#attr_shade');
+        const shadeValue = shadeElement ? shadeElement.textContent : '';
 
         return {
           sku: url.sku,
@@ -102,7 +104,8 @@ export const fetchProductDetails = (urls) => {
           reviews: reviewsElement || '',
           formAction,
           itemValue,
-          formKeyValue
+          formKeyValue,
+          shadeValue
         };
       })
       .catch((error) => ({
@@ -183,4 +186,20 @@ export const addToSampleCart = (prodId, formKey, uencValue, action) => {
       });
     });
   });
+};
+
+export const addCssToHead = (hrefUrl) => {
+  const link = document.createElement('link');
+  link.href = hrefUrl;
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  document.head.appendChild(link);
+};
+
+export const addScriptToHead = (srcUrl) => {
+  const script = document.createElement('script');
+  script.src = srcUrl;
+  script.type = 'text/javascript';
+  script.async = true;
+  document.head.appendChild(script);
 };

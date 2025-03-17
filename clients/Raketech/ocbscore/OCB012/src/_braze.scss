@@ -1,0 +1,586 @@
+.braze-modal {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.braze-modal__header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.braze-modal__title {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 0;
+}
+.braze-modal__close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  text-align: right;
+  padding: 0;
+  position: relative;
+}
+.braze-modal__close-btn::after {
+  content: '\2715';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.braze-modal__form {
+  display: flex;
+  flex-direction: column;
+}
+.braze-modal__input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  border: 1px solid #363636;
+  background-color: #262626;
+  color: #ffffff;
+}
+.braze-modal__input::placeholder {
+  color: #aaaaaa;
+}
+.braze-modal__input:hover,
+.braze-modal__input:focus,
+.braze-modal__input:not(:placeholder-shown) {
+  color: #ffffff;
+  border-width: 1px;
+  background-color: #363636;
+  border-color: #ffffff;
+  outline: none;
+}
+.braze-modal__input.error {
+  border-color: #dd0e1e;
+  background-color: #dd0e1e0a;
+}
+.braze-modal__checkbox-container {
+  align-items: flex-start;
+  color: #ffffff;
+  display: flex;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.braze-modal__checkbox {
+  margin-right: 10px;
+  margin-top: 3px;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #acacac;
+  border-radius: 4px;
+  padding: 11px;
+  cursor: pointer;
+  position: relative;
+}
+.braze-modal__checkbox:checked {
+  background-color: #f56701;
+  border-color: #f56701;
+}
+.braze-modal__checkbox:checked::after {
+  content: '\2713';
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.braze-modal__checkbox.error {
+  border-color: #dd0e1e;
+}
+.braze-modal__submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #f56701;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.46px;
+}
+.braze-modal__error {
+  display: none;
+  color: #dd0e1e;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.4px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* Thank you pop up */
+.braze-modal__thank-you {
+  display: none;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  border: 1px solid #008c00;
+  border-radius: 12px;
+  padding: 12px 16px;
+  max-width: 368px;
+  width: 100%;
+}
+.braze-modal__thank-you-icon-title {
+  display: flex;
+  align-items: center;
+}
+.braze-modal__thank-you-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  justify-content: space-between;
+}
+.braze-modal__thank-you-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+.braze-modal__thank-you-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+.braze-modal__thank-you-message {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.braze-modal__check-email-btn {
+  width: 100%;
+  padding: 8px 16px;
+  background-color: #008c00;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Styles for separate window view */
+.braze-modal.separate-window,
+.braze-modal__thank-you.separate-window {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  height: 100vh;
+  max-width: 100%;
+  width: 100%;
+  padding: 16px;
+  transform: none;
+}
+.braze-modal.separate-window .braze-modal__header,
+.braze-modal__thank-you.separate-window .braze-modal__thank-you-header {
+  margin-top: 44px;
+}
+.braze-modal.separate-window .braze-modal__submit-btn,
+.braze-modal__thank-you.separate-window .braze-modal__check-email-btn {
+  margin-bottom: 42px;
+}
+.braze-modal.separate-window .braze-modal__close-btn,
+.braze-modal__thank-you.separate-window .braze-modal__close-btn {
+  display: none;
+}
+.braze-modal.separate-window {
+  display: flex;
+  flex-direction: column;
+}
+.braze-modal.separate-window .braze-modal__form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.braze-modal.separate-window .braze-modal__submit-btn {
+  margin-top: auto;
+}
+.braze-modal__thank-you.separate-window {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.braze-modal__thank-you.separate-window .braze-modal__check-email-btn {
+  margin-top: auto;
+}
+
+/* New class for displaying thank you message */
+.braze-modal__thank-you.show {
+  display: flex;
+}
+
+.ab-pause-scrolling,
+body.ab-pause-scrolling,
+html.ab-pause-scrolling {
+  overflow: hidden;
+  touch-action: none;
+}
+.ab-iam-root.v3 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9011;
+  -webkit-tap-highlight-color: transparent;
+}
+.ab-iam-root.v3:focus {
+  outline: 0;
+}
+.ab-iam-root.v3.ab-effect-fullscreen,
+.ab-iam-root.v3.ab-effect-html,
+.ab-iam-root.v3.ab-effect-modal {
+  opacity: 0;
+}
+.ab-iam-root.v3.ab-effect-fullscreen.ab-show,
+.ab-iam-root.v3.ab-effect-html.ab-show,
+.ab-iam-root.v3.ab-effect-modal.ab-show {
+  opacity: 1;
+}
+.ab-iam-root.v3.ab-effect-fullscreen.ab-show.ab-animate-in,
+.ab-iam-root.v3.ab-effect-html.ab-show.ab-animate-in,
+.ab-iam-root.v3.ab-effect-modal.ab-show.ab-animate-in {
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.ab-iam-root.v3.ab-effect-fullscreen.ab-hide,
+.ab-iam-root.v3.ab-effect-html.ab-hide,
+.ab-iam-root.v3.ab-effect-modal.ab-hide {
+  opacity: 0;
+}
+.ab-iam-root.v3.ab-effect-fullscreen.ab-hide.ab-animate-out,
+.ab-iam-root.v3.ab-effect-html.ab-hide.ab-animate-out,
+.ab-iam-root.v3.ab-effect-modal.ab-hide.ab-animate-out {
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.ab-iam-root.v3.ab-effect-slide .ab-in-app-message {
+  -webkit-transform: translateX(535px);
+  -moz-transform: translateX(535px);
+  -ms-transform: translateX(535px);
+  transform: translateX(535px);
+}
+.ab-iam-root.v3.ab-effect-slide.ab-show .ab-in-app-message {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+.ab-iam-root.v3.ab-effect-slide.ab-show.ab-animate-in .ab-in-app-message {
+  -webkit-transition: transform 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+.ab-iam-root.v3.ab-effect-slide.ab-hide .ab-in-app-message {
+  -webkit-transform: translateX(535px);
+  -moz-transform: translateX(535px);
+  -ms-transform: translateX(535px);
+  transform: translateX(535px);
+}
+.ab-iam-root.v3.ab-effect-slide.ab-hide .ab-in-app-message.ab-swiped-left {
+  -webkit-transform: translateX(-535px);
+  -moz-transform: translateX(-535px);
+  -ms-transform: translateX(-535px);
+  transform: translateX(-535px);
+}
+.ab-iam-root.v3.ab-effect-slide.ab-hide .ab-in-app-message.ab-swiped-up {
+  -webkit-transform: translateY(-535px);
+  -moz-transform: translateY(-535px);
+  -ms-transform: translateY(-535px);
+  transform: translateY(-535px);
+}
+.ab-iam-root.v3.ab-effect-slide.ab-hide .ab-in-app-message.ab-swiped-down {
+  -webkit-transform: translateY(535px);
+  -moz-transform: translateY(535px);
+  -ms-transform: translateY(535px);
+  transform: translateY(535px);
+}
+.ab-iam-root.v3.ab-effect-slide.ab-hide.ab-animate-out .ab-in-app-message {
+  -webkit-transition: transform 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+.ab-iam-root.v3 .ab-ios-scroll-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  pointer-events: all;
+  touch-action: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ab-iam-root.v3 .ab-in-app-message {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: fixed;
+  text-align: center;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  line-height: normal;
+  letter-spacing: normal;
+  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
+    sans-serif;
+  z-index: 9011;
+  max-width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  pointer-events: all;
+  color: #333;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-no-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.ab-iam-root.v3 .ab-in-app-message :focus,
+.ab-iam-root.v3 .ab-in-app-message:focus {
+  outline: 0;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-clickable {
+  cursor: pointer;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-background {
+  background-color: #fff;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-close-button {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background-color: transparent;
+  background-size: 15px;
+  border: none;
+  width: 15px;
+  min-width: 15px;
+  height: 15px;
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  line-height: 0;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 9021;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-close-button svg {
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+  fill: #9b9b9b;
+  height: auto;
+  width: 100%;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-close-button svg.ab-chevron {
+  display: none;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-close-button:active {
+  background-color: transparent;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-close-button:focus {
+  background-color: transparent;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-close-button:hover {
+  background-color: transparent;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-close-button:hover svg {
+  fill-opacity: 0.8;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-text {
+  float: none;
+  line-height: 1.5;
+  margin: 20px 25px;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  vertical-align: text-bottom;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
+    sans-serif;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-text.start-aligned {
+  text-align: start;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-text.end-aligned {
+  text-align: end;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-text.center-aligned {
+  text-align: center;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-text::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 14px;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-text::-webkit-scrollbar-thumb {
+  -webkit-appearance: none;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-text::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-text::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-header {
+  float: none;
+  letter-spacing: 0;
+  margin: 0;
+  font-weight: 700;
+  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
+    sans-serif;
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-header.start-aligned {
+  text-align: start;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-header.end-aligned {
+  text-align: end;
+}
+.ab-iam-root.v3 .ab-in-app-message .ab-message-header.center-aligned {
+  text-align: center;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-fullscreen,
+.ab-iam-root.v3 .ab-in-app-message.ab-modal,
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 20px;
+  margin-top: calc(constant(safe-area-inset-top, 0) + 20px);
+  margin-right: calc(constant(safe-area-inset-right, 0) + 20px);
+  margin-bottom: calc(constant(safe-area-inset-bottom, 0) + 20px);
+  margin-left: calc(constant(safe-area-inset-left, 0) + 20px);
+  margin-top: calc(env(safe-area-inset-top, 0) + 20px);
+  margin-right: calc(env(safe-area-inset-right, 0) + 20px);
+  margin-bottom: calc(env(safe-area-inset-bottom, 0) + 20px);
+  margin-left: calc(env(safe-area-inset-left, 0) + 20px);
+  max-height: 150px;
+  padding: 10px;
+  right: 0;
+  background-color: #efefef;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone {
+  max-height: 66px;
+  margin: 10px;
+  margin-top: calc(constant(safe-area-inset-top, 0) + 10px);
+  margin-right: calc(constant(safe-area-inset-right, 0) + 10px);
+  margin-bottom: calc(constant(safe-area-inset-bottom, 0) + 10px);
+  margin-left: calc(constant(safe-area-inset-left, 0) + 10px);
+  margin-top: calc(env(safe-area-inset-top, 0) + 10px);
+  margin-right: calc(env(safe-area-inset-right, 0) + 10px);
+  margin-bottom: calc(env(safe-area-inset-bottom, 0) + 10px);
+  margin-left: calc(env(safe-area-inset-left, 0) + 10px);
+  max-width: 90%;
+  max-width: calc(100% - 40px);
+  min-width: 90%;
+  min-width: calc(100% - 40px);
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-close-button {
+  display: none;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-close-button svg:not(.ab-chevron) {
+  display: none;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone.ab-clickable .ab-close-button {
+  display: block;
+  height: 20px;
+  padding: 0 20px 0 18px;
+  pointer-events: none;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 12px;
+}
+.ab-iam-root.v3
+  .ab-in-app-message.ab-slideup.simulate-phone.ab-clickable
+  .ab-close-button
+  svg.ab-chevron {
+  display: inline;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone.ab-clickable .ab-message-text {
+  border-right-width: 40px;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text {
+  max-width: 100%;
+  border-right-width: 10px;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text span {
+  max-height: 66px;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text.ab-with-icon,
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-message-text.ab-with-image {
+  max-width: 80%;
+  max-width: calc(100% - 50px - 5px - 10px - 25px);
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-image-area {
+  width: 50px;
+  height: 50px;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.simulate-phone .ab-image-area img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable:active .ab-message-text,
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable:focus .ab-message-text,
+.ab-iam-root.v3 .ab-in-app-message.ab-slideup.ab-clickable:hover .ab-message-text {
+  opacity: 0.8;
+}

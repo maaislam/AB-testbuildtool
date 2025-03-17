@@ -77,11 +77,6 @@ const init = () => {
             item.querySelector('.OCB005__button[data-type="button"]')
         ],
         () => {
-          console.log(
-            item.querySelector('.OCB005__button[data-type="button"]'),
-            'checked',
-            item.closest('.OCB005__bettingItem')
-          );
           mainButton.innerHTML = '';
           mainButton.innerHTML = `place bet ► odds ${rating} <span class="${ID}__arrow">${rightArrow}</span>`;
         }

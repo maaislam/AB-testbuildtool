@@ -3,60 +3,21 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { observeDOM, onUrlChange, pollerLite } from './helpers/utils';
 import subsButton from './components/subsButton';
-import subsribeModal from './components/subsribeModal';
+import controlSubscribeBtn from './components/controlSubscribeBtn';
 
 const { ID, VARIATION } = shared;
-
-const getDivPosition = (iframeSelector, divSelector) => {
-  const iframe = document.querySelector(iframeSelector);
-  if (!iframe) return console.error('Iframe not found');
-
-  const iframeRect = iframe.getBoundingClientRect();
-  const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-  const targetDiv = iframeDocument.querySelector(divSelector);
-
-  if (!targetDiv) return console.error('Div not found inside iframe');
-
-  const divRect = targetDiv.getBoundingClientRect();
-
-  //Calculate absolute position relative to the main document
-  const absoluteX = iframeRect.left + divRect.left;
-  const absoluteY = iframeRect.top + divRect.top;
-
-  return {
-    x: absoluteX,
-    y: absoluteY
-  };
-};
-
-const insertElementAtPosition = (x, y) => {
-  const newElement = document.createElement('div');
-  newElement.classList.add(`${ID}__fakeCrossButton`);
-
-  //Style the element
-  Object.assign(newElement.style, {
-    left: `${x}px`,
-    top: `${y}px`
-  });
-
-  if (document.querySelector(`.${ID}__fakeCrossButton`)) {
-    document.querySelector(`.${ID}__fakeCrossButton`).remove();
-  }
-
-  document.body.appendChild(newElement);
-};
 
 const captureElementsContainingString = (searchString) => {
   const elements = [...document.querySelectorAll('p')]; //Get all elements as an array
 
   return elements.filter((el) => el.textContent.includes(searchString));
 };
-
 const renderSubsButton = () => {
   const noOddsElements = captureElementsContainingString('No odds available');
   if (noOddsElements.length > 0) {
     noOddsElements.forEach((noOddsElement) => {
       const noOddsWrapper = noOddsElement.closest('.MuiBox-root');
+      noOddsWrapper.parentElement.classList.add(`${ID}__buttonWrapper`);
       noOddsWrapper.classList.add(`${ID}__noOddsWrapper`);
       const subscribeButton = noOddsWrapper.nextElementSibling;
       if (subscribeButton) {
@@ -67,40 +28,56 @@ const renderSubsButton = () => {
   }
 };
 
-const init = () => {
-  //const oddsOptionsConatiner = document.querySelector('.MuiBox-root.mui-1smddtb');
-  renderSubsButton();
+const renderControlSubscribeButton = () => {
+  if (document.querySelector(`.${ID}__controlSubcribe`)) {
+    document.querySelector(`.${ID}__controlSubcribe`).remove();
+  }
 
-  pollerLite([".ab-iam-root[role='complementary'] iframe"], () => {
-    const formIframe = document.querySelector(".ab-iam-root[role='complementary'] iframe");
-    const wrapper = formIframe.closest('.ab-iam-root');
-    const position = getDivPosition('.ab-in-app-message', '.braze-modal__close-btn');
-    if (position) {
-      insertElementAtPosition(position.x, position.y);
-    }
-  });
+  document.querySelector('.mui-1nl0624').insertAdjacentHTML('afterend', controlSubscribeBtn(ID));
+};
+
+const clearABStorage = () => {
+  Object.keys(localStorage)
+    .filter((key) => key.startsWith('ab.storage'))
+    .forEach((key) => localStorage.removeItem(key));
+};
+
+const init = () => {
+  renderSubsButton();
+  renderControlSubscribeButton();
 
   observeDOM('.MuiStack-root.mui-10kro7q', (mutation) => {
     const { addedNodes } = mutation;
     if (addedNodes.length > 0) {
-      console.log('applied');
       renderSubsButton();
     }
   });
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
+  setup();
   const clickHandler = (e) => {
     const { target } = e;
-    console.log(target);
     if (target.closest(`.${ID}__subsButton`)) {
       e.preventDefault();
-      document.body.classList.add(`${ID}__modalShow`);
-    } else if (target.closest(`.${ID}__fakeCrossButton`)) {
-      document.body.classList.remove(`${ID}__modalShow`);
+      e.stopPropagation();
+      const clickedItem = target.closest(`.${ID}__subsButton`);
+      const controlSubscribeBtnElem = document.querySelector(`.${ID}__controlSubcribe button`);
+      clearABStorage();
+
+      if (controlSubscribeBtnElem) controlSubscribeBtnElem.click();
+
+      const wrapper = clickedItem.parentElement.parentElement;
+      const firstTeam = wrapper.querySelector('p.mui-1iglbju');
+      const secondTeam = wrapper.querySelector('p.mui-1iglbju + p.mui-1iglbju');
+      const firstTeamName = firstTeam ? firstTeam.innerText : '';
+      const secondTeamName = secondTeam ? secondTeam.innerText : '';
+
+      gaTracking(`${firstTeamName} vs ${secondTeamName} | Subscribe To Update Button`);
+    } else if (target.closest('[data-placement="odds-page"][data-type="button"]')) {
+      const clickedItem = target.closest('[data-placement="odds-page"][data-type="button"]');
+      const { operator } = clickedItem.dataset;
+      gaTracking(`${operator} | Odds Click`);
     }
   };
 
@@ -109,17 +86,17 @@ export default () => {
     document.body.addEventListener('click', (e) => clickHandler(e));
   }
   document.body.dataset[`${ID}__isListenerAdded`] = true;
-  if (VARIATION === 'control') return;
 
   //-----------------------------
   //Write experiment code here
   //-----------------------------
   //...
+  if (VARIATION === 'control') return;
 
   init();
 
   onUrlChange(() => {
-    pollerLite(['.MuiBox-root.mui-1smddtb'], () => {
+    pollerLite(['.MuiBox-root.mui-1smddtb', () => window.location.pathname === '/odds/'], () => {
       init();
     });
   });

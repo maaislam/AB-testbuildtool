@@ -6,7 +6,8 @@ const validCategories = [
   '/engineered-wood-flooring.html',
   '/laminate-flooring.html',
   '/vinyl-flooring.html',
-  '/parquet-flooring.html'
+  '/parquet-flooring.html',
+  '/special-offers.html'
 ];
 
 pollerLite(
