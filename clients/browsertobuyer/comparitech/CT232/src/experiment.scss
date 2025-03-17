@@ -1,0 +1,371 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .entry-content>p:nth-of-type(1)>a {
+        display: none;
+    }
+
+    .custom-excerpt.mobile::after {
+        display: none;
+    }
+    
+    &__container {
+        margin: 20px 0;
+        padding: 32px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #006C9B;
+
+        @include media-query(xl) {
+            padding: 24px;
+        }
+
+        @include media-query(lg) {
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        .surfshark-featured-card {
+            @include media-query(lg) {
+                order: 2;
+                margin: 20px 0;
+            }
+        }
+
+        .ipvanish-featured-card {
+            @include media-query(lg) {
+                order: 3;
+            }
+        }
+    }
+
+    &__basicVpnCard {
+        width: 100%;
+        background: #fff;
+        overflow: hidden;
+
+        .card-header {
+            padding: 16px;
+            background: #EAEAEA;
+            color: #222222;
+            font-family: Arial;
+            font-weight: 700;
+            font-size: 19.5px;
+            line-height: 150%;
+            text-align: center;
+
+        }
+
+        .card-body {
+            padding: 20px 20px 26px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 200px;
+            height: 44px;
+            margin-bottom: 10px;
+        }
+
+        .score-wrapper {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+
+            .score-heading {
+                margin-top: 10px;
+                font-family: Arial;
+                font-weight: 400;
+                font-size: 19.5px;
+                line-height: 1.2;
+                color: #222222;
+            }
+
+            .score {
+                margin-left: 8px;
+                font-family: Arial;
+                font-weight: 700;
+                font-size: 33px;
+                line-height: 1.2;
+                color: #222222;
+            }
+
+            .score-max {
+                font-family: Arial;
+                font-weight: 400;
+                font-size: 15.5px;
+                line-height: 1.2;
+                color: #222222;
+            }
+        }
+
+        .features {
+            padding: 0;
+            text-align: left;
+            margin: 16px 0;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+            list-style: none;
+            position: relative;
+            padding-left: 30px;
+
+            font-family: Arial;
+            font-weight: 400;
+            font-size: 15.5px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .features li::before {
+            content: url("data:image/svg+xml,%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_22_1076)'%3E%3Cpath d='M7.16563 18.0627L0.5 11.4096L2.33437 9.5752L7.16563 14.3971L18.6656 2.91895L20.5 4.75332L7.16563 18.0627Z' fill='%230177A5'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_22_1076'%3E%3Crect width='20' height='20' fill='white' transform='translate(0.5 -0.00585938)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+            position: absolute;
+            left: 0;
+            color: #007fae;
+            font-weight: bold;
+        }
+
+        .button {
+            color: #fff;
+            margin: 10px 0;
+            padding: 17px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+            border: 1px solid #006C9B;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(180deg, #0080B7 14.29%, #006C9B 41.77%);
+
+            // font-family: 'Inter';  
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1;
+            text-align: center;
+
+            svg {
+                margin-left: 10px;
+            }
+        }
+
+        .card-footer {
+            padding: 10px;
+            background: #EAEAEA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+
+            .check-icon {
+                display: flex;
+                width: 20px;
+                height: 20px;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .footer-text {
+                margin-left: 12px;
+                font-family: Arial;
+                font-weight: 700;
+                font-size: 15.5px;
+                line-height: 1.2;
+                color: #333;
+
+                .footer-date {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    &__bestChoiceVpnCard {
+        margin: 0 48px;
+        width: 100%;
+        background: #fff;
+        overflow: hidden;
+        border: 2px solid #FFFFFF;
+
+        @include media-query(xl) {
+            margin: 0 24px;
+        }
+
+        @include media-query(lg) {
+            order: 1;
+            margin: 0
+        }
+
+        .card-header {
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+
+            font-family: Arial;
+            font-weight: 700;
+            font-size: 15.5px;
+            line-height: 1.4;
+            background: #006C9B;
+            color: #fff;
+            border-bottom: 2px solid #007fae;
+        }
+
+        .card-title {
+            padding: 16px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            background: #0093D3;
+            color: #fff;
+
+            font-family: Arial;
+            font-weight: 700;
+            font-size: 19.5px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-body img {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .score-wrapper {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+
+            .score-heading {
+                margin-top: 10px;
+                font-family: Arial;
+                font-weight: 400;
+                font-size: 19.5px;
+                line-height: 1.2;
+                color: #222222;
+            }
+
+            .score {
+                margin-left: 8px;
+                font-family: Arial;
+                font-weight: 700;
+                font-size: 33px;
+                line-height: 1.2;
+                color: #222222;
+            }
+
+            .score-max {
+                font-family: Arial;
+                font-weight: 400;
+                font-size: 15.5px;
+                line-height: 1.2;
+                color: #222222;
+            }
+        }
+
+        .features {
+            padding: 0;
+            text-align: left;
+            margin: 16px 0;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+            list-style: none;
+            position: relative;
+            padding-left: 30px;
+
+            font-family: Arial;
+            font-weight: 400;
+            font-size: 15.5px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .features li::before {
+            content: url("data:image/svg+xml,%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_22_1076)'%3E%3Cpath d='M7.16563 18.0627L0.5 11.4096L2.33437 9.5752L7.16563 14.3971L18.6656 2.91895L20.5 4.75332L7.16563 18.0627Z' fill='%230177A5'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_22_1076'%3E%3Crect width='20' height='20' fill='white' transform='translate(0.5 -0.00585938)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+            position: absolute;
+            left: 0;
+            color: #007fae;
+            font-weight: bold;
+        }
+
+        .deal-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0 10px;
+            padding: 18px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1;
+            background: linear-gradient(180deg, #FF0E0E 14.29%, #B30202 41.77%);
+            border-radius: 3px;
+            text-align: center;
+            text-decoration: none;
+
+            svg {
+                margin-left: 10px;
+            }
+        }
+
+        .offer-note {
+            font-family: Arial;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+            color: #333333;
+
+            @include media-query(lg) {
+                font-size: 13px;
+            }
+        }
+
+        .card-footer {
+            padding: 10px;
+            background: #EAEAEA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+
+            .check-icon {
+                display: flex;
+                width: 20px;
+                height: 20px;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .footer-text {
+                margin-left: 12px;
+                font-family: Arial;
+                font-weight: 700;
+                font-size: 15.5px;
+                line-height: 1.2;
+                color: #333;
+
+                .footer-date {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
