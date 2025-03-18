@@ -84,7 +84,9 @@ export const fetchProductDetails = (urls) => {
         const reviewsElement = doc.querySelector('.product-reviews-summary');
         const productTitleElement = doc.querySelector('.page-title-wrapper.product');
         const productPriceElement = doc.querySelector('.product-info-price');
-        const formElement = doc.querySelector('#product_addtocart_form');
+        const formElement =
+          doc.querySelector('#product_addtocart_form') ||
+          doc.querySelector('#sample_addtocart_form');
         const formAction = formElement.action;
         const itemElement = formElement.querySelector('input[name="item"]');
         const itemValue = itemElement ? itemElement.value : '';

@@ -4,9 +4,9 @@ const bannerData = {
       badge: 'V1-first',
       title: 'Pay 25% Now, Get Your Floor Delivered Later!',
       ctaText: 'Learn more',
-      ctaLink: '/wood-floor-maintenance',
+      ctaLink: '/hold-your-stock',
       imgSrc:
-        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/adobestock-104157038_67d86510bd296.png',
+        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/pay-25-now_67d96ce4c9841.png',
       contentPosition: 'bottom'
     },
     {
@@ -14,18 +14,19 @@ const bannerData = {
       title: 'Found your favourite floor somewhere else?',
       subtitle: 'We can price match it!',
       ctaText: 'Learn more',
-      ctaLink: '/wood-floor-maintenance',
+      ctaLink: '/price-match-promise',
       imgSrc:
-        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/adobestock-626961738-2_67d86be5dfc44.png',
+        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/favourite-floor_67d96ce4d0a40.png',
       contentPosition: 'top'
     },
     {
       badge: 'V1-third',
       title: 'Have you met our fan club yet?',
       ctaText: 'Read reviews',
-      ctaLink: '/wood-floor-maintenance',
+      ctaLink:
+        'https://uk.trustpilot.com/review/luxuryflooring.co.uk?utm_medium=trustbox&utm_source=MicroCombo',
       imgSrc:
-        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/adobestock-202073936_67d86baa1c41c.png',
+        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/fan-club_67d96ce4bc57d.png',
       contentPosition: 'top',
       showReviews: true
     }
@@ -36,7 +37,8 @@ const bannerData = {
       title: 'Learn All About Engineered Wood Floors',
       ctaText: 'View flooring guide',
       ctaLink: '/engineered-wood-advice',
-      imgSrc: 'https://cdn-3.convertexperiments.com/uf/10041653/10041910/image0_67d86b2753e49.png',
+      imgSrc:
+        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/engineered-wood_67d96ce4c703d.png',
       contentPosition: 'top',
       baseUrl: '/engineered-wood-flooring.html'
     },
@@ -45,7 +47,8 @@ const bannerData = {
       title: 'Learn All About Luxury Vinyl Floors',
       ctaText: 'View flooring guide',
       ctaLink: '/vinyl-advice',
-      imgSrc: 'https://cdn-3.convertexperiments.com/uf/10041653/10041910/max-1_67d86af6f1de4.png',
+      imgSrc:
+        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/vinyl-floor_67d96ce4cbb05.png',
       contentPosition: 'top',
       baseUrl: '/vinyl-flooring.html'
     },
@@ -55,16 +58,17 @@ const bannerData = {
       ctaText: 'View flooring guide',
       ctaLink: '/laminate-advice',
       imgSrc:
-        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/lflam701-2_67d86ac386fd7.png',
+        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/laminate-floor_67d96ce4d2450.png',
       contentPosition: 'top',
       baseUrl: '/laminate-flooring.html'
     },
     {
       badge: 'V2-fourth',
-      title: 'Learn All About Solid Wood Floors',
+      title: 'Learn All About<br> Solid Wood Floors',
       ctaText: 'View flooring guide',
       ctaLink: '/solid-wood-advice',
-      imgSrc: 'https://cdn-3.convertexperiments.com/uf/10041653/10041910/so4029_67d86a8c94f24.png',
+      imgSrc:
+        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/solid-floor_67d96ce4cc9d3.png',
       contentPosition: 'top',
       baseUrl: '/solid-wood-flooring.html'
     }
@@ -76,7 +80,7 @@ const bannerData = {
       ctaText: 'Read their story',
       ctaLink: '/news/home-projects-fiftyfive-review/',
       imgSrc:
-        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/5fbcafc8a3abcdd274409c873890ec5f_67d86b66c2f6c.png',
+        'https://cdn-3.convertexperiments.com/uf/10041653/10041910/jackson-family_67d96ce4baeae.png',
       contentPosition: 'top'
     }
   ]

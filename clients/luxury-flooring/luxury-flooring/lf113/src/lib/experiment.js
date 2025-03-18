@@ -1,4 +1,6 @@
-import { trustpilot } from './components/trustpilot';
+/*eslint-disable no-undef */
+/*eslint-disable no-underscore-dangle */
+import generateTrustpilotRating from './components/generateTrustpilotRating';
 import bannerData from './data/bannerData';
 import { obsIntersection, pollerLite } from './helpers/utils';
 import setup from './services/setup';
@@ -27,12 +29,27 @@ const getSpeceficElement = (variation) => {
   return data;
 };
 
+const fetchTrustpilotReviews = () => {
+  return fetch(
+    'https://widget.trustpilot.com/trustbox-data/5419b6ffb0d04a076446a9af?businessUnitId=51f87a0a00006400056d3768&locale=en-GB',
+    {
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded'
+      }
+    }
+  )
+    .then((data) => data.json())
+    .catch((error) => console.error('Error fetching Trustpilot data:', error));
+};
+
 const renderHtml = (itemData) => {
   const { badge, title, subtitle, ctaText, ctaLink, imgSrc, contentPosition, showReviews } =
     itemData;
 
   return `
-    <a href="${ctaLink}" class="${ID}__editorial" data-attr="${badge}">
+    <a href="${ctaLink}" class="${ID}__editorial" data-attr="${badge}"  ${
+    showReviews ? "target = '_blank'" : ''
+  }>
       <div class="${ID}__content ${ID}__content--${contentPosition}">
         <div class="${ID}__content__badge">${badge}</div>
         <div class="${ID}__content__title">${title}</div>
@@ -59,22 +76,20 @@ const init = () => {
   if (document.querySelector(`.${ID}__editorial`)) return;
   attachPoint.insertAdjacentHTML('afterend', renderHtml(randomBannersData));
 
-  pollerLite(
-    [
-      `.${ID}__reviews`,
-      () =>
-        window.Trustpilot !== 'undefined' &&
-        typeof window.Trustpilot?.loadFromElement === 'function'
-    ],
-    () => {
-      if (document.querySelector(`.${ID}__trustpilotSection`)) {
-        document.querySelector(`.${ID}__trustpilotSection`).remove();
-      }
-      document.querySelector(`.${ID}__reviews`).insertAdjacentHTML('afterbegin', trustpilot(ID));
-      const trustbox = document.querySelector(`.${ID}__trustpilotSection .trustpilot-widget`);
-      window.Trustpilot.loadFromElement(trustbox);
-    }
-  );
+  pollerLite([`.${ID}__reviews`, () => window.Trustpilot !== 'undefined'], () => {
+    fetchTrustpilotReviews()
+      .then((data) => {
+        if (data && data.businessUnit && data.businessUnit.stars) {
+          console.log(data, 'data');
+          const trustPilotTargetPoint = document.querySelector(`.${ID}__reviews`);
+          trustPilotTargetPoint.insertAdjacentHTML(
+            'afterbegin',
+            generateTrustpilotRating(ID, data.businessUnit.stars)
+          );
+        }
+      })
+      .catch((error) => console.error('Failed to fetch reviews:', error));
+  });
 };
 
 const intersectionCallback = (entry) => {
@@ -88,7 +103,14 @@ const intersectionCallback = (entry) => {
 };
 
 export default () => {
+  window._conv_q = window._conv_q || [];
   setup();
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (target.closest(`.${ID}__editorial`)) {
+      _conv_q.push(['triggerConversion', '100489147']);
+    }
+  });
   init();
   if (window.matchMedia('(max-width: 767px)').matches) return;
   obsIntersection(

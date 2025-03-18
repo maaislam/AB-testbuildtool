@@ -53,6 +53,20 @@
   &__productsTable {
     display: flex;
     align-items: flex-start;
+
+    &:has(.trading-price) {
+      .static-product-container .#{$id}__tableContent .#{$id}__row:first-child {
+        height: 100px;
+
+        @media screen and (max-width: 1150px) and (min-width: 993px) {
+          height: 100px;
+        }
+
+        @include media-query(md) {
+          height: 80px;
+        }
+      }
+    }
   }
 
   .sticky-product-warpper {
@@ -151,6 +165,12 @@
     @include media-query(md) {
       padding-right: 0;
     }
+
+    .#{$id}__tableContent {
+      & > div:first-child {
+        align-items: center;
+      }
+    }
   }
 
   &__imageWrapper {
@@ -179,6 +199,25 @@
       align-items: center;
       height: 55px;
       padding: 10px;
+
+      &:first-child {
+        &:has(.trading-price) {
+          height: 100px;
+          padding-right: 0px;
+
+          @media screen and (max-width: 1150px) and (min-width: 993px) {
+            height: 100px;
+          }
+
+          @include media-query(md) {
+            height: 80px;
+          }
+
+          .final-price {
+            padding-right: 0;
+          }
+        }
+      }
       &:nth-child(odd) {
         background-color: #fff;
       }
@@ -201,7 +240,7 @@
 
       @include media-query(md) {
         &:first-child {
-          align-items: flex-start;
+          align-items: center;
         }
         &:not(:first-child) {
           font-family: 'work-sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -230,20 +269,28 @@
       .flooring-price {
         display: flex;
         flex-direction: row;
-        align-items: baseline;
+        align-items: center;
         flex-wrap: wrap;
 
         .final-price {
           font-size: 18px !important;
+          line-height: 1.2;
           padding-right: 8px;
           span {
             font-size: 18px !important;
             @include min-media-query(xxlg) {
               font-size: 24px !important;
             }
+            @media screen and (max-width: 1150px) and (min-width: 993px) {
+              font-size: 15px !important;
+            }
             @include media-query(md) {
-              font-size: 16px !important;
-              line-height: 1;
+              font-size: 14px !important;
+              line-height: 1.2;
+            }
+
+            @media screen and (max-width: 374px) {
+              font-size: 12px !important;
             }
           }
 
@@ -251,25 +298,60 @@
             font-size: 24px !important;
           }
 
-          @include media-query(md) {
-            font-size: 16px !important;
-            line-height: 1;
-          }
-        }
-        .old-price {
-          font-size: 16px !important;
-          span {
-            font-size: 16px !important;
-            @include media-query(md) {
-              font-size: 14px !important;
-              line-height: 1;
-            }
+          @media screen and (max-width: 1150px) and (min-width: 993px) {
+            font-size: 15px !important;
           }
 
           @include media-query(md) {
             font-size: 14px !important;
-            line-height: 1;
+            line-height: 1.2;
           }
+
+          @media screen and (max-width: 374px) {
+            font-size: 12px !important;
+          }
+        }
+        .old-price {
+          font-size: 16px !important;
+          line-height: 1.2;
+          span {
+            font-size: 16px !important;
+            @media screen and (max-width: 1150px) and (min-width: 993px) {
+              font-size: 14px !important;
+            }
+            @include media-query(md) {
+              font-size: 12px !important;
+              line-height: 1.2;
+            }
+
+            @media screen and (max-width: 374px) {
+              font-size: 10px !important;
+            }
+          }
+
+          @media screen and (max-width: 1150px) and (min-width: 993px) {
+            font-size: 12px !important;
+            line-height: 1.2;
+          }
+
+          @include media-query(md) {
+            font-size: 12px !important;
+            line-height: 1.2;
+          }
+
+          @media screen and (max-width: 374px) {
+            font-size: 10px !important;
+          }
+        }
+
+        .retail-pricing {
+          @include media-query(md) {
+            padding-top: 3px;
+          }
+        }
+
+        & ~ .widget.block-static-block {
+          display: none;
         }
       }
 
@@ -513,6 +595,12 @@
 
       @media screen and (max-width: 580px) {
         width: 50%;
+      }
+
+      .#{$id}__tableContent {
+        & > div:first-child {
+          padding-right: 0px;
+        }
       }
 
       .#{$id}__product {

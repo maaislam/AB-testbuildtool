@@ -13,7 +13,7 @@
     display: block;
     margin-bottom: 1rem;
     min-height: 400px;
-    animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fade-in 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
   &__img {
     height: 100%;
@@ -112,6 +112,74 @@
 
     .#{$id}__content__cta {
       font: normal normal normal 16px/22px Work Sans;
+    }
+  }
+
+  &__reviews {
+    position: absolute;
+    top: auto;
+    bottom: 26px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .trustpilot-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    color: #333;
+    gap: 6px; /* Spacing between elements */
+    white-space: nowrap; /* Ensure everything stays in one line */
+  }
+
+  /* Styling "Excellent" using tp-widget-trustscore styles */
+  .trustpilot-excellent {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+
+    @media screen and (max-width: 1350px) {
+      font-size: 13px;
+    }
+  }
+
+  .trustpilot-stars {
+    height: 24px; /* Adjust star size */
+    @media screen and (max-width: 1350px) {
+      height: 20px;
+    }
+
+    @media screen and (max-width: 374px) {
+      height: 16px;
+    }
+  }
+
+  .review-count {
+    color: #fff;
+    padding-top: 3px;
+
+    @media screen and (max-width: 1350px) {
+      font-size: 12px;
+    }
+  }
+
+  &__logoWrapper {
+    padding-bottom: 4px;
+    @media screen and (max-width: 1350px) {
+      padding-bottom: 0px;
+    }
+  }
+  .trustpilot-logo {
+    height: 24px; /* Match Trustpilot's branding */
+
+    @media screen and (max-width: 1350px) {
+      height: 20px;
+    }
+
+    @media screen and (max-width: 374px) {
+      height: 16px;
     }
   }
 

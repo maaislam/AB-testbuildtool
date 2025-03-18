@@ -11,7 +11,7 @@ const initSwiper = (container) => {
         spaceBetween: 11
       },
       480: {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 11
       }
     }
