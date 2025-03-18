@@ -3,7 +3,7 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import surfSharkVpnCard from './components/surfSharkVpnCard';
 import ipVanishVpnCard from './components/ipVanishVpnCard';
-import { getProviderBaseLink, getProviderImageLink, getProviderScore } from './helpers/utils';
+import { getProviderCTALink, getProviderImageLink, getProviderScore } from './helpers/utils';
 
 const { ID } = shared;
 
@@ -12,19 +12,19 @@ const providerData = {
   nordvpn: {
     score: getProviderScore('nordvpn') || 9.6,
     skyGoElem: document.querySelector('[href*="/go/nordvpn"] .badge-tested-text'),
-    ctaUrl: getProviderBaseLink('nordvpn'),
+    ctaUrl: getProviderCTALink('nordvpn'),
     imgUrl: getProviderImageLink('nordvpn')
   },
   surfshark: {
     score: getProviderScore('surfshark') || 9.3,
     skyGoElem: document.querySelector('[href*="/go/surfshark"] .badge-tested-text'),
-    ctaUrl: getProviderBaseLink('surfshark'),
+    ctaUrl: getProviderCTALink('surfshark'),
     imgUrl: getProviderImageLink('surfshark')
   },
   ipvanish: {
     score: getProviderScore('ipvanish') || 9.0,
     skyGoElem: document.querySelector('[href*="/go/ipvanish"] .badge-tested-text'),
-    ctaUrl: getProviderBaseLink('ipvanish'),
+    ctaUrl: getProviderCTALink('ipvanish'),
     imgUrl: getProviderImageLink('ipvanish')
   }
 };

@@ -18,7 +18,9 @@ const bestChoiceVpnCard = (providerData, shortSubjectElem) => {
             Best Overall for ${shortSubText}
         </div>` : '<div class="card-title">Best Overall VPN</div>'}
         <div class="card-body">
-            <img src="https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg?v=1610974086" alt="NordVPN Logo">
+            <a href="${imgUrl}" target="__blank">
+                <img src="https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg?v=1610974086" alt="NordVPN Logo">
+            </a>
             <div class="score-wrapper">
                 <span class="score-heading">Our Score:</span>
                 <span class="score">${score}</span>

@@ -8,7 +8,9 @@ const surfSharkVpnCard = (providerData) => {
     <div class="card ${id}__basicVpnCard surfshark-featured-card">
         <div class="card-header">Best for Users on a Budget</div>
         <div class="card-body">
-        <img src="https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/134407.svg?v=1610974086" alt="Surfshark Logo" width="120" class="logo">
+            <a href="${imgUrl}" target="__blank">
+                <img src="https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/134407.svg?v=1610974086" alt="Surfshark Logo" class="logo">
+            </a>
         <div class="score-wrapper">
             <span class="score-heading">Our Score:</span>
             <span class="score">${score}</span>

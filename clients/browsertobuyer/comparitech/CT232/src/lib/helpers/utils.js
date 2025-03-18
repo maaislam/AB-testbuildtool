@@ -124,7 +124,23 @@ export const getProviderImageLink = (providerSlug) => {
 
   //Append image path
   const imageLink = `${baseUrl}l/top3-image`;
-  console.log(`🖼️ Image Link for ${providerSlug}:`, imageLink);
+  console.log(`Image Link for ${providerSlug}:`, imageLink);
+
+  return imageLink;
+};
+
+export const getProviderCTALink = (providerSlug) => {
+  //First get the base link for the provider
+  const baseUrl = getProviderBaseLink(providerSlug);
+
+  //If no base URL found, return null
+  if (!baseUrl) {
+    return null;
+  }
+
+  //Append image path
+  const imageLink = `${baseUrl}l/top3-cta/`;
+  console.log(`CTA Link for ${providerSlug}:`, imageLink);
 
   return imageLink;
 };

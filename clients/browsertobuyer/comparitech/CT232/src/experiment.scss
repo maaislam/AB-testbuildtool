@@ -11,7 +11,7 @@
     }
     
     &__container {
-        margin: 20px 0;
+        margin: 20px auto;
         padding: 32px 50px;
         display: flex;
         justify-content: center;
@@ -66,7 +66,7 @@
         .logo {
             width: 200px;
             height: 44px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .score-wrapper {
@@ -138,7 +138,6 @@
             align-items: center;
             border-radius: 3px;
             border: 1px solid #006C9B;
-            font-weight: 700;
             text-decoration: none;
             background: linear-gradient(180deg, #0080B7 14.29%, #006C9B 41.77%);
 
@@ -206,9 +205,6 @@
         .card-header {
             padding: 12px;
             text-align: center;
-            font-size: 14px;
-            font-weight: 700;
-
             font-family: Arial;
             font-weight: 700;
             font-size: 15.5px;
@@ -220,9 +216,6 @@
 
         .card-title {
             padding: 16px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 700;
             background: #0093D3;
             color: #fff;
 
@@ -240,7 +233,7 @@
 
         .card-body img {
             width: 200px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .score-wrapper {
