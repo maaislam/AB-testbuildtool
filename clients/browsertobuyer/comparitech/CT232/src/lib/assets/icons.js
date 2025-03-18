@@ -11,3 +11,8 @@ export const checkIcon = `<svg width="25" height="25" viewBox="0 0 25 25" fill="
     </clipPath>
 </defs>
 </svg>`;
+
+export const starIcon = `<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.08393 0.0996094L7.52112 4.52281L12.1719 4.52281L8.40935 7.2565L9.84653 11.6797L6.08393 8.94601L2.32133 11.6797L3.75852 7.2565L-0.0040803 4.52281L4.64675 4.52281L6.08393 0.0996094Z" fill="white"/>
+</svg>
+`;

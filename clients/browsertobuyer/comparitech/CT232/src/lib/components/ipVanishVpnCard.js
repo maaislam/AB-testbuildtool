@@ -1,4 +1,4 @@
-import { checkIcon } from '../assets/icons';
+import { checkIcon, starIcon } from '../assets/icons';
 
 const ipVanishVpnCard = (providerData) => {
     const { id } = providerData;
@@ -6,6 +6,16 @@ const ipVanishVpnCard = (providerData) => {
 
     const htmlStr = `
     <div class="card ${id}__basicVpnCard ipvanish-featured-card">
+        <div class="card-header-hidden">
+            <span>EDITOR'S CHOICE</span>
+            <span class="star-icons">
+                ${starIcon}
+                ${starIcon}
+                ${starIcon}
+                ${starIcon}
+                ${starIcon}
+            </span>
+        </div>
         <div class="card-header">Best for Security & Privacy</div>
         <div class="card-body">
             <a href="${imgUrl}" target="__blank">
@@ -22,9 +32,9 @@ const ipVanishVpnCard = (providerData) => {
                 <li>Unlimited devices on one subscription</li>
             </ul>
             <a href="${ctaUrl}" class="button">Get IPVanish 
-            <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8.5 4.99414L0.250001 9.75728L0.250001 0.231001L8.5 4.99414Z" fill="white"/>
-            </svg>
+                <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.5 4.99414L0.250001 9.75728L0.250001 0.231001L8.5 4.99414Z" fill="white"/>
+                </svg>
             </a>
         </div>
         ${skyGoElem ? `

@@ -1,8 +1,9 @@
-import { checkIcon } from '../assets/icons';
+import { checkIcon, starIcon } from '../assets/icons';
 
 const bestChoiceVpnCard = (providerData, shortSubjectElem) => {
     const { id } = providerData;
     const { score, skyGoElem, ctaUrl, imgUrl } = providerData.nordvpn;
+
     let shortSubText = null;
 
     if (shortSubjectElem) {
@@ -12,7 +13,14 @@ const bestChoiceVpnCard = (providerData, shortSubjectElem) => {
     const htmlStr = `
     <div class="vpn-featured-card ${id}__bestChoiceVpnCard nordvpn-featured-card">
         <div class="card-header">
-            EDITOR'S CHOICE ★★★★★
+            EDITOR'S CHOICE 
+            <span class="star-icons">
+                ${starIcon}
+                ${starIcon}
+                ${starIcon}
+                ${starIcon}
+                ${starIcon}
+            </span>
         </div>
         ${shortSubjectElem ? `<div class="card-title">
             Best Overall for ${shortSubText}

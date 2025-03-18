@@ -2,6 +2,7 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+    .entry-content > p:nth-of-type(1),
     .entry-content>p:nth-of-type(1)>a {
         display: none;
     }
@@ -9,13 +10,26 @@
     .custom-excerpt.mobile::after {
         display: none;
     }
+
+    .offer-note {
+        margin-top: 10px;
+        font-family: Arial;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: center;
+        color: #333333;
+
+        @include media-query(lg) {
+            font-size: 13px;
+        }
+    }
     
     &__container {
         margin: 20px auto;
         padding: 32px 50px;
         display: flex;
         justify-content: center;
-        align-items: center;
         background: #006C9B;
 
         @include media-query(xl) {
@@ -43,10 +57,38 @@
 
     &__basicVpnCard {
         width: 100%;
-        background: #fff;
-        overflow: hidden;
+        border: 2px solid #006C9B;
+
+        @include media-query(lg) {
+            border: none;
+        }
+
+        .card-header-hidden {
+            height: 48px;
+            text-align: center;
+            font-family: Arial;
+            font-weight: 700;
+            font-size: 15.5px;
+            line-height: 1.4;
+            background: #006C9B;
+            color: #fff;
+            border-bottom: 2px solid #007fae;
+
+            * {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            @include media-query(lg) {
+                display: none;
+            }
+        }
 
         .card-header {
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 16px;
             background: #EAEAEA;
             color: #222222;
@@ -59,6 +101,7 @@
         }
 
         .card-body {
+            background: #fff;
             padding: 20px 20px 26px 20px;
             text-align: center;
         }
@@ -105,6 +148,11 @@
             padding: 0;
             text-align: left;
             margin: 16px 0;
+            min-height: 160px;
+
+            @include media-query(lg) {
+                min-height: 124px;
+            }
         }
 
         .features li {
@@ -130,7 +178,7 @@
 
         .button {
             color: #fff;
-            margin: 10px 0;
+            margin: 30px 0 0;
             padding: 17px;
             width: 100%;
             display: flex;
@@ -184,13 +232,25 @@
                 }
             }
         }
+
+        .card-footer:not(.has-sky-go) {
+            background: #006C9B;
+            box-shadow: 0 0 0 2px #006C9B;
+
+            * {
+                opacity: 0;
+            }
+
+            @include media-query(lg) {
+                display: none;
+            }
+        }
     }
 
     &__bestChoiceVpnCard {
         margin: 0 48px;
         width: 100%;
         background: #fff;
-        overflow: hidden;
         border: 2px solid #FFFFFF;
 
         @include media-query(xl) {
@@ -203,6 +263,9 @@
         }
 
         .card-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 12px;
             text-align: center;
             font-family: Arial;
@@ -212,13 +275,25 @@
             background: #006C9B;
             color: #fff;
             border-bottom: 2px solid #007fae;
+
+            .star-icons {
+                display: flex;
+                margin-left: 10px;
+
+                svg {
+                    margin-right: 4.5px;
+                }
+            }
         }
 
         .card-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 16px;
             background: #0093D3;
             color: #fff;
-
+            min-height: 90px;
             font-family: Arial;
             font-weight: 700;
             font-size: 19.5px;
@@ -272,6 +347,11 @@
             padding: 0;
             text-align: left;
             margin: 16px 0;
+            min-height: 160px;
+
+            @include media-query(lg) {
+                min-height: 124px;
+            }
         }
 
         .features li {
@@ -299,7 +379,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 30px 0 10px;
+            margin: 30px 0 0;
             padding: 18px;
             color: #fff;
             font-weight: 700;
@@ -312,19 +392,6 @@
 
             svg {
                 margin-left: 10px;
-            }
-        }
-
-        .offer-note {
-            font-family: Arial;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 1.5;
-            text-align: center;
-            color: #333333;
-
-            @include media-query(lg) {
-                font-size: 13px;
             }
         }
 
@@ -358,6 +425,19 @@
                 .footer-date {
                     font-weight: 400;
                 }
+            }
+        }
+
+        .card-footer:not(.has-sky-go) {
+            background: #006C9B;
+            box-shadow: 0 0 0 2px #006C9B;
+
+            * {
+                opacity: 0;
+            }
+
+            @include media-query(lg) {
+                display: none;
             }
         }
     }
