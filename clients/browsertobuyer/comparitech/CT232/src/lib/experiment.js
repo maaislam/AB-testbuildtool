@@ -1,9 +1,11 @@
+/*eslint-disable max-len */
+
 import bestChoiceVpnCard from './components/bestChoiceVpnCard';
 import setup from './services/setup';
 import shared from './shared/shared';
 import surfSharkVpnCard from './components/surfSharkVpnCard';
 import ipVanishVpnCard from './components/ipVanishVpnCard';
-import { getProviderCTALink, getProviderImageLink, getProviderScore } from './helpers/utils';
+import { checkTopThreeProvidersOrder, getProviderCTALink, getProviderImageLink, getProviderScore } from './helpers/utils';
 
 const { ID } = shared;
 
@@ -29,6 +31,8 @@ const providerData = {
   }
 };
 
+const isDesktop = () => (Math.min(window.innerWidth, document.documentElement.clientWidth, window.screen.width) >= 768);
+
 const init = () => {
   const postDetailContainer = document.querySelector('.post-details-container');
   const shortSubjectElem = document.querySelector('div.short-subject');
@@ -44,7 +48,7 @@ const init = () => {
     attachPoint.insertAdjacentHTML('afterend', container);
   }
 
-  if (postDetailContainer) {
+  if (postDetailContainer && isDesktop()) {
     const containerElem = document.querySelector(`.${ID}__container`);
     postDetailContainer.classList.add('wrapper');
     containerElem.insertAdjacentElement('afterend', postDetailContainer);
@@ -52,7 +56,8 @@ const init = () => {
 };
 
 export default () => {
-  setup();
-
-  init();
+  if (checkTopThreeProvidersOrder()) {
+    setup();
+    init();
+  }
 };

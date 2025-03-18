@@ -1,4 +1,4 @@
-import { checkIcon } from '../assets/icons';
+import { checkIcon, starIcon } from '../assets/icons';
 
 const surfSharkVpnCard = (providerData, shortSubjectElem) => {
     const { id } = providerData;
@@ -11,6 +11,16 @@ const surfSharkVpnCard = (providerData, shortSubjectElem) => {
 
     const htmlStr = `
     <div class="card ${id}__basicVpnCard surfshark-featured-card">
+        <div class="card-header-hidden">
+            <span>EDITOR'S CHOICE</span>
+            <span class="star-icons">
+                ${starIcon}
+                ${starIcon}
+                ${starIcon}
+                ${starIcon}
+                ${starIcon}
+            </span>
+        </div>
         <div class="card-header">Best for Users on a Budget</div>
         <div class="card-body">
             <a href="${imgUrl}" target="__blank">
