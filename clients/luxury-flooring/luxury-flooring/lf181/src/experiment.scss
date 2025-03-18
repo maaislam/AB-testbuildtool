@@ -26,9 +26,7 @@
     }
   }
   &__hidden {
-    @media screen and (min-width: 993px) {
-      display: none;
-    }
+    display: none;
   }
   &__comparisonWrapper {
     max-width: 1496px;
@@ -98,6 +96,10 @@
         .product-reviews-summary,
         .page-title-wrapper {
           background-color: #eef4ed;
+
+          @include media-query(md) {
+            background-color: #fff;
+          }
         }
       }
     }
@@ -557,7 +559,7 @@
 
     .#{$id}__pagination {
       top: 100% !important;
-      padding-top: 20px;
+      padding-top: 30px;
       .swiper-pagination-bullet {
         width: 16px;
         height: 16px;
@@ -571,7 +573,7 @@
 
     @include media-query(md) {
       display: block;
-      margin: 30px 0;
+      margin: 30px 0 60px;
     }
 
     @media screen and (min-width: 993px) {
