@@ -17,9 +17,9 @@ const ipVanishVpnCard = (providerData) => {
                 <span class="score-max">/10</span>
             </div>
             <ul class="features">
-                <li>Great value choice for Sky Go</li>
-                <li>Cost effective choice for streaming and security</li>
-                <li>Plenty of servers worldwide</li>
+                <li>Great choice for security and privacy</li>
+                <li>Easy to use VPN</li>
+                <li>Unlimited devices on one subscription</li>
             </ul>
             <a href="${ctaUrl}" class="button">Get IPVanish 
             <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">

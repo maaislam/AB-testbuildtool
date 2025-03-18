@@ -1,8 +1,13 @@
 import { checkIcon } from '../assets/icons';
 
-const surfSharkVpnCard = (providerData) => {
+const surfSharkVpnCard = (providerData, shortSubjectElem) => {
     const { id } = providerData;
     const { score, skyGoElem, ctaUrl, imgUrl } = providerData.surfshark;
+    let shortSubText = null;
+
+    if (shortSubjectElem) {
+        shortSubText = shortSubjectElem.textContent;
+    }
 
     const htmlStr = `
     <div class="card ${id}__basicVpnCard surfshark-featured-card">
@@ -17,9 +22,9 @@ const surfSharkVpnCard = (providerData) => {
             <span class="score-max">/10</span>
         </div>
         <ul class="features">
-            <li>Great choice for security and privacy</li>
-            <li>Easy to use VPN</li>
-            <li>Unlimited devices on one subscription</li>
+            <li>Great value choice for users on a budget</li>
+            <li>${shortSubText ? `Works well for ${shortSubText}` : 'Cost effective choice for streaming and security'}</li>
+            <li>Many servers worldwide</li>
         </ul>
         <a href="${ctaUrl}" class="button">Get SurfShark
             <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">

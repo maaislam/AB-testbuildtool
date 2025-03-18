@@ -27,9 +27,9 @@ const bestChoiceVpnCard = (providerData, shortSubjectElem) => {
                 <span class="score-max">/10</span>
             </div>
             <ul class="features">
-                <li>Best overall VPN for Sky Go</li>
+                <li>${shortSubText ? `Our #1 choice VPN for ${shortSubText}` : 'Our #1 choice VPN overall'}</li>
                 <li>Most reliable choice for streaming and unblocking</li>
-                <li>All major apps & devices supported - use on up to 10 at once</li>
+                <li>All major apps & devices supported plus use on up to 10 devices at once</li>
             </ul>
             <a href="${ctaUrl}" class="deal-btn">Get Special Deal
                 <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">

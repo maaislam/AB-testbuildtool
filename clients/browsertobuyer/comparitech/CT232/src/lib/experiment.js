@@ -35,7 +35,7 @@ const init = () => {
   const attachPoint = document.querySelector('.post-title-container .wrapper');
 
   const container = `<div class="${ID}__container wrapper">
-    ${surfSharkVpnCard(providerData)}
+    ${surfSharkVpnCard(providerData, shortSubjectElem)}
     ${bestChoiceVpnCard(providerData, shortSubjectElem)}
     ${ipVanishVpnCard(providerData)}
   </div>`;
