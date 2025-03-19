@@ -11,6 +11,7 @@ const shouldRunTest = (url) => /^https:\/\/ocbscores\.com\/predictions-and-tips\
 const init = () => {
   const tipsContainer = document.querySelector('#tips');
   const targetPoint = tipsContainer.parentElement;
+  targetPoint.classList.add(`${ID}__tipsWrapper`);
 
   if (VARIATION === '1') {
     const controlButtonElement = document.querySelector(
@@ -23,7 +24,6 @@ const init = () => {
       return;
     }
     const cloneControlButtonElement = controlButtonElement.cloneNode(true);
-    targetPoint.classList.add(`${ID}__tipsWrapper`);
     cloneControlButtonElement.classList.add(`${ID}__newButton`);
     const buttonTextElement = targetPoint.querySelector('p:last-of-type');
     const buttonText = buttonTextElement ? buttonTextElement.textContent : '';

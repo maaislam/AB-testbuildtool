@@ -72,6 +72,9 @@
   &__editorial[data-attr^='V1'] {
     .#{$id}__content__title {
       font: normal normal normal 40px/50px Lucida Bright;
+      @include media-query(sm) {
+        font: normal normal normal 30px/1.2 Lucida Bright;
+      }
     }
 
     .#{$id}__content__cta {
@@ -83,11 +86,19 @@
     .#{$id}__content__title {
       font: normal normal normal 35px/45px Lucida Bright;
       margin-bottom: 13px;
+
+      @include media-query(sm) {
+        font: normal normal normal 30px/1.2 Lucida Bright;
+      }
     }
 
     .#{$id}__content__subtitleTitle {
       font: normal normal normal 45px/50px Lucida Bright;
       padding-bottom: 13px;
+
+      @include media-query(sm) {
+        font: normal normal normal 35px/1.2 Lucida Bright;
+      }
     }
 
     .#{$id}__content__cta {
@@ -98,6 +109,9 @@
   &__editorial[data-attr^='V2'] {
     .#{$id}__content__title {
       font: normal normal normal 40px/50px Lucida Bright;
+      @include media-query(sm) {
+        font: normal normal normal 30px/1.2 Lucida Bright;
+      }
     }
 
     .#{$id}__content__cta {
@@ -108,6 +122,10 @@
   &__editorial[data-attr^='V3'] {
     .#{$id}__content__title {
       font: normal normal normal 40px/50px Lucida Bright;
+
+      @include media-query(sm) {
+        font: normal normal normal 30px/1.2 Lucida Bright;
+      }
     }
 
     .#{$id}__content__cta {

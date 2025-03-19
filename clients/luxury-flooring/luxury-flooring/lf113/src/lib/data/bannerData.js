@@ -23,8 +23,7 @@ const bannerData = {
       badge: 'V1-third',
       title: 'Have you met our fan club yet?',
       ctaText: 'Read reviews',
-      ctaLink:
-        'https://uk.trustpilot.com/review/luxuryflooring.co.uk?utm_medium=trustbox&utm_source=MicroCombo',
+      ctaLink: '/luxury-reviews',
       imgSrc:
         'https://cdn-3.convertexperiments.com/uf/10041653/10041910/fan-club_67d96ce4bc57d.png',
       contentPosition: 'top',
