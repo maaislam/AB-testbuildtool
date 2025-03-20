@@ -1,8 +1,12 @@
 import { checkIcon, starIcon } from '../assets/icons';
+import { getFooterText } from '../helpers/utils';
 
 const surfSharkVpnCard = (providerData, shortSubjectElem) => {
     const { id } = providerData;
     const { score, skyGoElem, ctaUrl, imgUrl } = providerData.surfshark;
+
+    const footerText = getFooterText(skyGoElem);
+
     let shortSubText = null;
 
     if (shortSubjectElem) {
@@ -48,8 +52,7 @@ const surfSharkVpnCard = (providerData, shortSubjectElem) => {
                 ${checkIcon}
             </span>
             <div class="footer-text">
-                Unblocks Sky Go - 
-                <span class="footer-date">Tested Mar 2025</span>
+                ${footerText}
             </div>
         </div>` : ''}
     </div>

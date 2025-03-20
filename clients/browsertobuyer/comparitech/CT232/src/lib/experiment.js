@@ -13,19 +13,19 @@ const providerData = {
   id: ID,
   nordvpn: {
     score: getProviderScore('nordvpn') || 9.6,
-    skyGoElem: document.querySelector('[href*="/go/nordvpn"] .badge-tested-text'),
+    skyGoElem: document.querySelector('[href*="/go/nordvpn"] .badge-element.badge-action'),
     ctaUrl: getProviderCTALink('nordvpn'),
     imgUrl: getProviderImageLink('nordvpn')
   },
   surfshark: {
     score: getProviderScore('surfshark') || 9.3,
-    skyGoElem: document.querySelector('[href*="/go/surfshark"] .badge-tested-text'),
+    skyGoElem: document.querySelector('[href*="/go/surfshark"] .badge-element.badge-action'),
     ctaUrl: getProviderCTALink('surfshark'),
     imgUrl: getProviderImageLink('surfshark')
   },
   ipvanish: {
     score: getProviderScore('ipvanish') || 9.0,
-    skyGoElem: document.querySelector('[href*="/go/ipvanish"] .badge-tested-text'),
+    skyGoElem: document.querySelector('[href*="/go/ipvanish"] .badge-element.badge-action'),
     ctaUrl: getProviderCTALink('ipvanish'),
     imgUrl: getProviderImageLink('ipvanish')
   }
@@ -38,10 +38,12 @@ const init = () => {
   const shortSubjectElem = document.querySelector('div.short-subject');
   const attachPoint = document.querySelector('.post-title-container .wrapper');
 
-  const container = `<div class="${ID}__container wrapper">
-    ${surfSharkVpnCard(providerData, shortSubjectElem)}
-    ${bestChoiceVpnCard(providerData, shortSubjectElem)}
-    ${ipVanishVpnCard(providerData)}
+  const container = `<div class="${ID}__container">
+    <div class="wrapper ${ID}__content">
+      ${surfSharkVpnCard(providerData, shortSubjectElem)}
+      ${bestChoiceVpnCard(providerData, shortSubjectElem)}
+      ${ipVanishVpnCard(providerData)}
+    </div>
   </div>`;
 
   if (!document.querySelector(`.${ID}__container`)) {

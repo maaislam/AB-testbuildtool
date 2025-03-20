@@ -1,10 +1,12 @@
 import { checkIcon, starIcon } from '../assets/icons';
+import { getFooterText } from '../helpers/utils';
 
 const bestChoiceVpnCard = (providerData, shortSubjectElem) => {
     const { id } = providerData;
     const { score, skyGoElem, ctaUrl, imgUrl } = providerData.nordvpn;
 
     let shortSubText = null;
+    const footerText = getFooterText(skyGoElem);
 
     if (shortSubjectElem) {
         shortSubText = shortSubjectElem.textContent;
@@ -50,8 +52,7 @@ const bestChoiceVpnCard = (providerData, shortSubjectElem) => {
         <div class="card-footer">
             <span class="check-icon">${checkIcon}</span>
             <div class="footer-text">
-                Unblocks Sky Go -
-                <span class="footer-date">Tested Mar 2025</span>
+            ${footerText}
             </div>
         </div>` : ''}
     </div>

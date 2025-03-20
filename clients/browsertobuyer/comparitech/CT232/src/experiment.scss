@@ -24,13 +24,12 @@
             font-size: 13px;
         }
     }
-    
-    &__container {
+
+    &__content {
         margin: 20px auto;
-        padding: 32px 50px;
+        padding: 32px 0;
         display: flex;
         justify-content: center;
-        background: #006C9B;
 
         @include media-query(xl) {
             padding: 24px;
@@ -40,6 +39,10 @@
             padding: 20px;
             flex-direction: column;
         }
+    }
+    
+    &__container {
+        background: #006C9B;
 
         .surfshark-featured-card {
             @include media-query(lg) {
@@ -98,6 +101,9 @@
             line-height: 150%;
             text-align: center;
 
+            @include media-query(lg) {
+                min-height: 50px;
+            }
         }
 
         .card-body {
@@ -227,24 +233,28 @@
                 line-height: 1.2;
                 color: #333;
 
-                .footer-date {
+                .badge-action-text {
+                    text-transform: capitalize;
+                }
+
+                .badge-tested-text {
                     font-weight: 400;
                 }
             }
         }
 
-        .card-footer:not(.has-sky-go) {
-            background: #006C9B;
-            box-shadow: 0 0 0 2px #006C9B;
+        // .card-footer:not(.has-sky-go) {
+        //     background: #006C9B;
+        //     box-shadow: 0 0 0 2px #006C9B;
 
-            * {
-                opacity: 0;
-            }
+        //     * {
+        //         opacity: 0;
+        //     }
 
-            @include media-query(lg) {
-                display: none;
-            }
-        }
+        //     @include media-query(lg) {
+        //         display: none;
+        //     }
+        // }
     }
 
     &__bestChoiceVpnCard {
@@ -299,6 +309,10 @@
             font-size: 19.5px;
             line-height: 1.5;
             text-align: center;
+
+            @include media-query(lg) {
+                min-height: 50px;
+            }
         }
 
         .card-body {
@@ -422,23 +436,27 @@
                 line-height: 1.2;
                 color: #333;
 
-                .footer-date {
+                .badge-action-text {
+                    text-transform: capitalize;
+                }
+
+                .badge-tested-text {
                     font-weight: 400;
                 }
             }
         }
 
-        .card-footer:not(.has-sky-go) {
-            background: #006C9B;
-            box-shadow: 0 0 0 2px #006C9B;
+        // .card-footer:not(.has-sky-go) {
+        //     background: #006C9B;
+        //     box-shadow: 0 0 0 2px #006C9B;
 
-            * {
-                opacity: 0;
-            }
+        //     * {
+        //         opacity: 0;
+        //     }
 
-            @include media-query(lg) {
-                display: none;
-            }
-        }
+        //     @include media-query(lg) {
+        //         display: none;
+        //     }
+        // }
     }
 }

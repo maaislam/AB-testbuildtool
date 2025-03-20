@@ -144,3 +144,18 @@ export const getProviderCTALink = (providerSlug) => {
 
   return imageLink;
 };
+
+export const getFooterText = (skyGoElem) => {
+  if (!skyGoElem) return '';
+
+  const badgeActionTextElem = skyGoElem.querySelector('.badge-action-text');
+  const badgeTestTextElem = skyGoElem.querySelector('.badge-tested-text');
+
+  const badgeActionText = badgeActionTextElem ? badgeActionTextElem.textContent : '';
+  const badgeTestText = badgeTestTextElem ? ` - ${badgeTestTextElem.textContent}` : '';
+
+  const footerText = `<span class="badge-action-text">${badgeActionText}</span>
+          <span class="badge-tested-text">${badgeTestText}</span>`;
+
+  return footerText;
+};

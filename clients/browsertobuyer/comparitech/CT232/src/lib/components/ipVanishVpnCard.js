@@ -1,8 +1,11 @@
 import { checkIcon, starIcon } from '../assets/icons';
+import { getFooterText } from '../helpers/utils';
 
 const ipVanishVpnCard = (providerData) => {
     const { id } = providerData;
     const { score, skyGoElem, ctaUrl, imgUrl } = providerData.ipvanish;
+
+    const footerText = getFooterText(skyGoElem);
 
     const htmlStr = `
     <div class="card ${id}__basicVpnCard ipvanish-featured-card">
@@ -41,8 +44,7 @@ const ipVanishVpnCard = (providerData) => {
         <div class="card-footer">
             <span class="check-icon">${checkIcon}</span>
             <div class="footer-text">
-                Unblocks Sky Go -
-                <span class="footer-date">Tested Mar 2025</span>
+                ${footerText}
             </div>
         </div>` : ''}
     </div>
