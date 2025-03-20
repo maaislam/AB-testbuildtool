@@ -139,9 +139,6 @@ const clickHandler = (id, target, event) => {
         closePopover(id);
         closeSidebar();
         scrollToSection('.new-comparison-table', 250);
-    } else if (target.closest('a[href^="https://join.protonvpn.com/signup"]')) {
-        event.preventDefault();
-        scrollToSection('#pricing');
     }
 };
 export default clickHandler;
