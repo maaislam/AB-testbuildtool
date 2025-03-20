@@ -39,7 +39,7 @@ const stickyProduct = (id, data) => {
                       data[0].details.flooringtype.toLowerCase().includes('vinyl') ||
                       data[0].details.flooringtype.toLowerCase().includes('laminate')
                         ? `
-                              <div class="${id}__row">Shade</div>     
+                              <div class="${id}__row">Colour</div>     
                           `
                         : `
                             <div class="${id}__row">Plank Width</div>

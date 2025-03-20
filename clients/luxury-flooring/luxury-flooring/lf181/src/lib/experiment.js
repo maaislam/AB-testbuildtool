@@ -138,10 +138,14 @@ const init = () => {
           });
 
           if (!document.querySelector(`.${ID}__slimilarProdsTag`)) {
-            document
-              .querySelector('.fp-calculator')
-              .insertAdjacentHTML('afterend', slimilarProdsTag(ID));
+            const targetPointElem =
+              document.querySelector('.fp-calculator') ||
+              document.querySelector('.product-info-out-of-stock');
+
+            targetPointElem.insertAdjacentHTML('afterend', slimilarProdsTag(ID));
           }
+
+          console.log(modifiedResults, 'modifiedResults');
 
           //desktop
           if (!document.querySelector(`.${ID}__comparisonWrapper`)) {

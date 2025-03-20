@@ -83,7 +83,7 @@ export const productMobile = (id, data, tagName) => {
                             data.details.flooringtype.toLowerCase().includes('laminate')
                               ? `
                                   <div>
-                                  <strong>Shade</strong>
+                                  <strong>Colour</strong>
                                   ${data.details.shade || ''}
                                   </div>       
                               `
