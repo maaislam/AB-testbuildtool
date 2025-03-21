@@ -25,6 +25,17 @@
         }
     }
 
+    &__netflixRegion {
+        .#{$id}__bestChoiceVpnCard .card-title,
+        .#{$id}__basicVpnCard .card-header {
+            min-height: 90px;
+
+            @include media-query(lg) {
+                min-height: 50px;
+            }
+        }
+    }
+
     &__content {
         margin: 20px auto;
         padding: 32px 0;
@@ -88,7 +99,6 @@
         }
 
         .card-header {
-            min-height: 90px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -100,10 +110,6 @@
             font-size: 19.5px;
             line-height: 150%;
             text-align: center;
-
-            @include media-query(lg) {
-                min-height: 50px;
-            }
         }
 
         .card-body {
@@ -242,19 +248,6 @@
                 }
             }
         }
-
-        // .card-footer:not(.has-sky-go) {
-        //     background: #006C9B;
-        //     box-shadow: 0 0 0 2px #006C9B;
-
-        //     * {
-        //         opacity: 0;
-        //     }
-
-        //     @include media-query(lg) {
-        //         display: none;
-        //     }
-        // }
     }
 
     &__bestChoiceVpnCard {
@@ -303,16 +296,11 @@
             padding: 16px;
             background: #0093D3;
             color: #fff;
-            min-height: 90px;
             font-family: Arial;
             font-weight: 700;
             font-size: 19.5px;
             line-height: 1.5;
             text-align: center;
-
-            @include media-query(lg) {
-                min-height: 50px;
-            }
         }
 
         .card-body {

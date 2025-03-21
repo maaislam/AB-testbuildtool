@@ -9,23 +9,38 @@ import { checkTopThreeProvidersOrder, getProviderCTALink, getProviderImageLink, 
 
 const { ID } = shared;
 
+const getFirstExistingBadgeElement = () => {
+  const selectors = [
+      '[href*="/go/nordvpn"] .badge-element.badge-action',
+      '[href*="/go/surfshark"] .badge-element.badge-action',
+      '[href*="/go/ipvanish"] .badge-element.badge-action'
+  ];
+
+  for (const selector of selectors) {
+      const element = document.querySelector(selector);
+      if (element) return element;
+  }
+
+  return null;
+};
+
 const providerData = {
   id: ID,
   nordvpn: {
     score: getProviderScore('nordvpn') || 9.6,
-    skyGoElem: document.querySelector('[href*="/go/nordvpn"] .badge-element.badge-action'),
+    skyGoElem: getFirstExistingBadgeElement(),
     ctaUrl: getProviderCTALink('nordvpn'),
     imgUrl: getProviderImageLink('nordvpn')
   },
   surfshark: {
     score: getProviderScore('surfshark') || 9.3,
-    skyGoElem: document.querySelector('[href*="/go/surfshark"] .badge-element.badge-action'),
+    skyGoElem: getFirstExistingBadgeElement(),
     ctaUrl: getProviderCTALink('surfshark'),
     imgUrl: getProviderImageLink('surfshark')
   },
   ipvanish: {
     score: getProviderScore('ipvanish') || 9.0,
-    skyGoElem: document.querySelector('[href*="/go/ipvanish"] .badge-element.badge-action'),
+    skyGoElem: getFirstExistingBadgeElement(),
     ctaUrl: getProviderCTALink('ipvanish'),
     imgUrl: getProviderImageLink('ipvanish')
   }
@@ -33,7 +48,19 @@ const providerData = {
 
 const isDesktop = () => (Math.min(window.innerWidth, document.documentElement.clientWidth, window.screen.width) >= 768);
 
+const setClassToBody = (className) => {
+  const { body } = document;
+
+  body.classList.add(className);
+};
+
 const init = () => {
+  const { pathname } = window.location;
+
+  if (pathname.includes('/change-netflix-region/')) {
+    setClassToBody(`${ID}__netflixRegion`);
+  }
+
   const postDetailContainer = document.querySelector('.post-details-container');
   const shortSubjectElem = document.querySelector('div.short-subject');
   const attachPoint = document.querySelector('.post-title-container .wrapper');
