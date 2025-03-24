@@ -11,10 +11,12 @@ const generateToplistData = (id) => {
         const name = nameWithSpan.replace(/\(.*?\)/, '').replace(/EDITOR’S CHOICE/i, '').trim();
         const isEditorChoice = anchor?.innerHTML.includes('EDITOR’S CHOICE');
 
-        //Case 2: Extract description & remove last sentence
+        //Case 2: Extract description & remove last sentence if it contains "free trial"
         const fullText = li.textContent.replace(/\s+/g, ' ').trim();
         let description = fullText.replace(nameWithSpan, '').trim();
-        const lastSentenceMatch = description.match(/Start a .*$/);
+
+        //Remove last sentence if it contains "free trial"
+        const lastSentenceMatch = description.match(/[^.?!]*free trial[^.?!]*[.?!]?$/i);
         if (lastSentenceMatch) {
             description = description.replace(lastSentenceMatch[0], '').trim();
         }

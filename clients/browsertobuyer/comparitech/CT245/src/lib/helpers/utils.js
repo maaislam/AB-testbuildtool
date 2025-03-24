@@ -1,3 +1,5 @@
+import { imgUrl } from "../data/data";
+
 /**
  * Polls the DOM for a condition to be met before executing a callback.
  *
@@ -48,4 +50,36 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
+};
+
+export const trackGA4Event = (category, action, label) => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'gaCustomEvent',
+    eventCategory: category,
+    eventAction: action,
+    eventLabel: label
+  });
+  console.log('event tracked', category, action, label);
+};
+
+export const getImgSrc = (name) => {
+  const nameLower = name.toLowerCase();
+
+  const match = Object.entries(imgUrl).find(([key]) =>
+    nameLower.includes(key.toLowerCase()) || key.toLowerCase().includes(nameLower));
+
+  return match ? match[1] : 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/default.png';
+};
+
+export const hideParagraphsBeforeList = (id, containerSelector) => {
+  const entryContent = document.querySelector(containerSelector);
+  if (!entryContent) return;
+
+  const childrenElem = Array.from(entryContent.children);
+
+  for (const el of childrenElem) {
+    if (el.tagName === 'OL') break;
+    if (el.tagName === 'P') el.classList.add(`${id}__hide`);
+  }
 };

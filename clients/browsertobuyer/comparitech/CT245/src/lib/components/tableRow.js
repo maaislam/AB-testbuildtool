@@ -1,30 +1,39 @@
-import { imgUrl } from '../data/data';
+import { getImgSrc } from '../helpers/utils';
 
 const tableRow = ({ id, index, name, link, isEditorChoice, description, trialLink, trialText }) => {
-  console.log('name', name);
-  const imgSrc = imgUrl[name.toLowerCase()];
+  const imgSrc = getImgSrc(name);
 
   return `
     <div class="${id}__card ${isEditorChoice ? 'highlighted' : ''}">
       <div class="image-wrapper">
         <div class="number">${index}</div>
-        ${link ? `<div class="logo">
-            <img src="${imgSrc}" alt="${name}">
-        </div>` : ''}
+        ${link ? `<a href='${link}' class="logo">
+            <img src="${imgSrc}" alt="${name}" class="${id}__logo">
+        </a>` : ''}
       </div>
       <div class="content-wrapper">
         <div class="title-box">
-          ${link ? `<a href="${link}" class="title-text-link">${name}</a>` : `<div class="title-text">${name}</div>`}
+          ${link ? `<a href="${link}" class="${id}__cardTitle title-text-link">${name}</a>` : `<div class="title-text">${name}</div>`}
           ${isEditorChoice ? `<span class="${id}__badge editor-badge">EDITOR'S CHOICE</span>` : ''}
         </div>
         <div class="content">
-          <p class="content-details">${description}</p>
-          <div class="free-trial-wrapper">
-            ${trialLink ? `<a href="${trialLink}" class="free-trial-text">${trialText}</a>` : ''}
+          <div class="content-details">
+            <span>${description}</span>
+            ${link ? `<a href='${link}' class="logo-mobile">
+              <img src="${imgSrc}" alt="${name}" class="${id}__logo">
+            </a>` : ''}
           </div>
-          <div class="action-btn">
-          ${link ? `<a href="${link}" class="website-btn">WEBSITE</a>` : ''}
-          </div>
+
+          ${link ? `
+            <div class="action-wrapper">
+              <div class="free-trial-wrapper">
+                ${trialLink ? `<a href="${trialLink}" class="free-trial-text ${id}__freeTrailLink">${trialText}</a>` : ''}
+              </div>
+              <div class="action-btn">
+                <a href="${link}" class="website-btn ${id}__cta">WEBSITE</a>
+              </div>
+            </div>
+          ` : ''}
         </div>
       </div>
     </div>`;
