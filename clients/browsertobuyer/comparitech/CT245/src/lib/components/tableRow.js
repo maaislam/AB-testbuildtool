@@ -1,10 +1,10 @@
 import { getImgSrc } from '../helpers/utils';
 
-const tableRow = ({ id, index, name, link, isEditorChoice, description, trialLink, trialText }) => {
+const tableRow = ({ id, index, name, link, description, trialLink, trialText }) => {
   const imgSrc = getImgSrc(name);
 
   return `
-    <div class="${id}__card ${isEditorChoice ? 'highlighted' : ''}">
+    <div class="${id}__card ${index === 1 ? 'highlighted' : ''}">
       <div class="image-wrapper">
         <div class="number">${index}</div>
         ${link ? `<a href='${link}' class="logo">
@@ -14,7 +14,7 @@ const tableRow = ({ id, index, name, link, isEditorChoice, description, trialLin
       <div class="content-wrapper">
         <div class="title-box">
           ${link ? `<a href="${link}" class="${id}__cardTitle title-text-link">${name}</a>` : `<div class="title-text">${name}</div>`}
-          ${isEditorChoice ? `<span class="${id}__badge editor-badge">EDITOR'S CHOICE</span>` : ''}
+          ${index === 1 ? `<span class="${id}__badge editor-badge">EDITOR'S CHOICE</span>` : ''}
         </div>
         <div class="content">
           <div class="content-details">

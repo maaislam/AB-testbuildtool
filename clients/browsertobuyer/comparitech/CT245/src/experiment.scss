@@ -3,6 +3,7 @@
 
 .#{$id} {
     &__hide,
+    .header-share-buttons-wrapper,
     .custom-excerpt.mobile:after,
     .entry-content > ol,
     .entry-content>p:nth-of-type(1) {
@@ -22,6 +23,20 @@
     .post-title-container.wrapper {
         display: flex;
         margin-bottom: 30px;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+
+            
+            .custom-excerpt:not(.mobile) {
+                margin-top: 0;
+            }
+
+            .post-details-container {
+                order: 1;
+            }
+        }
 
         .box.promo {
             margin-top: auto;

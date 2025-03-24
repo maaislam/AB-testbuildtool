@@ -10,10 +10,11 @@ const { ID } = shared;
 const isDesktop = () => (Math.min(window.innerWidth, document.documentElement.clientWidth, window.screen.width) >= 768);
 
 const getTableHeader = () => {
-  const boldSentence = document.querySelector('.entry-content p b');
+  const topListElem = document.querySelector('.entry-content > ol');
+  const headerBoldText = topListElem.previousElementSibling;
 
-  if (boldSentence) {
-      return boldSentence.textContent.trim();
+  if (headerBoldText) {
+      return headerBoldText.textContent.trim();
   }
   return 'Overview';
 };

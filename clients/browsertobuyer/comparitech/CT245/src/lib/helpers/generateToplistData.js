@@ -1,14 +1,23 @@
 const generateToplistData = (id) => {
-    const listItems = document.querySelectorAll('.entry-content ol li');
+    const listItems = document.querySelectorAll('.entry-content > ol:nth-of-type(1) li');
     const dataList = [];
 
     listItems.forEach((li, index) => {
         const anchor = li.querySelector('a[href*="/go/"][href*="/l/list"]');
 
-        //Case 1: No anchor means no link → Handle differently
+        //Case 1: No anchor means no link - Handle differently
         const link = anchor ? anchor.getAttribute('href') : null;
-        const nameWithSpan = anchor ? anchor.innerText : li.querySelector('b')?.innerText || 'Unknown Provider';
-        const name = nameWithSpan.replace(/\(.*?\)/, '').replace(/EDITOR’S CHOICE/i, '').trim();
+
+        //Extract name from anchor or fallback to <b> or <strong> tag
+        const fallbackNameElem = li.querySelector('b') || li.querySelector('strong');
+        const nameWithSpan = anchor
+            ? anchor.innerText
+            : fallbackNameElem?.innerText || 'Unknown Provider';
+
+        const name = nameWithSpan
+            .replace(/\(.*?\)/, '')
+            .replace(/EDITOR’S CHOICE/i, '')
+            .trim();
         const isEditorChoice = anchor?.innerHTML.includes('EDITOR’S CHOICE');
 
         //Case 2: Extract description & remove last sentence if it contains "free trial"
