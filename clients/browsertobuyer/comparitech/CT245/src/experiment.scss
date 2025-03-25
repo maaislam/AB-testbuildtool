@@ -10,6 +10,14 @@
         display: none;
     }
 
+    .post-title-container.with-excerpt .author-details .author-with-reviewer-details:first-child {
+        border-right: none;
+    }
+
+    .post-title-container.with-excerpt .author-details .editor_wrap {
+        width: 100%;
+    }
+
     &__postTitleContainer {
         @include media-query(xxl) {
             margin: 0 45px 30px 0;
@@ -53,7 +61,7 @@
         display: flex;
         flex-direction: column;
 
-        @include media-query(sm) {
+        @include media-query(md) {
             margin-top: 20px;
         }
 
@@ -74,9 +82,13 @@
             gap: 15px;
             border-bottom: 1px solid #222222;
 
-            @include media-query(sm) {
+            @include media-query(md) {
                 padding: 16px;
             }
+        }
+
+        .#{$id}__card.#{$id}__cardMobile {
+            display: block;
         }
 
         .#{$id}__card.highlighted {
@@ -93,6 +105,7 @@
         .image-wrapper {
             display: flex;
             gap: 10px;
+            height: max-content;
         }
 
         .number {
@@ -115,7 +128,7 @@
             justify-content: center;
             max-height: max-content;
 
-            @include media-query(sm) {
+            @include media-query(md) {
                 display: none;
             }
         }
@@ -131,7 +144,7 @@
         .logo-mobile {
             display: none;
 
-            @include media-query(sm) {
+            @include media-query(md) {
                 display: block;
                 margin-left: 16px;
             }
@@ -146,7 +159,7 @@
             flex: 1;
             margin: 8px 0 0;
 
-            @include media-query(sm) {
+            @include media-query(md) {
                 display: block;
             }
         }
@@ -204,7 +217,7 @@
                 max-width: 400px;
             }
 
-            @include media-query(sm) {
+            @include media-query(md) {
                 max-width: 100%;
             }
         }
@@ -214,7 +227,7 @@
             justify-content: space-between;
             flex: 1;
 
-            @include media-query(sm) {
+            @include media-query(md) {
                 margin-top: 8px;
                 align-items: center;
             }
@@ -224,7 +237,7 @@
             height: 40px;
             margin-top: 4px;
 
-            // @include media-query(sm) {
+            // @include media-query(md) {
             //     margin-top: 0;
             // }
         }
@@ -247,7 +260,7 @@
             justify-content: center;
             flex: 1;
 
-            @include media-query(sm) {
+            @include media-query(md) {
                 justify-content: start;
             }
         }
@@ -260,6 +273,7 @@
             line-height: 1.3;
             text-align: center;
             text-decoration: underline;
+            text-transform: capitalize;
             color: #1A73E8;
         }
     }

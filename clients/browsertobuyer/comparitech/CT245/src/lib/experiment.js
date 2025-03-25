@@ -4,10 +4,11 @@ import shared from './shared/shared';
 import tableRow from './components/tableRow';
 import generateToplistData from './helpers/generateToplistData';
 import { hideParagraphsBeforeList, trackGA4Event } from './helpers/utils';
+import tableRowMobile from './components/tableRowMobile';
 
 const { ID } = shared;
 
-const isDesktop = () => (Math.min(window.innerWidth, document.documentElement.clientWidth, window.screen.width) >= 768);
+const isDesktop = () => (Math.min(window.innerWidth, document.documentElement.clientWidth, window.screen.width) >= 850);
 
 const getTableHeader = () => {
   const topListElem = document.querySelector('.entry-content > ol');
@@ -38,7 +39,8 @@ const init = () => {
   const renderToplistTable = () => {
     const tableHeader = getTableHeader();
     const data = generateToplistData(ID);
-    const htmlRows = data.map(tableRow).join('');
+    const row = isDesktop() ? tableRow : tableRowMobile;
+    const htmlRows = data.map(row).join('');
 
     const fullTableHtml = `<div class="${ID}__container wrapper">
       <p class="${ID}__tableHeader">${tableHeader}</p>
