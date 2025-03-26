@@ -97,6 +97,7 @@ export const fetchProductDetails = (urls) => {
 
         return {
           sku: url.sku,
+          isAvailableForSample: url.isAvailableForSample,
           url,
           productType,
           details,

@@ -27,6 +27,10 @@
     }
   }
 
+  .OCB009__icon {
+    display: none;
+  }
+
   &__cardWrapper {
     border: 1px solid #f56701;
     [data-type='logo'] {
@@ -39,27 +43,39 @@
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       background-color: rgb(26, 86, 133);
-      border: 8px solid transparent;
+      border: 10px solid transparent;
 
       @media screen and (max-width: 767px) {
-        min-width: 50px;
-        width: 50px;
+        min-width: 80px;
+        width: 80px;
+      }
+
+      @media screen and (max-width: 389px) {
+        min-width: 70px;
+        width: 70px;
       }
     }
 
     [data-type='button'] {
       width: calc(100% - 100px);
       height: 43px;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 20px;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       margin-left: 0;
+      letter-spacing: 0.46px;
       @media screen and (max-width: 767px) {
-        width: calc(100% - 50px);
+        width: calc(100% - 80px);
+        padding: 12px 16px;
       }
 
-      @media screen and (max-width: 390px) {
-        font-size: 14px;
-        line-height: 1.2;
+      @media screen and (max-width: 389px) {
+        width: calc(100% - 70px);
+        font-size: 13px;
+        line-height: 19px;
+        padding: 12px;
       }
     }
     .mui-r0hi92 {
@@ -75,6 +91,10 @@
       padding-left: 0;
       padding-right: 0;
       padding-bottom: 0;
+
+      & + .OCB009__staticButtonWrapper {
+        display: none;
+      }
     }
   }
 }

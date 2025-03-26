@@ -1,6 +1,7 @@
 const bannerData = {
   1: [
     {
+      id: 'editorial-block-holdyourstock',
       badge: 'V1-first',
       title: 'Pay 25% Now, Get Your Floor Delivered Later!',
       ctaText: 'Learn more',
@@ -10,6 +11,7 @@ const bannerData = {
       contentPosition: 'bottom'
     },
     {
+      id: 'editorial-block-pricematchpromise',
       badge: 'V1-second',
       title: 'Found your favourite floor somewhere else?',
       subtitle: 'We can price match it!',
@@ -20,6 +22,7 @@ const bannerData = {
       contentPosition: 'top'
     },
     {
+      id: 'editorial-block-luxuryreviews',
       badge: 'V1-third',
       title: 'Have you met our fan club yet?',
       ctaText: 'Read reviews',
@@ -32,6 +35,7 @@ const bannerData = {
   ],
   2: [
     {
+      id: 'editorial-block-engineeredwoodadvice',
       badge: 'V2-first',
       title: 'Learn All About Engineered Wood Floors',
       ctaText: 'View flooring guide',
@@ -42,6 +46,7 @@ const bannerData = {
       baseUrl: '/engineered-wood-flooring.html'
     },
     {
+      id: 'editorial-block-vinyladvice',
       badge: 'V2-second',
       title: 'Learn All About Luxury Vinyl Floors',
       ctaText: 'View flooring guide',
@@ -52,6 +57,7 @@ const bannerData = {
       baseUrl: '/vinyl-flooring.html'
     },
     {
+      id: 'editorial-block-laminate-advice',
       badge: 'V2-third',
       title: 'Learn All About Laminate Floors',
       ctaText: 'View flooring guide',
@@ -62,6 +68,7 @@ const bannerData = {
       baseUrl: '/laminate-flooring.html'
     },
     {
+      id: 'editorial-block-solidwoodadvice',
       badge: 'V2-fourth',
       title: 'Learn All About<br> Solid Wood Floors',
       ctaText: 'View flooring guide',
@@ -74,6 +81,7 @@ const bannerData = {
   ],
   3: [
     {
+      id: 'editorial-block-customerhomes',
       badge: 'V3-first',
       title: "The Jacksons'<br>1930s renovation",
       ctaText: 'Read their story',
