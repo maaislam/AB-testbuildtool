@@ -88,6 +88,14 @@ const init = () => {
         }
       });
     });
+
+    pollerLite([`.OCB009__staticButtonWrapper .${ID}__staticButtonWrapper`], () => {
+      const wrapper = document.querySelector(
+        `.OCB009__staticButtonWrapper .${ID}__staticButtonWrapper`
+      );
+      const buttonWrapper = wrapper.parentElement;
+      buttonWrapper.insertAdjacentElement('beforebegin', wrapper);
+    });
   }
 
   const bettingsTipsItems = document.querySelectorAll(

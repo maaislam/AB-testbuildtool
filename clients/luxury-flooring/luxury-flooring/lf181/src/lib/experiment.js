@@ -82,13 +82,25 @@ const init = () => {
     .forEach((product) => {
       const productLinkElement = product.querySelector('.product-item-photo');
       const productLink = productLinkElement.getAttribute('href');
-      const formElement = product.querySelector('[data-role="tocart-form"]');
-      const { productSku } = formElement.dataset;
+      const formElement =
+        product.querySelector('[data-role="tocart-form"]') ||
+        product.querySelector('#sample_addtocart_form');
 
-      collectUrls.push({
-        sku: productSku || '',
-        link: productLink
-      });
+      if (formElement) {
+        const { productSku } = formElement.dataset;
+
+        collectUrls.push({
+          sku: productSku || '',
+          link: productLink,
+          isAvailableForSample: true
+        });
+      } else {
+        collectUrls.push({
+          sku: '',
+          link: productLink,
+          isAvailableForSample: false
+        });
+      }
     });
 
   //insert current product info
@@ -98,7 +110,8 @@ const init = () => {
 
   collectUrls.unshift({
     sku: currentProductSku,
-    link: currentProductLink
+    link: currentProductLink,
+    isAvailableForSample: !!currentProductSkuElement
   });
 
   //Usage example:
@@ -137,6 +150,8 @@ const init = () => {
             };
           });
 
+          console.log(modifiedResults, 'modifiedResults');
+
           if (!document.querySelector(`.${ID}__slimilarProdsTag`)) {
             const targetPointElem =
               document.querySelector('.fp-calculator') ||
@@ -144,8 +159,6 @@ const init = () => {
 
             targetPointElem.insertAdjacentHTML('afterend', slimilarProdsTag(ID));
           }
-
-          console.log(modifiedResults, 'modifiedResults');
 
           //desktop
           if (!document.querySelector(`.${ID}__comparisonWrapper`)) {

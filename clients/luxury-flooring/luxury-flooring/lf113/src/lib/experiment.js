@@ -43,13 +43,13 @@ const fetchTrustpilotReviews = () => {
 };
 
 const renderHtml = (itemData) => {
-  const { badge, title, subtitle, ctaText, ctaLink, imgSrc, contentPosition, showReviews } =
+  const { id, badge, title, subtitle, ctaText, ctaLink, imgSrc, contentPosition, showReviews } =
     itemData;
 
   return `
     <a href="${ctaLink}" class="${ID}__editorial" data-attr="${badge}"  ${
     showReviews ? "target = '_blank'" : ''
-  }>
+  } id="${id}">
       <div class="${ID}__content ${ID}__content--${contentPosition}">
         <div class="${ID}__content__badge">${badge}</div>
         <div class="${ID}__content__title">${title}</div>

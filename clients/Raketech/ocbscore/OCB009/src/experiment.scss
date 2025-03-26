@@ -31,6 +31,9 @@
     }
 
     .#{$id}__staticButtonWrapper {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
       padding: 0;
       [data-type='logo'] {
         position: relative;

@@ -35,9 +35,15 @@ export const product = (id, data) => {
                         }
                     </div>   
                     <div class="${id}__buttonWrapper"> 
-                        <div class="${id}__add-to-basket ${isActiveDisabled}" data-sku="${
-    data.sku
-  }">${selectButtonText}</div>
+                        ${
+                          data.isAvailableForSample
+                            ? `
+                              <div class="${id}__add-to-basket ${isActiveDisabled}" data-sku="${data.sku}">${selectButtonText}</div>
+                          `
+                            : `
+                              <div class="${id}__add-to-basket ${id}__disabled">Samples coming soon</div>
+                            `
+                        }
                     </div>
                 </div>
                 
@@ -100,10 +106,16 @@ export const productMobile = (id, data, tagName) => {
                               `
                           }
                       </div>   
-                      <div class="${id}__buttonWrapper"> 
-                          <div class="${id}__add-to-basket ${isActiveDisabled}" data-sku="${
-    data.sku
-  }">${selectButtonText}</div>
+                      <div class="${id}__buttonWrapper">    
+                      ${
+                        data.isAvailableForSample
+                          ? `
+                            <div class="${id}__add-to-basket ${isActiveDisabled}" data-sku="${data.sku}">${selectButtonText}</div>
+                        `
+                          : `
+                            <div class="${id}__add-to-basket ${id}__disabled">Samples coming soon</div>
+                          `
+                      }
                       </div>
                   </div>
                   
