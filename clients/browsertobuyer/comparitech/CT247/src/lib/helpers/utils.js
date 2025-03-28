@@ -49,6 +49,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+<<<<<<< HEAD
 
 export const trackGA4Event = (category, action, label) => {
   window.dataLayer = window.dataLayer || [];
@@ -60,3 +61,5 @@ export const trackGA4Event = (category, action, label) => {
   });
   console.log('event tracked', category, action, label);
 };
+=======
+>>>>>>> 60cc775acd3f39b51ddb389a97c88f7126d668ed

@@ -1,31 +1,9 @@
-import { underlayRules } from './data/data';
+import { cartUnderlay } from './helpers/cartUnderlay';
+import { addToCart, getUnderlay, observeDOM, pollerLite } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
 
 const { ID } = shared;
-
-const getUnderlay = (rugWidth, rugLength) => {
-  //Step 1: filter out the rules that match the rug width
-  const matchedWidthRules = underlayRules.filter((rule) => {
-    return rule.maxWidth === null || rugWidth <= rule.maxWidth;
-  });
-
-  //Step 2: filter out the rules that match the rug length from the matched width rules
-  for (let i = 0; i < matchedWidthRules.length; i++) {
-    const rule = matchedWidthRules[i];
-    const lengthMatch = rule.maxLength === null || rugLength <= rule.maxLength;
-    if (lengthMatch) {
-      console.log(`Rug Size: ${rugWidth}x${rugLength}`);
-      console.log(`Underlay: ${rule.variantName}`);
-      console.log(`Variant ID: ${rule.variantId}`);
-      console.log(`Price: £${rule.price}`);
-      return rule;
-    }
-  }
-
-  console.log(`No underlay found for rug size ${rugWidth}x${rugLength}`);
-  return null;
-};
 
 const getSelectedRugData = () => {
   const selectedInput = document.querySelector('input[name="id"]:checked');
@@ -61,17 +39,100 @@ const updateUnderlayModalPrice = () => {
   if (rugOnlyPriceEl) rugOnlyPriceEl.textContent = `£${rugOnlyPrice.toFixed(2)}`;
   if (rugWithUnderlayPriceEl) rugWithUnderlayPriceEl.textContent = `£${totalPrice}`;
 
-  console.log('Modal price updated!');
-  console.log(`Rug only: £${rugOnlyPrice.toFixed(2)}`);
-  console.log(`Rug + Underlay: £${totalPrice}`);
+  //console.log(`Rug only: £${rugOnlyPrice.toFixed(2)}`);
+  //console.log(`Rug + Underlay: £${totalPrice}`);
 };
 
 const init = () => {
-  updateUnderlayModalPrice();
+  const { pathname } = window.location;
+
+  if (pathname.includes('/products')) {
+    pollerLite(['#productUnderlayModal [data-underlay-submit]'], () => {
+      const atcBtnElem = document.querySelector('#productUnderlayModal [data-underlay-submit]');
+      const copyATCBtn = atcBtnElem.cloneNode(true);
+
+      copyATCBtn.removeAttribute('data-underlay-submit');
+      copyATCBtn.classList.add(`${ID}__atcBtn`);
+      copyATCBtn.style.display = 'none';
+
+      const underlayAccept = document.querySelector('#addUnderlayAccept');
+      const underlayReject = document.querySelector('#addUnderlayReject');
+
+      const toggleButtons = () => {
+        if (underlayAccept.checked) {
+          //Underlay selected → show cloned button
+          copyATCBtn.style.display = 'block';
+          atcBtnElem.style.display = 'none';
+        } else {
+          //Rug only selected → show Shopify original button
+          copyATCBtn.style.display = 'none';
+          atcBtnElem.style.display = 'block';
+        }
+      };
+
+      if (underlayAccept) underlayAccept.addEventListener('change', toggleButtons);
+      if (underlayReject) underlayReject.addEventListener('change', toggleButtons);
+
+      if (!document.querySelector(`.${ID}__atcBtn`)) {
+        atcBtnElem.insertAdjacentElement('beforebegin', copyATCBtn);
+      }
+
+      observeDOM('#productUnderlayModal', (mutation) => {
+        const { target } = mutation;
+
+        if (target && target.classList.contains('underlay-modal') && target.classList.contains('active')) {
+          updateUnderlayModalPrice();
+        }
+      });
+    });
+  } else if (pathname.includes('/cart')) {
+    pollerLite(['.quantity-box select', '.btn-add-underlay'], () => {
+      cartUnderlay(ID);
+    });
+  }
 };
 
 export default () => {
   setup();
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.closest(`.${ID}__atcBtn`)) {
+      const underlaySelected = document.querySelector('#addUnderlayAccept').checked;
+
+      if (!underlaySelected) {
+        return;
+      }
+
+      //Rug size & price detect from the selected radio button
+      const rug = getSelectedRugData();
+      if (!rug) {
+        return;
+      }
+
+      //Find the underlay that matches the rug size
+      const underlay = getUnderlay(rug.width, rug.length);
+      if (!underlay) {
+        return;
+      }
+
+      //Step 3: Add underlay to cart via Shopify AJAX API
+      addToCart(underlay.variantId, 1).then(() => {
+        //console.log('Underlay added to cart:', underlay.variantName);
+        //Go to cart
+        window.location.href = '/cart';
+      });
+    } else if (target.closest(`.${ID}__cartAtcBtn`)) {
+      const { variantId } = target.closest(`.${ID}__cartAtcBtn`).dataset;
+      if (!variantId) return;
+
+      addToCart(variantId, 1).then(() => {
+        //console.log('Underlay added from cart page');
+        window.location.reload();
+      });
+    }
+  });
 
   init();
 };
