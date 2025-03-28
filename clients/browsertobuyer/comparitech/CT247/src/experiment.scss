@@ -1,0 +1,215 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &__hide {
+        display: none;
+    }
+
+    &__dealCard {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        max-width: 100%;
+        background-color: #fff;
+        overflow: hidden;
+        border: 2px solid #1D2023;
+
+        .deal-header {
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 15px 15px 0 15px;
+            position: relative;
+
+            &-description {
+                margin-top: 10px;
+                font-family: Arial;
+                font-weight: 400;
+                font-size: 19.5px;
+                line-height: 1.5;
+            }
+        }
+
+        .deal-header p {
+            margin: 0;
+            font-family: Arial;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.2;
+        }
+
+        .deal-header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include media-query(lg) {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+            }
+        }
+
+        .sponsored {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-family: Arial;
+            font-weight: 400;
+            font-size: 15.5px;
+            line-height: 1.5;
+            color: #fff;
+            cursor: pointer;
+
+            .sponsoredIcon {
+                margin-right: 5px;
+                display: flex;
+            }
+        }
+
+        .deal-image {
+            @include media-query(lg) {
+                transform: translateY(-5px);
+            }
+        }
+
+        .deal-content {
+            padding: 10px 15px 15px 15px;
+            display: flex;
+            align-items: center;
+
+            @include media-query(lg) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .vpn-info {
+            display: flex;
+            align-items: center;
+            max-height: fit-content;
+
+            @include media-query(xl) {
+                width: 150px;
+            }
+
+            .totalIcon {
+                margin-left: 9px;
+
+                svg {
+                    width: 100%;
+                }
+            }
+
+            .locationIcon {
+                svg {
+                    @include media-query(xl) {
+                        width: 20px;
+                    }
+                }
+            }
+        }
+
+        .vpn-price {
+            margin-top: 4px;
+            display: flex;
+            margin-left: 20px;
+            font-family: Arial;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.2;
+            color: #444444;
+
+            @include media-query(lg) {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+
+        .vpn-price span {
+            margin-left: 4px;
+            font-family: Arial;
+            font-weight: 400;
+            font-size: 19.5px;
+            line-height: 1.5;
+            color: #444444;
+        }
+
+        .#{$id}__getDealBtn {
+            margin-left: auto;
+            padding: 10px;
+            width: 160px;
+            text-decoration: none;
+            font-family: Arial;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 1.2;
+            border-radius: 3px;
+            color: #fff;
+            background: #06884A;
+            text-align: center;
+
+            &:hover {
+                background: #068849e6;
+                text-decoration: none;
+            }
+
+            @include media-query(lg) {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &__dealCardContainer {
+        position: relative;
+    }
+
+    &__sponsoredTooltip {
+        position: absolute;
+        bottom: 240px;
+        right: -27%;
+        width: 626px;
+        font-family: Arial;
+        font-weight: 400;
+        font-size: 15.5px;
+        line-height: 1.5;
+        padding: 15px;
+        z-index: 999;
+        background: #1e1e1e;
+        color: #fff;
+
+        @include media-query(xl) {
+            bottom: 262px;
+            right: -33%;
+        }
+
+        @include media-query(lg) {
+            width: 100%;
+            left: 0;
+            right: initial;
+            top: calc(-1 * var(--tooltip-height));
+            bottom: initial;
+        }
+
+        &::after {
+            content: url("data:image/svg+xml,%3Csvg width='19' height='16' viewBox='0 0 19 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.5 16L0.406732 0.25L18.5933 0.250002L9.5 16Z' fill='%231D2023'/%3E%3C/svg%3E");
+            position: absolute;
+            bottom: -18px;
+            right: 50%;
+
+            @include media-query(xl) {
+                right: auto;
+            }
+        }
+    
+        .close-tooltip {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            cursor: pointer;
+
+            @include media-query(lg) {
+                right: -8px;
+            }
+        }
+    }
+}
