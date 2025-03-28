@@ -1,31 +1,35 @@
-const subsButton = (id) => {
+const subsButton = (id, data) => {
   const html = `
-        <div class="${id}__subsButton">
-          <a class="${id}__subsLink"
-            tabindex="0"
-            data-element="clicks-to-operators"
-            data-operator="1xBet"
-            data-placement="odds-page"
-            data-type="button"
-            rel="nofollow noindex"
-            target="_blank"
-            href="https://go.affiliationcloud.com/b40cf328-b1ec-11ed-9664-0050569e7c00">
-              <p class="${id}__counter">1</p>
-              <p class="${id}__number">1.23</p><span class=""></span>
-          </a>
-          <a class="${id}__subsLink"
-            tabindex="0"
-            data-element="clicks-to-operators"
-            data-operator="1xBet"
-            data-placement="odds-page"
-            data-type="button"
-            rel="nofollow noindex"
-            target="_blank"
-            href="https://go.affiliationcloud.com/b40cf328-b1ec-11ed-9664-0050569e7c00">
-              <p class="${id}__counter">2</p>
-              <p class="${id}__number">1.34</p><span class=""></span>
-          </a>
-        </div>
+      <div class="${id}__subsButton">
+            <a
+          class="${id}__subsLink MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-disableElevation MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-disableElevation MuiButton-fullWidth mui-znoxve"
+          tabindex="0"
+          data-element="clicks-to-operators"
+          data-operator="${data.operator}"
+          data-placement="odds-page"
+          data-type="button"
+          rel="nofollow noindex"
+          target="_blank"
+          href="${data.link}">
+            <p class="MuiTypography-root MuiTypography-body1 mui-vp5xag">1</p>
+            <p class="MuiTypography-root MuiTypography-body1 mui-1sruf3z">${data.firstTeamOddNumber}</p><span
+                  class="MuiTouchRipple-root mui-w0pj6f"></span>
+        </a>
+        <a
+          class="${id}__subsLink MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-disableElevation MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-disableElevation MuiButton-fullWidth mui-znoxve"
+          tabindex="0"
+          data-element="clicks-to-operators"
+          data-operator="${data.operator}"
+          data-placement="odds-page"
+          data-type="button"
+          rel="nofollow noindex"
+          target="_blank"
+          href="${data.operator}">
+            <p class="${id}__counter MuiTypography-root MuiTypography-body1 mui-vp5xag">2</p>
+            <p class="${id}__number MuiTypography-root MuiTypography-body1 mui-1sruf3z">${data.secondTeamOddNumber}</p><span
+                  class="MuiTouchRipple-root mui-w0pj6f"></span>
+        </a>
+      </div>
     `;
   return html.trim();
 };

@@ -3,6 +3,7 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { observeDOM, onUrlChange, pollerLite } from './helpers/utils';
 import subsButton from './components/subsButton';
+import oddsData from './data/data';
 
 const { ID, VARIATION } = shared;
 
@@ -15,14 +16,40 @@ const renderSubsButton = () => {
   const noOddsElements = captureElementsContainingString('No odds available');
   if (noOddsElements.length > 0) {
     noOddsElements.forEach((noOddsElement) => {
+      const parentElement = noOddsElement.closest('button[type="button"]');
+      const firstTeamNameElem = parentElement.querySelector('p.MuiTypography-body1.mui-1iglbju');
+      const secondTeamNameElem = firstTeamNameElem ? firstTeamNameElem.nextElementSibling : '';
+      const firstTeamName = firstTeamNameElem ? firstTeamNameElem.textContent : '';
+      const secondTeamName = secondTeamNameElem ? secondTeamNameElem.textContent : '';
+      const selectedDateElement = document.querySelector(
+        'button[id^="day-events-tab"].Mui-selected'
+      );
+      const dateNum = selectedDateElement ? selectedDateElement.textContent.trim() : '';
+
+      const isAvaiableOdds = oddsData.find(
+        (odd) =>
+          odd.firstTeam.toLowerCase().trim() === firstTeamName.toLowerCase().trim() &&
+          odd.secondTeam.toLowerCase().trim() === secondTeamName.toLowerCase().trim() &&
+          odd.dateNumber === dateNum
+      );
+
       const noOddsWrapper = noOddsElement.closest('.MuiBox-root');
       noOddsWrapper.parentElement.classList.add(`${ID}__buttonWrapper`);
       noOddsWrapper.classList.add(`${ID}__noOddsWrapper`);
-      const subscribeButton = noOddsWrapper.nextElementSibling;
-      if (subscribeButton) {
-        subscribeButton.remove();
+
+      if (isAvaiableOdds && isAvaiableOdds.oddsAvailable) {
+        noOddsWrapper.classList.add(`${ID}__hidden`);
+        const subscribeButton = noOddsWrapper.nextElementSibling;
+        if (subscribeButton) {
+          subscribeButton.remove();
+        }
+        noOddsWrapper.insertAdjacentHTML('afterend', subsButton(ID, isAvaiableOdds));
+      } else {
+        const noOddsWrapperTextElement = noOddsWrapper.querySelector('p');
+        if (noOddsWrapperTextElement) {
+          noOddsWrapperTextElement.textContent = 'Odds coming soon';
+        }
       }
-      noOddsWrapper.insertAdjacentHTML('afterend', subsButton(ID));
     });
   }
 };
@@ -50,10 +77,13 @@ export default () => {
       const { operator } = clickedItem.dataset;
       gaTracking(`${operator} | API Odds Click`);
     } else if (target.closest(`.${ID}__subsButton`) && target.closest(`.${ID}__subsLink`)) {
-      //e.preventDefault();
+      e.preventDefault();
+      //e.stopPropagation();
       const clickedItem = target.closest(`.${ID}__subsLink`);
+      const link = clickedItem.href;
       const { operator } = clickedItem.dataset;
       gaTracking(`${operator} | Manual Odds Click`);
+      window.open(link, '_blank');
     }
   };
 

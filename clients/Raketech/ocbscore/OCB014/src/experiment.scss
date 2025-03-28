@@ -98,6 +98,10 @@
   }
 
   &__noOddsWrapper {
-    display: none;
+    //display: none;
+
+    &.#{$id}__hidden {
+      display: none;
+    }
   }
 }
