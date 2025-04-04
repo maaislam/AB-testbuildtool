@@ -39,8 +39,8 @@ const updateUnderlayModalPrice = () => {
   if (rugOnlyPriceEl) rugOnlyPriceEl.textContent = `£${rugOnlyPrice.toFixed(2)}`;
   if (rugWithUnderlayPriceEl) rugWithUnderlayPriceEl.textContent = `£${totalPrice}`;
 
-  //console.log(`Rug only: £${rugOnlyPrice.toFixed(2)}`);
-  //console.log(`Rug + Underlay: £${totalPrice}`);
+  console.log(`Rug only: £${rugOnlyPrice.toFixed(2)}`);
+  console.log(`Rug + Underlay: £${totalPrice}`);
 };
 
 const init = () => {
