@@ -1,0 +1,178 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__hidden {
+    display: none !important;
+  }
+
+  &__cardContainer {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+    }
+
+    .card {
+      width: calc(50% - 12px);
+      border-radius: 12px;
+      overflow: hidden;
+      background-image: var(--bgImageDesktop);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 10px;
+
+      @media screen and (max-width: 991px) {
+        width: 100%;
+        background-image: var(--bgImageMobile);
+
+        &:last-child {
+          margin-top: 16px;
+        }
+      }
+    }
+
+    .label {
+      background-color: #c4302b;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      display: inline-block;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .casino-logo {
+      max-width: 220px;
+      width: 100%;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .card-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      padding: 30px 20px 14px;
+      position: relative;
+      z-index: 2;
+
+      @media screen and (max-width: 991px) {
+        max-width: 280px;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .overlay-text {
+      h2 {
+        font-family: 'Gilroy';
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 26px;
+        color: #fff;
+        margin: 0;
+
+        @media screen and (max-width: 991px) {
+          text-align: center;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 4px 0 0px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        .icon {
+          display: flex;
+        }
+        .text {
+          font-family: 'Gilroy';
+          font-weight: 800;
+          font-size: 16px;
+          line-height: 29px;
+          color: #fff;
+        }
+      }
+    }
+
+    .main-title {
+      font-size: 40px;
+      margin: 0 0 10px;
+      font-weight: 800;
+    }
+
+    .main-title span {
+      position: relative;
+    }
+
+    .main-title span::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 10px;
+      height: 10px;
+      background: yellow;
+      border-radius: 50%;
+    }
+
+    .icon {
+      margin-right: 8px;
+    }
+
+    .card-button {
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      max-width: 200px;
+      width: 100%;
+      background-color: #43d14f;
+      color: white;
+      padding: 12px 24px;
+      font-family: 'Gilroy';
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 26px;
+      text-align: center;
+      vertical-align: middle;
+      border-radius: 6px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: #43d14f;
+        color: white;
+      }
+
+      @media screen and (max-width: 991px) {
+        max-width: 100%;
+      }
+    }
+
+    .footer-links {
+      font-size: 12px;
+      color: #ccc;
+      margin-top: 16px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: underline;
+    }
+  }
+}
