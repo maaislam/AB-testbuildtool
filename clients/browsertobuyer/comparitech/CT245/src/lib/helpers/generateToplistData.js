@@ -79,3 +79,52 @@ const generateToplistData = (id) => {
 };
 
 export default generateToplistData;
+
+//old convert function
+//const generateToplistData = (id) => {
+//const listItems = document.querySelectorAll('.entry-content > ol:nth-of-type(1) li');
+//const dataList = [];
+//listItems.forEach((li, index) => {
+//const anchor = li.querySelector('a[href*="/go/"][href*="/l/list"]');
+//const link = anchor ? anchor.getAttribute('href') : null;
+//const fallbackNameElem = li.querySelector('b') || li.querySelector('strong');
+//const nameWithSpan = anchor
+//? anchor.innerText
+//: fallbackNameElem?.innerText || 'Unknown Provider';
+//const name = nameWithSpan
+//.replace(/\(.*?\)/, '')
+//.replace(/EDITOR’S CHOICE/i, '')
+//.trim();
+//const isEditorChoice = anchor?.innerHTML.includes('EDITOR’S CHOICE');
+//const fullText = li.textContent.replace(/\s+/g, ' ').trim();
+//let description = fullText.replace(nameWithSpan, '').trim();
+//const lastSentenceMatch = description.match(/[^.?!]*free trial[^.?!]*[.?!]?$/i);
+//if (lastSentenceMatch) {
+//description = description.replace(lastSentenceMatch[0], '').trim();
+//}
+//let trialLink = null;
+//let trialText = null;
+//const allLinks = [...li.querySelectorAll('a')];
+//allLinks.forEach((a) => {
+//if (!a.href.includes('/l/list')) {
+//trialLink = a.href;
+//trialText = a.textContent;
+//}
+//});
+//if (!trialLink && /trial|demo/i.test(nameWithSpan)) {
+//trialLink = link;
+//trialText = 'Free Trial';
+//}
+//dataList.push({
+//id,
+//index: index + 1,
+//name,
+//link,
+//isEditorChoice,
+//description,
+//trialLink,
+//trialText
+//});
+//});
+//return dataList;
+//};
