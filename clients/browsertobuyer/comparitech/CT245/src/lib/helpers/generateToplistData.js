@@ -3,22 +3,37 @@ const generateToplistData = (id) => {
     const dataList = [];
 
     listItems.forEach((li, index) => {
-        const anchor = li.querySelector('a[href*="/go/"][href*="/l/list"]');
+        const anchor = li.querySelector('a[href*="/go/"][href*="/l/"]');
 
         //Case 1: No anchor means no link - Handle differently
         const link = anchor ? anchor.getAttribute('href') : null;
 
-        //Extract name from anchor or fallback to <b> or <strong> tag
+        //Get surrounding strong or fallback for FREE TRIAL span
+        const strongElem = anchor?.closest('strong');
         const fallbackNameElem = li.querySelector('b') || li.querySelector('strong');
-        const nameWithSpan = anchor
-            ? anchor.innerText
-            : fallbackNameElem?.innerText || 'Unknown Provider';
+
+        //Combine innerText of anchor + optional span inside <strong> (like FREE TRIAL)
+        let nameWithSpan = 'Unknown Provider';
+        if (anchor) {
+            nameWithSpan = anchor.innerText;
+
+            //Check for nearby FREE TRIAL or EDITOR'S CHOICE inside <strong>
+            if (strongElem && strongElem !== anchor) {
+                const strongText = strongElem.innerText.trim();
+                if (strongText.includes(nameWithSpan)) {
+                    nameWithSpan = strongText;
+                }
+            }
+        } else if (fallbackNameElem) {
+            nameWithSpan = fallbackNameElem.innerText;
+        }
 
         const name = nameWithSpan
             .replace(/\(.*?\)/, '')
             .replace(/EDITOR’S CHOICE/i, '')
             .trim();
-        const isEditorChoice = anchor?.innerHTML.includes('EDITOR’S CHOICE');
+
+        const isEditorChoice = /EDITOR’S CHOICE/i.test(nameWithSpan);
 
         //Case 2: Extract description & remove last sentence if it contains "free trial"
         const fullText = li.textContent.replace(/\s+/g, ' ').trim();
