@@ -6,6 +6,7 @@ export const card = (id, data) => {
     casinoName,
     bgImageDesktop,
     bgImageMobile,
+    bgMobileV2,
     casinoLogo,
     mainTitle,
     titleItems,
@@ -14,11 +15,14 @@ export const card = (id, data) => {
     footerText
   } = data;
   const html = `
-        <div class="card" style="--bgImageDesktop:url(${bgImageDesktop}); --bgImageMobile:url(${bgImageMobile})">
+        <div class="card" style="--bgImageDesktop:url(${bgImageDesktop}); --bgImageMobile:url(${bgImageMobile}); --bgMobileV2:url(${bgMobileV2})">
             <div class="card-first-conatiner">
-                <div class="label">${tag}</div>
+                <div class="label hidden-mobile">${tag}</div>
                 <div class="casino-logo">
-                    <img src="${casinoLogo}" alt="${casinoName} logo" loading="lazy" />
+                    <img src="${casinoLogo}" alt="${casinoName} logo"  />
+                </div>
+                <div class="hidden-desktop">
+                    <div class="label">${tag}</div>
                 </div>
             </div>
             <div class="card-content">
@@ -33,11 +37,11 @@ export const card = (id, data) => {
                     </ul>
                 </div>
                 <div class="card-button">
-                    <a href="${ctaLink}" class="cta-button">${ctaText}</a>
+                    <a href="${ctaLink}" target="_blank" class="cta-button" rel="nofollow noreferrer" data-operator="${casinoName}" data-type="button">${ctaText}</a>
                     <div class="footer-links">
-                        <small>
+                        <span>
                             ${footerText}
-                        </small>
+                        </span>
                     </div>
                 </div>
             </div>
