@@ -7,8 +7,8 @@ const tableRow = ({ id, index, name, link, description, trialLink, trialText }) 
     <div class="${id}__card ${index === 1 ? 'highlighted' : ''}">
       <div class="image-wrapper">
         <div class="number">${index}</div>
-        ${link ? `<a href='${link}' class="logo">
-            <img src="${imgSrc}" alt="${name}" class="${id}__logo">
+        ${link && imgSrc ? `<a href='${link}' class="logo">
+            ${imgSrc ? `<img src="${imgSrc}" alt="${name}" class="${id}__logo">` : ''}
         </a>` : ''}
       </div>
       <div class="content-wrapper">
@@ -19,8 +19,8 @@ const tableRow = ({ id, index, name, link, description, trialLink, trialText }) 
         <div class="content">
           <div class="content-details">
             <span>${description}</span>
-            ${link ? `<a href='${link}' class="logo-mobile">
-              <img src="${imgSrc}" alt="${name}" class="${id}__logo">
+            ${link && imgSrc ? `<a href='${link}' class="logo-mobile">
+              ${imgSrc ? `<img src="${imgSrc}" alt="${name}" class="${id}__logo">` : ''}
             </a>` : ''}
           </div>
 
@@ -37,6 +37,6 @@ const tableRow = ({ id, index, name, link, description, trialLink, trialText }) 
         </div>
       </div>
     </div>`;
-  };
+};
 
 export default tableRow;
