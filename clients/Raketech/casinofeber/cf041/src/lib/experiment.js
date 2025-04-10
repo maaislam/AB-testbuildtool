@@ -3,7 +3,6 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { cardWrapper } from './components/cardWrapper';
 import { bottomCardsData, topCardsData } from './data/data';
-import { onUrlChange, pollerLite } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
