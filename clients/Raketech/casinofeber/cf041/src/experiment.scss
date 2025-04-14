@@ -26,26 +26,10 @@
       padding: 10px;
       cursor: pointer;
 
-      &:first-child {
-        background-image: url('https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/betmgm-desktop-banner_optimised.png');
-      }
-
-      &:last-child {
-        background-image: url('https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/casinoepic-desktop-banner_optimised.png');
-      }
-
       @media screen and (max-width: 991px) {
         width: 100%;
         background-image: var(--bgImageMobile);
         padding: 30px 24px 20px;
-
-        &:first-child {
-          background-image: url('https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/betmgm-mobile-banner_optimised.png');
-        }
-
-        &:last-child {
-          background-image: url('https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/casinoepic-mobile-banner_optimised.png');
-        }
 
         &:last-child {
           margin-top: 16px;
@@ -338,17 +322,29 @@
 
     .add-content {
       background-color: #f4f4f4;
-      padding: 3px 12px 5px 12px;
+      padding: 3px 0px 5px 0px;
 
       @media screen and (max-width: 991px) {
-        padding: 3px 16px 5px;
+        padding: 3px 0px 5px;
       }
     }
 
     .offer-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
+      padding-left: 12px;
+      padding-right: 12px;
+      display: inline-block;
+      width: 100%;
+
+      @media screen and (max-width: 991px) {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      span {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
 
       strong {
         font-family: 'Gilroy';
@@ -377,6 +373,13 @@
       vertical-align: middle;
       color: #000000;
       margin-bottom: 8px;
+    }
+    .#{$id}__add-content__footer {
+      padding: 0 12px;
+
+      @media screen and (max-width: 991px) {
+        padding: 0 16px;
+      }
     }
 
     .add-footer {

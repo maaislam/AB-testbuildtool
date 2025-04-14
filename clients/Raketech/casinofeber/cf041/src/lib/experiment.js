@@ -57,10 +57,10 @@ export default () => {
       const clickedItem = target.closest('.ad-image-wrapper');
       const operatorName = clickedItem.getAttribute('data-operator');
       gaTracking(`${operatorName} CTO | Logo | Top-banner`);
-    } else if (target.closest('.external-link') && target.closest(`.${ID}__miniCardContainer`)) {
-      const clickedItem = target.closest('.external-link');
+    } else if (target.closest('.offer-title') && target.closest(`.${ID}__miniCardContainer`)) {
+      const clickedItem = target.closest('.offer-title');
       const operatorName = clickedItem.getAttribute('data-operator');
-      gaTracking(`${operatorName} CTO | Button | Top-banner`);
+      gaTracking(`${operatorName} CTO | Content | Top-banner`);
     } else if (target.closest('.upper-content')) {
       const clickedItem = target.closest('.upper-content');
       const operatorName = clickedItem.getAttribute('data-operator');

@@ -12,13 +12,7 @@ export const topCardsData = [
     ctaText: 'TILL BetMGM',
     ctaLink: '/spela/betmgm-casino',
     footerText: `
-      18+. Gäller nya spelare vid första insättningen. Min insättning 100 kr. 20x
-      omsättningskrav. Gratisspins är omsättningsfria &amp; giltiga i 60 dagar. Ev. vinster är riktiga pengar. Regler
-      &amp; villkor här. <a href="https://www.stodlinjen.se/"
-        target="_blank"
-        rel="nofollow">stodlinjen.se</a> - <a href="https://www.spelpaus.se"
-        target="_blank"
-      rel="nofollow">spelpaus.se</a>. Spela ansvarsfullt.
+      18+ | Erbjudandet gäller nya kunder | Min. insättning 100 kr | Omsättningskrav: 35x | Free spins är omsättningsfria | <a href="https://www.casinofeber.se/spela/betmgm-casino/villkor" target="_blank" rel="nofollow"> Regler & Villkor gäller </a> | Spela ansvarsfullt | <a href="https://www.stodlinjen.se/" target="_blank" rel="nofollow"> stodlinjen.se </a>  
         `
   },
   {
@@ -35,13 +29,7 @@ export const topCardsData = [
     ctaText: 'Hämta BONUS',
     ctaLink: '/spela/casinoepic',
     footerText: `
-      Reklamlänk | 18+ | <a href="/spela/casinoepic/villkor"
-   target="_blank"
-   rel="nofollow noreferrer noopener"
-   data-operator="casinoepic"
-   data-type="terms">Regler &amp; villkor gäller</a> | Spela ansvarsfullt | <a href="https://www.stodlinjen.se"
-   target="_blank"
-   rel="nofollow noreferrer noopener">stodlinjen.se</a>
+      18+ | Erbjudandet gäller nya kunder | Min. insättning 200 kr | Omsättningskrav: 35x | <a href="https://www.casinofeber.se/spela/casinoepic/villkor" target="_blank" rel="nofollow"> Regler & Villkor gäller </a> | Spela ansvarsfullt | <a href="https://www.stodlinjen.se/" target="_blank" rel="nofollow"> stodlinjen.se </a>
     `
   }
 ];
@@ -100,13 +88,7 @@ export const bottomCardsData = [
     subtitle: 'Upp till 4000 kr + 200 free spins',
     casinoLink: '/spela/betmgm-casino',
     footerText: `
-      18+. Gäller nya spelare vid första insättningen. Min insättning 100 kr. 20x
-      omsättningskrav. Gratisspins är omsättningsfria &amp; giltiga i 60 dagar. Ev. vinster är riktiga pengar. Regler
-      &amp; villkor här. <a href="https://www.stodlinjen.se/"
-        target="_blank"
-        rel="nofollow">stodlinjen.se</a> - <a href="https://www.spelpaus.se"
-        target="_blank"
-      rel="nofollow">spelpaus.se</a>. Spela ansvarsfullt.
+      18+ | Erbjudandet gäller nya kunder | Min. insättning 100 kr | Omsättningskrav: 35x | Free spins är omsättningsfria | <a href="https://www.casinofeber.se/spela/betmgm-casino/villkor" target="_blank" rel="nofollow"> Regler & Villkor gäller </a> | Spela ansvarsfullt | <a href="https://www.stodlinjen.se/" target="_blank" rel="nofollow"> stodlinjen.se </a>  
         `,
     borderColorV1: '#000000',
     borderColorV2: '#000000'

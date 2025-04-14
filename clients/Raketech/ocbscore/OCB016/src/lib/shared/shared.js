@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "cf041",
+    ID: "OCB016",
     VARIATION: "1",
     CLIENT: "Raketech",
-    SITE: "casinofeber"
+    SITE: "ocbscore"
   };
