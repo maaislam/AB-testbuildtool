@@ -37,8 +37,8 @@ export const card = (id, data) => {
                     </ul>
                 </div>
                 <div class="card-button">
-                    <a href="${ctaLink}" target="_blank" class="cta-button" rel="nofollow noreferrer" data-operator="${casinoName}" data-type="button">${ctaText}</a>
-                    <div class="footer-links">
+                    <a href="${ctaLink}" target="_blank" class="cta-button ${id}__cta" rel="nofollow noreferrer" data-operator="${casinoName}" data-type="button">${ctaText}</a>
+                    <div class="footer-links ${id}__footer-links">
                         <span>
                             ${footerText}
                         </span>

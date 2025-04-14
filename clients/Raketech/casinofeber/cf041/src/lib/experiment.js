@@ -31,14 +31,28 @@ export default () => {
   //-----------------------------
   //If control, bail out from here
   //-----------------------------
-
-  document.body.addEventListener('click', (e) => {
+  let flag = false;
+  const clickHandler = (e) => {
     const { target } = e;
-    console.log(target.closest('.upper-content'), 'clicked');
-    if (target.closest('.cta-button') && target.closest(`.${ID}__cardContainer`)) {
-      const clickedItem = target.closest('.cta-button');
+
+    if (
+      target.closest(`.${ID}__cardContainer`) &&
+      !target.closest(`.${ID}__cta`) &&
+      !target.closest(`${ID}__footer-links`)
+    ) {
+      //eslint-disable-next-line no-unused-vars
+      flag = true;
+      const clickedItem = target.closest(`.${ID}__cardContainer`);
+      const button = clickedItem.querySelector(`.${ID}__cta`);
+      if (button) button.click();
+    }
+    if (target.closest(`.${ID}__cta`)) {
+      const clickedItem = target.closest(`.${ID}__cta`);
       const operatorName = clickedItem.getAttribute('data-operator');
-      gaTracking(`${operatorName} CTO | Button | Top Banner`);
+      flag === true
+        ? gaTracking(`${operatorName} | Top-Card`)
+        : gaTracking(`${operatorName} CTO | Button | Top-Card`);
+      flag = false;
     } else if (target.closest('.ad-image-wrapper') && target.closest(`.${ID}__miniCardContainer`)) {
       const clickedItem = target.closest('.ad-image-wrapper');
       const operatorName = clickedItem.getAttribute('data-operator');
@@ -50,15 +64,15 @@ export default () => {
     } else if (target.closest('.upper-content')) {
       const clickedItem = target.closest('.upper-content');
       const operatorName = clickedItem.getAttribute('data-operator');
-      gaTracking(`${operatorName} | Card`);
+      gaTracking(`${operatorName} | Top-Banner`);
     } else if (target.closest('.block-link.hide-desktop') && target.closest('a')) {
       const clickedItem = target.closest('a');
       const operatorName = clickedItem.querySelector('img').alt;
-      gaTracking(`${operatorName} | Top Banner`);
+      gaTracking(`${operatorName} | Top-Card`);
     } else if (target.closest('.block-link.hide-mobile') && target.closest('a')) {
       const clickedItem = target.closest('a');
       const operatorName = clickedItem.querySelector('img').alt;
-      gaTracking(`${operatorName} | Top Banner`);
+      gaTracking(`${operatorName} | Top-Card`);
     } else if (target.closest('.operator-container') && target.closest('.logo-container')) {
       const clickedItem = target.closest('.logo-container');
       const operatorName = clickedItem
@@ -70,7 +84,14 @@ export default () => {
       const operatorName = clickedItem.getAttribute('data-operator');
       gaTracking(`${operatorName} CTO | Button | Toplist`);
     }
-  });
+  };
+
+  const isListenerAdded = document.body.dataset[`${ID}__isListenerAdded`];
+  if (!isListenerAdded) {
+    document.body.addEventListener('click', clickHandler);
+  }
+  document.body.dataset[`${ID}__isListenerAdded`] = true;
+
   if (VARIATION === 'control') return;
 
   init();

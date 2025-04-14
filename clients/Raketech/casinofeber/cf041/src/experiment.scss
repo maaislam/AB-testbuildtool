@@ -24,11 +24,28 @@
       background-position: center;
       position: relative;
       padding: 10px;
+      cursor: pointer;
+
+      &:first-child {
+        background-image: url('https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/betmgm-desktop-banner_optimised.png');
+      }
+
+      &:last-child {
+        background-image: url('https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/casinoepic-desktop-banner_optimised.png');
+      }
 
       @media screen and (max-width: 991px) {
         width: 100%;
         background-image: var(--bgImageMobile);
         padding: 30px 24px 20px;
+
+        &:first-child {
+          background-image: url('https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/betmgm-mobile-banner_optimised.png');
+        }
+
+        &:last-child {
+          background-image: url('https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/casinoepic-mobile-banner_optimised.png');
+        }
 
         &:last-child {
           margin-top: 16px;

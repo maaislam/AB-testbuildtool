@@ -3,9 +3,9 @@ export const topCardsData = [
     tag: 'NYTT CASINO',
     casinoName: 'betmgm-casino',
     bgImageDesktop:
-      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/betmgm-desktop-banner.png',
+      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/betmgm-desktop-banner_optimised.png',
     bgImageMobile:
-      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/betmgm-mobile-banner.png',
+      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/betmgm-mobile-banner_optimised.png',
     casinoLogo: 'https://media.casinofeber.se/operators/betmgm-big-logo.svg',
     mainTitle: 'Upp till 4000 kr & 200 free spins',
     titleItems: ['Nu äntligen live i Sverige', 'Omedelbara uttag', 'Omsättningsfria spins'],
@@ -25,9 +25,9 @@ export const topCardsData = [
     tag: 'NYLANSERING',
     casinoName: 'casinoepic',
     bgImageDesktop:
-      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/casinoepic-desktop-banner.png',
+      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/casinoepic-desktop-banner_optimised.png',
     bgImageMobile:
-      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/casinoepic-mobile-banner.png',
+      'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/casinoepic-mobile-banner_optimised.png',
     casinoLogo:
       'https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/casinofeber/casino-epic-logo.png',
     mainTitle: '200 free spins till alla nya spelare',
