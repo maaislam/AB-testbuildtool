@@ -2,8 +2,32 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  &__hide {
+    display: none !important;
+  }
+
+  &__addedToBasket {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    font: normal normal 600 16px/22px Work Sans;
+    letter-spacing: 0;
+    color: #000;
+    text-align: left;
+
+    &::before {
+      content: "\e92e";
+      font-family: "icomoon";
+      font-size: 2rem;
+      font-weight: 400;
+      margin-right: .3em;
+      line-height: 1.8rem;
+    }
+  }
+
   #product-addtocart-button {
     position: relative;
+
     &:before {
       content: '';
       position: absolute;
@@ -97,35 +121,51 @@
       top: 0;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: space-between;
       color: #fff;
-      padding: 24px 24px 30px;
+      padding: 50px 16px 30px;
       background: #e5efe5;
       z-index: 99;
 
+      @include media-query(sm) {
+        padding: 28px 24px 30px;
+      }
+
       .#{$id}__closeWrapper {
-        display: flex;
-        align-items: center;
-        font-family: 'screwfix_betabold';
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 25px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
         cursor: pointer;
 
+        @include media-query(sm) {
+          top: 10px;
+          right: 10px;
+        }
+
         svg {
-          width: 24px;
-          height: 24px;
-          padding-left: 8px;
+          width: 36px;
+          height: 36px;
         }
       }
     }
   }
 
   &__headerMessage {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
+
     &__icon {
+      height: 30px;
+      width: 30px;
+      margin-right: 9px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
     }
+
     &__msg {
       font: normal normal normal 30px/40px Lucida Bright;
       letter-spacing: 0px;
@@ -136,12 +176,15 @@
   &__prodInfoWrapper {
     display: flex;
     justify-content: space-between;
+
     .#{$id}__prodImage {
       width: calc(50% - 12px);
     }
+
     .#{$id}__prodContent {
       width: calc(50% - 12px);
       text-align: left;
+
       &__title {
         font: normal normal 600 19px/26px Work Sans;
         color: #202020;
@@ -149,6 +192,7 @@
 
       &__info {
         margin: 10px 0;
+
         span {
           font: normal normal normal 14px/20px Work Sans;
           color: #202020;
@@ -167,6 +211,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+
     &__cartBtn {
       width: calc(50% - 7px);
       background-color: #6c7c69;
@@ -178,6 +223,7 @@
         background: #546052;
       }
     }
+
     &__checkoutBtn {
       width: calc(50% - 7px);
       margin: 0;
@@ -193,11 +239,15 @@
 
   &__prodAccessoriesWrapper {
     margin-top: 28px;
+    padding: 0 25px;
+
     .#{$id}__prodAccessoriesTitle {
-      font: normal normal normal 22px/45px Lucida Bright;
+      font: normal normal normal 23px/25px Lucida Bright;
       color: #2f2f2f;
-      margin-bottom: 10px;
+      margin-bottom: 0;
+      text-align: left;
     }
+
     .#{$id}__prodAccessoriesBtn {
       max-width: 290px;
       width: 100%;
@@ -207,6 +257,135 @@
       padding: 14px 17px 18px;
       border: 1px solid #1c1c1c;
       cursor: pointer;
+    }
+  }
+
+  &__productCard {
+    padding: 24px 0;
+    display: none;
+    align-items: center;
+    max-width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+
+    &.active {
+      display: flex;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .#{$id}__productImage {
+      width: 160px;
+      height: 100px;
+      margin-right: 16px;
+    }
+
+    .#{$id}__productContent {
+      flex: 1;
+
+      .product-title {
+        margin-bottom: 5px;
+        font-family: 'Work Sans';
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 25px;
+        color: #202020;
+        text-align: left;
+      }
+
+      .product-price {
+        font-family: 'Work Sans';
+        font-weight: 600;
+        font-size: 19px;
+        line-height: 27px;
+        color: #202020;
+        text-align: left;
+      }
+
+      .#{$id}__actionWrapper {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .quantity-add {
+        padding: 0 4px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #464646;
+        width: fit-content;
+        height: 50px;
+      }
+
+      .quantity-add button {
+        margin-bottom: 0;
+        width: 16px;
+        height: 16px;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .quantity-add input {
+        margin-bottom: 0;
+        width: 50px;
+        text-align: center;
+        background-color: transparent;
+      }
+
+      .#{$id}__actionWrapper {
+        display: flex;
+      }
+
+      .#{$id}__atcBtn {
+        margin: 10px 0 0 16px;
+        padding: 0 0 3px 0;
+        color: #202020;
+        border: none;
+        border-bottom: 2px solid #202020;
+        cursor: pointer;
+        background: none;
+      }
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 30px 0;
+
+    .arrow {
+      margin: 0;
+      border: 1px solid #707070;
+      padding: 10px;
+      cursor: pointer;
+      background: #fff;
+
+      svg {
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    .arrow:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    #rangeText {
+      font-size: 16px;
     }
   }
 }

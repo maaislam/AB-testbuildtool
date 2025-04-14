@@ -107,3 +107,28 @@ export const addToCart = (prodId, formKey, action, quantity) => {
     });
   });
 };
+
+export const fetchProductDetails = (urls) => {
+  const fetchPromises = urls.map((url) =>
+    fetch(url, {
+      headers: {
+        Accept: 'text/html'
+      }
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return response.text();
+      })
+      .then((html) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        return doc;
+      })
+      .catch((error) => ({
+        url,
+        error: error.message
+      })));
+
+  return Promise.all(fetchPromises); //Return the promise
+};
