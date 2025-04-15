@@ -158,19 +158,37 @@ export default () => {
         updatePaginationUI(ID, currentPage, itemsPerPage);
       }
     } else if (target.closest(`.${ID}__plusBtn`)) {
+      const cardElem = target.closest(`.${ID}__productCard`);
+      const cardPriceElem = cardElem.querySelector('.product-price');
+      const cardPrice = cardPriceElem.dataset.price;
+
       const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
+
       if (qtyInput) {
         const currentValue = parseInt(qtyInput.value) || 1;
         if (currentValue > 1) {
           qtyInput.value = currentValue - 1;
         }
       }
+
+      const priceFormat = cardPrice.replace('£', '');
+      const updatedPrice = Number(priceFormat) * Number(qtyInput.value);
+      cardPriceElem.textContent = `£${updatedPrice.toFixed(2)}`;
     } else if (target.closest(`.${ID}__minusBtn`)) {
+      const cardElem = target.closest(`.${ID}__productCard`);
+      const cardPriceElem = cardElem.querySelector('.product-price');
+      const cardPrice = cardPriceElem.dataset.price;
+
       const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
+
       if (qtyInput) {
         const currentValue = parseInt(qtyInput.value) || 1;
         qtyInput.value = currentValue + 1;
       }
+
+      const priceFormat = cardPrice.replace('£', '');
+      const updatedPrice = Number(priceFormat) * Number(qtyInput.value);
+      cardPriceElem.textContent = `£${updatedPrice.toFixed(2)}`;
     } else if (target.closest(`#${ID}__productAtcBtn`)) {
       const productAtcBtn = target.closest(`#${ID}__productAtcBtn`);
       const productCard = productAtcBtn.closest(`.${ID}__productCard`);
@@ -181,14 +199,22 @@ export default () => {
 
       const actionWrapper = productCard.querySelector(`.${ID}__actionWrapper`);
       const addedToBasketElement = productCard.querySelector(`.${ID}__addedToBasket`);
+      const addingToBasketElement = productCard.querySelector(`.${ID}__addingToBasket`);
+
+      actionWrapper.classList.add(`${ID}__hide`);
+      addingToBasketElement.classList.remove(`${ID}__hide`);
+
       addToCart(sku, formKey, url, quantity)
         .then(() => {
-          actionWrapper.classList.add(`${ID}__hide`);
-          addedToBasketElement.classList.remove(`${ID}__hide`);
           window.require(['Magento_Customer/js/customer-data'], (customerData) => {
             customerData.invalidate(['cart']); //Mark the cart data as stale
             customerData.reload(['cart'], true); //Force reload from server
           });
+        })
+        .then(() => {
+          actionWrapper.classList.add(`${ID}__hide`);
+          addingToBasketElement.classList.add(`${ID}__hide`);
+          addedToBasketElement.classList.remove(`${ID}__hide`);
         })
         .catch((err) => {
           console.error('Error:', err);
