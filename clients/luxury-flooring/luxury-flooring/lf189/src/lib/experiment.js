@@ -14,7 +14,9 @@ const productsData = [];
 const captureElementsContainingString = (searchString) => {
   const elements = [...document.querySelectorAll('#shopping-cart-table .product-item-name a')]; //Get all elements as an array
 
-  return elements.filter((el) => el.textContent.toLowerCase().trim().includes(searchString.toLowerCase().trim()));
+  return elements.filter((el) =>
+    el.textContent.toLowerCase().trim().includes(searchString.toLowerCase().trim())
+  );
 };
 
 const contentUpdate = (price, meterInfo, packInfo) => {
@@ -33,10 +35,11 @@ const contentUpdate = (price, meterInfo, packInfo) => {
 const init = () => {
   if (window.location.pathname === '/checkout/cart/' && VARIATION === '1') {
     const prodTitle = window.sessionStorage.getItem(`${ID}__productTitle`);
-    if (captureElementsContainingString(prodTitle)) {
+    if (captureElementsContainingString(prodTitle) && prodTitle) {
       const itemWrapper = captureElementsContainingString(prodTitle)[0].closest('.item-info');
       const accessoriesBtn = itemWrapper.querySelector('button.flooring-accessories');
       clickUntilModalAppears(accessoriesBtn, '.cart-crosssell._show');
+      window.sessionStorage.removeItem(`${ID}__productTitle`);
     }
 
     return;
@@ -47,7 +50,9 @@ const init = () => {
 
   const productTitleElem = document.querySelector('.page-title [data-ui-id="page-title-wrapper"]');
   const productTitle = productTitleElem?.textContent?.trim();
-  const dontForgetItems = document.querySelectorAll('.product-item.plp:not(.flooring-product) .product-item-info');
+  const dontForgetItems = document.querySelectorAll(
+    '.product-item.plp:not(.flooring-product) .product-item-info'
+  );
 
   const extractedData = Array.from(dontForgetItems).map((item) => {
     const productLink = item.querySelector('.product-item-link')?.href;
@@ -55,39 +60,47 @@ const init = () => {
     return productLink;
   });
 
-  fetchProductDetails(extractedData)
-    .then((results) => {
-      if (results.length === 0) return;
+  fetchProductDetails(extractedData).then((results) => {
+    console.log(results, 'results');
+    if (results.length === 0) {
+      document.documentElement.classList.remove(ID);
+      document.documentElement.classList.remove(`${ID}-${VARIATION}`);
+      return;
+    }
 
-      results.forEach((doc) => {
-        const image = doc.querySelector('.gallery__item--image img');
-        const priceElem = doc.querySelector('[data-price-type="finalPrice"]');
-        const productTitleElement = doc.querySelector('.page-title');
-        const sku = doc.querySelector('input[name="product"]')?.value;
-        const formKey = doc.querySelector('input[name="form_key"]')?.value;
-        const addFormWrapper = doc.querySelector('#product_addtocart_form');
-        const url = addFormWrapper.action;
+    results.forEach((doc) => {
+      const image = doc.querySelector('.gallery__item--image img');
+      const priceElem = doc.querySelector('[data-price-type="finalPrice"]');
+      const productTitleElement = doc.querySelector('.page-title');
+      const sku = doc.querySelector('input[name="product"]')?.value;
+      const formKey = doc.querySelector('input[name="form_key"]')?.value;
+      const addFormWrapper = doc.querySelector('#product_addtocart_form');
+      const url = addFormWrapper.action;
 
-        const imgSrc = image?.getAttribute('src');
-        const productTitleText = productTitleElement?.textContent?.trim();
-        const price = priceElem?.textContent?.trim();
+      const imgSrc = image?.getAttribute('src');
+      const productTitleText = productTitleElement?.textContent?.trim();
+      const price = priceElem?.textContent?.trim();
 
-        const productData = {
-          imgSrc,
-          productTitleText,
-          price,
-          sku,
-          formKey,
-          url
-        };
+      const productData = {
+        imgSrc,
+        productTitleText,
+        price,
+        sku,
+        formKey,
+        url
+      };
 
-        productsData.push(productData);
-      });
-
-      if (!document.querySelector(`.${ID}__modal`)) {
-        document.body.insertAdjacentHTML('beforeend', modal(ID, imageSrc, productTitle, VARIATION, productsData));
-      }
+      productsData.push(productData);
     });
+
+    if (!document.querySelector(`.${ID}__modal`)) {
+      console.log('render dom');
+      document.body.insertAdjacentHTML(
+        'beforeend',
+        modal(ID, imageSrc, productTitle, VARIATION, productsData)
+      );
+    }
+  });
 };
 
 export default () => {
@@ -117,6 +130,10 @@ export default () => {
           .then(() => {
             openModal(ID);
             contentUpdate(price, meterInfo, packInfo);
+            window.require(['Magento_Customer/js/customer-data'], (customerData) => {
+              customerData.invalidate(['cart']); //Mark the cart data as stale
+              customerData.reload(['cart'], true); //Force reload from server
+            });
           })
           .catch((err) => {
             console.error('Error:', err);
@@ -141,9 +158,7 @@ export default () => {
         updatePaginationUI(ID, currentPage, itemsPerPage);
       }
     } else if (target.closest(`.${ID}__plusBtn`)) {
-      const qtyInput = target
-        .closest(`.${ID}__actionWrapper`)
-        .querySelector(`.${ID}__qtyInput`);
+      const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
       if (qtyInput) {
         const currentValue = parseInt(qtyInput.value) || 1;
         if (currentValue > 1) {
@@ -151,9 +166,7 @@ export default () => {
         }
       }
     } else if (target.closest(`.${ID}__minusBtn`)) {
-      const qtyInput = target
-        .closest(`.${ID}__actionWrapper`)
-        .querySelector(`.${ID}__qtyInput`);
+      const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
       if (qtyInput) {
         const currentValue = parseInt(qtyInput.value) || 1;
         qtyInput.value = currentValue + 1;
@@ -168,10 +181,18 @@ export default () => {
 
       const actionWrapper = productCard.querySelector(`.${ID}__actionWrapper`);
       const addedToBasketElement = productCard.querySelector(`.${ID}__addedToBasket`);
-      addToCart(sku, formKey, url, quantity).then(() => {
-        actionWrapper.classList.add(`${ID}__hide`);
-        addedToBasketElement.classList.remove(`${ID}__hide`);
-      });
+      addToCart(sku, formKey, url, quantity)
+        .then(() => {
+          actionWrapper.classList.add(`${ID}__hide`);
+          addedToBasketElement.classList.remove(`${ID}__hide`);
+          window.require(['Magento_Customer/js/customer-data'], (customerData) => {
+            customerData.invalidate(['cart']); //Mark the cart data as stale
+            customerData.reload(['cart'], true); //Force reload from server
+          });
+        })
+        .catch((err) => {
+          console.error('Error:', err);
+        });
     }
   });
 

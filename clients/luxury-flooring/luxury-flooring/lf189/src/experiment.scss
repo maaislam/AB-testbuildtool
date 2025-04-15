@@ -85,11 +85,11 @@
     text-align: left;
 
     &::before {
-      content: "\e92e";
-      font-family: "icomoon";
+      content: '\e92e';
+      font-family: 'icomoon';
       font-size: 2rem;
       font-weight: 400;
-      margin-right: .3em;
+      margin-right: 0.3em;
       line-height: 1.8rem;
     }
   }
@@ -320,7 +320,7 @@
       font: normal normal normal 23px/25px Lucida Bright;
       color: #2f2f2f;
       margin-bottom: 0;
-      text-align: left;
+      text-align: center;
 
       @include media-query(sm) {
         font-size: 19px;
