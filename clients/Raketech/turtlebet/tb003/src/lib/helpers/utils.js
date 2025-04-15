@@ -96,7 +96,3 @@ export const onUrlChange = (callback, onError = null) => {
     }
   }
 };
-
-export const setTextCopy = (copyText) => {
-  navigator.clipboard.writeText(copyText);
-};
