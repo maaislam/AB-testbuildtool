@@ -6,6 +6,75 @@
     display: none !important;
   }
 
+  &-1 {
+    .#{$id}__prodBtnWrapperMobile {
+      display: none;
+    }
+
+    .#{$id}__modal.#{$id}__open {
+      .#{$id}__modal-container {
+        @media screen and (min-width: 641px) {
+          animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @media screen and (max-width: 640px) {
+          max-height: calc(100% - 200px);
+          padding-bottom: 40px;
+          animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @media screen and (max-width: 390px) {
+          max-height: calc(100% - 200px);
+          padding-bottom: 40px;
+        }
+
+        // @media screen and (max-width: 375px) {
+        //   max-height: calc(100% - 200px);
+        // }
+      }
+    }
+  }
+
+  &-2 {
+    .#{$id}__prodBtnWrapperMobile {
+      padding-top: 40px;
+      border-top: 1px solid #ddd;
+      display: none;
+
+      @include media-query(sm) {
+        display: block;
+      }
+
+      a {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    .#{$id}__modal.#{$id}__open {
+      .#{$id}__modal-container {
+        @media screen and (min-width: 641px) {
+          animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @media screen and (max-width: 640px) {
+          max-height: calc(100% - 100px);
+          padding-bottom: 40px;
+          animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @media screen and (max-width: 390px) {
+          max-height: calc(100% - 100px);
+          padding-bottom: 40px;
+        }
+
+        // @media screen and (max-width: 375px) {
+        //   max-height: calc(100% - 200px);
+        // }
+      }
+    }
+  }
+
   &__addedToBasket {
     margin-top: 8px;
     display: flex;
@@ -77,30 +146,8 @@
       }
 
       @media screen and (max-width: 640px) {
-        top: 31%;
-      }
-    }
-
-    &.#{$id}__open {
-      .#{$id}__modal-container {
-        @media screen and (min-width: 641px) {
-          animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-        }
-
-        @media screen and (max-width: 640px) {
-          max-height: calc(100% - 200px);
-          padding-bottom: 40px;
-          animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-        }
-
-        @media screen and (max-width: 390px) {
-          max-height: calc(100% - 200px);
-          padding-bottom: 40px;
-        }
-
-        // @media screen and (max-width: 375px) {
-        //   max-height: calc(100% - 200px);
-        // }
+        top: unset;
+        bottom: 0;
       }
     }
 
@@ -128,7 +175,7 @@
       z-index: 99;
 
       @include media-query(sm) {
-        padding: 28px 24px 30px;
+        padding: 28px 16px;
       }
 
       .#{$id}__closeWrapper {
@@ -160,6 +207,11 @@
       width: 30px;
       margin-right: 9px;
 
+      @include media-query(sm) {
+        height: 24px;
+        width: 24px;
+      }
+
       svg {
         width: 100%;
         height: 100%;
@@ -170,6 +222,11 @@
       font: normal normal normal 30px/40px Lucida Bright;
       letter-spacing: 0px;
       color: #2f2f2f;
+
+      @include media-query(sm) {
+        font-size: 19px;
+        line-height: 26px;
+      }
     }
   }
 
@@ -185,9 +242,18 @@
       width: calc(50% - 12px);
       text-align: left;
 
+      @include media-query(sm) {
+        width: 50%;
+      }
+
       &__title {
         font: normal normal 600 19px/26px Work Sans;
         color: #202020;
+
+        @include media-query(sm) {
+          font-size: 16px;
+          line-height: 22px;
+        }
       }
 
       &__info {
@@ -211,6 +277,10 @@
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+
+    @include media-query(sm) {
+      display: none;
+    }
 
     &__cartBtn {
       width: calc(50% - 7px);
@@ -241,17 +311,28 @@
     margin-top: 28px;
     padding: 0 25px;
 
+    @include media-query(sm) {
+      margin-top: 24px;
+      padding: 0 16px;
+    }
+
     .#{$id}__prodAccessoriesTitle {
       font: normal normal normal 23px/25px Lucida Bright;
       color: #2f2f2f;
       margin-bottom: 0;
       text-align: left;
+
+      @include media-query(sm) {
+        font-size: 19px;
+        line-height: 1.2;
+      }
     }
 
     .#{$id}__prodAccessoriesBtn {
+      display: block;
       max-width: 290px;
       width: 100%;
-      margin: 0 auto;
+      margin: 20px auto;
       font: normal normal normal 16px/22px Work Sans;
       color: #202020;
       padding: 14px 17px 18px;
@@ -268,6 +349,11 @@
     background-color: #fff;
     border-bottom: 1px solid #ddd;
 
+    @include media-query(sm) {
+      padding: 20px 0;
+      border-bottom: 0;
+    }
+
     &.active {
       display: flex;
     }
@@ -282,6 +368,11 @@
       width: 160px;
       height: 100px;
       margin-right: 16px;
+
+      @include media-query(sm) {
+        max-width: 120px;
+        height: auto;
+      }
     }
 
     .#{$id}__productContent {
@@ -295,6 +386,11 @@
         line-height: 25px;
         color: #202020;
         text-align: left;
+
+        @include media-query(sm) {
+          font-size: 16px;
+          line-height: 1.2;
+        }
       }
 
       .product-price {
@@ -319,6 +415,11 @@
         border: 1px solid #464646;
         width: fit-content;
         height: 50px;
+
+        @include media-query(sm) {
+          max-width: 75px;
+          height: 40px;
+        }
       }
 
       .quantity-add button {
@@ -341,6 +442,10 @@
         width: 50px;
         text-align: center;
         background-color: transparent;
+
+        @include media-query(sm) {
+          width: 35px;
+        }
       }
 
       .#{$id}__actionWrapper {
@@ -355,6 +460,10 @@
         border-bottom: 2px solid #202020;
         cursor: pointer;
         background: none;
+
+        @include media-query(sm) {
+          margin: 10px 0 0 10px;
+        }
       }
     }
   }
@@ -365,6 +474,10 @@
     justify-content: center;
     gap: 16px;
     margin: 30px 0;
+
+    @include media-query(sm) {
+      margin: 28px 0;
+    }
 
     .arrow {
       margin: 0;

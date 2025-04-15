@@ -1,13 +1,13 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { addToCart, clickUntilModalAppears, fetchProductDetails } from './helpers/utils';
+import { addToCart, clickUntilModalAppears, fetchProductDetails, isMobile } from './helpers/utils';
 import modal from './components/modal';
 import openModal from './helpers/openModal';
 import { closeModal } from './helpers/closeModal';
 import updatePaginationUI from './helpers/updatePaginationUI';
 
 const { ID, VARIATION } = shared;
-const itemsPerPage = 3;
+const itemsPerPage = isMobile() ? 1 : 3;
 let currentPage = 0;
 const productsData = [];
 
@@ -114,10 +114,9 @@ export default () => {
 
       if (price !== '£0.00' || !totalPriceElement) {
         addToCart(sku, formKey, url, quantity)
-          .then((response) => {
+          .then(() => {
             openModal(ID);
             contentUpdate(price, meterInfo, packInfo);
-            console.log(response, 'response');
           })
           .catch((err) => {
             console.error('Error:', err);
