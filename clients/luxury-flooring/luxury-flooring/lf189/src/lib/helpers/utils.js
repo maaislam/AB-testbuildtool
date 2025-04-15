@@ -132,3 +132,5 @@ export const fetchProductDetails = (urls) => {
 
   return Promise.all(fetchPromises); //Return the promise
 };
+
+export const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
