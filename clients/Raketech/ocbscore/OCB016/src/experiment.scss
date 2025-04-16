@@ -23,6 +23,13 @@
       text-transform: capitalize;
     }
   }
+  .#{$id}__MuiBox-root {
+    @media screen and (max-width: 767px) {
+      grid-template: 1fr / 80px auto !important;
+    }
+  }
+  .#{$id}__terms {
+  }
   button[type='button'] {
     a[data-type='button'] {
       position: relative;
@@ -52,7 +59,7 @@
       width: 100%;
       height: 100vh;
       background: #000;
-      opacity: 0.5;
+      opacity: 0.7;
       z-index: 99999;
     }
 
@@ -69,17 +76,17 @@
       border: 1px solid #f56701;
       z-index: 999999;
 
+      /* These are the key changes 👇 */
+      max-height: 90vh; /* Max height = 90% of viewport height */
+      height: auto; /* Let it shrink as needed */
+      overflow-y: auto; /* Scroll if content overflows */
+
       &::-webkit-scrollbar {
         display: none;
       }
 
       @media screen and (max-width: 767px) {
         max-width: 350px;
-      }
-
-      @media screen and (max-width: 389px) {
-        height: 400px;
-        overflow-y: scroll;
       }
     }
 
@@ -128,7 +135,7 @@
 
     .#{$id}__item {
       display: flex;
-      align-items: center;
+      align-items: baseline;
 
       p {
         font-weight: 400;
@@ -206,7 +213,7 @@
     svg {
       width: 32px;
       height: 32px;
-      padding-left: 8px;
+      margin-left: 8px;
 
       @media screen and (max-width: 767px) {
         width: 24px;
@@ -218,6 +225,11 @@
   .#{$id}__logoImageWrapper {
     width: 80px;
     height: 70px;
+
+    @media screen and (max-width: 767px) {
+      width: 60px;
+      height: 50px;
+    }
   }
 }
 

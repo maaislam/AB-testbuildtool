@@ -1,0 +1,28 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .MuiBox-root.css-uuwyu7 {
+    a:first-child {
+      display: none;
+    }
+  }
+
+  .#{$id}__casinoReviewLink {
+    width: max-content;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    vertical-align: middle;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-transform: capitalize;
+    color: #202020;
+    border: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 16px;
+  }
+}

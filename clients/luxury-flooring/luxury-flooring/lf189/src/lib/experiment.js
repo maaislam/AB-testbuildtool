@@ -1,6 +1,12 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { addToCart, clickUntilModalAppears, fetchProductDetails, isMobile } from './helpers/utils';
+import {
+  addToCart,
+  calculateTotalPrice,
+  clickUntilModalAppears,
+  fetchProductDetails,
+  isMobile
+} from './helpers/utils';
 import modal from './components/modal';
 import openModal from './helpers/openModal';
 import { closeModal } from './helpers/closeModal';
@@ -19,16 +25,24 @@ const captureElementsContainingString = (searchString) => {
   );
 };
 
-const contentUpdate = (price, meterInfo, packInfo) => {
+const contentUpdate = (price, wasPrice, meterInfo, packInfo) => {
   const modalContent = document.querySelector(`.${ID}__modal-container`);
   const meterElement = modalContent.querySelector(`.${ID}__meter`);
   const packSizeElement = modalContent.querySelector(`.${ID}__packSize`);
   const priceElement = modalContent.querySelector(`.${ID}__prodContent__price`);
+  const onlyPackNumber = packInfo.split('packs')[0].trim();
 
   if ((price, meterInfo, packInfo)) {
     meterElement.textContent = meterInfo;
     packSizeElement.textContent = packInfo;
-    priceElement.textContent = price;
+    if (wasPrice) {
+      priceElement.innerHTML = `${price} <span class="${ID}__wasPrice">was: ${calculateTotalPrice(
+        wasPrice,
+        parseInt(onlyPackNumber)
+      )}</span>`;
+    } else {
+      priceElement.textContent = price;
+    }
   }
 };
 
@@ -61,7 +75,6 @@ const init = () => {
   });
 
   fetchProductDetails(extractedData).then((results) => {
-    console.log(results, 'results');
     if (results.length === 0) {
       document.documentElement.classList.remove(ID);
       document.documentElement.classList.remove(`${ID}-${VARIATION}`);
@@ -94,12 +107,27 @@ const init = () => {
     });
 
     if (!document.querySelector(`.${ID}__modal`)) {
-      console.log('render dom');
       document.body.insertAdjacentHTML(
         'beforeend',
         modal(ID, imageSrc, productTitle, VARIATION, productsData)
       );
     }
+
+    const inputHandler = (e) => {
+      const wrapper = e.target.closest(`.${ID}__productContent`);
+      const priceElement = wrapper.querySelector('.product-price');
+      const { price } = priceElement.dataset;
+      if (e.target.value === '0' || e.target.value === '') {
+        priceElement.textContent = '£00.00';
+        return;
+      }
+      priceElement.textContent = calculateTotalPrice(price, parseInt(e.target.value));
+    };
+    const quantityInputs = document.querySelectorAll(`.${ID}__qtyInput`);
+    quantityInputs.forEach((inputEl) => {
+      inputEl.removeEventListener('input', inputHandler);
+      inputEl.addEventListener('input', inputHandler);
+    });
   });
 };
 
@@ -111,7 +139,6 @@ export default () => {
 
     if (target.matches('.fp-calculator #product-addtocart-button:not(.disabled)')) {
       e.preventDefault();
-      console.log('show modal');
       const totalPriceElement = document.querySelector(
         '.fp-calculator .fp-require-price.price-including-tax'
       );
@@ -124,12 +151,19 @@ export default () => {
       const formKey = addFormWrapper.querySelector('input[name="form_key"]')?.value;
       const url = addFormWrapper.action;
       const quantity = document.querySelector('.fp-calculator input')?.value;
+      const retailPriceElement = document.querySelector(
+        '.product-info-price-wrapper .retail-pricing'
+      );
+      const wasPriceElement = retailPriceElement?.querySelector(
+        '.flooring-price-pack-price .price-including-tax .price'
+      );
+      const wasPrice = wasPriceElement ? wasPriceElement.textContent : '';
 
       if (price !== '£0.00' || !totalPriceElement) {
         addToCart(sku, formKey, url, quantity)
           .then(() => {
             openModal(ID);
-            contentUpdate(price, meterInfo, packInfo);
+            contentUpdate(price, wasPrice, meterInfo, packInfo);
             window.require(['Magento_Customer/js/customer-data'], (customerData) => {
               customerData.invalidate(['cart']); //Mark the cart data as stale
               customerData.reload(['cart'], true); //Force reload from server
@@ -159,17 +193,26 @@ export default () => {
       }
     } else if (target.closest(`.${ID}__plusBtn`)) {
       const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
+      const wrapper = target.closest(`.${ID}__productContent`);
+      const priceElement = wrapper.querySelector('.product-price');
+      const { price } = priceElement.dataset;
       if (qtyInput) {
         const currentValue = parseInt(qtyInput.value) || 1;
         if (currentValue > 1) {
           qtyInput.value = currentValue - 1;
         }
+
+        priceElement.textContent = calculateTotalPrice(price, parseInt(qtyInput.value));
       }
     } else if (target.closest(`.${ID}__minusBtn`)) {
       const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
+      const wrapper = target.closest(`.${ID}__productContent`);
+      const priceElement = wrapper.querySelector('.product-price');
+      const { price } = priceElement.dataset;
       if (qtyInput) {
         const currentValue = parseInt(qtyInput.value) || 1;
         qtyInput.value = currentValue + 1;
+        priceElement.textContent = calculateTotalPrice(price, parseInt(qtyInput.value));
       }
     } else if (target.closest(`#${ID}__productAtcBtn`)) {
       const productAtcBtn = target.closest(`#${ID}__productAtcBtn`);
@@ -181,18 +224,28 @@ export default () => {
 
       const actionWrapper = productCard.querySelector(`.${ID}__actionWrapper`);
       const addedToBasketElement = productCard.querySelector(`.${ID}__addedToBasket`);
-      addToCart(sku, formKey, url, quantity)
-        .then(() => {
-          actionWrapper.classList.add(`${ID}__hide`);
-          addedToBasketElement.classList.remove(`${ID}__hide`);
-          window.require(['Magento_Customer/js/customer-data'], (customerData) => {
-            customerData.invalidate(['cart']); //Mark the cart data as stale
-            customerData.reload(['cart'], true); //Force reload from server
+      if (parseInt(quantity)) {
+        productAtcBtn.textContent = 'Adding';
+        productAtcBtn.disabled = true;
+      }
+
+      parseInt(quantity) >= 1 &&
+        addToCart(sku, formKey, url, quantity)
+          .then(() => {
+            actionWrapper.classList.add(`${ID}__hide`);
+            addedToBasketElement.classList.remove(`${ID}__hide`);
+            productAtcBtn.textContent = '+ Add to basket';
+            productAtcBtn.disabled = false;
+            window.require(['Magento_Customer/js/customer-data'], (customerData) => {
+              customerData.invalidate(['cart']); //Mark the cart data as stale
+              customerData.reload(['cart'], true); //Force reload from server
+            });
+          })
+          .catch((err) => {
+            productAtcBtn.textContent = '+ Add to basket';
+            productAtcBtn.disabled = false;
+            console.error('Error:', err);
           });
-        })
-        .catch((err) => {
-          console.error('Error:', err);
-        });
     }
   });
 

@@ -266,6 +266,8 @@
       }
 
       &__price {
+        display: flex;
+        align-items: center;
         font: normal normal 600 19px/1.2 Work Sans;
         color: #202020;
       }
@@ -463,6 +465,8 @@
 
         @include media-query(sm) {
           margin: 10px 0 0 10px;
+          font-size: 14px !important;
+          white-space: nowrap;
         }
       }
     }
@@ -500,6 +504,13 @@
     #rangeText {
       font-size: 16px;
     }
+  }
+
+  &__wasPrice {
+    font: normal normal 400 14px / 1.2 Work Sans;
+    color: #202020;
+    padding-left: 5px;
+    text-decoration: line-through;
   }
 }
 

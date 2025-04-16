@@ -1,7 +1,9 @@
 export const casino = (id, index, item) => {
   const { name, logoImg, title, link, TCLink, code } = item;
   const html = `
-        <div class="MuiBox-root mui-141vli0" style="background-color: ${item.bgColor};">
+        <div class="MuiBox-root ${id}__MuiBox-root mui-141vli0" style="background-color: ${
+    item.bgColor
+  };">
             <div class="MuiBox-root mui-4ataaz"><a data-element="clicks-to-operators"
                 data-operator="${name}"
                 data-placement="Popup toplist"
@@ -22,7 +24,7 @@ export const casino = (id, index, item) => {
                         src="${logoImg}"
                         style="color: transparent;"></a></div>
             <div class="MuiBox-root mui-1z07fve">
-                <div class="MuiBox-root mui-1rll8ue"><span class="MuiTypography-root MuiTypography-h4 mui-6nihh7">${title}</span><a class="MuiTypography-root MuiTypography-caption mui-s7ffus"
+                <div class="MuiBox-root mui-1rll8ue"><span class="MuiTypography-root MuiTypography-h4 mui-6nihh7">${title}</span><a class="${id}__terms MuiTypography-root MuiTypography-caption mui-s7ffus"
                     data-element="clicks-to-t&amp;c"
                     data-operator="${name}"
                     data-placement="Popup toplist"

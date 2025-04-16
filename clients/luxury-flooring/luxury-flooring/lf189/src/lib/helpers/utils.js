@@ -128,9 +128,22 @@ export const fetchProductDetails = (urls) => {
       .catch((error) => ({
         url,
         error: error.message
-      })));
+      }))
+  );
 
   return Promise.all(fetchPromises); //Return the promise
 };
 
 export const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
+export const calculateTotalPrice = (unitPriceStr, quantity) => {
+  const unitPrice = parseFloat(unitPriceStr.replace(/[^\d.]/g, ''));
+  if (isNaN(unitPrice) || quantity <= 0) return '£0.00';
+
+  const total = unitPrice * quantity;
+
+  return new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP'
+  }).format(total);
+};

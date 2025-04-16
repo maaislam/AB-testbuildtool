@@ -2,13 +2,15 @@ import { minusIcon, plusIcon } from '../assets/icons';
 import { isMobile } from '../helpers/utils';
 
 const productCard = (id, data, index) => {
-    const activeItemPerPage = isMobile() ? 1 : 3;
+  const activeItemPerPage = isMobile() ? 1 : 3;
 
-    const htmlStr = `<div class="${id}__productCard product-card ${index < activeItemPerPage ? 'active' : ''}" data-formKey="${data.formKey}" data-sku="${data.sku}" data-url="${data.url}">
+  const htmlStr = `<div class="${id}__productCard product-card ${
+    index < activeItemPerPage ? 'active' : ''
+  }" data-formKey="${data.formKey}" data-sku="${data.sku}" data-url="${data.url}">
         <img class="${id}__productImage" src="${data.imgSrc}" alt="Roll Image" />
         <div class="${id}__productContent">
             <div class="product-title">${data.productTitleText}</div>
-            <div class="product-price">${data.price}</div>
+            <div class="product-price" data-price="${data.price}">${data.price}</div>
             <div class="${id}__actionWrapper">
                 <div class="quantity-add">
                     <button class="${id}__plusBtn">${minusIcon}</button>
@@ -21,6 +23,6 @@ const productCard = (id, data, index) => {
         </div>
     </div>`;
 
-    return htmlStr;
+  return htmlStr;
 };
 export default productCard;
