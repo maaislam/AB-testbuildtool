@@ -36,6 +36,23 @@
   }
 
   &-2 {
+    .#{$id}__addingToBasket {
+      margin-top: 8px;
+      display: flex;
+      font: normal normal 600 16px/22px Work Sans;
+      letter-spacing: 0;
+      color: #000;
+
+      svg {
+        width: 24px;
+        margin-right: 8px;
+      }
+    }
+
+    .#{$id}__addingToBasket.#{$id}__hide {
+      display: none;
+    }
+
     .#{$id}__prodBtnWrapperMobile {
       padding-top: 40px;
       border-top: 1px solid #ddd;

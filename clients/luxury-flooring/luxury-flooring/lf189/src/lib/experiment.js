@@ -192,6 +192,10 @@ export default () => {
         updatePaginationUI(ID, currentPage, itemsPerPage);
       }
     } else if (target.closest(`.${ID}__plusBtn`)) {
+      const cardElem = target.closest(`.${ID}__productCard`);
+      const cardPriceElem = cardElem.querySelector('.product-price');
+      const cardPrice = cardPriceElem.dataset.price;
+
       const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
       const wrapper = target.closest(`.${ID}__productContent`);
       const priceElement = wrapper.querySelector('.product-price');
@@ -204,7 +208,15 @@ export default () => {
 
         priceElement.textContent = calculateTotalPrice(price, parseInt(qtyInput.value));
       }
+
+      const priceFormat = cardPrice.replace('£', '');
+      const updatedPrice = Number(priceFormat) * Number(qtyInput.value);
+      cardPriceElem.textContent = `£${updatedPrice.toFixed(2)}`;
     } else if (target.closest(`.${ID}__minusBtn`)) {
+      const cardElem = target.closest(`.${ID}__productCard`);
+      const cardPriceElem = cardElem.querySelector('.product-price');
+      const cardPrice = cardPriceElem.dataset.price;
+
       const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
       const wrapper = target.closest(`.${ID}__productContent`);
       const priceElement = wrapper.querySelector('.product-price');
@@ -214,6 +226,10 @@ export default () => {
         qtyInput.value = currentValue + 1;
         priceElement.textContent = calculateTotalPrice(price, parseInt(qtyInput.value));
       }
+
+      const priceFormat = cardPrice.replace('£', '');
+      const updatedPrice = Number(priceFormat) * Number(qtyInput.value);
+      cardPriceElem.textContent = `£${updatedPrice.toFixed(2)}`;
     } else if (target.closest(`#${ID}__productAtcBtn`)) {
       const productAtcBtn = target.closest(`#${ID}__productAtcBtn`);
       const productCard = productAtcBtn.closest(`.${ID}__productCard`);
