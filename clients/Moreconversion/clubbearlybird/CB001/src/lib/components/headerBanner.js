@@ -1,5 +1,6 @@
 import { brainIcon } from '../assets/icons';
 import { logo } from './logo';
+import { mobileLogoWithTitle } from './mobileLogoWithTitle';
 import reviewcards from './reviewCards';
 import { uspsList } from './uspsList';
 import { videoWrapper } from './videoWrapper';
@@ -10,10 +11,11 @@ export const headerBanner = (id, data) => {
             <div class="${id}__headerBannerContainer">
                 ${logo(id)}
                 <div class="${id}__contentHero">
+                    ${mobileLogoWithTitle(id)}
                     <div class="${id}__contentWrapper">
                         <h3 class="${id}__msg">ATTENTION: Go-getters &amp; Biohackers</h3>
                         <h1 class="${id}__title">EASILY WAKE UP TO MORNING ENERGY ON YOUR NIGHTSTAND</h1>
-                        <button class="${id}__btn">
+                        <button class="${id}__btn ${id}__desktop-btn">
                             <span class="${id}__text">Switch On Your Brain</span>
                             <span class="${id}__icon">${brainIcon}</span>
                         </button>
@@ -26,6 +28,10 @@ export const headerBanner = (id, data) => {
                         <div class="${id}__reviewsContainer">
                             ${reviewcards(id, data)}
                         </div>
+                         <button class="${id}__btn ${id}__mobile-btn">
+                            <span class="${id}__text">Switch On Your Brain</span>
+                            <span class="${id}__icon">${brainIcon}</span>
+                        </button>
                         ${uspsList(id, 'mobile')}
                     </div>
                 </div>

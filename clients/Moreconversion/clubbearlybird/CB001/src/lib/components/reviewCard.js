@@ -1,5 +1,5 @@
 /*eslint-disable no-unused-vars */
-import { startIcon, tickMark } from '../assets/icons';
+import { startIcon, tickMark, reviewStars, verifiedCustomerIcon } from '../assets/icons';
 import ratingStars from '../helpers/ratingStar';
 import shared from '../shared/shared';
 
@@ -21,12 +21,14 @@ const reviewCard = (id, data) => {
                         <div class="reviewer-name">
                             <span class="${id}__name">${author}</span>
                             ${
-                              verifiedReviewer ? `<span class="${id}__icon">${tickMark}</span>` : ''
+                              verifiedReviewer
+                                ? `<span class="${id}__icon">${verifiedCustomerIcon}</span>`
+                                : ''
                             }
                             
                         </div>
                         <div class="reviewer-ratings">
-                            ${ratingStars(reviewRating, 'v1-color')}
+                            ${reviewStars}
                         </div>
                     </div>
                 </div>

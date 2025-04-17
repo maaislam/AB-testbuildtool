@@ -48,11 +48,20 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 98px 1.28% 65px 1.28%;
+
+    @media screen and (max-width: 992px) {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 9px 1.28% 53px 1.28%;
+    }
   }
 
   &__logo {
     margin-left: 0 !important;
     padding: 0 1.28% 0px 1.28%;
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
   }
 
   &__msg {
@@ -87,7 +96,7 @@
     padding: 4px;
     margin-bottom: 24px;
     .#{$id}__text {
-      font-family: 'Inter';
+      font-family: 'Source Sans Pro';
       font-weight: 700;
       font-size: 22px;
       line-height: 60px;
@@ -125,7 +134,7 @@
       }
 
       .#{$id}__itemText {
-        font-family: 'Inter';
+        font-family: 'Source Sans Pro';
         font-weight: 600;
         font-size: 15px;
         line-height: 24px;
@@ -137,8 +146,37 @@
     }
   }
 
+  &__mobileLogoWithTitle {
+    display: none !important;
+    @media screen and (max-width: 992px) {
+      display: block !important;
+    }
+
+    .zpa-hidden-sm {
+      @media (min-width: 768px) and (max-width: 991px) {
+        display: block !important;
+      }
+    }
+  }
+
+  &__contentWrapper {
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+
   &__mobile {
     display: none;
+    @media screen and (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__desktop {
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
   }
 
   &__videoWrapper {
@@ -151,21 +189,81 @@
   }
 
   &__reviewsContainer {
-    max-width: 530px;
+    position: relative;
+    max-width: 500px;
     width: 100%;
     margin: 0 auto;
+
+    @media screen and (max-width: 500px) {
+      max-width: 408px;
+    }
+
+    @media screen and (max-width: 400px) {
+      max-width: 370px;
+    }
+
+    @media screen and (max-width: 370px) {
+      max-width: 350px;
+    }
   }
   &__reviewcards {
-    position: relative;
     margin-top: 25px;
     padding: 20px 0 15px;
 
     @media screen and (max-width: 767px) {
       margin-top: 20px;
     }
+
+    .swiper-button-next {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      right: -52px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNyAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTguOTU4MDEgMTUuODc1TDcuMTQ1NTEgMTQuMDc4MUwxMS45MDMzIDkuMzIwMzFIMC43NTQ4ODNWNi42Nzk2OUgxMS45MDMzTDcuMTQ1NTEgMS45Mjk2OUw4Ljk1ODAxIDAuMTI1TDE2LjgzMyA4TDguOTU4MDEgMTUuODc1WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==);
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: center;
+      background-color: #fff;
+      border-radius: 5px;
+      margin-top: 0;
+      transform: translateY(-50%);
+
+      &::after {
+        display: none;
+      }
+
+      @media screen and (max-width: 767px) {
+        display: none !important;
+      }
+    }
+
+    .swiper-button-prev {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      left: -52px;
+      right: 0;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNyAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTguMDQxOTkgMC4xMjQ5OTlMOS44NTQ0OSAxLjkyMTg3TDUuMDk2NjggNi42Nzk2OUwxNi4yNDUxIDYuNjc5NjlMMTYuMjQ1MSA5LjMyMDMxTDUuMDk2NjggOS4zMjAzMUw5Ljg1NDQ5IDE0LjA3MDNMOC4wNDE5OSAxNS44NzVMMC4xNjY5OTMgOEw4LjA0MTk5IDAuMTI0OTk5WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==);
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: center;
+      background-color: #fff;
+      border-radius: 5px;
+      margin-top: 0;
+      transform: translateY(-50%);
+
+      &::after {
+        display: none;
+      }
+
+      @media screen and (max-width: 767px) {
+        display: none !important;
+      }
+    }
   }
 
   &__reviewcards-swiper {
+    position: static !important;
     .swiper-slide {
     }
 
@@ -181,7 +279,7 @@
         &.swiper-pagination-bullet-active {
           width: 8px;
           height: 8px;
-          background: #fd689e;
+          background: #fff;
         }
       }
     }
@@ -196,7 +294,9 @@
       align-items: center;
       justify-content: center;
       background-color: #fff;
-      margin-bottom: 10px;
+      border: 2px solid #000000;
+      border-radius: 10px;
+      padding: 22px 26px;
     }
 
     .#{$id}__review-col1 {
@@ -216,21 +316,22 @@
     }
 
     .#{$id}__review-col2 {
-      width: calc(100% - 115px);
-      margin-left: 15px;
+      width: 100%;
       .row1 {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 10px;
+        margin-top: 17px;
         .reviewer-name {
           display: flex;
           align-items: center;
           .#{$id}__name {
-            font-size: 18px;
+            font-family: 'Source Sans Pro';
             font-weight: 700;
+            font-size: 18px;
             line-height: 22px;
-            color: #fd689e;
+            vertical-align: middle;
+            color: #fc5301;
 
             @media screen and (max-width: 767px) {
               font-size: 16px;
@@ -254,6 +355,9 @@
         }
 
         .reviewer-ratings {
+          display: flex;
+          align-items: center;
+          margin-left: 10px;
           .v1-color {
             color: #ff8302;
           }
@@ -266,16 +370,13 @@
 
       .row2 {
         .review-msg {
-          font-size: 15px;
+          font-family: 'Source Sans Pro';
           font-weight: 400;
           font-style: italic;
+          font-size: 15px;
           line-height: 22px;
-          text-align: left;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 4;
-          overflow: hidden;
-          text-overflow: ellipsis;
+          vertical-align: middle;
+          color: #000000;
 
           @media screen and (max-width: 767px) {
             font-size: 12px;
@@ -288,6 +389,19 @@
         width: calc(100% - 90px);
         margin-left: 10px;
       }
+    }
+  }
+
+  &__mobile-btn {
+    display: none;
+    @media screen and (max-width: 992px) {
+      display: flex;
+    }
+  }
+
+  &__desktop-btn {
+    @media screen and (max-width: 992px) {
+      display: none;
     }
   }
 
