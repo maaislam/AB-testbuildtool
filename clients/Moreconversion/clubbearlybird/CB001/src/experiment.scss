@@ -113,6 +113,9 @@
         height: 32px;
       }
     }
+    @media screen and (max-width: 767px) {
+      margin-top: 24px;
+    }
   }
 
   &__lists {
@@ -264,8 +267,6 @@
 
   &__reviewcards-swiper {
     position: static !important;
-    .swiper-slide {
-    }
 
     .swiper-pagination {
       display: flex;
@@ -285,9 +286,6 @@
     }
   }
 
-  &__reviewcards-swrapper {
-  }
-
   &__reviewCard {
     .#{$id}__review {
       display: flex;
@@ -297,6 +295,9 @@
       border: 2px solid #000000;
       border-radius: 10px;
       padding: 22px 26px;
+      @media screen and (max-width: 767px) {
+        padding: 16px 12px;
+      }
     }
 
     .#{$id}__review-col1 {
@@ -386,7 +387,7 @@
       }
 
       @media screen and (max-width: 767px) {
-        width: calc(100% - 90px);
+        width: 100%;
         margin-left: 10px;
       }
     }

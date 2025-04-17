@@ -8,11 +8,28 @@ const initSwiper = (container, initConfig) => {
     }
   };
 
+  const isMobile = () =>
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
   //eslint-disable-next-line no-unused-vars
   const slider = new window.Swiper(`${container}`, Object.assign(baseConfig, initConfig));
-  //slider.on('slideChange', () => {
-  //console.log('change');
-  //});
+  slider.on('slideChange', (e) => {
+    const pagiElement = document.querySelector('.swiper-pagination');
+    if (e.realIndex === 4 || (e.realIndex === 0 && isMobile())) {
+      pagiElement.style.bottom = '0px';
+    } else {
+      pagiElement.style.bottom = '10px';
+    }
+  });
+  slider.on('init', () => {
+    console.log('🚀 ~ slider.on ~ e:', slider.activeIndex);
+    const pagiElement = document.querySelector('.swiper-pagination');
+    if (isMobile() && slider.activeIndex) {
+      pagiElement.style.bottom = '0px';
+    } else {
+      pagiElement.style.bottom = '10px';
+    }
+  });
 };
 
 export default initSwiper;
