@@ -15,10 +15,10 @@ export const headerBanner = (id, data) => {
                     <div class="${id}__contentWrapper">
                         <h3 class="${id}__msg">ATTENTION: Go-getters &amp; Biohackers</h3>
                         <h1 class="${id}__title">EASILY WAKE UP TO MORNING ENERGY ON YOUR NIGHTSTAND</h1>
-                        <button class="${id}__btn ${id}__desktop-btn">
+                        <a href="#16074793" target="_self" class="${id}__btn ${id}__desktop-btn">
                             <span class="${id}__text">Switch On Your Brain</span>
                             <span class="${id}__icon">${brainIcon}</span>
-                        </button>
+                        </a>
                         ${uspsList(id, 'desktop')}
                     </div>
                     <div class="${id}__videoWrapper">
@@ -28,10 +28,10 @@ export const headerBanner = (id, data) => {
                         <div class="${id}__reviewsContainer">
                             ${reviewcards(id, data)}
                         </div>
-                         <button class="${id}__btn ${id}__mobile-btn">
+                         <a href="#16074793" target="_self" class="${id}__btn ${id}__mobile-btn">
                             <span class="${id}__text">Switch On Your Brain</span>
                             <span class="${id}__icon">${brainIcon}</span>
-                        </button>
+                        </a>
                         ${uspsList(id, 'mobile')}
                     </div>
                 </div>

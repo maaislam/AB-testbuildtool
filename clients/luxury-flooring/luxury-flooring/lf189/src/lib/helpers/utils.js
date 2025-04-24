@@ -108,6 +108,46 @@ export const addToCart = (prodId, formKey, action, quantity) => {
   });
 };
 
+export const VariantOptionsAddToCart = (
+  prodId,
+  formKey,
+  action,
+  quantity,
+  attributeId,
+  attributeId2,
+  attributeValue,
+  attributeValue2,
+  selected_configurable_option
+) => {
+  return new Promise((resolve, reject) => {
+    window.require(['jquery'], ($) => {
+      const data = {
+        product: prodId,
+        item: prodId,
+        form_key: formKey,
+        qty: quantity,
+        [`super_attribute[${attributeId}]`]: attributeValue,
+        selected_configurable_option
+      };
+      if (attributeId2 && attributeValue2) {
+        data[`super_attribute[${attributeId2}]`] = attributeValue2;
+      }
+      $.ajax({
+        url: action,
+        type: 'POST',
+        data,
+        success(response) {
+          resolve(response); //Resolve the promise with response
+        },
+        error(err) {
+          console.error('Error adding product to cart', err);
+          reject(err); //Reject the promise with error
+        }
+      });
+    });
+  });
+};
+
 export const fetchProductDetails = (urls) => {
   const fetchPromises = urls.map((url) =>
     fetch(url, {
@@ -137,13 +177,68 @@ export const fetchProductDetails = (urls) => {
 export const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
 
 export const calculateTotalPrice = (unitPriceStr, quantity) => {
-  const unitPrice = parseFloat(unitPriceStr.replace(/[^\d.]/g, ''));
-  if (isNaN(unitPrice) || quantity <= 0) return '£0.00';
+  const unitPrice =
+    typeof unitPriceStr === 'string'
+      ? parseFloat(unitPriceStr.replace(/[^\d.]/g, ''))
+      : parseFloat(unitPriceStr);
 
-  const total = unitPrice * quantity;
+  const qty = parseInt(quantity, 10);
+
+  if (isNaN(unitPrice) || isNaN(qty) || qty <= 0) return '£0.00';
+
+  const total = unitPrice * qty;
 
   return new Intl.NumberFormat('en-GB', {
     style: 'currency',
     currency: 'GBP'
   }).format(total);
+};
+
+export const getCommonElements = (arr1, arr2) => {
+  return arr1.filter((item) => arr2.includes(item));
+};
+
+export const getCookie = (name) => {
+  const match = document.cookie.match(new RegExp(`(^|;\\s?)${name}=([^;]*)`));
+  return match && match[2] ? unescape(match[2]) : undefined;
+};
+
+export const getSelectedProductIds = (mainWrapper) => {
+  const getProductsFromSelect = (select) => {
+    const selectedOption = select.options[select.selectedIndex];
+    const dataProducts = selectedOption.getAttribute('data-products');
+    if (!dataProducts) return [];
+
+    try {
+      const parsed = JSON.parse(dataProducts);
+      return parsed.products || [];
+    } catch (e) {
+      console.warn('Invalid JSON in data-products:', e);
+      return [];
+    }
+  };
+  const selects = mainWrapper.querySelectorAll('select');
+
+  if (selects.length === 2) {
+    const [firstSelect, secondSelect] = selects;
+    const firstData = getProductsFromSelect(firstSelect);
+    const secondData = getProductsFromSelect(secondSelect);
+    return [firstData, secondData];
+  }
+  if (selects.length === 1) {
+    return getProductsFromSelect(selects[0]);
+  }
+  return [];
+};
+
+export const formatPriceGBP = (price) => {
+  const numericPrice =
+    typeof price === 'string' ? parseFloat(price.replace(/[^\d.]/g, '')) : parseFloat(price);
+
+  if (isNaN(numericPrice)) return '£0.00';
+
+  return new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP'
+  }).format(numericPrice);
 };

@@ -1,11 +1,17 @@
+/*eslint-disable no-restricted-syntax */
+
 import setup from './services/setup';
 import shared from './shared/shared';
 import {
   addToCart,
   calculateTotalPrice,
-  clickUntilModalAppears,
   fetchProductDetails,
-  isMobile
+  formatPriceGBP,
+  getCommonElements,
+  getCookie,
+  getSelectedProductIds,
+  isMobile,
+  VariantOptionsAddToCart
 } from './helpers/utils';
 import modal from './components/modal';
 import openModal from './helpers/openModal';
@@ -16,14 +22,6 @@ const { ID, VARIATION } = shared;
 const itemsPerPage = isMobile() ? 1 : 3;
 let currentPage = 0;
 const productsData = [];
-
-const captureElementsContainingString = (searchString) => {
-  const elements = [...document.querySelectorAll('#shopping-cart-table .product-item-name a')]; //Get all elements as an array
-
-  return elements.filter((el) =>
-    el.textContent.toLowerCase().trim().includes(searchString.toLowerCase().trim())
-  );
-};
 
 const contentUpdate = (price, wasPrice, meterInfo, packInfo) => {
   const modalContent = document.querySelector(`.${ID}__modal-container`);
@@ -46,19 +44,18 @@ const contentUpdate = (price, wasPrice, meterInfo, packInfo) => {
   }
 };
 
+const variantPriceChange = (mainWrapper, data) => {
+  const priceElement = mainWrapper.querySelector('.product-price');
+  const productOptionWrapper = mainWrapper.querySelector(`.${ID}__productOptions`);
+  const priceData = JSON.parse(productOptionWrapper.dataset.price);
+  const variantId = data.length < 2 ? data[0] : getCommonElements(data[0], data[1])[0];
+  const price = priceData[variantId].finalPrice.amount;
+  const inputValue = mainWrapper.querySelector(`.${ID}__qtyInput`)?.value;
+  priceElement.textContent = calculateTotalPrice(price, parseInt(inputValue || 1));
+  priceElement.dataset.price = formatPriceGBP(price);
+};
+
 const init = () => {
-  if (window.location.pathname === '/checkout/cart/' && VARIATION === '1') {
-    const prodTitle = window.sessionStorage.getItem(`${ID}__productTitle`);
-    if (captureElementsContainingString(prodTitle) && prodTitle) {
-      const itemWrapper = captureElementsContainingString(prodTitle)[0].closest('.item-info');
-      const accessoriesBtn = itemWrapper.querySelector('button.flooring-accessories');
-      clickUntilModalAppears(accessoriesBtn, '.cart-crosssell._show');
-      window.sessionStorage.removeItem(`${ID}__productTitle`);
-    }
-
-    return;
-  }
-
   const imageElement = document.querySelector('#productCarousel .gallery__item img');
   const imageSrc = imageElement?.getAttribute('src');
 
@@ -86,7 +83,7 @@ const init = () => {
       const priceElem = doc.querySelector('[data-price-type="finalPrice"]');
       const productTitleElement = doc.querySelector('.page-title');
       const sku = doc.querySelector('input[name="product"]')?.value;
-      const formKey = doc.querySelector('input[name="form_key"]')?.value;
+      const formKey = getCookie('form_key');
       const addFormWrapper = doc.querySelector('#product_addtocart_form');
       const url = addFormWrapper.action;
 
@@ -94,13 +91,37 @@ const init = () => {
       const productTitleText = productTitleElement?.textContent?.trim();
       const price = priceElem?.textContent?.trim();
 
+      const scripts = doc.querySelectorAll('script[type="text/x-magento-init"]');
+      const configurableData = [];
+      let productOptionPrices;
+
+      scripts.forEach((scriptEl) => {
+        try {
+          const jsonText = scriptEl.textContent.trim();
+          const parsedData = JSON.parse(jsonText);
+
+          if (parsedData['#product_addtocart_form']?.configurable?.spConfig) {
+            const { spConfig } = parsedData['#product_addtocart_form'].configurable;
+            const { optionPrices } = spConfig;
+            productOptionPrices = optionPrices;
+            for (const [key, value] of Object.entries(spConfig.attributes)) {
+              configurableData.push(value);
+            }
+          }
+        } catch (err) {
+          console.warn('Skipping script due to JSON parse error:', err);
+        }
+      });
+
       const productData = {
         imgSrc,
         productTitleText,
         price,
         sku,
         formKey,
-        url
+        url,
+        configurableData,
+        productOptionPrices
       };
 
       productsData.push(productData);
@@ -128,12 +149,37 @@ const init = () => {
       inputEl.removeEventListener('input', inputHandler);
       inputEl.addEventListener('input', inputHandler);
     });
+
+    const changeHandler = (e) => {
+      const { target } = e;
+      const mainWrapper = target.closest(`.${ID}__productContent`);
+      const actionWrapper = mainWrapper.querySelector(`.${ID}__actionWrapper`);
+      const allSelectsWrapper = mainWrapper.querySelectorAll('select');
+      const allSelected = [...allSelectsWrapper].every((select) => select.selectedIndex > 0);
+
+      if (allSelected) {
+        actionWrapper.removeAttribute('disabled');
+        if (getSelectedProductIds(mainWrapper).length > 0) {
+          variantPriceChange(mainWrapper, getSelectedProductIds(mainWrapper));
+        }
+      } else {
+        actionWrapper.setAttribute('disabled', true);
+        const priceElement = mainWrapper.querySelector('.product-price');
+        const { startPrice } = priceElement.dataset;
+        priceElement.textContent = startPrice;
+      }
+    };
+
+    const allSelectWrapper = document.querySelectorAll(`.${ID}__product-option select`);
+    allSelectWrapper.forEach((selectItem) => {
+      selectItem.removeEventListener('change', changeHandler);
+      selectItem.addEventListener('change', changeHandler);
+    });
   });
 };
 
 export default () => {
   setup();
-
   document.body.addEventListener('click', (e) => {
     const { target } = e;
 
@@ -144,8 +190,8 @@ export default () => {
       );
       const price = totalPriceElement.textContent.trim();
       const fpTotalInfo = document.querySelector('.fp-calculator .fp-total-info');
-      const meterInfo = fpTotalInfo.textContent?.trim()?.split('/')[0]?.split('(')[1]?.trim();
-      const packInfo = fpTotalInfo.textContent?.trim()?.split('/')[1]?.split(')')[0]?.trim();
+      const packInfo = fpTotalInfo.textContent?.trim()?.split('/')[0]?.split('(')[1]?.trim();
+      const meterInfo = fpTotalInfo.textContent?.trim()?.split('/')[1]?.split(')')[0]?.trim();
       const addFormWrapper = document.querySelector('#product_addtocart_form');
       const sku = addFormWrapper.querySelector('input[name="product"]')?.value;
       const formKey = addFormWrapper.querySelector('input[name="form_key"]')?.value;
@@ -163,6 +209,7 @@ export default () => {
         addToCart(sku, formKey, url, quantity)
           .then(() => {
             openModal(ID);
+            document.body.classList.add(`${ID}__scrollOff`);
             contentUpdate(price, wasPrice, meterInfo, packInfo);
             window.require(['Magento_Customer/js/customer-data'], (customerData) => {
               customerData.invalidate(['cart']); //Mark the cart data as stale
@@ -174,11 +221,8 @@ export default () => {
           });
       }
     } else if (target.closest(`.${ID}__modal-overlay`) || target.closest(`.${ID}__closeWrapper`)) {
+      document.body.classList.remove(`${ID}__scrollOff`);
       closeModal(ID);
-    } else if (target.closest(`.${ID}__prodAccessoriesBtn`)) {
-      const clickedItem = target.closest(`.${ID}__prodAccessoriesBtn`);
-      const productTitle = clickedItem.getAttribute('data-name');
-      window.sessionStorage.setItem(`${ID}__productTitle`, productTitle);
     } else if (target.closest('#prevBtn')) {
       if (currentPage > 0) {
         currentPage--;
@@ -192,10 +236,6 @@ export default () => {
         updatePaginationUI(ID, currentPage, itemsPerPage);
       }
     } else if (target.closest(`.${ID}__plusBtn`)) {
-      const cardElem = target.closest(`.${ID}__productCard`);
-      const cardPriceElem = cardElem.querySelector('.product-price');
-      const cardPrice = cardPriceElem.dataset.price;
-
       const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
       const wrapper = target.closest(`.${ID}__productContent`);
       const priceElement = wrapper.querySelector('.product-price');
@@ -205,18 +245,13 @@ export default () => {
         if (currentValue > 1) {
           qtyInput.value = currentValue - 1;
         }
-
         priceElement.textContent = calculateTotalPrice(price, parseInt(qtyInput.value));
       }
 
-      const priceFormat = cardPrice.replace('£', '');
-      const updatedPrice = Number(priceFormat) * Number(qtyInput.value);
-      cardPriceElem.textContent = `£${updatedPrice.toFixed(2)}`;
+      //const priceFormat = price.replace('£', '');
+      //const updatedPrice = Number(priceFormat) * Number(qtyInput.value);
+      //cardPriceElem.textContent = `£${updatedPrice.toFixed(2)}`;
     } else if (target.closest(`.${ID}__minusBtn`)) {
-      const cardElem = target.closest(`.${ID}__productCard`);
-      const cardPriceElem = cardElem.querySelector('.product-price');
-      const cardPrice = cardPriceElem.dataset.price;
-
       const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
       const wrapper = target.closest(`.${ID}__productContent`);
       const priceElement = wrapper.querySelector('.product-price');
@@ -227,9 +262,9 @@ export default () => {
         priceElement.textContent = calculateTotalPrice(price, parseInt(qtyInput.value));
       }
 
-      const priceFormat = cardPrice.replace('£', '');
-      const updatedPrice = Number(priceFormat) * Number(qtyInput.value);
-      cardPriceElem.textContent = `£${updatedPrice.toFixed(2)}`;
+      //const priceFormat = price.replace('£', '');
+      //const updatedPrice = Number(priceFormat) * Number(qtyInput.value);
+      //cardPriceElem.textContent = `£${updatedPrice.toFixed(2)}`;
     } else if (target.closest(`#${ID}__productAtcBtn`)) {
       const productAtcBtn = target.closest(`#${ID}__productAtcBtn`);
       const productCard = productAtcBtn.closest(`.${ID}__productCard`);
@@ -245,16 +280,62 @@ export default () => {
         productAtcBtn.disabled = true;
       }
 
-      parseInt(quantity) >= 1 &&
-        addToCart(sku, formKey, url, quantity)
+      if (parseInt(quantity) >= 1) {
+        const optionsWrapper = productCard.querySelector(`.${ID}__productOptions`);
+
+        const attributeIdElem = optionsWrapper?.querySelector(`.${ID}__product-option`);
+
+        const attributeId = attributeIdElem?.dataset.id;
+
+        const attributeIdElem2 = optionsWrapper?.querySelector(
+          `.${ID}__product-option + .${ID}__product-option`
+        );
+
+        const attributeId2 = attributeIdElem2?.dataset.id;
+
+        const selectEl = optionsWrapper?.querySelector(`.${ID}__product-option select`);
+        const selectedOption = selectEl?.options[selectEl.selectedIndex];
+        const attributeValue = selectedOption?.value;
+
+        const selectEl2 = optionsWrapper?.querySelector(
+          `.${ID}__product-option + .${ID}__product-option select`
+        );
+        const selectedOption2 = selectEl2?.options[selectEl2.selectedIndex];
+        const attributeValue2 = selectedOption2?.value;
+
+        const productOption = selectedOption ? JSON.parse(selectedOption.dataset.products) : '';
+        const productOption2 = selectedOption2 ? JSON.parse(selectedOption2.dataset.products) : '';
+
+        const addToBasket = optionsWrapper
+          ? VariantOptionsAddToCart(
+              sku,
+              formKey,
+              url,
+              quantity,
+              attributeId,
+              attributeId2,
+              attributeValue,
+              attributeValue2,
+              productOption && productOption2
+                ? getCommonElements(productOption.products, productOption2.products)[0]
+                : productOption.products[0]
+            )
+          : addToCart(sku, formKey, url, quantity);
+
+        addToBasket
           .then(() => {
-            actionWrapper.classList.add(`${ID}__hide`);
-            addedToBasketElement.classList.remove(`${ID}__hide`);
-            productAtcBtn.textContent = '+ Add to basket';
-            productAtcBtn.disabled = false;
             window.require(['Magento_Customer/js/customer-data'], (customerData) => {
               customerData.invalidate(['cart']); //Mark the cart data as stale
               customerData.reload(['cart'], true); //Force reload from server
+              actionWrapper.classList.add(`${ID}__hide`);
+              addedToBasketElement.classList.remove(`${ID}__hide`);
+              productAtcBtn.textContent = '+ Add to basket';
+              productAtcBtn.disabled = false;
+
+              setTimeout(() => {
+                actionWrapper.classList.remove(`${ID}__hide`);
+                addedToBasketElement.classList.add(`${ID}__hide`);
+              }, 2000);
             });
           })
           .catch((err) => {
@@ -262,6 +343,13 @@ export default () => {
             productAtcBtn.disabled = false;
             console.error('Error:', err);
           });
+      }
+    } else if (target.closest('.flooring-accessories[type="button"]')) {
+      document.body.classList.add(`${ID}__hasModal`);
+    } else if (target.closest('.modals-overlay')) {
+      document.body.classList.remove(`${ID}__hasModal`);
+    } else if (target.closest('button.action-close') && target.closest('.modal-popup')) {
+      document.body.classList.remove(`${ID}__hasModal`);
     }
   });
 

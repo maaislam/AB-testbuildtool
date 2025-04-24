@@ -1,5 +1,6 @@
 import { minusIcon, plusIcon } from '../assets/icons';
 import { isMobile } from '../helpers/utils';
+import productOptions from './productOptions';
 
 const productCard = (id, data, index) => {
   const activeItemPerPage = isMobile() ? 1 : 3;
@@ -10,8 +11,17 @@ const productCard = (id, data, index) => {
         <img class="${id}__productImage" src="${data.imgSrc}" alt="Roll Image" />
         <div class="${id}__productContent">
             <div class="product-title">${data.productTitleText}</div>
-            <div class="product-price" data-price="${data.price}">${data.price}</div>
-            <div class="${id}__actionWrapper">
+            <div class="product-price" data-price="${data.price}" data-start-price="${
+    data.price
+  }">${data.price}</div>
+            ${
+              data.configurableData && data.configurableData.length > 0
+                ? `${productOptions(id, data.configurableData, data.productOptionPrices)}`
+                : ''
+            }
+            <div class="${id}__actionWrapper" disabled="${!!(
+    data.configurableData && data.configurableData.length > 0
+  )}">
                 <div class="quantity-add">
                     <button class="${id}__plusBtn">${minusIcon}</button>
                     <input class="${id}__qtyInput" type="number" id="qty" value="1" min="1"/>

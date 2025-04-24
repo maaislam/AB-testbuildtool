@@ -1,6 +1,6 @@
 module.exports = {
-  ID: 'CB002',
-  VARIATION: '3',
-  CLIENT: 'Moreconversion',
-  SITE: 'clubbearlybird'
-};
+    ID: "CB002",
+    VARIATION: "1",
+    CLIENT: "Moreconversion",
+    SITE: "clubbearlybird"
+  };

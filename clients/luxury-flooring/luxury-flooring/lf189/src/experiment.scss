@@ -2,6 +2,32 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  ._has-modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+    .modal-popup.cart-crosssell._show {
+      display: none;
+
+      & + .modals-overlay {
+        display: none;
+      }
+    }
+
+    &.#{$id}__hasModal {
+      overflow: hidden;
+      .modal-popup.cart-crosssell._show {
+        display: block;
+
+        & + .modals-overlay {
+          display: block;
+          z-index: 9999 !important;
+        }
+      }
+    }
+  }
+  &__scrollOff {
+    overflow: hidden;
+  }
   &__hide {
     display: none !important;
   }
@@ -24,7 +50,7 @@
         }
 
         @media screen and (max-width: 390px) {
-          max-height: calc(100% - 200px);
+          max-height: calc(100% - 120px);
           padding-bottom: 40px;
         }
 
@@ -57,10 +83,6 @@
       padding-top: 40px;
       border-top: 1px solid #ddd;
       display: none;
-
-      @include media-query(sm) {
-        display: block;
-      }
 
       a {
         padding-left: 16px;
@@ -297,16 +319,20 @@
     justify-content: space-between;
     margin-top: 15px;
 
-    @include media-query(sm) {
-      display: none;
-    }
+    // @include media-query(sm) {
+    //   display: none;
+    // }
 
     &__cartBtn {
       width: calc(50% - 7px);
       background-color: #6c7c69;
       margin: 0;
-      padding: 19px 0 18px;
+      padding: 16px 0 16px;
       color: #fff !important;
+
+      @include media-query(sm) {
+        font-size: 14px;
+      }
 
       &:hover {
         background: #546052;
@@ -316,9 +342,12 @@
     &__checkoutBtn {
       width: calc(50% - 7px);
       margin: 0;
-      padding: 19px 0 18px;
+      padding: 16px 0 16px;
       background: #c8a461;
       color: #fff !important;
+      @include media-query(sm) {
+        font-size: 14px;
+      }
 
       &:hover {
         background-color: #a57d38;
@@ -354,7 +383,7 @@
       margin: 20px auto;
       font: normal normal normal 16px/22px Work Sans;
       color: #202020;
-      padding: 14px 17px 18px;
+      padding: 16px 17px 16px;
       border: 1px solid #1c1c1c;
       cursor: pointer;
     }
@@ -425,6 +454,10 @@
         margin-top: 10px;
         display: flex;
         align-items: center;
+
+        &[disabled='true'] {
+          pointer-events: none;
+        }
       }
 
       .quantity-add {
@@ -465,10 +498,6 @@
         @include media-query(sm) {
           width: 35px;
         }
-      }
-
-      .#{$id}__actionWrapper {
-        display: flex;
       }
 
       .#{$id}__atcBtn {
@@ -528,6 +557,16 @@
     color: #202020;
     padding-left: 5px;
     text-decoration: line-through;
+  }
+
+  &__productOptions {
+    margin-top: 8px;
+    .#{$id}__product-option {
+      text-align: left;
+      select {
+        margin-top: 8px;
+      }
+    }
   }
 }
 

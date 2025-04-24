@@ -8,6 +8,7 @@ import closeModal from './helpers/closeModal';
 import { casinoData } from './data/data';
 
 const { ID, VARIATION } = shared;
+const shouldRunTest = (url) => /^https:\/\/ocbscores\.com\/predictions-and-tips\/.+$/.test(url);
 
 const renderModal = () => {
   if (!document.querySelector(`.${ID}__modal`)) {
@@ -25,8 +26,8 @@ export default () => {
     const { target } = e;
     if (
       target.closest('a[data-type="button"]') &&
-      target.closest('button[type="button"]') &&
-      VARIATION !== 'control'
+      VARIATION !== 'control' &&
+      target.closest('.MuiBox-root.mui-1u8boio')
     ) {
       e.preventDefault();
       e.stopPropagation();
@@ -56,13 +57,32 @@ export default () => {
       const { operator } = clickedItem.dataset;
       gaTracking(`${operator} | CTO | Logo | Popup`);
     } else if (
-      target.closest('button[type="button"]') &&
       target.closest('a[data-type="button"]') &&
-      VARIATION === 'control'
+      VARIATION === 'control' &&
+      target.closest('.MuiBox-root.mui-1u8boio')
     ) {
       const clickedItem = target.closest('a[data-type="button"]');
       const { operator } = clickedItem.dataset;
+      gaTracking(`${operator} | Button | Operator Page`);
+    } else if (
+      target.closest('a[data-type="button"]') &&
+      VARIATION !== 'control' &&
+      (target.closest('.MuiBox-root.mui-4kbj') || target.closest('.MuiBox-root.mui-3ufgs1'))
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+      const clickedItem = target.closest('a[data-type="button"]');
+      const { operator } = clickedItem.dataset;
       gaTracking(`${operator} | Button | Open Popup`);
+      openModal(ID);
+    } else if (
+      target.closest('a[data-type="button"]') &&
+      VARIATION === 'control' &&
+      (target.closest('.MuiBox-root.mui-4kbj') || target.closest('.MuiBox-root.mui-3ufgs1'))
+    ) {
+      const clickedItem = target.closest('a[data-type="button"]');
+      const { operator } = clickedItem.dataset;
+      gaTracking(`${operator} | Button | Operator Page`);
     }
   };
 
@@ -82,6 +102,10 @@ export default () => {
 
   onUrlChange(() => {
     pollerLite(['.MuiBox-root.mui-1smddtb', () => window.location.pathname === '/odds/'], () => {
+      init();
+    });
+
+    pollerLite(['body', '.MuiBox-root.mui-4kbj', () => shouldRunTest(window.location.href)], () => {
       init();
     });
   });

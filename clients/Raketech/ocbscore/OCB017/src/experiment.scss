@@ -1,0 +1,33 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__surveyBanner {
+    img {
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  &__desktop {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
+  }
+
+  &__policyPageBanner {
+    margin-top: 16px;
+  }
+  &__policyPageBannerMobile {
+    width: 100%;
+    padding-left: 24px;
+    padding-top: 24px;
+  }
+}

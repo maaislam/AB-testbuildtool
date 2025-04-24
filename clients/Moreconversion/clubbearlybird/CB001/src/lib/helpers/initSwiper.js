@@ -18,16 +18,7 @@ const initSwiper = (container, initConfig) => {
     if (e.realIndex === 4 || (e.realIndex === 0 && isMobile())) {
       pagiElement.style.bottom = '0px';
     } else {
-      pagiElement.style.bottom = '10px';
-    }
-  });
-  slider.on('init', () => {
-    console.log('🚀 ~ slider.on ~ e:', slider.activeIndex);
-    const pagiElement = document.querySelector('.swiper-pagination');
-    if (isMobile() && slider.activeIndex) {
-      pagiElement.style.bottom = '0px';
-    } else {
-      pagiElement.style.bottom = '10px';
+      pagiElement.style.bottom = isMobile() ? '0px' : '10px';
     }
   });
 };
