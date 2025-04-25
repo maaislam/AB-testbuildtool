@@ -5,6 +5,7 @@ import shared from './shared/shared';
 import {
   addToCart,
   calculateTotalPrice,
+  clickUntilModalAppears,
   fetchProductDetails,
   formatPriceGBP,
   getCommonElements,
@@ -22,6 +23,12 @@ const { ID, VARIATION } = shared;
 const itemsPerPage = isMobile() ? 1 : 3;
 let currentPage = 0;
 const productsData = [];
+
+const captureElementsContainingString = (searchString) => {
+  const elements = [...document.querySelectorAll('.cart.item .product-item-name')]; //Get all elements as an array
+
+  return elements.filter((el) => el.textContent.includes(searchString));
+};
 
 const contentUpdate = (price, wasPrice, meterInfo, packInfo) => {
   const modalContent = document.querySelector(`.${ID}__modal-container`);
@@ -56,6 +63,28 @@ const variantPriceChange = (mainWrapper, data) => {
 };
 
 const init = () => {
+  if (window.location.pathname === '/checkout/cart/' && VARIATION === '1') {
+    if (!document.documentElement.classList.contains(ID)) {
+      setup();
+    }
+    const prodTitle = window.sessionStorage.getItem(`${ID}__productTitle`);
+    if (captureElementsContainingString(prodTitle) && prodTitle) {
+      const itemWrapper = captureElementsContainingString(prodTitle)[0].closest('.item-info');
+      const accessoriesBtn = itemWrapper.querySelector('button.flooring-accessories');
+      clickUntilModalAppears(accessoriesBtn, '.cart-crosssell._show');
+      window.sessionStorage.removeItem(`${ID}__productTitle`);
+    }
+
+    return;
+  }
+
+  if (window.location.pathname === '/checkout/cart/' && VARIATION === '2') {
+    if (!document.documentElement.classList.contains(ID)) {
+      setup();
+    }
+    return;
+  }
+
   const imageElement = document.querySelector('#productCarousel .gallery__item img');
   const imageSrc = imageElement?.getAttribute('src');
 
@@ -211,6 +240,8 @@ export default () => {
             openModal(ID);
             document.body.classList.add(`${ID}__scrollOff`);
             contentUpdate(price, wasPrice, meterInfo, packInfo);
+            const { name } = document.querySelector(`.${ID}__modal`).dataset;
+            VARIATION === '1' && window.sessionStorage.setItem(`${ID}__productTitle`, name);
             window.require(['Magento_Customer/js/customer-data'], (customerData) => {
               customerData.invalidate(['cart']); //Mark the cart data as stale
               customerData.reload(['cart'], true); //Force reload from server
@@ -344,11 +375,15 @@ export default () => {
             console.error('Error:', err);
           });
       }
-    } else if (target.closest('.flooring-accessories[type="button"]')) {
+    } else if (target.closest('.flooring-accessories[type="button"]') && VARIATION === '2') {
       document.body.classList.add(`${ID}__hasModal`);
-    } else if (target.closest('.modals-overlay')) {
+    } else if (target.closest('.modals-overlay') && VARIATION === '2') {
       document.body.classList.remove(`${ID}__hasModal`);
-    } else if (target.closest('button.action-close') && target.closest('.modal-popup')) {
+    } else if (
+      target.closest('button.action-close') &&
+      target.closest('.modal-popup') &&
+      VARIATION === '2'
+    ) {
       document.body.classList.remove(`${ID}__hasModal`);
     }
   });

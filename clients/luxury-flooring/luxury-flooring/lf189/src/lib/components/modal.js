@@ -6,7 +6,7 @@ const modal = (id, imageSrc, productTitle, VARIATION, productsData) => {
   const itemLength = productsData.length;
 
   const html = `
-    <div class="${id}__modal">
+    <div class="${id}__modal" data-name="${productTitle}">
       <div class="${id}__modal-overlay"></div>
         <div class="${id}__modal-container">
           <div class="${id}__modal-header">
@@ -41,8 +41,15 @@ const modal = (id, imageSrc, productTitle, VARIATION, productsData) => {
         <div class="${id}__prodAccessoriesWrapper">
             <div class="${id}__prodAccessoriesTitle">Don't forget your accessories:</div>
             
-            ${VARIATION === '1' ? `<a href="/checkout/cart/" data-name="${productTitle}" class="${id}__prodAccessoriesBtn">View recommended accessories</a>`
-              : VARIATION === '2' ? `${productsData.map((data, index) => productCard(id, data, index)).join('')} ${pagination(id, itemLength)}` : ''}
+            ${
+              VARIATION === '1'
+                ? `<a href="/checkout/cart/" data-name="${productTitle}" class="${id}__prodAccessoriesBtn">View recommended accessories</a>`
+                : VARIATION === '2'
+                ? `${productsData
+                    .map((data, index) => productCard(id, data, index))
+                    .join('')} ${pagination(id, itemLength)}`
+                : ''
+            }
         </div>
         <div class="${id}__prodBtnWrapperMobile">
           <a href="/checkout/cart/" class="${id}__prodBtnWrapper__cartBtn">View shopping basket</a>

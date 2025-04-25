@@ -18,8 +18,8 @@ const pressFeatures = (id) => {
                         alt=""
                         data-ll-status="loaded"
                         class="entered loaded"></li>
-                <li><img src="https://luxuryflooring.co.uk/media/amasty/webp/wysiwyg/Yorkshire-Evening-Post_1__jpg.webp"
-                        data-amsrc="https://luxuryflooring.co.uk/media/amasty/webp/wysiwyg/Yorkshire-Evening-Post_1__jpg.webp"
+                <li><img src="https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test191/Yorkshire-Evening-Post_1_b_w.jpg"
+                        data-amsrc="https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test191/Yorkshire-Evening-Post_1_b_w.jpg"
                         alt=""
                         data-ll-status="loaded"
                         class="entered loaded"></li>

@@ -16,6 +16,11 @@
     padding-left: 40px;
     padding-right: 40px;
     width: auto;
+
+    @media screen and (max-width: 991px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
     .customer-gallery-text {
       h1 {
         margin-bottom: 25px;
@@ -25,13 +30,16 @@
         width: 100%;
         margin: 0 auto;
         margin-bottom: 25px;
+
+        @media screen and (max-width: 991px) {
+          max-width: 90%;
+        }
       }
       p:last-child {
         display: none;
       }
     }
 
-    #modal-content,
     .birthday-cta-container {
       display: none;
     }
@@ -47,9 +55,17 @@
           background-color: #546052;
         }
       }
+
+      @media screen and (max-width: 991px) {
+        transform: translateY(-40px);
+      }
     }
 
-    .#{$id}__show {
+    .grid-container {
+      @media screen and (max-width: 991px) {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
     .grid-container + .grid-container {
       display: none;
@@ -58,6 +74,12 @@
     &.#{$id}__active {
       .grid-container + .grid-container {
         display: grid;
+      }
+      .#{$id}__btnWrapper {
+        @media screen and (max-width: 991px) {
+          transform: translateY(0px);
+          margin-bottom: 30px;
+        }
       }
     }
 
@@ -92,10 +114,73 @@
         background-color: #546052 !important;
       }
     }
+
+    .about_img {
+      img {
+        @media screen and (max-width: 767px) {
+          max-width: 100% !important;
+        }
+      }
+    }
   }
   &__press-features {
     & + .press-features {
       display: none;
+    }
+  }
+
+  &__modal {
+    .modal-inner-wrap {
+      width: 50%;
+    }
+    #modal-content-0 {
+      padding: 0 0 30px;
+    }
+    .modal-image {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .modal-button.primary button {
+      background-color: #61715f;
+    }
+    .modal-content .modal-button button {
+      width: 100%;
+      text-transform: capitalize;
+      height: 46px;
+      font-size: 15px !important;
+      font-family: 'work-sans';
+
+      @media only screen and (min-width: 992px) and (max-width: 1745px) {
+        width: 100%;
+        text-transform: capitalize;
+        height: 35px;
+        font-size: 11px !important;
+        margin: 0 auto 5px;
+        padding: 10px 17px;
+      }
+
+      @media only screen and (min-width: 992px) and (max-width: 1319px) {
+        padding: 7px 15px;
+      }
+
+      @media screen and (max-width: 991px) {
+        width: 90% !important;
+        font-weight: normal;
+      }
+    }
+
+    .modal-content .modal-button.secondary button {
+      @media only screen and (min-width: 992px) and (max-width: 1745px) {
+        margin: 0 auto;
+      }
+    }
+
+    .modal-inner-content img.modal-thumbnail {
+      @media only screen and (max-width: 991px) {
+        float: none;
+        margin: 20px auto;
+        width: 40%;
+      }
     }
   }
 }

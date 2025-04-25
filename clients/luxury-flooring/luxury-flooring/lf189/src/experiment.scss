@@ -2,29 +2,32 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  ._has-modal {
-    overflow-x: hidden;
-    overflow-y: auto;
-    .modal-popup.cart-crosssell._show {
-      display: none;
-
-      & + .modals-overlay {
-        display: none;
-      }
-    }
-
-    &.#{$id}__hasModal {
-      overflow: hidden;
+  &-2 {
+    ._has-modal {
+      overflow-x: hidden;
+      overflow-y: auto;
       .modal-popup.cart-crosssell._show {
-        display: block;
+        display: none;
 
         & + .modals-overlay {
+          display: none;
+        }
+      }
+
+      &.#{$id}__hasModal {
+        overflow: hidden;
+        .modal-popup.cart-crosssell._show {
           display: block;
-          z-index: 9999 !important;
+
+          & + .modals-overlay {
+            display: block;
+            z-index: 9999 !important;
+          }
         }
       }
     }
   }
+
   &__scrollOff {
     overflow: hidden;
   }
