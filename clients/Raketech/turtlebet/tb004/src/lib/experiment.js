@@ -25,12 +25,12 @@ const init = () => {
   setup();
   if (VARIATION === 'control') return;
   renderDom();
-  const mainElement = document.querySelector('.MuiBox-root.css-yd8sa2');
+  const mainElement = document.querySelector('.css-yd8sa2');
 
   const isMutationAdded = mainElement.getAttribute(`${ID}__mutationAdded`);
   if (!isMutationAdded) {
     //eslint-disable-next-line no-return-assign
-    observeDOM('.MuiBox-root.css-yd8sa2', renderDom);
+    observeDOM('.css-yd8sa2', renderDom);
   }
   mainElement.setAttribute(`${ID}__mutationAdded`, true);
 };
@@ -75,6 +75,8 @@ export default () => {
   experimentStart();
 
   onUrlChange(() => {
+    document.documentElement.classList.remove(ID);
+    document.documentElement.classList.remove(`${ID}-${VARIATION}`);
     experimentStart();
   });
 };

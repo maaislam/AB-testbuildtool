@@ -1,9 +1,9 @@
 const buttonElem = (id) => {
   const html = `
     <div class="${id}__btnWrapper">
-        <button type="button" class="action ${id}__btn">
+        <a href="/customer-gallery" class="action ${id}__btn">
             View Customer Gallery
-        </button>
+        </a>
     </div>
   `;
   return html.trim();

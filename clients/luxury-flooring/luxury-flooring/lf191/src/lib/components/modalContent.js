@@ -11,17 +11,19 @@ const modalContent = (id, data) => {
     <div class="product-modal-right">
         <div class="product-details">
             <h2>${title}</h2>
-            <p style="margin-bottom:5px;">Flooring type: ${type}</p>
+            <p style="margin-bottom:5px;">Flooring type: ${type} ${
+    !type.includes('Wood') ? 'Wood' : ''
+  }</p>
             <p>${sku}</p>
         </div>
-        <div><a href="${link}.html"><img class="modal-thumbnail"
-                    src="/media/wysiwyg/${thumbnail}" loading="lazy"></a></div>
+        <div class="thumbnail-wrapper"><a href="${link}.html"><img class="modal-thumbnail"
+                    src="${thumbnail}" loading="lazy"></a></div>
         <div class="button-container">
             <div class="modal-button secondary"><a
                 href="${link}.html"><button>View Product</button></a>
             </div>
             <div class="modal-button primary"><a
-                href="${link}.html?gallery=true"><button>Order a Free
+                href="${link}.html?gallery=true" class="${id}__sampleBtn"><button>Order a Free
                         Sample</button></a></div>
         </div>
     </div>

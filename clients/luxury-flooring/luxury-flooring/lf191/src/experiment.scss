@@ -8,6 +8,10 @@
     display: none;
   }
 
+  div.page.messages {
+    z-index: 99999;
+  }
+
   &__photoGalarySection {
     box-sizing: border-box;
     margin-left: auto;
@@ -47,7 +51,15 @@
       text-align: center;
       margin-top: 20px;
       .#{$id}__btn {
+        width: 100%;
+        max-width: 385px;
+        border-radius: 0;
+        font-weight: 400;
+        font-size: 16px !important;
+        line-height: 1 !important;
+        padding: 18px;
         background-color: #6c7c69;
+        color: #fff;
         box-shadow: unset;
         margin-bottom: 0;
 
@@ -131,7 +143,8 @@
 
   &__modal {
     .modal-inner-wrap {
-      width: 50%;
+      width: 65%;
+      margin: 5.5rem auto;
     }
     #modal-content-0 {
       padding: 0 0 30px;
@@ -143,18 +156,36 @@
     .modal-button.primary button {
       background-color: #61715f;
     }
+
+    .product-modal-right {
+      @media screen and (min-width: 991px) {
+        grid-template-columns: 30% auto;
+      }
+    }
+    .thumbnail-wrapper {
+      @media screen and (min-width: 992px) {
+        a {
+          display: inline-block;
+          height: 100%;
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
     .modal-content .modal-button button {
       width: 100%;
       text-transform: capitalize;
-      height: 46px;
-      font-size: 15px !important;
+      height: 56px;
+      font-size: 16px !important;
       font-family: 'work-sans';
 
       @media only screen and (min-width: 992px) and (max-width: 1745px) {
         width: 100%;
         text-transform: capitalize;
-        height: 35px;
-        font-size: 11px !important;
+        height: 56px;
+        font-size: 16px !important;
+        line-height: 1;
         margin: 0 auto 5px;
         padding: 10px 17px;
       }
@@ -180,6 +211,17 @@
         float: none;
         margin: 20px auto;
         width: 40%;
+      }
+    }
+
+    .#{$id}__sampleBtn {
+      button.#{$id}__disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      &:has(button.#{$id}__disabled) {
+        pointer-events: none;
       }
     }
   }

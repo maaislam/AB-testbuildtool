@@ -14,6 +14,9 @@ const modal = (id) => {
                 <div class="modal-inner-wrap"
                     data-role="focusable-scope">
                     <header class="modal-header">
+                          <div class="modal-inner-description">
+                                
+                          </div>
                         <button class="action-close"
                                 data-role="closeBtn"
                                 type="button">
@@ -26,9 +29,11 @@ const modal = (id) => {
                         <div id="modal-content"
                             class="customer-gallery-modal">
                             <div class="modal-inner-content">
-                               
                             </div>
                         </div>
+                    </div>
+                    <div class="modal-inner-button">
+                        
                     </div>
                 </div>
                 <div data-role="focusable-end"

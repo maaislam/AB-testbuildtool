@@ -13,6 +13,7 @@ const fetchProductImagesData = async (productCard) => {
     if (!photoGalleryWrapper) return [];
 
     const galleryItems = photoGalleryWrapper.querySelectorAll('.gallery__item');
+    const productSkuElement = doc.querySelector('form[data-product-sku]');
 
     const images = [...galleryItems]
       .map((item) => {
@@ -21,7 +22,10 @@ const fetchProductImagesData = async (productCard) => {
       })
       .filter(Boolean);
 
-    return images;
+    return {
+      sku: productSkuElement ? productSkuElement.dataset.productSku : '',
+      images
+    };
   } catch (error) {
     console.error('Error fetching product data:', error);
     return [];

@@ -95,3 +95,27 @@ export const moveNonImageChildren = (source, target) => {
     }
   });
 };
+
+export const addToSampleCart = (prodId, formKey, uencValue, action) => {
+  return new Promise((resolve, reject) => {
+    window.require(['jquery'], ($) => {
+      $.ajax({
+        url: action,
+        type: 'POST',
+        data: {
+          product: prodId,
+          is_sample: 1,
+          uenc: uencValue || '',
+          form_key: formKey
+        },
+        success(response) {
+          resolve(response); //Resolve the promise with response
+        },
+        error(err) {
+          console.error('Error adding product to cart', err);
+          reject(err); //Reject the promise with error
+        }
+      });
+    });
+  });
+};
