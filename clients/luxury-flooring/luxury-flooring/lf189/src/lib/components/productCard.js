@@ -4,10 +4,13 @@ import productOptions from './productOptions';
 
 const productCard = (id, data, index) => {
   const activeItemPerPage = isMobile() ? 1 : 3;
+  const isConfigurableProduct = data.configurableData && data.configurableData.length > 0;
 
   const htmlStr = `<div class="${id}__productCard product-card ${
     index < activeItemPerPage ? 'active' : ''
-  }" data-formKey="${data.formKey}" data-sku="${data.sku}" data-url="${data.url}">
+  }" data-formKey="${data.formKey}" data-sku="${data.sku}" data-url="${
+    data.url
+  }" data-product-type="${isConfigurableProduct ? 'yes' : 'no'}">
         <img class="${id}__productImage" src="${data.imgSrc}" alt="Roll Image" />
         <div class="${id}__productContent">
             <div class="product-title">${data.productTitleText}</div>
@@ -19,9 +22,7 @@ const productCard = (id, data, index) => {
                 ? `${productOptions(id, data.configurableData, data.productOptionPrices)}`
                 : ''
             }
-            <div class="${id}__actionWrapper" disabled="${!!(
-    data.configurableData && data.configurableData.length > 0
-  )}">
+            <div class="${id}__actionWrapper" disabled="${!!isConfigurableProduct}">
                 <div class="quantity-add">
                     <button class="${id}__plusBtn">${minusIcon}</button>
                     <input class="${id}__qtyInput" type="number" id="qty" value="1" min="1"/>

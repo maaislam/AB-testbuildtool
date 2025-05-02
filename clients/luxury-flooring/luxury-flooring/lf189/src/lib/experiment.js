@@ -5,6 +5,7 @@ import shared from './shared/shared';
 import {
   addToCart,
   calculateTotalPrice,
+  checkCartData,
   clickUntilModalAppears,
   fetchProductDetails,
   formatPriceGBP,
@@ -63,6 +64,9 @@ const variantPriceChange = (mainWrapper, data) => {
 };
 
 const init = () => {
+  if (window.sessionStorage.getItem('hasSeenCheckout')) {
+    window.sessionStorage.removeItem('hasSeenCheckout');
+  }
   if (window.location.pathname === '/checkout/cart/' && VARIATION === '1') {
     if (!document.documentElement.classList.contains(ID)) {
       setup();
@@ -225,7 +229,7 @@ export default () => {
       const sku = addFormWrapper.querySelector('input[name="product"]')?.value;
       const formKey = addFormWrapper.querySelector('input[name="form_key"]')?.value;
       const url = addFormWrapper.action;
-      const quantity = document.querySelector('.fp-calculator input')?.value;
+      //const quantity = document.querySelector('.fp-calculator input')?.value;
       const retailPriceElement = document.querySelector(
         '.product-info-price-wrapper .retail-pricing'
       );
@@ -233,9 +237,10 @@ export default () => {
         '.flooring-price-pack-price .price-including-tax .price'
       );
       const wasPrice = wasPriceElement ? wasPriceElement.textContent : '';
+      const onlyPackNumber = packInfo.split('packs')[0].trim();
 
       if (price !== '£0.00' || !totalPriceElement) {
-        addToCart(sku, formKey, url, quantity)
+        addToCart(sku, formKey, url, onlyPackNumber)
           .then(() => {
             openModal(ID);
             document.body.classList.add(`${ID}__scrollOff`);
@@ -245,6 +250,7 @@ export default () => {
             window.require(['Magento_Customer/js/customer-data'], (customerData) => {
               customerData.invalidate(['cart']); //Mark the cart data as stale
               customerData.reload(['cart'], true); //Force reload from server
+              VARIATION === '2' && checkCartData(ID);
             });
           })
           .catch((err) => {
@@ -278,10 +284,6 @@ export default () => {
         }
         priceElement.textContent = calculateTotalPrice(price, parseInt(qtyInput.value));
       }
-
-      //const priceFormat = price.replace('£', '');
-      //const updatedPrice = Number(priceFormat) * Number(qtyInput.value);
-      //cardPriceElem.textContent = `£${updatedPrice.toFixed(2)}`;
     } else if (target.closest(`.${ID}__minusBtn`)) {
       const qtyInput = target.closest(`.${ID}__actionWrapper`).querySelector(`.${ID}__qtyInput`);
       const wrapper = target.closest(`.${ID}__productContent`);
@@ -292,12 +294,10 @@ export default () => {
         qtyInput.value = currentValue + 1;
         priceElement.textContent = calculateTotalPrice(price, parseInt(qtyInput.value));
       }
-
-      //const priceFormat = price.replace('£', '');
-      //const updatedPrice = Number(priceFormat) * Number(qtyInput.value);
-      //cardPriceElem.textContent = `£${updatedPrice.toFixed(2)}`;
     } else if (target.closest(`#${ID}__productAtcBtn`)) {
       const productAtcBtn = target.closest(`#${ID}__productAtcBtn`);
+      const mainProduct = productAtcBtn.closest(`.${ID}__productCard`);
+      const { productType } = mainProduct.dataset;
       const productCard = productAtcBtn.closest(`.${ID}__productCard`);
       const formKey = productCard.getAttribute('data-formKey');
       const sku = productCard.getAttribute('data-sku');
@@ -363,10 +363,12 @@ export default () => {
               productAtcBtn.textContent = '+ Add to basket';
               productAtcBtn.disabled = false;
 
-              setTimeout(() => {
-                actionWrapper.classList.remove(`${ID}__hide`);
-                addedToBasketElement.classList.add(`${ID}__hide`);
-              }, 2000);
+              if (productType === 'yes') {
+                setTimeout(() => {
+                  actionWrapper.classList.remove(`${ID}__hide`);
+                  addedToBasketElement.classList.add(`${ID}__hide`);
+                }, 2000);
+              }
             });
           })
           .catch((err) => {

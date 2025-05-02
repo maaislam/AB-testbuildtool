@@ -35,7 +35,7 @@ const modal = (id, imageSrc, productTitle, VARIATION, productsData) => {
               </div>
               <div class="${id}__prodBtnWrapper">
                   <a href="/checkout/cart/" class="${id}__prodBtnWrapper__cartBtn">View shopping basket</a>
-                  <a href="/checkout/" class="${id}__prodBtnWrapper__checkoutBtn">Go to checkout</a>
+                  <a href="/checkout/#shipping" class="${id}__prodBtnWrapper__checkoutBtn">Go to checkout</a>
               </div>
         </div>
         <div class="${id}__prodAccessoriesWrapper">
@@ -53,7 +53,7 @@ const modal = (id, imageSrc, productTitle, VARIATION, productsData) => {
         </div>
         <div class="${id}__prodBtnWrapperMobile">
           <a href="/checkout/cart/" class="${id}__prodBtnWrapper__cartBtn">View shopping basket</a>
-          <a href="/checkout/" class="${id}__prodBtnWrapper__checkoutBtn">Go to checkout</a>
+          <a href="/checkout/#shipping" class="${id}__prodBtnWrapper__checkoutBtn">Go to checkout</a>
           </div>
       </div>
     </div>

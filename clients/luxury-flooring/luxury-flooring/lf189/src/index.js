@@ -9,3 +9,12 @@ pollerLite(
   ],
   activate
 );
+
+if (window.location.pathname === '/checkout/') {
+  pollerLite([() => window.location.href.includes('#shipping')], () => {
+    if (!window.sessionStorage.getItem('hasSeenCheckout')) {
+      window.location.reload();
+      window.sessionStorage.setItem('hasSeenCheckout', true);
+    }
+  });
+}

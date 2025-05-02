@@ -242,3 +242,46 @@ export const formatPriceGBP = (price) => {
     currency: 'GBP'
   }).format(numericPrice);
 };
+
+export const checkCartData = (ID) => {
+  pollerLite(
+    [
+      () => window.localStorage.getItem('mage-cache-storage'),
+      () => JSON.parse(window.localStorage.getItem('mage-cache-storage')),
+      () => JSON.parse(window.localStorage.getItem('mage-cache-storage')).cart
+    ],
+    () => {
+      const storageData = window.localStorage.getItem('mage-cache-storage');
+      const { cart } = JSON.parse(storageData);
+      const cartItems = cart.items
+        .filter((item) => item.product_id && item.product_type !== 'configurable')
+        .map((item) => item.product_id);
+
+      if (cartItems.length > 0) {
+        const productCards = document.querySelectorAll(`.${ID}__productCard`);
+        productCards.forEach((card) => {
+          const { sku } = card.dataset;
+          const isExistingProduct = cartItems.find((item) => sku === item);
+          if (isExistingProduct) {
+            const actionWrapper = card.querySelector(`.${ID}__actionWrapper`);
+            const addingBasket = card.querySelector(`.${ID}__addingToBasket`);
+            const addedBasket = card.querySelector(`.${ID}__addedToBasket`);
+
+            if (actionWrapper) {
+              actionWrapper.removeAttribute('disabled');
+              actionWrapper.classList.add(`${ID}__hide`);
+            }
+
+            if (addingBasket) {
+              addingBasket.classList.add(`${ID}__hide`);
+            }
+
+            if (addedBasket) {
+              addedBasket.classList.remove(`${ID}__hide`);
+            }
+          }
+        });
+      }
+    }
+  );
+};
