@@ -22,7 +22,6 @@ import productDescription from './components/productDescription';
 import buttons from './components/buttons';
 
 const { ID, VARIATION } = shared;
-const isMobile = window.matchMedia('(max-width: 1023px)').matches;
 
 const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
 const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
@@ -77,7 +76,7 @@ const showErrorNotification = () => {
 const observerOptions = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.01
+  threshold: 0.001
 };
 
 const observerCallback = (entries, observer) => {
@@ -117,8 +116,14 @@ const paginationHandler = () => {
     const productLink = productLinkElement.href;
     card.classList.add(`${ID}__loaded-product`);
     if (VARIATION === '2' && !card.querySelector(`.${ID}__overlay`)) {
+      const newWElement = document.createElement('div');
+      newWElement.classList.add(`${ID}__newWrapper`);
+      if (!card.querySelector(`.${ID}__newWrapper`)) {
+        productLinkElement.insertAdjacentElement('beforebegin', newWElement);
+        newWElement.appendChild(productLinkElement);
+      }
       card
-        .querySelector('.product-item-photo')
+        .querySelector(`.${ID}__newWrapper`)
         .insertAdjacentHTML('beforeend', overlayButton(ID, productLink));
     }
     observer.observe(card);
@@ -143,9 +148,10 @@ export default () => {
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    if (target.closest('a.product-item-photo') && target.closest(`.${ID}__quick-view-btn`)) {
+    console.log(target, 'target');
+    if (target.closest(`.${ID}__quick-view-btn`)) {
       e.preventDefault();
-      const clickedItem = target.closest('a.product-item-photo');
+      const clickedItem = target.closest('.product-item-info');
       const productCard = clickedItem.closest('.item.product');
       const productReviews = productCard.querySelector('.product-reviews-summary')?.cloneNode(true);
       const productName = productCard.querySelector('.product-item-link').cloneNode(true);
@@ -181,7 +187,11 @@ export default () => {
         pollerLite([() => window.Swiper !== undefined], () => {
           initSwiperv2(`.${ID}__swiper__${sku}`, `.${ID}__swiperThumb__${sku}`);
         });
-        openModal(ID);
+
+        pollerLite([`.${ID}__swiper__${sku}.swiper-initialized`], () => {
+          openModal(ID);
+        });
+
         return;
       }
       fetchProductImagesData(productCard).then((data) => {
@@ -197,25 +207,26 @@ export default () => {
           modalInnerButton.dataset.sku = data.sku;
           pollerLite([() => window.Swiper !== undefined], () => {
             initSwiperv2(`.${ID}__swiper__${data.sku}`, `.${ID}__swiperThumb__${data.sku}`);
+            openModal(ID);
+          });
+          pollerLite([`.${ID}__swiper__${data.sku}.swiper-initialized`], () => {
+            openModal(ID);
           });
           clickedItem.dataset.array = JSON.stringify(data.images);
           clickedItem.dataset.sku = data.sku;
-          openModal(ID);
         }
       });
-    } else if (target.closest(`.${ID}__clicked`) && target.closest(`.${ID}__productLink`)) {
-    } else if (target.closest('a.product-item-photo') && target.closest(`.${ID}__overlay`)) {
-      //eslint-disable-next-line no-unused-expressions
-      isMobile ? target.closest('a.product-item-photo').classList.add(`${ID}__clicked`) : '';
+    } else if (target.closest(`.${ID}__productLink`)) {
+      e.preventDefault();
+      window.location.href = target.closest(`.${ID}__productLink`).dataset.href;
+    } else if (target.closest('a.product-item-photo')) {
       e.preventDefault();
     } else if (
-      (target.closest('.action-close') || target.matches('.modal-popup._show')) &&
+      (target.closest('.action-close') ||
+        target.closest('.modals-overlay') ||
+        target.matches('.modal-popup.modal-slide')) &&
       target.closest(`.${ID}__modal`)
     ) {
-      const productItemPhoto = document.querySelectorAll(`a.product-item-photo.${ID}__clicked`);
-      if (productItemPhoto) {
-        productItemPhoto.forEach((item) => item.classList.remove(`${ID}__clicked`));
-      }
       closeModal(ID);
     } else if (target.closest(`.${ID}__sampleBtn`)) {
       const clickedItem = target.closest(`.${ID}__sampleBtn`);
