@@ -382,10 +382,10 @@
     cursor: pointer;
     pointer-events: auto; /* allows button to be clickable */
     margin-top: 10px;
+    margin-bottom: 0;
   }
 
   &__productLink {
-    display: none !important;
     max-width: 220px;
     width: 100% !important;
     height: 50px;
@@ -396,10 +396,6 @@
     background-color: #c8a461 !important;
     color: #ffffff !important;
     opacity: 1;
-
-    @media screen and (max-width: 767px) {
-      display: block !important;
-    }
   }
 
   .lf183__btn-group {
