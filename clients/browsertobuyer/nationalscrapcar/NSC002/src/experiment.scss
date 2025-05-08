@@ -1,6 +1,9 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
+body {
+  visibility: hidden;
+}
 .#{$id} {
   #wrapper-navbar {
     background: none;
@@ -197,8 +200,11 @@
 
         .alloy-wheels {
           margin-top: 0;
-          & > .form-group > .form-check {
+          & > .form-group {
             position: relative;
+          }
+          & > .form-group > .form-check {
+            position: static;
             display: inline-block;
             max-width: 130px;
             width: 100%;
@@ -208,6 +214,7 @@
             padding: 3px 0;
 
             label {
+              position: relative;
               width: 100%;
               font-size: 14px;
               line-height: 100%;
@@ -234,6 +241,13 @@
 
             & + .form-check {
               margin-left: 10px;
+            }
+
+            li.parsley-custom-error-message {
+              width: max-content;
+              top: auto;
+              bottom: -10px;
+              right: 15px;
             }
 
             @media screen and (max-width: 767px) {
