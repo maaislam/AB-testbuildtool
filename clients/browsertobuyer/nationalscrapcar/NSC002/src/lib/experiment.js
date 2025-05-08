@@ -1,12 +1,12 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
+
 import progressWrapper from './components/progressWrapper';
 import banner from './components/banner';
 import tooltipWrapper from './components/tooltipWrapper';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const targetPoint = document.querySelector('.wrap.page-step-2');
@@ -43,8 +43,7 @@ const init = () => {
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
+  setup();
 
   init();
 };

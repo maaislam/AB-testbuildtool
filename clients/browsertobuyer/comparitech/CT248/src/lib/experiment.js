@@ -119,46 +119,13 @@ const translationData = {
 };
 
 const backupShortSubject = {
-  en: {
-    surfshark: 'Great value choice for users on a budget',
-    nordvpn: 'Most reliable choice for streaming and unblocking',
-    ipvanish: 'Great choice for security and privacy'
-  },
-  es: {
-    surfshark: 'Opción rentable para streaming y seguridad',
-    nordvpn: 'La opción más fiable para streaming y desbloqueo',
-    ipvanish: 'Gran opción para seguridad y privacidad'
-  },
-  de: {
-    surfshark: 'Günstige Wahl für sparsame Nutzer',
-    nordvpn: 'Zuverlässigste Wahl für Streaming und Entsperrung',
-    ipvanish: 'Top-Wahl für Sicherheit und Datenschutz'
-  },
-  ar: {
-    surfshark: 'خيار ممتاز لأصحاب الميزانية المحدودة',
-    nordvpn: 'الأكثر موثوقية للبث وكسر الحجب',
-    ipvanish: 'خيار رائع للخصوصية والأمان'
-  },
-  it: {
-    surfshark: 'Ottima scelta economica per chi ha un budget ridotto',
-    nordvpn: 'La più affidabile per streaming e sblocco',
-    ipvanish: 'Ottima per sicurezza e privacy'
-  },
-  fr: {
-    surfshark: 'Excellent choix économique pour petits budgets',
-    nordvpn: 'Le plus fiable pour le streaming et le déblocage',
-    ipvanish: 'Très bon choix pour la sécurité et la confidentialité'
-  },
-  ja: {
-    surfshark: '予算重視の方におすすめの高コスパVPN',
-    nordvpn: 'ストリーミングや制限解除に最も信頼できる選択',
-    ipvanish: 'セキュリティとプライバシーに最適'
-  },
-  ko: {
-    surfshark: '예산에 민감한 사용자에게 최고의 가성비',
-    nordvpn: '스트리밍 및 차단 해제에 가장 신뢰할 수 있는 선택',
-    ipvanish: '보안 및 개인정보 보호에 탁월'
-  }
+  en: 'Great choice VPN',
+  es: 'VPN muy recomendable',
+  de: 'Starke VPN-Wahl',
+  ar: 'VPN خيار رائع',
+  it: 'VPN consigliata',
+  fr: 'VPN fortement recommandée',
+  ja: '優れた選択のVPN'
 };
 const nordvpnGuaranteeMessage = {
   en: "You can try it risk free with NordVPN's 30-day money-back guarantee.",
@@ -192,14 +159,13 @@ export default () => {
     const originalName = link.textContent.trim();
     const nameWithoutColon = originalName.replace(/:/g, '').trim();
     const nameLower = nameWithoutColon.replace(/\s+/g, '').toLowerCase();
-    console.log('🚀 ~ document.querySelectorAll ~ nameLower:', nameLower);
+
     const vpnKey = nameLower.includes('privateinternetaccess') ? 'pia' : nameLower;
-    console.log('🚀 ~ document.querySelectorAll ~ vpnKey:', vpnKey);
 
     const reasonTemplate = translationData[vpnKey]?.[langCode] || translationData.default[langCode];
     const reason = shortSubject
       ? reasonTemplate.replace('<short subject>', shortSubject)
-      : backupShortSubject[langCode][vpnKey];
+      : backupShortSubject[langCode];
 
     const linkHref = link.getAttribute('href');
 
