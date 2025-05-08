@@ -1,11 +1,10 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { pollerLite } from './helpers/utils';
 import productsWrapper from './components/productsWrapper';
 import freeShippingBar from './components/freeShippingBar';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const getProductList = (listItems) => {
   //const listItems = [...document.querySelectorAll('#system_product-menu li')].slice(1);
@@ -53,20 +52,13 @@ export default () => {
   setup(); //use if needed
   console.log(ID);
   document.body.addEventListener('click', (e) => {
-    const targetPoint = document.querySelector('.accessories-banner');
-    const accessoriesBtn = targetPoint.querySelector('#system_product-button span');
     const { target } = e;
     console.log(target, 'target');
     if (target.closest(`.${ID}__item`)) {
       const clickedItem = target.closest(`.${ID}__item`);
       const { id } = clickedItem.dataset;
-      accessoriesBtn.click();
-      window.clickedId = id;
-    } else if (target.closest('#system_product-button') && window.clickedId) {
-      console.log('enterrr');
-      const controlItem = document.querySelector(`li#${window.clickedId}`);
+      const controlItem = document.querySelector(`li#${id}`);
       if (controlItem) controlItem.click();
-      window.clickedId = null;
     }
   });
 
