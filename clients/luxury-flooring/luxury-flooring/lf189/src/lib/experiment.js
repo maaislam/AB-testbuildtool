@@ -253,7 +253,7 @@ export default () => {
             window.require(['Magento_Customer/js/customer-data'], (customerData) => {
               customerData.invalidate(['cart']); //Mark the cart data as stale
               customerData.reload(['cart'], true); //Force reload from server
-              VARIATION === '2' && checkCartData(ID);
+              //VARIATION === '2' && checkCartData(ID);
             });
           })
           .catch((err) => {
@@ -366,12 +366,12 @@ export default () => {
               productAtcBtn.textContent = '+ Add to basket';
               productAtcBtn.disabled = false;
 
-              if (productType === 'yes') {
-                setTimeout(() => {
-                  actionWrapper.classList.remove(`${ID}__hide`);
-                  addedToBasketElement.classList.add(`${ID}__hide`);
-                }, 2000);
-              }
+              //if (productType === 'yes') {
+              setTimeout(() => {
+                actionWrapper.classList.remove(`${ID}__hide`);
+                addedToBasketElement.classList.add(`${ID}__hide`);
+              }, 2000);
+              //}
             });
           })
           .catch((err) => {
