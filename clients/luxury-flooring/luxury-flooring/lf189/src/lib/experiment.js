@@ -111,20 +111,20 @@ const init = () => {
       return;
     }
 
-    results.forEach((doc) => {
-      const image = doc.querySelector('.gallery__item--image img');
-      const priceElem = doc.querySelector('[data-price-type="finalPrice"]');
-      const productTitleElement = doc.querySelector('.page-title');
-      const sku = doc.querySelector('input[name="product"]')?.value;
+    results.forEach((item) => {
+      const image = item.doc.querySelector('.gallery__item--image img');
+      const priceElem = item.doc.querySelector('[data-price-type="finalPrice"]');
+      const productTitleElement = item.doc.querySelector('.page-title');
+      const sku = item.doc.querySelector('input[name="product"]')?.value;
       const formKey = getCookie('form_key');
-      const addFormWrapper = doc.querySelector('#product_addtocart_form');
+      const addFormWrapper = item.doc.querySelector('#product_addtocart_form');
       const url = addFormWrapper.action;
 
       const imgSrc = image?.getAttribute('src');
       const productTitleText = productTitleElement?.textContent?.trim();
       const price = priceElem?.textContent?.trim();
 
-      const scripts = doc.querySelectorAll('script[type="text/x-magento-init"]');
+      const scripts = item.doc.querySelectorAll('script[type="text/x-magento-init"]');
       const configurableData = [];
       let productOptionPrices;
 
@@ -154,8 +154,11 @@ const init = () => {
         formKey,
         url,
         configurableData,
-        productOptionPrices
+        productOptionPrices,
+        productLink: item.url
       };
+
+      //console.log(productData, 'productData');
 
       productsData.push(productData);
     });

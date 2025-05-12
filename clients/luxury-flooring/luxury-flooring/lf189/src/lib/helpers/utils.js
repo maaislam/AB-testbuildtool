@@ -163,7 +163,10 @@ export const fetchProductDetails = (urls) => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
 
-        return doc;
+        return {
+          doc,
+          url
+        };
       })
       .catch((error) => ({
         url,

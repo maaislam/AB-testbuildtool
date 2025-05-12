@@ -2,6 +2,9 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  div.page.messages {
+    z-index: 999;
+  }
   &__test {
     display: block;
   }
@@ -66,6 +69,15 @@
         height: 100px;
         justify-content: center;
         width: 100%;
+
+        @media screen and (max-width: 767px) {
+          font-size: 16px;
+          height: 60px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 35px;
       }
     }
     .swiper-button-prev {
@@ -95,6 +107,14 @@
         height: 100px;
         justify-content: center;
         width: 100%;
+        @media screen and (max-width: 767px) {
+          font-size: 16px;
+          height: 60px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 35px;
       }
     }
 
@@ -124,6 +144,11 @@
     }
 
     .#{$id}__modal {
+      .swiper-slide {
+        background-color: transparent !important;
+        background-position: center;
+        background-size: cover;
+      }
       .swiper-button-next {
         align-items: center;
         background: 0 0;
@@ -152,6 +177,14 @@
           height: 100px;
           justify-content: center;
           width: 100%;
+
+          @media screen and (max-width: 767px) {
+            font-size: 16px;
+            height: 60px;
+          }
+        }
+        @media screen and (max-width: 767px) {
+          width: 35px;
         }
       }
       .swiper-button-prev {
@@ -181,6 +214,14 @@
           height: 100px;
           justify-content: center;
           width: 100%;
+
+          @media screen and (max-width: 767px) {
+            font-size: 16px;
+            height: 60px;
+          }
+        }
+        @media screen and (max-width: 767px) {
+          width: 35px;
         }
       }
 
@@ -190,6 +231,7 @@
 
       .#{$id}__mainSlider {
         .swiper-wrapper {
+          user-select: none;
           .swiper-slide {
             img {
               width: 100%;
@@ -247,6 +289,10 @@
         letter-spacing: 0px;
         color: #202020;
         opacity: 1;
+
+        @media screen and (max-width: 767px) {
+          font: normal normal normal 16px/24px Lucida Bright;
+        }
       }
 
       .modal-inner-button {
@@ -311,6 +357,7 @@
         width: 55%;
         max-height: 80vh !important;
         min-height: max-content !important;
+        margin: 5.5rem auto;
 
         @media screen and (min-width: 1440px) {
           width: 45%;
@@ -327,7 +374,7 @@
           left: 0;
           position: absolute;
           right: 0;
-          margin: 5rem auto;
+          margin: 7rem auto;
           width: 75%;
           -webkit-transform: translateY(0);
           transform: translateY(0);
