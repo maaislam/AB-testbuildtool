@@ -54,7 +54,12 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     console.log(target, 'target');
-    if (target.closest(`.${ID}__item`)) {
+    if (target.closest(`.${ID}__item:not(.view-all)`)) {
+      const clickedItem = target.closest(`.${ID}__item`);
+      const { id } = clickedItem.dataset;
+      const controlItem = document.querySelector(`li#${id}`);
+      if (controlItem) controlItem.click();
+    } else if (target.closest(`.${ID}__item.view-all`)) {
       const clickedItem = target.closest(`.${ID}__item`);
       const { id } = clickedItem.dataset;
       const controlItem = document.querySelector(`li#${id}`);

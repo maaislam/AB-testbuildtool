@@ -1,0 +1,98 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #zpproductselector1-wrapper
+    .zpa-dynamic-product__inner-row
+    .zpa-flex--column:last-child
+    .zpa-offset-bottom-xxs
+    .zpa-column-content
+    h4 {
+    //display: none;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    align-items: center;
+    font-family: 'Source Sans Pro';
+    .old-price {
+      font-family: Source Sans Pro;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 23px;
+      text-decoration: line-through;
+      color: #262626;
+      margin-left: 15px;
+    }
+
+    .save-badge {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 26px;
+      background-color: #f26724;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-left: 18px;
+      display: inline-block;
+
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .zpa-product-price {
+    margin-top: 18px;
+    margin-bottom: 13px;
+    & > [data-zp-product-price-wrapper] {
+      display: none;
+    }
+    .zpa-el-product-price {
+      padding-top: 4px;
+      margin-bottom: 0;
+    }
+    .zpa-flex__wrap {
+      align-items: center;
+    }
+  }
+
+  &__productTag {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    white-space: nowrap;
+
+    .#{$id}__text {
+      font-family: 'Passion One';
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+      color: #262626;
+
+      @media screen and (max-width: 991px) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: 359px) {
+        font-size: 14px;
+      }
+    }
+
+    .#{$id}__subtext {
+      font-family: 'Passion One';
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+      color: #fff;
+      background-color: #f26724;
+      padding: 2px 4px;
+      @media screen and (max-width: 991px) {
+        font-size: 16px;
+      }
+      @media screen and (max-width: 359px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
