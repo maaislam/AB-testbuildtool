@@ -59,7 +59,7 @@ export const addToCart = (quantity, productId) => {
     'Content-Disposition: form-data; name="add-to-cart"\r\n\r\n' +
     `${productId}\r\n${boundary}--\r\n`;
 
-  return fetch('https://www.inogen.com/product/rove6-system/', {
+  return fetch(`${window.location.href}`, {
     method: 'POST',
     headers: {
       accept:
@@ -70,10 +70,80 @@ export const addToCart = (quantity, productId) => {
     body
   })
     .then((res) => res.text())
-    .then((htmlString) => {
+    .then((htmlText) => {
       const parser = new DOMParser();
-      const doc = parser.parseFromString(htmlString, 'text/html');
+      const doc = parser.parseFromString(htmlText, 'text/html');
       return doc;
     })
     .catch((err) => console.error('Error adding to cart:', err));
+};
+
+export const fetchCartDocument = async () => {
+  try {
+    const response = await fetch('https://www.inogen.com/cart/', {
+      headers: {
+        accept:
+          'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'accept-language': 'en-US,en;q=0.9',
+        'sec-ch-ua': '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin'
+      },
+      referrerPolicy: 'strict-origin-when-cross-origin',
+      body: null,
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include'
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status} - ${response.statusText}`);
+    }
+
+    const htmlText = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
+    return doc;
+  } catch (error) {
+    console.error('Failed to fetch cart page:', error);
+    return null;
+  }
+};
+
+export const extractCartTotals = (doc) => {
+  const subtotal =
+    doc.querySelector('.cart-subtotal .woocommerce-Price-amount')?.textContent.trim() || null;
+  const shipping = doc.querySelector('.cart-totals-free-shipping')?.textContent.trim() || null;
+  const salesTax =
+    doc
+      .querySelector('.tax-rate-us-ca-estimated-sales-tax-1 .woocommerce-Price-amount')
+      ?.textContent.trim() || null;
+  const orderTotal =
+    doc.querySelector('.order-total .woocommerce-Price-amount')?.textContent.trim() || null;
+
+  return {
+    subtotal,
+    shipping,
+    estimatedSalesTax: salesTax,
+    orderTotal
+  };
+};
+
+export const getVariationSelections = (formSelector = '.variations_form') => {
+  const form = document.querySelector(formSelector);
+  if (!form) return [];
+
+  return Array.from(form.querySelectorAll('.variation')).map((variation) => {
+    const label = variation.querySelector('label')?.textContent.trim();
+    const select = variation.querySelector('select');
+    const selectedOption = select?.selectedOptions[0]?.textContent.trim();
+
+    return {
+      label,
+      value: selectedOption
+    };
+  });
 };

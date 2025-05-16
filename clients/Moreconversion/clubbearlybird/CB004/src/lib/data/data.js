@@ -5,7 +5,7 @@ const data = {
   },
   2: {
     title:
-      '<span class="highlight">2 out of 3 people</span> who try EarlyBird become subscribers!⭐️'
+      '<span class="highlight">89.1% of users</span> report feeling more productive in the mornings! ⭐️'
   },
   3: {
     title:

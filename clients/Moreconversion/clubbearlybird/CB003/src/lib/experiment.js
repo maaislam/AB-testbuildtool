@@ -15,6 +15,17 @@ const renderPriceWrapper = () => {
   const sellPrice = sellPriceElement ? sellPriceElement.innerText : '';
   const savingAmount = getDiscountText(sellPrice, discountedPrice);
 
+  const selectedInput = document.querySelector('.zpa-product-option__input:checked');
+  const value = selectedInput ? selectedInput.value.split('-')[1] : '';
+
+  const addToCartBtn = document.querySelector('.zpa-add-to-cart-btn');
+
+  if (addToCartBtn && value) {
+    addToCartBtn.querySelector(
+      '.zpa-btn-custom__caption'
+    ).innerHTML = `ADD TO CART <span class="${ID}__perMessage">- ${value}</span> >`;
+  }
+
   console.log(discountedPrice, sellPrice, savingAmount);
   if (document.querySelector(`.${ID}__price-wrapper`)) {
     document.querySelector(`.${ID}__price-wrapper`).remove();
