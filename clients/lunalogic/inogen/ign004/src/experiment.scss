@@ -157,6 +157,7 @@
         color: #0d0d0f;
         margin: 0;
         padding-bottom: 20px;
+        text-align: left;
 
         @media screen and (max-width: 767px) {
           font-size: 20px;
@@ -294,6 +295,11 @@
     color: #0d0d0f;
     text-align: left;
     margin-bottom: 7px;
+
+    @media screen and (max-width: 767px) {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
   }
 
   &__accessoriesWrapper {
@@ -328,10 +334,10 @@
     .accessory__wrapper--margin img,
     .accessory__wrapper--nomargin img {
       margin-top: 0;
-      margin-bottom: 30px;
+      margin-bottom: 0px;
     }
     .accessory__text-holder {
-      width: 100%;
+      width: calc(100% - 30px);
     }
     .accessory__name {
       font-weight: 500;
@@ -356,7 +362,7 @@
       color: #333333;
       text-align: left;
       margin: 10px;
-      min-height: 40px;
+      min-height: 65px;
     }
     .accessory__price__mobile {
       font-weight: 900;
@@ -385,6 +391,10 @@
       opacity: 0.5;
       text-decoration: none;
       cursor: default;
+    }
+
+    &:active {
+      color: #fff !important;
     }
 
     @media screen and (max-width: 767px) {

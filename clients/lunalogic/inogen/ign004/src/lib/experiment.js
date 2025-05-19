@@ -7,6 +7,7 @@ import { addToCart, extractCartTotals, getVariationSelections, pollerLite } from
 import fakeButton from './components/fakeButton';
 import modal from './components/modal';
 import contentWrapper from './components/contentWrapper';
+import cartDescription from './components/cartDescription';
 
 const { ID, VARIATION } = shared;
 
@@ -140,7 +141,24 @@ export default () => {
       const productId = clickedItem.href.split('&p=')[1];
       clickedItem.classList.add('disabled-link');
       addToCart(1, productId)
-        .then(() => {
+        .then((doc) => {
+          const cartTotalElement = doc.querySelector('.cart_totals');
+          const cartInfoObj = extractCartTotals(cartTotalElement);
+          const totalCartItemElems = doc.querySelectorAll('.cart_item .input-text.qty');
+          const totalQuantity = Array.from(totalCartItemElems).reduce((sum, input) => {
+            const value = parseInt(input.value, 10);
+            return sum + (isNaN(value) ? 0 : value);
+          }, 0);
+          console.log(totalQuantity, 'totalQuantity');
+          const contentContainer = document.querySelector(`.${ID}__contentContainer`);
+          const cartDescriptionElem = contentContainer.querySelector(`.${ID}__bag-summary`);
+          if (cartDescriptionElem) cartDescriptionElem.remove();
+          if (cartInfoObj && totalQuantity) {
+            contentContainer.insertAdjacentHTML(
+              'beforeend',
+              cartDescription(ID, cartInfoObj, totalQuantity)
+            );
+          }
           clickedItem.classList.remove('disabled-link');
         })
         .catch(() => {
