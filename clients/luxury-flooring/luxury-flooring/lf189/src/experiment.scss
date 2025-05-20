@@ -430,10 +430,11 @@
       flex: 1;
 
       .product-title {
+        display: block;
         margin-bottom: 5px;
         font-family: 'Work Sans';
         font-weight: 500;
-        font-size: 19px;
+        font-size: 16px;
         line-height: 25px;
         color: #202020;
         text-align: left;
