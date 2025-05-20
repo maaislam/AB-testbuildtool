@@ -1,5 +1,6 @@
 const product = (ID, item) => {
   const { id, text, image } = item;
+
   const html = `
     <div class="${ID}__item" data-id="${id}">
         <div class="${ID}__imageWrapper">
