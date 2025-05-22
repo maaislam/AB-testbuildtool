@@ -2,19 +2,14 @@ import setup from './services/setup';
 import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { pollerLite } from './helpers/utils';
-import formModal from './components/formModal';
+import backgroundVideo from './components/backgroundVideo';
 
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  const targetPoint = document.querySelector('header');
-  const formWrapper = document.querySelector('#marketing-right');
-  const formElement = formWrapper.querySelector('p');
-
-  if (!document.querySelector(`.${ID}__formModal`)) {
-    targetPoint.insertAdjacentHTML('afterend', formModal(ID));
-    const modalFormElement = document.querySelector(`.${ID}__from`);
-    modalFormElement.insertAdjacentElement('beforeend', formElement);
+  const targetPoint = document.querySelector('#marketing-template .spz-bg-wrap');
+  if (!document.querySelector(`.${ID}__hero-video`)) {
+    targetPoint.insertAdjacentHTML('afterbegin', backgroundVideo(ID));
   }
 };
 export default () => {

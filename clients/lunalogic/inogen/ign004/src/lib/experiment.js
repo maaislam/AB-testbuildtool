@@ -3,7 +3,13 @@
 /*eslint-disable radix */
 import setup from './services/setup';
 import shared from './shared/shared';
-import { addToCart, extractCartTotals, getVariationSelections, pollerLite } from './helpers/utils';
+import {
+  addToCart,
+  extractCartTotals,
+  getVariationSelections,
+  parseHTML,
+  pollerLite
+} from './helpers/utils';
 import fakeButton from './components/fakeButton';
 import modal from './components/modal';
 import contentWrapper from './components/contentWrapper';
@@ -71,12 +77,39 @@ const renderModalContent = (mainProductObj, cartInfoObj, totalQuantity, selectio
   if (!contentWrapperElem.querySelector(`.${ID}__accessoriesWrapper`)) {
     contentWrapperElem.insertAdjacentElement('beforeend', varaitionAccessoriesWrapper);
   }
+
+  const accessoriesImages = document.querySelectorAll(`.${ID}__modal .accessory__image img`);
+  accessoriesImages.forEach((image) => {
+    const { src } = image.dataset;
+    image.src = src;
+  });
+  const links = [];
   const allButtons = document.querySelectorAll(`.${ID}__modal .accessory__cta`);
   allButtons.forEach((button) => {
     button.innerText = 'ADD TO CART';
     button.classList.add(`${ID}__atcCTA`);
+    if (!button.href.includes('&p=')) {
+      links.push({
+        link: button.href
+      });
+    }
   });
-  openModal(ID);
+
+  if (links.length > 0) {
+    parseHTML(links)
+      .then((response) => {
+        const accessoriesButtons = document.querySelectorAll(`.${ID}__modal .accessory__cta`);
+        accessoriesButtons.forEach((button) => {
+          const productLink = button.href;
+          const hasItem = response.find((item) => productLink.includes(item.link));
+          if (hasItem) button.setAttribute('data-id', hasItem.id);
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+  //openModal(ID);
 };
 
 const init = () => {
@@ -113,6 +146,15 @@ export default () => {
         price: priceAmount
       };
       clickedItem.disabled = true;
+      openModal(ID);
+      const modalContainer = document.querySelector(`.${ID}__modal-content`);
+      modalContainer.innerHTML = '';
+      if (!modalContainer.querySelector('.spinner')) {
+        modalContainer.insertAdjacentHTML(
+          'beforeend',
+          ' <div class="spinner" aria-label="Loading" role="status"></div>'
+        );
+      }
       addToCart(1, productId)
         .then((doc) => {
           const cartTotalElement = doc.querySelector('.cart_totals');
@@ -138,8 +180,11 @@ export default () => {
     } else if (target.closest(`.${ID}__atcCTA`)) {
       e.preventDefault();
       const clickedItem = target.closest(`.${ID}__atcCTA`);
-      const productId = clickedItem.href.split('&p=')[1];
+      const productId = clickedItem.href.includes('&p=')
+        ? clickedItem.href.split('&p=')[1]
+        : clickedItem.dataset.id;
       clickedItem.classList.add('disabled-link');
+      clickedItem.innerText = 'Adding...';
       addToCart(1, productId)
         .then((doc) => {
           const cartTotalElement = doc.querySelector('.cart_totals');
@@ -149,7 +194,6 @@ export default () => {
             const value = parseInt(input.value, 10);
             return sum + (isNaN(value) ? 0 : value);
           }, 0);
-          console.log(totalQuantity, 'totalQuantity');
           const contentContainer = document.querySelector(`.${ID}__contentContainer`);
           const cartDescriptionElem = contentContainer.querySelector(`.${ID}__bag-summary`);
           if (cartDescriptionElem) cartDescriptionElem.remove();
@@ -159,9 +203,14 @@ export default () => {
               cartDescription(ID, cartInfoObj, totalQuantity)
             );
           }
-          clickedItem.classList.remove('disabled-link');
+          clickedItem.innerText = 'Added to the cart';
+          setTimeout(() => {
+            clickedItem.innerText = 'ADD TO CART';
+            clickedItem.classList.remove('disabled-link');
+          }, 2000);
         })
         .catch(() => {
+          clickedItem.innerText = 'ADD TO CART';
           clickedItem.classList.remove('disabled-link');
         });
     }

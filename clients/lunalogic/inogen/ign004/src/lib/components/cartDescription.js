@@ -23,7 +23,7 @@ const cartDescription = (id, cartInfoObj, totalQuantity) => {
             ? `
                 <div class="line-item">
                     <span>Shipping</span>
-                    <span>${shipping}</span>
+                    <span>${shipping.includes('Free Shipping') ? 'Free' : `${shipping}`}</span>
                 </div>
             `
             : ''

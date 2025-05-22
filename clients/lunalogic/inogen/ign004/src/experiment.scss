@@ -2,6 +2,9 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  &:has(.#{$id}__modal.#{$id}__open) {
+    overflow: hidden;
+  }
   &__fakeAtb {
     & + button {
       display: none !important;
@@ -82,6 +85,17 @@
       padding: 20px 30px;
       @media screen and (max-width: 767px) {
         padding: 15px;
+      }
+
+      &:has(.spinner) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 250px);
+
+        @media screen and (max-width: 767px) {
+          height: calc(100vh - 150px);
+        }
       }
     }
   }
@@ -244,7 +258,7 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 20px;
-      padding-top: 13px;
+      padding-top: 14px;
       border-top: 1px solid #0d0d0f;
       span {
         font-weight: 800;
@@ -303,14 +317,18 @@
   }
 
   &__accessoriesWrapper {
-    display: flex;
+    display: flex !important;
     align-items: center;
     width: 100%;
     padding-top: 0;
 
     @media screen and (max-width: 767px) {
-      display: -webkit-box;
+      display: -webkit-box !important;
       overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
     .accessory__wrapper--nomargin,
     .accessory__wrapper--margin {
@@ -335,6 +353,15 @@
     .accessory__wrapper--nomargin img {
       margin-top: 0;
       margin-bottom: 0px;
+
+      @media screen and (max-width: 1023px) {
+        height: 280px;
+      }
+
+      @media screen and (max-width: 767px) {
+        height: 180px;
+        transform: translateY(-42px);
+      }
     }
     .accessory__text-holder {
       width: calc(100% - 30px);
@@ -342,11 +369,18 @@
     .accessory__name {
       font-weight: 500;
       font-size: 18px;
-      line-height: 100%;
+      line-height: 1.2;
       text-transform: uppercase;
       color: #333333;
       margin-bottom: 10px;
-      min-height: 36px;
+      min-height: 48px;
+    }
+    .accessory__image {
+      margin-top: 80px;
+
+      @media screen and (max-width: 767px) {
+        margin-top: 35px;
+      }
     }
     .accessory__price {
       font-weight: 900;
@@ -385,7 +419,7 @@
     font-weight: 600;
     font-size: 13px;
     line-height: 100%;
-    padding: 9.5px;
+    padding: 9px;
     &.disabled-link {
       pointer-events: none;
       opacity: 0.5;
@@ -393,7 +427,8 @@
       cursor: default;
     }
 
-    &:active {
+    &:active,
+    &:focus {
       color: #fff !important;
     }
 
@@ -401,8 +436,22 @@
       padding: 15.5px;
     }
   }
+
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #ccc;
+    border-top-color: #3498db;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 @keyframes slide-left {
   0% {
     transform: translateX(1000px);
