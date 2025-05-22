@@ -4,7 +4,6 @@ const backgroundVideo = (id) => {
             class="${id}__hero-video" 
             autoplay 
             muted
-            loop
             playsinline 
             preload="metadata" 
             aria-label="Promotional background video"
