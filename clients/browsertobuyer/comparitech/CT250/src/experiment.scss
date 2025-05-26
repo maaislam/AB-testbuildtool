@@ -1,0 +1,209 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .home-nav {
+    min-height: auto;
+    header {
+      .overlay,
+      .featured-img,
+      .software-title,
+      .software-excerpt {
+        display: none;
+      }
+
+      .software-logo {
+        margin: 16px 0 14px;
+      }
+    }
+  }
+
+  &__disclaimer {
+    max-width: 1200px;
+    width: 100%;
+    margin: 8px auto 0;
+
+    @media only screen and (max-width: 480px) {
+      padding: 0 10px;
+    }
+
+    @media only screen and (min-width: 481px) {
+      padding: 0 25px;
+    }
+
+    @media only screen and (min-width: 769px) {
+      padding: 0 45px;
+    }
+
+    @media only screen and (min-width: 1266px) {
+      padding: 0;
+    }
+  }
+
+  &__header {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    &-title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 125%;
+      color: #222;
+      margin: 0;
+      padding: 16px 0;
+
+      @media screen and (max-width: 767px) {
+        font-size: 24px;
+      }
+    }
+    &-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 150%;
+      color: #444;
+      padding: 0 0 16px;
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      padding: 0 10px;
+    }
+
+    @media only screen and (min-width: 481px) {
+      padding: 0 25px;
+    }
+
+    @media only screen and (min-width: 769px) {
+      padding: 0 45px;
+    }
+    @media only screen and (min-width: 1266px) {
+      padding: 0;
+    }
+  }
+
+  .main-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .section.group.main-content {
+      margin-top: 0 !important;
+    }
+
+    .main.wrapper {
+      width: calc(100% - 324px);
+      margin: 0;
+
+      table {
+        margin-top: 0 !important;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      padding: 0 10px;
+    }
+
+    @media only screen and (min-width: 481px) {
+      padding: 0 25px;
+    }
+
+    @media only screen and (min-width: 769px) {
+      padding: 0 45px;
+    }
+    @media only screen and (min-width: 1266px) {
+      padding: 0;
+    }
+  }
+
+  &__rightSideBanner {
+    width: 300px;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__rightSideBanner-readSection {
+    background-color: #fafafa;
+    border: solid 1px #ececec;
+    padding: 24px;
+  }
+
+  &__rightSideBanner-reviewsSection {
+    background-color: #fafafa;
+    border: solid 1px #ececec;
+    padding: 24px;
+    margin-top: 24px;
+  }
+
+  &__rightSideBanner-title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    color: #006c9b;
+    margin-bottom: 16px;
+  }
+
+  &__card-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    color: #0177a5;
+    margin: 8px 0;
+  }
+
+  &__lists {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+    .#{$id}__card-image {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .#{$id}__card-info {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 150%;
+      color: #444444;
+      * {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 150%;
+        color: #444444;
+      }
+    }
+  }
+
+  &__ctaWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__ctaLink {
+    display: inline-block;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0177a5;
+    text-decoration: none;
+  }
+}

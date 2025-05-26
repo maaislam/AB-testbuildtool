@@ -1,45 +1,38 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
-import fakeButton from './components/fakeButton';
 import progressContainer from './components/progressContainer';
 
-const { ID, VARIATION } = shared;
-//document.querySelectorAll('ul.parsley-errors-list > li, .error')
+const { ID } = shared;
+
+const toggleScreens = (hideSelector, showSelector) => {
+  const hideElem = document.querySelector(`.decoy_loader_screen ${hideSelector}`);
+  const showElem = document.querySelector(`.decoy_loader_screen ${showSelector}`);
+  if (hideElem) hideElem.style.display = 'none';
+  if (showElem) showElem.style.display = 'block';
+};
 
 const init = () => {
-  document.body.classList.add('scc058');
-  document.body.classList.add('SCC003');
   document.body.classList.add('is-decoy');
-  const controlSubmitBtn = document.querySelector('#submit');
-  if (!document.querySelector(`.${ID}__fakeBtn`)) {
-    controlSubmitBtn.insertAdjacentHTML('beforebegin', fakeButton(ID));
-  }
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
-
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+  setup();
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    if (target.closest(`.${ID}__fakeBtn`)) {
+    const formElement = document.querySelector('#form');
+    if (target.closest('#submit:not(.next-step)') && formElement.checkValidity()) {
+      e.preventDefault();
       const targetPoint = document.querySelector('.wrap.page-step-2 main');
       if (!document.querySelector(`.${ID}__decoy`)) {
         targetPoint.insertAdjacentHTML('afterbegin', progressContainer(ID));
+        //Handle screen transitions
+        setTimeout(() => toggleScreens('.screen1', '.screen2'), 5000);
+        //Final step debug log
+        setTimeout(() => {
+          target.closest('#submit').classList.add('next-step');
+          //target.closest('#submit').click();
+        }, 18000);
       }
     }
   });
