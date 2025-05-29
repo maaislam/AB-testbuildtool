@@ -3,7 +3,7 @@
 
 .#{$id} {
   .home-nav {
-    min-height: auto;
+    min-height: auto !important;
     header {
       .overlay,
       .featured-img,
@@ -13,7 +13,11 @@
       }
 
       .software-logo {
-        margin: 16px 0 14px;
+        margin: 16px 0 14px !important;
+
+        @media screen and (max-width: 767px) {
+          margin: 8px 0 8px !important;
+        }
       }
     }
   }
@@ -37,6 +41,12 @@
 
     @media only screen and (min-width: 1266px) {
       padding: 0;
+    }
+
+    .ct-ftc-disclaimer {
+      @media screen and (max-width: 900px) {
+        margin-top: 8px !important;
+      }
     }
   }
 
@@ -99,9 +109,247 @@
 
       table {
         margin-top: 0 !important;
+        tbody tr {
+          margin: 0 0 16px;
+          .provider_info {
+            align-items: center;
+
+            padding: 50px 24px 16px;
+            .rating {
+              position: absolute;
+              left: -1px;
+              top: -3px;
+            }
+
+            @media screen and (max-width: 1180px) and (min-width: 1023px) {
+              padding: 50px 5px 16px;
+            }
+
+            @media screen and (max-width: 900px) {
+              padding: 0;
+            }
+          }
+          .logo-features {
+            padding: 0;
+            & > a {
+              display: block;
+              max-width: 150px;
+              width: 100%;
+              overflow: hidden;
+
+              picture {
+                width: 100%;
+                height: 100%;
+              }
+              img {
+                max-width: 100%;
+                height: auto;
+              }
+            }
+
+            @media screen and (max-width: 500px) {
+              margin-top: 0;
+            }
+          }
+          .provider_info_wrap {
+            width: 30%;
+            position: relative;
+
+            @media screen and (max-width: 900px) {
+              width: 100%;
+              padding: 40px 16px 0 16px;
+            }
+            .rating-bg {
+              font-size: 16px;
+              font-weight: 700;
+              line-height: 1;
+              height: 28px;
+              padding: 7px 9px 5px 9px;
+            }
+            .cta_ratings {
+              @media screen and (max-width: 900px) {
+                padding-right: 0;
+                margin-top: 0;
+              }
+            }
+
+            .text_stars {
+              @media screen and (max-width: 900px) {
+                min-width: max-content !important;
+                padding-right: 0;
+                margin-top: 0;
+                margin-right: 8px;
+
+                .sct-star {
+                  width: 16px;
+                  height: 16px;
+                }
+                .sct-stars {
+                  margin-bottom: 0;
+                }
+
+                .text {
+                  font-size: 12px;
+                  line-height: 1;
+                  font-weight: 700;
+                  color: #333333;
+                }
+              }
+            }
+
+            .rating_box {
+              @media screen and (max-width: 900px) {
+                height: 32px;
+              }
+            }
+          }
+          .content {
+            @media screen and (max-width: 900px) {
+              padding: 0 16px 16px;
+            }
+            @media screen and (min-width: 901px) {
+              width: 70%;
+              padding: 16px 24px 16px 0;
+            }
+          }
+          .title_cta_wrap {
+            padding-right: 0;
+            [data-link='outbound-link'] {
+              .content_title {
+                h2 {
+                  font-size: 20px;
+                  font-weight: 700;
+                  line-height: 1.2;
+                  color: #1a73e8 !important;
+                  margin: 0 0 16px 0;
+
+                  @media screen and (max-width: 767px) {
+                    font-size: 16px;
+                  }
+                }
+              }
+              .content_bullets {
+                ul {
+                  margin: 0 0 16px 15px;
+                }
+                li {
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 150%;
+                  color: #333333;
+                  margin: 0 0 8px 3px;
+
+                  &:last-child {
+                    margin-bottom: 0;
+                  }
+
+                  @media screen and (max-width: 767px) {
+                    margin: 0 0 12px 3px;
+                  }
+                }
+
+                @media screen and (max-width: 500px) {
+                  padding-right: 0;
+                }
+              }
+            }
+
+            @media screen and (max-width: 500px) {
+              flex-direction: column;
+            }
+          }
+          .rating_deal_wrap {
+            max-width: 160px;
+            width: 100%;
+            .cta_ratings {
+              margin: 0 0 8px;
+              .sct-stars {
+                margin: 0 auto 0;
+                .sct-star {
+                  width: 16px;
+                  height: 16px;
+                }
+              }
+              .rating_box {
+                padding: 1px 8px;
+                line-height: 1;
+                height: 36px;
+              }
+            }
+            .cta_deal {
+              align-items: flex-end;
+              .button {
+                a {
+                  width: 160px;
+                  font-size: 14px;
+                  font-weight: 700;
+                  color: #fff;
+
+                  @media screen and (max-width: 500px) {
+                    width: 100%;
+                    max-width: 100%;
+                    font-size: 15px;
+                  }
+                }
+
+                @media screen and (max-width: 500px) {
+                  width: 100%;
+                  max-width: 100%;
+                }
+              }
+
+              @media screen and (max-width: 500px) {
+                width: 100%;
+                .deal {
+                  display: none;
+                }
+              }
+            }
+            .url {
+              display: none;
+            }
+
+            @media screen and (max-width: 500px) {
+              width: 100%;
+              max-width: 100%;
+              display: flex;
+              align-items: center;
+            }
+          }
+          .content_features {
+            h3 {
+              font-size: 14px !important;
+              margin: 0 0 8px;
+            }
+
+            ul {
+              line-height: 1;
+            }
+
+            li {
+              font-size: 12px;
+              font-weight: 700;
+              line-height: 1.2;
+              border: none;
+              padding: 0;
+              margin: 0 16px 8px 0;
+
+              a {
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 1.2;
+                color: #0177a5;
+              }
+            }
+
+            @media screen and (max-width: 768px) {
+              display: none;
+            }
+          }
+        }
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1023px) {
         width: 100%;
       }
     }
@@ -122,10 +370,64 @@
     }
   }
 
+  .#{$id}__provider-info {
+    .#{$id}__text {
+      font-size: 14px;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 150%;
+      margin: 12px 0 16px 0;
+      text-align: center;
+    }
+
+    .#{$id}__icon {
+      @media screen and (max-width: 1180px) and (min-width: 1023px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 150px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+
+    @media screen and (max-width: 500px) {
+      &.#{$id}__mobile {
+        display: block !important;
+        .#{$id}__text {
+          display: none;
+        }
+        .#{$id}__icon {
+          padding-top: 16px;
+        }
+      }
+    }
+  }
+  .#{$id}__mobileHeader {
+    display: none;
+    @media screen and (max-width: 900px) {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      font-style: italic;
+      line-height: 150%;
+      color: #333333;
+      padding: 8px 0 16px;
+    }
+  }
+
+  .#{$id}__provider-info.#{$id}__mobile {
+    display: none;
+  }
+
   &__rightSideBanner {
     width: 300px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1023px) {
       display: none;
     }
   }
@@ -195,6 +497,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: 24px 0 0;
   }
 
   &__ctaLink {

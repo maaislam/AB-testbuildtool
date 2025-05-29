@@ -10,7 +10,7 @@ const rightSideBanner = (id, mustReadArray, reviewsArray) => {
                          ${mustReadArray.map((item) => card(id, item)).join('\n')}
                     </div>
                     <div class="${id}__ctaWrapper">
-                        <a href="" class="${id}__ctaLink">See all articles</a>
+                        <a href="https://www.comparitech.com/net-admin/" class="${id}__ctaLink">See all articles</a>
                     </div>
                 </div>
                 <div class="${id}__rightSideBanner-reviewsSection">
@@ -19,7 +19,7 @@ const rightSideBanner = (id, mustReadArray, reviewsArray) => {
                            ${reviewsArray.map((item) => card(id, item)).join('\n')}
                     </div>
                     <div class="${id}__ctaWrapper">
-                        <a href="" class="${id}__ctaLink">See all reviews</a>
+                        <a href="https://www.comparitech.com/net-admin/" class="${id}__ctaLink">See all reviews</a>
                     </div>
                 </div>
             </div>

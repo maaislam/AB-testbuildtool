@@ -248,8 +248,8 @@
         padding-top: 4rem;
         padding-bottom: 40px;
 
-        @media screen and (max-width: 375px) {
-          padding-bottom: 30px;
+        @media screen and (max-width: 767px) {
+          padding-bottom: 20px;
         }
       }
       .modal-content {
@@ -292,7 +292,6 @@
 
         @media screen and (max-width: 767px) {
           font: normal normal normal 16px/24px Lucida Bright;
-          font-family: 'work-sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
       }
 
@@ -390,6 +389,18 @@
         @media screen and (max-width: 992px) {
           left: 0;
           width: 100%;
+        }
+      }
+
+      .#{$id}__productDescription {
+        .rating-summary,
+        .reviews-actions {
+          cursor: pointer;
+        }
+        .reviews-actions {
+          @media screen and (max-width: 991px) {
+            transform: translateY(2px);
+          }
         }
       }
     }

@@ -175,7 +175,12 @@ export default () => {
       if (clickedItem.dataset.array && clickedItem.dataset.sku) {
         const images = JSON.parse(clickedItem.dataset.array);
         const { sku } = clickedItem.dataset;
-        modalInnerDescription.innerHTML = productDescription(ID, productReviews, productName);
+        modalInnerDescription.innerHTML = productDescription(
+          ID,
+          productReviews,
+          productName,
+          productLink
+        );
         modalInnerContent.innerHTML = modalContent(ID, images, sku, productReviews, productName);
         modalInnerButton.innerHTML = buttons(ID, productLink, !!isSampleButton);
 
@@ -196,7 +201,12 @@ export default () => {
       }
       fetchProductImagesData(productCard).then((data) => {
         if (data.images && data.images.length >= 1) {
-          modalInnerDescription.innerHTML = productDescription(ID, productReviews, productName);
+          modalInnerDescription.innerHTML = productDescription(
+            ID,
+            productReviews,
+            productName,
+            productLink
+          );
           modalInnerContent.innerHTML = modalContent(ID, data.images, data.sku);
           modalInnerButton.innerHTML = buttons(ID, productLink, !!isSampleButton);
 
@@ -274,6 +284,13 @@ export default () => {
           .catch((err) => {
             console.error('Error:', err);
           });
+    } else if (
+      (target.closest('.rating-summary') || target.closest('.reviews-actions')) &&
+      target.closest(`.${ID}__productDescription`)
+    ) {
+      const clickedItem = target.closest(`.${ID}__productDescription`);
+      const { link } = clickedItem.dataset;
+      window.location.href = link;
     }
   });
 

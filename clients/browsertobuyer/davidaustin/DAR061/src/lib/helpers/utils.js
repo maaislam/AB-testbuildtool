@@ -49,15 +49,3 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
-
-export const formatDate = (dateString) => {
-  const [year, month, day] = dateString.split('-');
-  const date = new Date(Number(year), Number(month) - 1, Number(day));
-
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'UTC' //Ensures consistent output
-  });
-};

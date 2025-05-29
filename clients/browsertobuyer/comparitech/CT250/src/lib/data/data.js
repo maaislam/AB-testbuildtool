@@ -1,194 +1,200 @@
 export const descriptionObj = {
-  '/software/best-network-monitoring-tools': [
+  '/software/best-network-monitoring-tools/': [
     {
       provider: 'paessler',
       title: 'Paessler is a German company providing monitoring solutions.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/paessler_6835ba4d83865.png'
     },
     {
       provider: 'ninjaone',
       title: 'NinjaOne: A software company.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/ninjaone_6835bae7c15bd.png'
     },
     {
       provider: 'checkmk',
       title: 'The company is checkmk.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/checkmk_6835ba899a155.png'
     },
     {
       provider: 'superops',
       title: 'Superops is a company that offers superops.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/superops_6835b74aec2fd.png'
     },
     {
-      provider: 'managengine',
+      provider: 'manageengine',
       title: 'Managengine is a software company.',
-      badge: []
+      badge:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manageengine_6835b6f8eaab7.png'
     },
     {
       provider: 'site24x7',
       title: 'Site24x7 is a website and server monitoring solution.',
-      badge: []
+      badge: ''
     }
   ],
-  '/software/best-rmm-software': [
+  '/software/best-rmm-software/': [
     {
       provider: 'ninjaone',
       title: 'NinjaOne: A software company.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/ninjaone_6835bae7c15bd.png'
     },
     {
       provider: 'atera',
       title: 'Atera is the name of the company.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/atera_6835bab841877.png'
     },
     {
       provider: 'paessler',
       title: 'Paessler is a German company providing monitoring solutions.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/paessler_6835ba4d83865.png'
     },
     {
       provider: 'superops',
       title: 'Superops is a company that offers superops.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/superops_6835b74aec2fd.png'
     },
     {
-      provider: 'managengine',
+      provider: 'manageengine',
       title: 'Managengine is a software company.',
-      badge: []
+      badge:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manageengine_6835b6f8eaab7.png'
     },
     {
       provider: 'site24x7',
       title: 'Site24x7 is a website and server monitoring solution.',
-      badge: []
+      badge: ''
     }
   ],
-  '/software/best-rmm-tools': [
+  '/software/best-rmm-tools/': [
     {
       provider: 'ninjaone',
       title: 'NinjaOne: A software company.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/ninjaone_6835bae7c15bd.png'
     },
     {
       provider: 'atera',
       title: 'Atera is the name of the company.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/atera_6835bab841877.png'
     },
     {
       provider: 'paessler',
       title: 'Paessler is a German company providing monitoring solutions.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/paessler_6835ba4d83865.png'
     },
     {
       provider: 'superops',
       title: 'Superops is a company that offers superops.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/superops_6835b74aec2fd.png'
     },
     {
-      provider: 'managengine',
+      provider: 'manageengine',
       title: 'Managengine is a software company.',
-      badge: []
+      badge:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manageengine_6835b6f8eaab7.png'
     },
     {
       provider: 'site24x7',
       title: 'Site24x7 is a website and server monitoring solution.',
-      badge: []
+      badge: ''
     }
   ],
-  '/software/best-rmm-tools-for-msp': [
+  '/software/best-rmm-tools-for-msps/': [
     {
       provider: 'ninjaone',
       title: 'NinjaOne: A software company.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/ninjaone_6835bae7c15bd.png'
     },
     {
       provider: 'atera',
       title: 'Atera is the name of the company.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/atera_6835bab841877.png'
     },
     {
       provider: 'paessler',
       title: 'Paessler is a German company providing monitoring solutions.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/paessler_6835ba4d83865.png'
     },
     {
       provider: 'superops',
       title: 'Superops is a company that offers superops.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/superops_6835b74aec2fd.png'
     },
     {
-      provider: 'managengine',
+      provider: 'manageengine',
       title: 'Managengine is a software company.',
-      badge: []
+      badge:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manageengine_6835b6f8eaab7.png'
     },
     {
       provider: 'site24x7',
       title: 'Site24x7 is a website and server monitoring solution.',
-      badge: []
+      badge: ''
     }
   ],
-  '/software/network-monitoring-comparison': [
+  '/software/network-monitoring-comparison/': [
     {
       provider: 'paessler',
       title: 'Paessler is a German company providing monitoring solutions.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/paessler_6835ba4d83865.png'
     },
     {
       provider: 'ninjaone',
       title: 'NinjaOne: A software company.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/ninjaone_6835bae7c15bd.png'
     },
     {
       provider: 'checkmk',
       title: 'The company is checkmk.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/checkmk_6835ba899a155.png'
     },
     {
       provider: 'superops',
       title: 'Superops is a company that offers superops.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/superops_6835b74aec2fd.png'
     },
     {
-      provider: 'managengine',
+      provider: 'manageengine',
       title: 'Managengine is a software company.',
-      badge: []
+      badge:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manageengine_6835b6f8eaab7.png'
     },
     {
       provider: 'site24x7',
       title: 'Site24x7 is a website and server monitoring solution.',
-      badge: []
+      badge: ''
     }
   ],
-  '/software/rmm-comparison': [
+  '/software/rmm-comparison/': [
     {
       provider: 'ninjaone',
       title: 'NinjaOne: A software company.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/ninjaone_6835bae7c15bd.png'
     },
     {
       provider: 'atera',
       title: 'Atera is the name of the company.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/atera_6835bab841877.png'
     },
     {
       provider: 'paessler',
       title: 'Paessler is a German company providing monitoring solutions.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/paessler_6835ba4d83865.png'
     },
     {
       provider: 'superops',
       title: 'Superops is a company that offers superops.',
-      badge: []
+      badge: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/superops_6835b74aec2fd.png'
     },
     {
-      provider: 'managengine',
+      provider: 'manageengine',
       title: 'Managengine is a software company.',
-      badge: []
+      badge:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manageengine_6835b6f8eaab7.png'
     },
     {
       provider: 'site24x7',
       title: 'Site24x7 is a website and server monitoring solution.',
-      badge: []
+      badge: ''
     }
   ]
 };
@@ -398,7 +404,7 @@ export const sidebarObj = {
       date: '2025-04-03'
     }
   ],
-  '/software/best-rmm-tools-for-msp/': [
+  '/software/best-rmm-tools-for-msps/': [
     {
       location: 'mustread',
       position: 1,
@@ -602,4 +608,19 @@ export const sidebarObj = {
       date: '2025-04-03'
     }
   ]
+};
+
+export const providerImageObj = {
+  paessler:
+    'https://cdn-3.convertexperiments.com/uf/10021806/1002820/paessler-icon_6835bc9691509.png',
+
+  manageengine:
+    'https://cdn-3.convertexperiments.com/uf/10021806/1002820/logo-container-1_683721e5ad2c1.png',
+
+  ninjaone:
+    'https://cdn.comparitech.com/wp-content/uploads/2024/09/ninjaOne-logo-blue-e1737661378897.jpg',
+  checkmk: 'https://cdn.comparitech.com/wp-content/uploads/2024/09/CheckMK_logo.jpg',
+  superops: 'https://cdn.comparitech.com/wp-content/uploads/2024/09/superops_logo.jpg',
+  site24x7: 'https://cdn.comparitech.com/wp-content/uploads/2024/09/site24x7-text-logo.jpg',
+  atera: 'https://cdn.comparitech.com/wp-content/uploads/2024/09/atera-logo.jpg'
 };
