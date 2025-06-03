@@ -1,6 +1,6 @@
 module.exports = {
   ID: 'ign006',
-  VARIATION: '2',
+  VARIATION: '1',
   CLIENT: 'lunalogic',
   SITE: 'inogen'
 };
