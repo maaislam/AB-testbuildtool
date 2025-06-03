@@ -40,12 +40,8 @@ const init = () => {
       .filter((item) => item.location === 'mustread')
       .sort((a, b) => a.position - b.position);
 
-    const reviewsArray = articles
-      .filter((item) => item.location === 'review')
-      .sort((a, b) => a.position - b.position);
-
     if (!document.querySelector(`.${ID}__rightSideContainer`)) {
-      wrapper.insertAdjacentHTML('afterend', rightSideBanner(ID, mustReadArray, reviewsArray));
+      wrapper.insertAdjacentHTML('afterend', rightSideBanner(ID, mustReadArray));
     }
   }
 

@@ -1,0 +1,115 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .tooltip-wrapper {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-left: 5px;
+    vertical-align: middle;
+    transform: translateY(-3px);
+  }
+
+  #ouibounce-modal {
+    .tooltip-wrapper {
+      transform: translateY(0px);
+    }
+  }
+
+  .tooltip-wrapper:focus {
+    outline: none;
+  }
+
+  .tooltip-icon {
+    font-weight: bold;
+    border: 1px solid #000;
+    border-radius: 50%;
+    padding: 0 0.4em;
+    font-size: 0.85em;
+    background-color: #fff;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  .tooltip-text {
+    position: absolute;
+    bottom: 130%; /* instead of bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 230px;
+    font-size: 0.875rem;
+    font-style: italic;
+    white-space: normal;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    @media screen and (max-width: 580px) {
+      left: -70px;
+    }
+
+    @media screen and (max-width: 480px) {
+      left: 115px;
+    }
+
+    @media screen and (max-width: 370px) {
+      left: 30px;
+    }
+
+    @media screen and (max-width: 350px) {
+      left: -30px;
+    }
+  }
+
+  .tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+
+    @media screen and (max-width: 580px) {
+      left: 200px;
+    }
+
+    @media screen and (max-width: 480px) {
+      left: 17px;
+    }
+
+    @media screen and (max-width: 370px) {
+      left: 101px;
+    }
+
+    @media screen and (max-width: 350px) {
+      left: 161px;
+    }
+  }
+
+  /* Show tooltip on hover, focus, or touch */
+  .tooltip-wrapper:hover .tooltip-text,
+  .tooltip-wrapper:focus .tooltip-text,
+  .tooltip-wrapper.touch-active .tooltip-text {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .#{$id}__text {
+    font-size: 0.875rem !important;
+    font-style: italic;
+    margin: 10px 0 !important;
+    padding: 0 !important;
+  }
+}
