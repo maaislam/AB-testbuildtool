@@ -1,14 +1,22 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
 import tooltip from './components/tooltip';
 
 const { ID, VARIATION } = shared;
+const isMobile = () =>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const touchHandler = (el) => {
-  el.classList.add('touch-active');
-  setTimeout(() => el.classList.remove('touch-active'), 300);
+  console.log('clicked');
+  el.classList.toggle('touch-active');
+};
+
+const tooltipHandler = (el, show) => {
+  if (show) {
+    el.classList.add('touch-active');
+  } else {
+    el.classList.remove('touch-active');
+  }
 };
 
 const init = () => {
@@ -21,7 +29,11 @@ const init = () => {
     });
 
     document.querySelectorAll('.tooltip-wrapper').forEach((el) => {
-      el.addEventListener('touchstart', () => touchHandler(el));
+      if (isMobile()) el.addEventListener('click', () => touchHandler(el));
+      if (!isMobile()) {
+        el.addEventListener('mouseenter', () => tooltipHandler(el, true));
+        el.addEventListener('mouseleave', () => tooltipHandler(el, false));
+      }
     });
   }
 
@@ -43,5 +55,15 @@ const init = () => {
 export default () => {
   setup(); //use if needed
 
+  document.body.addEventListener('pointerup', (e) => {
+    const { target } = e;
+    if (!target.closest(`.${ID}__tooltip`)) {
+      document
+        .querySelectorAll(`.${ID}__tooltip`)
+        .forEach((el) => el.classList.remove('touch-active'));
+    } else if (target.closest('.tooltip-svg')) {
+      target.closest('.tooltip-wrapper').classList.remove('touch-active');
+    }
+  });
   init();
 };

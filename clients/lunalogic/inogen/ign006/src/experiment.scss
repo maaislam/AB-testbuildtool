@@ -8,7 +8,14 @@
     cursor: pointer;
     margin-left: 5px;
     vertical-align: middle;
-    transform: translateY(-3px);
+
+    &.touch-active {
+      .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+    }
   }
 
   #ouibounce-modal {
@@ -25,33 +32,49 @@
     font-weight: bold;
     border: 1px solid #000;
     border-radius: 50%;
-    padding: 0 0.4em;
-    font-size: 0.85em;
+    font-size: 12px;
     background-color: #fff;
     line-height: 1;
-    display: inline-block;
+    display: flex !important;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
   }
 
   .tooltip-text {
+    display: flex;
     position: absolute;
     bottom: 130%; /* instead of bottom */
     left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 0.5rem;
+    transform: translateX(-45%);
+    background-color: #fff;
+    color: #0f1111;
+    padding: 10px;
     border-radius: 5px;
     width: 230px;
     font-size: 14px;
-    font-style: italic;
     white-space: normal;
-    text-align: center;
+    text-align: left;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s ease;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #bbbfbf;
+    border-color: #bbbfbf;
+    box-shadow: 0 2px 5px rgba(15, 17, 17, 0.15);
+
+    svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    @media screen and (max-width: 767px) {
+      transform: translateX(-50%);
+    }
 
     @media screen and (max-width: 580px) {
       left: -70px;
@@ -75,36 +98,41 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-16px);
     border-width: 6px;
     border-style: solid;
-    border-color: #333 transparent transparent transparent;
+    border-color: #fff transparent transparent transparent;
+    @media screen and (max-width: 767px) {
+      transform: translateX(-50%);
+    }
 
     @media screen and (max-width: 580px) {
-      left: 200px;
+      left: 195px;
     }
 
     @media screen and (max-width: 480px) {
-      left: 17px;
+      left: 11px;
     }
 
     @media screen and (max-width: 370px) {
-      left: 101px;
+      left: 95px;
     }
 
     @media screen and (max-width: 350px) {
-      left: 161px;
+      left: 155px;
     }
   }
 
   /* Show tooltip on hover, focus, or touch */
-  .tooltip-wrapper:hover .tooltip-text,
-  .tooltip-wrapper:focus .tooltip-text,
-  .tooltip-wrapper.touch-active .tooltip-text {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
+  // .tooltip-wrapper:hover .tooltip-text,
+  // .tooltip-wrapper:focus .tooltip-text,
+  // .tooltip-wrapper.touch-active .tooltip-text {
+  //   @media screen and (min-width: 768px) {
+  //     opacity: 1;
+  //     visibility: visible;
+  //     pointer-events: auto;
+  //   }
+  // }
 
   .#{$id}__text {
     font-size: 14px !important;
