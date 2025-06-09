@@ -16,8 +16,8 @@ const tableRowMobile = ({ id, index, name, link, description, trialLink, trialTe
         <div class="content">
           <div class="content-details">
             <span>${description}</span>
-            ${link ? `<a href='${link}' class="logo-mobile">
-              <img src="${imgSrc}" alt="${name}" class="${id}__logo">
+            ${link && imgSrc ? `<a href='${link}' class="logo-mobile">
+              ${imgSrc ? `<img src="${imgSrc}" alt="${name}" class="${id}__logo">` : ''}
             </a>` : ''}
           </div>
 
@@ -34,6 +34,6 @@ const tableRowMobile = ({ id, index, name, link, description, trialLink, trialTe
         </div>
       </div>
     </div>`;
-  };
+};
 
 export default tableRowMobile;

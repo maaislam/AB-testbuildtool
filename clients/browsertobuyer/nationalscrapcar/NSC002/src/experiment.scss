@@ -1,0 +1,362 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+body {
+  visibility: hidden;
+}
+.#{$id} {
+  #wrapper-navbar {
+    background: none;
+  }
+  #navbar-top {
+    @media screen and (min-width: 992px) {
+      padding: 40px 15px 40px 15px;
+    }
+  }
+
+  .steps-container {
+    background-color: #eeeeee;
+  }
+  .steps-wrapper {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Oswald', sans-serif;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    @media screen and (max-width: 767px) {
+      max-width: 280px;
+    }
+
+    .step:first-child {
+      position: relative;
+      &::after {
+        content: 'Car Details';
+        position: absolute;
+        display: inline-block;
+        white-space: nowrap;
+        font-family: 'Oswald', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        top: auto;
+        bottom: -26px;
+        color: #373a3c;
+      }
+    }
+
+    .step:nth-child(2) {
+      position: relative;
+      &::after {
+        content: 'Your Details';
+        position: absolute;
+        display: inline-block;
+        white-space: nowrap;
+        font-family: 'Oswald', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        top: auto;
+        bottom: -26px;
+        color: #373a3c;
+      }
+    }
+
+    .step:nth-child(3) {
+      position: relative;
+      &::after {
+        content: 'Offers';
+        position: absolute;
+        display: inline-block;
+        white-space: nowrap;
+        font-family: 'Oswald', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        top: auto;
+        bottom: -26px;
+        color: #373a3c;
+      }
+    }
+  }
+
+  .steps-wrapper .steps {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .steps-wrapper .steps .step {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #00247d;
+    background-color: #fff;
+    border: solid 2px #00247d;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+    transition: 200ms ease;
+    transition-delay: 0ms;
+    z-index: 1;
+  }
+
+  .steps-wrapper .steps .step.active {
+    color: #fff;
+    background: #00247d;
+  }
+
+  .steps-wrapper .steps .progress-bar {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #00247d;
+  }
+
+  .steps-wrapper .steps .progress-bar .progress {
+    position: absolute;
+    height: 100%;
+    background: #00247d;
+  }
+
+  .#{$id}__car-banner {
+    background-image: url('https://nationalscrapcar.co.uk/scrap-cars.jpg'); /* Replace with your background URL */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 17px 0 11px;
+
+    @media screen and (max-width: 767px) {
+      padding: 8px 0;
+    }
+    .overlay {
+      padding: 28px 0;
+      text-align: center;
+      color: white;
+      display: inline-block;
+
+      @media screen and (max-width: 767px) {
+        padding: 30px 0;
+      }
+    }
+
+    .overlay h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 0 0 18px;
+
+      @media screen and (max-width: 767px) {
+        font-size: 24px;
+      }
+    }
+
+    .reg-plate {
+      display: inline-block;
+      max-width: 180px;
+      width: 100%;
+      background-color: #ffce30; /* yellow */
+      color: #333333;
+      padding: 6px 20px;
+      font-weight: bold;
+      font-size: 32px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+
+    .wrong-details {
+      display: block;
+      font-weight: 400;
+      font-size: 16px;
+      color: #fff;
+      text-decoration: underline;
+      margin-top: 5px;
+    }
+  }
+
+  #form {
+    & > .row:first-child {
+      display: none;
+    }
+
+    & > .row:last-child {
+      width: 100%;
+      margin: 0 auto;
+      & > div:first-child {
+        display: none;
+      }
+      #alloy-detail-section {
+        float: none;
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+
+        .alloy-wheels {
+          margin-top: 0;
+          & > .form-group {
+            position: relative;
+          }
+          & > .form-group > .form-check {
+            position: static;
+            display: inline-block;
+            max-width: 130px;
+            width: 100%;
+            border: solid 2px #00247d;
+            border-radius: 8px;
+            text-align: center;
+            padding: 3px 0;
+
+            label {
+              position: relative;
+              width: 100%;
+              font-size: 14px;
+              line-height: 100%;
+              color: #00247d;
+              padding: 0;
+            }
+
+            input {
+              position: absolute;
+              width: 100%;
+              top: 0;
+              left: 0;
+              opacity: 0;
+              height: 100%;
+              margin: 0;
+            }
+
+            &:has(input:checked) {
+              background-color: #00247d;
+              label {
+                color: #fff;
+              }
+            }
+
+            & + .form-check {
+              margin-left: 10px;
+            }
+
+            li.parsley-custom-error-message {
+              width: max-content;
+              top: auto;
+              bottom: -10px;
+              right: 15px;
+            }
+
+            @media screen and (max-width: 767px) {
+              max-width: 100px;
+              padding: 8px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .wrap.page-step-2 {
+    @media screen and (min-width: 992px) {
+      padding-top: 30px;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding-top: 16px;
+      padding-bottom: 30px;
+    }
+  }
+
+  .#{$id}__tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+
+    .tooltip-icon {
+      width: 20px;
+      height: 20px;
+      background-color: #eee;
+      border: 1px solid #373a3c;
+      border-radius: 50%;
+      font-size: 14px;
+      text-align: center;
+      line-height: 18px;
+      cursor: pointer;
+      padding: 0;
+      user-select: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .tooltip-content {
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 150%;
+      background: white;
+      color: black;
+      padding: 8px 12px;
+      border: solid 1px #373a3c;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      width: 225px;
+      text-align: left;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease;
+    }
+
+    .tooltip-content .tooltip-arrow {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .tooltip-wrapper.active .tooltip-content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:hover .tooltip-content,
+    .tooltip-icon:hover + .tooltip-content,
+    .tooltip-icon:focus + .tooltip-content {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  #submit {
+    &::after {
+      @media screen and (max-width: 767px) {
+        content: '→';
+        position: absolute;
+        font-size: 40px;
+        top: 50%;
+        margin-top: -35px;
+        right: 50%;
+        margin-right: -45%;
+        display: block;
+        color: #fff;
+        -webkit-transition: all 100ms linear 100ms;
+        -moz-transition: all 100ms linear 100ms;
+        -o-transition: all 100ms linear 100ms;
+        transition: all 100ms linear 100ms;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      text-indent: -15px;
+    }
+  }
+}

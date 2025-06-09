@@ -1,0 +1,30 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__socialProofWrapper {
+    font-family: 'Source Sans Pro' !important;
+    font-weight: 400 !important;
+    font-style: italic !important;
+    font-size: 22px !important;
+    line-height: 120% !important;
+    color: #262626 !important;
+    margin-bottom: 4px !important;
+
+    .highlight {
+      font-weight: 700 !important;
+      font-style: italic !important;
+      font-size: 22px !important;
+      line-height: 120% !important;
+      color: #f26724 !important;
+
+      @media screen and (max-width: 767px) {
+        font-size: 18px !important;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 18px !important;
+    }
+  }
+}

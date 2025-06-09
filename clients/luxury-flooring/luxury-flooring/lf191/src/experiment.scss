@@ -1,0 +1,228 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .usps-main.usps-main-new-design + .widget.block + .widget.block,
+  .diy_ready-main,
+  .cust_call {
+    display: none;
+  }
+
+  div.page.messages {
+    z-index: 99999;
+  }
+
+  &__photoGalarySection {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: auto;
+
+    @media screen and (max-width: 991px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .customer-gallery-text {
+      h1 {
+        margin-bottom: 25px;
+      }
+      p {
+        max-width: 65%;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 25px;
+
+        @media screen and (max-width: 991px) {
+          max-width: 90%;
+        }
+      }
+      p:last-child {
+        display: none;
+      }
+    }
+
+    .birthday-cta-container {
+      display: none;
+    }
+    .#{$id}__btnWrapper {
+      text-align: center;
+      margin-top: 20px;
+      .#{$id}__btn {
+        width: 100%;
+        max-width: 385px;
+        border-radius: 0;
+        font-weight: 400;
+        font-size: 16px !important;
+        line-height: 1 !important;
+        padding: 18px;
+        background-color: #6c7c69;
+        color: #fff;
+        box-shadow: unset;
+        margin-bottom: 0;
+
+        &:hover {
+          background-color: #546052;
+        }
+      }
+
+      @media screen and (max-width: 991px) {
+        transform: translateY(-40px);
+      }
+    }
+
+    .grid-container {
+      @media screen and (max-width: 991px) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    .grid-container + .grid-container {
+      display: none;
+    }
+
+    &.#{$id}__active {
+      .grid-container + .grid-container {
+        display: grid;
+      }
+      .#{$id}__btnWrapper {
+        @media screen and (max-width: 991px) {
+          transform: translateY(0px);
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    .#{$id}__hidden {
+      visibility: hidden;
+      grid-column: span 0 !important;
+      grid-row: span 0 !important;
+      width: 0 !important;
+      height: 0 !important;
+      overflow: hidden;
+      padding: 0 !important;
+      margin: 0 !important;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    & + .widget.block.block-static-block {
+      display: none;
+    }
+  }
+
+  &__aboutUsWrapper {
+    .about_info {
+      h2 + p {
+        display: none;
+      }
+    }
+
+    a {
+      background-color: #6c7c69 !important;
+      &:hover {
+        background-color: #546052 !important;
+      }
+    }
+
+    .about_img {
+      img {
+        @media screen and (max-width: 767px) {
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+  &__press-features {
+    & + .press-features {
+      display: none;
+    }
+  }
+
+  &__modal {
+    .modal-inner-wrap {
+      width: 65%;
+      margin: 5.5rem auto;
+    }
+    #modal-content-0 {
+      padding: 0 0 30px;
+    }
+    .modal-image {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .modal-button.primary button {
+      background-color: #61715f;
+    }
+
+    .product-modal-right {
+      @media screen and (min-width: 991px) {
+        grid-template-columns: 30% auto;
+      }
+    }
+    .thumbnail-wrapper {
+      @media screen and (min-width: 992px) {
+        a {
+          display: inline-block;
+          height: 100%;
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+    .modal-content .modal-button button {
+      width: 100%;
+      text-transform: capitalize;
+      height: 56px;
+      font-size: 16px !important;
+      font-family: 'work-sans';
+
+      @media only screen and (min-width: 992px) and (max-width: 1745px) {
+        width: 100%;
+        text-transform: capitalize;
+        height: 56px;
+        font-size: 16px !important;
+        line-height: 1;
+        margin: 0 auto 5px;
+        padding: 10px 17px;
+      }
+
+      @media only screen and (min-width: 992px) and (max-width: 1319px) {
+        padding: 7px 15px;
+      }
+
+      @media screen and (max-width: 991px) {
+        width: 90% !important;
+        font-weight: normal;
+      }
+    }
+
+    .modal-content .modal-button.secondary button {
+      @media only screen and (min-width: 992px) and (max-width: 1745px) {
+        margin: 0 auto;
+      }
+    }
+
+    .modal-inner-content img.modal-thumbnail {
+      @media only screen and (max-width: 991px) {
+        float: none;
+        margin: 20px auto;
+        width: 40%;
+      }
+    }
+
+    .#{$id}__sampleBtn {
+      button.#{$id}__disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      &:has(button.#{$id}__disabled) {
+        pointer-events: none;
+      }
+    }
+  }
+}

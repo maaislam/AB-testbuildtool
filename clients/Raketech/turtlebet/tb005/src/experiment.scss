@@ -1,0 +1,72 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .MuiTypography-h1.css-18ovn0v,
+  nav,
+  main > div:first-child,
+  .MuiStack-root.css-1i43dhb > div:first-child {
+    display: none;
+  }
+
+  &__text-container {
+    padding-top: 8px;
+    padding-bottom: 36px;
+
+    @media screen and (max-width: 899px) {
+      padding-bottom: 16px;
+    }
+  }
+
+  &__clamp-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    font-family: General Sans, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #fff;
+    margin-bottom: 4px;
+    &.expanded {
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+  }
+  &__btn {
+    font-family: General Sans, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    vertical-align: middle;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    color: #fff;
+    background-color: unset;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .css-19u2w0e {
+    align-self: baseline;
+  }
+
+  &__mobile {
+    display: none;
+    @media screen and (max-width: 899px) {
+      display: block;
+    }
+  }
+
+  &__desktop {
+    @media screen and (max-width: 899px) {
+      display: none;
+    }
+  }
+}

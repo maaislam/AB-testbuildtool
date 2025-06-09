@@ -1,0 +1,62 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  product-card {
+    a + div {
+      a:first-of-type {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &-2 {
+    product-card {
+      a + div {
+        a:not([data-sold-out]):last-of-type {
+          padding: 0;
+          & > div:first-child > div:first-child {
+            display: none;
+          }
+
+          & > div:first-child > div:last-child {
+            padding-top: 5px;
+          }
+        }
+      }
+
+      & > div:has(.#{$id}__badge) {
+        a + div a:not([data-sold-out]):last-of-type {
+          border-top: none;
+        }
+      }
+      & > div:hover {
+        a + div a:not([data-sold-out]):last-of-type {
+          border-top: solid 1px #e3e2de;
+        }
+      }
+    }
+  }
+  .#{$id}__badge {
+    font-family: Gill Sans, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif,
+      Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    padding: 15px;
+    margin: 0;
+    border: solid 1px #e3e2de;
+    border-top: none;
+    border-bottom: none;
+    cursor: pointer;
+
+    .jdgm-prev-badge__text {
+      visibility: visible;
+      font-size: 15px;
+      line-height: 130%;
+      color: #69686a;
+      text-decoration: underline;
+    }
+    .jdgm-star {
+      font-size: 12px;
+      color: #4d6947;
+    }
+  }
+}

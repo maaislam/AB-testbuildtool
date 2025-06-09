@@ -1,0 +1,480 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__hidden {
+    display: none !important;
+  }
+
+  &__cardContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+    }
+
+    .card {
+      width: calc(50% - 12px);
+      border-radius: 12px;
+      overflow: hidden;
+      background-image: var(--bgImageDesktop);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 10px;
+      cursor: pointer;
+
+      @media screen and (max-width: 991px) {
+        width: 100%;
+        background-image: var(--bgImageMobile);
+        padding: 30px 24px 20px;
+
+        &:last-child {
+          margin-top: 16px;
+        }
+      }
+    }
+
+    .label {
+      background-color: #c03832;
+      color: white;
+      padding: 8px 22px;
+      border-radius: 36px;
+      display: inline-block;
+      font-family: 'Gilroy';
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      vertical-align: middle;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+
+    .casino-logo {
+      max-width: 220px;
+      width: 100%;
+      height: 100px;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .hidden-mobile {
+      display: inline-block;
+      @media screen and (max-width: 991px) {
+        display: none;
+      }
+    }
+
+    .hidden-desktop {
+      display: none;
+      @media screen and (max-width: 991px) {
+        display: block;
+        text-align: center;
+        .label {
+          margin-top: 24px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    .card-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      padding: 30px 20px 14px;
+      position: relative;
+      z-index: 2;
+      align-items: center;
+
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        padding: 30px 0px 14px;
+      }
+
+      @media screen and (max-width: 991px) {
+        max-width: 280px;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .overlay-text {
+      h2 {
+        font-family: 'Gilroy';
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 110.00000000000001%;
+        color: #fff;
+        margin: 0;
+        padding-bottom: 8px;
+
+        @media screen and (max-width: 991px) {
+          font-size: 32px;
+          text-align: center;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 4px 0 0px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        .icon {
+          display: flex;
+        }
+        .text {
+          font-family: 'Gilroy';
+          font-weight: 800;
+          font-size: 16px;
+          line-height: 1.3;
+          color: #fff;
+        }
+      }
+    }
+
+    .main-title {
+      font-size: 40px;
+      margin: 0 0 10px;
+      font-weight: 800;
+    }
+
+    .main-title span {
+      position: relative;
+    }
+
+    .main-title span::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 10px;
+      height: 10px;
+      background: yellow;
+      border-radius: 50%;
+    }
+
+    .icon {
+      margin-right: 8px;
+    }
+
+    .card-button {
+      text-align: center;
+      margin-top: 11px;
+
+      @media screen and (max-width: 991px) {
+        margin-top: 8px;
+      }
+    }
+
+    .cta-button {
+      display: inline-block;
+      max-width: 200px;
+      width: 100%;
+      background-color: #43d14f;
+      color: white;
+      padding: 12px 24px;
+      font-family: 'Gilroy';
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 26px;
+      text-align: center;
+      vertical-align: middle;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: #43d14f;
+        color: white;
+      }
+
+      @media screen and (max-width: 991px) {
+        max-width: 100%;
+      }
+    }
+
+    .footer-links {
+      max-width: 200px;
+      font-family: 'Gilroy';
+      font-weight: 300;
+      font-size: 10px;
+      line-height: 16px;
+      text-align: center;
+      vertical-align: middle;
+      margin: 16px auto 0;
+      color: #fff;
+      height: 35px;
+      padding: 4px;
+      width: 100%;
+      text-align: center;
+      overflow-y: scroll;
+
+      @media screen and (max-width: 991px) {
+        max-width: 280px;
+      }
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #e0e0e0;
+        border-radius: 6px;
+        border: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: #37505c;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #263942;
+      }
+
+      span {
+        color: #fff;
+      }
+    }
+
+    .footer-links a {
+      color: #fff;
+      font-weight: 300;
+      text-decoration: underline;
+    }
+  }
+
+  &__miniCardContainer {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-top: 24px;
+
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+      margin-top: 14px;
+    }
+    .add-card {
+      width: calc(100% / 4);
+      overflow: hidden;
+      background: #fff;
+
+      @media screen and (max-width: 991px) {
+        width: 100%;
+      }
+    }
+
+    .ad-image {
+      position: relative;
+      background-image: var(--bgImage);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 12px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .ad-image-wrapper {
+      width: 100%;
+      margin: 0 auto;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ad-image img {
+      max-width: 140px;
+      width: 100%;
+      display: block;
+    }
+
+    .ad-logo {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-weight: bold;
+      font-size: 1.4em;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .ad-logo span.pin {
+      color: #ffd600;
+      font-size: 1.1em;
+      margin-left: 2px;
+    }
+
+    .add-content {
+      background-color: #f4f4f4;
+      padding: 3px 0px 5px 0px;
+
+      @media screen and (max-width: 991px) {
+        padding: 3px 0px 5px;
+      }
+    }
+
+    .offer-title {
+      padding-left: 12px;
+      padding-right: 12px;
+      display: inline-block;
+      width: 100%;
+
+      @media screen and (max-width: 991px) {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      span {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+
+      strong {
+        font-family: 'Gilroy';
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 26px;
+        vertical-align: middle;
+        color: #333333;
+
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+          min-height: 52px;
+        }
+      }
+    }
+
+    .external-link {
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    .offer-subtext {
+      font-family: 'Gilroy';
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 20px;
+      vertical-align: middle;
+      color: #000000;
+      margin-bottom: 8px;
+    }
+    .#{$id}__add-content__footer {
+      padding: 0 12px;
+
+      @media screen and (max-width: 991px) {
+        padding: 0 16px;
+      }
+    }
+
+    .add-footer {
+      font-family: 'Gilroy';
+      font-weight: 300;
+      font-size: 10px;
+      line-height: 16px;
+      vertical-align: middle;
+      color: #333333;
+
+      height: 18px;
+      padding: 0 4px;
+      width: 100%;
+      text-align: center;
+      overflow-y: scroll;
+
+      @media screen and (max-width: 991px) {
+        height: 22px;
+        overflow-y: hidden;
+      }
+
+      @media screen and (max-width: 500px) {
+        height: 18px;
+        padding: 0 4px;
+        overflow-y: scroll;
+      }
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #e0e0e0;
+        border-radius: 6px;
+        border: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: #37505c;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #263942;
+      }
+    }
+
+    .add-footer a {
+      color: #2980b9;
+      text-decoration: underline;
+      margin-left: 4px;
+    }
+
+    .add-footer a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-1 {
+    .#{$id}__cardContainer {
+      .card {
+        &:first-child {
+          .overlay-text {
+            h2 {
+              max-width: 175px;
+
+              @media screen and (max-width: 991px) {
+                max-width: 280px;
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          .overlay-text {
+            h2 {
+              max-width: 220px;
+              @media screen and (max-width: 991px) {
+                max-width: 280px;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .#{$id}__miniCardContainer {
+      .add-content {
+        border: solid 1px var(--borderColorV1);
+        border-top: none;
+        border-radius: 12px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+}
