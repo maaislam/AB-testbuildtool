@@ -9,13 +9,13 @@ import modal from './components/modal';
 import contentWrapper from './components/contentWrapper';
 import cartDescription from './components/cartDescription';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
-const openModal = (ID) => {
-  const modalElem = document.querySelector(`.${ID}__modal`);
+const openModal = (id) => {
+  const modalElem = document.querySelector(`.${id}__modal`);
 
-  modalElem.classList.add(`${ID}__open`);
-  modalElem.classList.remove(`${ID}__closing`);
+  modalElem.classList.add(`${id}__open`);
+  modalElem.classList.remove(`${id}__closing`);
 };
 
 export const closeModal = () => {
@@ -115,8 +115,9 @@ export default () => {
       clickedItem.disabled = true;
       addToCart(1, productId)
         .then((doc) => {
-          const cartTotalElement = doc.querySelector('.cart_totals');
+          const cartTotalElement = doc;
           const cartInfoObj = extractCartTotals(cartTotalElement);
+          console.log('🚀 ~ .then ~ cartInfoObj:', cartInfoObj);
           const totalCartItemElems = doc.querySelectorAll('.cart_item .input-text.qty');
           const totalQuantity = Array.from(totalCartItemElems).reduce((sum, input) => {
             const value = parseInt(input.value, 10);
