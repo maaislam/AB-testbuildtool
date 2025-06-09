@@ -9,7 +9,7 @@ const productDescription = (id, mainProductObj, selections) => {
                 </div>
                 <div class="product-details">
                 <div class="prod-title">${title.outerHTML}</div>
-                <p class="price">${price}</p>
+                <p class="price">$${price}</p>
                 ${
                   selections && selections.length > 0
                     ? `

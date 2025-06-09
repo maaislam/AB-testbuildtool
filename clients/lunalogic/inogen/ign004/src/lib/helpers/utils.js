@@ -75,35 +75,37 @@ export const addToCart = async (quantity, productId) => {
   }
 };
 
-export const fetchCartDocument = async () => {
+export const fetchCartTotals = async () => {
   try {
-    const response = await fetch('/cart');
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status} - ${response.statusText}`);
-    }
-
-    const htmlText = await response.text();
+    const res = await fetch('/cart/');
+    const htmlText = await res.text();
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlText, 'text/html');
-    return doc;
-  } catch (error) {
-    console.error('Failed to fetch cart page:', error);
+
+    const cartTotals = {
+      subtotal: doc.querySelector('.cart-subtotal .amount')?.textContent.trim(),
+      shipping: doc.querySelector('.cart-totals-free-shipping')?.textContent.trim(),
+      estimatedSalesTax: doc.querySelector('.tax-rate .amount')?.textContent.trim(),
+      orderTotal: doc.querySelector('.order-total .amount')?.textContent.trim()
+    };
+    console.log(cartTotals);
+    return cartTotals;
+  } catch (err) {
+    console.error('Error fetching cart totals:', err);
     return null;
   }
 };
 
 export const extractCartTotals = (doc) => {
-  console.log('🚀 ~ extractCartTotals ~ doc:', doc);
   const subtotal =
     doc
       .querySelector('.woocommerce-mini-cart__total .woocommerce-Price-amount')
       ?.textContent.trim() || null;
-  const shipping = doc.querySelector('.cart-totals-free-shipping')?.textContent.trim() || null;
-  const salesTax =
-    doc
-      .querySelector('.tax-rate-us-ca-estimated-sales-tax-1 .woocommerce-Price-amount')
-      ?.textContent.trim() || null;
+  const shipping =
+    doc.querySelector('.cart-totals-free-shipping')?.textContent.trim() || 'Free Shipping';
+  const salesTax = doc
+    .querySelector('.tax-rate-us-ca-estimated-sales-tax-1 .woocommerce-Price-amount')
+    ?.textContent.trim();
   const orderTotal =
     doc.querySelector('.order-total .woocommerce-Price-amount')?.textContent.trim() || null;
 

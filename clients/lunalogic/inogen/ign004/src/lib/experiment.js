@@ -6,6 +6,7 @@ import shared from './shared/shared';
 import {
   addToCart,
   extractCartTotals,
+  fetchCartTotals,
   getVariationSelections,
   parseHTML,
   pollerLite
@@ -136,14 +137,17 @@ export default () => {
       const productTitle = document.querySelector('.post__title')?.cloneNode(true);
       const mainImageElement = document.querySelector('.woocommerce-main-image img');
       const productImage = mainImageElement.src;
-      const priceElement = document.querySelector('.post--pdp__price');
-      const priceAmountElem = priceElement.querySelector('.woocommerce-Price-amount');
-      const priceAmount = priceAmountElem ? priceAmountElem.innerText.trim() : '';
+      const priceElement = document.querySelector('.woocommerce-Price-amount.amount');
+      const childNodes = Array.from(priceElement.childNodes);
+      const lastTextNode = childNodes
+        .reverse()
+        .find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+      const finalPrice = lastTextNode?.textContent.trim() || '';
 
       const mainProductObj = {
         title: productTitle,
         image: productImage,
-        price: priceAmount
+        price: finalPrice
       };
       clickedItem.disabled = true;
       openModal(ID);
@@ -159,14 +163,31 @@ export default () => {
         .then((doc) => {
           const cartTotalElement = doc;
           const cartInfoObj = extractCartTotals(cartTotalElement);
-          console.log('🚀 ~ .then ~ cartInfoObj:', cartInfoObj);
-          const totalCartItemElems = doc.querySelectorAll('.cart_item .input-text.qty');
-          const totalQuantity = Array.from(totalCartItemElems).reduce((sum, input) => {
-            const value = parseInt(input.value, 10);
-            return sum + (isNaN(value) ? 0 : value);
+          const totalCartItemElems = doc.querySelectorAll('.quantity');
+          const totalQuantity = Array.from(totalCartItemElems).reduce((sum, el) => {
+            const match = el.textContent.match(/^(\d+)/);
+            return sum + (match ? parseInt(match[1], 10) : 0);
           }, 0);
+
           if (cartInfoObj && totalQuantity) {
             renderModalContent(mainProductObj, cartInfoObj, totalQuantity, selections);
+            //get cart and get extra data
+            fetchCartTotals()
+              .then((cartInfoObject) => {
+                const contentContainer = document.querySelector(`.${ID}__contentContainer`);
+                const cartDescriptionElem = contentContainer.querySelector(`.${ID}__bag-summary`);
+
+                if (cartDescriptionElem) cartDescriptionElem.remove();
+                if (cartInfoObject && totalQuantity) {
+                  contentContainer.insertAdjacentHTML(
+                    'beforeend',
+                    cartDescription(ID, cartInfoObject, totalQuantity)
+                  );
+                }
+              })
+              .catch((error) => {
+                console.error('Error fetching cart document:', error);
+              });
           }
           clickedItem.disabled = false;
         })
@@ -188,23 +209,30 @@ export default () => {
       clickedItem.innerText = 'Adding...';
       addToCart(1, productId)
         .then((doc) => {
-          const cartTotalElement = doc.querySelector('.cart_totals');
-          const cartInfoObj = extractCartTotals(cartTotalElement);
-          const totalCartItemElems = doc.querySelectorAll('.cart_item .input-text.qty');
-          const totalQuantity = Array.from(totalCartItemElems).reduce((sum, input) => {
-            const value = parseInt(input.value, 10);
-            return sum + (isNaN(value) ? 0 : value);
+          //const cartInfoObj = extractCartTotals(cartTotalElement);
+          const totalCartItemElems = doc.querySelectorAll('.quantity');
+          const totalQuantity = Array.from(totalCartItemElems).reduce((sum, el) => {
+            const match = el.textContent.match(/^(\d+)/);
+            return sum + (match ? parseInt(match[1], 10) : 0);
           }, 0);
-          const contentContainer = document.querySelector(`.${ID}__contentContainer`);
-          const cartDescriptionElem = contentContainer.querySelector(`.${ID}__bag-summary`);
-          if (cartDescriptionElem) cartDescriptionElem.remove();
-          if (cartInfoObj && totalQuantity) {
-            contentContainer.insertAdjacentHTML(
-              'beforeend',
-              cartDescription(ID, cartInfoObj, totalQuantity)
-            );
-          }
-          clickedItem.innerText = 'Added to the cart';
+          //get cart and get extra data
+          fetchCartTotals()
+            .then((cartInfoObject) => {
+              const contentContainer = document.querySelector(`.${ID}__contentContainer`);
+              const cartDescriptionElem = contentContainer.querySelector(`.${ID}__bag-summary`);
+
+              if (cartDescriptionElem) cartDescriptionElem.remove();
+              if (cartInfoObject && totalQuantity) {
+                contentContainer.insertAdjacentHTML(
+                  'beforeend',
+                  cartDescription(ID, cartInfoObject, totalQuantity)
+                );
+              }
+            })
+            .catch((error) => {
+              console.error('Error fetching cart document:', error);
+            });
+          clickedItem.innerText = 'Added to cart';
           setTimeout(() => {
             clickedItem.innerText = 'ADD TO CART';
             clickedItem.classList.remove('disabled-link');
