@@ -1,6 +1,6 @@
-const productDescription = (id, productReviews, productName) => {
+const productDescription = (id, productReviews, productName, productLink) => {
   const html = `
-    <div class="${id}__productDescription">
+    <div class="${id}__productDescription" data-link="${productLink}#reviews">
         ${productReviews ? productReviews.outerHTML : ''}
         ${productName ? productName.outerHTML : ''}
     </div>

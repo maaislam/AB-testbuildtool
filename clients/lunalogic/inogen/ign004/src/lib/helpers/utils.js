@@ -130,3 +130,33 @@ export const getVariationSelections = (formSelector = '.variations_form') => {
     };
   });
 };
+
+export const parseHTML = async (urls) => {
+  const promises = urls.map((url) =>
+    fetch(url.link).catch((error) => {
+      console.error(`Error fetching ${url}: ${error.message}`);
+      return Promise.resolve(null);
+    })
+  );
+  const responses = await Promise.all(promises);
+  const data = [];
+  //eslint-disable-next-line no-restricted-syntax
+  for (const [index, response] of responses.entries()) {
+    if (response) {
+      //eslint-disable-next-line no-await-in-loop
+      const html = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      console.log(doc, 'doc');
+      const productIdElement = doc.querySelector('input[name="add-to-cart"]');
+      console.log(productIdElement, 'productIdElement');
+      const productId = productIdElement ? productIdElement.value : '';
+      data.push({
+        link: urls[index].link,
+        id: productId
+      });
+    }
+  }
+
+  return data;
+};

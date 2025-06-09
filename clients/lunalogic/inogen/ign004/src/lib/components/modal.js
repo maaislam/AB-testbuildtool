@@ -11,7 +11,7 @@ const modal = (id) => {
                 </div>
             </div>
             <div class="${id}__modal-content">
-            
+               
             </div>
         </div>
     </div>
