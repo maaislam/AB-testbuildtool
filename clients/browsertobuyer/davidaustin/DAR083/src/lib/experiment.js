@@ -15,7 +15,7 @@ const init = () => {};
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
+  //console.log(ID);
   //gaTracking('Conditions Met'); //use if needed
 
   //-----------------------------
