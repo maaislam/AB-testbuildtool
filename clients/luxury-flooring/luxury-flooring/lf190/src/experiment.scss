@@ -2,7 +2,77 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+  .#{$id}__productOverview {
+    position: relative;
+    background-color: #f9f2e4;
+    padding: 21px 16px 27px;
+
+    .product-overview-title {
+      font: normal normal 600 19px/26px Work Sans;
+      letter-spacing: 0px;
+      color: #202020;
+      margin: 0 0 17px;
+
+      @media screen and (max-width: 991px) {
+        text-align: center;
+      }
     }
+
+    .product-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(139px, 1fr));
+      gap: 20px;
+    }
+
+    &:before {
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 50vw;
+      left: -50vw;
+      display: block;
+      top: 0;
+      background-color: #f9f2e4;
+      z-index: -1;
+    }
+
+    @media screen and (max-width: 991px) {
+      margin: 24px 0 0;
+      padding: 24px 0px 40px;
+      &:before {
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 200vw;
+        left: -50vw;
+        display: block;
+        top: 0;
+        background-color: #f9f2e4;
+        z-index: -1;
+      }
+    }
+  }
+
+  .#{$id}__overview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .#{$id}__image-wrapper {
+      width: 60px;
+      height: 60px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .#{$id}__overview-label {
+      font: normal normal normal 16px/22px Work Sans;
+      color: #202020;
+      margin: 16px 0 0;
+    }
+  }
 }
