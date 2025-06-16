@@ -1,17 +1,15 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import {
   enrichMergedArray,
   extractAttributes,
   extractPdfIcons,
-  mergeAttributesWithIcons,
-  pollerLite
+  mergeAttributesWithIcons
 } from './helpers/utils';
 import mainObj from './data/data';
 import productOverview from './components/productOverview';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 const isMobile = window.matchMedia('(max-width: 992px)').matches;
 
 const init = () => {
@@ -34,19 +32,19 @@ const init = () => {
   const mobileTargetPoint = document.querySelector('.product-section.details');
 
   if (document.querySelector(`.${ID}__productOverview`)) {
-    document.querySelector(`.${ID}__productOverview`).remove();
+    document.querySelectorAll(`.${ID}__productOverview`).forEach((el) => el.remove());
   }
 
-  if (uniqueFinalArray.length > 0 && !isMobile) {
-    targetPoint.insertAdjacentHTML('beforeend', productOverview(ID, uniqueFinalArray));
-  } else {
-    mobileTargetPoint.insertAdjacentHTML('beforebegin', productOverview(ID, uniqueFinalArray));
+  if (uniqueFinalArray.length > 0) {
+    targetPoint.insertAdjacentHTML('beforeend', productOverview(ID, uniqueFinalArray, 'desktop'));
+    mobileTargetPoint.insertAdjacentHTML(
+      'beforebegin',
+      productOverview(ID, uniqueFinalArray, 'mobile')
+    );
   }
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-
+  setup();
   init();
 };

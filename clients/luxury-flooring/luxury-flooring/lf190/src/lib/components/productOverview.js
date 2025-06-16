@@ -1,6 +1,6 @@
-const productOverview = (id, finalArray) => {
+const productOverview = (id, finalArray, tag) => {
   const html = `
-        <div class="product-overview ${id}__productOverview">
+        <div class="product-overview ${id}__productOverview ${id}__${tag}">
             <h2 class="product-overview-title">Product Overview</h2>
             <div class="product-overview-grid">
             ${finalArray

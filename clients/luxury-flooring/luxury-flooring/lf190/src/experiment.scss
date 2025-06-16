@@ -3,9 +3,12 @@
 
 .#{$id} {
   .#{$id}__productOverview {
+    max-width: 1078px;
+    width: 100%;
     position: relative;
     background-color: #f9f2e4;
     padding: 21px 16px 27px;
+    margin: 27px 0 0;
 
     .product-overview-title {
       font: normal normal 600 19px/26px Work Sans;
@@ -15,6 +18,7 @@
 
       @media screen and (max-width: 991px) {
         text-align: center;
+        margin: 0 0 27px;
       }
     }
 
@@ -22,6 +26,22 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(139px, 1fr));
       gap: 20px;
+
+      @media screen and (max-width: 580px) {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+
+      @media screen and (max-width: 480px) {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+
+      @media screen and (max-width: 390px) {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      }
+
+      @media screen and (max-width: 350px) {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      }
     }
 
     &:before {
@@ -34,6 +54,20 @@
       top: 0;
       background-color: #f9f2e4;
       z-index: -1;
+    }
+
+    &.#{$id}__desktop {
+      @media screen and (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    &.#{$id}__mobile {
+      display: none;
+
+      @media screen and (max-width: 992px) {
+        display: block;
+      }
     }
 
     @media screen and (max-width: 991px) {
