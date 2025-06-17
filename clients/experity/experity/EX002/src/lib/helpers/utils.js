@@ -49,3 +49,21 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
+
+export const embedMedchatInIframe = (
+  url = 'https://medchatapp.com/widget/AWshYCMkWUG_ZraiOGvG4Q/answer-bot/2qsdrfpsgg'
+) => {
+  const iframe = document.createElement('iframe');
+  iframe.classList.add('med-iframe');
+
+  Object.assign(iframe, {
+    src: url,
+    width: '100%',
+    height: '600', //Adjust height as needed
+    frameBorder: '0',
+    allow: 'camera; microphone',
+    style: 'border: none; max-width: 100%;'
+  });
+
+  document.body.insertAdjacentElement('afterbegin', iframe);
+};

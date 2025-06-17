@@ -75,12 +75,14 @@ const mainObj = {
       {
         value: 'Underfloor Heating',
         icon: '20D',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png',
+        detail: 'Underfloor heating compatible'
       },
       {
         value: 'Durable & Longlasting',
         icon: '20E',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png',
+        detail: 'Durable & Long-lasting'
       },
       {
         value: 'Water Proof',

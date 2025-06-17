@@ -10,7 +10,6 @@ import mainObj from './data/data';
 import productOverview from './components/productOverview';
 
 const { ID } = shared;
-const isMobile = window.matchMedia('(max-width: 992px)').matches;
 
 const init = () => {
   const attributes = extractAttributes();

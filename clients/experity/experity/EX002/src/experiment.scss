@@ -2,10 +2,24 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  &__stepsWrapper {
-    & + form {
+  .med-iframe {
+    & ~ * {
       display: none !important;
     }
+  }
+  .final-step {
+    display: none !important;
+  }
+  #pardot-form {
+    .progress-dots {
+      margin: 0 auto 24px;
+    }
+
+    .form_col.field-hidden {
+      display: none;
+    }
+  }
+  &__stepsWrapper {
     #optionForm {
       max-width: 420px;
       width: 100%;
@@ -30,7 +44,7 @@
       box-shadow: none;
       gap: 0;
       .option-card {
-        width: calc(33.3333333333% - 14px);
+        width: calc(50% - 14px);
         margin: 0 7px 14px;
       }
       .option-label {
@@ -91,9 +105,19 @@
     padding: 24px;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-family: Arial, sans-serif;
+    &[data-step='2'] {
+      .option-card {
+        @media screen and (max-width: 580px) {
+          width: calc(50% - 14px) !important;
+        }
+      }
+      .next-button {
+        margin: 24px 0 0;
+      }
+    }
   }
 
   .progress-dots {
@@ -231,5 +255,9 @@
     line-height: 24px;
     text-align: center;
     cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
   }
 }
