@@ -58,6 +58,7 @@ const selectNoForLabel = (labelText = 'Are You a Patient?') => {
 
 const showFinalStep = () => {
   const finalForm = document.querySelector('#pardot-form');
+  const titleElem = finalForm.querySelector('h2');
   if (finalForm) finalForm.classList.remove('final-step');
   if (finalForm.querySelector('.progress-dots')) {
     finalForm.querySelector('.progress-dots').remove();
@@ -74,11 +75,13 @@ const showFinalStep = () => {
         `
     );
   }
-
+  const stepOneContainer = document.querySelector('.get-started-container[data-step="1"]');
+  const stepOneSelectedOption = stepOneContainer.querySelector('input[type="radio"]:checked');
   const stepTwoContainer = document.querySelector('.get-started-container[data-step="2"]');
   const selectedOption = stepTwoContainer.querySelector('input[type="radio"]:checked');
   if (selectedOption) {
     const selectedValue = selectedOption.value;
+    titleElem.textContent = stepOneSelectedOption.value;
     selectOptionByLabel(selectedValue);
     selectNoForLabel();
   }
@@ -102,12 +105,14 @@ const updateActiveDot = (target, step) => {
       const firstStep = document.querySelector('.get-started-container[data-step="1"]');
       const firstStepInput = firstStep.querySelector('input[type="radio"]:checked');
       const secondStep = document.querySelector('.get-started-container[data-step="2"]');
+      const title = secondStep.querySelector('.title');
       const form = secondStep.querySelector('#checkboxForm');
 
       if (firstStepInput && !conatiner) {
         form.innerHTML = '';
+        title.textContent = firstStepInput.value;
         const inputValue = firstStepInput.value;
-        const findOptions = firstStepOptions.find((option) => option.label === inputValue);
+        const findOptions = firstStepOptions.find((option) => option.value === inputValue);
         if (findOptions && findOptions.options) {
           form.innerHTML = findOptions.options
             .map((option) => {
@@ -162,7 +167,7 @@ export default () => {
       const secondStep = document.querySelector('.get-started-container[data-step="2"]');
       const secondStepInput = secondStep.querySelector('input[type="radio"]:checked');
 
-      if (firstStepInput && firstStepInput.value === 'I am a new or existing patient') {
+      if (firstStepInput && firstStepInput.value === 'Help From a Care Provider') {
         window.location.href = 'https://findurgentcare.com/';
         return;
       }
@@ -219,7 +224,7 @@ export default () => {
 
       if (
         firstStepInput &&
-        firstStepInput.value === 'I am a new or existing patient' &&
+        firstStepInput.value === 'Help From a Care Provider' &&
         targetStep !== '1'
       ) {
         window.location.href = 'https://findurgentcare.com/';

@@ -7,15 +7,14 @@ const firstStep = (firstStepOptions) => {
             <span class="dot" data-step="3"></span>
         </div>
 
-        <h2 class="title">Get Started</h2>
-        <p class="subtitle">What do you want to get started on?</p>
+        <h2 class="title">How can we help?</h2>
 
         <form class="options-grid" id="optionForm">
             ${firstStepOptions
               .map((option) => {
                 return `
                     <label class="option-card">
-                        <input type="radio" name="startOption" value="${option.label}" ${
+                        <input type="radio" name="startOption" value="${option.value}" ${
                   option.selected ? 'checked' : ''
                 } />
                         <span class="radio-mark"></span>

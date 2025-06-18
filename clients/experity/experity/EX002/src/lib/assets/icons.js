@@ -1,53 +1,66 @@
 export const demoIcon = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-<g clip-path="url(#clip0_24017_1867)">
-<path d="M20 15H28C28.2652 15 28.5196 15.1054 28.7071 15.2929C28.8946 15.4804 29 15.7348 29 16V27" stroke="#2FCB40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M13 9V15" stroke="#2FCB40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M10 12H16" stroke="#2FCB40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 27H31" stroke="#1B2B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M6 27V6C6 5.73478 6.10536 5.48043 6.29289 5.29289C6.48043 5.10536 6.73478 5 7 5H19C19.2652 5 19.5196 5.10536 19.7071 5.29289C19.8946 5.48043 20 5.73478 20 6V27" stroke="#1B2B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16 27V20H10V27" stroke="#1B2B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
+<g clip-path="url(#clip0_25970_949)">
+<path d="M14 25C19.799 25 24.5 20.299 24.5 14.5C24.5 8.70101 19.799 4 14 4C8.20101 4 3.5 8.70101 3.5 14.5C3.5 20.299 8.20101 25 14 25Z" stroke="#1B2B54" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M18.3376 14.7968C18.557 14.6597 18.557 14.3403 18.3376 14.2032L12.348 10.4597C12.1149 10.314 11.8125 10.4816 11.8125 10.7565V18.2435C11.8125 18.5184 12.1149 18.686 12.348 18.5403L18.3376 14.7968Z" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <defs>
-<clipPath id="clip0_24017_1867">
-<rect width="32" height="32" fill="white"/>
+<clipPath id="clip0_25970_949">
+<rect width="28" height="28" fill="white" transform="translate(0 0.5)"/>
 </clipPath>
 </defs>
 </svg>
 `;
 
 export const salesIcon = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-<g clip-path="url(#clip0_24017_1880)">
-<path d="M10 18C12.7614 18 15 15.7614 15 13C15 10.2386 12.7614 8 10 8C7.23858 8 5 10.2386 5 13C5 15.7614 7.23858 18 10 18Z" stroke="#1B2B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 10H31" stroke="#2FCB40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 16H31" stroke="#2FCB40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M23 22H31" stroke="#2FCB40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M2 24C2.8875 20.55 6.2725 18 10 18C13.7275 18 17.1125 20.55 18 24" stroke="#1B2B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
+<g clip-path="url(#clip0_25970_957)">
+<path d="M8.74232 23.5902C10.9479 24.8667 13.5424 25.2975 16.0422 24.8023C18.542 24.3071 20.7764 22.9198 22.3288 20.8988C23.8812 18.8779 24.6456 16.3614 24.4796 13.8185C24.3136 11.2756 23.2285 8.87978 21.4265 7.07783C19.6246 5.27588 17.2288 4.19075 14.6859 4.02475C12.143 3.85876 9.62644 4.62322 7.60553 6.17562C5.58461 7.72802 4.19723 9.96239 3.70206 12.4622C3.20688 14.9619 3.6377 17.5565 4.9142 19.762L3.54592 23.8472C3.4945 24.0014 3.48704 24.1668 3.52437 24.325C3.5617 24.4832 3.64234 24.6278 3.75726 24.7427C3.87218 24.8577 4.01683 24.9383 4.175 24.9756C4.33318 25.013 4.49862 25.0055 4.65279 24.9541L8.74232 23.5902Z" stroke="#1B2B54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 15.8125C14.7249 15.8125 15.3125 15.2249 15.3125 14.5C15.3125 13.7751 14.7249 13.1875 14 13.1875C13.2751 13.1875 12.6875 13.7751 12.6875 14.5C12.6875 15.2249 13.2751 15.8125 14 15.8125Z" fill="#2FCB40"/>
+<path d="M9.1875 15.8125C9.91237 15.8125 10.5 15.2249 10.5 14.5C10.5 13.7751 9.91237 13.1875 9.1875 13.1875C8.46263 13.1875 7.875 13.7751 7.875 14.5C7.875 15.2249 8.46263 15.8125 9.1875 15.8125Z" fill="#2FCB40"/>
+<path d="M18.8125 15.8125C19.5374 15.8125 20.125 15.2249 20.125 14.5C20.125 13.7751 19.5374 13.1875 18.8125 13.1875C18.0876 13.1875 17.5 13.7751 17.5 14.5C17.5 15.2249 18.0876 15.8125 18.8125 15.8125Z" fill="#2FCB40"/>
 </g>
 <defs>
-<clipPath id="clip0_24017_1880">
-<rect width="32" height="32" fill="white"/>
+<clipPath id="clip0_25970_957">
+<rect width="28" height="28" fill="white" transform="translate(0 0.5)"/>
 </clipPath>
 </defs>
 </svg>
 `;
 
 export const supportIcon = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-<g clip-path="url(#clip0_24017_1893)">
-<path d="M16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" stroke="#2FCB40" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M6 19C7.65685 19 9 17.6569 9 16C9 14.3431 7.65685 13 6 13C4.34315 13 3 14.3431 3 16C3 17.6569 4.34315 19 6 19Z" stroke="#1B2B54" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M26 19C27.6569 19 29 17.6569 29 16C29 14.3431 27.6569 13 26 13C24.3431 13 23 14.3431 23 16C23 17.6569 24.3431 19 26 19Z" stroke="#1B2B54" stroke-width="2" stroke-miterlimit="10"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
+<g clip-path="url(#clip0_25970_967)">
+<path d="M10.9067 11.4069L6.57544 7.07568" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.093 17.593L21.4243 21.9243" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 18.875C16.4162 18.875 18.375 16.9162 18.375 14.5C18.375 12.0838 16.4162 10.125 14 10.125C11.5838 10.125 9.625 12.0838 9.625 14.5C9.625 16.9162 11.5838 18.875 14 18.875Z" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.093 11.4069L21.4243 7.07568" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.9067 17.593L6.57544 21.9243" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 25C19.799 25 24.5 20.299 24.5 14.5C24.5 8.70101 19.799 4 14 4C8.20101 4 3.5 8.70101 3.5 14.5C3.5 20.299 8.20101 25 14 25Z" stroke="#1B2B54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <defs>
-<clipPath id="clip0_24017_1893">
-<rect width="32" height="32" fill="white"/>
+<clipPath id="clip0_25970_967">
+<rect width="28" height="28" fill="white" transform="translate(0 0.5)"/>
 </clipPath>
 </defs>
 </svg>
 `;
 
+export const providerIcon = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
+<g clip-path="url(#clip0_25970_978)">
+<path d="M11.375 16.25V21.5C11.375 22.6603 11.8359 23.7731 12.6564 24.5936C13.4769 25.4141 14.5897 25.875 15.75 25.875H18.375C19.5353 25.875 20.6481 25.4141 21.4686 24.5936C22.2891 23.7731 22.75 22.6603 22.75 21.5" stroke="#1B2B54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.75 17.4375C23.0607 17.4375 23.3125 17.6893 23.3125 18C23.3125 18.3107 23.0607 18.5625 22.75 18.5625C22.4393 18.5625 22.1875 18.3107 22.1875 18C22.1875 17.6893 22.4393 17.4375 22.75 17.4375Z" fill="#2FCB40" stroke="#2FCB40" stroke-width="1.5"/>
+<path d="M22.75 21.5C24.683 21.5 26.25 19.933 26.25 18C26.25 16.067 24.683 14.5 22.75 14.5C20.817 14.5 19.25 16.067 19.25 18C19.25 19.933 20.817 21.5 22.75 21.5Z" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.875 4.875H17.5V10.0342C17.5 13.3997 14.8225 16.2062 11.4559 16.25C10.6448 16.2607 9.83962 16.1102 9.08714 15.8072C8.33465 15.5042 7.64985 15.0547 7.07249 14.4849C6.49513 13.9151 6.03672 13.2362 5.72386 12.4878C5.411 11.7393 5.24993 10.9362 5.25 10.125V4.875H7.875" stroke="#1B2B54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_25970_978">
+<rect width="28" height="28" fill="white" transform="translate(0 0.5)"/>
+</clipPath>
+</defs>
+</svg>
+`;
 export const teleradiologyIcon = `
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
 <g clip-path="url(#clip0_24017_2268)">
@@ -133,6 +146,25 @@ export const chatIcon = `
 <defs>
 <clipPath id="clip0_24017_2310">
 <rect width="32" height="32" fill="white" transform="translate(0 0.5)"/>
+</clipPath>
+</defs>
+</svg>
+`;
+
+export const revenueIcon = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+<g clip-path="url(#clip0_25993_312)">
+<path d="M8.5 7H5.5C4.96957 7 4.46086 7.21071 4.08579 7.58579C3.71071 7.96086 3.5 8.46957 3.5 9C3.5 9.53043 3.71071 10.0391 4.08579 10.4142C4.46086 10.7893 4.96957 11 5.5 11H7.5C8.03043 11 8.53914 11.2107 8.91421 11.5858C9.28929 11.9609 9.5 12.4696 9.5 13C9.5 13.5304 9.28929 14.0391 8.91421 14.4142C8.53914 14.7893 8.03043 15 7.5 15H4" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.5 6V7" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.5 19H28.5" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.5 13V25" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.5 15V16" stroke="#2FCB40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.5 7H28.5V24C28.5 24.2652 28.3946 24.5196 28.2071 24.7071C28.0196 24.8946 27.7652 25 27.5 25H5.5C5.23478 25 4.98043 24.8946 4.79289 24.7071C4.60536 24.5196 4.5 24.2652 4.5 24V19" stroke="#1B2B54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.5 13H28.5" stroke="#1B2B54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_25993_312">
+<rect width="32" height="32" fill="white" transform="translate(0.5)"/>
 </clipPath>
 </defs>
 </svg>
