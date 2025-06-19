@@ -51,7 +51,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 };
 
 export const embedMedchatInIframe = (
-  url = 'https://medchatapp.com/widget/AWshYCMkWUG_ZraiOGvG4Q/answer-bot/2qsdrfpsgg'
+  url = 'https://medchatapp.com/widget/owtpCZkJW02wp_gWK6-jCg'
 ) => {
   const iframe = document.createElement('iframe');
   iframe.classList.add('med-iframe');
@@ -66,4 +66,8 @@ export const embedMedchatInIframe = (
   });
 
   document.body.insertAdjacentElement('afterbegin', iframe);
+
+  iframe.addEventListener('load', () => {
+    console.log('Iframe loaded successfully');
+  });
 };

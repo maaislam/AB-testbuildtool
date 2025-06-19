@@ -89,7 +89,7 @@ export const firstStepOptions = [
         value: 'Teleradiology'
       },
       {
-        label: 'Patient Engagement',
+        label: 'EMR, RCM, and Patient Engagement',
         icon: chatIcon,
         selected: false,
         value: 'Patient Engagement'
