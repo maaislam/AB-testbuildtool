@@ -20,22 +20,22 @@ const mainObj = {
       {
         value: 'Lacquered',
         icon: '10A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_lac.png'
       },
       {
         value: 'Oiled',
         icon: '10B',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_oil.png'
       },
       {
         value: 'Invisible Oiled',
         icon: '10C',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_invoil.png'
       },
       {
         value: 'Unfinished',
         icon: '10D',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_unf.png'
       },
       {
         value: 'Golden',
@@ -45,7 +45,7 @@ const mainObj = {
       {
         value: 'Whitewashed',
         icon: '10F',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_whitewash.png'
       }
     ]
   },
@@ -55,33 +55,37 @@ const mainObj = {
       {
         value: 'DIY-friendly',
         icon: '20A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_diy.png',
+        detail: 'DIY-friendly'
       },
       {
         value: 'DIY Ready',
         icon: '20A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_diy.png',
+        detail: 'DIY Ready'
       },
       {
         value: 'Realistic Texture',
         icon: '20B',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_realistic.png',
+        detail: 'Realistic Texture'
       },
       {
         value: 'Water-Resistant',
         icon: '20C',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png',
+        detail: 'Water-Resistant'
       },
       {
         value: 'Underfloor Heating',
         icon: '20D',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png',
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_UFH.png',
         detail: 'Underfloor heating compatible'
       },
       {
         value: 'Durable & Longlasting',
         icon: '20E',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png',
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_dur.png',
         detail: 'Durable & Long-lasting'
       },
       {
@@ -92,13 +96,19 @@ const mainObj = {
       {
         value: 'Refinish Over Time',
         icon: '20G',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_refin.png'
       }
     ]
   },
   'room suitability': {
     description: 'Spec',
     options: [
+      {
+        value: 'Suitable everywhere except bathrooms',
+        icon: '30A',
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_livingroom.png',
+        detail: 'Bedroom, Dining, Hallway, Kitchen, Living Room, Lounge'
+      },
       {
         value: 'Suitable for all rooms',
         icon: '30A',
@@ -113,8 +123,7 @@ const mainObj = {
       {
         value: '25 years Warranty',
         icon: '40A',
-        imageUrl:
-          'https://luxuryflooring.co.uk/media/attribute/swatch/swatch_thumb/113x113/l/u/luxury-flooring-guarantee-25-years.png'
+        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_warranty.png'
       }
     ]
   },

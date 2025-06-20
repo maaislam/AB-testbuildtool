@@ -132,7 +132,7 @@ export const enrichMergedArray = (mergedArray, mainObj) => {
     if (!section) return acc;
 
     const itemValue = item.value.toLowerCase().trim();
-    const requiresExactMatch = key === 'finish' || key === 'pdf_icon';
+    const requiresExactMatch = key === 'finish' || key === 'pdf_icon' || key === 'room suitability';
 
     //Try exact match first
     const exactMatch = section.options.find((opt) => {
