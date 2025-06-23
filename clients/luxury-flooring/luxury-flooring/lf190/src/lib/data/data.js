@@ -1,149 +1,118 @@
-const mainObj = {
-  'joining method': {
-    description: 'Spec',
-    options: [
+export const mainData = [
+  {
+    name: 'Engineered Wood',
+    keyWord: 'Engineered Wood',
+    option: [
       {
-        value: 'Click',
-        icon: '1A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        title: 'Lacquered',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_lac.png'
       },
       {
-        value: 'Tongue & Groove',
-        icon: '1B',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
+        title: 'Underfloor Heating Compatible',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_UFH.png'
+      },
+      {
+        title: 'Refinish Over Time',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_refin.png'
+      },
+      {
+        title: 'Durable & Long-lasting',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_dur.png'
+      },
+      {
+        title: 'Suitable Everywhere Except Bathrooms',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_livingroom.png'
+      },
+      {
+        title: '25-year Warranty',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_warranty.png'
       }
     ]
   },
-  finish: {
-    description: 'Spec',
-    options: [
+  {
+    name: 'Solid Wood',
+    keyWord: 'Solid Wood',
+    option: [
       {
-        value: 'Lacquered',
-        icon: '10A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_lac.png'
+        title: 'Lacquered',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_lac.png'
       },
       {
-        value: 'Oiled',
-        icon: '10B',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_oil.png'
+        title: 'Refinish Over Time',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_refin.png'
       },
       {
-        value: 'Invisible Oiled',
-        icon: '10C',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_invoil.png'
+        title: 'Durable & Long-lasting',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_dur.png'
       },
       {
-        value: 'Unfinished',
-        icon: '10D',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_unf.png'
+        title: 'Suitable Everywhere Except Bathrooms',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_livingroom.png'
       },
       {
-        value: 'Golden',
-        icon: '10E',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
-      },
-      {
-        value: 'Whitewashed',
-        icon: '10F',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_whitewash.png'
+        title: '25-year Warranty',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_warranty.png'
       }
     ]
   },
-  pdf_icon: {
-    description: "Features you'll love...",
-    options: [
+  {
+    name: 'LVTs',
+    keyWord: 'Vinyl (LVT)',
+    option: [
       {
-        value: 'DIY-friendly',
-        icon: '20A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_diy.png',
-        detail: 'DIY-friendly'
+        title: 'DIY Ready Click fit',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_diy.png'
       },
       {
-        value: 'DIY Ready',
-        icon: '20A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_diy.png',
-        detail: 'DIY Ready'
+        title: 'Realistic Texture',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_realistic.png'
       },
       {
-        value: 'Realistic Texture',
-        icon: '20B',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_realistic.png',
-        detail: 'Realistic Texture'
+        title: 'Underfloor Heating Compatible',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_UFH.png'
       },
       {
-        value: 'Water-Resistant',
-        icon: '20C',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png',
-        detail: 'Water-Resistant'
+        title: 'Durable & Long-lasting',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_dur.png'
       },
       {
-        value: 'Underfloor Heating',
-        icon: '20D',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_UFH.png',
-        detail: 'Underfloor heating compatible'
+        title: 'Suitable for all Rooms',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
       },
       {
-        value: 'Durable & Longlasting',
-        icon: '20E',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_dur.png',
-        detail: 'Durable & Long-lasting'
-      },
-      {
-        value: 'Water Proof',
-        icon: '20F',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png'
-      },
-      {
-        value: 'Refinish Over Time',
-        icon: '20G',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_refin.png'
+        title: '25-year Warranty',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_warranty.png'
       }
     ]
   },
-  'room suitability': {
-    description: 'Spec',
-    options: [
+  {
+    name: 'Laminate',
+    keyWord: 'Laminate',
+    option: [
       {
-        value: 'Suitable everywhere except bathrooms',
-        icon: '30A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_livingroom.png',
-        detail: 'Bedroom, Dining, Hallway, Kitchen, Living Room, Lounge'
+        title: 'DIY Ready Click fit',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_diy.png'
       },
       {
-        value: 'Suitable for all rooms',
-        icon: '30A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png',
-        detail: 'Bathroom, Bedroom, Dining, Hallway, Kitchen, Living Room, Lounge'
-      }
-    ]
-  },
-  guarantee: {
-    description: 'Spec',
-    options: [
-      {
-        value: '25 years Warranty',
-        icon: '40A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_warranty.png'
-      }
-    ]
-  },
-  'installation method': {
-    description: 'Spec',
-    options: [
-      {
-        value: 'Click',
-        icon: '1A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png',
-        detail: 'Floating Floor - Click System'
+        title: 'Realistic Texture',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_realistic.png'
       },
       {
-        value: 'Nailed or Glued Down',
-        icon: '50A',
-        imageUrl: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_allroom.png',
-        detail: 'Nailed or Glued Down'
+        title: 'Underfloor Heating Compatible',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_UFH.png'
+      },
+      {
+        title: 'Durable & Long-lasting',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_dur.png'
+      },
+      {
+        title: 'Suitable Everywhere Except Bathrooms',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_livingroom.png'
+      },
+      {
+        title: '25-year Warranty',
+        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_warranty.png'
       }
     ]
   }
-};
-
-export default mainObj;
+];
