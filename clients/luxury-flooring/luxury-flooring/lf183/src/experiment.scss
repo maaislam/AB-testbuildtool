@@ -143,263 +143,267 @@
       }
     }
 
-    .#{$id}__modal {
-      .swiper-slide {
-        background-color: transparent !important;
-        background-position: center;
-        background-size: cover;
-      }
-      .swiper-button-next {
-        align-items: center;
-        background: 0 0;
-        bottom: 0;
-        box-shadow: none;
-        display: flex;
-        height: 100%;
-        justify-content: center;
-        top: 0 !important;
-        transform: none;
-        transition-duration: 0.3s;
-        width: 52px;
-        margin-top: 0;
-        right: -1px;
-        transform: translateX(0px);
-        transition-duration: 0.3s;
-
-        &::after {
-          content: '\e92a';
+    .#{$id}__modal .#{$id}__modalContainer {
+      &._show {
+        .swiper-slide {
+          background-color: transparent !important;
+          background-position: center;
+          background-size: cover;
+        }
+        .swiper-button-next {
           align-items: center;
-          background: #fff;
-          color: #000;
+          background: 0 0;
+          bottom: 0;
+          box-shadow: none;
           display: flex;
-          font-family: icomoon;
-          font-size: 24px;
-          height: 100px;
+          height: 100%;
           justify-content: center;
-          width: 100%;
+          top: 0 !important;
+          transform: none;
+          transition-duration: 0.3s;
+          width: 52px;
+          margin-top: 0;
+          right: -1px;
+          transform: translateX(0px);
+          transition-duration: 0.3s;
 
+          &::after {
+            content: '\e92a';
+            align-items: center;
+            background: #fff;
+            color: #000;
+            display: flex;
+            font-family: icomoon;
+            font-size: 24px;
+            height: 100px;
+            justify-content: center;
+            width: 100%;
+
+            @media screen and (max-width: 767px) {
+              font-size: 16px;
+              height: 60px;
+            }
+          }
           @media screen and (max-width: 767px) {
-            font-size: 16px;
-            height: 60px;
+            width: 35px;
           }
         }
-        @media screen and (max-width: 767px) {
-          width: 35px;
-        }
-      }
-      .swiper-button-prev {
-        align-items: center;
-        background: 0 0;
-        bottom: 0;
-        box-shadow: none;
-        display: flex;
-        height: 100%;
-        justify-content: center;
-        top: 0 !important;
-        left: -1px;
-        transform: none;
-        transition-duration: 0.3s;
-        width: 52px;
-        margin-top: 0;
-        transform: translateX(0px);
-        transition-duration: 0.3s;
-        &::after {
-          content: '\e929';
+        .swiper-button-prev {
           align-items: center;
-          background: #fff;
-          color: #000;
+          background: 0 0;
+          bottom: 0;
+          box-shadow: none;
           display: flex;
-          font-family: icomoon;
-          font-size: 24px;
-          height: 100px;
+          height: 100%;
           justify-content: center;
-          width: 100%;
+          top: 0 !important;
+          left: -1px;
+          transform: none;
+          transition-duration: 0.3s;
+          width: 52px;
+          margin-top: 0;
+          transform: translateX(0px);
+          transition-duration: 0.3s;
+          &::after {
+            content: '\e929';
+            align-items: center;
+            background: #fff;
+            color: #000;
+            display: flex;
+            font-family: icomoon;
+            font-size: 24px;
+            height: 100px;
+            justify-content: center;
+            width: 100%;
 
+            @media screen and (max-width: 767px) {
+              font-size: 16px;
+              height: 60px;
+            }
+          }
           @media screen and (max-width: 767px) {
-            font-size: 16px;
-            height: 60px;
+            width: 35px;
           }
         }
-        @media screen and (max-width: 767px) {
-          width: 35px;
-        }
-      }
 
-      aside ~ aside {
-        display: none !important;
-      }
-
-      .#{$id}__mainSlider {
-        .swiper-wrapper {
-          user-select: none;
-          .swiper-slide {
-            img {
-              width: 100%;
-              height: auto;
+        .#{$id}__mainSlider {
+          .swiper-wrapper {
+            user-select: none;
+            .swiper-slide {
+              img {
+                width: 100%;
+                height: auto;
+              }
             }
           }
         }
-      }
 
-      .#{$id}__thumbSlider {
-        margin-top: 12px;
-      }
-      .modal-popup .modal-header {
-        padding-top: 4rem;
-        padding-bottom: 40px;
-
-        @media screen and (max-width: 767px) {
-          padding-bottom: 20px;
+        .#{$id}__thumbSlider {
+          margin-top: 12px;
         }
-      }
-      .modal-content {
-        padding-left: 100px;
-        padding-right: 100px;
-        padding-bottom: 60px;
+        .modal-popup .modal-header {
+          padding-top: 4rem;
+          padding-bottom: 40px;
 
-        @media screen and (max-width: 1250px) {
-          padding-left: 50px;
-          padding-right: 50px;
-        }
-
-        @media screen and (max-width: 780px) {
-          padding-left: 20px;
-          padding-right: 20px;
-          padding-bottom: 20px;
-        }
-      }
-      .modal-inner-description {
-        display: flex;
-        flex-direction: column;
-      }
-      .product-reviews-summary {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 0px;
-        .reviews-actions {
-          margin-top: 0;
-        }
-        .action.view > span {
-          display: none;
-        }
-      }
-      .product-item-link {
-        font: normal normal normal 33px/38px Lucida Bright;
-        letter-spacing: 0px;
-        color: #202020;
-        opacity: 1;
-
-        @media screen and (max-width: 767px) {
-          font: normal normal normal 16px/24px Lucida Bright;
-        }
-      }
-
-      .modal-inner-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 56px;
-        a,
-        span {
-          max-width: 240px;
-          width: 100%;
-          font: normal normal normal 16px/22px Work Sans;
-          letter-spacing: 0px;
-          color: #ffffff;
-          opacity: 1;
-          text-align: center;
-
-          @media screen and (max-width: 680px) {
-            max-width: 100%;
-            margin-left: 0 !important;
+          @media screen and (max-width: 767px) {
+            padding-bottom: 20px;
           }
         }
-        a {
-          background-color: #c8a461;
-          padding: 14px 0;
+        .modal-content {
+          padding-left: 100px;
+          padding-right: 100px;
+          padding-bottom: 60px;
 
-          &:hover {
-            background-color: #a57d38;
+          @media screen and (max-width: 1250px) {
+            padding-left: 50px;
+            padding-right: 50px;
+          }
+
+          @media screen and (max-width: 780px) {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
           }
         }
-
-        span {
-          margin: 0;
-          margin-left: 20px;
-          background-color: #6c7c69;
-          color: #fff;
-          padding: 14px 0;
-          cursor: pointer;
-
-          &:hover {
-            background-color: #546052;
-          }
-
-          &.#{$id}__disabled {
-            opacity: 0.5;
-            pointer-events: none;
-          }
-
-          @media screen and (max-width: 680px) {
-            margin-top: 20px;
-          }
-        }
-
-        @media screen and (max-width: 680px) {
+        .modal-inner-description {
+          display: flex;
           flex-direction: column;
-          width: 100%;
-          padding: 0 20px;
-          margin-bottom: 36px;
         }
-      }
-      .modal-inner-wrap {
-        width: 55%;
-        max-height: 80vh !important;
-        min-height: max-content !important;
-        margin: 5.5rem auto;
-
-        @media screen and (min-width: 1440px) {
-          width: 45%;
-          max-height: 75vh !important;
+        .product-reviews-summary {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 0px;
+          .reviews-actions {
+            margin-top: 0;
+          }
+          .action.view > span {
+            display: none;
+          }
         }
+        .product-item-link {
+          font: normal normal normal 33px/38px Lucida Bright;
+          letter-spacing: 0px;
+          color: #202020;
+          opacity: 1;
 
-        @media screen and (max-width: 1024px) {
-          width: 70%;
-        }
-
-        @media screen and (max-width: 992px) {
-          box-sizing: border-box;
-          height: auto;
-          left: 0;
-          position: absolute;
-          right: 0;
-          margin: 7rem auto;
-          width: 75%;
-          -webkit-transform: translateY(0);
-          transform: translateY(0);
+          @media screen and (max-width: 767px) {
+            font: normal normal normal 16px/24px Lucida Bright;
+          }
         }
 
-        @media screen and (max-width: 680px) {
-          width: 95%;
-        }
-      }
+        .modal-inner-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 56px;
+          a,
+          span {
+            max-width: 240px;
+            width: 100%;
+            font: normal normal normal 16px/22px Work Sans;
+            letter-spacing: 0px;
+            color: #ffffff;
+            opacity: 1;
+            text-align: center;
 
-      .modal-popup.modal-slide._inner-scroll._show {
-        @media screen and (max-width: 992px) {
-          left: 0;
-          width: 100%;
-        }
-      }
+            @media screen and (max-width: 680px) {
+              max-width: 100%;
+              margin-left: 0 !important;
+            }
+          }
+          a {
+            background-color: #c8a461;
+            padding: 14px 0;
 
-      .#{$id}__productDescription {
-        .rating-summary,
-        .reviews-actions {
-          cursor: pointer;
+            &:hover {
+              background-color: #a57d38;
+            }
+          }
+
+          span {
+            margin: 0;
+            margin-left: 20px;
+            background-color: #6c7c69;
+            color: #fff;
+            padding: 14px 0;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #546052;
+            }
+
+            &.#{$id}__disabled {
+              opacity: 0.5;
+              pointer-events: none;
+            }
+
+            @media screen and (max-width: 680px) {
+              margin-top: 20px;
+            }
+          }
+
+          @media screen and (max-width: 680px) {
+            flex-direction: column;
+            width: 100%;
+            padding: 0 20px;
+            margin-bottom: 36px;
+          }
         }
-        .reviews-actions {
-          @media screen and (max-width: 991px) {
-            transform: translateY(2px);
+        .modal-inner-wrap {
+          width: 55%;
+          max-height: 80vh !important;
+          min-height: max-content !important;
+          margin: 5.5rem auto;
+
+          @media screen and (min-width: 1440px) {
+            width: 45%;
+            max-height: 75vh !important;
+          }
+
+          @media screen and (max-width: 1024px) {
+            width: 70%;
+          }
+
+          @media screen and (max-width: 992px) {
+            box-sizing: border-box;
+            height: auto;
+            left: 0;
+            position: absolute;
+            right: 0;
+            margin: 7rem auto;
+            width: 75%;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+          }
+
+          @media screen and (max-width: 680px) {
+            width: 95%;
+          }
+        }
+
+        .modal-popup.modal-slide._inner-scroll._show {
+          @media screen and (max-width: 992px) {
+            left: 0;
+            width: 100%;
+          }
+        }
+
+        .#{$id}__productDescription {
+          .rating-summary,
+          .reviews-actions {
+            cursor: pointer;
+          }
+          .reviews-actions {
+            @media screen and (max-width: 991px) {
+              transform: translateY(2px);
+            }
+          }
+        }
+
+        @media only screen and (max-width: 992px) {
+          &.modal-popup.modal-slide {
+            left: 0;
           }
         }
       }

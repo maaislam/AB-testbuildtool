@@ -1,7 +1,7 @@
 const productOverview = (id, flooring, tag) => {
   const html = `
         <div class="product-overview ${id}__productOverview ${id}__${tag}">
-            <h2 class="product-overview-title">${flooring.name}</h2>
+            <h2 class="product-overview-title">Overview</h2>
             <div class="product-overview-grid">
             ${flooring.option
               .map((item) => {

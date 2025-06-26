@@ -1,13 +1,8 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import {
-  enrichMergedArray,
-  extractAttributes,
-  extractPdfIcons,
-  mergeAttributesWithIcons
-} from './helpers/utils';
-import mainObj, { mainData } from './data/data';
+import { mainData } from './data/data';
 import productOverview from './components/productOverview';
+import { captureElementsContainingString } from './helpers/utils';
 
 const { ID } = shared;
 
@@ -16,11 +11,8 @@ const handleResize = () => {
   const mobileOverviewElement = document.querySelector(`.${ID}__productOverview.${ID}__mobile`);
   const productAccordion = document.querySelector(`.${ID}__productAccordion`);
   if (window.innerWidth < 991) {
-    //Do something
-    console.log('Below 991px');
     mobileOverviewElement?.insertAdjacentElement('afterend', productAccordion);
   } else {
-    console.log('991px or wider');
     productMediaElement?.insertAdjacentElement('beforeend', productAccordion);
   }
 };
@@ -32,13 +24,10 @@ const init = () => {
 
   const detailsSection = document.querySelector('.product-section.details');
 
-  console.log(flooringType, 'flooringType');
-
   const isFindFlooring = mainData.find(
     (item) => item.keyWord.toLowerCase().trim() === flooringType.toLowerCase().trim()
   );
 
-  console.log(isFindFlooring, 'isFindFlooring');
   if (isFindFlooring) {
     const targetPoint = document.querySelector('.product.media');
     const mobileTargetPoint = document.querySelector('.product-section.details');
@@ -56,6 +45,7 @@ const init = () => {
   }
 
   const productAccordionElem = document.querySelector('.product-section.accfeat');
+  //const cloneProductAccordionElem = productAccordionElem.cloneNode(true);
   if (productAccordionElem && !document.querySelector(`.${ID}__productAccordion`)) {
     productMediaElement.insertAdjacentElement('beforeend', productAccordionElem);
     productAccordionElem.classList.add(`${ID}__productAccordion`);
@@ -67,12 +57,127 @@ const init = () => {
       .insertAdjacentElement('beforeend', detailsSection);
     detailsSection.classList.add(`${ID}__detailsSection`);
     detailsSection.querySelector('label[for="details-toggle"] span.more')?.click();
+
+    const dimensionElement = captureElementsContainingString('dimensions');
+    if (dimensionElement.length > 0) {
+      dimensionElement[0].innerText = 'Measurements';
+    }
+    const specElement = captureElementsContainingString('details');
+    if (specElement.length > 0) {
+      specElement[0].innerText = 'Specifications';
+    }
+
+    const packSizeElement = document.querySelector('[data-code="pack_size"]');
+    const packSizeValue = document.querySelector('#attr_pack_size');
+
+    const packWeightElement = document.querySelector('[data-code="pack_weight"]');
+    const packWeightValue = document.querySelector('#attr_pack_weight');
+    const mainTargetPoint = document.querySelector(
+      `.${ID}__productAccordion .product-detail-col-list`
+    );
+    if (packSizeElement && packSizeValue) {
+      mainTargetPoint.insertAdjacentElement('beforeend', packSizeElement);
+      mainTargetPoint.insertAdjacentElement('beforeend', packSizeValue);
+    }
+
+    if (packWeightElement && packWeightValue) {
+      mainTargetPoint.insertAdjacentElement('beforeend', packWeightElement);
+      mainTargetPoint.insertAdjacentElement('beforeend', packWeightValue);
+    }
   }
+
+  const deliveryAccordion = document.querySelector('.product-accordion-pane.delivery');
+  const returnAccordion = document.querySelector('.product-accordion-pane.returns');
+  const allReturnItems = document.querySelectorAll('.product-accordion-pane.returns > *');
+
+  if (deliveryAccordion && !deliveryAccordion.querySelector('h4.title-delivery.title-accr-info')) {
+    deliveryAccordion.insertAdjacentHTML(
+      'afterbegin',
+      '<h4 class="title-delivery title-accr-info">Delivery information</h4>'
+    );
+  }
+
+  if (
+    returnAccordion &&
+    allReturnItems.length > 0 &&
+    !deliveryAccordion.querySelector('h4.title-return.title-accr-info')
+  ) {
+    deliveryAccordion.insertAdjacentHTML(
+      'beforeend',
+      '<h4 class="title-return title-accr-info">Return information</h4>'
+    );
+  }
+
+  if (deliveryAccordion && allReturnItems.length > 0) {
+    allReturnItems.forEach((item) => {
+      deliveryAccordion.appendChild(item);
+    });
+  }
+
+  const tabs = document.querySelectorAll('.product-accordion-tab');
+
+  //Open the first pane initially
+  const firstPane = tabs[0].nextElementSibling;
+  firstPane.style.height = `${firstPane.scrollHeight}px`;
+  firstPane.dataset.open = 'true'; //custom flag to track open state
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const pane = tab.nextElementSibling;
+      const isOpen = pane.dataset.open === 'true';
+
+      //Close all panes
+      document.querySelectorAll('.product-accordion-pane').forEach((p) => {
+        if (p !== pane) {
+          p.style.height = `${p.scrollHeight}px`; //set height first
+          requestAnimationFrame(() => {
+            p.style.height = '0px';
+            p.dataset.open = 'false';
+          });
+        }
+      });
+
+      if (!isOpen) {
+        //Set height to auto via scrollHeight
+        pane.style.height = `${pane.scrollHeight}px`;
+        pane.dataset.open = 'true';
+
+        //Optional: reset to auto height after animation (if content might change)
+        pane.addEventListener('transitionend', function handler(e) {
+          if (e.propertyName === 'height') {
+            pane.style.height = 'auto';
+            //pane.style.padding = '0 10px 36px';
+            //pane.style.borderBottom = '1px solid #787878';
+            pane.removeEventListener('transitionend', handler);
+          }
+        });
+      } else {
+        //Collapse the current pane
+        pane.style.height = `${pane.scrollHeight}px`; //reset to current height
+        requestAnimationFrame(() => {
+          pane.style.height = '0px';
+          //pane.style.padding = '0';
+          //pane.style.borderBottom = '0';
+          pane.dataset.open = 'false';
+        });
+      }
+    });
+  });
 };
 
 export default () => {
   setup();
   init();
+
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (target.closest('.readmore')) {
+      const wrapper = target.closest('.product-accordion-pane');
+      setTimeout(() => {
+        wrapper.style.height = 'auto';
+      }, 100);
+    }
+  });
 
   //Initial check
   handleResize();

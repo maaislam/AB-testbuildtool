@@ -174,3 +174,9 @@ export const enrichMergedArray = (mergedArray, mainObj) => {
     return acc;
   }, []);
 };
+
+export const captureElementsContainingString = (searchString) => {
+  const elements = [...document.querySelectorAll('.product-detail-col > h5')]; //Get all elements as an array
+
+  return elements.filter((el) => el.textContent.toLowerCase().trim().includes(searchString));
+};
