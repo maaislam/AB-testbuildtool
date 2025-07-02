@@ -4,6 +4,51 @@ import { embedMedchatInIframe } from './helpers/utils';
 import stepsWrapper from './components/stepsWrapper';
 import { firstStepOptions, secondStepOptions } from './data/data';
 
+const loadEmbeddedMessaging = () => {
+  const initEmbeddedMessaging = () => {
+    try {
+      window.embeddedservice_bootstrap.settings.language = 'en_US';
+      window.embeddedservice_bootstrap.init(
+        '00Di0000000HSwp',
+        'Ungated_Messaging',
+        'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768',
+        {
+          scrt2URL: 'https://experityhealth.my.salesforce-scrt.com'
+        }
+      );
+    } catch (err) {
+      console.error('Error loading Embedded Messaging: ', err);
+    }
+  };
+
+  const externalScript = document.createElement('script');
+  externalScript.src =
+    'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768/assets/js/bootstrap.min.js';
+  externalScript.onload = initEmbeddedMessaging;
+  document.head.appendChild(externalScript);
+};
+
+const loadMedchatWidget = () => {
+  if (document.querySelector('script[src*="medchatapp.com/widget/widget.js"]')) {
+    if (document.querySelector('#medchat-launcher-frame')) {
+      document.querySelector('#medchat-launcher-frame').classList.remove('hidden');
+    }
+
+    return;
+  }
+  const script = document.createElement('script');
+  script.src = 'https://medchatapp.com/widget/widget.js?api-key=AWshYCMkWUG_ZraiOGvG4Q';
+  script.async = true;
+  script.dataset.medchat = 'true'; //mark it for easy removal
+  document.head.appendChild(script);
+};
+
+const removeMedchatWidget = () => {
+  if (document.querySelector('#medchat-launcher-frame')) {
+    document.querySelector('#medchat-launcher-frame').classList.add('hidden');
+  }
+};
+
 const selectOptionByLabel = (label) => {
   const selectEl = document.querySelector('.Inquiry_Primary_Solution_Interest select');
   if (!selectEl) return;
@@ -152,6 +197,7 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (target.closest('.next-button')) {
+      removeMedchatWidget();
       const currentStepEl = target.closest('.get-started-container');
       const allSteps = document.querySelectorAll('.get-started-container');
       const selectedOption = currentStepEl.querySelector('input[type="radio"]:checked');
@@ -174,12 +220,14 @@ export default () => {
 
       if (firstStepInput && firstStepInput.value === 'Help from Support' && currentIndex !== 0) {
         if (secondStepInput && secondStepInput.value === 'Teleradiology') {
-          embedMedchatInIframe();
+          embedMedchatInIframe('https://medchatapp.com/widget/AWshYCMkWUG_ZraiOGvG4Q');
           return;
         }
 
         if (secondStepInput && secondStepInput.value === 'Patient Engagement') {
-          window.location.href = 'https://www.experityhealth.com/contact/';
+          embedMedchatInIframe(
+            'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768/?lwc.mode=prod'
+          );
           return;
         }
       }
@@ -201,6 +249,7 @@ export default () => {
         showFinalStep();
       }
     } else if (target.classList.contains('dot') && target.dataset.step) {
+      removeMedchatWidget();
       const targetStep = target.dataset.step;
       const allSteps = document.querySelectorAll('.get-started-container');
       const stepContainer =
@@ -233,12 +282,14 @@ export default () => {
 
       if (firstStepInput && firstStepInput.value === 'Help from Support' && targetStep === '3') {
         if (secondStepInput && secondStepInput.value === 'Teleradiology') {
-          embedMedchatInIframe();
+          embedMedchatInIframe('https://medchatapp.com/widget/AWshYCMkWUG_ZraiOGvG4Q');
           return;
         }
 
         if (secondStepInput && secondStepInput.value === 'Patient Engagement') {
-          window.location.href = 'https://www.experityhealth.com/contact/';
+          embedMedchatInIframe(
+            'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768/?lwc.mode=prod'
+          );
           return;
         }
       }

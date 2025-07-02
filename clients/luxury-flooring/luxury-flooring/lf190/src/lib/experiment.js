@@ -3,8 +3,14 @@ import shared from './shared/shared';
 import { mainData } from './data/data';
 import productOverview from './components/productOverview';
 import { captureElementsContainingString } from './helpers/utils';
+import tablistener from './helpers/tablistener';
 
 const { ID } = shared;
+
+const isInViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+  return rect.top >= 0 && rect.bottom <= window.innerHeight;
+};
 
 const handleResize = () => {
   const productMediaElement = document.querySelector('.product.media');
@@ -87,9 +93,13 @@ const init = () => {
   }
 
   const deliveryAccordion = document.querySelector('.product-accordion-pane.delivery');
+  const deliveryTextElement = document.querySelector('.product-accordion-tab.delivery h2 > span');
   const returnAccordion = document.querySelector('.product-accordion-pane.returns');
   const allReturnItems = document.querySelectorAll('.product-accordion-pane.returns > *');
 
+  if (deliveryTextElement) {
+    deliveryTextElement.textContent = 'Delivery & Returns';
+  }
   if (deliveryAccordion && !deliveryAccordion.querySelector('h4.title-delivery.title-accr-info')) {
     deliveryAccordion.insertAdjacentHTML(
       'afterbegin',
@@ -114,55 +124,7 @@ const init = () => {
     });
   }
 
-  const tabs = document.querySelectorAll('.product-accordion-tab');
-
-  //Open the first pane initially
-  const firstPane = tabs[0].nextElementSibling;
-  firstPane.style.height = `${firstPane.scrollHeight}px`;
-  firstPane.dataset.open = 'true'; //custom flag to track open state
-
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const pane = tab.nextElementSibling;
-      const isOpen = pane.dataset.open === 'true';
-
-      //Close all panes
-      document.querySelectorAll('.product-accordion-pane').forEach((p) => {
-        if (p !== pane) {
-          p.style.height = `${p.scrollHeight}px`; //set height first
-          requestAnimationFrame(() => {
-            p.style.height = '0px';
-            p.dataset.open = 'false';
-          });
-        }
-      });
-
-      if (!isOpen) {
-        //Set height to auto via scrollHeight
-        pane.style.height = `${pane.scrollHeight}px`;
-        pane.dataset.open = 'true';
-
-        //Optional: reset to auto height after animation (if content might change)
-        pane.addEventListener('transitionend', function handler(e) {
-          if (e.propertyName === 'height') {
-            pane.style.height = 'auto';
-            //pane.style.padding = '0 10px 36px';
-            //pane.style.borderBottom = '1px solid #787878';
-            pane.removeEventListener('transitionend', handler);
-          }
-        });
-      } else {
-        //Collapse the current pane
-        pane.style.height = `${pane.scrollHeight}px`; //reset to current height
-        requestAnimationFrame(() => {
-          pane.style.height = '0px';
-          //pane.style.padding = '0';
-          //pane.style.borderBottom = '0';
-          pane.dataset.open = 'false';
-        });
-      }
-    });
-  });
+  tablistener(ID);
 };
 
 export default () => {
