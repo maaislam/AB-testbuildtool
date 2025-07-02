@@ -115,14 +115,14 @@ export const fetchCartDocument = async () => {
 
 export const extractCartTotals = (doc) => {
   const subtotal =
-    doc.querySelector('.cart-subtotal .woocommerce-Price-amount')?.textContent.trim() || null;
-  const shipping = doc.querySelector('.cart-totals-free-shipping')?.textContent.trim() || null;
+    doc.querySelector('.cart-subtotal .woocommerce-Price-amount')?.textContent.trim() || '';
+  const shipping = doc.querySelector('.cart-totals-free-shipping')?.textContent.trim() || '';
   const salesTax =
     doc
       .querySelector('.tax-rate-us-ca-estimated-sales-tax-1 .woocommerce-Price-amount')
-      ?.textContent.trim() || null;
+      ?.textContent.trim() || '';
   const orderTotal =
-    doc.querySelector('.order-total .woocommerce-Price-amount')?.textContent.trim() || null;
+    doc.querySelector('.order-total .woocommerce-Price-amount')?.textContent.trim() || '';
 
   return {
     subtotal,
