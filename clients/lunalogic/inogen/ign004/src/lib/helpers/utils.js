@@ -50,77 +50,62 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   observer.observe(target, config);
 };
 
-export const addToCart = (quantity, productId) => {
-  const boundary = `----WebKitFormBoundary${Math.random().toString(36).substring(2)}`;
-  const body =
-    `${boundary}\r\n` +
-    'Content-Disposition: form-data; name="quantity"\r\n\r\n' +
-    `${quantity}\r\n${boundary}\r\n` +
-    'Content-Disposition: form-data; name="add-to-cart"\r\n\r\n' +
-    `${productId}\r\n${boundary}--\r\n`;
+export const addToCart = async (quantity, productId) => {
+  const formData = new FormData();
+  formData.append('product_id', productId);
+  formData.append('quantity', quantity);
 
-  return fetch(`${window.location.href}`, {
-    method: 'POST',
-    headers: {
-      accept:
-        'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-      'accept-language': 'en-US,en;q=0.9',
-      'content-type': `multipart/form-data; boundary=${boundary.slice(2)}`
-    },
-    body
-  })
-    .then((res) => res.text())
-    .then((htmlText) => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(htmlText, 'text/html');
-      return doc;
-    })
-    .catch((err) => console.error('Error adding to cart:', err));
-};
-
-export const fetchCartDocument = async () => {
   try {
-    const response = await fetch('https://www.inogen.com/cart/', {
-      headers: {
-        accept:
-          'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-        'accept-language': 'en-US,en;q=0.9',
-        'sec-ch-ua': '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin'
-      },
-      referrerPolicy: 'strict-origin-when-cross-origin',
-      body: null,
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include'
+    const response = await fetch('/?wc-ajax=add_to_cart', {
+      method: 'POST',
+      body: formData
     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status} - ${response.statusText}`);
-    }
+    const result = await response.json();
 
-    const htmlText = await response.text();
+    //Extract and parse the HTML fragment
+    const html = result.fragments?.['div.widget_shopping_cart_content'];
+    if (!html) throw new Error('Cart fragment not found');
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    return doc;
+  } catch (err) {
+    console.error('Error adding to cart:', err);
+  }
+};
+
+export const fetchCartTotals = async () => {
+  try {
+    const res = await fetch('/cart/');
+    const htmlText = await res.text();
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlText, 'text/html');
-    return doc;
-  } catch (error) {
-    console.error('Failed to fetch cart page:', error);
+
+    const cartTotals = {
+      subtotal: doc.querySelector('.cart-subtotal .amount')?.textContent.trim(),
+      shipping: doc.querySelector('.cart-totals-free-shipping')?.textContent.trim(),
+      estimatedSalesTax: doc.querySelector('.tax-rate .amount')?.textContent.trim(),
+      orderTotal: doc.querySelector('.order-total .amount')?.textContent.trim()
+    };
+    console.log(cartTotals);
+    return cartTotals;
+  } catch (err) {
+    console.error('Error fetching cart totals:', err);
     return null;
   }
 };
 
 export const extractCartTotals = (doc) => {
   const subtotal =
-    doc.querySelector('.cart-subtotal .woocommerce-Price-amount')?.textContent.trim() || '';
-  const shipping = doc.querySelector('.cart-totals-free-shipping')?.textContent.trim() || '';
-  const salesTax =
     doc
-      .querySelector('.tax-rate-us-ca-estimated-sales-tax-1 .woocommerce-Price-amount')
-      ?.textContent.trim() || '';
+      .querySelector('.woocommerce-mini-cart__total .woocommerce-Price-amount')
+      ?.textContent.trim() || null;
+  const shipping =
+    doc.querySelector('.cart-totals-free-shipping')?.textContent.trim() || 'Free Shipping';
+  const salesTax = doc
+    .querySelector('.tax-rate-us-ca-estimated-sales-tax-1 .woocommerce-Price-amount')
+    ?.textContent.trim();
   const orderTotal =
     doc.querySelector('.order-total .woocommerce-Price-amount')?.textContent.trim() || '';
 

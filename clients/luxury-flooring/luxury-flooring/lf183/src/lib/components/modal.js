@@ -2,7 +2,7 @@ const modal = (id) => {
   const html = `
         <div class="${id}__modal modals-wrapper">
             <aside role="dialog"
-                class="modal-popup modal-slide _inner-scroll"
+                class="modal-popup modal-slide _inner-scroll ${id}__modalContainer"
                 aria-labelledby="modal-title-0"
                 aria-describedby="modal-content-0"
                 data-role="modal"

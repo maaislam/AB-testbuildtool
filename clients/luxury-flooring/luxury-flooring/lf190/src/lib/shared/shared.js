@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "lf183",
-    VARIATION: "2",
+    ID: "lf190",
+    VARIATION: "1",
     CLIENT: "luxury-flooring",
     SITE: "luxury-flooring"
   };
