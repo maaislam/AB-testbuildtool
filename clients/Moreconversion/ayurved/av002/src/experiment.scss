@@ -2,7 +2,39 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-    &__test {
-        display: block;
+  #threshold-bar-wrapper {
+    margin: 1em auto;
+  }
+
+  .threshold-progress-bar {
+    background-color: #e8eee8;
+    height: 14px;
+    padding: 4px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .threshold-fill {
+    height: 6px;
+    background-color: #448933;
+    width: 0%;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+  }
+
+  .threshold-message {
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    margin-top: 8px;
+
+    @include media-query(sm) {
+      font-size: 14px;
     }
+
+    strong {
+      color: #448933;
+      font-weight: 700;
+    }
+  }
 }
