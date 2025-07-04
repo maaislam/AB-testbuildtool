@@ -25,7 +25,7 @@ export const mainData = [
       },
       {
         title: '25-year Warranty',
-        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_warranty.png'
+        icon: 'https://luxuryflooring.co.uk/media/attribute/swatch/swatch_thumb/113x113/l/u/luxury-flooring-guarantee-25-years.png'
       }
     ]
   },
@@ -51,7 +51,7 @@ export const mainData = [
       },
       {
         title: '25-year Warranty',
-        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_warranty.png'
+        icon: 'https://luxuryflooring.co.uk/media/attribute/swatch/swatch_thumb/113x113/l/u/luxury-flooring-guarantee-25-years.png'
       }
     ]
   },
@@ -81,7 +81,7 @@ export const mainData = [
       },
       {
         title: '25-year Warranty',
-        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_warranty.png'
+        icon: 'https://luxuryflooring.co.uk/media/attribute/swatch/swatch_thumb/113x113/l/u/luxury-flooring-guarantee-25-years.png'
       }
     ]
   },
@@ -111,7 +111,7 @@ export const mainData = [
       },
       {
         title: '25-year Warranty',
-        icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_warranty.png'
+        icon: 'https://luxuryflooring.co.uk/media/attribute/swatch/swatch_thumb/113x113/l/u/luxury-flooring-guarantee-25-years.png'
       }
     ]
   }

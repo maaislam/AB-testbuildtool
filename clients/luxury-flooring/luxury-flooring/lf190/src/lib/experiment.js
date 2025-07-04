@@ -2,10 +2,13 @@ import setup from './services/setup';
 import shared from './shared/shared';
 import { mainData } from './data/data';
 import productOverview from './components/productOverview';
-import { captureElementsContainingString } from './helpers/utils';
+import { captureElementsContainingString, pollerLite } from './helpers/utils';
 import tablistener from './helpers/tablistener';
+import resetSlider from './helpers/resetSlider';
+import setBannerStyle from './helpers/setBannerStyle';
 
 const { ID } = shared;
+let bannerStyleTimeout;
 
 const isInViewport = (el) => {
   const rect = el.getBoundingClientRect();
@@ -20,6 +23,21 @@ const handleResize = () => {
     mobileOverviewElement?.insertAdjacentElement('afterend', productAccordion);
   } else {
     productMediaElement?.insertAdjacentElement('beforeend', productAccordion);
+    //Clear any existing timeout to debounce
+    clearTimeout(bannerStyleTimeout);
+    const bodyEl = document.querySelector('body');
+    if (bodyEl) {
+      bodyEl.style.removeProperty('--banner-top');
+      bodyEl.style.removeProperty('--banner-height');
+      bodyEl.style.removeProperty('--banner-overflow-width');
+    }
+    bannerStyleTimeout = setTimeout(() => {
+      if (typeof setBannerStyle === 'function') {
+        setBannerStyle();
+      } else {
+        console.warn('setBannerStyle is not defined or not a function.');
+      }
+    }, 100);
   }
 };
 
@@ -40,6 +58,9 @@ const init = () => {
 
     if (!document.querySelector(`.${ID}__productOverview.${ID}__desktop`)) {
       targetPoint.insertAdjacentHTML('beforeend', productOverview(ID, isFindFlooring, 'desktop'));
+      setTimeout(() => {
+        setBannerStyle();
+      }, 2000);
     }
 
     if (!document.querySelector(`.${ID}__productOverview.${ID}__mobile`)) {
@@ -125,6 +146,44 @@ const init = () => {
   }
 
   tablistener(ID);
+
+  pollerLite(
+    [
+      '.column.main > .products .products.slick-initialized',
+      () => typeof window.jQuery.fn.slick === 'function'
+    ],
+    () => {
+      const productSlider = document.querySelector('.column.main > .products .products');
+      productSlider.classList.add(`${ID}__productSlider`);
+
+      const sliders = productSlider.querySelectorAll('.slick-slide');
+      const wrapper = document.createElement('div');
+      wrapper.className = 'custom-pagination-wrapper';
+      wrapper.innerHTML = `
+      <button class="slick-prev-dot" aria-label="Previous">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M15 6L9 12L15 18" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="slick-dots-placeholder"></div>
+      <button class="slick-next-dot" aria-label="Next">
+         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M9 6L15 12L9 18" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    `;
+
+      if (
+        productSlider &&
+        productSlider.parentNode &&
+        !document.querySelector('.custom-pagination-wrapper') &&
+        sliders.length > 1
+      ) {
+        productSlider.insertAdjacentElement('afterend', wrapper);
+      }
+      resetSlider(ID);
+    }
+  );
 };
 
 export default () => {

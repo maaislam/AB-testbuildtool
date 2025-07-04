@@ -1,0 +1,63 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .billing-dropdown {
+    position: relative;
+    max-width: 300px;
+    margin: 1em auto;
+    font-family: sans-serif;
+
+    & + div {
+      display: none;
+    }
+  }
+
+  .billing-selected {
+    padding: 1em;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #f8f8f8;
+    cursor: pointer;
+  }
+
+  .billing-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 999;
+  }
+
+  .billing-options.visible {
+    display: block;
+  }
+
+  .billing-option {
+    padding: 1em;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .billing-option:hover {
+    background-color: #f0f0f0;
+  }
+
+  .billing-badge {
+    background: #1fd47b;
+    color: #fff;
+    padding: 0.2em 0.5em;
+    font-size: 0.75em;
+    border-radius: 0.2em;
+    margin-right: 0.5em;
+    white-space: nowrap;
+  }
+}
