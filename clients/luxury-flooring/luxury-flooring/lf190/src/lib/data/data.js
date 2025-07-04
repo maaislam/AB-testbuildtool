@@ -4,7 +4,7 @@ export const mainData = [
     keyWord: 'Engineered Wood',
     option: [
       {
-        title: 'Lacquered',
+        title: 'Lacquered Finish',
         icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_lac.png'
       },
       {
@@ -20,7 +20,7 @@ export const mainData = [
         icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_dur.png'
       },
       {
-        title: 'Suitable Everywhere Except Bathrooms',
+        title: 'Anywhere But Bathrooms',
         icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_livingroom.png'
       },
       {
@@ -34,7 +34,7 @@ export const mainData = [
     keyWord: 'Solid Wood',
     option: [
       {
-        title: 'Lacquered',
+        title: 'Lacquered Finish',
         icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_lac.png'
       },
       {
@@ -46,7 +46,7 @@ export const mainData = [
         icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_dur.png'
       },
       {
-        title: 'Suitable Everywhere Except Bathrooms',
+        title: 'Anywhere But Bathrooms',
         icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_livingroom.png'
       },
       {
@@ -106,7 +106,7 @@ export const mainData = [
         icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_dur.png'
       },
       {
-        title: 'Suitable Everywhere Except Bathrooms',
+        title: 'Anywhere But Bathrooms',
         icon: 'https://luxuryflooring.co.uk/media/wysiwyg/ab_tests/test190/icon_livingroom.png'
       },
       {
