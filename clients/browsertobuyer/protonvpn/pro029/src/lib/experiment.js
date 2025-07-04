@@ -1,3 +1,5 @@
+import { discountIcon, downArrow, savingsIcon } from './assets/icons';
+import { trackGA4Event } from './helpers/utils';
 import setup from './services/setup';
 
 //import shared from './shared/shared';
@@ -38,6 +40,7 @@ const createConnectedBillingDropdown = () => {
 
   const dropdown = document.createElement('div');
   dropdown.className = 'billing-dropdown';
+  dropdown.innerHTML = '<div class="billing-dropdown-container"></div>';
 
   const selected = document.createElement('div');
   selected.className = 'billing-selected';
@@ -46,11 +49,21 @@ const createConnectedBillingDropdown = () => {
   const menu = document.createElement('div');
   menu.className = 'billing-options';
 
-  selected.addEventListener('click', () => menu.classList.toggle('visible'));
-  document.addEventListener(
-    'click',
-    (e) => !dropdown.contains(e.target) && menu.classList.remove('visible')
-  );
+  selected.addEventListener('click', () => {
+    menu.classList.toggle('visible');
+    if (menu.classList.contains('visible')) {
+      selected.classList.add('open');
+      trackGA4Event('PRO 029', 'Drop-down Opened', '');
+    } else {
+      selected.classList.remove('open');
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      menu.classList.remove('visible');
+      selected.classList.remove('open');
+    }
+  });
 
   const allPlanData = [];
 
@@ -58,7 +71,7 @@ const createConnectedBillingDropdown = () => {
   const upgradeMsg = document.createElement('div');
   discountMsg.className = 'discount-applied-msg';
   upgradeMsg.className = 'billing-warning-msg';
-  discountMsg.style.marginBottom = '10px';
+  discountMsg.style.marginBottom = '16px';
   upgradeMsg.style.marginTop = '10px';
   const updateMessages = (currentLabel, currentPerMonth, currentMonths, currencySymbol) => {
     const currentIndex = allPlanData.findIndex((p) => p.months === currentMonths);
@@ -71,9 +84,13 @@ const createConnectedBillingDropdown = () => {
 
       upgradeMsg.innerHTML =
         savings > 0
-          ? `<div style="color:#2B1F77; display:flex;align-items:center;font-size:14px;">
-              ⚠️ <strong style="margin: 0 4px;">Save ${currencySymbol}${savings.toFixed(2)}</strong>
-              with a <a href="#" style="text-decoration: underline;">${nextPlan.duration} plan</a>
+          ? `<div style="color:#372580; display:flex;align-items:center;font-size:14px;">
+              <span class="savings-icon">${savingsIcon}</span><span class="savings-text"><strong>Save ${currencySymbol}${savings.toFixed(
+              2
+            )}</strong>
+              with a <a href="#" style="text-decoration: underline;">${
+                nextPlan.duration
+              } plan</a></span>
             </div>`
           : '';
     } else {
@@ -85,8 +102,8 @@ const createConnectedBillingDropdown = () => {
       if (base) {
         const percent = Math.round(((base.perMonthNum - currentPerMonth) / base.perMonthNum) * 100);
         discountMsg.innerHTML = `
-            <div style="color:#2B1F77; display:flex;align-items:center;font-size:14px;">
-              🏷️ Your ${percent}% discount has been applied
+            <div style="color:#372580; display:flex;align-items:center;">
+              <span class="discount-icon">${discountIcon}</span> Your ${percent}% discount has been applied
             </div>
           `;
       }
@@ -164,7 +181,10 @@ const createConnectedBillingDropdown = () => {
             <div class="billing-duration">${durations}</div>
             <div class="billing-per-month">${monthly} / month</div>
           </div>
-          <div class="billing-total">${total}</div>
+          <div class="billing-info">
+            <div class="billing-total">${total}</div>
+            <span class="dropdown-icon">${downArrow}</span>
+          </div>
         `;
     };
 
@@ -175,6 +195,7 @@ const createConnectedBillingDropdown = () => {
       updateSelected(duration, billedAmount, perMonth);
       menu.querySelectorAll('.billing-option').forEach((opt) => opt.classList.remove('active'));
       option.classList.add('active');
+      trackGA4Event('PRO 029', 'Plan Updated', '');
       menu.classList.remove('visible');
       updateMessages(duration, perMonthNum, months, symbol);
     });
@@ -188,7 +209,7 @@ const createConnectedBillingDropdown = () => {
     menu.appendChild(option);
   });
 
-  dropdown.append(selected, menu);
+  dropdown.querySelector('.billing-dropdown-container').append(selected, menu);
 
   const pricingRow = document.querySelectorAll('.pricing-box')[1];
   const secondColumn = pricingRow?.children[0];

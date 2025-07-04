@@ -3,31 +3,64 @@
 
 .#{$id} {
   .billing-dropdown {
-    border: 2px solid #c9bff9;
     border-radius: 12px;
-    padding: 12px;
-    background: white;
+    background: #c9bff9;
+    padding: 4px;
     cursor: pointer;
     font-family: inherit;
     font-size: 14px;
     width: 100%;
     max-width: 360px;
     position: relative;
+
+    @media screen and (max-width: 480px) {
+      max-width: 100%;
+    }
+  }
+
+  .billing-dropdown-container {
+    background-color: #fff;
+    border: solid 1px #d1cfcd;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:has(.billing-options:not(.visible)) {
+      border-color: #6241ff;
+    }
   }
 
   .billing-selected {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 12px 7px;
+
+    .billing-total {
+      color: #6241ff;
+    }
+
+    &.open {
+      .dropdown-icon svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .billing-info {
+    display: flex;
     align-items: center;
+
+    .dropdown-icon {
+      margin-left: 10px;
+      svg {
+        transition: all 0.2s ease;
+      }
+    }
   }
 
   .billing-options {
     display: none;
     flex-direction: column;
-    gap: 12px;
-    padding-top: 12px;
-    margin-top: 12px;
-    border-top: 1px solid #eee;
   }
 
   .billing-options.visible {
@@ -35,19 +68,37 @@
   }
 
   .billing-option {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px 14px;
+    border-top: 1px solid #d1cfcd;
+    padding: 8px 12px 10px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     background: #fff;
     transition: background 0.2s;
+
+    &:hover {
+      background: #6241ff;
+
+      .billing-total,
+      .billing-per-month,
+      .billing-duration,
+      .billing-save-badge {
+        color: #fff;
+      }
+    }
   }
 
   .billing-option.active {
-    background: #f0f0ff;
-    border-color: #9673ff;
+    @media screen and (max-width: 767px) {
+      background: #6241ff;
+
+      .billing-total,
+      .billing-per-month,
+      .billing-duration,
+      .billing-save-badge {
+        color: #fff;
+      }
+    }
   }
 
   .billing-left {
@@ -62,18 +113,23 @@
 
   .billing-duration {
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #0c0c14;
   }
 
   .billing-per-month {
-    font-size: 13px;
-    color: #777;
+    font-size: 12px;
+    line-height: 17px;
+    color: #5c5958;
+    padding-top: 4px;
   }
 
   .billing-total {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 17px;
     font-weight: bold;
-    color: #3c2e8c;
+    color: #1ea885;
   }
 
   .billing-badge {
@@ -87,28 +143,34 @@
     display: inline-block;
   }
 
-  .discount-applied-msg,
-  .billing-warning-msg {
-    font-size: 14px;
-    margin: 8px 0;
-    color: #2b1f77;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+  // .discount-applied-msg,
+  // .billing-warning-msg {
+  //   font-size: 14px;
+  //   margin: 8px 0;
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 6px;
+  // }
   .billing-save-badge {
-    background: #1abc9c;
-    color: #fff;
+    background: #27ddb1;
+    color: #0c0c14;
     font-size: 12px;
+    line-height: 17px;
     padding: 2px 6px;
     border-radius: 4px;
-    display: inline-block;
-    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
   }
 
   .plan-features {
     max-width: 400px;
     margin-top: 20px;
+
+    & + div {
+      display: none;
+    }
   }
 
   .plan-features h3 {
@@ -131,8 +193,13 @@
   }
 
   .tick-icon {
-    min-width: 10px;
-    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #f7f5ff;
   }
 
   /* Optional: Style inline icon inside the last item */
@@ -140,5 +207,36 @@
     height: 20px;
     vertical-align: middle;
     margin-left: 6px;
+  }
+
+  .discount-applied-msg {
+    div {
+      font-size: 12px;
+      line-height: 17px;
+    }
+
+    .discount-icon {
+      display: flex;
+      margin-right: 6px;
+    }
+  }
+
+  .savings-icon {
+    display: flex;
+    margin-right: 6px;
+  }
+  .billing-warning-msg {
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 17px;
+    a {
+      font-size: 12px;
+      line-height: 20px;
+      color: #372580;
+    }
+
+    .savings-text {
+      text-decoration: underline;
+    }
   }
 }

@@ -8,9 +8,12 @@ const { ID, VARIATION } = shared;
 
 const init = () => {
   const { pathname } = window.location;
-  const pageType = pathname.includes('/vpn-home-plans-offer') || pathname.includes('/vpn-home-offer')
-    ? 'hp'
-    : pathname.includes('/special-partner-offer') ? 'partner' : '';
+  const pageType =
+    pathname.includes('/vpn-home-plans-offer') || pathname.includes('/vpn-home-offer')
+      ? 'hp'
+      : pathname.includes('/special-partner-offer')
+      ? 'partner'
+      : '';
 
   let attachPoint;
 
@@ -60,7 +63,9 @@ export default () => {
     const { target } = e;
 
     if (target.closest(`.${ID}__redirectLink`)) {
-      const heroCtaElem = document.querySelector('[data-testid="hero-cta"]') || document.querySelector('a[data-testid="hero-download-cta"]');
+      const heroCtaElem =
+        document.querySelector('[data-testid="hero-cta"]') ||
+        document.querySelector('a[data-testid="hero-download-cta"]');
       heroCtaElem.click();
     }
   });
