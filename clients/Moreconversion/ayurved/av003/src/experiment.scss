@@ -1,0 +1,64 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .cart__item {
+    .price_total {
+      line-height: 19px;
+      & > .money {
+        font-weight: 700;
+      }
+
+      .money.sale {
+        .money {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .money.was_price {
+      .money {
+        font-size: 20px;
+        line-height: 19px;
+        font-weight: 400;
+        color: #e53221;
+      }
+    }
+  }
+
+  .#{$id}__savingsPriceWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 12px 0;
+
+    .text {
+      font-family: Open Sans;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      vertical-align: middle;
+      color: #21710d;
+      background-color: #daf8da;
+      border-radius: 20px;
+      padding: 4px 8px;
+    }
+
+    .amount {
+      font-family: Open Sans;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      color: #21710d;
+    }
+  }
+
+  .#{$id}__totalPrice {
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: Bold;
+    font-size: 18px;
+    line-height: 19px;
+    color: #e53221;
+  }
+}
