@@ -87,6 +87,8 @@ export const getCompareAtPrices = async (cartItems) => {
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const compareAtPriceEl = doc.querySelector('.compare-at-price');
 
+      console.log(compareAtPriceEl, 'compareAtPriceEl');
+
       return {
         id,
         url: fullUrl,

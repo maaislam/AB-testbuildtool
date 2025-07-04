@@ -20,7 +20,7 @@
       .money {
         font-size: 20px;
         line-height: 19px;
-        font-weight: 400;
+        font-weight: 400 !important;
         color: #e53221;
       }
     }
@@ -59,6 +59,13 @@
     font-style: Bold;
     font-size: 18px;
     line-height: 19px;
+    color: #e53221;
+  }
+
+  .#{$id}__wasPrice {
+    font-size: 20px;
+    line-height: 19px;
+    font-weight: 400 !important;
     color: #e53221;
   }
 }
