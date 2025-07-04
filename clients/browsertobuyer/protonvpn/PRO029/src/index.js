@@ -3,9 +3,16 @@ import { pollerLite } from './lib/helpers/utils';
 
 pollerLite(
   [
-    'body',
-    'main .pricing-box',
-    () => document.querySelectorAll('.pricing-box-content-cycle .text-bold.h2').length > 0
+    '[data-testid="billing-country"]',
+    () => {
+      const plans = document.querySelectorAll('.pricing-box-content-cycle');
+      return (
+        plans.length &&
+        Array.from(plans).every(
+          (plan) => plan.querySelector('.h2') && plan.querySelector('.h2').textContent.trim() !== ''
+        )
+      );
+    }
   ],
-  () => setTimeout(activate, 2000)
+  activate
 );
