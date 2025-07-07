@@ -1,11 +1,12 @@
 import { discountIcon, downArrow, savingsIcon } from './assets/icons';
 import { trackGA4Event } from './helpers/utils';
 import setup from './services/setup';
+import shared from './shared/shared';
 
 //import shared from './shared/shared';
 
-//const { ID, VARIATION } = shared;
-const PLAN_FEATURES = [
+const { ID } = shared;
+const planFeatures = [
   {
     html: 'Use on up to 10 devices at once'
   },
@@ -28,6 +29,12 @@ const TICK_SVG = `
       fill="#38257F"/>
   </svg>
 `;
+
+const pricingBoxClassNameConfig = {
+  0: '',
+  1: `${ID}-details`,
+  2: `${ID}-payment`
+};
 
 const formatPrice = (amountRaw, symbol) => {
   const amount = amountRaw.replace(/[€£$]/g, '').trim();
@@ -247,6 +254,28 @@ const adjustCurrencyDpd = () => {
   }
 };
 
+const adjustStepNames = () => {
+  const stepNames = document.querySelectorAll('.step-label');
+  stepNames.forEach((step, i) => {
+    const stepWrapper = step.parentElement.parentElement;
+    const stepCountName = step.parentElement;
+    const stepHeadline = stepWrapper.querySelector('h2');
+
+    const stepHeadlineConfig = {
+      0: '',
+      1: 'Enter your email address',
+      2: 'Select your payment method'
+    };
+
+    if (stepHeadline) {
+      stepHeadline.textContent = stepHeadlineConfig[i];
+    }
+    if (stepCountName) {
+      stepCountName.style.display = 'none';
+    }
+  });
+};
+
 const renderBulletPoints = () => {
   const wrapper = document.createElement('div');
   wrapper.className = 'plan-features';
@@ -255,7 +284,7 @@ const renderBulletPoints = () => {
   heading.textContent = 'Your plan includes:';
   wrapper.appendChild(heading);
 
-  PLAN_FEATURES.forEach((item) => {
+  planFeatures.forEach((item) => {
     const feature = document.createElement('div');
     feature.className = 'feature-item';
 
@@ -272,10 +301,37 @@ const renderBulletPoints = () => {
     wrapper.appendChild(feature);
   });
 
-  const thirdPricingBox = document.querySelectorAll('.pricing-box')[2];
-  const newPosition = thirdPricingBox.querySelector('.pricing-box-content > div > div > div');
+  const isMobile = window.innerWidth <= 600;
+  const priceBoxIndex = isMobile ? 1 : 2;
+  const newPositionSelector = isMobile ? 'div' : '.pricing-box-content > div > div > div';
+  const attachOrder = isMobile ? 'beforeend' : 'beforebegin';
+  const thirdPricingBox = document.querySelectorAll('.pricing-box')[priceBoxIndex];
+  console.log('🚀 ~ renderBulletPoints ~ thirdPricingBox:', thirdPricingBox);
+  const newPosition = thirdPricingBox.querySelector(newPositionSelector);
+  console.log('🚀 ~ renderBulletPoints ~ newPosition:', newPosition);
 
-  newPosition.insertAdjacentElement('beforebegin', wrapper);
+  newPosition.insertAdjacentElement(attachOrder, wrapper);
+  if (isMobile) {
+    const planFeatureElement = document.querySelector('.plan-features');
+    planFeatureElement.classList.add('mt-8', 'sm:mt-0', 'sm:p-11', 'sm:pt-0', 'pt-0');
+  }
+};
+
+const renderSignInComponent = () => {
+  const signIncomponent = document.querySelector(
+    '[name="account-form"] span:has(a[href*="/dashboard"])'
+  );
+  //extract href from the link
+  const link = signIncomponent.querySelector('a[href*="/dashboard"]');
+  if (link) {
+    const href = link.getAttribute('href');
+    const newHtml = `<span>Already have an account? <a class="link link-focus text-nowrap" href="${href}">Sign in</a></span>`;
+    console.log('Extracted href:', href);
+    const newAttachPoint = document.querySelector('header > div > div:nth-child(1)');
+    if (newAttachPoint) {
+      newAttachPoint.insertAdjacentHTML('afterend', newHtml);
+    }
+  }
 };
 
 export default () => {
@@ -284,8 +340,17 @@ export default () => {
   adjustCountryDpd();
   adjustCurrencyDpd();
   renderBulletPoints();
+  adjustStepNames();
+  renderSignInComponent();
 
   //hide step 1
   const step1 = document.querySelectorAll('.pricing-box')[0];
   step1.style.display = 'none';
+
+  document.querySelectorAll('.pricing-box').forEach((box, index) => {
+    const className = pricingBoxClassNameConfig[index];
+    if (className) {
+      box.classList.add(className);
+    }
+  });
 };

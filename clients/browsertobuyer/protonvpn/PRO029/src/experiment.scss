@@ -168,6 +168,10 @@
     max-width: 400px;
     margin-top: 20px;
 
+    @media screen and (max-width: 600px) {
+      margin-top: 0;
+    }
+
     & + div {
       display: none;
     }
@@ -237,6 +241,32 @@
 
     .savings-text {
       text-decoration: underline;
+    }
+  }
+
+  main > div > div:nth-child(-n + 3) {
+    display: none;
+  }
+
+  [name='account-form'] span:has(a[href*='/dashboard']) {
+    display: none;
+  }
+
+  &-payment {
+    & > div:not(.pricing-box-content) {
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+
+    & > div.pricing-box-content {
+      & > div > div:last-of-type {
+        @media screen and (max-width: 600px) {
+          display: none;
+        }
+      }
     }
   }
 }
