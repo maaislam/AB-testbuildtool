@@ -52,25 +52,13 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
 export const fetchCartData = () => {
   const timestamp = Date.now(); //Dynamic cache-busting value
-  const url = `https://theayurvedaexperience.com/cart.js?_=${timestamp}`;
+  const url = `/cart.js?_=${timestamp}`;
 
   return fetch(url, {
     headers: {
       accept: '*/*',
-      'accept-language': 'en-US,en;q=0.9',
-      priority: 'u=1, i',
-      'sec-ch-ua': '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"',
-      'sec-ch-ua-mobile': '?1',
-      'sec-ch-ua-platform': '"Android"',
-      'sec-fetch-dest': 'empty',
-      'sec-fetch-mode': 'cors',
-      'sec-fetch-site': 'same-origin'
-    },
-    referrer: 'https://theayurvedaexperience.com/cart',
-    referrerPolicy: 'strict-origin-when-cross-origin',
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include'
+      'accept-language': 'en-US,en;q=0.9'
+    }
   }).then((response) => {
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
     return response.json();
@@ -79,20 +67,36 @@ export const fetchCartData = () => {
 
 export const getCompareAtPrices = async (cartItems) => {
   const fetchProductData = async ({ id, url, quantity, final_line_price }) => {
-    const fullUrl = `https://theayurvedaexperience.com${url}`;
+    const cleanPath = (urlFragment) => urlFragment.split('?')[0].replace('-sca_clone_freegift', '');
 
+    console.log(final_line_price, 'final_line_price');
+    const fullUrl = `${cleanPath(url)}.js`;
+
+    console.log('🚀 ~ fetchProductData ~ fullUrl:', fullUrl);
     try {
       const response = await fetch(fullUrl);
-      const html = await response.text();
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      const compareAtPriceEl = doc.querySelector('.compare-at-price');
+      const data = await response.json();
+      console.log('🚀 ~ fetchProductData ~ data:', data);
 
-      console.log(compareAtPriceEl, 'compareAtPriceEl');
+      const { compare_at_price, price } = data;
+
+      const wasPrice =
+        compare_at_price > price
+          ? compare_at_price
+          : !compare_at_price && final_line_price === 0 && price
+          ? price
+          : compare_at_price;
+      //const originalPriceEl = doc.querySelector('.price [data-price]');
+
+      //const originalPrice = originalPriceEl?.textContent.trim() || null;
+
+      //const backupSalePrice =
+      console.log('🚀 ~ fetchProductData ~ wasPrice:', wasPrice);
 
       return {
         id,
         url: fullUrl,
-        compareAtPrice: compareAtPriceEl?.textContent.trim() || null,
+        compareAtPrice: wasPrice,
         quantity,
         salePrice: final_line_price
       };
@@ -113,10 +117,19 @@ export const getCompareAtPrices = async (cartItems) => {
   return results;
 };
 
-export const formatPriceUSD = (priceStr, quantity = 1) => {
-  const numeric = parseFloat(priceStr.replace(/[^0-9.]/g, '')) || 0;
-  const total = numeric * quantity;
-  return `$${total.toFixed(2)}`;
+export const formatPriceUSD = (price, quantity = 1) => {
+  const extractCurrencySymbol = (selector) => {
+    const el = document.querySelector(selector);
+    if (!el) return null;
+
+    const text = el.textContent.trim();
+    const match = text.match(/^[^\d.,\s]+/);
+    return match ? match[0] : null;
+  };
+  //const numeric = parseFloat(priceStr.replace(/[^0-9.]/g, '')) || 0;
+  const total = (price * quantity) / 100; //Assuming price is in cents
+  console.log('🚀 ~ formatPriceUSD ~ total:', total);
+  return `${extractCurrencySymbol('.cart_subtotal .money')}${total.toFixed(2)}`;
 };
 
 export const calculateTotalPrice = (items) => {
