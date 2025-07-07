@@ -226,6 +226,7 @@ const createConnectedBillingDropdown = () => {
   if (targetDiv) {
     targetDiv.style.display = 'none';
     targetDiv.classList.add('billing-dropdown-attach');
+    targetDiv.insertAdjacentHTML('beforebegin', `<h3 class="${ID}__summaryTitle">Summary</h3>`);
     targetDiv.insertAdjacentElement('beforebegin', discountMsg);
     targetDiv.insertAdjacentElement('beforebegin', dropdown);
     targetDiv.insertAdjacentElement('beforebegin', upgradeMsg);
@@ -280,6 +281,12 @@ const renderBulletPoints = () => {
   const wrapper = document.createElement('div');
   wrapper.className = 'plan-features';
 
+  const imageWrapper = document.createElement('div');
+  imageWrapper.classList.add(`${ID}__moneyBackImageWrapper`);
+  imageWrapper.innerHTML =
+    '<img src="https://vpncdn.protonweb.com/image-transformation/?s=s&image=it_started_with_the_world_wide_web_cfc840b987.png&width=1428&height=967" alt="30 days money back gurantee"/>';
+  wrapper.appendChild(imageWrapper);
+
   const heading = document.createElement('h3');
   heading.textContent = 'Your plan includes:';
   wrapper.appendChild(heading);
@@ -325,12 +332,33 @@ const renderSignInComponent = () => {
   const link = signIncomponent.querySelector('a[href*="/dashboard"]');
   if (link) {
     const href = link.getAttribute('href');
-    const newHtml = `<span>Already have an account? <a class="link link-focus text-nowrap" href="${href}">Sign in</a></span>`;
+    const newHtml = (screen) =>
+      `<span class="${ID}__signWrapper ${ID}__${screen}">Already have an account? <a class="link link-focus text-nowrap" href="${href}">Sign in</a></span>`;
     console.log('Extracted href:', href);
     const newAttachPoint = document.querySelector('header > div > div:nth-child(1)');
-    if (newAttachPoint) {
-      newAttachPoint.insertAdjacentHTML('afterend', newHtml);
+    const headerWrapper = newAttachPoint.parentElement;
+    if (newAttachPoint && !document.querySelector(`.${ID}__signWrapper.${ID}__desktop`)) {
+      newAttachPoint.insertAdjacentHTML('afterend', newHtml('desktop'));
     }
+    if (headerWrapper && !document.querySelector(`.${ID}__signWrapper.${ID}__mobile`)) {
+      headerWrapper.insertAdjacentHTML('afterend', newHtml('mobile'));
+    }
+  }
+};
+
+const renderMoneyBackImage = () => {
+  const payementWrapper = document.querySelector('form[name="payment-form"]');
+  const submitBtn = payementWrapper?.querySelector('button.button-solid-norm[type="submit"]');
+
+  if (!document.querySelector(`.${ID}__moneyBackImageWrapper.${ID}__mobileImage`)) {
+    submitBtn?.insertAdjacentHTML(
+      'afterend',
+      `
+      <div class="${ID}__moneyBackImageWrapper ${ID}__mobileImage">
+        <img src="https://vpncdn.protonweb.com/image-transformation/?s=s&image=it_started_with_the_world_wide_web_cfc840b987.png&width=1428&height=967" alt="30 days money back gurantee"/>
+      </div>
+    `
+    );
   }
 };
 
@@ -342,6 +370,7 @@ export default () => {
   renderBulletPoints();
   adjustStepNames();
   renderSignInComponent();
+  renderMoneyBackImage();
 
   //hide step 1
   const step1 = document.querySelectorAll('.pricing-box')[0];

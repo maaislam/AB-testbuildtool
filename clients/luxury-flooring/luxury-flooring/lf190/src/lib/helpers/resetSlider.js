@@ -19,14 +19,14 @@ const resetSlider = (id) => {
       arrows: true,
       infinite: false,
       speed: 300,
-      slidesToShow: 3,
+      slidesToShow: 7,
       slidesToScroll: 1,
       appendDots: $('.slick-dots-placeholder'),
       responsive: [
         {
           breakpoint: 1200,
           settings: {
-            slidesToShow: 3
+            slidesToShow: 7
           }
         },
         {

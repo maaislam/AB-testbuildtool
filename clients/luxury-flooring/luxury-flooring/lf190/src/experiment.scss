@@ -18,6 +18,13 @@
     label[for='details-toggle'] {
       display: none;
     }
+
+    @media screen and (max-width: 991px) {
+      margin-top: 0 !important;
+      .product-detail-col:nth-child(2) {
+        margin-bottom: 0;
+      }
+    }
   }
   .#{$id}__productOverview {
     max-width: 1170px;
@@ -182,6 +189,10 @@
       gap: 40px;
       max-width: 100%;
       padding-left: 0;
+
+      @media screen and (max-width: 991px) {
+        padding: 20px 0 0;
+      }
     }
 
     .product-accordion-tab {
@@ -257,27 +268,10 @@
   }
 
   .pdp-reviews {
+    position: relative;
+    padding: 64px 0 66px;
     @media screen and (max-width: 767px) {
       padding-top: 0;
-    }
-  }
-  .pdp-reviews-container {
-    position: relative;
-    align-items: start;
-    @media screen and (min-width: 993px) {
-      max-width: 100%;
-      margin: 65px 0 0;
-      padding: 64px 0 66px;
-    }
-
-    @media screen and (max-width: 991px) {
-      max-width: 100%;
-      margin: 45px 0 0;
-      padding: 40px 0 40px;
-    }
-
-    & * {
-      color: #202020;
     }
 
     &:before {
@@ -290,6 +284,26 @@
       top: 0;
       background-color: #f9f2e4;
       z-index: -1;
+    }
+
+    @media screen and (max-width: 991px) {
+      padding: 40px 0 40px;
+    }
+  }
+  .pdp-reviews-container {
+    position: relative;
+    align-items: start;
+    margin: 0;
+    @media screen and (min-width: 993px) {
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 991px) {
+      max-width: 100%;
+    }
+
+    & * {
+      color: #202020;
     }
 
     .pdp-reviews-summary {
@@ -398,6 +412,24 @@
       background: #f9f2e4;
       z-index: 1;
       pointer-events: none;
+    }
+  }
+
+  .#{$id}__reviewHeader {
+    font: normal normal normal 40px/50px Lucida Bright;
+    color: #202020;
+    margin: 0 0 26px;
+
+    @media screen and (max-width: 991px) {
+      font: normal normal normal 24px/32px Lucida Bright;
+      text-align: center;
+      margin: 0 0 20px;
+    }
+  }
+
+  .product-accordion-pane .description .readmore {
+    @media screen and (max-width: 991px) {
+      margin-top: 15px;
     }
   }
 }

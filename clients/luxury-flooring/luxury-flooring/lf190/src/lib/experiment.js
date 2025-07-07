@@ -145,6 +145,14 @@ const init = () => {
     });
   }
 
+  const reviewListElement = document.querySelector('.pdp-reviews');
+  if (!document.querySelector(`.${ID}__reviewHeader`)) {
+    reviewListElement.insertAdjacentHTML(
+      'afterbegin',
+      `<div class="${ID}__reviewHeader">Why customers love this product</div>`
+    );
+  }
+
   tablistener(ID);
 
   pollerLite(

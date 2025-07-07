@@ -1,6 +1,6 @@
 module.exports = {
-  ID: 'av003',
-  VARIATION: '2',
-  CLIENT: 'Moreconversion',
-  SITE: 'ayurved'
-};
+    ID: "av003",
+    VARIATION: "1",
+    CLIENT: "Moreconversion",
+    SITE: "ayurved"
+  };
