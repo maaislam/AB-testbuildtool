@@ -1,47 +1,47 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { embedMedchatInIframe } from './helpers/utils';
+import { embedMedchatInIframe, pollerLite } from './helpers/utils';
 import stepsWrapper from './components/stepsWrapper';
 import { firstStepOptions, secondStepOptions } from './data/data';
 
-const loadEmbeddedMessaging = () => {
-  const initEmbeddedMessaging = () => {
-    try {
-      window.embeddedservice_bootstrap.settings.language = 'en_US';
-      window.embeddedservice_bootstrap.init(
-        '00Di0000000HSwp',
-        'Ungated_Messaging',
-        'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768',
-        {
-          scrt2URL: 'https://experityhealth.my.salesforce-scrt.com'
-        }
-      );
-    } catch (err) {
-      console.error('Error loading Embedded Messaging: ', err);
-    }
-  };
+//const loadEmbeddedMessaging = () => {
+//const initEmbeddedMessaging = () => {
+//try {
+//window.embeddedservice_bootstrap.settings.language = 'en_US';
+//window.embeddedservice_bootstrap.init(
+//'00Di0000000HSwp',
+//'Ungated_Messaging',
+//'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768',
+//{
+//scrt2URL: 'https://experityhealth.my.salesforce-scrt.com'
+//}
+//);
+//} catch (err) {
+//console.error('Error loading Embedded Messaging: ', err);
+//}
+//};
 
-  const externalScript = document.createElement('script');
-  externalScript.src =
-    'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768/assets/js/bootstrap.min.js';
-  externalScript.onload = initEmbeddedMessaging;
-  document.head.appendChild(externalScript);
-};
+//const externalScript = document.createElement('script');
+//externalScript.src =
+//'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768/assets/js/bootstrap.min.js';
+//externalScript.onload = initEmbeddedMessaging;
+//document.head.appendChild(externalScript);
+//};
 
-const loadMedchatWidget = () => {
-  if (document.querySelector('script[src*="medchatapp.com/widget/widget.js"]')) {
-    if (document.querySelector('#medchat-launcher-frame')) {
-      document.querySelector('#medchat-launcher-frame').classList.remove('hidden');
-    }
+//const loadMedchatWidget = () => {
+//if (document.querySelector('script[src*="medchatapp.com/widget/widget.js"]')) {
+//if (document.querySelector('#medchat-launcher-frame')) {
+//document.querySelector('#medchat-launcher-frame').classList.remove('hidden');
+//}
 
-    return;
-  }
-  const script = document.createElement('script');
-  script.src = 'https://medchatapp.com/widget/widget.js?api-key=AWshYCMkWUG_ZraiOGvG4Q';
-  script.async = true;
-  script.dataset.medchat = 'true'; //mark it for easy removal
-  document.head.appendChild(script);
-};
+//return;
+//}
+//const script = document.createElement('script');
+//script.src = 'https://medchatapp.com/widget/widget.js?api-key=AWshYCMkWUG_ZraiOGvG4Q';
+//script.async = true;
+//script.dataset.medchat = 'true'; //mark it for easy removal
+//document.head.appendChild(script);
+//};
 
 const removeMedchatWidget = () => {
   if (document.querySelector('#medchat-launcher-frame')) {
@@ -101,9 +101,12 @@ const selectNoForLabel = (labelText = 'Are You a Patient?') => {
   }
 };
 
-const showFinalStep = () => {
+const parentPage = () => window.location.href.includes('/get-started');
+const renderprogressDotInIframe = () => {
+  if (parentPage()) return;
+
   const finalForm = document.querySelector('#pardot-form');
-  const titleElem = finalForm.querySelector('h2');
+  //nst titleElem = finalForm.querySelector('h2');
   if (finalForm) finalForm.classList.remove('final-step');
   if (finalForm.querySelector('.progress-dots')) {
     finalForm.querySelector('.progress-dots').remove();
@@ -120,16 +123,76 @@ const showFinalStep = () => {
         `
     );
   }
+  //const stepOneContainer = document.querySelector('.get-started-container[data-step="1"]');
+  //const stepOneSelectedOption = stepOneContainer.querySelector('input[type="radio"]:checked');
+  //const stepTwoContainer = document.querySelector('.get-started-container[data-step="2"]');
+  //const selectedOption = stepTwoContainer.querySelector('input[type="radio"]:checked');
+  //if (selectedOption) {
+  //const selectedValue = selectedOption.value;
+  //titleElem.textContent = stepOneSelectedOption.value;
+  ////selectOptionByLabel(selectedValue);
+  ////selectNoForLabel();
+  //}
+};
+
+const showFinalStep = () => {
+  const iframe = document.querySelector('#xframe');
   const stepOneContainer = document.querySelector('.get-started-container[data-step="1"]');
   const stepOneSelectedOption = stepOneContainer.querySelector('input[type="radio"]:checked');
+
   const stepTwoContainer = document.querySelector('.get-started-container[data-step="2"]');
   const selectedOption = stepTwoContainer.querySelector('input[type="radio"]:checked');
+
   if (selectedOption) {
     const selectedValue = selectedOption.value;
-    titleElem.textContent = stepOneSelectedOption.value;
-    selectOptionByLabel(selectedValue);
-    selectNoForLabel();
+    const titleElem = stepOneSelectedOption.value;
+    //send these to iframe
+    iframe.contentWindow.postMessage(
+      {
+        type: 'UPDATE_FORM',
+        data: {
+          title: titleElem,
+          stepOne: stepOneSelectedOption.value,
+          stepTwo: selectedValue
+        }
+      },
+      '*'
+    );
   }
+
+  if (iframe) {
+    iframe.classList.remove('hidden');
+  }
+  //const parentPage = window.location.href.includes('/get-started');
+
+  //const finalForm = document.querySelector('#pardot-form');
+  //const titleElem = finalForm.querySelector('h2');
+  //if (finalForm) finalForm.classList.remove('final-step');
+  //if (finalForm.querySelector('.progress-dots')) {
+  //finalForm.querySelector('.progress-dots').remove();
+  //}
+  //if (!finalForm.querySelector('.progress-dots')) {
+  //finalForm.insertAdjacentHTML(
+  //'afterbegin',
+  //`
+  //<div class="progress-dots">
+  //<span class="dot" data-step="1"></span>
+  //<span class="dot" data-step="2"></span>
+  //<span class="dot active" data-step="3"></span>
+  //</div>
+  //`
+  //);
+  //}
+  //const stepOneContainer = document.querySelector('.get-started-container[data-step="1"]');
+  //const stepOneSelectedOption = stepOneContainer.querySelector('input[type="radio"]:checked');
+  //const stepTwoContainer = document.querySelector('.get-started-container[data-step="2"]');
+  //const selectedOption = stepTwoContainer.querySelector('input[type="radio"]:checked');
+  //if (selectedOption) {
+  //const selectedValue = selectedOption.value;
+  //titleElem.textContent = stepOneSelectedOption.value;
+  //selectOptionByLabel(selectedValue);
+  //selectNoForLabel();
+  //}
 };
 
 const updateActiveDot = (target, step) => {
@@ -180,19 +243,15 @@ const updateActiveDot = (target, step) => {
 
 const { ID } = shared;
 const init = () => {
-  const targetPoint = document.querySelector('form');
-  const stepThree = document.querySelector('#pardot-form');
-  stepThree.classList.add('final-step');
-  stepThree.setAttribute('step', '3');
+  const targetPoint = document.querySelector('.spz-form-wrap .the-form');
+
   if (!document.querySelector(`.${ID}__stepsWrapper`)) {
+    document.getElementById('xframe').classList.add('hidden');
     targetPoint.insertAdjacentHTML(
       'beforebegin',
       stepsWrapper(ID, firstStepOptions, secondStepOptions)
     );
   }
-};
-export default () => {
-  setup(); //use if needed
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
@@ -220,15 +279,86 @@ export default () => {
 
       if (firstStepInput && firstStepInput.value === 'Help from Support' && currentIndex !== 0) {
         if (secondStepInput && secondStepInput.value === 'Teleradiology') {
+          //remove step 3 if exists
+          const stepThreeContainer = document.querySelector(
+            '.get-started-container[data-step="3"]'
+          );
+          if (stepThreeContainer) {
+            stepThreeContainer.remove();
+          }
+          //create a get started container with progress dot and an iframe
+          const getStartedContainer = document.createElement('div');
+          getStartedContainer.classList.add('get-started-container');
+          getStartedContainer.setAttribute('data-step', '3');
+
+          const progressDots = document.createElement('div');
+          progressDots.classList.add('progress-dots');
+          progressDots.innerHTML = `
+              <div class="dot-fake" data-step="1"></div>
+              <div class="dot-fake" data-step="2"></div>
+              <div class="dot active" data-step="3"></div>
+            `;
+
+          //place the new container after step2
+
+          getStartedContainer.appendChild(progressDots);
+          secondStep.insertAdjacentElement('afterend', getStartedContainer);
           embedMedchatInIframe('https://medchatapp.com/widget/AWshYCMkWUG_ZraiOGvG4Q');
+          //hide step 1 and 2
+          firstStep.style.display = 'none';
+          secondStep.style.display = 'none';
+          //append right after step 2
+
+          //bedMedchatInIframe('https://medchatapp.com/widget/AWshYCMkWUG_ZraiOGvG4Q');
           return;
         }
 
         if (secondStepInput && secondStepInput.value === 'Patient Engagement') {
+          //do exact same as above but with different URL
+          //remove step 3 if exists
+          const stepThreeContainer = document.querySelector(
+            '.get-started-container[data-step="3"]'
+          );
+          if (stepThreeContainer) {
+            stepThreeContainer.remove();
+          }
+          //create a get started container with progress dot and an iframe
+          const getStartedContainer = document.createElement('div');
+          getStartedContainer.classList.add('get-started-container');
+          getStartedContainer.setAttribute('data-step', '3');
+          const progressDots = document.createElement('div');
+          progressDots.classList.add('progress-dots');
+          progressDots.innerHTML = `
+              <div class="dot-fake" data-step="1"></div>
+              <div class="dot-fake" data-step="2"></div>
+              <div class="dot active" data-step="3"></div>
+            `;
+          //place the new container after step2
+          getStartedContainer.appendChild(progressDots);
+          secondStep.insertAdjacentElement('afterend', getStartedContainer);
           embedMedchatInIframe(
             'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768/?lwc.mode=prod'
           );
+          //hide step 1 and 2
+          firstStep.style.display = 'none';
+          secondStep.style.display = 'none';
           return;
+        }
+      }
+
+      if (firstStepInput && firstStepInput.value === 'Get a Demo' && currentIndex === 0) {
+        const formIframe = document.querySelector('#xframe');
+        if (formIframe) {
+          formIframe.src = 'https://go.experityhealth.com/l/26642/2019-09-23/6yx786';
+        }
+      } else if (
+        firstStepInput &&
+        firstStepInput.value === 'Talk to an Expert' &&
+        currentIndex === 0
+      ) {
+        const formIframe = document.querySelector('#xframe');
+        if (formIframe) {
+          formIframe.src = 'https://go.experityhealth.com/l/26642/2025-06-12/871rdr';
         }
       }
 
@@ -237,6 +367,7 @@ export default () => {
         updateActiveDot(target, nextStepEl.dataset.step);
       }
 
+      //console.log('step', nextStepEl.dataset.step, firstStepInput.value, currentIndex);
       if (nextStepEl && currentIndex === 0) {
         currentStepEl.style.display = 'none';
         nextStepEl.style.display = 'block';
@@ -301,7 +432,78 @@ export default () => {
       });
 
       updateActiveDot(target, targetStep);
+    } else if (target.closest('.dot-fake')) {
+      //Handle fake dot clicks
+      const targetStep = target.closest('.dot-fake').dataset.step;
+      const allSteps = document.querySelectorAll('.get-started-container');
+      allSteps.forEach((step) => {
+        step.style.display = step.dataset.step === targetStep ? 'block' : 'none';
+      });
+      updateActiveDot(target, targetStep);
     }
   });
-  init();
+
+  //add listener for DOT_CLICK
+  window.addEventListener('message', (event) => {
+    if (event.data.type === 'DOT_CLICK') {
+      const targetStep = event.data.step;
+      console.log('🚀 ~ window.addEventListener ~ targetStep:', targetStep);
+      //do js click on the dot
+      const dot = document.querySelector(`.progress-dots .dot[data-step="${targetStep}"]`);
+      if (dot) {
+        document.getElementById('xframe').classList.add('hidden');
+        dot.click();
+      }
+    }
+  });
+};
+export default () => {
+  setup(); //use if needed
+
+  pollerLite(['.spz-form-wrap'], init);
+
+  if (!parentPage()) {
+    pollerLite(['#pardot-form'], () => {
+      renderprogressDotInIframe();
+
+      document.body.addEventListener('click', (e) => {
+        const { target } = e;
+        if (target.classList.contains('dot') && target.dataset.step) {
+          //send data to parent page as this page is iframe
+          const targetStep = target.dataset.step;
+          console.log('🚀 ~ document.body.addEventListener ~ targetStep:', targetStep);
+          window.parent.postMessage(
+            {
+              type: 'DOT_CLICK',
+              step: targetStep
+            },
+            '*'
+          );
+        }
+      });
+      document
+        .querySelector('a[href="/contact/"]')
+        ?.closest('p')
+        ?.style.setProperty('display', 'none', 'important');
+      selectNoForLabel();
+      //listen from parent window to update form
+      const titleElem = document.querySelector('#pardot-form h2');
+      if (
+        titleElem &&
+        window.location.href.includes('https://go.experityhealth.com/l/26642/2025-06-12/871rdr')
+      ) {
+        titleElem.textContent = 'Talk to an Expert';
+      }
+      selectOptionByLabel('EMR | PM');
+      window.addEventListener('message', (event) => {
+        console.log('🚀 ~ window.addEventListener ~ event:', event.data.type);
+        if (event.data.type === 'UPDATE_FORM') {
+          const { title, stepOne, stepTwo } = event.data.data;
+          selectOptionByLabel(stepOne);
+
+          selectOptionByLabel(stepTwo === 'Insurance Follow-Up' ? 'Billing Services' : stepTwo);
+        }
+      });
+    });
+  }
 };

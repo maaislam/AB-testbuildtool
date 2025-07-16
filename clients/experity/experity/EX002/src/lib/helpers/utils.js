@@ -59,11 +59,16 @@ export const embedMedchatInIframe = (url) => {
     width: '100%',
     height: '600', //Adjust height as needed
     frameBorder: '0',
-    allow: 'camera; microphone',
+    allow: '',
     style: 'border: none; max-width: 100%;'
   });
 
-  document.body.insertAdjacentElement('afterbegin', iframe);
+  const stepThreeContainer = document.querySelector('.get-started-container[data-step="3"]');
+  if (!stepThreeContainer) {
+    console.error('Step three container not found');
+    return;
+  }
+  stepThreeContainer.appendChild(iframe);
 
   iframe.addEventListener('load', () => {
     console.log('Iframe loaded successfully');

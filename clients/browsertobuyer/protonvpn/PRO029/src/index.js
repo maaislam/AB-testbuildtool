@@ -4,6 +4,8 @@ import { pollerLite } from './lib/helpers/utils';
 pollerLite(
   [
     '[data-testid="billing-country"]',
+    '[data-testid="plan-1"]',
+    '[data-testid="3ds-info"]',
     () => {
       const plans = document.querySelectorAll('.pricing-box-content-cycle');
       return (

@@ -1,3 +1,4 @@
+import { pollerLite } from './helpers/utils';
 import setup from './services/setup';
 import shared from './shared/shared';
 
@@ -126,7 +127,7 @@ async function initCarousel() {
   await loadCSS('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
 
   await loadScript('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
-  console.log('I am here');
+
   const container = document.createElement('div');
   container.className = 'swiper cart-testimonial-swiper';
   container.innerHTML = `
@@ -162,19 +163,31 @@ async function initCarousel() {
     wrapper.appendChild(slide);
   });
 
-  const swiper = new window.Swiper('.cart-testimonial-swiper', {
-    loop: true,
-    autoHeight: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
+  //poll for swiper
+
+  pollerLite(
+    [
+      () =>
+        typeof window.Swiper === 'function' && document.querySelector('.cart-testimonial-swiper')
+    ],
+    () => {
+      console.log('Swiper is ready');
+
+      const swiper = new window.Swiper('.cart-testimonial-swiper', {
+        loop: true,
+        autoHeight: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      });
+      console.log('🚀 ~ initCarousel ~ swiper:', swiper);
     }
-  });
-  console.log('🚀 ~ initCarousel ~ swiper:', swiper);
+  );
 }
 export default () => {
   setup(); //use if needed

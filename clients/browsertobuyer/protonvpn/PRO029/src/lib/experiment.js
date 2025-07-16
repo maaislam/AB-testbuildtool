@@ -6,6 +6,18 @@ import shared from './shared/shared';
 //import shared from './shared/shared';
 
 const { ID } = shared;
+
+const ratingImg = `<div class="guarantee-box hide-mob">
+                                        <div class="left-box">
+                                            <img src="https://d31hba4f1d8ahx.cloudfront.net/PRO/006/30-day-guarantee_1.png" alt="30 Day Guarantee" width="42" height="51">
+                                        </div>
+                                        <div class="right-box">
+                                            <h4>30-day money-back <br>guarantee</h4>
+                                            <p>Try Proton VPN totally risk free - if for any reason you change your mind. you’ll receive a full refund. No
+                                                questions asked.</p>
+                                        </div>
+                                    </div>`;
+
 const planFeatures = [
   {
     html: 'Use on up to 10 devices at once'
@@ -35,6 +47,22 @@ const pricingBoxClassNameConfig = {
   1: `${ID}-details`,
   2: `${ID}-payment`
 };
+
+const durationCopyInYear = {
+  '1 month': '1 month',
+  '12 months': '1 year',
+  '24 months': '2 year'
+};
+
+const imgBasePath = 'https://d31hba4f1d8ahx.cloudfront.net/PRO/006/';
+
+const socialProofElem = `
+      <div class="rating-section">
+          <div class="rating-logo"><img src="${imgBasePath}rating-logo-cnet.png" alt="CNET" width="115" height="86"></div>
+          <div class="rating-logo"><img src="${imgBasePath}rating-logo-pceditor.png" alt="PC - EDITORS CHOICE" width="97" height="86"></div>
+          <div class="rating-logo"><img src="${imgBasePath}rating-logo-techradar.png" alt="Tech Radar PRO" width="99" height="85"></div>
+       </div>
+  `;
 
 const formatPrice = (amountRaw, symbol) => {
   const amount = amountRaw.replace(/[€£$]/g, '').trim();
@@ -96,7 +124,7 @@ const createConnectedBillingDropdown = () => {
               2
             )}</strong>
               with a <a href="#" style="text-decoration: underline;">${
-                nextPlan.duration
+                durationCopyInYear[nextPlan.duration] || nextPlan.duration
               } plan</a></span>
             </div>`
           : '';
@@ -118,12 +146,26 @@ const createConnectedBillingDropdown = () => {
       discountMsg.innerHTML = '';
     }
   };
+  const bacupData = {
+    0: {
+      duration: '1 month',
+      months: 1
+    },
+    1: {
+      duration: '12 months',
+      months: 12
+    },
+    2: {
+      duration: '24 months',
+      months: 24
+    }
+  };
 
-  plans.forEach((plan) => {
+  plans.forEach((plan, i) => {
     const radio = plan.querySelector('input[type="radio"]');
     if (!radio) return;
 
-    const duration = plan.querySelector('strong')?.innerText.trim() ?? '';
+    const { duration } = bacupData[i];
     const perMonthRaw = plan.querySelector('.h2')?.textContent.trim() ?? '';
     const billedText = plan.querySelector('[id$="-billed"]')?.innerText.trim() ?? '';
     const badge = plan.querySelector('.cycle-selector-label');
@@ -147,6 +189,9 @@ const createConnectedBillingDropdown = () => {
       symbol,
       radio
     };
+
+    console.log('🚀 ~ planData:', planData);
+
     allPlanData.push(planData);
 
     const option = document.createElement('div');
@@ -154,16 +199,20 @@ const createConnectedBillingDropdown = () => {
 
     const left = document.createElement('div');
     left.className = 'billing-left';
-    left.innerHTML = `<div class="billing-duration">${duration}</div>`;
+    left.innerHTML = `<div class="billing-duration">${
+      durationCopyInYear[duration] || duration
+    }</div> 
+    ${i === 0 ? `<div class="billing-per-month">${perMonth} / month</div>` : ''}`;
 
     const right = document.createElement('div');
     right.className = 'billing-right';
     right.innerHTML = `
         <div class="billing-total">${billedAmount}</div>
-        <div class="billing-per-month">${perMonth} / month</div>
+        ${i !== 0 ? `<div class="billing-per-month">${perMonth} / month</div>` : ''}
       `;
 
     const basePlan = allPlanData.find((p) => p.months === 1);
+    console.log('🚀 ~ basePlan:', basePlan);
     if (basePlan && months > 1) {
       const savings = basePlan.perMonthNum * months - perMonthNum * months;
       if (savings > 0) {
@@ -185,7 +234,7 @@ const createConnectedBillingDropdown = () => {
     const updateSelected = (durations, total, monthly) => {
       selected.innerHTML = `
           <div class="billing-label">
-            <div class="billing-duration">${durations}</div>
+            <div class="billing-duration">${durationCopyInYear[durations] || durations}</div>
             <div class="billing-per-month">${monthly} / month</div>
           </div>
           <div class="billing-info">
@@ -205,6 +254,14 @@ const createConnectedBillingDropdown = () => {
       trackGA4Event('PRO 029', 'Plan Updated', '');
       menu.classList.remove('visible');
       updateMessages(duration, perMonthNum, months, symbol);
+    });
+
+    option.addEventListener('mouseenter', () => {
+      //check if active
+      menu.querySelectorAll('.billing-option').forEach((opt) => opt.classList.add('hover'));
+    });
+    option.addEventListener('mouseleave', () => {
+      menu.querySelectorAll('.billing-option').forEach((opt) => opt.classList.remove('hover'));
     });
 
     if (radio.checked) {
@@ -283,9 +340,7 @@ const renderBulletPoints = () => {
 
   const imageWrapper = document.createElement('div');
   imageWrapper.classList.add(`${ID}__moneyBackImageWrapper`);
-  imageWrapper.innerHTML =
-    '<img src="https://vpncdn.protonweb.com/image-transformation/?s=s&image=it_started_with_the_world_wide_web_cfc840b987.png&width=1428&height=967" alt="30 days money back gurantee"/>';
-  wrapper.appendChild(imageWrapper);
+  imageWrapper.innerHTML = ratingImg;
 
   const heading = document.createElement('h3');
   heading.textContent = 'Your plan includes:';
@@ -307,6 +362,7 @@ const renderBulletPoints = () => {
 
     wrapper.appendChild(feature);
   });
+  wrapper.appendChild(imageWrapper);
 
   const isMobile = window.innerWidth <= 600;
   const priceBoxIndex = isMobile ? 1 : 2;
@@ -348,17 +404,28 @@ const renderSignInComponent = () => {
 
 const renderMoneyBackImage = () => {
   const payementWrapper = document.querySelector('form[name="payment-form"]');
-  const submitBtn = payementWrapper?.querySelector('button.button-solid-norm[type="submit"]');
+  const submitBtn = payementWrapper?.querySelector('.rating-section');
 
   if (!document.querySelector(`.${ID}__moneyBackImageWrapper.${ID}__mobileImage`)) {
     submitBtn?.insertAdjacentHTML(
-      'afterend',
+      'beforebegin',
       `
       <div class="${ID}__moneyBackImageWrapper ${ID}__mobileImage">
-        <img src="https://vpncdn.protonweb.com/image-transformation/?s=s&image=it_started_with_the_world_wide_web_cfc840b987.png&width=1428&height=967" alt="30 days money back gurantee"/>
+        ${ratingImg}
       </div>
     `
     );
+  }
+};
+const renderSocialProof = () => {
+  const threeDs = document.querySelector('[data-testid="3ds-info"]');
+  const existingSocialProofContainer = threeDs.parentElement;
+  existingSocialProofContainer.style.display = 'none';
+
+  const socialProofContainer = existingSocialProofContainer.nextElementSibling;
+
+  if (socialProofContainer) {
+    socialProofContainer.insertAdjacentHTML('afterend', socialProofElem);
   }
 };
 
@@ -370,7 +437,10 @@ export default () => {
   renderBulletPoints();
   adjustStepNames();
   renderSignInComponent();
-  renderMoneyBackImage();
+  setTimeout(() => {
+    renderSocialProof();
+    renderMoneyBackImage();
+  }, 1000);
 
   //hide step 1
   const step1 = document.querySelectorAll('.pricing-box')[0];

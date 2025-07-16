@@ -81,23 +81,19 @@
 
       .billing-total,
       .billing-per-month,
-      .billing-duration,
-      .billing-save-badge {
+      .billing-duration {
         color: #fff;
       }
     }
   }
 
-  .billing-option.active {
-    @media screen and (max-width: 767px) {
-      background: #6241ff;
+  .billing-option.active:not(.hover) {
+    background: #6241ff;
 
-      .billing-total,
-      .billing-per-month,
-      .billing-duration,
-      .billing-save-badge {
-        color: #fff;
-      }
+    .billing-total,
+    .billing-per-month,
+    .billing-duration {
+      color: #fff;
     }
   }
 
@@ -143,14 +139,6 @@
     display: inline-block;
   }
 
-  // .discount-applied-msg,
-  // .billing-warning-msg {
-  //   font-size: 14px;
-  //   margin: 8px 0;
-  //   display: flex;
-  //   align-items: center;
-  //   gap: 6px;
-  // }
   .billing-save-badge {
     background: #27ddb1;
     color: #0c0c14;
@@ -325,18 +313,71 @@
     }
   }
 
+  [data-testid='pay'] + div {
+    display: none;
+  }
+
   .#{$id}__moneyBackImageWrapper {
     &.#{$id}__mobileImage {
       display: none;
       margin: 15px 0;
 
-      & + div {
-        display: none;
-      }
+      // & + div {
+      //   display: none;
+      // }
 
       @media screen and (max-width: 910px) {
         display: block;
       }
+    }
+  }
+
+  .guarantee-box {
+    border-radius: 1rem;
+    background: #f7f5ff;
+    display: flex;
+    padding: 1.25rem;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    align-self: stretch;
+    margin-top: 1.5rem;
+  }
+
+  .guarantee-box .left-box {
+    flex: 0 0 2.625rem;
+  }
+
+  .guarantee-box h4 {
+    font-size: 0.875rem;
+    color: #38257f;
+    font-weight: 700;
+    letter-spacing: -0.0175rem;
+    margin: 0;
+    padding: 0 0 0.5rem 0;
+  }
+
+  .guarantee-box p {
+    font-size: 0.75rem;
+    color: #0c0c14;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+  }
+
+  .rating-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+  }
+
+  .rating-section img {
+    max-width: 100%;
+    height: auto;
+  }
+  @media screen and (max-width: 767px) {
+    .pro006 .rating-section img {
+      max-width: 94%;
     }
   }
 }
