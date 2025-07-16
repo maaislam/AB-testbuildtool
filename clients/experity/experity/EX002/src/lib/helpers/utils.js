@@ -69,8 +69,4 @@ export const embedMedchatInIframe = (url) => {
     return;
   }
   stepThreeContainer.appendChild(iframe);
-
-  iframe.addEventListener('load', () => {
-    console.log('Iframe loaded successfully');
-  });
 };

@@ -49,6 +49,46 @@ const removeMedchatWidget = () => {
   }
 };
 
+const isChatServiceAvailable = () => {
+  const now = new Date();
+
+  //Convert current time to UTC hours
+  const utcHour = now.getUTCHours();
+
+  //Central Time (CDT) is UTC - 5
+  const ctHour = (utcHour - 5 + 24) % 24;
+
+  //Check if time is between 8:00 a.m. and 5:00 p.m. CT
+  const isWithinOfficeHours = ctHour >= 8 && ctHour < 17;
+
+  return isWithinOfficeHours;
+};
+
+const loadEmbeddedMessaging = () => {
+  window.initEmbeddedMessaging = () => {
+    try {
+      window.embeddedservice_bootstrap.settings.language = 'en_US';
+
+      window.embeddedservice_bootstrap.init(
+        '00Di0000000HSwp',
+        'Ungated_Messaging',
+        'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768',
+        {
+          scrt2URL: 'https://experityhealth.my.salesforce-scrt.com'
+        }
+      );
+    } catch (err) {
+      console.error('Error loading Embedded Messaging: ', err);
+    }
+  };
+
+  const script = document.createElement('script');
+  script.src =
+    'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768/assets/js/bootstrap.min.js';
+  script.onload = window.initEmbeddedMessaging;
+  document.body.appendChild(script);
+};
+
 const selectOptionByLabel = (label) => {
   const selectEl = document.querySelector('.Inquiry_Primary_Solution_Interest select');
   if (!selectEl) return;
@@ -242,6 +282,7 @@ const updateActiveDot = (target, step) => {
 };
 
 const { ID } = shared;
+
 const init = () => {
   const targetPoint = document.querySelector('.spz-form-wrap .the-form');
 
@@ -253,6 +294,7 @@ const init = () => {
     );
   }
 
+  loadEmbeddedMessaging();
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (target.closest('.next-button')) {
@@ -283,8 +325,15 @@ const init = () => {
           const stepThreeContainer = document.querySelector(
             '.get-started-container[data-step="3"]'
           );
-          if (stepThreeContainer) {
-            stepThreeContainer.remove();
+          if (stepThreeContainer && stepThreeContainer.querySelector('#embedded-messaging')) {
+            const mbedChatBubble = document.getElementById('embedded-messaging');
+            mbedChatBubble.classList.remove('show');
+            embedMedchatInIframe('https://medchatapp.com/widget/AWshYCMkWUG_ZraiOGvG4Q');
+            //hide step 1 and 2
+            firstStep.style.display = 'none';
+            secondStep.style.display = 'none';
+            stepThreeContainer.style.display = 'block';
+            return;
           }
           //create a get started container with progress dot and an iframe
           const getStartedContainer = document.createElement('div');
@@ -319,8 +368,18 @@ const init = () => {
           const stepThreeContainer = document.querySelector(
             '.get-started-container[data-step="3"]'
           );
-          if (stepThreeContainer) {
-            stepThreeContainer.remove();
+          if (stepThreeContainer && stepThreeContainer.querySelector('#embedded-messaging')) {
+            //stepThreeContainer.remove();
+            firstStep.style.display = 'none';
+            secondStep.style.display = 'none';
+            stepThreeContainer.style.display = 'block';
+            const medChatBubble = document.getElementById('embedded-messaging');
+            medChatBubble.classList.add('show');
+            const teleChat = document.querySelector('.med-iframe');
+            if (teleChat) {
+              teleChat.remove();
+            }
+            return;
           }
           //create a get started container with progress dot and an iframe
           const getStartedContainer = document.createElement('div');
@@ -331,14 +390,30 @@ const init = () => {
           progressDots.innerHTML = `
               <div class="dot-fake" data-step="1"></div>
               <div class="dot-fake" data-step="2"></div>
-              <div class="dot active" data-step="3"></div>
+              <div class="dot-fake active" data-step="3"></div>
             `;
           //place the new container after step2
           getStartedContainer.appendChild(progressDots);
           secondStep.insertAdjacentElement('afterend', getStartedContainer);
-          embedMedchatInIframe(
-            'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768/?lwc.mode=prod'
-          );
+
+          if (isChatServiceAvailable()) {
+            const medChatBubble = document.getElementById('embedded-messaging');
+            const stepContainerThree = document.querySelector(
+              '.get-started-container[data-step="3"]'
+            );
+            if (stepContainerThree) {
+              stepContainerThree.insertAdjacentElement('beforeend', medChatBubble);
+              medChatBubble.querySelector('button').click();
+              const teleChat = document.querySelector('.med-iframe');
+              if (teleChat) {
+                teleChat.remove();
+              }
+              medChatBubble.classList.add('show');
+            }
+          } else {
+            window.location.href = 'https://www.experityhealth.com/contact/';
+          }
+
           //hide step 1 and 2
           firstStep.style.display = 'none';
           secondStep.style.display = 'none';
@@ -418,9 +493,25 @@ const init = () => {
         }
 
         if (secondStepInput && secondStepInput.value === 'Patient Engagement') {
-          embedMedchatInIframe(
-            'https://experityhealth.my.site.com/ESWUngatedMessaging1728591322768/?lwc.mode=prod'
-          );
+          if (isChatServiceAvailable()) {
+            const stepThreeContainer = document.querySelector(
+              '.get-started-container[data-step="3"]'
+            );
+
+            const medChatBubble = document.getElementById('embedded-messaging');
+
+            if (stepThreeContainer) {
+              stepThreeContainer.insertAdjacentElement('beforeend', medChatBubble);
+              medChatBubble.querySelector('button').click();
+              const teleChat = document.querySelector('.med-iframe');
+              if (teleChat) {
+                teleChat.remove();
+              }
+              medChatBubble.classList.add('show');
+            }
+          } else {
+            window.location.href = 'https://www.experityhealth.com/contact/';
+          }
           return;
         }
       }
@@ -439,6 +530,8 @@ const init = () => {
       allSteps.forEach((step) => {
         step.style.display = step.dataset.step === targetStep ? 'block' : 'none';
       });
+      //reposition embedchat and hide it
+
       updateActiveDot(target, targetStep);
     }
   });

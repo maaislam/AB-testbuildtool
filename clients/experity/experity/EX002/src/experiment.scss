@@ -204,7 +204,8 @@
     margin: 0 5px;
   }
 
-  .dot.active {
+  .dot.active,
+  .dot-fake.active {
     background: #2ecc71;
   }
 
@@ -334,6 +335,63 @@
 
     &:focus {
       outline: none;
+    }
+  }
+
+  #q-messenger-frame {
+    display: none !important;
+  }
+
+  .embedded-messaging {
+    display: none;
+
+    &.show {
+      display: block;
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 168px;
+        height: 45px;
+        background: #1b2b54;
+        top: 52px;
+        right: 26px;
+        left: auto;
+        z-index: 100;
+        opacity: 0;
+        animation: showBar 0.1s ease forwards;
+        animation-delay: 3s;
+        pointer-events: none;
+        z-index: 9999;
+
+        // @media screen and (max-width: 767px) {
+        //   right: 48px;
+        // }
+      }
+    }
+
+    .embeddedMessagingConversationButtonWrapper {
+      position: static;
+    }
+    .embeddedMessagingConversationButton {
+      position: static;
+    }
+    .embeddedMessagingFrame {
+      position: static;
+      width: 100% !important;
+      margin: 0 auto;
+      box-shadow: none;
+      z-index: 9998;
+      min-height: 609px;
+      height: auto;
+      @media screen and (max-width: 767px) {
+        position: relative;
+      }
+    }
+  }
+  @keyframes showBar {
+    to {
+      opacity: 1;
     }
   }
 }
