@@ -169,9 +169,9 @@ const renderCustomDesktopNav = (navData) => {
     <div class="ab-column">
       <div class="ab-heading">Portable Concentrators</div>
       <ul class="ab-list">
-        <li><a href="#">Rove 6™ System</a></li>
-        <li><a href="#">Rove 4™ System</a></li>
-        <li><a href="#">Inogen Freedom Bundle</a></li>
+        <li><a href="${navData[0].groupedSubmenu[0].links[1].href}">Rove 6™ System</a></li>
+        <li><a href="${navData[0].groupedSubmenu[0].links[0].href}">Rove 4™ System</a></li>
+        <li><a href="${navData[0].groupedSubmenu[0].links[2].href}">Inogen Freedom Bundle</a></li>
       </ul>
     </div>
 
@@ -179,8 +179,8 @@ const renderCustomDesktopNav = (navData) => {
     <div class="ab-column">
       <div class="ab-heading">Home/Stationary Concentrators</div>
       <ul class="ab-list">
-        <li><a href="#">Inogen At Home Stationary Oxygen Concentrator</a></li>
-        <li><a href="#">Inogen® Voxi™ 5 Stationary Oxygen Concentrator</a></li>
+        <li><a href="${navData[0].groupedSubmenu[1].links[0].href}">Inogen At Home Stationary Oxygen Concentrator</a></li>
+        <li><a href="${navData[0].groupedSubmenu[1].links[1].href}">Inogen® Voxi™ 5 Stationary Oxygen Concentrator</a></li>
       </ul>
     </div>
 
@@ -188,7 +188,7 @@ const renderCustomDesktopNav = (navData) => {
     <div class="ab-column">
       <div class="ab-heading">Parts & Accessories</div>
       <ul class="ab-list">
-        <li><a href="#">Parts & Accessories</a></li>
+        <li><a href="${navData[0].groupedSubmenu[2].links[0].href}">Parts & Accessories</a></li>
       </ul>
     </div>
 
