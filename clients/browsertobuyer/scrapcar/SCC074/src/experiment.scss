@@ -2,6 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  a[href="https://www.scrapcarcomparison.co.uk/quote-forms/rnf/"]
+  {
+    visibility: hidden;
+  }
   .#{$id}__mainWrapper {
     overflow: unset;
     display: none;

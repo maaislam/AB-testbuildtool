@@ -85,11 +85,7 @@ export const setAttributeInDom = () => {
 
     card.dataset.price = formattedPrice;
     card.dataset.rank = rank;
-
-    console.log(`Card ${rank}: £${formattedPrice}`, card);
   });
-
-  console.log('offerCards', offerCards);
 };
 
 export const autoClickOnInactivity = (selector, delay = 5000) => {
@@ -111,4 +107,20 @@ export const autoClickOnInactivity = (selector, delay = 5000) => {
 
   //Once any interaction happens, cancel the click permanently
   events.forEach((event) => window.addEventListener(event, clearAndStop));
+};
+
+export const getPostcodeFromQFI = () => {
+  try {
+    const qfiKey = new URLSearchParams(window.location.search).get('qfi');
+    if (!qfiKey) return null;
+
+    const { postcode } = JSON.parse(localStorage.getItem(qfiKey) || '{}');
+    if (!postcode) return null;
+
+    const cleaned = postcode.replace(/\s+/g, '').toUpperCase();
+    return cleaned.length < 5 ? null : `${cleaned.slice(0, -3)} ${cleaned.slice(-3)}`;
+  } catch (err) {
+    console.error('Error retrieving or formatting postcode:', err);
+    return null;
+  }
 };

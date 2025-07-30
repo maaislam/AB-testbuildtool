@@ -5,16 +5,6 @@ import cardWrapper from './components/cardWrapper';
 
 const { ID, VARIATION } = shared;
 
-const trackGA4Event = (category, action, label) => {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'gaCustomEvent',
-    eventCategory: category,
-    eventAction: action,
-    eventLabel: label
-  });
-};
-
 const init = () => {
   const mainWrapper = document.querySelector('main > div > section');
   if (mainWrapper) mainWrapper.classList.add(`${ID}__mainWrapper`);
@@ -41,8 +31,7 @@ const init = () => {
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
+  setup();
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
@@ -68,15 +57,8 @@ export default () => {
       const rankUpdate = target.getAttribute('data-rank-update');
       const controlButton = document.querySelector(`div[data-rank="${rankUpdate}"] button`);
       if (controlButton) {
-        trackGA4Event('SCC 074', 'Scrap Accept', '');
         controlButton.click();
       }
-    } else if (
-      target.closest('div[data-rank]') &&
-      target.closest('button') &&
-      VARIATION === 'control'
-    ) {
-      trackGA4Event('SCC 074', 'Scrap Accept', '');
     }
   });
 
