@@ -88,25 +88,48 @@ export const setAttributeInDom = () => {
   });
 };
 
-export const autoClickOnInactivity = (selector, delay = 5000) => {
-  let timeout;
-  const targetElement = document.querySelector(selector);
-  if (!targetElement) return;
+export const detectInactivity = ({ timeout = 60000, onInactive, onActive, fireOnce = false }) => {
+  let timerId = null;
+  let isInactive = false;
+  let hasFiredOnce = false;
 
-  const events = ['mousemove', 'keydown', 'touchstart', 'scroll'];
+  const triggerInactive = () => {
+    if (fireOnce && hasFiredOnce) return;
+    isInactive = true;
+    hasFiredOnce = true;
+    onInactive?.();
+    if (fireOnce) clearTimeout(timerId);
+  };
 
-  function clearAndStop() {
-    clearTimeout(timeout);
-    //remove all listeners after first interaction
-    events.forEach((event) => window.removeEventListener(event, clearAndStop));
-  }
+  const markActive = () => {
+    if (isInactive) {
+      isInactive = false;
+      onActive?.();
+    }
+    if (!fireOnce || !hasFiredOnce) {
+      resetTimer();
+    }
+  };
 
-  timeout = setTimeout(() => {
-    targetElement.click();
-  }, delay);
+  const resetTimer = () => {
+    clearTimeout(timerId);
+    timerId = setTimeout(triggerInactive, timeout);
+  };
 
-  //Once any interaction happens, cancel the click permanently
-  events.forEach((event) => window.addEventListener(event, clearAndStop));
+  const events = ['mousemove', 'mousedown', 'keydown', 'scroll', 'touchstart'];
+
+  events.forEach((event) =>
+    window.addEventListener(event, markActive, {
+      passive: true
+    })
+  );
+
+  resetTimer();
+
+  return () => {
+    clearTimeout(timerId);
+    events.forEach((event) => window.removeEventListener(event, markActive));
+  };
 };
 
 export const getPostcodeFromQFI = () => {

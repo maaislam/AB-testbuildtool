@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { autoClickOnInactivity, setAttributeInDom } from './helpers/utils';
+import { detectInactivity, setAttributeInDom } from './helpers/utils';
 import cardWrapper from './components/cardWrapper';
 
 const { ID, VARIATION } = shared;
@@ -27,7 +27,14 @@ const init = () => {
     document.body.appendChild(overlay);
   }
 
-  autoClickOnInactivity('#customModalTrigger');
+  const stop = detectInactivity({
+    timeout: 5000,
+    fireOnce: true,
+    onInactive: () => {
+      document.querySelector('#customModalTrigger')?.click();
+    },
+    onActive: () => console.log('✅ User is active again')
+  });
 };
 
 export default () => {
