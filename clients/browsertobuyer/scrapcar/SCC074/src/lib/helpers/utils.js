@@ -1,0 +1,114 @@
+/**
+ * Polls the DOM for a condition to be met before executing a callback.
+ *
+ * @param {array} conditions The array of conditions to check for.
+ * @param {function} callback The callback function when all conditions are true.
+ * @param {number} maxTime max time the check witll run before abort.
+ */
+export const pollerLite = (conditions, callback, maxTime = 1000000) => {
+  const POLLING_INTERVAL = 25;
+  const startTime = Date.now();
+  const interval = setInterval(() => {
+    const allConditionsMet = conditions.every((condition) => {
+      if (typeof condition === 'function') {
+        return condition();
+      }
+      return !!document.querySelector(condition);
+    });
+    if (allConditionsMet) {
+      clearInterval(interval);
+      callback();
+    } else if (Date.now() - startTime >= maxTime) {
+      clearInterval(interval);
+      console.error('Polling exceeded maximum time limit');
+    }
+  }, POLLING_INTERVAL);
+};
+export const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
+  const target = document.querySelector(`${targetSelectorString}`);
+
+  if (!target) return;
+  //configuration of the observer:
+
+  const config = configObject || {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    characterData: true,
+    characterDataOldValue: true
+  };
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      //console.log(mutation);
+      observer.disconnect();
+
+      callbackFunction(mutation);
+      observer.observe(target, config);
+    });
+  });
+
+  observer.observe(target, config);
+};
+
+export const setAttributeInDom = () => {
+  const offerButtons = document.querySelectorAll('button[aria-label="Accept this offer"]');
+
+  const offerCards = Array.from(offerButtons)
+    .map((button) => {
+      //Step 1: Go up to main card container
+      const card = button.closest('.rounded-lg'); //safer than .parentElement chain
+
+      if (!card) return null;
+
+      //Step 2: Look for <div> containing price <span>
+      const priceEl = card.querySelector('.h-12 span');
+      if (!priceEl) return null;
+
+      const rawText = priceEl.textContent.trim();
+      const priceMatch = rawText.match(/[\d.]+/); //match numbers like 174.00 or 87.5
+      const price = priceMatch ? parseFloat(priceMatch[0]) : NaN;
+
+      return {
+        card,
+        price
+      };
+    })
+    .filter(({ price }) => !isNaN(price));
+
+  //Step 3: Sort by price descending
+  offerCards.sort((a, b) => b.price - a.price);
+
+  //Step 4: Add data attributes + console logs
+  offerCards.forEach(({ card, price }, index) => {
+    const rank = index + 1;
+    const formattedPrice = price.toFixed(2);
+
+    card.dataset.price = formattedPrice;
+    card.dataset.rank = rank;
+
+    console.log(`Card ${rank}: £${formattedPrice}`, card);
+  });
+
+  console.log('offerCards', offerCards);
+};
+
+export const autoClickOnInactivity = (selector, delay = 5000) => {
+  let timeout;
+  const targetElement = document.querySelector(selector);
+  if (!targetElement) return;
+
+  const events = ['mousemove', 'keydown', 'touchstart', 'scroll'];
+
+  function clearAndStop() {
+    clearTimeout(timeout);
+    //remove all listeners after first interaction
+    events.forEach((event) => window.removeEventListener(event, clearAndStop));
+  }
+
+  timeout = setTimeout(() => {
+    targetElement.click();
+  }, delay);
+
+  //Once any interaction happens, cancel the click permanently
+  events.forEach((event) => window.addEventListener(event, clearAndStop));
+};
