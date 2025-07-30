@@ -163,16 +163,6 @@ const renderprogressDotInIframe = () => {
         `
     );
   }
-  //const stepOneContainer = document.querySelector('.get-started-container[data-step="1"]');
-  //const stepOneSelectedOption = stepOneContainer.querySelector('input[type="radio"]:checked');
-  //const stepTwoContainer = document.querySelector('.get-started-container[data-step="2"]');
-  //const selectedOption = stepTwoContainer.querySelector('input[type="radio"]:checked');
-  //if (selectedOption) {
-  //const selectedValue = selectedOption.value;
-  //titleElem.textContent = stepOneSelectedOption.value;
-  ////selectOptionByLabel(selectedValue);
-  ////selectNoForLabel();
-  //}
 };
 
 const showFinalStep = () => {
@@ -558,6 +548,12 @@ export default () => {
   if (!parentPage()) {
     pollerLite(['#pardot-form'], () => {
       renderprogressDotInIframe();
+
+      const submitBtn = document.querySelector('input[type="submit"]');
+
+      if (submitBtn) {
+        submitBtn.setAttribute('value', 'Get Started');
+      }
 
       document.body.addEventListener('click', (e) => {
         const { target } = e;

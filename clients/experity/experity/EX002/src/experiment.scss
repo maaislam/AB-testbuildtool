@@ -130,7 +130,7 @@
     }
   }
   .get-started-container {
-    padding: 24px;
+    padding: 24px 40px;
     background: white;
     border-radius: 12px;
     // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -193,6 +193,11 @@
     display: flex;
     justify-content: center;
     margin-bottom: 16px;
+    & + h2.title {
+      &::after {
+        display: none;
+      }
+    }
   }
 
   .dot,
@@ -217,11 +222,11 @@
     line-height: 150%;
     text-align: center;
     color: #1b2b54;
-    margin-bottom: 24px;
+    margin-bottom: 24px !important;
 
     @media screen and (max-width: 480px) {
       font-size: 16px;
-      margin-bottom: 16px;
+      margin-bottom: 16px !important;
     }
   }
 
@@ -318,7 +323,7 @@
   }
 
   .next-button {
-    max-width: 470px;
+    // max-width: 470px;
     width: 100%;
     background-color: #2fcb40;
     border: none;
@@ -355,7 +360,7 @@
         height: 45px;
         background: #1b2b54;
         top: 52px;
-        right: 26px;
+        right: 38px;
         left: auto;
         z-index: 100;
         opacity: 0;
@@ -379,7 +384,7 @@
     .embeddedMessagingFrame {
       position: static;
       width: 100% !important;
-      margin: 0 auto;
+      margin: 0 auto !important;
       box-shadow: none;
       z-index: 9998;
       min-height: 609px;
