@@ -102,7 +102,7 @@ const renderCustomMobileNav = (navData) => {
           <button class="nav-toggle ab-nav-toggle" data-index="${index}">
             ${item.title} <span class="arrow">${arrowSvg}</span>
           </button>
-          <div class="submenu ab-submenu-grouped" hidden>
+          <div class="submenu ab-submenu-grouped hide">
             ${item.groupedSubmenu
               .map(
                 (group, gIndex) => `
@@ -110,7 +110,7 @@ const renderCustomMobileNav = (navData) => {
                 <button class="ab-group-toggle" data-group-toggle="${index}-${gIndex}">
                   ${group.groupTitle} <span class="arrow">${arrowSvg}</span>
                 </button>
-                <ul class="ab-submenu-list ab-group-list" data-group="${index}-${gIndex}" hidden>
+                <ul class="ab-submenu-list ab-group-list hide" data-group="${index}-${gIndex}" >
                   ${group.links
                     .map(
                       (link) => `
@@ -134,7 +134,7 @@ const renderCustomMobileNav = (navData) => {
         <button class="nav-toggle ab-nav-toggle" data-index="${index}">
           ${item.title} <span class="arrow">${arrowSvg}</span>
         </button>
-        <ul class="submenu ab-submenu-list" hidden>
+        <ul class="submenu ab-submenu-list hide">
           ${item.submenuLinks
             .map(
               (link) => `
@@ -161,18 +161,71 @@ const renderCustomMobileNav = (navData) => {
   document.body.appendChild(wrapper);
 };
 
+const renderCustomDesktopNav = (navData) => {
+  const html = `
+    <div class="ab-desktop-dropdown">
+  <div class="ab-dropdown-columns">
+    <!-- Column 1 -->
+    <div class="ab-column">
+      <div class="ab-heading">Portable Concentrators</div>
+      <ul class="ab-list">
+        <li><a href="#">Rove 6™ System</a></li>
+        <li><a href="#">Rove 4™ System</a></li>
+        <li><a href="#">Inogen Freedom Bundle</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="ab-column">
+      <div class="ab-heading">Home/Stationary Concentrators</div>
+      <ul class="ab-list">
+        <li><a href="#">Inogen At Home Stationary Oxygen Concentrator</a></li>
+        <li><a href="#">Inogen® Voxi™ 5 Stationary Oxygen Concentrator</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="ab-column">
+      <div class="ab-heading">Parts & Accessories</div>
+      <ul class="ab-list">
+        <li><a href="#">Parts & Accessories</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: CTA -->
+    <div class="ab-column ab-cta-column">
+        <img src="https://cdn.inogen.com/wp-content/uploads/2025/06/inogen_rove_series.jpg.webp"
+        alt="Inogen Rove 6"
+        class="ab-cta-image">
+        <div class="ab-cta-container">
+          <p>Inogen Rove 6</p>
+          <a href="https://www.inogen.com/products/rove6-systems/" class="ab-cta-button">Shop Now ${cartSvg}</a>
+        </div>
+    </div>
+  </div>
+</div>
+  `;
+  const targetElem = document.querySelector('#primary-nav > li:first-child ul[data-depth="1"]');
+  if (!document.querySelector('.ab-desktop-dropdown')) {
+    targetElem.insertAdjacentHTML('beforebegin', html);
+  }
+};
+
 const initInteraction = () => {
   document.body.addEventListener('click', (e) => {
-    if (e.target.matches('.nav-toggle')) {
-      const submenu = e.target.nextElementSibling;
-      if (submenu) submenu.hidden = !submenu.hidden;
+    if (e.target.closest('.nav-toggle')) {
+      const buttonEl = e.target.closest('.nav-toggle');
+      const submenu = buttonEl.nextElementSibling;
+      if (submenu) {
+        submenu.classList.toggle('hide');
+      }
     }
 
     if (e.target.matches('.ab-group-toggle, .ab-group-toggle *')) {
       const btn = e.target.closest('.ab-group-toggle');
       const targetKey = btn.getAttribute('data-group-toggle');
       const groupList = document.querySelector(`.ab-group-list[data-group="${targetKey}"]`);
-      if (groupList) groupList.hidden = !groupList.hidden;
+      if (groupList) groupList.classList.toggle('hide');
     }
 
     if (e.target.id === 'nav-close') {
@@ -190,18 +243,19 @@ const isMobile = () => {
 export default () => {
   setup(); //use if needed
   console.log(ID);
+  const navData = getNavData();
+  console.log('🚀 ~ navData:', navData);
   if (!isMobile()) {
     //do stuff for desktop
     console.log('This is not a mobile device, skipping mobile nav setup.');
     document.documentElement.classList.add('ab-desktop-nav');
 
+    renderCustomDesktopNav(navData);
     return;
   }
 
   document.documentElement.classList.add('ab-mobile-nav');
 
-  const navData = getNavData();
-  console.log('🚀 ~ navData:', navData);
   renderCustomMobileNav(navData);
   injectCustomHamburger();
   initInteraction();
