@@ -212,6 +212,14 @@ const renderCustomDesktopNav = (navData) => {
 };
 
 const initInteraction = () => {
+  document.body.addEventListener('pointerup', (e) => {
+    const { target } = e;
+    if (target.matches('#shiftnav-toggle-main')) {
+      console.log('ShiftNav toggle clicked');
+      e.preventDefault();
+      document.querySelector('#ab-new-hamburger')?.click();
+    }
+  });
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('.nav-toggle')) {
       const buttonEl = e.target.closest('.nav-toggle');

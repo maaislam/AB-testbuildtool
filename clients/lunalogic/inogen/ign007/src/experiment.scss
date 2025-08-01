@@ -7,6 +7,13 @@
 }
 .#{$id}.ab-mobile-nav {
   /* === Custom Hamburger Button === */
+  .shiftnav-open.shiftnav-open-left #shiftnav-toggle-main {
+    transform: translateX(0) !important;
+  }
+
+  .shiftnav.shiftnav-left-edge {
+    transform: translateX(-100%) !important;
+  }
   .rotate {
     transform: rotate(180deg);
   }
