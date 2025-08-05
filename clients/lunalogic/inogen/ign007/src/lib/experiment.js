@@ -66,7 +66,7 @@ const injectCustomHamburger = () => {
   if (document.getElementById('ab-new-hamburger')) return;
 
   const hamburger = document.createElement('div');
-  hamburger.className = 'new-hamburger';
+  hamburger.classList.add('new-hamburger', 'open');
   hamburger.id = 'ab-new-hamburger';
   hamburger.innerHTML = '<span></span><span></span><span></span>';
 
@@ -91,7 +91,7 @@ const renderCustomMobileNav = (navData) => {
 
   const wrapper = document.createElement('div');
   wrapper.id = 'ab-custom-mobile-nav';
-  wrapper.setAttribute('data-test-nav-open', 'false');
+  wrapper.setAttribute('data-test-nav-open', 'true');
   wrapper.className = 'ab-nav-container';
 
   const listItems = navData
