@@ -1,0 +1,211 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #toc-widget-2 {
+    .vpn {
+      display: none;
+    }
+  }
+  &__hidden {
+    display: none;
+  }
+
+  &__title {
+    font-family: 'Arial';
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 31.5px */
+    color: #222;
+    margin: 20px 0 20px;
+  }
+
+  .vpn-card {
+    position: relative;
+    display: flex;
+    border: 2px solid #006c9b;
+    background: #fff;
+    padding: 16px 24px;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .vpn-left {
+      flex: 1;
+      padding: 0 10px;
+    }
+
+    .vpn-left .badge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #006c9b;
+      color: #ffffff;
+      padding: 5px 15px;
+      color: #fff;
+      text-align: center;
+      font-family: 'Arial';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .vpn-left img {
+      max-width: 100px;
+      margin: 0;
+      margin-bottom: 12px;
+    }
+
+    .vpn-left .headline {
+      color: #333;
+      font-family: 'Arial';
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 150%; /* 24px */
+    }
+
+    .vpn-middle {
+      flex: 2;
+      padding: 0 10px;
+    }
+
+    .vpn-middle .vpn-title {
+      color: #1a73e8;
+      font-family: 'Arial';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-decoration-line: underline;
+      margin-bottom: 16px;
+    }
+
+    .vpn-middle ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .vpn-middle ul li {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 8px;
+      position: relative;
+
+      span:first-child {
+        margin-right: 8px;
+      }
+
+      span:last-child {
+        color: #333;
+        font-family: 'Arial';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400 !important;
+        line-height: 150%; /* 21px */
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .vpn-right {
+      flex: 1;
+      text-align: center;
+      padding: 0 0 0 10px;
+    }
+
+    .rating-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 16px;
+    }
+    .rating-wrapper-first {
+      display: flex;
+      flex-direction: column;
+      margin-right: 12px;
+    }
+
+    .vpn-right .rating {
+      color: #333;
+      text-align: center;
+      font-family: 'Arial';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 0;
+    }
+
+    .vpn-right .stars {
+      //   color: #f5a623;
+      //   font-size: 18px;
+      //   margin-bottom: 4px;
+    }
+
+    .vpn-right .score {
+      color: #fff;
+      text-align: center;
+      font-family: 'Arial';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      border-radius: 3px;
+      background: #006c9b;
+      padding: 4px 8px;
+    }
+
+    &:first-child {
+      .vpn-right .button {
+        border-radius: 3px;
+        border: 1px solid #b50202;
+        background: linear-gradient(180deg, #ff0e0e 14.29%, #b30202 41.77%);
+      }
+    }
+
+    &:not(:first-child) {
+      .vpn-right .button {
+        border-radius: 3px;
+        border: 1px solid #006c9b;
+        background: linear-gradient(180deg, #377db1 14.29%, #2d6b98 41.77%);
+      }
+    }
+
+    .vpn-right .button {
+      display: inline-block;
+      max-width: 160px;
+      width: 100%;
+      color: #fff;
+      font-family: 'Arial';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      padding: 20px 12px;
+      margin-bottom: 8px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .vpn-right .small-text {
+      color: #333;
+      text-align: center;
+      font-family: 'Arial';
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 16.8px */
+    }
+  }
+}
