@@ -2,11 +2,11 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  #toc-widget-2 {
-    .vpn {
-      display: none;
-    }
-  }
+  // #toc-widget-2 {
+  //   .vpn {
+  //     display: none;
+  //   }
+  // }
   &__hidden {
     height: 0;
     margin: 0;
@@ -300,7 +300,6 @@
       line-height: normal;
       padding: 18px 12px;
       margin-bottom: 8px;
-      white-space: nowrap;
 
       &:hover {
         text-decoration: none;

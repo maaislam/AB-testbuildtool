@@ -5,6 +5,7 @@ import shared from './shared/shared';
 import cardWrapper from './components/cardWrapper';
 import trackGA4Event from './services/gaTracking';
 import translationData from './data/data';
+import { obsIntersection } from './helpers/utils';
 
 const { ID } = shared;
 
@@ -73,6 +74,18 @@ const init = () => {
     document
       .querySelector('.entry-content > ol')
       .insertAdjacentHTML('beforebegin', cardWrapper(ID, filteredProviders, language));
+  }
+
+  const handIntersection = (entry) => {
+    if (entry.isIntersecting) {
+      document.querySelector('#toc-widget-2 .vpn')?.classList.add(`${ID}__hidden`);
+    } else {
+      document.querySelector('#toc-widget-2 .vpn')?.classList.remove(`${ID}__hidden`);
+    }
+  };
+
+  if (document.querySelector(`.${ID}__cardWrapper`)) {
+    obsIntersection(document.querySelector(`.${ID}__cardWrapper`), 0.2, handIntersection);
   }
 };
 
