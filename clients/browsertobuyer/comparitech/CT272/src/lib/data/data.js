@@ -9,7 +9,7 @@ const translationData = {
       ],
       cta: 'Get Special Deal',
       image:
-        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg'
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg?v=1610974086'
     },
     Surfshark: {
       headline: 'Great choice for ease of  use',
@@ -32,6 +32,30 @@ const translationData = {
       features: ['High speed', 'Exceptional streaming capabilities', '24/7 customer support'],
       cta: '',
       image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
+    },
+    TotalVPN: {
+      headline: 'The best for users on a budget',
+      features: ['High speed', 'Exceptional streaming capabilities', '24/7 customer support'],
+      cta: '',
+      image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
+    },
+    ExpressVPN: {
+      headline: 'The best for users seeking a Canadian IP address',
+      features: ['Best VPN for China', 'Server choice', 'Secure and trustworthy'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/507.svg?v=1610974086'
+    },
+    ProtonVPN: {
+      headline: 'The best for users seeking excellent security',
+      features: [
+        'Good speeds',
+        'Strong security',
+        'Works with Netflix and other popular streaming services'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
     }
   },
   es: {

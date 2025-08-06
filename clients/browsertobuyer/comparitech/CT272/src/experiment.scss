@@ -46,6 +46,14 @@
     align-items: center;
     margin-bottom: 20px;
 
+    @media screen and (max-width: 991px) and (min-width: 768px) {
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: 680px) {
+      flex-direction: column;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -53,6 +61,22 @@
     .vpn-left {
       flex: 1;
       padding: 32px 10px 0 0;
+
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-right: 0;
+      }
+
+      @media screen and (max-width: 680px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-right: 0;
+      }
     }
 
     .vpn-left .badge {
@@ -84,11 +108,25 @@
       font-style: italic;
       font-weight: 700;
       line-height: 1.5;
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        text-align: center;
+      }
+      @media screen and (max-width: 680px) {
+        text-align: center;
+      }
     }
 
     .vpn-middle {
       flex: 2;
       padding: 0 10px;
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        width: 100%;
+        padding: 0;
+      }
+      @media screen and (max-width: 680px) {
+        width: 100%;
+        padding: 0;
+      }
     }
 
     .vpn-middle .vpn-title {
@@ -100,12 +138,30 @@
       line-height: normal;
       text-decoration-line: underline;
       margin-bottom: 16px;
+
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        display: none;
+      }
+
+      @media screen and (max-width: 680px) {
+        display: none;
+      }
     }
 
     .vpn-middle ul {
       list-style: none;
       padding: 0;
       margin: 0;
+
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        max-width: 240px;
+        margin: 12px auto;
+      }
+
+      @media screen and (max-width: 680px) {
+        max-width: 240px;
+        margin: 12px auto;
+      }
     }
 
     .vpn-middle ul li {
@@ -136,6 +192,18 @@
       flex: 1;
       text-align: center;
       padding: 0 0 0 10px;
+
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        width: 100%;
+        max-width: 350px;
+        padding-left: 0;
+      }
+
+      @media screen and (max-width: 680px) {
+        width: 100%;
+        max-width: 350px;
+        padding-left: 0;
+      }
     }
 
     .rating-wrapper {
@@ -143,6 +211,14 @@
       align-items: center;
       justify-content: space-between;
       margin: 0 0 16px;
+
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        justify-content: center;
+      }
+
+      @media screen and (max-width: 680px) {
+        justify-content: center;
+      }
     }
     .rating-wrapper-first {
       display: flex;
@@ -159,6 +235,14 @@
       font-weight: 700;
       line-height: normal;
       margin-bottom: 0;
+
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        display: none;
+      }
+
+      @media screen and (max-width: 680px) {
+        display: none;
+      }
     }
 
     .vpn-right .stars {
@@ -211,6 +295,14 @@
 
       &:hover {
         text-decoration: none;
+      }
+
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        max-width: 100%;
+      }
+
+      @media screen and (max-width: 680px) {
+        max-width: 100%;
       }
     }
 
