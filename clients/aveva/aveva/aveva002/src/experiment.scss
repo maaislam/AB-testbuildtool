@@ -1,0 +1,1090 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+body {
+  opacity: 0;
+}
+
+.#{$id} {
+  body {
+    opacity: 1 !important;
+  }
+
+  .#{$id}__dataProcessingConsent {
+    margin-top: -20px;
+
+    @include media-query(sm) {
+      margin-top: -10px;
+    }
+  }
+
+  section.background-container {
+    padding-top: 101px !important;
+    padding-bottom: 101px !important;
+
+    @include media-query(lg) {
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
+    }
+  }
+
+  &__formContainer {
+    max-width: 628px;
+    margin: 0 auto;
+    padding: 24px;
+    background: #fff;
+
+    .mktoForm .mktoRequiredField .mktoAsterix {
+      display: none;
+    }
+
+    .marketo-form .mktoField {
+      height: 48px; //FIX: Safari: can we increase the height of the dropdown?
+    }
+
+    .emailEmptyErrorMsg:after,
+    .emailInvalidErrorMsg:after,
+    .selectErrorMsg:after,
+    .telErrorMsg:after,
+    .textareaErrorMsg:after,
+    .textErrorMsg:after {
+      font-size: 14px; //Fix: Please fix the error message
+    }
+
+    & + .background-container-wrapper,
+    & ~ .column-control.section,
+    .#{$id}__formStep {
+      display: none;
+    }
+
+    .#{$id}__formStep.#{$id}__activeStep {
+      display: block;
+    }
+
+    .#{$id}__headerTitle {
+      font-family: 'barlow-medium';
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      text-align: left;
+      color: #363d42;
+    }
+
+    .#{$id}__headerQuestion {
+      margin: 24px 0 36px;
+      font-family: 'barlow-medium';
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 45px;
+      text-align: left;
+      color: #363d42;
+
+      @include media-query(xsm) {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+
+    .#{$id}__optionsContainer {
+      label.option {
+        margin-bottom: 12px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 24px;
+        border: 1px solid #aaaaaa;
+        cursor: pointer;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &.#{$id}__activeOption {
+          border: 1px solid #6b04a8;
+          background: #eee4f5;
+        }
+
+        input {
+          display: none;
+        }
+
+        .label-title {
+          margin-left: 25px;
+          font-family: 'barlow-medium';
+          font-size: 28px;
+          font-weight: 500;
+          line-height: 32px;
+          color: #363d42;
+
+          @include media-query(xsm) {
+            font-size: 20px;
+            line-height: 24px;
+          }
+        }
+
+        svg {
+          display: flex;
+          width: 64px;
+          height: 64px;
+
+          @include media-query(xsm) {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+
+    .#{$id}__supportThankYouPage {
+      padding: 30px 20px 30px;
+
+      @include media-query(xsm) {
+        padding: 30px 0;
+      }
+
+      h2 {
+        font-family: 'Muli-Bold';
+        color: #363d42;
+      }
+
+      p {
+        font-family: 'Muli-Bold';
+        color: #363d42;
+      }
+
+      .thankYouCardDescription {
+        margin-bottom: 40px;
+      }
+
+      .#{$id}__options {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+
+      .#{$id}__supportOption,
+      .#{$id}__selfServeOption {
+        background: #fff;
+        border: 1px solid #e9eced;
+        padding: 24px 14px 24px 12px;
+        width: calc(50% - 16px);
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        cursor: pointer;
+
+        @include media-query(sm) {
+          width: 100%;
+        }
+
+        &:hover {
+          border: 1px solid #6b04a8;
+        }
+
+        .title {
+          font-family: 'Muli-Bold';
+          margin-bottom: 6px;
+          color: #363d42;
+          font-size: 18px;
+          line-height: 24px;
+        }
+
+        .description {
+          font-family: 'Muli-Bold';
+          color: #363d42;
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 4px;
+
+          span {
+            color: #5a74c9;
+            text-decoration: underline;
+          }
+        }
+
+        .#{$id}__supportCenter {
+          padding-left: 10px;
+        }
+
+        .#{$id}__docs {
+          padding-left: 10px;
+        }
+      }
+
+      .#{$id}__supportOption svg,
+      .#{$id}__selfServeOption svg {
+        margin-right: 6px;
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+        fill: #694f77;
+
+        @include media-query(xsm) {
+          margin-right: 8px;
+          height: 30px;
+          width: 30px;
+        }
+      }
+
+      a.link {
+        color: #5a74c9;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .#{$id}__options {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .#{$id}__option {
+          width: 100%;
+        }
+      }
+    }
+
+    &[data-current-step='1'] {
+      .form-footer {
+        .prev-btn {
+          visibility: hidden;
+        }
+      }
+    }
+
+    &:has(.#{$id}__activeStep[data-step='3'][data-form-type='support']) {
+      .form-footer {
+        display: none;
+      }
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 36px;
+
+      @include media-query(xsm) {
+        margin-top: 16px;
+      }
+
+      .next-btn {
+        // width: 124px;
+        padding: 10px 24px 14px;
+        font-family: 'Barlow-SemiBold';
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+        color: #fff;
+        background: #4d69e0;
+        border: none;
+        cursor: pointer;
+
+        @include media-query(xsm) {
+          font-size: 13px;
+          padding: 8px 16px;
+        }
+
+        &:focus {
+          border-radius: 0 !important;
+          border: none !important;
+          outline: none !important;
+        }
+
+        &:hover {
+          background: #3051db;
+        }
+
+        svg {
+          margin-left: 10px;
+
+          @include media-query(xsm) {
+            margin-right: 6px;
+            width: 12px;
+          }
+        }
+      }
+
+      .prev-btn {
+        // width: 140px;
+        padding: 10px 24px 14px;
+        font-family: 'Barlow-SemiBold';
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+        color: #000;
+        background: #fff;
+        border: none;
+        cursor: pointer;
+        border: 1px solid #000000;
+
+        @include media-query(xsm) {
+          font-size: 13px;
+          padding: 8px 16px;
+        }
+
+        &:focus {
+          border-radius: 0 !important;
+          outline: none !important;
+        }
+
+        // &:hover {
+        //     background: #f9f9f9;
+        // }
+
+        svg {
+          margin-right: 10px;
+
+          @include media-query(xsm) {
+            margin-right: 6px;
+            width: 12px;
+          }
+        }
+      }
+    }
+
+    &[data-current-step='4'] {
+      .form-footer {
+        display: none;
+      }
+    }
+  }
+
+  &__formContainer.#{$id}__thankYouScreen {
+    max-width: 870px;
+    padding: 20px;
+  }
+
+  // support channel
+  &__activeStep[data-step='2'][data-form-type='support'] {
+    .#{$id}__headerTitle {
+      margin: 20px 0 40px;
+      font-family: 'barlow-medium';
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 32px;
+      text-align: left;
+      color: #363d42;
+    }
+
+    form.mktoForm {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+
+      @include media-query(sm) {
+        gap: 0;
+      }
+    }
+
+    .mktoFormRow {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .support-mkto-form {
+      .marketo-form--heading,
+      .mktoFormRow,
+      .mktoButton[type='submit'] {
+        display: none;
+      }
+
+      .marketo-form {
+        padding: 0;
+      }
+
+      .#{$id}__firstNameRow {
+        display: block;
+        grid-column: 1;
+        grid-row: 1;
+
+        @include media-query(sm) {
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .#{$id}__lastNameRow {
+        display: block;
+        grid-column: 2;
+        grid-row: 1;
+
+        @include media-query(sm) {
+          grid-row: 2;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .#{$id}__companyRow {
+        display: block;
+        grid-column: 1;
+        grid-row: 2;
+
+        @include media-query(sm) {
+          grid-row: 3;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .#{$id}__emailRow {
+        display: block;
+        grid-column: 2;
+        grid-row: 2;
+
+        @include media-query(sm) {
+          grid-row: 4;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .#{$id}__jobTitleRow {
+        display: block;
+        grid-column: 1;
+        grid-row: 3;
+
+        @include media-query(sm) {
+          grid-row: 5;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .#{$id}__phoneRow {
+        display: block;
+        grid-column: 2;
+        grid-row: 3;
+
+        @include media-query(sm) {
+          grid-row: 6;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .#{$id}__industryRow {
+        display: block;
+        grid-column: 1;
+        grid-row: 4;
+
+        @include media-query(sm) {
+          grid-row: 8;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .#{$id}__countryRow {
+        display: block;
+        grid-column: 2;
+        grid-row: 4;
+
+        @include media-query(sm) {
+          grid-row: 9;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .mktoFormRow:has(#State) {
+        display: block;
+        grid-column: 1;
+        grid-row: 5;
+
+        @include media-query(sm) {
+          grid-row: 10;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .mktoFormRow:has(#PostalCode) {
+        display: block;
+        grid-column: 2;
+        grid-row: 5;
+
+        @include media-query(sm) {
+          grid-row: 11;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .mktoFormRow.#{$id}__onlyStateCode {
+        grid-column: 1 / span 2 !important;
+      }
+
+      .mktoFormRow.#{$id}__onlyPostalCode {
+        grid-column: 1 / span 2 !important;
+      }
+
+      .#{$id}__enquiryMessageRow {
+        display: block;
+        grid-column: 1 / span 2;
+        /* Span across both columns */
+        grid-row: 5;
+
+        @include media-query(sm) {
+          grid-row: 10;
+        }
+      }
+
+      .#{$id}__privacyPolicyLabel-1 {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 6;
+
+        @include media-query(sm) {
+          margin: 10px 0 16px 0;
+          grid-row: 11;
+        }
+
+        .mktoFormCol {
+          margin-bottom: -10px !important;
+        }
+
+        .mktoHtmlText {
+          display: block;
+        }
+      }
+
+      .#{$id}__privacyPolicyLabel-2 {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 7;
+
+        @include media-query(sm) {
+          margin: 10px 0 16px 0;
+          grid-row: 12;
+        }
+
+        .mktoFormCol {
+          margin-bottom: -10px !important;
+        }
+
+        .mktoHtmlText {
+          display: block;
+        }
+      }
+
+      .#{$id}__privacyPolicyDropdown {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 7;
+        margin-bottom: 0;
+
+        .mktoFormCol {
+          margin-bottom: 0 !important;
+        }
+
+        .mktoFieldWrap.mktoRequiredField {
+          padding-bottom: 0 !important;
+        }
+
+        @include media-query(sm) {
+          grid-row: 12;
+        }
+      }
+
+      .#{$id}__dataProcessingConsent {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 8;
+
+        @include media-query(sm) {
+          margin: 10px 0 16px 0;
+          grid-row: 12;
+        }
+
+        .mktoFormCol {
+          margin-bottom: -10px !important;
+        }
+
+        .mktoHtmlText {
+          display: block;
+        }
+      }
+
+      .#{$id}__optInDataProcessing {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 9;
+
+        @include media-query(sm) {
+          margin: 10px 0 16px 0;
+          grid-row: 13;
+        }
+      }
+
+      &:has(#State),
+      &:has(#PostalCode) {
+        .#{$id}__enquiryMessageRow {
+          //if support form has state field
+          display: block;
+          grid-column: 1 / span 2;
+          /* Span across both columns */
+          grid-row: 6;
+
+          @include media-query(sm) {
+            grid-row: 12;
+          }
+        }
+
+        .#{$id}__privacyPolicyLabel-1 {
+          display: block;
+          grid-column: 1 / span 2;
+          grid-row: 7;
+
+          @include media-query(sm) {
+            grid-row: 13;
+          }
+
+          .mktoFormCol {
+            margin-bottom: -10px !important;
+          }
+
+          .mktoHtmlText {
+            display: block;
+          }
+        }
+
+        .#{$id}__privacyPolicyLabel-2 {
+          display: block;
+          grid-column: 1 / span 2;
+          grid-row: 8;
+
+          @include media-query(sm) {
+            grid-row: 14;
+          }
+
+          .mktoFormCol {
+            margin-bottom: -10px !important;
+          }
+
+          .mktoHtmlText {
+            display: block;
+          }
+        }
+
+        .#{$id}__privacyPolicyDropdown {
+          display: block;
+          grid-column: 1 / span 2;
+          grid-row: 8;
+
+          @include media-query(sm) {
+            grid-row: 14;
+          }
+        }
+
+        .#{$id}__dataProcessingConsent {
+          display: block;
+          grid-column: 1 / span 2;
+          grid-row: 9;
+
+          @include media-query(sm) {
+            margin: 10px 0 16px 0;
+            grid-row: 15;
+          }
+
+          .mktoFormCol {
+            margin-bottom: -10px !important;
+          }
+
+          .mktoHtmlText {
+            display: block;
+          }
+        }
+
+        .#{$id}__optInDataProcessing {
+          display: block;
+          grid-column: 1 / span 2;
+          grid-row: 10;
+
+          @include media-query(sm) {
+            margin: 10px 0 16px 0;
+            grid-row: 16;
+          }
+        }
+      }
+    }
+  }
+
+  // sales channel (first part of the form)
+  &__activeStep[data-step='2'][data-form-type='sales'] {
+    .sales-mkto-form {
+      .marketo-form--heading,
+      .mktoFormRow,
+      .mktoHtmlText,
+      .mktoButton[type='submit'] {
+        display: none;
+      }
+
+      .marketo-form {
+        padding: 0;
+      }
+
+      .mktoFormRow.#{$id}__firstNameRow,
+      .mktoFormRow.#{$id}__lastNameRow,
+      .mktoFormRow.#{$id}__emailRow,
+      .mktoFormRow.#{$id}__companyRow {
+        display: block;
+      }
+    }
+  }
+
+  // sales channel (last part of the form)
+  &__activeStep[data-step='3'][data-form-type='sales'] {
+    form.mktoForm {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+
+      @include media-query(sm) {
+        gap: 0;
+      }
+    }
+
+    .mktoFormRow {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sales-mkto-form {
+      .marketo-form--heading,
+      .mktoFormRow,
+      .mktoButton[type='submit'] {
+        display: none;
+      }
+
+      .marketo-form {
+        padding: 0;
+      }
+
+      .mktoFormRow.#{$id}__jobTitleRow {
+        display: block;
+        grid-column: 1;
+        grid-row: 1;
+
+        @include media-query(sm) {
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .mktoFormRow.#{$id}__phoneRow {
+        display: block;
+        grid-column: 2;
+        grid-row: 1;
+
+        @include media-query(sm) {
+          grid-row: 2;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .mktoFormRow.#{$id}__industryRow {
+        display: block;
+        grid-column: 1;
+        grid-row: 2;
+
+        @include media-query(sm) {
+          grid-row: 3;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .mktoFormRow.#{$id}__countryRow {
+        display: block;
+        grid-column: 2;
+        grid-row: 2;
+
+        @include media-query(sm) {
+          grid-row: 4;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .mktoFormRow:has(#State) {
+        display: block;
+        grid-column: 1;
+        grid-row: 3;
+
+        @include media-query(sm) {
+          grid-row: 5;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .mktoFormRow.#{$id}__onlyStateCode {
+        grid-column: 1 / span 2 !important;
+      }
+
+      .mktoFormRow.#{$id}__onlyPostalCode {
+        grid-column: 1 / span 2 !important;
+      }
+
+      .mktoFormRow:has(#PostalCode) {
+        display: block;
+        grid-column: 2;
+        grid-row: 3;
+
+        @include media-query(sm) {
+          grid-row: 6;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      // .mktoFormRow.#{$id}__stateRow {
+      //     display: block;
+      //     grid-column: 1;
+      //     grid-row: 3;
+      // }
+
+      // .mktoFormRow.#{$id}__postCodeRow {
+      //     display: block;
+      //     grid-column: 2;
+      //     grid-row: 3;
+      // }
+
+      .mktoFormRow.#{$id}__enquiryMessageRow {
+        display: block;
+        grid-column: 1 / span 2;
+        /* Span across both columns */
+        grid-row: 3;
+
+        @include media-query(sm) {
+          grid-row: 5;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .#{$id}__privacyPolicyLabel-1 {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 4;
+
+        @include media-query(sm) {
+          margin: 10px 0 16px 0;
+          grid-row: 6;
+          grid-column: 1 / span 2;
+        }
+
+        .mktoFormCol {
+          margin-bottom: -10px !important;
+        }
+
+        .mktoHtmlText {
+          display: block;
+        }
+      }
+
+      .#{$id}__privacyPolicyLabel-2 {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 5;
+
+        @include media-query(sm) {
+          margin: 10px 0 16px 0;
+          grid-row: 7;
+          grid-column: 1 / span 2;
+        }
+
+        .mktoFormCol {
+          margin-bottom: -10px !important;
+        }
+
+        .mktoHtmlText {
+          display: block;
+        }
+      }
+
+      .#{$id}__privacyPolicyDropdown {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 5;
+
+        .mktoFormCol {
+          margin-bottom: 0 !important;
+        }
+
+        .mktoFieldWrap.mktoRequiredField {
+          padding-bottom: 0 !important;
+        }
+
+        @include media-query(sm) {
+          grid-row: 7;
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .#{$id}__dataProcessingConsent {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 6;
+
+        @include media-query(sm) {
+          margin: 10px 0 16px 0;
+          grid-row: 8;
+        }
+
+        .mktoFormCol {
+          margin-bottom: -10px !important;
+        }
+
+        .mktoHtmlText {
+          display: block;
+        }
+      }
+
+      .#{$id}__optInDataProcessing {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 7;
+
+        @include media-query(sm) {
+          margin: 10px 0 16px 0;
+          grid-row: 9;
+        }
+      }
+
+      &:has(#State),
+      &:has(#PostalCode) {
+        .#{$id}__enquiryMessageRow {
+          //if support form has state field
+          display: block;
+          grid-column: 1 / span 2;
+          /* Span across both columns */
+          grid-row: 4;
+
+          @include media-query(sm) {
+            grid-row: 7;
+            grid-column: 1 / span 2;
+          }
+        }
+
+        .#{$id}__privacyPolicyLabel-1 {
+          display: block;
+          grid-column: 1 / span 2;
+          grid-row: 5;
+
+          @include media-query(sm) {
+            grid-row: 8;
+            grid-column: 1 / span 2;
+          }
+
+          .mktoFormCol {
+            margin-bottom: -10px !important;
+          }
+
+          .mktoHtmlText {
+            display: block;
+          }
+        }
+
+        .#{$id}__privacyPolicyLabel-2 {
+          display: block;
+          grid-column: 1 / span 2;
+          grid-row: 6;
+
+          @include media-query(sm) {
+            grid-row: 9;
+            grid-column: 1 / span 2;
+          }
+
+          .mktoFormCol {
+            margin-bottom: -10px !important;
+          }
+
+          .mktoHtmlText {
+            display: block;
+          }
+        }
+
+        .#{$id}__privacyPolicyDropdown {
+          display: block;
+          grid-column: 1 / span 2;
+          grid-row: 6;
+
+          @include media-query(sm) {
+            grid-row: 9;
+            grid-column: 1 / span 2;
+          }
+        }
+
+        .#{$id}__dataProcessingConsent {
+          display: block;
+          grid-column: 1 / span 2;
+          grid-row: 7;
+
+          @include media-query(sm) {
+            margin: 10px 0 16px 0;
+            grid-row: 10;
+          }
+
+          .mktoFormCol {
+            margin-bottom: -10px !important;
+          }
+
+          .mktoHtmlText {
+            display: block;
+          }
+        }
+
+        .#{$id}__optInDataProcessing {
+          display: block;
+          grid-column: 1 / span 2;
+          grid-row: 8;
+
+          @include media-query(sm) {
+            margin: 10px 0 16px 0;
+            grid-row: 11;
+          }
+        }
+      }
+    }
+  }
+
+  // sales channel (thank you page)
+  [data-step='4'][data-form-type='sales'] {
+    h2,
+    h3 {
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-family: 'barlow-medium';
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 45px;
+      color: #363d42;
+    }
+
+    h3 {
+      font-family: 'Helvetica';
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      color: #363d42;
+    }
+  }
+
+  &__removeSecondPartFormError {
+    .#{$id}__activeStep[data-step='3'][data-form-type='sales'] {
+      .emailEmptyErrorMsg:after,
+      .emailInvalidErrorMsg:after,
+      .selectErrorMsg:after,
+      .telErrorMsg:after,
+      .textareaErrorMsg:after,
+      .textErrorMsg:after {
+        display: none;
+      }
+
+      .emailEmptyErrorMsg input,
+      .emailInvalidErrorMsg input,
+      .selectErrorMsg select,
+      .telErrorMsg input,
+      .textareaErrorMsg textarea,
+      .textErrorMsg input {
+        border-left: 1px solid #c7ccd6 !important;
+      }
+
+      .emailEmptyErrorMsg,
+      .emailInvalidErrorMsg,
+      .selectErrorMsg,
+      .telErrorMsg,
+      .textareaErrorMsg,
+      .textErrorMsg {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
+}
