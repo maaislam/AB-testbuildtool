@@ -1,11 +1,12 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
-import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
-import { translationData } from './data/data';
-import cardWrapper from './components/cardWrapper';
 
-const { ID, VARIATION } = shared;
+import shared from './shared/shared';
+
+import cardWrapper from './components/cardWrapper';
+import trackGA4Event from './services/gaTracking';
+import translationData from './data/data';
+
+const { ID } = shared;
 
 const init = () => {
   //A) Hide the top hero <p> that wraps the first image via CSS class
@@ -14,12 +15,35 @@ const init = () => {
     heroP.classList.add(`${ID}__hidden`);
   }
 
-  const listItems = document.querySelectorAll('.entry-content > ol > li');
+  const listItems = document.querySelectorAll('.entry-content > ol:first-of-type > li');
 
-  [...listItems].slice(0, 3).forEach((li) => {
-    console.log(li.textContent); //or your logic here
-    li.classList.add(`${ID}__hidde`, `${ID}__item`);
+  listItems.forEach((li, i) => {
+    li.classList.add(`${ID}__hidden`); //Hide all items initially
+    if (i < 3) {
+      li.classList.add(`${ID}__item`);
+    }
   });
+
+  const renderShowMore = () => {
+    const html = `
+      <div class="${ID}__showMore">See ${listItems.length - 3} more</div>`;
+
+    const attachPoint = document.querySelector('.entry-content > ol');
+    if (document.querySelector(`.${ID}__showMore`)) {
+      document.querySelector(`.${ID}__showMore`).remove(); //Remove existing show more if present
+    }
+    attachPoint.insertAdjacentHTML('afterend', html);
+    document.querySelector(`.${ID}__showMore`).addEventListener('click', () => {
+      listItems.forEach((li, i) => {
+        if (i < 3) return; //Skip the first three items
+        li.classList.remove(`${ID}__hidden`);
+        trackGA4Event('See More Clicks', 'See More Clicks');
+      });
+      document.querySelector(`.${ID}__showMore`).remove();
+    });
+  };
+
+  renderShowMore();
 
   const topThreeListItems = document.querySelectorAll(`.${ID}__item`);
   const collectData = [...topThreeListItems].map((li) => {
@@ -58,19 +82,6 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
-
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
 
   init();
 };

@@ -66,7 +66,6 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;

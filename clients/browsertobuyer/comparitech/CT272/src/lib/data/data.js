@@ -1,23 +1,25 @@
-export const translationData = {
+const translationData = {
   en: {
     NordVPN: {
-      headline: 'Best overall for changing Netflix region',
+      headline: 'The best overall VPN 2025',
       features: [
         'Best-in-class streaming features',
         'Advanced privacy tools',
         'Speedy, secure servers'
       ],
-      cta: '',
+      cta: 'Get Special Deal',
       image:
-        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg?v=1610974086'
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg'
     },
     Surfshark: {
-      headline: '',
+      headline: 'Great choice for ease of  use',
       features: ['Very user-friendly', 'Anonymity boosting features', 'A strong all-rounder'],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/134407.svg'
     },
     IPVanish: {
-      headline: '',
+      headline: 'The best for multiple devices',
       features: [
         'Best VPN for multiple devices',
         'Fast and functional',
@@ -25,34 +27,38 @@ export const translationData = {
       ],
       cta: ''
     },
-    TotalVPN: {
-      headline: 'Cheapest option for changing Netflix region',
+    'Total VPN': {
+      headline: 'The best for users on a budget',
       features: ['High speed', 'Exceptional streaming capabilities', '24/7 customer support'],
       cta: '',
-      image: 'https://cdn.comparitech.com/wp-content/uploads/2016/05/total-vpn-logo-1.jpg.webp'
+      image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
     }
   },
   es: {
     NordVPN: {
-      headline: '',
+      headline: 'La mejor VPN global de 2025',
       features: [
         'Funciones de streaming líderes',
         'Herramientas de privacidad avanzadas',
         'Servidores rápidos y seguros'
       ],
-      cta: ''
+      cta: 'Obtén una oferta especial',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg'
     },
     Surfshark: {
-      headline: '',
+      headline: 'Gran elección por su facilidad de uso',
       features: [
         'Muy fácil de usar',
         'Funciones que mejoran el anonimato',
         'Un fuerte todoterreno'
       ],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/134407.svg'
     },
     IPVanish: {
-      headline: '',
+      headline: 'La mejor para múltiples dispositivos',
       features: [
         'La mejor VPN para múltiples dispositivos',
         'Rápido y funcional',
@@ -61,36 +67,41 @@ export const translationData = {
       cta: ''
     },
     TotalVPN: {
-      headline: '',
+      headline: 'La mejor VPN para usuarios con presupuesto limitado',
       features: [
-        'alta velocidad',
+        'Alta velocidad',
         'Capacidades de transmisión excepcionales',
         'Atención al cliente 24/7'
       ],
-      cta: ''
+      cta: '',
+      image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
     }
   },
   de: {
     NordVPN: {
-      headline: '',
+      headline: 'Die beste Allround-VPN 2025',
       features: [
         'Erstklassige Streaming-Funktionen',
         'Erweiterte Datenschutz-Tools',
         'Schnelle, sichere Server'
       ],
-      cta: ''
+      cta: 'Spezialangebot sichern',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg'
     },
     Surfshark: {
-      headline: '',
+      headline: 'Großartige Wahl für Benutzerfreundlichkeit',
       features: [
         'Sehr benutzerfreundlich',
         'Funktionen zur Steigerung der Anonymität',
         'Ein starker Allrounder'
       ],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/134407.svg'
     },
     IPVanish: {
-      headline: '',
+      headline: 'Die beste für mehrere Geräte',
       features: [
         'Bestes VPN für mehrere Geräte',
         'Schnell und funktional',
@@ -99,147 +110,191 @@ export const translationData = {
       cta: ''
     },
     TotalVPN: {
-      headline: '',
+      headline: 'Die beste für Nutzer mit kleinem Budget',
       features: [
         'Hohe Geschwindigkeit',
         'Außergewöhnliche Streaming-Funktionen',
         '24/7 Kundensupport'
       ],
-      cta: ''
+      cta: '',
+      image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
     }
   },
   ar: {
     NordVPN: {
-      headline: '',
+      headline: 'أفضل خدمة VPN شاملة لعام 2025',
       features: ['ميزات بث رائدة', 'أدوات خصوصية متقدمة', 'خوادم سريعة وآمنة'],
-      cta: ''
+      cta: 'احصل على العرض الخاص',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg'
     },
     Surfshark: {
-      headline: '',
+      headline: 'خيار ممتاز لسهولة الاستخدام',
       features: [
         'سهل الاستخدام للغاية',
         'ميزات تعزيز عدم الكشف عن الهوية',
         'لاعب قوي متعدد المهارات'
       ],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/134407.svg'
     },
     IPVanish: {
-      headline: '',
+      headline: 'الأفضل لأجهزة متعددة',
       features: ['أفضل VPN لأجهزة متعددة', 'سريع وعملي', 'أمان قوي مهما كان الأمر'],
       cta: ''
     },
     TotalVPN: {
-      headline: '',
+      headline: 'الأفضل للمستخدمين ذوي الميزانية المحدودة',
       features: [
         'سرعة عالية',
         'قدرات بث استثنائية',
         'دعم العملاء على مدار الساعة طوال أيام الأسبوع'
       ],
-      cta: ''
+      cta: '',
+      image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
     }
   },
   it: {
     NordVPN: {
-      headline: '',
+      headline: 'La migliore VPN complessiva del 2025',
       features: [
         'Streaming al top della categoria',
         'Strumenti avanzati per la privacy',
         'Server veloci e sicuri'
       ],
-      cta: ''
+      cta: 'Ottieni offerta speciale',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg'
     },
     Surfshark: {
-      headline: '',
+      headline: 'Ottima scelta per la facilità d’uso',
       features: [
         'Molto facile da usare',
         "Funzionalità che aumentano l'anonimato",
         'Un forte tuttofare'
       ],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/134407.svg'
     },
     IPVanish: {
-      headline: '',
-      features: ['', '', ''],
+      headline: 'La migliore per più dispositivi',
+      features: [
+        'La migliore VPN per più dispositivi',
+        'Veloce e funzionale',
+        'Sicurezza robusta in ogni caso'
+      ],
       cta: ''
     },
     TotalVPN: {
-      headline: '',
-      features: ['', '', ''],
-      cta: ''
+      headline: 'La migliore per utenti con budget limitato',
+      features: ['Alta velocità', 'Capacità di streaming eccezionali', 'Assistenza clienti 24/7'],
+      cta: '',
+      image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
     }
   },
   fr: {
     NordVPN: {
-      headline: '',
+      headline: 'La meilleure VPN globale 2025',
       features: [
         'Excellentes fonctions de streaming',
         'Outils de confidentialité avancés',
         'Serveurs rapides et sécurisés'
       ],
-      cta: ''
+      cta: 'Profitez de l’offre spéciale',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg'
     },
     Surfshark: {
-      headline: '',
-      features: ['', '', ''],
-      cta: ''
+      headline: 'Excellent choix pour la facilité d’utilisation',
+      features: [
+        'Très facile à utiliser',
+        "Fonctions renforçant l'anonymat",
+        'Un excellent polyvalent'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/134407.svg'
     },
     IPVanish: {
-      headline: '',
-      features: ['', '', ''],
+      headline: 'Le meilleur VPN pour plusieurs appareils',
+      features: [
+        'Le meilleur VPN pour plusieurs appareils',
+        'Rapide et fonctionnel',
+        'Sécurité solide en toute circonstance'
+      ],
       cta: ''
     },
     TotalVPN: {
-      headline: '',
-      features: ['', '', ''],
-      cta: ''
+      headline: 'La meilleure pour les utilisateurs à petit budget',
+      features: [
+        'Haute vitesse',
+        'Capacités de streaming exceptionnelles',
+        'Assistance clientèle 24h/24 et 7j/7'
+      ],
+      cta: '',
+      image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
     }
   },
   ja: {
     NordVPN: {
-      headline: '',
+      headline: '2025年のベスト総合VPN',
       features: [
         '最高クラスのストリーミング機能',
         '高度なプライバシーツール',
         '高速かつ安全なサーバー'
       ],
-      cta: ''
+      cta: '特別オファーを入手',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg'
     },
     Surfshark: {
-      headline: '',
-      features: ['', '', ''],
-      cta: ''
+      headline: '使いやすさに優れた選択肢',
+      features: ['非常に使いやすい', '匿名性を高める機能', 'オールラウンドに強い'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/134407.svg'
     },
     IPVanish: {
-      headline: '',
-      features: ['', '', ''],
+      headline: '複数デバイスに最適',
+      features: ['複数デバイスに最適なVPN', '高速かつ機能的', 'あらゆる状況で強力なセキュリティ'],
       cta: ''
     },
     TotalVPN: {
-      headline: '',
-      features: ['', '', ''],
-      cta: ''
+      headline: '予算重視のユーザーに最適',
+      features: ['高速', '優れたストリーミング機能', '24時間年中無休のカスタマーサポート'],
+      cta: '',
+      image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
     }
   },
   ko: {
     NordVPN: {
-      headline: '',
+      headline: '2025년 최고의 종합 VPN',
       features: ['최고급 스트리밍 기능', '고급 개인정보 보호 도구', '빠르고 안전한 서버'],
-      cta: ''
+      cta: '특별 할인 받기',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg'
     },
     Surfshark: {
-      headline: '',
-      features: ['', '', ''],
-      cta: ''
+      headline: '사용 편의성에 탁월한 선택',
+      features: ['매우 사용자 친화적', '익명성을 강화하는 기능', '강력한 다재다능함'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/134407.svg'
     },
     IPVanish: {
-      headline: '',
-      features: ['', '', ''],
+      headline: '여러 기기에 가장 적합',
+      features: ['여러 기기에 가장 적합한 VPN', '빠르고 기능적', '어떤 상황에서도 강력한 보안'],
       cta: ''
     },
     TotalVPN: {
-      headline: '',
-      features: ['', '', ''],
-      cta: ''
+      headline: '예산이 제한된 사용자에게 최적',
+      features: ['고속', '뛰어난 스트리밍 기능', '24시간 연중무휴 고객 지원'],
+      cta: '',
+      image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
     }
   }
 };
+
+export default translationData;
