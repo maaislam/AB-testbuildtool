@@ -42,20 +42,6 @@ const init = () => {
 export default () => {
   setup();
 
-  document.addEventListener('pointerup', (e) => {
-    const { target } = e;
-
-    if (target.closest(`.${ID}__option`)) {
-      const currentOption = target.closest(`.${ID}__option`);
-      const stepValue = currentOption.querySelector('[type="radio"]').value;
-      const stepValueLowerCase = stepValue.toLowerCase();
-      const eventLabel =
-        stepValueLowerCase === 'products'
-          ? '1st Step Sales/Product Clicks'
-          : `1st Step ${stepValueLowerCase} Clicks`;
-    }
-  });
-
   document.addEventListener('click', (e) => {
     const { target } = e;
 
