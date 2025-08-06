@@ -58,8 +58,6 @@ const init = () => {
     };
   });
 
-  console.log(collectData);
-
   const language = document.documentElement.lang || 'en'; //Default to English if no lang attribute is found
 
   const filteredProviders = collectData
@@ -70,8 +68,6 @@ const init = () => {
       badge: p.badge,
       ...translationData[language][p.text]
     }));
-
-  console.log(filteredProviders);
 
   if (filteredProviders.length > 0 && !document.querySelector(`.${ID}__cardWrapper`)) {
     document

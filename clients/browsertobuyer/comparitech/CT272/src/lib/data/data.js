@@ -27,7 +27,7 @@ const translationData = {
       ],
       cta: '',
       image:
-        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/507.svg'
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/810.svg?v=1610974086'
     },
     'Total VPN': {
       headline: 'The best for users on a budget',
@@ -90,7 +90,9 @@ const translationData = {
         'Rápido y funcional',
         'Fuerte seguridad, pase lo que pase'
       ],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/810.svg?v=1610974086'
     },
     TotalVPN: {
       headline: 'La mejor VPN para usuarios con presupuesto limitado',
@@ -151,7 +153,9 @@ const translationData = {
         'Schnell und funktional',
         'Starke Sicherheit, egal was passiert'
       ],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/810.svg?v=1610974086'
     },
     TotalVPN: {
       headline: 'Die beste für Nutzer mit kleinem Budget',
@@ -204,7 +208,9 @@ const translationData = {
     IPVanish: {
       headline: 'الأفضل لأجهزة متعددة',
       features: ['أفضل VPN لأجهزة متعددة', 'سريع وعملي', 'أمان قوي مهما كان الأمر'],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/810.svg?v=1610974086'
     },
     TotalVPN: {
       headline: 'الأفضل للمستخدمين ذوي الميزانية المحدودة',
@@ -261,7 +267,9 @@ const translationData = {
         'Veloce e funzionale',
         'Sicurezza robusta in ogni caso'
       ],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/810.svg?v=1610974086'
     },
     TotalVPN: {
       headline: 'La migliore per utenti con budget limitato',
@@ -318,7 +326,9 @@ const translationData = {
         'Rapide et fonctionnel',
         'Sécurité solide en toute circonstance'
       ],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/810.svg?v=1610974086'
     },
     TotalVPN: {
       headline: 'La meilleure pour les utilisateurs à petit budget',
@@ -371,7 +381,9 @@ const translationData = {
     IPVanish: {
       headline: '複数デバイスに最適',
       features: ['複数デバイスに最適なVPN', '高速かつ機能的', 'あらゆる状況で強力なセキュリティ'],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/810.svg?v=1610974086'
     },
     TotalVPN: {
       headline: '予算重視のユーザーに最適',
@@ -412,7 +424,9 @@ const translationData = {
     IPVanish: {
       headline: '여러 기기에 가장 적합',
       features: ['여러 기기에 가장 적합한 VPN', '빠르고 기능적', '어떤 상황에서도 강력한 보안'],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/810.svg?v=1610974086'
     },
     TotalVPN: {
       headline: '예산이 제한된 사용자에게 최적',

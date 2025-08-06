@@ -75,8 +75,6 @@ const oneDecimal = (s) => {
 };
 
 const card = (provider, language, index) => {
-  console.log(provider, 'provider');
-
   const providerExtraData = getLdJsonByBrand(provider.name);
 
   const overallRating = providerExtraData?.aggregateRating?.ratingValue || '9.8';

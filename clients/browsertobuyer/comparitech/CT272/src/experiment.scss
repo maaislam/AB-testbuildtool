@@ -262,6 +262,14 @@
       border-radius: 3px;
       background: #006c9b;
       padding: 4px 8px;
+
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+      }
     }
 
     &:first-child {
@@ -286,7 +294,7 @@
       width: 100%;
       color: #fff;
       font-family: 'Arial';
-      font-size: 14px;
+      font-size: 17px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
