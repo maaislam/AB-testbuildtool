@@ -9,7 +9,7 @@ const translationData = {
       ],
       cta: 'Get Special Deal',
       image:
-        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg?v=1610974086'
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/2273.svg'
     },
     Surfshark: {
       headline: 'Great choice for ease of  use',
@@ -25,7 +25,9 @@ const translationData = {
         'Fast and functional',
         'Strong security, no matter what'
       ],
-      cta: ''
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/507.svg'
     },
     'Total VPN': {
       headline: 'The best for users on a budget',
@@ -99,6 +101,24 @@ const translationData = {
       ],
       cta: '',
       image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
+    },
+    ExpressVPN: {
+      headline: 'El mejor para usuarios que desean una dirección IP canadiense',
+      features: ['Mejor VPN para China', 'Elección de servidor', 'Seguro y confiable'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/507.svg?v=1610974086'
+    },
+    ProtonVPN: {
+      headline: 'La mejor para usuarios que buscan una seguridad excelente',
+      features: [
+        'Buenas velocidades',
+        'Seguridad robusta',
+        'Funciona con Netflix y otros servicios de streaming populares'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
     }
   },
   de: {
@@ -142,6 +162,24 @@ const translationData = {
       ],
       cta: '',
       image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
+    },
+    ExpressVPN: {
+      headline: 'Die beste für Anwender, die eine kanadische IP-Adresse wünschen',
+      features: ['Bestes VPN für China', 'Serverauswahl', 'Sicher und vertrauenswürdig'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/507.svg?v=1610974086'
+    },
+    ProtonVPN: {
+      headline: 'Die beste für Nutzer, die hervorragende Sicherheit suchen',
+      features: [
+        'Gute Geschwindigkeiten',
+        'Starke Sicherheit',
+        'Funktioniert mit Netflix und anderen beliebten Streaming-Diensten'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
     }
   },
   ar: {
@@ -177,6 +215,20 @@ const translationData = {
       ],
       cta: '',
       image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
+    },
+    ExpressVPN: {
+      headline: 'الأفضل للمستخدمين الذين يبحثون عن عنوان IP كندي',
+      features: ['أفضل VPN للصين', 'اختيار الخادم', 'آمن وجدير بالثقة'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/507.svg?v=1610974086'
+    },
+    ProtonVPN: {
+      headline: 'الأفضل للمستخدمين الباحثين عن أمان ممتاز',
+      features: ['سرعات جيدة', 'أمان قوي', 'يعمل مع Netflix وخدمات البث الشائعة الأخرى'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
     }
   },
   it: {
@@ -216,6 +268,24 @@ const translationData = {
       features: ['Alta velocità', 'Capacità di streaming eccezionali', 'Assistenza clienti 24/7'],
       cta: '',
       image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
+    },
+    ExpressVPN: {
+      headline: 'La migliore per utenti che cercano un indirizzo IP canadese',
+      features: ['Miglior VPN per la Cina', 'Scelta del server', 'Sicuro e affidabile'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/507.svg?v=1610974086'
+    },
+    ProtonVPN: {
+      headline: 'La migliore per utenti che cercano un’eccellente sicurezza',
+      features: [
+        'Buone velocità',
+        'Sicurezza solida',
+        'Funziona con Netflix e altri servizi di streaming popolari'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
     }
   },
   fr: {
@@ -259,6 +329,24 @@ const translationData = {
       ],
       cta: '',
       image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
+    },
+    ExpressVPN: {
+      headline: 'Le meilleur pour les utilisateurs recherchant une adresse IP canadienne',
+      features: ['Meilleur VPN pour la Chine', 'Choix du serveur', 'Sécurisé et fiable'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/507.svg?v=1610974086'
+    },
+    ProtonVPN: {
+      headline: 'Le meilleur pour les utilisateurs recherchant une sécurité excellente',
+      features: [
+        'Bonnes vitesses',
+        'Sécurité solide',
+        'Fonctionne avec Netflix et d’autres services de streaming populaires'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
     }
   },
   ja: {
@@ -290,6 +378,20 @@ const translationData = {
       features: ['高速', '優れたストリーミング機能', '24時間年中無休のカスタマーサポート'],
       cta: '',
       image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
+    },
+    ExpressVPN: {
+      headline: 'カナダのIPアドレスを求めるユーザーに最適',
+      features: ['中国向けに最適なVPN', 'サーバー選択', '安全で信頼性が高い'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/507.svg?v=1610974086'
+    },
+    ProtonVPN: {
+      headline: '優れたセキュリティを求めるユーザーに最適',
+      features: ['高速', '強力なセキュリティ', 'Netflixや他の人気ストリーミングサービスで動作'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
     }
   },
   ko: {
@@ -317,6 +419,20 @@ const translationData = {
       features: ['고속', '뛰어난 스트리밍 기능', '24시간 연중무휴 고객 지원'],
       cta: '',
       image: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/frame_68926263dfba0.png'
+    },
+    ExpressVPN: {
+      headline: '캐나다 IP 주소를 원하는 사용자에게 최적',
+      features: ['중국에 가장 적합한 VPN', '서버 선택', '안전하고 신뢰할 수 있음'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/507.svg?v=1610974086'
+    },
+    ProtonVPN: {
+      headline: '우수한 보안을 원하는 사용자에게 최적',
+      features: ['우수한 속도', '강력한 보안', 'Netflix 및 기타 인기 스트리밍 서비스에서 작동'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
     }
   }
 };
