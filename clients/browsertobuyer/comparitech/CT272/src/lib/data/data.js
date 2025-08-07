@@ -51,9 +51,9 @@ const translationData = {
     ProtonVPN: {
       headline: 'The best for users seeking excellent security',
       features: [
-        'Good speeds',
-        'Strong security',
-        'Works with Netflix and other popular streaming services'
+        'Great choice for privacy and security',
+        'Use on up to 10 devices at once',
+        'Fast connections for streaming and gaming'
       ],
       cta: '',
       image:
@@ -114,9 +114,9 @@ const translationData = {
     ProtonVPN: {
       headline: 'La mejor para usuarios que buscan una seguridad excelente',
       features: [
-        'Buenas velocidades',
-        'Seguridad robusta',
-        'Funciona con Netflix y otros servicios de streaming populares'
+        'Excelente opción para privacidad y seguridad',
+        'Úsalo en hasta 10 dispositivos a la vez',
+        'Conexiones rápidas para streaming y juegos'
       ],
       cta: '',
       image:
@@ -177,9 +177,9 @@ const translationData = {
     ProtonVPN: {
       headline: 'Die beste für Nutzer, die hervorragende Sicherheit suchen',
       features: [
-        'Gute Geschwindigkeiten',
-        'Starke Sicherheit',
-        'Funktioniert mit Netflix und anderen beliebten Streaming-Diensten'
+        'Tolle Wahl für Datenschutz und Sicherheit',
+        'Auf bis zu 10 Geräten gleichzeitig nutzbar',
+        'Schnelle Verbindungen für Streaming und Gaming'
       ],
       cta: '',
       image:
@@ -231,7 +231,11 @@ const translationData = {
     },
     ProtonVPN: {
       headline: 'الأفضل للمستخدمين الباحثين عن أمان ممتاز',
-      features: ['سرعات جيدة', 'أمان قوي', 'يعمل مع Netflix وخدمات البث الشائعة الأخرى'],
+      features: [
+        'خيار رائع للخصوصية والأمان',
+        'استخدمه على 10 أجهزة في وقت واحد',
+        'اتصالات سريعة للبث والألعاب'
+      ],
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
@@ -287,9 +291,9 @@ const translationData = {
     ProtonVPN: {
       headline: 'La migliore per utenti che cercano un’eccellente sicurezza',
       features: [
-        'Buone velocità',
-        'Sicurezza solida',
-        'Funziona con Netflix e altri servizi di streaming popolari'
+        'Ottima scelta per privacy e sicurezza',
+        'Utilizzabile su fino a 10 dispositivi',
+        'Connessioni rapide per streaming e gaming'
       ],
       cta: '',
       image:
@@ -350,9 +354,9 @@ const translationData = {
     ProtonVPN: {
       headline: 'Le meilleur pour les utilisateurs recherchant une sécurité excellente',
       features: [
-        'Bonnes vitesses',
-        'Sécurité solide',
-        'Fonctionne avec Netflix et d’autres services de streaming populaires'
+        'Excellent choix pour la confidentialité et la sécurité',
+        'Utilisable sur jusqu’à 10 appareils',
+        'Connexions rapides pour streaming et jeux'
       ],
       cta: '',
       image:
@@ -400,7 +404,11 @@ const translationData = {
     },
     ProtonVPN: {
       headline: '優れたセキュリティを求めるユーザーに最適',
-      features: ['高速', '強力なセキュリティ', 'Netflixや他の人気ストリーミングサービスで動作'],
+      features: [
+        'プライバシーとセキュリティに最適',
+        '最大10台のデバイスで同時利用可能',
+        'ストリーミングやゲームに高速接続'
+      ],
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
@@ -443,7 +451,11 @@ const translationData = {
     },
     ProtonVPN: {
       headline: '우수한 보안을 원하는 사용자에게 최적',
-      features: ['우수한 속도', '강력한 보안', 'Netflix 및 기타 인기 스트리밍 서비스에서 작동'],
+      features: [
+        '프라이버시와 보안에 탁월한 선택',
+        '최대 10대 기기 동시 사용 가능',
+        '스트리밍과 게임에 빠른 연결 속도'
+      ],
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'

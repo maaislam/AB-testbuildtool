@@ -1,5 +1,5 @@
 /*eslint-disable prefer-template */
-const applyDynamicRowClasses = (id) => {
+const applyDynamicRowClasses = () => {
   const firstNameInput = document.querySelector('form.mktoForm #FirstName');
   const lastNameInput = document.querySelector('form.mktoForm #LastName');
   const emailInput = document.querySelector('form.mktoForm #Email');
@@ -25,26 +25,26 @@ const applyDynamicRowClasses = (id) => {
   const countryRow = countryInput.closest('.mktoFormRow');
 
   //turn to es5 syntax
-  firstNameRow.classList.add(id + '__firstNameRow');
-  lastNameRow.classList.add(id + '__lastNameRow');
-  emailRow.classList.add(id + '__emailRow');
-  companyRow.classList.add(id + '__companyRow');
-  industryRow.classList.add(id + '__industryRow');
-  jobTitleRow.classList.add(id + '__jobTitleRow');
-  phoneRow.classList.add(id + '__phoneRow');
-  enquiryTypeRow.classList.add(id + '__enquiryTypeRow');
-  enquiryMessageRow.classList.add(id + '__enquiryMessageRow');
-  countryRow.classList.add(id + '__countryRow');
+  firstNameRow.classList.add('contact-us__firstNameRow');
+  lastNameRow.classList.add('contact-us__lastNameRow');
+  emailRow.classList.add('contact-us__emailRow');
+  companyRow.classList.add('contact-us__companyRow');
+  industryRow.classList.add('contact-us__industryRow');
+  jobTitleRow.classList.add('contact-us__jobTitleRow');
+  phoneRow.classList.add('contact-us__phoneRow');
+  enquiryTypeRow.classList.add('contact-us__enquiryTypeRow');
+  enquiryMessageRow.classList.add('contact-us__enquiryMessageRow');
+  countryRow.classList.add('contact-us__countryRow');
 
   if (stateInput) {
     const stateRow = stateInput.closest('.mktoFormRow');
     //turn to es5 syntax
-    stateRow.classList.add(id + '__stateRow');
+    stateRow.classList.add('contact-us__stateRow');
   }
   if (postCodeInput) {
     const postCodeRow = postCodeInput.closest('.mktoFormRow');
     //turn to es5 syntax
-    postCodeRow.classList.add(id + '__postCodeRow');
+    postCodeRow.classList.add('contact-us__postCodeRow');
   }
 };
 export default applyDynamicRowClasses;

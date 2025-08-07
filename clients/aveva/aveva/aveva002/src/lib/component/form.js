@@ -1,14 +1,14 @@
 import { nextArrowIcon, phoneIcon, prevArrowIcon, searchIcon } from '../assets/icons';
 
-const form = (id) => {
-    const htmlStr = `<div class="${id}__formContainer" data-current-step="1" id="${id}__formContainer">
+const form = () => {
+  const htmlStr = `<div class="contact-us__formContainer" data-current-step="1" id="contact-us__formContainer">
         <!-- Step 1 -->
-        <div class="${id}__formStep ${id}__activeStep" data-step="1">
-            <h3 class='${id}__headerTitle'>Contact Us</h3>
-            <h2 class='${id}__headerQuestion'>What is the nature of your request?</h2>
+        <div class="contact-us__formStep contact-us__activeStep" data-step="1">
+            <h3 class='contact-us__headerTitle'>Contact Us</h3>
+            <h2 class='contact-us__headerQuestion'>What is the nature of your request?</h2>
 
-            <div class="${id}__optionsContainer">
-                <label class="option ${id}__option" data-option="sales/products">
+            <div class="contact-us__optionsContainer">
+                <label class="option contact-us__option" data-option="sales/products">
                     <input type="radio" name="request" value="Products">
                     <span>
                         <svg width="64" height="58" viewBox="0 0 64 58" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +17,7 @@ const form = (id) => {
                     </span>
                     <span class="label-title">Sales/Product</span>
                 </label>
-                <label class="option ${id}__option" data-option="training">
+                <label class="option contact-us__option" data-option="training">
                     <input type="radio" name="request" value="Training" checked>
                     <span>
                         <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@ const form = (id) => {
                     </span>
                     <span class="label-title">Training</span>
                 </label>
-                <label class="option ${id}__option" data-option="support">
+                <label class="option contact-us__option" data-option="support">
                     <input type="radio" name="request" value="Services and Support">
                     <span>
                         <svg width="61" height="64" viewBox="0 0 61 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,30 +39,30 @@ const form = (id) => {
         </div>
 
         <!-- Step 2 - support channel  -->
-        <div class="${id}__formStep" data-step="2" data-form-type="support">
+        <div class="contact-us__formStep" data-step="2" data-form-type="support">
             <h3>Get Support</h3>
-            <h2 class='${id}__headerTitle'>Contact AVEVA customer support</h2>
+            <h2 class='contact-us__headerTitle'>Contact AVEVA customer support</h2>
             <div class="support-mkto-form"></div>
         </div>
 
         <!-- Step 4 - support channel -->
-        <div class="${id}__formStep ${id}__supportThankYouPage" data-step="4" data-form-type="support">
+        <div class="contact-us__formStep contact-us__supportThankYouPage" data-step="4" data-form-type="support">
             <h2>Thank you</h2>
             <p class='thankYouCardDescription'>A member of our team will be in touch shortly. For faster assistance, you have two options:</p>
 
-            <div class="${id}__options">
-                <div class="${id}__supportOption">
+            <div class="contact-us__options">
+                <div class="contact-us__supportOption">
                     <span>${phoneIcon}</span>
-                    <div class="${id}__supportCenter">
+                    <div class="contact-us__supportCenter">
                         <p class="title">Call our support center.</p>
-                        <p class="description ${id}__supportUrl">Find the right phone number for your location&nbsp<span>here</span> </p>
+                        <p class="description contact-us__supportUrl">Find the right phone number for your location&nbsp<span>here</span> </p>
                     </div>
                 </div>
-                <div class="${id}__selfServeOption">
+                <div class="contact-us__selfServeOption">
                     ${searchIcon}
-                    <div class="${id}__docs">
+                    <div class="contact-us__docs">
                         <p class="title">Browse self-serve docs.</p>
-                        <p class="description ${id}__selfServeUrl">Find solutions, guides, and tips in our comprehensive 
+                        <p class="description contact-us__selfServeUrl">Find solutions, guides, and tips in our comprehensive 
                             <span>Support&nbspDocumentation</span>
                         </p>
                     </div>
@@ -71,21 +71,21 @@ const form = (id) => {
         </div>
 
         <!-- Step 2 - sales -->
-        <div class="${id}__formStep" data-step="2" data-form-type="sales">
+        <div class="contact-us__formStep" data-step="2" data-form-type="sales">
             <h3>Contact Us</h3>
-            <h2 class='${id}__headerQuestion'>What is best way to contact you?</h2>
+            <h2 class='contact-us__headerQuestion'>What is best way to contact you?</h2>
             <div class="sales-mkto-form"></div>
         </div>
 
         <!-- Step 4 - sales -->
-        <div class="${id}__formStep" data-step="4" data-form-type="sales">
+        <div class="contact-us__formStep" data-step="4" data-form-type="sales">
             <h3>Contact Us</h3>
             <h2>Thank you!</h2>
             <p>A member of our team will be in touch</p>
         </div>
 
         <!-- Step 4 - support channel  -->
-        <div class="${id}__formStep" data-step="4" data-form-type="support">
+        <div class="contact-us__formStep" data-step="4" data-form-type="support">
             <h3>Contact Us</h3>
             <h2>Thank you!</h2>
             <p>A member of our team will be in touch</p>
@@ -93,16 +93,16 @@ const form = (id) => {
 
         <!-- Footer with Next Button -->
         <div class="form-footer">
-            <button class="prev-btn ${id}__prev-btn"> 
+            <button class="prev-btn contact-us__prev-btn"> 
                 ${prevArrowIcon} Previous
             </button>
-            <button class="next-btn ${id}__next-btn">
+            <button class="next-btn contact-us__next-btn">
                 Next 
                 ${nextArrowIcon}
             </button>
         </div>
     </div>`;
 
-    return htmlStr;
+  return htmlStr;
 };
 export default form;

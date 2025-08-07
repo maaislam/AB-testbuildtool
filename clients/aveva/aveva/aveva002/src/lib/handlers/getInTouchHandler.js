@@ -1,4 +1,4 @@
-const getInTouchHandler = (id, card) => {
+const getInTouchHandler = () => {
   const controlEmailUsCTA = document.querySelector('a[data-cta="Email us"]');
 
   controlEmailUsCTA.click();

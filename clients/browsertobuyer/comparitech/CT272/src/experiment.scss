@@ -28,6 +28,7 @@
   }
 
   &__title {
+    display: none;
     font-family: 'Arial';
     font-size: 21px;
     font-style: normal;
@@ -294,7 +295,7 @@
       width: 100%;
       color: #fff;
       font-family: 'Arial';
-      font-size: 17px;
+      font-size: 15px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;

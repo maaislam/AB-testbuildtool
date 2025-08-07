@@ -16,7 +16,7 @@ const init = () => {
     heroP.classList.add(`${ID}__hidden`);
   }
 
-  const listItems = document.querySelectorAll('.entry-content > ol:first-of-type > li');
+  const listItems = document.querySelectorAll('.entry-content > ol:has(.badge) > li');
 
   listItems.forEach((li, i) => {
     li.classList.add(`${ID}__hidden`); //Hide all items initially
@@ -29,7 +29,7 @@ const init = () => {
     const html = `
       <div class="${ID}__showMore">See ${listItems.length - 3} more</div>`;
 
-    const attachPoint = document.querySelector('.entry-content > ol');
+    const attachPoint = document.querySelector('.entry-content > ol:has(.badge)');
     if (document.querySelector(`.${ID}__showMore`)) {
       document.querySelector(`.${ID}__showMore`).remove(); //Remove existing show more if present
     }
@@ -54,10 +54,12 @@ const init = () => {
     const badge = li.querySelector('.badge');
     return {
       link,
-      text,
+      text: text.includes(':') ? text.split(':')[0].trim() : text, //Remove any trailing colon and text
       badge: !!badge
     };
   });
+
+  console.log(collectData, 'collectData');
 
   const language = document.documentElement.lang || 'en'; //Default to English if no lang attribute is found
 
@@ -70,9 +72,10 @@ const init = () => {
       ...translationData[language][p.text]
     }));
 
+  console.log(filteredProviders, 'filteredProviders');
   if (filteredProviders.length > 0 && !document.querySelector(`.${ID}__cardWrapper`)) {
     document
-      .querySelector('.entry-content > ol')
+      .querySelector('.entry-content > ol:has(.badge)')
       .insertAdjacentHTML('beforebegin', cardWrapper(ID, filteredProviders, language));
   }
 

@@ -4,30 +4,30 @@ import isFormValidated from '../helpers/isFormValidated';
 import removeAllActiveStepClasses from '../helpers/removeAllActiveStepClasses';
 import updateDigitalData from '../helpers/updateDigitalData';
 
-const isFormFirstPartValidated = (id) => {
-  const firstNameInput = document.querySelector(`.${id}__firstNameRow`);
-  const lastNameInput = document.querySelector(`.${id}__lastNameRow`);
-  const emailInput = document.querySelector(`.${id}__emailRow`);
-  const companyInput = document.querySelector(`.${id}__companyRow`);
+const isFormFirstPartValidated = () => {
+  const firstNameInput = document.querySelector('.contact-us__firstNameRow');
+  const lastNameInput = document.querySelector('.contact-us__lastNameRow');
+  const emailInput = document.querySelector('.contact-us__emailRow');
+  const companyInput = document.querySelector('.contact-us__companyRow');
 
   return ![firstNameInput, lastNameInput, emailInput, companyInput].some(
     (row) => row && row.querySelector('.mktoFormRow .mktoInvalid')
   );
 };
 
-const isAnyRadioOptionSelected = (id) => {
-  return document.querySelector(`.${id}__option.${id}__activeOption`) !== null;
+const isAnyRadioOptionSelected = () => {
+  return document.querySelector('.contact-us__option.contact-us__activeOption') !== null;
 };
 
-const nextStepHandler = (id, nextBtnElem) => {
-  const { step1, currentStep } = window[`${id}__data`];
-  const formContainerElem = document.querySelector(`.${id}__formContainer`);
+const nextStepHandler = (nextBtnElem) => {
+  const { step1, currentStep } = window['contact-us__data'];
+  const formContainerElem = document.querySelector('.contact-us__formContainer');
   const mktoFormContainer = document.querySelector('.marketo-form-container.section');
   const mktoFormElem = document.querySelector('.marketo-form');
   const mktoId = Number(mktoFormElem.getAttribute('data-form-id'));
 
   //if no radio option selected then return
-  if (!isAnyRadioOptionSelected(id)) return;
+  if (!isAnyRadioOptionSelected()) return;
 
   if (currentStep === 1) {
     //sales channel (show form - first part)
@@ -45,9 +45,9 @@ const nextStepHandler = (id, nextBtnElem) => {
     enquiryTypeElem.value = step1;
 
     //remove all active classes
-    removeAllActiveStepClasses(id);
+    removeAllActiveStepClasses();
 
-    step2FormElem.classList.add(`${id}__activeStep`);
+    step2FormElem.classList.add('contact-us__activeStep');
 
     //Update DataLayer Object per client guidance
     //window.s.tl(true, 'o', dataForm.formStatus);
@@ -57,9 +57,9 @@ const nextStepHandler = (id, nextBtnElem) => {
     //sales channel (show form - last part)
     //update data-step attribute from 2-3 so that we can show the another half part of the form
     const step2FormElem = document.querySelector('[data-step="2"][data-form-type="sales"]');
-    const headerQuestion = step2FormElem.querySelector(`.${id}__headerQuestion`);
+    const headerQuestion = step2FormElem.querySelector('.contact-us__headerQuestion');
     const workNumberElem = document.querySelector('.sales-mkto-form #LblPhone');
-    const formContainerElement = document.querySelector(`.${id}__formContainer`);
+    const formContainerElement = document.querySelector('.contact-us__formContainer');
     const jobTitleElem = document.querySelector('#Title');
     const dataForm = {
       formStatus: 'Step 2 Complete',
@@ -72,9 +72,9 @@ const nextStepHandler = (id, nextBtnElem) => {
     window.MktoForms2.getForm(mktoId).validate();
     //mktoFormSubmitBtn.click(); //submit the form for the first part
     //after form submission, remove error-design from the second step
-    formContainerElement.classList.add(`${id}__removeSecondPartFormError`);
+    formContainerElement.classList.add('contact-us__removeSecondPartFormError');
     //form validation here for the first part of the form, if not validated then return
-    if (!isFormFirstPartValidated(id)) return;
+    if (!isFormFirstPartValidated()) return;
 
     //Update DataLayer Object per client guidance
     //window.s.tl(true, 'o', dataForm.formStatus);
@@ -102,17 +102,17 @@ const nextStepHandler = (id, nextBtnElem) => {
       thankYouStepElem = document.querySelector('[data-step="4"][data-form-type="sales"]');
     } else if (step1 === 'Services and Support') {
       thankYouStepElem = document.querySelector('[data-step="4"][data-form-type="support"]');
-      formContainerElem.classList.add(`${id}__thankYouScreen`);
+      formContainerElem.classList.add('contact-us__thankYouScreen');
     }
-    const formContainerElement = document.querySelector(`.${id}__formContainer`);
+    const formContainerElement = document.querySelector('.contact-us__formContainer');
     const dataForm = {
       formStatus: 'Step 3 Complete',
       formId: mktoId
     };
 
-    if (formContainerElement.classList.contains(`${id}__removeSecondPartFormError`))
+    if (formContainerElement.classList.contains('contact-us__removeSecondPartFormError'))
       //eslint-disable-next-line curly
-      formContainerElement.classList.remove(`${id}__removeSecondPartFormError`);
+      formContainerElement.classList.remove('contact-us__removeSecondPartFormError');
 
     //form validation here
     window.MktoForms2.getForm(mktoId).validate();
@@ -121,18 +121,18 @@ const nextStepHandler = (id, nextBtnElem) => {
     if (isFormValidated()) {
       const submitBtn = document.querySelector('form button[type="submit"]');
       //remove all active classes
-      removeAllActiveStepClasses(id);
+      removeAllActiveStepClasses();
       //show thank you page
-      thankYouStepElem.classList.add(`${id}__activeStep`);
+      thankYouStepElem.classList.add('contact-us__activeStep');
 
       //Update DataLayer Object per client guidance
       //window.s.tl(true, 'o', dataForm.formStatus);
       updateDigitalData('form', dataForm);
 
       //update the current step in the global object
-      window[`${id}__data`].currentStep = currentStep + 1;
+      window['contact-us__data'].currentStep = currentStep + 1;
       //update the current step in the form container for handling CSS designs
-      formContainerElem.setAttribute('data-current-step', window[`${id}__data`].currentStep);
+      formContainerElem.setAttribute('data-current-step', window['contact-us__data'].currentStep);
 
       window.scrollTo({
         top: formContainerElem.offsetTop - 200,
@@ -152,8 +152,8 @@ const nextStepHandler = (id, nextBtnElem) => {
   }
 
   //update the current step in the global object
-  window[`${id}__data`].currentStep = currentStep + 1;
+  window['contact-us__data'].currentStep = currentStep + 1;
   //update the current step in the form container for handling CSS designs
-  formContainerElem.setAttribute('data-current-step', window[`${id}__data`].currentStep);
+  formContainerElem.setAttribute('data-current-step', window['contact-us__data'].currentStep);
 };
 export default nextStepHandler;

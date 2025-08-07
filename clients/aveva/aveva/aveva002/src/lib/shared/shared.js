@@ -1,6 +1,6 @@
 module.exports = {
-    ID: "aveva002",
-    VARIATION: "1",
-    CLIENT: "aveva",
-    SITE: "aveva"
-  };
+  ID: 'contact-us',
+  VARIATION: '1',
+  CLIENT: 'aveva',
+  SITE: 'aveva'
+};

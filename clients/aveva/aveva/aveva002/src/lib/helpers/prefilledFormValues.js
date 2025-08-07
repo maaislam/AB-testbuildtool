@@ -1,11 +1,11 @@
-const prefilledFormValues = (id, formType) => {
-    if (formType === 'support') {
-        const supportMktoFormElem = document.querySelector('.support-mkto-form');
-        const industryInputElem = supportMktoFormElem.querySelector('#Industry__c');
-        const jobTitleInputElem = supportMktoFormElem.querySelector('#Title');
+const prefilledFormValues = (formType) => {
+  if (formType === 'support') {
+    const supportMktoFormElem = document.querySelector('.support-mkto-form');
+    const industryInputElem = supportMktoFormElem.querySelector('#Industry__c');
+    const jobTitleInputElem = supportMktoFormElem.querySelector('#Title');
 
-        industryInputElem.value = 'Academia';
-        jobTitleInputElem.value = 'Support submission';
-    }
+    industryInputElem.value = 'Academia';
+    jobTitleInputElem.value = 'Support submission';
+  }
 };
 export default prefilledFormValues;

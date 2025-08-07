@@ -7,12 +7,11 @@ import prevStepHandler from './handlers/prevStepHandler';
 import applyDynamicRowClasses from './helpers/applyDynamicRowClasses';
 import updateDigitalData from './helpers/updateDigitalData';
 import { observeDOM } from './helpers/utils';
-import setup from './services/setup';
 import shared from './shared/shared';
 
-const { ID, VARIATION } = shared;
+const { VARIATION } = shared;
 
-window[`${ID}__data`] = {
+window['contact-us__data'] = {
   currentStep: 1
 };
 
@@ -33,51 +32,51 @@ const addHiddenField = () => {
 const init = () => {
   const attachPoint = document.querySelector('section.background-container');
 
-  attachPoint.insertAdjacentHTML('afterbegin', form(ID));
+  attachPoint.insertAdjacentHTML('afterbegin', form());
 
-  applyDynamicRowClasses(ID);
-  addHiddenField();
+  applyDynamicRowClasses();
+  //addHiddenField();
 };
 
 export default () => {
-  setup();
+  //setup();
 
   document.addEventListener('click', (e) => {
     const { target } = e;
 
-    if (target.closest(`.${ID}__option`)) {
-      const options = document.querySelectorAll(`.${ID}__option`);
-      const currentOption = target.closest(`.${ID}__option`);
+    if (target.closest('.contact-us__option')) {
+      const options = document.querySelectorAll('.contact-us__option');
+      const currentOption = target.closest('.contact-us__option');
       const stepValue = currentOption.querySelector('[type="radio"]').value;
 
       //Remove active class from all options
-      options.forEach((opt) => opt.classList.remove(`${ID}__activeOption`));
+      options.forEach((opt) => opt.classList.remove('contact-us__activeOption'));
 
       //Add active class to the clicked option
-      target.closest(`.${ID}__option`).classList.add(`${ID}__activeOption`);
+      target.closest('.contact-us__option').classList.add('contact-us__activeOption');
 
       //Save the selected value to the global object for step 1
-      window[`${ID}__data`].step1 = stepValue;
-    } else if (target.closest(`.${ID}__next-btn`)) {
-      const nextBtn = target.closest(`.${ID}__next-btn`);
-      nextStepHandler(ID, nextBtn);
-    } else if (target.closest(`.${ID}__prev-btn`)) {
-      prevStepHandler(ID);
-    } else if (target.closest(`.${ID}__supportOption`)) {
+      window['contact-us__data'].step1 = stepValue;
+    } else if (target.closest('.contact-us__next-btn')) {
+      const nextBtn = target.closest('.contact-us__next-btn');
+      nextStepHandler(nextBtn);
+    } else if (target.closest('.contact-us__prev-btn')) {
+      prevStepHandler();
+    } else if (target.closest('.contact-us__supportOption')) {
       window.location.href = 'https://www.aveva.com/en/support-and-success/support-contact/';
-    } else if (target.closest(`.${ID}__selfServeOption`)) {
+    } else if (target.closest('.contact-us__selfServeOption')) {
       window.location.href = 'https://docs.aveva.com/';
-    } else if (target.closest(`.${ID}__chat-with-us`)) {
-      chatWithUsHandler(ID, target.closest(`.${ID}__chat-with-us`));
-    } else if (target.closest(`.${ID}__get-in-touch`)) {
-      getInTouchHandler(ID, target.closest(`.${ID}__get-in-touch`));
-    } else if (target.closest(`.${ID}__customer-support`)) {
-      customerSupportHandler(ID, target.closest(`.${ID}__customer-support`));
+    } else if (target.closest('.contact-us__chat-with-us')) {
+      chatWithUsHandler();
+    } else if (target.closest('.contact-us__get-in-touch')) {
+      getInTouchHandler();
+    } else if (target.closest('.contact-us__customer-support')) {
+      customerSupportHandler();
     }
 
-    if (target.closest(`.${ID}__formContainer`)) {
+    if (target.closest('.contact-us__formContainer')) {
       //Update DataLayer Object per client guidance
-      const formContainerElem = target.closest(`.${ID}__formContainer`);
+      const formContainerElem = target.closest('.contact-us__formContainer');
       const mktoFormElem = document.querySelector('.marketo-form');
       const mktoId = Number(mktoFormElem.getAttribute('data-form-id'));
 
@@ -97,6 +96,8 @@ export default () => {
 
   init();
 
+  document.body.style.opacity = '1';
+
   const callbackFn = (mutation) => {
     const ismktoFieldDescriptor =
       mutation?.addedNodes[0]?.classList?.contains('mktoFieldDescriptor');
@@ -112,11 +113,11 @@ export default () => {
       const hasStateCode = document.querySelector('.mktoFormRow #State');
 
       if (hasStateCode && !hasPostalCode) {
-        hasStateCode.closest('.mktoFormRow').classList.add(`${ID}__onlyStateCode`);
+        hasStateCode.closest('.mktoFormRow').classList.add('contact-us__onlyStateCode');
       } else if (hasStateCode && hasPostalCode) {
-        hasStateCode.closest('.mktoFormRow').classList.remove(`${ID}__onlyStateCode`);
+        hasStateCode.closest('.mktoFormRow').classList.remove('contact-us__onlyStateCode');
       } else if (!hasStateCode && hasPostalCode) {
-        hasPostalCode.closest('.mktoFormRow').classList.remove(`${ID}__onlyPostalCode`);
+        hasPostalCode.closest('.mktoFormRow').classList.remove('contact-us__onlyPostalCode');
       }
 
       //if privacy policy is linked in the label
@@ -124,19 +125,19 @@ export default () => {
       if (privacyPolicyLabels.length > 0) {
         privacyPolicyLabels.forEach((privacyPolicyLabel, index) => {
           const privacyPolicyLabelParent = privacyPolicyLabel.closest('.mktoFormRow');
-          privacyPolicyLabelParent.classList.add(`${ID}__privacyPolicyLabel-${index + 1}`);
+          privacyPolicyLabelParent.classList.add(`contact-us__privacyPolicyLabel-${index + 1}`);
         });
       }
 
       if (privacyPolicyDropdown) {
         const optInDataProcessingElem = document.querySelector('#optInDataProcessing');
         const dropdownParent = privacyPolicyDropdown.closest('.mktoFormRow');
-        dropdownParent.classList.add(`${ID}__privacyPolicyDropdown`);
+        dropdownParent.classList.add('contact-us__privacyPolicyDropdown');
 
         if (optInDataProcessingElem) {
           //china
           const optInDataProcessingElemParent = optInDataProcessingElem.closest('.mktoFormRow');
-          optInDataProcessingElemParent.classList.add(`${ID}__optInDataProcessing`);
+          optInDataProcessingElemParent.classList.add('contact-us__optInDataProcessing');
         }
 
         //for some country, the privacy policy is linked can't be found in the label
@@ -150,12 +151,12 @@ export default () => {
 
             if (isLabelMatch) {
               const privacyPolicyLabelParent = mktoHtmlTextElem.closest('.mktoFormRow');
-              privacyPolicyLabelParent.classList.add(`${ID}__privacyPolicyLabel-1`);
+              privacyPolicyLabelParent.classList.add('contact-us__privacyPolicyLabel-1');
             }
 
             if (mktoHtmlTextElemText.includes('We will use the personal information')) {
               const privacyPolicyLabelParent = mktoHtmlTextElem.closest('.mktoFormRow');
-              privacyPolicyLabelParent.classList.add(`${ID}__dataProcessingConsent`);
+              privacyPolicyLabelParent.classList.add('contact-us__dataProcessingConsent');
             }
           });
         }

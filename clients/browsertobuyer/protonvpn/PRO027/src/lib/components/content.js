@@ -6,7 +6,9 @@ const content = (id, data) => {
         <div class="${id}__card">
             <h1 class="font-serif">Proton VPN Plus</h1>
             <div class="${id}__price-wrapper">
-                <div class="price">${data[0].price}<span>/month</span></div>
+                <div class="price"><span class="text-3xl">${
+                  data[0].price
+                }</span><span>/month</span></div>
                 ${
                   data[0].tag
                     ? `

@@ -1,9 +1,10 @@
 import { backButtonIcon, nextButtonIcon } from '../assets/icons';
 import content from './content';
 import mainImage from './mainImage';
+import skeleton from './skeleton';
 import thumbnailImage from './thumbnailImage';
 
-const heroSection = (id, sliderData, collectedData) => {
+const heroSection = (id, sliderData) => {
   const html = `
         <div class="${id}__heroSection">
           <div class="${id}__container">
@@ -22,7 +23,7 @@ const heroSection = (id, sliderData, collectedData) => {
                 </div>
              </div>
              <div class="${id}__content">
-                ${content(id, collectedData)}
+               ${skeleton(id)}
              </div>
           </div>
         </div>
@@ -31,3 +32,5 @@ const heroSection = (id, sliderData, collectedData) => {
 };
 
 export default heroSection;
+
+//${content(id, collectedData)}
