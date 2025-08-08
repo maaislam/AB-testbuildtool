@@ -58,6 +58,17 @@ const translationData = {
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
+    },
+    CyberGhost: {
+      headline: 'Easy and affordable VPN',
+      features: [
+        'Very fast',
+        'High security and a zero-logs privacy policy',
+        '45-day money-back guarantee'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/11779.svg?v=1610974086'
     }
   },
   es: {
@@ -131,6 +142,17 @@ const translationData = {
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
+    },
+    CyberGhost: {
+      headline: 'VPN fácil y asequible',
+      features: [
+        'Muy rápida',
+        'Gran seguridad y una política de privacidad de cero registros',
+        '45 días de garantía de devolución'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/11779.svg?v=1610974086'
     }
   },
   de: {
@@ -204,6 +226,17 @@ const translationData = {
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
+    },
+    CyberGhost: {
+      headline: 'Einfaches und günstiges VPN',
+      features: [
+        'Sehr schnell',
+        'Hohe Sicherheit und eine Zero-Logs-Datenschutzrichtlinie',
+        '45 Tage Geld-zurück-Garantie'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/11779.svg?v=1610974086'
     }
   },
   ar: {
@@ -257,6 +290,17 @@ const translationData = {
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
+    },
+    CyberGhost: {
+      headline: 'شبكة VPN سهلة وبأسعار معقولة',
+      features: [
+        'سريع جدا',
+        'أمان عالي وسياسة خصوصية خالية من السجلات',
+        'ضمان استرداد الأموال لمدة 45 يومًا'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/11779.svg?v=1610974086'
     }
   },
   it: {
@@ -322,6 +366,17 @@ const translationData = {
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
+    },
+    CyberGhost: {
+      headline: 'VPN semplice e conveniente',
+      features: [
+        'Molto veloce',
+        'Elevata sicurezza e politica sulla privacy senza log',
+        'Garanzia di rimborso di 45 giorni'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/11779.svg?v=1610974086'
     }
   },
   fr: {
@@ -399,6 +454,17 @@ const translationData = {
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
+    },
+    CyberGhost: {
+      headline: 'VPN facile et abordable',
+      features: [
+        'Très rapide',
+        'Haute sécurité et politique de confidentialité zéro journal',
+        'Garantie de remboursement de 45 jours'
+      ],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/11779.svg?v=1610974086'
     }
   },
   ja: {
@@ -460,6 +526,13 @@ const translationData = {
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
+    },
+    CyberGhost: {
+      headline: '簡単で手頃な価格のVPN',
+      features: ['非常に速い', '高いセキュリティとゼロログプライバシーポリシー', '45日間返金保証'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/11779.svg?v=1610974086'
     }
   },
   ko: {
@@ -509,6 +582,13 @@ const translationData = {
       cta: '',
       image:
         'https://cdn.comparitech.com/wp-content/uploads/2018/10/Proton_VPN_Logo-300x68.jpg.webp'
+    },
+    CyberGhost: {
+      headline: '쉽고 저렴한 VPN',
+      features: ['매우 빠르다', '높은 보안성과 무로그 개인정보 보호정책', '45일 환불 보장'],
+      cta: '',
+      image:
+        'https://cdn.comparitech.com/wp-content/themes/comparitech-2018/static/img/featured-assets/11779.svg?v=1610974086'
     }
   }
 };
