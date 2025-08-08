@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { mainData } from './data/data';
+import { mainData, skuData } from './data/data';
 import productOverview from './components/productOverview';
 import { captureElementsContainingString, pollerLite } from './helpers/utils';
 import tablistener from './helpers/tablistener';
@@ -56,8 +56,16 @@ const init = () => {
     const targetPoint = document.querySelector('.product.media');
     const mobileTargetPoint = document.querySelector('.product-section.details');
 
+    const productSkuElement = document.querySelector('[data-code="sku"]');
+    const prodSku = productSkuElement ? productSkuElement.textContent.trim() : '';
+    const isExistingSku = skuData[prodSku];
+    console.log(isExistingSku, 'isExistingSku');
+
     if (!document.querySelector(`.${ID}__productOverview.${ID}__desktop`)) {
-      targetPoint.insertAdjacentHTML('beforeend', productOverview(ID, isFindFlooring, 'desktop'));
+      targetPoint.insertAdjacentHTML(
+        'beforeend',
+        productOverview(ID, isFindFlooring, 'desktop', isExistingSku)
+      );
       setTimeout(() => {
         setBannerStyle();
       }, 2000);
@@ -66,7 +74,7 @@ const init = () => {
     if (!document.querySelector(`.${ID}__productOverview.${ID}__mobile`)) {
       mobileTargetPoint.insertAdjacentHTML(
         'beforebegin',
-        productOverview(ID, isFindFlooring, 'mobile')
+        productOverview(ID, isFindFlooring, 'mobile', isExistingSku)
       );
     }
   }
