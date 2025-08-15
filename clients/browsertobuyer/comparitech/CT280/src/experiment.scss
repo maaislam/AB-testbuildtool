@@ -1,0 +1,163 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__card {
+    background: #ffffff;
+    max-width: 100%;
+
+    /* Header */
+    .card-header {
+    }
+
+    .title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .rank {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .title a {
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .badge {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .logo {
+      max-width: 180px;
+      padding: 10px;
+      border: solid 1px #bbb4b4;
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    .logo span {
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .desc {
+      margin: 20px 0 20px;
+      color: #374151;
+    }
+
+    /* Info grid */
+    .grid {
+      .#{$id}__item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .first-item {
+          max-width: 180px;
+          width: 100%;
+          flex-shrink: 0;
+          color: #000;
+
+          @media screen and (max-width: 767px) {
+            max-width: 100%;
+            border-bottom: 1px solid #cfdae5;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+          }
+        }
+
+        .second-item {
+          width: 100%;
+        }
+
+        @media screen and (max-width: 767px) {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .#{$id}__label {
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    /* Pros / Cons lists */
+    .pros,
+    .cons {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 6px;
+    }
+
+    .pros li,
+    .cons li {
+      position: relative;
+      padding-left: 26px;
+    }
+
+    .pros li::before,
+    .cons li::before {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-weight: 900;
+    }
+
+    .pros li::before {
+      content: '✓';
+      color: #059669;
+    }
+
+    .cons li::before {
+      content: '✕';
+      color: #dc2626;
+    }
+
+    /* Feature chips */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px dashed #cbd5e1;
+      background: #fff;
+      color: #006c9b;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    /* Subtle link */
+    .muted-link {
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+}
