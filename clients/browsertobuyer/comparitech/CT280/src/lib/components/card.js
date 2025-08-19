@@ -9,8 +9,11 @@ const card = (id, data) => {
     cons,
     features,
     'SaaS/On-Premises': saasOnPremises,
+    Cloud_based,
     os,
-    freetrailElement
+    Reporting_Analytics,
+    freetrialElement,
+    pricingText
   } = data;
   const html = `
         <div class="${id}__card">
@@ -19,7 +22,7 @@ const card = (id, data) => {
                     <div>
                        ${nameWithUrl}
                     </div>
-                    <div class="logo"><img src="${imageUrl}" alt="${name} logo"/></div>
+                    <div class="logo"><img src="${imageUrl}" alt="provider logo"/></div>
                 </div>
                 
             </div>
@@ -29,24 +32,56 @@ const card = (id, data) => {
             </p>
 
             <div class="grid">
-                <div class="${id}__item">
-                    <div class="${id}__label first-item">Pricing</div>
-                    <div class="second-item">${pricing}</div>
-                </div>
-                <div class="${id}__item">
-                    <div class="${id}__label first-item">Pros</div>
-                    <ul class="pros second-item">
-                        ${pros.map((item) => `<li><strong>${item}</strong></li>`).join('\n')}
-                    </ul>
-                </div>
-            
-                <div class="${id}__item">
-                    <div class="${id}__label first-item">Cons</div>
-                    <ul class="cons second-item">
-                        ${cons.map((item) => `<li><strong>${item}</strong></li>`).join('\n')}
-                    </ul>
-                </div>
-
+                ${
+                  pricingText
+                    ? `
+                    <div class="${id}__item">
+                        <div class="${id}__label first-item">Pricing</div>
+                        <div class="second-item">
+                            <div>${pricingText}</div>
+                            <ul>
+                               ${
+                                 pricing.length > 0
+                                   ? pricing.map((item) => `<li>${item}</li>`).join('\n')
+                                   : ''
+                               }
+                            </ul>
+                        </div>
+                    </div>
+                    `
+                    : ''
+                }
+                
+                ${
+                  pros.length > 0
+                    ? `
+                    
+                    <div class="${id}__item">
+                        <div class="${id}__label first-item">Pros</div>
+                        <ul class="pros second-item">
+                            ${pros.map((item) => `<li><strong>${item}</strong></li>`).join('\n')}
+                        </ul>
+                    </div>
+                    `
+                    : ''
+                }
+                
+                ${
+                  cons.length > 0
+                    ? `
+                         <div class="${id}__item">
+                            <div class="${id}__label first-item">Cons</div>
+                            <ul class="cons second-item">
+                                ${cons
+                                  .map((item) => `<li><strong>${item}</strong></li>`)
+                                  .join('\n')}
+                            </ul>
+                        </div>
+                    
+                    `
+                    : ''
+                }
+               
                 <div class="${id}__item">
                     <div class="${id}__label first-item">Features</div>
                     <div class="chips second-item">
@@ -54,20 +89,60 @@ const card = (id, data) => {
                     </div>
                 </div>
 
-                <div class="${id}__item">
-                    <div class="${id}__label first-item">SaaS/On-Premises</div>
-                    <div class="second-item">${saasOnPremises}</div>
-                </div>
+                ${
+                  saasOnPremises
+                    ? `
+                     <div class="${id}__item">
+                        <div class="${id}__label first-item">SaaS/On-Premises</div>
+                        <div class="second-item">${saasOnPremises}</div>
+                    </div>
+                    `
+                    : ''
+                }
 
-                <div class="${id}__item">
-                    <div class="${id}__label first-item">OS</div>
-                    <div class="second-item">${os}</div>
-                </div>
+                ${
+                  Cloud_based
+                    ? `
+                     <div class="${id}__item">
+                        <div class="${id}__label first-item">Cloud Based</div>
+                        <div class="second-item">${Cloud_based}</div>
+                    </div>
+                    `
+                    : ''
+                }
+               
+                ${
+                  os
+                    ? `
+                    <div class="${id}__item">
+                        <div class="${id}__label first-item">OS</div>
+                        <div class="second-item">${os}</div>
+                    </div>  
+                    `
+                    : ''
+                }
 
-                <div class="${id}__item">
-                    <div class="${id}__label first-item">Free trial</div>
-                    <div class="second-item">${freetrailElement}</div>
-                </div>
+                ${
+                  Reporting_Analytics
+                    ? `
+                    <div class="${id}__item">
+                        <div class="${id}__label first-item">Reporting & Analytics</div>
+                        <div class="second-item">${Reporting_Analytics}</div>
+                    </div>  
+                    `
+                    : ''
+                }
+
+                 ${
+                   freetrialElement
+                     ? `
+                     <div class="${id}__item">
+                        <div class="${id}__label first-item">Free trial</div>
+                        <div class="second-item">${freetrialElement}</div>
+                    </div>
+                    `
+                     : ''
+                 }     
             </div>
         </div>
     `;

@@ -2,9 +2,14 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  .hidden-by-hideInitial {
+    display: none !important;
+  }
   .#{$id}__card {
     background: #ffffff;
     max-width: 100%;
+
+    margin-bottom: 50px;
 
     /* Header */
     .card-header {
