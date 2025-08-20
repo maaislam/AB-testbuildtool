@@ -13,7 +13,9 @@ const card = (id, data) => {
     os,
     Reporting_Analytics,
     freetrialElement,
-    pricingText
+    pricingText,
+    best_for,
+    relevant_for
   } = data;
   const html = `
         <div class="${id}__card">
@@ -51,6 +53,28 @@ const card = (id, data) => {
                     `
                     : ''
                 }
+
+                ${
+                  best_for
+                    ? `
+                     <div class="${id}__item">
+                        <div class="${id}__label first-item">Best For</div>
+                        <div class="second-item">${best_for}</div>
+                    </div>
+                    `
+                    : ''
+                }
+
+                 ${
+                   relevant_for
+                     ? `
+                     <div class="${id}__item">
+                        <div class="${id}__label first-item">Relevant For</div>
+                        <div class="second-item">${relevant_for}</div>
+                    </div>
+                    `
+                     : ''
+                 }
                 
                 ${
                   pros.length > 0

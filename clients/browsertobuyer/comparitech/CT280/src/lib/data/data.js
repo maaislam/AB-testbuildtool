@@ -1893,6 +1893,1157 @@ export const data = {
       <a href="https://www.adaxes.com/download.htm" target="_blank" rel="noopener noreferrer">a free trial</a>
       `
     }
+  ],
+  '/net-admin/best-free-sftp-ftps-servers/': [
+    {
+      name: '',
+      extraName: '',
+      nameWithUrl: `
+      `,
+      imageUrl: '',
+      description: `
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['', '', '', '', ''],
+      cons: [''],
+      features: ['', '', '', '', ''],
+      'SaaS/On-Premises': '',
+      os: 'Windows, macOS, Linux, Solaris, AIX, and z/OS',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/jscape-redwood-best-free-sftp-ftps-servers/l/cta/u/5203-9650-0093-3881+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="5203-9650-0093-3881" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>7-day free trial</b></a>
+      `
+    },
+    {
+      name: 'Files.com SFTP Service',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/files-cloud-ftp-sftp-server-learn-more-best-free-sftp-ftps-servers/l/header/u/3797-7888-8669-7497+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3797-7888-8669-7497" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>2. Files.com SFTP Service <span style="color: #993300;">(FREE TRIAL)</span></b></a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><a href="https://www.comparitech.com/go/files-cloud-ftp-sftp-server-learn-more-best-free-sftp-ftps-servers/l/inline/u/1879-3161-1382-9134+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="1879-3161-1382-9134" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>Files.com</b></a> is a cloud-based file platform with a <strong>built-in FTP and SFTP server</strong>. Being based on a remote server, this service is able to offer many more features than a traditional SFTP server. The Files.com system consists of cloud storage that <b>acts as a buffer</b> for all file activities.</p>
+      `,
+      best_for:
+        'Small, medium, or enterprise-level businesses that have stronger technical skills within their in-house IT teams',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Reduces Traffic',
+        'Team Collaboration',
+        'Traceability',
+        'Good for Large Files',
+        'Remote Access Security'
+      ],
+      cons: ['No Native Productivity Suite'],
+      features: [
+        'Cloud Platform',
+        'User Accounts',
+        'Mediated Transfers',
+        'Link Invites',
+        'Transfer Security'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/files-cloud-ftp-sftp-server-learn-more-best-free-sftp-ftps-servers/l/cta/u/3025-1134-2324-9269+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3025-1134-2324-9269" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>7-day free trial</strong></a>
+      `
+    },
+    {
+      name: 'ExaVault',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/exavault-best-free-sftp-and-ftps-servers-best-free-sftp-ftps-servers/l/header/u/1949-3335-9929-6993+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="1949-3335-9929-6993" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>3. ExaVault <span style="color: #993300;">(FREE TRIAL)</span></strong></a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><strong><a href="https://www.comparitech.com/go/exavault-best-free-sftp-and-ftps-servers-best-free-sftp-ftps-servers/l/inline/u/3393-5429-8079-1862+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3393-5429-8079-1862" class="go-link" data-gtm-vis-has-fired1649924_55="1">ExaVault</a></strong>, (which is owned by Files.com) is a cloud service that mediates file transfers, offering <b>SFTP</b> and <b>SFTP</b> as secure solutions. The system enables administrators to keep track of file movements and automatic logging gives you the records you need for compliance auditing.</p>
+      `,
+      best_for: 'Small, medium, and enterprise-level businesses',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Compliance Documentation', 'Desktop App', 'Link Invites', 'Encryption Security'],
+      cons: ['No Native Productivity Suit'],
+      features: ['Cloud Platform', 'Secure Transfers', 'Minimum Account Size', 'File Syncing'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a class="go-link" href="https://www.comparitech.com/go/exavault-best-free-sftp-and-ftps-servers-best-free-sftp-ftps-servers/l/button/u/0512-6981-6853-3762+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="0512-6981-6853-3762" data-gtm-vis-has-fired1649924_55="1">
+                <span class="ctech-dl-button-tagline">30-days</span>
+            </a>
+      `
+    },
+    {
+      name: 'Cerberus FTP Server',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/cerberus-best-free-sftp-ftps-servers/l/header/u/3322-6670-2212-6122+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3322-6670-2212-6122" class="go-link" data-gtm-vis-has-fired1649924_55="1">4. Cerberus FTP Server <span style="color: #993300;">(FREE TRIAL)</span></a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><a href="https://www.comparitech.com/go/cerberus-best-free-sftp-ftps-servers/l/inline/u/1319-5039-6076-3747+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="1319-5039-6076-3747" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>Cerberus FTP Server</b></a> is a file transfer server owned by Digital Ocean that can implement&nbsp; SFTP and FTPS. The package is also able to move files with FTP, SCP, FTP, and HTTPS. This is an on-premises package for <b>Windows</b> and <b>Windows Server</b>. The bundle includes a Web-based server, which is stored together with the server unit and can be accessed by users through any standard Web browser.</p>
+      `,
+      best_for:
+        'Medium-sized or Enterprise-level businesses. Smaller companies with a larger budget for the software may also want to explore this open',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Simultaneous Transfers', 'Network Monitoring', 'Single Sign-On'],
+      cons: ['Built for Windows'],
+      features: ['Secure Protocols', 'User Management', 'Task Automation'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/cerberus-best-free-sftp-ftps-servers/l/cta/u/9200-2843-4153-0042+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="9200-2843-4153-0042" class="go-link" data-gtm-vis-has-fired1649924_55="1">25-day free trial</a>
+      `
+    },
+    {
+      name: 'SFTP To Go',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/sftp-to-go-best-free-sftp-ftps-servers/l/header/u/4906-5877-8815-6660+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="4906-5877-8815-6660" class="go-link" data-gtm-vis-has-fired1649924_55="1">5. SFTP To Go <span style="color: #993300;">(FREE TRIAL)</span></a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><a href="https://www.comparitech.com/go/sftp-to-go-best-free-sftp-ftps-servers/l/inline/u/3097-6901-0814-4336+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3097-6901-0814-4336" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>SFTP To Go</strong></a> is a cloud-storage-as-a-service where you can securely store, transfer, share, and integrate files using protocols like SFTP, FTPS, S3, and HTTPS. Built on the AWS infrastructure, this platform is highly reliable and available. It is also easy to use, and at the same time, highly secure.</p>
+      `,
+      best_for:
+        'Organizations that want to securely store and share sensitive data. It also works well for organizations that must meet compliance standards like HIPAA and GDPR',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Supports compliance', 'Scalable', 'Secure', 'Easy to use'],
+      cons: ['Cloud-based'],
+      features: ['Web portal', 'Scalable', 'Authentication', 'Encryption', 'Secure'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/sftp-to-go-best-free-sftp-ftps-servers/l/cta/u/2955-4657-0617-2383+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="2955-4657-0617-2383" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>7-day free trial</strong></a>
+      `
+    },
+    {
+      name: 'FileZilla Server',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://filezilla-project.org" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">6. FileZilla Server</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>FileZilla, </b>well known for its popular cross-platform <a href="https://filezilla-project.org/download.php?type=client" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">FTP client tool</a>, also provides a server for <a href="https://filezilla-project.org/download.php?type=server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">download</a> that supports<b> FTP and FTPS </b>(FTP over TLS/SSL). <b>FileZilla Server supports files up to 4GB</b>, giving it the bandwidth to support the needs of most organizations. On the whole, the platform is easy to configure. To start you need to connect to a server with your login credentials and then you can<b> view a list of files</b> and <b>directories</b>.</p>
+      `,
+      best_for:
+        'Small or medium-sized businesses that don’t need hands-on product or customer support.',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Companion Client', 'Multiple Simultaneous Transfers', 'Keep Alive'],
+      cons: ['Doesn’t Interface with Cloud Drives'],
+      features: ['Secure Protocols', 'Multi Platform', 'No Cost'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'SolarWinds SFTP/SCP Server',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.solarwinds.com/free-tools/free-sftp-server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><strong>7. SolarWinds SFTP/SCP Server</strong></a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>SolarWinds SFTP/SCP Server</b> is a <b>free SFTP server </b>that can complete SFTP and SCP file transfers up to 4GB. With SolarWinds SFTP/SCP Server you can <b>conduct multiple transfers</b> across lots of devices simultaneously. You can also select which version of SSH you want to use (whether <b>SSH1</b> or <b>SSH2</b>). The platform is ideal for users looking to complete tasks like pushing out OS and firmware updates.</p>
+      `,
+      best_for: 'Enterprise-level businesses',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Transfers to Equipment', 'Free to Use', 'User Accounts'],
+      cons: ['No Automation Features'],
+      features: ['Secure Protocols', 'Simultaneous Transfers', 'Choice of SSH'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.solarwinds.com/free-tools/free-sftp-server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a>
+      `
+    },
+    {
+      name: 'Syncplify Server',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.syncplify.com/syncplify-server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">8. Syncplify Server</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>Syncplify Server</b> is an SFTP and FTPS server for Windows that support<b>s FTP, SFTP, FTPS,</b> and is compliant with HIPAA regulations.<b> Syncplify Server </b>supports up to <b>5,000 concurrent clients</b>. The platform has been designed for high availability so you can<b> deploy 2 SFTP server nodes</b>. If one node goes down then the other will still be available, which reduces the chance of disruption.</p>
+      `,
+      best_for: 'Small, medium, or enterprise-level businesses with skilled IT teams',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Active Directory integration', 'Easy Setup', 'Zero Vulnerabilities'],
+      cons: ['Free Version Limitations'],
+      features: ['Secure Protocols', 'Task Automation', 'Email Triggers'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'CrushFTP',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.crushftp.com" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">9. CrushFTP</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>CrushFTP</b> is an FTP server for <b>Windows</b>, <b>macOS</b>, and <b>Linux</b> that supports <b>SFTP, FTPS, SCP,</b> and <b>HTTPS</b>. With CrushFTP you can manage file transfers through a <b>web-based user interface</b>. Here the user can view previews of any images, PDFS, videos or documents on the server. Previews enable you to see the content of a particular file from a glance.</p>
+      `,
+      best_for: 'Small, medium, or large businesses with a skilled IT team.',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Secure and Speedy', 'File Processing', 'Address Blacklisting'],
+      cons: ['Pricey'],
+      features: ['Secure Protocols', 'Blocks Attacks', 'Multiple Operating Systems'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Rebex Tiny SFTP Server',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://labs.rebex.net/tiny-sftp-server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">10. Rebex Tiny SFTP Server</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>Rebex Tiny SFTP Server </b>is an <b>SFTP server for Windows</b> designed for basic file sharing. You can complete file transfers and view an activity log. The software can be deployed from a <b>ZIP file</b> without any long-winded configurations.</p>
+      `,
+      best_for: 'Individuals or small businesses with appropriately skilled IT teams',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Uncomplicated', 'Activity Logging', 'Small Footprint'],
+      cons: ['Ugly'],
+      features: ['Secure Protocol', 'No Cost', 'For Windows'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    }
+  ],
+  '/net-admin/active-directory-tools/': [
+    {
+      name: 'ManageEngine ADManager Plus',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/manageengine-active-directory-tools-admp-active-directory-tools/l/header/u/0590-8503-1992-8462+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="0590-8503-1992-8462" class="go-link">1. ManageEngine ADManager Plus <span style="color: #993300;">(FREE TRIAL)</span></a>
+      `,
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine_688a18911590c.png',
+      description: `
+      <p><a href="https://www.comparitech.com/go/manageengine-active-directory-tools-admp-active-directory-tools/l/inline/u/3256-8591-7673-6828+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="3256-8591-7673-6828" class="go-link"><strong>ManageEngine ADManager Plus</strong></a> is an AD management tool that allows users to conduct <strong>Active Directory</strong> management and <strong>generate reports</strong>. In terms of management capabilities, you can manage AD objects, groups, and users from one location. This is beneficial because it allows you to sidestep the hassle of your Active Directory management and use the sleek <strong>ManageEngine </strong>GUI instead.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Password Management',
+        'Active Directory Cleanup',
+        'GPO Management',
+        'Microsoft 365 Management',
+        'Automated Workflows'
+      ],
+      cons: ['Integration Complexity'],
+      features: [
+        'Offers a Front End to AD',
+        'Unify the Management of Many Instances',
+        'Compliance Reporting',
+        'Bulk User Management'
+      ],
+      'SaaS/On-Premises': '',
+      os: 'Windows Server, AWS, and Azure',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/manageengine-active-directory-tools-admp-active-directory-tools/l/cta/u/0051-7205-6822-9291+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="0051-7205-6822-9291" class="go-link"><strong>30-day free trial</strong></a>
+      `
+    },
+    {
+      name: 'NinjaOne Active Directory Management',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/ninjaone-lm-active-directory-tools/l/header/u/9644-5935-6174-4434+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="9644-5935-6174-4434" class="go-link">2. NinjaOne Active Directory Management <span style="color: #993300;">(FREE TRIAL)</span></a>
+      `,
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/clip-path-group-1_688a19989bb12.png',
+      description: `
+      <p><a href="https://www.comparitech.com/go/ninjaone-lm-active-directory-tools/l/inline/u/7247-9636-0827-9424+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="7247-9636-0827-9424" class="go-link"><b>NinjaOne</b></a> includes Endpoint and Active Directory management in its remote monitoring and management platform. This service presents your AD domain details, including all permissions within the NinjaOne dashboard, so technicians don’t have to log in remotely to manage access rights data.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Increases technician productivity',
+        'Includes a ticketing system',
+        'Provides confidential credentials distribution',
+        'access to remote systems'
+      ],
+      cons: ['This is a SaaS package with no self-hosting package'],
+      features: [
+        'Integrated AD access',
+        'Remote monitoring and management',
+        'User account management'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/ninjaone-ft-active-directory-tools/l/cta/u/2604-9401-2492-7859+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="2604-9401-2492-7859" class="go-link"><b>14-day free trial</b></a>
+      `
+    },
+    {
+      name: 'ManageEngine ADAudit Plus',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/manageengine-active-directory-tools-adap-active-directory-tools/l/header/u/8077-6498-9286-6903+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="8077-6498-9286-6903" class="go-link"><b>3. ManageEngine ADAudit Plus <span style="color: #993300;">(FREE TRIAL)</span></b></a>
+      `,
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine_688a18911590c.png',
+      description: `
+      <p><a href="https://www.comparitech.com/go/manageengine-active-directory-tools-adap-active-directory-tools/l/inline/u/9360-8436-3000-0707+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="9360-8436-3000-0707" class="go-link"><b>ADAudit Plus</b></a> from ManageEngine has a stronger focus on standards compliance requirements than the company’s ADManager Plus tool. This system auditing utility is a powerful AD tool that gives you live user activity reports and includes <b>automated insider threat detection systems</b>. You will be able to block people who are allowed access to your resources from using them inappropriately.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Focused heavily on compliance requirements',
+        'Pre-configured compliance',
+        'Features insider threat detection',
+        'Supports automation and scripting',
+        'Great user interface'
+      ],
+      cons: [
+        'Upgrading can often break features and cause issues',
+        'Custom reporting has a steep learning curve'
+      ],
+      features: ['Compliance enforcement', 'User activity tracking', 'Insider threat detection'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/manageengine-active-directory-tools-adap-active-directory-tools/l/cta/u/0406-7345-4659-9465+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="0406-7345-4659-9465" class="go-link"><strong>30-day free trial</strong></a>
+      `
+    },
+    {
+      name: 'SentinelOne Singularity Ranger AD',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.sentinelone.com/platform/singularity-ranger-ad/" target="_blank" rel="noopener noreferrer">4. SentinelOne Singularity Ranger AD</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><a href="https://www.sentinelone.com/platform/singularity-ranger-ad/" target="_blank" rel="noopener noreferrer"><b>SentinelOne Singularity </b><b>Ranger AD</b></a> protects on premises Active Directory and Azure AD. The system is part of the Singularity brand but it isn’t included in any of the Sentinel Singularity packages. You don’t have to take out a subscription to the rest of the SentinelOne Singularity platform in order to use this tool.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Identifies account management errors',
+        'Operates continuously to monitor all activity',
+        'Can spot insider threats or account takeovers'
+      ],
+      cons: [
+        'Needs to be implemented in conjunction with other tools to provide a full system security service'
+      ],
+      features: ['Audits AD accounts', 'Scans AD configurations', 'Constant monitoring'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.sentinelone.com/lp/identity-suite-demo/" target="_blank" rel="noopener noreferrer">free demo</a>
+      `
+    },
+    {
+      name: 'Specops Command',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://specopssoft.com/support-docs/specops-command/download/" target="_blank" rel="noopener noreferrer">5. Specops Command</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><strong>Specops Command</strong> is another tool that offers you a formidable Active Directory management experience. With this program, you use scripts to manage your network. <strong>Specops Command</strong> enables the use of <strong>Windows PowerShell</strong> and <strong>VBScripts</strong> to manage users and devices throughout your network. You can even execute commands straight through to client systems.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Extremely lightweight, runs from PowerShel',
+        'Very flexible, allows for VBScript and PowerShell commands',
+        'Can generate reports',
+        'Designed for professionals that want a bare-bones option'
+      ],
+      cons: [
+        'Much steeper learning curve than similar tools',
+        'No real graphical interface',
+        'Reporting is limited',
+        'No pre-configured actions or reports'
+      ],
+      features: [
+        'Supports PowerShell and VBScripts functions',
+        'Manages scripts',
+        'Generate AD reports'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Recovery Manager for Active Directory (Quest)',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.quest.com/register/54780/" target="_blank" rel="noopener noreferrer">6. Recovery Manager for Active Directory (Quest)</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p>As the name suggests, <strong>Recovery for Active Directory </strong>is a third-party tool for Active Directory that has been designed to help you recover data. Generally speaking, when an object is lost in Active Directory you have to restart the Domain Controller to recover it. <strong>Recovery Manager for Active Directory </strong>eliminates this inconvenience by allowing you to <strong>r</strong><strong>ecover objects without restarting Active Directory</strong>.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Adds helpful graphical elements to AD to enhance the management experience',
+        'Helpful for recovering deleted objects from the graveyard',
+        'Supports Azure AD as well as on-premise versions',
+        'Can help visualize permissions and inheritance'
+      ],
+      cons: ['Interface feels a bit outdated', 'Some of the Wizards aren’t as intuitive as other'],
+      features: ['Fast recovery of AD objects', 'Also operates for Azure', 'Visualize hierarchies'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.quest.com/register/54780/" target="_blank" rel="noopener noreferrer">30-day free trial</a>
+      `
+    },
+    {
+      name: 'ManageEngine Free Active Directory Tools',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.manageengine.com/products/free-windows-active-directory-tools/free-active-directory-tools-index.html" target="_blank" rel="noopener noreferrer">7. ManageEngine Free Active Directory Tools</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><strong>ManageEngine Free Active Directory Tools</strong> is essentially a group of utilities that help to manage <strong>Active Directory</strong>. Some of the utilities available include <strong>AD Query Tool</strong>, <strong>CSV Generator</strong>, <strong>Last Logon Reporter</strong>, <strong>Terminal Session Manager</strong>, <strong>AD Replication Manager</strong>, <strong>SharePoint Manager</strong>, <strong>DMZ Port Analyzer</strong>, <strong>Domain</strong> and <strong>DC Roles Reported</strong>, <strong>Local Users Manager</strong>, <strong>Password Policy Manager</strong>, and <strong>Exchange Health Monitor</strong>.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'A complete toolset of over 14 different tools that add additional functionality into Active Directory',
+        'Can be notified when an AD account password is locked out, or going to expire soon',
+        'Offers a duplicate objects finder, great for cleaning up larger directories',
+        'Can export lists of members based on permissions, group, or name',
+        'Completely free'
+      ],
+      cons: [
+        'Different functionality is found in different tools, it would be more convenient to have most features in a single tool',
+        'Some tools come with little explanation of how to use them'
+      ],
+      features: ['A bundle of 14 tools', 'Password renewal reminder', 'See who is connected'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'SolarWinds Permissions Analyzer for Active Directory',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.solarwinds.com/free-tools/permissions-analyzer-for-active-directory" target="_blank" rel="noopener noreferrer">8. SolarWinds Permissions Analyzer for Active Directory</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p>First up on this list we have <strong>SolarWinds Permissions Analyzers for Active Directory</strong>. One of the most common complaints made of the original Active Directory program is that it offers poor permissions management. <strong>SolarWinds Permissions Analyzer for Active Directory</strong> is an AD management tool that seeks to rectify this by allowing you to view which users in your network have permission to which data.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Highly visual and intuitive tool that is great for both small and large Active Directory environments',
+        'Top down view allows you to quickly spot permission issues based on shares, security groups, or individual users',
+        'Lightweight tools – won’t bog down important services running on AD',
+        'Great for auditing compliance',
+        'Completely free'
+      ],
+      cons: [
+        'While the tool is easy to use, it features an advanced tab that contains a lot of options that can take time to fully explore'
+      ],
+      features: [
+        'Free to use',
+        'Provides an overview',
+        'Shows permissions by group or user',
+        'Low processing power requirements',
+        'File permissions'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Netwrix Account Lockout Examiner',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.netwrix.com/account_lockout_examiner.html" target="_blank" rel="noopener noreferrer">9. Netwrix Account Lockout Examiner</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p>There are many occasions in <strong>Active Directory</strong> where a user is locked out of <strong>Active Directory</strong> at the most inconvenient time. <strong>Netwrix Account Lockout Examiner</strong> has been designed for the expressed purpose of getting to the bottom of <strong>Active Directory</strong> lockouts. This tool notifies administrators when an account has been locked out of <strong>Active Directory</strong> so that they can take a closer look at why this is the case.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Provides a visual indication of when accounts are locked, great for detecting attempted attacks',
+        'Can unlock accounts directly from the tool without reopening ADUC',
+        'Can investigate netlogon for more details from within the tool',
+        'Completely free'
+      ],
+      cons: [
+        'Interface is a bit cluttered, not viable for tracking a large number of users',
+        'May have to refresh the program to see new lockouts'
+      ],
+      features: ['Fast identification of locked accounts', 'Unlock button', 'Investigation option'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Bulk Password Control (WiseDATAman)',
+      extraName: '',
+      nameWithUrl: `
+      <a href="http://www.wisesoft.co.uk/software/passwordcontrol/bulk_password_control.aspx" target="_blank" rel="noopener noreferrer">10. Bulk Password Control (WiseDATAman)</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>Bulk Password Control</b> is a tool designed to help users with password management on <b>Active Directory</b>. As a password manager, <b>Bulk Password Control </b>is very fast paced. You can <b>change passwords on multiple accounts at once</b>. You can do this through the use of a <b>password generator</b> that creates passwords for each account. In the event that you want to make this more simple, you can set every account password to the same code. In other words, you can manage passwords in bulk.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Can help manage generic accounts easily',
+        'Saves a ton of time when changing passwords in bulk',
+        'Supports unlocking/locking accounts as well as disabling users',
+        'Free to use'
+      ],
+      cons: [
+        'Passwords are visible all in one place, could be a security issue if users are not prompted to reset upon login'
+      ],
+      features: [
+        'Mass password setting',
+        'Password generator',
+        'Enable, disable, and unlock accounts'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Netwrix Inactive User Tracker',
+      extraName: '',
+      nameWithUrl: `
+      <p><strong>Netwrix Inactive User Tracker</strong> is a tool that is used to flag up <strong>Active Directory</strong> accounts that aren’t in use and helps to put them to rest. This tool <strong>scans for inactive user accounts and then provides you with information on for how long the accounts have been dormant</strong>. In effect, the tool automatically keeps you updated on the state of your connected accounts so that you can take action if need be.</p>
+      `,
+      imageUrl: '',
+      description: `
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Can easily see metrics like last login, account age, and username from a single space',
+        'Good for pruning inactive accounts and identifying potential security flaws',
+        'Can quickly identify modified/new accounts that could be malicious'
+      ],
+      cons: ['Could use a better reporting option'],
+      features: ['Discovers inactive accounts', 'Account activity details', 'Auditing features'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    }
+  ],
+  '/net-admin/network-topology-and-mapping/': [
+    {
+      name: 'Auvik',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/auvik-network-mapping-topology-learn-more-network-topology-and-mapping/l/header/u/5213-7563-8354-0782+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="5213-7563-8354-0782" class="go-link" data-gtm-vis-has-fired1649924_55="1">1. Auvik <span style="color: #993300;">(FREE TRIAL)</span></a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><a href="https://www.comparitech.com/go/auvik-network-mapping-topology-learn-more-network-topology-and-mapping/l/inline/u/5846-1922-0815-1844+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="5846-1922-0815-1844" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>Auvik</strong></a> is <b>a SaaS platform</b> that implements network monitoring and asset management functions through the use of an on-site agent. The central detection service of this package is its network discovery system, which also creates a network <b>asset inventory</b> and draws up a network map.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Constantly Updated',
+        'Creates Asset Inventory',
+        'Automatic Configuration Backup',
+        'Cloud-Based SaaS Platform',
+        'Multi-Tenant Option'
+      ],
+      cons: ['No On-Site Version'],
+      features: [
+        'Network Mapping',
+        'Switch Port Mapping',
+        'Network Traffic Analysis',
+        'Automatic Network Discovery',
+        'Alerts for Problems'
+      ],
+      'SaaS/On-Premises': '',
+      os: 'Cloud-based',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/auvik-network-mapping-topology-free-trial-network-topology-and-mapping/l/cta/u/7059-5075-0354-1284+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="7059-5075-0354-1284" class="go-link" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a>
+      `
+    },
+    {
+      name: 'Faddom',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/faddom-lm-network-topology-and-mapping/l/header/u/7933-4589-2034-9475+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="7933-4589-2034-9475" class="go-link" data-gtm-vis-has-fired1649924_55="1">2. Faddom <span style="color: #993300;">(FREE TRIAL)</span></a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><a href="https://www.comparitech.com/go/faddom-lm-network-topology-and-mapping/l/inline/u/0359-9839-5356-8068+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="0359-9839-5356-8068" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>Faddom</strong></a> is a hybrid system documentation and mapping package that is able to identify resources both on premise and in the cloud. The service provides IT asset inventories and network maps.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Automated Network Discovery', 'Enhanced Visibility', 'Continuous Updates'],
+      cons: ['No Cloud Version'],
+      features: [
+        'Discovery and Mapping Service',
+        'Network Topology Mapping',
+        'Software Inventory Management'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/faddom-ft-network-topology-and-mapping/l/cta/u/3269-1245-9759-9256+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3269-1245-9759-9256" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>free trial</strong></a>
+      `
+    },
+    {
+      name: 'Domotz',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-learn-more-network-topology-and-mapping/l/header/u/1972-5182-5784-2499+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="1972-5182-5784-2499" class="go-link" data-gtm-vis-has-fired1649924_55="1">3. Domotz <span style="color: #993300;">(FREE TRIAL)</span></a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><strong><a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-learn-more-network-topology-and-mapping/l/inline/u/5126-0074-2692-1550+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="5126-0074-2692-1550" class="go-link" data-gtm-vis-has-fired1649924_55="1">Domotz</a></strong> is a SaaS platform that offers network monitoring for IT Departments and it is also suitable for <b>managed service providers </b>(MSPs). The system offers a multi-tenant architecture and there is no limit to the number of user accounts that you can create for technicians to get access to the Domotz console. This tool can unify the monitoring of multiple sites and it includes an automated <b>network mapping</b> system.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Easy to Use',
+        'Automatic Discovery and Visualization',
+        'Remote Management Capabilities'
+      ],
+      cons: ['Cost'],
+      features: [
+        'Automated Network Discovery',
+        'Network Topology Mapping',
+        'Network Asset Inventory and Network Map',
+        'Live Network Performance Reporting'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-free-trial-network-topology-and-mapping/l/cta/u/3237-1511-2858-8528+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3237-1511-2858-8528" class="go-link" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a>
+      `
+    },
+    {
+      name: 'ManageEngine Network Mapping with OpManager',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/header/u/3969-3620-3402-3704+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3969-3620-3402-3704" class="go-link" data-gtm-vis-has-fired1649924_55="1">4. ManageEngine Network Mapping with OpManager <span style="color: #993300;">(FREE TRIAL)</span></a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/inline/u/9592-7142-9236-4051+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="9592-7142-9236-4051" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>ManageEngine OpManager</b></a> is a combination of network and server monitoring systems. It includes automated network discovery and <b>topology mapping</b>. As well as tracking and recording all physical connections, the system is able to monitor and map virtualizations and VLAN systems for VoIP.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Integrated Monitoring Capabilities',
+        'Automatic Map Updates',
+        'Cross-Platform Compatibility'
+      ],
+      cons: ['Learning Curve'],
+      features: [
+        'Maps Virtual and Physical Networks',
+        'Real-Time Network Mapping',
+        'Customizable Network Maps',
+        'Network Inventory Creation'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/cta/u/6228-1353-0210-1924+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="6228-1353-0210-1924" class="go-link" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      `
+    },
+    {
+      name: 'Site24x7 Network Monitoring',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/header/u/3832-3134-9088-4495+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3832-3134-9088-4495" class="go-link" data-gtm-vis-has-fired1649924_55="1">5. Site24x7 Network Monitoring <span style="color: #993300;">(FREE TRIAL)</span></a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/inline/u/1650-2136-5921-0287+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="1650-2136-5921-0287" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>Site24x7 Network Monitoring</b></a> is a service that is delivered from the cloud and includes a network topology mapping feature. The package includes a discovery service that identifies all devices on the network and populates a system inventory. The network topology map is drawn up automatically from the information held in the inventory.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Self-Setup System', 'Constant Inventory Updates', 'Performance Alerts'],
+      cons: ['No On-Premises Version'],
+      features: [
+        'Layer 2 Network Maps',
+        'Network Discovery',
+        'Network Inventory Documentation',
+        'Interface Labeling'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/cta/u/2006-1525-6845-3216+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="2006-1525-6845-3216" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>30-day free trial</b></a>
+      `
+    },
+    {
+      name: 'Datadog Live Network Mapping',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.datadoghq.com/product/network-monitoring/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">6. Datadog Live Network Mapping</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><a href="https://www.datadoghq.com/product/network-monitoring/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><strong>Datadog</strong></a> includes live network mapping services in its two network monitoring packages. These plans are the <b>Network Performance Monitor</b>, which provides network data flow analysis, and the <b>Network Device Monitor</b>, which provides constant checks on switches, routers, and network appliances. Both of these services are delivered from a cloud platform.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Best Interface for Network Mapping', 'Real-Time Updates', 'Subscription Model'],
+      cons: ['Short Trial Period'],
+      features: [
+        'Network Auto Discovery and Visualization',
+        'Tagging and Filters',
+        'Live Mapping and Traffic Patterns',
+        'Data Flow Analysis'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Microsoft Visio',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.microsoft.com/en-us/p/visio-professional-2019/cfq7ttc0k7cg?activetab=pivot%3aoverviewtab" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">7. Microsoft Visio</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p>Visio is a high-end chart and map-creating tool and is widely-used throughout businesses for a range of tasks. <b>It is possible that many managers in your </b><b>enterprise already use Visio</b>.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText:
+        'It can be bought individually or added to Microsoft Office 365 at an additional cost.',
+      pricing: [],
+      pros: ['Ease of Use', 'Network Planning', 'Widely Used File Format'],
+      cons: ['Platform Limitation', 'Lack of Live Network Auto-Discovery'],
+      features: [
+        'Charting Tool',
+        'Network Icon Library',
+        'Design Templates',
+        'Add-On to Microsoft Office 365'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Fortra’s Intermapper',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.fortra.com/products/network-monitoring-software" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">8. Fortra’s Intermapper</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><strong>Fortra’s</strong> <b>Intermapper</b> is available in both a free and paid version. The tool includes discovery and an automatic mapping feature to get you started, alternatively you can create your own plan from scratch. The autodiscovery system is also capable of plotting virtualization as well as physical network topology.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Free and Paid Versions', 'Easy to Use Interface', 'Cross-Platform Compatibility'],
+      cons: ['Cost'],
+      features: [
+        'Autodiscovery and Mapping',
+        'Topology Map Editor',
+        'SLA Compliance Reporting',
+        'Multi-Tenant Management'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.helpsystems.com/cta/start-your-free-intermapper-trial" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      `
+    },
+    {
+      name: 'Lucidchart',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.lucidchart.com/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">9. Lucidchart</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>Lucidchart </b>is a general flowchart creation topology tool that has specialized icon libraries for a range of industries, including network topology. You don’t get any autodiscovery features with this tool, but it would be a great option if you are creating a network from scratch.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Simple Color Scheme and Interface',
+        'Free and Paid Versions',
+        'Multi-Platform Availability'
+      ],
+      cons: ['No Autodiscovery'],
+      features: [
+        'Import Existing Network Maps',
+        'Library of IT Icons',
+        'Visio Compatibility',
+        'Collaboration Features'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Paessler PRTG Network Monitor',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.paessler.com/network-mapping" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">10. Paessler PRTG Network Monitor</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>Paessler PRTG</b> is a system-wide monitoring package. You choose which of the monitors in the large bundle that you want to activate but the network discovery function is part of every implementation. This system generates a network inventory and presents a number of mapping options.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Full Network Monitoring Package',
+        'Scalable Package',
+        'Network Map Templates',
+        'SaaS Delivery of Self-Hosted'
+      ],
+      cons: ['Confusing Default Sunburst Map'],
+      features: ['Network Discovery', 'Automated Maps', 'Topology Map Editor'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.paessler.com/download/prtg-download?download=1" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><strong>30-day free trial</strong></a>
+      `
+    },
+    {
+      name: 'SolarWinds Network Topology Mapper',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.solarwinds.com/network-topology-mapper" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">11. SolarWinds Network Topology Mapper</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p>The <b>SolarWinds Network Topology Mapper</b> includes on-demand device discovery and automated mapping. This gives you a great starting point if you are adding to an existing network. You can choose whether the discovery procedure uses <b>SNMP</b> or <b>ICMP</b> (Ping and Traceroute) to locate devices. It can also identify network infrastructure through <b>WMI</b> and <b>CDP</b> (Cisco Discovery Protocol) methods.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Compliance Reporting',
+        'Scalability',
+        'Integration with Other SolarWinds Products',
+        'Static Maps for Capacity Planning'
+      ],
+      cons: ['Cost'],
+      features: [
+        'Network Autodiscovery',
+        'Multi-Level Network Discovery',
+        'Customizable Topology Maps',
+        'Virtualization Support'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.solarwinds.com/network-topology-mapper" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a>
+      `
+    },
+    {
+      name: 'Edraw Max',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.edrawsoft.com/edraw-max.php" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">12. Edraw Max</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p>Edraw is a general map, plan, and chart creation tool that includes some great formats for network topology mapping. The editor has libraries of network and IT equipment in different styles, including <b>Basic</b>, <b>Detailed</b>, and <b>3D</b>.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Detailed Mapping Capabilities',
+        'Supports 2D and 3D Views',
+        'Multi-Platform Availability'
+      ],
+      cons: ['Limited Integrations'],
+      features: ['3D Maps Possible', 'IT Icon Library', 'Network Map Templates'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.edrawsoft.com/download-edrawmax.php" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">a free trial</a>
+      `
+    },
+    {
+      name: 'LanFlow',
+      extraName: '',
+      nameWithUrl: `
+      <a href="http://www.pacestar.com/lanflow/index.html" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">13. LanFlow</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>LanFlow Net Diagrammer</b> is produced by Pacestar Software. The package includes libraries of 2D and 3D icons to enable you to create your own network topology maps.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Simple and Effective Interface', 'Supports 2D and 3D Modeling', 'Customizable Icons'],
+      cons: ['Windows Only', 'Lacks Auto-Discovery'],
+      features: ['IT Icon Library', 'Customizable Icons', 'Drag-and-Drop Editor'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="http://www.pacestar.com/lanflow/trial.htm" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      `
+    },
+    {
+      name: 'Net-Probe',
+      extraName: '',
+      nameWithUrl: `
+      `,
+      imageUrl: '',
+      description: `
+      <p>Net-Probe is a little more than a network mapping tool – it is really a network monitoring system and it will discover your network for you. The network maps of the system can be overlaid on real-world maps if you run a WAN. There is also a classic network diagram format included in the tool.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Highly Detailed', 'Free and Paid Version', 'Map WAN Networks over Physical Map'],
+      cons: ['Windows Only'],
+      features: ['Automated Map Drawing', 'Real-World Maps for WANs', 'Network Monitoring'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Network Notepad',
+      extraName: '',
+      nameWithUrl: `
+      <a href="http://www.networknotepad.com/index.shtml" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">15. Network Notepad</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p>Network Notepad is available both as free and paid versions. The software runs on <b>Windows </b>and has a small footprint. You can expand the paid mapper, which is called <b>Network Notepad Professional</b> <b>Edition, </b>and make it into a network monitor by adding on <b>NNMonitor</b>, which is a Ping tool.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Two Versions for Different Needs',
+        'Barebones Interface',
+        'In-Depth Networking Details'
+      ],
+      cons: ['Windows Only', 'Limited Device Discovery Method'],
+      features: ['Network Discovery Feature', 'Automated Network Mapping', 'Network Monitoring'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'netTerrain Logical',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://graphicalnetworks.com/netterrain-logical-2/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">16. netTerrain Logical</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p>Graphical Networks produces a range of network management software, including <b>netTerrain Logical</b>. This is an automated network documentation system that will <b>compile a hardware inventory</b> and <b>generate network topology maps</b> by probing the network.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Automated Device Discovery',
+        'Capacity Planning and Network Restructuring',
+        'Compatibility with Visio Format'
+      ],
+      cons: ['Windows Only', 'Limited Icons'],
+      features: ['Network Discovery', 'Automated Mapping', 'Supports Capacity Planning'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://graphicalnetworks.com/demo-form/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">a free demo</a>
+      `
+    },
+    {
+      name: 'D3M',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.d3mnetworks.com/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">17. D3M</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p>D3M caters to a unique niche market – IT sales professionals. This network mapping tool can be used to plan out a customer’s requirements, compiling an inventory of necessary network equipment as the topology map builds. If you set up a product library with prices, the inventory will also copy to a bid with a total equipment cost calculated on it automatically. <b>Icons used in the map are provided by equipment manufacturers</b>, so customers will be able to see exactly which make and model of device goes where.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['User-Friendly Interface', 'Streamlined Quote Creation', 'Simple and Sleek Interface'],
+      cons: ['Higher Price Point', 'Focus on Presentations'],
+      features: [
+        'Designed for Network Services Sales Executives',
+        'Collaboration Features',
+        'Accessible by Mobile App',
+        'Cloud Storage Included'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://app.d3mnetworks.com/users/sign-up" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">for free</a>
+      `
+    },
+    {
+      name: 'LANTopoLog',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.lantopolog.com/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">18. LANTopoLog</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>LANTopoLog</b> is a <b>free</b> enthusiast-created network mapper. You don’t get a concept of the physical layout of your network from this topology tool. However, the information displayed in the map gives you a very straightforward representation of all the network data that you need quickly.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Completely Free',
+        'Supports Autodiscovery',
+        'Windows Only',
+        'Not the Most User-Friendly Option'
+      ],
+      cons: [''],
+      features: [
+        'Network Discovery',
+        'Rudimentary Network Map',
+        'Fast and Barebones Look into Network'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Creately',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://creately.com/Online-Network-Diagram-Software" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">19. Creately</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>Creately</b> is a neat chart-creating tool that has specialized templates and icons for network mapping. This is a pure topology design tool and doesn’t include any autodiscovery options. However, you could use this designer in conjunction with a basic network explorer, such as <b>LANTopoLog</b> to get the best of both worlds.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Built-in Collaboration Tools',
+        'Cross-Platform Support',
+        'Standalone or Cloud Product'
+      ],
+      cons: ['No Auto-Discovery Options', 'Does Not Tap Into Live Networks'],
+      features: [
+        'Create Rack Views and Map Physical Connections',
+        'Diagram Editor',
+        'Network Icon Library',
+        'On-Premises or Cloud-Based'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: '10-Strike Network Diagram',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.10-strike.com/network-diagram/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">20. 10-Strike Network Diagram</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p>The 10-Strike Network Diagram tool is a dedicated network map creator with <b>autodiscovery capabilities</b>. You don’t have to use the autodiscovery option in cases such as starting the design of a completely new network. The package features a graphics editor, which is the main utility of the software. The editor includes a library of IT icons that you can drag and drop onto the design pad.</p>
+      `,
+      best_for: '',
+      relevant_for: '',
+      pricingText: '',
+      pricing: [],
+      pros: ['Auto Discovery and Static Diagram Mapping', 'Variety of Network Icons'],
+      cons: ['Windows Only'],
+      features: [
+        'Network Discovery',
+        'Automatic Map Creation',
+        'World Map View Option',
+        'Physical Mapping with Google Maps'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.10-strike.com/network-diagram/download.shtml" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day trial</a>
+      `
+    }
   ]
 };
 
@@ -1901,5 +3052,8 @@ export const pageIDs = {
   '/net-admin/anti-spam-software/': 'The_best_anti-spam_softwareemail_spam_blockers',
   '/net-admin/rmm-software-and-tools/': 'The_Best_RMM_Software_and_Tools',
   '/net-admin/mobile-device-management-software/': 'The_best_MDM_solutions',
-  '/net-admin/ad-administration-management-tools/': 'The_Best_AD_Admin_Management_Tools'
+  '/net-admin/ad-administration-management-tools/': 'The_Best_AD_Admin_Management_Tools',
+  '/net-admin/best-free-sftp-ftps-servers/': 'The_best_free_SFTP_and_FTPS_server_tools',
+  '/net-admin/active-directory-tools/': 'The_best_Active_Directory_tools',
+  '/net-admin/network-topology-and-mapping/': 'The_best_network_mapping_software'
 };
