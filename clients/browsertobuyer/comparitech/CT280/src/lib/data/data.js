@@ -253,7 +253,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/okbio-network-monitoring-tools/l/header/u/2730-4396-6147-9990+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="2730-4396-6147-9990" class="go-link">10. Obkio <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1obkio-1_68a76030e2358.png',
       description: `
       <p>Operating from a cloud platform, <a href="https://www.comparitech.com/go/okbio-network-monitoring-tools/l/inline/u/2314-7591-7012-1179+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="2314-7591-7012-1179" class="go-link"><b>Obkio</b></a> reaches out to networks through the installation of local agents. It is able to test traffic patterns between agents, so the more agents you install, the more data points you will have. The package also implements device monitoring through the Simple Network Management Protocol (SNMP).</p>
       `,
@@ -303,12 +304,13 @@ export const data = {
       `
     },
     {
-      name: 'Intermapper',
+      name: 'Fortra’s Intermapper',
       extraName: '',
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/helpsystems-intermapper-network-monitoring-learn-more-network-monitoring-tools/l/header/u/3979-9632-8245-4513+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="3979-9632-8245-4513" class="go-link">12. Fortra’s Intermapper <span style="color: #800000;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1fortra-1_68a7605a5692b.png',
       description: `
       <p><b>Fortra’s Intermapper</b> offers a network map on its main screen. However, we found that this tool offers more than just a visual representation of your network. For a start, that network map is derived from an autodiscovery function. The network probe cycles around <b>constantly</b> and if any changes occur in the network’s layout, the network map is updated automatically. The system operates around the clock.</p>
       
@@ -358,6 +360,200 @@ export const data = {
       freetrialElement: `
       <a href="https://www.comparitech.com/go/adrem-network-monitoring-tools/l/tcta/u/6620-9055-1961-1699+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="6620-9055-1961-1699" class="go-link">30 days</a>
       `
+    },
+    {
+      name: 'Datadog Network Monitoring',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.datadoghq.com/product/network-monitoring/" target="_blank" rel="noopener noreferrer">14. Datadog Network Monitoring</a>
+      `,
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1datadog-1_68a7668d11950.png',
+      description: `
+      <p><b>Datadog Network Performance Monitoring</b> is <b>a cloud-based SaaS infrastructure monitoring service</b> that examines network traffic flows. It is partnered by a <b>Network Device Monitoring</b> service, which focuses on the statuses of each device on the network, such as switches, routers, and appliances.</p>
+      `,
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Automatic Asset Inventory',
+        'Traffic Patterns and Virtualizations',
+        'Accessible from Anywhere'
+      ],
+      cons: ['Desire for a Longer Trial Period'],
+      features: [
+        'Network Mapping and Protocol Analysis',
+        'Alerts on Performance Thresholds',
+        'Correlation with SNMP'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: `
+      <a href="https://www.datadoghq.com/product/network-monitoring/" target="_blank" rel="noopener noreferrer">14 days</a>
+      `
+    },
+    {
+      name: 'ExtraHop Reveal(x)',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.extrahop.com/products/security/" target="_blank" rel="noopener noreferrer">15. ExtraHop Reveal(x)</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b>ExtraHop Reveal(x)</b> is a network security monitoring system that is able to block the threats that it identifies. This tool uses AI to spot illogical or non-standard behavior that can indicate account takeover or an insider threat. The service operates an anomaly-based detection method.</p>
+      `,
+      pricingText: '',
+      pricing: [],
+      pros: ['Multi-Site Operations'],
+      cons: ['No Price List'],
+      features: [
+        'User and Entity Behavior Analytics (UEBA)',
+        'Automatic Network Discovery',
+        'Identifies Rogue Devices'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'AKIPS',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.akips.com/lp/nb/network-monitoring-software/" target="_blank" rel="noopener noreferrer">16. AKIPS</a>
+      `,
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/akips_68a74c9a279ea.svg',
+      description: `
+      <p><a href="https://www.akips.com/lp/nb/network-monitoring-software/" target="_blank" rel="noopener noreferrer"><b>AKIPS</b></a> is a network monitoring package that provides both device status checks and traffic monitoring. The system includes a discovery service that generates a network inventory. Each record in the inventory lists provides click-through access to device details. That detail screen also shows all of the recent events on the device.</p>
+      `,
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Full Network Visibility',
+        'Alerts for Device Problems',
+        'Log Forwarding to SIEM tools'
+      ],
+      cons: ['No General Price List on the Site'],
+      features: ['Network Discovery', 'Device Statuses', 'Traffic Analysis'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement:
+        '<a href="https://www.akips.com/lp/nb/network-monitoring-software/" target="_blank" rel="noopener noreferrer">30 days</a>'
+    },
+    {
+      name: 'SolarWinds Network Performance Monitor',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.solarwinds.com/network-performance-monitor" target="_blank" rel="noopener noreferrer">17. SolarWinds Network Performance Monitor</a>
+      `,
+      imageUrl: '',
+      description: `
+      <p><b><a href="https://www.solarwinds.com/network-performance-monitor" target="_blank" rel="noopener noreferrer">SolarWinds Network Performance Monitor</a> </b>is a comprehensive network performance monitoring tool that can monitor the status of devices with <b>SNMP</b>. It can <b>automatically discover network devices connected to your network</b>.</p>
+      `,
+      pricingText: 'The price of SolarWinds Network Performance Monitor starts at $2,995 (~£2,350)',
+      pricing: [],
+      pros: ['Auto-Discovery', 'SNMP Monitoring and Packet Analysis', 'Customizable Dashboard'],
+      cons: ['May Be Overwhelming for Small Networks'],
+      features: ['SNMP Monitoring', 'Auto-Discovery', 'Network Packet Analysis'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement:
+        '<a href="https://www.solarwinds.com/network-performance-monitor/registration" target="_blank" rel="noopener noreferrer">free</a>'
+    },
+    {
+      name: 'Nagios Core',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.nagios.org/projects/nagios-core/" target="_blank" rel="noopener noreferrer">18. Nagios Core</a>
+      `,
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/nagios_68a7487e2aa65.svg',
+      description: `
+      <p>For those that prefer bar charts and color-coded device alerting <b>Nagios Core</b> is an <b>open-source network monitor</b> that has a web interface for monitoring network performance. Through the user network interface, you can monitor your <b>Current Network Status</b> with your<b> Host Status Totals </b>and<b> Network Service Status Totals </b>broken down at the top of the page. The GUI is color-coded so you can easily see elements that are unavailable or compromised.</p>
+      `,
+      pricingText: '',
+      pricing: [],
+      pros: ['Open-Source Transparent Tool', 'Robust API Backend'],
+      cons: ['Open-Source Version Support', 'Technical and Complex Installation'],
+      features: ['Performance Dashboard', 'Capacity Planning', 'Community-Created Plugins'],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Catchpoint Network Experience',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.catchpoint.com/network-experience" rel="noopener noreferrer" target="_blank">19. Catchpoint Network Experience</a>
+      `,
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/catchpoint_68a74cc3a1091.svg',
+      description: `
+      <p><b>Catchpoint Network Experience</b> is one of the four performance monitoring module on the cloud-based Catchpoint platform. The purpose of the Catchpoint system is to ensure the successful delivery of Web applications. The platform is offered as a single package rather than individual module purchases.</p>
+      `,
+      pricingText: '',
+      pricing: [],
+      pros: ['Root Cause Analysis', 'Assesses ISP Performance'],
+      cons: ['Not Suitable for LAN Monitoring'],
+      features: [
+        'Virtual Network Performance Monitoring',
+        'BGP Assessments',
+        'Website Delivery Performance'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement:
+        '<a href="https://www.catchpoint.com/trial" target="_blank" rel="noopener noreferrer">14-day free trial</a>'
+    },
+    {
+      name: 'Icinga',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.icinga.com/" target="_blank" rel="noopener noreferrer">20. Icinga</a>
+      `,
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/icinga_68a76c7885a60.png',
+      description: `
+      <p><b>Icinga</b> is an <b>open-source network monitoring tool</b> that monitors the performance of your network, cloud-service, and data center. The software is web-based and can be configured through the <b>GUI</b> or with the <b>Domain Specific Language</b> (<b>DSL</b>). Having the choice between the two gives you the power to monitor however you want.</p>
+      `,
+      pricingText: '',
+      pricing: [],
+      pros: ['Modules for Different Functionality', 'Cross-Platform Compatibility'],
+      cons: ['Reliance on Open-Source Community', 'Designed for Technical Users'],
+      features: [
+        'Web-Based GUI',
+        'DSL Configuration Available',
+        'Icinga Modules/Extensions',
+        'Built-In Visual Reporting'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
+    },
+    {
+      name: 'Zabbix',
+      extraName: '',
+      nameWithUrl: `
+      <a href="https://www.zabbix.com/download" target="_blank" rel="noopener noreferrer">21. Zabbix</a>
+      `,
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/zabbix_68a74bbb2cc6d.svg',
+      description: `
+      <p>More generic visuals and less customizable than other tools in this list, <b>Zabbix</b> is an <b>open-source free network monitoring tool</b> that combines network, server, cloud, application, and services monitoring into one unified solution. Zabbix uses <b>SNMP </b>and<b> IPMP</b> to monitor your network. The autodiscovery feature<b> automatically locates network devices</b> and adds them to be monitored. The tool can also<b> detect configuration changes automatically</b> so you can tell if a network device has been updated.</p>
+      `,
+      pricingText: '',
+      pricing: [],
+      pros: [
+        'Open-Source Transparent Tool',
+        'Immediate Detection of Devices and Changes',
+        'Useful Templates for Quick Insights'
+      ],
+      cons: ['Interface Not as Intuitive', 'Desire for Better Alerting Features'],
+      features: [
+        'Auto Discovery Feature',
+        'SNMP and IPMP Monitoring',
+        'Application/Server Monitoring',
+        'Network Monitoring Templates',
+        'Alerts System'
+      ],
+      'SaaS/On-Premises': '',
+      os: '',
+      freetrialElement: ''
     }
   ],
   '/net-admin/anti-spam-software/': [
@@ -597,7 +793,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://mxguarddog.com/account.register/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">9. MX Guarddog</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/mx-guard-dog_68a75cbb3cddc.png',
       description: `
       <p><b>MX Guarddog </b>is a spam blocker that uses TLS encryption to protect your email inbox. <b>Phishing attacks</b>, <b>malware</b>, <b>DDoS attacks</b>, and <b>viruses </b>are just some of the things that <b>MX Guarddog </b>defends against. Once any communication is blocked, you can view a quarantine report which will show the message content that was blocked.</p>
       `,
@@ -627,7 +824,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.spamfighter.com/SPAMfighter/Product_Info.asp" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">10. SPAMfighter</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/spamfighter_68a75d6d3dca7.png',
       description: `
       <p><strong>SPAMfighter </strong>is a spam filter compatible with <strong>Outlook</strong>, <strong>Outlook Express</strong>, <strong>Thunderbird</strong>, <strong>Windows Mail</strong>, and <strong>Windows Live Mail</strong>. <strong>SPAMfighter’s</strong><strong>filtering works in multiple languages </strong>and can block spam in English, Spanish, German, French, Italian, Polish, Danish, and more. Once a suspicious email has been flagged the software will add the sender to the blacklist and block future emails from reaching your inbox.</p>
       `,
@@ -658,7 +856,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://vamsoft.com/trial-version-download" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">11. ORF Fusion</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/orfusion_68a75cde58d49.png',
       description: `
       <p><strong>ORF Fusion </strong>is a piece of <strong>spam filter software </strong>designed specifically for business use cases. The tool <strong>eliminates false positives </strong>and ensures that legitimate email makes its way to your inbox. One of the unique selling points of <strong>ORF Fusion </strong>is that it has <strong>23 layered tests </strong>to check the status of mail. These tests are a mixture of blacklist and whitelist tests that stop malicious mail without affecting genuine mail.</p>
       `,
@@ -694,7 +893,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.zerospam.eu/en/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">12. Zerospam</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/zerospam_68a75dc6ee9a4.png',
       description: `
       <p><strong>Zerospam</strong> operates as a proxy based in the cloud. It catches all of your incoming emails and assesses each message before forwarding the safe emails on to your email server. The tool quarantines all suspicious emails, so they can still be checked and approved manually.</p>
       `,
@@ -1089,7 +1289,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.connectwise.com/software/automate/rmm" target="_blank" rel="noopener noreferrer">14. ConnectWise Automate</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/connectwise_68a75f423631c.png',
       description: `
       <p><strong>ConnectWise Automate </strong>is a RMM tool that <b>automatically discovers devices</b> throughout a client’s network. You can monitor a range of devices including <b>desktops and servers </b>as well as virtual infrastructure like<b> virtual machines</b>. There are<b> over 100 pre-configured commands</b> for managing customer devices after deployment.</p>
       `,
@@ -1112,7 +1313,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.pulseway.com/" target="_blank" rel="noopener noreferrer">15. Pulseway RMM</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/pulseway_68a75d30e9c83.png',
       description: `
       <p><b>Pulseway RMM </b>is a remote monitoring and management tool with <b>SNMP monitoring</b> that monitors applications and Windows, Linux, and Mac devices. Pulseway is well-known for its automation. You can<b> create custom scripts</b> to automate particular monitoring tasks to help you manage your customer’s asset inventory more efficiently.</p>
       `,
@@ -1325,7 +1527,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.ivanti.com/products/ivanti-neurons-for-mdm" target="_blank" rel="noopener noreferrer">5. Ivanti Neurons for MDM</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/iivanti_68a765818d0e1.svg',
       description: `
       <p>Ivanti Neurons for MDM was known as <b>MobileIron</b> until 2020 when Ivanti bought the mobile device management tool and integrated it into its Neurons line of products. This system is driven from the cloud and can be accessed from each device through an onboard app.</p>
       `,
@@ -1701,7 +1904,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/manageengine-active-directory-admin-admp-ad-administration-management-tools/l/header/u/6353-3145-0679-8033+337078/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="337078" data-clickid="6353-3145-0679-8033" class="go-link"><b>1.</b> <b>ManageEngine ADManager Plus <span style="color: #993300;">(FREE TRIAL)</span></b></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1me-vmp-1_68a761c8e51c7.png',
       description: `
       <p><a href="https://www.comparitech.com/go/manageengine-active-directory-admin-admp-ad-administration-management-tools/l/inline/u/2829-0609-9101-4548+337078/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="337078" data-clickid="2829-0609-9101-4548" class="go-link"><strong>ManageEngine ADManager Plus</strong></a> provides <b>a single console</b> to enable you to manage all of your Active Directory instances for all locations and applications in one place. As well as centralizing all of your on-premises AD services, it will include cloud-based systems, such as Skype, G-Suite, and Office 365.</p>
       `,
@@ -1875,7 +2079,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.imanami.com/" target="_blank" rel="noopener noreferrer"><b>7.</b> <b>GroupID</b></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/group-id-1_68a75f8bcecb8.png',
       description: `
       <p><b>GroupID</b> from <b>Imanami Corporation</b> is an Active Directory management tool that focuses on security issues. It is centered on <b>group policies</b> that enable it to search through all settings to identify access rights weaknesses that could be exploited by intruders.</p>
       `,
@@ -2032,7 +2237,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/cerberus-best-free-sftp-ftps-servers/l/header/u/3322-6670-2212-6122+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3322-6670-2212-6122" class="go-link" data-gtm-vis-has-fired1649924_55="1">4. Cerberus FTP Server <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/cerberus_68a75f1d10251.png',
       description: `
       <p><a href="https://www.comparitech.com/go/cerberus-best-free-sftp-ftps-servers/l/inline/u/1319-5039-6076-3747+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="1319-5039-6076-3747" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>Cerberus FTP Server</b></a> is a file transfer server owned by Digital Ocean that can implement&nbsp; SFTP and FTPS. The package is also able to move files with FTP, SCP, FTP, and HTTPS. This is an on-premises package for <b>Windows</b> and <b>Windows Server</b>. The bundle includes a Web-based server, which is stored together with the server unit and can be accessed by users through any standard Web browser.</p>
       `,
@@ -2056,7 +2262,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/sftp-to-go-best-free-sftp-ftps-servers/l/header/u/4906-5877-8815-6660+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="4906-5877-8815-6660" class="go-link" data-gtm-vis-has-fired1649924_55="1">5. SFTP To Go <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/sftp-to-go_68a75d0dd24b2.png',
       description: `
       <p><a href="https://www.comparitech.com/go/sftp-to-go-best-free-sftp-ftps-servers/l/inline/u/3097-6901-0814-4336+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3097-6901-0814-4336" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>SFTP To Go</strong></a> is a cloud-storage-as-a-service where you can securely store, transfer, share, and integrate files using protocols like SFTP, FTPS, S3, and HTTPS. Built on the AWS infrastructure, this platform is highly reliable and available. It is also easy to use, and at the same time, highly secure.</p>
       `,
@@ -2127,7 +2334,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.syncplify.com/syncplify-server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">8. Syncplify Server</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/syncplify_68a75d92792d4.png',
       description: `
       <p><b>Syncplify Server</b> is an SFTP and FTPS server for Windows that support<b>s FTP, SFTP, FTPS,</b> and is compliant with HIPAA regulations.<b> Syncplify Server </b>supports up to <b>5,000 concurrent clients</b>. The platform has been designed for high availability so you can<b> deploy 2 SFTP server nodes</b>. If one node goes down then the other will still be available, which reduces the chance of disruption.</p>
       `,
@@ -2148,7 +2356,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.crushftp.com" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">9. CrushFTP</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/crush-ftp_68a75f69c0daf.png',
       description: `
       <p><b>CrushFTP</b> is an FTP server for <b>Windows</b>, <b>macOS</b>, and <b>Linux</b> that supports <b>SFTP, FTPS, SCP,</b> and <b>HTTPS</b>. With CrushFTP you can manage file transfers through a <b>web-based user interface</b>. Here the user can view previews of any images, PDFS, videos or documents on the server. Previews enable you to see the content of a particular file from a glance.</p>
       `,
@@ -2169,7 +2378,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://labs.rebex.net/tiny-sftp-server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">10. Rebex Tiny SFTP Server</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/rebex_68a75d510fbef.png',
       description: `
       <p><b>Rebex Tiny SFTP Server </b>is an <b>SFTP server for Windows</b> designed for basic file sharing. You can complete file transfers and view an activity log. The software can be deployed from a <b>ZIP file</b> without any long-winded configurations.</p>
       `,
@@ -2193,7 +2402,7 @@ export const data = {
       <a href="https://www.comparitech.com/go/manageengine-active-directory-tools-admp-active-directory-tools/l/header/u/0590-8503-1992-8462+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="0590-8503-1992-8462" class="go-link">1. ManageEngine ADManager Plus <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
       imageUrl:
-        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine_688a18911590c.png',
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1me-vmp-1_68a761c8e51c7.png',
       description: `
       <p><a href="https://www.comparitech.com/go/manageengine-active-directory-tools-admp-active-directory-tools/l/inline/u/3256-8591-7673-6828+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="3256-8591-7673-6828" class="go-link"><strong>ManageEngine ADManager Plus</strong></a> is an AD management tool that allows users to conduct <strong>Active Directory</strong> management and <strong>generate reports</strong>. In terms of management capabilities, you can manage AD objects, groups, and users from one location. This is beneficial because it allows you to sidestep the hassle of your Active Directory management and use the sleek <strong>ManageEngine </strong>GUI instead.</p>
       `,
@@ -2511,10 +2720,11 @@ export const data = {
       name: 'Netwrix Inactive User Tracker',
       extraName: '',
       nameWithUrl: `
-      <p><strong>Netwrix Inactive User Tracker</strong> is a tool that is used to flag up <strong>Active Directory</strong> accounts that aren’t in use and helps to put them to rest. This tool <strong>scans for inactive user accounts and then provides you with information on for how long the accounts have been dormant</strong>. In effect, the tool automatically keeps you updated on the state of your connected accounts so that you can take action if need be.</p>
+      <a href="https://www.netwrix.com/netwrix_inactive_user_tracker.html" target="_blank" rel="noopener noreferrer">11. Netwrix Inactive User Tracker</a>
       `,
       imageUrl: '',
       description: `
+      <p><strong>Netwrix Inactive User Tracker</strong> is a tool that is used to flag up <strong>Active Directory</strong> accounts that aren’t in use and helps to put them to rest. This tool <strong>scans for inactive user accounts and then provides you with information on for how long the accounts have been dormant</strong>. In effect, the tool automatically keeps you updated on the state of your connected accounts so that you can take action if need be.</p>
       `,
       best_for: '',
       relevant_for: '',
@@ -2575,7 +2785,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/faddom-lm-network-topology-and-mapping/l/header/u/7933-4589-2034-9475+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="7933-4589-2034-9475" class="go-link" data-gtm-vis-has-fired1649924_55="1">2. Faddom <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/faddom_68a75debd2258.png',
       description: `
       <p><a href="https://www.comparitech.com/go/faddom-lm-network-topology-and-mapping/l/inline/u/0359-9839-5356-8068+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="0359-9839-5356-8068" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>Faddom</strong></a> is a hybrid system documentation and mapping package that is able to identify resources both on premise and in the cloud. The service provides IT asset inventories and network maps.</p>
       `,
@@ -2635,7 +2845,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/header/u/3969-3620-3402-3704+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3969-3620-3402-3704" class="go-link" data-gtm-vis-has-fired1649924_55="1">4. ManageEngine Network Mapping with OpManager <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1op-manager_68a730e6dcac5.png',
       description: `
       <p><a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/inline/u/9592-7142-9236-4051+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="9592-7142-9236-4051" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>ManageEngine OpManager</b></a> is a combination of network and server monitoring systems. It includes automated network discovery and <b>topology mapping</b>. As well as tracking and recording all physical connections, the system is able to monitor and map virtualizations and VLAN systems for VoIP.</p>
       `,
@@ -2695,7 +2906,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.datadoghq.com/product/network-monitoring/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">6. Datadog Live Network Mapping</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1datadog-1_68a7668d11950.png',
       description: `
       <p><a href="https://www.datadoghq.com/product/network-monitoring/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><strong>Datadog</strong></a> includes live network mapping services in its two network monitoring packages. These plans are the <b>Network Performance Monitor</b>, which provides network data flow analysis, and the <b>Network Device Monitor</b>, which provides constant checks on switches, routers, and network appliances. Both of these services are delivered from a cloud platform.</p>
       `,
@@ -2721,7 +2933,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.microsoft.com/en-us/p/visio-professional-2019/cfq7ttc0k7cg?activetab=pivot%3aoverviewtab" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">7. Microsoft Visio</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/microsoft_68a75e145e339.png',
       description: `
       <p>Visio is a high-end chart and map-creating tool and is widely-used throughout businesses for a range of tasks. <b>It is possible that many managers in your </b><b>enterprise already use Visio</b>.</p>
       `,
@@ -2749,7 +2962,7 @@ export const data = {
       <a href="https://www.fortra.com/products/network-monitoring-software" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">8. Fortra’s Intermapper</a>
       `,
       imageUrl:
-        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1fortra_68a7315681891.png',
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1fortra-1_68a7605a5692b.png',
       description: `
       <p><strong>Fortra’s</strong> <b>Intermapper</b> is available in both a free and paid version. The tool includes discovery and an automatic mapping feature to get you started, alternatively you can create your own plan from scratch. The autodiscovery system is also capable of plotting virtualization as well as physical network topology.</p>
       `,
@@ -2898,7 +3111,8 @@ export const data = {
       nameWithUrl: `
       <a href="http://www.pacestar.com/lanflow/index.html" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">13. LanFlow</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/lanflow_68a75e430cfcf.png',
       description: `
       <p><b>LanFlow Net Diagrammer</b> is produced by Pacestar Software. The package includes libraries of 2D and 3D icons to enable you to create your own network topology maps.</p>
       `,
@@ -2919,8 +3133,10 @@ export const data = {
       name: 'Net-Probe',
       extraName: '',
       nameWithUrl: `
+      <a href="https://net-probe.soft112.com/" target="_blank" rel="noopener noreferrer">14. Net-Probe</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/netprobe_68a7664b348bf.png',
       description: `
       <p>Net-Probe is a little more than a network mapping tool – it is really a network monitoring system and it will discover your network for you. The network maps of the system can be overlaid on real-world maps if you run a WAN. There is also a classic network diagram format included in the tool.</p>
       `,
@@ -2941,7 +3157,8 @@ export const data = {
       nameWithUrl: `
       <a href="http://www.networknotepad.com/index.shtml" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">15. Network Notepad</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/network-notepad_68a75e6d49de9.png',
       description: `
       <p>Network Notepad is available both as free and paid versions. The software runs on <b>Windows </b>and has a small footprint. You can expand the paid mapper, which is called <b>Network Notepad Professional</b> <b>Edition, </b>and make it into a network monitor by adding on <b>NNMonitor</b>, which is a Ping tool.</p>
       `,
@@ -2994,7 +3211,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.d3mnetworks.com/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">17. D3M</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/d3m_68a75e9b23fab.png',
       description: `
       <p>D3M caters to a unique niche market – IT sales professionals. This network mapping tool can be used to plan out a customer’s requirements, compiling an inventory of necessary network equipment as the topology map builds. If you set up a product library with prices, the inventory will also copy to a bid with a total equipment cost calculated on it automatically. <b>Icons used in the map are provided by equipment manufacturers</b>, so customers will be able to see exactly which make and model of device goes where.</p>
       `,
@@ -3022,7 +3239,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.lantopolog.com/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">18. LANTopoLog</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/lantopolog_68a75ecbd03ac.png',
       description: `
       <p><b>LANTopoLog</b> is a <b>free</b> enthusiast-created network mapper. You don’t get a concept of the physical layout of your network from this topology tool. However, the information displayed in the map gives you a very straightforward representation of all the network data that you need quickly.</p>
       `,
@@ -3083,7 +3301,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.10-strike.com/network-diagram/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">20. 10-Strike Network Diagram</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/10-strike-netwrok-diagram_68a75ef467105.png',
       description: `
       <p>The 10-Strike Network Diagram tool is a dedicated network map creator with <b>autodiscovery capabilities</b>. You don’t have to use the autodiscovery option in cases such as starting the design of a completely new network. The package features a graphics editor, which is the main utility of the software. The editor includes a library of IT icons that you can drag and drop onto the design pad.</p>
       `,
