@@ -4,92 +4,129 @@ import shared from './shared/shared';
 
 import cardWrapper from './components/cardWrapper';
 import trackGA4Event from './services/gaTracking';
-import translationData from './data/data';
+import { data, translationData } from './data/data';
 import { obsIntersection } from './helpers/utils';
+import { arrow } from './assets/icons';
 
 const { ID } = shared;
 
 const init = () => {
+  const { pathname } = window.location;
+  const hasPageData = data[pathname];
   //A) Hide the top hero <p> that wraps the first image via CSS class
   const heroP = document.querySelector('.entry-content > p');
   if (heroP && heroP.querySelector('img')) {
     heroP.classList.add(`${ID}__hidden`);
   }
 
-  const listItems = document.querySelectorAll('.entry-content > ol > li');
+  const listItems = document.querySelector('.highlight-box')
+    ? document.querySelectorAll(
+        '.entry-content .highlight-box .list-item, .entry-content .also-considering .list-item'
+      )
+    : document.querySelectorAll('.entry-content > ol > li');
 
-  listItems.forEach((li, i) => {
-    li.classList.add(`${ID}__hidden`); //Hide all items initially
-    if (i < 3) {
-      li.classList.add(`${ID}__item`);
+  const providerArray = [];
+  console.log(listItems, 'listItems');
+  listItems.forEach((li) => {
+    if (!li.querySelector('a.go-link')) {
+      li.classList.add(`${ID}__initial-hidden`);
     }
+    providerArray.push({
+      name:
+        li.querySelector('a.go-link') &&
+        li.querySelector('a.go-link').childNodes[1]?.textContent &&
+        li.querySelector('a.go-link .serial')
+          ? li.querySelector('a.go-link').childNodes[1].textContent.trim()
+          : li.querySelector('a.go-link')
+          ? li.querySelector('a.go-link').textContent.trim()
+          : li.querySelector('b').textContent.trim(),
+      shown: !!li.querySelector('a.go-link'),
+      linkElement: li.querySelector('a.go-link')
+        ? li.querySelector('a.go-link').cloneNode(true)
+        : null
+    });
   });
 
-  const renderShowMore = () => {
+  console.log(providerArray, 'providerArray');
+  const renderShowMore = (count) => {
     const html = `
-      <div class="${ID}__showMore">See ${listItems.length - 3} more</div>`;
+      <div class="${ID}__showMore">See ${count} more</div>`;
 
-    const attachPoint = document.querySelector('.entry-content > ol');
+    const attachPoint = document.querySelector(`.${ID}__cardWrapper`);
     if (document.querySelector(`.${ID}__showMore`)) {
       document.querySelector(`.${ID}__showMore`).remove(); //Remove existing show more if present
     }
-    attachPoint.insertAdjacentHTML('afterend', html);
+    attachPoint.insertAdjacentHTML('beforeend', html);
     document.querySelector(`.${ID}__showMore`).addEventListener('click', () => {
-      listItems.forEach((li, i) => {
-        if (i < 3) return; //Skip the first three items
-        li.classList.remove(`${ID}__hidden`);
-        trackGA4Event('See More Clicks', 'See More Clicks');
+      trackGA4Event('See More Clicks', 'See More Clicks');
+      const initialHiddenItems = document.querySelectorAll(`.list-item.${ID}__initial-hidden`);
+      initialHiddenItems.forEach((li, i) => {
+        li.classList.remove(`${ID}__initial-hidden`);
+        li.classList.add(`${ID}__show`);
       });
       document.querySelector(`.${ID}__showMore`).remove();
     });
   };
 
-  renderShowMore();
-
-  const topThreeListItems = document.querySelectorAll(`.${ID}__item`);
-  const collectData = [...topThreeListItems].map((li) => {
-    const linkElement = li.querySelector('a.go-link');
-    const link = linkElement ? linkElement.getAttribute('href') : '';
-    const text = linkElement ? linkElement.textContent.trim() : '';
-    const badge = li.querySelector('.badge');
-    return {
-      link,
-      text: text.includes(':') ? text.split(':')[0].trim() : text, //Remove any trailing colon and text
-      badge: !!badge
-    };
-  });
-
-  console.log(collectData, 'collectData');
-
   const language = document.documentElement.lang || 'en'; //Default to English if no lang attribute is found
 
-  const filteredProviders = collectData
-    .filter((p) => translationData[language][p.text]) //only include if translation exists
-    .map((p) => ({
-      name: p.text,
-      link: p.link,
-      badge: p.badge,
-      ...translationData[language][p.text]
-    }));
-
-  console.log(filteredProviders, 'filteredProviders');
-  if (filteredProviders.length > 0 && !document.querySelector(`.${ID}__cardWrapper`)) {
+  if (!document.querySelector(`.${ID}__cardWrapper`) && hasPageData) {
     document
-      .querySelector('.entry-content > ol')
-      .insertAdjacentHTML('beforebegin', cardWrapper(ID, filteredProviders, language));
+      .querySelector('.entry-content')
+      .insertAdjacentHTML('afterbegin', cardWrapper(ID, hasPageData, providerArray, language));
   }
 
-  const handIntersection = (entry) => {
-    if (entry.isIntersecting) {
-      document.querySelector('#toc-widget-2 .vpn')?.classList.add(`${ID}__hidden`);
-    } else {
-      document.querySelector('#toc-widget-2 .vpn')?.classList.remove(`${ID}__hidden`);
+  const allActiveProviders = document.querySelectorAll(`.${ID}__cardList .vpn-card`);
+  allActiveProviders.forEach((provider, index) => {
+    const { name } = provider.dataset;
+    const providerLinkElem = provider.querySelector('.vpn-title a');
+    const button = provider.querySelector('.vpn-button-wrapper a');
+    if (providerLinkElem.querySelector('.serial')) {
+      providerLinkElem.querySelector('.serial').remove();
     }
-  };
+    providerLinkElem.insertAdjacentHTML('afterbegin', `<span class="serial">${index + 1}.</span>`);
+    if (button.querySelector('.serial')) {
+      button.querySelector('.serial').remove();
+    }
+    button.className = 'button';
+    const firstWord = name ? name.split(' ')[0] : name;
+    button.textContent = `Go to ${firstWord} ${arrow}`;
+  });
 
-  if (document.querySelector(`.${ID}__cardWrapper`)) {
-    obsIntersection(document.querySelector(`.${ID}__cardWrapper`), 0.2, handIntersection);
+  if (providerArray.length !== 0) {
+    const countFalseShown = providerArray.filter((item) => !item.shown).length;
+    if (countFalseShown > 0) {
+      //Do something if there are hidden items
+      renderShowMore(countFalseShown);
+    }
+
+    //Get the two boundary elements
+    const start = document.querySelector('.CT270__cardWrapper');
+    const end = document.querySelector('.highlight-box');
+
+    if (start && end) {
+      let current = start.nextElementSibling;
+
+      while (current && current !== end) {
+        if (current.tagName.toLowerCase() === 'p') {
+          current.style.display = 'none'; //hide the <p>
+        }
+        current = current.nextElementSibling;
+      }
+    }
   }
+
+  //const handIntersection = (entry) => {
+  //if (entry.isIntersecting) {
+  //document.querySelector('#toc-widget-2 .vpn')?.classList.add(`${ID}__hidden`);
+  //} else {
+  //document.querySelector('#toc-widget-2 .vpn')?.classList.remove(`${ID}__hidden`);
+  //}
+  //};
+
+  //if (document.querySelector(`.${ID}__cardWrapper`)) {
+  //obsIntersection(document.querySelector(`.${ID}__cardWrapper`), 0.2, handIntersection);
+  //}
 };
 
 export default () => {

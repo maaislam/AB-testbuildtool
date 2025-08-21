@@ -1,5 +1,5 @@
 import { arrow, tickIcon } from '../assets/icons';
-import translationData from '../data/data';
+import { translationData } from '../data/data';
 
 const getStarSvg = (inputRating) => {
   //1. force to nearest two decimals (eliminate tiny FP errors)
@@ -74,7 +74,7 @@ const oneDecimal = (s) => {
   return n.toFixed(1);
 };
 
-const card = (provider, language, index) => {
+const card = (hasPageData, provider, language, index) => {
   const providerExtraData = getLdJsonByBrand(provider.name);
 
   const overallRating = providerExtraData?.aggregateRating?.ratingValue || '9.8';
@@ -86,56 +86,94 @@ const card = (provider, language, index) => {
 
   const starIcons = getStarSvg(finalRatingNumber); //Round to 1 decimal place
 
+  console.log(hasPageData, 'hasPageData');
+  console.log(provider, 'provider');
+  //Filter the main array based on the small array
+  const filteredData = hasPageData.filter((item) => {
+    //Ensure that the provider is 'shown' and the name matches
+    return (
+      provider.shown && item.name.toLowerCase().trim().includes(provider.name.toLowerCase().trim())
+    );
+  });
+
+  console.log(filteredData, 'filterend');
+
+  if (filteredData.length === 0) {
+    //Do something with filteredData
+    return null; //Return null if no matching data found
+  }
+
   const html = `
-       <div class="vpn-card">
-            <!-- LEFT -->
-            <div class="vpn-left">
-                ${
-                  provider.badge
-                    ? `<div class="badge">${index + 1}. EDITOR'S CHOICE</div>`
-                    : `<div class="badge">${index + 1}.</div>`
-                }
-                <img src="${provider.image}" alt="${provider.name}" />
-                <div class="headline">${provider.headline}</div>
-            </div>
+        <div class="vpn-card" data-name="${provider.name}">
+          <!-- LEFT -->
+          <div class="vpn-left">
+              ${
+                filteredData[0].extraName
+                  ? `<div class="badge">${index + 1}. EDITOR'S CHOICE</div>`
+                  : `<div class="badge">${index + 1}.</div>`
+              }
+              <img src="${filteredData[0].imageUrl}" alt="${filteredData[0].name}" />
+              <div class="headline">${filteredData[0].best_for}</div>
+          </div>
 
-            <!-- MIDDLE -->
-            <div class="vpn-middle">
-                <div class="vpn-title">${index + 1}. <a href="${provider.link}">
-                  ${provider.name}</a>
-                </div>
-                <ul>
-                    ${translationData[language][provider.name].features
-                      .map((feature) => {
-                        return `<li><span>${tickIcon}</span><span>${feature}</span></li>`;
-                      })
-                      .join('')}
-                </ul>
-            </div>
+          <!-- MIDDLE -->
+          <div class="vpn-middle">
+              ${
+                provider.linkElement
+                  ? `
+                  <div class="vpn-title">
+                    ${provider.linkElement.outerHTML}
+                  </div>
+                `
+                  : ''
+              }
+             <ul>
+            ${filteredData[0].pros
+              .map((feature) => {
+                return `<li><span>${tickIcon}</span><span>${feature}</span></li>`;
+              })
+              .join('')}
+            </ul>
+            ${
+              filteredData[0].features
+                ? `
+               <h4 class="featured-title">Features</h4>
+               <ul class="featured-lists">
+                 ${filteredData[0].features
+                   .map((feature) => {
+                     return `<li>${feature}</li>`;
+                   })
+                   .join('')}
+               </ul>
+              `
+                : ''
+            }
+          </div>
 
-            <!-- RIGHT -->
-            <div class="vpn-right">
-                <div class="rating-wrapper">
-                    <div class="rating-wrapper-first">
-                        <div class="rating">Exceptional</div>
-                        <div class="stars">${starIcons}</div>
-                    </div>
+          <!-- RIGHT -->
+          <div class="vpn-right">
+            <div class="rating-wrapper">
+              <div class="rating-wrapper-first">
+                <div class="rating">Exceptional</div>
+                <div class="stars">${starIcons}</div>
+              </div>
 
-                    <div class="rating-wrapper-second">
-                        <div class="score">${oneDecimal(overallRating)}</div>
-                    </div>
-                </div>
-                <a href="${provider.link}" class="button">${
-    index !== 0 ? `Get ${provider.name}` : 'Get Special Deal'
-  } <span>${arrow}</span></a>
-                ${
-                  provider.name === 'NordVPN'
-                    ? `<div class="small-text">Get 72% off ${provider.name} plans<br>LIMITED TIME</div>`
-                    : ''
-                }
-            </div>
+              <div class="rating-wrapper-second">
+                <div class="score">${oneDecimal(overallRating)}</div>
+              </div>
+            </div> 
+            ${
+              provider.linkElement
+                ? `
+                  <div class="vpn-button-wrapper">
+                     ${provider.linkElement.outerHTML}
+                  </div>
+                `
+                : ''
+            }
+          </div>
         </div>
-    `;
+  `;
   return html.trim();
 };
 

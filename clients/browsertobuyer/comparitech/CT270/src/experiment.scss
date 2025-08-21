@@ -38,13 +38,43 @@
     margin: 20px 0 20px;
   }
 
+  &__cardWrapper {
+    & + p {
+      display: none;
+    }
+  }
+
+  .entry-content {
+    .highlight-box {
+      display: none;
+    }
+    .remaining-items {
+      .list-item {
+        display: none;
+
+        &.#{$id}__initial-hidden {
+          display: none;
+        }
+
+        &.#{$id}__show {
+          display: block;
+        }
+      }
+    }
+
+    .CT266__hide {
+      & + p {
+        display: none;
+      }
+    }
+  }
+
   .vpn-card {
     position: relative;
     display: flex;
     border: 2px solid #006c9b;
     background: #fff;
     padding: 16px 24px;
-    align-items: center;
     margin-bottom: 20px;
 
     @media screen and (max-width: 991px) and (min-width: 768px) {
@@ -97,8 +127,9 @@
     }
 
     .vpn-left img {
-      max-width: 150px;
-      margin: 0;
+      max-width: 130px;
+      width: 100%;
+      margin: 0 auto;
       margin-bottom: 12px;
     }
 
@@ -109,6 +140,7 @@
       font-style: italic;
       font-weight: 700;
       line-height: 1.5;
+      text-align: center;
       @media screen and (max-width: 991px) and (min-width: 768px) {
         text-align: center;
       }
@@ -323,6 +355,29 @@
       font-style: normal;
       font-weight: 400;
       line-height: 140%; /* 16.8px */
+    }
+
+    .featured-title {
+      color: #333;
+      font-family: Arial;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: normal;
+      margin: 16px 0 8px;
+    }
+    .featured-lists {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        color: #0177a5;
+        font-family: Arial;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0 16px 10px 0;
+      }
     }
   }
 }

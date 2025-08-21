@@ -6,7 +6,7 @@ export const data = {
       nameWithUrl:
         '<a href="https://www.comparitech.com/go/auvik-network-monitoring-tools-learn-more-network-monitoring-tools/l/header/u/3752-0270-8158-3501+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="3752-0270-8158-3501" class="go-link">1. Auvik <span style="color: #800000;">(FREE TRIAL)</span></a>',
       imageUrl:
-        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/clip-path-group_688a17fd5ae23.png',
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1auvik_68a7307e19bd2.png',
       description:
         '<a href="https://www.comparitech.com/go/auvik-network-monitoring-tools-learn-more-network-monitoring-tools/l/inline/u/8626-1194-5010-3490+66031/" target="_blank" class="go-link">Auvik</a> is a cloud-based network monitoring system that includes a number of system management tools. The package is accessed through a Web browser and when you open an account, the setup process installs collectors on your system. The Auvik package is able to monitor multiple sites and centralizes their control. This makes the package ideal for monitoring a WAN.',
       pricingText: 'Auvik doesn’t publish its prices.',
@@ -26,7 +26,7 @@ export const data = {
       'SaaS/On-Premises': 'SaaS',
       os: 'Cloud-based',
       freetrialElement:
-        '<a href="https://www.comparitech.com/go/auvik-network-monitoring-tools-learn-more-network-monitoring-tools/l/tcta/u/2095-2982-9699-0202+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="2095-2982-9699-0202" class="go-link">14-days</a>'
+        '<a href="https://www.comparitech.com/go/auvik-network-monitoring-tools-learn-more-network-monitoring-tools/l/tcta/u/2095-2982-9699-0202+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="2095-2982-9699-0202" class="go-link">14 days</a>'
     },
     {
       name: 'Paessler PRTG Network Monitor ',
@@ -35,7 +35,7 @@ export const data = {
       <a href="https://www.comparitech.com/go/paessler-prtg-network-monitoring-learn-more-network-monitoring-tools/l/header/u/6039-0213-8320-4787+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="6039-0213-8320-4787" class="go-link">2. Paessler PRTG Network Monitor <span style="color: #800000;">(FREE TRIAL)</span></a>
       `,
       imageUrl:
-        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/paesller_688a184417589.png',
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1paesller_68a730a59a254.png',
       description: `
       <p><a href="https://www.comparitech.com/go/paessler-prtg-network-monitoring-learn-more-network-monitoring-tools/l/inline/u/5873-3420-5642-7781+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="5873-3420-5642-7781" class="go-link"><b>PRTG Network Monitor from Paessler </b></a>is a free network monitoring suite that uses <b>SNMP, packet sniffing, </b>and<b> WMI</b> to monitor your network. Scan network segments to discover and add devices to monitor. You can choose between a range of sensors to monitor various segments of your network. Each sensor monitors an individual value in your network, for instance, there are <b>Bandwidth Monitoring Sensors, Hardware Parameters Sensors, <a href="https://www.comparitech.com/net-admin/best-data-usage-meters/" target="_blank" rel="noopener noreferrer">network data usage meters</a>, SNMP sensors, VOIP and QoS sensors,</b> and more.</p>
       `,
@@ -59,7 +59,7 @@ export const data = {
       'SaaS/On-Premises': 'On-premises, SaaS available',
       os: 'Windows Server',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/paessler-prtg-network-monitoring-learn-more-network-monitoring-tools/l/tcta/u/8879-9093-7079-2199+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="8879-9093-7079-2199" class="go-link">30-days</a>
+      <a href="https://www.comparitech.com/go/paessler-prtg-network-monitoring-learn-more-network-monitoring-tools/l/tcta/u/8879-9093-7079-2199+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="8879-9093-7079-2199" class="go-link">30 days</a>
       `
     },
     {
@@ -68,7 +68,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/domotz-network-monitoring-learn-more-network-monitoring-tools/l/header/u/8927-3510-0731-0301+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="8927-3510-0731-0301" class="go-link" data-gtm-vis-has-fired1649924_55="1">3. Domotz <span style="color: #800000;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/domotz_688a185f51fe2.png',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1domotz_68a730bf45743.png',
       description: `
       <p><b><a href="https://www.comparitech.com/go/domotz-network-monitoring-learn-more-network-monitoring-tools/l/inline/u/0850-1835-9332-4388+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="0850-1835-9332-4388" class="go-link" data-gtm-vis-has-fired1649924_55="1">Domotz</a></b> is a cloud-based system that offers network monitoring. It can unify the supervision of multiple networks and also has a <b>multi-tenant</b> configuration for use by managed service providers.</p>
       `,
@@ -90,7 +91,7 @@ export const data = {
       'SaaS/On-Premises': 'SaaS',
       os: 'Cloud-based',
       freetrialElement:
-        '<a href="https://www.comparitech.com/go/domotz-network-monitoring-learn-more-network-monitoring-tools/l/tcta/u/1905-1686-6701-1592+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1905-1686-6701-1592" class="go-link" data-gtm-vis-has-fired1649924_55="1">14-days</a>'
+        '<a href="https://www.comparitech.com/go/domotz-network-monitoring-learn-more-network-monitoring-tools/l/tcta/u/1905-1686-6701-1592+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1905-1686-6701-1592" class="go-link" data-gtm-vis-has-fired1649924_55="1">14 days</a>'
     },
     {
       name: 'Checkmk',
@@ -98,7 +99,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/checkmk-network-monitoring-network-monitoring-tools/l/header/u/8482-1631-1574-5395+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="8482-1631-1574-5395" class="go-link">4. Checkmk <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1checkmk_68a7310f39c56.png',
       description: `
       <p><b><a href="https://www.comparitech.com/go/checkmk-network-monitoring-network-monitoring-tools/l/inline/u/5724-0937-6047-3193+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="5724-0937-6047-3193" class="go-link">Checkmk</a></b> is a system monitoring package that is able to track the performance of networks, servers, and applications. The network monitor can be used for <b>LANs</b> and <b>wireless networks</b>, so it can also be useful for following activity on networks that use both wired and wireless technology.</p>
       `,
@@ -115,7 +117,7 @@ export const data = {
       'SaaS/On-Premises': 'On-premises, SaaS available',
       os: 'Linux',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/checkmk-network-monitoring-network-monitoring-tools/l/tcta/u/8891-8640-8594-1191+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="8891-8640-8594-1191" class="go-link">30-days</a>
+      <a href="https://www.comparitech.com/go/checkmk-network-monitoring-network-monitoring-tools/l/tcta/u/8891-8640-8594-1191+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="8891-8640-8594-1191" class="go-link">30 days</a>
       `
     },
     {
@@ -124,7 +126,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/ninjaone-lm-network-monitoring-tools/l/header/u/0196-1470-2492-3759+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="0196-1470-2492-3759" class="go-link">5. NinjaOne RMM <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1ninja1_68a730d4b8c50.png',
       description: `
       <p><a href="https://www.comparitech.com/go/ninjaone-lm-network-monitoring-tools/l/inline/u/9351-8911-2338-8958+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="9351-8911-2338-8958" class="go-link"><b>NinjaOne RMM</b></a> provides remote monitoring and management services from a <b>cloud platform</b>. This system can be accessed from anywhere through any standard Web browser, so your business doesn’t need any special equipment or even servers to administer multiple remote networks.</p>
       `,
@@ -138,8 +141,10 @@ export const data = {
       cons: ['No Public Price List, Custom Quotes Required'],
       features: ['Autodiscovery', 'Device Status Monitoring', 'Traffic Analysis'],
       'SaaS/On-Premises': 'SaaS',
-      os: '',
-      freetrialElement: 'Cloud-based'
+      os: 'Cloud-based',
+      freetrialElement: `
+      <a href="https://www.comparitech.com/go/ninjaone-ft-network-monitoring-tools/l/cta/u/6502-9268-8558-3986+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="6502-9268-8558-3986" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>14 days</b></a>
+      `
     },
     {
       name: 'Progress WhatsUp Gold ',
@@ -147,7 +152,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/progress-network-monitoring-tools/l/header/u/0829-7099-4225-7923+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="0829-7099-4225-7923" class="go-link">6. Progress WhatsUp Gold <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1progress-whatsup-gold_68a7460e68135.png',
       description: `
       <p><a href="https://www.comparitech.com/go/progress-network-monitoring-tools/l/inline/u/2150-9515-5991-0044+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="2150-9515-5991-0044" class="go-link"><b>Progress WhatsUp Gold</b></a> is a network device monitoring tool that provides businesses with an easy-to-use solution to oversee their network infrastructure. It provides real-time visibility into network performance through the deployment of SNMP processes. The tool continuously monitors various devices, servers, and applications, offering insights into device health, which is crucial for maintaining network uptime and optimal performance.</p>
       `,
@@ -163,7 +169,7 @@ export const data = {
       'SaaS/On-Premises': 'On-premises',
       os: 'Windows Server',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/progress-network-monitoring-tools/l/tcta/u/5260-7296-8432-0082+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="5260-7296-8432-0082" class="go-link">14-days</a>
+      <a href="https://www.comparitech.com/go/progress-network-monitoring-tools/l/tcta/u/5260-7296-8432-0082+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="5260-7296-8432-0082" class="go-link">14 days</a>
       `
     },
     {
@@ -172,7 +178,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/manageengine-opmanager-learn-more-network-monitoring-tools/l/header/u/1865-2936-1396-8704+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1865-2936-1396-8704" class="go-link" data-gtm-vis-has-fired1649924_55="1">7. ManageEngine OpManager <span style="color: #800000;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1op-manager_68a730e6dcac5.png',
       description: `
       <p><a href="https://www.comparitech.com/go/manageengine-opmanager-learn-more-network-monitoring-tools/l/inline/u/2950-2228-9384-5192+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="2950-2228-9384-5192" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>ManageEngine OpManager</b></a> is a network monitoring solution that can monitor the performance of network devices, servers, routers, switches, and virtual machines in real-time. <b>Customizable dashboards</b> provide <b>over 200 widgets</b> for you to create a unique monitoring experience.</p>
       `,
@@ -189,7 +196,7 @@ export const data = {
       'SaaS/On-Premises': 'On-premises',
       os: 'Linux, Windows Server, Azure, and AWS',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/manageengine-opmanager-learn-more-network-monitoring-tools/l/tcta/u/8405-0687-4563-4508+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="8405-0687-4563-4508" class="go-link">30-days</a>
+      <a href="https://www.comparitech.com/go/manageengine-opmanager-learn-more-network-monitoring-tools/l/tcta/u/8405-0687-4563-4508+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="8405-0687-4563-4508" class="go-link">30 days</a>
       `
     },
     {
@@ -198,7 +205,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/atera-lm-betwork-monitoring-tools/l/header/u/1560-1132-1424-3899+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1560-1132-1424-3899" class="go-link">8. Atera <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1atera_68a730f8d08cd.png',
       description: `
       <p><a href="https://www.comparitech.com/go/atera-lm-betwork-monitoring-tools/l/inline/u/0490-0882-5271-2546+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="0490-0882-5271-2546" class="go-link"><b>Atera</b></a> is a comprehensive remote monitoring and management (RMM) system designed primarily for IT service providers and managed service providers (MSPs). It combines powerful monitoring tools with remote management features to provide a holistic solution for maintaining and optimizing IT environments. With its cloud-based platform, Atera enables users to efficiently oversee their networks, detect issues, and implement solutions in real-time.</p>
       `,
@@ -210,7 +218,7 @@ export const data = {
       'SaaS/On-Premises': 'SaaS',
       os: 'Cloud-based',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/atera-lm-betwork-monitoring-tools/l/tcta/u/8625-3908-4961-3029+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="8625-3908-4961-3029" class="go-link">30-days</a>
+      <a href="https://www.comparitech.com/go/atera-lm-betwork-monitoring-tools/l/tcta/u/8625-3908-4961-3029+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="8625-3908-4961-3029" class="go-link">30 days</a>
       `
     },
     {
@@ -219,7 +227,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/superops-network-monitoring-tools/l/header/u/5530-6664-9071-4262+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="5530-6664-9071-4262" class="go-link">9. SuperOps <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1superops_68a7451d047b3.png',
       description: `
       <p><a href="https://www.comparitech.com/go/superops-network-monitoring-tools/l/inline/u/4672-2873-2694-9022+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="4672-2873-2694-9022" class="go-link"><b>SuperOps</b></a> is a cloud platform that offers system management tools, such as a remote monitoring and management package. That <b>RMM</b> includes a network monitoring unit that provides network discovery. The service generates a system inventory that forms the basis for automated monitoring routines.</p>
       `,
@@ -235,7 +244,7 @@ export const data = {
       'SaaS/On-Premises': 'SaaS',
       os: 'Cloud-based',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/superops-network-monitoring-tools/l/tcta/u/5249-1800-8482-3585+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="5249-1800-8482-3585" class="go-link">14-days</a>
+      <a href="https://www.comparitech.com/go/superops-network-monitoring-tools/l/tcta/u/5249-1800-8482-3585+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="5249-1800-8482-3585" class="go-link">14 days</a>
       `
     },
     {
@@ -265,7 +274,7 @@ export const data = {
       'SaaS/On-Premises': 'SaaS',
       os: 'Cloud-based',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/okbio-network-monitoring-tools/l/tcta/u/4773-3564-5311-4964+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="4773-3564-5311-4964" class="go-link">14-days</a>
+      <a href="https://www.comparitech.com/go/okbio-network-monitoring-tools/l/tcta/u/4773-3564-5311-4964+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="4773-3564-5311-4964" class="go-link">14 days</a>
       `
     },
     {
@@ -290,7 +299,7 @@ export const data = {
       'SaaS/On-Premises': 'SaaS',
       os: 'Cloud-based',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/site24x7-network-monitoring-free-trial/l/tcta/u/1500-0043-5137-0923+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1500-0043-5137-0923" class="go-link">30-days</a>
+      <a href="https://www.comparitech.com/go/site24x7-network-monitoring-free-trial/l/tcta/u/1500-0043-5137-0923+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1500-0043-5137-0923" class="go-link">30 days</a>
       `
     },
     {
@@ -317,7 +326,7 @@ export const data = {
       'SaaS/On-Premises': 'On-premises',
       os: 'Windows, Linux, or macOS',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/helpsystems-intermapper-network-monitoring-learn-more-network-monitoring-tools/l/tcta/u/9581-9120-6288-8918+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="9581-9120-6288-8918" class="go-link">30-days</a>
+      <a href="https://www.comparitech.com/go/helpsystems-intermapper-network-monitoring-learn-more-network-monitoring-tools/l/tcta/u/9581-9120-6288-8918+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="9581-9120-6288-8918" class="go-link">30 days</a>
       `
     },
     {
@@ -326,7 +335,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/adrem-network-monitoring-tools/l/header/u/1495-7834-0290-0721+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1495-7834-0290-0721" class="go-link">13. AdRem NetCrunch <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1adrem_68a7316d45309.png',
       description: `
       <p><a href="https://www.comparitech.com/go/adrem-network-monitoring-tools/l/inline/u/1495-2196-7939-2083+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1495-2196-7939-2083" class="go-link"><strong>AdRem NetCrunch</strong></a> provides monitoring services to watch over networks, endpoints, and software. This is an on-premises software package and it is able to reach across your network to examine all endpoints, not just the host of the package. The service includes a network discovery routine that discovers all devices, writes up a hardware inventory, and generates a network topology map.</p>
       `,
@@ -346,7 +356,7 @@ export const data = {
       'SaaS/On-Premises': 'Hybrid',
       os: 'Window Server',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/adrem-network-monitoring-tools/l/tcta/u/6620-9055-1961-1699+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="6620-9055-1961-1699" class="go-link">30-days</a>
+      <a href="https://www.comparitech.com/go/adrem-network-monitoring-tools/l/tcta/u/6620-9055-1961-1699+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="6620-9055-1961-1699" class="go-link">30 days</a>
       `
     }
   ],
@@ -357,7 +367,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/guardz-anti-spam-software/l/header/u/1563-0144-1288-2599+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="1563-0144-1288-2599" class="go-link">1. Guardz <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1guardz_68a7468128320.png',
       description: `
       <p><a href="https://www.comparitech.com/go/guardz-anti-spam-software/l/inline/u/9223-4234-2370-7799+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="9223-4234-2370-7799" class="go-link"><b>Guardz</b></a> is a cloud-based security monitoring platform that includes spam blocking as part of its email security unit. This module will also block business email compromise (BEC), phishing, and malware. When a suspicious email is detected, Guardz moves it from the user’s mailbox to a quarantine area and reports on the event in the system dashboard.</p>
       `,
@@ -382,7 +393,7 @@ export const data = {
       Cloud_based: 'Yes',
       Reporting_Analytics: 'Yes',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/guardz-anti-spam-software/l/cta/u/5523-1933-7426-7282+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="5523-1933-7426-7282" class="go-link"><b>14-days</b></a>
+      <a href="https://www.comparitech.com/go/guardz-anti-spam-software/l/cta/u/5523-1933-7426-7282+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="5523-1933-7426-7282" class="go-link"><b>14 days</b></a>
       `
     },
     {
@@ -391,7 +402,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/mailwasher-anti-spam-software/l/header/u/9741-1890-1552-8447+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="9741-1890-1552-8447" class="go-link">2. Mailwasher <span style="color: #993300;">(FREE TOOL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1mailwasher_68a746b36a1d4.png',
       description: `
       <p><a href="https://www.comparitech.com/go/mailwasher-anti-spam-software/l/inline/u/9857-0139-7340-5398+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="9857-0139-7340-5398" class="go-link"><strong>Mailwasher</strong></a> is compatible with all email providers on desktop and mobile devices. Email providers supported by <strong>Mailwasher </strong>include <strong>Outlook</strong>, <strong>Outlook Express</strong>, <strong>Incredimail</strong>, <strong>Thunderbird</strong>, <strong>Windows Live Mail</strong>, <strong>Gmail</strong>, <strong>Hotmail</strong>, <strong>Yahoo</strong>, <strong>EM Client</strong>, and more. The diverse range of email accounts supported by <strong>Mailwasher </strong>makes the software versatile in enterprise environments.</p>
       `,
@@ -415,7 +427,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/eset-anti-spam-software/l/header/u/0409-4087-4049-3011+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="0409-4087-4049-3011" class="go-link">3. ESET Protect Mail Plus <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1est-mail-plus_68a746e32dc5b.png',
       description: `
       <p><strong><a href="https://www.comparitech.com/go/eset-anti-spam-software/l/inline/u/8915-6786-9756-6894+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="8915-6786-9756-6894" class="go-link">ESET Protect Email Plus</a></strong> detects and blocks malicious content in emails. This means that the service will block malware, spam, and phishing attempts. Malware is easy to deal with because the ESET system just needs to shield any attachments, unpack them, and, in the case of software, run them, in a protected <b>sandbox</b> that is hosted on the cloud.</p>
       `,
@@ -427,7 +440,7 @@ export const data = {
       Cloud_based: 'Hybrid',
       Reporting_Analytics: 'Yes',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/eset-anti-spam-software/l/cta/u/8923-2180-8215-7049+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="8923-2180-8215-7049" class="go-link"><strong>30-day free trial</strong></a>
+      <a href="https://www.comparitech.com/go/eset-anti-spam-software/l/cta/u/8923-2180-8215-7049+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="8923-2180-8215-7049" class="go-link"><strong>30 days</strong></a>
       `
     },
     {
@@ -436,7 +449,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/titanhq-anti-spam-software/l/header/u/4711-5816-0589-7583+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="4711-5816-0589-7583" class="go-link" data-gtm-vis-has-fired1649924_55="1">4. TitanHQ Email Security <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1titan_68a7472bd956f.png',
       description: `
       <p><b><a href="https://www.comparitech.com/go/titanhq-anti-spam-software/l/inline/u/8441-0072-7366-9085+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="8441-0072-7366-9085" class="go-link" data-gtm-vis-has-fired1649924_55="1">TitanHQ Email Security</a></b> is a web-based anti-spam solution intended for Microsoft Office 365 accounts. The tool is designed to discover <b>phishing email attacks</b>, <b>spear-phishing attacks</b>, and <b>zero-day attacks</b>. To recognize the latest threats <b>Email Security </b>uses a mixture of machine learning and Bayesian analysis to identify new attacks. The powerful email protection against zero-day threats is excellent for minimizing exposure towards emerging email threats.</p>
       `,
@@ -461,7 +475,7 @@ export const data = {
       Reporting_Analytics: 'No',
       freetrialElement: `
       <a class="go-link" href="https://www.comparitech.com/go/titanhq-anti-spam-software/l/button/u/6420-4869-8922-9641+212897/" target="_blank" rel="sponsored nofollow noopener" data-postid="212897" data-clickid="6420-4869-8922-9641" data-gtm-vis-has-fired1649924_55="1">
-                Access a 14-day FREE Trial
+                14 days
             </a>
       `
     },
@@ -471,7 +485,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.hornetsecurity.com/en/services/spam-filter/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">5. Hornetsecurity Email Spam Filter and Malware Protection Service</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/hornet-security_68a74dca2733e.svg',
       description: `
       <p><strong>Hornetsecurity Email Spam Filter and Malware Protection Service</strong> is a cloud-based system that stands between your email server and the rest of the world. It will filter out phishing, spam, malicious links, and malware and it also blocks DDoS attacks. The service checks outgoing emails as well. For further protection, the program uses TLS encryption to keep your interactions safe from snooping. In the event the client-server goes down, the tool will use automatic mail queuing to help you return to normal operations ASAP.</p>
       `,
@@ -490,7 +505,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://c-command.com/spamsieve/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">6. SpamSieve</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/spamsieve_68a74afe4f123.svg',
       description: `
       <p>The spam filter in Mail on Macs isn’t very good. If you use a different email client, you are stuck with whatever Junk main identification that system provides. However, if you want a better spam filtering service, you can try <b>SpamSieve</b> instead.</p>
       `,
@@ -515,7 +531,7 @@ export const data = {
       Cloud_based: 'Yes',
       Reporting_Analytics: 'Yes',
       freetrialElement: `
-      <a href="https://c-command.com/spamsieve/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      <a href="https://c-command.com/spamsieve/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30 days</a>
       `
     },
     {
@@ -524,7 +540,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.trustifi.com/products/inbound-shield/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">7. Trustifi Inbound Shield</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/trustfi_68a74b978c3c6.svg',
       description: `
       <p><a href="https://www.trustifi.com/products/inbound-shield/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><b>Trustifi Inbound Shield</b></a> is a cloud-based email protection system that you implement in your own mail server through an API. Adding on this plug-in sets up a call to the remote process to scan each incoming mail. The service is also available as a plug-in for Microsoft 365 and Google Workspace.</p>
       `,
@@ -554,7 +571,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comodo.com/business-security/email-security/antispam-gateway.php" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">8. Comodo Dome Antispam</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/comodo_68a74ce533571.svg',
       description: `
       <p><strong>Comodo Dome Antispam </strong>is a <strong>spam prevention tool </strong>designed for enterprise users. Comodo Dome Antispam <strong>scans and filters emails </strong>to keep your inbox safe from cyber attackers. When downloading files from the inbox, <strong>Comodo Dome Antispam </strong>uses its Valkyrie file verdict platform to analyze files as they are being downloaded. You can open and interact with a file without any risk of infection even from the latest malware attacks.</p>
       `,
@@ -571,7 +588,7 @@ export const data = {
       Cloud_based: 'Yes',
       Reporting_Analytics: 'Yes',
       freetrialElement: `
-      <a href="https://secure.nurd.com/home/purchase.php?key5sk1=848c6d1e34329ff3bb0ee6e305b1743aa76cc8d2&amp;license=trial&amp;pid=215&amp;track=10041&amp;af=10041" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      <a href="https://secure.nurd.com/home/purchase.php?key5sk1=848c6d1e34329ff3bb0ee6e305b1743aa76cc8d2&amp;license=trial&amp;pid=215&amp;track=10041&amp;af=10041" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30 days</a>
       `
     },
     {
@@ -601,7 +618,7 @@ export const data = {
       Cloud_based: 'Yes',
       Reporting_Analytics: 'No',
       freetrialElement: `
-      <a href="https://mxguarddog.com/account.register/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">one-month free trial</a>
+      <a href="https://mxguarddog.com/account.register/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">one month</a>
       `
     },
     {
@@ -632,7 +649,7 @@ export const data = {
       Cloud_based: 'No',
       Reporting_Analytics: 'No',
       freetrialElement: `
-      <a href="https://www.spamfighter.com/SPAMfighter/SMTP_Install.asp" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      <a href="https://www.spamfighter.com/SPAMfighter/SMTP_Install.asp" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30 days</a>
       `
     },
     {
@@ -668,7 +685,7 @@ export const data = {
       Cloud_based: 'No',
       Reporting_Analytics: 'Yes',
       freetrialElement: `
-      <a href="https://vamsoft.com/trial-version-download" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">42-day free trial</a>
+      <a href="https://vamsoft.com/trial-version-download" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">42 days</a>
       `
     },
     {
@@ -696,7 +713,7 @@ export const data = {
       Cloud_based: 'Yes',
       Reporting_Analytics: 'No',
       freetrialElement: `
-      <a href="https://www.zerospam.eu/en/free-trial/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      <a href="https://www.zerospam.eu/en/free-trial/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30 days</a>
       `
     }
   ],
@@ -707,7 +724,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/ninjarmm-learn-more-rmm-software-and-tools/l/header/u/0327-9269-5354-1576+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0327-9269-5354-1576" class="go-link"><b>1. NinjaOne RMM <span style="color: #993300;">(FREE TRIAL)</span></b></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1ninja1_68a730d4b8c50.png',
       description: `
       <p><a href="https://www.comparitech.com/go/ninjarmm-learn-more-rmm-software-and-tools/l/inline/u/1242-6782-7618-5765+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="1242-6782-7618-5765" class="go-link"><b>NinjaOne RMM</b></a> is a comprehensive remote monitoring and management (RMM) platform designed to streamline IT operations. With its robust set of features and user-friendly interface, it empowers IT teams to efficiently manage and secure endpoints across various environments.</p>
       `,
@@ -733,7 +751,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Cloud based',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/ninjarmm-free-trial-rmm-software-and-tools/l/demo/u/5996-9246-6625-0727+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5996-9246-6625-0727" class="go-link">accessing a demo system for 14 days</a>
+      <a href="https://www.comparitech.com/go/ninjarmm-free-trial-rmm-software-and-tools/l/demo/u/5996-9246-6625-0727+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5996-9246-6625-0727" class="go-link">14 days</a>
       `
     },
     {
@@ -742,7 +760,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/syncro-rmm-software-and-tools/l/header/u/3546-3063-9329-8779+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="3546-3063-9329-8779" class="go-link"><b>2. Syncro <span style="color: #993300;">(FREE TRIAL)</span></b></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1syncro-1_68a74e12922db.png',
       description: `
       <p><b></b><b><a href="https://www.comparitech.com/go/syncro-rmm-software-and-tools/l/inline/u/7598-6839-2863-0087+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7598-6839-2863-0087" class="go-link">Syncro</a></b> is a cloud platform of tools for managed service providers. This includes a PSA module and an RMM package. The <b>SaaS package</b> is priced per technician and there is no limit to the number of sites or endpoints that the package will cover. This means that even the smallest MSP can afford to cover many clients with this support software.</p>
       `,
@@ -756,7 +775,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Cloud-based',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/syncro-rmm-software-and-tools/l/cta/u/9115-7792-1735-6885+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="9115-7792-1735-6885" class="go-link">14-day free trial</a>
+      <a href="https://www.comparitech.com/go/syncro-rmm-software-and-tools/l/cta/u/9115-7792-1735-6885+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="9115-7792-1735-6885" class="go-link">14 days</a>
       `
     },
     {
@@ -765,7 +784,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/superops-ai-best-rmm-software-and-tools-rmm-software-and-tools/l/header/u/8536-7264-4576-3736+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="8536-7264-4576-3736" class="go-link">3. SuperOps <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1superops_68a7451d047b3.png',
       description: `
       <p><strong><a href="https://www.comparitech.com/go/superops-ai-best-rmm-software-and-tools-rmm-software-and-tools/l/inline/u/0140-3053-9173-2111+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0140-3053-9173-2111" class="go-link">SuperOps</a></strong> is a powerful, cloud-first software, built for MSPs to effortlessly manage client endpoint networks. This bundle includes PSA and RMM functions. The RMM part of this deal includes:</p>
       `,
@@ -784,7 +804,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Cloud-based',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/superops-ai-best-rmm-software-and-tools-rmm-software-and-tools/l/cta/u/2558-6763-7314-4538+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="2558-6763-7314-4538" class="go-link">14-day free trial</a>
+      <a href="https://www.comparitech.com/go/superops-ai-best-rmm-software-and-tools-rmm-software-and-tools/l/cta/u/2558-6763-7314-4538+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="2558-6763-7314-4538" class="go-link">14 days</a>
       `
     },
     {
@@ -793,7 +813,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/atera-lm-rmm-software-and-tools/l/header/u/0938-5793-5271-3647+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0938-5793-5271-3647" class="go-link">4. Atera <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1atera_68a730f8d08cd.png',
       description: `
       <p><a href="https://www.comparitech.com/go/atera-lm-rmm-software-and-tools/l/inline/u/7377-7227-9257-9828+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7377-7227-9257-9828" class="go-link"><strong>Atera</strong></a> is a SaaS platform of system management tools for IT Departments and MSP technicians. The bundle is packaged along with PSA functions as well, so MSPs and IT Departments get all of the software they need to operate efficiently within the Atera Platform. The remote monitoring and management (RMM) system includes a high degree of task automation, which enables technicians to support multiple users simultaneously.</p>
       `,
@@ -824,7 +845,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/n-able-rmm-rmm-software-and-tools/l/header/u/7231-3430-2537-7901+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7231-3430-2537-7901" class="go-link">5. N-able N-sight <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1n-able_68a747647d362.png',
       description: `
       <p><a href="https://www.comparitech.com/go/n-able-rmm-rmm-software-and-tools/l/inline/u/8417-4101-6177-0466+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="8417-4101-6177-0466" class="go-link"><b>N-able N-sight RMM</b></a> is a remote monitoring and management tool designed specifically for MSPs. The user can discover devices and then start monitoring with<b> out-of-the-box monitoring templates</b> through the dashboard. The software simplifies managing remote devices, with a GUI that you don’t have to be a technical wizard in order to use.</p>
       `,
@@ -849,7 +871,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Windows, Mac, Android, iOS, and more',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/n-able-rmm-rmm-software-and-tools/l/cta/u/0440-1821-0567-2965+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0440-1821-0567-2965" class="go-link"><strong>30-day free trial</strong></a>
+      <a href="https://www.comparitech.com/go/n-able-rmm-rmm-software-and-tools/l/cta/u/0440-1821-0567-2965+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0440-1821-0567-2965" class="go-link"><strong>30 days</strong></a>
       `
     },
     {
@@ -858,7 +880,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/manageengine-rmm-software-and-tools-learn-more-rmm-software-and-tools/l/header/u/7589-2855-9841-4364+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7589-2855-9841-4364" class="go-link">6. ManageEngine RMM Central <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1me-rmm_68a747c4809ea.png',
       description: `
         <p><a href="https://www.comparitech.com/go/manageengine-rmm-software-and-tools-learn-more-rmm-software-and-tools/l/inline/u/4326-0121-3546-9749+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="4326-0121-3546-9749" class="go-link"><strong>ManageEngine RMM Central</strong></a> is a multi-tenanted system that provides all of the tools that an MSP needs to administer IT assets on behalf of clients. Unusually for RMM systems, this is not a SaaS package. Instead, you acquire a software bundle for installation on your own host running <strong>Windows Server</strong> or access it as a service for installation on <strong>AWS</strong> or <strong>Azure</strong> accounts.</p>
       `,
@@ -881,7 +904,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Windows, Server, AWS, and Azure',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/manageengine-rmm-software-and-tools-free-trial-rmm-software-and-tools/l/cta/u/3216-0968-9186-3840+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="3216-0968-9186-3840" class="go-link"><strong>30-day free trial</strong></a>
+      <a href="https://www.comparitech.com/go/manageengine-rmm-software-and-tools-free-trial-rmm-software-and-tools/l/cta/u/3216-0968-9186-3840+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="3216-0968-9186-3840" class="go-link"><strong>30 days</strong></a>
       `
     },
     {
@@ -904,7 +927,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Windows, Mac and Linux',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/manageengine-desktop-central-free-trial-rmm-software-and-tools/l/cta/u/5441-5930-8511-6267+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5441-5930-8511-6267" class="go-link">30-day free trial</a>
+      <a href="https://www.comparitech.com/go/manageengine-desktop-central-free-trial-rmm-software-and-tools/l/cta/u/5441-5930-8511-6267+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5441-5930-8511-6267" class="go-link">30 days</a>
       `
     },
     {
@@ -927,7 +950,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Cloud-based',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/site24x7-rmm-software-and-tools/l/cta/u/0077-4345-8897-7005+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0077-4345-8897-7005" class="go-link"><b>30-day free trial</b></a>
+      <a href="https://www.comparitech.com/go/site24x7-rmm-software-and-tools/l/cta/u/0077-4345-8897-7005+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0077-4345-8897-7005" class="go-link"><b>30-days</b></a>
       `
     },
     {
@@ -936,7 +959,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.goto.com/it-management/resolve" target="_blank" rel="noopener noreferrer"><b>9. GoTo Resolve</b></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/go-to-resolve_68a74d8f64317.svg',
       description: `
       <p><a href="https://www.goto.com/it-management/resolve" target="_blank" rel="noopener noreferrer"><b></b><b>GoTo Resolve</b></a> provides remote monitoring and management for endpoints and software – it doesn’t monitor networks. The package is accessed through the <b>GoTo website</b>, so the Administrator console and technician consoles don’t need to be downloaded. The remote devices that you monitor with this package each need an agent installed to provide access.</p>
       `,
@@ -950,7 +974,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.goto.com/resolve/free" target="_blank" rel="noopener noreferrer"><strong>14-day free trial</strong></a>
+      <a href="https://www.goto.com/resolve/free" target="_blank" rel="noopener noreferrer"><strong>14 days</strong></a>
       `
     },
     {
@@ -959,7 +983,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://barracudamsp.com/product-details/barracuda-rmm-remote-monitoring-management/" target="_blank" rel="noopener noreferrer">10. Barracuda RMM</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1barracuda_68a745689f908.png',
       description: `
       <p><strong><a href="https://barracudamsp.com/product-details/barracuda-rmm-remote-monitoring-management/" target="_blank" rel="noopener noreferrer">Barracuda RMM</a></strong> is a cloud-based remote monitoring and management platform for MSPs. It focuses on IT as a security monitoring and management tool. There are also security add-ons services that give regular <b>network monitoring</b> functions plus an extended <b>Help Desk</b> that you can offer to your clients.</p>
       `,
@@ -984,7 +1009,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.paessler.com/lp/network-monitoring-tool-prtg" target="_blank" rel="noopener noreferrer">11. Paessler PRTG</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1paesller_68a730a59a254.png',
       description: `
       <p><a href="https://www.paessler.com/lp/network-monitoring-tool-prtg" target="_blank" rel="noopener noreferrer"><b>Paessler PRTG</b></a> is a package of tools and the buyer decides which of the monitors in the bundle to turn on. There are many different services and each specializes in a specific technology – no company will ever need to use all of them.</p>
       `,
@@ -1007,7 +1033,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.paessler.com/download/prtg-download?download=1" target="_blank" rel="noopener noreferrer"><b>30-day free trial</b></a>
+      <a href="https://www.paessler.com/download/prtg-download?download=1" target="_blank" rel="noopener noreferrer"><b>30 days</b></a>
       `
     },
     {
@@ -1030,7 +1056,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Windows, Windows Server, macOS, Linux, Android, and iOS',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/solarwinds-dameware-remote-everywhere-more-information/u/3406-5499-3600-3681+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="3406-5499-3600-3681" class="go-link"><strong>14-day free trial</strong></a>
+      <a href="https://www.comparitech.com/go/solarwinds-dameware-remote-everywhere-more-information/u/3406-5499-3600-3681+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="3406-5499-3600-3681" class="go-link"><strong>14 days</strong></a>
       `
     },
     {
@@ -1039,7 +1065,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.teamviewer.com/en/remote-management/" target="_blank" rel="noopener noreferrer">13. TeamViewer Remote Management</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/teamviewer_68a74b28e9fc9.svg',
       description: `
       <p><b>TeamViewer Remote Management</b> is an RMM system that is designed for use by manager service providers and IT departments. This is a cloud-based service that is able to consolidate the management of multiple sites and has an optional multi-tenant structure, which can be used by MSPs to keep the data of clients separate.</p>
       `,
@@ -1053,7 +1080,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Cloud-based',
       freetrialElement: `
-      <a href="https://www.teamviewer.com/en/remote-management/getstarted/" target="_blank" rel="noopener noreferrer">14-day free trial</a>
+      <a href="https://www.teamviewer.com/en/remote-management/getstarted/" target="_blank" rel="noopener noreferrer">14 days</a>
       `
     },
     {
@@ -1076,7 +1103,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.connectwise.com/resources/trial/connectwise-automate-trial" target="_blank" rel="noopener noreferrer">a 14-day free trial</a>
+      <a href="https://www.connectwise.com/resources/trial/connectwise-automate-trial" target="_blank" rel="noopener noreferrer">14 days</a>
       `
     },
     {
@@ -1098,7 +1125,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.pulseway.com/enterprise/evaluation" target="_blank" rel="noopener noreferrer">14-day free trial</a>
+      <a href="https://www.pulseway.com/enterprise/evaluation" target="_blank" rel="noopener noreferrer">14 days</a>
       `
     },
     {
@@ -1107,7 +1134,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.kaseya.com/products/vsa/" target="_blank" rel="noopener noreferrer">16. Kaseya VSA</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/kaseya_68a7485b9ea8e.svg',
       description: `
       <p><b>Kaseya </b>is an RMM tool that can monitor a remote network. Kaseya VSA monitors performance metrics such as <b>uptime, CPU, memory, disk space,</b> and more to track the performance of remote hardware. Network discovery catalogs devices throughout your network so you can view them in the <b>Discovered Devices</b> view.</p>
       `,
@@ -1129,7 +1156,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.kaseya.com/get-started/vsa-trial/" target="_blank" rel="noopener noreferrer">14-day free trial</a>
+      <a href="https://www.kaseya.com/get-started/vsa-trial/" target="_blank" rel="noopener noreferrer">14 days</a>
       `
     },
     {
@@ -1138,7 +1165,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.itarian.com/" target="_blank" rel="noopener noreferrer">17. ITarian</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/itarian_68a72ea2a9c70.svg',
       description: `
       <p><b>ITarian </b>is an RMM software that enables MSPs to monitor a network remotely. ITarian enables the user to<b> deploy the latest patches </b>to a remote network and eliminate vulnerabilities. The platform can be deployed efficiently with an <b>autodiscovery</b> feature which automatically locates endpoints throughout the network. Similarly, there are LDAP and Active directory integrations that allow the user to import users and devices.</p>
       `,
@@ -1162,7 +1190,7 @@ export const data = {
       <a href="https://www.comparitech.com/go/ninjaone-lm-mobile-device-management-software/l/header/u/0772-8501-3780-7669+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="0772-8501-3780-7669" class="go-link">1. NinjaOne Mobile Device Management <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
       imageUrl:
-        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/clip-path-group-1_688a19989bb12.png',
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1ninja1_68a730d4b8c50.png',
       description: `
       <p>The <a href="https://www.comparitech.com/go/ninjaone-lm-mobile-device-management-software/l/inline/u/2361-8507-5828-0388+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="2361-8507-5828-0388" class="go-link"><b>NinjaOne Mobile Device Management</b></a> system is built into the NinjaOne remote monitoring and management cloud platform. This system is suitable for use by managed service providers because it has a multi-tenant architecture that keeps the data of MSP clients separate. However, the platform can also be used by IT departments.</p>
       `,
@@ -1186,7 +1214,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/ninjaone-ft-mobile-device-management-software/l/cta/u/2656-9126-5461-6050+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="2656-9126-5461-6050" class="go-link"><b>14-day free trial</b></a>
+      <a href="https://www.comparitech.com/go/ninjaone-ft-mobile-device-management-software/l/cta/u/2656-9126-5461-6050+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="2656-9126-5461-6050" class="go-link"><b>14 days</b></a>
       `
     },
     {
@@ -1196,7 +1224,7 @@ export const data = {
       <a href="https://www.comparitech.com/go/kandji-mdm-solutions-learn-more-mobile-device-management-software/l/header/u/3005-0737-5074-9907+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="3005-0737-5074-9907" class="go-link">2. Kandji&nbsp; <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
       imageUrl:
-        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/kandji-idd4tjvfuc-0-1_688a197f96303.png',
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1kandji_68a745eec9881.png',
       description: `
       <p><a href="https://www.comparitech.com/go/kandji-mdm-solutions-learn-more-mobile-device-management-software/l/inline/u/9942-0246-5133-5510+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="9942-0246-5133-5510" class="go-link"><b>Kandji.io</b></a> specializes in the management of <b>Apple devices</b>. This includes desktop Macs and mobile devices. The fleet management features in the package include onboarding systems and update management.</p>
       `,
@@ -1223,7 +1251,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/kandji-mdm-solutions-free-trial-mobile-device-management-software/l/cta/u/6218-4920-2349-2888+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="6218-4920-2349-2888" class="go-link">14-day free trial</a>
+      <a href="https://www.comparitech.com/go/kandji-mdm-solutions-free-trial-mobile-device-management-software/l/cta/u/6218-4920-2349-2888+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="6218-4920-2349-2888" class="go-link">14 days</a>
       `
     },
     {
@@ -1233,7 +1261,7 @@ export const data = {
       <a href="https://www.comparitech.com/go/manageengine-mdm-solutions-mobile-device-management-software/l/header/u/0793-2275-6382-0544+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="0793-2275-6382-0544" class="go-link">3. ManageEngine Mobile Device Manager Plus <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
       imageUrl:
-        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine_688a18911590c.png',
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1me-dmp_68a747e99d5e8.png',
       description: `
       <p><a href="https://www.comparitech.com/go/manageengine-mdm-solutions-mobile-device-management-software/l/inline/u/3301-9013-1856-3685+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="3301-9013-1856-3685" class="go-link"><b>ManageEngine Mobile Device Manager Plus</b></a> is a<b> free MDM solution</b> that can <b>monitor desktop computers, laptops, smartphones, </b>and<b> tablets</b>. The software supports multiple operating systems including <b>Windows, Mac OS, Chrome OS, iOS,</b> and <b>Android</b>. Through the customizable dashboard you can monitor mobile smart device status, giving you complete visibility over the connected devices your employees bring to work.</p>
       `,
@@ -1254,7 +1282,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/manageengine-mdm-solutions-mobile-device-management-software/l/cta/u/9519-6201-4287-5683+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="9519-6201-4287-5683" class="go-link"><strong>30-day free trial</strong></a>
+      <a href="https://www.comparitech.com/go/manageengine-mdm-solutions-mobile-device-management-software/l/cta/u/9519-6201-4287-5683+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="9519-6201-4287-5683" class="go-link"><strong>30 days</strong></a>
       `
     },
     {
@@ -1263,7 +1291,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/rippling-mobile-device-management-software/l/header/u/3236-9147-9612-1308+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="3236-9147-9612-1308" class="go-link">4. Rippling <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/rippling_68a7499e51823.svg',
       description: `
       <p><a href="https://www.comparitech.com/go/rippling-mobile-device-management-software/l/inline/u/1284-8987-8255-9727+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="1284-8987-8255-9727" class="go-link"><strong>Rippling</strong></a> is a unified MDM tool that provides visibility into all Windows and Apple devices that connect to your network, including laptops, mobile devices, desktops, and BYODs. It handles the entire lifecycle of devices, from setup to management and deprovisioning, along with security and compliance.</p>
       `,
@@ -1287,7 +1316,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/rippling-mobile-device-management-software/l/cta/u/5734-8939-5867-3558+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="5734-8939-5867-3558" class="go-link"><b>14-day free trial</b></a>
+      <a href="https://www.comparitech.com/go/rippling-mobile-device-management-software/l/cta/u/5734-8939-5867-3558+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="5734-8939-5867-3558" class="go-link"><b>14 days</b></a>
       `
     },
     {
@@ -1315,7 +1344,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.ivanti.com/lp/uem/trials/ivanti-neurons-mdm" target="_blank" rel="noopener noreferrer">30-day free trial</a>
+      <a href="https://www.ivanti.com/lp/uem/trials/ivanti-neurons-mdm" target="_blank" rel="noopener noreferrer">30 days</a>
       `
     },
     {
@@ -1324,7 +1353,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.citrix.com/products/citrix-endpoint-management/" rel="noopener noreferrer" target="_blank">6. Citrix Endpoint Management</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/citrix_68a748f127329.svg',
       description: `
       <p>Citrix used to have a mobile device management tool, called <b>XenMobile</b>. However, the company has integrated that system into its&nbsp; UEM, which is called <b>Citrix Endpoint Management</b>. This system will manage devices that run Windows, macOS, iOS, Android, and ChromeOS. When we tested Citrix Endpoint Management we found the following key features.</p>
       `,
@@ -1341,8 +1370,7 @@ export const data = {
       features: ['Two operating options', 'Posture scanning', 'Containerization'],
       'SaaS/On-Premises': '',
       os: '',
-      freetrialElement: `
-      `
+      freetrialElement: ''
     },
     {
       name: 'Scalefusion',
@@ -1350,7 +1378,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://scalefusion.com/mobile-device-management" target="_blank" rel="noopener noreferrer">7. Scalefusion</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/scalefusion_68a749f19638d.svg',
       description: `
       <p><a href="https://scalefusion.com/mobile-device-management" target="_blank" rel="noopener noreferrer"><strong>Scalefusion</strong></a> is a cloud-based unified endpoint management system that includes endpoint management for Android, iOS, Windows, macOS and Linux devices. They support varied device types like Smartphones, Laptops, Desktops, Kiosks, Digital Signage, Rugged Devices, Handheld Computers, VR Devices, POS Devices and more.</p>
       `,
@@ -1374,7 +1403,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://app.scalefusion.com/users/sign_up" target="_blank" rel="noopener noreferrer">free trial</a>
+      <a href="https://app.scalefusion.com/users/sign_up" target="_blank" rel="noopener noreferrer">free</a>
       `
     },
     {
@@ -1383,7 +1412,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.samsungknox.com/" target="_blank" rel="noopener noreferrer">8. Samsung Knox Mobile</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/samsung-knox_68a749c227f66.svg',
       description: `
       <p><b>Samsung Knox Manage</b> is part of a platform of device management system, called Knox Suite. The Manage unit is specifically focused on managing mobile devices that are provided by Samsung. A separate module in the suite provides device on-boarding.</p>
       `,
@@ -1398,7 +1428,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.samsungknox.com/en/solutions/knox-suite#get-started" target="_blank" rel="noopener noreferrer">90-day free trial</a>
+      <a href="https://www.samsungknox.com/en/solutions/knox-suite#get-started" target="_blank" rel="noopener noreferrer">90 days</a>
       `
     },
     {
@@ -1407,7 +1437,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.miradore.com/" target="_blank" rel="noopener noreferrer">9. Miradore Mobile Device Management</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/miradore_68a74959321d0.svg',
       description: `
       <p><a href="https://www.miradore.com/" target="_blank" rel="noopener noreferrer"><b>Miradore Mobile Device Management</b></a> is a cloud-hosted service with a Free edition. Miradore actually has three levels of service – there are two paid plans as well as that Free edition. Those upper plans are called Premium ($3.30 per device per month) and Premium+ ($4.75 per device per month). All plans can manage <b>Windows</b> and <b>macOS</b> computers and mobile devices running <b>iOS</b> and <b>Android</b>. Those Windows and macOS computers can be workstations or laptops.</p>
       `,
@@ -1429,7 +1460,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.miradore.com/" target="_blank" rel="noopener noreferrer"><strong>14-day free trial</strong></a>
+      <a href="https://www.miradore.com/" target="_blank" rel="noopener noreferrer"><strong>14 days</strong></a>
       `
     },
     {
@@ -1438,7 +1469,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.omnissa.com/products/workspace-one-unified-endpoint-management/" target="_blank" rel="noopener noreferrer">10. Omnissa Workspace ONE</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/omnissa_68a7497b2e205.svg',
       description: `
       <p><a href="https://www.omnissa.com/products/workspace-one-unified-endpoint-management/" target="_blank" rel="noopener noreferrer"><b>Omnissa Workspace ONE UEM </b></a>is a mobile device management tool that can be used to remotely manage devices. With <b>Omnissa Workspace One </b>you can configure devices in bulk with the <b>Apple Device Enrollment Program, Know Mobile Enrollment, </b>and<b> Android zero-touch enrollment.</b></p>
       `,
@@ -1462,7 +1494,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.omnissa.com/contact-us/" target="_blank" rel="noopener noreferrer">30-day free trial</a>
+      <a href="https://www.omnissa.com/contact-us/" target="_blank" rel="noopener noreferrer">30 days</a>
       `
     },
     {
@@ -1471,7 +1503,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.blackberry.com/uk/en/products/endpoint-management/blackberry-uem/overview" target="_blank" rel="noopener noreferrer">11. BlackBerry Unified Endpoint Management</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/blackberry_68a7489ea7e21.svg',
       description: `
       <p><strong>BlackBerry Unified Endpoint Management </strong>is an endpoint management solution designed for monitoring the Internet of Things (IoT) devices. Through one centralized user interface, you can view an <strong>overview of devices, users, </strong>and<strong> applications</strong> in use throughout your network. The tool supports operating systems including <strong>Windows 10, Mac OS, iOS, Android, </strong>and<strong> Chrome OS</strong>.</p>
       `,
@@ -1499,7 +1532,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://account.blackberry.com/register/trial" target="_blank" rel="noopener noreferrer">start the free trial</a>
+      <a href="https://account.blackberry.com/register/trial" target="_blank" rel="noopener noreferrer">free</a>
       `
     },
     {
@@ -1532,7 +1565,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://suremdm.42gears.com/console/v3/#/user/signup" target="_blank" rel="noopener noreferrer">30-day free trial</a>
+      <a href="https://suremdm.42gears.com/console/v3/#/user/signup" target="_blank" rel="noopener noreferrer">30 days</a>
       `
     },
     {
@@ -1541,7 +1574,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://soti.net/mobicontrol" target="_blank" rel="noopener noreferrer">13. SOTI MobiControl</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/soti_68a74a1a9705c.svg',
       description: `
       <p><strong>SOTI MobiControl</strong> is an endpoint management solution that can monitor devices from over 170 vendors in one location. Devices supported b<strong>y SOTI MobiControl</strong> include <strong>Windows XP, Windows CE, Mac OS, iOS, </strong>and <strong>Android</strong>.</p>
       `,
@@ -1565,7 +1598,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.soti.net/products/soti-mobicontrol/mobicontrol-trial/" target="_blank" rel="noopener noreferrer">30-day free trial</a>
+      <a href="https://www.soti.net/products/soti-mobicontrol/mobicontrol-trial/" target="_blank" rel="noopener noreferrer">30 days</a>
       `
     },
     {
@@ -1574,7 +1607,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.ibm.com/security/mobile/maas360" target="_blank" rel="noopener noreferrer">14. IBM MaaS360</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/ibm_68a74914ec42b.svg',
       description: `
       <p><b>IBM MaaS360 </b>is an enterprise mobility management solution that supports <b>Windows, Mac OS, Android, </b>and<b> iOS devices</b>. With<b> IBM MaaS360 </b>you can monitor the data usage of devices in real-time and deploy updates to mobile applications from one centralized location. Application updates can be deployed to<b> Windows </b>and<b> Mac OS</b> devices for apps like<b> Java, Adobe, Flash, Apple iTunes,</b> and more.</p>
       `,
@@ -1597,7 +1630,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.ibm.com/account/reg/us-en/signup?" target="_blank" rel="noopener noreferrer">30-day free trial</a>
+      <a href="https://www.ibm.com/account/reg/us-en/signup?" target="_blank" rel="noopener noreferrer">30 days</a>
       `
     },
     {
@@ -1606,7 +1639,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://meraki.cisco.com/" target="_blank" rel="noopener noreferrer">15. Cisco Meraki</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/cisco_68a748ced63b4.svg',
       description: `
       <p>Cisco Meraki covers the management of laptops and desktops as well as smartphones and tablets. This management console of this system is very attractive and includes a map showing the locations of all of your company’s managed devices. However, it can’t manage IoT or WiFi-enabled office equipment, such as printers. <strong>It will communicate with devices running Windows, macOS, Windows Phone, iOS, Android, Chrome OS and Samsung Knox</strong>.</p>
       `,
@@ -1628,8 +1661,7 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: 'Cloud based',
-      freetrialElement: `
-      `
+      freetrialElement: ''
     },
     {
       name: 'Jamf Now',
@@ -1659,8 +1691,7 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
-      freetrialElement: `
-      `
+      freetrialElement: ''
     }
   ],
   '/net-admin/ad-administration-management-tools/': [
@@ -1694,7 +1725,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Windows Server',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/manageengine-active-directory-admin-admp-ad-administration-management-tools/l/cta/u/9976-3498-0454-6687+337078/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="337078" data-clickid="9976-3498-0454-6687" class="go-link"><strong>30-day free trial</strong></a>
+      <a href="https://www.comparitech.com/go/manageengine-active-directory-admin-admp-ad-administration-management-tools/l/cta/u/9976-3498-0454-6687+337078/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="337078" data-clickid="9976-3498-0454-6687" class="go-link"><strong>30 days</strong></a>
       `
     },
     {
@@ -1723,7 +1754,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/manageengine-active-directory-admin-adap-ad-administration-management-tools/l/cta/u/1898-3606-8131-8530+337078/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="337078" data-clickid="1898-3606-8131-8530" class="go-link">30-day free trial</a>
+      <a href="https://www.comparitech.com/go/manageengine-active-directory-admin-adap-ad-administration-management-tools/l/cta/u/1898-3606-8131-8530+337078/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="337078" data-clickid="1898-3606-8131-8530" class="go-link">30 days</a>
       `
     },
     {
@@ -1732,7 +1763,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.solarwinds.com/access-rights-manager" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><b>3.</b> <b>SolarWinds Access Rights Manager</b></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/solarwinds_68a74a90d93ef.svg',
       description: `
       <p><strong>SolarWinds Access Rights Manager</strong> creates <b>a better interface</b> to Active Directory than the native front-end of AD. It is particularly strong on <b>security management</b> and standards compliance.</p>
       `,
@@ -1757,7 +1789,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.solarwinds.com/access-rights-manager/registration" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      <a href="https://www.solarwinds.com/access-rights-manager/registration" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30 days</a>
       `
     },
     {
@@ -1792,7 +1824,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.quest.com/products/active-administrator/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><b>5.</b> <b>Quest Active Administrator</b></a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/quest_68a74a35e06d6.svg',
       description: `
       <p><b>Quest Active Administrator</b> has extensive monitoring features as well as excellent facilities for Active Directory management. Besides improving the efficiency of administrators by taking care of <b>day-to-day Active Directory administration tasks</b>, the Quest package <b>protects</b> the AD system from accidental or malicious changes. This is closely linked to the backup and restore functions of the tool, which makes it able to restore altered records effortlessly.</p>
       `,
@@ -1806,7 +1838,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.quest.com/register/93787/" target="_blank" rel="noopener noreferrer">a 30-day free trial</a>
+      <a href="https://www.quest.com/register/93787/" target="_blank" rel="noopener noreferrer">30 days</a>
       `
     },
     {
@@ -1834,7 +1866,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.netwrix.com/active_directory_auditing.html" target="_blank" rel="noopener noreferrer">a 20-day free</a>
+      <a href="https://www.netwrix.com/active_directory_auditing.html" target="_blank" rel="noopener noreferrer">20 days</a>
       `
     },
     {
@@ -1862,7 +1894,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.imanami.com/groupid-trial/" target="_blank" rel="noopener noreferrer">a free trial</a>
+      <a href="https://www.imanami.com/groupid-trial/" target="_blank" rel="noopener noreferrer">free</a>
       `
     },
     {
@@ -1871,7 +1903,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.adaxes.com/" target="_blank" rel="noopener noreferrer"><b>8.</b> <b>Adaxes</b></a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/adaxes_68a74c79c3c7d.svg',
       description: `
       <p><b>Adaxes</b> is able to examine all AD instances, no matter what system or software package it serves and no matter where it is located.</p>
       `,
@@ -1890,30 +1922,45 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.adaxes.com/download.htm" target="_blank" rel="noopener noreferrer">a free trial</a>
+      <a href="https://www.adaxes.com/download.htm" target="_blank" rel="noopener noreferrer">free</a>
       `
     }
   ],
   '/net-admin/best-free-sftp-ftps-servers/': [
     {
-      name: '',
+      name: 'JSCAPE MFT',
       extraName: '',
       nameWithUrl: `
+		  <a href="https://www.comparitech.com/go/jscape-redwood-best-free-sftp-ftps-servers/l/header/u/6095-8089-3417-3734+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="6095-8089-3417-3734" class="go-link" data-gtm-vis-has-fired1649924_55="1">1. JSCAPE MFT <span style="color: #993300;">(FREE DEMO)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/jscape-1_68a74829b3836.svg',
       description: `
+		  <p><a href="https://www.comparitech.com/go/jscape-redwood-best-free-sftp-ftps-servers/l/inline/u/8043-6726-7506-4131+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="8043-6726-7506-4131" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>JSCAPE MFT</b></a>, a product of Redwood Software, implements <b>SFTP</b>, <b>SCP</b>, and <b>FTPS</b> within its client and server pair. The client isn’t distributed, but it is held on the same computer as the server unit. The users access the client over the network, or even across the internet, through a Web browser. The client includes a document viewer, which removes the need to transfer a file.</p>
       `,
-      best_for: '',
+      best_for: 'Enterprise-level businesses',
       relevant_for: '',
       pricingText: '',
       pricing: [],
-      pros: ['', '', '', '', ''],
-      cons: [''],
-      features: ['', '', '', '', ''],
+      pros: [
+        'Standards Compliance',
+        'Multiple OS Support',
+        'Cross-Platform Operation',
+        'A Proprietary Secure Transfer Protocol',
+        'Coordination Between Cloud File Stores'
+      ],
+      cons: ['No Cloud Storage'],
+      features: [
+        'Web-based client',
+        'Runs on z Series mainframes',
+        'Secure Transfers',
+        'Transfer Scripts',
+        'EDI Protocols'
+      ],
       'SaaS/On-Premises': '',
       os: 'Windows, macOS, Linux, Solaris, AIX, and z/OS',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/jscape-redwood-best-free-sftp-ftps-servers/l/cta/u/5203-9650-0093-3881+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="5203-9650-0093-3881" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>7-day free trial</b></a>
+      <a href="https://www.comparitech.com/go/jscape-redwood-best-free-sftp-ftps-servers/l/cta/u/5203-9650-0093-3881+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="5203-9650-0093-3881" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>7 days</b></a>
       `
     },
     {
@@ -1922,7 +1969,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/files-cloud-ftp-sftp-server-learn-more-best-free-sftp-ftps-servers/l/header/u/3797-7888-8669-7497+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3797-7888-8669-7497" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>2. Files.com SFTP Service <span style="color: #993300;">(FREE TRIAL)</span></b></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/files-1_68a74d2ecb821.svg',
       description: `
       <p><a href="https://www.comparitech.com/go/files-cloud-ftp-sftp-server-learn-more-best-free-sftp-ftps-servers/l/inline/u/1879-3161-1382-9134+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="1879-3161-1382-9134" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>Files.com</b></a> is a cloud-based file platform with a <strong>built-in FTP and SFTP server</strong>. Being based on a remote server, this service is able to offer many more features than a traditional SFTP server. The Files.com system consists of cloud storage that <b>acts as a buffer</b> for all file activities.</p>
       `,
@@ -1949,7 +1997,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/files-cloud-ftp-sftp-server-learn-more-best-free-sftp-ftps-servers/l/cta/u/3025-1134-2324-9269+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3025-1134-2324-9269" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>7-day free trial</strong></a>
+      <a href="https://www.comparitech.com/go/files-cloud-ftp-sftp-server-learn-more-best-free-sftp-ftps-servers/l/cta/u/3025-1134-2324-9269+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3025-1134-2324-9269" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>7 days</strong></a>
       `
     },
     {
@@ -1958,7 +2006,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/exavault-best-free-sftp-and-ftps-servers-best-free-sftp-ftps-servers/l/header/u/1949-3335-9929-6993+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="1949-3335-9929-6993" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>3. ExaVault <span style="color: #993300;">(FREE TRIAL)</span></strong></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/exavault_68a74d0e647b7.svg',
       description: `
       <p><strong><a href="https://www.comparitech.com/go/exavault-best-free-sftp-and-ftps-servers-best-free-sftp-ftps-servers/l/inline/u/3393-5429-8079-1862+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3393-5429-8079-1862" class="go-link" data-gtm-vis-has-fired1649924_55="1">ExaVault</a></strong>, (which is owned by Files.com) is a cloud service that mediates file transfers, offering <b>SFTP</b> and <b>SFTP</b> as secure solutions. The system enables administrators to keep track of file movements and automatic logging gives you the records you need for compliance auditing.</p>
       `,
@@ -1973,7 +2022,7 @@ export const data = {
       os: '',
       freetrialElement: `
       <a class="go-link" href="https://www.comparitech.com/go/exavault-best-free-sftp-and-ftps-servers-best-free-sftp-ftps-servers/l/button/u/0512-6981-6853-3762+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="0512-6981-6853-3762" data-gtm-vis-has-fired1649924_55="1">
-                <span class="ctech-dl-button-tagline">30-days</span>
+                <span class="ctech-dl-button-tagline">30 days</span>
             </a>
       `
     },
@@ -1998,7 +2047,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/cerberus-best-free-sftp-ftps-servers/l/cta/u/9200-2843-4153-0042+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="9200-2843-4153-0042" class="go-link" data-gtm-vis-has-fired1649924_55="1">25-day free trial</a>
+      <a href="https://www.comparitech.com/go/cerberus-best-free-sftp-ftps-servers/l/cta/u/9200-2843-4153-0042+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="9200-2843-4153-0042" class="go-link" data-gtm-vis-has-fired1649924_55="1">25 days</a>
       `
     },
     {
@@ -2022,7 +2071,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/sftp-to-go-best-free-sftp-ftps-servers/l/cta/u/2955-4657-0617-2383+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="2955-4657-0617-2383" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>7-day free trial</strong></a>
+      <a href="https://www.comparitech.com/go/sftp-to-go-best-free-sftp-ftps-servers/l/cta/u/2955-4657-0617-2383+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="2955-4657-0617-2383" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>7 days</strong></a>
       `
     },
     {
@@ -2031,7 +2080,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://filezilla-project.org" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">6. FileZilla Server</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/filezilla_68a74d6f5018f.svg',
       description: `
       <p><b>FileZilla, </b>well known for its popular cross-platform <a href="https://filezilla-project.org/download.php?type=client" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">FTP client tool</a>, also provides a server for <a href="https://filezilla-project.org/download.php?type=server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">download</a> that supports<b> FTP and FTPS </b>(FTP over TLS/SSL). <b>FileZilla Server supports files up to 4GB</b>, giving it the bandwidth to support the needs of most organizations. On the whole, the platform is easy to configure. To start you need to connect to a server with your login credentials and then you can<b> view a list of files</b> and <b>directories</b>.</p>
       `,
@@ -2053,7 +2103,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.solarwinds.com/free-tools/free-sftp-server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><strong>7. SolarWinds SFTP/SCP Server</strong></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/solarwinds_68a74a90d93ef.svg',
       description: `
       <p><b>SolarWinds SFTP/SCP Server</b> is a <b>free SFTP server </b>that can complete SFTP and SCP file transfers up to 4GB. With SolarWinds SFTP/SCP Server you can <b>conduct multiple transfers</b> across lots of devices simultaneously. You can also select which version of SSH you want to use (whether <b>SSH1</b> or <b>SSH2</b>). The platform is ideal for users looking to complete tasks like pushing out OS and firmware updates.</p>
       `,
@@ -2067,7 +2118,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.solarwinds.com/free-tools/free-sftp-server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a>
+      <a href="https://www.solarwinds.com/free-tools/free-sftp-server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">14 days</a>
       `
     },
     {
@@ -2167,7 +2218,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Windows Server, AWS, and Azure',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/manageengine-active-directory-tools-admp-active-directory-tools/l/cta/u/0051-7205-6822-9291+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="0051-7205-6822-9291" class="go-link"><strong>30-day free trial</strong></a>
+      <a href="https://www.comparitech.com/go/manageengine-active-directory-tools-admp-active-directory-tools/l/cta/u/0051-7205-6822-9291+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="0051-7205-6822-9291" class="go-link"><strong>30 days</strong></a>
       `
     },
     {
@@ -2177,7 +2228,7 @@ export const data = {
       <a href="https://www.comparitech.com/go/ninjaone-lm-active-directory-tools/l/header/u/9644-5935-6174-4434+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="9644-5935-6174-4434" class="go-link">2. NinjaOne Active Directory Management <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
       imageUrl:
-        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/clip-path-group-1_688a19989bb12.png',
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1ninja1_68a730d4b8c50.png',
       description: `
       <p><a href="https://www.comparitech.com/go/ninjaone-lm-active-directory-tools/l/inline/u/7247-9636-0827-9424+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="7247-9636-0827-9424" class="go-link"><b>NinjaOne</b></a> includes Endpoint and Active Directory management in its remote monitoring and management platform. This service presents your AD domain details, including all permissions within the NinjaOne dashboard, so technicians don’t have to log in remotely to manage access rights data.</p>
       `,
@@ -2200,7 +2251,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/ninjaone-ft-active-directory-tools/l/cta/u/2604-9401-2492-7859+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="2604-9401-2492-7859" class="go-link"><b>14-day free trial</b></a>
+      <a href="https://www.comparitech.com/go/ninjaone-ft-active-directory-tools/l/cta/u/2604-9401-2492-7859+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="2604-9401-2492-7859" class="go-link"><b>14 days</b></a>
       `
     },
     {
@@ -2233,7 +2284,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/manageengine-active-directory-tools-adap-active-directory-tools/l/cta/u/0406-7345-4659-9465+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="0406-7345-4659-9465" class="go-link"><strong>30-day free trial</strong></a>
+      <a href="https://www.comparitech.com/go/manageengine-active-directory-tools-adap-active-directory-tools/l/cta/u/0406-7345-4659-9465+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="0406-7345-4659-9465" class="go-link"><strong>30 days</strong></a>
       `
     },
     {
@@ -2242,7 +2293,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.sentinelone.com/platform/singularity-ranger-ad/" target="_blank" rel="noopener noreferrer">4. SentinelOne Singularity Ranger AD</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/sentinel-one_68a74a64254d3.svg',
       description: `
       <p><a href="https://www.sentinelone.com/platform/singularity-ranger-ad/" target="_blank" rel="noopener noreferrer"><b>SentinelOne Singularity </b><b>Ranger AD</b></a> protects on premises Active Directory and Azure AD. The system is part of the Singularity brand but it isn’t included in any of the Sentinel Singularity packages. You don’t have to take out a subscription to the rest of the SentinelOne Singularity platform in order to use this tool.</p>
       `,
@@ -2262,7 +2314,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.sentinelone.com/lp/identity-suite-demo/" target="_blank" rel="noopener noreferrer">free demo</a>
+      <a href="https://www.sentinelone.com/lp/identity-suite-demo/" target="_blank" rel="noopener noreferrer">free</a>
       `
     },
     {
@@ -2325,7 +2377,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.quest.com/register/54780/" target="_blank" rel="noopener noreferrer">30-day free trial</a>
+      <a href="https://www.quest.com/register/54780/" target="_blank" rel="noopener noreferrer">30 days</a>
       `
     },
     {
@@ -2364,7 +2416,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.solarwinds.com/free-tools/permissions-analyzer-for-active-directory" target="_blank" rel="noopener noreferrer">8. SolarWinds Permissions Analyzer for Active Directory</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/solarwinds_68a74a90d93ef.svg',
       description: `
       <p>First up on this list we have <strong>SolarWinds Permissions Analyzers for Active Directory</strong>. One of the most common complaints made of the original Active Directory program is that it offers poor permissions management. <strong>SolarWinds Permissions Analyzer for Active Directory</strong> is an AD management tool that seeks to rectify this by allowing you to view which users in your network have permission to which data.</p>
       `,
@@ -2486,7 +2539,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/auvik-network-mapping-topology-learn-more-network-topology-and-mapping/l/header/u/5213-7563-8354-0782+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="5213-7563-8354-0782" class="go-link" data-gtm-vis-has-fired1649924_55="1">1. Auvik <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1auvik_68a7307e19bd2.png',
       description: `
       <p><a href="https://www.comparitech.com/go/auvik-network-mapping-topology-learn-more-network-topology-and-mapping/l/inline/u/5846-1922-0815-1844+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="5846-1922-0815-1844" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>Auvik</strong></a> is <b>a SaaS platform</b> that implements network monitoring and asset management functions through the use of an on-site agent. The central detection service of this package is its network discovery system, which also creates a network <b>asset inventory</b> and draws up a network map.</p>
       `,
@@ -2512,7 +2566,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: 'Cloud-based',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/auvik-network-mapping-topology-free-trial-network-topology-and-mapping/l/cta/u/7059-5075-0354-1284+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="7059-5075-0354-1284" class="go-link" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a>
+      <a href="https://www.comparitech.com/go/auvik-network-mapping-topology-free-trial-network-topology-and-mapping/l/cta/u/7059-5075-0354-1284+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="7059-5075-0354-1284" class="go-link" data-gtm-vis-has-fired1649924_55="1">14 days</a>
       `
     },
     {
@@ -2539,7 +2593,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/faddom-ft-network-topology-and-mapping/l/cta/u/3269-1245-9759-9256+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3269-1245-9759-9256" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>free trial</strong></a>
+      <a href="https://www.comparitech.com/go/faddom-ft-network-topology-and-mapping/l/cta/u/3269-1245-9759-9256+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3269-1245-9759-9256" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>free</strong></a>
       `
     },
     {
@@ -2548,7 +2602,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-learn-more-network-topology-and-mapping/l/header/u/1972-5182-5784-2499+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="1972-5182-5784-2499" class="go-link" data-gtm-vis-has-fired1649924_55="1">3. Domotz <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1domotz_68a730bf45743.png',
       description: `
       <p><strong><a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-learn-more-network-topology-and-mapping/l/inline/u/5126-0074-2692-1550+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="5126-0074-2692-1550" class="go-link" data-gtm-vis-has-fired1649924_55="1">Domotz</a></strong> is a SaaS platform that offers network monitoring for IT Departments and it is also suitable for <b>managed service providers </b>(MSPs). The system offers a multi-tenant architecture and there is no limit to the number of user accounts that you can create for technicians to get access to the Domotz console. This tool can unify the monitoring of multiple sites and it includes an automated <b>network mapping</b> system.</p>
       `,
@@ -2571,7 +2626,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-free-trial-network-topology-and-mapping/l/cta/u/3237-1511-2858-8528+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3237-1511-2858-8528" class="go-link" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a>
+      <a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-free-trial-network-topology-and-mapping/l/cta/u/3237-1511-2858-8528+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3237-1511-2858-8528" class="go-link" data-gtm-vis-has-fired1649924_55="1">14 days</a>
       `
     },
     {
@@ -2603,7 +2658,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/cta/u/6228-1353-0210-1924+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="6228-1353-0210-1924" class="go-link" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/cta/u/6228-1353-0210-1924+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="6228-1353-0210-1924" class="go-link" data-gtm-vis-has-fired1649924_55="1">30 days</a>
       `
     },
     {
@@ -2631,7 +2686,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/cta/u/2006-1525-6845-3216+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="2006-1525-6845-3216" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>30-day free trial</b></a>
+      <a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/cta/u/2006-1525-6845-3216+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="2006-1525-6845-3216" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>30 days</b></a>
       `
     },
     {
@@ -2693,7 +2748,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.fortra.com/products/network-monitoring-software" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">8. Fortra’s Intermapper</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1fortra_68a7315681891.png',
       description: `
       <p><strong>Fortra’s</strong> <b>Intermapper</b> is available in both a free and paid version. The tool includes discovery and an automatic mapping feature to get you started, alternatively you can create your own plan from scratch. The autodiscovery system is also capable of plotting virtualization as well as physical network topology.</p>
       `,
@@ -2712,7 +2768,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.helpsystems.com/cta/start-your-free-intermapper-trial" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      <a href="https://www.helpsystems.com/cta/start-your-free-intermapper-trial" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30 days</a>
       `
     },
     {
@@ -2721,7 +2777,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.lucidchart.com/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">9. Lucidchart</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/lucidchart_68a74c1768ef6.svg',
       description: `
       <p><b>Lucidchart </b>is a general flowchart creation topology tool that has specialized icon libraries for a range of industries, including network topology. You don’t get any autodiscovery features with this tool, but it would be a great option if you are creating a network from scratch.</p>
       `,
@@ -2751,7 +2808,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.paessler.com/network-mapping" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">10. Paessler PRTG Network Monitor</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1paesller_68a730a59a254.png',
       description: `
       <p><b>Paessler PRTG</b> is a system-wide monitoring package. You choose which of the monitors in the large bundle that you want to activate but the network discovery function is part of every implementation. This system generates a network inventory and presents a number of mapping options.</p>
       `,
@@ -2770,7 +2828,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.paessler.com/download/prtg-download?download=1" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><strong>30-day free trial</strong></a>
+      <a href="https://www.paessler.com/download/prtg-download?download=1" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><strong>30 days</strong></a>
       `
     },
     {
@@ -2779,7 +2837,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.solarwinds.com/network-topology-mapper" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">11. SolarWinds Network Topology Mapper</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/solarwinds_68a74a90d93ef.svg',
       description: `
       <p>The <b>SolarWinds Network Topology Mapper</b> includes on-demand device discovery and automated mapping. This gives you a great starting point if you are adding to an existing network. You can choose whether the discovery procedure uses <b>SNMP</b> or <b>ICMP</b> (Ping and Traceroute) to locate devices. It can also identify network infrastructure through <b>WMI</b> and <b>CDP</b> (Cisco Discovery Protocol) methods.</p>
       `,
@@ -2803,7 +2862,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.solarwinds.com/network-topology-mapper" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a>
+      <a href="https://www.solarwinds.com/network-topology-mapper" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">14 days</a>
       `
     },
     {
@@ -2812,7 +2871,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.edrawsoft.com/edraw-max.php" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">12. Edraw Max</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/edraw_68a74bf041fcf.svg',
       description: `
       <p>Edraw is a general map, plan, and chart creation tool that includes some great formats for network topology mapping. The editor has libraries of network and IT equipment in different styles, including <b>Basic</b>, <b>Detailed</b>, and <b>3D</b>.</p>
       `,
@@ -2830,7 +2889,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.edrawsoft.com/download-edrawmax.php" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">a free trial</a>
+      <a href="https://www.edrawsoft.com/download-edrawmax.php" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">free</a>
       `
     },
     {
@@ -2853,7 +2912,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="http://www.pacestar.com/lanflow/trial.htm" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>
+      <a href="http://www.pacestar.com/lanflow/trial.htm" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30 days</a>
       `
     },
     {
@@ -2907,7 +2966,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://graphicalnetworks.com/netterrain-logical-2/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">16. netTerrain Logical</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/netterrain-logical_68a74c3971dc7.svg',
       description: `
       <p>Graphical Networks produces a range of network management software, including <b>netTerrain Logical</b>. This is an automated network documentation system that will <b>compile a hardware inventory</b> and <b>generate network topology maps</b> by probing the network.</p>
       `,
@@ -2925,7 +2985,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://graphicalnetworks.com/demo-form/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">a free demo</a>
+      <a href="https://graphicalnetworks.com/demo-form/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">free</a>
       `
     },
     {
@@ -2953,7 +3013,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://app.d3mnetworks.com/users/sign-up" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">for free</a>
+      <a href="https://app.d3mnetworks.com/users/sign-up" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">free</a>
       `
     },
     {
@@ -2992,7 +3052,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://creately.com/Online-Network-Diagram-Software" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">19. Creately</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/creately_68a74c57e3226.svg',
       description: `
       <p><b>Creately</b> is a neat chart-creating tool that has specialized templates and icons for network mapping. This is a pure topology design tool and doesn’t include any autodiscovery options. However, you could use this designer in conjunction with a basic network explorer, such as <b>LANTopoLog</b> to get the best of both worlds.</p>
       `,
@@ -3041,7 +3102,7 @@ export const data = {
       'SaaS/On-Premises': '',
       os: '',
       freetrialElement: `
-      <a href="https://www.10-strike.com/network-diagram/download.shtml" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day trial</a>
+      <a href="https://www.10-strike.com/network-diagram/download.shtml" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30 days</a>
       `
     }
   ]

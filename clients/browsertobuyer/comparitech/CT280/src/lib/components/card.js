@@ -1,3 +1,5 @@
+import { crossIcon, tickIcon } from '../assets/icons';
+
 const card = (id, data) => {
   const {
     name,
@@ -29,9 +31,9 @@ const card = (id, data) => {
                 
             </div>
 
-            <p class="desc">
+            
                 ${description}
-            </p>
+           
 
             <div class="grid">
                 ${
@@ -40,14 +42,15 @@ const card = (id, data) => {
                     <div class="${id}__item">
                         <div class="${id}__label first-item">Pricing</div>
                         <div class="second-item">
-                            <div>${pricingText}</div>
-                            <ul>
+                            <div class="pricing-text">${pricingText}</div>
                                ${
                                  pricing.length > 0
-                                   ? pricing.map((item) => `<li>${item}</li>`).join('\n')
+                                   ? `<ul>${pricing
+                                       .map((item) => `<li>${item}</li>`)
+                                       .join('\n')}</ul>`
                                    : ''
                                }
-                            </ul>
+                            
                         </div>
                     </div>
                     `
@@ -83,7 +86,12 @@ const card = (id, data) => {
                     <div class="${id}__item">
                         <div class="${id}__label first-item">Pros</div>
                         <ul class="pros second-item">
-                            ${pros.map((item) => `<li><strong>${item}</strong></li>`).join('\n')}
+                            ${pros
+                              .map(
+                                (item) =>
+                                  `<li><span>${tickIcon}</span><strong>${item}</strong></li>`
+                              )
+                              .join('\n')}
                         </ul>
                     </div>
                     `
@@ -97,7 +105,10 @@ const card = (id, data) => {
                             <div class="${id}__label first-item">Cons</div>
                             <ul class="cons second-item">
                                 ${cons
-                                  .map((item) => `<li><strong>${item}</strong></li>`)
+                                  .map(
+                                    (item) =>
+                                      `<li><span>${crossIcon}</span><strong>${item}</strong></li>`
+                                  )
                                   .join('\n')}
                             </ul>
                         </div>
