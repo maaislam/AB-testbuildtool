@@ -17,7 +17,8 @@ const card = (id, data) => {
     freetrialElement,
     pricingText,
     best_for,
-    relevant_for
+    relevant_for,
+    operating_systems
   } = data;
   const html = `
         <div class="${id}__card">
@@ -52,6 +53,17 @@ const card = (id, data) => {
                                }
                             
                         </div>
+                    </div>
+                    `
+                    : ''
+                }
+
+                ${
+                  operating_systems
+                    ? `
+                     <div class="${id}__item">
+                        <div class="${id}__label first-item">Operating Systems</div>
+                        <div class="second-item">${operating_systems}</div>
                     </div>
                     `
                     : ''

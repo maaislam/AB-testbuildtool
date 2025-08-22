@@ -48,6 +48,20 @@
         align-items: flex-start;
         gap: 16px;
       }
+
+      a {
+        color: #1a73e8;
+        font-family: Arial;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration-line: underline;
+
+        span {
+          display: none;
+          text-decoration: none;
+        }
+      }
     }
 
     .rank {

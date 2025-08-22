@@ -8,7 +8,7 @@ export const data = {
       imageUrl:
         'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1auvik_68a7307e19bd2.png',
       description:
-        '<a href="https://www.comparitech.com/go/auvik-network-monitoring-tools-learn-more-network-monitoring-tools/l/inline/u/8626-1194-5010-3490+66031/" target="_blank" class="go-link">Auvik</a> is a cloud-based network monitoring system that includes a number of system management tools. The package is accessed through a Web browser and when you open an account, the setup process installs collectors on your system. The Auvik package is able to monitor multiple sites and centralizes their control. This makes the package ideal for monitoring a WAN.',
+        '<p><a href="https://www.comparitech.com/go/auvik-network-monitoring-tools-learn-more-network-monitoring-tools/l/inline/u/8626-1194-5010-3490+66031/" target="_blank" class="go-link">Auvik</a> is a cloud-based network monitoring system that includes a number of system management tools. The package is accessed through a Web browser and when you open an account, the setup process installs collectors on your system. The Auvik package is able to monitor multiple sites and centralizes their control. This makes the package ideal for monitoring a WAN.</p>',
       pricingText: 'Auvik doesn’t publish its prices.',
       pricing: [],
       pros: [
@@ -2143,6 +2143,7 @@ export const data = {
       description: `
 		  <p><a href="https://www.comparitech.com/go/jscape-redwood-best-free-sftp-ftps-servers/l/inline/u/8043-6726-7506-4131+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="8043-6726-7506-4131" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>JSCAPE MFT</b></a>, a product of Redwood Software, implements <b>SFTP</b>, <b>SCP</b>, and <b>FTPS</b> within its client and server pair. The client isn’t distributed, but it is held on the same computer as the server unit. The users access the client over the network, or even across the internet, through a Web browser. The client includes a document viewer, which removes the need to transfer a file.</p>
       `,
+      operating_systems: 'Windows, macOS, Linux, Solaris, AIX, and z/OS',
       best_for: 'Enterprise-level businesses',
       relevant_for: '',
       pricingText: '',
@@ -2179,6 +2180,7 @@ export const data = {
       description: `
       <p><a href="https://www.comparitech.com/go/files-cloud-ftp-sftp-server-learn-more-best-free-sftp-ftps-servers/l/inline/u/1879-3161-1382-9134+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="1879-3161-1382-9134" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>Files.com</b></a> is a cloud-based file platform with a <strong>built-in FTP and SFTP server</strong>. Being based on a remote server, this service is able to offer many more features than a traditional SFTP server. The Files.com system consists of cloud storage that <b>acts as a buffer</b> for all file activities.</p>
       `,
+      operating_systems: 'Cloud-based with Windows and macOS clients available',
       best_for:
         'Small, medium, or enterprise-level businesses that have stronger technical skills within their in-house IT teams',
       relevant_for: '',
@@ -2216,6 +2218,7 @@ export const data = {
       description: `
       <p><strong><a href="https://www.comparitech.com/go/exavault-best-free-sftp-and-ftps-servers-best-free-sftp-ftps-servers/l/inline/u/3393-5429-8079-1862+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3393-5429-8079-1862" class="go-link" data-gtm-vis-has-fired1649924_55="1">ExaVault</a></strong>, (which is owned by Files.com) is a cloud service that mediates file transfers, offering <b>SFTP</b> and <b>SFTP</b> as secure solutions. The system enables administrators to keep track of file movements and automatic logging gives you the records you need for compliance auditing.</p>
       `,
+      operating_systems: 'Cloud-based (platform-agnostic, works with all operating systems)',
       best_for: 'Small, medium, and enterprise-level businesses',
       relevant_for: '',
       pricingText: '',
@@ -2242,6 +2245,7 @@ export const data = {
       description: `
       <p><a href="https://www.comparitech.com/go/cerberus-best-free-sftp-ftps-servers/l/inline/u/1319-5039-6076-3747+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="1319-5039-6076-3747" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>Cerberus FTP Server</b></a> is a file transfer server owned by Digital Ocean that can implement&nbsp; SFTP and FTPS. The package is also able to move files with FTP, SCP, FTP, and HTTPS. This is an on-premises package for <b>Windows</b> and <b>Windows Server</b>. The bundle includes a Web-based server, which is stored together with the server unit and can be accessed by users through any standard Web browser.</p>
       `,
+      operating_systems: 'Windows and Windows Server',
       best_for:
         'Medium-sized or Enterprise-level businesses. Smaller companies with a larger budget for the software may also want to explore this open',
       relevant_for: '',
@@ -2267,6 +2271,7 @@ export const data = {
       description: `
       <p><a href="https://www.comparitech.com/go/sftp-to-go-best-free-sftp-ftps-servers/l/inline/u/3097-6901-0814-4336+19763/" target="_blank" rel="sponsored nofollow noopener" data-postid="19763" data-clickid="3097-6901-0814-4336" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>SFTP To Go</strong></a> is a cloud-storage-as-a-service where you can securely store, transfer, share, and integrate files using protocols like SFTP, FTPS, S3, and HTTPS. Built on the AWS infrastructure, this platform is highly reliable and available. It is also easy to use, and at the same time, highly secure.</p>
       `,
+      operating_systems: 'Cloud-based',
       best_for:
         'Organizations that want to securely store and share sensitive data. It also works well for organizations that must meet compliance standards like HIPAA and GDPR',
       relevant_for: '',
@@ -2292,6 +2297,7 @@ export const data = {
       description: `
       <p><b>FileZilla, </b>well known for its popular cross-platform <a href="https://filezilla-project.org/download.php?type=client" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">FTP client tool</a>, also provides a server for <a href="https://filezilla-project.org/download.php?type=server" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">download</a> that supports<b> FTP and FTPS </b>(FTP over TLS/SSL). <b>FileZilla Server supports files up to 4GB</b>, giving it the bandwidth to support the needs of most organizations. On the whole, the platform is easy to configure. To start you need to connect to a server with your login credentials and then you can<b> view a list of files</b> and <b>directories</b>.</p>
       `,
+      operating_systems: 'Windows, macOS, and Linux',
       best_for:
         'Small or medium-sized businesses that don’t need hands-on product or customer support.',
       relevant_for: '',
@@ -2315,6 +2321,7 @@ export const data = {
       description: `
       <p><b>SolarWinds SFTP/SCP Server</b> is a <b>free SFTP server </b>that can complete SFTP and SCP file transfers up to 4GB. With SolarWinds SFTP/SCP Server you can <b>conduct multiple transfers</b> across lots of devices simultaneously. You can also select which version of SSH you want to use (whether <b>SSH1</b> or <b>SSH2</b>). The platform is ideal for users looking to complete tasks like pushing out OS and firmware updates.</p>
       `,
+      operating_systems: 'Windows Server',
       best_for: 'Enterprise-level businesses',
       relevant_for: '',
       pricingText: '',
@@ -2339,6 +2346,7 @@ export const data = {
       description: `
       <p><b>Syncplify Server</b> is an SFTP and FTPS server for Windows that support<b>s FTP, SFTP, FTPS,</b> and is compliant with HIPAA regulations.<b> Syncplify Server </b>supports up to <b>5,000 concurrent clients</b>. The platform has been designed for high availability so you can<b> deploy 2 SFTP server nodes</b>. If one node goes down then the other will still be available, which reduces the chance of disruption.</p>
       `,
+      operating_systems: 'Windows',
       best_for: 'Small, medium, or enterprise-level businesses with skilled IT teams',
       relevant_for: '',
       pricingText: '',
@@ -2361,6 +2369,7 @@ export const data = {
       description: `
       <p><b>CrushFTP</b> is an FTP server for <b>Windows</b>, <b>macOS</b>, and <b>Linux</b> that supports <b>SFTP, FTPS, SCP,</b> and <b>HTTPS</b>. With CrushFTP you can manage file transfers through a <b>web-based user interface</b>. Here the user can view previews of any images, PDFS, videos or documents on the server. Previews enable you to see the content of a particular file from a glance.</p>
       `,
+      operating_systems: 'Windows, macOS, and Linux',
       best_for: 'Small, medium, or large businesses with a skilled IT team.',
       relevant_for: '',
       pricingText: '',
@@ -2382,6 +2391,7 @@ export const data = {
       description: `
       <p><b>Rebex Tiny SFTP Server </b>is an <b>SFTP server for Windows</b> designed for basic file sharing. You can complete file transfers and view an activity log. The software can be deployed from a <b>ZIP file</b> without any long-winded configurations.</p>
       `,
+      operating_systems: 'Windows OS',
       best_for: 'Individuals or small businesses with appropriately skilled IT teams',
       relevant_for: '',
       pricingText: '',
