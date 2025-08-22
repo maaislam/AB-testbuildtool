@@ -52,13 +52,33 @@
       .list-item {
         display: none;
 
-        &.#{$id}__initial-hidden {
-          display: none;
-        }
-
         &.#{$id}__show {
           display: block;
+          list-style-type: none;
         }
+      }
+    }
+
+    ol:has(.#{$id}__show) {
+      padding-left: 0;
+    }
+
+    .#{$id}__show {
+      display: block;
+      list-style-type: none;
+
+      margin-bottom: 10px;
+    }
+    .#{$id}__initial-hidden {
+      display: none;
+    }
+
+    .#{$id}__always-hidden {
+      display: none;
+    }
+    .#{$id}__hidden {
+      & + p {
+        display: none;
       }
     }
 
@@ -104,7 +124,7 @@
       @media screen and (max-width: 680px) {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         width: 100%;
         padding-right: 0;
       }
@@ -125,18 +145,30 @@
       font-weight: 700;
       line-height: normal;
     }
+    .vpn-image-wrapper {
+      max-width: 130px;
+      margin: 0 auto 12px;
+
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+      }
+
+      @media screen and (max-width: 680px) {
+        //display: none;
+        margin-left: 0;
+      }
+    }
 
     .vpn-left img {
-      max-width: 130px;
-      width: 100%;
+      max-width: 100%;
       margin: 0 auto;
-      margin-bottom: 12px;
+
+      border-radius: 0 !important;
     }
 
     .vpn-left .headline {
       color: #333;
       font-family: 'Arial';
-      font-size: 16px;
+      font-size: 14px;
       font-style: italic;
       font-weight: 700;
       line-height: 1.5;
@@ -145,7 +177,8 @@
         text-align: center;
       }
       @media screen and (max-width: 680px) {
-        text-align: center;
+        text-align: left;
+        margin: 8px 0 16px;
       }
     }
 
@@ -172,12 +205,20 @@
       text-decoration-line: underline;
       margin-bottom: 16px;
 
+      a {
+        span {
+          display: none;
+        }
+      }
+
       @media screen and (max-width: 991px) and (min-width: 768px) {
-        display: none;
+        //display: none;
+        max-width: 240px;
+        margin: 16px auto 0;
       }
 
       @media screen and (max-width: 680px) {
-        display: none;
+        //display: none;
       }
     }
 
@@ -192,8 +233,8 @@
       }
 
       @media screen and (max-width: 680px) {
-        max-width: 240px;
-        margin: 12px auto;
+        max-width: 100%;
+        margin: 12px 0;
       }
     }
 
@@ -229,12 +270,14 @@
       @media screen and (max-width: 991px) and (min-width: 768px) {
         width: 100%;
         max-width: 350px;
+        margin: 0 auto;
         padding-left: 0;
       }
 
       @media screen and (max-width: 680px) {
         width: 100%;
         max-width: 350px;
+        margin: 0 auto;
         padding-left: 0;
       }
     }
@@ -244,6 +287,8 @@
       align-items: center;
       justify-content: space-between;
       margin: 0 0 16px;
+      visibility: hidden;
+      display: none;
 
       @media screen and (max-width: 991px) and (min-width: 768px) {
         justify-content: center;
@@ -322,17 +367,23 @@
     }
 
     .vpn-right .button {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       max-width: 190px;
       width: 100%;
       color: #fff;
       font-family: 'Arial';
-      font-size: 15px;
+      font-size: 14px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
       padding: 18px 12px;
       margin-bottom: 8px;
+      gap: 10px;
+
+      svg {
+      }
 
       &:hover {
         text-decoration: none;
@@ -364,6 +415,11 @@
       font-weight: 700;
       line-height: normal;
       margin: 16px 0 8px;
+      @media screen and (max-width: 991px) and (min-width: 768px) {
+        //display: none;
+        max-width: 240px;
+        margin: 16px auto 0;
+      }
     }
     .featured-lists {
       display: flex;
@@ -377,6 +433,11 @@
         font-weight: 700;
         line-height: normal;
         margin: 0 16px 10px 0;
+      }
+
+      @media screen and (max-width: 680px) {
+        flex-direction: column;
+        margin-right: 0;
       }
     }
   }

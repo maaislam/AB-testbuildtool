@@ -76,7 +76,6 @@ const oneDecimal = (s) => {
 
 const card = (hasPageData, provider, language, index) => {
   const providerExtraData = getLdJsonByBrand(provider.name);
-
   const overallRating = providerExtraData?.aggregateRating?.ratingValue || '9.8';
   const ratingnumber = Number(overallRating);
 
@@ -86,17 +85,15 @@ const card = (hasPageData, provider, language, index) => {
 
   const starIcons = getStarSvg(finalRatingNumber); //Round to 1 decimal place
 
-  console.log(hasPageData, 'hasPageData');
-  console.log(provider, 'provider');
   //Filter the main array based on the small array
   const filteredData = hasPageData.filter((item) => {
     //Ensure that the provider is 'shown' and the name matches
     return (
-      provider.shown && item.name.toLowerCase().trim().includes(provider.name.toLowerCase().trim())
+      provider.shown &&
+      (item.name.toLowerCase().trim().includes(provider.name.toLowerCase().trim()) ||
+        provider.name.toLowerCase().trim().includes(item.name.toLowerCase().trim()))
     );
   });
-
-  console.log(filteredData, 'filterend');
 
   if (filteredData.length === 0) {
     //Do something with filteredData
@@ -109,10 +106,12 @@ const card = (hasPageData, provider, language, index) => {
           <div class="vpn-left">
               ${
                 filteredData[0].extraName
-                  ? `<div class="badge">${index + 1}. EDITOR'S CHOICE</div>`
+                  ? `<div class="badge">${index + 1}. Editor’s Choice</div>`
                   : `<div class="badge">${index + 1}.</div>`
               }
-              <img src="${filteredData[0].imageUrl}" alt="${filteredData[0].name}" />
+              <div class="vpn-image-wrapper">
+                <img src="${filteredData[0].imageUrl}" alt="${filteredData[0].name}" />
+              </div>
               <div class="headline">${filteredData[0].best_for}</div>
           </div>
 
@@ -122,7 +121,7 @@ const card = (hasPageData, provider, language, index) => {
                 provider.linkElement
                   ? `
                   <div class="vpn-title">
-                    ${provider.linkElement.outerHTML}
+                    ${index + 1}. ${provider.linkElement.outerHTML}
                   </div>
                 `
                   : ''
@@ -167,6 +166,16 @@ const card = (hasPageData, provider, language, index) => {
                 ? `
                   <div class="vpn-button-wrapper">
                      ${provider.linkElement.outerHTML}
+                  </div>
+                `
+                : ''
+            }
+
+            ${
+              filteredData[0].freetrialElement
+                ? `
+                  <div class="vpn-button-wrapper-another">
+                     ${filteredData[0].freetrialElement}
                   </div>
                 `
                 : ''

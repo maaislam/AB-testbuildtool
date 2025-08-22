@@ -1,0 +1,156 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  /* Promo Shipping Banner */
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    .shipping-calculate {
+      width: max-content;
+    }
+
+    @media screen and (max-width: 767px) {
+      justify-content: center;
+      margin: 10px 0 24px;
+    }
+  }
+  &__promo-banner {
+    max-width: 400px;
+    background-color: #f26723;
+    color: #fff;
+    padding: 9px 14px 8px 18px;
+    border-radius: 12px;
+    margin-left: 20px;
+
+    @media screen and (max-width: 767px) {
+      margin-left: 0;
+      padding: 7px 22px 8px 22px;
+    }
+
+    .promo-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .promo-icon {
+      span {
+        display: flex;
+        width: 37px;
+        height: 29px;
+        margin-right: 11px;
+        svg {
+        }
+      }
+    }
+
+    .promo-text {
+      font-style: Black;
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: 0%;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 767px) {
+        font-size: 17px;
+      }
+    }
+
+    .promo-text-bold {
+      font-weight: 900;
+    }
+
+    .promo-text-normal {
+      font-weight: 400;
+    }
+
+    /* Product Rating */
+    .rating-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .rating-badge {
+      background-color: hsl(210, 100%, 56%);
+      color: hsl(0, 0%, 100%);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .stars-container {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .star-icon {
+      height: 1rem;
+      width: 1rem;
+      fill: hsl(45, 100%, 51%);
+      color: hsl(45, 100%, 51%);
+    }
+  }
+
+  .upgrade-container {
+    max-width: 520px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #000; /* Black border */
+    border-radius: 12px;
+    padding: 9px 12px 8px 21px;
+    margin-left: 20px;
+
+    @media screen and (max-width: 767px) {
+      padding: 8px 18px;
+      margin-left: 0;
+    }
+
+    .upgrade-text {
+      font-size: 20px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      margin-right: 8px;
+
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+
+    .highlight {
+      color: #000; /* Orange color for highlighted text */
+      font-weight: bold;
+    }
+
+    .upgrade-button {
+      display: inline-block;
+      max-width: 166px;
+      background-color: #f26723; /* Orange button */
+      color: white;
+      border: none;
+      padding: 11px 12px;
+      font-family: 'Passion One';
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 20px;
+      line-height: 1.2;
+      border-radius: 57px;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+
+    .upgrade-button:hover {
+      background-color: #e05c11; /* Darker orange on hover */
+    }
+  }
+}
