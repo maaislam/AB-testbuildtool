@@ -1,0 +1,55 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  body.cms-home .usps-main-new-design .block_content .item.item-homes {
+    display: none;
+  }
+
+  .#{$id}__trustpilotSection {
+    max-width: 1165px;
+    width: 95%;
+    margin: auto;
+  }
+
+  .luxury-reviews-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 0;
+    a {
+      padding: 12px 20px;
+      color: #fff !important;
+    }
+  }
+
+  .lf-orders-icon .cls-1 {
+    font-size: 67.19px;
+  }
+
+  .lf-orders-icon .cls-1,
+  .lf-orders-icon .cls-2,
+  .lf-orders-icon .cls-3 {
+    font-family: Margaret-Bold, Margaret;
+    font-weight: 700;
+    isolation: isolate;
+  }
+
+  .lf-orders-icon .cls-2 {
+    font-size: 97.05px;
+  }
+
+  .lf-orders-icon .cls-4 {
+    fill: none;
+    stroke-width: 0.5px;
+  }
+
+  .lf-orders-icon .cls-4,
+  .cls-5 {
+    stroke: #000;
+  }
+
+  .lf-orders-icon .cls-3 {
+    font-size: 216.49px;
+  }
+}

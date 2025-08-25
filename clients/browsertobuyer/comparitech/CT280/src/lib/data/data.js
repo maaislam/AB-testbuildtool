@@ -284,7 +284,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/site24x7-network-monitoring-free-trial/l/header/u/1433-4036-6739-2400+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1433-4036-6739-2400" class="go-link">11. Site24x7 Network Monitoring <span style="color: #800000;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine-site-24-7_68ac67aa1f746.svg',
       description: `
       <p>The <a href="https://www.comparitech.com/go/site24x7-network-monitoring-free-trial/l/inline/u/6853-3080-2649-3689+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="6853-3080-2649-3689" class="go-link"><b>Site24x7 cloud-based network monitoring tool</b></a> that covers IT infrastructure, applications, and user behavior. The network monitoring section of the tool is able to automatically discover all devices attached to the network. Site24x7 compiles <b>an equipment inventory</b> from the results of that search and then draws up <b>network topology maps</b> automatically. The inventory and maps all get updated automatically whenever equipment gets added, moved, or removed.</p>
       `,
@@ -397,7 +398,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.extrahop.com/products/security/" target="_blank" rel="noopener noreferrer">15. ExtraHop Reveal(x)</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/extrahop_68ac6438397f2.svg',
       description: `
       <p><b>ExtraHop Reveal(x)</b> is a network security monitoring system that is able to block the threats that it identifies. This tool uses AI to spot illogical or non-standard behavior that can indicate account takeover or an insider threat. The service operates an anomaly-based detection method.</p>
       `,
@@ -444,7 +446,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.solarwinds.com/network-performance-monitor" target="_blank" rel="noopener noreferrer">17. SolarWinds Network Performance Monitor</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/solarwinds_68ac64694cbe9.svg',
       description: `
       <p><b><a href="https://www.solarwinds.com/network-performance-monitor" target="_blank" rel="noopener noreferrer">SolarWinds Network Performance Monitor</a> </b>is a comprehensive network performance monitoring tool that can monitor the status of devices with <b>SNMP</b>. It can <b>automatically discover network devices connected to your network</b>.</p>
       `,
@@ -1113,7 +1116,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/manageengine-desktop-central-learn-more-rmm-software-and-tools/l/header/u/7157-2339-6776-9941+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7157-2339-6776-9941" class="go-link"><b>7. ManageEngine Endpoint Central <span style="color: #993300;">(FREE TRIAL)</span></b></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine-endpoint-central_68ac67698370b.svg',
       description: `
       <p><a href="https://www.comparitech.com/go/manageengine-desktop-central-learn-more-rmm-software-and-tools/l/inline/u/8428-8496-1562-0026+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="8428-8496-1562-0026" class="go-link"><b>ManageEngine Endpoint Central</b></a> is a package of endpoint management tools that would work very well as an RMM either for managed service providers or for in-house IT departments. This system is much stronger on the management functions of RMM and would partner well with a general system monitoring tool to get a full RMM suite.</p>
       `,
@@ -1136,7 +1140,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/site24x7-rmm-software-and-tools/l/header/u/4784-9537-3515-1004+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="4784-9537-3515-1004" class="go-link">8. Site24x7 MSP Edition <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine-site-24-7_68ac67aa1f746.svg',
       description: `
       <p><a href="https://www.comparitech.com/go/site24x7-rmm-software-and-tools/l/inline/u/1104-3922-0674-1499+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="1104-3922-0674-1499" class="go-link"><b>Site24x7 MSP Edition</b></a> provides all of the monitoring tools of the Site24x7 platform in a multi-tenant architecture for managed service providers. This is a cloud-based service and it can monitor any system anywhere through the installation of an agent on the monitored site. The package can also monitor cloud accounts.</p>
       `,
@@ -1744,7 +1749,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.42gears.com/products/mobile-device-management/" target="_blank" rel="noopener noreferrer">12. SureMDM</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/sure-mdn_68ac69359c5f7.svg',
       description: `
       <p><b>SureMDM</b> from 42Gears Mobility Systems provides a mobile device fleet management solution from a cloud platform. This service can also provide secure access to corporate services for user-owned devices.</p>
       `,
@@ -1872,7 +1878,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.jamf.com/products/jamf-now/" target="_blank" rel="noopener noreferrer">16. Jamf Now</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/jamf_68ac697e8c1d4.svg',
       description: `
       <p><strong>Jamf Now</strong> is a mobile device management system that only controls iOS devices. This is a cloud-based system that is priced per device. The service is free for the first three devices.</p>
       `,
@@ -1938,7 +1944,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/manageengine-active-directory-admin-adap-ad-administration-management-tools/l/header/u/3720-2198-2332-6243+337078/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="337078" data-clickid="3720-2198-2332-6243" class="go-link">2. ManageEngine ADAudit Plus <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine-ad-audit-plus_68ac66e8dd2ce.svg',
       description: `
       <p><a href="https://www.comparitech.com/go/manageengine-active-directory-admin-adap-ad-administration-management-tools/l/inline/u/8678-5517-7139-4663+337078/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="337078" data-clickid="8678-5517-7139-4663" class="go-link"><b>ManageEngine ADAudit Plus</b></a> is designed for businesses that need to comply with data protection standards. The tool implements user behavior analytics and compares the activities of each user account with the permissions assigned in AD. As well as monitoring activity, the system <b>logs all actions</b> that pertain to sensitive data access and provides compliance reporting.</p>
       `,
@@ -2002,7 +2009,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://specopssoft.com/product/specops-active-directory-janitor/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><b>4.</b> <b>Specops Active Directory Janitor</b></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/specops_68ac6515077c8.svg',
       description: `
       <p><b>Specops Active Directory Janitor</b> focuses on one of the biggest issues of Active Directory management, which is <b>inactive accounts</b> and out-of-date device records. This is one of a group of Active Directory administration tools produced by Specops and we found it a tough task to pick which of them is the best for inclusion in this list.</p>
       `,
@@ -2051,7 +2059,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.netwrix.com/active_directory_auditing.html" rel="noopener noreferrer" target="_blank"><b>6.</b> <b>Netwrix Auditor for Active Directory</b></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/netwrix_68ac65bcc9eff.svg',
       description: `
       <p><b>Netwrix Auditor</b> is a system-wide security management service that includes Active Directory management and monitoring capabilities. Alongside this general security system, Netwrix offers the <b>Auditor for Active Directory</b> for free. This provides you specific Active directory administration recommendations to enhance your security.</p>
       `,
@@ -2480,7 +2489,7 @@ export const data = {
       <a href="https://www.comparitech.com/go/manageengine-active-directory-tools-adap-active-directory-tools/l/header/u/8077-6498-9286-6903+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="8077-6498-9286-6903" class="go-link"><b>3. ManageEngine ADAudit Plus <span style="color: #993300;">(FREE TRIAL)</span></b></a>
       `,
       imageUrl:
-        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine_688a18911590c.png',
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine-ad-audit-plus_68ac66e8dd2ce.svg',
       description: `
       <p><a href="https://www.comparitech.com/go/manageengine-active-directory-tools-adap-active-directory-tools/l/inline/u/9360-8436-3000-0707+108465/" target="_blank" rel="sponsored nofollow noopener" data-postid="108465" data-clickid="9360-8436-3000-0707" class="go-link"><b>ADAudit Plus</b></a> from ManageEngine has a stronger focus on standards compliance requirements than the company’s ADManager Plus tool. This system auditing utility is a powerful AD tool that gives you live user activity reports and includes <b>automated insider threat detection systems</b>. You will be able to block people who are allowed access to your resources from using them inappropriately.</p>
       `,
@@ -2542,7 +2551,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://specopssoft.com/support-docs/specops-command/download/" target="_blank" rel="noopener noreferrer">5. Specops Command</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/specops_68ac6515077c8.svg',
       description: `
       <p><strong>Specops Command</strong> is another tool that offers you a formidable Active Directory management experience. With this program, you use scripts to manage your network. <strong>Specops Command</strong> enables the use of <strong>Windows PowerShell</strong> and <strong>VBScripts</strong> to manage users and devices throughout your network. You can even execute commands straight through to client systems.</p>
       `,
@@ -2577,7 +2587,7 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.quest.com/register/54780/" target="_blank" rel="noopener noreferrer">6. Recovery Manager for Active Directory (Quest)</a>
       `,
-      imageUrl: '',
+      imageUrl: 'https://cdn-3.convertexperiments.com/uf/10021806/1002820/quest_68ac654209cea.svg',
       description: `
       <p>As the name suggests, <strong>Recovery for Active Directory </strong>is a third-party tool for Active Directory that has been designed to help you recover data. Generally speaking, when an object is lost in Active Directory you have to restart the Domain Controller to recover it. <strong>Recovery Manager for Active Directory </strong>eliminates this inconvenience by allowing you to <strong>r</strong><strong>ecover objects without restarting Active Directory</strong>.</p>
       `,
@@ -2605,7 +2615,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.manageengine.com/products/free-windows-active-directory-tools/free-active-directory-tools-index.html" target="_blank" rel="noopener noreferrer">7. ManageEngine Free Active Directory Tools</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine-free-active-directory-tools_68ac65875dcb2.svg',
       description: `
       <p><strong>ManageEngine Free Active Directory Tools</strong> is essentially a group of utilities that help to manage <strong>Active Directory</strong>. Some of the utilities available include <strong>AD Query Tool</strong>, <strong>CSV Generator</strong>, <strong>Last Logon Reporter</strong>, <strong>Terminal Session Manager</strong>, <strong>AD Replication Manager</strong>, <strong>SharePoint Manager</strong>, <strong>DMZ Port Analyzer</strong>, <strong>Domain</strong> and <strong>DC Roles Reported</strong>, <strong>Local Users Manager</strong>, <strong>Password Policy Manager</strong>, and <strong>Exchange Health Monitor</strong>.</p>
       `,
@@ -2671,7 +2682,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.netwrix.com/account_lockout_examiner.html" target="_blank" rel="noopener noreferrer">9. Netwrix Account Lockout Examiner</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/netwrix_68ac65bcc9eff.svg',
       description: `
       <p>There are many occasions in <strong>Active Directory</strong> where a user is locked out of <strong>Active Directory</strong> at the most inconvenient time. <strong>Netwrix Account Lockout Examiner</strong> has been designed for the expressed purpose of getting to the bottom of <strong>Active Directory</strong> lockouts. This tool notifies administrators when an account has been locked out of <strong>Active Directory</strong> so that they can take a closer look at why this is the case.</p>
       `,
@@ -2700,7 +2712,8 @@ export const data = {
       nameWithUrl: `
       <a href="http://www.wisesoft.co.uk/software/passwordcontrol/bulk_password_control.aspx" target="_blank" rel="noopener noreferrer">10. Bulk Password Control (WiseDATAman)</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/wisedataman_68ac663322e52.png',
       description: `
       <p><b>Bulk Password Control</b> is a tool designed to help users with password management on <b>Active Directory</b>. As a password manager, <b>Bulk Password Control </b>is very fast paced. You can <b>change passwords on multiple accounts at once</b>. You can do this through the use of a <b>password generator</b> that creates passwords for each account. In the event that you want to make this more simple, you can set every account password to the same code. In other words, you can manage passwords in bulk.</p>
       `,
@@ -2732,7 +2745,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.netwrix.com/netwrix_inactive_user_tracker.html" target="_blank" rel="noopener noreferrer">11. Netwrix Inactive User Tracker</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/netwrix_68ac65bcc9eff.svg',
       description: `
       <p><strong>Netwrix Inactive User Tracker</strong> is a tool that is used to flag up <strong>Active Directory</strong> accounts that aren’t in use and helps to put them to rest. This tool <strong>scans for inactive user accounts and then provides you with information on for how long the accounts have been dormant</strong>. In effect, the tool automatically keeps you updated on the state of your connected accounts so that you can take action if need be.</p>
       `,
@@ -2888,7 +2902,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/header/u/3832-3134-9088-4495+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3832-3134-9088-4495" class="go-link" data-gtm-vis-has-fired1649924_55="1">5. Site24x7 Network Monitoring <span style="color: #993300;">(FREE TRIAL)</span></a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine-site-24-7_68ac67aa1f746.svg',
       description: `
       <p><a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/inline/u/1650-2136-5921-0287+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="1650-2136-5921-0287" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>Site24x7 Network Monitoring</b></a> is a service that is delivered from the cloud and includes a network topology mapping feature. The package includes a discovery service that identifies all devices on the network and populates a system inventory. The network topology map is drawn up automatically from the information held in the inventory.</p>
       `,

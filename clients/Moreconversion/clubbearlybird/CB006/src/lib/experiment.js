@@ -24,6 +24,7 @@ const startExperiment = () => {
       .then((cartData) => {
         if (cartData) {
           fetchProductDetails(cartData).then((productDetails) => {
+            console.log(productDetails, 'productDetails');
             productDetails.forEach(({ variant_id, compare_at_price, quantity }) => {
               const priceWrapper = document.querySelector(
                 `li[data-item="${variant_id}"] .product-price`
@@ -45,9 +46,12 @@ const startExperiment = () => {
               }
             });
 
+            const hasComparePrice = productDetails.some((item) => item.compare_at_price);
+
             if (
               !document.querySelector(`.${ID}__total`) &&
-              document.querySelector('.cart-total-bottom')
+              document.querySelector('.cart-total-bottom') &&
+              hasComparePrice
             ) {
               console.log(calculateSubtotal(productDetails));
               document

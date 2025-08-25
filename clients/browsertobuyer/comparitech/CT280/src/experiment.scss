@@ -97,6 +97,12 @@
         border-radius: 0 !important;
       }
 
+      &:has(img[src*='manage-engine-site-24-7']) {
+        border: 1px solid #ccc;
+        width: 100px;
+        padding: 12px;
+      }
+
       @media screen and (max-width: 767px) {
         order: -1;
       }
