@@ -8,6 +8,12 @@
   .#{$id}__card-wrapper {
     margin: 20px 0;
   }
+  .entry-content .#{$id}__card .provider-poster p:first-of-type img,
+  .entry-content .#{$id}__card .provider-poster p:first-of-type picture {
+    display: block !important;
+    padding: 0;
+    margin: 0;
+  }
   .#{$id}__card {
     background: #ffffff;
     max-width: 100%;
@@ -35,6 +41,26 @@
 
     /* Header */
     .card-header {
+    }
+    .provider-poster {
+      margin: 15px 0;
+    }
+
+    .provider-name-info {
+      display: flex;
+      align-items: baseline;
+
+      .extra-name {
+        border-radius: 3px;
+        background: #b30202;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: normal;
+        padding: 4px 5px;
+        margin-left: 16px;
+        flex-shrink: 0;
+      }
     }
 
     .title-wrap {

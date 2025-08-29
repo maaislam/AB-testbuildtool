@@ -3,6 +3,7 @@ import { crossIcon, tickIcon } from '../assets/icons';
 const card = (id, data) => {
   const {
     name,
+    extraName,
     nameWithUrl,
     imageUrl,
     description,
@@ -18,24 +19,24 @@ const card = (id, data) => {
     pricingText,
     best_for,
     relevant_for,
-    operating_systems
+    operating_systems,
+    poster,
+    additionalInfo
   } = data;
   const html = `
         <div class="${id}__card">
             <div class="card-header">
                 <div class="title-wrap">
-                    <div>
+                    <div class="provider-name-info">
                        ${nameWithUrl}
+                       ${extraName ? `<div class="extra-name">${extraName}</div>` : ''}
                     </div>
                     <div class="logo"><img src="${imageUrl}" alt="provider logo"/></div>
                 </div>
                 
             </div>
-
-            
-                ${description}
-           
-
+            ${description}
+            ${poster ? `<div class="provider-poster">${poster}</div>` : ''}
             <div class="grid">
                 ${
                   pricingText
@@ -191,6 +192,7 @@ const card = (id, data) => {
                      : ''
                  }     
             </div>
+            ${additionalInfo ? `${additionalInfo}` : ''}
         </div>
     `;
 
