@@ -1,36 +1,34 @@
-import { downArrow, starRating } from '../assets/icons';
+import { downArrow, freeShippingIcon, starRating } from '../assets/icons';
 import { flavourData, pricingData, uspsData } from '../data/data';
 import { formatPrice } from '../helpers/utils';
 import flavourItem from './flavourItem';
 import packItem from './packItem';
 import extraUsp from './extraUsp';
-import tabElement from './tabElement';
+import tabs from './tabs';
 
 const variantsWrapper = (id, price_max, flavoursArray, packArray, selling_plan_groups) => {
   const activeFlavorItem = flavourData.find((item) => item.isActive);
   const firstSellingPlan = selling_plan_groups[0].selling_plans[0];
   const html = `
     <div class="product-selection ${id}__product-selection">
+        <div class="${id}__prodDescription">"First... delicious! Second, I went from hitting the snooze every morning to waking up at 5 AM without any struggle... and using mornings as a tool to getting so much more done"  - Deanna S. USA</div>
+        <div class="${id}__prodName">EarlyBird Morning Cocktail</div>
         <div class="${id}__prodInfo">
           <div class="${id}__prodRatings">
             <span>${starRating}</span>
             <span>4.8</span>
           </div>
-          <div class="${id}__prodName">EarlyBird Morning Cocktail</div>
-          <div class="${id}__prodDescription">"First... delicious! Second, I went from hitting the snooze every morning to waking up at 5 AM without any struggle... and using mornings as a tool to getting so much more done"  - Deanna S. USA</div>
+          
         </div>
-        <div class="${id}__mainPrice">$54.40</div>
-        <div class="flavor flavor-desktop">
-            <p class="flavor-label">Choose Flavor:</p>
-            <div class="flavor-options">
-                ${flavoursArray.map((item) => flavourItem(item)).join('\n')}
-            </div>
+        <div class="${id}__priceWrapper">
+          <div class="${id}__mainPrice">$54.40</div>
+          <div class="${id}__icon">${freeShippingIcon}</div>
         </div>
-        <div class="flavor flavor-mobile">
+        <div class="flavor">
             <p class="flavor-label">Choose Flavor:</p>
             <div class="flavor-options">
                 <div class="active-flavor" data-key="${activeFlavorItem.title}">
-                    <span class="icon">${activeFlavorItem.icon}</span>
+                    <span class="icon" style="display:none;">${activeFlavorItem.icon}</span>
                     <span>${activeFlavorItem.title}</span>
                     <span class="indicator-icon">${downArrow}</span>
                 </div>
@@ -45,10 +43,10 @@ const variantsWrapper = (id, price_max, flavoursArray, packArray, selling_plan_g
             ${packArray.map((item) => packItem(item, price_max)).join('\n')}
         </div>
 
-        <div class="pricing-options">
+        <div class="pricing-options" style="display:none;">
             <div class="option first-option">
                 <div class="radio-group subscription-option">
-                    <input type="radio" id="auto-ship" name="pricing-option" checked>
+                    <input type="radio" id="auto-ship" name="pricing-option">
                     <label for="auto-ship">
                         <span></span>
                         <span>AutoShip & Save</span>
@@ -90,7 +88,7 @@ const variantsWrapper = (id, price_max, flavoursArray, packArray, selling_plan_g
             <!-- Buy Once Option -->
             <div class="option second-option">
                 <div class="radio-group oneTime-option">
-                    <input type="radio" id="buy-once" name="pricing-option">
+                    <input type="radio" id="buy-once" name="pricing-option" checked>
                     <label for="buy-once">
                         <span></span>
                         <span>Buy Once</span>
@@ -99,6 +97,7 @@ const variantsWrapper = (id, price_max, flavoursArray, packArray, selling_plan_g
                 </div>
             </div>
         </div>
+        ${tabs(id)}
         <div class="product-form-buttons-wrapper ${id}__buttonsWrapper">
           <button type="button" class="cart-icon btn btn-add-tocart ${id}__addtocart" id="AddToCart" style="display: inline-block;"><span class="btn-money ${id}__total-price"><span class="line-through" style="display: none">$68.00</span>$54.00</span>
               <span class="divisor">-</span><span class="btn-label">Add To Cart</span>
@@ -114,7 +113,6 @@ const variantsWrapper = (id, price_max, flavoursArray, packArray, selling_plan_g
     </div>
         </div>
         <div class="${id}__disclaimer">No Risk, No Hassle <b>60-Day</b> 100% Money Back Guarantee</div>
-        ${tabElement(id)}
         ${extraUsp(id)}
     </div>
 

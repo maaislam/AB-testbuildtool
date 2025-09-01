@@ -187,22 +187,3 @@ export const addJsToPage = (src, id, cb, classes) => {
   s.setAttribute('id', id);
   document.head.appendChild(s);
 };
-
-export const attachListener = (id) => {
-  document.querySelectorAll(`.${id}__tabs-accordion .tabs-accordion-title`).forEach((item) => {
-    item.addEventListener('click', () => {
-      const parentItem = item.closest('.tabs-accordion-item');
-      const content = parentItem.querySelector('.tabs-accordion-content');
-
-      //Toggle active class to open/close accordion
-      parentItem.classList.toggle('active');
-
-      //If the content is open, slide it up, otherwise slide it down
-      if (parentItem.classList.contains('active')) {
-        content.style.maxHeight = `${content.scrollHeight}px`; //Expand content
-      } else {
-        content.style.maxHeight = '0'; //Collapse content
-      }
-    });
-  });
-};

@@ -1,5 +1,5 @@
 import setup from './services/setup';
-
+import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import initSwiper from './helpers/initSwiper';
 import swiperConfig from './configs/swiperConfigs';
@@ -13,13 +13,10 @@ import {
   getPackCount,
   getProduct,
   pollerLite,
-  uniqOpts,
-  attachListener
+  uniqOpts
 } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
-const isMobile = () =>
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
 const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
@@ -48,18 +45,7 @@ const priceDomUpdate = (plan, findVariant) => {
     )}</strike> ${formatPrice(price)}`;
   }
 
-  if (chooseOption.id === 'auto-ship') {
-    totalPriceElement.innerHTML = `<span class="line-through" style="display: none">${formatPrice(
-      compare_at_price,
-      packCount
-    )}</span> ${formatPrice(price, packCount)}`;
-
-    mainPrice.innerHTML = formatPrice(price, packCount);
-
-    window.packQuantity = packCount;
-    window.prodId = findVariant.id;
-    window.sellingPlanId = plan.selling_plan_id;
-  } else if (chooseOption.id === 'buy-once') {
+  if (chooseOption.id === 'buy-once') {
     totalPriceElement.innerHTML = `<span class="line-through" style="display: none"></span>${formatPrice(
       compare_at_price || price,
       packCount
@@ -82,9 +68,7 @@ const priceDomUpdate = (plan, findVariant) => {
 };
 
 const priceCalculation = () => {
-  const activeFalvorElement = isMobile()
-    ? document.querySelector('.active-flavor')
-    : document.querySelector('.flavor-active');
+  const activeFalvorElement = document.querySelector('.active-flavor');
 
   console.log(activeFalvorElement, 'activeFalvorElement');
   const activePackElement = document.querySelector('.pack-active');
@@ -178,24 +162,16 @@ export default () => {
       });
       clickedItem.classList.add('pack-active');
       priceCalculation();
-    } else if (target.closest('.flavor-option') && target.closest('.flavor-desktop')) {
-      const clickedItem = target.closest('.flavor-option');
-      const activeItems = document.querySelectorAll('.flavor-option.flavor-active');
-      activeItems.forEach((item) => {
-        item.classList.remove('flavor-active');
-      });
-      clickedItem.classList.add('flavor-active');
-      priceCalculation();
-    } else if (target.closest('.active-flavor') && target.closest('.flavor-mobile')) {
+    } else if (target.closest('.active-flavor')) {
       const clickedItem = target.closest('.active-flavor');
-      const wrapper = clickedItem.closest('.flavor-mobile');
+      const wrapper = clickedItem.closest('.flavor');
       wrapper.classList.toggle('active');
 
       const subscribeWrapper = document.querySelector('.delivery-options');
       if (subscribeWrapper) subscribeWrapper.classList.remove('active');
       //priceCalculation();
     } else if (target.closest('.flavor-option') && target.closest('.flavor-options-hidden')) {
-      const wrapper = document.querySelector('.flavor-mobile');
+      const wrapper = document.querySelector('.flavor');
       const clickedItem = target.closest('.flavor-option');
       const { key } = clickedItem.dataset;
       const text = clickedItem.querySelector('span:last-child').textContent;
@@ -227,22 +203,22 @@ export default () => {
           target.closest(`.${ID}__addtocart`).disabled = false;
           console.error(err);
         });
-    } else if (
-      target.closest('.tabs-accordion-title') &&
-      target.closest(`.${ID}__tabs-accordion`)
-    ) {
-      const parentItem = target.closest('.tabs-accordion-item');
-      const content = parentItem.querySelector('.tabs-accordion-content');
+    } else if (target.closest(`.${ID}__button`)) {
+      const clickedItem = target.closest(`.${ID}__button`);
+      const { key } = clickedItem.dataset;
+      const allContents = document.querySelectorAll(`.${ID}__info`);
+      const allbuttons = document.querySelectorAll(`.${ID}__button`);
+      allContents.forEach((content) => {
+        content.classList.remove('zpa-tabs-element__tab--opened');
+      });
 
-      //Toggle active class to open/close accordion
-      parentItem.classList.toggle('active');
+      allbuttons.forEach((button) => {
+        button.classList.remove('zpa-tabs-element-switcher__item--active');
+      });
 
-      //If the content is open, slide it up, otherwise slide it down
-      if (parentItem.classList.contains('active')) {
-        content.style.maxHeight = `${content.scrollHeight}px`; //Expand content
-      } else {
-        content.style.maxHeight = '0'; //Collapse content
-      }
+      clickedItem.classList.add('zpa-tabs-element-switcher__item--active');
+      const targetContent = document.querySelector(`.${ID}__${key}`);
+      if (targetContent) targetContent.classList.add('zpa-tabs-element__tab--opened');
     } else if (!target.matches('.active-option') || !target.matches('.active-flavor')) {
       const wrapper = document.querySelector('.delivery-options');
       if (wrapper) wrapper.classList.remove('active');
