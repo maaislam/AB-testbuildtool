@@ -16,7 +16,7 @@ const init = () => {
     heroP.classList.add(`${ID}__hidden`);
   }
 
-  const listItems = document.querySelectorAll('.entry-content > ol:has(.badge) > li');
+  const listItems = document.querySelectorAll('.entry-content ol:has(.badge) > li');
 
   listItems.forEach((li, i) => {
     li.classList.add(`${ID}__hidden`); //Hide all items initially
@@ -29,7 +29,7 @@ const init = () => {
     const html = `
       <div class="${ID}__showMore">See ${listItems.length - 3} more</div>`;
 
-    const attachPoint = document.querySelector('.entry-content > ol:has(.badge)');
+    const attachPoint = document.querySelector('.entry-content ol:has(.badge)');
     if (document.querySelector(`.${ID}__showMore`)) {
       document.querySelector(`.${ID}__showMore`).remove(); //Remove existing show more if present
     }

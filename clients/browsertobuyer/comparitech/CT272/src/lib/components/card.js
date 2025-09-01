@@ -68,6 +68,16 @@ const getLdJsonByBrand = (targetBrand) => {
     return match || found;
   }, null);
 };
+
+const vpnRatings = {
+  NordVPN: 9.4,
+  'Total VPN': 9.2,
+  ProtonVPN: 9.0,
+  ExpressVPN: 8.8,
+  IPVanish: 8.3,
+  Surfshark: 8.8,
+  TotalVPN: 9.2
+};
 const oneDecimal = (s) => {
   const n = parseFloat(s);
   if (Number.isNaN(n)) throw new Error(`"${s}" is not a number`);
@@ -75,9 +85,11 @@ const oneDecimal = (s) => {
 };
 
 const card = (provider, language, index) => {
-  const providerExtraData = getLdJsonByBrand(provider.name);
-
-  const overallRating = providerExtraData?.aggregateRating?.ratingValue || '9.8';
+  const removeSpacesRegex = (str) => str.replace(/\s+/g, '');
+  const sanitizedName = removeSpacesRegex(provider.name);
+  const providerExtraData = getLdJsonByBrand(sanitizedName);
+  const overallRating =
+    providerExtraData?.aggregateRating?.ratingValue || vpnRatings[provider.name];
   const ratingnumber = Number(overallRating);
 
   const ratingOutofFive = ratingnumber / 2; //Convert to 0-5 scale

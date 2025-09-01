@@ -1,5 +1,5 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 import { pollerLite } from './helpers/utils';
 import variantsWrapper from './components/variantsWrapper';
@@ -7,7 +7,7 @@ import variantsWrapper from './components/variantsWrapper';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  const targetPoint = document.querySelector('.zpa-product-wrapper');
+  const targetPoint = document.querySelector('.js-cluster-wrapper');
   if (!document.querySelector(`.${ID}__product-selection`)) {
     targetPoint.insertAdjacentHTML('beforebegin', variantsWrapper(ID));
   }

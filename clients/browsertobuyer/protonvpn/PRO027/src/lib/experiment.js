@@ -74,6 +74,13 @@ export default () => {
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
+
+    if (!target.closest('.dropdown')) {
+      const clickedItem = document.querySelector('.dropdown-selected');
+      const wrapper = clickedItem.closest('.dropdown');
+      wrapper.classList.remove('open');
+    }
+
     if (target.closest('.dropdown-selected')) {
       const clickedItem = target.closest('.dropdown-selected');
       const wrapper = clickedItem.closest('.dropdown');
