@@ -1,12 +1,10 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
+
 import shared from './shared/shared';
 import initSwiper from './helpers/initSwiper';
-import swiperConfig from './configs/swiperConfigs';
+
 import mainWrapper from './components/mainWrapper';
 import {
-  addCssToPage,
-  addJsToPage,
   addToCart,
   formatPrice,
   getOption2WithPrice,
@@ -16,10 +14,7 @@ import {
   uniqOpts
 } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
-
-const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
-const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
+const { ID } = shared;
 
 const priceDomUpdate = (plan, findVariant) => {
   const { compare_at_price, price } = plan;
@@ -128,9 +123,6 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
-  addJsToPage(swiperJs, `${ID}__swiperjs`);
-  addCssToPage(swiperCss, `${ID}__swipercss`);
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
@@ -197,7 +189,7 @@ export default () => {
         .then((cartItem) => {
           console.log('Added:', cartItem);
           target.closest(`.${ID}__addtocart`).disabled = false;
-          window.location.reload();
+          window.location.pathname = '/checkout';
         })
         .catch((err) => {
           target.closest(`.${ID}__addtocart`).disabled = false;

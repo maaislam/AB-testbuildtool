@@ -1,28 +1,23 @@
+/*eslint-disable object-curly-newline */
 import setup from './services/setup';
 
 import shared from './shared/shared';
 import initSwiper from './helpers/initSwiper';
-import swiperConfig from './configs/swiperConfigs';
+
 import mainWrapper from './components/mainWrapper';
 import {
-  addCssToPage,
-  addJsToPage,
   addToCart,
   formatPrice,
   getOption2WithPrice,
   getPackCount,
   getProduct,
   pollerLite,
-  uniqOpts,
-  attachListener
+  uniqOpts
 } from './helpers/utils';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 const isMobile = () =>
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-const swiperJs = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js';
-const swiperCss = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
 
 const priceDomUpdate = (plan, findVariant) => {
   const { compare_at_price, price } = plan;
@@ -37,7 +32,7 @@ const priceDomUpdate = (plan, findVariant) => {
   const packCount = getPackCount(findVariant.option2);
   const chooseOption = document.querySelector('input[name="pricing-option"]:checked');
 
-  console.log(packCount, 'packCount');
+  //console.log(packCount, 'packCount');
 
   oneTimeOption.querySelector('.price').innerHTML = formatPrice(compare_at_price);
   itemElement.innerHTML = `${packCount} ITEM${packCount > 1 ? 'S' : ''}`;
@@ -86,7 +81,7 @@ const priceCalculation = () => {
     ? document.querySelector('.active-flavor')
     : document.querySelector('.flavor-active');
 
-  console.log(activeFalvorElement, 'activeFalvorElement');
+  //console.log(activeFalvorElement, 'activeFalvorElement');
   const activePackElement = document.querySelector('.pack-active');
   const flavor = activeFalvorElement ? activeFalvorElement.dataset.key : null;
   const pack = activePackElement ? activePackElement.dataset.key : null;
@@ -106,7 +101,7 @@ const priceCalculation = () => {
       (plan) => plan.selling_plan_id === Number(id)
     );
 
-    console.log('selecting plan', findSellingPlan, findVariant);
+    //console.log('selecting plan', findSellingPlan, findVariant);
     priceDomUpdate(findSellingPlan, findVariant);
   }
 };
@@ -117,7 +112,7 @@ const init = () => {
   //usage
   getProduct('https://clubearlybird.com/products/earlybird-morning-cocktail-copy.js')
     .then((data) => {
-      console.log(data, 'data');
+      //console.log(data, 'data');
       //data = your big array
       const { variants, price_max, selling_plan_groups, images } = data;
 
@@ -145,12 +140,10 @@ const init = () => {
 export default () => {
   setup(); //use if needed
   console.log(ID);
-  addJsToPage(swiperJs, `${ID}__swiperjs`);
-  addCssToPage(swiperCss, `${ID}__swipercss`);
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
-    console.log(target, 'target');
+
     if (target.closest('.active-option')) {
       const clickedItem = target.closest('.active-option');
       const wrapper = clickedItem.closest('.delivery-options');
@@ -219,9 +212,9 @@ export default () => {
       target.closest(`.${ID}__addtocart`).disabled = true;
       addToCart(window.prodId, window.packQuantity, window.sellingPlanId)
         .then((cartItem) => {
-          console.log('Added:', cartItem);
+          //console.log('Added:', cartItem);
           target.closest(`.${ID}__addtocart`).disabled = false;
-          window.location.reload();
+          window.location.pathname = '/checkout';
         })
         .catch((err) => {
           target.closest(`.${ID}__addtocart`).disabled = false;
