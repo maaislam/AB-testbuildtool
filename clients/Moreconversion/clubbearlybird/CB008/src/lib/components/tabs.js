@@ -8,9 +8,7 @@ const tabs = (id) => {
                 class="${id}__button zpa-btn-custom zpa-tabs-element-switcher__item zpa-tabs-element-switcher__item--active"
                 data-tab-switcher="4456099" data-key="description"> Description </button> <button type="button"
                 class="${id}__button zpa-btn-custom zpa-tabs-element-switcher__item"
-                data-tab-switcher="4456103" data-key="ingredients"> Ingredients </button> <button type="button"
-                class="${id}__button zpa-btn-custom zpa-tabs-element-switcher__item"
-                data-tab-switcher="4456101" data-key="flavors"> Flavors </button>
+                data-tab-switcher="4456103" data-key="ingredients"> Ingredients </button>
     </div>
     <div class="flex-row">
         <div class="zpa-flex--column zpa-flex xs-12 sm-12 lg-12 md-12">
@@ -47,16 +45,7 @@ const tabs = (id) => {
                         </div>
                     </div>
                 </div>
-                <div class="${id}__flavors ${id}__info flex-row zpa-tabs-element__tab"
-                     data-tab="4456101">
-                    <div class="zpa-flex--column zpa-flex xs-12 sm-12 lg-12 md-12">
-                        <div class="zp ca-3673311 zpa-column-content">
-                            <div class="pack-info">
-                                <h3 class="pack-title">Flavors info</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

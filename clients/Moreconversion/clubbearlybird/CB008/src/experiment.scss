@@ -377,6 +377,15 @@
         &:hover {
           background: rgba(242, 103, 36, 0.1019607843) !important;
         }
+
+        &.flavor-disabled {
+          cursor: not-allowed;
+          color: #ccc;
+
+          span {
+            color: #ccc;
+          }
+        }
       }
     }
 

@@ -360,7 +360,8 @@
         .flavor-option {
           border-radius: 0;
           border-color: transparent;
-          background-color: transparent !important;
+          background-color: #fff;
+          border: 0;
 
           span:nth-child(2) {
             font-family: 'Source Sans Pro';
@@ -416,7 +417,6 @@
     border: 2px solid #d9d9d9;
     border-radius: 10px;
     gap: 10px;
-    cursor: pointer;
     span:first-child {
       /* Add styles for the icon here */
       display: flex;
@@ -433,12 +433,19 @@
       border-color: #f58d5c;
       background: #f267241a;
     }
-  }
 
-  .flavor-option.sold-out {
-    background-color: #f0f0f0;
-    color: #aaa;
-    cursor: not-allowed;
+    &:not(.flavor-disabled) {
+      cursor: pointer;
+    }
+
+    &.flavor-disabled {
+      color: #ccc !important;
+      cursor: not-allowed;
+
+      span {
+        color: #ccc !important;
+      }
+    }
   }
 
   .pricing {

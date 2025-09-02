@@ -94,7 +94,7 @@ const variantsWrapper = (id, price_max, flavoursArray, packArray, selling_plan_g
                     <label for="buy-once">
                         <span></span>
                         <span>Buy Once</span>
-                        <span class="price">${formatPrice(price_max)}</span>
+                        <span class="price">${formatPrice(price_max)}/pack</span>
                     </label>
                 </div>
             </div>

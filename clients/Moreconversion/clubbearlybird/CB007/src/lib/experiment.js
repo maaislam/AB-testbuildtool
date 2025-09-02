@@ -32,9 +32,7 @@ const priceDomUpdate = (plan, findVariant) => {
   const packCount = getPackCount(findVariant.option2);
   const chooseOption = document.querySelector('input[name="pricing-option"]:checked');
 
-  //console.log(packCount, 'packCount');
-
-  oneTimeOption.querySelector('.price').innerHTML = formatPrice(compare_at_price);
+  oneTimeOption.querySelector('.price').innerHTML = `${formatPrice(compare_at_price)}/pack`;
   itemElement.innerHTML = `${packCount} ITEM${packCount > 1 ? 'S' : ''}`;
 
   if (targetPoint) {
@@ -81,7 +79,6 @@ const priceCalculation = () => {
     ? document.querySelector('.active-flavor')
     : document.querySelector('.flavor-active');
 
-  //console.log(activeFalvorElement, 'activeFalvorElement');
   const activePackElement = document.querySelector('.pack-active');
   const flavor = activeFalvorElement ? activeFalvorElement.dataset.key : null;
   const pack = activePackElement ? activePackElement.dataset.key : null;
@@ -101,7 +98,6 @@ const priceCalculation = () => {
       (plan) => plan.selling_plan_id === Number(id)
     );
 
-    //console.log('selecting plan', findSellingPlan, findVariant);
     priceDomUpdate(findSellingPlan, findVariant);
   }
 };
@@ -112,16 +108,14 @@ const init = () => {
   //usage
   getProduct('https://clubearlybird.com/products/earlybird-morning-cocktail-copy.js')
     .then((data) => {
-      //console.log(data, 'data');
       //data = your big array
       const { variants, price_max, selling_plan_groups, images } = data;
 
-      const flavoursArray = uniqOpts(variants, 'option1');
+      const flavoursArray = uniqOpts(variants);
       const packArray = getOption2WithPrice(variants);
 
       window[`${ID}__variants`] = variants;
 
-      console.log(data, 'data');
       if (!document.querySelector(`.${ID}__product-selection`)) {
         targetPoint.insertAdjacentHTML(
           'beforebegin',
@@ -131,6 +125,21 @@ const init = () => {
         pollerLite([() => window.Swiper !== undefined], () => {
           initSwiper();
         });
+
+        //TRIGGER ONLY AVAILABLE OPTION IN DESKTOP AND MOBILE
+        const desktopFlavorOption = document.querySelector(
+          '.flavor-desktop .flavor-option:not(.flavor-disabled)'
+        );
+        const mobileFlavorOption = document.querySelector(
+          '.flavor-mobile .flavor-option:not(.flavor-disabled)'
+        );
+
+        if (desktopFlavorOption) {
+          desktopFlavorOption.click();
+        } else if (mobileFlavorOption) {
+          mobileFlavorOption.click();
+        }
+
         priceCalculation();
       }
     })
@@ -138,8 +147,7 @@ const init = () => {
 };
 
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
+  setup();
 
   document.body.addEventListener('click', (e) => {
     const { target } = e;
@@ -171,7 +179,10 @@ export default () => {
       });
       clickedItem.classList.add('pack-active');
       priceCalculation();
-    } else if (target.closest('.flavor-option') && target.closest('.flavor-desktop')) {
+    } else if (
+      target.closest('.flavor-option:not(.flavor-disabled)') &&
+      target.closest('.flavor-desktop')
+    ) {
       const clickedItem = target.closest('.flavor-option');
       const activeItems = document.querySelectorAll('.flavor-option.flavor-active');
       activeItems.forEach((item) => {
@@ -187,7 +198,10 @@ export default () => {
       const subscribeWrapper = document.querySelector('.delivery-options');
       if (subscribeWrapper) subscribeWrapper.classList.remove('active');
       //priceCalculation();
-    } else if (target.closest('.flavor-option') && target.closest('.flavor-options-hidden')) {
+    } else if (
+      target.closest('.flavor-option:not(.flavor-disabled)') &&
+      target.closest('.flavor-options-hidden')
+    ) {
       const wrapper = document.querySelector('.flavor-mobile');
       const clickedItem = target.closest('.flavor-option');
       const { key } = clickedItem.dataset;
@@ -202,7 +216,7 @@ export default () => {
       }
       if (wrapper) wrapper.classList.remove('active');
       priceCalculation();
-    } else if (target.closest('.first-option') && !target.closest('.active-flavor')) {
+    } else if (target.closest('.first-option') && !target.closest('.active-option')) {
       document.querySelector('input#auto-ship').click();
       priceCalculation();
     } else if (target.closest('.second-option')) {
@@ -212,7 +226,6 @@ export default () => {
       target.closest(`.${ID}__addtocart`).disabled = true;
       addToCart(window.prodId, window.packQuantity, window.sellingPlanId)
         .then((cartItem) => {
-          //console.log('Added:', cartItem);
           target.closest(`.${ID}__addtocart`).disabled = false;
           window.location.pathname = '/checkout';
         })

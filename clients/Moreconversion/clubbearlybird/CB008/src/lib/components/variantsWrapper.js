@@ -24,7 +24,7 @@ const variantsWrapper = (id, price_max, flavoursArray, packArray, selling_plan_g
           <div class="${id}__mainPrice">$54.40</div>
           <div class="${id}__icon">${freeShippingIcon}</div>
         </div>
-        <div class="flavor">
+        <div class="flavor" style="display:none;">
             <p class="flavor-label">Choose Flavor:</p>
             <div class="flavor-options">
                 <div class="active-flavor" data-key="${activeFlavorItem.title}">

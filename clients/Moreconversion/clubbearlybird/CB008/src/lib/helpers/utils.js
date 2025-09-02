@@ -65,9 +65,30 @@ export const getProduct = async (url) => {
   return res.json();
 };
 
-export const uniqOpts = (arr, key) => [
-  ...new Set(arr.map((o) => (typeof o[key] === 'string' ? o[key].trim() : o[key])).filter(Boolean))
-];
+export const uniqOpts = (arr, key = 'option1', { caseInsensitive = false } = {}) => {
+  const map = new Map();
+
+  for (const o of arr ?? []) {
+    let raw = o?.[key];
+    if (typeof raw === 'string') raw = raw.trim();
+    if (!raw) continue;
+
+    const id = caseInsensitive && typeof raw === 'string' ? raw.toLowerCase() : raw;
+    const avail = Boolean(o?.available);
+
+    const existing = map.get(id);
+    if (existing) {
+      if (avail) existing.available = true; //OR logic across duplicates
+    } else {
+      map.set(id, {
+        [key]: typeof raw === 'string' ? raw : String(raw),
+        available: avail
+      });
+    }
+  }
+
+  return [...map.values()];
+};
 export const getOption2WithPrice = (data) => {
   const seen = new Set();
   const out = [];
