@@ -2640,10 +2640,6 @@ export const data = {
 <p>If you require more, you will need to purchase a paid version (price depends on the number of endpoints you want to support. To view the pricing information you will need to contact the company directly. You can <a href="https://www.itarian.com/signup/" target="_blank" rel="noopener noreferrer">start the free trial</a>.</p>
 <h4><strong>Who is it recommended for?</strong></h4>
 <p>Businesses that are following ITIL will particularly value the ITarian system because it is designed along those guidelines.</p>
-<div class="ctech-content-on-bk  "><p></p>
-<p><b>ITarian</b> is a tool that’s recommended for enterprises looking for a low-cost but high-quality remote monitoring tool. The software has been designed with managed IT service providers in mind, providing a single pane of glass to monitor remote networks.</p>
-<p>The platform offers enough visibility to reliably monitor a customer’s entire network. ITarian’s cloud-based setup enables it to be deployed in any environment, with minimal disruption.</p>
-<p></p></div>
 </div>`,
 
       poster: `<figure id="attachment_275930" aria-describedby="caption-attachment-275930" style="width: 1276px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-275930 size-full">
