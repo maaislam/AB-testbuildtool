@@ -1729,6 +1729,43 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: 'Cloud based',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This is a unified platform that offers multiple features like automated patching, remote monitoring, automation, and security in a single console. Besides reducing the need for multiple tools, this platform also provides extensive visibility for administrators.</p>
+      <h4><b>Feature in Focus: Automated Remediation</b></h4>
+      <p>The automated remediation feature identifies vulnerabilities and remediates them when possible. It also sends alerts to administrators, so they can proactively take action to address the vulnerabilities. This feature reduces downtime and brings down the workload for IT teams.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><b>NinjaOne RMM</b> stands out for its ease of use, excellent customer support, and powerful patch management capabilities. It ensures your systems are always up-to-date and secure, making it a reliable choice for any IT environment.</p>
+      <p>The NinjaOne platform is designed with a <b>multi-tenant architecture</b> for managed service providers. This enables the MSP to create a new sub-account for each client, which keeps the data of that customer separate from all the other enterprises watched over by the MSP. The platform is also available for IT departments, which will not need that multi-tenant feature.</p>
+      <figure id="attachment_460691" aria-describedby="caption-attachment-460691" style="width: 1403px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/ninjarmm-learn-more-rmm-software-and-tools/l/image/u/3674-8066-1649-3948+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="3674-8066-1649-3948" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-460691 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/NinjaOne-NinjaRMM-RMM.jpg.webp 1403w, https://cdn.comparitech.com/wp-content/uploads/2019/04/NinjaOne-NinjaRMM-RMM-300x176.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/NinjaOne-NinjaRMM-RMM-1024x599.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/NinjaOne-NinjaRMM-RMM-768x449.jpg.webp 768w" sizes="auto, (max-width: 1403px) 100vw, 1403px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/NinjaOne-NinjaRMM-RMM.jpg" alt="NinjaOne NinjaRMM RMM" width="1403" height="821" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/NinjaOne-NinjaRMM-RMM.jpg 1403w, https://cdn.comparitech.com/wp-content/uploads/2019/04/NinjaOne-NinjaRMM-RMM-300x176.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/NinjaOne-NinjaRMM-RMM-1024x599.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/NinjaOne-NinjaRMM-RMM-768x449.jpg 768w" sizes="auto, (max-width: 1403px) 100vw, 1403px">
+</picture>
+</a><figcaption id="caption-attachment-460691" class="wp-caption-text">A dashboard showing system events, their criticality, and devices requiring different actions.</figcaption></figure>
+<div class="ctech-content-on-bk  "><p></p>
+<p>The <b>patch manager</b> in NinjaOne RMM automates the deployment of patches to ensure systems are always up-to-date. The service will scan and update endpoints running Windows, macOS, and Linux and will update the <b>operating system</b> where necessary. The package also updates <b>core applications,</b> such as Java, Adobe, and Chrome, where necessary. The patch manager also provides detailed reports and alerts to keep IT teams informed.</p>
+<p>NinjaOne’s <b>remote access</b> tool allows IT professionals to securely access and troubleshoot endpoints from anywhere. This feature is invaluable for resolving issues quickly and minimizing downtime. The tool offers a range of access options, including full control, view-only, and file transfer. Companies that currently use Splashtop, TeamViewer, ScreenConneft, or ConnectWise can just slot in those remote access tools instead of using the RMM’s native remote desktop system.</p>
+<p></p></div>
+<p>The remote <b>system monitoring</b> capabilities of NinjaOne RMM provide real-time insights into the health and performance of endpoints. Customizable alerts and templates allow IT teams to stay on top of potential issues before they escalate. The monitoring tool also offers detailed performance metrics and historical data for in-depth analysis.</p>
+<p><a href="https://www.comparitech.com/net-admin/ninjaone-rmm-review/">Read our in-depth NinjaOne RMM review</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>NinjaOne RMM is recommended for businesses of all sizes looking to enhance their IT management and security. Its scalability and comprehensive features make it an ideal choice for MSPs, IT departments, and organizations with diverse IT environments.</p>
+<p>NinjaOne RMM is a subscription service with a charge rate per month. According to G2’s recognition, NinjaOne has been rated #1 in RMM, Patch Management, and User Satisfaction for Endpoint Management. You need to contact NinjaOne to <a href="https://www.comparitech.com/go/ninjaone-ninjarmm-quote-rmm-software-and-tools/l/quote/u/7029-5758-4569-9541+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7029-5758-4569-9541" class="go-link">get a quote</a>. You can experience the system yourself for free by <a href="https://www.comparitech.com/go/ninjarmm-free-trial-rmm-software-and-tools/l/demo/u/5781-8901-6612-7628+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5781-8901-6612-7628" class="go-link">accessing a demo system</a> for 14 days.</p>
+<div class="editors-choice">
+                <h3>EDITOR'S CHOICE</h3>
+                                    <p><strong>NinjaOne RMM</strong> is our top pick for an RMM software package because it is designed as an integrated and comprehensive platform for the management of IT infrastructure. NinjaOne provides a centralized platform for monitoring, maintaining, and securing endpoints across diverse environments. One of its important services is its Help Desk ticketing system. This is fronted by a self-service portal, which can include a knowledge base. The tickets can be routed automatically and technicians get a dashboard that shows current open tasks. The service also provides a management console that shows progress on all tasks and provides the opportunity to reroute or prioritize tasks. Technicians can oversee multiple devices, monitor system performance, and receive real-time alerts about potential issues. This allows IT teams to respond quickly to problems, minimizing downtime and improving overall productivity. NinjaOne also automates tasks, offering tools for patch management, software deployment, and script execution. These features save time, allowing IT staff to focus on strategic initiatives. The platform supports a wide range of devices, including Windows, macOS, and Linux, ensuring compatibility with most IT ecosystems. The technician dashboard also includes a remote access tool that provides remote control capabilities. This enables technicians to explore and troubleshoot remote endpoints manually and also demonstrate solutions to users.</p>
+                                                    <p class="download-link"><strong>Download: </strong><a href="https://www.comparitech.com/go/ninjarmm-free-trial-rmm-software-and-tools/l/ecbox/u/5075-1273-4577-5575+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5075-1273-4577-5575" class="go-link">Get a 14-day free trial</a></p>
+                                                    <p><strong>Official Site:</strong> <a href="https://www.comparitech.com/go/ninjarmm-free-trial-rmm-software-and-tools/l/ecbox/u/7781-1103-8132-0963+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7781-1103-8132-0963" class="go-link">https://www.ninjaone.com/freetrialform/</a></p>
+                                                    <p><strong>OS:</strong> Cloud based</p>
+                            </div>
+</div>`,
+
+      poster: `<figure id="attachment_275935" aria-describedby="caption-attachment-275935" style="width: 1030px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/ninjarmm-learn-more-rmm-software-and-tools/l/image/u/9283-0325-7346-6440+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="9283-0325-7346-6440" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-275935 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/02/NinjaRMM-Alerts-1030x473-1.jpg.webp 1030w, https://cdn.comparitech.com/wp-content/uploads/2020/02/NinjaRMM-Alerts-1030x473-1-300x138.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2020/02/NinjaRMM-Alerts-1030x473-1-1024x470.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2020/02/NinjaRMM-Alerts-1030x473-1-768x353.jpg.webp 768w" sizes="auto, (max-width: 1030px) 100vw, 1030px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2020/02/NinjaRMM-Alerts-1030x473-1.jpg" alt="NinjaRMM-Alerts" width="1030" height="473" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/02/NinjaRMM-Alerts-1030x473-1.jpg 1030w, https://cdn.comparitech.com/wp-content/uploads/2020/02/NinjaRMM-Alerts-1030x473-1-300x138.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2020/02/NinjaRMM-Alerts-1030x473-1-1024x470.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2020/02/NinjaRMM-Alerts-1030x473-1-768x353.jpg 768w" sizes="auto, (max-width: 1030px) 100vw, 1030px">
+</picture>
+</a><figcaption id="caption-attachment-275935" class="wp-caption-text">An overview of all devices, including the events and actions running on them.</figcaption></figure>`,
       freetrialElement:
         '<p>NinjaOne RMM is a subscription service with a charge rate per month. According to G2’s recognition, NinjaOne has been rated #1 in RMM, Patch Management, and User Satisfaction for Endpoint Management. You need to contact NinjaOne to <a href="https://www.comparitech.com/go/ninjaone-ninjarmm-quote-rmm-software-and-tools/l/quote/u/5674-4690-9621-5833+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5674-4690-9621-5833" class="go-link">get a quote</a>. You can experience the system yourself for free by <a href="https://www.comparitech.com/go/ninjarmm-free-trial-rmm-software-and-tools/l/demo/u/5667-0555-1584-8030+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5667-0555-1584-8030" class="go-link">accessing a demo system</a> for 14 days.</p>'
     },
@@ -1752,6 +1789,38 @@ export const data = {
       features: ['Combined Package', 'Sets Itself Up', 'SNMP-Based Monitoring'],
       'SaaS/On-Premises': '',
       os: 'Cloud-based',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>Syncro combines RMM and PSA into the same platform to offer extensive capabilities for technicians. Also, features like unlimited endpoint monitoring, scripting, patch management, ticketing, and billing reduce the need for multiple tools.</p>
+      <h4><b>Feature in Focus: Policy Inheritance</b></h4>
+      <p>With this feature, you can assign hierarchical policies to folders, and the same will apply to all sub-folders within those folders. The advantage of this tool is that global policies that are common across all folders can be implemented more efficiently. It can also ensure consistent configurations.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p>The <b>Syncro</b> system is a great package for MSPs because it includes professional services automation features as well s remote monitoring and management tools. You get a customizable ticketing system in this bundle as well as the remote monitoring tools and automated asset management services. The system includes a patch manager as well.</p>
+      <p>The RMM system is stronger at managing endpoints running <b>Windows</b> than any other operating system this is because its automated patch manager is only available for Windows – the system isn’t able to update devices running Linux, Unix, or macOS.</p>
+      <p>The monitoring services in the bundle cover all levels of systems, including networks, services, and endpoints. The monitor raises <b>an aler</b><strong>t</strong> if any performance issue arises. This enables a single technician can manage many sites at once because it isn’t necessary to pay attention to the automated monitoring console unless a notification arrives.</p>
+      <p>The <b>automation</b> features in the RMM package enable you to set up scripts for remediation. Another option is to generate a ticket for the problem so that support technicians can get allocated an investigative task. It is also possible to just set up alerts to get forwarded to specific members of staff via SMS.</p>
+      <figure id="attachment_460695" aria-describedby="caption-attachment-460695" style="width: 1253px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/syncro-rmm-software-and-tools/l/image/u/9182-1039-0854-9439+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="9182-1039-0854-9439" class="go-link"><img loading="lazy" decoding="async" class="wp-image-460695 size-full" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/SyncroMSP-Syncro-RMM.jpg" alt="SyncroMSP Syncro RMM" width="1253" height="711" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/SyncroMSP-Syncro-RMM.jpg 1253w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SyncroMSP-Syncro-RMM-300x170.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SyncroMSP-Syncro-RMM-1024x581.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SyncroMSP-Syncro-RMM-768x436.jpg 768w" sizes="auto, (max-width: 1253px) 100vw, 1253px"></a><figcaption id="caption-attachment-460695" class="wp-caption-text">A dashboard displaying the executive summary of managed devices.</figcaption></figure>
+      <h4><strong>Who is it recommended for?</strong></h4>
+      <p>The Syncro system is suitable for managed service providers of all sizes. However, startups and all MSPs will benefit the most from this system because you get all of the functions in the package at per-technician pricing. So a single freelance technician just starting out gets all of the software that a large organization enjoys.</p>
+      <p>Syncro has only one plan. This is an <b>all-in-one</b> package that gives you access to all of the services on the Syncro platform. You can get access to the service with a <strong><a href="https://www.comparitech.com/go/syncro-rmm-software-and-tools/l/cta/u/7063-6391-2685-5953+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7063-6391-2685-5953" class="go-link">14-day free trial</a></strong>.</p>
+      <div class="ctech-content-on-bk  "><p></p>
+<p>The <b>Syncro RMM</b> system is a good option for small MSPs because it doesn’t impose charges on the volume of assets that are being monitored and managed. You just pay a fee per technician and no other factor is taken into account in the price. You can pay for the service at a monthly rate, which means that you can get your new MSP up and running for very little money. However, if you choose to pay on the annual plan, you save money per month. The full package also gives you PSA tools for managing the MSP business.</p>
+<p><b>Get a 14-day free trial:</b> <a href="https://www.comparitech.com/go/syncro-rmm-software-and-tools/l/register/u/6187-3852-4438-7964+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="6187-3852-4438-7964" class="go-link">https://syncromsp.com/start-my-free-trial/</a></p>
+<p><b>OS:</b> Cloud-based</p>
+<p></p></div>
+<p style="text-align: center;">            <a class="ctech-dl-button go-link" href="https://www.comparitech.com/go/syncro-rmm-software-and-tools/l/button/u/5878-8320-1689-0501+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5878-8320-1689-0501">
+                <span class="ctech-dl-button-anchor">Syncro</span>
+                <span class="ctech-dl-button-tagline">Start 14-day FREE Trial</span>
+            </a>
+</p>
+</div>`,
+
+      poster: `<figure id="attachment_431646" aria-describedby="caption-attachment-431646" style="width: 994px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/syncro-rmm-software-and-tools/l/image/u/6186-0744-0267-1699+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="6186-0744-0267-1699" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-431646 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2023/03/Syncro-Real-time-Service-Monitoring.jpg.webp 994w, https://cdn.comparitech.com/wp-content/uploads/2023/03/Syncro-Real-time-Service-Monitoring-300x170.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2023/03/Syncro-Real-time-Service-Monitoring-768x436.jpg.webp 768w" sizes="auto, (max-width: 994px) 100vw, 994px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2023/03/Syncro-Real-time-Service-Monitoring.jpg" alt="Syncro Real-time Service Monitoring" width="994" height="564" srcset="https://cdn.comparitech.com/wp-content/uploads/2023/03/Syncro-Real-time-Service-Monitoring.jpg 994w, https://cdn.comparitech.com/wp-content/uploads/2023/03/Syncro-Real-time-Service-Monitoring-300x170.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2023/03/Syncro-Real-time-Service-Monitoring-768x436.jpg 768w" sizes="auto, (max-width: 994px) 100vw, 994px">
+</picture>
+</a><figcaption id="caption-attachment-431646" class="wp-caption-text">The status of a real-time service monitor.</figcaption></figure>`,
       freetrialElement:
         '<p>Syncro has only one plan. This is an <b>all-in-one</b> package that gives you access to all of the services on the Syncro platform. You can get access to the service with a <strong><a href="https://www.comparitech.com/go/syncro-rmm-software-and-tools/l/cta/u/0629-8830-8308-6417+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0629-8830-8308-6417" class="go-link">14-day free trial</a></strong>.</p>'
     },
@@ -1780,6 +1849,40 @@ export const data = {
       features: ['Package Options', 'Self Setup', 'Software Management'],
       'SaaS/On-Premises': '',
       os: 'Cloud-based',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This agentic AI-powered platform brings PSA and RMM into a single and lightweight interface. It is designed for speed, accuracy, and automation, and can increase the productivity of employees. Furthermore, it is highly modular, offering high levels of flexibility and scalability.</p>
+      <h4><b>Feature in Focus: Smart Automation</b></h4>
+      <p>A standout feature of this tool is its flexible automation engine that supports contextual triggers. What this means is that you can set up conditions and actions based on ticket priorities and system alerts. For example, if a high-priority ticket is generated, it will automatically perform the action associated with it, which can be sending an alert or even running a script.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>SuperOps</strong> is an extensive RMM package and the SaaS platform also offers a PSA bundle. It is also possible to get a discounted price for a combination of both packages. Although not officially an ITIL tool, the presentation of the package reads a lot like an ITIL menu.</p>
+      <p>Although RMMs are <b>essential for MSPs</b>, there is no reason why the in-house technician team of an IT department shouldn’t use this package to manage a corporate system. The units of the <b>SaaS platform</b> form a stack with the <b>Asset Management</b> tool providing an information base for system management processes.</p>
+      <p>The <b>Policy Management</b> system works in tandem with the <b>Alert Management</b> system to set up automated monitoring processes. When a policy rule gets tripped an alert is triggered. So, technicians don’t have to be allocated to watch monitoring screens all day – just when a problem is notified.</p>
+      <p><b>Patch Management</b> is a major contributor to security and the efficient operations of the managed system. The SuperOps system refers to the software inventory maintained by the Asset Management module and polls providers for updates and patches. These are copied over automatically when they become available.</p>
+      <figure id="attachment_460694" aria-describedby="caption-attachment-460694" style="width: 1272px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/superops-ai-best-rmm-software-and-tools-rmm-software-and-tools/l/image/u/7941-7159-1690-2399+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7941-7159-1690-2399" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-460694 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Superops-RMM.jpg.webp 1272w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Superops-RMM-300x206.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Superops-RMM-1024x704.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Superops-RMM-768x528.jpg.webp 768w" sizes="auto, (max-width: 1272px) 100vw, 1272px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/Superops-RMM.jpg" alt="Superops RMM" width="1272" height="875" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Superops-RMM.jpg 1272w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Superops-RMM-300x206.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Superops-RMM-1024x704.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Superops-RMM-768x528.jpg 768w" sizes="auto, (max-width: 1272px) 100vw, 1272px">
+</picture>
+</a><figcaption id="caption-attachment-460694" class="wp-caption-text">A patch management policy configuration screen.</figcaption></figure>
+<p>The system needs to be set up to have allowed maintenance windows marked off in a calendar. The SecOps Patch Management can be set up to roll out queued patches at the next available window. It is also possible to specify that all patches should be <b>approved by an operator</b> before they are allowed to be applied.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>The SuperOps package is designed for MSPs – from solo operators through to large IT teams – that manage a lot of client systems or one very large company network. The package subscription rate is levied for the management of 150 endpoints. If you manage more, you add on another 150-endpoint unit.</p>
+<p><span data-sheets-root="1">SuperOps offers four plans with better monthly prices when billed annually. These are Standard (PSA Only) – $79 , Standard (RMM Only) – $99, Pro Unified Basic – $129, and Pro Unified Advanced – $159. These are subscription packages that are priced per technician per month for up to 150 endpoints.</span> All versions are available for testing on a <strong><a href="https://www.comparitech.com/go/superops-ai-best-rmm-software-and-tools-rmm-software-and-tools/l/cta/u/0310-9774-5430-3871+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0310-9774-5430-3871" class="go-link">14-day free trial</a></strong>.</p>
+<div class="ctech-content-on-bk  "><p></p>
+<p><b>SuperOps</b> is a SaaS platform that includes PSA and RMM services for independent technicians, MSPs, and IT departments and also has a PSA-only option. The notable feature of this service is the opportunity to automate monitoring and routine management tasks. The conditions that draw the attention of operators to emerging problems can be customized. All of the actions of technicians and automated processes are logged.</p>
+<h4><b>Start 14-day free trial:</b> <a href="https://www.comparitech.com/go/superops-ai-best-rmm-software-and-tools-rmm-software-and-tools/l/box/u/9254-4310-8480-6727+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="9254-4310-8480-6727" class="go-link">superops.ai/signup</a></h4>
+<h4><b>OS:</b> Cloud-based</h4>
+<p></p></div>
+</div>`,
+
+      poster: `
+      <figure id="attachment_352518" aria-describedby="caption-attachment-352518" style="width: 1722px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/superops-ai-best-rmm-software-and-tools-rmm-software-and-tools/l/image/u/6079-8690-0800-4491+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="6079-8690-0800-4491" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-352518 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM.jpg.webp 1722w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM-300x230.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM-1024x786.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM-768x590.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM-1536x1179.jpg.webp 1536w" sizes="auto, (max-width: 1722px) 100vw, 1722px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM.jpg" alt="SuperOps_AI RMM" width="1722" height="1322" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM.jpg 1722w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM-300x230.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM-1024x786.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM-768x590.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/SuperOps_AI-RMM-1536x1179.jpg 1536w" sizes="auto, (max-width: 1722px) 100vw, 1722px">
+</picture>
+</a><figcaption id="caption-attachment-352518" class="wp-caption-text">A screen showing a summary of the activities of a specific device.</figcaption></figure>
+      `,
       freetrialElement:
         '<p><span data-sheets-root="1">SuperOps offers four plans with better monthly prices when billed annually. These are Standard (PSA Only) – $79 , Standard (RMM Only) – $99, Pro Unified Basic – $129, and Pro Unified Advanced – $159. These are subscription packages that are priced per technician per month for up to 150 endpoints.</span> All versions are available for testing on a <strong><a href="https://www.comparitech.com/go/superops-ai-best-rmm-software-and-tools-rmm-software-and-tools/l/cta/u/2680-3856-7326-9201+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="2680-3856-7326-9201" class="go-link">14-day free trial</a></strong>.</p>'
     },
@@ -1813,6 +1916,38 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: 'Windows, Mac, Android, iOS, and more',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This is an all-in-one IT management platform that integrates RMM, PSA, help desk, and patch management. Its per-technician model also makes it easy to budget and track costs.</p>
+      <h4><b>Feature in Focus: AI Copilot</b></h4>
+      <p>Atera’s AI Copilot leverages AI to automate routine tasks, provide real-time insights, and even offer context-aware recommendations where appropriate. It can further improve efficiency by autonomously resolving minor IT issues, thereby reducing the need for manual interference.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><b>Atera </b>is a cloud system that is very similar to NinjaRMM. The remote monitoring and management service is included in combination with a professional services automation (PSA) package. With this bundle, IT departments and MSPs get all the software they need to support their sites and users.</p>
+      <p>For managing customer concerns, Atera has a<b> ticketing system </b>that allows you to <b>create tickets</b> and<b> track how long they take to be resolved</b>. In the tickets menu, you can view a list of tickets detailing performance issues and when the resolution is due. The ticketing system is handy because it enables the technicians to resolve any problems quickly and efficiently.</p>
+      <figure id="attachment_460693" aria-describedby="caption-attachment-460693" style="width: 1894px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/atera-lm-rmm-software-and-tools/l/image/u/5439-5429-5833-5223+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5439-5429-5833-5223" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-460693 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM.jpg.webp 1894w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM-300x109.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM-1024x373.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM-768x280.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM-1536x560.jpg.webp 1536w" sizes="auto, (max-width: 1894px) 100vw, 1894px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM.jpg" alt="Atera RMM" width="1894" height="690" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM.jpg 1894w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM-300x109.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM-1024x373.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM-768x280.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Atera-RMM-1536x560.jpg 1536w" sizes="auto, (max-width: 1894px) 100vw, 1894px">
+</picture>
+</a><figcaption id="caption-attachment-460693" class="wp-caption-text">A screen showing a list of tickets, their priority, and activity status.</figcaption></figure>
+<p>The remote access capabilities of <b>Atera</b> are also first-class. You can<b> access computers, servers, applications, and files remotely </b>through the GUI. Users can remotely access devices from the device view or through a ticket or alert. Also, technicians can monitor endpoints with Windows, macOS, and Linux operating systems.</p>
+<p>The fast and easy remote access makes it easy for a technician to click through and manage devices firsthand. All sessions are protected with <b>TLS and 256-bit AES encryption</b> so you open up minimal vulnerabilities by interacting with a remote network.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>The big advantage that Atera has over many of the rival remote management and monitoring (RMM) systems is that it is priced per technician with no minimum number of seats per account. This means that all package utilities are available from the smallest MSP companies and even independent technicians all the way to much larger IT Departments.</p>
+<p>Atera is ideal for MSPs and IT Departments that want a tool that provides a solid user experience and remote access. Prices start at $129 per month per technician when paid annually for MSPs. IT Department plans begin at $149 a month per technician when paid annually The pricing model is scalable and can support an unlimited number of devices.. You can download the<b> <a href="https://www.comparitech.com/go/atera-ft-rmm-software-and-tools/l/cta/u/0813-2425-2652-0427+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0813-2425-2652-0427" class="go-link"><strong>free trial</strong></a></b>.</p>
+<div class="ctech-content-on-bk  "><p></p>
+<p><b>Atera </b>has leading remote access capabilities and an intuitive user interface. The tool has been tailored toward remote support from top-to-bottom and excels in this respect. Every feature from Network Discovery to the ticketing system has been designed to make the monitoring process as painless as possible. Atera supports multiple operating systems including Windows, Mac, and Linux.</p>
+<h4><strong>Start Free Trial: <a class="go-link" href="https://www.comparitech.com/go/atera-ft-rmm-software-and-tools/l/box/u/4776-6583-4719-9943+146634/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired-1649924_55="1" data-postid="146634" data-clickid="4776-6583-4719-9943">atera.com/remote-monitoring-and-management/</a><br>
+</strong></h4>
+<h4><strong>OS:</strong> Windows, Mac, Android, iOS, and more</h4>
+<p></p></div>
+</div>`,
+
+      poster: `<figure id="attachment_306401" aria-describedby="caption-attachment-306401" style="width: 1924px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/atera-lm-rmm-software-and-tools/l/image/u/3698-2752-4076-7598+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="3698-2752-4076-7598" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-306401 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard.jpg.webp 1924w, https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard-300x169.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard-1024x578.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard-768x433.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard-1536x867.jpg.webp 1536w" sizes="auto, (max-width: 1924px) 100vw, 1924px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard.jpg" alt="Atera Dashboard" width="1924" height="1086" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard.jpg 1924w, https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard-300x169.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard-1024x578.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard-768x433.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2020/03/Atera-Dashboard-1536x867.jpg 1536w" sizes="auto, (max-width: 1924px) 100vw, 1924px">
+</picture>
+</a><figcaption id="caption-attachment-306401" class="wp-caption-text">A dashboard displaying tickets, alerts, and their statuses</figcaption></figure>`,
       freetrialElement:
         '<p>Atera is ideal for MSPs and IT Departments that want a tool that provides a solid user experience and remote access. Prices start at $129 per month per technician when paid annually for MSPs. IT Department plans begin at $149 a month per technician when paid annually The pricing model is scalable and can support an unlimited number of devices.. You can download the<b> <a href="https://www.comparitech.com/go/atera-ft-rmm-software-and-tools/l/cta/u/9718-0789-9454-9451+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="9718-0789-9454-9451" class="go-link"><strong>free trial</strong></a></b>.</p>'
     },
@@ -1847,6 +1982,37 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: 'Windows, Mac, Android, iOS, and more',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>Another comprehensive platform that brings together remote monitoring, automation, patch management, and more to improve efficiency and reduce the need for multiple tools. In particular, its integration with Apple Business Manager allows zero-touch deployment for Apple devices. In turn, this can help with device management as well.</p>
+      <h4><b>Feature in Focus: Site Concentrator</b></h4>
+      <p>This is a unique feature that makes it possible to set up one device in the network as a centralized cache for updates and patches. This acts as the site concentrator, providing the required information to other devices connected to it. The advantages of this model are reduced bandwidth consumption and faster deployment, especially in areas with limited connectivity.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>N-able N-sight</strong> is a similar package to NinjaOne. N-able offers two RMM packages and N-sight is aimed at smaller MSPs and also the operations departments of businesses for in-house use. The N-able system is a cloud platform that is charged for by subscription.</p>
+      <p>Endpoint detection and response functionalities to help you detect threats throughout the remote environment. For example, you can <b>scan files continuously in real-time</b> to make sure that no malicious content has made its way onto the network. When threats are detected, <b>machine learning </b>enables you to respond quickly.</p>
+      <p>The NetPath feature is another useful addition. With <b>NetPath</b>, you can view <b>network performance</b> on a <b>map</b>, to see where connectivity issues are between devices. The function stands in as a<b> Traceroute tool </b>that allows you to pinpoint where performance issues have taken root throughout your network.</p>
+      <figure id="attachment_460674" aria-describedby="caption-attachment-460674" style="width: 1407px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/n-able-rmm-rmm-software-and-tools/l/image/u/7543-8926-1821-6027+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7543-8926-1821-6027" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-460674 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/N-able-N-Sight-Network-Troubleshooting.jpg.webp 1407w, https://cdn.comparitech.com/wp-content/uploads/2019/03/N-able-N-Sight-Network-Troubleshooting-300x162.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/N-able-N-Sight-Network-Troubleshooting-1024x552.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/N-able-N-Sight-Network-Troubleshooting-768x414.jpg.webp 768w" sizes="auto, (max-width: 1407px) 100vw, 1407px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/N-able-N-Sight-Network-Troubleshooting.jpg" alt="N-able N-Sight RMM" width="1407" height="758" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/N-able-N-Sight-Network-Troubleshooting.jpg 1407w, https://cdn.comparitech.com/wp-content/uploads/2019/03/N-able-N-Sight-Network-Troubleshooting-300x162.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/N-able-N-Sight-Network-Troubleshooting-1024x552.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/N-able-N-Sight-Network-Troubleshooting-768x414.jpg 768w" sizes="auto, (max-width: 1407px) 100vw, 1407px">
+</picture>
+</a><figcaption id="caption-attachment-460674" class="wp-caption-text">A dashboard showing tickets and their status.</figcaption></figure>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>The N-sight package is aimed at smaller MSPs. It can also be used by the in-house support teams that need to manage corporate IT assets.</p>
+<p>N-able N-sight is one of the top RMM software products on the market. The tool has a custom pricing model, which you can request from the company directly. Download the <b><a href="https://www.comparitech.com/go/n-able-rmm-rmm-software-and-tools/l/cta/u/1381-3350-9791-9670+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="1381-3350-9791-9670" class="go-link"><strong>30-day free trial</strong></a></b>.</p>
+<div class="ctech-content-on-bk  "><p></p>
+<p><strong>N-able N-sight RMM</strong> offers a complete remote monitoring experience that’s easy to use. Whether you want to manage device performance, protect against threats in real-time, or complete hop-to-hop diagnostics. The platform stands apart from many other competitors based on the depth of features and the compelling user experience.</p>
+<p>You can take complete control over the amount of visibility you have and can structure your monitoring activities according to your preferences. The RMM software can be hosted on-premises or run the cloud.</p>
+<h4><strong>Get 30-day Free Trial: </strong><a href="https://www.comparitech.com/go/n-able-rmm-rmm-software-and-tools/l/box/u/3498-8671-2646-9117+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="3498-8671-2646-9117" class="go-link">n-able.com/products/n-sight-rmm/trial</a></h4>
+<h4><strong>OS:</strong> Windows, Mac, Android, iOS, and more</h4>
+<p></p></div>
+</div>`,
+
+      poster: `<figure id="attachment_353736" aria-describedby="caption-attachment-353736" style="width: 800px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/n-able-rmm-rmm-software-and-tools/l/image/u/3183-7045-3389-7861+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="3183-7045-3389-7861" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-353736 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/N-able-RMM.jpg.webp 800w, https://cdn.comparitech.com/wp-content/uploads/2019/04/N-able-RMM-300x170.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/N-able-RMM-768x435.jpg.webp 768w" sizes="auto, (max-width: 800px) 100vw, 800px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/N-able-RMM.jpg" alt="N-able N-sight" width="800" height="453" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/N-able-RMM.jpg 800w, https://cdn.comparitech.com/wp-content/uploads/2019/04/N-able-RMM-300x170.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/N-able-RMM-768x435.jpg 768w" sizes="auto, (max-width: 800px) 100vw, 800px">
+</picture>
+</a><figcaption id="caption-attachment-353736" class="wp-caption-text">A comprehensive dashboard displaying the status of devices and servers.</figcaption></figure>`,
       freetrialElement:
         '<p>N-able N-sight is one of the top RMM software products on the market. The tool has a custom pricing model, which you can request from the company directly. Download the <b><a href="https://www.comparitech.com/go/n-able-rmm-rmm-software-and-tools/l/cta/u/5179-8512-0396-8644+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="5179-8512-0396-8644" class="go-link"><strong>30-day free trial</strong></a></b>.</p>'
     },
@@ -1879,6 +2045,35 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: 'Windows, Server, AWS, and Azure',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>A unified platform that combines network performance monitoring with endpoint management, to give technicians the flexibility to monitor and manage devices across multiple sites. Its well-developed and intuitive console provides technicians with the required information to stay on top of issues.</p>
+      <h4><b>Feature in Focus: Probe-based Architecture</b></h4>
+      <p>The probe-based architecture used by ManageEngine RMM allows the deployment of probes at remote sites and across multiple sites. These probes can collect fault and performance data and consolidate it in a central location for further analysis.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>ManageEngine RMM Central</strong> is made for MSPs and it would be identical to all of the RMMs listed above were it not for the fact that this is a software package rather than a SaaS platform. You can install this software on Windows Server or on an account with AWS or Azure.</p>
+      <p>The RMM scours a network on enrollment, discovers all devices, and draws up an asset inventory from it. The tool then scours each endpoint to create a <strong>software inventory</strong>. These two processes repeat continuously to provide constantly up-to-date asset records. The system will automatically generate a network topology from the hardware inventory data.</p>
+      <p>The software inventory forms the basis of an <strong>automated patch manager</strong>, allowing RMM Central to keep all software up to date. Controls in the patch management settings allow check and authorize each update or just let the system apply all patches automatically at the next available maintenance window.</p>
+      <p>With all devices mapped, the RMM will implement performance monitoring on the client’s network. Any anomaly that arises in resource usage will trigger <strong>an alert</strong>. The alerting mechanism allows technicians to get on with other tasks, knowing that they will be informed of any event that needs attention.</p>
+      <p>The package also includes a <strong>remote control</strong>/remote access service that gives technicians views of the desktop or operating system of each managed device.</p>
+      <h4><strong>Who is it recommended for?</strong></h4>
+      <p>ManageEngine RMM Central includes an autodiscovery function, network mapping, automated monitoring through a system of alerts, and management for servers and virtualizations. This tool is a good choice for any MSP that needs to squeeze extra value out of its human resources.</p>
+      <p>There are two editions for RMM Central: <strong>Free</strong> and <strong>Enterprise</strong>. The Free edition has all of the functions available in the Enterprise version, except that it is limited to monitoring 20 endpoints and 5 network devices. You can get a <a href="https://www.comparitech.com/go/manageengine-rmm-software-and-tools-free-trial-rmm-software-and-tools/l/cta/u/2837-0726-8245-3944+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="2837-0726-8245-3944" class="go-link"><strong>30-day free trial</strong></a> of the Enterprise edition.</p>
+      <div class="ctech-content-on-bk  "><p></p>
+<p><strong>ManageEngine RMM Central</strong> offers deployment flexibility for those businesses that want to host their own services. The tool is also available for installation on AWS and Azure. You can run an entire MSP technical support team with this package and small businesses get all of the bells and whistles for free. RMM Central saves technicians time by automating most of the important monitoring and management tasks. That saves your business money.</p>
+<h4><strong>Start a 30-day Free Trial</strong>: <a href="https://www.comparitech.com/go/manageengine-rmm-software-and-tools-free-trial-rmm-software-and-tools/l/box/u/3234-1743-4205-5442+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="3234-1743-4205-5442" class="go-link">https://www.manageengine.com/remote-monitoring-management/download.html</a></h4>
+<h4><strong>OS</strong>: Windows, Server, AWS, and Azure</h4>
+<p></p></div>
+</div>`,
+
+      poster: `
+      <figure id="attachment_391759" aria-describedby="caption-attachment-391759" style="width: 890px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/manageengine-rmm-software-and-tools-learn-more-rmm-software-and-tools/l/image/u/6300-7134-2217-8464+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="6300-7134-2217-8464" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-391759 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-RMM-Central.jpg.webp 890w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-RMM-Central-300x169.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-RMM-Central-768x431.jpg.webp 768w" sizes="auto, (max-width: 890px) 100vw, 890px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-RMM-Central.jpg" alt="ManageEngine RMM Central" width="890" height="500" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-RMM-Central.jpg 890w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-RMM-Central-300x169.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-RMM-Central-768x431.jpg 768w" sizes="auto, (max-width: 890px) 100vw, 890px">
+</picture>
+</a><figcaption id="caption-attachment-391759" class="wp-caption-text">A dashboard with a list of devices on your infrastructure and their activity.</figcaption></figure>
+      `,
       freetrialElement:
         '<p>There are two editions for RMM Central: <strong>Free</strong> and <strong>Enterprise</strong>. The Free edition has all of the functions available in the Enterprise version, except that it is limited to monitoring 20 endpoints and 5 network devices. You can get a <a href="https://www.comparitech.com/go/manageengine-rmm-software-and-tools-free-trial-rmm-software-and-tools/l/cta/u/4631-9709-8309-2747+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="4631-9709-8309-2747" class="go-link"><strong>30-day free trial</strong></a> of the Enterprise edition.</p>'
     },
@@ -1902,6 +2097,37 @@ export const data = {
       features: ['Automated System Documentation', 'Full Asset Management', 'In-House Usage'],
       'SaaS/On-Premises': '',
       os: 'Windows, Mac and Linux',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This platform integrates endpoint management and security for streamlined monitoring. It also supports a wide range of devices and operating systems, making it easy for MSPs to manage everything from a single console.</p>
+      <h4><b>Feature in Focus: Endpoint Analytics</b></h4>
+      <p>This feature provides real-time insights into the performance of devices and applications. Using this information, IT technicians can better monitor system health, identify performance bottlenecks, and proactively fix issues before they create a big impact.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>ManageEngine Endpoint Central</strong> is almost identical to RMM Central but with one important difference – it is able to manage mobile devices as well as desktops. Endpoint Central is designed for use by in-house IT operations teams and it is available in editions, all of which include mobile device management.</p>
+      <p>Customers of Endpoint Central can expand this service by adding on a <b>mobile device management</b> service from ManageEngine to create a full unified endpoint management suite. The base package is able to manage computers running Windows, macOS, Linux, and Windows Server. The MDM adds on support for Android, iOS, tvOS, and Chrome OS devices.</p>
+      <p>Device profiles can be set up to make it easy to onboard new devices. This includes an OS and software package definition that enables technicians to standardized configurations on all devices. This function extends to mobile devices with the addition of the MDM service. The MDM also includes <b>security controls</b> such as device tracking, remote locking, and wiping.</p>
+      <figure id="attachment_460696" aria-describedby="caption-attachment-460696" style="width: 1902px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/manageengine-desktop-central-learn-more-rmm-software-and-tools/l/image/u/6986-6056-6869-5302+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="6986-6056-6869-5302" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-460696 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM.jpg.webp 1902w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM-300x121.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM-1024x414.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM-768x311.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM-1536x621.jpg.webp 1536w" sizes="auto, (max-width: 1902px) 100vw, 1902px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM.jpg" alt="ManageEngine Endpoint Central RMM" width="1902" height="769" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM.jpg 1902w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM-300x121.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM-1024x414.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM-768x311.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Endpoint-Central-RMM-1536x621.jpg 1536w" sizes="auto, (max-width: 1902px) 100vw, 1902px">
+</picture>
+</a><figcaption id="caption-attachment-460696" class="wp-caption-text">A screen displaying a summary of agent installations across different platforms.</figcaption></figure>
+<p>The central server software for Endpoint Central installs on <b>Windows Server</b>. For those businesses that don’t want to maintain their own online servers, there are also versions that can be accessed from an <b>Azure </b>or <b>AWS</b> account.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Small businesses will enjoy the Free edition of Endpoint Central, which is limited to monitoring 25 devices. That package includes all of the tools that you need to manage endpoints in your office and support their users, but it doesn’t include mobile device management. All of the paid versions have MDM included and the top plan is suitable for managing multiple sites. MSPs should check out Endpoint Central MSP.</p>
+<p>There are four editions of Endpoint Central and one of these is <b>Free</b>. That edition is limited to managing 25 computers. You can get a <strong><a href="https://www.comparitech.com/go/manageengine-desktop-central-free-trial-rmm-software-and-tools/l/cta/u/0551-4469-8741-9213+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0551-4469-8741-9213" class="go-link">30-day free trial</a></strong> of the <b>Enterprise</b> edition.</p>
+<div class="ctech-content-on-bk  "><p></p>
+<p><b>ManageEngine Endpoint Central</b> system includes automated system management tools that focus <b>on IT asset management</b> and <b>software management</b> tools. Within the Endpoint Central console, users will find an automated <b>patch management</b> system that detects available patches and triggers an automated rollout on a given daily install time window. The system also maintains a software inventory for <b>license management</b> and version updating.</p>
+<h4><strong>Start 30-day Free Trial:</strong> <a href="https://www.comparitech.com/go/manageengine-desktop-central-free-trial-rmm-software-and-tools/l/box/u/2455-1400-3019-7706+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="2455-1400-3019-7706" class="go-link">manageengine.com/products/desktop-central/</a></h4>
+<h4><strong>OS:</strong> Windows, Mac and Linux</h4>
+<p></p></div>
+</div>`,
+
+      poster: `<figure id="attachment_316350" aria-describedby="caption-attachment-316350" style="width: 1479px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/manageengine-desktop-central-learn-more-rmm-software-and-tools/l/image/u/8480-0950-1184-2761+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="8480-0950-1184-2761" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-316350 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Desktop-Central-Patch-Management-Module.jpg.webp 1479w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Desktop-Central-Patch-Management-Module-300x145.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Desktop-Central-Patch-Management-Module-1024x496.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Desktop-Central-Patch-Management-Module-768x372.jpg.webp 768w" sizes="auto, (max-width: 1479px) 100vw, 1479px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Desktop-Central-Patch-Management-Module.jpg" alt="ManageEngine Desktop Central Patch Management Module" width="1479" height="717" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Desktop-Central-Patch-Management-Module.jpg 1479w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Desktop-Central-Patch-Management-Module-300x145.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Desktop-Central-Patch-Management-Module-1024x496.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ManageEngine-Desktop-Central-Patch-Management-Module-768x372.jpg 768w" sizes="auto, (max-width: 1479px) 100vw, 1479px">
+</picture>
+</a><figcaption id="caption-attachment-316350" class="wp-caption-text">A dashboard displaying the status of patch deployments.</figcaption></figure>`,
       freetrialElement:
         '<p>There are four editions of Endpoint Central and one of these is <b>Free</b>. That edition is limited to managing 25 computers. You can get a <strong><a href="https://www.comparitech.com/go/manageengine-desktop-central-free-trial-rmm-software-and-tools/l/cta/u/7266-6288-8540-0931+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="7266-6288-8540-0931" class="go-link">30-day free trial</a></strong> of the <b>Enterprise</b> edition.</p>'
     },
@@ -1925,20 +2151,47 @@ export const data = {
       features: ['Designed for MSPs', 'Full Stack Observability', 'Cloud-Based System'],
       'SaaS/On-Premises': '',
       os: 'Cloud-based',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This is a cloud-based multi-tenant monitoring solution that allows MSPs to manage multiple client accounts through a single console. It integrates multiple capabilities, like application performance management, log analysis, and infrastructure monitoring, to get comprehensive visibility.</p>
+      <h4><b>Feature in Focus: Customer Health View</b></h4>
+      <p>This feature provides a high-level operational status of every customer account, making it easy to assess the health of all client environments. Additionally, its dashboard is also notable because it provides the real-time data of all monitors within a single client account for quick resolution of issues.</p>
+      <h4><b>Why do we recommend it?</b></h4>
+      <p><b>Site24x7 MSP Edition</b> is an adapted version of the full Site24x7 platform. This edition enables the creation of sub-accounts so managed service providers can keep the data of each client separate. As well as a full complement of monitoring systems, this package includes log management and network configuration services.</p>
+      <p>The <b>Network Monitoring</b> service of this package includes an autodiscovery feature. This identifies all of the equipment connected to the network and documents them in a hardware inventory. The system also provides an instantly generated network topology map. The discovery process repeats continuously and if changes have been made, the inventory gets updated. The topology map is generated from inventory data every time it is accessed, so that gets automatically updated as well.</p>
+      <p>Other features in the network monitor include a device status checker that is driven by the <b>Simple Network Management Protocol</b> (SNMP). It also provides traffic analysis, communicating with the switches and routers from all the major network equipment providers by using the NetFlow, IPFIX, J-Flow, sFlow, cFlow, AppFlow, and NetStream protocols.</p>
+      <p>A new feature in the platform is the <b>Digital Risk Analyzer</b>. This looks at vulnerabilities in internet-facing systems, such as gateways, email systems, and websites. The scanner gives each asset a security score and provides advice on how security can be tightened.</p>
+      <p>All of the monitoring systems in the package have a series of performance thresholds placed on them. These are leveled to provide technicians time if traffic volumes approach a switch’s full capacity or if a server’s CPU gets heavily loaded. If a threshold is crossed, the system raises<b> an alert</b>. You can set up the monitor to forward alerts to technicians as notifications by email, SMS, voice call, push notification, or Slack message.</p>
+      <figure id="attachment_460697" aria-describedby="caption-attachment-460697" style="width: 1919px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/site24x7-rmm-software-and-tools/l/image/u/9415-8728-0610-3606+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="9415-8728-0610-3606" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-460697 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM.jpg.webp 1919w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM-300x78.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM-1024x265.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM-768x199.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM-1536x398.jpg.webp 1536w" sizes="auto, (max-width: 1919px) 100vw, 1919px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM.jpg" alt="Site24x7 MSP Edition RMM" width="1919" height="497" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM.jpg 1919w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM-300x78.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM-1024x265.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM-768x199.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Site24x7-MSP-Edition-RMM-1536x398.jpg 1536w" sizes="auto, (max-width: 1919px) 100vw, 1919px">
+</picture>
+</a><figcaption id="caption-attachment-460697" class="wp-caption-text">A list of alarms, including information about the monitor name, outage reason, user, assigned technician, and time elapsed since the last alarm.</figcaption></figure>
+<h4><b>Who is it recommended for?</b></h4>
+<p>The MSP plan is suitable for any size of managed service provider. The pricing works on the number of assets that are under management, not the number of clients, sites, users, or technicians. The package can be expanded easily by adding on capacity upgrades. So, small to very large MSPs will find the system fits their needs.</p>
+<p>The Site24x7 system is based in the cloud and you can set up as many technicians on the system as you like. The package is very comprehensive and takes time to explore. You can examine the Site24x7 platform by accessing a <a href="https://www.comparitech.com/go/site24x7-rmm-software-and-tools/l/cta/u/2355-2516-8990-9697+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="2355-2516-8990-9697" class="go-link"><b>30-day free trial</b></a>.</p>
+<h4><b>Start 30-day free trial</b>: <a class="waffle-rich-text-link go-link" href="https://www.comparitech.com/go/site24x7-rmm-software-and-tools/l/cta/u/4429-8524-3082-9009+146634/" target="_blank" rel="sponsored nofollow noopener" data-sheets-formula-bar-text-link="https://barracudamsp.com/product-details/barracuda-rmm-remote-monitoring-management/?setc=_kk&amp;mrm=Online_Advertising&amp;mrmd=MSP-GLBL-OAD-Comparitech&amp;mrlsd=MSP-GLBL-OAD-Comparitech&amp;utm_campaign=MSP-GLBL-OAD-Comparitech&amp;utm_medium=CPC&amp;utm_source=Camparitech" data-sheets-formula-bar-text-style="color:#1155cc;text-decoration:underline;font-family:'docs-Helvetica';font-style:normal;text-decoration-skip-ink:none;" data-postid="146634" data-clickid="4429-8524-3082-9009">Site24x7.com/msp/</a></h4>
+</div>`,
+
+      poster: `<figure id="attachment_458315" aria-describedby="caption-attachment-458315" style="width: 1440px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/site24x7-rmm-software-and-tools/l/image/u/1280-5730-2570-8267+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="1280-5730-2570-8267" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-458315 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/msp-header.jpg.webp 1440w, https://cdn.comparitech.com/wp-content/uploads/2019/04/msp-header-300x176.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/msp-header-1024x601.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/msp-header-768x451.jpg.webp 768w" sizes="auto, (max-width: 1440px) 100vw, 1440px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/msp-header.jpg" alt="msp-header dashboard screenshot" width="1440" height="845" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/msp-header.jpg 1440w, https://cdn.comparitech.com/wp-content/uploads/2019/04/msp-header-300x176.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/msp-header-1024x601.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/msp-header-768x451.jpg 768w" sizes="auto, (max-width: 1440px) 100vw, 1440px">
+</picture>
+</a><figcaption id="caption-attachment-458315" class="wp-caption-text">A comprehensive dashboard showing the details of device clusters within the U.S. region.</figcaption></figure>`,
       freetrialElement:
         '<p>The Site24x7 system is based in the cloud and you can set up as many technicians on the system as you like. The package is very comprehensive and takes time to explore. You can examine the Site24x7 platform by accessing a <a href="https://www.comparitech.com/go/site24x7-rmm-software-and-tools/l/cta/u/1825-8915-6748-6278+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="1825-8915-6748-6278" class="go-link"><b>30-day free trial</b></a>.</p>'
     },
     {
-      name: 'GoTo Resolve',
+      name: 'LogMeIn Resolve',
       extraName: '',
       nameWithUrl: `
-      <a href="https://www.goto.com/it-management/resolve" target="_blank" rel="noopener noreferrer"><b>9. GoTo Resolve</b></a>
+      <a href="https://www.logmein.com/products/resolve" target="_blank" rel="noopener noreferrer"><b>9. LogMeIn Resolve</b></a>
       `,
       imageUrl:
         'https://cdn-3.convertexperiments.com/uf/10021806/1002820/go-to-resolve_68a74d8f64317.svg',
-      description: `
-      <p><a href="https://www.goto.com/it-management/resolve" target="_blank" rel="noopener noreferrer"><b></b><b>GoTo Resolve</b></a> provides remote monitoring and management for endpoints and software – it doesn’t monitor networks. The package is accessed through the <b>GoTo website</b>, so the Administrator console and technician consoles don’t need to be downloaded. The remote devices that you monitor with this package each need an agent installed to provide access.</p>
-      `,
+      description:
+        '<p><a href="https://www.logmein.com/products/resolve" target="_blank" rel="noopener noreferrer"><b></b><b>LogMeIn Resolve</b></a>, formerly GoTo, provides remote monitoring and management for endpoints and software – it doesn’t monitor networks. The package is accessed through the <b>LogMeIn website</b>, so the Administrator console and technician consoles don’t need to be downloaded. The remote devices that you monitor with this package each need an agent installed to provide access.</p>',
       best_for: 'Unified IT support and management',
       relevant_for: 'SMBs and MSPs',
       pricingText: 'There are three plans, all priced per organizer per month',
@@ -1948,6 +2201,30 @@ export const data = {
       features: ['Monitoring for Endpoints', 'Accesses Multiple OS’s', 'Remote Access Facilities'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This tool also integrates multiple capabilities, like remote support, helpdesk ticketing, and mobile device management into a single console. It streamlines IT operations and boosts the efficiency for MSPs.</p>
+      <h4><b>Feature in Focus: Zero Trust Security Architecture</b></h4>
+      <p>This architecture requires the verification of every action, thereby preventing unauthorized access or misuse of existing credentials. It also improves the security posture of the entire organization.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><b>LogMeIn Resolve</b> offers remote monitoring and management for endpoints. The system also provides remote access tools that give access to the command line and to the desktop. The package also provides a file transfer system and remote execution capabilities. This system also provides a patch manager for Windows.</p>
+      <p>The monitoring tool keeps constant track of the resources of each of the devices that have a <b>Lite agent</b> installed. The <b>Professional agent</b> provides much more functionality because technicians can transfer files to these devices and execute maintenance scripts. It is also possible to deploy software on these endpoints.</p>
+      <p>The Professional agent grants command line access for investigation. <b>Desktop access</b> is available in two modes – attended and unattended. Whenever a technician wants to access the device, the user of that computer gets <b>a notification</b> and has 60 seconds to allow or block access. This gives the technician remote control. If no response is received, the technician gets full remote desktop access.</p>
+      <p>The devices running the Professional agents can be started up and rebooted. The system includes <b>a patch manager</b> for Windows.</p>
+      <p>The system also provides a <b>workload automation</b> system that technicians can set up without needing to create any scripts. The service can trigger those processes regularly on a schedule.</p>
+      <p>The <strong>LogMeIn Resolve</strong> package includes a <b>Help Desk ticketing</b> service that users can access to request assistance. The ticketing service provides support team managers with automated team and task tracking.</p>
+      <h4><strong>Who do we recommend it for?</strong></h4>
+      <p>The GoTo RMM system is great for support teams, thanks to its Help Desk ticketing systems. Small businesses might just need the remote access features of the package; in which case, they can use the tool for free. There is also a multi-tenant version for managed service providers.</p>
+      <p>There are four plans for LogMeIn Resolve and you sign up for any of them online. The first of these packages is Free. this gives you the remote access functions. You need to go to the paid versions for the RMM features of LogMeIn Resolve. You can try any of these paid plans on a <a href="https://www.goto.com/resolve/free" target="_blank" rel="noopener noreferrer"><strong>14-day free trial</strong></a>.</p>
+
+</div>`,
+
+      poster: `<figure id="attachment_464779" aria-describedby="caption-attachment-464779" style="width: 827px" class="wp-caption alignnone"><picture loading="lazy" decoding="async" class="wp-image-464779 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/08/GoTo-Resolve-Support.jpg.webp 827w, https://cdn.comparitech.com/wp-content/uploads/2019/08/GoTo-Resolve-Support-300x168.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/08/GoTo-Resolve-Support-768x431.jpg.webp 768w" sizes="auto, (max-width: 827px) 100vw, 827px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/08/GoTo-Resolve-Support.jpg" alt="GoTo Resolve Support" width="827" height="464" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/08/GoTo-Resolve-Support.jpg 827w, https://cdn.comparitech.com/wp-content/uploads/2019/08/GoTo-Resolve-Support-300x168.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/08/GoTo-Resolve-Support-768x431.jpg 768w" sizes="auto, (max-width: 827px) 100vw, 827px">
+</picture>
+<figcaption id="caption-attachment-464779" class="wp-caption-text">A custom home page for an MSP.</figcaption></figure>`,
       freetrialElement:
         '<p>There are four plans for LogMeIn Resolve and you sign up for any of them online. The first of these packages is Free. this gives you the remote access functions. You need to go to the paid versions for the RMM features of LogMeIn Resolve. You can try any of these paid plans on a <a href="https://www.goto.com/resolve/free" target="_blank" rel="noopener noreferrer"><strong>14-day free trial</strong></a>.</p>'
     },
@@ -1975,6 +2252,26 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>A security-focused tool that allows MSPs to stay on top of vulnerabilities in the client systems. Its multi-layered security services simplify service delivery, while focusing on security.</p>
+      <h4><b>Feature in Focus: Site Security Assessment</b></h4>
+      <p>Using this feature, MSPs can evaluate the security posture of client devices, and make appropriate recommendations to prevent security-related incidents. It also enabled MSPs to offer value-added services to their clients.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Barracuda RMM</strong> is another cloud-based platform that is a close rival to NinjaOne. The Barracuda system includes a vulnerability scanner and other tools on the platform that can be linked into the RMM service provide email security, patching, a backup service, and an XDR threat detection system.</p>
+      <p>The security-focused Barracuda RMM package gives your technicians automated services that keep the client’s site safe. These include vulnerability management and system cleanup services. The package includes a patch manager to implement version weaknesses highlighted by the vulnerability scanner. The toolbox in RMM includes <b>remote access</b> and <b>remote desktop</b> utilities plus ongoing monitoring with <b>alerts</b> that enable unattended monitoring.</p>
+      <p>As this is specifically an RMM platform, there isn’t a PSA system included in the platform. However, the RMM is able to <b>integrate</b> with a long list of well-known PSA systems. There are some PSA functions included in the RMM. These relate to service plans and ticketing. The platform has a series of service plan templates, which your sales team can offer to prospective customers. When one of these is selected, your contract creation process is a lot easier. Nominating a service plan in the client setup within the Barracuda RMM console automatically triggers <b>service level</b> expectation threshold monitoring.</p>
+      <h4><strong>Who is it recommended for?</strong></h4>
+      <p>Barracuda RMM is for MSPs and it allows those service providers to offer a range of security tools in addition to system monitoring and management services.</p>
+      <p>You can contact the Sales Department to <a href="https://www.barracuda.com/products/msp/network-protection/rmm/request-a-quote" target="_blank" rel="noopener noreferrer"><strong>get a quote</strong></a>.</p>
+</div>`,
+
+      poster: `<figure id="attachment_346718" aria-describedby="caption-attachment-346718" style="width: 2093px" class="wp-caption alignnone"><picture loading="lazy" decoding="async" class="wp-image-346718 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard.jpg.webp 2093w, https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard-300x145.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard-1024x496.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard-768x372.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard-1536x743.jpg.webp 1536w, https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard-2048x991.jpg.webp 2048w" sizes="auto, (max-width: 2093px) 100vw, 2093px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard.jpg" alt="BarracudaMSP Services Dashboard" width="2093" height="1013" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard.jpg 2093w, https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard-300x145.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard-1024x496.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard-768x372.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard-1536x743.jpg 1536w, https://cdn.comparitech.com/wp-content/uploads/2019/04/BarracudaMSP-Services-Dashboard-2048x991.jpg 2048w" sizes="auto, (max-width: 2093px) 100vw, 2093px">
+</picture>
+<figcaption id="caption-attachment-346718" class="wp-caption-text">A services dashboard with comprehensive information.</figcaption></figure>`,
       freetrialElement: ''
     },
     {
@@ -2006,6 +2303,27 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>An agentless monitoring solution that can cover multiple aspects of monitoring and infrastructure. It also works well for any kind of device, including cloud services. It supports multiple monitoring protocols as well, making it suitable for almost any environment.</p>
+      <h4><b>Feature in Focus: AI-powered Anomaly Detection</b></h4>
+      <p>A highlight of PRTG is that it uses AI to set the baseline values. Also, it monitors these values for deviations, making it easy to detect potential issues before they impact the wider infrastructure.</p>
+      <h4><b>Why do we recommend it?</b></h4>
+      <p><b>Paessler PRTG</b> is very easy to set up. The tool has a probe unit that will gather information from a site and send that on to the administration console. That console could be in the cloud as part of the SaaS version or on your premises, running on Windows Server.</p>
+      <p>The PRTG probe’s network scan sets up all of the system documentation, populating the console. So, this tool sets itself up and can create a multi-site remote monitoring service. The console locates each site on a network map and can also show the performance of connections between them.</p>
+      <p>The PRTG package will also monitor cloud platforms. It can track the performance of network devices, servers, and other hardware, such as firewalls. The tool records activity metrics, such as network traffic throughput per link and server resource capacity and utilization. The package has sensors that examine the quality of connections to judge suitability for VoIP.</p>
+      <p>This package is able to monitor virtual systems as well as physical hardware. It will monitor hypervisors and containers and link the performance of that middleware to the applications that run on them. The ability to monitor all levels of the stack simultaneously enables rapid root cause analysis when problems arise. The package also provides troubleshooting tools, based on Ping and Traceroute.</p>
+      <h4><b>Who is it recommended for?</b></h4>
+      <p>This is a very flexible package and it will appeal to companies that need to monitor a single site and also corporations that have multiple sites to watch over. The system is even suitable for very small businesses, thanks to its free edition that provides 100 sensors.</p>
+      <p>Sign up for the hosted PRTG SaaS package online or download the package and run it on Windows Server. You can start off by accessing a <a href="https://www.paessler.com/download/prtg-download?download=1" target="_blank" rel="noopener noreferrer"><b>30-day free trial</b></a>.</p>
+</div>`,
+
+      poster: `<figure id="attachment_472066" aria-describedby="caption-attachment-472066" style="width: 1144px" class="wp-caption alignnone"><picture loading="lazy" decoding="async" class="wp-image-472066 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Paessler-PRTG-Remote-Access-Sites.jpg.webp 1144w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Paessler-PRTG-Remote-Access-Sites-300x124.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Paessler-PRTG-Remote-Access-Sites-1024x422.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Paessler-PRTG-Remote-Access-Sites-768x317.jpg.webp 768w" sizes="auto, (max-width: 1144px) 100vw, 1144px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/Paessler-PRTG-Remote-Access-Sites.jpg" alt="Paessler PRTG Remote Access Sites" width="1144" height="472" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Paessler-PRTG-Remote-Access-Sites.jpg 1144w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Paessler-PRTG-Remote-Access-Sites-300x124.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Paessler-PRTG-Remote-Access-Sites-1024x422.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Paessler-PRTG-Remote-Access-Sites-768x317.jpg 768w" sizes="auto, (max-width: 1144px) 100vw, 1144px">
+</picture>
+<figcaption id="caption-attachment-472066" class="wp-caption-text">A detailed dashboard displaying remote sites, local infrastructure, and the installed services and apps.</figcaption></figure>`,
       freetrialElement:
         '<p>Sign up for the hosted PRTG SaaS package online or download the package and run it on Windows Server. You can start off by accessing a <a href="https://www.paessler.com/download/prtg-download?download=1" target="_blank" rel="noopener noreferrer"><b>30-day free trial</b></a>.</p>'
     },
@@ -2028,6 +2346,30 @@ export const data = {
       features: ['Connects to Multiple Device Types', 'Remote Access', 'Remote Desktop'],
       'SaaS/On-Premises': '',
       os: 'Windows, Windows Server, macOS, Linux, Android, and iOS',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This cloud-based remote support solution offers the flexibility to connect to remote systems through a GUI or the command line, making it well-suited for different environments. You can also use it to connect to Android and iPhone devices and devices with multiple monitors. It has an on-premise deployment option as well.</p>
+      <h4><b>Feature in Focus: Unattended Support</b></h4>
+      <p>The standout feature of this tool is its unattended support, which allows technicians to access and manage devices remotely without user interaction. The advantage of this feature is that technicians can fix problems non-intrusively while users are away from their computers.</p>
+      <h4><b>Why do we recommend it?</b></h4>
+      <p><b>Dameware Remote Everywhere</b> is a cloud-hosted system that technicians access through a browser. As such, it doesn’t matter what operating system the technician’s computer is running as long as it has a Web browser. This tool enables access to unattended devices and can start up a remote computer. It also provides remote desktop and remote control functions.</p>
+      <p>The remote computer that a technician accesses through this utility can be running <b>Windows</b>, <b>macOS</b>, or <b>Linux</b>. The tool will also access mobile devices running <b>iOS</b> or <b>Android</b>. The system is able to start up, reboot, and shut down remote devices. When the system connects to a remote device, it scans the computer and produces a summary of its attributes and statuses.</p>
+      <p>The tool can be used to connect to computers that are in use. In this scenario, the technician gets a view of the desktop of the remote device. The main purpose of remote access is to allow technicians to manage the device rather than just watch it, so the more important conduit of remote desktop is actually <b>remote control</b>.</p>
+      <p>A remote control session can include a text or video <b>chat panel</b> to enable the technician and the user to communicate. The remote connection is usually initiated to help the user who has a problem. So, the session can involve the user showing the technician exactly what the problem is or for the technician to fix a problem or to show the user how to use a feature or software package correctly.</p>
+      <p>In all cases, the session can be <b>recorded</b> – that feature can be set to run automatically. The recording can be stored and the user can be given access to it.</p>
+      <h4><b>Who is it recommended for?</b></h4>
+      <p>The buyers of Dameware Remote Everywhere would be companies or managed service providers that use an RMM package that doesn’t include a remote access function. This tool will specifically appeal to businesses that prefer SaaS packages and don’t want to host their technician software. Those who would rather host the remote access software themselves should look at <strong>Dameware Remote Support</strong>, which installs on Windows Server.</p>
+      <p><b>Dameware Remote Everywhere</b> is one of three options offered by the Dameware brand. The other two are <b>Dameware Remote Support</b> and <b>Dameware Mini Remote Control</b>. These are both on-premises software packages that you install on each technician workstation. You can assess Dameware Remote Everywhere with a <a href="https://www.solarwinds.com/dameware-remote-everywhere/registration" target="_blank" rel="noopener noreferrer"><strong>14-day free trial</strong></a>.</p>
+      <p>The Dameware system runs on the cloud and the technician’s computer can be running Windows, macOS, or Linux.</p>
+
+</div>`,
+
+      poster: `<figure id="attachment_300607" aria-describedby="caption-attachment-300607" style="width: 987px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2020/08/SolarWinds-Dameware-Remote-Everywhere-Secrets-Vault.jpg" target="_blank" rel="noopener noreferrer"><picture loading="lazy" decoding="async" class="wp-image-300607 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/08/SolarWinds-Dameware-Remote-Everywhere-Secrets-Vault.jpg.webp 987w, https://cdn.comparitech.com/wp-content/uploads/2020/08/SolarWinds-Dameware-Remote-Everywhere-Secrets-Vault-300x190.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2020/08/SolarWinds-Dameware-Remote-Everywhere-Secrets-Vault-768x486.jpg.webp 768w" sizes="auto, (max-width: 987px) 100vw, 987px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2020/08/SolarWinds-Dameware-Remote-Everywhere-Secrets-Vault.jpg" alt="SolarWinds Dameware Remote Everywhere - Secrets Vault" width="987" height="624" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/08/SolarWinds-Dameware-Remote-Everywhere-Secrets-Vault.jpg 987w, https://cdn.comparitech.com/wp-content/uploads/2020/08/SolarWinds-Dameware-Remote-Everywhere-Secrets-Vault-300x190.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2020/08/SolarWinds-Dameware-Remote-Everywhere-Secrets-Vault-768x486.jpg 768w" sizes="auto, (max-width: 987px) 100vw, 987px">
+</picture>
+</a><figcaption id="caption-attachment-300607" class="wp-caption-text">A secret vault dashboard with information about secrets, their names, and last used timestamp.</figcaption></figure>`,
       freetrialElement:
         '<p><b>Dameware Remote Everywhere</b> is one of three options offered by the Dameware brand. The other two are <b>Dameware Remote Support</b> and <b>Dameware Mini Remote Control</b>. These are both on-premises software packages that you install on each technician workstation. You can assess Dameware Remote Everywhere with a <a href="https://www.solarwinds.com/dameware-remote-everywhere/registration" target="_blank" rel="noopener noreferrer"><strong>14-day free trial</strong></a>.</p>'
     },
@@ -2051,6 +2393,38 @@ export const data = {
       features: ['System Scanning', 'Unified Endpoint management', 'Remote Access'],
       'SaaS/On-Premises': '',
       os: 'Cloud-based',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This unified platform combines multiple aspects of remote monitoring and management into a single pane. Its asset management, endpoint protection, patch management, and backup solutions allow technicians to proactively identify and fix issues.</p>
+      <h4><b>Feature in Focus: AI-powered Session Insights</b></h4>
+      <p>The Sessions Insights feature uses AI to automatically document remote support sessions. It can even generate AI summaries after the session to improve performance and diagnostics. This data can also help to set the baseline standards for performance.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><b>TeamViewer Remote Management</b> is backed by a well-established IT support tools provider. This is a relatively new RMM package but experience counts with IT software packages and the background that this company has in remote connection management and account security provides the RMM with a strong foundation.</p>
+      <p>The RMM includes a discovery process, which creates an asset inventory. This is available for network devices and endpoints. The discovery process is fueled by <b>SNMP</b>, which repeats constantly, so the asset inventory is kept up to date. The SNMP routine also provides constant device status monitoring.</p>
+      <p>The <b>hardware inventory</b> provides the main screen for the monitoring and management functions. All information about a device is attached to its entry in the inventory. This is where you access device information and also status alerts.</p>
+      <p>Each discovered endpoint will get an agent installed on it. This enables deeper monitoring functions and scans for software. The service compiles a <b>software inventory</b>, which details the operating system, applications, and version numbers for each. The endpoint agent also enables remote access for maintenance. This can involve the transfer of scripts and there are some standard maintenance tasks such as wake-up, reboot, and temporary file cleaning, built into the package.</p>
+      <p>Software management functions in the package include a deployment service that lets an administrator roll out new software to multiple endpoints or onboard a new device with a package of software. The package also includes a <b>patch manager</b> and log collection. These functions are available for endpoints running <b>Windows</b>, <b>macOS</b>, and <b>Linux</b>.</p>
+      <figure id="attachment_460698" aria-describedby="caption-attachment-460698" style="width: 1418px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-RMM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460698 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-RMM.jpg.webp 1418w, https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-RMM-300x169.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-RMM-1024x576.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-RMM-768x432.jpg.webp 768w" sizes="auto, (max-width: 1418px) 100vw, 1418px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-RMM.jpg" alt="TeamViewer Remote Management RMM" width="1418" height="797" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-RMM.jpg 1418w, https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-RMM-300x169.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-RMM-1024x576.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-RMM-768x432.jpg 768w" sizes="auto, (max-width: 1418px) 100vw, 1418px">
+</picture>
+</a><figcaption id="caption-attachment-460698" class="wp-caption-text">Detailed information about different assets.</figcaption></figure>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>This package is charged for on a subscription rate per endpoint per month and it is delivered from the cloud. This makes the tool a good choice for businesses of all sizes and it is available in a configuration for MSPs. The system will be of particular interest to businesses that already use the TeamViewer remote access system.</p>
+<p>The TeamViewer Remote Management system is a <b>SaaS package</b> and it has just one plan. The RMM can be supplemented by security add-ons, such as a backup service and endpoint protection. You can try out TeamViewer Remote Management with a <a href="https://www.teamviewer.com/en/remote-management/getstarted/" target="_blank" rel="noopener noreferrer">14-day free trial</a>.</p>
+<div class="ctech-content-on-bk  "><p></p>
+<p><b>TeamViewer Remote Management</b> is a competent, cloud-based RMM package that is available for IT departments that manage several sites from one location and there is also the option to create sub-accounts, which is suitable for managed service providers. This package is priced per endpoint, which makes it affordable for small businesses and scaleable for startups and growing enterprises. The tool provides device discovery, automated monitoring, and endpoint management features.</p>
+<p><b>Get a 14-day free trial:</b> <a href="https://www.teamviewer.com/en/remote-management/getstarted/" target="_blank" rel="noopener noreferrer">https://www.teamviewer.com/en/remote-management/getstarted/</a></p>
+<p><b>Operating system:</b> Cloud-based</p>
+<p></p></div>
+</div>`,
+
+      poster: `<figure id="attachment_434129" aria-describedby="caption-attachment-434129" style="width: 795px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-434129 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management.jpg.webp 795w, https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-300x174.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-768x444.jpg.webp 768w" sizes="auto, (max-width: 795px) 100vw, 795px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management.jpg" alt="TeamViewer Remote Management" width="795" height="460" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management.jpg 795w, https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-300x174.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/TeamViewer-Remote-Management-768x444.jpg 768w" sizes="auto, (max-width: 795px) 100vw, 795px">
+</picture>
+</a><figcaption id="caption-attachment-434129" class="wp-caption-text">A monitoring dashboard showing the endpoints’ health and security.</figcaption></figure>`,
       freetrialElement:
         '<p>The TeamViewer Remote Management system is a <b>SaaS package</b> and it has just one plan. The RMM can be supplemented by security add-ons, such as a backup service and endpoint protection. You can try out TeamViewer Remote Management with a <a href="https://www.teamviewer.com/en/remote-management/getstarted/" target="_blank" rel="noopener noreferrer">14-day free trial</a>.</p>'
     },
@@ -2074,6 +2448,36 @@ export const data = {
       features: ['Multi-Tenanted Architecture', 'Remote Monitoring', 'Remote Access Recording'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This RMM platform can automate IT tasks, saving time and effort. More importantly, technicians can use scripts to automate repetitive tasks, deploy patches, update software, and more. With these features, they can seamlessly monitor multiple endpoints simultaneously.</p>
+      <h4><b>Feature in Focus: ConnectWise Sidekick</b></h4>
+      <p>This is an AI-driven scripting assistant that uses AI to generate PowerShell scripts. The team can review and approve these scripts, and they will run independently on different devices to automate tasks. At the same time, teams can control their implementation.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>ConnectWise Automate</strong> is one of the leading RMM packages for MSPs. A PSA system is also available and that is called ConnectWise Manage. As its name suggests, the big selling point of ConnectWise Automate is the high degree of task automation that it offers. This package provides patch management as well as system monitoring.</p>
+      <p>When it comes to remote network management, ConnectWise Automate is an excellent tool for a number of reasons. You can not only <b>take control of sessions remotely</b> but also <b>record videos of remote sessions</b>. Having recordings of videos of remote sessions makes sure that you have evidence that could be needed during an audit.</p>
+      <figure id="attachment_460699" aria-describedby="caption-attachment-460699" style="width: 1381px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/04/Connectwise-RMM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460699 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Connectwise-RMM.jpg.webp 1381w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Connectwise-RMM-300x180.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Connectwise-RMM-1024x613.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Connectwise-RMM-768x460.jpg.webp 768w" sizes="auto, (max-width: 1381px) 100vw, 1381px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/Connectwise-RMM.jpg" alt="Connectwise RMM" width="1381" height="827" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Connectwise-RMM.jpg 1381w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Connectwise-RMM-300x180.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Connectwise-RMM-1024x613.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Connectwise-RMM-768x460.jpg 768w" sizes="auto, (max-width: 1381px) 100vw, 1381px">
+</picture>
+</a><figcaption id="caption-attachment-460699" class="wp-caption-text">A list of workstations and servers with their device and site names.</figcaption></figure>
+<p>From a maintenance standpoint, the<b> patch management</b> capabilities of ConnectWise Automate are also very well put together. You can <b>schedule and approve patches automatically</b> and keep the network updated hassle-free.</p>
+<p>The platform also offers third-party management current applications for a number of products including <b>Adobe Flash, Adobe Reader XI and DC, Mozilla Firefox, Apple iTunes, Google Chrome, PDFCreator,</b> and more.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>ConnectWise is a very reliable brand and so MSPs will find it very difficult to choose between this package, NinjaOne, Atera, SuperOps, N-able, ManageEngine, Pluseway, and Kaseya. There is no free version, so small businesses probably wouldn’t opt for ConnectWise Automate.</p>
+<p>ConnectWise Automate is highly recommended for MSPs looking for a remote monitoring solution that’s easy to use and deploy. However, you will have to contact the company directly for pricing information. The service can be downloaded as <a href="https://www.connectwise.com/platform/automate/trial" target="_blank" rel="noopener noreferrer">a 14-day free trial</a>.</p>
+<div class="ctech-content-on-bk  "><p></p>
+<p><b>ConnectWise Automate</b> is a great RMM platform because it provides MSPs with a centralized console to manage their client’s entire IT asset inventory. Everything from autodiscovery to the patch management process is built to help the user monitor a remote network as easily as possible. That includes physical devices and virtual services.</p>
+<p>Other features like remote control session recording are also useful for MSPs who want to ensure they’re prepared for auditing scenarios. The product is available for Windows, Mac, and Linux.</p>
+<p></p></div>
+</div>`,
+
+      poster: `<figure id="attachment_276462" aria-describedby="caption-attachment-276462" style="width: 2550px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-276462 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2.jpg.webp 2550w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2-300x162.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2-1024x554.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2-768x415.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2-1536x831.jpg.webp 1536w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2-2048x1108.jpg.webp 2048w" sizes="auto, (max-width: 2550px) 100vw, 2550px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2.jpg" alt="ConnectWise Automate dashboard" width="2550" height="1379" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2.jpg 2550w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2-300x162.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2-1024x554.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2-768x415.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2-1536x831.jpg 1536w, https://cdn.comparitech.com/wp-content/uploads/2019/04/ConnectWise-Automate-2-2048x1108.jpg 2048w" sizes="auto, (max-width: 2550px) 100vw, 2550px">
+</picture>
+</a><figcaption id="caption-attachment-276462" class="wp-caption-text">A detailed look into the state of the infrastructure, including devices, hardware, and software.</figcaption></figure>`,
       freetrialElement:
         '<p>ConnectWise Automate is highly recommended for MSPs looking for a remote monitoring solution that’s easy to use and deploy. However, you will have to contact the company directly for pricing information. The service can be downloaded as <a href="https://www.connectwise.com/platform/automate/trial" target="_blank" rel="noopener noreferrer">a 14-day free trial</a>.</p>'
     },
@@ -2096,6 +2500,35 @@ export const data = {
       features: ['A Wide Audience', 'Task Automation', 'Mobile First System'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>A mobile-centric RMM that’s geared to meet the demands of today’s remote and BYOD culture. It empowers IT professionals to monitor and control their IT infrastructure. This intuitive mobile application also provides real-time alerts, automation, and complete system management, all of which support quick responses to issues across all devices.</p>
+      <h4><b>Feature in Focus: Automation Engine</b></h4>
+      <p>Pulseway’s automation engine supports the creation of complex workflows through a visual editor. With this feature, IT administrators can automate tasks like system reboots, backups, and starting or stopping processes. This automation capability can also come in handy to resolve first-level issues.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p>The RMM market is becoming very crowded and the <strong>Pulseway RMM</strong> package is another tool that any MSP in the market to buy should consider. This package includes PSA modules. Pulseway started out as a provider of mobile devices and the Pulseway RMM console can be accessed through a mobile as well as through a desktop. The packages offered by Pulseway provide an option to add on a patch manager and endpoint protection from Bitdefender and Webroot.</p>
+      <p>The <b>remote control </b>feature allows you to connect to remote computers with ease. You can connect to a device and interact with the device directly. If the user has multiple monitors, you can <b>choose which monitor you want to view</b>. If you choose to, you can send files between the source and destination computers.</p>
+      <p><b>Automated patching</b> enables you to update a network remotely without having to do everything manually. The platform supports a range of applications including<b> Adobe Acrobat Reader DC, Dropbox, FileZilla, Google Chrome, GoToMeeting, Microsoft OneDrive, Skype, Slack,</b> and more.</p>
+      <figure id="attachment_460700" aria-describedby="caption-attachment-460700" style="width: 1122px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-RMM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460700 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-RMM.jpg.webp 1122w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-RMM-300x221.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-RMM-1024x755.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-RMM-768x566.jpg.webp 768w" sizes="auto, (max-width: 1122px) 100vw, 1122px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-RMM.jpg" alt="Pulseway RMM" width="1122" height="827" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-RMM.jpg 1122w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-RMM-300x221.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-RMM-1024x755.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-RMM-768x566.jpg 768w" sizes="auto, (max-width: 1122px) 100vw, 1122px">
+</picture>
+</a><figcaption id="caption-attachment-460700" class="wp-caption-text">The Pulseway RMM app, as seen on tablets, Android, and iPhone devices.</figcaption></figure>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>The minimum number of endpoints that you can get a license for with Pulseway is 20, so very small businesses won’t go for this package. The service is designed for MSPs but there is also a version for in-house IT departments.</p>
+<p>The Pulseway RMM service is charged for by subscription. The price increases with three factors: the number of endpoints covered, the amount of third-party patching, and the number of devices that will be protected by BitDefender. The base price for the service covers 20 endpoints without patching or BitDefender for $32 (23.82) per month when paid annually. All new customers have to undergo a mandatory <b>Advanced Onboarding and Best Practices</b> session, which costs $149. You can assess Pluseway with a <a href="https://www.pulseway.com/enterprise/evaluation" target="_blank" rel="noopener noreferrer">14-day free trial</a>.</p>
+<div class="ctech-content-on-bk  "><p></p>
+<p><b>Pulseway</b> is regarded as one of the top RMM tools because it has everything an MSP could want to monitor a customer’s network. Features like the real-time mobile app for Android and iOS makes sure that you’re always within reach to be able to respond to critical issues.</p>
+<p>Similarly, the use of automation, custom scripts, and patch scheduling make life much easier and you don’t have to focus on tedious manual tasks. Pulseway is available for Windows, Mac, and Linux.</p>
+<p></p></div>
+</div>`,
+
+      poster: `<figure id="attachment_276467" aria-describedby="caption-attachment-276467" style="width: 1205px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-Automation.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-276467 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-Automation.jpg.webp 1205w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-Automation-300x221.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-Automation-1024x755.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-Automation-768x567.jpg.webp 768w" sizes="auto, (max-width: 1205px) 100vw, 1205px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-Automation.jpg" alt="Pulseway RMM" width="1205" height="889" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-Automation.jpg 1205w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-Automation-300x221.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-Automation-1024x755.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Pulseway-Automation-768x567.jpg 768w" sizes="auto, (max-width: 1205px) 100vw, 1205px">
+</picture>
+</a><figcaption id="caption-attachment-276467" class="wp-caption-text">An overview of tasks and their configuration details.</figcaption></figure>`,
       freetrialElement:
         '<p>The Pulseway RMM service is charged for by subscription. The price increases with three factors: the number of endpoints covered, the amount of third-party patching, and the number of devices that will be protected by BitDefender. The base price for the service covers 20 endpoints without patching or BitDefender for $32 (23.82) per month when paid annually. All new customers have to undergo a mandatory <b>Advanced Onboarding and Best Practices</b> session, which costs $149. You can assess Pluseway with a <a href="https://www.pulseway.com/enterprise/evaluation" target="_blank" rel="noopener noreferrer">14-day free trial</a>.</p>'
     },
@@ -2126,6 +2559,37 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>It combines IT automation, endpoint monitoring, patching, and credential management through a single console. It also integrates well with Kaseya’s broader IT suite for extensibility and scalability. As a result, technicians can access features like ticketing, documentation, antivirus, backups, and more.</p>
+      <h4><b>Feature in Focus: Live Connect</b></h4>
+      <p>The Live Connect feature allows technicians to connect instantly to any managed device in a non-intrusive way. It also offers access to background processes, registry editors, task managers, and file systems, so technicians can troubleshoot problems without disturbing the user.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Kaseya VSA</strong> is a very successful RMM that includes the management of mobile devices as well as on-premises equipment. This cloud package includes a patch manager and available add-ons provide security software, system documentation, and backup services.</p>
+      <p>The tool also has a <b>mobile app </b>that you can use to manage <b>IT service tickets</b>. The mobile effectively allows you to manage performance incidents on-the-go and stay updated wherever you are, reducing the time to resolution.</p>
+      <figure id="attachment_460701" aria-describedby="caption-attachment-460701" style="width: 1801px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460701 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM.jpg.webp 1801w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM-300x146.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM-1024x498.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM-768x373.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM-1536x746.jpg.webp 1536w" sizes="auto, (max-width: 1801px) 100vw, 1801px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM.jpg" alt="Kasaya VSA RMM" width="1801" height="875" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM.jpg 1801w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM-300x146.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM-1024x498.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM-768x373.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kasaya-VSA-RMM-1536x746.jpg 1536w" sizes="auto, (max-width: 1801px) 100vw, 1801px">
+</picture>
+</a><figcaption id="caption-attachment-460701" class="wp-caption-text">Home screen and controls for MSPs.</figcaption></figure>
+<p>The overall monitoring experience can be customized according to the needs of the user. <b>Custom dashboards</b> and <b>reports</b> allow you to monitor all changes in your environment. For example, <b>status reports </b>let you know when the last audit was completed to assist you in staying up to date with compliance concerns.</p>
+<p>The patch management capabilities of Kaseya VSA are also very valuable. <b>Automated software deployments </b>enable you to <b>schedule scans</b> and <b>deploy patches </b>to devices automatically. You can control what patches are completed by creating policy profiles to decide when patches are approved and installed.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Kaseya RMM is aimed at MSPs but it can also be used by in-house IT departments. The Kaseya cloud platform offers other products that fit together with the VSA service, called Kaseya BMS.</p>
+<p>Kaseya VSA provides a reliable RMM monitoring experience that gives you the freedom to monitor how you work most effectively. To view the pricing information you will have to contact the company directly to request a quote. You can start the <a href="https://www.kaseya.com/get-started/vsa-trial/" target="_blank" rel="noopener noreferrer">14-day free trial</a>.</p>
+<div class="ctech-content-on-bk  "><p></p>
+<p><b>Kaseya VSA</b> is a reliable mid-level remote monitoring solution. The range of customization options and the automated deployment of patches make the tool very valuable for an MSP.</p>
+<p>With a mobile app to help manage support tickets, this tool has everything you need to manage a remote network effectively.</p>
+<p>The Kaseya VSA agent is available for Windows 8, 8.1, and 10; Windows Server 2012, 2012 R2, 2016, and 2019; macOS 10.13, 10.14, 10.15, and 11.0; and CentOS, RHEL, Debian, OpenSUSE Leap, SLES, and Ubuntu Linux.</p>
+<p></p></div>
+</div>`,
+
+      poster: `<figure id="attachment_276472" aria-describedby="caption-attachment-276472" style="width: 1441px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/04/Kaseya-VSA-Automation-Dashboard.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-276472 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Kaseya-VSA-Automation-Dashboard.jpg.webp 1441w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kaseya-VSA-Automation-Dashboard-300x165.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kaseya-VSA-Automation-Dashboard-1024x564.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kaseya-VSA-Automation-Dashboard-768x423.jpg.webp 768w" sizes="auto, (max-width: 1441px) 100vw, 1441px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/Kaseya-VSA-Automation-Dashboard.jpg" alt="Kaseya VSA Automation Dashboard" width="1441" height="793" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Kaseya-VSA-Automation-Dashboard.jpg 1441w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kaseya-VSA-Automation-Dashboard-300x165.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kaseya-VSA-Automation-Dashboard-1024x564.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Kaseya-VSA-Automation-Dashboard-768x423.jpg 768w" sizes="auto, (max-width: 1441px) 100vw, 1441px">
+</picture>
+</a><figcaption id="caption-attachment-276472" class="wp-caption-text">A dashboard showing vulnerabilities and compliance rates.</figcaption></figure>`,
       freetrialElement:
         '<p>Kaseya VSA provides a reliable RMM monitoring experience that gives you the freedom to monitor how you work most effectively. To view the pricing information you will have to contact the company directly to request a quote. You can start the <a href="https://www.kaseya.com/get-started/vsa-trial/" target="_blank" rel="noopener noreferrer">14-day free trial</a>.</p>'
     },
@@ -2149,6 +2613,36 @@ export const data = {
       features: ['Free Service Request Package', 'Remote Access', 'Unified Endpoint Management'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>A cloud-based platform that integrates real-time monitoring, automated patch management, remote access, and endpoint security. It improves operational efficiency and reduces downtime, while allowing IT technicians to proactively secure IT environments.</p>
+      <h4><b>Feature in Focus: Proactive Alerts</b></h4>
+      <p>This feature leverages AI to automate routine tasks and generate proactive alerts. Armed with these alerts, technicians can identify and fix issues at the earliest, resulting in minimal system downtime.</p>
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>ITarian</strong> is not a well-known brand but it was created by the same founder that started Comodo and the platform offers extensive IT asset management services. The system can be used for all of the Service Desk functions of an IT department and there is also a version for managed service providers.</p>
+      <p><b>Remote access and control</b> enable the user to interact with remote devices as if they were physically in front of them. The user <b>can access files located on any device </b>connected to the network. Having access to all of this information is useful for troubleshooting performance issues. You can also determine which users have access to particular files.</p>
+      <p>For enhanced visibility, presents users with <b>analytics</b> and <b>reporting</b>. Machine learning and threat intelligence supply the user with the most relevant performance and security data throughout the network. <b>Reports</b> are customizable, so the user can choose how their customer’s data is presented to them.</p>
+      <figure id="attachment_460702" aria-describedby="caption-attachment-460702" style="width: 1559px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460702 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM.jpg.webp 1559w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM-300x159.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM-1024x544.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM-768x408.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM-1536x816.jpg.webp 1536w" sizes="auto, (max-width: 1559px) 100vw, 1559px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM.jpg" alt="Itarian RMM" width="1559" height="828" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM.jpg 1559w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM-300x159.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM-1024x544.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM-768x408.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/04/Itarian-RMM-1536x816.jpg 1536w" sizes="auto, (max-width: 1559px) 100vw, 1559px">
+</picture>
+</a><figcaption id="caption-attachment-460702" class="wp-caption-text">A ticketing home screen.</figcaption></figure>
+<p>ITarian provides a reliable monitoring experience. ITarian is available as a <b>free version </b>for<b> less than 50 endpoints</b>, which is ideal for smaller enterprises.</p>
+<p>If you require more, you will need to purchase a paid version (price depends on the number of endpoints you want to support. To view the pricing information you will need to contact the company directly. You can <a href="https://www.itarian.com/signup/" target="_blank" rel="noopener noreferrer">start the free trial</a>.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Businesses that are following ITIL will particularly value the ITarian system because it is designed along those guidelines.</p>
+<div class="ctech-content-on-bk  "><p></p>
+<p><b>ITarian</b> is a tool that’s recommended for enterprises looking for a low-cost but high-quality remote monitoring tool. The software has been designed with managed IT service providers in mind, providing a single pane of glass to monitor remote networks.</p>
+<p>The platform offers enough visibility to reliably monitor a customer’s entire network. ITarian’s cloud-based setup enables it to be deployed in any environment, with minimal disruption.</p>
+<p></p></div>
+</div>`,
+
+      poster: `<figure id="attachment_275930" aria-describedby="caption-attachment-275930" style="width: 1276px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-275930 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard.jpg.webp 1276w, https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard-300x141.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard-1024x481.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard-768x361.jpg.webp 768w" sizes="auto, (max-width: 1276px) 100vw, 1276px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard.jpg" alt="ITarian MSP dashboard" width="1276" height="599" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard.jpg 1276w, https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard-300x141.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard-1024x481.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2020/02/ITarian-MSP-dashboard-768x361.jpg 768w" sizes="auto, (max-width: 1276px) 100vw, 1276px">
+</picture>
+</a><figcaption id="caption-attachment-275930" class="wp-caption-text">A list of devices and their status.</figcaption></figure>`,
       freetrialElement:
         '<p>If you require more, you will need to purchase a paid version (price depends on the number of endpoints you want to support. To view the pricing information you will need to contact the company directly. You can <a href="https://www.itarian.com/signup/" target="_blank" rel="noopener noreferrer">start the free trial</a>.</p>'
     }
@@ -2184,6 +2678,37 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>NinjaOne integrates MDM into the larger IT operations to provide a comprehensive view. Using this platform, IT teams can manage a wide range of devices through a single dashboard. Its built-in automation feature simplifies the management of remote devices without compromising on security.</p>
+      <h4><b>Feature in Focus – Remote Mobile Device Access</b></h4>
+      <p>Its remote support feature allows authorized individuals to view the screen of connected devices, including mobile phones, in real-time. This is particularly useful for remote and field teams, as IT personnel can resolve user issues from anywhere. It is also helpful to guide non-technical users to troubleshoot their devices.</p>
+      <figure id="attachment_473365" aria-describedby="caption-attachment-473365" style="width: 612px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/ninjaone-lm-mobile-device-management-software/l/image/u/4991-3995-1408-2083+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="4991-3995-1408-2083" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-473365 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ninjaone-MDM-Add-Devices.jpg.webp 612w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ninjaone-MDM-Add-Devices-300x144.jpg.webp 300w" sizes="auto, (max-width: 612px) 100vw, 612px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ninjaone-MDM-Add-Devices.jpg" alt="NinjaOne MDM Add Devices" width="612" height="294" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ninjaone-MDM-Add-Devices.jpg 612w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ninjaone-MDM-Add-Devices-300x144.jpg 300w" sizes="auto, (max-width: 612px) 100vw, 612px">
+</picture>
+</a><figcaption id="caption-attachment-473365" class="wp-caption-text">The configuration options for a new device.</figcaption></figure>
+<h4><b>Why do we recommend it?</b></h4>
+<p>The <b>NinjaOne Mobile Device Management</b> system expands the RMM to mobile devices, which is particularly important for businesses that have roaming employees. As managed service providers for a large share of NinjaOne’s customer base, the ability to offer more services improves MSP marketability and so also makes the NinjaOne package more attractive.</p>
+<p>While the main functions of the RMM include software deployment, that translates to <b>mobile application management</b> on devices running iOS and Android. That function doesn’t just enable administrators to add or remove approved apps from mobile device but it also enables devices to be locked down, preventing users from installing their own favorite but unapproved apps.</p>
+<p>Security features include <b>tracking</b> plus <b>locking</b> and <b>wiping</b> for lost or stolen devices. Mobile content management provides secure delivery of corporate data in files to mobile devices. All of these functions can be managed by the technicians of MSPs on behalf of clients.</p>
+<p>In addition to the <b>endpoint management</b> services in the RMM package, you get automated system discovery, documentation, and monitoring. The RMM includes an alerting mechanism that triggers when performance issues arise. This means that technicians can assume that everything is OK if they don’t hear otherwise. The RMM&nbsp; console can be setup to forward alerts by email, SMS, push notification, or Slack, PagerDuty, or Teams messages.</p>
+<h4><b>Who is it recommended for?</b></h4>
+<p>This system is suitable for managed service providers to look after the mobile devices of their clients and for IT departments that want to manage their own systems in house. The tool is hosted in the cloud and it can manage multiple sites within one account, so it is a good choice for multi-site businesses.</p>
+<p>NinjaOne is a<b> cloud-based system</b>, so you sign up for the package at the company’s website rather than downloading any software. You can assess the service with its mobile device management unit with a <a href="https://www.comparitech.com/go/ninjaone-ft-mobile-device-management-software/l/cta/u/2573-1930-2254-0325+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="2573-1930-2254-0325" class="go-link"><b>14-day free trial</b></a>.</p>
+<p style="text-align: center;">            <a class="ctech-dl-button go-link" href="https://www.comparitech.com/go/ninjaone-ft-mobile-device-management-software/l/button/u/9190-5078-7481-6351+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="9190-5078-7481-6351">
+                <span class="ctech-dl-button-anchor">NinjaOne MDM</span>
+                <span class="ctech-dl-button-tagline">Access a 14-day FREE Trial</span>
+            </a>
+</p>
+</div>`,
+
+      poster: `<figure id="attachment_473364" aria-describedby="caption-attachment-473364" style="width: 880px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/ninjaone-lm-mobile-device-management-software/l/image/u/0754-8407-1466-3540+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="0754-8407-1466-3540" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-473364 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-MDM.jpg.webp 880w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-MDM-300x219.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-MDM-768x561.jpg.webp 768w" sizes="auto, (max-width: 880px) 100vw, 880px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-MDM.jpg" alt="NinjaOne MDM" width="880" height="643" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-MDM.jpg 880w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-MDM-300x219.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-MDM-768x561.jpg 768w" sizes="auto, (max-width: 880px) 100vw, 880px">
+</picture>
+</a><figcaption id="caption-attachment-473364" class="wp-caption-text">A dashboard displaying the list of connected devices, their health, and system events, along with a pop-up window for adding a new device.</figcaption></figure>`,
       freetrialElement:
         '<p>NinjaOne is a<b> cloud-based system</b>, so you sign up for the package at the company’s website rather than downloading any software. You can assess the service with its mobile device management unit with a <a href="https://www.comparitech.com/go/ninjaone-ft-mobile-device-management-software/l/cta/u/5195-4665-8141-6266+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="5195-4665-8141-6266" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>14-day free trial</b></a>.</p>'
     },
@@ -2220,6 +2745,37 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>It is an Apple-focused MDM that comes with 150+ pre-built automations to meet every common scenario seen in Apple devices. Its zero-touch deployment and offline enforcement make it easy to implement policies across all devices that connect to the organization’s network.</p>
+      <h4><b>Feature in Focus – Assignment Maps</b></h4>
+      <p>Using the Assignment Maps, teams can build conditional deployment workflows. Its no-code canvas allows admins to drag-and-drop apps, scripts, etc., and assign them to specific devices based on the owner’s role. It can also be auto-configured according to the rules of the department or location.</p>
+      <figure id="attachment_460568" aria-describedby="caption-attachment-460568" style="width: 1200px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/kandji-mdm-solutions-learn-more-mobile-device-management-software/l/image/u/5106-7096-2106-4523+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="5106-7096-2106-4523" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-460568 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Kanji-MDM.jpg.webp 1200w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kanji-MDM-300x146.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kanji-MDM-1024x497.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kanji-MDM-768x373.jpg.webp 768w" sizes="auto, (max-width: 1200px) 100vw, 1200px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Kanji-MDM.jpg" alt="Kanji MDM" width="1200" height="583" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Kanji-MDM.jpg 1200w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kanji-MDM-300x146.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kanji-MDM-1024x497.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kanji-MDM-768x373.jpg 768w" sizes="auto, (max-width: 1200px) 100vw, 1200px">
+</picture>
+</a><figcaption id="caption-attachment-460568" class="wp-caption-text">A list of apps associated with a user and information about these apps.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p>The <strong>Kandji</strong> system offers a cloud platform for Apple device management that enables you to control the security of devices to protect your company’s data from falling into the wrong hands.</p>
+<p>The setup for a group of devices is planned in a system called <b>Blueprints</b>. You can create the same Blueprints for different models of mobile devices. The features that you include in one of these plans relate to the applications and access rights, which sit on top of the operating system and aren’t hardware dependent. You don’t have to apply the same Blueprint to all devices, so you can create different plans for different groups of users.</p>
+<p>Functions in the Kandji package include security services, such as configuration locking and vulnerability scanning. The system includes a patch manager that allows each device user to decide when to run the update batch. Administrators can create security monitoring and maintenance automation scripts by assembling workflows through the selection of pre-written templates.</p>
+<p>User accounts can be acquired from third-party apps, so you can import the accounts that you have already set up in systems, such as <b>Slack</b> or <b>Okta</b>. This allows you to easily create a single sign-on environment for all of your mobile devices, also coordinating access rights to on-premises Macs.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>The Kandji focus on Apple devices is interesting but it reduces the potential customer base for this service. If you have Windows PCs on your site or if you allow BYOD for users with Android phones, you would have to switch to other unified endpoint management tools to watch over them.</p>
+<p>You set up an account on the Kandji website and then download <b>an agent</b> onto each of the devices that you enroll in the service, so there are both cloud and on-device elements to this system. Pricing is determined based on the type of plan you choose and how many users are managed. You can get in contact with the Kandji team for a tailored quote. You can also register for a <strong><a href="https://www.comparitech.com/go/kandji-mdm-solutions-free-trial-mobile-device-management-software/l/cta/u/1884-6641-3335-1142+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="1884-6641-3335-1142" class="go-link">14-day free trial</a></strong>, which starts with a system demo to assess the Kandji service.</p>
+<p style="text-align: center;">            <a class="ctech-dl-button go-link" href="https://www.comparitech.com/go/kandji-mdm-solutions-free-trial-mobile-device-management-software/l/button/u/3418-7508-1652-0608+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="3418-7508-1652-0608">
+                <span class="ctech-dl-button-anchor">Kandji</span>
+                <span class="ctech-dl-button-tagline">Get a 14-day FREE Trial</span>
+            </a>
+</p>
+</div>`,
+
+      poster: `<figure id="attachment_384650" aria-describedby="caption-attachment-384650" style="width: 1097px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/kandji-mdm-solutions-learn-more-mobile-device-management-software/l/image/u/7360-4566-8939-8307+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="7360-4566-8939-8307" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-384650 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Kandji-Dashboard-Screenshot.jpg.webp 1097w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kandji-Dashboard-Screenshot-300x185.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kandji-Dashboard-Screenshot-1024x630.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kandji-Dashboard-Screenshot-768x473.jpg.webp 768w" sizes="auto, (max-width: 1097px) 100vw, 1097px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Kandji-Dashboard-Screenshot.jpg" alt="Kandji Dashboard Screenshot" width="1097" height="675" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Kandji-Dashboard-Screenshot.jpg 1097w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kandji-Dashboard-Screenshot-300x185.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kandji-Dashboard-Screenshot-1024x630.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Kandji-Dashboard-Screenshot-768x473.jpg 768w" sizes="auto, (max-width: 1097px) 100vw, 1097px">
+</picture>
+</a><figcaption id="caption-attachment-384650" class="wp-caption-text">A list of device categories.</figcaption></figure>`,
       freetrialElement:
         '<p>You set up an account on the Kandji website and then download <b>an agent</b> onto each of the devices that you enroll in the service, so there are both cloud and on-device elements to this system. Pricing is determined based on the type of plan you choose and how many users are managed. You can get in contact with the Kandji team for a tailored quote. You can also register for a <strong><a href="https://www.comparitech.com/go/kandji-mdm-solutions-free-trial-mobile-device-management-software/l/cta/u/9051-6235-0726-6286+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="9051-6235-0726-6286" class="go-link" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a></strong>, which starts with a system demo to assess the Kandji service.</p>'
     },
@@ -2250,6 +2806,39 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>MDM Plus provides a unified console for managing mobile devices, desktops, kiosks, and even rugged devices. Using this tool, you can automate many processes related to enrollment, profile and app management, geo-fencing, and more. It also comes with excellent security through role-based access controls.</p>
+      <h4><b>Feature in Focus – Zoho Assist</b></h4>
+      <p>MDM Plus comes with built-in remote troubleshooting capabilities powered by Zoho Assist. With this feature, your team can chat during the session, transfer files during the session, use encrypted gateways for safe access, screen-share iOS devices, and more.</p>
+      <figure id="attachment_460578" aria-describedby="caption-attachment-460578" style="width: 967px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/manageengine-mdm-solutions-mobile-device-management-software/l/image/u/8363-8268-1119-5621+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="8363-8268-1119-5621" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-460578 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-Mobile-Device-Manager-Plus-MSP-MDM.jpg.webp 967w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-Mobile-Device-Manager-Plus-MSP-MDM-300x186.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-Mobile-Device-Manager-Plus-MSP-MDM-768x475.jpg.webp 768w" sizes="auto, (max-width: 967px) 100vw, 967px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-Mobile-Device-Manager-Plus-MSP-MDM.jpg" alt="ManageEngine Mobile Device Manager Plus MSP MDM" width="967" height="598" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-Mobile-Device-Manager-Plus-MSP-MDM.jpg 967w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-Mobile-Device-Manager-Plus-MSP-MDM-300x186.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-Mobile-Device-Manager-Plus-MSP-MDM-768x475.jpg 768w" sizes="auto, (max-width: 967px) 100vw, 967px">
+</picture>
+</a><figcaption id="caption-attachment-460578" class="wp-caption-text">A detailed list of users who have enrolled their devices with the MDM tool.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p>Apart from its free tier, <strong>ManageEngine Mobile Device Manager Plus</strong> is an impressive package because it offers a range of solutions for mobile device management, such as containerization for BYOD and remote tracking and locking for managed devices.</p>
+<p>The mobile asset management experience offered by<strong> ManageEngine Mobile Device Manager Plus</strong> is very comprehensive. The <strong>dashboard</strong> also enables you to view additional information on devices including device owners, installed applications, and more. You can schedule regular device scans to keep this information updated.</p>
+<p>If there are any problems with a device you can use remote troubleshooting to take control of the device and<strong> find the root cause of the issue</strong> in real-time. The administrator can use a remote chat to communicate with the end-user of the device. The chat can also be used to <strong>issue security commands</strong>.</p>
+<p>ManageEngine Mobile Device Manager Plus is a complete enterprise mobile management package that comes in both on-premises and cloud-based versions. It includes a configuration manager for single or mass device set up and there is also a self-enrollment app that you can use for your device enrollment program. You can also set different policies for business-owned and user-owned devices.</p>
+<p>It’s a mobile device management solution for device management that supports Windows, Mac OS, Chrome OS, iOS, and Android.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Mobile Device Manager Plus is suitable for enterprises of all sizes. The UEM system allows desktops running Windows and macOS to be included in the management scheme along with mobile devices running iOS, Android, and Chrome OS. The system can also manage IoT devices. The only problem is that it doesn’t include the management of computers running Linux.</p>
+<p>During our testing, we identified the following pros and cons related to Mobile Device Manager Plus.</p>
+<p><strong>ManageEngine Mobile Device Manager </strong>is recommended to enterprises that want a free mobile device management solution. The software’s<strong> free for up to 25 devices</strong>. <strong>ManageEngine Mobile Device Manager Plus</strong> is available on-premises (for Windows) and in the cloud. For pricing information, you must request a personalized quote from the company directly. You can download the <a href="https://www.comparitech.com/go/manageengine-mdm-solutions-mobile-device-management-software/l/cta/u/2624-2732-6521-7079+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="2624-2732-6521-7079" class="go-link"><strong>30-day free trial</strong></a>.</p>
+<p style="text-align: center;">            <a class="ctech-dl-button go-link" href="https://www.comparitech.com/go/manageengine-mdm-solutions-mobile-device-management-software/l/button/u/8098-2240-9681-1862+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="8098-2240-9681-1862">
+                <span class="ctech-dl-button-anchor">ManageEngine Mobile Device Manager</span>
+                <span class="ctech-dl-button-tagline">Start 30-day FREE Trial</span>
+            </a>
+</p>
+</div>`,
+
+      poster: `<figure id="attachment_279413" aria-describedby="caption-attachment-279413" style="width: 2560px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/manageengine-mdm-solutions-mobile-device-management-software/l/image/u/9131-1852-4873-0752+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="9131-1852-4873-0752" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-279413 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/03/ManageEngine-Mobile-Device-Manager-Plus-.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2020/03/ManageEngine-Mobile-Device-Manager-Plus-.jpg" alt="ManageEngine Mobile Device Manager Plus" width="2560" height="1166">
+</picture>
+</a><figcaption id="caption-attachment-279413" class="wp-caption-text">A dashboard showing devices and their information.</figcaption></figure>`,
       freetrialElement:
         '<p><strong>ManageEngine Mobile Device Manager </strong>is recommended to enterprises that want a free mobile device management solution. The software’s<strong> free for up to 25 devices</strong>. <strong>ManageEngine Mobile Device Manager Plus</strong> is available on-premises (for Windows) and in the cloud. For pricing information, you must request a personalized quote from the company directly. You can download the <a href="https://www.comparitech.com/go/manageengine-mdm-solutions-mobile-device-management-software/l/cta/u/0444-3089-0734-3515+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="0444-3089-0734-3515" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>30-day free trial</strong></a>.</p>'
     },
@@ -2283,6 +2872,37 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Unique Business Proposition</strong></h4>
+      <p>Rippling stands out by unifying MDM with HR, payroll, and IT management in a single, cloud-based platform, enabling businesses to automate the entire employee lifecycle—from onboarding to offboarding—in as little as 90 seconds, while ensuring robust security and compliance across iOS, Android, Windows, and macOS devices.</p>
+      <h4><strong>Feature in Focus: Workflow Studio</strong></h4>
+      <p>Rippling’s Workflow Studio allows businesses to create hyper-customized automation workflows for IT and HR tasks, such as automatically provisioning devices, assigning apps, or scheduling device lock/wipe during offboarding, using prebuilt templates or custom triggers to save time and reduce manual errors.</p>
+      <figure id="attachment_534301" aria-describedby="caption-attachment-534301" style="width: 698px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/rippling-mobile-device-management-software/l/image/u/5336-9731-2603-4393+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="5336-9731-2603-4393" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-534301 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Device-Management.jpg.webp 698w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Device-Management-300x300.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Device-Management-150x150.jpg.webp 150w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Device-Management-64x64.jpg.webp 64w" sizes="auto, (max-width: 698px) 100vw, 698px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Device-Management.jpg" alt="Rippling Device Management" width="698" height="699" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Device-Management.jpg 698w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Device-Management-300x300.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Device-Management-150x150.jpg 150w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Device-Management-64x64.jpg 64w" sizes="auto, (max-width: 698px) 100vw, 698px">
+</picture>
+</a><figcaption id="caption-attachment-534301" class="wp-caption-text">Customizable automation options for onboarding and offboarding processes.</figcaption></figure>
+<h3><b>Why do we recommend it?</b></h3>
+<p>Rippling is a good choice for organizations that need complete control and visibility into the devices that connect to their network. This unified platform can handle everything from device setup to management with just a few clicks.</p>
+<p>In particular, its security features are top-notch. It encrypts devices using FileVault and BitLocker and stores the recovery keys in your MDM. Similarly, it deploys SentinelOne for automatic threat defense to protect every endpoint from cyberthreats. It can lock stolen or lost devices and even wipe the sensitive data stored in them to prevent unauthorized access.</p>
+<p>Besides these security features, its unified view enables you to monitor their health. It also allows your administrators to restrict access in real-time, reassign devices, install updates, and more.</p>
+<h3><b>Who is it recommended for?</b></h3>
+<p>It is highly recommended for MSPs who manage devices for their clients. It also works well for IT teams that have to manage remote devices connecting to their organization’s network.</p>
+<p>In all, Rippling is a unified MDM platform that supports Windows and Apple devices with just a few clicks.</p>
+<p>Get access to the <a href="https://www.comparitech.com/go/rippling-mobile-device-management-software/l/cta/u/0464-5106-6141-8049+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="0464-5106-6141-8049" class="go-link"><b>14-day free trial</b></a>.</p>
+<p style="text-align: center;">            <a class="ctech-dl-button go-link" href="https://www.comparitech.com/go/rippling-mobile-device-management-software/l/button/u/3212-8071-0861-0559+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="3212-8071-0861-0559">
+                <span class="ctech-dl-button-anchor">Rippling</span>
+                <span class="ctech-dl-button-tagline">Access a 14-day FREE Trial</span>
+            </a>
+</p>
+</div>`,
+
+      poster: `<figure id="attachment_534300" aria-describedby="caption-attachment-534300" style="width: 1375px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/rippling-mobile-device-management-software/l/image/u/9926-1892-8542-9025+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="9926-1892-8542-9025" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-534300 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Threats.jpg.webp 1375w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Threats-300x167.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Threats-1024x569.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Threats-768x427.jpg.webp 768w" sizes="auto, (max-width: 1375px) 100vw, 1375px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Threats.jpg" alt="Rippling Threats" width="1375" height="764" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Threats.jpg 1375w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Threats-300x167.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Threats-1024x569.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Rippling-Threats-768x427.jpg 768w" sizes="auto, (max-width: 1375px) 100vw, 1375px">
+</picture>
+</a><figcaption id="caption-attachment-534300" class="wp-caption-text">Centralized dashboard displaying device management, app provisioning, and employee data for IT administrators.</figcaption></figure>`,
       freetrialElement:
         '<p>Get access to the <a href="https://www.comparitech.com/go/rippling-mobile-device-management-software/l/cta/u/2551-2677-7559-3279+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="2551-2677-7559-3279" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>14-day free trial</b></a>.</p>'
     },
@@ -2311,6 +2931,31 @@ export const data = {
       features: ['Mass onboarding', 'Virtual desktop', 'Containerization'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This cloud-based platform makes it easy to manage and secure all endpoints, regardless of the device. Since it can control any device, the user experience across all of them is seamless. At the same time, it comes with many powerful features like zero-touch provisioning, threat defense, secure VPN, protection from email threats, app and content management, remote troubleshooting, and more. All these features can be accessed through a single interface. Moreover, it uses AI to create smooth workflows.</p>
+      <h4><b>Feature in Focus – Rugged Device Automation</b></h4>
+      <p>One of the critical challenges is to manage rugged devices used by field service teams, as they can be subject to harsh weather conditions. Ivanti addresses this challenge. It integrates with Zebra, StageNow, and Android Enterprise to automate the firmware and OS on rugged devices. Moreover, IT administrators can set configurations, automate compliance, and verify readiness before the devices are deployed.</p>
+      <figure id="attachment_460579" aria-describedby="caption-attachment-460579" style="width: 1315px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460579 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-MDM.jpg.webp 1315w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-MDM-300x109.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-MDM-1024x373.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-MDM-768x280.jpg.webp 768w" sizes="auto, (max-width: 1315px) 100vw, 1315px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-MDM.jpg" alt="Ivanti Neurons MDM" width="1315" height="479" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-MDM.jpg 1315w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-MDM-300x109.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-MDM-1024x373.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-MDM-768x280.jpg 768w" sizes="auto, (max-width: 1315px) 100vw, 1315px">
+</picture>
+</a><figcaption id="caption-attachment-460579" class="wp-caption-text">A dashoard showing different aspects of devices.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p><b>Ivanti Neurons for MDM</b> containerizes the delivery of mobile applications, tied together with access to storage space. This means that, when the user logs out, there are no assets of the company left on the device. This prevents business data from being leaked through loss or theft of the device. It also means that users can access the business system from their own devices, keeping personal and work systems completely separate.</p>
+<p>Ivanti Neurons doesn’t just apply to mobile devices. It will also provide services to computers running <b>Windows</b> and <b>macOS</b>. Mobile devices can be running <b>iOS</b> or <b>Android</b>. The administrator sets up an application profile that contains a menu of software packages and services. Each user account then has a profile associated with it. The user is then able to self-enroll and access that workspace from any device.</p>
+<p>The Ivanti system includes a VPN service. So, by installing an app on a mobile device, the user can open a portal that has a secure connection through to the business’s space on the Ivanti server. This account space can be accessed from anywhere.</p>
+<h4><strong>Who do we recommend it for?</strong></h4>
+<p>Ivanti Neurons for MDM is a very scalable product. It might be over-complicated for very small businesses, such as owner-run companies that could probably do just as well with a remote desktop system for mobile devices. However, mid-sized and large organizations that have a lot of roaming employees would benefit from this system.</p>
+<p>Ivanti doesn’t publish its prices. The cloud-based system is easy to sign up for and the application profile setup process is guided and device-agnostic. You can examine Ivanti Neurons for MDM with a <a href="https://www.ivanti.com/lp/uem/trials/ivanti-neurons-mdm" target="_blank" rel="noopener noreferrer">30-day free trial</a>.</p>
+</div>`,
+
+      poster: `<figure id="attachment_425463" aria-describedby="caption-attachment-425463" style="width: 977px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-for-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-425463 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-for-MDM.jpg.webp 977w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-for-MDM-300x111.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-for-MDM-768x283.jpg.webp 768w" sizes="auto, (max-width: 977px) 100vw, 977px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-for-MDM.jpg" alt="Ivanti Neurons for MDM" width="977" height="360" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-for-MDM.jpg 977w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-for-MDM-300x111.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Ivanti-Neurons-for-MDM-768x283.jpg 768w" sizes="auto, (max-width: 977px) 100vw, 977px">
+</picture>
+</a><figcaption id="caption-attachment-425463" class="wp-caption-text">The configuration filters for adding a device.</figcaption></figure>`,
       freetrialElement:
         '<p>Ivanti doesn’t publish its prices. The cloud-based system is easy to sign up for and the application profile setup process is guided and device-agnostic. You can examine Ivanti Neurons for MDM with a <a href="https://www.ivanti.com/lp/uem/trials/ivanti-neurons-mdm" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>.</p>'
     },
@@ -2337,6 +2982,31 @@ export const data = {
       features: ['Two operating options', 'Posture scanning', 'Containerization'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This platform combines MDM with Mobile Application Management (MAM) to give you better control over devices and the applications that run on them. Using this tool, you can enforce policies, manage configurations, and improve security by blocking certain apps. It supports a wide range of operating systems as well.</p>
+      <h4><b>Feature in Focus – Integration with Microsoft Endpoint Manager</b></h4>
+      <p>Citrix integrates well with Microsoft Endpoint Manager, so users can secure M365 applications with conditional access through Azure AD. It also offers micro VPN capabilities to Microsoft Intune-aware apps like Microsoft Edge. All these features greatly increase the security of the devices that connect to an organization’s network.</p>
+      <figure id="attachment_460580" aria-describedby="caption-attachment-460580" style="width: 1799px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460580 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM.jpg.webp 1799w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM-300x144.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM-1024x492.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM-768x369.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM-1536x738.jpg.webp 1536w" sizes="auto, (max-width: 1799px) 100vw, 1799px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM.jpg" alt="Citrix Endpoint Management MDM" width="1799" height="864" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM.jpg 1799w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM-300x144.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM-1024x492.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM-768x369.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-MDM-1536x738.jpg 1536w" sizes="auto, (max-width: 1799px) 100vw, 1799px">
+</picture>
+</a><figcaption id="caption-attachment-460580" class="wp-caption-text">A bunch of graphs showing information about the compliance rates, decommissioned, and enrolled devices.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p>The application management version of the Citrix service is called <b>Workspace Premium</b>. This provides a very similar strategy to other options on this list, which containerizes company data. The company-owned devices have broader access to the company network. However, those devices are scanned for security risks, such as malware or insecure apps before they are allowed to connect. So, you get two secure avenues of protecting your network from the risk of malware lateral movement.</p>
+<p>The Workspace Premium option operates as a virtual desktop system that is attached to a user account. So, the user can log into a workstation at work and then leave the office and use a mobile device while out on site. That device can be company-owned or user-owned. The delivery of the application profile is managed in the same way regardless of device ownership.</p>
+<p>Under the Workspace Premium scenario, the device should have a <b>screen lock</b> and no data is saved to the device. Thus, if the user mislays the device, anyone finding it will be unable to unlock that device and so would not be able to access company data.</p>
+<h4><strong>Who do we recommend it for?</strong></h4>
+<p>Citrix publishes a price list for its three UEM plans and they are levied per user or per device. This makes the system suitable for use by any size of business. The Citrix Endpoint Management service is based in the cloud and so the administrator can be located anywhere and administer user accounts and devices anywhere in the world.</p>
+<p>The price for Citrix Endpoint Management varies depending on how many devices are included in the plan. However, Citrix publishes an average price for guidance. For the <b>Stand-Alone</b> plan, which enables direct device management, the price is $4 per user per month or $3 per device per month. The virtualized <b>Workspace Premium</b> system is available in two levels with the higher plan called <b>Workspace Premium Plus</b>. The lower plan costs $18 per user per month and the higher plan is priced at $25 per user per month.</p>
+</div>`,
+
+      poster: `<figure id="attachment_425464" aria-describedby="caption-attachment-425464" style="width: 1251px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-425464 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management.jpg.webp 1251w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-300x192.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-1024x656.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-768x492.jpg.webp 768w" sizes="auto, (max-width: 1251px) 100vw, 1251px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management.jpg" alt="Citrix Endpoint Management" width="1251" height="802" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management.jpg 1251w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-300x192.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-1024x656.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Citrix-Endpoint-Management-768x492.jpg 768w" sizes="auto, (max-width: 1251px) 100vw, 1251px">
+</picture>
+</a><figcaption id="caption-attachment-425464" class="wp-caption-text">A detailed dashboard displaying the installed apps across devices, and categorization of devices based on carrier, platform, and managed services.</figcaption></figure>`,
       freetrialElement: ''
     },
     {
@@ -2369,6 +3039,32 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This UEM platform is known for its clean, intuitive dashboard and excellent remote tools. More importantly, it can handle different types of devices at scale. Furthermore, it can automate routine tasks like enrollment, compliance with security policies, app and content deployment, geo-fencing, running scripts, and report generation.</p>
+      <h4><b>Feature in Focus – Remote Mirroring</b></h4>
+      <p>Scalefusion supports full remote mirroring and control across Android, macOS, and Windows devices. This means your remote teams can securely access remote devices, view their screens, record sessions, and even start VoIP calls from the same console. Your team can even send screen shares and recordings to ITSM tools like Jira and Freshservice to create tickets and track their progress.</p>
+      <figure id="attachment_460577" aria-describedby="caption-attachment-460577" style="width: 1664px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/scalefusion-mdm-solutions-mobile-device-management-software/l/image/u/9485-5240-1980-5216+62897/" target="_blank" rel="sponsored nofollow noopener" data-postid="62897" data-clickid="9485-5240-1980-5216" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-460577 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1.jpg.webp 1664w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1-300x143.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1-1024x489.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1-768x367.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1-1536x734.jpg.webp 1536w" sizes="auto, (max-width: 1664px) 100vw, 1664px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1.jpg" alt="ScaleFusion MDM" width="1664" height="795" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1.jpg 1664w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1-300x143.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1-1024x489.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1-768x367.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ScaleFusion-MDM-1-1536x734.jpg 1536w" sizes="auto, (max-width: 1664px) 100vw, 1664px">
+</picture>
+</a><figcaption id="caption-attachment-460577" class="wp-caption-text">A list of all users and their associated devices.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p>While all MDM packages offer onboarding, tracking, locking, and wiping, the provisioning features of <strong>Scalefusion</strong> are outstanding. The ability of this tool to mirror screens of iOS and Android devices for support troubleshooting is also a very useful tool for technicians that other MDMs lack.</p>
+<p>The cloud service includes an <b>app storage</b> space so you can create profiles and set up your in-house apps in the Scalefusion App Store. This enables you to define onboarding routines to download apps from the official app stores together with your own apps.</p>
+<p>Once devices are up and running, you can contact them through <b>screen mirroring</b> for maintenance issues. The technical support module of Scalefusion integrates with third-party Service Desk utilities to manage tickets.</p>
+<p><b>Security measures</b> in the Scalefusion package include device tracking, vulnerability scanning for user-owned devices, and remote locking and wiping for managed devices. It is also possible to host your content on the Scalefusion server and deliver it through a remote access viewer, so files don’t need to be downloaded.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Although the per-device pricing of Scalefusion makes this comprehensive MDM accessible to businesses of all sizes, the technician tools in this system make it particularly interesting to large organizations or managed service providers that maintain teams of support technicians.</p>
+<p>Scalefusion is among the few MDMs that support Linux devices as well. They offer a subscription service with four plan levels, all with a rate per device per month. The Starter package costs $2 per device per month. You can get to know the Scalefusion system by accessing a demo. Why not check out Scalefusion for yourself on a <a href="https://app.scalefusion.com/users/sign_up" target="_blank" rel="noopener noreferrer">free trial</a>.</p>
+</div>`,
+
+      poster: `<figure id="attachment_413919" aria-describedby="caption-attachment-413919" style="width: 1510px" class="wp-caption alignnone"><picture loading="lazy" decoding="async" class="wp-image-413919 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Scalefusion.jpg.webp 1510w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Scalefusion-300x175.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Scalefusion-1024x597.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Scalefusion-768x448.jpg.webp 768w" sizes="auto, (max-width: 1510px) 100vw, 1510px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Scalefusion.jpg" alt="Scalefusion" width="1510" height="880" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Scalefusion.jpg 1510w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Scalefusion-300x175.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Scalefusion-1024x597.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Scalefusion-768x448.jpg 768w" sizes="auto, (max-width: 1510px) 100vw, 1510px">
+</picture>
+<figcaption id="caption-attachment-413919" class="wp-caption-text">A snapshot of devices and their types.</figcaption></figure>`,
       freetrialElement:
         '<p>Scalefusion is among the few MDMs that support Linux devices as well. They offer a subscription service with four plan levels, all with a rate per device per month. The Starter package costs $2 per device per month. You can get to know the Scalefusion system by accessing a demo. Why not check out Scalefusion for yourself on a <a href="https://app.scalefusion.com/users/sign_up" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">free trial</a>.</p>'
     },
@@ -2393,6 +3089,31 @@ export const data = {
       features: ['Location tracking', 'Phone call cost limits', 'Kiosk function'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>It combines chip-to-cloud defense for Samsung devices. It comes built into Samsung Galaxy devices and offers advanced features, like real-time kernel monitoring, container-based data management, and hardware protection. Its Mobile Enrollment and Asset Intelligence modules ensure secure enrollment and compliance with security policies.</p>
+      <h4><b>Feature in Focus – Enterprise Firmware-Over-The-Air (E-FOTA)</b></h4>
+      <p>E-FOTA provides comprehensive control to administrators, as they can schedule and install firmware updates across all connected devices. The updates can be tested on pilot staging devices before being applied across organizations to ensure that existing applications don’t break due to new updates.</p>
+      <figure id="attachment_460581" aria-describedby="caption-attachment-460581" style="width: 1256px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460581 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-MDM.jpg.webp 1256w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-MDM-300x132.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-MDM-1024x450.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-MDM-768x338.jpg.webp 768w" sizes="auto, (max-width: 1256px) 100vw, 1256px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-MDM.jpg" alt="Samsung Knox MDM" width="1256" height="552" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-MDM.jpg 1256w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-MDM-300x132.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-MDM-1024x450.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-MDM-768x338.jpg 768w" sizes="auto, (max-width: 1256px) 100vw, 1256px">
+</picture>
+</a><figcaption id="caption-attachment-460581" class="wp-caption-text">A screen showing device and work profile controls.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p>The Knox system protects devices from misuse by preventing the user from adding unauthorized apps. It also scans each device according to a policy that you set up. It will prevent it from accessing your network and assets, such as file stores if it is in the wrong location or if some setting presents a security risk. This is a useful tool for enforcing some data protection standards, such as GDPR, which bans access to data from outside a stated country.</p>
+<p>Other features in the Knox Manage system include remote access to all managed devices for troubleshooting. This system has a cloud-based console and it is able to manage and access devices anywhere in the world. This makes it a useful system for global businesses that want centralized management for all sites. Device users can travel overseas and the device can still be managed.</p>
+<p>The statistics gathering feature of the Knox Manage system can extract contract usage information such as call charges and data plan usage. Bill costs can be limited and devices can be blocked from making high-charge calls, such as to premium numbers.</p>
+<h4><strong>Who do we recommend it for?</strong></h4>
+<p>Knox Suite is provided by Samsung and it only operates on Samsung devices. All Samsung devices run Android and so you won’t be able to manage iOS devices with this system and there is no associated workstation management package.</p>
+<p>Knox Manage isn’t a standalone package. You subscribe to <b>Knox Suite</b>, which includes Knox Manage. Samsung doesn’t provide a price list for Knox Suite but it does offer a <a href="https://www.samsungknox.com/en/solutions/knox-suite#get-started" target="_blank" rel="noopener noreferrer">90-day free trial</a>.</p>
+</div>`,
+
+      poster: `<figure id="attachment_425467" aria-describedby="caption-attachment-425467" style="width: 1257px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-425467 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage.jpg.webp 1257w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage-300x135.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage-1024x459.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage-768x345.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage-604x270.jpg.webp 604w" sizes="auto, (max-width: 1257px) 100vw, 1257px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage.jpg" alt="Samsung Knox Manage" width="1257" height="564" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage.jpg 1257w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage-300x135.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage-1024x459.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage-768x345.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Samsung-Knox-Manage-604x270.jpg 604w" sizes="auto, (max-width: 1257px) 100vw, 1257px">
+</picture>
+</a><figcaption id="caption-attachment-425467" class="wp-caption-text">A list of uploaded devices.</figcaption></figure>`,
       freetrialElement:
         '<p>Knox Manage isn’t a standalone package. You subscribe to <b>Knox Suite</b>, which includes Knox Manage. Samsung doesn’t provide a price list for Knox Suite but it does offer a <a href="https://www.samsungknox.com/en/solutions/knox-suite#get-started" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">90-day free trial</a>.</p>'
     },
@@ -2424,6 +3145,32 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This cloud-based platform simplifies onboarding and enrollment. Its simple and uncluttered interface works well for both technical and non-technical users, and at the same time, makes it easy for administrators to offer security and remote support.&nbsp; Its transparent pricing helps with budgeting for organizations with a large Samsung fleet.</p>
+      <h4><b>Feature in Focus – Automated Enrollment</b></h4>
+      <p>A highlight of this tool is its simplified onboarding and enrollment. It integrates with Apple DEP, Android Zero Touch, Samsung Knox, and Windows Autopilot to streamline setup. Once enrolled, the devices will get automatic configuration profiles and policies based on the user group and role within the organization.</p>
+      <h4><b>Why do we recommend it?</b></h4>
+      <p><b>Miradore Mobile Device Management</b> has all of the classic elements of an MDM: mass onboarding, tracking, locking, and wiping, containerized apps, and device encryption. This system is hosted in the cloud, so you don’t need to download and manage any software. The package’s dashboard is accessed through a dashboard and the tool lets you manage endpoints wherever they are in the world.</p>
+      <figure id="attachment_460589" aria-describedby="caption-attachment-460589" style="width: 1615px" class="wp-caption alignnone"><picture loading="lazy" decoding="async" class="wp-image-460589 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM.jpg.webp 1615w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM-300x139.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM-1024x476.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM-768x357.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM-1536x713.jpg.webp 1536w" sizes="auto, (max-width: 1615px) 100vw, 1615px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM.jpg" alt="Miradore MDM" width="1615" height="750" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM.jpg 1615w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM-300x139.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM-1024x476.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM-768x357.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Miradore-MDM-1536x713.jpg 1536w" sizes="auto, (max-width: 1615px) 100vw, 1615px">
+</picture>
+<figcaption id="caption-attachment-460589" class="wp-caption-text">The configuration details of devices.</figcaption></figure>
+<p>It is difficult to see past the Free edition. However, exciting though it is to get anything for free, there are reasons that people decide to pay for one of the two <b>Premium</b> packages. There are many functions that you can only get in the paid versions.</p>
+<p>Examples of utilities that you only get in the paid editions include peripheral device management, drive encryption for workstations, containerization for work apps and data, and automated patching. An important distinction is that the Premium packages provide a <b>unified endpoint management</b> (UEM) service because they include functions for on-premises equipment.</p>
+<p>All versions get the same dashboard – there are just a few more tabs available in the Premium plans. The most eye-catching feature of the console is a <b>location map</b>. This pinpoints the location of all your registered devices. Data on your hardware inventory is also presented in charts and graphs on the home page and more detailed information is available in tables on the back pages.</p>
+<h4><b>Who is it recommended for?</b></h4>
+<p>The Free edition is good for small businesses but remember that you can also get management functions for on-premises devices with the Premium editions, so many SMBs might be tempted to pay. The automation features for software management also provide a lure through to the Premium plans. Large organizations with many roaming users will definitely be interested in the Miradore system.</p>
+<p>Miradore Mobile Device Management is easy to sign up for and set up. The <b>Free edition</b> is a good introduction to the service but you can go one better and try the <b>Premium edition</b> on a <a href="https://www.miradore.com/" target="_blank" rel="noopener noreferrer"><strong>14-day free trial</strong></a>. Your package will switch to the Free edition after that if you decide not to pay.</p>
+</div>`,
+
+      poster: `<figure id="attachment_257234" aria-describedby="caption-attachment-257234" style="width: 640px" class="wp-caption alignnone"><picture loading="lazy" decoding="async" class="wp-image-257234 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2018/03/Miradore.jpg.webp 640w, https://cdn.comparitech.com/wp-content/uploads/2018/03/Miradore-300x181.jpg.webp 300w" sizes="auto, (max-width: 640px) 100vw, 640px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2018/03/Miradore.jpg" alt="Miradore" width="640" height="386" srcset="https://cdn.comparitech.com/wp-content/uploads/2018/03/Miradore.jpg 640w, https://cdn.comparitech.com/wp-content/uploads/2018/03/Miradore-300x181.jpg 300w" sizes="auto, (max-width: 640px) 100vw, 640px">
+</picture>
+<figcaption id="caption-attachment-257234" class="wp-caption-text">A dashboard with comprehensive information about devices and their related information.</figcaption></figure>`,
       freetrialElement:
         '<p>Miradore Mobile Device Management is easy to sign up for and set up. The <b>Free edition</b> is a good introduction to the service but you can go one better and try the <b>Premium edition</b> on a <a href="https://www.miradore.com/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><strong>14-day free trial</strong></a>. Your package will switch to the Free edition after that if you decide not to pay.</p>'
     },
@@ -2457,6 +3204,31 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>Workspace ONE is a unified platform for managing desktop, mobile, and rugged devices. It integrates with different platforms to offer chip-to-cloud deployments with zero-trust policies, which can improve the security of your devices. Also, the Omnissa Intelligence can track user behavior in real-time to predict potential threats.</p>
+      <h4><b>Feature in Focus – Freestyle Orchestrator</b></h4>
+      <p>Freestyle Orchestrator is a low-code/no-code engine that can automate complex IT workflows across all platforms. It can automatically deploy apps, profiles, certificates, OS updates, and compliance checks based on the device and its permissions.</p>
+      <figure id="attachment_460582" aria-describedby="caption-attachment-460582" style="width: 1572px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460582 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM.jpg.webp 1572w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM-300x139.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM-1024x474.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM-768x356.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM-1536x711.jpg.webp 1536w" sizes="auto, (max-width: 1572px) 100vw, 1572px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM.jpg" alt="VMWare Workspace One MDM" width="1572" height="728" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM.jpg 1572w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM-300x139.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM-1024x474.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM-768x356.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-One-MDM-1536x711.jpg 1536w" sizes="auto, (max-width: 1572px) 100vw, 1572px">
+</picture>
+</a><figcaption id="caption-attachment-460582" class="wp-caption-text">A list view of all associated devices, and information about their enrollment and compliance status.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p><strong>Omnissa Workspace One</strong> offers a sophisticated solution to the management of desktops and mobile devices that can be managed or user-owned. By treating every device as a support system for a Omnissa operating system, the tool standardizes the delivery of applications, attaching the desktop to the user account instead of to the device.</p>
+<p>To manage devices, you can <strong>configure policies </strong>that determine restrictions and assign them to devices. You can distinguish between devices and assign them based on the operating system or ownership type. Ownership types are divided into BYO (Bring Your Own) and corporate-owned so you can tell which devices are company-owned and which are owned by employees.</p>
+<p>The platform also enables you to <strong>automatically push applications to devices</strong>. This means you can purchase applications in bulk and deploy them efficiently without wasting any time. When it comes to adding new devices, users can enter credentials into an <strong>onboarding workflow</strong> to join the management solution.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Omnissa offers a flexible pricing structure with per-user and per-device options that make this service accessible to businesses of all sizes. The use of virtualization is widespread these days and any system administrator who has already learned how it works will have no problems understanding the Workspace One package.</p>
+<p><b>Omnissa Workspace ONE</b> is suitable for enterprises of all sizes and comes with a range of pricing options, due to its seven editions. Prices start at $1.66 (£1.33) per device and $3.00 (£2.40) per user. You can try the <a href="https://www.omnissa.com/contact-us/" target="_blank" rel="noopener noreferrer">30-day free trial</a> to manage up to 100 devices.</p>
+</div>`,
+
+      poster: `<figure id="attachment_393614" aria-describedby="caption-attachment-393614" style="width: 987px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-ONE.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-393614 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-ONE.jpg.webp 987w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-ONE-300x170.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-ONE-768x436.jpg.webp 768w" sizes="auto, (max-width: 987px) 100vw, 987px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-ONE.jpg" alt="VMWare Workspace ONE" width="987" height="560" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-ONE.jpg 987w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-ONE-300x170.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/VMWare-Workspace-ONE-768x436.jpg 768w" sizes="auto, (max-width: 987px) 100vw, 987px">
+</picture>
+</a><figcaption id="caption-attachment-393614" class="wp-caption-text">A dashboard showing the number of deployed devices and their health and performance.</figcaption></figure>`,
       freetrialElement:
         '<p><b>Omnissa Workspace ONE</b> is suitable for enterprises of all sizes and comes with a range of pricing options, due to its seven editions. Prices start at $1.66 (£1.33) per device and $3.00 (£2.40) per user. You can try the <a href="https://www.omnissa.com/contact-us/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a> to manage up to 100 devices.</p>'
     },
@@ -2494,6 +3266,31 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>BlackBerry UEM secures endpoints from chip to cloud using proprietary encryption and containerization. Using this tool, IT teams can manage iOS, Android, Knox, Windows, macOS, BlackBerry, and wearable devices through a single console.</p>
+      <h4><b>Feature in Focus – Secure Connect Plus</b></h4>
+      <p>Secure Connect Plus module provides on-device end-to-end encryption through a secure IP tunnel. This can be set up for just containerized apps without requiring a full-device VPN. Besides the granular control, this feature ensures the safety of transmitting confidential data.</p>
+      <figure id="attachment_460583" aria-describedby="caption-attachment-460583" style="width: 1103px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460583 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM.jpg.webp 1103w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM-300x199.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM-1024x681.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM-768x510.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM-195x130.jpg.webp 195w" sizes="auto, (max-width: 1103px) 100vw, 1103px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM.jpg" alt="Blackberry Unified Endpoint Management MDM" width="1103" height="733" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM.jpg 1103w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM-300x199.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM-1024x681.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM-768x510.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Blackberry-Unified-Endpoint-Management-MDM-195x130.jpg 195w" sizes="auto, (max-width: 1103px) 100vw, 1103px">
+</picture>
+</a><figcaption id="caption-attachment-460583" class="wp-caption-text">A zoomed-in view of the different actions you can do on the dashboard.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p><strong>BlackBerry UEM</strong> offers a cloud-based service but you can also choose to get it as a software download and host it yourself. Its ability to centralize the management of user and corporate-owned devices is helpful and its ability to include Windows, macOS, and Chrome OS devices is also useful. Unfortunately, like many other options on this list, BlackBerry UEM can’t manage Linux devices.</p>
+<p>Managing policies with <strong>BlackBerry Unified Endpoint Management</strong> is very easy. You can <strong>manage policies, users, groups, </strong>and<strong> applications</strong> from the console. Tasks you can complete including assigning apps to user accounts, distributing applications to containers, and configuring native apps.</p>
+<p><b>Onboarding new users </b>is also incredibly efficient, with the option to <b>activate new devices</b> via<b> QR code</b> for <b>iOS</b> and <b>Android</b> users. Groups can also be linked with Active Directory to <b>automatically onboard new users</b>. There is also the option to set aside work activities from personal ones with multiple activation types such as Work and Personal devices and Work Only.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>The BlackBerry presentation for its UEM stresses the system’s suitability for use with IoT devices. However, it is also designed to manage desktops and mobile devices. Although other systems don’t put that capability in their headline, many of the packages on this list have equal IoT management capabilities.</p>
+<p><strong>BlackBerry Unified Endpoint Management </strong>is a solid MDM solution that’s available on-premises and in the cloud. To view the pricing information you need to request a quote from the sales team directly. You can <a href="https://account.blackberry.com/register/trial" target="_blank" rel="noopener noreferrer">start the free trial</a>.</p>
+</div>`,
+
+      poster: `<figure id="attachment_279600" aria-describedby="caption-attachment-279600" style="width: 1024px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2020/03/BlackBerry-UEM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-279600 size-large">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/03/BlackBerry-UEM-1024x643.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2020/03/BlackBerry-UEM-300x188.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2020/03/BlackBerry-UEM-768x482.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2020/03/BlackBerry-UEM.jpg.webp 1354w" sizes="auto, (max-width: 1024px) 100vw, 1024px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2020/03/BlackBerry-UEM-1024x643.jpg" alt="BlackBerry UEM" width="1024" height="643" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/03/BlackBerry-UEM-1024x643.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2020/03/BlackBerry-UEM-300x188.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2020/03/BlackBerry-UEM-768x482.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2020/03/BlackBerry-UEM.jpg 1354w" sizes="auto, (max-width: 1024px) 100vw, 1024px">
+</picture>
+</a><figcaption id="caption-attachment-279600" class="wp-caption-text">A snapshot of all active devices.</figcaption></figure>`,
       freetrialElement:
         '<p><strong>BlackBerry Unified Endpoint Management </strong>is a solid MDM solution that’s available on-premises and in the cloud. To view the pricing information you need to request a quote from the sales team directly. You can <a href="https://account.blackberry.com/register/trial" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">start the free trial</a>.</p>'
     },
@@ -2527,6 +3324,33 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>This UEM platform supports an extremely wide array of devices across multiple operating systems. Using this platform’s unified console, you can control mobile devices, desktops, rugged devices, kiosks, POS devices, wearables, digital signage, VR/AR systems, IoT devices, and more. It comes with remote troubleshooting as well.</p>
+      <h4><b>Feature in Focus – Advanced Remote Support</b></h4>
+      <p>A highlight of SureMDM is its granular remote support. Through its console, admins can view and control Android screens, access file systems, run terminal commands, and even record sessions as they happen. This level of remote support and troubleshooting can help fix complex issues quickly.</p>
+      <figure id="attachment_460584" aria-describedby="caption-attachment-460584" style="width: 1564px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460584 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM.jpg.webp 1564w, https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM-300x155.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM-1024x529.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM-768x397.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM-1536x794.jpg.webp 1536w" sizes="auto, (max-width: 1564px) 100vw, 1564px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM.jpg" alt="42Gears SureMDM MDM" width="1564" height="808" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM.jpg 1564w, https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM-300x155.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM-1024x529.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM-768x397.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/42Gears-SureMDM-MDM-1536x794.jpg 1536w" sizes="auto, (max-width: 1564px) 100vw, 1564px">
+</picture>
+</a><figcaption id="caption-attachment-460584" class="wp-caption-text">The location of devices on a map.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p><b>SureMDM</b> is able to manage mobile devices running Android and iOS. It is also able to track wearable tech and VR equipment. However, this tool can manage devices running Windows, macOS, and Linux, which extends the abilities of the system to desktops, making it a <b>Unified Endpoint Management</b> (UEM) system.</p>
+<p>Fleet devices are managed through a mobile app. This app provides a portal. Think of it as an app locker – tapping on it opens a folder that includes icons for all your corporate apps. This is <b>Mobile Application Management </b>(MAM) strategy and it is applied to user-owned devices through containerization.</p>
+<p>The containerized version works in the same way as the app locker. Users tap on the app and get prompted to log in. A <b>single sign-on </b>mechanism in the app then flows through authorization to all of the apps in the opened folder. Any data that gets accessed through one of the apps in the folder cannot be saved to the device because the container provides a floating operating system that neither apps nor users can break through.</p>
+<p>The <b>Kiosk Mode</b> is also implemented through containerization, only this configuration possesses the device entirely. Thus, settings for keyboard commands and conditions such as WiFi access are blocked unless they are specified within the container’s operating system. Thus, it is possible to tightly control the functions of the device that a user can access while still enabling remote management down to the device’s operating system. This technique can also be allied to VR and wearable devices.</p>
+<p><b>Device security</b> features in the SureMDM package include tracking, locking, and wiping. The tool is able to track devices all over the world and its administrator interface is available in multiple languages, including French, Spanish, and German as well as English.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>The per-device charging structure of this system makes it accessible to businesses of all sizes. Some higher functions are available as paid add-ons, which makes right-sizing provision easier. There is a multi-tenant account version, called SureMDM Hub for managed service providers.</p>
+<p>You can check out this MDM system by accessing a 30-day free trial of <a href="https://suremdm.42gears.com/console/v3/#/user/signup" target="_blank" rel="noopener noreferrer">SureMDM</a> or <a href="https://www.42gears.com/free-trial-selection/suremdm-hub-free-trial/?pname=38" target="_blank" rel="noopener noreferrer">SureMDM Hub</a>.</p>
+</div>`,
+
+      poster: `<figure id="attachment_434132" aria-describedby="caption-attachment-434132" style="width: 1216px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/SureMDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-434132 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/SureMDM.jpg.webp 1216w, https://cdn.comparitech.com/wp-content/uploads/2019/03/SureMDM-300x173.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/SureMDM-1024x589.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/SureMDM-768x442.jpg.webp 768w" sizes="auto, (max-width: 1216px) 100vw, 1216px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/SureMDM.jpg" alt="SureMDM" width="1216" height="700" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/SureMDM.jpg 1216w, https://cdn.comparitech.com/wp-content/uploads/2019/03/SureMDM-300x173.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/SureMDM-1024x589.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/SureMDM-768x442.jpg 768w" sizes="auto, (max-width: 1216px) 100vw, 1216px">
+</picture>
+</a><figcaption id="caption-attachment-434132" class="wp-caption-text">A list of devices on the computer and the app on iPhone and iPad.</figcaption></figure>`,
       freetrialElement:
         '<p>You can check out this MDM system by accessing a 30-day free trial of <a href="https://suremdm.42gears.com/console/v3/#/user/signup" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">SureMDM</a> or <a href="https://www.42gears.com/free-trial-selection/suremdm-hub-free-trial/?pname=38" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">SureMDM Hub</a>.</p>'
     },
@@ -2559,6 +3383,33 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>SOTI delivers enterprise-grade device management across all devices and operating systems. It speeds up app and data deployment and enforces security across all connected devices. It also offers remote troubleshooting.</p>
+      <h4><b>Feature in Focus – SOTI XTreme</b></h4>
+      <p>SOTI XTreme uses peer-assisted hubs to speed up large-scale app and data rollout. It’s estimated that deployment using SOTI XTreme is 10 times faster than standard processes, and can be particularly useful for Android fleets in remote locations. It also works well in areas with low bandwidth and poor Internet connections.</p>
+      <figure id="attachment_460586" aria-describedby="caption-attachment-460586" style="width: 1196px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/Soti-MobiControl-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460586 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Soti-MobiControl-MDM.jpg.webp 1196w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Soti-MobiControl-MDM-300x146.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Soti-MobiControl-MDM-1024x499.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Soti-MobiControl-MDM-768x374.jpg.webp 768w" sizes="auto, (max-width: 1196px) 100vw, 1196px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Soti-MobiControl-MDM.jpg" alt="Soti MobiControl MDM" width="1196" height="583" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Soti-MobiControl-MDM.jpg 1196w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Soti-MobiControl-MDM-300x146.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Soti-MobiControl-MDM-1024x499.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Soti-MobiControl-MDM-768x374.jpg 768w" sizes="auto, (max-width: 1196px) 100vw, 1196px">
+</picture>
+</a><figcaption id="caption-attachment-460586" class="wp-caption-text">The compliance and status information of a specific device.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p><strong>SOTI MobiControl</strong> is able to support IoT devices and desktops as well as mobile devices and it is focused on enforcing security on corporate-owned devices.</p>
+<p>When monitoring devices users can choose between <strong>remote viewing</strong> or <strong>remote control </strong>to take control of devices for a more hands-on approach to performance issues. There is also a <strong>chat</strong> that enables the administrator to communicate with the end-user of the device.</p>
+<p>The software can also be used for mobile content management to<b> secure files </b>and <b>web content</b>. Through the <b>SOTI Hub app,</b> you can upload <b>Microsoft Office files </b>and determine which users have access to the resources. The application is very useful for managing access to files to ensure that only relevant employees can view sensitive information.</p>
+<p>The <strong>application management capabilities</strong> of<strong> SOTI MobiControl</strong> are also very useful. Administrators can control what applications are permitted through<strong> blacklists </strong>and<strong> whitelists</strong>. Blacklisting non-work applications help ensure that teams stay productive.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>This system aims to manage corporate-owned devices with strong security and data transfer performance optimization. It is a good choice if you often have problems connecting to devices in areas with poor signal quality.</p>
+<p>During our testing, we identified the following pros and cons related to SOTI MobiControl.</p>
+<p><strong>SOTI MobiControl</strong> is recommended for teams looking for MDM solutions with clear connected visibility with remote control capabilities. However, you must request pricing information from the company directly. You can start the <a href="https://www.soti.net/products/soti-mobicontrol/mobicontrol-trial/" target="_blank" rel="noopener noreferrer">30-day free trial</a>.</p>
+</div>`,
+
+      poster: `<figure id="attachment_279614" aria-describedby="caption-attachment-279614" style="width: 960px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2020/03/SOTI-MobiControl.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-279614 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/03/SOTI-MobiControl.jpg.webp 960w, https://cdn.comparitech.com/wp-content/uploads/2020/03/SOTI-MobiControl-300x169.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2020/03/SOTI-MobiControl-768x432.jpg.webp 768w" sizes="auto, (max-width: 960px) 100vw, 960px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2020/03/SOTI-MobiControl.jpg" alt="SOTI MobiControl" width="960" height="540" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/03/SOTI-MobiControl.jpg 960w, https://cdn.comparitech.com/wp-content/uploads/2020/03/SOTI-MobiControl-300x169.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2020/03/SOTI-MobiControl-768x432.jpg 768w" sizes="auto, (max-width: 960px) 100vw, 960px">
+</picture>
+</a><figcaption id="caption-attachment-279614" class="wp-caption-text">A dashboard showing all the associated devices.</figcaption></figure>`,
       freetrialElement:
         '<p><strong>SOTI MobiControl</strong> is recommended for teams looking for MDM solutions with clear connected visibility with remote control capabilities. However, you must request pricing information from the company directly. You can start the <a href="https://www.soti.net/products/soti-mobicontrol/mobicontrol-trial/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>.</p>'
     },
@@ -2590,6 +3441,31 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>IBM MaaS360 uses its AI-powered platform Watson to monitor endpoint security and compliance. From its well-developed console, IT admins can provide containerization of apps, threat defense, identity services through MFA and SSO, and over-the-air provisioning. It integrates well with rugged and non-GMS Android devices.</p>
+      <h4><b>Feature in Focus – Containerized App Security</b></h4>
+      <p>IBM MaaS360 secures mobile apps through a managed container. This helps separate work and personal data, and makes it convenient to enforce policies on the work-related containers. This separation also safeguards the privacy of users without impacting security.</p>
+      <figure id="attachment_460587" aria-describedby="caption-attachment-460587" style="width: 1472px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/IBM-MaaS-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460587 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/IBM-MaaS-MDM.jpg.webp 1472w, https://cdn.comparitech.com/wp-content/uploads/2019/03/IBM-MaaS-MDM-300x171.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/IBM-MaaS-MDM-1024x585.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/IBM-MaaS-MDM-768x439.jpg.webp 768w" sizes="auto, (max-width: 1472px) 100vw, 1472px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/IBM-MaaS-MDM.jpg" alt="IBM MaaS MDM" width="1472" height="841" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/IBM-MaaS-MDM.jpg 1472w, https://cdn.comparitech.com/wp-content/uploads/2019/03/IBM-MaaS-MDM-300x171.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/IBM-MaaS-MDM-1024x585.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/IBM-MaaS-MDM-768x439.jpg 768w" sizes="auto, (max-width: 1472px) 100vw, 1472px">
+</picture>
+</a><figcaption id="caption-attachment-460587" class="wp-caption-text">A screen displaying the MDM policy of an organization.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p><strong>IBM MaaS360</strong> is a thorough enterprise UEM package with very strong security measures that includes malware scanning.</p>
+<p>The device security features included with <b>IBM MaaS360 </b>are one of its greatest assets. The device platform can <b>detect and remediate malware</b> on endpoints. Being able to detect malware on devices provides you with an extra layer of mobile security that helps prevent endpoints from being compromised and putting your data at risk.</p>
+<p>If you’re looking to<a href="https://www.comparitech.com/net-admin/iot-device-monitoring/"><strong> monitor IoT devices</strong></a> then <strong>IBM MaaS360 </strong>is a natural choice. The platform can monitor <strong>Google Android, Android Things, Microsoft Windows 10, </strong>and<strong> Windows IoT devices</strong> to deploy security policies to protect the devices from causing security risks.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>The capabilities of MaaS360 with its ability to monitor and protect just about every device type that a business can use makes it a good choice for large and complex corporations. However, it provides per-device pricing, which makes it accessible to small businesses.</p>
+<p><strong>IBM MaaS360</strong> is one of the easiest to use tools on this list, with a high-quality console for managing devices that would suit the needs of enterprises of all sizes. I<strong>BM MaaS360 </strong>pricing starts at $4 (£3.25) per device per month and $8 (£6.50) per user per month. You can start the <a href="https://www.ibm.com/account/reg/us-en/signup?" target="_blank" rel="noopener noreferrer">30-day free trial</a>.</p>
+</div>`,
+
+      poster: `<figure id="attachment_279621" aria-describedby="caption-attachment-279621" style="width: 1024px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2020/03/IBM-MaaS360.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-279621 size-large">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/03/IBM-MaaS360-1024x576.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2020/03/IBM-MaaS360-300x169.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2020/03/IBM-MaaS360-768x432.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2020/03/IBM-MaaS360.jpg.webp 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2020/03/IBM-MaaS360-1024x576.jpg" alt="IBM MaaS360" width="1024" height="576" srcset="https://cdn.comparitech.com/wp-content/uploads/2020/03/IBM-MaaS360-1024x576.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2020/03/IBM-MaaS360-300x169.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2020/03/IBM-MaaS360-768x432.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2020/03/IBM-MaaS360.jpg 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px">
+</picture>
+</a><figcaption id="caption-attachment-279621" class="wp-caption-text">A dashboard showing alerts.</figcaption></figure>`,
       freetrialElement:
         '<p><strong>IBM MaaS360</strong> is one of the easiest to use tools on this list, with a high-quality console for managing devices that would suit the needs of enterprises of all sizes. I<strong>BM MaaS360 </strong>pricing starts at $4 (£3.25) per device per month and $8 (£6.50) per user per month. You can start the <a href="https://www.ibm.com/account/reg/us-en/signup?" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>.</p>'
     },
@@ -2621,6 +3497,33 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: 'Cloud based',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>The Meraki dashboard, which is built into all Cisco Meraki devices, can unify device, app, content, and network management. It supports remote diagnostics, location, and app/content delivery from a centralized console. Moreover, it eases the process of implementing policy-driven access controls.</p>
+      <h4><b>Feature in Focus – Network Policy Enforcement</b></h4>
+      <p>Cisco Meraki provides the option to selectively implement and monitor policy enforcement. For example, non-compliant devices can be placed on a guest VLAN or even denied access to organizational resources. Such tight enforcement greatly reduces risks for BYOD devices.</p>
+      <figure id="attachment_460588" aria-describedby="caption-attachment-460588" style="width: 1206px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/Cisco-Meraki-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460588 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Cisco-Meraki-MDM.jpg.webp 1206w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Cisco-Meraki-MDM-300x104.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Cisco-Meraki-MDM-1024x356.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Cisco-Meraki-MDM-768x267.jpg.webp 768w" sizes="auto, (max-width: 1206px) 100vw, 1206px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Cisco-Meraki-MDM.jpg" alt="Cisco Meraki MDM" width="1206" height="419" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Cisco-Meraki-MDM.jpg 1206w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Cisco-Meraki-MDM-300x104.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Cisco-Meraki-MDM-1024x356.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Cisco-Meraki-MDM-768x267.jpg 768w" sizes="auto, (max-width: 1206px) 100vw, 1206px">
+</picture>
+</a><figcaption id="caption-attachment-460588" class="wp-caption-text">The configuration options to quarantine, authorize, and wipe devices.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p><strong>Cisco Meraki</strong> is a very sophisticated virtual network system that, despite its underlying complexity, presents a simple network in your management console. You can assign IP addresses in a single address space across your enterprise’s many sites and treat mobile devices as part of that structure.</p>
+<p>Underpinning the MDM is a secure communication channel that is encrypted by AES with a 256-bit key. The app communication is protected by a VPN, which is applied on a per-app basis.</p>
+<p>Configuration can be varied according to device type, user profile, or ownership model. These groups of devices can be configured in bulk, but there is always the possibility of individual configuration.<strong> Users with their own devices can enroll to get included in the network</strong>. The delivery method for apps and data files is called Backpack. The central administrator creates a bundle of files and then sends out access permissions to groups, individuals, or the entire network. These bundles will go out to user-owned devices once they have enrolled and been included in a user group.</p>
+<p>Lost or stolen mobile phones can have all of their rights revoked and can be locked or wiped remotely. <b>Meraki automatically tracks mobile plan usage</b>, so excessive activity can be identified from live reports and stolen devices can be cut off from the phone and data services immediately.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Large multi-site businesses would get the most out of the Cisco Meraki service. It is also a good tool for securing the inclusion of user-owned devices by delivering apps and data outside of the secure network in containers.</p>
+<p>Cisco Meraki Systems Manager is a robust, cloud-based MDM solution that simplifies device management across iOS, Android, macOS, and Windows devices, offering strong security and scalability for businesses. Its seamless integration with Meraki networking devices and intuitive dashboard make it ideal for large, multi-site organizations, though it may require dedicated hardware and be less user-friendly for smaller setups.</p>
+<div>Related post: <a href="https://www.comparitech.com/net-admin/cisco-network-monitoring-tools/" target="_blank" rel="noopener noreferrer">Best Cisco Network Monitoring Tools</a></div>
+</div>`,
+
+      poster: `<figure style="width: 575px" class="wp-caption alignnone"><a href="https://meraki.cisco.com/" target="_blank" rel="noopener noreferrer"><picture loading="lazy" decoding="async">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2018/03/Meraki.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2018/03/Meraki.jpg" alt="Cisco Meraki" width="575" height="196">
+</picture>
+</a><figcaption class="wp-caption-text">A list of devices and information about their statuses, operating systems, connectivity, and enrollment dates.</figcaption></figure>`,
       freetrialElement: ''
     },
     {
@@ -2651,6 +3554,33 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Unique Business Proposition</b></h4>
+      <p>Jamf Now is an easy-to-use platform for Apple environments. It uses Apple Business Manager’s automated enrollment feature and Blueprints to set policies and manage configurations. It supports advanced features like remote wiping, disk encryption, and passcode encryption.</p>
+      <h4><b>Feature in Focus – Zero-touch Deployment</b></h4>
+      <p>Jamf Now’s Blueprints enables IT admins to create groups with pre-defined configuration settings related to apps, profiles, and other settings. When a device is assigned to a group, the default settings of the group apply to the device. This feature eliminates manual setup and ensures consistency across all devices.</p>
+      <figure id="attachment_460590" aria-describedby="caption-attachment-460590" style="width: 1124px" class="wp-caption alignnone"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/03/Jamf-Now-MDM.jpg" rel="noopener noreferrer" target="_blank"><picture loading="lazy" decoding="async" class="wp-image-460590 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Jamf-Now-MDM.jpg.webp 1124w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Jamf-Now-MDM-300x187.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Jamf-Now-MDM-1024x639.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Jamf-Now-MDM-768x479.jpg.webp 768w" sizes="auto, (max-width: 1124px) 100vw, 1124px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Jamf-Now-MDM.jpg" alt="Jamf Now MDM" width="1124" height="701" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Jamf-Now-MDM.jpg 1124w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Jamf-Now-MDM-300x187.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Jamf-Now-MDM-1024x639.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Jamf-Now-MDM-768x479.jpg 768w" sizes="auto, (max-width: 1124px) 100vw, 1124px">
+</picture>
+</a><figcaption id="caption-attachment-460590" class="wp-caption-text">The devices associated with a network.</figcaption></figure>
+<h4><strong>Why do we recommend it?</strong></h4>
+<p><strong>Jamf Now</strong> is equally competent at managing corporate-owned devices and BYOD. The service is a good choice because of its ability to secure devices and prevent lost or misplaced mobiles from risking data disclosure.</p>
+<p>The setup process for devices revolves around “<strong>blueprints</strong>.” Each blueprint represents a standard configuration. You can create groups of devices and allocate a different blueprint to each. Configuration of those groups of devices can then be commanded, setting up all of them in bulk.</p>
+<p>An alternative method for device inclusion is the <strong>enrolment process</strong>. This requires a device owner to create an account for the network by accessing a custom enrollment page. Once signup is complete, the configuration of the device initiates, giving user-owned devices the same level of security accorded to business-owned devices.</p>
+<p>Remote monitoring of devices can be automated, giving you alerts when risk conditions occur, such as jailbreaking or the installation of unauthorized software.<b> It is possible to display a full inventory of devices on your network in the dashboard</b>. Details include spare storage capacity, a list of installed apps, and the serial number of the device.</p>
+<p>Each device can be given a passcode centrally, and it is possible to use two-factor authentication with Jamf Now. <strong>You can activate a lost mode, which will lock the device and cause it to signal you its location</strong>. You can also wipe devices remotely.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>The big restriction in the Jamf Now service is that it only manages iOS. If you are prepared to have multiple device management tools running in parallel, you could integrate Jamf Now into your toolset. However, that strategy doesn’t make sense when there are other competent tools available that offer more operating systems.</p>
+<p>Jamf Now is an interesting system and the <strong>free service for three devices</strong> is very tempting for sole traders, partnerships, and startups on a tight budget. The limitation of the service to just iOS devices may make this option too limited for your business.</p>
+</div>`,
+
+      poster: `<figure style="width: 640px" class="wp-caption alignnone"><a href="https://www.jamf.com/products/jamf-now/" target="_blank" rel="noopener noreferrer"><picture loading="lazy" decoding="async">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2018/03/Jamf.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2018/03/Jamf.jpg" alt="Jamf Now" width="640" height="395">
+</picture>
+</a><figcaption class="wp-caption-text">The different blueprint options.</figcaption></figure>`,
       freetrialElement: ''
     }
   ],
@@ -3606,10 +4536,6 @@ export const data = {
 <h4><strong>Who is it recommended for?</strong></h4>
 <p>Network administrators are probably using TFTP to move configuration images at the moment and should replace that facility with Rebex Tiny SFTP Server. The time has gone when network administrators could rely on the security of a private network. You should ensure strong file encryption on all of your file movements even within the confines of your LAN.</p>
 <p>During our testing, we identified the following pros and cons related to Rebex Tiny SFTP Server.</p>
-<div class="ctech-content-on-bk  "><p></p>
-<p><b>Rebex Tiny SFTP Server </b>is a great lightweight SFTP server. If you want to conduct quick transfers without worrying about completing any hefty installations or configurations then this is the tool to use.</p>
-<p>However, if you want to transfer sensitive information then the plain text disclosure of passwords is likely to be a deal-breaker. Rebex Tiny SFTP Server is available for Windows.</p>
-<p></p></div>
 </div>`,
 
       poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2020/02/Rebex-Tiny-Sftp-Server.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-276504">
@@ -3852,7 +4778,7 @@ export const data = {
       <div style="max-width: 805px; margin: 0 auto; border: 1px solid #000; padding: 10px; display: flex; justify-content: space-between;">
     <!-- Radar Chart -->
     <div style="position: relative; width: 450px; height: 400px;">
-        <canvas class="jschartgraphic" id="supportscoresentinelone6218" width="450" height="450" style="display: block; box-sizing: border-box; height: 450px; width: 450px;"></canvas>
+        <div class="new-canvas-wrapper new-canvas-wrapper-1"></div>
         <!-- Logo in the bottom-right corner -->
         <picture decoding="async" style="position: absolute; bottom: 10px; right: 10px; width: 80px; opacity: 0.3;">
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2024/09/comparitech-logo-transparent.jpg.webp">
@@ -3931,7 +4857,7 @@ export const data = {
       <div style="max-width: 805px; margin: 0 auto; border: 1px solid #000; padding: 10px; display: flex; justify-content: space-between;">
     <!-- Radar Chart -->
     <div style="position: relative; width: 450px; height: 400px;">
-        <canvas class="jschartgraphic" id="supportscorespecops279" width="450" height="450" style="display: block; box-sizing: border-box; height: 450px; width: 450px;"></canvas>
+        <div class="new-canvas-wrapper new-canvas-wrapper-2"></div>
         <!-- Logo in the bottom-right corner -->
         <picture decoding="async" style="position: absolute; bottom: 10px; right: 10px; width: 80px; opacity: 0.3;">
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2024/09/comparitech-logo-transparent.jpg.webp">
@@ -3943,105 +4869,6 @@ export const data = {
     <!-- Legend Section -->
     <div id="supportscorespecops279_legend" style="padding-left: 20px; border-left: 1px solid #000; display: flex; flex-direction: column; justify-content: center; max-width: 250px;"><strong>Data Points:</strong><ul><li><strong># of Employees:</strong> 60</li><li><strong>Self-Service Support:</strong> 100</li><li><strong>Customer Success:</strong> 0</li><li><strong>Employee Job Satisfaction:</strong> 60</li><li><strong>Revenue/Cash Flow/Funding:</strong> 48</li></ul></div>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var ctx = document.getElementById('supportscorespecops279').getContext('2d');
-        var chartData = {
-            labels: ['# of Employees', 'Self-Service Support', 'Customer Success', 'Employee Job Satisfaction', 'Revenue/Cash Flow/Funding'],
-            datasets: [{ 
-                label: 'Specops', 
-                data: [60, 100, 0, 60, 48], 
-                backgroundColor: 'rgba(62, 95, 255, 0.5)', 
-                borderColor: 'rgba(31, 47, 127, 0.8)', 
-                borderWidth: 1, 
-                tension: 0.4, 
-                fill: true 
-            }]
-        };
-
-        var supportscorespecops279 = new Chart(ctx, {
-            type: 'radar',
-            data: chartData,
-            options: {
-                responsive: true,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Specops SupportScore: 49/100',
-                        font: {
-                            size: 18
-                        }
-                    },
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return context.dataset.label + ': ' + context.raw;
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    r: { beginAtZero: true, ticks: { stepSize: 20 } }
-                }
-            }
-        });
-
-        var legendHTML = '<strong>Data Points:</strong><ul>';
-        chartData.labels.forEach(function(label, index) {
-            legendHTML += '<li><strong>' + label + ':</strong> ' + chartData.datasets[0].data[index] + '</li>';
-        });
-        legendHTML += '</ul>';
-        document.getElementById('supportscorespecops279_legend').innerHTML = legendHTML;
-    });
-</script>
-<style>
-    #thinscaleLegend ul { list-style: none; padding: 0; }
-    #thinscaleLegend li { padding: 5px 0; font-size: 14px; }
-    #thinscaleLegend li strong { font-weight: bold; }
-</style>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Dataset",
-  "name": "Specops Support Score",
-  "description": "A dataset showcasing key metrics for Specops's support capabilities.",
-  "creator": {
-    "@type": "Organization",
-    "name": "Comparitech Ltd.",
-    "url": "https://www.comparitech.com"
-  },
-  "datePublished": "2024-12-04",
-  "license": "http://creativecommons.org/licenses/by/4.0/",
-  "variableMeasured": [
-    {
-      "@type": "PropertyValue",
-      "name": "# of Employees",
-      "value": "60"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Self-Service Support",
-      "value": "100"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Customer Success",
-      "value": "0"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Employee Job Satisfaction",
-      "value": "60"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Revenue/Cash Flow/Funding",
-      "value": "48"
-    }
-  ]
-}
-</script>
 <h4><strong>Why do we recommend it?</strong></h4>
 <p><strong>Specops Command</strong> provides a scripting system to manage users and devices. This is a great maintenance task automation feature that can implement tasks overnight when all of the users are out of the office.</p>
 <p>What makes the scripting feature interesting is that you can not only write your own scripts but import them straight from a file as well. In addition, you can schedule when a script will be executed. This gives you an additional measure of automation that allows you to take a step back.</p>
@@ -4093,7 +4920,7 @@ export const data = {
       <div style="max-width: 805px; margin: 0 auto; border: 1px solid #000; padding: 10px; display: flex; justify-content: space-between;">
     <!-- Radar Chart -->
     <div style="position: relative; width: 450px; height: 400px;">
-        <canvas class="jschartgraphic" id="supportscorequest169" width="450" height="450" style="display: block; box-sizing: border-box; height: 450px; width: 450px;"></canvas>
+         <div class="new-canvas-wrapper new-canvas-wrapper-3"></div>
         <!-- Logo in the bottom-right corner -->
         <picture decoding="async" style="position: absolute; bottom: 10px; right: 10px; width: 80px; opacity: 0.3;">
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2024/09/comparitech-logo-transparent.jpg.webp">
@@ -4266,7 +5093,7 @@ export const data = {
       <div style="max-width: 805px; margin: 0 auto; border: 1px solid #000; padding: 10px; display: flex; justify-content: space-between;">
     <!-- Radar Chart -->
     <div style="position: relative; width: 450px; height: 400px;">
-        <canvas class="jschartgraphic" id="supportscorenetwrix9086" width="450" height="450" style="display: block; box-sizing: border-box; height: 450px; width: 450px;"></canvas>
+         <div class="new-canvas-wrapper new-canvas-wrapper-4"></div>
         <!-- Logo in the bottom-right corner -->
         <picture decoding="async" style="position: absolute; bottom: 10px; right: 10px; width: 80px; opacity: 0.3;">
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2024/09/comparitech-logo-transparent.jpg.webp">
@@ -4331,7 +5158,7 @@ export const data = {
       <div style="max-width: 805px; margin: 0 auto; border: 1px solid #000; padding: 10px; display: flex; justify-content: space-between;">
     <!-- Radar Chart -->
     <div style="position: relative; width: 450px; height: 400px;">
-        <canvas class="jschartgraphic" id="supportscorewisedataman276" width="450" height="450" style="display: block; box-sizing: border-box; height: 450px; width: 450px;"></canvas>
+         <div class="new-canvas-wrapper new-canvas-wrapper-5"></div>
         <!-- Logo in the bottom-right corner -->
         <picture decoding="async" style="position: absolute; bottom: 10px; right: 10px; width: 80px; opacity: 0.3;">
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2024/09/comparitech-logo-transparent.jpg.webp">
@@ -4409,7 +5236,6 @@ export const data = {
       relevant_for: '',
       pricingText: '',
       pricing: [],
-      poster: '',
       pros: [
         'Constantly Updated',
         'Creates Asset Inventory',
@@ -4427,6 +5253,38 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: 'Cloud-based',
+      additionalInfo: `
+<div class="additional-info">
+<h4><strong>Why do we recommend it?</strong></h4>
+<p><strong>Auvik</strong> will discover all of the devices connected to a network, log them in an inventory, and then map the network. This tool re-checks the network periodically and keeps the network inventory and map constantly up to date.</p>
+<p>The Auvik<b> network map</b> has a distinctive style. It isn’t a topographical map, so it couldn’t be laid over a world map or an office layout. Instead, it uses <b>a tree structure</b> that identifies the links between network nodes. This is particularly useful if you want to get a switch port summary of one device because you can get a view showing all the ports on the device that are in use, together with a note on the destination of the cable plugged into each of them.</p>
+<p><a href="https://www.comparitech.com/go/auvik-network-mapping-topology-learn-more-network-topology-and-mapping/l/image/u/0166-3436-1123-5410+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="0166-3436-1123-5410" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-377878">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Auvik-Device-Mapping.jpg.webp 996w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Auvik-Device-Mapping-300x147.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Auvik-Device-Mapping-768x377.jpg.webp 768w" sizes="auto, (max-width: 996px) 100vw, 996px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Auvik-Device-Mapping.jpg" alt="Auvik Device Mapping" width="996" height="489" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Auvik-Device-Mapping.jpg 996w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Auvik-Device-Mapping-300x147.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Auvik-Device-Mapping-768x377.jpg 768w" sizes="auto, (max-width: 996px) 100vw, 996px">
+</picture>
+</a></p>
+<p>The network map gives access to details on each device. These are <b>Layer 2</b> and <b>Layer 3</b> systems and you can get details on their addresses, manufacturer, model, and operating capacity. The full Auvik console headlines major issues, which are derived from <b>alerts</b> that identify performance problems or device faults.</p>
+<p>The Auvik tool enables you to manage network devices and that includes the standardization and protection of device settings. The service will backup configurations, keep a version library, and enable rollback to any specific point in time. The Auvik system monitor rescans every device every 60 minutes to check on configuration changes. If an unauthorized change is detected, the service restores the stored, standard configuration.</p>
+<p>There are two plan levels with the Auvik package: <b>Essentials</b> and <b>Performance</b>. The Essentials service offers network device status reports. The Performance deal gives you bandwidth analysis with live capacity reports that can be viewed in the details of each device.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Auvik is an automated network monitoring and management system. Not only does it map the network, but it will raise an alert if a device is experiencing problems and it will also protect the configurations of network devices. This is a good tool for overworked network managers who just don’t seem to have the time to get anything done.</p>
+<p>Auvik doesn’t publish its price list. The exact price depends on which plan is chosen and the size of the network that is to be monitored. You can examine Auvik on a <strong><a href="https://www.comparitech.com/go/auvik-network-mapping-topology-free-trial-network-topology-and-mapping/l/cta/u/7768-7326-1235-0795+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="7768-7326-1235-0795" class="go-link" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a></strong>.</p>
+<div class="editors-choice">
+                <h3 data-gtm-vis-has-fired1649924_54="1">EDITOR'S CHOICE</h3>
+                                    <p><strong>Auvik</strong> is our top pick for network mapping, diagram, and topology software because it empowers IT teams to visualize and manage complex networks efficiently, saving time and reducing errors while improving overall network reliability. Auvik automatically discovers network devices and generates detailed, accurate topology maps. Within minutes of deployment, it identifies routers, switches, servers, and endpoints, displaying their relationships and connections in a clear, intuitive interface. This eliminates the need for manual mapping and ensures that your network diagram stays up to date as changes occur. Network environments are dynamic, and Auvik ensures you have a constantly updated view of your topology. When devices are added, removed, or reconfigured, the platform reflects these changes instantly. This real-time accuracy enables IT teams to respond quickly to issues and maintain a comprehensive understanding of the network. Auvik’s topology maps are not just static visuals, they are fully interactive and integrated with network performance metrics. Administrators can click on devices or connections to drill down into status, performance, and error details, streamlining the troubleshooting process. As a cloud-based solution, Auvik eliminates the need for on-premises infrastructure, ensuring rapid deployment and scalability. Its secure remote access further supports IT teams managing distributed networks.</p>
+                                                    <p class="download-link"><strong>Download: </strong><a href="https://www.comparitech.com/go/auvik-network-mapping-topology-free-trial-network-topology-and-mapping/l/ecbox/u/7437-8282-8566-6554+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="7437-8282-8566-6554" class="go-link" data-gtm-vis-has-fired1649924_55="1">Access 14-day FREE Trial</a></p>
+                                                    <p><strong>Official Site:</strong> <a href="https://www.comparitech.com/go/auvik-network-mapping-topology-free-trial-network-topology-and-mapping/l/ecbox/u/3468-8278-0069-3691+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3468-8278-0069-3691" class="go-link" data-gtm-vis-has-fired1649924_55="1">https://www.auvik.com/lp/see-auvik/</a></p>
+                                                    <p><strong>OS:</strong> Cloud-based</p>
+                            </div>
+</div>`,
+
+      poster: `
+      <figure id="attachment_516607" aria-describedby="caption-attachment-516607" style="width: 1869px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/auvik-network-mapping-topology-learn-more-network-topology-and-mapping/l/image/u/3968-4249-0713-7518+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3968-4249-0713-7518" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="size-full wp-image-516607">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard.jpg.webp 1869w, https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard-300x188.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard-1024x641.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard-768x481.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard-1536x962.jpg.webp 1536w" sizes="auto, (max-width: 1869px) 100vw, 1869px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard.jpg" alt="Auvik Dashboard" width="1869" height="1170" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard.jpg 1869w, https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard-300x188.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard-1024x641.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard-768x481.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/11/Auvik-Dashboard-1536x962.jpg 1536w" sizes="auto, (max-width: 1869px) 100vw, 1869px">
+</picture>
+</a><figcaption id="caption-attachment-516607" class="wp-caption-text">The Auvik Dashboard</figcaption></figure>
+      `,
       freetrialElement:
         '<p>Auvik doesn’t publish its price list. The exact price depends on which plan is chosen and the size of the network that is to be monitored. You can examine Auvik on a <strong><a href="https://www.comparitech.com/go/auvik-network-mapping-topology-free-trial-network-topology-and-mapping/l/cta/u/2638-8421-4798-1815+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="2638-8421-4798-1815" class="go-link">14-day free trial</a></strong>.</p>'
     },
@@ -4453,6 +5311,32 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><b>Faddom</b> is a hybrid IT asset inventory mapping system. It documents your network and all connected devices. That creates an inventory and the Faddom tool generates a map from that list so you’ve got your hardware and software inventories in place. The system is also able to trace through running processes and create an application dependency map.</p>
+      <p>The Faddom tool provides hardware and software inventories that can be used for system mapping.</p>
+      <p><a href="https://www.comparitech.com/go/faddom-lm-network-topology-and-mapping/l/image/u/5309-1308-3864-3015+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="5309-1308-3864-3015" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-547163">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard.jpg.webp 1741w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard-300x165.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard-1024x564.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard-768x423.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard-1536x846.jpg.webp 1536w" sizes="auto, (max-width: 1741px) 100vw, 1741px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard.jpg" alt="Faddom IT Dashboard" width="1741" height="959" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard.jpg 1741w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard-300x165.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard-1024x564.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard-768x423.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-IT-Dashboard-1536x846.jpg 1536w" sizes="auto, (max-width: 1741px) 100vw, 1741px">
+</picture>
+</a></p>
+<p>The searching and mapping capabilities of Faddom can be applied to <a href="https://www.comparitech.com/go/faddom-adm-network-topology-and-mapping/l/inline/u/8784-9918-5846-8438+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="8784-9918-5846-8438" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>application dependency mapping</strong></a>. This use identifies all of the supporting microservices that back the frameworks, APIs and plug-ins that supply many of the functions that get folded into mobile apps and websites.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Faddom is an inventory system and it isn’t intended for system monitoring. So, like SolarWinds Topology Mapper, the buyer of this tool would be someone who is happy with an existing network monitor except for the maps that it provides.</p>
+<p>Faddom is a downloadable, self-service virtual appliance that can be run on an on-premises or cloud server. You can get a <a href="https://www.comparitech.com/go/faddom-ft-network-topology-and-mapping/l/cta/u/6397-7616-4251-5574+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="6397-7616-4251-5574" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>free trial</strong></a> of Faddom.</p>
+<p style="text-align: center;">            <a class="ctech-dl-button go-link" href="https://www.comparitech.com/go/faddom-ft-network-topology-and-mapping/l/button/u/8595-2139-8376-2301+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="8595-2139-8376-2301" data-gtm-vis-has-fired1649924_55="1">
+                <span class="ctech-dl-button-anchor">Faddom</span>
+                <span class="ctech-dl-button-tagline">Start FREE Trial</span>
+            </a>
+</p>
+</div>`,
+
+      poster: `<p><a href="https://www.comparitech.com/go/faddom-lm-network-topology-and-mapping/l/image/u/8773-0661-4634-2172+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="8773-0661-4634-2172" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-547161">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map.jpg.webp 1831w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map-300x154.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map-1024x524.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map-768x393.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map-1536x786.jpg.webp 1536w" sizes="auto, (max-width: 1831px) 100vw, 1831px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map.jpg" alt="Faddom Application Map" width="1831" height="937" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map.jpg 1831w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map-300x154.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map-1024x524.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map-768x393.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/07/Faddom-Application-Map-1536x786.jpg 1536w" sizes="auto, (max-width: 1831px) 100vw, 1831px">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>Faddom is a downloadable, self-service virtual appliance that can be run on an on-premises or cloud server. You can get a <a href="https://www.comparitech.com/go/faddom-ft-network-topology-and-mapping/l/cta/u/2871-4067-1700-4776+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="2871-4067-1700-4776" class="go-link"><strong>free trial</strong></a> of Faddom.</p>'
     },
@@ -4485,6 +5369,32 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Domotz</strong> is a SaaS package so you don’t have to host the software on your own site. That also means that the system can monitor any network anywhere across the internet. This service discovers and maps your network and creates a network inventory. These services are constantly updated.</p>
+      <p>The Domotz system uses <b>an agent</b> on the monitored network and that program collects data for upload to the Domotz server. Processing is performed on the cloud server and that is also where the console for the system is hosted. The tool performs a network discovery routine, which is based on <b>SNMP</b> and other network protocols, and it repeats constantly, so data is always updated. This information goes into a <b>network asset inventory</b> and this database of devices is the source material for the <b>network map</b>. Whenever the inventory gets updated, the network map gets redrawn.</p>
+      <p>This system can monitor <b>physical </b>and <b>virtual</b> networks, plus wireless services. It will track the performance of endpoints, equipment, and IoT devices.</p>
+      <p><a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-learn-more-network-topology-and-mapping/l/image/u/1801-7902-3795-1918+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="1801-7902-3795-1918" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459616">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Mapping-Diagram-Topology-Tool.jpg.webp 1422w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Mapping-Diagram-Topology-Tool-300x182.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Mapping-Diagram-Topology-Tool-1024x621.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Mapping-Diagram-Topology-Tool-768x466.jpg.webp 768w" sizes="auto, (max-width: 1422px) 100vw, 1422px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Mapping-Diagram-Topology-Tool.jpg" alt="Domotz Mapping Diagram Topology Tool" width="1422" height="862" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Mapping-Diagram-Topology-Tool.jpg 1422w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Mapping-Diagram-Topology-Tool-300x182.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Mapping-Diagram-Topology-Tool-1024x621.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Mapping-Diagram-Topology-Tool-768x466.jpg 768w" sizes="auto, (max-width: 1422px) 100vw, 1422px">
+</picture>
+</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Domotz is very similar to Auvik and it includes constant automated network monitoring. This tool will optimize the valuable time of highly-paid network specialists and there is also a version available for use by managed service providers.</p>
+<p>Domotz is a <b>subscription</b> service with a set price of $21 per network per month, regardless of the number of nodes on the network. There is also a custom plan, which is priced by negotiation. You can access Domotz with a <strong><a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-free-trial-network-topology-and-mapping/l/cta/u/8157-1506-7571-6194+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="8157-1506-7571-6194" class="go-link" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a></strong>.</p>
+<p style="text-align: center;">            <a class="ctech-dl-button go-link" href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-free-trial-network-topology-and-mapping/l/button/u/2180-3071-6325-7193+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="2180-3071-6325-7193" data-gtm-vis-has-fired1649924_55="1">
+                <span class="ctech-dl-button-anchor">Domotz</span>
+                <span class="ctech-dl-button-tagline">Start 14-day FREE Trial</span>
+            </a>
+</p>
+</div>`,
+
+      poster: `<p><a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-learn-more-network-topology-and-mapping/l/image/u/6130-2280-5657-1655+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="6130-2280-5657-1655" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-378430">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Network-Topology.jpg.webp 1367w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Network-Topology-300x172.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Network-Topology-1024x587.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Network-Topology-768x440.jpg.webp 768w" sizes="auto, (max-width: 1367px) 100vw, 1367px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Network-Topology.jpg" alt="Domotz Network Topology" width="1367" height="783" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Network-Topology.jpg 1367w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Network-Topology-300x172.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Network-Topology-1024x587.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Domotz-Network-Topology-768x440.jpg 768w" sizes="auto, (max-width: 1367px) 100vw, 1367px">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>Domotz is a <b>subscription</b> service with a set price of $21 per network per month, regardless of the number of nodes on the network. There is also a custom plan, which is priced by negotiation. You can access Domotz with a <strong><a href="https://www.comparitech.com/go/domotz-mapping-diagram-topology-free-trial-network-topology-and-mapping/l/cta/u/8863-2871-3049-3484+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="8863-2871-3049-3484" class="go-link">14-day free trial</a></strong>.</p>'
     },
@@ -4517,6 +5427,33 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>ManageEngine OpManager</strong> is the complete monitoring package for networks. It includes an autodiscovery service that continuously re-scans. With each search, the tool records all encountered devices and lists them in an inventory. From that inventory, OpManager generates topology maps in a variety of formats. OpManager also provides automated monitoring services for network devices.</p>
+      <p>The OpManager system runs its first system sweep with <b>Ping</b> and the <b>Simple Network Management Protocol (SNMP)</b> to identify every network device and endpoint on the system. It is able to record all information about each device, such as make, model, and operating system.</p>
+      <p>The network search also reveals how all of the equipment on the system connect together. This information is then made available to a network topology mapping in the monitoring bundle. The system discovery process is continuous, so it adjusts the <b>network inventory</b> whenever changes are made to the network.</p>
+      <p><a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/image/u/9153-6386-9597-3582+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="9153-6386-9597-3582" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459615">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool.jpg.webp 1652w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool-300x145.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool-1024x497.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool-768x372.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool-1536x745.jpg.webp 1536w" sizes="auto, (max-width: 1652px) 100vw, 1652px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool.jpg" alt="ManageEngine Op Manager Mapping Diagram Topology Tool" width="1652" height="801" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool.jpg 1652w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool-300x145.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool-1024x497.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool-768x372.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Op-Manager-Mapping-Diagram-Topology-Tool-1536x745.jpg 1536w" sizes="auto, (max-width: 1652px) 100vw, 1652px">
+</picture>
+</a></p>
+<p>The <b>network topology maps</b> are generated anew whenever the map module is accessed by the user. That means that the topology map that is displayed is always based on the latest version of the network inventory and is never out of date.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>OpManager is suitable for networks of all sizes. Even very small networks can use it because there is a free version that is limited to monitoring three devices. The tool includes alerts on the discovery of a problem, so network managers know that everything is running smoothly unless they are notified otherwise.</p>
+<p>OpManager is delivered as on-premises software for <b>Windows Server</b> or <b>Linux</b>. The system is available for a <strong><a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/cta/u/2936-0412-8786-7170+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="2936-0412-8786-7170" class="go-link" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a></strong>.</p>
+<p style="text-align: center;">            <a class="ctech-dl-button go-link" href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/button/u/9826-5628-7778-4845+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="9826-5628-7778-4845" data-gtm-vis-has-fired1649924_55="1">
+                <span class="ctech-dl-button-anchor">ManageEngine Network Mapping with OpManager</span>
+                <span class="ctech-dl-button-tagline">Download 30-day FREE Trial</span>
+            </a>
+</p>
+</div>`,
+
+      poster: `<p><a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/image/u/0336-6818-0166-5594+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="0336-6818-0166-5594" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-341218">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Network-Topology-with-OpManager.jpg.webp 1222w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Network-Topology-with-OpManager-300x144.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Network-Topology-with-OpManager-1024x492.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Network-Topology-with-OpManager-768x369.jpg.webp 768w" sizes="auto, (max-width: 1222px) 100vw, 1222px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Network-Topology-with-OpManager.jpg" alt="ManageEngine Network Topology with OpManager" width="1222" height="587" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Network-Topology-with-OpManager.jpg 1222w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Network-Topology-with-OpManager-300x144.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Network-Topology-with-OpManager-1024x492.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/ManageEngine-Network-Topology-with-OpManager-768x369.jpg 768w" sizes="auto, (max-width: 1222px) 100vw, 1222px">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>OpManager is delivered as on-premises software for <b>Windows Server</b> or <b>Linux</b>. The system is available for a <strong><a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/cta/u/5573-4670-2251-5965+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="5573-4670-2251-5965" class="go-link">30-day free trial</a></strong>.</p>'
     },
@@ -4545,6 +5482,31 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><b>Why do we recommend it?</b></h4>
+      <p><b>Site24x7 Network Monitoring</b> provides network device status monitoring with the Simple Network Management Protocol (SNMP), which also provides the data for the inventory and the topology map. The system also implements traffic analysis and enables capacity planning. All packages from the platform also include server and application monitoring features.</p>
+      <p>The service operates network device monitoring with SNMP and traffic analysis with NetFlow, IPFIX, sFlow, J-Flow, cFlow, AppFlow, and NetStream. The system also collects Quality of Service statistics for VoIP connection monitoring and it can monitor virtualizations as well. All of these activity trackers operate simultaneously.</p>
+      <p><a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/image/u/0779-5382-2993-2532+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="0779-5382-2993-2532" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459618">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Site24x7-Network-Monitoring-Mapping-Diagram-Topology-Tool.jpg.webp 1468w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Site24x7-Network-Monitoring-Mapping-Diagram-Topology-Tool-300x177.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Site24x7-Network-Monitoring-Mapping-Diagram-Topology-Tool-1024x603.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Site24x7-Network-Monitoring-Mapping-Diagram-Topology-Tool-768x453.jpg.webp 768w" sizes="auto, (max-width: 1468px) 100vw, 1468px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Site24x7-Network-Monitoring-Mapping-Diagram-Topology-Tool.jpg" alt="Site24x7 Network Monitoring Mapping Diagram Topology Tool" width="1468" height="865" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Site24x7-Network-Monitoring-Mapping-Diagram-Topology-Tool.jpg 1468w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Site24x7-Network-Monitoring-Mapping-Diagram-Topology-Tool-300x177.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Site24x7-Network-Monitoring-Mapping-Diagram-Topology-Tool-1024x603.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Site24x7-Network-Monitoring-Mapping-Diagram-Topology-Tool-768x453.jpg 768w" sizes="auto, (max-width: 1468px) 100vw, 1468px">
+</picture>
+</a></p>
+<h4><b>Who is it recommended for?</b></h4>
+<p>This package is very comprehensive and covers all types of IT assets for a low subscription rate. So, it offers good value for money. The service is delivered from the cloud and sets itself up through system scanning, which makes the package very easy to use. IT is suitable for small businesses and the capacity of the monitoring systems can be expanded to suit larger companies.</p>
+<p>The Site24x7 platform is marketed in plans and all of them include the Network Monitoring service with its network mapping utility. You can examine the system by accessing a <a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/cta/u/9638-0050-9034-6420+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="9638-0050-9034-6420" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>30-day free trial</b></a>.</p>
+<p style="text-align: center;">            <a class="ctech-dl-button" href="#" target="_blank" data-gtm-vis-has-fired1649924_55="1">
+                <span class="ctech-dl-button-anchor">Site24x7 Network Monitoring</span>
+                <span class="ctech-dl-button-tagline">Register for a 30-day FREE Trial</span>
+            </a>
+</p>
+</div>`,
+
+      poster: `<p><a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/image/u/6287-3487-4862-6792+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="6287-3487-4862-6792" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone wp-image-458049 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors.jpg.webp 1919w, https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors-300x135.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors-1024x462.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors-768x346.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors-1536x692.jpg.webp 1536w" sizes="auto, (max-width: 1919px) 100vw, 1919px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors.jpg" alt="site24x7-infra-maps-link-monitors" width="1919" height="865" srcset="https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors.jpg 1919w, https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors-300x135.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors-1024x462.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors-768x346.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2018/10/site24x7-infra-maps-link-monitors-1536x692.jpg 1536w" sizes="auto, (max-width: 1919px) 100vw, 1919px">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>The Site24x7 platform is marketed in plans and all of them include the Network Monitoring service with its network mapping utility. You can examine the system by accessing a <a href="https://www.comparitech.com/go/site24x7-network-topology-and-mapping/l/cta/u/1051-7204-8069-1007+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="1051-7204-8069-1007" class="go-link"><b>30-day free trial</b></a>.</p>'
     },
@@ -4573,6 +5535,24 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Datadog</strong> is a cloud platform that offers many system monitoring and management tools and the <strong>Live Network Mapping</strong> system is part of a module called the Network Performance Monitoring package. This is a traffic management service and it will map your network, showing live traffic flows on each stretch.</p>
+      <p>The Live Network Mapping system is able to cover local, remote, and cloud-based systems, even monitoring traffic flows on the internet connections between locations. The service automatically draws up a network map. Once assessed, the network topology view can be altered on demand to show the connections to a specific device, <b>a topology plan</b> of the whole network, or a focused layout of a specific route between two endpoints.</p>
+      <p>The plan constantly checks on the nodes available on the network and will <b>automatically redraw</b> the network topology map if any devices are added, moved, or removed. The visualization of the network also shows a live report of the traffic flow throughput on each link.</p>
+      <p><a href="https://www.comparitech.com/go/datadog-network-topology-learn-more-network-topology-and-mapping/l/image/u/0818-6146-8474-1927+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="0818-6146-8474-1927" class="go-link" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459611">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool.jpg.webp 1622w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool-300x160.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool-1024x546.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool-768x410.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool-1536x819.jpg.webp 1536w" sizes="auto, (max-width: 1622px) 100vw, 1622px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool.jpg" alt="Datadog Live Network Mapping Diagram Topology Tool" width="1622" height="865" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool.jpg 1622w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool-300x160.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool-1024x546.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool-768x410.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-Live-Network-Mapping-Diagram-Topology-Tool-1536x819.jpg 1536w" sizes="auto, (max-width: 1622px) 100vw, 1622px">
+</picture>
+</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>When compared to Auvik, this service doesn’t quite compete because the Auvik plan gives you network device status checks. You have to add on another module to the Datadog Network Performance Monitoring system, which is called Network Device Monitoring. With these two modules, any network manager can leave network monitoring to the Datadog system.</p>
+<p>Datadog’s monitoring systems are <b>charged for by subscription</b> with a rate per month or at a lower rate if paid annually. Both the Network Performance Monitor and the Network Device Monitor include <b>live network mapping.</b></p>
+</div>`,
+
+      poster:
+        '<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-correlate-network-traffic-app-performance.gif" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><img loading="lazy" decoding="async" class="alignnone wp-image-337263 size-full" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Datadog-correlate-network-traffic-app-performance.gif" alt="Datadog correlate network traffic app performance" width="1440" height="710"></a></p>',
       freetrialElement: ''
     },
     {
@@ -4601,6 +5581,30 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Microsoft Visio</strong> is a chart-creation tool and it has a library of icons that include network device representations. This tool is a good choice for creating your own network maps.</p>
+      <p>Many other applications enable network maps to be exported to Visio, so you can use this tool to consolidate information from a range of sources.</p>
+      <p>As a leading design tool, Visio is a little pricey. However, it includes IT icons and network design templates to speed up your topology mapping tasks.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459619">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-Mapping-Diagram-Topology-Tool.jpg.webp 1177w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-Mapping-Diagram-Topology-Tool-300x188.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-Mapping-Diagram-Topology-Tool-1024x641.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-Mapping-Diagram-Topology-Tool-768x481.jpg.webp 768w" sizes="auto, (max-width: 1177px) 100vw, 1177px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-Mapping-Diagram-Topology-Tool.jpg" alt="Microsoft Visio Mapping Diagram Topology Tool" width="1177" height="737" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-Mapping-Diagram-Topology-Tool.jpg 1177w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-Mapping-Diagram-Topology-Tool-300x188.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-Mapping-Diagram-Topology-Tool-1024x641.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-Mapping-Diagram-Topology-Tool-768x481.jpg 768w" sizes="auto, (max-width: 1177px) 100vw, 1177px">
+</picture>
+</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>There is no network scanning function in Visio and the package isn’t dedicated to creating just network maps. You can use this system to create a wide range of charts. The Visio system would be a great tool for a network consultant who needs to create presentations as well as network maps. A network manager planning a new network without any existing equipment to scan would also benefit from Microsoft Visio.</p>
+<p>Visio runs on <b>Windows</b> environments and is also available online. It can be bought individually or added to <b>Microsoft Office 365</b> at an additional cost.</p>
+<p><strong>See also:</strong> <a href="https://www.comparitech.com/net-admin/application-mapping-tools/" target="_blank" rel="noopener" data-gtm-vis-has-fired1649924_55="1">Application Mapping Tools</a></p>
+</div>`,
+
+      poster: `
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone wp-image-244694 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio.jpg.webp 1724w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-300x148.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-1024x507.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-768x380.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-1536x760.jpg.webp 1536w" sizes="auto, (max-width: 1724px) 100vw, 1724px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio.jpg" alt="Micrososft VISIO" width="1724" height="853" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio.jpg 1724w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-300x148.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-1024x507.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-768x380.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Microsoft-Visio-1536x760.jpg 1536w" sizes="auto, (max-width: 1724px) 100vw, 1724px">
+</picture>
+</a></p>
+      `,
       freetrialElement: ''
     },
     {
@@ -4628,6 +5632,26 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Intermapper</strong> will scan your network and create a map, which forms the basis for the network monitoring system that is included in the package. The difference between Intermapper and other tools on this list is that the network scan isn’t automatic. You have to demand a refresh. This is actually a great benefit because the system allows you to alter network maps manually, which you can use to trial changes. Without an automatic refresh, your alterations are preserved.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Fortra-Intermapper-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459620">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Fortra-Intermapper-Mapping-Diagram-Topology-Tool.jpg.webp 1192w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Fortra-Intermapper-Mapping-Diagram-Topology-Tool-300x181.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Fortra-Intermapper-Mapping-Diagram-Topology-Tool-1024x617.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Fortra-Intermapper-Mapping-Diagram-Topology-Tool-768x463.jpg.webp 768w" sizes="auto, (max-width: 1192px) 100vw, 1192px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Fortra-Intermapper-Mapping-Diagram-Topology-Tool.jpg" alt="Fortra Intermapper Mapping Diagram Topology Tool" width="1192" height="718" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Fortra-Intermapper-Mapping-Diagram-Topology-Tool.jpg 1192w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Fortra-Intermapper-Mapping-Diagram-Topology-Tool-300x181.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Fortra-Intermapper-Mapping-Diagram-Topology-Tool-1024x617.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Fortra-Intermapper-Mapping-Diagram-Topology-Tool-768x463.jpg 768w" sizes="auto, (max-width: 1192px) 100vw, 1192px">
+</picture>
+</a></p>
+<p>The graphics editor includes <b>a library of icons</b>, and you can also create your own. Other features in the tool extend to network monitoring functions. It is also capable of storing network performance data to assist with capacity planning and <b>SLA compliance reporting</b>.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Although the basics of Intermapper are the same as the services offered by OpManager and other tools on this list. The Intermapper system isn’t quite as extensive as the ManageEngine tool. This can be an advantage for the managers of small networks who can be a little overwhelmed with all of the screens in larger network mapping and monitoring tools. Even better, Intermapper is free to use on networks with up to 10 devices.</p>
+<p>The free version of the tool limits you to monitoring 10 devices. The paid version is available as a subscription service or you can buy it for a one-time fee. Charges are made per monitored device. The software runs on <b>Windows</b>, <b>macOS</b>, and <b>Linux</b>. You can get the paid version of the tool on a <a href="https://www.helpsystems.com/cta/start-your-free-intermapper-trial" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/01/Intermapper.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/01/Intermapper.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/01/Intermapper.jpg" alt="Fortra Intermapper" width="640" height="273">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>The free version of the tool limits you to monitoring 10 devices. The paid version is available as a subscription service or you can buy it for a one-time fee. Charges are made per monitored device. The software runs on <b>Windows</b>, <b>macOS</b>, and <b>Linux</b>. You can get the paid version of the tool on a <a href="https://www.helpsystems.com/cta/start-your-free-intermapper-trial" target="_blank" rel="noopener noreferrer">30-day free trial</a>.</p>'
     },
@@ -4660,6 +5684,27 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Lucidchart</strong> is very similar to Microsoft Visio. Like that rival graphics tool, Lucidchart can be used to create many different types of charts. The package includes templates and also libraries of icons and you can design a network by accessing the network icon list.</p>
+      <p>You can import and export maps in a range of formats, including Visio. That means that <b>you can import maps of existing networks</b> from any tool that exports in Visio format.</p>
+      <p>This is a pure chart editor, so you don’t pay per device, you pay per user account. There is also <b>a free version</b>, which doesn’t include an import/export feature. There is also <a href="https://lucid.app/pricing/lucidchart#/createAccount" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1">a free version</a>, which can only be used to create or edit three charts per month. The paid version is offered in three editions:<b> Individual</b>, <b>Team</b>, and <b>Enterprise</b>. The two higher plans let you create many user accounts on the Lucdchart system. Those users have the option of sharing chart editing or sending finished charts to those who aren’t registered as users within the system.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Lucidchart-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459621">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Lucidchart-Mapping-Diagram-Topology-Tool.jpg.webp 1385w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lucidchart-Mapping-Diagram-Topology-Tool-300x188.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lucidchart-Mapping-Diagram-Topology-Tool-1024x640.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lucidchart-Mapping-Diagram-Topology-Tool-768x480.jpg.webp 768w" sizes="auto, (max-width: 1385px) 100vw, 1385px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Lucidchart-Mapping-Diagram-Topology-Tool.jpg" alt="Lucidchart Mapping Diagram Topology Tool" width="1385" height="866" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Lucidchart-Mapping-Diagram-Topology-Tool.jpg 1385w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lucidchart-Mapping-Diagram-Topology-Tool-300x188.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lucidchart-Mapping-Diagram-Topology-Tool-1024x640.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lucidchart-Mapping-Diagram-Topology-Tool-768x480.jpg 768w" sizes="auto, (max-width: 1385px) 100vw, 1385px">
+</picture>
+</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>With no discovery service, this tool is intended for planning new networks rather than documenting existing systems. Thus, the tool is ideal for a network engineering consultant or the network manager hired to set up a network for a startup.</p>
+<p>The software for the service installs on <b>Windows</b>, <b>Linux</b>, <b>macOS</b>, <b>Chrome OS</b>, <b>iOS</b>, and <b>Android</b>. You can try the paid version for free for seven days. The system can also be accessed through Google Apps.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/01/Lucidchart.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/01/Lucidchart.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/01/Lucidchart.jpg" alt="Lucidchart" width="640" height="400">
+</picture>
+</a></p>`,
       freetrialElement: ''
     },
     {
@@ -4687,6 +5732,27 @@ export const data = {
       features: ['Network Discovery', 'Automated Maps', 'Topology Map Editor'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><b>Paessler PRTG</b> is a good option for all network mapping requirements because it provides both automatically generated network maps and a network map editor. You can get a map drawn up for you, plan a network visually from scratch, or create a customized representation of the data in the network inventory.</p>
+      <p>PRTG presents visualizations of a network <b>automatically</b>. The company has created a unique network path visualization called the <b>Sunburst Map</b> of which it is very proud. However, this is not a conventional network topology map and although it is visually appealing, it can be a little confusing for someone who just wants to see the network layout.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Monitor-Mapping-Diagram-Topology-.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459622">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Monitor-Mapping-Diagram-Topology-.jpg.webp 1535w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Monitor-Mapping-Diagram-Topology--300x168.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Monitor-Mapping-Diagram-Topology--1024x574.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Monitor-Mapping-Diagram-Topology--768x431.jpg.webp 768w" sizes="auto, (max-width: 1535px) 100vw, 1535px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Monitor-Mapping-Diagram-Topology-.jpg" alt="Paessler PRTG Network Monitor Mapping Diagram Topology" width="1535" height="861" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Monitor-Mapping-Diagram-Topology-.jpg 1535w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Monitor-Mapping-Diagram-Topology--300x168.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Monitor-Mapping-Diagram-Topology--1024x574.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Monitor-Mapping-Diagram-Topology--768x431.jpg 768w" sizes="auto, (max-width: 1535px) 100vw, 1535px">
+</picture>
+</a></p>
+<p>The settings system of the tool lets you select from mapping templates so you get a layout view with which you are comfortable. These options include a <b>real-world map</b>, which is great for looking at WANs. There is also a <b>map editor</b> in the package, which lets you create a network layout from scratch or read in the data from the inventory and then adjust the generated layout.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>This package is a useful network monitoring package and the mapping service is just part of that service. The provision of both automated map generation and a map editor makes this tool a strong competitor to all of the other mapping systems on this list. This is suitable for networks of all sizes.</p>
+<p>PRTG is charged as an allowance of sensors. You then decide which sensors to turn on. If you only want 100 of the sensors in the package, you never have to pay. Get a <a href="https://www.paessler.com/download/prtg-download?download=1" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><strong>30-day free trial</strong></a> of Paessler PRTG to try its network topology mapper.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Map.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-434321">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Map.jpg.webp 1267w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Map-300x185.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Map-1024x631.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Map-768x473.jpg.webp 768w" sizes="auto, (max-width: 1267px) 100vw, 1267px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Map.jpg" alt="Paessler PRTG Network Map" width="1267" height="781" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Map.jpg 1267w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Map-300x185.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Map-1024x631.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Paessler-PRTG-Network-Map-768x473.jpg 768w" sizes="auto, (max-width: 1267px) 100vw, 1267px">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>PRTG is charged as an allowance of sensors. You then decide which sensors to turn on. If you only want 100 of the sensors in the package, you never have to pay. Get a <a href="https://www.paessler.com/download/prtg-download?download=1" target="_blank" rel="noopener noreferrer"><strong>30-day free trial</strong></a> of Paessler PRTG to try its network topology mapper.</p>'
     },
@@ -4720,6 +5786,24 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p>The <strong>SolarWinds Network Topology Mapper</strong> automatically scans a network and provides a range of network maps, which are redrawn automatically every time the layout of the network changes.</p>
+      <p>The mapping discovery procedure can also plot the network infrastructure that composes virtualizations and maps clients to hosts for <b>VMWare</b> and <b>Hyper-V</b> implementations. Maps can be exported into presentation formats for distribution and it is also possible to export them into Visio for further work.</p>
+      <p>The map development environment supports different network plans and can compile several perspectives from one scan. The icon library has a suitably diverse set of device representations to enable you to <b>distinguish between types of network equipment</b> visually on the map. You can also adapt existing icon designs to create your own.</p>
+      <p>If you don’t want to use an automatically-generated map, you can set the discoverer tool to just create <b>a device inventory</b>, from which you can plot your own topology map. An auto-update feature would not be useful for a network plan for expansion. However, you can store different maps and set your current system topology to update automatically when alterations to the existing network occur.</p>
+      <p>Network Topology Mapper offers comprehensive automatic discovery of the network topology with intuitive diagram production. Supports a host of discovery methods. It can run on Windows 10, 8.1, 8, and 7 desktop OS and Windows Server 2003 and later, .Net 3.5 or later</p>
+      <h4><strong>Who is it recommended for?</strong></h4>
+      <p>There are many tools on this list that perform network mapping and then implement automated system monitoring. So, there probably aren’t many businesses that would prefer to have a tool that only provides maps. This tool would be a good service for very large businesses that don’t feel that the mapping included in automated monitoring services is good enough.</p>
+      <p>The network mapper is compliant with PCI and FIPS-2 standards. This software runs on <b>Windows</b> environments and you can access it on a <strong><a href="https://www.solarwinds.com/network-topology-mapper" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">14-day free trial</a></strong>.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/SolarWinds-Network-Topology-Mapper-Scan.jpg" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone wp-image-368835 size-full">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/SolarWinds-Network-Topology-Mapper-Scan.jpg.webp 1022w, https://cdn.comparitech.com/wp-content/uploads/2019/02/SolarWinds-Network-Topology-Mapper-Scan-300x187.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/SolarWinds-Network-Topology-Mapper-Scan-768x479.jpg.webp 768w" sizes="auto, (max-width: 1022px) 100vw, 1022px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/SolarWinds-Network-Topology-Mapper-Scan.jpg" alt="SolarWinds Network Topology Mapper - Scan" width="1022" height="638" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/SolarWinds-Network-Topology-Mapper-Scan.jpg 1022w, https://cdn.comparitech.com/wp-content/uploads/2019/02/SolarWinds-Network-Topology-Mapper-Scan-300x187.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/SolarWinds-Network-Topology-Mapper-Scan-768x479.jpg 768w" sizes="auto, (max-width: 1022px) 100vw, 1022px">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>The network mapper is compliant with PCI and FIPS-2 standards. This software runs on <b>Windows</b> environments and you can access it on a <strong><a href="https://www.solarwinds.com/network-topology-mapper" target="_blank" rel="noopener noreferrer">14-day free trial</a></strong>.</p>'
     },
@@ -4746,6 +5830,26 @@ export const data = {
       features: ['3D Maps Possible', 'IT Icon Library', 'Network Map Templates'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Edraw Max</strong> is another option for those who want to plan a new network rather than map an existing system. The functions of this tool are similar to those of Microsoft Vision because it has a range of charting applications and can be used for network map creation by accessing the network icon library.</p>
+      <p>It also has libraries of icons that derive from <b>Cisco</b>, <b>AWS</b>, <b>Azure</b>, and <b>Google Cloud Platform</b>, so you can create network maps that look as though they came straight from a professional graphics artist. Different perspectives available in the tool include <b>Rack View</b>, <b>LDAP</b>, and <b>Active Directory</b> mapping, and a physical world view that includes icons of cities and offices if you need to draw a WAN.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/eDrawSoft-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459624">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/eDrawSoft-Mapping-Diagram-Topology-Tool.jpg.webp 993w, https://cdn.comparitech.com/wp-content/uploads/2019/02/eDrawSoft-Mapping-Diagram-Topology-Tool-300x180.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/eDrawSoft-Mapping-Diagram-Topology-Tool-768x462.jpg.webp 768w" sizes="auto, (max-width: 993px) 100vw, 993px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/eDrawSoft-Mapping-Diagram-Topology-Tool.jpg" alt="eDrawSoft Mapping Diagram Topology Tool" width="993" height="597" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/eDrawSoft-Mapping-Diagram-Topology-Tool.jpg 993w, https://cdn.comparitech.com/wp-content/uploads/2019/02/eDrawSoft-Mapping-Diagram-Topology-Tool-300x180.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/eDrawSoft-Mapping-Diagram-Topology-Tool-768x462.jpg 768w" sizes="auto, (max-width: 993px) 100vw, 993px">
+</picture>
+</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>As with the other chart creation tools on this list, Edraw Max is a good choice for networking consultants and the network managers of startups.</p>
+<p>Edraw has a stable of products with different specializations. For network mapping, you need to look at Edraw Max, which is available on <a href="https://www.edrawsoft.com/download-edrawmax.php" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">a free trial</a>. The software installs on <b>Windows</b>, <b>macOS</b>, and <b>Linux</b>.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Edraw-Max.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-368844">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Edraw-Max.jpg.webp 1101w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Edraw-Max-300x193.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Edraw-Max-1024x658.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Edraw-Max-768x493.jpg.webp 768w" sizes="auto, (max-width: 1101px) 100vw, 1101px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Edraw-Max.jpg" alt="Edraw Max" width="1101" height="707" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Edraw-Max.jpg 1101w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Edraw-Max-300x193.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Edraw-Max-1024x658.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Edraw-Max-768x493.jpg 768w" sizes="auto, (max-width: 1101px) 100vw, 1101px">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>Edraw has a stable of products with different specializations. For network mapping, you need to look at Edraw Max, which is available on <a href="https://www.edrawsoft.com/download-edrawmax.php" target="_blank" rel="noopener noreferrer">a free trial</a>. The software installs on <b>Windows</b>, <b>macOS</b>, and <b>Linux</b>.</p>'
     },
@@ -4769,6 +5873,26 @@ export const data = {
       features: ['IT Icon Library', 'Customizable Icons', 'Drag-and-Drop Editor'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>LanFlow</strong> is a graphics editor that is specifically designed for the creation of network maps. An interesting feature of this package is that, as well as providing a library of network icons, it enables you to create your own.</p>
+      <p>You can also create your own icons or import them from other graphics tools. The editor employs a <b>drag-and-drop</b> methodology that allows you to select icons from a side panel and place them on the design board.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Pacestar-LanFlow-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459626">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Pacestar-LanFlow-Mapping-Diagram-Topology-Tool.jpg.webp 640w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Pacestar-LanFlow-Mapping-Diagram-Topology-Tool-300x225.jpg.webp 300w" sizes="auto, (max-width: 640px) 100vw, 640px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Pacestar-LanFlow-Mapping-Diagram-Topology-Tool.jpg" alt="Pacestar LanFlow Mapping Diagram Topology Tool" width="640" height="480" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Pacestar-LanFlow-Mapping-Diagram-Topology-Tool.jpg 640w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Pacestar-LanFlow-Mapping-Diagram-Topology-Tool-300x225.jpg 300w" sizes="auto, (max-width: 640px) 100vw, 640px">
+</picture>
+</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>LanFlow, like the other network design tools on this list, is suitable for use by network consultants and network engineers that need to plan a new network.</p>
+<p>This is a paid product, but you can get it for evaluation on a <a href="http://www.pacestar.com/lanflow/trial.htm" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day free trial</a>. Don’t try using the free trial version for your business, because it will print a message saying that this is the trial copy on all network diagrams. The software installs on <b>Windows</b>.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/01/LanFlow.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/01/LanFlow.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/01/LanFlow.jpg" alt="LanFlow" width="640" height="330">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>This is a paid product, but you can get it for evaluation on a <a href="http://www.pacestar.com/lanflow/trial.htm" target="_blank" rel="noopener noreferrer">30-day free trial</a>. Don’t try using the free trial version for your business, because it will print a message saying that this is the trial copy on all network diagrams. The software installs on <b>Windows</b>.</p>'
     },
@@ -4792,6 +5916,27 @@ export const data = {
       features: ['Automated Map Drawing', 'Real-World Maps for WANs', 'Network Monitoring'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Net-Probe</strong> is a network monitoring system that includes a discovery and mapping function. This service isn’t as sophisticated as the ManageEngine or SolarWinds packages on this list. However, its simplicity can be an advantage because it focuses attention on just a few issues that are vital for continuing good network performance.</p>
+      <p>The autodiscovery feature will compile a hardware inventory for you, so if you are organizing your network, you can ignore the generated topology plan and work from the hardware list. <b>A live map will show device statuses on equipment icons</b> and also list alerts in a separate window.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Netprobe-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459627">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Netprobe-Mapping-Diagram-Topology-Tool.jpg.webp 1001w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Netprobe-Mapping-Diagram-Topology-Tool-300x197.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Netprobe-Mapping-Diagram-Topology-Tool-768x504.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Netprobe-Mapping-Diagram-Topology-Tool-320x210.jpg.webp 320w" sizes="auto, (max-width: 1001px) 100vw, 1001px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Netprobe-Mapping-Diagram-Topology-Tool.jpg" alt="Netprobe Mapping Diagram Topology Tool" width="1001" height="657" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Netprobe-Mapping-Diagram-Topology-Tool.jpg 1001w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Netprobe-Mapping-Diagram-Topology-Tool-300x197.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Netprobe-Mapping-Diagram-Topology-Tool-768x504.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Netprobe-Mapping-Diagram-Topology-Tool-320x210.jpg 320w" sizes="auto, (max-width: 1001px) 100vw, 1001px">
+</picture>
+</a></p>
+<p>This is a very helpful little tool, but it doesn’t have the backing of a big corporation, so support is not so great. The software runs on <b>Windows</b> and <b>the Standard version is available for free</b>. This will monitor up to eight devices.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>The network administrators of small networks would enjoy using this tool. The free version sounds appealing but it lacks some vital features, such as Ping and TraceRoute, so it is worth paying for one of the higher editions to get those tools.</p>
+<p>This doesn’t include most of the features of the tool, such as Ping, Traceroute, and <a href="https://www.comparitech.com/net-admin/best-network-scanners/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">network scanning</a>. The paid versions are the Pro, to monitor up to 20 devices, Deluxe, to monitor up to 45 devices, and Enterprise, which will monitor up to 400 devices.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/01/Net-Probe.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/01/Net-Probe.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/01/Net-Probe.jpg" alt="Net Probe" width="640" height="356">
+</picture>
+</a></p>`,
       freetrialElement: ''
     },
     {
@@ -4818,6 +5963,21 @@ export const data = {
       features: ['Network Discovery Feature', 'Automated Network Mapping', 'Network Monitoring'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Network Notepad</strong> presents a number of usage options. Essentially, it is a graphics editor for the manual creation of a network map. This is a free tool but you can upgrade to a paid version to get autodiscovery and automated mapping. The package also provides a basic network device availability tester that is based on Ping.</p>
+      <p>The basic Network Notepad includes a rudimentary discovery system based on <a href="https://www.comparitech.com/net-admin/cisco-discovery-protocol/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1"><b>Cisco Discovery Protocol</b></a>. However, you will probably use this tool more as a network map designer. The editing screen gives you all of the icons that you need to clearly depict your network and the map is built using drag-and-drop. If you use CDP to locate all of your devices, the attributes discovered by that process can be pulled into the descriptions of the network nodes in your map.</p>
+      <h4><strong>Who is it recommended for?</strong></h4>
+      <p>Network Notepad is a combination tool. Use it to design a new network, discover an existing network and get a map of it that you can adjust, or get it to discover, map, and monitor a network. This system is appropriate for planning or discovering a small network.</p>
+      <p>You can run Network Notepad on Windows 10, 8, 7, Vista, XP, and 2000. The <a href="http://www.networknotepad.com/download.shtml" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">Freeware Edition </a>is easy to download and you can get a 30-day free trial of the <a href="http://www.networknotepad.com/Pro1.3/EN/Download.shtml" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">Professional Edition</a> and the <a href="http://www.networknotepad.com/Ent1.0/EN/Download.shtml" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">Enterprise Edition</a>.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/01/Network-Notepad.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/01/Network-Notepad.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/01/Network-Notepad.jpg" alt="Network Notepad" width="640" height="410">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>You can run Network Notepad on Windows 10, 8, 7, Vista, XP, and 2000. The <a href="http://www.networknotepad.com/download.shtml" target="_blank" rel="noopener noreferrer">Freeware Edition </a>is easy to download and you can get a 30-day free trial of the <a href="http://www.networknotepad.com/Pro1.3/EN/Download.shtml" target="_blank" rel="noopener noreferrer">Professional Edition</a> and the <a href="http://www.networknotepad.com/Ent1.0/EN/Download.shtml" target="_blank" rel="noopener noreferrer">Enterprise Edition</a>.</p>'
     },
@@ -4845,6 +6005,27 @@ export const data = {
       features: ['Network Discovery', 'Automated Mapping', 'Supports Capacity Planning'],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p>The purpose of <strong>netTerrain Logical</strong> is to support IT asset inventories. There are a number of functions in this tool for inventory management but the most attractive is its network discovery and automatic mapping tool. The package provides a range of layout options and you can switch from one view to another with ease.</p>
+      <p>You don’t have to stick with those generated maps because you can adjust the topology to meet your specific project aims.</p>
+      <p>The netTerrain tool supports capacity planning and network reorganization. Extra features help you identify and shut down security weaknesses on your network. This topology tool is Visio-compatible, which gives you the opportunity to exchange data from netTerrain Logical to a range of other Visio-aligned tools.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459628">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool.jpg.webp 1761w, https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool-300x147.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool-1024x502.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool-768x376.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool-1536x753.jpg.webp 1536w" sizes="auto, (max-width: 1761px) 100vw, 1761px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool.jpg" alt="GraphicalNetworks netTerrain Logical Mapping Diagram Topology Tool" width="1761" height="863" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool.jpg 1761w, https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool-300x147.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool-1024x502.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool-768x376.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/GraphicalNetworks-netTerrain-Logical-Mapping-Diagram-Topology-Tool-1536x753.jpg 1536w" sizes="auto, (max-width: 1761px) 100vw, 1761px">
+</picture>
+</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>This tool is not a network monitor but is limited to documenting a network and creating an inventory and a map. Network managers that are happy with their network monitoring tool but dissatisfied with its mapping capabilities should consider netTerrain Logical.</p>
+<p>The tool installs on <b>Windows Server 2012 and higher</b>. You can get <a href="https://graphicalnetworks.com/demo-form/" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">a free demo</a> of the system to try it out before you buy.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/01/netTerrain-Logical.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/01/netTerrain-Logical.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/01/netTerrain-Logical.jpg" alt="netTerrain Logical" width="640" height="408">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>The tool installs on <b>Windows Server 2012 and higher</b>. You can get <a href="https://graphicalnetworks.com/demo-form/" target="_blank" rel="noopener noreferrer">a free demo</a> of the system to try it out before you buy.</p>'
     },
@@ -4872,6 +6053,26 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>DM3</strong> support sales staff when assisting a client to plan their requirements and suggesting items from the company’s sales list to meet those needs. This is the reverse of the tools on the list that scan a network and compile an inventory. Instead, the system requires an inventory to be entered and then allows the user to select from that list of products when designing a new network.</p>
+      <p>You don’t have to be a sales professional to use this tool, so it would work just as well for an IT department that needs to plan, adapt, and expand a busy network for an organization. The concept of providing a service for workers in the field means that the tool was designed for collaboration and presentation. <b>Plans can be stored on the Cloud</b> and mobile apps make design and retrieval possible from anywhere.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459629">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool.jpg.webp 1548w, https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool-300x167.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool-1024x571.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool-768x428.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool-1536x856.jpg.webp 1536w" sizes="auto, (max-width: 1548px) 100vw, 1548px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool.jpg" alt="D3MNetworks D3M Mapping Diagram Topology Tool" width="1548" height="863" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool.jpg 1548w, https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool-300x167.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool-1024x571.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool-768x428.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/D3MNetworks-D3M-Mapping-Diagram-Topology-Tool-1536x856.jpg 1536w" sizes="auto, (max-width: 1548px) 100vw, 1548px">
+</picture>
+</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>This tool is designed for use by sales staff and it is linked to a list of available products. Although network engineers can use the tool to create a plan for a new network, you need to set up an inventory first, which means you would already have decided which devices to buy before creating the plan and discovering which are really necessary.</p>
+<p>The tool is pricey, but you can get <b>your first project completed <a href="https://app.d3mnetworks.com/users/sign-up" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">for free</a></b>. There is no limit on the number of projects you can use the tool for after that first free trial. There are three charging bands for the system, which work on the number of users that you want to access the tool. The service is charged on a subscription basis with a monthly fee.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/01/D3M.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/01/D3M.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/01/D3M.jpg" alt="D3M" width="640" height="351">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>The tool is pricey, but you can get <b>your first project completed <a href="https://app.d3mnetworks.com/users/sign-up" target="_blank" rel="noopener noreferrer">for free</a></b>. There is no limit on the number of projects you can use the tool for after that first free trial. There are three charging bands for the system, which work on the number of users that you want to access the tool. The service is charged on a subscription basis with a monthly fee.</p>'
     },
@@ -4904,6 +6105,27 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>LANTopoLog</strong> is a network mapper that is completely free to use. The system includes a discovery service that will identify all of your devices and then create a network map for you. It isn’t accurate to call that a topology map because you get no sense of the proximity or distance between connected devices. Instead, you get a hierarchical view of your network</p>
+      <p>The tool includes <b>a network discovery facility, which is based on SNMP</b>. The resulting map, which is drawn automatically, shows each of the devices in your network and the devices that it connects to. The result of this schematic is a tree structure that gives the IP addresses, port numbers, and hostnames of each device and its connections.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Lantopolog-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459630">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Lantopolog-Mapping-Diagram-Topology-Tool.jpg.webp 1307w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lantopolog-Mapping-Diagram-Topology-Tool-300x104.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lantopolog-Mapping-Diagram-Topology-Tool-1024x355.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lantopolog-Mapping-Diagram-Topology-Tool-768x266.jpg.webp 768w" sizes="auto, (max-width: 1307px) 100vw, 1307px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Lantopolog-Mapping-Diagram-Topology-Tool.jpg" alt="Lantopolog Mapping Diagram Topology Tool" width="1307" height="453" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Lantopolog-Mapping-Diagram-Topology-Tool.jpg 1307w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lantopolog-Mapping-Diagram-Topology-Tool-300x104.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lantopolog-Mapping-Diagram-Topology-Tool-1024x355.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Lantopolog-Mapping-Diagram-Topology-Tool-768x266.jpg 768w" sizes="auto, (max-width: 1307px) 100vw, 1307px">
+</picture>
+</a></p>
+<p><b>This is a rudimentary network monitoring system</b>. Its use as a network mapping tool lies in the list of discovered devices, which you could use as an inventory. This provides you with the current connections between your devices, which you could use as a guide when replanning your network in a graphics tool, such as Visio. This software runs on <b>Windows</b> environments.</p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>LANTopoLog is a useful tool for anyone who doesn’t want to pay for a network mapping system. The hierarchical layout of the map can be good for when you are planning or reorganizing the connections to each of your switches. That is, you could use a more sophisticated map from another tool to work out where your network devices are and then use this map to examine the utilization of switch ports.</p>
+
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/01/LANTopoLog.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/01/LANTopoLog.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/01/LANTopoLog.jpg" alt="LANTopoLog" width="974" height="358">
+</picture>
+</a></p>`,
       freetrialElement: ''
     },
     {
@@ -4935,6 +6157,27 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>Creately</strong> is another option for those who want to use a chart creation tool to create a range of diagrams, including a network map. There is no network discovery function in this tool and you can’t import a map created by a monitoring tool. You would use Creately to draw up a new network.</p>
+      <p>The package includes <b>a large selection of templates</b>, which each come with a set of icons. The layouts available include WAN views that feature city and cloud icons. You also get the standard LAN layout option and you can even create rack views.</p>
+      <p>The Creately system allows you to set up accounts for members of your team and there is <b>a collaboration feature</b> built into the tool, which enables you to grant editing or viewing access to other users.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459631">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool.jpg.webp 1737w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool-300x150.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool-1024x513.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool-768x385.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool-1536x769.jpg.webp 1536w" sizes="auto, (max-width: 1737px) 100vw, 1737px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool.jpg" alt="Creately Mapping Diagram Topology Tool" width="1737" height="870" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool.jpg 1737w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool-300x150.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool-1024x513.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool-768x385.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Mapping-Diagram-Topology-Tool-1536x769.jpg 1536w" sizes="auto, (max-width: 1737px) 100vw, 1737px">
+</picture>
+</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>As it doesn’t have a discovery function, Creately is suited to designing a new network. So, it is likely users of this package would be network consultancies or the network manager of a new company.</p>
+<p>The software can be installed on <b>Windows</b>, <b>Linux</b>, and <b>macOS</b> and access can be granted to users of mobile devices that run <b>iOS </b>or <b>Android</b>. You can also opt to get Creately as a Cloud service. You can try the package by accessing a <a href="https://creately.com/demo-start" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">demo account</a>.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Diagram.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-368845">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Diagram.jpg.webp 1263w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Diagram-300x170.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Diagram-1024x581.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Diagram-768x435.jpg.webp 768w" sizes="auto, (max-width: 1263px) 100vw, 1263px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Diagram.jpg" alt="Creately Diagram" width="1263" height="716" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Diagram.jpg 1263w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Diagram-300x170.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Diagram-1024x581.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/Creately-Diagram-768x435.jpg 768w" sizes="auto, (max-width: 1263px) 100vw, 1263px">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>The software can be installed on <b>Windows</b>, <b>Linux</b>, and <b>macOS</b> and access can be granted to users of mobile devices that run <b>iOS </b>or <b>Android</b>. You can also opt to get Creately as a Cloud service. You can try the package by accessing a <a href="https://creately.com/demo-start" target="_blank" rel="noopener noreferrer">demo account</a>.</p>'
     },
@@ -4963,6 +6206,26 @@ export const data = {
       ],
       'SaaS/On-Premises': '',
       os: '',
+      additionalInfo: `
+<div class="additional-info">
+      <h4><strong>Why do we recommend it?</strong></h4>
+      <p><strong>10-Strike Network Diagram</strong> is a network planning tool that has an on-demand network discovery function that can boost your progress by populating your plan with the existing network as a starting point. The tool has a library of network device icons that lets you work out how to change your existing network or create a new one from scratch.</p>
+      <p>Views available within the package include <b>a real-world map</b>, which is based on Google maps. The autodiscovery feature will even trace your connections across the internet, plotting the location of each router as it passes through the real-world map.</p>
+      <p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async" class="alignnone size-full wp-image-459632">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool.jpg.webp 1276w, https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool-300x201.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool-1024x688.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool-768x516.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool-195x130.jpg.webp 195w" sizes="auto, (max-width: 1276px) 100vw, 1276px">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool.jpg" alt="10-strike Network Diagram Mapping Diagram Topology Tool" width="1276" height="857" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool.jpg 1276w, https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool-300x201.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool-1024x688.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool-768x516.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/02/10-strike-Network-Diagram-Mapping-Diagram-Topology-Tool-195x130.jpg 195w" sizes="auto, (max-width: 1276px) 100vw, 1276px">
+</picture>
+</a></p>
+<h4><strong>Who is it recommended for?</strong></h4>
+<p>Network consultants and network managers would all benefit from this tool. It is a useful both for exploring an existing network and also for creating a brand-new network. The system can be used to map a network of any size.</p>
+<p>This software runs on <b>Windows</b> environments and you can get it on a <a href="https://www.10-strike.com/network-diagram/download.shtml" target="_blank" rel="noopener noreferrer" data-gtm-vis-has-fired1649924_55="1">30-day trial</a>.</p>
+</div>`,
+
+      poster: `<p><a href="https://cdn.comparitech.com/wp-content/uploads/2019/01/10Strike.jpg" rel="noopener noreferrer" target="_blank" data-gtm-vis-has-fired1649924_55="1"><picture loading="lazy" decoding="async">
+<source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/01/10Strike.jpg.webp">
+<img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/01/10Strike.jpg" alt="10Strike" width="640" height="425">
+</picture>
+</a></p>`,
       freetrialElement:
         '<p>This software runs on <b>Windows</b> environments and you can get it on a <a href="https://www.10-strike.com/network-diagram/download.shtml" target="_blank" rel="noopener noreferrer">30-day trial</a>.</p>'
     }

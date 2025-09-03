@@ -65,3 +65,22 @@ export const obsIntersection = (target, threshold, callback) => {
   if (!target) return;
   observer.observe(target);
 };
+
+export const setNewCanvas = (wrapper, canvas) => {
+  //Grab the original canvas
+  const originalCanvas = canvas;
+
+  //Create a new canvas
+  const cloneCanvas = document.createElement('canvas');
+  cloneCanvas.width = originalCanvas.width;
+  cloneCanvas.height = originalCanvas.height;
+
+  //Copy the drawing
+  const ctx = cloneCanvas.getContext('2d');
+  ctx.drawImage(originalCanvas, 0, 0);
+
+  //Insert at the top of the page
+  if (wrapper.querySelector('.new-canvas-wrapper')) {
+    wrapper.querySelector('.new-canvas-wrapper').append(cloneCanvas);
+  }
+};
