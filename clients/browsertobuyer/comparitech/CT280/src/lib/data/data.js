@@ -1,10 +1,3 @@
-//additionalInfo: `
-//<div class="additional-info">
-
-//</div>`,
-
-//poster:``,
-
 export const data = {
   '/net-admin/network-monitoring-tools/': [
     {
@@ -15,7 +8,7 @@ export const data = {
       imageUrl:
         'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1auvik_68a7307e19bd2.png',
       description:
-        '<p><a href="https://www.comparitech.com/go/auvik-network-monitoring-tools-learn-more-network-monitoring-tools/l/inline/u/8626-1194-5010-3490+66031/" target="_blank" class="go-link">Auvik</a> is a cloud-based network monitoring system that includes a number of system management tools. The package is accessed through a Web browser and when you open an account, the setup process installs collectors on your system. The Auvik package is able to monitor multiple sites and centralizes their control. This makes the package ideal for monitoring a WAN.</p>',
+        '<p><b><a href="https://www.comparitech.com/go/auvik-network-monitoring-tools-learn-more-network-monitoring-tools/l/inline/u/4866-2827-9510-5925+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="4866-2827-9510-5925" class="go-link">Auvik</a></b> is a <b>cloud-based</b> network monitoring system that includes a number of system management tools. The package is accessed through a Web browser and when you open an account, the setup process installs <b>collectors</b> on your system. The Auvik package is able to monitor multiple sites and centralizes their control. This makes the package ideal for monitoring a WAN.</p><p>The service provided by Auvik begins with a <b>network discovery</b> process. This automatically populates all of the base information needed for the monitor to work. The discovery service is continuous, so it will spot when new devices are added to the network.</p>',
       pricingText: 'Auvik doesn’t publish its prices.',
       pricing: [],
       poster: `<figure id="attachment_516607" aria-describedby="caption-attachment-516607" style="width: 1869px" class="wp-caption alignnone"><a href="https://www.comparitech.com/go/auvik-network-monitoring-tools-learn-more-network-monitoring-tools/l/image/u/2497-4692-1929-5962+66031/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="66031" data-clickid="2497-4692-1929-5962" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-516607 size-full">
@@ -125,6 +118,7 @@ export const data = {
         'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1domotz_68a730bf45743.png',
       description: `
       <p><b><a href="https://www.comparitech.com/go/domotz-network-monitoring-learn-more-network-monitoring-tools/l/inline/u/0850-1835-9332-4388+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="0850-1835-9332-4388" class="go-link" data-gtm-vis-has-fired1649924_55="1">Domotz</a></b> is a cloud-based system that offers network monitoring. It can unify the supervision of multiple networks and also has a <b>multi-tenant</b> configuration for use by managed service providers.</p>
+      <p>The system is accessed through an attractive cloud-based console with any standard Web browser. Setting up an account involves installing an agent on a host that is connected to the network that is going to be monitored. The package also includes network and endpoint <b>management tools</b> and workload automation facilities.</p>
       `,
       pricingText:
         'There are two pricing plans for Domotz.The Device Plan costs up to $1.50 per month per device,and their Location Plan is priced at $35 or less per month, per location.',
@@ -241,7 +235,9 @@ export const data = {
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Network-Monitoring-Organizations.jpg.webp 1384w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Network-Monitoring-Organizations-300x167.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Network-Monitoring-Organizations-1024x570.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Network-Monitoring-Organizations-768x428.jpg.webp 768w" sizes="auto, (max-width: 1384px) 100vw, 1384px">
 <img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Network-Monitoring-Organizations.jpg" alt="NinjaOne Network Monitoring - Organizations" width="1384" height="771" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Network-Monitoring-Organizations.jpg 1384w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Network-Monitoring-Organizations-300x167.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Network-Monitoring-Organizations-1024x570.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Network-Monitoring-Organizations-768x428.jpg 768w" sizes="auto, (max-width: 1384px) 100vw, 1384px">
 </picture>
-</a></p>`,
+</a></p>
+<p>Problem areas of the network are color-coded and easy to see</p>
+`,
       pricing: [],
       pros: [
         'Simultaneous Monitoring of Multiple Sites',
@@ -254,7 +250,7 @@ export const data = {
       os: 'Cloud-based',
       additionalInfo: `
        <div class="additional-info">
-            <p><a href="https://www.comparitech.com/go/ninjaone-lm-network-monitoring-tools/l/image/u/0031-5548-6587-2107+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="0031-5548-6587-2107" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-437480 size-full">
+            <p><a href="https://www.comparitech.com/go/ninjaone-lm-network-monitoring-tools/l/image/u/1701-4294-4152-8416+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1701-4294-4152-8416" class="go-link"><picture loading="lazy" decoding="async" class="wp-image-437480 size-full">
             <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Endpoint-Management.jpg.webp 998w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Endpoint-Management-300x180.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Endpoint-Management-768x461.jpg.webp 768w" sizes="auto, (max-width: 998px) 100vw, 998px">
             <img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Endpoint-Management.jpg" alt="NinjaOne Endpoint Management" width="998" height="599" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Endpoint-Management.jpg 998w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Endpoint-Management-300x180.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/NinjaOne-Endpoint-Management-768x461.jpg 768w" sizes="auto, (max-width: 998px) 100vw, 998px">
             </picture>
@@ -345,7 +341,9 @@ export const data = {
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager.jpg.webp 2181w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager-300x176.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager-1024x600.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager-768x450.jpg.webp 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager-1536x900.jpg.webp 1536w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager-2048x1200.jpg.webp 2048w" sizes="auto, (max-width: 2181px) 100vw, 2181px">
 <img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager.jpg" alt="ManageEngine OpManager" width="2181" height="1278" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager.jpg 2181w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager-300x176.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager-1024x600.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager-768x450.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager-1536x900.jpg 1536w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ManageEngine-OpManager-2048x1200.jpg 2048w" sizes="auto, (max-width: 2181px) 100vw, 2181px">
 </picture>
-</a></p>`,
+</a></p>
+<p>This customizable dashboard allows you to focus on your unique areas of interest</p>
+`,
       pros: [
         'Unique Dashboards and Reports',
         'Reduced False Positives',
@@ -550,7 +548,7 @@ export const data = {
       pricingText: '',
       pricing: [],
       poster:
-        '<p><a href="https://www.comparitech.com/go/site24x7-network-monitoring-free-trial/l/image/u/0343-7521-9454-5408+66031/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="66031" data-clickid="0343-7521-9454-5408" class="go-link"><img loading="lazy" decoding="async" class="wp-image-228865 size-full" src="https://cdn.comparitech.com/wp-content/uploads/2019/10/Site24x7-1.jpg" alt="Site24x7" width="2798" height="1454" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/10/Site24x7-1.jpg 2798w, https://cdn.comparitech.com/wp-content/uploads/2019/10/Site24x7-1-300x156.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/10/Site24x7-1-768x399.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/10/Site24x7-1-1024x532.jpg 1024w" sizes="auto, (max-width: 2798px) 100vw, 2798px"></a></p>',
+        '<p><a href="https://www.comparitech.com/go/site24x7-network-monitoring-free-trial/l/image/u/0343-7521-9454-5408+66031/" target="_blank" rel="sponsored nofollow noopener" data-gtm-vis-has-fired1649924_55="1" data-postid="66031" data-clickid="0343-7521-9454-5408" class="go-link"><img loading="lazy" decoding="async" class="wp-image-228865 size-full" src="https://cdn.comparitech.com/wp-content/uploads/2019/10/Site24x7-1.jpg" alt="Site24x7" width="2798" height="1454" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/10/Site24x7-1.jpg 2798w, https://cdn.comparitech.com/wp-content/uploads/2019/10/Site24x7-1-300x156.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/10/Site24x7-1-768x399.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2019/10/Site24x7-1-1024x532.jpg 1024w" sizes="auto, (max-width: 2798px) 100vw, 2798px"></a></p><p>Network Alerts are prominently displayed and colour-coded.</p>',
       pros: ['Bridging Technical and Business Metrics', 'Freeware Version'],
       cons: ['Learning Curve'],
       features: [
@@ -606,7 +604,9 @@ export const data = {
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/HelpSystems-Intermapper-Screenshots.jpg.webp 1219w, https://cdn.comparitech.com/wp-content/uploads/2019/03/HelpSystems-Intermapper-Screenshots-300x187.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/HelpSystems-Intermapper-Screenshots-1024x639.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/HelpSystems-Intermapper-Screenshots-768x479.jpg.webp 768w" sizes="auto, (max-width: 1219px) 100vw, 1219px">
 <img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/HelpSystems-Intermapper-Screenshots.jpg" alt="Fortra Intermapper Screenshots" width="1219" height="761" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/HelpSystems-Intermapper-Screenshots.jpg 1219w, https://cdn.comparitech.com/wp-content/uploads/2019/03/HelpSystems-Intermapper-Screenshots-300x187.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/HelpSystems-Intermapper-Screenshots-1024x639.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/HelpSystems-Intermapper-Screenshots-768x479.jpg 768w" sizes="auto, (max-width: 1219px) 100vw, 1219px">
 </picture>
-</a></p>`,
+</a></p>
+<p>Comprehensive maps and time graphs at your fingertips</p>
+`,
       pricing: [],
       pros: ['Server Not Required', 'Continuous Automated Monitoring', 'Free Version Available'],
       cons: ['No Cloud Version', 'Free Edition Device Limitation'],
@@ -715,7 +715,7 @@ export const data = {
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Datadog-Network-Monitoring.jpg.webp 1473w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Datadog-Network-Monitoring-300x169.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Datadog-Network-Monitoring-1024x576.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Datadog-Network-Monitoring-768x432.jpg.webp 768w" sizes="auto, (max-width: 1473px) 100vw, 1473px">
 <img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Datadog-Network-Monitoring.jpg" alt="Datadog Network Monitoring" width="1473" height="829" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Datadog-Network-Monitoring.jpg 1473w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Datadog-Network-Monitoring-300x169.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Datadog-Network-Monitoring-1024x576.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Datadog-Network-Monitoring-768x432.jpg 768w" sizes="auto, (max-width: 1473px) 100vw, 1473px">
 </picture>
-</p>`,
+</p><p>The network devices are color-coded for easily identifying problematic connections</p>`,
       pros: [
         'Automatic Asset Inventory',
         'Traffic Patterns and Virtualizations',
@@ -769,7 +769,7 @@ export const data = {
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/ExtraHop-Reveal-x.jpg.webp 1271w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ExtraHop-Reveal-x-300x181.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ExtraHop-Reveal-x-1024x616.jpg.webp 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ExtraHop-Reveal-x-768x462.jpg.webp 768w" sizes="auto, (max-width: 1271px) 100vw, 1271px">
 <img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/ExtraHop-Reveal-x.jpg" alt="ExtraHop Reveal x" width="1271" height="765" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/ExtraHop-Reveal-x.jpg 1271w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ExtraHop-Reveal-x-300x181.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ExtraHop-Reveal-x-1024x616.jpg 1024w, https://cdn.comparitech.com/wp-content/uploads/2019/03/ExtraHop-Reveal-x-768x462.jpg 768w" sizes="auto, (max-width: 1271px) 100vw, 1271px">
 </picture>
-</a></p>`,
+</a></p><p>Key Stats and processing times are prominently displayed numerically</p>`,
       pricing: [],
       pros: ['Multi-Site Operations'],
       cons: ['No Price List'],
@@ -859,11 +859,12 @@ export const data = {
         'https://cdn-3.convertexperiments.com/uf/10021806/1002820/solarwinds_68ac64694cbe9.svg',
       description: `
       <p><b><a href="https://www.solarwinds.com/network-performance-monitor" target="_blank" rel="noopener noreferrer">SolarWinds Network Performance Monitor</a> </b>is a comprehensive network performance monitoring tool that can monitor the status of devices with <b>SNMP</b>. It can <b>automatically discover network devices connected to your network</b>.</p>
+      <p>When we tested Network Performance Monitor we found the following key features and a unique feature as compared to other reviews in this post.</p>
       `,
       pricingText: 'The price of SolarWinds Network Performance Monitor starts at $2,995 (~£2,350)',
       pricing: [],
       poster:
-        '<p><img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2018/06/1.-SolarWinds-Network-Performance-Monitor.jpg" alt="SolarWinds Network Performance Monitor" width="960" height="540"></p>',
+        '<p><img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2018/06/1.-SolarWinds-Network-Performance-Monitor.jpg" alt="SolarWinds Network Performance Monitor" width="960" height="540"></p><p>The main dashboard monitors the availability and performance of connected network devices from a holistic perspective.</p>',
       pros: ['Auto-Discovery', 'SNMP Monitoring and Packet Analysis', 'Customizable Dashboard'],
       cons: ['May Be Overwhelming for Small Networks'],
       features: ['SNMP Monitoring', 'Auto-Discovery', 'Network Packet Analysis'],
@@ -942,7 +943,7 @@ export const data = {
 <source type="image/webp" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Catchpoint-Network-Experience.jpg.webp 802w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Catchpoint-Network-Experience-300x157.jpg.webp 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Catchpoint-Network-Experience-768x402.jpg.webp 768w" sizes="auto, (max-width: 802px) 100vw, 802px">
 <img loading="lazy" decoding="async" src="https://cdn.comparitech.com/wp-content/uploads/2019/03/Catchpoint-Network-Experience.jpg" alt="Catchpoint Network Experience" width="802" height="420" srcset="https://cdn.comparitech.com/wp-content/uploads/2019/03/Catchpoint-Network-Experience.jpg 802w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Catchpoint-Network-Experience-300x157.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2019/03/Catchpoint-Network-Experience-768x402.jpg 768w" sizes="auto, (max-width: 802px) 100vw, 802px">
 </picture>
-</a></p>`,
+</a></p><p>Clear layout dashboard that is easy to drill-down</p>`,
       pricing: [],
       pros: ['Root Cause Analysis', 'Assesses ISP Performance'],
       cons: ['Not Suitable for LAN Monitoring'],
@@ -983,7 +984,7 @@ export const data = {
       `,
       pricingText: '',
       poster:
-        '<p><img loading="lazy" decoding="async" class="wp-image-80327 size-full" src="https://cdn.comparitech.com/wp-content/uploads/2018/06/7.-Icinga.jpg" alt="Icinga" width="1920" height="1080" srcset="https://cdn.comparitech.com/wp-content/uploads/2018/06/7.-Icinga.jpg 1920w, https://cdn.comparitech.com/wp-content/uploads/2018/06/7.-Icinga-300x169.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2018/06/7.-Icinga-768x432.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2018/06/7.-Icinga-1024x576.jpg 1024w" sizes="auto, (max-width: 1920px) 100vw, 1920px"></p>',
+        '<p><img loading="lazy" decoding="async" class="wp-image-80327 size-full" src="https://cdn.comparitech.com/wp-content/uploads/2018/06/7.-Icinga.jpg" alt="Icinga" width="1920" height="1080" srcset="https://cdn.comparitech.com/wp-content/uploads/2018/06/7.-Icinga.jpg 1920w, https://cdn.comparitech.com/wp-content/uploads/2018/06/7.-Icinga-300x169.jpg 300w, https://cdn.comparitech.com/wp-content/uploads/2018/06/7.-Icinga-768x432.jpg 768w, https://cdn.comparitech.com/wp-content/uploads/2018/06/7.-Icinga-1024x576.jpg 1024w" sizes="auto, (max-width: 1920px) 100vw, 1920px"></p><p>Network alerts and stressed devices are prominently displayed</p>',
       pricing: [],
       pros: ['Modules for Different Functionality', 'Cross-Platform Compatibility'],
       cons: ['Reliance on Open-Source Community', 'Designed for Technical Users'],
@@ -1834,6 +1835,13 @@ export const data = {
         'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1superops_68a7451d047b3.png',
       description: `
       <p><strong><a href="https://www.comparitech.com/go/superops-ai-best-rmm-software-and-tools-rmm-software-and-tools/l/inline/u/0140-3053-9173-2111+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="0140-3053-9173-2111" class="go-link">SuperOps</a></strong> is a powerful, cloud-first software, built for MSPs to effortlessly manage client endpoint networks. This bundle includes PSA and RMM functions. The RMM part of this deal includes:</p>
+      <ul>
+        <li>Asset Management</li>
+        <li>Policy Management</li>
+        <li>Patch Management</li>
+        <li>Alert Management</li>
+      </ul>
+      <p>These systems are intended for use by the technicians that implement the management of client systems.</p>
       `,
       best_for: 'Unified IT management',
       relevant_for: 'MSPs and IT service teams',

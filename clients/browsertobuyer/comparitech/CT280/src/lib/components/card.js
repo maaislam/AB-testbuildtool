@@ -35,7 +35,7 @@ const card = (id, data) => {
                 </div>
                 
             </div>
-            ${description}
+            <div class="provider-description">${description}</div>
             ${poster ? `<div class="provider-poster">${poster}</div>` : ''}
             <div class="grid">
                 ${

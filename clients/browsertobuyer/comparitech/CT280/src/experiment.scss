@@ -8,6 +8,21 @@
   .#{$id}__card-wrapper {
     margin: 20px 0;
   }
+  .entry-content .#{$id}__card .additional-info p:first-of-type picture {
+    display: block !important;
+
+    img {
+      display: block !important;
+    }
+  }
+
+  .entry-content .#{$id}__card .additional-info p picture {
+    display: block !important;
+
+    img {
+      display: block !important;
+    }
+  }
   .entry-content .#{$id}__card .provider-poster p:first-of-type img,
   .entry-content .#{$id}__card .provider-poster p:first-of-type picture {
     display: block !important;
@@ -19,7 +34,7 @@
     max-width: 100%;
     margin-bottom: 50px;
 
-    & > p {
+    & > .provider-description {
       font-family: Arial;
       font-size: 18.72px;
       font-style: normal;
@@ -27,12 +42,6 @@
       line-height: 150%;
       color: #444;
       margin: 20px 0;
-
-      b,
-      a,
-      strong {
-        font-weight: 400;
-      }
 
       @media screen and (max-width: 767px) {
         margin: 20px 0 !important;
