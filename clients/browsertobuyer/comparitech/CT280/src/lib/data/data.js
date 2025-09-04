@@ -1980,14 +1980,7 @@ export const data = {
         'Team and Task Management Automation'
       ],
       cons: ['Patching not Universal'],
-      features: [
-        'Full Stack Observability',
-        'Unified Endpoint Management',
-        'Software Security',
-        'Multi-Tenant Architecture',
-        'Technician Efficiency',
-        'Team and Task Management Automation'
-      ],
+      features: ['Full Stack Observability', 'Unified Endpoint Management', 'Software Security'],
       'SaaS/On-Premises': '',
       os: 'Windows, Mac, Android, iOS, and more',
       additionalInfo: `
@@ -2502,6 +2495,8 @@ export const data = {
       `,
       best_for: 'Mobile-first IT management',
       relevant_for: 'SMBs and MSPs that need control over mobile-enabled infrastructure',
+      pricingText:
+        'The cost depends on the number of endpoints. The minimum is 20 endpoints, which costs $44 per month',
       pricing: [],
       pros: ['Auto-Remediation', 'Full Stack Observability', 'Extra Features'],
       cons: [''],
@@ -2800,8 +2795,14 @@ export const data = {
       pricingText:
         'The annual subscription costs $495 for a single user license with 50 mobile devices. The cost of a perpetual license is $1,238.',
       pricing: [],
-      pros: [],
-      cons: [],
+      pros: [
+        'Designed to work right away, features over 200 customizable widgets to build unique dashboards and reports',
+        'Leverages autodiscovery to find, inventory, and map new devices',
+        'Uses intelligent alerting to reduce false positives and eliminate alert fatigue across larger networks',
+        'Supports email, SMS, and webhook for numerous alerting channels',
+        'Integrates well in the ManageEngine ecosystem with their other products'
+      ],
+      cons: ['Is a feature-rich tool that will require a time investment to properly learn'],
       features: [
         'Supports Windows, Mac OS, Chrome OS, iOS, and Android.',
         'Remote device control',
@@ -3195,12 +3196,11 @@ export const data = {
       pricingText: 'Starts at $10/device/month.',
       pricing: [],
       pros: [
-        'Use onboarding workflow to add new devices',
+        'Supports platforms like Apple Enrollment as well as Android Zero Touch',
         'Great for both managed devices as well as BYOD environments',
-        'Can build workflows and policies with little platform knowledge',
-        'Can take some time to explore the product'
+        'Can build workflows and policies with little platform knowledge'
       ],
-      cons: [],
+      cons: ['Can take some time to explore the product'],
       features: [
         'Configure devices on bulk',
         'Automatically deploy applications',
@@ -3254,9 +3254,7 @@ export const data = {
       pros: [
         'Sleek highly customizable interface',
         'Cross-platform support with Windows, Mac OS, Linux, Android and iOS',
-        'Available on-premise and as a cloud service',
-        'Would like to see more options for mobile security',
-        'Better suited for enterprise networks'
+        'Available on-premise and as a cloud service'
       ],
       cons: [
         'Would like to see more options for mobile security',
@@ -3994,7 +3992,7 @@ export const data = {
         'EDI Protocols'
       ],
       'SaaS/On-Premises': '',
-      os: 'Windows, macOS, Linux, Solaris, AIX, and z/OS',
+      //os: 'Windows, macOS, Linux, Solaris, AIX, and z/OS',
       additionalInfo: `
 <div class="additional-info">
       <h4>Comparitech SupportScore</h4>
@@ -4068,7 +4066,7 @@ export const data = {
         'Transfer Security'
       ],
       'SaaS/On-Premises': '',
-      os: '',
+      //os: '',
       additionalInfo: `
 <div class="additional-info">
       <h4>Comparitech SupportScore</h4>
@@ -4133,7 +4131,7 @@ export const data = {
       cons: ['No Native Productivity Suit'],
       features: ['Cloud Platform', 'Secure Transfers', 'Minimum Account Size', 'File Syncing'],
       'SaaS/On-Premises': '',
-      os: '',
+      //os: '',
       additionalInfo: `
 <div class="additional-info">
       <h4><strong>Why do we recommend it?</strong></h4>
@@ -4189,7 +4187,7 @@ export const data = {
       cons: ['Built for Windows'],
       features: ['Secure Protocols', 'User Management', 'Task Automation'],
       'SaaS/On-Premises': '',
-      os: '',
+      //os: '',
       additionalInfo: `
 <div class="additional-info">
       <h4>Comparitech SupportScore</h4>
@@ -4252,7 +4250,7 @@ export const data = {
       cons: ['Cloud-based'],
       features: ['Web portal', 'Scalable', 'Authentication', 'Encryption', 'Secure'],
       'SaaS/On-Premises': '',
-      os: '',
+      //os: '',
       additionalInfo: `
 <div class="additional-info">
       <h4><b>Why do we recommend it?</b></h4>
@@ -4304,7 +4302,7 @@ export const data = {
       cons: ['Doesn’t Interface with Cloud Drives'],
       features: ['Secure Protocols', 'Multi Platform', 'No Cost'],
       'SaaS/On-Premises': '',
-      os: '',
+      //os: '',
       additionalInfo: `
 <div class="additional-info">
       <h4>Comparitech SupportScore</h4>
@@ -4356,7 +4354,7 @@ export const data = {
       cons: ['No Automation Features'],
       features: ['Secure Protocols', 'Simultaneous Transfers', 'Choice of SSH'],
       'SaaS/On-Premises': '',
-      os: '',
+      //os: '',
       additionalInfo: `
 <div class="additional-info">
       <h4>Comparitech SupportScore</h4>
@@ -4409,7 +4407,7 @@ export const data = {
       cons: ['Free Version Limitations'],
       features: ['Secure Protocols', 'Task Automation', 'Email Triggers'],
       'SaaS/On-Premises': '',
-      os: '',
+      //os: '',
       additionalInfo: `
 <div class="additional-info">
       <h4>Comparitech SupportScore</h4>
@@ -4464,7 +4462,7 @@ export const data = {
       cons: ['Pricey'],
       features: ['Secure Protocols', 'Blocks Attacks', 'Multiple Operating Systems'],
       'SaaS/On-Premises': '',
-      os: '',
+      //os: '',
       additionalInfo: `
 <div class="additional-info">
       <h4>Comparitech SupportScore</h4>
@@ -4519,7 +4517,7 @@ export const data = {
       cons: ['Ugly'],
       features: ['Secure Protocol', 'No Cost', 'For Windows'],
       'SaaS/On-Premises': '',
-      os: '',
+      //os: '',
       additionalInfo: `
 <div class="additional-info">
       <h4>Comparitech SupportScore</h4>
@@ -4647,8 +4645,7 @@ export const data = {
       pros: [
         'Increases technician productivity',
         'Includes a ticketing system',
-        'Provides confidential credentials distribution',
-        'access to remote systems'
+        'Provides confidential credentials distribution for access to remote systems'
       ],
       cons: ['This is a SaaS package with no self-hosting package'],
       features: [
@@ -4709,7 +4706,7 @@ export const data = {
 </a></p>`,
       pros: [
         'Focused heavily on compliance requirements',
-        'Pre-configured compliance',
+        'Pre-configured compliance reports',
         'Features insider threat detection',
         'Supports automation and scripting',
         'Great user interface'
@@ -6095,13 +6092,8 @@ export const data = {
       relevant_for: '',
       pricingText: '',
       pricing: [],
-      pros: [
-        'Completely Free',
-        'Supports Autodiscovery',
-        'Windows Only',
-        'Not the Most User-Friendly Option'
-      ],
-      cons: [''],
+      pros: ['Completely Free', 'Supports Autodiscovery'],
+      cons: ['Windows Only', 'Not the Most User-Friendly Option'],
       features: [
         'Network Discovery',
         'Rudimentary Network Map',
