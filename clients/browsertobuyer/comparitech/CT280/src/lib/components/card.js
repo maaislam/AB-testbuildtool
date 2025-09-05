@@ -35,8 +35,6 @@ const card = (id, data) => {
                 </div>
                 
             </div>
-            <div class="provider-description">${description}</div>
-            ${poster ? `<div class="provider-poster">${poster}</div>` : ''}
             <div class="grid">
                 ${
                   pricingText
@@ -192,6 +190,8 @@ const card = (id, data) => {
                      : ''
                  }     
             </div>
+            <div class="provider-description">${description}</div>
+            ${poster ? `<div class="provider-poster">${poster}</div>` : ''}
             ${additionalInfo ? `${additionalInfo}` : ''}
         </div>
     `;

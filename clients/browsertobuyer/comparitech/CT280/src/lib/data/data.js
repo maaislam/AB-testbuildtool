@@ -2334,7 +2334,8 @@ export const data = {
       nameWithUrl: `
       <a href="https://www.comparitech.com/go/solarwinds-dameware-remote-everywhere-more-information/u/4223-7364-0923-0224+146634/" target="_blank" rel="sponsored nofollow noopener" data-postid="146634" data-clickid="4223-7364-0923-0224" class="go-link">12. Dameware Remote Everywhere</a>
       `,
-      imageUrl: '',
+      imageUrl:
+        'https://cdn-3.convertexperiments.com/uf/10021806/1002820/solarwinds-1_68ba826bd24bf.svg',
       description: `
       <p><b>Dameware Remote Everywhere</b> is an RMM tool rather than a full RMM package. This is a cloud-based service that manages connections between technicians and the remote devices that they support.</p>
       `,
@@ -2499,7 +2500,7 @@ export const data = {
         'The cost depends on the number of endpoints. The minimum is 20 endpoints, which costs $44 per month',
       pricing: [],
       pros: ['Auto-Remediation', 'Full Stack Observability', 'Extra Features'],
-      cons: [''],
+      cons: ['Desktop Console Not So Great'],
       features: ['A Wide Audience', 'Task Automation', 'Mobile First System'],
       'SaaS/On-Premises': '',
       os: '',
