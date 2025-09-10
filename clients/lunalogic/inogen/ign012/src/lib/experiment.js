@@ -76,7 +76,7 @@ const init = () => {
           },
           {
             value: 'both',
-            label: 'Both – For home and another for travel'
+            label: 'Both – For home and another for&nbsp;travel'
           }
         ]
       },
@@ -123,11 +123,11 @@ const init = () => {
         options: [
           {
             value: 'wheels',
-            label: "A unit on wheels that's easy to move around my&nbsp;home"
+            label: "A unit on wheels that's easy to move around&nbsp;my&nbsp;home"
           },
           {
             value: 'compact',
-            label: 'A unit that is light & compact enough to take when I&nbsp;travel'
+            label: 'A unit that is light & compact enough to take when&nbsp;I&nbsp;travel'
           }
         ]
       },
@@ -140,11 +140,11 @@ const init = () => {
         options: [
           {
             value: 'budget',
-            label: 'Budget-friendly device, made anywhere in the world'
+            label: 'Budget-friendly device, made anywhere in&nbsp;the&nbsp;world'
           },
           {
             value: 'premiumUSA',
-            label: 'Premium device, designed and assembled in the USA'
+            label: 'Premium device, designed and assembled in&nbsp;the&nbsp;USA'
           }
         ]
       }
@@ -365,6 +365,13 @@ const init = () => {
     if (btnElement) {
       btnElement.value = 'Get my results';
     }
+
+    if (!document.querySelector('.previous-button')) {
+      targetPoint.insertAdjacentHTML(
+        'beforeend',
+        '<button class="previous-button">Previous</button>'
+      );
+    }
   });
 
   document.body.addEventListener(
@@ -385,6 +392,17 @@ const init = () => {
       const quizWrapper = e.target.closest('.quiz-step');
       const nextButton = quizWrapper.querySelector('.quiz-btn.quiz-next');
       if (nextButton) nextButton.click();
+      if (e.target.closest('input#q1-0')) {
+        document.querySelector('.quiz-seg[data-seg="1"]').style.display = 'none';
+        document.querySelector('.quiz-seg[data-seg="2"]').style.display = 'none';
+      }
+    } else if (e.target.closest('.previous-button')) {
+      if (!state.history.length) return;
+      state.currentId = state.history.pop();
+      showStep(state.currentId);
+
+      document.querySelector('#formSection #leadForm').hidden = true;
+      document.querySelector('#formSection #leadForm').setAttribute('aria-hidden', 'true');
     }
     const btn = e.target.closest('[data-action="next"], [data-action="back"]');
     if (!btn) return;
@@ -395,6 +413,10 @@ const init = () => {
       if (!state.history.length) return;
       state.currentId = state.history.pop();
       showStep(state.currentId);
+      if (state.currentId === 's1') {
+        document.querySelector('.quiz-seg[data-seg="1"]').removeAttribute('style');
+        document.querySelector('.quiz-seg[data-seg="2"]').removeAttribute('style');
+      }
       return;
     }
 

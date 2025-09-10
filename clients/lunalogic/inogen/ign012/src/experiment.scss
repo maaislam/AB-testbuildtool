@@ -1,6 +1,8 @@
 @import './variables';
 @import '../src/lib/shared/shared.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --quiz-maxw: 640px;
   --quiz-primary: #2a7be4; /* blue */
@@ -46,7 +48,7 @@
     input[type='radio']:checked {
       position: relative;
       background-color: #fff; /* Orange color */
-      border-color: #f97c2d;
+      border-color: #f58220;
 
       &:after {
         content: '';
@@ -55,7 +57,7 @@
         left: 50%;
         width: 16px;
         height: 16px;
-        background-color: #f97c2d;
+        background-color: #f58220;
         border-radius: 3px;
         transform: translate(-50%, -50%);
         border-radius: 50%;
@@ -66,7 +68,7 @@
   .desktop-form-title {
     font-weight: 500;
     font-size: 26px;
-    line-height: 100%;
+    line-height: 1.2;
     margin: 20px 0 50px;
     color: #0d0d0f;
   }
@@ -81,6 +83,20 @@
 
     .header_txt {
       margin-top: 250px;
+      h1 {
+        font-family: Montserrat;
+      }
+
+      @media screen and (min-width: 1366px) {
+        width: 620px;
+
+        h1 {
+          font-family: Montserrat;
+          font-weight: 600;
+          font-size: 50px;
+          line-height: 1.2;
+        }
+      }
     }
 
     #formSection {
@@ -95,11 +111,27 @@
       .lead_form_page {
         border-radius: 0 0 24px 24px;
 
+        .btn_submit {
+          .form_button_loading {
+            width: 100%;
+            background: #00549e;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 12px 30px;
+          }
+        }
+
         input[value='Get my results'] {
           width: 100%;
           padding: 12px 30px;
-          font-size: 20px;
-          background: linear-gradient(180deg, #00549e 0%, #003360 100%);
+          font-size: 18px;
+          font-weight: 400;
+          background: #00549e;
+
+          &:not([disabled]):hover {
+            background: #cae1ff;
+            color: #000;
+          }
         }
         .form_footer {
           p {
@@ -114,6 +146,15 @@
             }
           }
         }
+        .previous-button {
+          background-color: #fff;
+          color: #00549e;
+          font-weight: 600;
+          text-transform: capitalize;
+          border: 0;
+          padding: 0;
+          text-decoration: underline;
+        }
       }
 
       @media screen and (max-width: 1380px) {
@@ -121,7 +162,7 @@
       }
 
       @media screen and (min-width: 1250px) {
-        max-width: 500px;
+        max-width: 550px;
         width: 100%;
         top: 50%;
         transform: translateY(-50%);
@@ -129,7 +170,7 @@
       }
 
       @media screen and (min-width: 768px) {
-        max-width: 500px;
+        max-width: 550px;
         width: 100%;
         top: 50%;
         transform: translateY(-50%);
@@ -170,10 +211,11 @@
         opacity: 0;
       }
       @media screen and (max-width: 767px) {
+        font-family: Montserrat;
         opacity: 1;
         font-weight: 500;
         font-size: 32px;
-        line-height: 100%;
+        line-height: 1.2;
         color: #fff;
       }
     }
@@ -275,7 +317,17 @@
 
     @media screen and (max-width: 767px) {
       margin: 30px auto 0;
-      padding: 20px 15px 70px;
+      padding: 20px 15px 30px;
+    }
+
+    [data-step-id='s1'] {
+      .quiz-nav {
+        display: none;
+      }
+
+      @media screen and (max-width: 767px) {
+        padding-bottom: 40px;
+      }
     }
 
     [data-step-id='s2'] {
@@ -296,6 +348,10 @@
     gap: 10px;
     margin: 4px 0 18px;
     padding: 0 4px;
+
+    &:has([data-seg='2'][style='display: none;']) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
   .quiz-seg {
     height: 3px;
@@ -325,11 +381,16 @@
 
   /* Heading & copy */
   .quiz-heading {
-    //font-family: 'Montserrat';
+    font-family: 'Montserrat';
     font-weight: 500;
     font-size: 26px;
-    line-height: 100%;
+    line-height: 1.2;
     margin: 50px 0;
+
+    @media screen and (max-width: 767px) {
+      font-size: 20px;
+      margin: 25px 0 33px;
+    }
   }
   .quiz-subheading {
     margin: 0 6px 6px;
@@ -339,6 +400,7 @@
     display: none;
   } /* not used on screen 1 per design */
   .quiz-note {
+    font-family: Montserrat;
     margin: 6px 6px 14px;
     color: var(--quiz-subtext);
   }
@@ -370,10 +432,14 @@
     font-family: Lato;
     font-weight: 400;
     font-size: 18px;
-    line-height: 100%;
+    line-height: 1.2;
     transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease,
       color 0.15s ease;
     cursor: pointer;
+
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+    }
   }
   .quiz-option-label:hover {
     background-color: #cae1ff;

@@ -1,0 +1,110 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #CartDrawer {
+    [data-essential-upsell-element='container'] {
+      display: block !important;
+    }
+
+    .#{$id}__reviewWrapper {
+      border-top: 1px solid #f1eff1;
+      border-bottom: 1px solid #f1eff1;
+      padding: 20px 0;
+      margin-bottom: 16px;
+      &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-icon {
+      }
+
+      &-title {
+        font-family: Questrial;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.7px;
+        text-align: center;
+        margin: 0 0 6px;
+      }
+
+      &-author {
+        font-family: Poppins;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.7px;
+        text-align: center;
+      }
+    }
+    [data-essential-upsell-element='products'] {
+      display: none !important;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: block;
+      margin-top: 0;
+      transform: translateY(-50%);
+
+      &:after {
+        font-size: 15px;
+        color: black;
+      }
+    }
+
+    .swiper-slide {
+      [data-essential-upsell-element='content-container'] {
+        align-items: flex-start !important;
+      }
+      [data-essential-upsell-element='content'] {
+        [data-essential-upsell-element='price'] {
+          display: none !important;
+        }
+      }
+      [data-essential-upsell-element='button-container'] {
+        display: none !important;
+      }
+    }
+    [data-essential-upsell-element='button-left'],
+    [data-essential-upsell-element='button-right'] {
+      display: none !important;
+    }
+    [data-essential-upsell-element='product'] {
+      [data-essential-upsell-element='content-container'] {
+        // align-items: flex-start !important;
+        // [data-essential-upsell-element='content'] {
+        //   display: flex;
+        //   flex-direction: column !important;
+        //   height: fit-content !important;
+        //   a {
+        //     display: inline-block;
+        //   }
+
+        //   [data-essential-upsell-element='price'] {
+        //     display: none !important;
+        //   }
+        // }
+      }
+
+      //   [data-essential-upsell-element='button-container'] {
+      //     display: none !important;
+      //   }
+
+      .add-to-cart {
+        display: inline-block;
+        margin: 15px 0 0;
+        font-family: Questrial;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 100%;
+        text-decoration: underline;
+      }
+    }
+  }
+}
