@@ -76,7 +76,7 @@ const init = () => {
           },
           {
             value: 'both',
-            label: 'Both – For home and another for&nbsp;travel'
+            label: 'Both'
           }
         ]
       },
@@ -212,8 +212,8 @@ const init = () => {
           ${sub}
           <fieldset class="quiz-fieldset">
             ${q}
-            ${note}
             <div class="quiz-options">${options}</div>
+             ${note}
           </fieldset>
           <div class="quiz-nav">
             <button type="button" class="quiz-btn quiz-back" data-action="back" disabled>Previous</button>

@@ -5,6 +5,7 @@
   #CartDrawer {
     [data-essential-upsell-element='container'] {
       display: block !important;
+      padding-top: 0 !important;
     }
 
     .#{$id}__reviewWrapper {
@@ -43,12 +44,14 @@
       }
     }
     [data-essential-upsell-element='products'] {
-      display: none !important;
+      //display: block !important;
     }
 
     .swiper-button-next,
     .swiper-button-prev {
-      display: block;
+      width: 20px;
+      height: 20px;
+      display: flex;
       margin-top: 0;
       transform: translateY(-50%);
 
@@ -56,54 +59,112 @@
         font-size: 15px;
         color: black;
       }
+
+      &.swiper-button-prev.swiper-button-disabled {
+        display: none !important;
+      }
+
+      &.swiper-button-next.swiper-button-disabled {
+        display: none !important;
+      }
+    }
+
+    .#{$id}__upsell-wrapper {
+      .upsell-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Questrial;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 100%;
+        vertical-align: middle;
+        color: #2a0825;
+        padding: 0 0 10px;
+      }
     }
 
     .swiper-slide {
+      [data-essential-upsell-element='image-container'] {
+        width: 56px !important;
+      }
+      &[data-essential-upsell-element='product'] {
+        border: 0 !important;
+      }
       [data-essential-upsell-element='content-container'] {
         align-items: flex-start !important;
-      }
-      [data-essential-upsell-element='content'] {
-        [data-essential-upsell-element='price'] {
-          display: none !important;
-        }
       }
       [data-essential-upsell-element='button-container'] {
         display: none !important;
       }
-    }
-    [data-essential-upsell-element='button-left'],
-    [data-essential-upsell-element='button-right'] {
-      display: none !important;
-    }
-    [data-essential-upsell-element='product'] {
-      [data-essential-upsell-element='content-container'] {
-        // align-items: flex-start !important;
-        // [data-essential-upsell-element='content'] {
-        //   display: flex;
-        //   flex-direction: column !important;
-        //   height: fit-content !important;
-        //   a {
-        //     display: inline-block;
-        //   }
+      [data-essential-upsell-element='title'] {
+        width: 120px !important;
 
-        //   [data-essential-upsell-element='price'] {
-        //     display: none !important;
-        //   }
-        // }
+        @media screen and (max-width: 767px) {
+          width: 90px !important;
+        }
+      }
+      [data-essential-upsell-element='title'] {
+        font-family: Domine !important;
+        font-weight: 700 !important;
+        font-style: Bold !important;
+        font-size: 14px !important;
+        line-height: 100% !important;
+        color: #2a0825 !important;
+        line-height: 1.2 !important;
       }
 
-      //   [data-essential-upsell-element='button-container'] {
-      //     display: none !important;
-      //   }
+      [data-essential-upsell-element='regular-price'],
+      [data-essential-upsell-element='discounted-price'] {
+        font-family: Questrial !important;
+        font-weight: 400 !important;
+        font-size: 12px !important;
+        line-height: 100% !important;
+      }
 
       .add-to-cart {
         display: inline-block;
+        width: max-content;
         margin: 15px 0 0;
         font-family: Questrial;
         font-weight: 400;
         font-size: 12px;
         line-height: 100%;
         text-decoration: underline;
+        cursor: pointer;
+        &.clicked {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+      }
+      [data-essential-upsell-element='price'] {
+        position: absolute;
+        right: 40px;
+        top: 13px;
+
+        @media screen and (max-width: 767px) {
+          right: 14px;
+        }
+      }
+    }
+
+    .drawer__footer {
+      [data-essential-upsell-element='container'] {
+        [data-essential-upsell-element='products'] {
+          opacity: 0;
+          &.main-products-control {
+            display: none !important;
+          }
+        }
+      }
+
+      [data-essential-upsell-element='header'] {
+        display: none !important;
+      }
+
+      [data-essential-upsell-element='button-left'],
+      [data-essential-upsell-element='button-right'] {
+        display: none !important;
       }
     }
   }
