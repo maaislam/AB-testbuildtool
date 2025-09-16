@@ -1,0 +1,217 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.#{$id} {
+  #content_wrapper {
+    & > section {
+      .content_hook {
+        display: none !important;
+      }
+    }
+  }
+  #form_container {
+    min-height: max-content !important;
+    background-image: url('https://cdn-3.convertexperiments.com/uf/10041653/10041910/frame-522_68c97a8555e01.png') !important;
+    background-position: center;
+
+    @media screen and (max-width: 767px) {
+      background-image: url('https://cdn-3.convertexperiments.com/uf/10041653/10041910/frame-557_68c98955420c2.png') !important;
+    }
+    .hero_text {
+      display: none !important;
+    }
+
+    #formSection {
+      max-width: 800px !important;
+      position: static !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      border: 0 !important;
+      padding: 100px 15px 100px !important;
+      background-color: unset !important;
+
+      @media screen and (max-width: 767px) {
+        max-width: 93% !important;
+        padding: 75px 15px 30px !important;
+      }
+      .bluebg {
+        display: none;
+      }
+      .lead_form_page.lead_form_page1 {
+        width: 100% !important;
+        padding: 0 !important;
+        background-color: unset !important;
+      }
+
+      .#{$id}__form-header {
+        h1 {
+          font-family: Montserrat;
+          font-weight: 500;
+          font-size: 40px;
+          line-height: 100%;
+          text-align: center;
+          color: #0d0d0f;
+          margin: 0;
+          padding: 0 0 29px;
+
+          @media screen and (max-width: 767px) {
+            font-size: 32px;
+            padding: 0 0 30px;
+            max-width: 360px;
+            margin: 0 auto;
+          }
+        }
+        p {
+          font-family: Montserrat;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          text-align: center;
+          color: #0d0d0f;
+          margin: 0 !important;
+          padding: 0 0 50px;
+
+          @media screen and (max-width: 767px) {
+            font-size: 20px;
+            padding: 0 0 30px;
+            max-width: 360px;
+            margin: 0 auto !important;
+          }
+        }
+      }
+      .new-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .form_field_container {
+          width: calc(100% / 3 - 10px);
+
+          @media screen and (max-width: 767px) {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+
+        @media screen and (max-width: 767px) {
+          flex-direction: column;
+        }
+      }
+      .prescribed_o2_patient_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 10px 0 25px;
+        border-bottom: 1px solid #00549e;
+
+        @media screen and (max-width: 767px) {
+          padding: 15px 0 30px;
+        }
+        p {
+          margin: 0 !important;
+          padding-right: 10px;
+        }
+
+        & + .form_field_container {
+          padding: 25px 0 25px;
+          margin: 0;
+          border-bottom: 1px solid #00549e;
+
+          @media screen and (max-width: 767px) {
+            padding: 30px 0 30px;
+          }
+
+          & > p {
+            margin: 0 !important;
+          }
+        }
+      }
+
+      .btn_submit {
+        margin: 25px 0 0;
+
+        @media screen and (max-width: 767px) {
+          margin: 30px 0 0;
+        }
+      }
+
+      .form_footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 25px 0 0px;
+        gap: 17px;
+
+        @media screen and (max-width: 767px) {
+          flex-direction: column;
+          margin: 30px 0 0px;
+        }
+
+        p {
+          margin: 0 !important;
+        }
+
+        .#{$id}__imageWrapper {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .custom-radio-buttons {
+        display: flex;
+        align-items: center;
+
+        & + div {
+          display: none;
+        }
+
+        input[type='radio'] {
+          margin-top: 0;
+          margin-right: 5px;
+          margin-left: 0;
+          position: static;
+          z-index: 1;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          border: solid 1px #000;
+          appearance: unset;
+          opacity: 1;
+          appearance: none;
+          -webkit-appearance: none;
+        }
+
+        label {
+          margin-right: 20px;
+          font-size: 16px;
+          cursor: pointer;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+        input[type='radio']:checked {
+          position: relative;
+          background-color: #fff; /* Orange color */
+          border-color: #f58220;
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            background-color: #f58220;
+            border-radius: 3px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
