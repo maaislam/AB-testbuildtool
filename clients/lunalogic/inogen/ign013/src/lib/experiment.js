@@ -8,9 +8,11 @@ import { image } from './assets/icons';
 
 const { ID, VARIATION } = shared;
 const init = () => {
-  const formContainer = document.querySelector('#form_container');
-  const leadFormElement = formContainer.querySelector('.lead_form_page');
-  const fields = formContainer.querySelectorAll('.form_field_container');
+  const formContainer = document.querySelector('#formSection');
+  const leadFormElement = formContainer.querySelector('#leadForm fieldset');
+  const fields = formContainer.querySelector('.form_field_container')
+    ? formContainer.querySelectorAll('.form_field_container')
+    : formContainer.querySelectorAll('.form-group');
 
   if (!leadFormElement.querySelector('.new-wrapper')) {
     leadFormElement.insertAdjacentHTML('afterbegin', '<div class="new-wrapper"></div>');
@@ -26,7 +28,6 @@ const init = () => {
   }
 
   pollerLite(['#formSection .lead_form_page'], () => {
-    const targetPoint = document.querySelector('#formSection .lead_form_page.lead_form_page1');
     const prescribedElem = document.querySelector('#formSection .prescribed_o2_patient_container');
 
     const str = `
@@ -42,22 +43,47 @@ const init = () => {
       prescribedElem.querySelector('p').insertAdjacentHTML('afterend', str);
       customRadioButtonListener();
     }
+  });
 
-    const termLinkElem = document.querySelector('.checkbox_container.term_link');
-    if (termLinkElem) {
-      termLinkElem.innerHTML = `
+  const termLinkElem =
+    document.querySelector('.checkbox_container.term_link') ||
+    document.querySelector('.custom-chekbox.term_link');
+  if (termLinkElem) {
+    termLinkElem.innerHTML = `
         I agree to Inogen’s <a href="/terms-of-use/" target="_blank">Terms of Use</a> and authorize Inogen to contact me including by phone and sms&nbsp;text&nbsp;messaging.
           <input type="checkbox" name="terms" required="required">
           <span class="checkmark"></span>
       `;
-    }
+  }
 
-    if (!document.querySelector(`.${ID}__imageWrapper`)) {
-      targetPoint
-        .querySelector('.form_footer')
-        .insertAdjacentHTML('beforeend', `<div class="${ID}__imageWrapper">${image}</div>`);
-    }
-  });
+  if (
+    !document.querySelector(`.${ID}__imageWrapper`) &&
+    document.querySelector('#formSection .form_footer')
+  ) {
+    const targetPoint = document.querySelector('#formSection .lead_form_page.lead_form_page1');
+    targetPoint.querySelector('.form_footer').insertAdjacentHTML(
+      'beforeend',
+      `<div class="${ID}__imageWrapper">
+            <div class="logoSet">
+                <img decoding="async" src="https://try.inogen.com/wp-content/uploads/2025/01/badge_BBB_Aplus_highres.jpg" alt="BBB Rating A+">
+                <img decoding="async" src="https://try.inogen.com/wp-content/uploads/2025/01/logo_lifetime_170.png" alt="Designed and assembled in USA">
+                <img decoding="async" alt="USA Logo" src="https://try.inogen.com/wp-content/uploads/2025/01/USA-Logo-new.png">
+            </div>
+          </div>`
+    );
+  }
+
+  if (
+    document.querySelector('#topform_disclaimer') &&
+    !document.querySelector('.disclaimer-wrapper')
+  ) {
+    const disclaimerElem = document.querySelector('#topform_disclaimer');
+    const logoSetElem = document.querySelector('#formSection .logoSet');
+    disclaimerElem.insertAdjacentHTML('beforebegin', '<div class="disclaimer-wrapper"></div>');
+
+    document.querySelector('.disclaimer-wrapper').appendChild(disclaimerElem);
+    document.querySelector('.disclaimer-wrapper').appendChild(logoSetElem);
+  }
 };
 export default () => {
   setup(); //use if needed

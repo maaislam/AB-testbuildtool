@@ -1,6 +1,8 @@
-import activate from './lib/experiment';
+import activate, { renderThankYou } from './lib/experiment';
 import { pollerLite } from './lib/helpers/utils';
 
-document.body.style.opacity = '0';
-
-pollerLite(['body', '.heroSection'], activate);
+if (window.location.href.includes('/thankyou/?leadid=')) {
+  pollerLite(['body'], renderThankYou);
+} else {
+  pollerLite(['body', '.heroSection'], activate);
+}

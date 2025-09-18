@@ -3,8 +3,376 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { pollerLite } from './helpers/utils';
 import customRadioButtonListener from './helpers/customRadioButtonListener';
+import successStr from './components/successStr';
 
 const { ID, VARIATION } = shared;
+
+/*========= RESULT STEP: scoring + decision + TY renderer ========= */
+
+const imgObj = {
+  ROVE6: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4.png.webp',
+  ROVE4: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4.png.webp',
+  AT_HOME: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4.png.webp',
+  VOXI5: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4.png.webp'
+};
+
+const productObj = {
+  ROVE6: 'https://www.inogen.com/product/rove6-system/',
+  ROVE4: 'https://www.inogen.com/product/rove4-system/',
+  AT_HOME: '#',
+  VOXI5: 'https://www.inogen.com/product/voxi-5/'
+};
+
+//Storage key used across pages
+const STORAGE_KEY = 'inogen:quiz:result';
+
+//Minimal HTML->DOM
+const _toFrag = (html) => {
+  const t = document.createElement('template');
+  t.innerHTML = html.trim();
+  return t.content;
+};
+
+//Product copy for TY card
+const _COPY = {
+  ROVE6: {
+    title: 'Inogen Rove 6',
+    tag: 'Premium portable — longer battery life'
+  },
+  ROVE4: {
+    title: 'Inogen Rove 4',
+    tag: 'Ultra portable — light and compact'
+  },
+  AT_HOME: {
+    title: 'Inogen At Home',
+    tag: 'Stationary — quiet & efficient for daily use'
+  },
+  VOXI5: {
+    title: 'Inogen Voxi 5',
+    tag: 'Compact portable — light with solid performance'
+  }
+};
+
+//----- Scoring (per spec) -----
+function scoreProducts(ans) {
+  const score = {
+    ROVE6: 0,
+    ROVE4: 0,
+    AT_HOME: 0,
+    VOXI5: 0
+  };
+
+  //Q1 — Use location
+  if (ans.q1 === 'home') {
+    score.AT_HOME += 3;
+  } else if (ans.q1 === 'portable') {
+    score.ROVE6 += 2;
+    score.ROVE4 += 2;
+    score.VOXI5 += 2;
+  } else if (ans.q1 === 'both') {
+    score.AT_HOME += 1;
+    score.ROVE6 += 1;
+    score.ROVE4 += 1;
+    score.VOXI5 += 1;
+  }
+
+  //Q2 — Portable trade-off (only if Q1 ≠ Home)
+  if (ans.q1 !== 'home') {
+    if (ans.q2_portablePriority === 'light') {
+      score.ROVE4 += 3;
+      score.VOXI5 += 3;
+      score.ROVE6 += 1;
+    } else if (ans.q2_portablePriority === 'battery') {
+      score.ROVE6 += 3;
+      score.ROVE4 += 1;
+      score.VOXI5 += 1;
+    }
+  }
+
+  //Q3 — Travel frequency (only if Q1 ≠ Home)
+  if (ans.q1 !== 'home') {
+    if (ans.q3_travelFrequency === 'frequent') {
+      score.ROVE4 += 2;
+      score.VOXI5 += 2;
+      score.ROVE6 += 2;
+      console.log(score, 'score');
+    } else if (ans.q3_travelFrequency === 'occasional') {
+      score.ROVE6 += 1;
+      score.ROVE4 += 1;
+      score.VOXI5 += 1;
+      if (ans.q1 === 'both') score.AT_HOME += 1;
+    }
+  }
+
+  //Q4 — Home priorities (only if Q1 = Home or Both)
+  if (ans.q1 === 'home' || ans.q1 === 'both') {
+    if (ans.q4_homePriority === 'wheels') {
+      score.AT_HOME += 3;
+    } else if (ans.q4_homePriority === 'compact') {
+      score.AT_HOME += 2;
+      score.ROVE4 += 1;
+      score.VOXI5 += 1;
+    }
+  }
+
+  //Q5 — Budget vs premium (asked for all users)
+  if (ans.q5_budgetPreference === 'budget') {
+    score.VOXI5 += 2;
+    score.ROVE4 += 1;
+    score.AT_HOME += 1;
+  } else if (ans.q5_budgetPreference === 'premiumUSA') {
+    score.ROVE6 += 2;
+    score.AT_HOME += 2;
+    score.ROVE4 += 2;
+  }
+
+  return score;
+}
+
+//----- Decision / Tiebreak rules A–E -----
+const _ORDER_PRODUCTS = ['ROVE6', 'ROVE4', 'VOXI5', 'AT_HOME']; //Rule E
+const _PORTABLES = new Set(['ROVE6', 'ROVE4', 'VOXI5']);
+
+function decideWinner(score, ans) {
+  const keys = Object.keys(score);
+  const max = Math.max(...keys.map((k) => score[k]));
+  let cand = keys.filter((k) => score[k] === max);
+  const trace = {
+    max,
+    start: [...cand],
+    steps: []
+  };
+
+  //A — single winner
+  if (cand.length === 1) {
+    trace.steps.push('A: single high score');
+    return {
+      product: cand[0],
+      appliedRule: 'A',
+      trace
+    };
+  }
+
+  //D — tie incl AT_HOME vs portable
+  if (cand.includes('AT_HOME') && cand.some((p) => _PORTABLES.has(p))) {
+    if (ans.q1 === 'home') {
+      trace.steps.push('D: Q1=home → AT_HOME');
+      return {
+        product: 'AT_HOME',
+        appliedRule: 'D',
+        trace
+      };
+    }
+    if (ans.q1 === 'both') {
+      if (ans.q4_homePriority === 'wheels') {
+        trace.steps.push('D: Q1=both & Q4=wheels → AT_HOME');
+        return {
+          product: 'AT_HOME',
+          appliedRule: 'D',
+          trace
+        };
+      }
+      const portOnly = cand.filter((p) => _PORTABLES.has(p));
+      if (portOnly.length) {
+        cand = portOnly;
+        trace.steps.push(`D: choose among portables → [${cand.join(', ')}]`);
+      }
+      if (cand.length === 1) {
+        return {
+          product: cand[0],
+          appliedRule: 'D',
+          trace
+        };
+      }
+    } else if (ans.q1 === 'portable') {
+      cand = cand.filter((p) => _PORTABLES.has(p));
+      trace.steps.push(`D: Q1=portable → [${cand.join(', ')}]`);
+      if (cand.length === 1) {
+        return {
+          product: cand[0],
+          appliedRule: 'D',
+          trace
+        };
+      }
+    }
+  }
+
+  //B — tie ROVE6 vs lighter (ROVE4/VOXI5)
+  if (cand.includes('ROVE6') && (cand.includes('ROVE4') || cand.includes('VOXI5'))) {
+    if (ans.q2_portablePriority === 'battery') {
+      trace.steps.push('B: Q2=battery → ROVE6');
+      return {
+        product: 'ROVE6',
+        appliedRule: 'B',
+        trace
+      };
+    }
+    if (ans.q2_portablePriority === 'light') {
+      if (cand.includes('ROVE4')) {
+        trace.steps.push('B: Q2=light → ROVE4');
+        return {
+          product: 'ROVE4',
+          appliedRule: 'B',
+          trace
+        };
+      }
+      if (cand.includes('VOXI5')) {
+        trace.steps.push('B: Q2=light → VOXI5');
+        return {
+          product: 'VOXI5',
+          appliedRule: 'B',
+          trace
+        };
+      }
+    }
+  }
+
+  //C — tie between ROVE4 and VOXI5
+  const onlyR4V5 = cand.every((p) => p === 'ROVE4' || p === 'VOXI5');
+  if (onlyR4V5) {
+    if (ans.q5_budgetPreference === 'budget') {
+      trace.steps.push('C: Q5=budget → VOXI5');
+      return {
+        product: 'VOXI5',
+        appliedRule: 'C',
+        trace
+      };
+    }
+    if (ans.q5_budgetPreference === 'premiumUSA') {
+      trace.steps.push('C: Q5=premium → ROVE4');
+      return {
+        product: 'ROVE4',
+        appliedRule: 'C',
+        trace
+      };
+    }
+    if (ans.q3_travelFrequency === 'frequent') {
+      trace.steps.push('C: Q3=frequent → VOXI5'); //current change
+      return {
+        product: 'VOXI5',
+        appliedRule: 'C',
+        trace
+      };
+    }
+    if (ans.q3_travelFrequency === 'occasional') {
+      trace.steps.push('C: Q3=occasional → VOXI5');
+      return {
+        product: 'VOXI5',
+        appliedRule: 'C',
+        trace
+      };
+    }
+  }
+
+  //E — deterministic fallback
+  const winner = [...cand].sort(
+    (a, b) => _ORDER_PRODUCTS.indexOf(a) - _ORDER_PRODUCTS.indexOf(b)
+  )[0];
+  trace.steps.push(`E: fallback → ${winner}`);
+  return {
+    product: winner,
+    appliedRule: 'E',
+    trace
+  };
+}
+
+//----- Rationale for TY copy -----
+function buildRationale(product, ans, score, { appliedRule, trace }) {
+  const factors = [];
+  if (ans.q1 === 'home') factors.push('You primarily plan to use it at home.');
+  if (ans.q1 === 'portable') factors.push('You plan to use it mostly on the go.');
+  if (ans.q1 === 'both') factors.push('You plan to use it both at home and while traveling.');
+  if (ans.q1 !== 'home') {
+    if (ans.q2_portablePriority === 'battery') factors.push('You preferred longer battery life.');
+    if (ans.q2_portablePriority === 'light') factors.push('You preferred the lightest option.');
+    if (ans.q3_travelFrequency === 'frequent') factors.push('You travel frequently.');
+    if (ans.q3_travelFrequency === 'occasional') factors.push('You travel occasionally.');
+  }
+  if (ans.q1 === 'home' || ans.q1 === 'both') {
+    if (ans.q4_homePriority === 'wheels')
+      factors.push('At home, easy movement around the house matters.');
+    if (ans.q4_homePriority === 'compact')
+      factors.push('You want a compact unit for home with occasional travel.');
+  }
+  if (ans.q5_budgetPreference === 'budget')
+    factors.push('You indicated a budget-friendly preference.');
+  if (ans.q5_budgetPreference === 'premiumUSA')
+    factors.push('You prefer premium devices designed & assembled in the USA.');
+  return {
+    product,
+    points: score[product],
+    appliedRule,
+    factors,
+    trace
+  };
+}
+
+//----- TY card HTML -----
+const _li = (t) => `<li class="ty-rec-bullet">${t}</li>`;
+function tyCardHTML(winner, rationale) {
+  const c = _COPY[winner] || {
+    title: winner,
+    tag: ''
+  };
+  return `
+    <section class="ty-rec-root" aria-labelledby="ty-rec-heading">
+      <div class="ty-rec-card">
+        <div class="ty-rec-header">
+          <div class="ty-rec-texts">
+              <h2 id="ty-rec-heading" class="ty-rec-heading">Your best match</h2>
+              <h3 class="ty-rec-title">${c.title}</h3>
+          </div>
+          <div class="ty-rec-image">
+            <img src="${imgObj[winner] || ''}" alt="${c.title}" class="ty-rec-img" />
+          </div>
+        </div>
+        <div class="ty-rec-body">
+            <p class="ty-rec-tag">${c.tag}</p>
+            <div class="ty-rec-why">
+              ${
+                rationale?.factors?.length
+                  ? `<ul class="ty-rec-list">${rationale.factors.map(_li).join('')}</ul>`
+                  : ''
+              }
+            </div>
+            <div class="call-box">
+              <p>Call now for the best price</p>
+              <a href="tel:18888888888" class="call-number">1-888-888-8888</a>
+            </div>
+            <div class="ty-rec-ctas">
+              <a class="ty-btn ty-btn--primary" href="${productObj[winner] || '#'}">Shop online</a>
+            </div>
+          </div>
+        </div> 
+    </section>
+  `;
+}
+
+//----- Thank-you renderer (runs on TY page; no quiz needed) -----
+export function renderThankYou() {
+  setup();
+  let payload = null;
+  try {
+    payload = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+  } catch (_) {}
+  if (!payload?.winner) return;
+
+  //Try a few safe mounts; tweak if you have a dedicated TY container
+  const mount = document.querySelector('.thankyou-section');
+
+  if (!document.querySelector(`.${ID}__heroSection`)) {
+    mount.insertAdjacentHTML('beforebegin', successStr(ID));
+  }
+
+  const mainWrapper = document.querySelector(`.${ID}__thankyou-hero`);
+  const contentWrapper = mainWrapper.querySelector(`.${ID}__content`);
+  contentWrapper.innerHTML = tyCardHTML(payload.winner, payload.rationale);
+
+  //optional privacy clear
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch (_) {}
+}
 
 const init = () => {
   //---------- Config ----------
@@ -432,8 +800,42 @@ const init = () => {
       }
       const currentId = sec?.getAttribute('data-step-id');
       const nextId = getNextId(currentId, state.answers);
-      if (nextId === 's6') showForm();
-      else if (nextId) {
+      if (nextId === 's6') {
+        showForm();
+        document.body.addEventListener(
+          'submit',
+          (e) => {
+            const form = e.target;
+            if (!(form instanceof HTMLFormElement)) return;
+            if (form !== formEl) return; //only the lead form
+
+            const answers = {
+              ...state.answers
+            };
+            if (!Object.keys(answers).length) return;
+
+            const score = scoreProducts(answers);
+            const decision = decideWinner(score, answers);
+            const rationale = buildRationale(decision.product, answers, score, decision);
+
+            try {
+              localStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify({
+                  ts: Date.now(),
+                  answers,
+                  score,
+                  winner: decision.product,
+                  rationale
+                })
+              );
+            } catch (_) {
+              /*ignore storage errors */
+            }
+          },
+          true
+        );
+      } else if (nextId) {
         state.history.push(currentId);
         state.currentId = nextId;
         showStep(state.currentId);
@@ -467,8 +869,6 @@ const init = () => {
       showStep(state.currentId);
     }
   };
-
-  document.body.style.opacity = '1';
 };
 
 export default () => {
