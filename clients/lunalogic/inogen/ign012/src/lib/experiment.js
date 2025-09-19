@@ -802,6 +802,7 @@ const init = () => {
       const nextId = getNextId(currentId, state.answers);
       if (nextId === 's6') {
         showForm();
+        VWO.event('formStartsQuizStandard');
         document.body.addEventListener(
           'submit',
           (e) => {
@@ -812,12 +813,21 @@ const init = () => {
             const answers = {
               ...state.answers
             };
+            console.log('answers', answers);
             if (!Object.keys(answers).length) return;
 
             const score = scoreProducts(answers);
             const decision = decideWinner(score, answers);
             const rationale = buildRationale(decision.product, answers, score, decision);
 
+            //Replace the property values with your actual values
+            VWO.event('totalFormComplitionsQuizStandard', {
+              q1: answers.q1,
+              q2PortablePriority: answers.q1 !== 'home' ? answers.q2_portablePriority : '',
+              q3TravelFrequency: answers.q1 !== 'home' ? answers.q3_travelFrequency : '',
+              q4HomePriority: answers.q4_homePriority || '',
+              q5BudgetPreference: answers.q5_budgetPreference || ''
+            });
             try {
               localStorage.setItem(
                 STORAGE_KEY,
@@ -873,7 +883,14 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
+  //Do not change anything in the following two lines
+  window.VWO = window.VWO || [];
+  VWO.event =
+    VWO.event ||
+    function () {
+      VWO.push(['event'].concat([].slice.call(arguments)));
+    };
 
   init();
+  VWO.event('quizStarts');
 };
