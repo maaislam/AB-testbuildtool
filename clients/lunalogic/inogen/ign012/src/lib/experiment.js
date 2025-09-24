@@ -408,7 +408,7 @@ const init = () => {
         when: {
           q1: 'portable'
         },
-        to: 's6'
+        to: 's5'
       },
       {
         from: 's3',
