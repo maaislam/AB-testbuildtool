@@ -45,17 +45,6 @@ const init = () => {
     }
   });
 
-  const termLinkElem =
-    document.querySelector('.checkbox_container.term_link') ||
-    document.querySelector('.custom-chekbox.term_link');
-  if (termLinkElem) {
-    termLinkElem.innerHTML = `
-        I agree to Inogen’s <a href="/terms-of-use/" target="_blank">Terms of Use</a> and authorize Inogen to contact me including by phone and sms&nbsp;text&nbsp;messaging.
-          <input type="checkbox" name="terms" required="required">
-          <span class="checkmark"></span>
-      `;
-  }
-
   if (
     !document.querySelector(`.${ID}__imageWrapper`) &&
     document.querySelector('#formSection .form_footer')
