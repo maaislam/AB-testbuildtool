@@ -1,6 +1,7 @@
 import {
   audioIcon,
   batteryIcon,
+  greenIcon,
   layer_1svg,
   layer_2svg,
   layer_3svg,
@@ -106,7 +107,158 @@ const prodsData = {
         }
       ]
     },
-    videoElemSelector: '.rove4_getting_started'
+    videoElemSelector: '.rove4_getting_started',
+    packages: {
+      title: 'Battery Bundles to Keep You Moving',
+      subtitle: 'Inogen Rove 6™ Freedom Packages',
+      stickyInfo: [
+        {
+          title: 'What’s included'
+        },
+        {
+          title: 'Standard Batteries'
+        },
+        {
+          title: 'Intermediate Batteries'
+        },
+        {
+          title: 'Extended Batteries'
+        },
+        {
+          title: 'Concentrator'
+        },
+        {
+          title: 'Lifetime warranty'
+        },
+        {
+          title: 'AC/DC power supplies'
+        },
+        {
+          title: 'Carry Bag, User Manual'
+        },
+        {
+          title: 'Bluetooth System'
+        },
+        {
+          title: 'Inogen Connect App'
+        }
+      ],
+
+      productsInfo: [
+        {
+          heading: '1',
+          standard_value: '3',
+          intermediate_value: '-',
+          extended_batteries: '-',
+          connector: greenIcon,
+          warranty: greenIcon,
+          power_supplies: greenIcon,
+          user_manual: greenIcon,
+          bluetooth: greenIcon,
+          app: greenIcon,
+          price: '$3,900',
+          atc: 'Add to cart'
+        },
+        {
+          heading: '1',
+          standard_value: '3',
+          intermediate_value: '-',
+          extended_batteries: '-',
+          connector: greenIcon,
+          warranty: greenIcon,
+          power_supplies: greenIcon,
+          user_manual: greenIcon,
+          bluetooth: greenIcon,
+          app: greenIcon,
+          price: '$3,900',
+          atc: 'Add to cart'
+        },
+        {
+          heading: '1',
+          standard_value: '3',
+          intermediate_value: '-',
+          extended_batteries: '-',
+          connector: greenIcon,
+          warranty: greenIcon,
+          power_supplies: greenIcon,
+          user_manual: greenIcon,
+          bluetooth: greenIcon,
+          app: greenIcon,
+          price: '$3,900',
+          atc: 'Add to cart'
+        },
+        {
+          heading: '1',
+          standard_value: '3',
+          intermediate_value: '-',
+          extended_batteries: '-',
+          connector: greenIcon,
+          warranty: greenIcon,
+          power_supplies: greenIcon,
+          user_manual: greenIcon,
+          bluetooth: greenIcon,
+          app: greenIcon,
+          price: '$3,900',
+          atc: 'Add to cart'
+        },
+        {
+          heading: '1',
+          standard_value: '3',
+          intermediate_value: '-',
+          extended_batteries: '-',
+          connector: greenIcon,
+          warranty: greenIcon,
+          power_supplies: greenIcon,
+          user_manual: greenIcon,
+          bluetooth: greenIcon,
+          app: greenIcon,
+          price: '$3,900',
+          atc: 'Add to cart'
+        },
+        {
+          heading: '1',
+          standard_value: '3',
+          intermediate_value: '-',
+          extended_batteries: '-',
+          connector: greenIcon,
+          warranty: greenIcon,
+          power_supplies: greenIcon,
+          user_manual: greenIcon,
+          bluetooth: greenIcon,
+          app: greenIcon,
+          price: '$3,900',
+          atc: 'Add to cart'
+        },
+        {
+          heading: '1',
+          standard_value: '3',
+          intermediate_value: '-',
+          extended_batteries: '-',
+          connector: greenIcon,
+          warranty: greenIcon,
+          power_supplies: greenIcon,
+          user_manual: greenIcon,
+          bluetooth: greenIcon,
+          app: greenIcon,
+          price: '$3,900',
+          atc: 'Add to cart'
+        },
+        {
+          heading: '1',
+          standard_value: '3',
+          intermediate_value: '-',
+          extended_batteries: '-',
+          connector: greenIcon,
+          warranty: greenIcon,
+          power_supplies: greenIcon,
+          user_manual: greenIcon,
+          bluetooth: greenIcon,
+          app: greenIcon,
+          price: '$3,900',
+          atc: 'Add to cart'
+        }
+      ]
+    }
   }
 };
 

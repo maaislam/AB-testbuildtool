@@ -110,3 +110,9 @@ export const roundTickIcon = `
 <path d="M28 40.5294L36 49L52 31" stroke="#00549E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `;
+
+export const greenIcon = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
+<circle cx="6.75" cy="6" r="6" fill="#66D348"/>
+</svg>
+`;

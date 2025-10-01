@@ -10,7 +10,10 @@ const wrapper = (id, name, link, pageTitle) => {
   const nameArray = Object.keys(data);
   const nameKey = nameArray.find((opertor) => name.toLowerCase().includes(opertor.toLowerCase()));
   const opertorObj = nameKey ? data[nameKey] : null;
-  console.log(opertorObj, 'opertorObj');
+
+  const isFindSubText = subtextData.find((item) => item.page === window.location.pathname);
+
+  console.log(isFindSubText, 'isFindSubText');
 
   const html = `
     <div class="${id}__wrapper">
@@ -53,7 +56,7 @@ const wrapper = (id, name, link, pageTitle) => {
         </div>
         <div class="${id}__text">
             ${
-              subtextData[window.location.pathname] ||
+              isFindSubText?.best_for ||
               pageTitle
                 .replace(/\btools\b/g, 'tool')
                 .replace(/\bproviders\b/g, 'provider')

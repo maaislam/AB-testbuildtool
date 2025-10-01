@@ -22,8 +22,8 @@ export const product = (id, data) => {
                         <div>${data.details['Thickness:'] || ''}</div>
 
                         ${
-                          data.details.flooringtype.toLowerCase().includes('vinyl') ||
-                          data.details.flooringtype.toLowerCase().includes('laminate')
+                          data?.details?.flooringtype?.toLowerCase().includes('vinyl') ||
+                          data?.details?.flooringtype?.toLowerCase().includes('laminate')
                             ? `
                                 <div>${data.details.shade || ''}</div>       
                             `
@@ -85,8 +85,8 @@ export const productMobile = (id, data, tagName) => {
                           </div>
   
                           ${
-                            data.details.flooringtype.toLowerCase().includes('vinyl') ||
-                            data.details.flooringtype.toLowerCase().includes('laminate')
+                            data?.details?.flooringtype?.toLowerCase().includes('vinyl') ||
+                            data?.details?.flooringtype?.toLowerCase().includes('laminate')
                               ? `
                                   <div>
                                   <strong>Colour</strong>

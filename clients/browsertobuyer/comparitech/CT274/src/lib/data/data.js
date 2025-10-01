@@ -558,6 +558,30 @@ export const data = {
     freetrialElement:
       '\n      <a href="https://www.comparitech.com/go/site24x7-network-monitoring-free-trial/l/tcta/u/1500-0043-5137-0923+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1500-0043-5137-0923" class="go-link">30 days free trial</a>\n      '
   },
+  Site24x7: {
+    name: 'Site24x7',
+    extraName: '',
+    nameWithUrl:
+      '\n      <a href="https://www.comparitech.com/go/site24x7-network-monitoring-free-trial/l/header/u/1433-4036-6739-2400+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1433-4036-6739-2400" class="go-link">11. Site24x7 Network Monitoring <span style="color: #800000;">(FREE TRIAL)</span></a>\n      ',
+    imageUrl:
+      'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine-site-24-7_68ae983b6cb7f.svg',
+    description:
+      '\n      <p>The <a href="https://www.comparitech.com/go/site24x7-network-monitoring-free-trial/l/inline/u/6853-3080-2649-3689+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="6853-3080-2649-3689" class="go-link"><b>Site24x7 cloud-based network monitoring tool</b></a> that covers IT infrastructure, applications, and user behavior. The network monitoring section of the tool is able to automatically discover all devices attached to the network. Site24x7 compiles <b>an equipment inventory</b> from the results of that search and then draws up <b>network topology maps</b> automatically. The inventory and maps all get updated automatically whenever equipment gets added, moved, or removed.</p>\n      ',
+    best_for: 'Best for monitoring web applications and sites.',
+    pricingText: '',
+    pricing: [],
+    pros: ['Bridging Technical and Business Metrics', 'Freeware Version'],
+    cons: ['Learning Curve'],
+    features: [
+      'All-in-One Solution',
+      'Real-time Monitoring',
+      'Powerful Reporting, Analytics, and Alerts'
+    ],
+    'SaaS/On-Premises': 'SaaS',
+    os: 'Cloud-based',
+    freetrialElement:
+      '\n      <a href="https://www.comparitech.com/go/site24x7-network-monitoring-free-trial/l/tcta/u/1500-0043-5137-0923+66031/" target="_blank" rel="sponsored nofollow noopener" data-postid="66031" data-clickid="1500-0043-5137-0923" class="go-link">30 days free trial</a>\n      '
+  },
   'Fortra’s Intermapper': {
     name: 'Fortra’s Intermapper',
     extraName: '',
@@ -1297,6 +1321,36 @@ export const data = {
     freetrialElement: ''
   },
   'Paessler PRTG': {
+    name: 'Paessler PRTG',
+    extraName: '',
+    nameWithUrl:
+      '\n      <a href="https://www.paessler.com/lp/network-monitoring-tool-prtg" target="_blank" rel="noopener noreferrer">11. Paessler PRTG</a>\n      ',
+    imageUrl:
+      'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1paesller_68a730a59a254.png',
+    description:
+      '\n      <p><a href="https://www.paessler.com/lp/network-monitoring-tool-prtg" target="_blank" rel="noopener noreferrer"><b>Paessler PRTG</b></a> is a package of tools and the buyer decides which of the monitors in the bundle to turn on. There are many different services and each specializes in a specific technology – no company will ever need to use all of them.</p>\n      ',
+    best_for: 'Best choice for companies of all sizes with flexible options.',
+    relevant_for: 'MSPs and enterprises that need extensive visibility',
+    pricingText:
+      'It depends on the number of devices and aspects. The cost starts at $179 for up to 500 aspects and 50 devices',
+    pricing: [],
+    pros: [
+      'Network device and traffic monitoring',
+      'Stores activity data for analysis',
+      'Collects Syslog messages'
+    ],
+    cons: ['Doesn’t provide system management services'],
+    features: [
+      'Full stack observability',
+      'Multi-site monitoring',
+      'Automatic discovery and system documentation'
+    ],
+    'SaaS/On-Premises': '',
+    os: '',
+    freetrialElement:
+      '\n      <a href="https://www.paessler.com/download/prtg-download?download=1" target="_blank" rel="noopener noreferrer"><b>30 days</b></a>\n      '
+  },
+  Paessler: {
     name: 'Paessler PRTG',
     extraName: '',
     nameWithUrl:
@@ -2643,6 +2697,96 @@ export const data = {
       '\n      <a href="https://www.comparitech.com/go/faddom-ft-network-topology-and-mapping/l/cta/u/3269-1245-9759-9256+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3269-1245-9759-9256" class="go-link" data-gtm-vis-has-fired1649924_55="1"><strong>free trial</strong></a>\n      '
   },
   'ManageEngine OpManager Network Mapping (FREE TRIAL)': {
+    name: 'ManageEngine OpManager Network Mapping (FREE TRIAL)',
+    extraName: '',
+    nameWithUrl:
+      '\n      <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/header/u/3969-3620-3402-3704+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3969-3620-3402-3704" class="go-link" data-gtm-vis-has-fired1649924_55="1">4. ManageEngine Network Mapping with OpManager <span style="color: #993300;">(FREE TRIAL)</span></a>\n      ',
+    imageUrl:
+      'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine_68b17f9df1899.svg',
+    description:
+      '\n      <p><a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/inline/u/9592-7142-9236-4051+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="9592-7142-9236-4051" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>ManageEngine OpManager</b></a> is a combination of network and server monitoring systems. It includes automated network discovery and <b>topology mapping</b>. As well as tracking and recording all physical connections, the system is able to monitor and map virtualizations and VLAN systems for VoIP.</p>\n      ',
+    best_for: 'Best for real-time topology in monitoring suite.',
+    relevant_for: '',
+    pricingText: '',
+    pricing: [],
+    pros: [
+      'Integrated Monitoring Capabilities',
+      'Automatic Map Updates',
+      'Cross-Platform Compatibility'
+    ],
+    cons: ['Learning Curve'],
+    features: [
+      'Maps Virtual and Physical Networks',
+      'Real-Time Network Mapping',
+      'Customizable Network Maps',
+      'Network Inventory Creation'
+    ],
+    'SaaS/On-Premises': '',
+    os: '',
+    freetrialElement:
+      '\n      <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/cta/u/6228-1353-0210-1924+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="6228-1353-0210-1924" class="go-link" data-gtm-vis-has-fired1649924_55="1">30 days free trial</a>\n      '
+  },
+  'ManageEngine OpManager Network Mapping (FREE TRIAL)': {
+    name: 'ManageEngine OpManager Network Mapping (FREE TRIAL)',
+    extraName: '',
+    nameWithUrl:
+      '\n      <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/header/u/3969-3620-3402-3704+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3969-3620-3402-3704" class="go-link" data-gtm-vis-has-fired1649924_55="1">4. ManageEngine Network Mapping with OpManager <span style="color: #993300;">(FREE TRIAL)</span></a>\n      ',
+    imageUrl:
+      'https://cdn-3.convertexperiments.com/uf/10021806/1002820/manage-engine_68b17f9df1899.svg',
+    description:
+      '\n      <p><a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/inline/u/9592-7142-9236-4051+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="9592-7142-9236-4051" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>ManageEngine OpManager</b></a> is a combination of network and server monitoring systems. It includes automated network discovery and <b>topology mapping</b>. As well as tracking and recording all physical connections, the system is able to monitor and map virtualizations and VLAN systems for VoIP.</p>\n      ',
+    best_for: 'Best for real-time topology in monitoring suite.',
+    relevant_for: '',
+    pricingText: '',
+    pricing: [],
+    pros: [
+      'Integrated Monitoring Capabilities',
+      'Automatic Map Updates',
+      'Cross-Platform Compatibility'
+    ],
+    cons: ['Learning Curve'],
+    features: [
+      'Maps Virtual and Physical Networks',
+      'Real-Time Network Mapping',
+      'Customizable Network Maps',
+      'Network Inventory Creation'
+    ],
+    'SaaS/On-Premises': '',
+    os: '',
+    freetrialElement:
+      '\n      <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/cta/u/6228-1353-0210-1924+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="6228-1353-0210-1924" class="go-link" data-gtm-vis-has-fired1649924_55="1">30 days free trial</a>\n      '
+  },
+  'ManageEngine Log360': {
+    name: 'ManageEngine OpManager Network Mapping (FREE TRIAL)',
+    extraName: '',
+    nameWithUrl:
+      '\n      <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/header/u/3969-3620-3402-3704+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="3969-3620-3402-3704" class="go-link" data-gtm-vis-has-fired1649924_55="1">4. ManageEngine Network Mapping with OpManager <span style="color: #993300;">(FREE TRIAL)</span></a>\n      ',
+    imageUrl:
+      'https://cdn-3.convertexperiments.com/uf/10021806/1002820/property-1me-log360_68dd4260d542e.png',
+    description:
+      '\n      <p><a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/inline/u/9592-7142-9236-4051+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="9592-7142-9236-4051" class="go-link" data-gtm-vis-has-fired1649924_55="1"><b>ManageEngine OpManager</b></a> is a combination of network and server monitoring systems. It includes automated network discovery and <b>topology mapping</b>. As well as tracking and recording all physical connections, the system is able to monitor and map virtualizations and VLAN systems for VoIP.</p>\n      ',
+    best_for: 'Best for real-time topology in monitoring suite.',
+    relevant_for: '',
+    pricingText: '',
+    pricing: [],
+    pros: [
+      'Integrated Monitoring Capabilities',
+      'Automatic Map Updates',
+      'Cross-Platform Compatibility'
+    ],
+    cons: ['Learning Curve'],
+    features: [
+      'Maps Virtual and Physical Networks',
+      'Real-Time Network Mapping',
+      'Customizable Network Maps',
+      'Network Inventory Creation'
+    ],
+    'SaaS/On-Premises': '',
+    os: '',
+    freetrialElement:
+      '\n      <a href="https://www.comparitech.com/go/manageengine-network-mapping-topology-network-topology-and-mapping/l/cta/u/6228-1353-0210-1924+152482/" target="_blank" rel="sponsored nofollow noopener" data-postid="152482" data-clickid="6228-1353-0210-1924" class="go-link" data-gtm-vis-has-fired1649924_55="1">30 days free trial</a>\n      '
+  },
+  ManageEngine: {
     name: 'ManageEngine OpManager Network Mapping (FREE TRIAL)',
     extraName: '',
     nameWithUrl:

@@ -20,12 +20,12 @@ const trackGA4Event = (category, action, label) => {
 const init = () => {
   (() => {
     const firstProvider = document.querySelector('.entry-content ol li a.go-link');
-    const providerName = firstProvider.querySelector('strong')
-      ? firstProvider.querySelector('strong').childNodes[0].textContent.trim() ||
+    const providerName = firstProvider.querySelector('b')
+      ? firstProvider.querySelector('b').childNodes[0].textContent.trim() ||
         firstProvider.innerText ||
         ''
-      : firstProvider.querySelector('b')
-      ? firstProvider.querySelector('b').childNodes[0].textContent.trim() ||
+      : firstProvider.querySelector('strong')
+      ? firstProvider.querySelector('strong').childNodes[0].textContent.trim() ||
         firstProvider.innerText ||
         ''
       : firstProvider.textContent.trim() || firstProvider.innerText || '';
@@ -38,148 +38,204 @@ const init = () => {
 
     const entryContent = document.querySelector('.entry-content');
     const features = entryContent ? entryContent.getBoundingClientRect() : {};
-    //--- Banner setup ---
-    const banner = document.createElement('div');
-    banner.id = 'sticky-banner';
-    banner.innerHTML = wrapper(ID, providerName, providerLink, pageTitle);
-    Object.assign(banner.style, {
-      position: 'fixed',
-      top: '0',
-      left: `${features.left}px`,
-      background: '#fff',
-      color: '#fff',
-      textAlign: 'center',
-      display: 'none',
-      width: `${features.width}px`,
-      zIndex: '9999'
-    });
 
-    if (!document.querySelector('#sticky-banner')) {
-      document.querySelector('.entry-content').insertAdjacentElement('beforebegin', banner);
-      trackGA4Event('test_run_ct_274', '', '');
-    }
+    //new code
+    (() => {
+      const CONFIG = {
+        mainMenuSelector: '.header-nav',
+        editorsChoiceSelector: '.editors-choice',
+        proConSelector: '.pro-con-list-wrapper',
+        topListHrefFragment: '/l/list',
+        stickyBannerSelector: '#sticky-banner'
+      };
 
-    let lastScrollY = window.scrollY;
-    let ticking = false;
+      //Create a basic banner if one doesn't exist
+      const ensureBanner = () => {
+        let el = document.querySelector(CONFIG.stickyBannerSelector);
+        if (!el) {
+          el = document.createElement('div');
+          el.id = CONFIG.stickyBannerSelector.replace(/^#/, '');
+          el.setAttribute('role', 'region');
+          el.style.cssText = `
+        position: fixed; left: ${features.left}px; top: 0; z-index: 99999;
+        visibility: hidden; pointer-events: none; /* start hidden */
+        background: #fff; color: #fff; text-align: center;
+        font: 14px/1.3 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        box-shadow: 0 -6px 16px rgba(0,0,0,.15); width: ${features.width}px;
+      `;
+          el.innerHTML = wrapper(ID, providerName, providerLink, pageTitle);
 
-    const isInViewport = (el) => {
-      if (!el || typeof el.getBoundingClientRect !== 'function') return false;
-      const r = el.getBoundingClientRect();
-      //element intersects viewport vertically
-      return r.top < window.innerHeight && r.bottom > 0;
-    };
+          if (!document.querySelector('#sticky-banner')) {
+            document.querySelector('.entry-content').insertAdjacentElement('beforebegin', el);
+            trackGA4Event('test_run_ct_274', '', '');
+          }
+        }
+        return el;
+      };
 
-    //Get the first <ol> that contains a link with href*="/l/list"
-    const getFirstListWithLink = () => {
-      const ols = document.querySelectorAll('ol');
-      for (const ol of ols) {
-        if (ol.querySelector('a[href*="/l/list"]')) return ol;
-      }
-      return null;
-    };
+      const findTopList = () => {
+        const ols = document.querySelectorAll('ol');
+        for (const ol of ols) {
+          if (ol.querySelector(`a[href*="${CONFIG.topListHrefFragment}"]`)) return ol;
+        }
+        return null;
+      };
 
-    const anyTargetInView = () => {
-      //Check ALL .editors-choice and .header-nav
-      const targets = [...document.querySelectorAll('.editors-choice, .header-nav')];
+      const getAbsTop = (el) => {
+        const r = el.getBoundingClientRect();
+        return window.scrollY + r.top;
+      };
+      const getAbsBottom = (el) => getAbsTop(el) + (el?.offsetHeight || 0);
 
-      //Add ONLY the first matching <ol> (if any)
-      const firstOl = getFirstListWithLink();
-      if (firstOl) targets.push(firstOl);
+      const banner = ensureBanner();
+      let visible = false;
 
-      //Debug which elements we're checking
-      console.log(
-        '[targets]',
-        targets.map((t) => {
-          const r = t.getBoundingClientRect();
-          return {
-            node:
-              t.tagName +
-              (t.className ? `.${String(t.className).trim().replace(/\s+/g, '.')}` : ''),
-            top: Math.round(r.top),
-            bottom: Math.round(r.bottom)
-          };
-        })
+      //Scroll direction
+      let lastY = window.scrollY;
+      let scrollingUp = false;
+
+      //Watchers for elements that directly hide the banner while visible
+      const trackers = {};
+      const observe = (el, key) => {
+        if (!el) return;
+        trackers[key] = {
+          el,
+          inView: false
+        };
+        new IntersectionObserver(
+          ([entry]) => {
+            trackers[key].inView = entry.isIntersecting;
+            applyVisibility();
+          },
+          {
+            threshold: 0
+          }
+        ).observe(el);
+      };
+
+      //Targets (allow refresh if DOM changes)
+      let editorsChoice = document.querySelector(CONFIG.editorsChoiceSelector);
+      let proCons = Array.from(document.querySelectorAll(CONFIG.proConSelector));
+      let lastProCon = proCons.length ? proCons[proCons.length - 1] : null;
+
+      observe(document.querySelector(CONFIG.mainMenuSelector), 'mainMenu');
+      observe(findTopList(), 'topList');
+
+      const show = () => {
+        if (visible) return;
+        banner.style.visibility = 'visible';
+        banner.style.pointerEvents = 'auto';
+        banner.setAttribute('aria-hidden', 'false');
+        visible = true;
+      };
+
+      const hide = () => {
+        if (!visible) return;
+        banner.style.visibility = 'hidden';
+        banner.style.pointerEvents = 'none';
+        banner.setAttribute('aria-hidden', 'true');
+        visible = false;
+      };
+
+      //Exclusion states
+      const betweenEditorsAndLast = () => {
+        if (!editorsChoice || !lastProCon) return false;
+        const viewportTop = window.scrollY;
+        const viewportBottom = viewportTop + window.innerHeight;
+        const ecTop = getAbsTop(editorsChoice);
+        const lastBottom = getAbsBottom(lastProCon);
+        //Exclusion is active once we've reached editors-choice,
+        //and remains until we pass the bottom of the last pro/con.
+        const reachedEditors = viewportBottom >= ecTop;
+        const beforeLastBottom = viewportTop < lastBottom;
+        return reachedEditors && beforeLastBottom;
+      };
+
+      const belowLastProCon = () => {
+        if (!lastProCon) return false;
+        const viewportTop = window.scrollY;
+        const lastBottom = getAbsBottom(lastProCon);
+        //Below last pros/cons when the viewport top is at/after the last section's bottom
+        return viewportTop >= lastBottom;
+      };
+
+      const exclusionActive = () => {
+        const menuIn = trackers.mainMenu?.inView;
+        const listIn = trackers.topList?.inView;
+        const between = betweenEditorsAndLast();
+        const belowLast = belowLastProCon();
+        return !!(menuIn || listIn || between || belowLast);
+      };
+
+      const shouldHide = () => {
+        //Hide if scrolling up OR any exclusion is active
+        return scrollingUp || exclusionActive();
+      };
+
+      const applyVisibility = () => {
+        if (shouldHide()) hide();
+        else show(); //reappear when scrolling down and no exclusion in view
+
+        const entryContentElem = document.querySelector('.entry-content');
+        const { left, width } = entryContentElem ? entryContentElem.getBoundingClientRect() : {};
+        const bannerElem = document.querySelector('#sticky-banner');
+        if (bannerElem) {
+          bannerElem.style.left = `${left}px`;
+          bannerElem.style.width = `${width}px`;
+        }
+      };
+
+      //Listeners
+      window.addEventListener(
+        'scroll',
+        () => {
+          const y = window.scrollY;
+          scrollingUp = y < lastY;
+          lastY = y;
+          applyVisibility();
+        },
+        {
+          passive: true
+        }
       );
 
-      //Visible if ANY target intersects the viewport
-      const visible = targets.some(isInViewport);
-      if (visible) {
-        console.log('→ A hide-target is in viewport → should hide banner');
-      } else {
-        console.log('→ No hide-targets in viewport');
-      }
-      return visible;
-    };
+      window.addEventListener('resize', applyVisibility);
 
-    const applyVisibility = (scrollDir) => {
-      const inView = anyTargetInView();
+      //Re-detect dynamic elements (for SPA or lazy content)
+      const refreshTargets = () => {
+        //editors-choice / pro-cons might appear or change
+        editorsChoice = document.querySelector(CONFIG.editorsChoiceSelector) || editorsChoice;
+        proCons = Array.from(document.querySelectorAll(CONFIG.proConSelector));
+        lastProCon = proCons.length ? proCons[proCons.length - 1] : lastProCon;
 
-      //Rule: hide if (scrolling up) OR (any target in view)
-      const shouldHide = scrollDir === 'up' || inView;
-      const nextDisplay = shouldHide ? 'none' : 'block';
+        //top list may appear later
+        if (!trackers.topList?.el) {
+          const tl = findTopList();
+          if (tl) observe(tl, 'topList');
+        }
+      };
 
-      if (banner.style.display !== nextDisplay) {
-        console.log(
-          `Setting banner display to: ${nextDisplay} (dir: ${scrollDir}, inView: ${inView})`
-        );
-        banner.style.display = nextDisplay;
-      } else {
-        console.log(
-          `Banner display unchanged: ${nextDisplay} (dir: ${scrollDir}, inView: ${inView})`
-        );
-      }
-    };
-
-    const handleTick = () => {
-      const currentY = window.scrollY;
-      const dir = currentY > lastScrollY ? 'down' : currentY < lastScrollY ? 'up' : 'none';
-      console.log('Scroll →', {
-        currentY,
-        lastScrollY,
-        dir
+      const mo = new MutationObserver(() => {
+        clearTimeout(mo._t);
+        mo._t = setTimeout(() => {
+          refreshTargets();
+          applyVisibility();
+        }, 150);
+      });
+      mo.observe(document.documentElement, {
+        childList: true,
+        subtree: true
       });
 
-      applyVisibility(dir);
-
-      lastScrollY = currentY;
-      ticking = false;
-    };
-
-    const onScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(handleTick);
+      //Init
+      const init_2 = () => applyVisibility();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init_2);
+      } else {
+        init_2();
       }
-
-      const entryContentElem = document.querySelector('.entry-content');
-      const { left, width } = entryContentElem ? entryContentElem.getBoundingClientRect() : {};
-      if (banner) {
-        banner.style.left = `${left}px`;
-        banner.style.width = `${width}px`;
-      }
-    };
-
-    //Also respond to resizes (viewport changes can affect visibility)
-    window.addEventListener('resize', onScroll, {
-      passive: true
-    });
-    window.addEventListener('scroll', onScroll, {
-      passive: true
-    });
-
-    //Initial run
-    console.log('Sticky banner initialized. Running initial visibility check…');
-    handleTick();
-
-    //Optional: observe DOM changes that might add/remove targets
-    const mo = new MutationObserver(() => {
-      console.log('DOM changed → re-evaluating visibility');
-      onScroll();
-    });
-    mo.observe(document.documentElement, {
-      childList: true,
-      subtree: true
-    });
+      window.addEventListener('load', init_2);
+    })();
   })();
 };
 
