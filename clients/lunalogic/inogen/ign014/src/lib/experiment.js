@@ -11,6 +11,7 @@ import twoColumnsWithImage from './components/twoColumnsWithImage';
 import packageStr from './components/packageStr';
 import compareProducts from './components/compareProducts';
 import initStickyBar from './helpers/initStickyBar';
+import mainGallery from './components/mainGallery';
 
 const { ID, VARIATION } = shared;
 
@@ -33,6 +34,40 @@ const init = () => {
     }
 
     const mainNewWrapper = document.querySelector(`.${ID}__mainWrapper`);
+
+    const thumbElement = document.querySelector('.product-images-swiper-container-wrapper');
+    const thumbSwiper = thumbElement.querySelector('.swiper');
+    thumbSwiper.classList.add(`${ID}__mySwiper`);
+    if (thumbSwiper) {
+      thumbSwiper.swiper.destroy();
+    }
+
+    if (!document.querySelector(`.${ID}__mySwiper2`)) {
+      thumbElement.insertAdjacentHTML('beforebegin', mainGallery(ID, data.imagesList));
+      const swiper = new window.Swiper(`.${ID}__mySwiper`, {
+        loop: true,
+        spaceBetween: 15,
+        slidesPerView: 5,
+        freeMode: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+          //Mobile view: 1 slide per view
+          320: {
+            slidesPerView: 4
+          },
+          1200: {
+            slidesPerView: 5
+          }
+        }
+      });
+      const swiper2 = new window.Swiper(`.${ID}__mySwiper2`, {
+        loop: true,
+        spaceBetween: 10,
+        thumbs: {
+          swiper
+        }
+      });
+    }
 
     if (!document.querySelector(`.${ID}__prodDescriptionWrapper`)) {
       productTitleElem.insertAdjacentHTML('afterend', prodDescriptionInfo(ID, data));

@@ -14,6 +14,12 @@ const prodsData = {
     title:
       '<h1 class="post__title post--pdp__title">Inogen <sup>®</sup> Rove 4<sup>™</sup> System</h1>',
     subtext: 'Lightweight & Highly Portable',
+    imagesList: [
+      'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2.png',
+      'https://cdn.inogen.com/wp-content/uploads/2023/04/AC_Power_Supply_Rove4.png',
+      'https://cdn.inogen.com/wp-content/uploads/2016/05/G4-single-battery-400px.png',
+      'https://cdn.inogen.com/wp-content/uploads/2016/05/Rove-4-Carry-Bag-No-Strap.png'
+    ],
     features: [
       {
         icon: layer_1svg,
@@ -298,6 +304,13 @@ const prodsData = {
     id: 'rove6-system',
     title: '<h1 class="post__title post--pdp__title">Rove 6<sup>™</sup> System</h1>',
     subtext: 'Powerfully Portable',
+    imagesList: [
+      'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2.png',
+      'https://cdn.inogen.com/wp-content/uploads/2023/04/AC_Power_Supply_Rove4.png',
+      'https://cdn.inogen.com/wp-content/uploads/2014/02/g3-dc-power-ba306.png',
+      'https://cdn.inogen.com/wp-content/uploads/2019/03/g5_single_battery.png',
+      'https://cdn.inogen.com/wp-content/uploads/2016/05/Rove-4-Carry-Bag-No-Strap.png'
+    ],
     features: [
       {
         icon: layer_1svg,
