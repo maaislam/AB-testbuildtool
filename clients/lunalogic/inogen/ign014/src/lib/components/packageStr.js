@@ -29,7 +29,7 @@ const packageStr = (id, data) => {
                                 return `
                                 <div class="swiper-slide">
                                     <div class="item">
-                                        <div class="${id}__list">
+                                        <div class="${id}__list" style="--bg-color:${item.bgColor}">
                                             ${item.heading ? `<span>${item.heading}</span>` : ''}
                                             ${
                                               item.standard_value
@@ -64,9 +64,17 @@ const packageStr = (id, data) => {
                                               item.bluetooth ? `<span>${item.bluetooth}</span>` : ''
                                             }
                                             ${item.app ? `<span>${item.app}</span>` : ''}
-                                        </ul>
-                                        ${item.price ? `<p>${item.price}</p>` : ''}
-                                        ${item.atc ? `<button>${item.atc}</button>` : ''}
+                                        </div>
+                                        ${
+                                          item.price
+                                            ? `<p class="package-price">${item.price}</p>`
+                                            : ''
+                                        }
+                                        ${
+                                          item.atc
+                                            ? `<button class="package-btn" id="${item.id}">${item.atc}</button>`
+                                            : ''
+                                        }
                                     </div>
                                 </div>
                                 `;

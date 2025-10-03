@@ -146,6 +146,8 @@ const prodsData = {
 
       productsInfo: [
         {
+          id: '87987788653',
+          bgColor: '#DEEFFF',
           heading: '1',
           standard_value: '3',
           intermediate_value: '-',
@@ -160,7 +162,25 @@ const prodsData = {
           atc: 'Add to cart'
         },
         {
-          heading: '1',
+          id: '87987788662',
+          bgColor: '#B0D9FF',
+          heading: '1i',
+          standard_value: '3',
+          intermediate_value: '-',
+          extended_batteries: '-',
+          connector: greenIcon,
+          warranty: greenIcon,
+          power_supplies: greenIcon,
+          user_manual: greenIcon,
+          bluetooth: greenIcon,
+          app: greenIcon,
+          price: '$3,980',
+          atc: 'Add to cart'
+        },
+        {
+          id: '87987788657',
+          bgColor: '#7CBFFF',
+          heading: '2',
           standard_value: '3',
           intermediate_value: '-',
           extended_batteries: '-',
@@ -174,7 +194,9 @@ const prodsData = {
           atc: 'Add to cart'
         },
         {
-          heading: '1',
+          id: '87987788664',
+          bgColor: '#00549E',
+          heading: '2i',
           standard_value: '3',
           intermediate_value: '-',
           extended_batteries: '-',
@@ -184,11 +206,13 @@ const prodsData = {
           user_manual: greenIcon,
           bluetooth: greenIcon,
           app: greenIcon,
-          price: '$3,900',
+          price: '$3,980',
           atc: 'Add to cart'
         },
         {
-          heading: '1',
+          id: '87987788659',
+          bgColor: '#002D55',
+          heading: '3',
           standard_value: '3',
           intermediate_value: '-',
           extended_batteries: '-',
@@ -198,64 +222,74 @@ const prodsData = {
           user_manual: greenIcon,
           bluetooth: greenIcon,
           app: greenIcon,
-          price: '$3,900',
+          price: '$4,340',
           atc: 'Add to cart'
+        }
+      ]
+    },
+
+    productComparison: {
+      stickyInfo: {
+        title: 'Compare </br>Rove Systems',
+        items: [
+          {
+            title: 'Weight <span>(with Standard battery)</span>'
+          },
+          {
+            title: 'Battery'
+          },
+          {
+            title: 'Hands-free Portability'
+          },
+          {
+            title: 'Noise Level <span>(at flow setting 2)</span>'
+          },
+          {
+            title: 'Warranty'
+          },
+          {
+            title: 'FAA Approved'
+          },
+          {
+            title: 'Designed & Assembled in the USA'
+          },
+          {
+            title: 'Available Direct from Inogen'
+          }
+        ]
+      },
+      productsInfo: [
+        {
+          bgColor: '#95C0EA',
+          weightInfo: '2.9lbs',
+          batteryInfo: 'Up to 5 Hours',
+          probability: 'Yes',
+          noiseLavel: '39dBA',
+          warranty: '3 Years or lifetime',
+          faaValue: 'Yes',
+          assembledValue: 'Yes',
+          availability: 'Yes',
+          prodName: 'Rove 4™',
+          prodPrice: 'From $2,995',
+          ctaText: '',
+          ctaLink: '',
+          imageLink: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2-1717x2048.png.webp'
         },
         {
-          heading: '1',
-          standard_value: '3',
-          intermediate_value: '-',
-          extended_batteries: '-',
-          connector: greenIcon,
-          warranty: greenIcon,
-          power_supplies: greenIcon,
-          user_manual: greenIcon,
-          bluetooth: greenIcon,
-          app: greenIcon,
-          price: '$3,900',
-          atc: 'Add to cart'
-        },
-        {
-          heading: '1',
-          standard_value: '3',
-          intermediate_value: '-',
-          extended_batteries: '-',
-          connector: greenIcon,
-          warranty: greenIcon,
-          power_supplies: greenIcon,
-          user_manual: greenIcon,
-          bluetooth: greenIcon,
-          app: greenIcon,
-          price: '$3,900',
-          atc: 'Add to cart'
-        },
-        {
-          heading: '1',
-          standard_value: '3',
-          intermediate_value: '-',
-          extended_batteries: '-',
-          connector: greenIcon,
-          warranty: greenIcon,
-          power_supplies: greenIcon,
-          user_manual: greenIcon,
-          bluetooth: greenIcon,
-          app: greenIcon,
-          price: '$3,900',
-          atc: 'Add to cart'
-        },
-        {
-          heading: '1',
-          standard_value: '3',
-          intermediate_value: '-',
-          extended_batteries: '-',
-          connector: greenIcon,
-          warranty: greenIcon,
-          power_supplies: greenIcon,
-          user_manual: greenIcon,
-          bluetooth: greenIcon,
-          app: greenIcon,
-          price: '$3,900',
-          atc: 'Add to cart'
+          bgColor: '#bcd2e5',
+          weightInfo: '4.8lbs',
+          batteryInfo: 'Up to 12 hours 45 mins',
+          probability: 'Yes',
+          noiseLavel: '39dBA',
+          warranty: '3 Years or lifetime',
+          faaValue: 'Yes',
+          assembledValue: 'Yes',
+          availability: 'Yes',
+          prodName: 'Rove 6™',
+          prodPrice: 'From $2,995',
+          ctaText: 'Find out more',
+          ctaLink: '',
+          imageLink: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2-1717x2048.png.webp'
         }
       ]
     }

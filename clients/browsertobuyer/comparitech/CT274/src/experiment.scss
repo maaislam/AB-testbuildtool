@@ -52,12 +52,12 @@
       font-weight: 700;
       line-height: 150%;
       text-decoration-line: underline;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 200px;
-      width: fit-content;
-
+      // white-space: nowrap;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      // max-width: 200px;
+      // width: fit-content;
+      text-align: left;
       @media screen and (max-width: 450px) {
         max-width: 100px;
       }

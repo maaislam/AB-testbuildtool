@@ -6,12 +6,11 @@ const wrapper = (id, data, variation) => {
   const html = `
         <div class="${id}__trusted-card">
             <div class="trusted-top">
-                <h1 class="trusted-title">${data.title}</h1>
-                <p class="trusted-sub">${data.subtitle}</p>
+                ${data.title ? `<h1 class="trusted-title">${data.title}</h1>` : ''}
+                ${data.subtitle ? `<p class="trusted-sub">${data.subtitle}</p>` : ''}
             </div>
 
             <div class="trusted-features">
-
                 ${data.list
                   .map((item, index) => {
                     const iconKey = `v${variation}_${labels[index]}`;
@@ -22,8 +21,17 @@ const wrapper = (id, data, variation) => {
                                 ${IconSVG}
                             </div>
                             <div class="feature-text">
-                                <span class="feature-title">${item.title}</span>
-                                <span class="feature-desc">${item.subtext}</span>
+                                ${
+                                  item.title
+                                    ? `<span class="feature-title">${item.title}</span>`
+                                    : ''
+                                }
+                                ${
+                                  item.subtext
+                                    ? `<span class="feature-desc">${item.subtext}</span>`
+                                    : ''
+                                }
+                                
                             </div>
                         </div>
                     `;

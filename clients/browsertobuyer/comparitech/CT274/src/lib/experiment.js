@@ -31,7 +31,12 @@ const init = () => {
       : firstProvider.textContent.trim() || firstProvider.innerText || '';
 
     const providerLink = firstProvider ? firstProvider.href || '' : '';
-    console.log(firstProvider, 'firstProvider');
+
+    const updatedName = providerName.includes('(FREE TRIAL)')
+      ? providerName.replace('(FREE TRIAL)', '').trim()
+      : providerName;
+
+    console.log(updatedName, 'updatedName');
 
     const pageTitleElem = document.querySelector('#pagetitle');
     const pageTitle = pageTitleElem.textContent || pageTitleElem.innerText || '';
@@ -63,7 +68,7 @@ const init = () => {
         font: 14px/1.3 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
         box-shadow: 0 -6px 16px rgba(0,0,0,.15); width: ${features.width}px;
       `;
-          el.innerHTML = wrapper(ID, providerName, providerLink, pageTitle);
+          el.innerHTML = wrapper(ID, updatedName, providerLink, pageTitle);
 
           if (!document.querySelector('#sticky-banner')) {
             document.querySelector('.entry-content').insertAdjacentElement('beforebegin', el);
@@ -245,18 +250,16 @@ const startExperiment = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
-  //gaTracking('Conditions Met'); //use if needed
 
-  //-----------------------------
-  //If control, bail out from here
-  //-----------------------------
-  //if (VARIATION === 'control') {
-  //}
-
-  //-----------------------------
-  //Write experiment code here
-  //-----------------------------
-  //...
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    if (
+      target.closest(`.${ID}__imageWWrapper`) ||
+      target.closest(`.${ID}__title`) ||
+      target.closest(`.${ID}__providerBtn`)
+    ) {
+      trackGA4Event('test_run_ct_274', 'Sticky Banner Clicks', '');
+    }
+  });
   startExperiment();
 };
