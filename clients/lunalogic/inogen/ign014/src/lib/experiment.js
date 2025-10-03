@@ -117,7 +117,7 @@ const init = () => {
         `.${ID}__packageContainer .${ID}__productsWrapper:not(.${ID}__sticky)`,
         {
           loop: false,
-          slidesPerView: 5, //Adjust based on design needs
+          slidesPerView: window.location.pathname === '/product/rove4-system/' ? 5 : 3, //Adjust based on design needs
           spaceBetween: 30, //Adjust spacing between slides
           breakpoints: {
             //Mobile view: 1 slide per view
@@ -137,7 +137,7 @@ const init = () => {
               slidesPerView: 3
             },
             1200: {
-              slidesPerView: 5
+              slidesPerView: window.location.pathname === '/product/rove4-system/' ? 5 : 3
             }
           }
         }
@@ -278,6 +278,14 @@ export default () => {
       const controlBtn = document.querySelector('.single_add_to_cart_button');
       clickedItem.innerHTML = '<i class="fa fa-spinner fa-pulse"></i>';
       if (controlBtn) controlBtn.click();
+    } else if (target.closest('.package-btn')) {
+      const clickedItem = target.closest('.package-btn');
+      const { id } = clickedItem;
+      const controlBtn = document.querySelector(`.freedom_packages_container a[data-id="${id}"]`);
+      if (controlBtn) {
+        clickedItem.innerHTML = '<i class="fa fa-spinner fa-pulse"></i>';
+        controlBtn.click();
+      }
     }
   });
   init();
