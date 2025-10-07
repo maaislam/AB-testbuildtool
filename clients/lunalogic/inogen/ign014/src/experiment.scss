@@ -48,6 +48,12 @@
         .product_price {
           display: none;
         }
+
+        .new-product-title {
+          & + .post__title.post--pdp__title {
+            display: none;
+          }
+        }
       }
       .product_add_to_cart {
         width: 100%;
@@ -148,6 +154,7 @@
         margin-left: 0px;
         padding-left: 0px;
         padding-right: 0px;
+        overflow: hidden;
 
         .woocommerce-product-gallery__image {
           height: 100px;
@@ -159,6 +166,10 @@
             max-width: 100%;
             width: 100%;
             object-position: center;
+          }
+
+          @media screen and (max-width: 400px) {
+            height: 70px;
           }
         }
 
@@ -255,13 +266,23 @@
       line-height: 1.2;
       padding: 30px 0;
       margin: 0;
+
+      @media screen and (max-width: 767px) {
+        font-size: 20px;
+        padding: 20px 0;
+      }
     }
 
     &-features {
       padding-bottom: 30px;
+
+      @media screen and (max-width: 767px) {
+        padding-bottom: 20px;
+      }
     }
 
     &-features-list {
+      position: relative;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -286,7 +307,7 @@
       }
 
       .#{$id}__tooltipBox {
-        position: relative;
+        //position: relative;
         &-icon {
           display: flex;
         }
@@ -294,29 +315,23 @@
         &-text {
           visibility: hidden;
           position: absolute;
-          width: 120px;
-          background-color: #555;
+          //width: 120px;
+          background-color: #ececec;
           color: #fff;
-          text-align: center;
-          padding: 5px 0;
+          text-align: left;
+          padding: 15px 20px;
           border-radius: 6px;
           z-index: 1;
           opacity: 0;
           transition: opacity 0.6s;
-          bottom: 150%;
-          left: 50%;
-          margin-left: -60px;
-
-          &:after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #555 transparent transparent transparent;
-          }
+          top: 50px;
+          bottom: 50px;
+          left: 0%;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 21px;
+          color: #333333;
+          height: fit-content;
         }
 
         &:hover {
@@ -326,12 +341,73 @@
           }
         }
       }
+
+      &:nth-child(2) {
+        .#{$id}__tooltipBox {
+          //position: relative;
+          &-icon {
+            display: flex;
+          }
+
+          &-text {
+            visibility: hidden;
+            position: absolute;
+            width: 343px;
+            background-color: #ececec;
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 6px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.6s;
+            top: 50px;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 21px;
+            color: #333333;
+            height: fit-content;
+
+            @media screen and (max-width: 919px) {
+              top: 100px;
+            }
+
+            @media screen and (max-width: 767px) {
+              top: 50px;
+              left: 0;
+              transform: translateX(0%);
+            }
+
+            @media screen and (max-width: 400px) {
+              width: 300px;
+            }
+
+            @media screen and (max-width: 350px) {
+              top: 100px;
+            }
+          }
+
+          &:hover {
+            .#{$id}__tooltipBox-text {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
     }
 
     &-description {
       display: flex;
       align-items: center;
       gap: 15px;
+      margin: 0;
+
+      @media screen and (max-width: 767px) {
+        padding-bottom: 20px;
+      }
       .#{$id}__icon {
         display: flex;
         align-items: center;
@@ -380,11 +456,28 @@
         line-height: 21px;
         color: #333333;
       }
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
     }
   }
 
   .#{$id}__mainWrapper {
     padding: 0 15px;
+  }
+
+  .#{$id}__groupWrapper {
+    &-inner {
+      padding: 80px 15px;
+      background-color: #f2f2f2;
+      width: calc(100% + 30px);
+      margin-left: -15px;
+
+      @media screen and (max-with: 767px) {
+        padding: 60px 15px;
+      }
+    }
   }
 
   .#{$id}__comparisonWrapper {
@@ -424,7 +517,7 @@
       .#{$id}__comparisonTitle {
         font-family: Lato;
         font-weight: 400;
-        font-size: 30px;
+        font-size: 25px;
         line-height: 1.2;
         padding: 0 0 20px;
       }
@@ -432,19 +525,20 @@
       .#{$id}__comparisonMainWeight {
         font-family: Lato;
         font-weight: 500;
-        font-size: 70px;
+        font-size: 40px;
         line-height: 1.2;
         color: #0d0d0f;
+        padding: 0 0 10px;
 
         @media screen and (max-width: 767px) {
-          font-size: 60px;
+          font-size: 40px;
         }
       }
 
       .#{$id}__comparisonSubtext {
         font-family: Lato;
-        font-weight: 400;
-        font-size: 15px;
+        font-weight: 700;
+        font-size: 16px;
         line-height: 1.2;
         color: #0d0d0f;
       }
@@ -486,7 +580,7 @@
       .#{$id}__comparisonItemTitle {
         font-family: Lato;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 1.2;
         color: #0d0d0f;
 
@@ -516,8 +610,8 @@
       .#{$id}__comparisonItemWeight {
         font-family: Lato;
         font-weight: 400;
-        font-size: 20px;
-        line-height: 25px;
+        font-size: 16px;
+        line-height: 1.2;
         color: #0d0d0f;
         padding-left: 10px;
         flex-shrink: 0;
@@ -572,10 +666,10 @@
       .#{$id}__title {
         font-family: Lato;
         font-weight: 400;
-        font-size: 30px;
+        font-size: 25px;
         line-height: 1.2;
         color: #0d0d0f;
-        padding: 0 0 15px;
+        padding: 0 0 20px;
 
         @media screen and (max-width: 1080px) {
           font-size: 20px;
@@ -585,12 +679,12 @@
       .#{$id}__subtext {
         font-family: Lato;
         font-weight: 500;
-        font-size: 45px;
+        font-size: 40px;
         line-height: 1.2;
         color: #0d0d0f;
 
         @media screen and (max-width: 1080px) {
-          font-size: 35px;
+          font-size: 36px;
         }
       }
 
@@ -607,9 +701,13 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: 100% 100%;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
 
       .#{$id}__icon {
-        padding-bottom: 77px;
+        padding-bottom: 30px;
         @media screen and (max-width: 767px) {
           padding-bottom: 10px;
         }
@@ -618,13 +716,13 @@
       .#{$id}__title {
         font-family: Lato;
         font-weight: 500;
-        font-size: 60px;
+        font-size: 40px;
         line-height: 1.2;
         color: #0d0d0f;
         padding: 0 0 20px;
 
         @media screen and (max-width: 1080px) {
-          font-size: 40px;
+          font-size: 36px;
         }
       }
 
@@ -640,10 +738,44 @@
         }
       }
 
+      .#{$id}__twoColumnsRight_first {
+        width: calc(100% - 0px);
+
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
+      }
+
+      .#{$id}__twoColumnsRight_second {
+        width: 150px;
+        height: 150px;
+        background-image: var(--bg-box);
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        -webkit-transform: translate(30%, 9%) scale(1.4);
+        transform: translate(64%, 0%) scale(1.4);
+
+        img {
+          display: none;
+        }
+
+        @media screen and (max-width: 767px) {
+          background-image: none;
+          transform: unset;
+          width: 100%;
+          height: 100%;
+          padding-top: 30px;
+          img {
+            display: block;
+          }
+        }
+      }
+
       @media screen and (max-width: 767px) {
+        flex-direction: column;
         width: 100%;
-        padding: 15px;
-        height: 225px;
+        padding: 15px 15px 30px;
       }
     }
   }
@@ -676,6 +808,8 @@
         align-items: center;
         justify-content: center;
         padding: 0 15px;
+        background: #fff;
+        border-radius: 20px;
       }
       @media screen and (max-width: 767px) {
         max-width: 100%;
@@ -1237,7 +1371,7 @@
       width: calc(100% - 215px);
       .swiper-slide {
         justify-content: flex-start;
-        background-color: #deefff;
+        background-color: #eef7ff;
         border-radius: 10px;
         .item {
           width: 100%;
@@ -1267,11 +1401,18 @@
             line-height: 1.2;
             text-align: center;
             background-color: var(--bg-color);
+            color: var(--text-color);
             border-radius: 10px;
-            color: #0d0d0f;
             &::after {
               display: none;
             }
+          }
+
+          &:not(:first-child) {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.2;
+            color: #0d0d0f;
           }
         }
       }
@@ -1476,7 +1617,7 @@
         }
 
         @media screen and (max-width: 767px) {
-          height: 155px;
+          height: 175px;
         }
       }
     }
@@ -1525,7 +1666,7 @@
       width: calc(100% - 33.33333%);
       .swiper-slide {
         justify-content: flex-start;
-        background-color: #deefff;
+        background-color: #eef7ff;
         border-radius: 10px;
         .item {
           width: 100%;
@@ -1707,5 +1848,41 @@
 
   .sticky-bar.visible {
     bottom: 0; /* slides up */
+  }
+
+  .pdp--details-new {
+    margin: 30px 0 57px;
+
+    h2 {
+      font-family: Lato;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 1.2;
+      text-transform: none;
+      margin: 0;
+      padding: 0 0 15px;
+      color: #0d0d0f;
+    }
+    p {
+      font-family: Lato;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.2;
+      color: #0d0d0f;
+    }
+
+    &.pdp-details-desktop {
+      display: none;
+    }
+
+    @media screen and (max-width: 767px) {
+      &.pdp-details-mobile {
+        display: none;
+      }
+
+      &.pdp-details-desktop {
+        display: block;
+      }
+    }
   }
 }

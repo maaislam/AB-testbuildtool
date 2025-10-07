@@ -1,0 +1,370 @@
+/* =========================
+   Scope + Design Tokens
+   ========================= */
+.sp001 {
+  --sp-black: #000;
+  --sp-white: #fff;
+  --sp-gray-900: #454545;
+  --sp-gray-700: #919191;
+  --sp-gray-500: #bdbdbd;
+  --sp-gray-300: #c7c7c7;
+  --sp-red: #d6002a;
+
+  --sp-font-regular: AkkuratPro-regular;
+  --sp-font-bold: AkkuratPro-Bold;
+}
+
+/* Ensure body visible when experiment is active */
+.sp001 body {
+  opacity: 1 !important;
+}
+
+/* =========================
+   Grid / Layout (AEM areas)
+   ========================= */
+.sp001 div.grid:has(.aemformcontainer) > div:first-child {
+  max-width: 568px;
+}
+
+@media screen and (max-width: 1024px) {
+  .sp001 div.grid:has(.aemformcontainer) > div:first-child {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .sp001 div.grid:has(.aemformcontainer) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sp001 div.grid:has(.aemformcontainer) > div:nth-child(2) {
+    grid-column: span 1 / span 1 !important;
+  }
+}
+
+/* Reverse order variant */
+.sp001 body.sp001__reverseOrder div.grid:has(.aemformcontainer) > div:nth-child(2) {
+  order: -1;
+}
+.sp001 body.sp001__reverseOrder div.grid:has(.aemformcontainer) > div:first-child {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .sp001 body.sp001__reverseOrder div.grid:has(.aemformcontainer) > div:first-child {
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* =========================
+   Multi-step Visibility
+   ========================= */
+/* Step visibility by active step */
+.sp001 .sp001__formWrapper[data-step-active='1'] [data-step='2'],
+.sp001 .sp001__formWrapper[data-step-active='1'] [data-step='3'],
+.sp001 .sp001__formWrapper[data-step-active='2'] [data-step='1'],
+.sp001 .sp001__formWrapper[data-step-active='2'] [data-step='3'],
+.sp001 .sp001__formWrapper[data-step-active='3'] [data-step='1'],
+.sp001 .sp001__formWrapper[data-step-active='3'] [data-step='2'] {
+  display: none;
+}
+
+/* Header copy visibility by fill step */
+.sp001 .sp001__formWrapper[data-fill-step='0'] [data-info='2'],
+.sp001 .sp001__formWrapper[data-fill-step='0'] [data-info='3'],
+.sp001 .sp001__formWrapper[data-fill-step='1'] [data-info='1'],
+.sp001 .sp001__formWrapper[data-fill-step='1'] [data-info='3'],
+.sp001 .sp001__formWrapper[data-fill-step='2'] [data-info='1'],
+.sp001 .sp001__formWrapper[data-fill-step='2'] [data-info='2'],
+.sp001 .sp001__formWrapper[data-fill-step='2'] [data-info='3'],
+.sp001 .sp001__formWrapper[data-fill-step='2'] .hint,
+.sp001 .sp001__formWrapper[data-fill-step='3'] [data-info='1'],
+.sp001 .sp001__formWrapper[data-fill-step='3'] [data-info='2'],
+.sp001 .sp001__formWrapper[data-fill-step='3'] [data-info='3'],
+.sp001 .sp001__formWrapper[data-fill-step='3'] .hint {
+  display: none;
+}
+
+/* Progress dots + rails by fill step */
+.sp001 .sp001__formWrapper[data-fill-step='0'] [data-segment='2'] span.dot,
+.sp001 .sp001__formWrapper[data-fill-step='0'] [data-segment='3'] span.dot {
+  border: 0;
+  background-color: var(--sp-gray-700);
+}
+
+.sp001 .sp001__formWrapper[data-fill-step='1'] [data-segment='1'] span.dot,
+.sp001 .sp001__formWrapper[data-fill-step='2'] [data-segment='1'] span.dot,
+.sp001 .sp001__formWrapper[data-fill-step='2'] [data-segment='2'] span.dot,
+.sp001 .sp001__formWrapper[data-fill-step='3'] [data-segment='1'] span.dot,
+.sp001 .sp001__formWrapper[data-fill-step='3'] [data-segment='2'] span.dot,
+.sp001 .sp001__formWrapper[data-fill-step='3'] [data-segment='3'] span.dot {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMTZDNi41NDE2NyAxNS45NzkyIDUuMjA4MzMgMTUuNjI1IDQgMTQuOTM3NUMyLjc5MTY3IDE0LjIyOTIgMS44MTI1IDEzLjI1IDEuMDYyNSAxMkMwLjM1NDE2NyAxMC43MjkyIDAgOS4zOTU4MyAwIDhDMCA2LjYwNDE3IDAuMzU0MTY3IDUuMjcwODMgMS4wNjI1IDRDMS44MTI1IDIuNzUgMi43OTE2NyAxLjc3MDgzIDQgMS4wNjI1QzUuMjA4MzMgMC4zNzUgNi41NDE2NyAwLjAyMDgzMzMgOCAwQzkuNDU4MzMgMC4wMjA4MzMzIDEwLjc5MTcgMC4zNzUgMTIgMS4wNjI1QzEzLjIwODMgMS43NzA4MyAxNC4xODc1IDIuNzUgMTQuOTM3NSA0QzE1LjY0NTggNS4yNzA4MyAxNiA2LjYwNDE3IDE2IDhDMTYgOS4zOTU4MyAxNS42NDU4IDEwLjcyOTIgMTQuOTM3NSAxMkMxNC4xODc1IDEzLjI1IDEzLjIwODMgMTQuMjI5MiAxMiAxNC45Mzc1QzEwLjc5MTcgMTUuNjI1IDkuNDU4MzMgMTUuOTc5MiA4IDE2Wk0xMS41MzEyIDYuNTMxMjVDMTEuODIyOSA2LjE3NzA4IDExLjgyMjkgNS44MjI5MiAxMS41MzEyIDUuNDY4NzVDMTEuMTc3MSA1LjE3NzA4IDEwLjgyMjkgNS4xNzcwOCAxMC40Njg4IDUuNDY4NzVMNyA4LjkzNzVMNS41MzEyNSA3LjQ2ODc1QzUuMTc3MDggNy4xNzcwOCA0LjgyMjkyIDcuMTc3MDggNC40Njg3NSA3LjQ2ODc1QzQuMTc3MDggNy44MjI5MiA0LjE3NzA4IDguMTc3MDggNC40Njg3NSA4LjUzMTI1TDYuNDY4NzUgMTAuNTMxMkM2LjgyMjkyIDEwLjgyMjkgNy4xNzcwOCAxMC44MjI5IDcuNTMxMjUgMTAuNTMxMkwxMS41MzEyIDYuNTMxMjVaIiBmaWxsPSIjRDYwMDJBIi8+Cjwvc3ZnPgo=);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 0;
+}
+
+.sp001 .sp001__formWrapper[data-fill-step='1'] [data-segment='1'] .rail,
+.sp001 .sp001__formWrapper[data-fill-step='2'] [data-segment='1'] .rail,
+.sp001 .sp001__formWrapper[data-fill-step='2'] [data-segment='2'] .rail,
+.sp001 .sp001__formWrapper[data-fill-step='3'] [data-segment='1'] .rail,
+.sp001 .sp001__formWrapper[data-fill-step='3'] [data-segment='2'] .rail,
+.sp001 .sp001__formWrapper[data-fill-step='3'] [data-segment='3'] .rail {
+  background-color: var(--sp-red);
+}
+
+/* Gray dot for untouched step in fill-step=1 */
+.sp001 .sp001__formWrapper[data-fill-step='1'] [data-segment='3'] span.dot {
+  border: 0;
+  background-color: var(--sp-gray-700);
+}
+
+/* =========================
+   Wrapper / Inner Elements
+   ========================= */
+.sp001 .sp001__formWrapper [data-guide-parent-id='guideContainer-rootPanel-panel__'] {
+  width: 100% !important;
+  padding-right: 0;
+}
+
+.sp001 .sp001__formWrapper .sp001__formInner {
+  padding-bottom: 64px;
+}
+
+.sp001 .sp001__formWrapper .sp001__step {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp001 .sp001__formWrapper .sp001__step input {
+  height: 48px !important;
+  padding: 12px 16px !important;
+}
+
+.sp001
+  .sp001__formWrapper
+  .sp001__step
+  .guideFieldNode:not(.guideButton):not(.guideTextDraw):not(.guideChart) {
+  padding-top: 20px;
+}
+
+.sp001 .sp001__formWrapper .sp001__policyConatiner {
+  padding-left: 40px;
+}
+
+/* Action buttons */
+.sp001 .sp001__formWrapper .sp001__actionWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 38px 0 0;
+}
+
+.sp001 .sp001__formWrapper .sp001__actionWrapper button:first-child {
+  font-family: var(--sp-font-bold);
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+  line-height: 19.6px;
+  padding: 10px 16px;
+  border: 1px solid var(--sp-black);
+  color: var(--sp-black);
+}
+
+.sp001 .sp001__formWrapper .sp001__actionWrapper button:last-child {
+  font-family: var(--sp-font-bold);
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+  line-height: 19.6px;
+  color: var(--sp-white);
+  background-color: var(--sp-red);
+  padding: 10px 16px;
+}
+
+/* Hide the original AEM form after our wrapper */
+.sp001 .sp001__formWrapper ~ * {
+  display: none;
+}
+
+/* =========================
+   Step 3 specifics
+   ========================= */
+.sp001 .sp001__formWrapper .sp001__step.sp001__third-step .sp001__thirdStepLabel {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 34.5px;
+  letter-spacing: -2%;
+  color: var(--sp-black);
+  margin: 0;
+  padding: 0;
+}
+
+.sp001 .sp001__formWrapper .sp001__step.sp001__third-step .sp001__thirdStepText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: var(--sp-black);
+  padding: 16px 0 24px;
+  margin: 0;
+}
+
+.sp001 .sp001__formWrapper .sp001__step.sp001__third-step .multiline.textField textArea {
+  height: 200px !important;
+  border: 3px solid var(--sp-gray-300);
+}
+
+.sp001 .sp001__formWrapper .sp001__step.sp001__third-step input[type='checkbox'] {
+  position: relative;
+  width: 24px !important;
+  height: 24px !important;
+  box-sizing: border-box;
+  padding: 0 !important;
+  border: 2px solid var(--sp-black);
+}
+
+.sp001
+  .sp001__formWrapper
+  .sp001__step.sp001__third-step
+  .guidecheckbox
+  .guideCheckBoxItem
+  .guideWidgetLabel
+  label {
+  font-size: 14px;
+  line-height: 19.6px;
+  color: var(--sp-gray-900);
+}
+
+.sp001 .sp001__formWrapper .sp001__step.sp001__third-step .sp001__policyConatiner p {
+  font-family: var(--sp-font-regular);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.6px;
+  color: var(--sp-gray-900);
+}
+
+/* =========================
+   Step Container / Progress
+   ========================= */
+.sp001 .sp001__stepContainer {
+  margin: 0 auto 0;
+}
+
+.sp001 .sp001__stepContainer .sp001__progress-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  column-gap: 8px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.sp001 .sp001__stepContainer .segment {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 8px;
+}
+.sp001 .sp001__stepContainer .segment-inner {
+  display: flex;
+  align-items: center;
+}
+
+.sp001 .sp001__stepContainer .rail {
+  height: 4px;
+  width: 100%;
+  margin-left: 8px;
+  background: var(--sp-gray-700);
+  border-radius: 4px;
+}
+
+/* Connector visibility (unchanged) */
+.sp001 .sp001__stepContainer .segment:nth-child(1) .rail {
+  visibility: visible;
+}
+.sp001 .sp001__stepContainer .segment:nth-child(2) .rail {
+  visibility: visible;
+}
+.sp001 .sp001__stepContainer .segment:nth-child(3) .rail {
+  display: none;
+}
+
+.sp001 .sp001__stepContainer .marker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sp001 .sp001__stepContainer .dot {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  border-radius: 50%;
+  background: var(--sp-gray-500);
+}
+
+.sp001 .sp001__stepContainer .dot.current {
+  background: var(--sp-white);
+  border: 3px solid #ff3b3b; /* kept literal, matches original */
+}
+
+.sp001 .sp001__stepContainer .meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp001 .sp001__stepContainer .step {
+  font-family: var(--sp-font-regular);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--sp-gray-900);
+}
+
+.sp001 .sp001__stepContainer .title {
+  font-family: var(--sp-font-bold);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--sp-black);
+}
+
+.sp001 .sp001__stepContainer .hint {
+  font-family: var(--sp-font-regular);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.6px;
+  color: var(--sp-gray-900);
+  text-align: right;
+}
+
+@media (max-width: 400px) {
+  .sp001 .sp001__stepContainer .title {
+    height: 40px;
+  }
+}
+
+/* =========================
+   Form Header (titles + copy)
+   ========================= */
+.sp001 .sp001__formHeader .sp001__formHeader-info h1 {
+  font-family: var(--sp-font-bold);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 34.5px;
+  letter-spacing: -2%;
+  color: var(--sp-black);
+  margin: 0 0 16px;
+}
+
+.sp001 .sp001__formHeader .sp001__formHeader-info p {
+  font-family: var(--sp-font-regular);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: var(--sp-black);
+  margin: 0 0 24px;
+}

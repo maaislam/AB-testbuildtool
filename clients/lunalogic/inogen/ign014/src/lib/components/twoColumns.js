@@ -8,9 +8,14 @@ const twoColumns = (id, data) => {
                    <div class="${id}__subtext">${data.items[0].subtitle}</div>
                 </div>
                 <div class="${id}__twoColumnsRight" style="background-image: url(${data.items[1].bgLink});">
-                     <div class="${id}__icon">${data.items[1].icon}</div>
-                   <div class="${id}__title">${data.items[1].title}</div>
-                   <div class="${id}__subtext">${data.items[1].subtitle}</div>
+                   <div class="${id}__twoColumnsRight_first">
+                      <div class="${id}__icon">${data.items[1].icon}</div>
+                      <div class="${id}__title">${data.items[1].title}</div>
+                      <div class="${id}__subtext">${data.items[1].subtitle}</div>
+                   </div>
+                   <div class="${id}__twoColumnsRight_second" style="--bg-box:url(${data.items[1].imageLink});">
+                       <img src="${data.items[1].imageLink}"/>
+                   </div>
                 </div>
             </div>
         </div>

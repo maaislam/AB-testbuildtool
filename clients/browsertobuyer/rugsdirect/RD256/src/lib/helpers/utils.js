@@ -49,11 +49,3 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   observer.observe(target, config);
 };
-
-export const sendAdobeEvent = (linkName, eventName) => {
-  if (typeof window.s !== 'undefined') {
-    window.s.linkTrackVars = 'events';
-    window.s.events = eventName;
-    window.s.tl(true, 'o', linkName);
-  }
-};

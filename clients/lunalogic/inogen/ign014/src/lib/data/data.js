@@ -12,8 +12,11 @@ const prodsData = {
   '/product/rove4-system/': {
     id: 'rove4-system',
     title:
-      '<h1 class="post__title post--pdp__title">Inogen <sup>®</sup> Rove 4<sup>™</sup> System</h1>',
-    subtext: 'Lightweight & Highly Portable',
+      '<h1 class="post__title post--pdp__title new-product-title">Inogen <sup>®</sup> Rove 4<sup>™</sup> System</h1>',
+    subtext: 'Lightweight & Portable',
+    aboutText: 'About',
+    aboutDeatails:
+      'The Inogen® Rove 4™ Portable Oxygen Concentrator is designed to move with you. Lightweight, quiet, and reliable, as it delivers pulse-dose oxygen with Inogen’s Intelligent Delivery Technology®. With up to 8 years expected service life and FAA approval for carriage and use for air travel, the Rove 4™ offers the mobility to go where life takes you.',
     imagesList: [
       'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2.png',
       'https://cdn.inogen.com/wp-content/uploads/2023/04/AC_Power_Supply_Rove4.png',
@@ -25,13 +28,14 @@ const prodsData = {
         icon: layer_1svg,
         title: '2.9lbs',
         isTooltip: true,
-        tooltipText: 'test'
+        tooltipText: 'Standard battery at flow setting 1'
       },
       {
         icon: layer_2svg,
         title: '5 Hour Battery life',
         isTooltip: true,
-        tooltipText: 'test'
+        tooltipText:
+          'Standard battery at flow setting 2 – 5 hours Extended battery at flow setting 2 – up to 14 hours 45 minutes'
       },
       {
         icon: layer_3svg,
@@ -45,32 +49,32 @@ const prodsData = {
     descriptionIcon: usaFlag,
     feature_1: {
       title: 'Lightweight design',
-      mainWeight: '4.8lbs ≈',
+      mainWeight: '2.9lbs ≈',
       subtext: 'with Standard battery',
       items: [
         {
-          item: 'Small desktop printer',
-          weight: '4.7–5 lbs'
+          item: 'Laptop',
+          weight: '2.7–2.9lbs'
         },
         {
-          item: 'Bag of apples <span>(8–10 medium)</span>',
-          weight: '4.8 lbs'
+          item: 'Tablet & Case',
+          weight: '2.8 lbs'
         },
         {
-          item: "Pair of men's hiking boots",
-          weight: '4.5–5 lbs'
+          item: 'Bag of sugar',
+          weight: '3.3lbs'
         },
         {
-          item: 'Cast iron skillet <span>(10-inch)</span>',
-          weight: '4.6–5 lbs'
+          item: 'Empty kettle',
+          weight: '3lbs'
         },
         {
-          item: 'Medium-sized laptop <span>(15-inch)</span>',
-          weight: '4.8 lbs'
+          item: 'Sneakers',
+          weight: '2.5–3lbs'
         },
         {
-          item: 'Household vacuum <span>(handheld)</span>',
-          weight: '4.7–4.9 lbs'
+          item: '2L Bottle of water',
+          weight: '4.4lbs'
         }
       ]
     },
@@ -79,18 +83,17 @@ const prodsData = {
       items: [
         {
           title: 'Long Battery Life',
-          subtitle: 'Up to 6 hours 15 minutes on a single charge.',
+          subtitle: 'Up to 5 hours on a single charge with extended battery.',
           icon: batteryIcon,
           bgLink:
             'https://cdn-3.convertexperiments.com/uf/10041653/10041910/frame-56_68dbed5c05f64.png'
         },
         {
           title: 'Only 39 dBA',
-          subtitle: 'Quiet as a home refrigerator, on setting 2',
+          subtitle: 'Quiet as a home refrigerator.',
           icon: audioIcon,
-          bgLink:
-            'https://cdn-3.convertexperiments.com/uf/10041653/10041910/dba-card_68dbed93429a8.png',
-          imageLink: ''
+          bgLink: '',
+          imageLink: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2-1717x2048.png.webp'
         }
       ]
     },
@@ -116,7 +119,7 @@ const prodsData = {
     videoElemSelector: '.rove4_getting_started',
     packages: {
       title: 'Battery Bundles to Keep You Moving',
-      subtitle: 'Inogen Rove 6™ Freedom Packages',
+      subtitle: 'Inogen Rove 4™ Freedom Packages',
       stickyInfo: [
         {
           title: 'What’s included'
@@ -152,6 +155,7 @@ const prodsData = {
 
       productsInfo: [
         {
+          textColor: '#0D0D0F',
           id: '87987788653',
           bgColor: '#DEEFFF',
           heading: '1',
@@ -168,11 +172,12 @@ const prodsData = {
           atc: 'Add to cart'
         },
         {
+          textColor: '#0D0D0F',
           id: '87987788662',
           bgColor: '#B0D9FF',
           heading: '1i',
-          standard_value: '3',
-          intermediate_value: '-',
+          standard_value: '-',
+          intermediate_value: '3',
           extended_batteries: '-',
           connector: greenIcon,
           warranty: greenIcon,
@@ -184,12 +189,13 @@ const prodsData = {
           atc: 'Add to cart'
         },
         {
+          textColor: '#0D0D0F',
           id: '87987788657',
           bgColor: '#7CBFFF',
           heading: '2',
-          standard_value: '3',
+          standard_value: '1',
           intermediate_value: '-',
-          extended_batteries: '-',
+          extended_batteries: '1',
           connector: greenIcon,
           warranty: greenIcon,
           power_supplies: greenIcon,
@@ -200,12 +206,13 @@ const prodsData = {
           atc: 'Add to cart'
         },
         {
+          textColor: '#fff',
           id: '87987788664',
           bgColor: '#00549E',
           heading: '2i',
-          standard_value: '3',
-          intermediate_value: '-',
-          extended_batteries: '-',
+          standard_value: '-',
+          intermediate_value: '1',
+          extended_batteries: '1',
           connector: greenIcon,
           warranty: greenIcon,
           power_supplies: greenIcon,
@@ -216,12 +223,13 @@ const prodsData = {
           atc: 'Add to cart'
         },
         {
+          textColor: '#fff',
           id: '87987788659',
           bgColor: '#002D55',
           heading: '3',
-          standard_value: '3',
+          standard_value: '-',
           intermediate_value: '-',
-          extended_batteries: '-',
+          extended_batteries: '2',
           connector: greenIcon,
           warranty: greenIcon,
           power_supplies: greenIcon,
@@ -294,16 +302,20 @@ const prodsData = {
           prodName: 'Rove 6™',
           prodPrice: 'From $2,995',
           ctaText: 'Find out more',
-          ctaLink: '',
-          imageLink: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2-1717x2048.png.webp'
+          ctaLink: '/product/rove6-system/',
+          imageLink: 'https://cdn.inogen.com/wp-content/uploads/2023/06/Inogen-Rove-6-Left.png.webp'
         }
       ]
     }
   },
   '/product/rove6-system/': {
     id: 'rove6-system',
-    title: '<h1 class="post__title post--pdp__title">Rove 6<sup>™</sup> System</h1>',
+    title:
+      '<h1 class="post__title post--pdp__title new-product-title">Inogen <sup>®</sup> Rove 6<sup>™</sup> System</h1>',
     subtext: 'Powerfully Portable',
+    aboutText: 'About',
+    aboutDeatails:
+      'The Inogen® Rove 6™ Portable Oxygen Concentrator is built to make your day-to-day feel as comfortable and effortless as possible. With six flow settings and up to 1,260 mL of oxygen per minute, it’s designed to adapt to whatever you’re up to—whether that’s spending time with family, enjoying the outdoors, or even traveling. It’s truly quiet, lightweight, and simple to use, so you can focus on what matters most without feeling restricted by your oxygen therapy.',
     imagesList: [
       'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2.png',
       'https://cdn.inogen.com/wp-content/uploads/2023/04/AC_Power_Supply_Rove4.png',
@@ -316,13 +328,14 @@ const prodsData = {
         icon: layer_1svg,
         title: '4.8lbs',
         isTooltip: true,
-        tooltipText: 'test'
+        tooltipText: 'Standard battery at flow setting 1'
       },
       {
         icon: layer_2svg,
         title: 'Up to 6 Hours, 15 Minutes Battery life',
         isTooltip: true,
-        tooltipText: 'test'
+        tooltipText:
+          'Standard battery at flow setting 2 – 5 hours Extended battery at flow setting 2 – up to 14 hours 45 minutes'
       },
       {
         icon: layer_3svg,
@@ -379,9 +392,8 @@ const prodsData = {
           title: 'Only 39 dBA',
           subtitle: 'Quiet as a home refrigerator.',
           icon: audioIcon,
-          bgLink:
-            'https://cdn-3.convertexperiments.com/uf/10041653/10041910/dba-card_68dbed93429a8.png',
-          imageLink: ''
+          bgLink: '',
+          imageLink: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4.png.webp'
         }
       ]
     },
@@ -471,7 +483,7 @@ const prodsData = {
           user_manual: greenIcon,
           bluetooth: greenIcon,
           app: greenIcon,
-          price: '$3,980',
+          price: '$4,215',
           atc: 'Add to cart'
         },
         {
@@ -487,7 +499,7 @@ const prodsData = {
           user_manual: greenIcon,
           bluetooth: greenIcon,
           app: greenIcon,
-          price: '$3,900',
+          price: '$4,630',
           atc: 'Add to cart'
         }
       ]
@@ -538,7 +550,7 @@ const prodsData = {
           prodPrice: 'From $2,995',
           ctaText: '',
           ctaLink: '',
-          imageLink: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2-1717x2048.png.webp'
+          imageLink: 'https://cdn.inogen.com/wp-content/uploads/2023/06/Inogen-Rove-6-Left.png.webp'
         },
         {
           bgColor: '#bcd2e5',

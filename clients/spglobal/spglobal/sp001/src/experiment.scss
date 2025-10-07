@@ -9,6 +9,48 @@ $font_bold: AkkuratPro-Bold;
   body {
     opacity: 1 !important;
   }
+
+  div.grid:has(.aemformcontainer) {
+    @media screen and (min-width: 1025px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    div.lg\:col-span-1:has(.aem-Grid) {
+      &:first-child {
+        max-width: 568px;
+
+        @media screen and (max-width: 1024px) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  div.lg\:col-span-2:has(.aemformcontainer) {
+    @media screen and (min-width: 768px) {
+      grid-column: span 1 / span 1 !important;
+    }
+  }
+
+  body.#{$id}__reverseOrder {
+    div.grid:has(.aemformcontainer) {
+      div.lg\:col-span-2:has(.aem-Grid) {
+        order: -1;
+      }
+
+      div.lg\:col-span-1:has(.aem-Grid) {
+        &:first-child {
+          margin-left: auto;
+
+          @media screen and (max-width: 1024px) {
+            max-width: 100%;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+
   .#{$id}__formWrapper {
     &[data-step-active='1'] {
       [data-step='2'],
@@ -142,6 +184,7 @@ $font_bold: AkkuratPro-Bold;
         line-height: 19.6px;
         padding: 10px 16px;
         border: 1px solid #000000;
+        color: #000;
       }
 
       button:last-child {
@@ -156,9 +199,72 @@ $font_bold: AkkuratPro-Bold;
       }
     }
 
+    .#{$id}__formInner {
+      padding-bottom: 64px;
+    }
+
     .#{$id}__step {
       display: flex;
       flex-direction: column;
+
+      input {
+        padding: 12px 16px !important;
+        height: 48px !important;
+      }
+
+      .guideFieldNode:not(.guideButton):not(.guideTextDraw):not(.guideChart) {
+        padding-top: 20px;
+      }
+
+      &.#{$id}__third-step {
+        .#{$id}__thirdStepLabel {
+          font-weight: 700;
+          font-size: 30px;
+          line-height: 34.5px;
+          letter-spacing: -2%;
+          color: #000;
+          padding: 0;
+          margin: 0;
+        }
+        .#{$id}__thirdStepText {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22.4px;
+          color: #000000;
+          margin: 0;
+          padding: 16px 0 24px;
+        }
+
+        .multiline.textField textArea {
+          height: 200px !important;
+          border: solid 3px #c7c7c7;
+        }
+
+        input[type='checkbox'] {
+          position: relative;
+          width: 24px !important;
+          height: 24px !important;
+          box-sizing: border-box;
+          padding: 0 !important;
+          border: 2px solid #000000;
+        }
+
+        .guidecheckbox .guideCheckBoxItem .guideWidgetLabel label {
+          font-size: 14px;
+          line-height: 19.6px;
+          color: #454545;
+        }
+
+        .#{$id}__policyConatiner {
+          p {
+            font-family: $font_regular;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19.6px;
+            color: #454545;
+          }
+        }
+      }
     }
 
     & ~ * {
@@ -167,7 +273,7 @@ $font_bold: AkkuratPro-Bold;
   }
 
   .#{$id}__stepContainer {
-    margin: 32px auto 0px;
+    margin: 0px auto 0px;
 
     /* Progress */
     .#{$id}__progress-bar {

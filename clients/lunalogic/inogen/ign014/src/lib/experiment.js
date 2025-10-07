@@ -28,9 +28,26 @@ const init = () => {
     const atcWrapper = productHeaderElem.querySelector('.product_add_to_cart');
     console.log('Experiment running');
 
+    const pdpImageWrapper = productHeaderElem.querySelector('.post--pdp__views');
+
+    if (!pdpImageWrapper.querySelector('.pdp--details-new')) {
+      pdpImageWrapper.insertAdjacentHTML(
+        'beforeend',
+        `<div class="pdp--details-new pdp-details-mobile">
+          <h2>${data.aboutText}</h2>
+          <p>${data.aboutDeatails}</p>
+        </div>`
+      );
+    }
+
     const targetPoint = document.querySelector('.page');
     if (!document.querySelector(`.${ID}__mainWrapper`)) {
       targetPoint.insertAdjacentHTML('beforebegin', `<div class="${ID}__mainWrapper"></div>`);
+    }
+
+    const controlProductTitleElem = document.querySelector('.post__title.post--pdp__title');
+    if (!document.querySelector('.new-product-title')) {
+      controlProductTitleElem.insertAdjacentHTML('beforebegin', data.title);
     }
 
     const mainNewWrapper = document.querySelector(`.${ID}__mainWrapper`);
@@ -82,6 +99,16 @@ const init = () => {
       productDetailsElem.insertAdjacentHTML('beforeend', uspWrapper(ID, data.uspList));
     }
 
+    if (!document.querySelector('.pdp--details-new.pdp--details-desktop')) {
+      productDetailsElem.insertAdjacentHTML(
+        'beforeend',
+        `<div class="pdp--details-new pdp-details-desktop">
+          <h2>${data.aboutText}</h2>
+          <p>${data.aboutDeatails}</p>
+        </div>`
+      );
+    }
+
     const productInfoWrapper = document.querySelector('.product.type-product');
 
     if (productInfoWrapper) {
@@ -112,16 +139,34 @@ const init = () => {
       );
     }
 
+    if (!document.querySelector(`.${ID}__groupWrapper`)) {
+      mainNewWrapper.insertAdjacentHTML(
+        'beforeend',
+        `<ddiv class="${ID}__groupWrapper">
+           <div class="${ID}__groupWrapper-inner"></div>
+        </div>`
+      );
+    }
+
+    //this one
     if (!document.querySelector(`.${ID}__comparisonWrapper`) && data.feature_1) {
-      mainNewWrapper.insertAdjacentHTML('beforeend', comparisonStr(ID, data.feature_1));
+      mainNewWrapper
+        .querySelector(`.${ID}__groupWrapper-inner`)
+        .insertAdjacentHTML('beforeend', comparisonStr(ID, data.feature_1));
     }
 
+    //this one
     if (!document.querySelector(`.${ID}__twoColumnsWrapper`) && data.feature_2) {
-      mainNewWrapper.insertAdjacentHTML('beforeend', twoColumns(ID, data.feature_2));
+      mainNewWrapper
+        .querySelector(`.${ID}__groupWrapper-inner`)
+        .insertAdjacentHTML('beforeend', twoColumns(ID, data.feature_2));
     }
 
+    //this one
     if (!document.querySelector(`.${ID}__twoColumnsImageWrapper`) && data.feature_3) {
-      mainNewWrapper.insertAdjacentHTML('beforeend', twoColumnsWithImage(ID, data.feature_3));
+      mainNewWrapper
+        .querySelector(`.${ID}__groupWrapper-inner`)
+        .insertAdjacentHTML('beforeend', twoColumnsWithImage(ID, data.feature_3));
     }
 
     if (!document.querySelector(`.${ID}__videoElement`) && data.videoElemSelector) {

@@ -1,0 +1,31 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .variant-selector__list-item--header {
+    & > span {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .ff-heading.block {
+        color: #57575b;
+        text-align: right;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: line-through;
+      }
+    }
+  }
+  .#{$id}__savingsPrice {
+    color: #e03a1d;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: right;
+  }
+}

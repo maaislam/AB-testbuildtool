@@ -29,7 +29,9 @@ const packageStr = (id, data) => {
                                 return `
                                 <div class="swiper-slide">
                                     <div class="item">
-                                        <div class="${id}__list" style="--bg-color:${item.bgColor}">
+                                        <div class="${id}__list" style="--bg-color:${
+                                  item.bgColor
+                                }; --text-color:${item.textColor}">
                                             ${item.heading ? `<span>${item.heading}</span>` : ''}
                                             ${
                                               item.standard_value
