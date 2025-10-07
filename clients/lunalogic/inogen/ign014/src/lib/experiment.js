@@ -11,7 +11,7 @@ import twoColumnsWithImage from './components/twoColumnsWithImage';
 import packageStr from './components/packageStr';
 import compareProducts from './components/compareProducts';
 import initStickyBar from './helpers/initStickyBar';
-import mainGallery from './components/mainGallery';
+import productGallery from './components/productGallery';
 
 const { ID, VARIATION } = shared;
 
@@ -60,30 +60,65 @@ const init = () => {
     }
 
     if (!document.querySelector(`.${ID}__mySwiper2`)) {
-      thumbElement.insertAdjacentHTML('beforebegin', mainGallery(ID, data.imagesList));
-      const swiper = new window.Swiper(`.${ID}__mySwiper`, {
-        loop: true,
-        spaceBetween: 15,
-        slidesPerView: 5,
-        freeMode: true,
-        watchSlidesProgress: true,
+      thumbElement.insertAdjacentHTML('afterbegin', productGallery(ID, data.imagesList));
+      const swiper = new window.Swiper('.mySwiper', {
+        loop: false,
+        spaceBetween: 10,
+        slidesPerView: 5.5,
+
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
         breakpoints: {
-          //Mobile view: 1 slide per view
           320: {
-            slidesPerView: 4
+            slidesPerView: 3.5,
+            spaceBetween: 15
           },
-          1200: {
-            slidesPerView: 5
+          768: {
+            slidesPerView: 4.2,
+            spaceBetween: 15
+          },
+          1025: {
+            slidesPerView: 5.5,
+            spaceBetween: 15
           }
         }
       });
-      const swiper2 = new window.Swiper(`.${ID}__mySwiper2`, {
-        loop: true,
+      const swiper2 = new window.Swiper('.mySwiper2', {
+        loop: false,
         spaceBetween: 10,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
         thumbs: {
           swiper
         }
       });
+      //const swiper = new window.Swiper(`.${ID}__mySwiper`, {
+      //loop: true,
+      //spaceBetween: 15,
+      //slidesPerView: 5,
+      //freeMode: true,
+      //watchSlidesProgress: true,
+      //breakpoints: {
+      ////Mobile view: 1 slide per view
+      //320: {
+      //slidesPerView: 4
+      //},
+      //1200: {
+      //slidesPerView: 5
+      //}
+      //}
+      //});
+      //const swiper2 = new window.Swiper(`.${ID}__mySwiper2`, {
+      //loop: true,
+      //spaceBetween: 10,
+      //thumbs: {
+      //swiper
+      //}
+      //});
     }
 
     if (!document.querySelector(`.${ID}__prodDescriptionWrapper`)) {

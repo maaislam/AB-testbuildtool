@@ -17,12 +17,62 @@ const prodsData = {
     aboutText: 'About',
     aboutDeatails:
       'The Inogen® Rove 4™ Portable Oxygen Concentrator is designed to move with you. Lightweight, quiet, and reliable, as it delivers pulse-dose oxygen with Inogen’s Intelligent Delivery Technology®. With up to 8 years expected service life and FAA approval for carriage and use for air travel, the Rove 4™ offers the mobility to go where life takes you.',
-    imagesList: [
-      'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2.png',
-      'https://cdn.inogen.com/wp-content/uploads/2023/04/AC_Power_Supply_Rove4.png',
-      'https://cdn.inogen.com/wp-content/uploads/2016/05/G4-single-battery-400px.png',
-      'https://cdn.inogen.com/wp-content/uploads/2016/05/Rove-4-Carry-Bag-No-Strap.png'
-    ],
+    imagesList: {
+      mainSliderImage: [
+        {
+          srcType: 'image',
+          link: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2-1288x1536.png.webp'
+        },
+        {
+          srcType: 'image',
+          link: 'https://cdn.inogen.com/wp-content/uploads/2023/04/AC_Power_Supply_Rove4.png.webp'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.vwo.io/useruploads/1054833/images/11ebb32717a09bdb47822c9cdde4a64a_992860cdbeac3d3570f72672e3957162e81da1a6.jpg'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.vwo.io/useruploads/1054833/images/2d825b1a15780f5a27ea9338227b53dd_2cc7a65bd733bd8acd86421743dc426ebb46790c.jpg'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.vwo.io/useruploads/1054833/images/fb81bbc986dba970a5777c69a8a8ec1b_e8389bba61bfec1894cf506744e5b7748013405c.jpg'
+        },
+        {
+          srcType: 'video',
+          link: 'https://salyenz.s3.us-east-1.amazonaws.com/Rove+4+360.mp4',
+          imgLink:
+            'https://useruploads.vwo.io/useruploads/1054833/images/62395ed74028c5d6aa80dcc46581ad04_420a2d5849c9f0279f17694e1e598da0084c2975.png'
+        }
+      ],
+      thumbnailImage: [
+        {
+          srcType: 'image',
+          link: 'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2-1288x1536.png.webp'
+        },
+        {
+          srcType: 'image',
+          link: 'https://cdn.inogen.com/wp-content/uploads/2023/04/AC_Power_Supply_Rove4.png.webp'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.vwo.io/useruploads/1054833/images/11ebb32717a09bdb47822c9cdde4a64a_992860cdbeac3d3570f72672e3957162e81da1a6.jpg'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.vwo.io/useruploads/1054833/images/2d825b1a15780f5a27ea9338227b53dd_2cc7a65bd733bd8acd86421743dc426ebb46790c.jpg'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.vwo.io/useruploads/1054833/images/fb81bbc986dba970a5777c69a8a8ec1b_e8389bba61bfec1894cf506744e5b7748013405c.jpg'
+        },
+        {
+          srcType: 'video',
+          link: 'https://useruploads.vwo.io/useruploads/1054833/images/62395ed74028c5d6aa80dcc46581ad04_420a2d5849c9f0279f17694e1e598da0084c2975.png'
+        }
+      ]
+    },
     features: [
       {
         icon: layer_1svg,
