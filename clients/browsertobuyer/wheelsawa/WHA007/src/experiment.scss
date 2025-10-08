@@ -1,0 +1,136 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+@import './startV3Experiment';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.#{$id} {
+  .#{$id}__fakeBtn {
+    & + button {
+      display: none;
+    }
+  }
+
+  .#{$id}__wrapper {
+    max-width: 568px;
+    width: 100%;
+    margin: 0 auto;
+
+    .#{$id}__wrapper-inner {
+      padding: 0 16px;
+    }
+
+    .card-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.5s ease;
+
+      h3 {
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+        font-size: 92.25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 96px; /* 104.065% */
+
+        @media screen and (max-width: 767px) {
+          font-size: 34.594px;
+          line-height: 40px; /* 115.628% */
+          max-width: 240px;
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 4px;
+      background: #fff;
+      padding: 48px;
+      margin-top: 50px;
+
+      /* Form shadow */
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1), 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+
+      @media screen and (max-width: 767px) {
+        margin-top: 40px;
+        padding: 24px;
+      }
+    }
+
+    .card-icon {
+      margin-bottom: 24px;
+    }
+
+    .card-content {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .card-content-text {
+      color: #000;
+      text-align: center;
+      font-family: Arial;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      color: #000;
+
+      @media screen and (max-width: 767px) {
+        font-size: 20px;
+      }
+    }
+
+    .car-track {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 0;
+      height: 40px;
+    }
+
+    .track-line {
+      // position: absolute;
+      // top: 50%;
+      // left: 0;
+      // width: 100%;
+      // height: 3px;
+      // background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.4));
+      // transform: translateY(-50%);
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(to right, white 0%, white 0%, orange 0%, orange 100%);
+      transform: translateY(-50%);
+      border-radius: 2px;
+    }
+
+    .car {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: 1;
+      //transition: left 3s linear; /* smooth move */
+    }
+
+    .car svg {
+      width: 45px;
+      height: auto;
+    }
+  }
+}

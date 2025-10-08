@@ -1,10 +1,16 @@
 import { playButton } from '../assets/icons';
 
-const productGallery = (id, data) => {
+const modalLightBox = (id, data) => {
   const html = `
-        <div class="${id}__productGallery">
-            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                <div class="swiper-wrapper">
+        <div class="lightbox ${id}__modalLightBox" id="lightbox" aria-hidden="true">
+  <div class="lightbox__backdrop"></div>
+  <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Media viewer">
+    <button class="lightbox__close" aria-label="Close">
+        <span></span>
+    </button>
+
+    <div class="swiper lightbox-swiper">
+       <div class="swiper-wrapper">
                     ${data.mainSliderImage
                       .map((item) => {
                         return `
@@ -23,8 +29,8 @@ const productGallery = (id, data) => {
                                             ${
                                               item.srcType === 'video'
                                                 ? `
-                                                    ${playButton}
-                                                    `
+                                                ${playButton}
+                                                 `
                                                 : ''
                                             }
 
@@ -49,36 +55,19 @@ const productGallery = (id, data) => {
                       })
                       .join('\n')}
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-            <div thumbsSlider="" class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                     ${data.thumbnailImage
-                       .map((item) => {
-                         return `
-                                <div class="swiper-slide ${
-                                  item.srcType === 'video' ? 'video-thumb-slide' : ''
-                                }">
-                                    <img src="${item.link}" />
-                                    ${
-                                      item.srcType === 'video'
-                                        ? `
-                                        ${playButton}
-                                        `
-                                        : ''
-                                    }
-                                </div>
-                            `;
-                       })
-                       .join('\n')}
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
+
+      <div class="swiper-button-prev" aria-label="Prev">
+          <span></span>
+      </div>
+      <div class="swiper-button-next" aria-label="Next">
+          <span></span>                      
+      </div>
+    </div>
+  </div>
+</div>
+    
     `;
   return html.trim();
 };
 
-export default productGallery;
+export default modalLightBox;

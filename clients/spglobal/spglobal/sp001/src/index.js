@@ -7,7 +7,8 @@ pollerLite(
   [
     'body',
     '#guideContainer-rootPanel___guide-item-container',
-    '#guideContainer-rootPanel-panel___guide-item'
+    '#guideContainer-rootPanel-panel___guide-item',
+    () => typeof window.alloy === 'function'
   ],
   activate
 );

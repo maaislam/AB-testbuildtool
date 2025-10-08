@@ -32,7 +32,7 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   const config = configObject || {
     childList: true,
-    subtree: true,
+    subtree: false,
     attributes: true,
     characterData: true,
     characterDataOldValue: true
@@ -48,36 +48,4 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
-};
-
-//Adobe Target / Web SDK helper for event tracking
-export const sendAdobeEvent = (linkName, eventName) => {
-  if (typeof window.alloy !== 'function') return;
-  window.alloy('sendEvent', {
-    xdm: {
-      eventType: 'web.webinteraction.linkClicks',
-      web: {
-        webInteraction: {
-          name: linkName,
-          type: 'other'
-        }
-      },
-      _experience: {
-        analytics: {
-          customEvent: {
-            name: eventName
-          }
-        }
-      }
-    },
-    data: {
-      __adobe: {
-        analytics: {
-          events: [eventName], //e.g. "event15"
-          linkName,
-          linkType: 'o'
-        }
-      }
-    }
-  });
 };

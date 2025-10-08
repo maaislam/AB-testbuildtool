@@ -366,13 +366,62 @@ const prodsData = {
     aboutText: 'About',
     aboutDeatails:
       'The Inogen® Rove 6™ Portable Oxygen Concentrator is built to make your day-to-day feel as comfortable and effortless as possible. With six flow settings and up to 1,260 mL of oxygen per minute, it’s designed to adapt to whatever you’re up to—whether that’s spending time with family, enjoying the outdoors, or even traveling. It’s truly quiet, lightweight, and simple to use, so you can focus on what matters most without feeling restricted by your oxygen therapy.',
-    imagesList: [
-      'https://cdn.inogen.com/wp-content/uploads/2023/05/Rove4v2.png',
-      'https://cdn.inogen.com/wp-content/uploads/2023/04/AC_Power_Supply_Rove4.png',
-      'https://cdn.inogen.com/wp-content/uploads/2014/02/g3-dc-power-ba306.png',
-      'https://cdn.inogen.com/wp-content/uploads/2019/03/g5_single_battery.png',
-      'https://cdn.inogen.com/wp-content/uploads/2016/05/Rove-4-Carry-Bag-No-Strap.png'
-    ],
+    imagesList: {
+      mainSliderImage: [
+        {
+          srcType: 'image',
+          link: 'https://cdn.inogen.com/wp-content/uploads/2023/06/Inogen-Rove-6-700x700.png.webp'
+        },
+        {
+          srcType: 'image',
+          link: 'https://cdn.inogen.com/wp-content/uploads/2023/06/AC-Power-Supply-Rove-6.png.webp'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.visualwebsiteoptimizer.com/useruploads/1054833/images/c907d575d1ba307334395cc6d7cf5d66_42cebd2708c071f300ceed50527407b436c120e9.jpg'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.visualwebsiteoptimizer.com/useruploads/1054833/images/2469c5b0ff8c5f1ddcbb2e74602ec2d0_aa511e3fecc9ea0663d4a345ad7b8d10c75403a1.jpg'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.visualwebsiteoptimizer.com/useruploads/1054833/images/26db6ef1e28aaac09544f20b71295dc0_0d9508a484e3bd5b8a656ab64ef92305fad96bb2.jpg'
+        },
+        {
+          srcType: 'video',
+          link: 'https://salyenz.s3.us-east-1.amazonaws.com/Rove+6+360.mp4',
+          imgLink:
+            'https://useruploads.visualwebsiteoptimizer.com/useruploads/1054833/images/7d9ffe12889ce99e1f8b8e6847d5ae10_9231029b262ae13efb2455a69029fd6e434d0437.png'
+        }
+      ],
+      thumbnailImage: [
+        {
+          srcType: 'image',
+          link: 'https://cdn.inogen.com/wp-content/uploads/2023/06/Inogen-Rove-6-700x700.png.webp'
+        },
+        {
+          srcType: 'image',
+          link: 'https://cdn.inogen.com/wp-content/uploads/2023/06/AC-Power-Supply-Rove-6.png.webp'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.visualwebsiteoptimizer.com/useruploads/1054833/images/c907d575d1ba307334395cc6d7cf5d66_42cebd2708c071f300ceed50527407b436c120e9.jpg'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.visualwebsiteoptimizer.com/useruploads/1054833/images/2469c5b0ff8c5f1ddcbb2e74602ec2d0_aa511e3fecc9ea0663d4a345ad7b8d10c75403a1.jpg'
+        },
+        {
+          srcType: 'image',
+          link: 'https://useruploads.visualwebsiteoptimizer.com/useruploads/1054833/images/26db6ef1e28aaac09544f20b71295dc0_0d9508a484e3bd5b8a656ab64ef92305fad96bb2.jpg'
+        },
+        {
+          srcType: 'video',
+          link: 'https://useruploads.visualwebsiteoptimizer.com/useruploads/1054833/images/7d9ffe12889ce99e1f8b8e6847d5ae10_9231029b262ae13efb2455a69029fd6e434d0437.png'
+        }
+      ]
+    },
     features: [
       {
         icon: layer_1svg,

@@ -36,6 +36,37 @@
     }, POLLING_INTERVAL);
   };
 
+  const sendAdobeEvent = (linkName, eventName) => {
+    if (typeof window.alloy !== 'function') return;
+    window.alloy('sendEvent', {
+      xdm: {
+        eventType: 'web.webinteraction.linkClicks',
+        web: {
+          webInteraction: {
+            name: linkName,
+            type: 'other'
+          }
+        },
+        _experience: {
+          analytics: {
+            customEvent: {
+              name: eventName
+            }
+          }
+        }
+      },
+      data: {
+        __adobe: {
+          analytics: {
+            events: [eventName], //e.g. "event15"
+            linkName,
+            linkType: 'o'
+          }
+        }
+      }
+    });
+  };
+
   /*--------------------------------- Markup ------------------------------------- */
   const setup = () => {
     const { ID, VARIATION } = shared$1;
@@ -279,10 +310,12 @@
           if (checkBoxElem && checkBoxElem.checked) {
             if (!document.body.classList.contains(`${ID}__stepComplete-3`)) {
               console.log('step--3 completes');
-              console.log('form completes in variation');
+              console.log('form submission completes');
               addClass(document.body, `${ID}__stepComplete-3`);
             }
             if (controlSubmitBtn) controlSubmitBtn.click();
+            sendAdobeEvent('Step 3 completes', '');
+            sendAdobeEvent('form submission completes', '');
             return;
           }
         }
@@ -298,6 +331,7 @@
 
             if (!document.body.classList.contains(`${ID}__stepComplete-${step}`)) {
               console.log(`step--${step} completes`);
+              sendAdobeEvent(`Step ${step} completes`, '');
               addClass(document.body, `${ID}__stepComplete-${step}`);
             }
           }
@@ -326,6 +360,7 @@
         pollerLite(['.thankyou-message-component'], () => {
           if (!document.body.classList.contains(`${ID}__formComplete`)) {
             console.log('form completes in control');
+            sendAdobeEvent('form submission completes', '');
             addClass(document.body, `${ID}__formComplete`);
           }
         });

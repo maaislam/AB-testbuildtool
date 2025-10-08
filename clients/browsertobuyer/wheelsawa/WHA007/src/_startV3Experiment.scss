@@ -1,0 +1,142 @@
+/* Sticky black bar container */
+
+#waStickyBar {
+  background-color: #000;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.waSB {
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.25);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Splide wrapper inside the bar */
+.waSB__splide {
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0));
+}
+
+/* Each slide appears inline like a pill */
+.waSB__slide {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 25px;
+
+  width: 100%;
+}
+
+.splide__slide-small {
+  max-width: 240px;
+}
+
+.splide__slide-big {
+  max-width: 450px;
+}
+
+/* Add a subtle dot after each slide to separate (looks continuous in loop) */
+.waSB__slide::after {
+  content: '•';
+  margin-left: 16px;
+  opacity: 0.55;
+  font-weight: 700;
+  display: none;
+}
+
+/* Icon + text */
+.waSB__icon {
+  width: 30px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+.waSB__text {
+  color: #fff;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 112%; /* 13.44px */
+}
+
+@media (min-width: 480px) {
+  .waSB__splide {
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0));
+  }
+  .waSB__icon {
+    width: 44px;
+    height: 24px;
+  }
+
+  .splide__slide-small {
+    max-width: max-content;
+  }
+
+  .splide__slide-big {
+    max-width: max-content;
+  }
+}
+#gt_float_wrapper {
+  bottom: 60px !important;
+}
+.cky-revisit-bottom-left {
+  bottom: 60px !important;
+}
+
+@media screen and (max-width: 767px) {
+  .waSB__slide {
+    padding: 2px 15px;
+  }
+}
+
+/* If you must respect reduced motion, uncomment:
+@media (prefers-reduced-motion: reduce) {
+  .waSB { display: none; }
+}
+*/
+
+.info-bar {
+  background: #222; /* dark background */
+  color: #fff; /* white text */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 16px 15px;
+
+  .info-bar-inner {
+    max-width: 992px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    .info-item {
+      &:last-child {
+        margin-left: 32px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-text {
+  color: #fff;
+  text-align: left;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 112%;
+}

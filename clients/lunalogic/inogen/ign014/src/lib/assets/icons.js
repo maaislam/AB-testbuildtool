@@ -116,3 +116,10 @@ export const greenIcon = `
 <circle cx="6.75" cy="6" r="6" fill="#66D348"/>
 </svg>
 `;
+
+export const playButton = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+<rect width="30" height="30" rx="15" fill="#00549E"/>
+<path d="M22 14.5L10.75 20.9952L10.75 8.00481L22 14.5Z" fill="white"/>
+</svg>
+`;

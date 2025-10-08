@@ -1911,7 +1911,6 @@
       .swiper-slide {
         border-radius: 20px;
         background-color: #fff;
-        //height: 55vh;
 
         img {
           border-radius: 20px;
@@ -1942,11 +1941,16 @@
             border: 2px solid #eb5e00;
           }
         }
+
+        @media screen and (max-width: 767px) {
+          height: 85px;
+        }
       }
 
       .swiper-button-prev::after,
       .swiper-button-next::after {
         color: #333333;
+        font-size: 24px;
       }
 
       .swiper-button-prev,
@@ -1956,8 +1960,241 @@
         }
       }
     }
+
+    .video-thumb-slide {
+      position: relative;
+
+      svg {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .video-slide-item {
+      position: relative;
+
+      svg {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        cursor: pointer;
+
+        @media screen and (max-width: 767px) {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
     & ~ div {
       display: none;
+    }
+  }
+
+  /* Modal lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    display: none; /* hidden by default */
+    z-index: 99999;
+
+    .swiper-wrapper {
+      align-items: center;
+    }
+  }
+
+  .lightbox.is-open {
+    /* Center the dialog vertically & horizontally */
+    display: grid;
+    place-items: center;
+  }
+
+  .lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1; /* behind the dialog */
+  }
+
+  .lightbox__dialog {
+    position: relative;
+    z-index: 2; /* above backdrop */
+    width: min(650px, 1200px);
+    max-height: 90vh; /* keep within viewport */
+    margin: 0; /* centering handled by grid */
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex; /* center slide content box if needed */
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: 767px) {
+      width: min(450px, 1200px);
+    }
+
+    @media screen and (max-width: 480px) {
+      width: min(360px, 1200px);
+    }
+
+    @media screen and (max-width: 360px) {
+      width: min(320px, 1200px);
+    }
+  }
+
+  .lightbox__close {
+    position: absolute;
+    top: -21px;
+    right: -5px;
+    z-index: 2;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+
+    span {
+      display: block;
+      position: relative;
+      left: 12px;
+      top: 12px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #000;
+      border: 2px solid white;
+      box-shadow: 0 0 4px #000;
+      transition: transform 0.25s ease-in-out;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: 4px;
+        width: 12px;
+        height: 2px;
+        background-color: #fff;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: 4px;
+        width: 12px;
+        height: 2px;
+        background-color: #fff;
+        transform: rotate(-45deg);
+      }
+
+      &:hover {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .lightbox .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox .swiper-slide img,
+  .lightbox .swiper-slide video,
+  .lightbox .swiper-slide iframe {
+    max-width: 100%;
+    max-height: 50vh; /* leave room for close button/padding */
+  }
+
+  .lightbox .swiper-slide video {
+    max-width: 100%;
+    max-height: 100vh; /* leave room for close button/padding */
+  }
+
+  .#{$id}__modalLightBox {
+    .video-slide-item {
+      position: relative;
+
+      svg {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        cursor: pointer;
+
+        @media screen and (max-width: 767px) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      margin-top: 0;
+      span {
+        display: block;
+        position: relative;
+        left: 12px;
+        top: 12px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #000;
+        border: 2px solid white;
+        box-shadow: 0 0 4px #000;
+        transition: transform 0.25s ease-in-out;
+
+        &:hover {
+          transform: rotate(360deg);
+        }
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .swiper-button-next {
+      right: 20px;
+      span {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 6px;
+          width: 8px;
+          height: 8px;
+          border-top: 2px solid #fff;
+          border-right: 2px solid #fff;
+          transform: rotate(45deg);
+          left: initial;
+          right: 7px;
+        }
+      }
+    }
+
+    .swiper-button-prev {
+      span {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 6px;
+          width: 8px;
+          height: 8px;
+          border-top: 2px solid #fff;
+          border-right: 2px solid #fff;
+          transform: rotate(-135deg);
+          left: 7px;
+        }
+      }
     }
   }
 }

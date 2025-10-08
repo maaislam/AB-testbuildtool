@@ -1,7 +1,6 @@
 import setup from './services/setup';
-import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
-import { observeDOM, pollerLite } from './helpers/utils';
+import { observeDOM } from './helpers/utils';
 import prodsData from './data/data';
 import prodDescriptionInfo from './components/prodDescriptionInfo';
 import uspWrapper from './components/uspWrapper';
@@ -12,8 +11,10 @@ import packageStr from './components/packageStr';
 import compareProducts from './components/compareProducts';
 import initStickyBar from './helpers/initStickyBar';
 import productGallery from './components/productGallery';
+import modalLightBox from './components/modalLightBox';
+import { lightboxFunctionality, stopAllMedia } from './helpers/lightboxFunctionality';
 
-const { ID, VARIATION } = shared;
+const { ID } = shared;
 
 const init = () => {
   const { pathname } = window.location;
@@ -59,7 +60,7 @@ const init = () => {
       thumbSwiper.swiper.destroy();
     }
 
-    if (!document.querySelector(`.${ID}__mySwiper2`)) {
+    if (!document.querySelector(`.${ID}__productGallery`)) {
       thumbElement.insertAdjacentHTML('afterbegin', productGallery(ID, data.imagesList));
       const swiper = new window.Swiper('.mySwiper', {
         loop: false,
@@ -96,29 +97,33 @@ const init = () => {
           swiper
         }
       });
-      //const swiper = new window.Swiper(`.${ID}__mySwiper`, {
-      //loop: true,
-      //spaceBetween: 15,
-      //slidesPerView: 5,
-      //freeMode: true,
-      //watchSlidesProgress: true,
-      //breakpoints: {
-      ////Mobile view: 1 slide per view
-      //320: {
-      //slidesPerView: 4
-      //},
-      //1200: {
-      //slidesPerView: 5
-      //}
-      //}
-      //});
-      //const swiper2 = new window.Swiper(`.${ID}__mySwiper2`, {
-      //loop: true,
-      //spaceBetween: 10,
-      //thumbs: {
-      //swiper
-      //}
-      //});
+    }
+
+    if (!document.querySelector(`.${ID}__modalLightBox`)) {
+      document.body.insertAdjacentHTML('beforeend', modalLightBox(ID, data.imagesList));
+      const lightboxSwiper = new window.Swiper('.lightbox-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        zoom: {
+          maxRatio: 3
+        },
+        keyboard: {
+          enabled: true
+        },
+        pagination: {
+          el: '.lightbox-swiper .swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.lightbox-swiper .swiper-button-next',
+          prevEl: '.lightbox-swiper .swiper-button-prev'
+        },
+        on: {
+          slideChange: stopAllMedia
+        }
+      });
+
+      lightboxFunctionality(lightboxSwiper);
     }
 
     if (!document.querySelector(`.${ID}__prodDescriptionWrapper`)) {
