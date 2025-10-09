@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { observeDOM, pollerLite } from './helpers/utils';
+import { pollerLite } from './helpers/utils';
 import wrapper from './components/wrapper';
 import startCarAnimation from './helpers/initCarScroll';
 
@@ -18,6 +18,7 @@ export default () => {
       if (mainWrapper && !document.querySelector(`.${ID}__wrapper`)) {
         mainWrapper.childNodes[1].style.display = 'none';
         mainWrapper.insertAdjacentHTML('beforeend', wrapper(ID));
+        mainWrapper.scrollIntoView();
         startCarAnimation(ID);
       }
 

@@ -133,4 +133,12 @@
       height: auto;
     }
   }
+
+  #makeForm {
+    .label-complete-fields {
+      & + .label-complete-fields {
+        display: none;
+      }
+    }
+  }
 }

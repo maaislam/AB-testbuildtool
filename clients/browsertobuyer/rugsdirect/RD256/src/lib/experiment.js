@@ -1,6 +1,6 @@
 import setup from './services/setup';
 import shared from './shared/shared';
-import { pollerLite } from './helpers/utils';
+import { obsIntersection, pollerLite } from './helpers/utils';
 
 const { ID, VARIATION } = shared;
 
@@ -36,6 +36,7 @@ const getSavingAmount = (sellPrice, originalPrice) => {
 
 const formatDeliveryText = (text) => {
   //Match "Get it XXX" where XXX is a 3-letter weekday
+  if (!text) return;
   const match = text.match(/Get it (\w{3})/i);
   if (!match) return text; //if no match, return original text
 
@@ -52,6 +53,20 @@ const formatDeliveryText = (text) => {
 
   const fullDay = dayMap[shortDay] || match[1];
   return `Get it ${fullDay}`;
+};
+
+const handleIntersection = (entry) => {
+  if (entry.isIntersecting && !document.body.classList.contains(`${ID}-test_run_event`)) {
+    trackGAEvent('RD 256', 'test_run_RD_256', '');
+    document.body.classList.add(`${ID}-test_run_event`);
+  }
+};
+
+const handleObserver = (selector) => {
+  const intersectionAnchor = document.querySelector(selector);
+  if (intersectionAnchor) {
+    obsIntersection(intersectionAnchor, 0.2, handleIntersection);
+  }
 };
 
 const init = () => {
@@ -86,7 +101,13 @@ const init = () => {
               const savingsPrice = getSavingAmount(sellPrice, originalPrice);
               const targetPoint = item.querySelector('.variant-selector__list-item--header > span');
               console.log(targetPoint, 'targetPoint');
-              if (!targetPoint.querySelector(`.${ID}__savingsPrice`)) {
+              if (
+                !targetPoint.querySelector(`.${ID}__savingsPrice`) &&
+                savingsPrice &&
+                !savingsPrice.includes('NaN') &&
+                savingsPrice !== '£0' &&
+                savingsPrice !== '£0.00'
+              ) {
                 targetPoint.insertAdjacentHTML(
                   'beforeend',
                   `<span class="${ID}__savingsPrice block">Save ${savingsPrice}</span>`
@@ -96,7 +117,9 @@ const init = () => {
 
             const controlDDeliverMsgElem = item.querySelector('[data-variant-delivery] span');
             const deliveryMsg = controlDDeliverMsgElem ? controlDDeliverMsgElem.textContent : null;
-            controlDDeliverMsgElem.textContent = formatDeliveryText(deliveryMsg);
+            if (deliveryMsg) {
+              controlDDeliverMsgElem.textContent = formatDeliveryText(deliveryMsg);
+            }
           });
         };
         //updateDeliveryMessages();
@@ -113,15 +136,11 @@ const init = () => {
   );
 };
 export default () => {
-  setup(); //use if needed
-  console.log(ID);
-  document.body.addEventListener('click', (e) => {
-    const { target } = e;
-    if (target.closest('.variant-selector__btn')) {
-      pollerLite([() => target.closest('.variant-selector__btn[open="true"]')], () => {
-        trackGAEvent('RD 256', 'drop_down_open');
-      });
-    }
-  });
+  setup();
+
+  if (document.querySelector('.variant-selector__list-item--header s.ff-heading')) {
+    handleObserver('.variant-selector__list-item--header s.ff-heading');
+  }
+  if (VARIATION === 'control') return;
   init();
 };

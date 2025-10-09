@@ -52,6 +52,11 @@
   margin-left: auto;
 }
 
+.sp001 body.sp001__reverseOrder div.grid:has(.aemformcontainer) > div:first-child > div {
+  background-color: #f6f6f6;
+  padding: 32px;
+}
+
 @media screen and (max-width: 1024px) {
   .sp001 body.sp001__reverseOrder div.grid:has(.aemformcontainer) > div:first-child {
     max-width: 100%;
@@ -175,6 +180,11 @@
   color: var(--sp-black);
 }
 
+.sp001 .sp001__formWrapper .sp001__actionWrapper button:first-child:hover {
+  color: #fff;
+  background: #000;
+}
+
 .sp001 .sp001__formWrapper .sp001__actionWrapper button:last-child {
   font-family: var(--sp-font-bold);
   font-weight: 700;
@@ -184,6 +194,11 @@
   color: var(--sp-white);
   background-color: var(--sp-red);
   padding: 10px 16px;
+}
+
+.sp001 .sp001__formWrapper .sp001__actionWrapper button:last-child:hover {
+  background: #000;
+  color: #fff;
 }
 
 /* Hide the original AEM form after our wrapper */
@@ -339,6 +354,19 @@
   line-height: 19.6px;
   color: var(--sp-gray-900);
   text-align: right;
+}
+
+.sp001 body.sp001__reverseOrder .bg-grey-5:has(.aemformcontainer) {
+  background-color: #fff;
+}
+
+@media (max-width: 767px) {
+  .sp001 body.sp001__reverseOrder div.grid:has(.aemformcontainer) > div:nth-child(2) {
+    order: 0;
+  }
+  .sp001 body.sp001__reverseOrder div.grid:has(.aemformcontainer) > div:first-child > div {
+    padding: 16px;
+  }
 }
 
 @media (max-width: 400px) {
