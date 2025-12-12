@@ -1,0 +1,488 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  // ================================
+  // Vehicle Tabs – Design Tokens
+  // ================================
+  $fe-tab-font-family: Arial !default;
+  $fe-tab-font-size: 14px !default;
+  $fe-tab-font-weight: 700 !default;
+  $fe-tab-line-height: 1 !default;
+
+  $fe-tab-text-color: #000 !default;
+  $fe-tab-active-bg: #fff !default;
+  $fe-tab-inactive-bg: linear-gradient(180deg, #f2f2f2 31.25%, #d4d4d4 93.75%) !default;
+
+  // ==========================
+  // Icon URLs
+  // ==========================
+  $truck-desktop: 'https://cdn-3.convertexperiments.com/uf/10021806/10025682/pick-up-truck-1_693bda938cdfc.png';
+  $car-desktop: 'https://cdn-3.convertexperiments.com/uf/10021806/10025682/car-1_693bdac39e041.png';
+  $dollar-desktop: 'https://cdn-3.convertexperiments.com/uf/10021806/10025682/_693bdad65d3a2.png';
+
+  $truck-mobile: 'https://cdn-3.convertexperiments.com/uf/10021806/10025682/pick-up-truck-orange-1_693bdae81a254.png';
+  $car-mobile: 'https://cdn-3.convertexperiments.com/uf/10021806/10025682/car-orange-1_693bdaf452d97.png';
+  $dollar-mobile: 'https://cdn-3.convertexperiments.com/uf/10021806/10025682/-orange_693bdb0232086.png';
+
+  // ================================
+  // Component Styles
+  // ================================
+
+  .ticked-list,
+  [id*='gt-wrapper-'] {
+    display: none;
+  }
+
+  [data-ref='hero-banner'] {
+    padding-bottom: 44px;
+  }
+
+  @media (max-width: 768px) {
+    [data-ref='hero-banner'] {
+      padding-bottom: 26px;
+    }
+
+    .ticked-list-parent {
+      display: none;
+    }
+
+    h1 ~ .fe-info-bar {
+      display: none;
+    }
+  }
+
+  .fe-vehicle-tabs {
+    display: flex;
+    gap: 5px;
+    align-items: flex-end;
+    background-color: transparent;
+
+    & + div {
+      margin-top: 16px;
+      border-radius: 0 4px 4px 4px;
+      header {
+        display: none;
+        & ~ div {
+          padding-top: 36px;
+          h2 {
+            display: none;
+          }
+
+          #makeForm {
+            gap: 20px;
+          }
+
+          #makeForm,
+          #vinForm,
+          #plateForm {
+            .react-select__control {
+              border: 1px solid #282828;
+              background: #f2f2f2;
+              padding-top: 18px;
+              @media (max-width: 768px) {
+                padding-top: 10px;
+              }
+            }
+
+            label {
+              color: #000;
+              text-align: center;
+              font-family: Arial;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 24px; /* 171.429% */
+              text-transform: uppercase;
+              background: linear-gradient(#fff 30%, #f2f2f2 30%);
+              @media (max-width: 768px) {
+                font-size: 12px;
+              }
+            }
+
+            input#vin,
+            input#plate {
+              border: 1px solid #282828;
+              background: #f2f2f2;
+              padding-top: 18px;
+              @media (max-width: 768px) {
+                padding-top: 10px;
+              }
+            }
+
+            .react-select__placeholder,
+            input#vin::placeholder,
+            input#plate::placeholder {
+              color: #9ca3af;
+              font-family: Arial;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 24px;
+              text-transform: uppercase;
+              @media (max-width: 768px) {
+                font-size: 14px;
+              }
+            }
+
+            .react-select__indicator svg {
+              fill: #282828;
+              stroke: #282828;
+            }
+
+            button[type='submit'] {
+              height: 48px;
+              color: #fff;
+              font-family: Arial;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              border-radius: 4px;
+              background: #2c59b5;
+
+              @media (max-width: 768px) {
+                width: 100%;
+              }
+            }
+            .label-complete-fields {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .fe-vehicle-tabs__tab {
+    height: 34px;
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 4px 4px 0 0;
+    background: $fe-tab-inactive-bg;
+    color: $fe-tab-text-color;
+    text-align: center;
+    font-family: $fe-tab-font-family;
+    font-size: $fe-tab-font-size;
+    font-weight: $fe-tab-font-weight;
+    line-height: $fe-tab-line-height;
+    text-transform: uppercase;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    &.is-active {
+      height: 36px;
+      padding: 11px 16px 11px 16px;
+      background: $fe-tab-active-bg;
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+  }
+
+  .fe-info-bar {
+    display: flex;
+    background: transparent;
+    margin-top: 40px;
+  }
+
+  .fe-info-item {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px 16px 0 0;
+    margin-right: 16px;
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+
+    &--last {
+      border-right: none;
+
+      .fe-info-item__body {
+        max-width: 220px;
+
+        @media (max-width: 768px) {
+          max-width: none;
+        }
+      }
+    }
+
+    &__icon {
+      width: 48px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      flex-shrink: 0;
+    }
+
+    &__icon--truck {
+      background-image: url(#{$truck-desktop});
+    }
+
+    &__icon--car {
+      background-image: url(#{$car-desktop});
+    }
+
+    &__icon--dollar {
+      background-image: url(#{$dollar-desktop});
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &__title {
+      color: #fff;
+      font-family: Arial;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 120%;
+    }
+
+    &__body {
+      width: 100%;
+      color: #fff;
+      font-family: Arial;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 120%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .fe-info-bar {
+      flex-direction: column;
+      background: #fff;
+      margin-top: 12px;
+      width: 100%;
+      max-width: 375px;
+      margin: 12px auto 0;
+    }
+
+    .fe-info-item {
+      flex-direction: row;
+      align-items: center;
+      padding: 12px 16px;
+      border: none;
+
+      &__content {
+        gap: 0;
+      }
+
+      br {
+        display: none;
+      }
+
+      &--last {
+        border-bottom: none;
+      }
+
+      &__icon--truck {
+        background-image: url(#{$truck-mobile});
+      }
+
+      &__icon--car {
+        background-image: url(#{$car-mobile});
+      }
+
+      &__icon--dollar {
+        background-image: url(#{$dollar-mobile});
+      }
+
+      &__title {
+        color: var(--Dark-grey, #282828);
+        line-height: 24px;
+      }
+
+      &__body {
+        color: var(--Dark-grey, #282828);
+        line-height: 24px;
+      }
+    }
+  }
+
+  $fe-hero-quals-bg: #f2f2f2;
+  $fe-hero-quals-text: #282828;
+
+  .fe-hero-quals {
+    background: $fe-hero-quals-bg;
+  }
+
+  .fe-hero-quals__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+    justify-content: space-around;
+    gap: 24px;
+    padding: 20px 16px; // tweak if needed to match design
+  }
+
+  .fe-hero-quals__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fe-hero-quals__tick {
+    flex: 0 0 auto;
+    display: block;
+  }
+
+  .fe-hero-quals__text {
+    color: $fe-hero-quals-text;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+    white-space: nowrap;
+  }
+
+  // Hide on tablet/mobile (<= 768px)
+  @media (max-width: 768px) {
+    .fe-hero-quals {
+      display: none;
+    }
+  }
+
+  $tp-id: 'fe-trustpilot-rating';
+
+  .fe-trustpilot-rating {
+    width: 100%;
+    background: #fff;
+
+    &__inner {
+      max-width: 1366px;
+      margin: 0 auto;
+      padding: 48px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border-bottom: 2px solid #000;
+    }
+
+    // copy style you provided
+    &__title {
+      color: #000;
+      text-align: center;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 26px;
+
+      &-mobile {
+        display: none; // only on mobile layout
+      }
+    }
+
+    &__stars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    &__star {
+      width: 40px;
+      height: 40px;
+      display: block;
+    }
+
+    &__brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &__logo-icon {
+      width: 26px;
+      height: 24px;
+      display: block;
+    }
+
+    &__brand-text {
+      color: #000;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 26px;
+    }
+
+    // Mobile layout (image 2)
+    @media (max-width: 768px) {
+      &__inner {
+        position: relative;
+        padding: 16px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        border: none;
+        padding-bottom: 60px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% - 60px);
+          height: 2px;
+          background: #000;
+        }
+      }
+
+      &__title {
+        text-align: left;
+        font-size: 14px;
+
+        &-desktop {
+          display: none;
+        }
+
+        &-mobile {
+          display: inline;
+        }
+      }
+
+      &__stars {
+        gap: 6px;
+      }
+
+      &__star {
+        width: 28px;
+        height: 28px;
+      }
+      &__brand {
+        align-items: flex-end;
+      }
+
+      &__brand-text {
+        display: inline;
+        white-space: nowrap;
+        align-items: flex-start;
+        font-size: 14px;
+        line-height: 1;
+      }
+    }
+
+    @media (max-width: 400px) {
+      &__inner {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  }
+}
