@@ -1,0 +1,14 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #product_addtocart_form {
+    .custom-child-upsel-checkbox {
+      position: relative;
+      .per-pack-price {
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+}

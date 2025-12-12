@@ -35,40 +35,17 @@ const card = (id, data) => {
                 </div>
                 
             </div>
-            ${description}
-            ${poster ? `<div class="provider-poster">${poster}</div>` : ''}
             <div class="grid">
-                ${
-                  pricingText
-                    ? `
-                    <div class="${id}__item">
-                        <div class="${id}__label first-item">Pricing</div>
-                        <div class="second-item">
-                            <div class="pricing-text">${pricingText}</div>
-                               ${
-                                 pricing.length > 0
-                                   ? `<ul>${pricing
-                                       .map((item) => `<li>${item}</li>`)
-                                       .join('\n')}</ul>`
-                                   : ''
-                               }
-                            
-                        </div>
-                    </div>
-                    `
-                    : ''
-                }
-
-                ${
-                  operating_systems
-                    ? `
+                 ${
+                   operating_systems
+                     ? `
                      <div class="${id}__item">
                         <div class="${id}__label first-item">Operating Systems</div>
                         <div class="second-item">${operating_systems}</div>
                     </div>
                     `
-                    : ''
-                }
+                     : ''
+                 }
 
                 ${
                   best_for
@@ -91,7 +68,28 @@ const card = (id, data) => {
                     `
                      : ''
                  }
-                
+                 
+                ${
+                  pricingText
+                    ? `
+                    <div class="${id}__item">
+                        <div class="${id}__label first-item">Pricing</div>
+                        <div class="second-item">
+                            <div class="pricing-text">${pricingText}</div>
+                               ${
+                                 pricing.length > 0
+                                   ? `<ul>${pricing
+                                       .map((item) => `<li>${item}</li>`)
+                                       .join('\n')}</ul>`
+                                   : ''
+                               }
+                            
+                        </div>
+                    </div>
+                    `
+                    : ''
+                }
+
                 ${
                   pros.length > 0
                     ? `
@@ -192,6 +190,8 @@ const card = (id, data) => {
                      : ''
                  }     
             </div>
+            <div class="provider-description">${description}</div>
+            ${poster ? `<div class="provider-poster">${poster}</div>` : ''}
             ${additionalInfo ? `${additionalInfo}` : ''}
         </div>
     `;

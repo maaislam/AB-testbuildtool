@@ -8,10 +8,8 @@ import trackGA4Event from './services/gaTracking';
 const { ID, VARIATION } = shared;
 
 const handleIntersectionForTest = (entry) => {
-  console.log('Intersection entry:', entry);
   if (entry.isIntersecting) {
     if (!document.body.classList.contains(`${ID}__hasSeen`)) {
-      console.log('In view', entry.target);
       trackGA4Event('test_run_ct_280', 'scrolls down', '');
       document.body.classList.add(`${ID}__hasSeen`);
     }
@@ -82,6 +80,29 @@ const init = () => {
     if (mainTargetPoint) {
       mainTargetPoint.insertAdjacentHTML('afterend', cardWrapper(ID, hasPageData));
       handleObserver(`.${ID}__card`);
+    }
+
+    if (window.location.pathname === '/net-admin/active-directory-tools/') {
+      const canvasElements = document.querySelectorAll('canvas.jschartgraphic');
+
+      canvasElements.forEach((element, index) => {
+        //Grab the original canvas
+        const originalCanvas = element;
+
+        const originalStyles = originalCanvas.getAttribute('style');
+        //Create a new canvas
+        const cloneCanvas = document.createElement('canvas');
+        cloneCanvas.width = originalCanvas.width;
+        cloneCanvas.height = originalCanvas.height;
+        cloneCanvas.setAttribute('style', originalStyles);
+
+        //Copy the drawing
+        const ctx = cloneCanvas.getContext('2d');
+        ctx.drawImage(originalCanvas, 0, 0);
+
+        //Insert at the top of the page
+        document.querySelector(`.new-canvas-wrapper-${index + 1}`).append(cloneCanvas);
+      });
     }
   }
 };

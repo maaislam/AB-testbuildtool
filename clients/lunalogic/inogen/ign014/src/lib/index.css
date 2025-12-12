@@ -1,0 +1,37 @@
+#pardot-form {
+  display: flex !important;
+  flex-wrap: wrap;
+  background: #ffffff !important;
+  border: 0px !important;
+  box-shadow: none !important;
+  padding: 20px !important;
+}
+
+#pardot-form .form_col {
+  width: 50%;
+}
+
+#pardot-form .form-field.Are_You_a_Patient {
+  display: flex;
+  flex-direction: column;
+}
+
+#pardot-form .form_col:has(.hidden) {
+  display: none;
+}
+#pardot-form .form-field.Are_You_a_Patient label {
+  margin-bottom: 15px;
+}
+#pardot-form p.form-field {
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 480px) {
+  #pardot-form {
+    display: block !important;
+  }
+
+  #pardot-form .form_col {
+    width: 100%;
+  }
+}

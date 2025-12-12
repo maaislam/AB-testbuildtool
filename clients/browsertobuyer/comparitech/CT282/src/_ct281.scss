@@ -1,0 +1,77 @@
+.ct281 .entry-content > p:has(img),
+.in_short_container li:not(:has(a.go-link)) {
+  display: none !important;
+}
+
+.ct281 .in_short_container.fallback + .entry-content > .in_short_container {
+  display: none;
+}
+
+.ct281 .in_short_container li,
+.ct281 .adjust-font {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 29px;
+  color: #444;
+}
+
+.ct281 .in_short_header-wrapper {
+  display: inline-block;
+}
+
+.ct281 .in_short_header-question,
+.ct281 .in_short_header {
+  display: inline-block;
+}
+
+.ct281 .in_short_mobile_header.header-text.active {
+  display: none;
+}
+
+.ct281 .in_short_header-question {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ct281 .in_short_container .header-text {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ct281 .in_short_container .in_short_content-update ul li:after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' fill='none'%3E%3Ccircle cx='9.421' cy='9.421' r='9.421' fill='%23006C9B'/%3E%3Cpath fill='%23fff' d='M6.852 5.286l1.004-1.003L12.872 9.3l-1.003 1.003z'/%3E%3Cpath fill='%23fff' d='M6.852 5.286l1.004-1.003L12.872 9.3l-1.003 1.003z'/%3E%3Cpath fill='%23fff' d='M7.855 14.56l-1.003-1.003L11.87 8.54l1.003 1.003z'/%3E%3Cpath fill='%23fff' d='M7.855 14.56l-1.003-1.003L11.87 8.54l1.003 1.003z'/%3E%3C/svg%3E");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 6px;
+  left: -30px;
+}
+
+.ct281 .in_short_container .in_short_content-update ul {
+  list-style: none;
+  -webkit-padding-start: 30px;
+  padding-inline-start: 30px;
+}
+
+.ct281 .in_short_container .in_short_content-update ul li {
+  position: relative;
+}
+
+.ct281 .in_short_container .in_short_content-update ul li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.ct281 .in_short_container .in_short_content-update ul li:not(:last-child):before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: calc(100% + 15px);
+  background-color: #006c9b;
+  top: 6px;
+  left: -22px;
+}

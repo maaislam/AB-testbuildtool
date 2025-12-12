@@ -36,8 +36,8 @@ const stickyProduct = (id, data) => {
                     <div class="${id}__row">Floor Type</div>
                     <div class="${id}__row">Plank Thickness</div>
                     ${
-                      data[0].details.flooringtype.toLowerCase().includes('vinyl') ||
-                      data[0].details.flooringtype.toLowerCase().includes('laminate')
+                      data[0]?.details?.flooringtype?.toLowerCase().includes('vinyl') ||
+                      data[0]?.details?.flooringtype?.toLowerCase().includes('laminate')
                         ? `
                               <div class="${id}__row">Colour</div>     
                           `
