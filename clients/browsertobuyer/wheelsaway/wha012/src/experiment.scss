@@ -1,0 +1,428 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+// =============================================
+// WheelsAway Form Enhancements - Swiper Version
+// =============================================
+
+// Variables
+$wa-orange: #ed732e;
+$wa-orange-light: #ed732e;
+$wa-white: #fff;
+$wa-black: #000;
+$wa-gray: #ccc;
+$wa-border-gray: #ddd;
+$wa-green: #00a5a5;
+$wa-transition-fast: 0.2s ease;
+$wa-transition-mid: 0.3s ease;
+.#{$id}-1 {
+  // -----------------------------------------
+  // Fieldset Base Styles
+  // -----------------------------------------
+  fieldset {
+    transform: none !important;
+
+    & > div:last-child {
+      flex-wrap: nowrap !important;
+    }
+
+    .flex.items-start {
+      position: relative;
+      width: max-content;
+      justify-content: flex-start !important;
+      gap: 8px !important;
+
+      @media screen and (max-width: 400px) {
+        width: 100%;
+      }
+
+      section[role='tooltip'] {
+        width: 100% !important;
+        min-width: 330px;
+        top: 28px;
+        left: auto;
+        right: -20px;
+        transform: translateX(50%);
+        z-index: 99;
+
+        @media screen and (max-width: 600px) {
+          right: auto;
+          left: 0;
+          transform: none;
+        }
+
+        span {
+          display: none;
+        }
+      }
+
+      legend {
+        color: $wa-black;
+        font-weight: 700;
+        text-wrap: pretty;
+      }
+
+      // Tooltip Icon
+      > button[aria-label='Tooltip'] {
+        position: relative;
+        right: auto;
+        margin-left: 0;
+        color: $wa-orange;
+        transition: color $wa-transition-fast, transform $wa-transition-fast;
+
+        &:hover {
+          &::after {
+            visibility: visible;
+          }
+        }
+
+        &::after {
+          visibility: hidden;
+          content: '';
+          position: absolute;
+          top: calc(100% + 5px);
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 18px;
+          height: 18px;
+          background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none"><path d="M7.79443 0L15.5887 13.5H0.00020504L7.79443 0Z" fill="%234B5563"/></svg>');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: transparent;
+          animation: wa-pulse 1s ease-out infinite;
+        }
+
+        svg {
+          fill: $wa-orange;
+        }
+      }
+    }
+
+    // Radio & Checkbox Interaction
+    input[type='radio'],
+    input[type='checkbox'] {
+      & + label:not([for*='checkbox-warning_lights']) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 33px;
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'arial';
+        color: $wa-black;
+      }
+
+      &:checked + label:not([for*='checkbox-warning_lights']),
+      &:focus + label:not([for*='checkbox-warning_lights']),
+      &:hover + label:not([for*='checkbox-warning_lights']) {
+        border-color: $wa-orange !important;
+        color: $wa-white !important;
+        background-color: $wa-orange !important;
+        border-radius: 4px;
+      }
+    }
+
+    input[type='checkbox'] {
+      & + label[for*='checkbox-warning_lights'] {
+        width: 64px;
+        height: 64px;
+        border-width: 2px !important;
+        border-radius: 4px;
+      }
+
+      &:checked + label[for*='checkbox-warning_lights'] {
+        width: 62px;
+        height: 62px;
+        border-color: $wa-orange !important;
+        border-width: 4px !important;
+      }
+    }
+
+    label[for*='checkbox-warning_lights'] {
+    }
+  }
+
+  // -----------------------------------------
+  // Swiper Carousel Container
+  // -----------------------------------------
+  .wa-swiper {
+    overflow: hidden;
+    min-height: 150px;
+    position: relative;
+
+    .swiper-wrapper {
+      transition-property: transform, height !important;
+    }
+
+    fieldset.swiper-slide {
+      height: auto !important;
+      width: 100%;
+      margin: 0;
+      padding: 0 0 1rem;
+      box-sizing: border-box;
+      flex-shrink: 0;
+
+      &.swiper-slide-active {
+        overflow: visible;
+      }
+    }
+  }
+
+  // -----------------------------------------
+  // Secondary Questions (conditional)
+  // -----------------------------------------
+  .wa-secondary-question {
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 1rem;
+
+    animation: wa-fade-in $wa-transition-mid;
+  }
+
+  // -----------------------------------------
+  // Next Button (for conditional questions)
+  // -----------------------------------------
+  .wa-next-btn {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.625rem 1rem;
+    background-color: $wa-orange;
+    color: $wa-white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color $wa-transition-fast, opacity $wa-transition-fast;
+
+    &:hover:not(:disabled) {
+      background-color: $wa-orange;
+    }
+
+    &:disabled {
+      background-color: $wa-gray;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+
+  // -----------------------------------------
+  // Submit Button Enhancement
+  // -----------------------------------------
+  button[type='submit']:not(:disabled) {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    font-weight: 700;
+    background-color: $wa-green !important;
+  }
+
+  // -----------------------------------------
+  // Animations
+  // -----------------------------------------
+  @keyframes wa-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// =============================================
+// WheelsAway Form Enhancements V2 (Standalone)
+// Enhanced Labels with descriptions & tick icons
+// Requires: window.switch = true
+// =============================================
+
+// // Variables
+// $wa-orange: #ed732e;
+// $wa-orange-hover: darken($wa-orange, 5%);
+// $wa-orange-light: rgba($wa-orange, 0.1);
+// $wa-white: #fff;
+// $wa-gray: #ccc;
+// $wa-gray-dark: #666;
+// $wa-border-gray: #ddd;
+// $wa-transition-fast: 0.2s ease;
+// $wa-transition-mid: 0.3s ease;
+
+.#{$id}-2 {
+  // -----------------------------------------
+  // Label Enhancements
+  // -----------------------------------------
+
+  $wa-gray-light: #9ca3af;
+
+  h1 {
+    color: #000;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  fieldset {
+    & > div:last-child {
+      gap: 16px !important;
+    }
+
+    .wa-secondary-question > div > div {
+      width: 100%;
+    }
+
+    label {
+      position: relative;
+      padding: 12px;
+      border-radius: 4px;
+      border: 2px solid $wa-gray-light;
+      background: #fff;
+      text-wrap: pretty;
+
+      .wa-label-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        text-align: left;
+        color: $wa-black;
+        font-size: 12px;
+        font-weight: 400;
+
+        strong {
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+
+      .wa-tick {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        visibility: hidden;
+      }
+
+      &[for*='checkbox-warning_lights'] {
+        width: 100%;
+        padding: 6px;
+        .wa-label-with-icon {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          .wa-label-icon {
+            width: 48px;
+            height: 48px;
+          }
+          img {
+            padding: 0;
+            max-width: 100%;
+            height: auto;
+          }
+
+          .wa-label-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            color: $wa-black;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-wrap: pretty;
+          }
+        }
+      }
+    }
+    input[type='radio'],
+    input[type='checkbox'] {
+      &:checked + label {
+        border-width: 2px;
+      }
+      &:checked + label .wa-tick {
+        visibility: visible;
+      }
+    }
+
+    legend {
+      color: $wa-black;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-wrap: pretty;
+    }
+
+    [aria-label='Tooltip'] {
+      display: none;
+    }
+  }
+
+  .wa-swiper {
+    overflow: hidden;
+    min-height: 190px;
+    position: relative;
+
+    .swiper-wrapper {
+      transition-property: transform, height !important;
+    }
+
+    fieldset.swiper-slide {
+      height: auto !important;
+      width: 100%;
+      margin: 0;
+      padding: 0 0 1rem;
+      box-sizing: border-box;
+      flex-shrink: 0;
+
+      &.swiper-slide-active {
+        overflow: visible;
+      }
+    }
+  }
+
+  // -----------------------------------------
+  // Secondary Questions (conditional)
+  // -----------------------------------------
+  .wa-secondary-question {
+    width: 100%;
+    margin-top: 0.5rem;
+    animation: wa-fade-in $wa-transition-mid;
+  }
+
+  .wa-next-btn {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.625rem 1rem;
+    background-color: $wa-orange;
+    color: $wa-white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color $wa-transition-fast, opacity $wa-transition-fast;
+
+    &:hover:not(:disabled) {
+      background-color: $wa-orange;
+    }
+
+    &:disabled {
+      background-color: $wa-gray;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+
+  button[type='submit']:not(:disabled) {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    font-weight: 700;
+    background-color: $wa-green !important;
+  }
+}

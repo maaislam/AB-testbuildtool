@@ -109,7 +109,7 @@ export const lightboxFunctionality = (lightboxSwiper) => {
       return;
     }
 
-    //3) স্লাইডের খালি অংশে ক্লিক → MODAL OPEN
+    //3)  MODAL OPEN
     const slideEl = target.closest('.mySwiper2 .swiper-slide');
     if (slideEl) {
       const index = Array.from(slideEl.parentElement.children).indexOf(slideEl);

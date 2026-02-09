@@ -1,0 +1,460 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.#{$id} {
+  $font-inter: 'Inter', sans-serif;
+
+  .orange-highlight {
+    color: #ff7800;
+    font-weight: 800;
+  }
+
+  .fe-vehicle-header__offer-value {
+    svg {
+      fill: #374151;
+      stroke: #fff;
+      width: 24px;
+      height: 24px;
+      transform: translateY(3px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    header > div:first-child {
+      width: 100%;
+      max-width: 1024px;
+    }
+    header > div:first-child > div:first-child {
+      display: none;
+    }
+  }
+  @media (min-width: 768px) {
+    main form {
+      grid-column: span 12 / span 12;
+      margin-top: 21px;
+      padding: 0;
+      border-radius: 8px;
+      background: #f6f9fc;
+    }
+  }
+
+  main form:has(.variation-2) {
+    margin-top: 0;
+    background-color: transparent;
+  }
+  [name='capLower'] + span {
+    color: #000;
+    text-align: center;
+    font-family: $font-inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.64px;
+  }
+
+  [name='capLower'] ~ span > button {
+    transform: translateY(-4px);
+  }
+
+  @media (max-width: 768px) {
+    [name='capLower'] ~ span > button {
+      transform: translateY(6px);
+    }
+  }
+
+  [name='capLower'] ~ span > button svg {
+    fill: #374151;
+    stroke: #fff;
+    width: 24px;
+    height: 24px;
+  }
+
+  main form > section:first-of-type {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    main form > section:first-of-type {
+      display: none;
+    }
+  }
+  .fe-form-enhanced,
+  .fe-form-enhanced-page2 {
+    padding-top: 10px;
+  }
+  @media (min-width: 768px) {
+    .fe-form-enhanced,
+    .fe-form-enhanced-page2 {
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+      grid-column: span 12 / span 12;
+      background: #f6f9fc;
+
+      box-shadow: none;
+      border-radius: 0;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .fe-form-enhanced.variation-2,
+    .fe-form-enhanced-page2.variation-2 {
+      max-width: 540px;
+      padding: 24px 32px 32px;
+      border-radius: 8px;
+      background: #f6f9fc;
+    }
+  }
+  .fe-form-enhanced .fe-all-required {
+    font-size: 14px;
+    font-family: $font-inter;
+    margin-bottom: 6px;
+  }
+  @media (max-width: 768px) {
+    .fe-form-enhanced .fe-all-required {
+      font-size: 12px;
+    }
+  }
+
+  .fe-form-enhanced fieldset div.w-full:has(input[type='radio']) {
+    max-width: 83px;
+  }
+  @media (max-width: 768px) {
+    .fe-form-enhanced fieldset div.w-full:has(input[type='radio']) {
+      max-width: 100%;
+    }
+  }
+
+  .fe-form-enhanced fieldset div:not(.w-full):has(input[type='radio']) {
+    max-width: 160px;
+  }
+  @media (max-width: 768px) {
+    .fe-form-enhanced fieldset div:not(.w-full):has(input[type='radio']) {
+      max-width: none;
+    }
+  }
+  .fe-form-enhanced fieldset input[type='radio'] + label {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #7190af;
+    background: #ffffff;
+    color: #7190af;
+    font-family: $font-inter;
+    font-size: 16px;
+    font-weight: 700;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  @media (max-width: 768px) {
+    .fe-form-enhanced fieldset input[type='radio'] + label {
+      padding: 4px 27px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  .fe-form-enhanced fieldset legend {
+    color: #000;
+    font-family: $font-inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .fe-form-enhanced div > label:first-child {
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: max-content;
+    color: #000;
+    font-family: $font-inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .fe-form-enhanced div > label:first-child + button svg {
+    fill: #374151;
+    stroke: #fff;
+    width: 24px;
+    height: 24px;
+  }
+  .fe-form-enhanced fieldset input[type='radio']:checked + label {
+    border-color: #ff7800; /* orange when active */
+    color: #ff7800;
+  }
+  .fe-form-enhanced input[type='tel'],
+  .fe-form-enhanced input[type='email'] {
+    margin-top: 0;
+    border: 2px solid #3d3d3d !important;
+    box-shadow: none;
+  }
+  .fe-form-enhanced button[aria-label='Get offers'] {
+    background: #ff7800 !important;
+    border-radius: 6px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    box-shadow: 0 -4px 0 0 rgba(0, 0, 0, 0.2) inset;
+  }
+  .fe-form-enhanced button[aria-label='Get offers'][disabled] {
+    border-radius: 4px;
+    background: #ff7800 !important;
+
+    box-shadow: 0 -4px 0 0 rgba(0, 0, 0, 0.2) inset;
+    cursor: pointer;
+    opacity: 1;
+  }
+  .fe-form-enhanced .fe-privacy-text {
+    color: #000;
+    font-family: $font-inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  .fe-form-enhanced-page2 {
+    background: #f4fbff !important;
+    border-radius: 10px;
+    padding-bottom: 20px;
+  }
+  .fe-form-enhanced-page2 h1 {
+    color: #000;
+    font-family: $font-inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .fe-form-enhanced-page2 .fe-row-3 {
+    display: flex !important;
+
+    flex-wrap: nowrap !important;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .fe-form-enhanced-page2 .fe-row-3 > div {
+    width: 152px !important;
+  }
+  @media only screen and (max-width: 768px) {
+    .fe-form-enhanced-page2 .fe-row-3 > div {
+      width: 102px !important;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .fe-form-enhanced-page2 .fe-row-3 {
+      flex-wrap: wrap !important;
+      flex-direction: column !important;
+    }
+    .fe-form-enhanced-page2 .fe-row-3 > div {
+      width: 100% !important;
+    }
+    .fe-form-enhanced-page2 .fe-row-2 > div {
+      width: 100% !important;
+    }
+  }
+
+  .fe-form-enhanced-page2 .fe-row-2 {
+    display: flex !important;
+
+    flex-wrap: nowrap !important;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  .fe-form-enhanced-page2 .fe-row-2 > div {
+    width: 148px !important;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .fe-form-enhanced-page2 .fe-row-2 > div {
+      width: 102px !important;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .fe-form-enhanced-page2 .fe-row-3 {
+      flex-wrap: wrap !important;
+      flex-direction: column !important;
+    }
+    .fe-form-enhanced-page2 .fe-row-3 > div {
+      width: 100% !important;
+    }
+    .fe-form-enhanced-page2 .fe-row-2 > div {
+      width: 100% !important;
+    }
+  }
+
+  .fe-form-enhanced-page2 fieldset > div:first-child {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .fe-form-enhanced-page2 fieldset legend {
+    width: auto;
+    color: #000;
+    font-family: $font-inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .fe-form-enhanced-page2 fieldset legend + button svg {
+    fill: #374151;
+    stroke: #fff;
+    width: 24px;
+    height: 24px;
+  }
+  .fe-form-enhanced-page2 fieldset input[type='radio'] + label {
+    height: 100%;
+    min-height: 39px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 8px 8px;
+    justify-content: center;
+    align-items: center;
+    color: #7190af;
+    text-align: center;
+    font-family: $font-inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 4px;
+    border: 2px solid #7190af;
+    background: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .fe-form-enhanced-page2 fieldset input[type='radio'] + label {
+      font-size: 14px;
+    }
+  }
+
+  .fe-form-enhanced-page2 fieldset input[type='radio']:checked + label {
+    border-color: #ff8a00 !important;
+    color: #ff8a00 !important;
+  }
+  .fe-form-enhanced-page2 button[aria-label='Get best price'],
+  .fe-form-enhanced-page2 button[aria-label='Next'] {
+    background: #ff8a00 !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 -4px 0 0 rgba(0, 0, 0, 0.2) inset;
+    opacity: 1 !important;
+    border-radius: 6px !important;
+    padding: 14px 0 !important;
+  }
+  .fe-form-enhanced-page2 button[disabled] {
+    opacity: 1 !important;
+    cursor: pointer !important;
+  }
+  .fe-vehicle-header {
+    width: 100%;
+    grid-column: span 12 / span 12;
+    text-align: center;
+    padding: 24px 16px 16px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.25);
+  }
+  @media screen and (min-width: 768px) {
+    .fe-vehicle-header.variation-2 {
+      margin-top: 0;
+      border: none;
+      background: #f5f5f5; /* section background */
+      box-shadow: 0 0 0 100vmax #f5f5f5;
+      clip-path: inset(0 -100vmax);
+    }
+  }
+  @media (max-width: 768px) {
+    // .fe-vehicle-header {
+    //   display: none;
+    // }
+    .fe-vehicle-header__inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      gap: 8px 16px;
+      align-items: center;
+    }
+
+    .fe-vehicle-header__offer-value {
+      grid-column: 1 / -1; /* spans full width */
+    }
+
+    .fe-vehicle-header__plate-wrap {
+      grid-row: 2;
+      grid-column: 1;
+    }
+
+    .fe-vehicle-header__title {
+      grid-row: 2;
+      grid-column: 2;
+      margin: 0 !important;
+      text-align: left;
+    }
+
+    .fe-vehicle-header__not-my {
+      grid-row: 3;
+      grid-column: 2;
+      margin-top: 0 !important;
+      text-align: left;
+    }
+  }
+  .fe-vehicle-header__inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .fe-vehicle-header__title {
+    margin: 0 0 20px;
+    color: #000;
+    font-family: $font-inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.64px;
+  }
+  .fe-vehicle-header__plate-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .fe-vehicle-header__plate {
+    border-radius: 4px;
+    border: 2px solid #333;
+    background: #fd0;
+    padding: 4px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .fe-vehicle-header__plate-text {
+    color: #000;
+    font-family: $font-inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .fe-vehicle-header__not-my {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: $font-inter;
+    font-size: 14px;
+    color: #1a4ca3;
+
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .fe-vehicle-header__not-my:hover {
+    text-decoration: none;
+  }
+}
